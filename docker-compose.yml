@@ -1,2 +1,7 @@
 # ClearPath Local Environment Orchestration
 # TODO: To be configured by Data Lead for MySQL setup next week.
+
+version: '3.8'
+
+services:
+  # MySQL database configuration will be appended here by the Data Lead
