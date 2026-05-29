@@ -5,6 +5,49 @@ UCD COMP47360 Team 6 - Accessibility Intelligence App for Manhattan
 
 Welcome to the official repository for **ClearPath**. To ensure high code quality, robust architecture, and smooth sprint integrations, all team members are required to strictly adhere to the following development workflows.
 
+### System Architecture Diagram
+
+```mermaid
+graph LR
+    %% Style Definitions (With Accent Borders)
+    classDef client fill:#ffffff,stroke:#333333,stroke-width:2px;
+    classDef docker fill:#f9f9f9,stroke:#0076ff,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef database fill:#f5f5f5,stroke:#333333,stroke-width:2px;
+
+    %% 1. Client Tier (Presentation Layer)
+    subgraph Client_Tier [Presentation Layer / Clients]
+        A[Mobile App Client <br> React Native]:::client
+        B[Web Dashboard <br> React/HTML/CSS]:::client
+    end
+
+    %% 2. Application Tier (Server Side - Docker Compose Network Boundary)
+    subgraph Docker_Environment [Docker Compose Network]
+        
+        subgraph Flask_Container [Container: API Application Server]
+            C[Poetry Environment] --> D[Flask Core Engine]
+            D --> E[Flask Blueprints <br> API Routing]
+        end
+
+        subgraph MySQL_Container [Container: Database Server]
+            F[(MySQL DB <br> Relational Schemas)]:::database
+        end
+        
+        E <-->|SQL via TCP/IP| F
+    end
+
+    %% 3. Data & Analytics Pipeline (Offline / Background Process)
+    subgraph Analytics_Pipeline [Data & ML Pipeline]
+        G[Data Ingestion Script] -->|ETL Processing| F
+        H[ML Predictive Model] -->|Model Inference| D
+    end
+
+    %% Network Protocols (Communication Layer)
+    A <-->|HTTP Requests / JSON Payloads| E
+    B <-->|HTTP Requests / JSON Payloads| E
+
+    %% Apply Styles
+    class Docker_Environment,Flask_Container,MySQL_Container docker;
+```
 ---
 
 ## 1. Git Branching & Pull Request (PR) Policy
