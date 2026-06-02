@@ -1,7 +1,23 @@
-# ClearPath Local Environment Orchestration
-# TODO: To be configured by Data Lead for MySQL setup next week.
-
-version: '3.8'
-
 services:
-  # MySQL database configuration will be appended here by the Data Lead
+  mysql:
+    image: mysql:8.4
+    container_name: clearpath-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: clearpath_root
+      MYSQL_DATABASE: clearpath
+      MYSQL_USER: clearpath_app
+      MYSQL_PASSWORD: clearpath_app
+    ports:
+      - "3306:3306"
+    volumes:
+      - clearpath_mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uclearpath_app", "-pclearpath_app"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  clearpath_mysql_data:
