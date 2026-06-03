@@ -1,15 +1,17 @@
 import { VENUES } from "./data/venues";
 import { REPORTS } from "./data/reports";
+import BusynessChart from "./components/BusynessChart";
 
 function App() {
   return (
     <div style={{ padding: "20px" }}>
-      <h1>ClinicFlow</h1>
+      <h1>ClearPath</h1>
 
       <h2>Summary</h2>
       <p>Total Venues: {VENUES.length}</p>
       <p>Open Venues: {VENUES.filter(v => v.open_now).length}</p>
       <p>Active Reports: {REPORTS.length}</p>
+      <BusynessChart venues={VENUES} />
 
       <h2>Venues</h2>
       {VENUES.map((venue) => (
