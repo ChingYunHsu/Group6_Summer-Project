@@ -146,3 +146,46 @@ vite.config.ts.timestamp-*
 .venv/
 venv/
 poetry.lock
+__pycache__/
+*.py[cod]
+*.pyc
+
+# ============================================
+# Docker
+# ============================================
+# Docker volumes (MySQL data)
+clearpath_mysql_data/
+docker-compose.override.yml
+
+# ============================================
+# Project Specific
+# ============================================
+# SQL data files (keep only schema in docker/mysql/init/)
+*.sql
+!docker/mysql/init/*.sql
+!Data+ML/test/6.2_DB/001_clearpath_schema.sql
+
+# Data source files (too large for git - store externally)
+data_source/*.csv
+data_source/*.json
+data_source/*.geojson
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# ============================================
+# IDE / Editor
+# ============================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (PyCharm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# macOS
+.DS_Store
+._*

@@ -19,5 +19,19 @@ services:
       timeout: 5s
       retries: 10
 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: clearpath-phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: clearpath_root
+    ports:
+      - "8080:80"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
 volumes:
   clearpath_mysql_data:
