@@ -13,6 +13,8 @@ class Settings:
     besttime_api_key: str
     google_maps_api_key: str
     gemini_api_key: str
+    port: int
+    flask_env: str
 
 
 def get_settings() -> Settings:
@@ -21,4 +23,7 @@ def get_settings() -> Settings:
         besttime_api_key=os.getenv("BESTTIME_API_KEY", ""),
         google_maps_api_key=os.getenv("GOOGLE_MAPS_API_KEY", ""),
         gemini_api_key=os.getenv("GEMINI_API_KEY", ""),
+        port=int(os.getenv("PORT", "5000")),
+        flask_env=os.getenv("FLASK_ENV", "production"),
     )
+
