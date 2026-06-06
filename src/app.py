@@ -1,9 +1,13 @@
 from flask import Flask
 
+from api.app_state import bp as app_state_bp
 from api.health import bp as health_bp
 from api.integrations import bp as integrations_bp
+from api.routes import bp as routes_bp
 from api.reports import bp as reports_bp
 from api.venues import bp as venues_bp
+from api.insights import bp as insights_bp
+from api.user import bp as user_bp
 from settings import get_settings
 
 
@@ -17,8 +21,12 @@ def create_app() -> Flask:
 
     app.register_blueprint(health_bp)
     app.register_blueprint(integrations_bp)
+    app.register_blueprint(user_bp)
+    app.register_blueprint(routes_bp)
+    app.register_blueprint(app_state_bp)
     app.register_blueprint(venues_bp)
     app.register_blueprint(reports_bp)
+    app.register_blueprint(insights_bp)
 
     return app
 
