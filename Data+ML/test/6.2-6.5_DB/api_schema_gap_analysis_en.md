@@ -45,9 +45,9 @@ The goal is to identify every gap, determine whether it requires a schema change
 | **busyness.busyness_status** | string | busyness_level | busyness_scores.level | ⚠️ Enum mapping needed |
 | **busyness.busyness_color** | string | — | — | ✅ Computed at API layer |
 | **busyness.estimated_wait_minutes** | int | avg_wait_minutes | busyness_scores.estimated_wait_minutes | ✅ Aligned |
-| **busyness.forecast_1h** | int | — | — | ❌ **Column needed** |
-| **busyness.forecast_4h** | int | — | — | ❌ **Column needed** |
-| **busyness.forecast_8h** | int | — | — | ❌ **Column needed** |
+| **busyness.forecast_1h** | int | busyness_forecast_12h | busyness_scores.forecast_1h | ⚠️ **INT column; mock_data uses 12h array — API layer transforms** |
+| **busyness.forecast_4h** | int | — | — | ✅ **Dropped from DB** |
+| **busyness.forecast_8h** | int | — | — | ✅ **Dropped from DB** |
 
 ### 2.2 GET /api/v1/venues/{venue_id} (Detail — extra fields)
 
@@ -61,7 +61,7 @@ The goal is to identify every gap, determine whether it requires a schema change
 | data_confidence | float | — | venues.source_confidence | ✅ Aligned |
 | created_at | string | — | venues.created_at | ✅ Aligned |
 | open_now | bool | open_now | — | ⚠️ **Computed at API layer** |
-| weather_risk | string | weather_risk | — | ❌ **Column needed or computed** |
+| weather_risk | string | weather_risk | venues.weather_risk | ✅ Aligned |
 
 ---
 
@@ -167,7 +167,9 @@ ALTER TABLE report_confirmations ADD COLUMN language VARCHAR(10) AFTER action;
 ### 4.4 New Columns on `busyness_scores`
 
 ```sql
--- Forecast fields (1h/4h/8h)
+-- Forecast fields (1h/4h/8h) — ALREADY APPLIED
+-- forecast_1h: INT column; mock_data uses 12h array → API layer transforms
+-- forecast_4h/8h: exist but planned for removal
 ALTER TABLE busyness_scores ADD COLUMN forecast_1h INT AFTER estimated_wait_minutes;
 ALTER TABLE busyness_scores ADD COLUMN forecast_4h INT AFTER forecast_1h;
 ALTER TABLE busyness_scores ADD COLUMN forecast_8h INT AFTER forecast_4h;
@@ -238,20 +240,21 @@ These fields are present in the API response but should be **computed at runtime
 
 | Category | New Columns | New Tables | API-Layer Only |
 |----------|-------------|------------|----------------|
-| `venues` | +10 fields | — | 1 (open_now) |
-| `user_reports` | +6 fields | — | 2 (live_report_count, badge_text) |
-| `report_confirmations` | +1 field | — | 1 (language) |
-| `busyness_scores` | +3 fields | — | — |
-| `venue_accessibility` | — | ✅ New table | — |
-| `venue_language` | — | ✅ New table | — |
-| `venue_warnings` | — | ✅ New table | — |
-| Computed fields | — | — | +8 fields |
+| `venues` | ✅ All applied | — | 1 (open_now) |
+| `user_reports` | ✅ All applied | — | 2 (live_report_count, badge_text) |
+| `report_confirmations` | ✅ Applied | — | 1 (language) |
+| `busyness_scores` | ✅ Applied (forecast_4h/8h dropped) | — | 1 (busyness_forecast_12h → forecast_1h transform) |
+| `venue_accessibility` | — | ✅ Created | — |
+| `venue_language` | — | ✅ Created | — |
+| `venue_warnings` | — | ✅ Created | — |
+| Computed fields | — | — | +9 fields (incl. supported_services) |
 
 ---
 
 ## 7. Next Steps
 
-1. Update the Docker initializer SQL (`docker/mysql/init/001_clearpath_schema.sql`) with all schema changes.
-2. Align `src/mock_data.py` to match the new schema fields.
-3. Update API response serialization in `src/api/venues.py` and `src/api/reports.py`.
-4. Add unit tests in `tests/test_database_plan.py` for new tables and fields.
+1. ~~Update the Docker initializer SQL~~ → Sync `docker/mysql/init/001_clearpath_schema.sql` with `Data+ML/test/6.2-6.5_DB/001_clearpath_schema.sql`.
+2. ~~Align `src/mock_data.py`~~ → `phone_number` → `phone` ✅ Done. `busyness_forecast_12h` kept as frontend field; API transforms to `forecast_1h` INT.
+3. Update API response serialization: map `venue_type` → `category`, compute `supported_services` from venue attributes.
+4. ~~Drop `forecast_4h`/`forecast_8h` columns~~ → ✅ Already dropped from DB.
+5. Add unit tests in `tests/test_database_plan.py` for new tables and fields.
