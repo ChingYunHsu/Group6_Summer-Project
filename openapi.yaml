@@ -3,22 +3,27 @@ info:
   title: ClearPath API
   version: 1.1.0
   description: Shared REST API contract for ClearPath frontend and backend teams.
+
 servers:
-- url: http://localhost:5000
-  description: Local development server
+  - url: https://api.clearpath.example
+    description: Production server
+  - url: http://localhost:5000
+    description: Local development server
+
 tags:
-- name: Health
-- name: Integrations
-- name: Venues
-- name: Reports
-- name: User
-- name: Routes
-- name: App State
+  - name: Health
+  - name: Integrations
+  - name: Venues
+  - name: Reports
+  - name: User
+  - name: Routes
+  - name: App State
+
 paths:
   /api/v1/health:
     get:
       tags:
-      - Health
+        - Health
       summary: Health check
       operationId: getHealth
       responses:
@@ -28,14 +33,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HealthResponse'
+
   /api/v1/integrations/status:
     get:
       tags:
-      - Integrations
+        - Integrations
       summary: Get integration configuration status
       operationId: getIntegrationsStatus
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Current integration configuration flags.
@@ -49,34 +55,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/venues:
     get:
       tags:
-      - Venues
+        - Venues
       summary: List venues
       operationId: listVenues
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       parameters:
-      - name: languages
-        in: query
-        required: false
-        description: Optional comma-separated language codes used to filter results.
-        schema:
-          type: string
-        example: FR,ES
-      - name: accessible
-        in: query
-        required: false
-        description: When true, returns only fully accessible venues.
-        schema:
-          type: boolean
-      - name: open_now
-        in: query
-        required: false
-        description: When true, returns only venues that are open now.
-        schema:
-          type: boolean
+        - name: languages
+          in: query
+          required: false
+          description: Optional comma-separated language codes used to filter results.
+          schema:
+            type: string
+            example: FR,ES
+        - name: accessible
+          in: query
+          required: false
+          description: When true, returns only fully accessible venues.
+          schema:
+            type: boolean
+        - name: open_now
+          in: query
+          required: false
+          description: When true, returns only venues that are open now.
+          schema:
+            type: boolean
       responses:
         '200':
           description: A pageless list of venues.
@@ -90,21 +97,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/venues/{venue_id}:
     get:
       tags:
-      - Venues
+        - Venues
       summary: Get a venue by ID
       operationId: getVenueById
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       parameters:
-      - name: venue_id
-        in: path
-        required: true
-        description: Unique venue identifier.
-        schema:
-          type: string
+        - name: venue_id
+          in: path
+          required: true
+          description: Unique venue identifier.
+          schema:
+            type: string
       responses:
         '200':
           description: Venue found.
@@ -124,10 +132,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/reports:
     get:
       tags:
-      - Reports
+        - Reports
       summary: List active community reports
       operationId: listReports
       responses:
@@ -139,9 +148,11 @@ paths:
                 $ref: '#/components/schemas/ReportListResponse'
     post:
       tags:
-      - Reports
+        - Reports
       summary: Submit a crowd or accessibility report
       operationId: submitReport
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:
@@ -161,19 +172,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidationErrorResponse'
+
   /api/v1/reports/{report_id}/confirmations:
     post:
       tags:
-      - Reports
+        - Reports
       summary: Confirm or resolve an existing report
       operationId: confirmReport
+      security:
+        - BearerAuth: []
       parameters:
-      - name: report_id
-        in: path
-        required: true
-        description: Unique report identifier.
-        schema:
-          type: string
+        - name: report_id
+          in: path
+          required: true
+          description: Unique report identifier.
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -199,20 +213,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/insights:
     get:
       tags:
-      - Reports
+        - Reports
       summary: Get district-level analytics for Insights Dashboard
       operationId: getInsightsDashboard
       parameters:
-      - name: district
-        in: query
-        required: false
-        schema:
-          type: string
-        description: Optional district key such as uptown, midtown_east, midtown_west,
-          downtown.
+        - name: district
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Optional district key such as uptown, midtown_east, midtown_west, downtown.
       responses:
         '200':
           description: Analytics payload for Insights Dashboard cards and charts.
@@ -220,14 +234,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InsightsDashboard'
+
   /api/v1/user/profile:
     get:
       tags:
-      - User
+        - User
       summary: Get the current user profile
       operationId: getUserProfile
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Current user profile.
@@ -241,56 +256,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /api/v1/user/medical-id:
-    get:
-      tags:
-      - User
-      summary: Get the user's medical ID details
-      operationId: getMedicalId
-      security:
-      - ApiKeyAuth: []
-      responses:
-        '200':
-          description: Medical ID details.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MedicalId'
-        '401':
-          description: Invalid or missing API key.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-  /api/v1/user/emergency-contacts:
-    get:
-      tags:
-      - User
-      summary: List emergency contacts
-      operationId: listEmergencyContacts
-      security:
-      - ApiKeyAuth: []
-      responses:
-        '200':
-          description: Emergency contacts list.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/EmergencyContactListResponse'
-        '401':
-          description: Invalid or missing API key.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/user/settings:
     get:
       tags:
-      - User
+        - User
       summary: Get user settings
       operationId: getUserSettings
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: User settings.
@@ -304,14 +278,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/user/languages:
     get:
       tags:
-      - User
+        - User
       summary: List language options
       operationId: listLanguageOptions
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Supported language options.
@@ -325,14 +300,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/user/favourites:
     get:
       tags:
-      - User
+        - User
       summary: List saved favourites
       operationId: listFavourites
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Saved venues.
@@ -346,14 +322,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/routes/options:
     get:
       tags:
-      - Routes
+        - Routes
       summary: Get route options for the current destination
       operationId: getRouteOptions
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Available route options.
@@ -367,14 +344,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/routes/detail:
     get:
       tags:
-      - Routes
+        - Routes
       summary: Get route detail preview
       operationId: getRouteDetail
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Route detail preview.
@@ -388,14 +366,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/app-state:
     get:
       tags:
-      - App State
+        - App State
       summary: Get application state flags
       operationId: getAppState
       security:
-      - ApiKeyAuth: []
+        - ApiKeyAuth: []
       responses:
         '200':
           description: Application state flags.
@@ -409,19 +388,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/account:
+    delete:
+      tags:
+        - User
+      summary: Delete the current user account
+      operationId: deleteAccount
+      security:
+        - BearerAuth: []
+      responses:
+        '204':
+          description: Account deleted and scheduled for anonymisation.
+        '401':
+          description: Invalid or missing bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
       in: header
       name: X-API-Key
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
   schemas:
     HealthResponse:
       type: object
       required:
-      - status
-      - service
-      - version
+        - status
+        - service
+        - version
       properties:
         status:
           type: string
@@ -429,12 +432,13 @@ components:
           type: string
         version:
           type: string
+
     IntegrationsStatusResponse:
       type: object
       required:
-      - besttime
-      - google_maps
-      - gemini
+        - besttime
+        - google_maps
+        - gemini
       properties:
         besttime:
           $ref: '#/components/schemas/IntegrationConfigStatus'
@@ -442,18 +446,20 @@ components:
           $ref: '#/components/schemas/IntegrationConfigStatus'
         gemini:
           $ref: '#/components/schemas/IntegrationConfigStatus'
+
     IntegrationConfigStatus:
       type: object
       required:
-      - configured
+        - configured
       properties:
         configured:
           type: boolean
+
     VenueListResponse:
       type: object
       required:
-      - count
-      - items
+        - count
+        - items
       properties:
         count:
           type: integer
@@ -462,11 +468,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Venue'
+
     Venue:
       type: object
       required:
-      - venue_id
-      - name
+        - venue_id
+        - name
       properties:
         venue_id:
           type: string
@@ -493,9 +500,9 @@ components:
         accessible_status:
           type: string
           enum:
-          - full_access
-          - partial
-          - step_free_route_only
+            - full_access
+            - partial
+            - step_free_route_only
         accessibility_features:
           type: array
           items:
@@ -508,9 +515,10 @@ components:
         busyness_level:
           type: string
           enum:
-          - quiet
-          - moderate
-          - busy
+            - quiet
+            - moderate
+            - busy
+            - no_live_info
         busyness_percent:
           type: integer
           minimum: 0
@@ -540,18 +548,16 @@ components:
           description: Service tags such as Bilingual Staff, First-Aid Kit, AED.
         live_status_badge:
           type: string
-          description: Short status label shown in the header badge (e.g., "Open Now",
-            "Closes 22:00 PM").
+          description: Short status label shown in the header badge (e.g., "Open Now", "Closes 22:00 PM").
         busyness_forecast_12h:
           type: array
-          description: Twelve hourly forecast entries used to render the 12-hour busyness
-            bar chart.
+          description: Twelve hourly forecast entries used to render the 12-hour busyness bar chart.
           items:
             type: object
             required:
-            - offset_hours
-            - percent
-            - level
+              - offset_hours
+              - percent
+              - level
             properties:
               offset_hours:
                 type: integer
@@ -564,38 +570,38 @@ components:
               level:
                 type: string
                 enum:
-                - quiet
-                - moderate
-                - busy
+                  - quiet
+                  - moderate
+                  - busy
         forecast_mode:
           type: string
           enum:
-          - live
-          - predicted
-          description: Whether telemetry is live or future prediction mode (maps to
-            green/yellow/red vs blue pins).
+            - live
+            - predicted
+          description: Whether telemetry is live or future prediction mode (maps to green/yellow/red vs blue pins).
         is_favourite:
           type: boolean
           description: True when the venue is saved in the user favourites grid.
+
     ReportSubmission:
       type: object
       additionalProperties: false
       required:
-      - issue_type
-      - latitude
-      - longitude
+        - issue_type
+        - latitude
+        - longitude
       properties:
         venue_id:
           type: string
         issue_type:
           type: string
           enum:
-          - elevator_broken
-          - wheelchair_lift_broken
-          - toilet_out_of_order
-          - large_crowd
-          - protest_or_blockage
-          - entrance_closed
+            - elevator_broken
+            - wheelchair_lift_broken
+            - toilet_out_of_order
+            - large_crowd
+            - protest_or_blockage
+            - entrance_closed
         latitude:
           type: number
           format: float
@@ -605,25 +611,27 @@ components:
         accuracy_meters:
           type: number
           format: float
+
     ReportConfirmationRequest:
       type: object
       additionalProperties: false
       required:
-      - action
+        - action
       properties:
         action:
           type: string
           enum:
-          - still_here
-          - resolved
-          - not_sure
-          - still_out_of_order
-          - open_now
+            - still_here
+            - resolved
+            - not_sure
+            - still_out_of_order
+            - open_now
+
     ReportListResponse:
       type: object
       required:
-      - count
-      - items
+        - count
+        - items
       properties:
         count:
           type: integer
@@ -632,13 +640,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Report'
+
     Report:
       type: object
       required:
-      - report_id
-      - venue_id
-      - issue_type
-      - status
+        - report_id
+        - venue_id
+        - issue_type
+        - status
       properties:
         report_id:
           type: string
@@ -647,23 +656,24 @@ components:
         issue_type:
           type: string
           enum:
-          - elevator_broken
-          - wheelchair_lift_broken
-          - toilet_out_of_order
-          - large_crowd
-          - protest_or_blockage
-          - entrance_closed
+            - elevator_broken
+            - wheelchair_lift_broken
+            - toilet_out_of_order
+            - large_crowd
+            - protest_or_blockage
+            - entrance_closed
         status:
           type: string
           enum:
-          - active
-          - resolved
+            - active
+            - resolved
+
     ReportResponse:
       type: object
       required:
-      - status
-      - report_id
-      - message
+        - status
+        - report_id
+        - message
       properties:
         status:
           type: string
@@ -678,13 +688,14 @@ components:
           type: integer
         expires_in_minutes:
           type: integer
+
     ReportConfirmationResponse:
       type: object
       required:
-      - report_id
-      - action
-      - status
-      - report
+        - report_id
+        - action
+        - status
+        - report
       properties:
         report_id:
           type: string
@@ -694,18 +705,20 @@ components:
           type: string
         report:
           $ref: '#/components/schemas/Report'
+
     ErrorResponse:
       type: object
       required:
-      - error
+        - error
       properties:
         error:
           type: string
+
     ValidationErrorResponse:
       type: object
       required:
-      - error
-      - missing_fields
+        - error
+        - missing_fields
       properties:
         error:
           type: string
@@ -725,23 +738,24 @@ components:
           type: array
           items:
             type: string
+
     InsightsDashboard:
       type: object
       required:
-      - district
-      - real_time_density
-      - quick_triage
-      - best_travel_window
-      - prediction_series
-      - fastest_hubs
+        - district
+        - real_time_density
+        - quick_triage
+        - best_travel_window
+        - prediction_series
+        - fastest_hubs
       properties:
         district:
           type: string
         real_time_density:
           type: object
           required:
-          - percent
-          - trend
+            - percent
+            - trend
           properties:
             percent:
               type: integer
@@ -755,8 +769,8 @@ components:
         quick_triage:
           type: object
           required:
-          - wait_minutes
-          - label
+            - wait_minutes
+            - label
           properties:
             wait_minutes:
               type: integer
@@ -768,8 +782,8 @@ components:
         best_travel_window:
           type: object
           required:
-          - start_time
-          - end_time
+            - start_time
+            - end_time
           properties:
             start_time:
               type: string
@@ -804,10 +818,10 @@ components:
           items:
             type: object
             required:
-            - venue_id
-            - clinic_name
-            - capacity_label
-            - travel_minutes
+              - venue_id
+              - clinic_name
+              - capacity_label
+              - travel_minutes
             properties:
               venue_id:
                 type: string
@@ -833,12 +847,13 @@ components:
                 type: array
                 items:
                   type: string
+
     UserProfile:
       type: object
       required:
-      - user_id
-      - account_state
-      - full_name
+        - user_id
+        - account_state
+        - full_name
       properties:
         user_id:
           type: string
@@ -866,56 +881,7 @@ components:
           type: string
         avatar_initials:
           type: string
-    MedicalId:
-      type: object
-      required:
-      - blood_type
-      properties:
-        blood_type:
-          type: string
-        severe_allergies:
-          type: array
-          items:
-            type: string
-        conditions:
-          type: array
-          items:
-            type: string
-        medications:
-          type: array
-          items:
-            type: string
-        emergency_notes:
-          type: string
-        medical_pass_title:
-          type: string
-    EmergencyContactListResponse:
-      type: object
-      required:
-      - count
-      - items
-      properties:
-        count:
-          type: integer
-          minimum: 0
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/EmergencyContact'
-    EmergencyContact:
-      type: object
-      required:
-      - contact_id
-      - name
-      properties:
-        contact_id:
-          type: string
-        name:
-          type: string
-        relationship:
-          type: string
-        phone:
-          type: string
+
     UserSettings:
       type: object
       properties:
@@ -937,11 +903,12 @@ components:
           type: boolean
         delete_account_enabled:
           type: boolean
+
     LanguageOptionListResponse:
       type: object
       required:
-      - count
-      - items
+        - count
+        - items
       properties:
         count:
           type: integer
@@ -950,12 +917,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LanguageOption'
+
     LanguageOption:
       type: object
       required:
-      - code
-      - native_name
-      - english_name
+        - code
+        - native_name
+        - english_name
       properties:
         code:
           type: string
@@ -963,11 +931,12 @@ components:
           type: string
         english_name:
           type: string
+
     FavouriteListResponse:
       type: object
       required:
-      - count
-      - items
+        - count
+        - items
       properties:
         count:
           type: integer
@@ -976,11 +945,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Favourite'
+
     Favourite:
       type: object
       required:
-      - favourite_id
-      - venue_id
+        - favourite_id
+        - venue_id
       properties:
         favourite_id:
           type: string
@@ -990,6 +960,7 @@ components:
           type: string
         display_status:
           type: string
+
     RouteOptionsResponse:
       type: object
       properties:
@@ -1003,11 +974,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RouteOption'
+
     RouteOption:
       type: object
       required:
-      - mode
-      - duration_minutes
+        - mode
+        - duration_minutes
       properties:
         mode:
           type: string
@@ -1018,6 +990,7 @@ components:
           type: string
         summary:
           type: string
+
     RouteDetailResponse:
       type: object
       properties:
@@ -1033,6 +1006,7 @@ components:
             type: string
         start_navigation_label:
           type: string
+
     Coordinate:
       type: object
       properties:
@@ -1042,6 +1016,7 @@ components:
         longitude:
           type: number
           format: float
+
     AppState:
       type: object
       properties:

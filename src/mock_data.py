@@ -1,3 +1,6 @@
+# ClearPath mock data for API v1.1.0
+# Updated to align with openapi-vs-schema-gap on 2026-06-07.
+
 VENUES = [
     {
         "venue_id": "v_1001",
@@ -10,7 +13,12 @@ VENUES = [
         "primary_language": "EN",
         "secondary_language": "FR",
         "accessible_status": "full_access",
-        "accessibility_features": ["ramp", "lift", "automatic_door", "disabled_toilet"],
+        "accessibility_features": [
+            "ramp",
+            "lift",
+            "automatic_door",
+            "disabled_toilet",
+        ],
         "active_warning": False,
         "live_report_count": 0,
         "busyness_level": "quiet",
@@ -44,7 +52,10 @@ VENUES = [
         "primary_language": "EN",
         "secondary_language": "ES",
         "accessible_status": "partial",
-        "accessibility_features": ["ramp", "disabled_toilet"],
+        "accessibility_features": [
+            "ramp",
+            "disabled_toilet",
+        ],
         "active_warning": True,
         "live_report_count": 2,
         "busyness_level": "moderate",
@@ -78,10 +89,13 @@ VENUES = [
         "primary_language": "EN",
         "secondary_language": "ZH",
         "accessible_status": "step_free_route_only",
-        "accessibility_features": ["step_free_route"],
+        "accessibility_features": [
+            "step_free_route",
+        ],
         "active_warning": True,
         "live_report_count": 1,
-        "busyness_level": "busy",
+        # Use the new 4th level to represent “no live info / prediction mode”
+        "busyness_level": "no_live_info",
         "busyness_percent": 81,
         "avg_wait_minutes": 7,
         "open_now": False,
@@ -102,6 +116,7 @@ VENUES = [
         "is_favourite": False,
     },
 ]
+
 
 REPORTS = [
     {
@@ -132,11 +147,13 @@ REPORTS = [
     },
 ]
 
+
 REPORT_TEMPLATE = {
     "status": "accepted",
     "report_id": "r_new",
     "message": "Report queued for validation.",
 }
+
 
 USER_PROFILE = {
     "user_id": "u_1001",
@@ -153,29 +170,6 @@ USER_PROFILE = {
     "avatar_initials": "AR",
 }
 
-MEDICAL_ID = {
-    "blood_type": "O+",
-    "severe_allergies": ["Penicillin", "Peanuts"],
-    "conditions": ["Asthma"],
-    "medications": ["Salbutamol Inhaler"],
-    "emergency_notes": "Prefers communication in Spanish during emergencies.",
-    "medical_pass_title": "MEDICAL ALERT / ALERTA MÉDICA",
-}
-
-EMERGENCY_CONTACTS = [
-    {
-        "contact_id": "ec_001",
-        "name": "Lucia Rivera",
-        "relationship": "Mother",
-        "phone": "+34 612 345 678",
-    },
-    {
-        "contact_id": "ec_002",
-        "name": "Daniel Ortiz",
-        "relationship": "Friend",
-        "phone": "+1 (646) 555-0191",
-    },
-]
 
 USER_SETTINGS = {
     "selected_language": "English",
@@ -189,6 +183,7 @@ USER_SETTINGS = {
     "delete_account_enabled": True,
 }
 
+
 LANGUAGE_OPTIONS = [
     {"code": "en", "native_name": "English", "english_name": "English"},
     {"code": "fr", "native_name": "Français", "english_name": "French"},
@@ -196,6 +191,7 @@ LANGUAGE_OPTIONS = [
     {"code": "zh", "native_name": "中文", "english_name": "Chinese"},
     {"code": "ar", "native_name": "العربية", "english_name": "Arabic"},
 ]
+
 
 FAVOURITES = [
     {
@@ -212,17 +208,28 @@ FAVOURITES = [
     },
 ]
 
+
 INSIGHTS_DASHBOARD = {
     "district": "Midtown East",
     "real_time_density": {
         "percent": 84,
+        # Required by schema
+        "trend": "+4% vs last hour",
+        # UI-friendly alias
         "trend_label": "+4% vs last hour",
     },
     "quick_triage": {
         "wait_minutes": 12,
+        # Required label field
+        "label": "Shortest wait in district",
+        # UI display field
         "venue_name": "Central Park Urgent Care",
     },
     "best_travel_window": {
+        # Required 24h fields
+        "start_time": "14:30",
+        "end_time": "16:00",
+        # UI display fields
         "start": "2:30 PM",
         "end": "4:00 PM",
         "cta_label": "Plan Route",
@@ -234,32 +241,42 @@ INSIGHTS_DASHBOARD = {
         {
             "rank": 1,
             "venue_id": "v_1001",
+            "clinic_name": "Central Park Urgent Care",
             "venue_name": "Central Park Urgent Care",
+            "capacity_label": "OPTIMAL FLOW",
+            "flow_status": "OPTIMAL FLOW",
             "travel_minutes": 5,
             "wait_minutes": 5,
+            "languages": ["EN", "FR"],
             "language_flags": ["EN", "FR"],
-            "flow_status": "OPTIMAL FLOW",
         },
         {
             "rank": 2,
             "venue_id": "v_1002",
+            "clinic_name": "Brooklyn Bridge Pharmacy",
             "venue_name": "Brooklyn Bridge Pharmacy",
+            "capacity_label": "MODERATE",
+            "flow_status": "MODERATE",
             "travel_minutes": 8,
             "wait_minutes": 12,
+            "languages": ["EN", "ES"],
             "language_flags": ["EN", "ES"],
-            "flow_status": "MODERATE",
         },
         {
             "rank": 3,
             "venue_id": "v_1003",
+            "clinic_name": "Queens Transit Hub",
             "venue_name": "Queens Transit Hub",
+            "capacity_label": "DIVERTING",
+            "flow_status": "DIVERTING",
             "travel_minutes": 10,
             "wait_minutes": 7,
+            "languages": ["EN", "ZH"],
             "language_flags": ["EN", "ZH"],
-            "flow_status": "DIVERTING",
         },
     ],
 }
+
 
 ROUTE_OPTIONS = {
     "origin_label": "Current Location",
@@ -287,6 +304,7 @@ ROUTE_OPTIONS = {
     ],
 }
 
+
 ROUTE_DETAIL = {
     "destination_venue_id": "v_1002",
     "polyline_preview": [
@@ -302,6 +320,7 @@ ROUTE_DETAIL = {
     ],
     "start_navigation_label": "Start Navigation",
 }
+
 
 APP_STATE = {
     "is_guest": False,
