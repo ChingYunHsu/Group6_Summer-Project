@@ -1,6 +1,3 @@
-# ClearPath mock data for API v1.1.0
-# Updated to align with openapi-vs-schema-gap on 2026-06-07.
-
 VENUES = [
     {
         "venue_id": "v_1001",
@@ -13,12 +10,7 @@ VENUES = [
         "primary_language": "EN",
         "secondary_language": "FR",
         "accessible_status": "full_access",
-        "accessibility_features": [
-            "ramp",
-            "lift",
-            "automatic_door",
-            "disabled_toilet",
-        ],
+        "accessibility_features": ["ramp", "lift", "automatic_door", "disabled_toilet"],
         "active_warning": False,
         "live_report_count": 0,
         "busyness_level": "quiet",
@@ -26,7 +18,7 @@ VENUES = [
         "avg_wait_minutes": 5,
         "open_now": True,
         "address": "150 E 42nd St, New York, NY 10017",
-        "phone_number": "+1 (212) 661-8139",
+        "phone": "+1 (212) 661-8139",
         "opening_hours": "Mon-Sun: 08:00 AM - 10:00 PM",
         "distance_km": 0.8,
         "supported_services": ["Bilingual Staff (French)", "First-Aid Kit"],
@@ -34,10 +26,17 @@ VENUES = [
         "forecast_mode": "live",
         "busyness_forecast_12h": [
             {"offset_hours": 0, "percent": 20, "level": "quiet"},
+            {"offset_hours": 1, "percent": 24, "level": "quiet"},
+            {"offset_hours": 2, "percent": 28, "level": "quiet"},
             {"offset_hours": 3, "percent": 35, "level": "moderate"},
+            {"offset_hours": 4, "percent": 42, "level": "moderate"},
+            {"offset_hours": 5, "percent": 50, "level": "moderate"},
             {"offset_hours": 6, "percent": 60, "level": "moderate"},
+            {"offset_hours": 7, "percent": 68, "level": "busy"},
+            {"offset_hours": 8, "percent": 74, "level": "busy"},
             {"offset_hours": 9, "percent": 80, "level": "busy"},
-            {"offset_hours": 12, "percent": 40, "level": "moderate"},
+            {"offset_hours": 10, "percent": 66, "level": "busy"},
+            {"offset_hours": 11, "percent": 52, "level": "moderate"},
         ],
         "is_favourite": True,
     },
@@ -52,10 +51,7 @@ VENUES = [
         "primary_language": "EN",
         "secondary_language": "ES",
         "accessible_status": "partial",
-        "accessibility_features": [
-            "ramp",
-            "disabled_toilet",
-        ],
+        "accessibility_features": ["ramp", "disabled_toilet"],
         "active_warning": True,
         "live_report_count": 2,
         "busyness_level": "moderate",
@@ -63,7 +59,7 @@ VENUES = [
         "avg_wait_minutes": 12,
         "open_now": True,
         "address": "10 Brooklyn Bridge Blvd, Brooklyn, NY 11201",
-        "phone_number": "+1 (718) 555-0102",
+        "phone": "+1 (718) 555-0102",
         "opening_hours": "Mon-Fri: 09:00 AM - 09:00 PM",
         "distance_km": 3.2,
         "supported_services": ["Bilingual Staff (Spanish)", "First-Aid Kit"],
@@ -71,10 +67,17 @@ VENUES = [
         "forecast_mode": "live",
         "busyness_forecast_12h": [
             {"offset_hours": 0, "percent": 40, "level": "moderate"},
+            {"offset_hours": 1, "percent": 44, "level": "moderate"},
+            {"offset_hours": 2, "percent": 49, "level": "moderate"},
             {"offset_hours": 3, "percent": 55, "level": "moderate"},
+            {"offset_hours": 4, "percent": 61, "level": "busy"},
+            {"offset_hours": 5, "percent": 68, "level": "busy"},
             {"offset_hours": 6, "percent": 75, "level": "busy"},
+            {"offset_hours": 7, "percent": 78, "level": "busy"},
+            {"offset_hours": 8, "percent": 72, "level": "busy"},
             {"offset_hours": 9, "percent": 65, "level": "busy"},
-            {"offset_hours": 12, "percent": 35, "level": "moderate"},
+            {"offset_hours": 10, "percent": 50, "level": "moderate"},
+            {"offset_hours": 11, "percent": 35, "level": "moderate"},
         ],
         "is_favourite": True,
     },
@@ -89,18 +92,15 @@ VENUES = [
         "primary_language": "EN",
         "secondary_language": "ZH",
         "accessible_status": "step_free_route_only",
-        "accessibility_features": [
-            "step_free_route",
-        ],
+        "accessibility_features": ["step_free_route"],
         "active_warning": True,
         "live_report_count": 1,
-        # Use the new 4th level to represent “no live info / prediction mode”
-        "busyness_level": "no_live_info",
+        "busyness_level": "busy",
         "busyness_percent": 81,
         "avg_wait_minutes": 7,
         "open_now": False,
         "address": "Queens Transit Hub, Queens, NY 11373",
-        "phone_number": "+1 (718) 555-0144",
+        "phone": "+1 (718) 555-0144",
         "opening_hours": "Mon-Sun: 06:00 AM - 11:30 PM",
         "distance_km": 5.4,
         "supported_services": ["First-Aid Kit"],
@@ -108,15 +108,21 @@ VENUES = [
         "forecast_mode": "predicted",
         "busyness_forecast_12h": [
             {"offset_hours": 0, "percent": 75, "level": "busy"},
+            {"offset_hours": 1, "percent": 72, "level": "busy"},
+            {"offset_hours": 2, "percent": 68, "level": "busy"},
             {"offset_hours": 3, "percent": 60, "level": "moderate"},
+            {"offset_hours": 4, "percent": 54, "level": "moderate"},
+            {"offset_hours": 5, "percent": 49, "level": "moderate"},
             {"offset_hours": 6, "percent": 45, "level": "moderate"},
+            {"offset_hours": 7, "percent": 38, "level": "moderate"},
+            {"offset_hours": 8, "percent": 31, "level": "moderate"},
             {"offset_hours": 9, "percent": 25, "level": "quiet"},
-            {"offset_hours": 12, "percent": 20, "level": "quiet"},
+            {"offset_hours": 10, "percent": 22, "level": "quiet"},
+            {"offset_hours": 11, "percent": 20, "level": "quiet"},
         ],
         "is_favourite": False,
     },
 ]
-
 
 REPORTS = [
     {
@@ -129,7 +135,6 @@ REPORTS = [
         "confirmation_count": 8,
         "expires_in_minutes": 95,
         "created_at": "2026-05-28T10:00:00Z",
-        "reported_by": "anonymous",
         "badge_text": "8 users confirmed",
     },
     {
@@ -142,18 +147,31 @@ REPORTS = [
         "confirmation_count": 12,
         "expires_in_minutes": 120,
         "created_at": "2026-05-28T10:30:00Z",
-        "reported_by": "anonymous",
         "badge_text": "12 users confirmed",
     },
 ]
-
 
 REPORT_TEMPLATE = {
     "status": "accepted",
     "report_id": "r_new",
     "message": "Report queued for validation.",
+    "received_payload": {
+        "venue_id": "v_1001",
+        "issue_type": "elevator_broken",
+        "latitude": 40.785091,
+        "longitude": -73.968285,
+        "accuracy_meters": 15.0,
+    },
+    "visible_in_seconds": 20,
+    "expires_in_minutes": 120,
 }
 
+REPORT_CONFIRMATION_TEMPLATE = {
+    "report_id": "r_501",
+    "action": "still_here",
+    "status": "recorded",
+    "report": REPORTS[0],
+}
 
 USER_PROFILE = {
     "user_id": "u_1001",
@@ -166,10 +184,9 @@ USER_PROFILE = {
     "nationality": "Spanish",
     "address": "245 W 46th St, New York, NY 10036",
     "spoken_languages": ["English", "Spanish", "French"],
-    "guest_prompt_title": "Secure Your Medical ID",
+    "guest_prompt_title": "Log in to submit and verify reports",
     "avatar_initials": "AR",
 }
-
 
 USER_SETTINGS = {
     "selected_language": "English",
@@ -183,7 +200,6 @@ USER_SETTINGS = {
     "delete_account_enabled": True,
 }
 
-
 LANGUAGE_OPTIONS = [
     {"code": "en", "native_name": "English", "english_name": "English"},
     {"code": "fr", "native_name": "Français", "english_name": "French"},
@@ -191,7 +207,6 @@ LANGUAGE_OPTIONS = [
     {"code": "zh", "native_name": "中文", "english_name": "Chinese"},
     {"code": "ar", "native_name": "العربية", "english_name": "Arabic"},
 ]
-
 
 FAVOURITES = [
     {
@@ -208,28 +223,21 @@ FAVOURITES = [
     },
 ]
 
-
 INSIGHTS_DASHBOARD = {
     "district": "Midtown East",
     "real_time_density": {
         "percent": 84,
-        # Required by schema
         "trend": "+4% vs last hour",
-        # UI-friendly alias
         "trend_label": "+4% vs last hour",
     },
     "quick_triage": {
         "wait_minutes": 12,
-        # Required label field
-        "label": "Shortest wait in district",
-        # UI display field
+        "label": "Lower Manhattan",
         "venue_name": "Central Park Urgent Care",
     },
     "best_travel_window": {
-        # Required 24h fields
         "start_time": "14:30",
         "end_time": "16:00",
-        # UI display fields
         "start": "2:30 PM",
         "end": "4:00 PM",
         "cta_label": "Plan Route",
@@ -239,7 +247,6 @@ INSIGHTS_DASHBOARD = {
     "history_series_7d": [58, 62, 49, 71, 66, 54, 47],
     "fastest_hubs": [
         {
-            "rank": 1,
             "venue_id": "v_1001",
             "clinic_name": "Central Park Urgent Care",
             "venue_name": "Central Park Urgent Care",
@@ -247,11 +254,10 @@ INSIGHTS_DASHBOARD = {
             "flow_status": "OPTIMAL FLOW",
             "travel_minutes": 5,
             "wait_minutes": 5,
-            "languages": ["EN", "FR"],
+            "languages": ["English", "French"],
             "language_flags": ["EN", "FR"],
         },
         {
-            "rank": 2,
             "venue_id": "v_1002",
             "clinic_name": "Brooklyn Bridge Pharmacy",
             "venue_name": "Brooklyn Bridge Pharmacy",
@@ -259,11 +265,10 @@ INSIGHTS_DASHBOARD = {
             "flow_status": "MODERATE",
             "travel_minutes": 8,
             "wait_minutes": 12,
-            "languages": ["EN", "ES"],
+            "languages": ["English", "Spanish"],
             "language_flags": ["EN", "ES"],
         },
         {
-            "rank": 3,
             "venue_id": "v_1003",
             "clinic_name": "Queens Transit Hub",
             "venue_name": "Queens Transit Hub",
@@ -271,12 +276,11 @@ INSIGHTS_DASHBOARD = {
             "flow_status": "DIVERTING",
             "travel_minutes": 10,
             "wait_minutes": 7,
-            "languages": ["EN", "ZH"],
+            "languages": ["English", "Chinese"],
             "language_flags": ["EN", "ZH"],
         },
     ],
 }
-
 
 ROUTE_OPTIONS = {
     "origin_label": "Current Location",
@@ -286,24 +290,26 @@ ROUTE_OPTIONS = {
         {
             "mode": "walk",
             "duration_minutes": 18,
+            "accessibility_mode": "standard",
             "status": "available",
             "summary": "Fastest walking route",
         },
         {
             "mode": "transit",
             "duration_minutes": 12,
+            "accessibility_mode": "step_free",
             "status": "available",
-            "summary": "Subway 6 + 4 min walk",
+            "summary": "Step-free subway route with lift access",
         },
         {
             "mode": "drive",
             "duration_minutes": 9,
+            "accessibility_mode": "standard",
             "status": "moderate_traffic",
             "summary": "Moderate congestion",
         },
     ],
 }
-
 
 ROUTE_DETAIL = {
     "destination_venue_id": "v_1002",
@@ -314,13 +320,12 @@ ROUTE_DETAIL = {
     ],
     "steps": [
         "Start at Current Location.",
-        "Walk 4 minutes to the nearest subway entrance.",
+        "Walk 4 minutes to the nearest accessible subway entrance.",
         "Take Subway 6 downtown for 2 stops.",
-        "Exit and walk 3 minutes to Brooklyn Bridge Pharmacy.",
+        "Exit via lift and walk 3 minutes to Brooklyn Bridge Pharmacy.",
     ],
     "start_navigation_label": "Start Navigation",
 }
-
 
 APP_STATE = {
     "is_guest": False,
