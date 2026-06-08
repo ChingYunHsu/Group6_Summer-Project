@@ -56,9 +56,7 @@ VENUES = [
             "busyness_status": "quiet",
             "busyness_color": "green",
             "estimated_wait_minutes": 5,
-            "forecast_1h": 28,
-            "forecast_4h": 42,
-            "forecast_8h": 74,
+            "updated_at": "2026-06-08T09:00:00Z",
         },
         "busyness_level": "quiet",
         "busyness_percent": 24,
@@ -145,9 +143,7 @@ VENUES = [
             "busyness_status": "moderate",
             "busyness_color": "yellow",
             "estimated_wait_minutes": 12,
-            "forecast_1h": 55,
-            "forecast_4h": 61,
-            "forecast_8h": 72,
+            "updated_at": "2026-06-08T09:05:00Z",
         },
         "busyness_level": "moderate",
         "busyness_percent": 53,
@@ -234,9 +230,7 @@ VENUES = [
             "busyness_status": "busy",
             "busyness_color": "red",
             "estimated_wait_minutes": 7,
-            "forecast_1h": 72,
-            "forecast_4h": 54,
-            "forecast_8h": 31,
+            "updated_at": "2026-06-08T09:10:00Z",
         },
         "busyness_level": "busy",
         "busyness_percent": 81,
@@ -264,6 +258,69 @@ VENUES = [
         "created_at": "2026-06-01T11:00:00Z",
     },
 ]
+
+VENUE_BUSYNESS = {
+    "v_1001": {
+        "venue_id": "v_1001",
+        "busyness": {
+            "busyness_score": 24,
+            "busyness_status": "quiet",
+            "busyness_color": "green",
+            "estimated_wait_minutes": 5,
+            "updated_at": "2026-06-08T09:00:00Z",
+        },
+    },
+    "v_1002": {
+        "venue_id": "v_1002",
+        "busyness": {
+            "busyness_score": 53,
+            "busyness_status": "moderate",
+            "busyness_color": "yellow",
+            "estimated_wait_minutes": 12,
+            "updated_at": "2026-06-08T09:05:00Z",
+        },
+    },
+    "v_1003": {
+        "venue_id": "v_1003",
+        "busyness": {
+            "busyness_score": 81,
+            "busyness_status": "busy",
+            "busyness_color": "red",
+            "estimated_wait_minutes": 7,
+            "updated_at": "2026-06-08T09:10:00Z",
+        },
+    },
+}
+
+VENUE_FORECASTS = {
+    "v_1001": {
+        "venue_id": "v_1001",
+        "forecast": VENUES[0]["busyness_forecast_12h"],
+        "best_time_to_go_today": {
+            "offset_hours": 0,
+            "percent": 20,
+            "label": "Now",
+        },
+    },
+    "v_1002": {
+        "venue_id": "v_1002",
+        "forecast": VENUES[1]["busyness_forecast_12h"],
+        "best_time_to_go_today": {
+            "offset_hours": 11,
+            "percent": 35,
+            "label": "In 11 hours",
+        },
+    },
+    "v_1003": {
+        "venue_id": "v_1003",
+        "forecast": VENUES[2]["busyness_forecast_12h"],
+        "best_time_to_go_today": {
+            "offset_hours": 11,
+            "percent": 20,
+            "label": "In 11 hours",
+        },
+    },
+}
 
 REPORTS = [
     {
@@ -321,6 +378,62 @@ REPORTS = [
         },
         "live_report_count": 1,
         "badge_text": "12 users confirmed",
+    },
+    {
+        "report_id": "r_503",
+        "issue_type": "ramp_blocked",
+        "venue_id": "v_1001",
+        "venue_name": "Central Park Urgent Care",
+        "venue_category": "clinic",
+        "latitude": 40.785091,
+        "longitude": -73.968285,
+        "accuracy_m": 8.0,
+        "anonymous": True,
+        "description": "Temporary signage and delivery boxes blocking the access ramp.",
+        "photos": ["https://example.com/images/reports/r_503_1.jpg"],
+        "status": "resolved",
+        "created_at": "2026-05-28T08:20:00Z",
+        "expires_at": "2026-05-28T10:20:00Z",
+        "expires_in_minutes": 0,
+        "confirmations": {
+            "count": 4,
+            "latest_action": "resolved",
+            "latest_action_at": "2026-05-28T09:15:00Z",
+        },
+        "language": {
+            "default_language": "en",
+            "fallback_language": "fr",
+        },
+        "live_report_count": 0,
+        "badge_text": "Resolved by community",
+    },
+    {
+        "report_id": "r_504",
+        "issue_type": "closed_early",
+        "venue_id": "v_1002",
+        "venue_name": "Brooklyn Bridge Pharmacy",
+        "venue_category": "pharmacy",
+        "latitude": 40.706086,
+        "longitude": -73.996864,
+        "accuracy_m": 11.0,
+        "anonymous": False,
+        "description": "Venue closed before listed hours due to staffing shortage.",
+        "photos": ["https://example.com/images/reports/r_504_1.jpg"],
+        "status": "expired",
+        "created_at": "2026-05-27T18:00:00Z",
+        "expires_at": "2026-05-27T20:00:00Z",
+        "expires_in_minutes": 0,
+        "confirmations": {
+            "count": 3,
+            "latest_action": "not_sure",
+            "latest_action_at": "2026-05-27T18:25:00Z",
+        },
+        "language": {
+            "default_language": "en",
+            "fallback_language": "es",
+        },
+        "live_report_count": 0,
+        "badge_text": "Expired after 2 hours",
     },
 ]
 
@@ -395,6 +508,32 @@ SOS_RESPONSE = {
     "incident_id": "sos_9001",
 }
 
+DELETE_ACCOUNT_RESPONSE = {
+    "status": "scheduled",
+    "message": "Your account deletion has been scheduled and synced data will be purged within 24 hours.",
+    "purge_deadline": "2026-06-09T23:59:59Z",
+}
+
+MEDICAL_PASSPORT_RESPONSE = {
+    "status": "generated",
+    "pdf_url": "https://example.com/files/medical_passport_u_1001_en.pdf",
+    "language": "en",
+    "generated_at": "2026-06-08T20:15:00Z",
+}
+
+CHATBOT_RESPONSE = {
+    "message": "The quietest nearby option is Central Park Urgent Care, which is open now and has an estimated 5 minute wait.",
+    "language": "en",
+    "citations": ["venue:v_1001", "busyness:v_1001"],
+    "suggested_prompts": [
+        "Find an urgent care near me",
+        "Which clinics are open now?",
+        "I have no insurance",
+    ],
+    "fallback_used": False,
+    "response_time_ms": 1240,
+}
+
 LANGUAGE_OPTIONS = [
     {"code": "en", "native_name": "English", "english_name": "English"},
     {"code": "fr", "native_name": "Français", "english_name": "French"},
@@ -417,6 +556,13 @@ FAVOURITES = [
         "display_status": "MODERATE",
     },
 ]
+
+FAVOURITE_CREATE_TEMPLATE = {
+    "favourite_id": "fav_003",
+    "venue_id": "v_1003",
+    "saved_at": "2026-06-08T18:45:00Z",
+    "display_status": "DIVERTING",
+}
 
 INSIGHTS_DASHBOARD = {
     "district": "Midtown East",
@@ -481,6 +627,23 @@ ROUTE_OPTIONS = {
     "origin_label": "Current Location",
     "destination_venue_id": "v_1002",
     "departure_time_label": "Leave Now",
+    "summary_by_mode": {
+        "transit": {
+            "duration_minutes": 12,
+            "accessibility_mode": "step_free",
+            "status": "available",
+        },
+        "walk": {
+            "duration_minutes": 18,
+            "accessibility_mode": "standard",
+            "status": "available",
+        },
+        "drive": {
+            "duration_minutes": 9,
+            "accessibility_mode": "standard",
+            "status": "moderate_traffic",
+        },
+    },
     "options": [
         {
             "mode": "walk",
