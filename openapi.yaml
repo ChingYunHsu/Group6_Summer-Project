@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.2.0
+  version: 1.3.0
   description: Shared REST API contract for ClearPath frontend and backend teams.
 
 servers:
@@ -15,6 +15,7 @@ tags:
   - name: Reports
   - name: User
   - name: Routes
+  - name: Realtime
   - name: App State
 
 paths:
@@ -85,7 +86,7 @@ paths:
           description: Optional venue type filter for advanced filtering.
           schema:
             type: string
-            enum: [clinic, pharmacy, hospital, dentist, laboratory]
+            enum: [restroom, healthcare, emergencyasset, clinic, pharmacy, hospital, dentist, laboratory]
       responses:
         '200':
           description: A pageless list of venues.
@@ -328,6 +329,85 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /api/v1/user/notification-preferences:
+    get:
+      tags: [User]
+      summary: Get busyness alert and notification preferences
+      operationId: getNotificationPreferences
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Notification preferences.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationPreferences'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      tags: [User]
+      summary: Update busyness alert and notification preferences
+      operationId: updateNotificationPreferences
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationPreferencesUpdate'
+      responses:
+        '200':
+          description: Notification preferences updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationPreferences'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/sos:
+    post:
+      tags: [User]
+      summary: Trigger SOS panic flow
+      operationId: triggerSos
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SosRequest'
+      responses:
+        '200':
+          description: SOS event accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SosResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/routes/options:
     get:
       tags: [Routes]
@@ -335,6 +415,14 @@ paths:
       operationId: getRouteOptions
       security:
         - ApiKeyAuth: []
+      parameters:
+        - name: accessibility_mode
+          in: query
+          required: false
+          description: Optional routing accessibility preference.
+          schema:
+            type: string
+            enum: [standard, step_free]
       responses:
         '200':
           description: Available route options.
@@ -363,6 +451,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RouteDetailResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/realtime/map-updates:
+    get:
+      tags: [Realtime]
+      summary: Subscribe to live map updates
+      operationId: subscribeMapUpdates
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Server-Sent Events stream for venue and report map updates.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                example: "event: venue_update\ndata: {\"venue_id\":\"v_1002\",\"busyness_percent\":61}\n\n"
         '401':
           description: Invalid or missing API key.
           content:
@@ -446,7 +556,7 @@ components:
 
     Venue:
       type: object
-      required: [venue_id, name]
+      required: [venue_id, name, venue_type, latitude, longitude]
       properties:
         venue_id:
           type: string
@@ -454,7 +564,7 @@ components:
           type: string
         venue_type:
           type: string
-          enum: [clinic, pharmacy, hospital, dentist, laboratory]
+          enum: [restroom, healthcare, emergencyasset, clinic, pharmacy, hospital, dentist, laboratory]
         latitude:
           type: number
           format: float
@@ -463,6 +573,24 @@ components:
           format: float
         borough:
           type: string
+        address:
+          type: string
+        phone:
+          type: string
+        opening_hours:
+          type: string
+        opening_hours_structured:
+          $ref: '#/components/schemas/OpeningHoursStructured'
+        photos:
+          type: array
+          items:
+            type: string
+        rating:
+          type: number
+          format: float
+        weather_risk:
+          type: string
+          enum: [low, medium, high]
         language_tags:
           type: array
           items:
@@ -471,9 +599,15 @@ components:
           type: string
         secondary_language:
           type: string
+        accessibility:
+          $ref: '#/components/schemas/VenueAccessibility'
+        warnings:
+          $ref: '#/components/schemas/VenueWarnings'
+        language:
+          $ref: '#/components/schemas/VenueLanguage'
         accessible_status:
           type: string
-          enum: [full_access, partial, step_free_route_only]
+          enum: [full_access, partial, step_free_route_only, none]
         accessibility_features:
           type: array
           items:
@@ -483,6 +617,13 @@ components:
         live_report_count:
           type: integer
           minimum: 0
+        distance_km:
+          type: number
+          format: float
+        open_now:
+          type: boolean
+        busyness:
+          $ref: '#/components/schemas/VenueBusyness'
         busyness_level:
           type: string
           enum: [quiet, moderate, busy]
@@ -493,17 +634,6 @@ components:
         avg_wait_minutes:
           type: integer
           minimum: 0
-        open_now:
-          type: boolean
-        address:
-          type: string
-        phone:
-          type: string
-        opening_hours:
-          type: string
-        distance_km:
-          type: number
-          format: float
         supported_services:
           type: array
           items:
@@ -512,13 +642,124 @@ components:
           type: string
         busyness_forecast_12h:
           type: array
-          description: Twelve hourly forecast entries sourced from the busyness_forecasts table.
           items:
             $ref: '#/components/schemas/BusynessForecastPoint'
         forecast_mode:
           type: string
           enum: [live, predicted]
         is_favourite:
+          type: boolean
+        source:
+          type: string
+        data_confidence:
+          type: number
+          format: float
+        created_at:
+          type: string
+          format: date-time
+
+    VenueAccessibility:
+      type: object
+      properties:
+        wheelchair_friendly:
+          type: boolean
+        step_free_route:
+          type: boolean
+        accessible_toilet:
+          type: boolean
+        entrance_width_cm:
+          type: integer
+
+    VenueWarnings:
+      type: object
+      properties:
+        active_warning:
+          type: boolean
+        warning_detail:
+          type: string
+        wait_alert:
+          type: boolean
+        replacement_suggestion:
+          type: object
+          properties:
+            venue_id:
+              type: string
+            venue_name:
+              type: string
+            reason:
+              type: string
+
+    VenueLanguage:
+      type: object
+      properties:
+        language_tag:
+          type: array
+          items:
+            type: string
+        support_level:
+          type: string
+          enum: [full, partial, none]
+        chatbot_enabled:
+          type: boolean
+        chatbot_welcoming_message:
+          type: string
+
+    VenueBusyness:
+      type: object
+      properties:
+        busyness_score:
+          type: integer
+          minimum: 0
+          maximum: 100
+        busyness_status:
+          type: string
+          enum: [quiet, moderate, busy]
+        busyness_color:
+          type: string
+        estimated_wait_minutes:
+          type: integer
+          minimum: 0
+        forecast_1h:
+          type: integer
+          minimum: 0
+          maximum: 100
+        forecast_4h:
+          type: integer
+          minimum: 0
+          maximum: 100
+        forecast_8h:
+          type: integer
+          minimum: 0
+          maximum: 100
+
+    OpeningHoursStructured:
+      type: object
+      properties:
+        monday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        tuesday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        wednesday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        thursday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        friday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        saturday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        sunday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+
+    DailyOpeningHours:
+      type: object
+      properties:
+        open:
+          type: string
+          example: '08:00'
+        close:
+          type: string
+          example: '22:00'
+        closed:
           type: boolean
 
     BusynessForecastPoint:
@@ -559,9 +800,21 @@ components:
         longitude:
           type: number
           format: float
-        accuracy_meters:
+        accuracy_m:
           type: number
           format: float
+        anonymous:
+          type: boolean
+        description:
+          type: string
+        photos:
+          type: array
+          items:
+            type: string
+        default_language:
+          type: string
+        fallback_language:
+          type: string
 
     ReportConfirmationRequest:
       type: object
@@ -576,6 +829,8 @@ components:
             - not_sure
             - still_out_of_order
             - open_now
+        language:
+          type: string
 
     ReportListResponse:
       type: object
@@ -591,11 +846,9 @@ components:
 
     Report:
       type: object
-      required: [report_id, venue_id, issue_type, status]
+      required: [report_id, issue_type, status, created_at]
       properties:
         report_id:
-          type: string
-        venue_id:
           type: string
         issue_type:
           type: string
@@ -606,25 +859,69 @@ components:
             - large_crowd
             - protest_or_blockage
             - entrance_closed
+        venue_id:
+          type: string
+        venue_name:
+          type: string
+        venue_category:
+          type: string
         latitude:
           type: number
           format: float
         longitude:
           type: number
           format: float
+        accuracy_m:
+          type: number
+          format: float
+        anonymous:
+          type: boolean
+        description:
+          type: string
+        photos:
+          type: array
+          items:
+            type: string
         status:
           type: string
           enum: [active, resolved]
-        confirmation_count:
-          type: integer
-          minimum: 0
-        expires_in_minutes:
-          type: integer
-          minimum: 0
         created_at:
           type: string
           format: date-time
+        expires_at:
+          type: string
+          format: date-time
+        expires_in_minutes:
+          type: integer
+          minimum: 0
+        confirmations:
+          $ref: '#/components/schemas/ReportConfirmations'
+        language:
+          $ref: '#/components/schemas/ReportLanguage'
+        live_report_count:
+          type: integer
+          minimum: 0
         badge_text:
+          type: string
+
+    ReportConfirmations:
+      type: object
+      properties:
+        count:
+          type: integer
+          minimum: 0
+        latest_action:
+          type: string
+        latest_action_at:
+          type: string
+          format: date-time
+
+    ReportLanguage:
+      type: object
+      properties:
+        default_language:
+          type: string
+        fallback_language:
           type: string
 
     ReportResponse:
@@ -633,7 +930,6 @@ components:
       properties:
         status:
           type: string
-          example: active
         report_id:
           type: string
         message:
@@ -657,6 +953,89 @@ components:
           type: string
         report:
           $ref: '#/components/schemas/Report'
+
+    NotificationPreferences:
+      type: object
+      properties:
+        busyness_alerts_enabled:
+          type: boolean
+        push_notifications_enabled:
+          type: boolean
+        quiet_hours_enabled:
+          type: boolean
+        quiet_hours_start:
+          type: string
+          example: '22:00'
+        quiet_hours_end:
+          type: string
+          example: '07:00'
+        alert_threshold_percent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        preferred_venue_types:
+          type: array
+          items:
+            type: string
+        preferred_boroughs:
+          type: array
+          items:
+            type: string
+
+    NotificationPreferencesUpdate:
+      type: object
+      additionalProperties: false
+      properties:
+        busyness_alerts_enabled:
+          type: boolean
+        push_notifications_enabled:
+          type: boolean
+        quiet_hours_enabled:
+          type: boolean
+        quiet_hours_start:
+          type: string
+        quiet_hours_end:
+          type: string
+        alert_threshold_percent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        preferred_venue_types:
+          type: array
+          items:
+            type: string
+        preferred_boroughs:
+          type: array
+          items:
+            type: string
+
+    SosRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        share_live_location:
+          type: boolean
+        note:
+          type: string
+
+    SosResponse:
+      type: object
+      required: [status, message]
+      properties:
+        status:
+          type: string
+          example: accepted
+        message:
+          type: string
+          example: SOS alert triggered successfully.
+        incident_id:
+          type: string
 
     ErrorResponse:
       type: object
