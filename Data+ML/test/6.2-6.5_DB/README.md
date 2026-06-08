@@ -104,7 +104,7 @@ Part 16: Conclusion                     [Cells 48-49]
 - **Contents**:
   - Imports: csv, json, re, hashlib, datetime, os, decimal, pathlib, pymysql
   - Config: MySQL connection, Manhattan BBOX, NYC BBOX, county-borough mapping, OSM category map
-  - Utility functions: `is_manhattan()`, `source_hash()`, `gen_vid()`, `get_conn()`, `safe_int()`, `safe_dec()`
+  - Utility functions: `is_manhattan()`, `gps_to_district()`, `source_hash()`, `gen_vid()`, `get_conn()`, `safe_int()`, `safe_dec()`
   - Schema helpers: `column_exists()`, `table_exists()`
   - ETL helpers: `log_etl_error()`, `etl_execute()`, `etl_executemany()`
 - **Execution**: Must run first.
@@ -244,7 +244,7 @@ Part 16: Conclusion                     [Cells 48-49]
   - `parse_lass_languages()` → ISO codes
   - `find_nearest_venue()` → SQL Haversine GPS match
   - `etl_venue_language()` → venue_language table
-- **Output**: inserted=61, skipped=381
+- **Output**: inserted=63, skipped=379
 
 ### Cell [45] — Final Verification
 - **Type**: Code
@@ -471,3 +471,72 @@ LASS data covers government service centers — only 442 Manhattan records exist
 4. **Data paths**: Data files are located at `data_source/` relative to the project root.
 5. **Schema file**: `001_clearpath_schema.sql` has been fixed for correct table creation order.
 6. **Cell numbering**: Section headings and function names are more reliable than cell numbers for navigation.
+
+---
+
+## 10. Database Implementation Scope
+
+This directory implements the database and ETL path for the retained ClearPath
+MVP sources. The application uses one `clearpath` MySQL schema; source datasets
+remain ETL inputs and are not exposed as one application table per source.
+
+The retained source scope includes:
+
+- internal user reports;
+- NYC public restrooms and Parks toilets;
+- OpenStreetMap healthcare POIs;
+- NYS health facilities;
+- NYC AED inventory;
+- pedestrian ramp locations;
+- Google Maps enrichment;
+- weather and heat context.
+
+`clearpath_sources.json` records retained and excluded sources. Do not add an
+excluded local file to the ETL path without updating the agreed source scope,
+the manifest, and this README.
+
+### Local MySQL
+
+From the repository root:
+
+```bash
+docker compose up -d mysql
+docker compose ps
+```
+
+The Docker initializer is:
+
+```text
+docker/mysql/init/001_clearpath_schema.sql
+```
+
+It runs automatically only when the MySQL volume is first created. Do not use
+`docker compose down -v` merely to rerun the initializer because it deletes all
+database data.
+
+The SQL file in this notebook directory and the Docker initializer serve
+different workflows and may diverge. Confirm the target environment before
+synchronizing either file.
+
+### Source Validation
+
+The historical `backend_database_README.md` references
+`backend/database/validate_sources.py`, but that script is not present in the
+current repository. Use the notebook data-source validation cell together with
+`clearpath_sources.json` until a maintained standalone validator is added.
+
+## 11. Historical Reference Documents
+
+The following files are retained for detailed history and bilingual reference:
+
+- `api_schema_gap_analysis_en.md`
+- `[CN]api_schema_gap_analysis_cn.md`
+- `fix_plan.md`
+- `[CN]fix_plan.md`
+- `fix_summary.md`
+- `backend_database_README.md`
+
+Their current conclusions have been consolidated into `docs/memory/`. Where a
+historical document conflicts with current Final requirements or current code,
+the current source, this README, and the corresponding memory decision take
+precedence.

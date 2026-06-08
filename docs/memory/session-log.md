@@ -44,3 +44,30 @@
 - [ ] 完成其他 API 开发
 - [ ] 前端开发
 - [ ] 部署配置
+
+## 2026-06-07
+
+### 文档合并
+
+- 将中英文 API/Schema gap 分析的有效结论合并到
+  `docs/memory/openapi-vs-schema-gap.md`。
+- 将中英文 fix plan 的历史决策和当前裁决合并到
+  `docs/memory/final-requirements-database-impact.md`。
+- 将 `fix_summary.md` 的实施结果和 `backend_database_README.md` 的运行边界
+  合并到 `docs/memory/database-build-notebook-status.md`。
+- 将 backend 数据库范围、Docker 初始化和数据源清单说明合并到
+  `Data+ML/test/6.2-6.5_DB/README.md`。
+- 所有原始文档均保留，作为历史细节和双语参考。
+
+### 关键决策
+
+- 代码目录 README 继续负责操作步骤；`docs/memory/` 负责决策、状态与跨会话交接。
+- 2026-06-03 fix plan 视为历史基线，不能覆盖 2026-06-07 Final 需求裁决。
+- 历史文档中的 `backend/database/validate_sources.py` 当前不存在，不写入有效命令。
+- 多份 Schema SQL 当前并不完全一致，禁止无判断地相互覆盖。
+
+### 验证
+
+- [x] 检查新增链接和源文件路径。
+- [x] 检查 Markdown 格式与重复章节。
+- [x] 确认原始来源文件未修改。
