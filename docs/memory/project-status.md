@@ -1,20 +1,20 @@
-# ClearPath 当前项目状态
+# ClearPath Current Project Status
 
-> 更新日期：2026-06-09 | openapi.yaml v1.4.0
+> Updated: 2026-06-09 | openapi.yaml v1.4.0 | grill-with-docs decisions frozen
 
 ---
 
-## 项目概览
+## Project Overview
 
-- **项目名称**: ClearPath — 曼哈顿无障碍设施导航
-- **技术栈**: Flask + MySQL + React Native
-- **分支**: `main` (主分支), `alex` (开发分支)
-- **DB**: MySQL `clearpath` schema, 13 张表
+- **Project Name**: ClearPath — Manhattan Accessibility Navigation
+- **Tech Stack**: Flask + MySQL + React Native
+- **Branches**: `main` (production), `alex` (development)
+- **DB**: MySQL `clearpath` schema, 19 tables
 
-## 数据库连接
+## Database Connection
 
-| 参数 | 值 |
-|------|-----|
+| Parameter | Value |
+|-----------|-------|
 | Host | 127.0.0.1:3306 |
 | User | clearpath_app |
 | Password | clearpath_app |
@@ -22,44 +22,40 @@
 
 ---
 
-## 数据库 Schema 状态 (13 张表)
+## Database Schema Status (18 tables)
 
-### 已完成的表
+### Completed Tables
 
-| 表名 | 行数 | 用途 |
-|------|------|------|
-| `venues` | ~3,479 | 统一 POI 表 (含 district、语言、无障碍、警告、weather_risk) |
-| `venue_source_links` | ~3,479 | 数据源追踪 (1:1 with venues) |
-| `restroom_profiles` | 476 | 卫生间详情 |
-| `healthcare_profiles` | 1,228 | 医疗机构详情 |
-| `emergency_assets` | ~3,279 | AED 设备 (含唯一约束) |
-| `pedestrian_ramps` | 23,625 | 无障碍坡道 (含 district) |
-| `venue_accessibility` | 0 | 场馆无障碍详情 (待填充) |
-| `venue_language` | 63 | 场馆多语言支持 |
-| `venue_warnings` | 0 | 场馆警告 (待填充) |
-| `external_context_cache` | 1 | 天气 API 缓存 |
+| Table | Rows | Purpose |
+|-------|------|---------|
+| `venues` | ~3,479 | Unified POI table (includes district, language, accessibility, warnings, weather_risk) |
+| `venue_source_links` | ~3,479 | Data source tracking (1:1 with venues) |
+| `restroom_profiles` | 476 | Restroom details |
+| `healthcare_profiles` | 1,228 | Healthcare facility details |
+| `emergency_assets` | ~3,279 | AED devices (with unique constraint) |
+| `pedestrian_ramps` | 23,625 | Accessibility ramps (with district) |
+| `venue_accessibility` | 0 | Venue accessibility details (pending) |
+| `venue_language` | 63 | Venue multilingual support |
+| `venue_warnings` | 0 | Venue warnings (pending) |
+| `external_context_cache` | 1 | Weather API cache |
+| `users` | 0 | Account system base (D1: email + password) |
+| `user_favorite_venues` | 0 | Cross-device favorite sync |
+| `notification_preferences` | 0 | Quiet hours + Push subscriptions |
+| `report_categories` | 8 | Report category dictionary (D8: filter by venue type) |
+| `busyness_forecasts` | 0 | 12-hour time-series forecast (D4: quiet/moderate/busy) |
+| `venue_embeddings` | 0 | RAG vector storage (D9: MySQL JSON) |
 
-### 需改造的表
+### Modified Tables
 
-| 表名 | 行数 | 问题 |
-|------|------|------|
-| `user_reports` | 0 | 缺 `user_id` FK, 需移除 `anonymous`/`reported_by` |
-| `report_confirmations` | 0 | 缺 `user_id` + 唯一约束 `(report_id, user_id)` |
-| `busyness_scores` | 0 | 仅有 `forecast_1h`; 缺 `busyness_forecasts` 时序表 |
-
-### 缺失的关键表
-
-| 表名 | 用途 | 优先级 |
-|------|------|--------|
-| `users` | 账户系统基础 | P0 |
-| `user_favorite_venues` | 跨设备收藏同步 | P1 |
-| `notification_preferences` | 安静时段 + Push 订阅 | P1 |
-| `busyness_forecasts` | 12 小时时序预测 | P1 |
-| `report_categories` | 报告类别字典 | P2 |
+| Table | Modification | Status |
+|-------|-------------|--------|
+| `user_reports` | ✅ Added `user_id` FK, DROP `reported_by`, `issue_type` → VARCHAR + FK | 2026-06-09 |
+| `report_confirmations` | ✅ Added `user_id` FK + `UNIQUE (report_id, user_id)` | 2026-06-09 |
+| `busyness_scores` | ✅ ENUM changed to `quiet/moderate/busy`, nullable | 2026-06-09 |
 
 ---
 
-## venues 表列数：24
+## venues Table Columns: 24
 
 ```
 venue_id, venue_type, name, latitude, longitude, borough, district,
@@ -71,87 +67,106 @@ created_at, updated_at
 
 ---
 
-## ETL Pipeline 状态
+## ETL Pipeline Status
 
 - **Notebook**: `Data+ML/test/6.2-6.5_DB/database_build.ipynb` (49 cells, 24 code cells)
 - **Schema**: `Data+ML/test/6.2-6.5_DB/001_clearpath_schema.sql`
-- **数据源**: `data_source/` (仓库外部), 由 `clearpath_sources.json` 管理
+- **Data Sources**: `data_source/` (outside repo), managed by `clearpath_sources.json`
 - **MySQL Docker**: `docker-compose.yml` at repo root, init: `docker/mysql/init/001_clearpath_schema.sql`
-- **District Zoning**: ✅ 已实现 (venues + pedestrian_ramps)
-- **Weather API**: ✅ NWS 集成, 1 条缓存
-- **Venue Language**: ✅ LASS 数据, 63 条匹配
+- **District Zoning**: ✅ Implemented (venues + pedestrian_ramps)
+- **Weather API**: ✅ NWS integration, 1 cached entry
+- **Venue Language**: ✅ LASS data, 63 matched
 
-### ETL 后行数 (2026-06-05)
+### ETL Row Counts (2026-06-05)
 
-| 数据源 | Manhattan | ETL 后 |
-|--------|-----------|--------|
-| NYC Public Restrooms | 358 | 349 导入 |
-| Parks Toilets | 129 | 127 导入 |
-| OSM Healthcare | 900 | 900 导入 |
-| NYS Health | 454 | 431 导入 |
-| AED Inventory | 3,393 | 3,279 导入 (dedup) |
-| Pedestrian Ramps | 23,625 | 23,625 导入 |
+| Data Source | Manhattan | After ETL |
+|-------------|-----------|-----------|
+| NYC Public Restrooms | 358 | 349 imported |
+| Parks Toilets | 129 | 127 imported |
+| OSM Healthcare | 900 | 900 imported |
+| NYS Health | 454 | 431 imported |
+| AED Inventory | 3,393 | 3,279 imported (dedup) |
+| Pedestrian Ramps | 23,625 | 23,625 imported |
 | Weather (NWS API) | — | 1 cached |
 | Venue Language (LASS) | 442 | 63 matched |
 
 ---
 
-## OpenAPI 状态 (v1.4.0)
+## OpenAPI Status (v1.4.0) — Contract ready, backend pending
 
-- **端点数**: 20+
-- **新标签**: Busyness, Insights, Chatbot
-- **覆盖率**: ~90%
-- **组内审核**: `docs/memory/openapi_gap_finalacceptcriteria.md`
+- **Endpoints**: 20+
+- **New Tags**: Busyness, Insights, Chatbot
+- **Coverage**: ~90%
+- **Gap Analysis**: `docs/memory/openapi_gap_finalacceptcriteria.md`
 
-### 已实现的端点
+### OpenAPI Contract Status (YAML defined)
 
-| 模块 | 端点 | 状态 |
-|------|------|------|
-| Venues | `GET /venues`, `GET /venues/{id}` | ✅ |
-| Busyness | `GET /venues/{id}/busyness`, `GET /venues/{id}/busyness/forecast` | ✅ |
-| Reports | `GET/POST /reports`, `POST /reports/{id}/confirmations` | ✅ |
-| Insights | `GET /insights` | ✅ |
-| Chatbot | `POST /chatbot` | ✅ |
-| User | profile, settings, languages, favourites (CRUD), SOS, notification-prefs, account delete, medical-passport | ✅ |
-| Routes | options, detail | ✅ |
-| Realtime | SSE map-updates | ✅ |
-
----
-
-## Sprint Pipeline 状态
-
-| 已完成 | 待实现 |
-|--------|--------|
-| ✅ 13 张表 Schema | ❌ JWT 认证 |
-| ✅ ETL 数据导入 | ❌ Profile CRUD |
-| ✅ Mock 数据 (v1.4.0) | ❌ 实时遥测管道 |
-| ✅ Weather API 集成 | ❌ 12 小时 ML 预测 |
-| ✅ Venue Language ETL | ❌ 报告 TTL (2h) |
-| ✅ Schema 同步机制 | ❌ 级联删除 API |
-| ✅ District Zoning (venues + ramps) | ❌ Gemini RAG |
-| ✅ emergency_assets 唯一约束 | ❌ 用户认证系统 |
-| ✅ OpenAPI v1.4.0 (20+ 端点) | |
+| Module | Endpoints | Contract | Backend |
+|--------|-----------|----------|---------|
+| Venues | `GET /venues`, `GET /venues/{id}` | ✅ | ✅ |
+| Busyness | `GET /venues/{id}/busyness`, `GET /venues/{id}/busyness/forecast` | ✅ | ❌ No data source |
+| Reports | `GET/POST /reports`, `POST /reports/{id}/confirmations` | ✅ | ❌ Missing users table |
+| Insights | `GET /insights` | ✅ | ✅ |
+| Chatbot | `POST /chatbot` | ✅ | ❌ RAG not implemented |
+| User | profile, settings, languages, favourites, SOS, notification-prefs, account delete, medical-passport | ✅ | ❌ Missing users table |
+| Routes | options, detail | ✅ | ✅ |
+| Realtime | SSE map-updates | ✅ | ✅ |
 
 ---
 
-## 文件结构
+## Sprint Pipeline Status
+
+| Completed | Pending |
+|-----------|---------|
+| ✅ 19-table Schema | ❌ JWT Auth (backend impl) |
+| ✅ ETL data ingestion | ❌ Profile CRUD (backend impl) |
+| ✅ Mock data (v1.4.0) | ❌ Real-time telemetry pipeline |
+| ✅ Weather API integration | ❌ 12-hour ML forecast (table ready) |
+| ✅ Venue Language ETL | ❌ Report TTL (2h) |
+| ✅ Schema sync mechanism (test→file) | ❌ Cascade delete API |
+| ✅ District Zoning (venues + ramps) | ❌ Gemini RAG (table ready) |
+| ✅ emergency_assets unique constraint | ❌ User auth system (users table ready) |
+| ✅ OpenAPI v1.4.0 contract (20+ endpoints) | ❌ Docker schema sync (test→docker) |
+| ✅ users + favorites + notifications tables | |
+| ✅ report_categories + ALTER user_reports/confirmations | |
+| ✅ busyness_forecasts + venue_embeddings tables | |
+
+**Status Legend**: "Table ready" = DDL complete, awaiting backend code implementation
+
+### Backend API Endpoints (Flask implementation, not DDL)
+
+| Endpoint | Purpose | Dependency | Status |
+|----------|---------|------------|--------|
+| `POST /auth/register` | Email + password + full name registration | users table | ✅ Ready |
+| `POST /auth/login` | Email + password → JWT | users table | ✅ Ready |
+| `POST /auth/forgot-password` | Send reset link | users table | ✅ Ready |
+| `POST /auth/reset-password` | Token + new password | users table | ✅ Ready |
+| `POST /reports` | Submit report (login required) | users + report_categories tables | ✅ Ready |
+| `POST /reports/{id}/confirmations` | Confirm report (login required) | users + UNIQUE constraint | ✅ Ready |
+| `GET /venues/{id}/busyness/forecast` | 12h forecast | busyness_forecasts table | ✅ Ready |
+| `POST /chatbot` | RAG query | venue_embeddings table | ✅ Ready |
+
+---
+
+## File Structure
 
 ```
 docs/memory/
-├── project-status.md          ← 本文件
-├── project-issues.md          ← 现有问题
-├── execution-plan.md          ← 执行计划 (DB schema 重点)
-├── openapi_gap_finalacceptcriteria.md  ← 组内审核用
-└── MEMORY.md                  ← 索引
+├── project-status.md          ← This file
+├── project-issues.md          ← Current issues
+├── execution-plan.md          ← Execution plan (DB schema focus)
+├── context-terms.md           ← Domain glossary + 10 frozen decisions
+├── openapi_gap_finalacceptcriteria.md  ← Gap analysis for review
+└── MEMORY.md                  ← Index
 
 src/
-├── app.py              # Flask 应用入口
-├── mock_data.py        # 模拟数据 (v1.4.0)
-└── api/                # API 路由
+├── app.py              # Flask application entry
+├── mock_data.py        # Mock data (v1.4.0)
+└── api/                # API routes
 
 Data+ML/test/6.2-6.5_DB/
-├── database_build.ipynb      # ETL 流程
-├── 001_clearpath_schema.sql  # 数据库 Schema
-├── README.md                 # 操作文档
-└── clearpath_sources.json    # 数据源清单
+├── database_build.ipynb      # ETL pipeline
+├── 001_clearpath_schema.sql  # Database schema
+├── README.md                 # Operating instructions
+└── clearpath_sources.json    # Data source manifest
 ```

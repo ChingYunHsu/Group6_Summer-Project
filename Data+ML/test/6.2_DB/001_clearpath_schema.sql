@@ -8,7 +8,7 @@ CREATE TABLE `busyness_scores` (
   `score_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `venue_id` varchar(36) NOT NULL,
   `score` tinyint unsigned NOT NULL,
-  `level` enum('low','medium','high','unknown') NOT NULL DEFAULT 'unknown',
+  `level` enum('quiet','moderate','busy') DEFAULT NULL,
   `estimated_wait_minutes` int unsigned DEFAULT NULL,
   `forecast_1h` json DEFAULT NULL COMMENT '12-hour forecast array [h0..h11]',
   `forecast_start_time` datetime NOT NULL,
@@ -97,14 +97,17 @@ CREATE TABLE `pedestrian_ramps` (
 CREATE TABLE `report_confirmations` (
   `confirmation_id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `report_id` varchar(36) NOT NULL,
+  `user_id` varchar(36) NOT NULL,
   `action` enum('still_here','resolved','not_sure','still_out_of_order','open_now') NOT NULL,
   `language` varchar(10) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `client_context` json DEFAULT NULL,
   PRIMARY KEY (`confirmation_id`),
+  UNIQUE KEY `uq_report_user` (`report_id`,`user_id`),
   KEY `idx_report_confirmations_report` (`report_id`),
   KEY `idx_report_confirmations_action` (`action`),
-  CONSTRAINT `fk_report_confirmation_report` FOREIGN KEY (`report_id`) REFERENCES `user_reports` (`report_id`) ON DELETE CASCADE
+  CONSTRAINT `fk_report_confirmation_report` FOREIGN KEY (`report_id`) REFERENCES `user_reports` (`report_id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_confirmation_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `restroom_profiles` (
@@ -124,15 +127,15 @@ CREATE TABLE `restroom_profiles` (
 
 CREATE TABLE `user_reports` (
   `report_id` varchar(36) NOT NULL,
+  `user_id` varchar(36) NOT NULL,
   `venue_id` varchar(36) DEFAULT NULL,
-  `issue_type` enum('elevator_broken','wheelchair_lift_broken','toilet_out_of_order','large_crowd','protest_or_blockage','entrance_closed') NOT NULL,
+  `issue_type` varchar(64) NOT NULL,
   `latitude` decimal(10,7) NOT NULL,
   `longitude` decimal(10,7) NOT NULL,
   `accuracy_meters` decimal(8,2) DEFAULT NULL,
   `anonymous` tinyint(1) DEFAULT '0',
   `description` text,
   `photos` json DEFAULT NULL,
-  `reported_by` varchar(50) DEFAULT 'anonymous',
   `status` enum('active','resolved','expired') NOT NULL DEFAULT 'active',
   `expires_in_minutes` int DEFAULT '120',
   `default_language` varchar(10) DEFAULT NULL,
@@ -144,7 +147,9 @@ CREATE TABLE `user_reports` (
   KEY `idx_user_reports_venue_status` (`venue_id`,`status`),
   KEY `idx_user_reports_status_expiry` (`status`,`expires_at`),
   KEY `idx_user_reports_location` (`latitude`,`longitude`),
+  CONSTRAINT `fk_user_report_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   CONSTRAINT `fk_user_report_venue` FOREIGN KEY (`venue_id`) REFERENCES `venues` (`venue_id`) ON DELETE SET NULL,
+  CONSTRAINT `fk_report_category` FOREIGN KEY (`issue_type`) REFERENCES `report_categories` (`category_id`),
   CONSTRAINT `user_reports_chk_1` CHECK (((`source_confidence` >= 0) and (`source_confidence` <= 1)))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -226,4 +231,102 @@ CREATE TABLE `venues` (
   KEY `idx_venues_borough` (`borough`),
   CONSTRAINT `venues_chk_1` CHECK (((`source_confidence` >= 0) and (`source_confidence` <= 1)))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------------
+-- Phase 2: User & Account System
+-- -----------------------------------------------------------
+
+CREATE TABLE `users` (
+  `user_id` varchar(36) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `display_name` varchar(128) NOT NULL,
+  `email_verified` tinyint(1) DEFAULT '0',
+  `preferred_language` varchar(10) DEFAULT 'en',
+  `account_status` enum('active','suspended','deleted') DEFAULT 'active',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `idx_users_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `user_favorite_venues` (
+  `user_id` varchar(36) NOT NULL,
+  `venue_id` varchar(36) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`user_id`,`venue_id`),
+  CONSTRAINT `fk_fav_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_fav_venue` FOREIGN KEY (`venue_id`) REFERENCES `venues` (`venue_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `notification_preferences` (
+  `pref_id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(36) NOT NULL,
+  `venue_id` varchar(36) DEFAULT NULL,
+  `notification_type` enum('crowd_alert','closure_alert','quiet_hours') NOT NULL,
+  `enabled` tinyint(1) DEFAULT '1',
+  `threshold` tinyint unsigned DEFAULT NULL,
+  `quiet_start` time DEFAULT NULL,
+  `quiet_end` time DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`pref_id`),
+  UNIQUE KEY `uq_user_notif_type` (`user_id`,`venue_id`,`notification_type`),
+  CONSTRAINT `fk_notif_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_notif_venue` FOREIGN KEY (`venue_id`) REFERENCES `venues` (`venue_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------------
+-- Phase 3: Report Categories Dictionary
+-- -----------------------------------------------------------
+
+CREATE TABLE `report_categories` (
+  `category_id` varchar(64) NOT NULL,
+  `display_name` varchar(128) NOT NULL,
+  `applies_to_venue_types` json NOT NULL,
+  `requires_floor_info` tinyint(1) DEFAULT '0',
+  `icon_name` varchar(64) DEFAULT NULL,
+  `sort_order` tinyint unsigned DEFAULT '0',
+  `is_active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------------
+-- Phase 4: Busyness Forecast
+-- -----------------------------------------------------------
+
+CREATE TABLE `busyness_forecasts` (
+  `forecast_id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `venue_id` varchar(36) NOT NULL,
+  `forecast_for` datetime NOT NULL,
+  `predicted_score` tinyint unsigned NOT NULL,
+  `predicted_level` enum('quiet','moderate','busy') NOT NULL,
+  `estimated_wait_minutes` int unsigned DEFAULT NULL,
+  `model_version` varchar(64) NOT NULL,
+  `generated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`forecast_id`),
+  UNIQUE KEY `uq_forecast` (`venue_id`,`forecast_for`,`model_version`),
+  KEY `idx_forecast_venue_time` (`venue_id`,`forecast_for`),
+  CONSTRAINT `fk_forecast_venue` FOREIGN KEY (`venue_id`) REFERENCES `venues` (`venue_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------------
+-- Phase 5: RAG Data Layer
+-- -----------------------------------------------------------
+
+CREATE TABLE `venue_embeddings` (
+  `venue_id` varchar(36) NOT NULL,
+  `embedding` json NOT NULL,
+  `text_snapshot` text NOT NULL,
+  `model_version` varchar(64) NOT NULL,
+  `generated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`venue_id`),
+  CONSTRAINT `fk_embedding_venue` FOREIGN KEY (`venue_id`) REFERENCES `venues` (`venue_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Phase 5: Additional indexes
+CREATE INDEX `idx_venues_district` ON `venues` (`district`);
+CREATE INDEX `idx_venues_type_district` ON `venues` (`venue_type`,`district`);
 
