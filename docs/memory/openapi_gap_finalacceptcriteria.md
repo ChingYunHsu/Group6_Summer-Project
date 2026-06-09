@@ -69,12 +69,12 @@
 
 ## 3. Current Remaining Issues (YAML vs mock vs Criteria)
 
-### 3.1 ⚠️ mock_data.py Alignment Gaps
+### 3.1 ✅ mock_data.py Alignment — Resolved (2026-06-09)
 
 | Item | mock_data.py | OpenAPI v1.4.0 | Status |
 |------|-------------|----------------|--------|
-| `REPORT_CONFIRMATION_TEMPLATE` | Missing `user_id` | Required field (L1082) | ⚠️ Gap |
-| `INSIGHTS_DASHBOARD.district` | `"Midtown East"` (title case) | Enum lowercase `midtown_east` | ⚠️ Mismatch |
+| `REPORT_CONFIRMATION_TEMPLATE` | ✅ Added `user_id` | Required field (L1082) | ✅ Resolved |
+| `INSIGHTS_DASHBOARD.district` | ✅ Changed to `"midtown_east"` | Enum lowercase `midtown_east` | ✅ Resolved |
 | `FAVOURITE_CREATE_TEMPLATE` | Present | `FavouriteCreateRequest` schema | ✅ Aligned |
 | `DELETE_ACCOUNT_RESPONSE` | Present | `DeleteAccountResponse` schema | ✅ Aligned |
 | `MEDICAL_PASSPORT_RESPONSE` | Present | `MedicalPassportResponse` schema | ✅ Aligned |
@@ -84,12 +84,12 @@
 | `REPORTS[3].status` | `"expired"` | `Report.status` enum includes `expired` | ✅ Aligned |
 | `REPORTS[2].issue_type` | `"ramp_blocked"` | `ReportSubmission` includes `ramp_blocked` | ✅ Aligned |
 
-### 3.2 ⚠️ busyness_forecasts DB Table — Pending
+### 3.2 ✅ busyness_forecasts DB Table — Resolved (2026-06-09)
 
 - OpenAPI defines `GET /venues/{id}/busyness/forecast` returning 12h forecast
 - mock_data.py provides static forecast data
-- **DB `busyness_scores` table has 0 rows**; no `busyness_forecasts` table exists yet
-- API contract is complete; data source is not
+- **DB `busyness_forecasts` table created** (D4: quiet/moderate/busy)
+- **API contract**: ✅ complete; **Data source**: ✅ table ready (ML pipeline can write)
 
 ---
 
@@ -110,7 +110,7 @@
 ## 5. Priority Fix Items (v1.4.0)
 
 ### P0 — Data Pipeline
-1. **Create `busyness_forecasts` table** — DB data source for forecast endpoint
+1. ~~Create `busyness_forecasts` table~~ ✅ Resolved (2026-06-09)
 
 ### P1 — Alignment
-2. **Fix mock_data.py** — add `user_id` to `REPORT_CONFIRMATION_TEMPLATE`; fix `INSIGHTS_DASHBOARD.district` case
+2. ~~Fix mock_data.py~~ ✅ Resolved (2026-06-09)

@@ -149,37 +149,30 @@ CREATE TABLE IF NOT EXISTS pedestrian_ramps (
 
 -- -----------------------------------------------------------
 -- user_reports — Crowd-sourced incident reports
+-- Phase 3: Added user_id FK (D3), removed reported_by, issue_type → VARCHAR + FK
 -- -----------------------------------------------------------
 CREATE TABLE IF NOT EXISTS user_reports (
   report_id VARCHAR(36) PRIMARY KEY,
+  user_id VARCHAR(36) NOT NULL,
   venue_id VARCHAR(36),
-  issue_type ENUM(
-    'elevator_broken',
-    'wheelchair_lift_broken',
-    'toilet_out_of_order',
-    'large_crowd',
-    'protest_or_blockage',
-    'entrance_closed'
-  ) NOT NULL,
+  issue_type VARCHAR(64) NOT NULL,
   latitude DECIMAL(10, 7) NOT NULL,
   longitude DECIMAL(10, 7) NOT NULL,
   accuracy_meters DECIMAL(8, 2),
-  -- Gap-fix: anonymous, description, photos
+  -- D3: 保留 anonymous (提交后匿名化)
   anonymous BOOLEAN DEFAULT FALSE,
   description TEXT,
   photos JSON,
-  -- Gap-fix: reported_by
-  reported_by VARCHAR(50) DEFAULT 'anonymous',
   status ENUM('active', 'resolved', 'expired') NOT NULL DEFAULT 'active',
-  -- Gap-fix: expires_in_minutes (API-facing field)
   expires_in_minutes INT DEFAULT 120,
-  -- Gap-fix: language support
   default_language VARCHAR(10),
   fallback_language VARCHAR(10),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   expires_at TIMESTAMP NOT NULL,
   source_confidence DECIMAL(4, 3) NOT NULL DEFAULT 0.500,
+  CONSTRAINT fk_user_report_user FOREIGN KEY (user_id) REFERENCES users(user_id),
   CONSTRAINT fk_user_report_venue FOREIGN KEY (venue_id) REFERENCES venues (venue_id) ON DELETE SET NULL,
+  CONSTRAINT fk_report_category FOREIGN KEY (issue_type) REFERENCES report_categories(category_id),
   CHECK (source_confidence >= 0 AND source_confidence <= 1),
   INDEX idx_user_reports_venue_status (venue_id, status),
   INDEX idx_user_reports_status_expiry (status, expires_at),
@@ -188,16 +181,19 @@ CREATE TABLE IF NOT EXISTS user_reports (
 
 -- -----------------------------------------------------------
 -- report_confirmations — User votes on reports
+-- Phase 3: Added user_id FK + UNIQUE constraint (D6)
 -- -----------------------------------------------------------
 CREATE TABLE IF NOT EXISTS report_confirmations (
   confirmation_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   report_id VARCHAR(36) NOT NULL,
+  user_id VARCHAR(36) NOT NULL,
   action ENUM('still_here', 'resolved', 'not_sure', 'still_out_of_order', 'open_now') NOT NULL,
-  -- Gap-fix: language
   language VARCHAR(10),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   client_context JSON,
   CONSTRAINT fk_report_confirmation_report FOREIGN KEY (report_id) REFERENCES user_reports (report_id) ON DELETE CASCADE,
+  CONSTRAINT fk_confirmation_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+  UNIQUE KEY uq_report_user (report_id, user_id),
   INDEX idx_report_confirmations_report (report_id),
   INDEX idx_report_confirmations_action (action)
 );
@@ -209,12 +205,10 @@ CREATE TABLE IF NOT EXISTS busyness_scores (
   score_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   venue_id VARCHAR(36) NOT NULL,
   score TINYINT UNSIGNED NOT NULL,
-  level ENUM('low', 'medium', 'high', 'unknown') NOT NULL DEFAULT 'unknown',
+  level ENUM('quiet','moderate','busy') DEFAULT NULL,
   estimated_wait_minutes INT UNSIGNED,
   -- Gap-fix: forecast columns
   forecast_1h INT,
-  forecast_4h INT,
-  forecast_8h INT,
   forecast_start_time DATETIME NOT NULL,
   forecast_end_time DATETIME NOT NULL,
   model_version VARCHAR(64) NOT NULL,
@@ -280,3 +274,107 @@ CREATE TABLE IF NOT EXISTS venue_warnings (
   CONSTRAINT fk_warnings_venue
     FOREIGN KEY (venue_id) REFERENCES venues (venue_id) ON DELETE CASCADE
 );
+
+-- -----------------------------------------------------------
+-- NEW TABLES — Phase 2: User & Account System (2026-06-09)
+-- D1: 邮箱+密码 (bcrypt), D2: Guest 无 token, D7: 邮箱即认证标识
+-- -----------------------------------------------------------
+
+-- users — Account base (D10: no medical data on server)
+CREATE TABLE IF NOT EXISTS users (
+  user_id VARCHAR(36) PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  display_name VARCHAR(128) NOT NULL,
+  email_verified BOOLEAN DEFAULT FALSE,
+  preferred_language VARCHAR(10) DEFAULT 'en',
+  account_status ENUM('active','suspended','deleted') DEFAULT 'active',
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deleted_at TIMESTAMP NULL,
+  INDEX idx_users_email (email)
+);
+
+-- user_favorite_venues — Cross-device venue bookmarks
+CREATE TABLE IF NOT EXISTS user_favorite_venues (
+  user_id VARCHAR(36) NOT NULL,
+  venue_id VARCHAR(36) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (user_id, venue_id),
+  CONSTRAINT fk_fav_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+  CONSTRAINT fk_fav_venue FOREIGN KEY (venue_id) REFERENCES venues(venue_id) ON DELETE CASCADE
+);
+
+-- notification_preferences — Push subscriptions + quiet hours
+CREATE TABLE IF NOT EXISTS notification_preferences (
+  pref_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  user_id VARCHAR(36) NOT NULL,
+  venue_id VARCHAR(36),
+  notification_type ENUM('crowd_alert','closure_alert','quiet_hours') NOT NULL,
+  enabled BOOLEAN DEFAULT TRUE,
+  threshold TINYINT UNSIGNED,
+  quiet_start TIME,
+  quiet_end TIME,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_notif_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+  CONSTRAINT fk_notif_venue FOREIGN KEY (venue_id) REFERENCES venues(venue_id) ON DELETE CASCADE,
+  UNIQUE KEY uq_user_notif_type (user_id, venue_id, notification_type)
+);
+
+-- -----------------------------------------------------------
+-- NEW TABLES — Phase 3: Report System (2026-06-09)
+-- D5: OpenAPI 8 issue types, D8: 字典表按场馆类型过滤
+-- -----------------------------------------------------------
+
+-- report_categories — Issue type dictionary (D8)
+CREATE TABLE IF NOT EXISTS report_categories (
+  category_id VARCHAR(64) PRIMARY KEY,
+  display_name VARCHAR(128) NOT NULL,
+  applies_to_venue_types JSON NOT NULL,
+  requires_floor_info BOOLEAN DEFAULT FALSE,
+  icon_name VARCHAR(64),
+  sort_order TINYINT UNSIGNED DEFAULT 0,
+  is_active BOOLEAN DEFAULT TRUE
+);
+
+-- -----------------------------------------------------------
+-- NEW TABLES — Phase 4: Busyness Forecast (2026-06-09)
+-- D4: 三级 quiet/moderate/busy, 12h time-series prediction
+-- -----------------------------------------------------------
+
+-- busyness_forecasts — Future 12h predictions (ML pipeline writes)
+CREATE TABLE IF NOT EXISTS busyness_forecasts (
+  forecast_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  venue_id VARCHAR(36) NOT NULL,
+  forecast_for DATETIME NOT NULL,
+  predicted_score TINYINT UNSIGNED NOT NULL,
+  predicted_level ENUM('quiet','moderate','busy') NOT NULL,
+  estimated_wait_minutes INT UNSIGNED,
+  model_version VARCHAR(64) NOT NULL,
+  generated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY uq_forecast (venue_id, forecast_for, model_version),
+  INDEX idx_forecast_venue_time (venue_id, forecast_for),
+  CONSTRAINT fk_forecast_venue FOREIGN KEY (venue_id) REFERENCES venues(venue_id) ON DELETE CASCADE
+);
+
+-- -----------------------------------------------------------
+-- NEW TABLES — Phase 5: RAG Data Layer (2026-06-09)
+-- D9: MySQL JSON/BLOB (~3500 venues)
+-- -----------------------------------------------------------
+
+-- venue_embeddings — Gemini embedding vectors for semantic search
+CREATE TABLE IF NOT EXISTS venue_embeddings (
+  venue_id VARCHAR(36) PRIMARY KEY,
+  embedding JSON NOT NULL,
+  text_snapshot TEXT NOT NULL,
+  model_version VARCHAR(64) NOT NULL,
+  generated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_embedding_venue FOREIGN KEY (venue_id) REFERENCES venues(venue_id) ON DELETE CASCADE
+);
+
+-- -----------------------------------------------------------
+-- Phase 5: Additional indexes for RAG + search
+-- -----------------------------------------------------------
+CREATE INDEX IF NOT EXISTS idx_venues_district ON venues(district);
+CREATE INDEX IF NOT EXISTS idx_venues_type_district ON venues(venue_type, district);
