@@ -1,0 +1,9 @@
+# Memory Index
+
+## 项目文档
+- [project-status.md](project-status.md) — 当前项目状态：DB Schema、ETL、OpenAPI、Sprint 进度
+- [project-issues.md](project-issues.md) — 现有问题：P0/P1/P2 分级，含已解决项
+- [execution-plan.md](execution-plan.md) — 执行计划：6 Phase，DB Schema DDL 重点
+
+## 组内审核
+- [openapi_gap_finalacceptcriteria.md](openapi_gap_finalacceptcriteria.md) — OpenAPI v1.4.0 vs Requirements 覆盖率分析
