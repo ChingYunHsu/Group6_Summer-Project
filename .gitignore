@@ -146,3 +146,8 @@ vite.config.ts.timestamp-*
 .venv/
 venv/
 poetry.lock
+
+
+src/__pycache__/
+__pycache__/
+*.pyc

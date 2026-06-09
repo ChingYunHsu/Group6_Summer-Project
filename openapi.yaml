@@ -1,0 +1,1692 @@
+openapi: 3.0.3
+info:
+  title: ClearPath API
+  version: 1.4.0
+  description: Shared REST API contract for ClearPath frontend and backend teams.
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+tags:
+  - name: Health
+  - name: Integrations
+  - name: Venues
+  - name: Busyness
+  - name: Reports
+  - name: User
+  - name: Routes
+  - name: Realtime
+  - name: Insights
+  - name: Chatbot
+  - name: App State
+
+paths:
+  /api/v1/health:
+    get:
+      tags: [Health]
+      summary: Health check
+      operationId: getHealth
+      responses:
+        '200':
+          description: Service is running.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+  /api/v1/integrations/status:
+    get:
+      tags: [Integrations]
+      summary: Get integration configuration status
+      operationId: getIntegrationsStatus
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Current integration configuration flags.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegrationsStatusResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/venues:
+    get:
+      tags: [Venues]
+      summary: List venues
+      operationId: listVenues
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: languages
+          in: query
+          required: false
+          description: Optional comma-separated language codes used to filter results.
+          schema:
+            type: string
+            example: FR,ES
+        - name: accessible
+          in: query
+          required: false
+          description: When true, returns only fully accessible venues.
+          schema:
+            type: boolean
+        - name: open_now
+          in: query
+          required: false
+          description: When true, returns only venues that are open now.
+          schema:
+            type: boolean
+        - name: venue_type
+          in: query
+          required: false
+          description: Optional venue type filter for advanced filtering.
+          schema:
+            type: string
+            enum: [restroom, healthcare, emergencyasset, clinic, pharmacy, hospital, dentist, laboratory]
+      responses:
+        '200':
+          description: A pageless list of venues.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VenueListResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/venues/{venue_id}:
+    get:
+      tags: [Venues]
+      summary: Get a venue by ID
+      operationId: getVenueById
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: venue_id
+          in: path
+          required: true
+          description: Unique venue identifier.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Venue found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Venue'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Venue not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/venues/{venue_id}/busyness:
+    get:
+      tags: [Busyness]
+      summary: Get realtime busyness for a venue
+      operationId: getVenueBusyness
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: venue_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Current busyness snapshot for the venue.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VenueBusynessResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Venue not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/venues/{venue_id}/busyness/forecast:
+    get:
+      tags: [Busyness]
+      summary: Get 12-hour busyness forecast for a venue
+      operationId: getVenueBusynessForecast
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: venue_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Twelve-hour forecast data and best time recommendation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VenueBusynessForecastResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Venue not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/reports:
+    get:
+      tags: [Reports]
+      summary: List active community reports
+      operationId: listReports
+      parameters:
+        - name: venue_id
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: issue_type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - elevator_broken
+              - wheelchair_lift_broken
+              - toilet_out_of_order
+              - large_crowd
+              - protest_or_blockage
+              - entrance_closed
+              - ramp_blocked
+              - closed_early
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [active, resolved, expired]
+      responses:
+        '200':
+          description: Active reports visible on the map.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportListResponse'
+    post:
+      tags: [Reports]
+      summary: Submit a crowd or accessibility report
+      operationId: submitReport
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportSubmission'
+      responses:
+        '201':
+          description: Report accepted for validation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportResponse'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/reports/{report_id}/confirmations:
+    post:
+      tags: [Reports]
+      summary: Confirm or resolve an existing report
+      operationId: confirmReport
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: report_id
+          in: path
+          required: true
+          description: Unique report identifier.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportConfirmationRequest'
+      responses:
+        '200':
+          description: Confirmation or resolution recorded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReportConfirmationResponse'
+        '400':
+          description: Invalid confirmation payload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Report not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/insights:
+    get:
+      tags: [Insights]
+      summary: Get district-level analytics for Insights Dashboard
+      operationId: getInsightsDashboard
+      parameters:
+        - name: district
+          in: query
+          required: false
+          description: Optional district key such as uptown, midtown_east, midtown_west, downtown.
+          schema:
+            type: string
+        - name: timeframe
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [live, today, week]
+      responses:
+        '200':
+          description: Analytics payload for Insights Dashboard cards and charts.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsightsDashboard'
+
+  /api/v1/chatbot:
+    post:
+      tags: [Chatbot]
+      summary: Ask the multilingual assistant a question
+      operationId: askChatbot
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatbotRequest'
+      responses:
+        '200':
+          description: Assistant response generated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatbotResponse'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/profile:
+    get:
+      tags: [User]
+      summary: Get the current user profile
+      operationId: getUserProfile
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Current user profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/settings:
+    get:
+      tags: [User]
+      summary: Get user settings
+      operationId: getUserSettings
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: User settings.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSettings'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/languages:
+    get:
+      tags: [User]
+      summary: List language options
+      operationId: listLanguageOptions
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Supported language options.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LanguageOptionListResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/favourites:
+    get:
+      tags: [User]
+      summary: List saved favourites
+      operationId: listFavourites
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Saved venues.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FavouriteListResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      tags: [User]
+      summary: Add a venue to favourites
+      operationId: addFavourite
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FavouriteCreateRequest'
+      responses:
+        '201':
+          description: Favourite created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Favourite'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/favourites/{venue_id}:
+    delete:
+      tags: [User]
+      summary: Remove a venue from favourites
+      operationId: deleteFavourite
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: venue_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Favourite removed.
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Favourite not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/notification-preferences:
+    get:
+      tags: [User]
+      summary: Get busyness alert and notification preferences
+      operationId: getNotificationPreferences
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Notification preferences.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationPreferences'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      tags: [User]
+      summary: Update busyness alert and notification preferences
+      operationId: updateNotificationPreferences
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationPreferencesUpdate'
+      responses:
+        '200':
+          description: Notification preferences updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationPreferences'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/sos:
+    post:
+      tags: [User]
+      summary: Trigger SOS panic flow
+      operationId: triggerSos
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SosRequest'
+      responses:
+        '200':
+          description: SOS event accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SosResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/account:
+    delete:
+      tags: [User]
+      summary: Delete user account and purge synced data
+      operationId: deleteUserAccount
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Account deletion accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteAccountResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/medical-passport:
+    get:
+      tags: [User]
+      summary: Generate the user medical passport PDF
+      operationId: getMedicalPassport
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+            example: en
+      responses:
+        '200':
+          description: Medical passport generated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalPassportResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/routes/options:
+    get:
+      tags: [Routes]
+      summary: Get route options for the current destination
+      operationId: getRouteOptions
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: accessibility_mode
+          in: query
+          required: false
+          description: Optional routing accessibility preference.
+          schema:
+            type: string
+            enum: [standard, step_free]
+      responses:
+        '200':
+          description: Available route options.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteOptionsResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/routes/detail:
+    get:
+      tags: [Routes]
+      summary: Get route detail preview
+      operationId: getRouteDetail
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Route detail preview.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteDetailResponse'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/realtime/map-updates:
+    get:
+      tags: [Realtime]
+      summary: Subscribe to live map updates
+      operationId: subscribeMapUpdates
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Server-Sent Events stream for venue and report map updates.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                example: "event: venue_update\ndata: {\"venue_id\":\"v_1002\",\"busyness_percent\":61}\n\n"
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/app-state:
+    get:
+      tags: [App State]
+      summary: Get application state flags
+      operationId: getAppState
+      security:
+        - ApiKeyAuth: []
+      responses:
+        '200':
+          description: Application state flags.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppState'
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    HealthResponse:
+      type: object
+      required: [status, service, version]
+      properties:
+        status:
+          type: string
+        service:
+          type: string
+        version:
+          type: string
+
+    IntegrationsStatusResponse:
+      type: object
+      required: [besttime, google_maps, gemini]
+      properties:
+        besttime:
+          $ref: '#/components/schemas/IntegrationConfigStatus'
+        google_maps:
+          $ref: '#/components/schemas/IntegrationConfigStatus'
+        gemini:
+          $ref: '#/components/schemas/IntegrationConfigStatus'
+
+    IntegrationConfigStatus:
+      type: object
+      required: [configured]
+      properties:
+        configured:
+          type: boolean
+
+    VenueListResponse:
+      type: object
+      required: [count, items]
+      properties:
+        count:
+          type: integer
+          minimum: 0
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Venue'
+
+    Venue:
+      type: object
+      required: [venue_id, name, venue_type, latitude, longitude]
+      properties:
+        venue_id:
+          type: string
+        name:
+          type: string
+        venue_type:
+          type: string
+          enum: [restroom, healthcare, emergencyasset, clinic, pharmacy, hospital, dentist, laboratory]
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        borough:
+          type: string
+        address:
+          type: string
+        phone:
+          type: string
+        opening_hours:
+          type: string
+        opening_hours_structured:
+          $ref: '#/components/schemas/OpeningHoursStructured'
+        photos:
+          type: array
+          items:
+            type: string
+        rating:
+          type: number
+          format: float
+        weather_risk:
+          type: string
+          enum: [low, medium, high]
+        language_tags:
+          type: array
+          items:
+            type: string
+        primary_language:
+          type: string
+        secondary_language:
+          type: string
+        language:
+          $ref: '#/components/schemas/VenueLanguage'
+        accessibility:
+          $ref: '#/components/schemas/VenueAccessibility'
+        warnings:
+          $ref: '#/components/schemas/VenueWarnings'
+        accessible_status:
+          type: string
+          enum: [full_access, partial, step_free_route_only, none]
+        accessibility_features:
+          type: array
+          items:
+            type: string
+        active_warning:
+          type: boolean
+        live_report_count:
+          type: integer
+          minimum: 0
+        distance_km:
+          type: number
+          format: float
+        open_now:
+          type: boolean
+        busyness:
+          $ref: '#/components/schemas/VenueBusyness'
+        busyness_level:
+          type: string
+          enum: [quiet, moderate, busy]
+        busyness_percent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        avg_wait_minutes:
+          type: integer
+          minimum: 0
+        supported_services:
+          type: array
+          items:
+            type: string
+        live_status_badge:
+          type: string
+        busyness_forecast_12h:
+          type: array
+          items:
+            $ref: '#/components/schemas/BusynessForecastPoint'
+        forecast_mode:
+          type: string
+          enum: [live, predicted]
+        is_favourite:
+          type: boolean
+        source:
+          type: string
+        data_confidence:
+          type: number
+          format: float
+        created_at:
+          type: string
+          format: date-time
+
+    VenueAccessibility:
+      type: object
+      properties:
+        wheelchair_friendly:
+          type: boolean
+        step_free_route:
+          type: boolean
+        accessible_toilet:
+          type: boolean
+        entrance_width_cm:
+          type: integer
+
+    VenueWarnings:
+      type: object
+      properties:
+        active_warning:
+          type: boolean
+        warning_detail:
+          type: string
+        wait_alert:
+          type: boolean
+        replacement_suggestion:
+          type: object
+          properties:
+            venue_id:
+              type: string
+            venue_name:
+              type: string
+            reason:
+              type: string
+
+    VenueLanguage:
+      type: object
+      properties:
+        language_tag:
+          type: array
+          items:
+            type: string
+        support_level:
+          type: string
+          enum: [full, partial, none]
+        chatbot_enabled:
+          type: boolean
+        chatbot_welcoming_message:
+          type: string
+
+    VenueBusyness:
+      type: object
+      properties:
+        busyness_score:
+          type: integer
+          minimum: 0
+          maximum: 100
+        busyness_status:
+          type: string
+          enum: [quiet, moderate, busy]
+        busyness_color:
+          type: string
+        estimated_wait_minutes:
+          type: integer
+          minimum: 0
+        updated_at:
+          type: string
+          format: date-time
+
+    VenueBusynessResponse:
+      type: object
+      required: [venue_id, busyness]
+      properties:
+        venue_id:
+          type: string
+        busyness:
+          $ref: '#/components/schemas/VenueBusyness'
+
+    VenueBusynessForecastResponse:
+      type: object
+      required: [venue_id, forecast, best_time_to_go_today]
+      properties:
+        venue_id:
+          type: string
+        forecast:
+          type: array
+          items:
+            $ref: '#/components/schemas/BusynessForecastPoint'
+        best_time_to_go_today:
+          type: object
+          properties:
+            offset_hours:
+              type: integer
+            percent:
+              type: integer
+            label:
+              type: string
+
+    OpeningHoursStructured:
+      type: object
+      properties:
+        monday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        tuesday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        wednesday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        thursday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        friday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        saturday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+        sunday:
+          $ref: '#/components/schemas/DailyOpeningHours'
+
+    DailyOpeningHours:
+      type: object
+      properties:
+        open:
+          type: string
+          example: '08:00'
+        close:
+          type: string
+          example: '22:00'
+        closed:
+          type: boolean
+
+    BusynessForecastPoint:
+      type: object
+      required: [offset_hours, percent, level]
+      properties:
+        offset_hours:
+          type: integer
+          minimum: 0
+          maximum: 12
+        percent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        level:
+          type: string
+          enum: [quiet, moderate, busy]
+
+    ReportSubmission:
+      type: object
+      additionalProperties: false
+      required: [issue_type, latitude, longitude]
+      properties:
+        venue_id:
+          type: string
+        issue_type:
+          type: string
+          enum:
+            - elevator_broken
+            - wheelchair_lift_broken
+            - toilet_out_of_order
+            - large_crowd
+            - protest_or_blockage
+            - entrance_closed
+            - ramp_blocked
+            - closed_early
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        accuracy_m:
+          type: number
+          format: float
+        anonymous:
+          type: boolean
+          description: Optional display anonymization flag after authenticated submission.
+        description:
+          type: string
+        photos:
+          type: array
+          items:
+            type: string
+        default_language:
+          type: string
+        fallback_language:
+          type: string
+
+    ReportConfirmationRequest:
+      type: object
+      additionalProperties: false
+      required: [action, user_id]
+      properties:
+        action:
+          type: string
+          enum:
+            - still_here
+            - resolved
+            - not_sure
+            - still_out_of_order
+            - open_now
+        user_id:
+          type: string
+        language:
+          type: string
+
+    ReportListResponse:
+      type: object
+      required: [count, items]
+      properties:
+        count:
+          type: integer
+          minimum: 0
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Report'
+
+    Report:
+      type: object
+      required: [report_id, issue_type, status, created_at]
+      properties:
+        report_id:
+          type: string
+        issue_type:
+          type: string
+          enum:
+            - elevator_broken
+            - wheelchair_lift_broken
+            - toilet_out_of_order
+            - large_crowd
+            - protest_or_blockage
+            - entrance_closed
+            - ramp_blocked
+            - closed_early
+        venue_id:
+          type: string
+        venue_name:
+          type: string
+        venue_category:
+          type: string
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        accuracy_m:
+          type: number
+          format: float
+        anonymous:
+          type: boolean
+        description:
+          type: string
+        photos:
+          type: array
+          items:
+            type: string
+        status:
+          type: string
+          enum: [active, resolved, expired]
+        created_at:
+          type: string
+          format: date-time
+        expires_at:
+          type: string
+          format: date-time
+        expires_in_minutes:
+          type: integer
+          minimum: 0
+        confirmations:
+          $ref: '#/components/schemas/ReportConfirmations'
+        language:
+          $ref: '#/components/schemas/ReportLanguage'
+        live_report_count:
+          type: integer
+          minimum: 0
+        badge_text:
+          type: string
+
+    ReportConfirmations:
+      type: object
+      properties:
+        count:
+          type: integer
+          minimum: 0
+        latest_action:
+          type: string
+        latest_action_at:
+          type: string
+          format: date-time
+
+    ReportLanguage:
+      type: object
+      properties:
+        default_language:
+          type: string
+        fallback_language:
+          type: string
+
+    ReportResponse:
+      type: object
+      required: [status, report_id, message]
+      properties:
+        status:
+          type: string
+        report_id:
+          type: string
+        message:
+          type: string
+        received_payload:
+          $ref: '#/components/schemas/ReportSubmission'
+        visible_in_seconds:
+          type: integer
+        expires_in_minutes:
+          type: integer
+
+    ReportConfirmationResponse:
+      type: object
+      required: [report_id, action, status, report]
+      properties:
+        report_id:
+          type: string
+        action:
+          type: string
+        status:
+          type: string
+        report:
+          $ref: '#/components/schemas/Report'
+
+    NotificationPreferences:
+      type: object
+      properties:
+        busyness_alerts_enabled:
+          type: boolean
+        push_notifications_enabled:
+          type: boolean
+        quiet_hours_enabled:
+          type: boolean
+        quiet_hours_start:
+          type: string
+          example: '22:00'
+        quiet_hours_end:
+          type: string
+          example: '07:00'
+        alert_threshold_percent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        preferred_venue_types:
+          type: array
+          items:
+            type: string
+        preferred_boroughs:
+          type: array
+          items:
+            type: string
+
+    NotificationPreferencesUpdate:
+      type: object
+      additionalProperties: false
+      properties:
+        busyness_alerts_enabled:
+          type: boolean
+        push_notifications_enabled:
+          type: boolean
+        quiet_hours_enabled:
+          type: boolean
+        quiet_hours_start:
+          type: string
+        quiet_hours_end:
+          type: string
+        alert_threshold_percent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        preferred_venue_types:
+          type: array
+          items:
+            type: string
+        preferred_boroughs:
+          type: array
+          items:
+            type: string
+
+    SosRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        share_live_location:
+          type: boolean
+        note:
+          type: string
+
+    SosResponse:
+      type: object
+      required: [status, message]
+      properties:
+        status:
+          type: string
+          example: accepted
+        message:
+          type: string
+          example: SOS alert triggered successfully.
+        incident_id:
+          type: string
+
+    DeleteAccountResponse:
+      type: object
+      required: [status, message, purge_deadline]
+      properties:
+        status:
+          type: string
+          example: scheduled
+        message:
+          type: string
+        purge_deadline:
+          type: string
+          format: date-time
+
+    MedicalPassportResponse:
+      type: object
+      required: [status, pdf_url]
+      properties:
+        status:
+          type: string
+        pdf_url:
+          type: string
+        language:
+          type: string
+        generated_at:
+          type: string
+          format: date-time
+
+    ChatbotRequest:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+        language:
+          type: string
+        voice_input:
+          type: boolean
+        context:
+          type: object
+          properties:
+            latitude:
+              type: number
+              format: float
+            longitude:
+              type: number
+              format: float
+            current_venue_id:
+              type: string
+
+    ChatbotResponse:
+      type: object
+      required: [message, language]
+      properties:
+        message:
+          type: string
+        language:
+          type: string
+        citations:
+          type: array
+          items:
+            type: string
+        suggested_prompts:
+          type: array
+          items:
+            type: string
+        fallback_used:
+          type: boolean
+        response_time_ms:
+          type: integer
+
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: string
+
+    ValidationErrorResponse:
+      type: object
+      required: [error, missing_fields]
+      properties:
+        error:
+          type: string
+        missing_fields:
+          type: array
+          items:
+            type: string
+        invalid_fields:
+          type: array
+          items:
+            type: string
+        allowed_issue_types:
+          type: array
+          items:
+            type: string
+        allowed_actions:
+          type: array
+          items:
+            type: string
+
+    InsightsDashboard:
+      type: object
+      required:
+        [district, real_time_density, quick_triage, best_travel_window, prediction_series, fastest_hubs]
+      properties:
+        district:
+          type: string
+        real_time_density:
+          type: object
+          required: [percent, trend]
+          properties:
+            percent:
+              type: integer
+              minimum: 0
+              maximum: 100
+            trend:
+              type: string
+            trend_label:
+              type: string
+        quick_triage:
+          type: object
+          required: [wait_minutes, label]
+          properties:
+            wait_minutes:
+              type: integer
+              minimum: 0
+            label:
+              type: string
+            venue_name:
+              type: string
+        best_travel_window:
+          type: object
+          required: [start_time, end_time]
+          properties:
+            start_time:
+              type: string
+            end_time:
+              type: string
+            start:
+              type: string
+            end:
+              type: string
+            cta_label:
+              type: string
+        chart_mode:
+          type: string
+        prediction_series:
+          type: array
+          items:
+            type: integer
+            minimum: 0
+            maximum: 100
+        history_series_7d:
+          type: array
+          items:
+            type: integer
+            minimum: 0
+            maximum: 100
+        fastest_hubs:
+          type: array
+          items:
+            type: object
+            required: [venue_id, clinic_name, capacity_label, travel_minutes]
+            properties:
+              venue_id:
+                type: string
+              clinic_name:
+                type: string
+              venue_name:
+                type: string
+              capacity_label:
+                type: string
+              flow_status:
+                type: string
+              travel_minutes:
+                type: integer
+                minimum: 0
+              wait_minutes:
+                type: integer
+                minimum: 0
+              languages:
+                type: array
+                items:
+                  type: string
+              language_flags:
+                type: array
+                items:
+                  type: string
+
+    UserProfile:
+      type: object
+      required: [user_id, account_state, full_name]
+      properties:
+        user_id:
+          type: string
+        account_state:
+          type: string
+        full_name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        date_of_birth:
+          type: string
+        gender:
+          type: string
+        nationality:
+          type: string
+        address:
+          type: string
+        spoken_languages:
+          type: array
+          items:
+            type: string
+        guest_prompt_title:
+          type: string
+        avatar_initials:
+          type: string
+
+    UserSettings:
+      type: object
+      properties:
+        selected_language:
+          type: string
+        selected_language_native:
+          type: string
+        location_access_enabled:
+          type: boolean
+        notifications_enabled:
+          type: boolean
+        privacy_mode:
+          type: string
+        guest_mode_enabled:
+          type: boolean
+        show_medical_id_on_sos:
+          type: boolean
+        data_export_available:
+          type: boolean
+        delete_account_enabled:
+          type: boolean
+
+    LanguageOptionListResponse:
+      type: object
+      required: [count, items]
+      properties:
+        count:
+          type: integer
+          minimum: 0
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LanguageOption'
+
+    LanguageOption:
+      type: object
+      required: [code, native_name, english_name]
+      properties:
+        code:
+          type: string
+        native_name:
+          type: string
+        english_name:
+          type: string
+
+    FavouriteListResponse:
+      type: object
+      required: [count, items]
+      properties:
+        count:
+          type: integer
+          minimum: 0
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Favourite'
+
+    Favourite:
+      type: object
+      required: [favourite_id, venue_id]
+      properties:
+        favourite_id:
+          type: string
+        venue_id:
+          type: string
+        saved_at:
+          type: string
+          format: date-time
+        display_status:
+          type: string
+
+    FavouriteCreateRequest:
+      type: object
+      required: [venue_id]
+      properties:
+        venue_id:
+          type: string
+
+    RouteOptionsResponse:
+      type: object
+      properties:
+        origin_label:
+          type: string
+        destination_venue_id:
+          type: string
+        departure_time_label:
+          type: string
+        summary_by_mode:
+          type: object
+          properties:
+            transit:
+              $ref: '#/components/schemas/RouteModeSummary'
+            walk:
+              $ref: '#/components/schemas/RouteModeSummary'
+            drive:
+              $ref: '#/components/schemas/RouteModeSummary'
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/RouteOption'
+
+    RouteModeSummary:
+      type: object
+      properties:
+        duration_minutes:
+          type: integer
+        accessibility_mode:
+          type: string
+        status:
+          type: string
+
+    RouteOption:
+      type: object
+      required: [mode, duration_minutes]
+      properties:
+        mode:
+          type: string
+        duration_minutes:
+          type: integer
+          minimum: 0
+        accessibility_mode:
+          type: string
+          enum: [standard, step_free]
+        status:
+          type: string
+        summary:
+          type: string
+
+    RouteDetailResponse:
+      type: object
+      properties:
+        destination_venue_id:
+          type: string
+        polyline_preview:
+          type: array
+          items:
+            $ref: '#/components/schemas/Coordinate'
+        steps:
+          type: array
+          items:
+            type: string
+        start_navigation_label:
+          type: string
+
+    Coordinate:
+      type: object
+      properties:
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+
+    AppState:
+      type: object
+      properties:
+        is_guest:
+          type: boolean
+        is_authenticated:
+          type: boolean
+        has_accepted_terms:
+          type: boolean
+        has_accepted_privacy_policy:
+          type: boolean
+        location_permission:
+          type: string
+        show_finish_profile_prompt:
+          type: boolean
