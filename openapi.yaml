@@ -31,20 +31,6 @@ info:
       marker in blue, indicating live telemetry is unavailable. `VenueBusynessResponse`
       and `GET /venues/{venue_id}/busyness` document the `query_time` parameter and the
       `forecast_mode: predicted` signal that triggers this state.
-    - **Fix 7 (Missing Auth Routes — F-13 Deviation):** Three auth paths added:
-      `POST /api/v1/auth/register`, `POST /api/v1/auth/login`, and
-      `POST /api/v1/auth/reset-password`. Corresponding request/response schemas added.
-      Without these the frontend cannot obtain the JWT tokens that all BearerAuth
-      endpoints require.
-    - **Fix 8 (Language Param Mismatch — F-02 Deviation):** `GET /api/v1/venues`
-      `languages` string param replaced with two discrete params `primary_lang` and
-      `secondary_lang` matching PRD F-02's dual-dropdown architecture and the
-      `/venues?primary_lang=FR&secondary_lang=ZH` endpoint spec in the tech stack.
-    - **Fix 9 (Long Waiting Time — PRD 8-Grid Gap):** `long_waiting_time` added as a
-      distinct enum value across `ReportSubmission`, `Report`, and `listReports` filter.
-      PRD US-04 AC2 and F-04 explicitly list both "Too Crowded" and "Long Waiting Time"
-      as separate grid slots; the original contract only had `large_crowd` → "Too Crowded"
-      with no entry for "Long Waiting Time".
     - **Fix 7 (Missing Auth Routes — F-13):** Added `/api/v1/auth/register`,
       `/api/v1/auth/login`, and `/api/v1/auth/reset-password` paths. These are required
       by F-13 (Flask-JWT-Extended) for the frontend to request initial JWT tokens.
