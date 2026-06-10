@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.4.1
+  version: 1.5.0
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
 
@@ -20,12 +20,57 @@ info:
       `POST /reports/{id}/confirmations`, `POST /user/favourites`) now document the
       `X-Client-Origin` header check and return `403 Forbidden` when the header value is
       `web`. Marked with the `x-web-readonly: true` extension for tooling.
+    - **Fix 5 (Report Filtering Logic):** `ReportSubmission` and `Report` schemas now
+      carry an `issue_type_label` field mapping each snake_case enum value to its
+      mockup display label. `ReportSubmission` gains an `available_issue_types` field
+      (populated by the backend) whose contents shrink/hide dynamically when `venue_id`
+      is present, based on the venue's category. Standalone reports expose all 8 labels.
+    - **Fix 6 (Future-Time Map Marker Colour):** `VenueBusyness` gains a boolean
+      `is_future_time_query` flag. When `true` (Auto Current Time = OFF), `busyness_color`
+      must be set to `#2563EB` (blue) by the backend and clients must render the map
+      marker in blue, indicating live telemetry is unavailable. `VenueBusynessResponse`
+      and `GET /venues/{venue_id}/busyness` document the `query_time` parameter and the
+      `forecast_mode: predicted` signal that triggers this state.
+    - **Fix 7 (Missing Auth Routes — F-13 Deviation):** Three auth paths added:
+      `POST /api/v1/auth/register`, `POST /api/v1/auth/login`, and
+      `POST /api/v1/auth/reset-password`. Corresponding request/response schemas added.
+      Without these the frontend cannot obtain the JWT tokens that all BearerAuth
+      endpoints require.
+    - **Fix 8 (Language Param Mismatch — F-02 Deviation):** `GET /api/v1/venues`
+      `languages` string param replaced with two discrete params `primary_lang` and
+      `secondary_lang` matching PRD F-02's dual-dropdown architecture and the
+      `/venues?primary_lang=FR&secondary_lang=ZH` endpoint spec in the tech stack.
+    - **Fix 9 (Long Waiting Time — PRD 8-Grid Gap):** `long_waiting_time` added as a
+      distinct enum value across `ReportSubmission`, `Report`, and `listReports` filter.
+      PRD US-04 AC2 and F-04 explicitly list both "Too Crowded" and "Long Waiting Time"
+      as separate grid slots; the original contract only had `large_crowd` → "Too Crowded"
+      with no entry for "Long Waiting Time".
+    - **Fix 7 (Missing Auth Routes — F-13):** Added `/api/v1/auth/register`,
+      `/api/v1/auth/login`, and `/api/v1/auth/reset-password` paths. These are required
+      by F-13 (Flask-JWT-Extended) for the frontend to request initial JWT tokens.
+      Also added `AuthRegisterRequest`, `AuthLoginRequest`, `AuthLoginResponse`,
+      `AuthResetPasswordRequest`, and `AuthResetPasswordResponse` schemas. Guest-mode
+      access is preserved: no auth required for map browsing, venue reading, report
+      viewing, or chatbot use per F-13 spec.
+    - **Fix 8 (Language Filter Mismatch — F-02):** `GET /api/v1/venues` `languages`
+      single-string parameter replaced with two separate fields: `primary_lang` and
+      `secondary_lang` (optional), matching the dual-dropdown UI state in F-02 and the
+      PRD tech stack note `/venues?primary_lang=FR&secondary_lang=ZH`.
+    - **Fix 9 (Missing issue_type `long_waiting_time` — F-04/US-04):** The PRD
+      explicitly names `Long Waiting Time` as one of the 8 standardized grid labels.
+      Added `long_waiting_time` to all `issue_type` enums and mapped it to the
+      `Long Waiting Time` display label. Previous contract erroneously omitted it.
+    - **Fix 10 (F-14 PDF is Web-client-side only):** Confirmed `GET /user/medical-passport`
+      render_token approach (v1.4.1) aligns with F-14: PDF is generated via
+      browser `window.print()` on the web client, not server-side. No further schema
+      changes needed beyond what was applied in v1.4.1.
 
 servers:
   - url: http://localhost:5000
     description: Local development server
 
 tags:
+  - name: Auth
   - name: Health
   - name: Integrations
   - name: Venues
@@ -39,6 +84,110 @@ tags:
   - name: App State
 
 paths:
+  # FIX 7 — Missing Auth Routes (F-13 Deviation)
+  # F-13 requires Flask-JWT-Extended for all authenticated API communication.
+  # Without these routes the frontend cannot request the initial JWT tokens.
+  # Guest access (map browse, venue read, report view, chatbot) remains open.
+
+  /api/v1/auth/register:
+    post:
+      tags: [Auth]
+      summary: Register a new user account
+      description: >
+        Creates a new user account via email, full name, and password (no
+        third-party OAuth per F-13). On success, returns a JWT access token and
+        triggers the "Finish Profile" intercept bottom-sheet prompt on the client.
+      operationId: registerUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRegisterRequest'
+      responses:
+        '201':
+          description: Account created. JWT tokens returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthLoginResponse'
+        '400':
+          description: Validation failed (missing fields, weak password, etc.).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '409':
+          description: Email already registered.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/auth/login:
+    post:
+      tags: [Auth]
+      summary: Authenticate and receive JWT tokens
+      description: >
+        Authenticates via email and password. Returns a short-lived JWT access
+        token and a refresh token. All BearerAuth-protected endpoints require
+        the access token in the Authorization header.
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthLoginRequest'
+      responses:
+        '200':
+          description: Authentication successful. JWT tokens returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthLoginResponse'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/auth/reset-password:
+    post:
+      tags: [Auth]
+      summary: Request a password reset email
+      description: >
+        Sends a tokenized password-reset link to the registered email address
+        per F-13 secure self-service password recovery requirement. Does not
+        confirm whether the email exists (prevents enumeration).
+      operationId: resetPassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthResetPasswordRequest'
+      responses:
+        '200':
+          description: Reset email dispatched if the address is registered.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResetPasswordResponse'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+
   /api/v1/health:
     get:
       tags: [Health]
@@ -72,7 +221,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-
   /api/v1/venues:
     get:
       tags: [Venues]
@@ -81,13 +229,34 @@ paths:
       security:
         - ApiKeyAuth: []
       parameters:
-        - name: languages
+        # FIX 8 — F-02 Language Filter: dual-field architecture
+        # PRD F-02 explicitly requires two separate fields matching the dual-dropdown
+        # UI (Primary Language + Secondary Language Optional). The previous single
+        # `languages` comma-string param did not match the frontend state model or
+        # the PRD tech stack note (/venues?primary_lang=FR&secondary_lang=ZH).
+        - name: primary_lang
           in: query
           required: false
-          description: Optional comma-separated language codes used to filter results.
+          description: >
+            Primary language filter — ISO 639-1 code (e.g. FR, ZH, ES). Filters map
+            pins to venues whose verified supported languages include this value.
+            Corresponds to the "Primary Language" dropdown in the Advanced Filters panel.
+            Pre-populated from the user's saved profile language preference but remains
+            inactive until explicitly applied.
           schema:
             type: string
-            example: FR,ES
+            example: FR
+        - name: secondary_lang
+          in: query
+          required: false
+          description: >
+            Optional secondary language filter — ISO 639-1 code (e.g. ZH, ES).
+            Corresponds to the "Secondary Language (Optional)" dropdown in the Advanced
+            Filters panel. When provided, venues must support BOTH primary_lang AND
+            secondary_lang to appear in results.
+          schema:
+            type: string
+            example: ZH
         - name: accessible
           in: query
           required: false
@@ -159,6 +328,11 @@ paths:
     get:
       tags: [Busyness]
       summary: Get realtime busyness for a venue
+      description: >
+        Returns the current busyness snapshot for a venue. When `query_time` is supplied
+        (Auto Current Time = OFF), live telemetry is unavailable; the backend sets
+        `is_future_time_query: true` and `busyness_color: "#2563EB"` in the response, and
+        clients must render the map marker in blue to signal predicted-only data.
       operationId: getVenueBusyness
       security:
         - ApiKeyAuth: []
@@ -168,6 +342,17 @@ paths:
           required: true
           schema:
             type: string
+        - name: query_time
+          in: query
+          required: false
+          description: >
+            ISO 8601 datetime for a non-current time query (Auto Current Time = OFF).
+            When present, the response reflects predicted busyness only; live telemetry
+            is unavailable and the map marker colour switches to blue (#2563EB).
+          schema:
+            type: string
+            format: date-time
+            example: "2025-06-12T18:00:00Z"
       responses:
         '200':
           description: Current busyness snapshot for the venue.
@@ -242,6 +427,7 @@ paths:
               - wheelchair_lift_broken
               - toilet_out_of_order
               - large_crowd
+              - long_waiting_time
               - protest_or_blockage
               - entrance_closed
               - ramp_blocked
@@ -862,6 +1048,140 @@ components:
       bearerFormat: JWT
 
   schemas:
+    AuthRegisterRequest:
+      type: object
+      additionalProperties: false
+      required: [full_name, email, password]
+      description: Registration payload. No third-party OAuth per F-13.
+      properties:
+        full_name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+          minLength: 8
+
+    AuthLoginRequest:
+      type: object
+      additionalProperties: false
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+
+    AuthLoginResponse:
+      type: object
+      required: [access_token, token_type, user_id]
+      description: >
+        JWT token pair returned on successful login or registration.
+        The access_token is a short-lived JWT used in the Authorization header
+        for all BearerAuth endpoints. The refresh_token allows silent re-auth.
+      properties:
+        access_token:
+          type: string
+          description: Short-lived JWT (Bearer token) for API authentication.
+        refresh_token:
+          type: string
+          description: Long-lived token for silent access token renewal.
+        token_type:
+          type: string
+          example: bearer
+        user_id:
+          type: string
+        finish_profile_prompt:
+          type: boolean
+          description: >
+            When true (new registrations), the client must display the
+            "Would you like to finish setting up your Medical Profile and ID
+            now?" intercept sheet per F-13 acceptance criteria.
+
+    AuthResetPasswordRequest:
+      type: object
+      additionalProperties: false
+      required: [email]
+      properties:
+        email:
+          type: string
+          format: email
+
+    AuthResetPasswordResponse:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+          example: If this email is registered, a reset link has been sent.
+
+    # FIX 7 — Auth schemas (F-13)
+    RegisterRequest:
+      type: object
+      required: [full_name, email, password]
+      additionalProperties: false
+      properties:
+        full_name:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+          minLength: 8
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      additionalProperties: false
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+
+    AuthTokenResponse:
+      type: object
+      required: [access_token, token_type, user_id]
+      properties:
+        access_token:
+          type: string
+          description: Signed JWT (Flask-JWT-Extended). Use as Bearer token.
+        token_type:
+          type: string
+          example: bearer
+        user_id:
+          type: string
+        show_profile_setup_prompt:
+          type: boolean
+          description: >
+            True on first registration — frontend must display the Medical Profile
+            setup intercept bottom sheet per F-13.
+
+    PasswordResetRequest:
+      type: object
+      required: [email]
+      additionalProperties: false
+      properties:
+        email:
+          type: string
+          format: email
+
+    PasswordResetResponse:
+      type: object
+      required: [message]
+      properties:
+        message:
+          type: string
+          example: If that email is registered, a reset link has been sent.
+
     HealthResponse:
       type: object
       required: [status, service, version]
@@ -1055,6 +1375,10 @@ components:
 
     VenueBusyness:
       type: object
+      # FIX 6 — Future-Time Map Marker Colour
+      # When is_future_time_query is true (Auto Current Time = OFF), live telemetry is
+      # unavailable. The backend MUST set busyness_color to "#2563EB" (blue) and clients
+      # MUST render the map marker blue to indicate predicted-only data.
       properties:
         busyness_score:
           type: integer
@@ -1065,6 +1389,26 @@ components:
           enum: [quiet, moderate, busy]
         busyness_color:
           type: string
+          description: >
+            Hex colour for the map marker. Normally reflects live busyness level
+            (green/amber/red). When `is_future_time_query` is `true`, this MUST be
+            `#2563EB` (blue) to indicate live telemetry is unavailable.
+          example: "#2563EB"
+        is_future_time_query:
+          type: boolean
+          description: >
+            True when the busyness data is for a non-current (future or past) time
+            (i.e. Auto Current Time = OFF). Clients must switch all map markers to
+            blue (#2563EB) uniformly when this flag is true, as live busyness
+            telemetry is unavailable for the queried time.
+          default: false
+        data_mode:
+          type: string
+          enum: [live, predicted]
+          description: >
+            Indicates whether busyness data is sourced from live telemetry (`live`)
+            or from forecast/historical prediction (`predicted`). Always `predicted`
+            when `is_future_time_query` is `true`.
         estimated_wait_minutes:
           type: integer
           minimum: 0
@@ -1149,22 +1493,73 @@ components:
 
     ReportSubmission:
       type: object
+      # FIX 5 — Report Filtering Logic
+      # issue_type uses backend snake_case identifiers. issue_type_label carries the
+      # matching mockup display label. available_issue_types is populated by the backend:
+      #   - No venue_id (standalone): all 8 categories exposed.
+      #   - venue_id present: list filtered/hidden based on that venue's category.
       additionalProperties: false
       required: [issue_type, latitude, longitude]
       properties:
         venue_id:
           type: string
+          description: >
+            When present, the backend filters `available_issue_types` dynamically
+            based on the venue's category (e.g. a pharmacy will not expose
+            `elevator_broken`). Omit for standalone, non-venue-bound reports.
         issue_type:
           type: string
+          description: >
+            Backend identifier for the report category. See `issue_type_label` for
+            the corresponding mockup display label.
           enum:
             - elevator_broken
             - wheelchair_lift_broken
             - toilet_out_of_order
             - large_crowd
+            - long_waiting_time
             - protest_or_blockage
             - entrance_closed
             - ramp_blocked
             - closed_early
+        available_issue_types:
+          type: array
+          readOnly: true
+          description: >
+            Backend-populated list of issue types valid for this submission context.
+            Standalone reports (no venue_id) return all 8 entries. Venue-bound reports
+            return only the subset relevant to that venue's category — irrelevant types
+            are hidden rather than disabled. Clients must render only these options.
+          items:
+            type: object
+            required: [value, label]
+            properties:
+              value:
+                type: string
+                description: Snake_case identifier sent in the `issue_type` field.
+                enum:
+                  - elevator_broken
+                  - wheelchair_lift_broken
+                  - toilet_out_of_order
+                  - large_crowd
+                  - long_waiting_time
+                  - protest_or_blockage
+                  - entrance_closed
+                  - ramp_blocked
+                  - closed_early
+              label:
+                type: string
+                description: Mockup display label shown to the user.
+                enum:
+                  - "Lift Broken"
+                  - "Wheelchair Lift Broken"
+                  - "Toilet out of service"
+                  - "Too Crowded"
+                  - "Long Waiting Time"
+                  - "Protest / Blockage"
+                  - "Entrance Blocked"
+                  - "Ramp Blocked"
+                  - "Closed Early"
         latitude:
           type: number
           format: float
@@ -1226,15 +1621,44 @@ components:
           type: string
         issue_type:
           type: string
+          description: Snake_case backend identifier for the report category.
           enum:
             - elevator_broken
             - wheelchair_lift_broken
             - toilet_out_of_order
             - large_crowd
+            - long_waiting_time
             - protest_or_blockage
             - entrance_closed
             - ramp_blocked
             - closed_early
+        issue_type_label:
+          type: string
+          readOnly: true
+          description: >
+            FIX 5 — Mockup display label corresponding to `issue_type`.
+            Standalone label mapping (all 8 categories):
+              elevator_broken         → "Lift Broken"
+              wheelchair_lift_broken  → "Wheelchair Lift Broken"
+              toilet_out_of_order     → "Toilet out of service"
+              large_crowd             → "Too Crowded"
+              long_waiting_time       → "Long Waiting Time"
+              protest_or_blockage     → "Protest / Blockage"
+              entrance_closed         → "Entrance Blocked"
+              ramp_blocked            → "Ramp Blocked"
+              closed_early            → "Closed Early"
+            For venue-bound reports the backend only returns labels relevant to
+            that venue's category; others are hidden (not disabled).
+          enum:
+            - "Lift Broken"
+            - "Wheelchair Lift Broken"
+            - "Toilet out of service"
+            - "Too Crowded"
+            - "Long Waiting Time"
+            - "Protest / Blockage"
+            - "Entrance Blocked"
+            - "Ramp Blocked"
+            - "Closed Early"
         venue_id:
           type: string
         venue_name:
