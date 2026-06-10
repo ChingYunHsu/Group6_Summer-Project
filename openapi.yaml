@@ -1,8 +1,25 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.4.0
-  description: Shared REST API contract for ClearPath frontend and backend teams.
+  version: 1.4.1
+  description: |
+    Shared REST API contract for ClearPath frontend and backend teams.
+
+    ## Changelog — v1.4.1
+    - **Fix 1 (Auth Binding):** `GET /user/profile` and `GET /user/settings` upgraded from
+      `ApiKeyAuth` to `BearerAuth` (JWT) so the backend can isolate per-user MySQL sessions.
+    - **Fix 2 (Medical Data / D10 Compliance):** `GET /user/medical-passport` no longer
+      returns a server-hosted `pdf_url`. The response is a lightweight audit acknowledgement
+      containing a short-lived `render_token` (signed JWT, 5-min TTL). The Web frontend
+      renders the A4 passport client-side after the user scans the mobile QR code; zero
+      clinical data is written to cloud storage.
+    - **Fix 3 (Server-Side Storage Risk):** `MedicalPassportResponse` schema updated —
+      `pdf_url` field removed and replaced with `render_token` to eliminate unencrypted
+      clinical PDF storage on the server.
+    - **Fix 4 (Web Read-Only Gating):** All write endpoints (`POST /reports`,
+      `POST /reports/{id}/confirmations`, `POST /user/favourites`) now document the
+      `X-Client-Origin` header check and return `403 Forbidden` when the header value is
+      `web`. Marked with the `x-web-readonly: true` extension for tooling.
 
 servers:
   - url: http://localhost:5000
@@ -242,12 +259,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ReportListResponse'
+
+    # FIX 4 — Web Read-Only Gating
     post:
       tags: [Reports]
       summary: Submit a crowd or accessibility report
+      description: >
+        **Mobile-only write endpoint.**
+        The backend checks the `X-Client-Origin` header before processing any payload.
+        Requests originating from the Web client (`X-Client-Origin: web`) are rejected
+        with `403 Forbidden` to enforce the PRD Web Read-Only constraint and suppress
+        malicious payloads from the web surface.
+      x-web-readonly: true
       operationId: submitReport
       security:
         - BearerAuth: []
+      parameters:
+        - name: X-Client-Origin
+          in: header
+          required: false
+          description: >
+            Client platform identifier. The backend enforces `mobile` for all write
+            operations. Any request carrying `web` (or no recognised origin on hardened
+            environments) is rejected with `403 Forbidden` before the payload is parsed.
+          schema:
+            type: string
+            enum: [mobile, web]
       requestBody:
         required: true
         content:
@@ -273,11 +310,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: >-
+            Forbidden. Write operations are not permitted from the Web client.
+            The server detected `X-Client-Origin: web` (or an equivalent web-platform
+            signal) and has suppressed the payload without processing it.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
   /api/v1/reports/{report_id}/confirmations:
+    # FIX 4 — Web Read-Only Gating
     post:
       tags: [Reports]
       summary: Confirm or resolve an existing report
+      description: >
+        **Mobile-only write endpoint.**
+        Returns `403 Forbidden` when `X-Client-Origin: web` is detected.
+      x-web-readonly: true
       operationId: confirmReport
       security:
         - BearerAuth: []
@@ -288,6 +339,15 @@ paths:
           description: Unique report identifier.
           schema:
             type: string
+        - name: X-Client-Origin
+          in: header
+          required: false
+          description: >
+            Client platform identifier. Must be `mobile` for write access.
+            Requests with value `web` are rejected with 403 Forbidden.
+          schema:
+            type: string
+            enum: [mobile, web]
       requestBody:
         required: true
         content:
@@ -309,6 +369,12 @@ paths:
                 $ref: '#/components/schemas/ValidationErrorResponse'
         '401':
           description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden. Write operations are not permitted from the Web client.
           content:
             application/json:
               schema:
@@ -379,13 +445,16 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  # FIX 1 — Auth Binding: upgraded from ApiKeyAuth to BearerAuth (JWT)
+  # Without a Bearer token the backend cannot resolve the authenticated user's
+  # MySQL row; ApiKeyAuth is app-level and does not carry a user identity claim.
   /api/v1/user/profile:
     get:
       tags: [User]
       summary: Get the current user profile
       operationId: getUserProfile
       security:
-        - ApiKeyAuth: []
+        - BearerAuth: []   # FIX 1: was ApiKeyAuth — JWT required for per-user session isolation
       responses:
         '200':
           description: Current user profile.
@@ -394,19 +463,20 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserProfile'
         '401':
-          description: Invalid or missing API key.
+          description: Invalid or missing bearer token.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  # FIX 1 — Auth Binding: upgraded from ApiKeyAuth to BearerAuth (JWT)
   /api/v1/user/settings:
     get:
       tags: [User]
       summary: Get user settings
       operationId: getUserSettings
       security:
-        - ApiKeyAuth: []
+        - BearerAuth: []   # FIX 1: was ApiKeyAuth — JWT required for per-user session isolation
       responses:
         '200':
           description: User settings.
@@ -415,7 +485,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserSettings'
         '401':
-          description: Invalid or missing API key.
+          description: Invalid or missing bearer token.
           content:
             application/json:
               schema:
@@ -462,12 +532,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+
+    # FIX 4 — Web Read-Only Gating
     post:
       tags: [User]
       summary: Add a venue to favourites
+      description: >
+        **Mobile-only write endpoint.**
+        Returns `403 Forbidden` when `X-Client-Origin: web` is detected.
+      x-web-readonly: true
       operationId: addFavourite
       security:
         - BearerAuth: []
+      parameters:
+        - name: X-Client-Origin
+          in: header
+          required: false
+          description: >
+            Client platform identifier. Must be `mobile` for write access.
+            Requests with value `web` are rejected with 403 Forbidden.
+          schema:
+            type: string
+            enum: [mobile, web]
       requestBody:
         required: true
         content:
@@ -483,6 +569,12 @@ paths:
                 $ref: '#/components/schemas/Favourite'
         '401':
           description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '403':
+          description: Forbidden. Write operations are not permitted from the Web client.
           content:
             application/json:
               schema:
@@ -617,10 +709,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  # FIX 2 & FIX 3 — Medical Data Starvation / Server-Side Storage Risk
+  # Per D10, all sensitive medical data is strictly client-side. This endpoint
+  # no longer triggers server-side PDF generation or storage. Instead it returns
+  # a short-lived render_token (signed JWT, 5-min TTL) that authorises the Web
+  # frontend to render the passport client-side after the user scans the mobile
+  # QR code. Zero clinical rows or PDF files are written to the cloud.
   /api/v1/user/medical-passport:
     get:
       tags: [User]
-      summary: Generate the user medical passport PDF
+      summary: Issue a render token for client-side medical passport generation
+      description: >
+        **D10 Compliant — No server-side PDF storage.**
+
+        This endpoint acts as a lightweight audit log and token issuer only.
+        The Web frontend renders the A4 passport PDF entirely client-side using
+        data already held locally on the user's device, accessed after scanning
+        the mobile QR code that encodes the `render_token` returned here.
+
+        No clinical payload is transmitted to or stored on the server. The
+        `pdf_url` field from v1.4.0 has been removed (Fix 3 — Server-Side
+        Storage Risk).
       operationId: getMedicalPassport
       security:
         - BearerAuth: []
@@ -633,7 +742,10 @@ paths:
             example: en
       responses:
         '200':
-          description: Medical passport generated successfully.
+          description: >-
+            Render token issued. No clinical data is stored server-side.
+            The client uses the render_token to authorise local PDF rendering
+            after QR scan. Token expires in 5 minutes.
           content:
             application/json:
               schema:
@@ -1314,14 +1426,28 @@ components:
           type: string
           format: date-time
 
+    # FIX 2 & FIX 3 — Medical Data / Server-Side Storage Risk
+    # pdf_url removed. No clinical PDF is stored server-side (D10 mandate).
+    # render_token is a short-lived signed JWT (5-min TTL) that the Web frontend
+    # exchanges after QR scan to authorise purely client-side PDF rendering.
     MedicalPassportResponse:
       type: object
-      required: [status, pdf_url]
+      required: [status]
+      description: >
+        Medical passport generation acknowledgement. No clinical PDF is stored
+        server-side (D10 mandate). The Web frontend renders the passport
+        client-side from locally-held data after scanning the mobile QR code.
+        This response acts as a lightweight audit log entry only.
       properties:
         status:
           type: string
-        pdf_url:
+          example: generated
+        render_token:
           type: string
+          description: >
+            Short-lived signed JWT (5-minute TTL) the Web frontend exchanges
+            via QR scan to authorise client-side PDF rendering. Contains no
+            clinical payload — only a user reference and expiry claim.
         language:
           type: string
         generated_at:
