@@ -52,22 +52,33 @@ graph LR
 
 ## 1. Git Branching & Pull Request (PR) Policy
 
-The `main` branch is locked and reserved strictly for stable, production-ready code. No direct pushes to `main` are allowed.
+The main branch is locked and reserved strictly for stable, production-ready code. No direct pushes to main are allowed.
 
 ### Branch Naming Convention
 When working on a backlog task, create a separate feature branch using the following shortened prefix formats:
-* `feature/fe-mob-[task]` (Mobile Front-End / React Native, e.g., `feature/fe-mob-login`)
-* `feature/fe-web-[task]` (Web Front-End / Dashboard, e.g., `feature/fe-web-charts`)
-* `feature/be-[task]`     (Back-End / Flask & Poetry, e.g., `feature/be-clinic-api`)
-* `feature/db-[task]`     (Database & Data Processing, e.g., `feature/db-nyc-scraping`)
-* `bugfix/[issue]`        (For resolving broken code or system crashes)
+
+    feature/fe-mob-[task] (Mobile Front-End / React Native, e.g., feature/fe-mob-login)
+
+    feature/fe-web-[task] (Web Front-End / Dashboard, e.g., feature/fe-web-charts)
+
+    feature/be-[task]     (Back-End / Flask & Poetry, e.g., feature/be-clinic-api)
+
+    feature/db-[task]     (Database & Data Processing, e.g., feature/db-nyc-scraping)
+
+    bugfix/[issue]        (For resolving broken code or system crashes)
 
 ### Pull Request & Integration Workflow
-1. Commit and push your work to your remote feature branch.
-2. Open a **Pull Request (PR)** on GitHub targeting the `main` branch.
-3. Link your PR to the corresponding **Notion Backlog Task**.
-4. **Peer Review Requirement:** Tag at least one team member to review your code. 
-5. Once approved by your peer reviewer, the branch can be safely merged into `main`.
+Commit and push your work to your remote feature branch.
+
+Open a Pull Request (PR) on GitHub targeting the main branch.
+
+Link your PR to the corresponding Notion Backlog Task.
+
+Peer Review & Conflict Handling:
+
+* If there is a code conflict: Tag the teammate whose branch has the conflict to review and approve it within two days. Once they have approved, the Integration Lead (Ivy) will personally handle the merge.
+
+* If there are no conflicts: You are free to merge your own PR once it’s ready, but please make sure to follow the chronological order in which the PRs were created to prevent any race conditions.
 
 ---
 
