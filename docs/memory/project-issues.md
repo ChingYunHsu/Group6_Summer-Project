@@ -20,7 +20,7 @@
 ### 3. ~~busyness_forecasts 表缺失 — 12h 预测无数据源~~ ✅ 已解决 2026-06-09
 - **影响**: `GET /venues/{id}/busyness/forecast` 返回假数据
 - **OpenAPI**: 定义了 12 元素数组 `[{offset_hours, percent, level}]`
-- **状态**: ✅ 已创建 `busyness_forecasts` 表 (D4: quiet/moderate/busy)
+- **状态**: ✅ 已创建 `busyness_forecasts` 表 (D4: quiet/moderate/busy/no_data)
 - **详见**: `execution-plan.md` Phase 4
 
 ---
@@ -35,8 +35,8 @@
 | `INSIGHTS_DASHBOARD.district` | ✅ 已改为 `"midtown_east"` | enum lowercase `midtown_east` | ✅ 已修复（风格一致性）2026-06-09 |
 
 ### 5. 拥挤度命名 — 已冻结 (D4)
-- 三级统一: `quiet` / `moderate` / `busy`
-- `busyness_scores.level` 允许 NULL 表示无数据
+- **四级统一**: `quiet` / `moderate` / `busy` / `no_data`
+- `busyness_scores.level` 使用 ENUM，`no_data` = 🔵 Blue (F-06: No Live Info)
 - **状态**: ✅ 已执行 ALTER TABLE 2026-06-09
 
 ### 6. 报告 issue_type — 已冻结 (D5 + D8)
@@ -52,11 +52,14 @@
 
 ## 📋 P2 — 待确认事项
 
-### 8. 医疗数据边界 — 已冻结 (D10)
-- Final: 严格本地存储 (AsyncStorage/SQLite)
-- 服务器 Profile 只保留账户显示字段
-- Medical ID / Emergency Contacts 由客户端本地 API 处理
-- **已确认**: OpenAPI 已移除 medical-id 和 emergency-contacts 端点
+### 8. 医疗数据边界 — 已冻结 (D10) — 修订 2026-06-09
+- ~~Final: 严格本地存储 (AsyncStorage/SQLite)~~
+- **新方案**: 云端加密存储（AES-256-GCM），传输 + 静态双层加密
+- **加密方式**: Per-user 密钥（PBKDF2 from password + 服务端 salt）
+- **保留端点**: GET/PUT `/api/v1/profile`（含加密医学字段）
+- **新增端点**: GET/PUT `/api/v1/user/medical-id`、`/api/v1/user/emergency-contacts`（加密读写）
+- **变更原因**: Web 端 Medical Passport PDF 列印功能需要服务端可读取医疗数据
+- **已恢复**: OpenAPI 需重新加入 medical-id 和 emergency-contacts 端点
 
 ### 9. RAG 数据层 — 已冻结 (D9)
 - embedding 存储: MySQL JSON/BLOB（~3500 条场馆数据量足够）
@@ -66,7 +69,7 @@
 
 ### 10. busyness_scores 表 0 行
 - API 端点已定义 (v1.4.0), 但无实际数据源
-- ~~需确认数据来源~~ ✅ 表结构已就绪 (Phase 4: ENUM 改为 quiet/moderate/busy)
+- ~~需确认数据来源~~ ✅ 表结构已就绪 (Phase 4: ENUM 改为 quiet/moderate/busy/no_data)
 - **busyness_forecasts 表**: ✅ 已创建 (Phase 4, 2026-06-09)
 - **状态**: 表结构就绪，数据填充待 ML pipeline (BestTime API / MTA / 手动)
 
@@ -78,7 +81,7 @@
 |---|------|---------|------|
 | 1 | `phone_number` vs `phone` | mock_data.py 已改为 `phone` | session 2026-06-06 |
 | 2 | forecast_4h/8h 残留字段 | 已从 DB 删除 + schema 同步 | session 2026-06-06 |
-| 3 | Medical ID 端点 | 已从 OpenAPI 移除 (device-local) | openapi_gap (1.3) |
+| 3 | ~~Medical ID 端点~~ | ~~已从 OpenAPI 移除 (device-local)~~ → D10 修订后需恢复（加密版） | openapi_gap (1.3) → D10 修订 2026-06-09 |
 | 4 | 12h 预测结构 | 独立 `busyness_forecasts` 表方案确定 | openapi_gap (1.5) |
 | 5 | issue_type 缺 2 值 | 已补 `ramp_blocked` + `closed_early` | openapi_gap (1.4) |
 | 6 | GET /reports 无过滤 | 已加 `venue_id`, `issue_type`, `status` | openapi_gap (#10) |
@@ -95,7 +98,7 @@
 | 17 | D7 `auth_subject` | 不需要, 邮箱即认证标识 | grill-with-docs 2026-06-09 |
 | 18 | D8 报告类别存储 | 字典表 `report_categories` (按场馆类型过滤) | grill-with-docs 2026-06-09 |
 | 19 | D9 RAG embedding | MySQL JSON/BLOB (~3500条足够) | grill-with-docs 2026-06-09 |
-| 20 | D10 医疗数据边界 | 严格本地存储, 不云同步 | grill-with-docs 2026-06-09 |
+| 20 | ~~D10 医疗数据边界~~ | ~~严格本地存储, 不云同步~~ → D10 修订: 云端加密存储 (AES-256-GCM) | grill-with-docs 2026-06-09 → 修订 2026-06-09 |
 | 11 | Chatbot RAG | 已加 POST 端点 | openapi_gap (#2) |
 | 12 | Medical Passport PDF | 已加 GET 端点 | openapi_gap (#5) |
 | 13 | RouteOption per-mode | 已加 `summary_by_mode` | openapi_gap (#13) |

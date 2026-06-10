@@ -19,11 +19,13 @@
 - "Submit Anonymous Report" means **anonymized after submission**, not anonymous submission
 - **Team decision (applied in YAML)**: `ReportConfirmationRequest` now requires `user_id` (L1082); `anonymous` retained as optional display flag (L1065-1067)
 
-### 1.3 Medical ID / Emergency Contacts — Removed from API (Team Decision)
-- `GET /user/medical-id` and `GET /user/emergency-contacts` are **not in OpenAPI** ✅
-- Medical data stays **local on the device** for privacy
-- SOS panic button works without server-side medical data
-- `UserSettings.show_medical_id_on_sos` is a device-local toggle, not a server endpoint
+### 1.3 Medical ID / Emergency Contacts — ~~Removed from API~~ D10 修订后需恢复 (2026-06-09)
+- ~~`GET /user/medical-id` and `GET /user/emergency-contacts` are **not in OpenAPI** ✅~~
+- ~~Medical data stays **local on the device** for privacy~~
+- **D10 修订**: Medical data 加密存储于服务端（AES-256-GCM），需恢复 GET/PUT 端点
+- **加密方式**: Per-user 密钥（PBKDF2 from password + 服务端 salt）
+- **保留**: SOS panic button works without server-side medical data
+- **保留**: `UserSettings.show_medical_id_on_sos` is a device-local toggle
 
 ### 1.4 Report Confirmation Action Enum — Accepted
 - US-06 specifies 2 buttons: **[Confirm]** and **[Resolve]**
@@ -88,7 +90,7 @@
 
 - OpenAPI defines `GET /venues/{id}/busyness/forecast` returning 12h forecast
 - mock_data.py provides static forecast data
-- **DB `busyness_forecasts` table created** (D4: quiet/moderate/busy)
+- **DB `busyness_forecasts` table created** (D4: quiet/moderate/busy/no_data)
 - **API contract**: ✅ complete; **Data source**: ✅ table ready (ML pipeline can write)
 
 ---

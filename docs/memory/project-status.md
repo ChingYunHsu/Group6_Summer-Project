@@ -51,7 +51,7 @@
 |-------|-------------|--------|
 | `user_reports` | ✅ Added `user_id` FK, DROP `reported_by`, `issue_type` → VARCHAR + FK | 2026-06-09 |
 | `report_confirmations` | ✅ Added `user_id` FK + `UNIQUE (report_id, user_id)` | 2026-06-09 |
-| `busyness_scores` | ✅ ENUM changed to `quiet/moderate/busy`, nullable | 2026-06-09 |
+| `busyness_scores` | ✅ ENUM changed to `quiet/moderate/busy/no_data`, nullable | 2026-06-09 |
 
 ---
 

@@ -36,7 +36,7 @@
 | B2.1 | Core App Entry, Poetry & Flask Blueprints Setup | Week 4 | `pyproject.toml` + Blueprints (`/auth`, `/profile`, `/map`) | ❌ |
 | B2.2 | MySQL Table Implementation & Connection Pooling | Week 4 | DDL execution + FK constraints + district index + Flask-SQLAlchemy pooling | ✅ DDL done |
 | B2.3 | Authentication Gateway & JWT Session API | Week 4 | `/auth/register`, `/auth/login`, `/auth/guest` + JWT | ❌ users table ready |
-| B2.4 | Personal Profile & Medical ID CRUD Endpoints | Week 4 | `GET/PUT /api/v1/profile` | ❌ D10: medical data device-local only |
+| B2.4 | Personal Profile & Medical ID CRUD Endpoints | Week 4 | `GET/PUT /api/v1/profile` + medical endpoints (encrypted) | ❌ D10 修订: 需实现加密存储 |
 
 ### Data (fangxun.wu)
 
@@ -132,13 +132,13 @@
 | D1 | Email + password (bcrypt) | S2: B2.3 |
 | D2 | No token = Guest | S2: B2.3 |
 | D3 | Anonymize after submission, keep `anonymous` | S3: B3.3 |
-| D4 | Three levels `quiet/moderate/busy`, NULL = no data | S3: D3.2 |
+| D4 | **Four levels** `quiet/moderate/busy/no_data` (F-06 color alignment) | S3: D3.2 |
 | D5 | OpenAPI 8 issue_type values | S3: B3.3 |
 | D6 | Confirmation overwrite, `UNIQUE (report_id, user_id)` | S3: B3.3 |
 | D7 | No `auth_subject` needed | S2: B2.3 |
 | D8 | Dictionary table `report_categories` (filter by venue type) | S3: B3.3 |
 | D9 | MySQL JSON/BLOB for RAG embeddings | S4: D4.1 |
-| D10 | Strict local storage, no cloud sync | S2: B2.4 |
+| D10 | Cloud encrypted storage (AES-256-GCM), no local copy | S2: B2.4 |
 
 ---
 

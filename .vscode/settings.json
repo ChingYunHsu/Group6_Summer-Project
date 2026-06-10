@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python3 -c \"\nimport json\nwith open\\('/Users/alex/Documents/COMP47360-Research_Practicum/Group6_Summer-Project/Data\\+ML/test/6\\.8-6\\.12_DB/dqr_cleaning_pipeline\\.ipynb'\\) as f:\n    nb = json\\.load\\(f\\)\n\n# Compare cell 28 and 29 exactly\nsrc28 = ''\\.join\\(nb\\['cells'\\]\\[28\\]\\['source'\\]\\)\nsrc29 = ''\\.join\\(nb\\['cells'\\]\\[29\\]\\['source'\\]\\)\nprint\\(f'Cell 28 length: \\{len\\(src28\\)\\}'\\)\nprint\\(f'Cell 29 length: \\{len\\(src29\\)\\}'\\)\nprint\\(f'Identical: \\{src28 == src29\\}'\\)\n\n# Show diff if not identical\nif src28 != src29:\n    lines28 = src28\\.splitlines\\(\\)\n    lines29 = src29\\.splitlines\\(\\)\n    for j, \\(a, b\\) in enumerate\\(zip\\(lines28, lines29\\)\\):\n        if a != b:\n            print\\(f'Line \\{j\\}: 28=\\{repr\\(a\\)\\} \\| 29=\\{repr\\(b\\)\\}'\\)\n\n# Show full cell 29\nprint\\(\\)\nprint\\('=== Full Cell 29 ==='\\)\nprint\\(src29\\)\n\"\n$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
