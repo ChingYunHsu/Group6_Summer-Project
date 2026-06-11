@@ -20,7 +20,6 @@ jobs:
     - name: Configure Git Safe Directory
       run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-    # FIXED: Upgraded Python runner environment to 3.11 to align with your team's pyproject.toml
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
@@ -33,6 +32,10 @@ jobs:
         virtualenvs-in-project: true
         installer-parallel: true
 
+    - name: Force Local Virtualenv Location
+      run: poetry config virtualenvs.in-project true
+      working-directory: ./backend
+
     - name: Load cached venv
       id: cached-poetry-dependencies
       uses: actions/cache@v4
@@ -40,13 +43,11 @@ jobs:
         path: backend/.venv
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-    # FIXED: Replaced '--with dev' with vanilla install to maximize backwards compatibility with all Poetry dependency formats
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
       working-directory: ./backend 
 
-    # FIXED: Invoked the virtual environment binary directly to bypass Linux PATH isolation and Poetry parsing conflicts
     - name: Run Pytest with Coverage
       run: |
         .venv/bin/python -m pytest tests/ --cov=. --cov-fail-under=60
