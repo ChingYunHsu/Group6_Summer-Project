@@ -1,19 +1,31 @@
 from copy import deepcopy
 
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 
 from auth import require_api_key
 from mock_data import (
-    EMERGENCY_CONTACTS,
     FAVOURITES,
     LANGUAGE_OPTIONS,
-    MEDICAL_ID,
     USER_PROFILE,
     USER_SETTINGS,
 )
 
 
 bp = Blueprint("user", __name__)
+
+# Registration-locked fields (user_id, email, full_name) are intentionally
+# excluded — they cannot be edited via this endpoint.
+PROFILE_EDITABLE_FIELDS = {"phone", "nationality", "spoken_languages"}
+
+SETTINGS_EDITABLE_FIELDS = {
+    "selected_language",
+    "selected_language_native",
+    "location_access_enabled",
+    "notifications_enabled",
+    "privacy_mode",
+    "guest_mode_enabled",
+    "show_medical_id_on_sos",
+}
 
 
 @bp.get("/api/v1/user/profile")
@@ -22,21 +34,59 @@ def get_user_profile():
     return jsonify(deepcopy(USER_PROFILE))
 
 
-@bp.get("/api/v1/user/medical-id")
+@bp.put("/api/v1/user/profile")
 @require_api_key
-def get_medical_id():
-    return jsonify(deepcopy(MEDICAL_ID))
+def update_user_profile():
+    payload = request.get_json(silent=True) or {}
 
+    invalid_fields = [field for field in payload if field not in PROFILE_EDITABLE_FIELDS]
+    if invalid_fields:
+        return (
+            jsonify(
+                {
+                    "error": "Validation failed.",
+                    "missing_fields": [],
+                    "invalid_fields": invalid_fields,
+                }
+            ),
+            400,
+        )
 
-@bp.get("/api/v1/user/emergency-contacts")
-@require_api_key
-def get_emergency_contacts():
-    return jsonify({"count": len(EMERGENCY_CONTACTS), "items": deepcopy(EMERGENCY_CONTACTS)})
+    for field in PROFILE_EDITABLE_FIELDS:
+        if field in payload:
+            USER_PROFILE[field] = payload[field]
+
+    return jsonify(deepcopy(USER_PROFILE))
 
 
 @bp.get("/api/v1/user/settings")
 @require_api_key
 def get_user_settings():
+    return jsonify(deepcopy(USER_SETTINGS))
+
+
+@bp.put("/api/v1/user/settings")
+@require_api_key
+def update_user_settings():
+    payload = request.get_json(silent=True) or {}
+
+    invalid_fields = [field for field in payload if field not in SETTINGS_EDITABLE_FIELDS]
+    if invalid_fields:
+        return (
+            jsonify(
+                {
+                    "error": "Validation failed.",
+                    "missing_fields": [],
+                    "invalid_fields": invalid_fields,
+                }
+            ),
+            400,
+        )
+
+    for field in SETTINGS_EDITABLE_FIELDS:
+        if field in payload:
+            USER_SETTINGS[field] = payload[field]
+
     return jsonify(deepcopy(USER_SETTINGS))
 
 

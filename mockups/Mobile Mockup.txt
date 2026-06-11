@@ -1,0 +1,1453 @@
+Mobile Page List 
+
+
+ClearPath Mobile App - Official Page & 
+Specification List 
+Mockup link : https://stitch.withgoogle.com/projects/13086852146672746071?pli=1 
+ 
+ 
+1. Onboarding & Legal 
+Page 1: Onboarding - Language Search 
+●​ Description: The initial language preference initialization setup screen. It features a 
+live search bar ("Search other languages...") and a dual-naming grid layout enforcing 
+the notation template: [Language Name in its Native Script] ([Language Name in 
+English]). 
+●​ UI Components: Includes a primary blue "Continue" button at the bottom. By 
+continuing, a caption text alerts users that they agree to the platform's Terms of 
+Service and Privacy Policy. 
+Page 2: Onboarding - Terms of Service & Privacy Policy 
+●​ Description: The regulatory compliance agreement and review page titled "Legal & 
+Privacy". It features individual, explicit checkboxes for the "Terms of Service" and 
+"Privacy Policy". 
+●​ Security Standards: Explicitly highlights that all sensitive health data is secured with 
+256-bit HIPAA compliant encryption. It finishes with a full-width blue "Accept & 
+Continue" action button. 
+Page 3: Onboarding - Permissions of Location Access 
+●​ Description: The native permission prompt gateway titled "Help us find you". It 
+guides the user to enable location services to unlock real-time clinic mapping and 
+shortest wait times. 
+●​ UI Components: Features a primary blue "Enable Location Access" button and a 
+secondary "I'll do this later" option to safely pass. 
+●​ Copy Enhancement: Under the primary subtitle, an ultra-short friendly 
+recommendation tip is appended to prevent layout crowding: (Device GPS 
+recommended for route searching.). 
+2. Authentication Gateway 
+Page 4: Onboarding - Secure Login Wall 
+●​ Description: A local data privacy-first marketing screen titled "Secure Your Medical 
+ID". It prompts the user to safeguard chronic conditions and allergies, offering a 
+primary blue "Log In / Register" button and a clear "Continue as Guest" option to 
+bypass authentication. 
+Page 5: Onboarding - Login & Registration Workspace 
+●​ Description: The localized credential entry dashboard. 
+
+
+●​ Sign-In View: Titled "Welcome back", hosting input fields for Email Address and 
+Password with a prominent blue "Sign In" button. 
+●​ Registration View: Titled "Get started", hosting Full Name, Email, and Password 
+inputs with HIPAA asset labels. Upon successful creation, a temporary intercept 
+sheet asks: "Would you like to finish setting up your Medical Profile and ID now?" 
+with action buttons: [Finish Profile & ID] vs. [Skip for Now]. 
+3. Core Map & Crowdsourced Reporting 
+Page 6: Main Map View (Dynamic Telemetry Dashboard) 
+●​ Description: The primary map viewport overlayed with a top floating search bar 
+("Search clinics or pharmacies..."), an advanced filter icon button, and a rapid 
+horizontal category filter chip row supporting Clinics, Pharmacy, and AED categories. 
+Houses a red floating SOS button and a yellow reporting action icon. 
+Page 6-A: Interactive Bottom Sheet Filter (Dynamic UI) 
+●​ Description: Tapping the filter icon pulls open the "Filters" tray modal. It features an 
+"Auto Current Time" toggle switch with two strict visual states: 
+○​ State 1: "Auto Current Time" = ON (Corporate Blue): Completely HIDES 
+the manual [Date] and [Time] selection inputs from the layout hierarchy. The 
+[LIVE STATUS] congestion section (Quiet, Moderate, Busy chips) is fully 
+visible. Medical venue pins render dynamic traffic-light colors. 
+○​ State 2: "Auto Current Time" = OFF (Neutral Gray): Instantly SHOWS 
+manual [Date] and [Time] input rows. Completely HIDES the entire [LIVE 
+STATUS] filter section from the DOM view. Map venue markers transform into 
+a uniform Blue palette (No Live Info), except for crowdsourced report 
+markers. 
+●​ System Permission Guard: When a user toggles 'Full Wheelchair Access' and 
+clicks 'Apply Filters' while the device GPS is disabled, the app intercepts the action 
+and pops up a mandatory Alert Modal: "Location Services Required - To use 
+accessibility tracking filters, please enable location services." featuring [Go to System 
+Settings] vs. [Cancel]. 
+Page 6-B: Reporting Modal Overlay (Waze-Style 9-Grid & Spatial Routing) 
+●​ Description: Activated by tapping the yellow warning/yield sign floating icon. 
+●​ System GPS Interception: If GPS is disabled, it blocks the gateway and shows a 
+mandatory alert: "Location Services Required - To submit issue reports, please 
+enable your device's system location services." [Go to System Settings] vs. [Cancel]. 
+●​ Spatial Choice Sheet: Prompts the user with "Where would you like to report this 
+issue?" via two distinct paths: 
+○​ Path A: Bind to Nearby Landmark/Venue: Filters established venues within 
+a radius. Once submitted, it integrates a red-tinted Critical Alert Strip into that 
+clinic's detail sheet and superimposes a miniature yellow-and-black 
+exclamation triangle warning badge onto the venue map marker. 
+○​ Path B: Drop Pin at Current Location: Binds explicitly to live GPS 
+coordinates, dropping a brand-new Standalone Incident Marker (yellow 
+triangle pin) onto the map viewport. 
+
+
+●​ Dynamic Grid Content & Category Filtering Logic: Renders a high-contrast 9-grid 
+icon matrix. Under Path B, all options are fully unlocked. Under Path A, the grid 
+automatically hooks into the venue category (Clinics, Pharmacy, AED, Toilets) and 
+hides irrelevant options (e.g., masking "Elevator Broken" if a Public Toilet is chosen). 
+●​ Time Isolation Warning: The bottom of the selection view displays a static caption 
+footer rule corrected for typos: "(Reports are always submitted using your current 
+time.)". 
+Page 6-C: Crowdsourced Verification & Display Layer 
+●​ Description: UI containers for users to validate active crowdsourced data. 
+○​ Path A Verification (Inside Bottom Sheet): Displays a light-red card header 
+(Community Alert: Wheelchair lift out of order) with an inline confirmation 
+string (Is this still an issue? (3 users confirmed)) and two full-width colored 
+action buttons: [Confirm] (Red) vs. [Resolve] (Light Blue). 
+○​ Path B Verification (Map Pop-up Window): Tapping a standalone yellow 
+triangle pin triggers a crisp callout pop-up displaying the issue type, timeline, 
+confirmation tally, and side-by-side horizontal action buttons: [Confirm] (Blue) 
+vs. [Resolve] (White Outline). 
+Page 6-D: Clinic Details Bottom Sheet 
+●​ Description: An expandable asset log showcasing selected venue metrics titled with 
+clinic names (e.g., "CityMD Urgent Care"). Houses critical alert strips, verification 
+rows, service summary badges (French Help Available, First-Aid Kit On-Site), and the 
+interactive "12-Hour Wait Time Forecast Chart". 
+●​ Dynamic Layout Note: The chart area dynamically disappears entirely if "Auto 
+Current Time" is toggled OFF, replaced by a single static text tag. 
+Page 6-E: Map Routing Engine 
+●​ Description: Dedicated navigation structures triggered during path generation. 
+○​ 6-E1 (Set Starting Point): Allows composition of travel paths. If "Current 
+Location" is selected and location services are disabled, hitting "Search 
+Route" intercepts the flow with a mandatory "Location Services Disabled" 
+modal. 
+○​ 6-E2 (Route Options Grid): Displays transport tabs (Walk, Transit, Drive) 
+alongside multi-modal congestion cards (e.g., Bus M15, Subway 6) tracking 
+transit intervals and duration. 
+○​ 6-E3 (Route Detail & Full Path View): Renders expandable step-by-step 
+walking/transit directions, finishing with a primary blue "Start Navigation" 
+call-to-action. 
+4. Assistance & SOS 
+Page 7: AI Chatbot Workspace (Gemini RAG Pipeline) 
+●​ Description: A real-time multilingual conversational chatbot dashboard titled 
+"Assistant". Features automated language matching tracking indicators (Responding 
+in French - Tap to Change), grounded RAG outputs rendering interactive inline clinic 
+item cards (e.g., "Centre Médical International"), a persistent bottom message input 
+box, and a floating blue mic dictation toggle. 
+
+
+Page 8: Emergency Alert Overlay (SOS Active Screen) 
+●​ Description: A full-screen, high-priority emergency responder overlay utilizing a 
+bright crimson color profile. Renders a prominent live countdown clock (SOS ACTIVE 
+00:00), automated text-based room-level GPS coordinates, and a centralized Medical 
+ID summary block (Blood Type, Severe Allergies, Conditions, Emergency Contact 
+info). 
+●​ Gesture Boundaries: Includes a persistent bottom safety cancel banner requiring a 
+continuous long-press for 3 seconds (HOLD 3S TO CANCEL) to safely abort 
+outbound emergency rescue calls. 
+5. Profile & Medical ID Settings 
+Page 9: Profile & Medical ID Workspace 
+●​ Description: The primary personal record container running on two alternate display 
+parameters: 
+○​ Guest Mode Dashboard: Displays a locked graphic prompt (Secure Your 
+Medical ID) pushing users toward registration. 
+○​ Logged-In Account View: A comprehensive split dashboard displaying a 
+sync state tracker card, "Personal Info" fields (Name, DOB, Gender, 
+Nationality, Phone, Email, Address, Emergency Contacts), and a "Medical ID" 
+grid. 
+●​ Sub-Form Workspaces: 
+○​ Page 9-A (Edit Medical ID): A standalone sub-form sheet utilizing pill-shaped 
+tagging deletion components (X) for quick removal of spoken languages, 
+allergies, or conditions. 
+○​ Page 9-B (Edit Profile): A data configuration form for demographic data, 
+contact info, and emergency contacts, topped with a blue "Save" navbar 
+hook. 
+6. App Configuration 
+Page 10: Settings Dashboard 
+●​ Description: The centralized global application configuration utility center. Houses a 
+hardware permission toggle for "Enable Location Access", a dropdown row to 
+"Change language", an inline "Logout" button, and a red-tinted, high-risk "DANGER 
+ZONE" command button to "Delete my account" and wipe local storage permanently. 
+ 
+
+
+1. Onboarding - Language Search 
+
+
+1. Onboarding - Language Search                                                                     Scan by phone          
+https://stitch.withgoogle.com/preview/13086852146672746 
+071?node-id=e79a0a3a60c5461c8ea8c2627d055632 
+ 
+ 
+ 
+ 
+ 
+The dynamically filtered search result rows must strictly enforce the following dual-naming 
+notation template: [Language Name in its Native Script] ([Language Name in English]). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+2. Onboarding - Terms of Service & 
+Privacy Policy 
+
+
+2. Onboarding - Terms of Service & Privacy Policy 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=2f382f259bb94877
+bcb90b188787e1f9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+3. Onboarding - Permissions of 
+Location Access 
+
+
+3. Onboarding - Permissions of Location Access 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=f4e8ce7502a44c77
+baf1c32905b2662b 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+4. Onboarding - Secure Login Wall 
+
+
+4. Onboarding - Secure Login Wall 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=354c0d364bc944e7
+8b9b80833aae5f3d 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+5. Onboarding - Login & Registration 
+
+
+5. Onboarding - Login & Registration                                                                 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=adc853276959423d
+bdb23116e6087d39-1780619117096 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Scan by phone 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+6. Main Map 
+
+
+6-1. Main Map                                                      
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=59a4522904b245c4
+afedef98204215d5 
+ 
+●​ Four Core Quick Filter Chips & Matching Pin Markers: 
+○​ Clinics Chip / Pin Marker 
+○​ Pharmacy Chip / Pin Marker 
+○​ AED Chip / Pin Marker 
+○​ Toilets Chip / Pin Marker 
+●​ Real-Time busyness: 
+○​ 🟢 Green (Quiet): Indicates a low capacity usage block, running under a 30% 
+user load with minimal wait times. 
+○​ 🟡 Yellow (Moderate): Indicates a balanced capacity utilization stage, 
+running between 30% and 70% live facility aggregate load. 
+○​ 🔴 Red (Busy): Indicates a high congestion state, running over a 70% 
+wait-time capacity load threshold. 
+○​ 🔵 Blue (No Live Info): Indicates that the system is functioning in predictive 
+future-query mode or active real-time data telemetry is temporarily 
+unavailable for that facility(view 6-3 page). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+a.​ profile icon menu  
+​
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+​
+​
+         
+b.​  report system  
+ 
+●​ When we click the report icon and GPS is disabled ,the application must 
+completely block the gateway overlay from opening, intercept the action, and trigger 
+a mandatory alert popup modal stating:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+Description: A rapid crowdsourced community reporting wizard activated by the floating 
+warning/yield sign action icon. Upon tapping the icon, a clean prompt overlay opens to 
+establish the report's spatial location with two distinct routing paths: 
+●​ Path A: Bind to Nearby Landmark/Venue: The user selects an established venue 
+marker from a dynamically populated list of nearby locations. Once submitted, this 
+crowdsourced report is neatly integrated directly into that specific clinic's header info 
+as a red-tinted Critical Alert Strip (e.g., ⚠️ Elevator Broken) within the venue details 
+bottom sheet. Additionally, on the interactive map viewport, the selected base venue 
+marker will dynamically render a miniature yellow-and-black exclamation triangle 
+warning badge superimposed perfectly onto its bottom-right corner to indicate an 
+active community report. 
+●​ Path B: Drop Pin at Current Location: The user chooses to report an issue tied 
+directly to their live GPS coordinates rather than an existing building. Upon 
+submission, a brand-new Standalone Incident Marker (a crisp yellow triangle with a 
+black exclamation mark) is dropped onto the map matrix. Tapping this standalone 
+marker dynamically displays a dedicated Report Detail Pop-up Window showcasing 
+the specific issue type, precise timestamp, and a live community confirmation tally. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+Dynamic Grid Content & Category Filtering Logic: Once the spatial location path is 
+selected, the interface renders a highly responsive 9-grid layout of high-contrast visual icons 
+covering localized infrastructure barriers. The available selection pool dynamically morphs 
+based on the user's chosen path: 
+●​ Under Path B (Current Location Constraints): The reporting interface lifts all 
+restrictions and unlocks all available options within the 9-grid matrix, as any 
+unpredictable environmental or roadside barrier (e.g., Protest/Blockage, Ramp 
+Blocked) can manifest in an open spatial coordinate. 
+●​ Under Path A (Nearby Spot Constraints): The frontend grid automatically hooks 
+into the database entity category (Clinics, Pharmacy, AED, Toilets) of the 
+selected landmark and applies conditional filters to hide irrelevant options: 
+○​ Example 1 (Toilets): Structural transportation alerts like "Lift Broken" or 
+"Elevator Broken" are completely masked. 
+○​ Example 2 (AED Hubs): Focuses strictly on access barriers like "Entrance 
+Blocked" while filtering out restroom or staffing-specific icons. 
+6-2. Main Map - Reporting System (General Options) 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=844f3284e85840ed
+bbb1efb1c03ad955 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+Crowdsourced Verification & Display Layer  
+Path A Confirmation Display (Bound to Nearby Spot) 
+●​ UI Container Placement: When a report is tied to a specific landmark, the alert does 
+not clutter the open map matrix. Instead, it is neatly encapsulated inside that specific 
+venue's Detail Bottom Sheet (See page 6-4). 
+Path B Confirmation Display (Dropped Pin at Current Location) 
+●​ UI Container Placement: When an incident is dropped directly onto open GPS 
+coordinates, it is rendered as an independent, floating Standalone Incident Marker 
+(the yellow triangle pin). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+c.​ filters 
+When a user toggles 'Full Wheelchair Access' and clicks 'Apply Filters', the 
+application instantly verifies device GPS status and triggers a mandatory permission 
+alert modal if location services are disabled.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+Expanded Dynamic Layout Constraints (Notion Ready) 
+State 1: "Auto Current Time" = ON (Real-Time Telemetry Mode) 
+When the toggle is active, the system locks the application context into the absolute factual 
+present. 
+●​ Filter Tray/Modal Mutation: 
+○​ The manual [Date] and [Time] input selection rows must be completely 
+hidden from the layout hierarchy. 
+○​ The [LIVE STATUS / BUSYNESS LEVEL] congestion filter section (🟢 
+Quiet, 🟡 Moderate, 🔴 Busy chips/checkboxes) is fully visible and 
+interactive. 
+●​ Venue Detail Panel Appearance: 
+○​ Clicking any active venue marker pin slides open the Left Detail Drawer 
+(Web) or Bottom Sheet (Mobile). 
+○​ The 12-Hour Capacity/Busyness Forecast Bar Chart must be fully 
+rendered to present real-time and upcoming hourly occupancy telemetry.(See 
+page 6-4) 
+●​ Map Viewport Rendering: All medical venue marker pins render dynamic traffic-light 
+colors (Green/Yellow/Red) based on active, live telemetry. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+State 2: "Auto Current Time" = OFF (Neutral Gray / Future-Time Prediction Mode) 
+When the toggle is deactivated, the system shifts into a decoupled query state to preview 
+static future time intervals. 
+●​ Filter Tray/Modal Mutation: 
+○​ The manual [Date] and [Time] input rows instantly slide into 
+view/become active for explicit user configuration. 
+○​ The entire [LIVE STATUS / BUSYNESS LEVEL] filter section must be 
+completely hidden/removed from the DOM view, eliminating data 
+contradiction. 
+●​ Venue Detail Panel Mutation (12-Hour Chart Disappearance): 
+○​ Clicking any blue venue marker pin opens the detail panel. 
+○​ The system must completely hide/remove the 12-Hour 
+Capacity/Busyness Forecast Bar Chart. 
+○​ Alternative Display: The panel replaces the chart area with a single, static 
+text-based predictive capacity tag (e.g., "Predicted Status at [Selected Time]: 
+Quiet") matching the user's explicit filter timestamp. 
+●​ Map Viewport Rendering: Upon clicking [Apply Filters], all venue marker pins 
+transform into a uniform Blue palette (No Live Info), except for crowdsourced report 
+markers which retain their alert styling. 
+6-3. Main Map - Future Time ( blue markers) 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=62414aaf99994bb2
+bf1dd998c969aa1f 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+6-4. Main Map - Clinic Details                                                                            Scan by phone 
+https://stitch.withgoogle.com/preview/13086852146672746071? 
+node-id=05620493b8934d13b4040768acb58b36 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+●​ Issue report Bind to Nearby 
+Landmark/Venue: The user 
+selects an established venue 
+marker from a dynamically 
+populated list of nearby locations. 
+Once submitted, this 
+crowdsourced report is neatly 
+integrated directly into that specific 
+clinic's header info as a red-tinted 
+Critical Alert Strip (e.g., ⚠️ 
+Elevator Broken) within the venue 
+details bottom sheet. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+●​ 12-Hour Busyness Forecast 
+○​ "Auto Current Time" = ON 
+The 12-Hour 
+Capacity/Busyness Forecast 
+Bar Chart must be fully 
+rendered to present real-time 
+and upcoming hourly 
+occupancy telemetry. 
+○​ "Auto Current Time" = OFF 
+ The system must completely 
+hide/remove the 12-Hour 
+Capacity/Busyness Forecast 
+Bar Chart. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+6-5. Map Routing - Set Starting Point                                                                Scan by phone 
+https://stitch.withgoogle.com/preview/130868521466727 
+46071?node-id=6fb8a27700fc48028b6d3b5d7b08be0e 
+ 
+ 
+ 
+ 
+ 
+When a user selects 'Current Location' as starting point or destination and clicks 'Search 
+Route', the application instantly verifies device GPS status and triggers a mandatory 
+permission alert modal if location services are disabled.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+6-6. Map Routing -Route Options 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=3fadd84db8664cb8
+b960937c41f4fb97 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+6-7. Map Routing - Route Detail & Full Path View 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=c4a41da53bf54a5c
+a3503ec372896b4a 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+7. AI Chatbot 
+
+
+7. AI Chatbot 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=05cd35ecbc6d4f99
+804c02bde1a59e73 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+8. Emergency SOS 
+
+
+8. Emergency SOS 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=d3b861de431f4422
+aa2a7fb2b6153897 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+9. Profile 
+
+
+9-1. Profile - Guest Mode 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 9-2. Profile - Login & Register 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+9-3. Profile - Logged In Mode 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+https://stitch.withg
+oogle.com/preview
+/13086852146672
+746071?node-id=3
+ea357d6e41f4befb
+d92ad2c459eb727 
+ 
+ 
+ 
+ 
+ 
+ 
+  Scan by phone 
+
+
+9-4. Profile - Edit Medical ID 
+https://stitch.withgoogle.com/preview/
+13086852146672746071?node-id=23
+9c448daa8a4a51acadd33272d69743 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  Scan by phone 
+9-5. Profile - Edit Profile 
+https://stitch.withgoogle.com/preview/13
+086852146672746071?node-id=9b44cc
+2d68f04be0b423d455b1e137b6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
+
+
+10. Settings 
+
+
+10. Settings 
+https://stitch.withgoogle.com/preview/13086852146672746071?node-id=118d9220b9534400
+90642b3f127899a0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scan by phone 
