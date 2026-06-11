@@ -46,9 +46,10 @@ jobs:
       run: poetry install --no-interaction --no-root
       working-directory: ./backend 
 
+    # FIXED: Invoked the virtual environment binary directly to bypass Linux PATH isolation and Poetry parsing conflicts
     - name: Run Pytest with Coverage
       run: |
-        poetry run pytest tests/ --cov=. --cov-fail-under=60
+        .venv/bin/python -m pytest tests/ --cov=. --cov-fail-under=60
       working-directory: ./backend
       env:
         PYTHONPATH: .
