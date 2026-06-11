@@ -11,21 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # FIXED: Configured the runner to recursively pull all nested submodules and files safely
     - name: Checkout code
       uses: actions/checkout@v4
       with:
         submodules: false
         fetch-depth: 1
 
-    # FIXED: Prevents git security locks on the runner when navigating multiple directories
     - name: Configure Git Safe Directory
       run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-    - name: Set up Python 3.10
+    # FIXED: Upgraded Python runner environment to 3.11 to align with your team's pyproject.toml
+    - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.11'
 
     - name: Install Poetry
       uses: snok/install-poetry@v1
@@ -41,12 +40,11 @@ jobs:
         path: backend/.venv
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-
+    # FIXED: Replaced '--with dev' with vanilla install to maximize backwards compatibility with all Poetry dependency formats
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --with dev --no-interaction --no-root
+      run: poetry install --no-interaction --no-root
       working-directory: ./backend 
-
 
     - name: Run Pytest with Coverage
       run: |
