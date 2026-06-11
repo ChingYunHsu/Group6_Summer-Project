@@ -231,7 +231,7 @@ CREATE TABLE `venue_warnings` (
 
 CREATE TABLE `venues` (
   `venue_id` varchar(36) NOT NULL,
-  `venue_type` enum('restroom','healthcare','emergency_asset','clinic','pharmacy','hospital','dentist','laboratory') NOT NULL,
+  `venue_type` enum('restroom','healthcare','emergencyasset','clinic','pharmacy','hospital','dentist','laboratory') NOT NULL,
   `name` varchar(255) NOT NULL,
   `latitude` decimal(10,7) NOT NULL,
   `longitude` decimal(10,7) NOT NULL,
