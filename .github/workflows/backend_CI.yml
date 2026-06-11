@@ -29,18 +29,14 @@ jobs:
       uses: snok/install-poetry@v1
       with:
         virtualenvs-create: true
-        virtualenvs-in-project: true
+        virtualenvs-in-project: false # Let Poetry manage it globally
         installer-parallel: true
-
-    - name: Force Local Virtualenv Location
-      run: poetry config virtualenvs.in-project true
-      working-directory: ./backend
 
     - name: Load cached venv
       id: cached-poetry-dependencies
       uses: actions/cache@v4
       with:
-        path: backend/.venv
+        path: ~/.cache/pypoetry/virtualenvs # Cache the global environment
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
     - name: Install dependencies
@@ -48,9 +44,10 @@ jobs:
       run: poetry install --no-interaction --no-root
       working-directory: ./backend 
 
+    # FIXED: Reverted to standard Poetry execution now that the environment is stable
     - name: Run Pytest with Coverage
       run: |
-        .venv/bin/python -m pytest tests/ --cov=. --cov-fail-under=60
+        poetry run pytest tests/ --cov=. --cov-fail-under=60
       working-directory: ./backend
       env:
         PYTHONPATH: .
