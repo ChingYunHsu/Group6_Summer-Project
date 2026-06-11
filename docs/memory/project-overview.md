@@ -1,7 +1,7 @@
 # ClearPath 项目架构总览
 
 > 基于 `docs/memory/` 和当前源码树整理的架构摘要。
-> 更新日期：2026-06-10
+> 更新日期：2026-06-11
 
 ## 1. 系统是什么
 
@@ -41,7 +41,7 @@ graph LR
 
     Mock[src/mock_data.py]:::data
     OpenAPI[openapi.yaml]:::data
-    Pipeline[Data+ML/test]:::data
+    Pipeline[Data+ML/test/shared<br/>6 DQR modules]:::data
     Memory[docs/memory/*]:::memory
 
     Mobile --> Flask
@@ -107,6 +107,19 @@ graph LR
 
 这个文件是当前架构摩擦的主要来源，因为它把多个领域混在一个大模块里。
 
+### `Data+ML/test/shared/`
+
+DQR pipeline 的 6 个共享 Python 模块（2026-06-11 从 notebook 拆出）：
+
+- `dqr_utils.py` — DB 连接、地理判断、坐标验证
+- `dqr_io.py` — 数据加载、CSV 导出、审计报告
+- `dqr_checks.py` — 7 项质量检查 + DQ 评分 + D2.7
+- `dqr_analysis.py` — 列分析、异常检测、GPS 重复检测
+- `dqr_cleaning.py` — 清洗管道（不修改输入 DataFrame）
+- `external_ingestion.py` — 交通/天气外部数据获取
+
+Notebook `dqr_cleaning_pipeline.ipynb` 仅保留编排 + 图表（21 cells, 218 lines）。pytest 覆盖 12 个测试用例。
+
 ### `openapi.yaml`
 
 这是客户端和后端计划共同依赖的契约面。
@@ -140,6 +153,10 @@ graph LR
 - 契约和 fixture 的命名可能会漂移
 - 有些问题本质是结构形状不一致，而不是功能缺失
 
+**已深ening 的部分** (2026-06-11)：
+
+- DQR pipeline 从单体 notebook 拆为 6 个共享模块，pytest 覆盖 D2.7
+
 `project-issues.md` 里已经记录的例子包括：
 
 - `confirmation_count` 和嵌套的 `confirmations.count`
@@ -166,7 +183,7 @@ graph LR
 
 ## 7. 最优先目标
 
-第一个该深ening 的地方是 `src/mock_data.py`。
+DQR pipeline 已完成深ening（6 modules + pytest）。下一个该深ening 的地方是 `src/mock_data.py`。
 
 原因：
 

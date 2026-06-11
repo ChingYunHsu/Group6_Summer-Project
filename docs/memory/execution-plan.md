@@ -130,3 +130,81 @@ Phase 6 (验证+清理)
 1. **按旧 Pipeline 实现服务器医疗 Profile** — 违反 Final 隐私边界
 2. **继续允许无法追踪用户身份的报告/确认** — 无法执行唯一用户确认
 3. **12 小时预测数据失真** — 单值伪造数组无法支撑真实图表
+
+---
+
+## Sprint 2 数据任务 (fangxun.wu)
+
+**目标**: 完成数据库 ERD 修订、数据摄取、模拟数据和 ML 模型初始化
+**总工时**: Est. 46h
+
+| # | Task | Week | Description | Status | Est. (h) |
+|---|------|------|-------------|:------:|:--------:|
+| D2.1 | ERD Revision, Schema Updates & District Zoning Setup | Week 4 | ERD update + 4 district nodes | ✅ 2026-06-09 | 5 |
+| D2.2 | MySQL Table Implementation & Index Tuning | Week 4 | DDL scripts + FK constraints + composite indexes | ✅ 2026-06-09 | 5 |
+| D2.3 | Data Parsing & Ingestion | Week 5 | ETL: 349 restrooms, 900 healthcare, 431 NYS, 3,279 AEDs, 63 LASS | ✅ 2026-06-05 | 10 |
+| D2.4 | API & Map Mocking Data Arrays | Week 4 | JSON mock data grouped by lowercase district tokens | ⚠️ 部分完成 | 6 |
+| D2.5 | Zoned Historical Ingestion & ML Model Init (Advance Start) | Week 5 | [High Priority] traffic_hourly.csv fetched; ARIMA/LSTM pending | ⚠️ 进行中 | 10 |
+| D2.6 | Data Deduplication & Multi-Source Cleansing Preprocessing | Week 5 | GPS duplicate detection (grid+haversine, lat-scaled) | ✅ 2026-06-11 | 10 |
+| D2.7 | Database Integrity, Privacy & Constraint Unit Testing | Week 5 | PyTest: 100% venues non-Null district; 12 test cases | ✅ 2026-06-11 | — |
+
+### DQR Pipeline Refactoring (2026-06-11)
+
+- 6 shared modules in `Data+ML/test/shared/` (dqr_utils, dqr_io, dqr_checks, dqr_analysis, dqr_cleaning, external_ingestion)
+- Notebook: 21 cells, 218 code lines (from 40 cells, 406 lines)
+- Output moved to `output/` subdirectory
+- All imports consolidated in Cell 2
+- pytest: 12 tests pass (D2.7, GPS grid, export overwrite, import path, clean_venues immutability)
+
+### Park Toilet GPS Fix (2026-06-11)
+
+- 124 zero-coordinate restroom venues fixed using NYC Open Data (`i7jb-7jku`)
+- 93 Manhattan-可信 matches written to DB
+- 3 Bronx Jackie Robinson Park entries deleted (wrong Borough)
+- CSV `Directory_Of_Toilets_In_Public_Parks_20260526.csv` updated: +Latitude/Longitude columns
+- DB: 473 restrooms, 100% GPS, 0 null districts
+
+
+
+Sprint2 重点任务 D2.5 进展说明：
+### D2.5 ARIMA/LSTM 实施计划
+
+#### 当前数据限制
+
+- `traffic_hourly.csv` 是按道路方向和小时聚合的 24 小时年度平均轮廓，不是连续历史时间序列。
+- 当前数据缺少日期、连续时间戳和 `venue_id`，不能直接作为可信的 ARIMA/LSTM 生产训练集。
+- 该文件仅保留为小时轮廓分析和演示基线，不标记为生产训练数据。
+
+#### 实施阶段
+
+1. **历史序列重构**: 从 NYC SODA 保留 `yr`、`m`、`d`、`hh`，按道路方向生成 `traffic_timeseries.csv`。
+2. **基线模型**: 实现 24 小时季节性朴素预测，作为 SARIMA/LSTM 的最低性能基准。
+3. **SARIMA**: 使用 Statsmodels SARIMAX 为每条道路方向训练时序模型；数据不足时回退到季节性基线。
+4. **LSTM**: 使用 PyTorch 训练共享模型，输入过去 24 或 48 小时，输出未来 12 小时。
+5. **场馆映射**: 建立道路序列到场馆的空间映射，生成 `venue_traffic_mapping.csv`，字段为 `venue_id`、`series_id`、`distance_m`。
+6. **预测发布**: 统一输出 `forecast_for`、`predicted_score`、`predicted_level`、`model_version`，最终写入 `busyness_forecasts`。
+
+数据库写入默认关闭。只有模型通过验证且预测记录具有有效场馆映射后，才允许显式启用写入。
+
+#### 产物与接口
+
+- `traffic_timeseries.csv`
+- `venue_traffic_mapping.csv`
+- `busyness_forecasting.ipynb`
+- SARIMA/PyTorch 模型文件和模型评估报告
+- 连续 12 小时预测结果
+
+`predicted_score` 必须限制在 `0-100`，等级规则如下：
+
+- `< 30`: `quiet`
+- `30-70`: `moderate`
+- `> 70`: `busy`
+
+#### 验收标准
+
+- 每条训练序列至少覆盖 7 天，推荐覆盖 28 天以上。
+- 训练、验证和测试集必须按时间顺序切分，禁止随机切分。
+- SARIMA 或 LSTM 至少一个模型必须优于 24 小时季节性朴素基线。
+- 每次预测必须输出连续 12 个小时，且不得包含重复时间点。
+- 所有预测分数必须位于 `0-100`，等级必须符合统一阈值。
+- 没有有效 `venue_id` 映射的道路预测不得写入 `busyness_forecasts`。

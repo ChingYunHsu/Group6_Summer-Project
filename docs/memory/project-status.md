@@ -85,12 +85,12 @@ graph TB
 | `report_confirmations` | Added `user_id` FK + `UNIQUE (report_id, user_id)` | ✅ 2026-06-09 |
 | `busyness_scores` | ENUM changed to `quiet/moderate/busy/no_data`, nullable, forecast_1h → JSON | ✅ 2026-06-09 |
 
-### venue_type ENUM (2026-06-10 统一)
+### venue_type ENUM (2026-06-10 align)
 
 ```sql
 ENUM('restroom', 'healthcare', 'emergencyasset', 'clinic', 'pharmacy', 'hospital', 'dentist', 'laboratory')
 ```
-> 注: OpenAPI、DB Schema、ETL notebook 已统一为 `emergencyasset`（无下划线）
+> : OpenAPI、DB Schema、ETL notebook follow the same feature name as `emergencyasset`
 
 ---
 
@@ -118,7 +118,7 @@ created_at, updated_at
 - **District Zoning**: ✅ Implemented (venues + pedestrian_ramps)
 - **Weather API**: ✅ NWS integration, 1 cached entry
 - **Venue Language**: ✅ LASS data, 63 matched
-- **DQR Pipeline**: `Data+ML/test/6.8-6.12_DB/dqr_cleaning_pipeline.ipynb` (数据质量报告, 4 gaps fixed 2026-06-10)
+- **DQR Pipeline**: `Data+ML/test/6.8-6.12_DB/dqr_cleaning_pipeline.ipynb` (21 cells, 218 lines; 6 shared modules; output → `output/` subdirectory)
 - **Notebook Cell Safety**: Cells 27/31/35/37/46 已注释（已完成或危险操作），cell 14 添加 `finally` 连接清理
 
 ### ETL Row Counts (2026-06-10, corrected)
@@ -241,26 +241,26 @@ created_at, updated_at
 
 | 项目 | 负责人 | Notion 状态 |
 |------|--------|-------------|
-| 🔄 ERD Revision & District Zoning Setup | F | **In progress** |
+| 🔄 12-hour ML forecast (ARIMA/LSTM) | F | **In progress** |
 
 ### 待实现功能 (Sprint 2)
 
-| 项目 | 负责人 | 依赖 |
-|------|--------|------|
-| ❌ JWT Auth (backend impl) | E | users table ✅ |
-| ❌ Profile CRUD (backend impl) | E | users table ✅ |
-| ❌ Mobile UI Component Binding | D | Mock data ✅ |
-| ❌ Web UI Component Binding | C | Mock data ✅ |
-| ❌ Real-time telemetry pipeline | F | — |
-| ❌ 12-hour ML forecast (table ready) | F | busyness_forecasts ✅ |
-| ❌ Report TTL (2h) | E | — |
-| ❌ Cascade delete API | E | users table ✅ |
-| ❌ Gemini RAG (table ready) | E | venue_embeddings ✅ |
+| 项目 | 负责人 | 依赖 | 状态 |
+|------|--------|------|------|
+| ❌ JWT Auth (backend impl) | E | users table ✅ | Not started |
+| ❌ Profile CRUD (backend impl) | E | users table ✅ | Not started |
+| ❌ Mobile UI Component Binding | D | Mock data ✅ | Not started |
+| ❌ Web UI Component Binding | C | Mock data ✅ | Not started |
+| ❌ Real-time telemetry pipeline | F | — | Not started |
+| ⚠️ 12-hour ML forecast | F | busyness_forecasts ✅ | ARIMA/LSTM pending |
+| ❌ Report TTL (2h) | E | — | Not started |
+| ❌ Cascade delete API | E | users table ✅ | Not started |
+| ❌ Gemini RAG (table ready) | E | venue_embeddings ✅ | Not started |
 
 ### 已知问题
 
 > 所有技术问题、阻塞项、已解决问题详见 [`project-issues.md`](project-issues.md)。
-> 当前未解决: P0 × 2 (#4 district schema, #5 ImportError) · P1 × 2 (#11 expires_at, #12 KeyError) · P2 × 2 (#16 DQR O(N²), #17 dqr_utils 重复)
+> 当前未解决: D2.4 Mock 数据不完整 · D2.5 ARIMA/LSTM 未实现
 
 ---
 
@@ -309,16 +309,24 @@ frontend/web/                  ← React (Vite)
 └── package.json               # Vite + React
 
 Data+ML/
-├── test/6.2-6.5_DB/
-│   ├── database_build.ipynb   # ETL pipeline (49 cells)
-│   ├── 001_clearpath_schema.sql  # DB schema
-│   ├── dqr_utils.py           # DQR utility functions
-│   ├── clearpath_sources.json # Data source manifest
-│   └── README.md              # Operating instructions
-├── test/6.8-6.12_DB/
-│   ├── dqr_cleaning_pipeline.ipynb  # DQR pipeline
-│   ├── dqr_utils.py           # (duplicate of 6.2-6.5_DB)
-│   └── *.csv, *.png           # DQR outputs
+├── test/
+│   ├── 6.2-6.5_DB/
+│   │   ├── database_build.ipynb   # ETL pipeline (49 cells)
+│   │   ├── 001_clearpath_schema.sql  # DB schema
+│   │   ├── clearpath_sources.json # Data source manifest
+│   │   └── tests/                # Existing ETL tests
+│   ├── 6.8-6.12_DB/
+│   │   ├── dqr_cleaning_pipeline.ipynb  # DQR pipeline (21 cells, 218 lines)
+│   │   ├── output/               # DQR outputs (CSV + PNG)
+│   │   └── tests/
+│   │       └── test_dqr_modules.py  # 12 pytest cases (D2.7, GPS, export)
+│   └── shared/                   # Shared Python modules
+│       ├── dqr_utils.py          # DB connect, geo utils, MANHATTAN_BOUNDS
+│       ├── dqr_io.py             # load_dqr_tables, export_dqr_artifacts
+│       ├── dqr_checks.py         # 7 quality checks, compute_dq_scores
+│       ├── dqr_analysis.py       # profiling, anomaly detection, GPS duplicates
+│       ├── dqr_cleaning.py       # clean_venues (never mutates input)
+│       └── external_ingestion.py # traffic + weather API
 └── plan/                      # Architecture docs
 
 docker/

@@ -1,38 +1,38 @@
 table,column,dtype,non_null,total,missing_pct,nunique,mode,min,max,mean,std
-venues,venue_id,object,4841,4841,0.0,4841,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
-venues,venue_type,object,4841,4841,0.0,3,emergency_asset,,,,
-venues,name,object,4841,4841,0.0,2785,"Walt Disney/ABC, Inc. AED",,,,
-venues,latitude,float64,4841,4841,0.0,2621,0.0,0.0,40.8830448,39.69,6.52
-venues,longitude,float64,4841,4841,0.0,2590,0.0,-74.0228642,0.0,-72.03,11.82
-venues,borough,object,4503,4841,7.0,11,Manhattan,,,,
-venues,district,object,4714,4841,2.6,4,downtown,,,,
-venues,language_tags,object,0,4841,100.0,0,,,,,
-venues,primary_language,object,0,4841,100.0,0,,,,,
-venues,secondary_language,object,0,4841,100.0,0,,,,,
-venues,accessible_status,object,4841,4841,0.0,1,none,,,,
-venues,accessibility_features,object,0,4841,100.0,0,,,,,
-venues,active_warning,int64,4841,4841,0.0,1,0,0.0,0.0,0.0,0.0
-venues,open_now,int64,4841,4841,0.0,1,1,1.0,1.0,1.0,0.0
-venues,address,object,4734,4841,2.2,2662,750 SEVENTH AVENUE,,,,
-venues,phone,object,800,4841,83.5,729,2122417005,,,,
-venues,website,object,505,4841,89.6,478,www.premierhomehealthcare.com,,,,
-venues,opening_hours,object,370,4841,92.4,260,24/7,,,,
-venues,photos,object,0,4841,100.0,0,,,,,
-venues,rating,object,0,4841,100.0,0,,,,,
-venues,weather_risk,object,4841,4841,0.0,1,low,,,,
-venues,source_confidence,float64,4841,4841,0.0,5,0.8,0.3,0.9,0.74,0.14
-venues,created_at,datetime64[ns],4841,4841,0.0,8,2026-06-09 15:08:58,,,,
-venues,updated_at,datetime64[ns],4841,4841,0.0,8,2026-06-09 15:08:58,,,,
-restroom_profiles,venue_id,object,476,476,0.0,476,008920d309a932335a51a1095936ac560a96,,,,
-restroom_profiles,restroom_type,object,395,476,17.0,6,Multi-Stall W/M Restrooms,,,,
-restroom_profiles,operator,object,476,476,0.0,32,NYC Parks,,,,
-restroom_profiles,status,object,349,476,26.7,2,operational,,,,
-restroom_profiles,open_seasonal,object,0,476,100.0,0,,,,,
-restroom_profiles,open_year_round,float64,105,476,77.9,1,1.0,1.0,1.0,1.0,0.0
-restroom_profiles,ada_accessible,object,0,476,100.0,0,,,,,
-restroom_profiles,handicap_accessible,float64,256,476,46.2,1,1.0,1.0,1.0,1.0,0.0
-restroom_profiles,changing_station,float64,199,476,58.2,1,1.0,1.0,1.0,1.0,0.0
-restroom_profiles,additional_notes,object,144,476,69.7,134,"Yes, a key is needed to enter",,,,
+venues,venue_id,object,4838,4838,0.0,4838,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
+venues,venue_type,object,4838,4838,0.0,3,emergency_asset,,,,
+venues,name,object,4838,4838,0.0,2782,"Walt Disney/ABC, Inc. AED",,,,
+venues,latitude,float64,4838,4838,0.0,2635,40.7607464,40.5913629,42.8038509,40.76,0.05
+venues,longitude,float64,4838,4838,0.0,2599,-73.9835251,-74.4016511,-73.8000647,-73.98,0.02
+venues,borough,object,4500,4838,7.0,11,Manhattan,,,,
+venues,district,object,4838,4838,0.0,4,downtown,,,,
+venues,language_tags,object,0,4838,100.0,0,,,,,
+venues,primary_language,object,0,4838,100.0,0,,,,,
+venues,secondary_language,object,0,4838,100.0,0,,,,,
+venues,accessible_status,object,4838,4838,0.0,1,none,,,,
+venues,accessibility_features,object,0,4838,100.0,0,,,,,
+venues,active_warning,int64,4838,4838,0.0,1,0,0.0,0.0,0.0,0.0
+venues,open_now,int64,4838,4838,0.0,1,1,1.0,1.0,1.0,0.0
+venues,address,object,4731,4838,2.2,2659,750 SEVENTH AVENUE,,,,
+venues,phone,object,800,4838,83.5,729,2122417005,,,,
+venues,website,object,505,4838,89.6,478,www.premierhomehealthcare.com,,,,
+venues,opening_hours,object,370,4838,92.4,260,24/7,,,,
+venues,photos,object,0,4838,100.0,0,,,,,
+venues,rating,object,0,4838,100.0,0,,,,,
+venues,weather_risk,object,4838,4838,0.0,1,low,,,,
+venues,source_confidence,float64,4838,4838,0.0,5,0.8,0.3,0.9,0.74,0.14
+venues,created_at,datetime64[ns],4838,4838,0.0,8,2026-06-09 15:08:58,,,,
+venues,updated_at,datetime64[ns],4838,4838,0.0,14,2026-06-09 15:08:58,,,,
+restroom_profiles,venue_id,object,473,473,0.0,473,008920d309a932335a51a1095936ac560a96,,,,
+restroom_profiles,restroom_type,object,392,473,17.1,6,Multi-Stall W/M Restrooms,,,,
+restroom_profiles,operator,object,473,473,0.0,32,NYC Parks,,,,
+restroom_profiles,status,object,349,473,26.2,2,operational,,,,
+restroom_profiles,open_seasonal,object,0,473,100.0,0,,,,,
+restroom_profiles,open_year_round,float64,102,473,78.4,1,1.0,1.0,1.0,1.0,0.0
+restroom_profiles,ada_accessible,object,0,473,100.0,0,,,,,
+restroom_profiles,handicap_accessible,float64,255,473,46.1,1,1.0,1.0,1.0,1.0,0.0
+restroom_profiles,changing_station,float64,199,473,57.9,1,1.0,1.0,1.0,1.0,0.0
+restroom_profiles,additional_notes,object,141,473,70.2,131,"Yes, a key is needed to enter",,,,
 healthcare_profiles,venue_id,object,1086,1086,0.0,1086,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
 healthcare_profiles,facility_external_id,object,431,1086,60.3,431,10001,,,,
 healthcare_profiles,facility_type,object,1051,1086,3.2,17,pharmacy,,,,
@@ -69,15 +69,15 @@ pedestrian_ramps,obstacles_ramp,object,23625,23625,0.0,22,None,,,,
 pedestrian_ramps,obstacles_landing,object,23625,23625,0.0,42,None,,,,
 pedestrian_ramps,created_at,datetime64[ns],23625,23625,0.0,1,2026-06-09 15:09:01,,,,
 pedestrian_ramps,updated_at,datetime64[ns],23625,23625,0.0,1,2026-06-09 15:09:01,,,,
-venue_source_links,source_link_id,int64,4841,4841,0.0,4841,3484,3484.0,8328.0,5904.67,1398.58
-venue_source_links,venue_id,object,4841,4841,0.0,4841,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
-venue_source_links,source_name,object,4841,4841,0.0,5,aed_inventory,,,,
-venue_source_links,source_record_id,object,4841,4841,0.0,4841,0022d470c7e385eaf6952c2942a29dfa7d4a,,,,
-venue_source_links,raw_name,object,4841,4841,0.0,2781,"Walt Disney/ABC, Inc.",,,,
-venue_source_links,raw_location_text,object,3710,4841,23.4,1725,750 SEVENTH AVENUE,,,,
-venue_source_links,matched_method,object,4841,4841,0.0,1,single_source,,,,
-venue_source_links,match_confidence,float64,4841,4841,0.0,5,0.8,0.3,0.9,0.74,0.14
-venue_source_links,created_at,datetime64[ns],4841,4841,0.0,8,2026-06-09 15:08:58,,,,
+venue_source_links,source_link_id,int64,4838,4838,0.0,4838,3484,3484.0,8328.0,5905.91,1398.13
+venue_source_links,venue_id,object,4838,4838,0.0,4838,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
+venue_source_links,source_name,object,4838,4838,0.0,5,aed_inventory,,,,
+venue_source_links,source_record_id,object,4838,4838,0.0,4838,0022d470c7e385eaf6952c2942a29dfa7d4a,,,,
+venue_source_links,raw_name,object,4838,4838,0.0,2778,"Walt Disney/ABC, Inc.",,,,
+venue_source_links,raw_location_text,object,3710,4838,23.3,1725,750 SEVENTH AVENUE,,,,
+venue_source_links,matched_method,object,4838,4838,0.0,1,single_source,,,,
+venue_source_links,match_confidence,float64,4838,4838,0.0,5,0.8,0.3,0.9,0.74,0.14
+venue_source_links,created_at,datetime64[ns],4838,4838,0.0,8,2026-06-09 15:08:58,,,,
 external_context_cache,cache_id,int64,1,1,0.0,1,8,8.0,8.0,8.0,
 external_context_cache,context_type,object,1,1,0.0,1,weather_current,,,,
 external_context_cache,venue_id,object,0,1,100.0,0,,,,,

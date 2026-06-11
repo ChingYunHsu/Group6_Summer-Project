@@ -1,8 +1,11 @@
 """
 dqr_utils.py — Shared utilities for ClearPath data quality analysis.
 
-Extracted from database_build.ipynb to avoid code duplication.
-Import via: sys.path.insert(0, '<path-to-6.2-6.5_DB>'); from dqr_utils import ...
+Single canonical copy.  All notebooks import from here.
+Usage in notebooks:
+    UTIL_DIR = Path.cwd().resolve().parents[1] / 'shared'
+    sys.path.insert(0, str(UTIL_DIR))
+    from dqr_utils import ...
 """
 
 import os

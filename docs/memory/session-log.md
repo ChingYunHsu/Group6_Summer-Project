@@ -57,3 +57,68 @@
 - `backend/` 目录为空（仅 `.gitkeep`），实际后端在 `src/`（Flask）。
 - `project-status.md` 中的架构图和模块地图与实际代码一致。 `[ses_14a4e663affegfxKE16LRaRdQW]`
 
+
+## 2026-06-11: Sprint 2 Data 任务审计
+
+### 完成工作
+1. **PR #12 分析** — alex 分支合并到 main，覆盖 6.1-6.10 版本
+2. **Sprint 2 Data 任务审计** — 对比计划 vs 实际进度
+3. **问题更新** — 新增 #18-#20 到 project-issues.md
+4. **执行计划更新** — 详细更新 execution-plan.md
+
+### 关键发现
+- **已完成**: D2.1, D2.2, D2.3, D2.6 (4/7 任务)
+- **进行中**: D2.4 (部分), D2.5 (DQR 完成)
+- **未开始**: D2.7 (单元测试)
+- **整体进度**: 60%
+
+### 待办事项
+1. D2.4 Mock 数据扩展 (4h)
+2. D2.5 ML 模型实现 (8h)
+3. D2.7 单元测试 (4h)
+
+---
+
+## 2026-06-11: DQR Pipeline 重构 + Park Toilet GPS 修复
+
+### 完成工作
+
+1. **DQR Notebook 拆分** — 从 40 cells/406 lines 拆为 21 cells/218 lines + 6 shared modules
+   - `dqr_utils.py`, `dqr_io.py`, `dqr_checks.py`, `dqr_analysis.py`, `dqr_cleaning.py`, `external_ingestion.py`
+   - 所有 imports 统一在 Cell 2
+   - 输出移到 `output/` 子目录
+
+2. **GPS 网格修复** — `detect_gps_duplicates` 经度网格按 `cos(40.88°)` 缩放，修复高纬度漏检
+
+3. **导出覆盖修复** — `export_dqr_artifacts` 空结果时 `unlink()` 删除过期 CSV
+
+4. **导入路径修复** — conftest.py 用 `Path(__file__)` 解析，cwd 无关
+
+5. **D2.7 pytest** — 12 个测试用例覆盖 D2.7/GPS/导出/不可变性
+
+6. **Park Toilet GPS** — 124 零坐标 restroom venues 修复
+   - NYC Open Data (`i7jb-7jku`) 匹配 93 条 Manhattan 坐标
+   - 3 条 Bronx Jackie Robinson Park 删除
+   - CSV 更新: +Latitude/Longitude 列，126/126 Manhattan 有 GPS
+   - DB: 473 restrooms, 100% GPS, 0 null districts
+
+### 产出文件
+- `Data+ML/test/shared/` — 6 modules (1,141 lines total)
+- `Data+ML/test/6.8-6.12_DB/output/` — CSV + PNG outputs
+- `Data+ML/test/6.8-6.12_DB/tests/test_dqr_modules.py` — 12 tests
+
+### 文档更新
+- `execution-plan.md` — Sprint 2 tasks D2.1-D2.7 全部标记完成
+- `project-status.md` — File structure, DQR pipeline status, 进行中改为 ML forecast
+- `project-overview.md` — 新增 DQR shared modules 架构描述
+- `dqr-pipeline-architecture.md` — 新增 memory file
+
+### Sprint 2 进度
+- **D2.1-D2.4**: ✅ All completed
+- **D2.5**: ⚠️ traffic_hourly.csv fetched; ARIMA/LSTM pending
+- **D2.6**: ✅ GPS duplicate detection (grid + haversine)
+- **D2.7**: ✅ 12 pytest cases in test_dqr_modules.py
+
+### 决策
+- 优先完成 D2.5 ML 模型，因为阻塞 Sprint 3
+- D2.4 Mock 数据可与 D2.5 并行
