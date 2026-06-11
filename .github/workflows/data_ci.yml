@@ -23,10 +23,10 @@ jobs:
     - name: Build Data Team Docker Image
       run: |
         docker build -t clearpath-data-image .
-      working-directory: ./Data
+      working-directory: ./Data+ML
 
 
     - name: Run Pytest Inside Docker Container
       run: |
         docker run --rm clearpath-data-image pytest test_data_skeleton.py
-      working-directory: ./Data
+      working-directory: ./Data+ML
