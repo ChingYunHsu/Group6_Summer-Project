@@ -38,19 +38,19 @@ jobs:
       id: cached-poetry-dependencies
       uses: actions/cache@v4
       with:
-        path: .venv
+        path: backend/.venv
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-    # FIXED: Added working-directory context since configuration files live in the /backend subfolder
+
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root
+      run: poetry install --with dev --no-interaction --no-root
       working-directory: ./backend 
 
-    # FIXED: Added explicit PYTHONPATH target to bridge the multi-directory structure
+
     - name: Run Pytest with Coverage
       run: |
-        poetry run python -m pytest tests/ --cov=. --cov-fail-under=60
+        poetry run pytest tests/ --cov=. --cov-fail-under=60
       working-directory: ./backend
       env:
         PYTHONPATH: .
