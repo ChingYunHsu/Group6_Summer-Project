@@ -1,5 +1,7 @@
 name: ClearPath Backend CI (Poetry Engine)
 
+env:
+  PYTHONPATH: .
 # Trigger conditions: Runs when someone pushes to the main branch or opens a Pull Request (PR) against main
 on:
   push:
