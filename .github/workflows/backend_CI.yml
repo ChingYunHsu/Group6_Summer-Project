@@ -44,7 +44,11 @@ jobs:
       run: poetry install --no-interaction --no-root
       working-directory: ./backend 
 
-    # FIXED: Reverted to standard Poetry execution now that the environment is stable
+  
+    - name: Ensure Pytest is Installed
+      run: poetry run pip install pytest pytest-cov
+      working-directory: ./backend
+
     - name: Run Pytest with Coverage
       run: |
         poetry run pytest tests/ --cov=. --cov-fail-under=60
