@@ -64,6 +64,17 @@ info:
       render_token approach (v1.4.1) aligns with F-14: PDF is generated via
       browser `window.print()` on the web client, not server-side. No further schema
       changes needed beyond what was applied in v1.4.1.
+    - **Fix 11 (F-13 / B2.4 Account Personalization — PUT endpoints added):**
+      Added `PUT /api/v1/user/profile` and `PUT /api/v1/user/settings` so users
+      can edit their profile and settings per F-13. `UserProfileUpdate` exposes
+      only the 3 fields editable on the profile page (`phone`, `nationality`,
+      `spoken_languages`); `user_id`, `email`, and `full_name` remain
+      registration-locked (read-only). `UserSettingsUpdate` mirrors the
+      user-togglable fields of `UserSettings`. Also removed the dead
+      `GET /user/medical-id` and `GET /user/emergency-contacts` routes from
+      `src/api/user.py` per the D10 decision (medical data stays device-local;
+      these were never part of the OpenAPI contract and referenced non-existent
+      mock data).
 
 servers:
   - url: http://localhost:5000
@@ -655,6 +666,43 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+    # FIX 11 — F-13 / B2.4 Account Personalization
+    put:
+      tags: [User]
+      summary: Update editable profile fields
+      description: >
+        Updates the user's editable profile fields. `user_id`, `email`, and
+        `full_name` are registration-locked (read-only) and cannot be changed
+        via this endpoint.
+      operationId: updateUserProfile
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProfileUpdate'
+      responses:
+        '200':
+          description: Profile updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfile'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Invalid or missing bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   # FIX 1 — Auth Binding: upgraded from ApiKeyAuth to BearerAuth (JWT)
   /api/v1/user/settings:
     get:
@@ -670,6 +718,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserSettings'
+        '401':
+          description: Invalid or missing bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    # FIX 11 — F-13 / B2.4 Account Personalization
+    put:
+      tags: [User]
+      summary: Update user settings
+      operationId: updateUserSettings
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserSettingsUpdate'
+      responses:
+        '200':
+          description: Settings updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSettings'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
         '401':
           description: Invalid or missing bearer token.
           content:
@@ -2091,6 +2172,46 @@ components:
         data_export_available:
           type: boolean
         delete_account_enabled:
+          type: boolean
+
+    # FIX 11 — F-13 / B2.4 Account Personalization
+    # user_id, email, and full_name are registration-locked (read-only) and
+    # are intentionally omitted — only these 3 fields are user-editable.
+    UserProfileUpdate:
+      type: object
+      additionalProperties: false
+      description: >
+        Editable profile fields only. `user_id`, `email`, and `full_name`
+        are registration-locked (read-only) and cannot be updated via this
+        endpoint.
+      properties:
+        phone:
+          type: string
+        nationality:
+          type: string
+        spoken_languages:
+          type: array
+          items:
+            type: string
+
+    # FIX 11 — F-13 / B2.4 Account Personalization
+    UserSettingsUpdate:
+      type: object
+      additionalProperties: false
+      properties:
+        selected_language:
+          type: string
+        selected_language_native:
+          type: string
+        location_access_enabled:
+          type: boolean
+        notifications_enabled:
+          type: boolean
+        privacy_mode:
+          type: string
+        guest_mode_enabled:
+          type: boolean
+        show_medical_id_on_sos:
           type: boolean
 
     LanguageOptionListResponse:
