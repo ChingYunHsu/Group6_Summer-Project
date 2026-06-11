@@ -15,8 +15,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       with:
-        submodules: recursive
-        fetch-depth: 0
+        submodules: false
+        fetch-depth: 1
 
     # FIXED: Prevents git security locks on the runner when navigating multiple directories
     - name: Configure Git Safe Directory
