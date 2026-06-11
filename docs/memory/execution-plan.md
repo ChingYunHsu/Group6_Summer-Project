@@ -20,7 +20,7 @@
 | D7 | `auth_subject` | 不需要，邮箱即认证标识 |
 | D8 | 报告类别存储 | 字典表 `report_categories`（按场馆类型过滤） |
 | D9 | RAG embedding | MySQL JSON/BLOB（~3500 条数据量足够） |
-| D10 | 医疗数据边界 | 严格本地存储，不云同步 |
+| D10 | 医疗数据边界 | 云端加密存储（AES-256-GCM）+ 本地无独立副本 |
 
 ---
 
