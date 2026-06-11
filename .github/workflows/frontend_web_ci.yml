@@ -1,0 +1,35 @@
+name: ClearPath Frontend (Web) CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'frontend/web/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'frontend/web/**'
+
+jobs:
+  run-web-tests:
+    runs-on: ubuntu-latest 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+  
+    - name: Install Web Dependencies
+      run: npm install
+      working-directory: ./frontend/web
+
+
+    - name: Run Web Tests (Skeleton Pipeline)
+      run: npm run test
+      working-directory: ./frontend/web
