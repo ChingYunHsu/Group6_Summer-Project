@@ -1,0 +1,32 @@
+name: ClearPath Data & ML CI (Docker Engine)
+
+on:
+  push:
+    branches: [ main ]
+  
+    paths:
+      - 'Data+ML/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'Data+ML/**'
+
+jobs:
+  build-and-test-data:
+    runs-on: ubuntu-latest 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+
+    - name: Build Data Team Docker Image
+      run: |
+        docker build -t clearpath-data-image .
+      working-directory: ./Data
+
+
+    - name: Run Pytest Inside Docker Container
+      run: |
+        docker run --rm clearpath-data-image pytest test_data_skeleton.py
+      working-directory: ./Data
