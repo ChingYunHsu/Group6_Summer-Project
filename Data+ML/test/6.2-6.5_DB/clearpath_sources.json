@@ -1,0 +1,66 @@
+{
+  "data_source_root": "../data_source",
+  "included_sources": [
+    {
+      "type": "Internal",
+      "name": "User Reports Database",
+      "local_file": null,
+      "storage_role": "user_reports, report_confirmations"
+    },
+    {
+      "type": "Toilet",
+      "name": "NYC Public Restrooms i7jb-7jku",
+      "local_file": "Public_Restrooms_20260526.csv",
+      "storage_role": "venues, venue_source_links, restroom_profiles"
+    },
+    {
+      "type": "Toilet",
+      "name": "Directory of Toilets in Public Parks hjae-yuav",
+      "local_file": "Directory_Of_Toilets_In_Public_Parks_20260526.csv",
+      "storage_role": "venues, venue_source_links, restroom_profiles"
+    },
+    {
+      "type": "Healthcare",
+      "name": "OpenStreetMap / Overpass POI",
+      "local_file": "POI_healtcare.geojson",
+      "storage_role": "venues, venue_source_links, healthcare_profiles"
+    },
+    {
+      "type": "Healthcare",
+      "name": "NYS Health Facility General Information vn5v-hh5r",
+      "local_file": "Health_Facility_General_Information_20260526.csv",
+      "storage_role": "venues, venue_source_links, healthcare_profiles"
+    },
+    {
+      "type": "Healthcare",
+      "name": "AED Inventory 2er2-jqsx",
+      "local_file": "New_York_City_Automated_External_Defibrillator_(AED)_Inventory_20260526.csv",
+      "storage_role": "venues, venue_source_links, emergency_assets"
+    },
+    {
+      "type": "Accessibility",
+      "name": "Pedestrian Ramp Locations ufzp-rrqu",
+      "local_file": "Pedestrian_Ramp_Locations_20260526.csv",
+      "storage_role": "pedestrian_ramps"
+    },
+    {
+      "type": "Traffic",
+      "name": "Google Map API",
+      "local_file": null,
+      "storage_role": "external_context_cache"
+    },
+    {
+      "type": "Weather",
+      "name": "Weather / NYC Urban Heat Portal",
+      "local_file": null,
+      "storage_role": "external_context_cache"
+    }
+  ],
+  "excluded_local_files": [
+    "POI_accessibility.geojson",
+    "Health_Center_Service_Delivery_and_LookAlike_Sites.csv",
+    "MTA_Subway_Stations_20260526.csv",
+    "Language_Access_Secret_Shopper_(LASS)_Ratings_20260526.csv",
+    "Population_and_Languages_of_the_Limited_English_Proficient_(LEP)_Speakers_by_Community_District_20260526.csv"
+  ]
+}
