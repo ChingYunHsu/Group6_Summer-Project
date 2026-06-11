@@ -1,7 +1,9 @@
+from copy import deepcopy
+
 from flask import Blueprint, jsonify, request
 
 from auth import require_api_key
-from mock_data import VENUES
+from mock_data import VENUE_BUSYNESS, VENUE_FORECASTS, VENUES
 
 
 bp = Blueprint("venues", __name__)
@@ -45,3 +47,31 @@ def get_venue(venue_id: str):
     if not venue:
         return jsonify({"error": "Venue not found."}), 404
     return jsonify(venue)
+
+
+@bp.get("/api/v1/venues/<venue_id>/busyness")
+@require_api_key
+def get_venue_busyness(venue_id: str):
+    entry = VENUE_BUSYNESS.get(venue_id)
+    if not entry:
+        return jsonify({"error": "Venue not found."}), 404
+
+    response = deepcopy(entry)
+    query_time = request.args.get("query_time")
+
+    if query_time:
+        response["busyness"]["is_future_time_query"] = True
+        response["busyness"]["busyness_color"] = "#2563EB"
+        response["busyness"]["data_mode"] = "predicted"
+
+    return jsonify(response)
+
+
+@bp.get("/api/v1/venues/<venue_id>/busyness/forecast")
+@require_api_key
+def get_venue_busyness_forecast(venue_id: str):
+    forecast = VENUE_FORECASTS.get(venue_id)
+    if not forecast:
+        return jsonify({"error": "Venue not found."}), 404
+
+    return jsonify(deepcopy(forecast))

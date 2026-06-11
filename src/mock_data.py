@@ -266,6 +266,8 @@ VENUE_BUSYNESS = {
             "busyness_score": 24,
             "busyness_status": "quiet",
             "busyness_color": "green",
+            "is_future_time_query": False,
+            "data_mode": "live",
             "estimated_wait_minutes": 5,
             "updated_at": "2026-06-08T09:00:00Z",
         },
@@ -276,6 +278,8 @@ VENUE_BUSYNESS = {
             "busyness_score": 53,
             "busyness_status": "moderate",
             "busyness_color": "yellow",
+            "is_future_time_query": False,
+            "data_mode": "live",
             "estimated_wait_minutes": 12,
             "updated_at": "2026-06-08T09:05:00Z",
         },
@@ -286,6 +290,8 @@ VENUE_BUSYNESS = {
             "busyness_score": 81,
             "busyness_status": "busy",
             "busyness_color": "red",
+            "is_future_time_query": False,
+            "data_mode": "live",
             "estimated_wait_minutes": 7,
             "updated_at": "2026-06-08T09:10:00Z",
         },
@@ -600,7 +606,7 @@ DELETE_ACCOUNT_RESPONSE = {
 
 MEDICAL_PASSPORT_RESPONSE = {
     "status": "generated",
-    "pdf_url": "https://example.com/files/medical_passport_u_1001_en.pdf",
+    "render_token": "mock_render_token_u_1001",
     "language": "en",
     "generated_at": "2026-06-08T20:15:00Z",
 }
@@ -781,4 +787,26 @@ APP_STATE = {
     "has_accepted_privacy_policy": True,
     "location_permission": "granted",
     "show_finish_profile_prompt": False,
+}
+
+# Mock auth "database" — email+password accounts (D1: email/password, no OAuth).
+AUTH_USERS = [
+    {
+        "user_id": "u_1001",
+        "full_name": "Amelia Rivera",
+        "email": "amelia.rivera@example.com",
+        "password": "Password123",
+    },
+]
+
+AUTH_LOGIN_RESPONSE = {
+    "access_token": "mock_access_token_u_1001",
+    "refresh_token": "mock_refresh_token_u_1001",
+    "token_type": "bearer",
+    "user_id": "u_1001",
+    "finish_profile_prompt": False,
+}
+
+AUTH_RESET_PASSWORD_RESPONSE = {
+    "message": "If this email is registered, a reset link has been sent.",
 }
