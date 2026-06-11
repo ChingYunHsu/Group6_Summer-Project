@@ -1,0 +1,50 @@
+name: ClearPath Backend CI (Poetry Engine)
+
+# Trigger conditions: Runs when someone pushes to the main branch or opens a Pull Request (PR) against main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest  # Executes on the latest virtual Linux environment provided by GitHub
+
+    steps:
+    # 1. Clone the latest repository source code into the runner environment
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # 2. Set up the Python runtime environment (configured to Python 3.10)
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    # 3. Download and install the Poetry dependency manager on the virtual runner
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        installer-parallel: true
+
+    # 4. Check for existing dependency cache to significantly reduce workflow execution times for future PRs
+    - name: Load cached venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v4
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+    # 5. If no cache hit occurs, let Poetry install all dependencies deterministically via poetry.lock (including Pytest)
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-root
+
+    # 6. Core execution: Run Pytest via Poetry and enforce a strict 60% test coverage threshold
+    # If any submitted code falls below 60% coverage, this step fails, blocking the merge button on GitHub!
+    - name: Run Pytest with Coverage
+      run: |
+        poetry run pytest backend/tests/ --cov=backend --cov-fail-under=60
