@@ -27,7 +27,10 @@ jobs:
       run: npm install
       working-directory: ./frontend/mobile
 
-
+    - name: Run Mobile Linting Check
+      run: npm run lint
+      working-directory: ./frontend/mobile
+      
     - name: Run Mobile Tests (Skeleton Pipeline)
       run: npm run test
       working-directory: ./frontend/mobile
