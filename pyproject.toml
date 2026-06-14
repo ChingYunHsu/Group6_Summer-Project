@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Waze-style mobile and web app for vulnerable tourists with real-time accessibility alerts, crowd reports, and ML-powered busyness predictions in Manhattan"
 authors = ["Emmett Quinn, Casey Liew, Hsu Ching Yun, David Irving, Joanna Saheed, Fangxun Wu"]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"

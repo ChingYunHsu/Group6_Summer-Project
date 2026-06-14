@@ -16,7 +16,7 @@ USE clearpath;
 CREATE TABLE IF NOT EXISTS venues (
   venue_id VARCHAR(36) PRIMARY KEY,
   venue_type ENUM(
-    'restroom', 'healthcare', 'emergency_asset',
+    'restroom', 'healthcare', 'emergencyasset',
     'clinic', 'pharmacy', 'hospital', 'dentist', 'laboratory'
   ) NOT NULL,
   name VARCHAR(255) NOT NULL,

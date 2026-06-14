@@ -1,0 +1,66 @@
+ClearPath Web Application Page List
+Mockup Link : https://stitch.withgoogle.com/projects/17979766821868861590?pli=1
+
+
+1. Portal Entry & Location Activation
+Web Page 1: Sign-In Gateway (with Location Trigger)
+Expected Live Information & UI Flow: A split horizontal layout desktop screen. The left side features a solid blue branding panel ("Your Safety, Our Priority."), while the right side hosts interactive credentials forms (Login/Register tabs) and a "Continue as Guest" bypass link. Upon successful account verification or clicking the Guest link, the background dims under a dark mask to dynamically trigger a centered, modal "Enable Location" Prompt Window.
+Global Route Guard Rule: Regardless of the entry path chosen to access the main map—whether via successful login, guest registration bypass, or direct URL access—the application must intercept the routing event and forcibly render the location permission modal to verify tracking status before initializing the map matrix viewport.
+System Logic & Interpretation: The modal forces user interaction via a dual-button action footer ("Not Now" vs. "Allow Access"). Clicking [Allow Access] initializes the browser’s native HTML5 Geolocation API (navigator.geolocation.getCurrentPosition) to stream the traveler's precise latitude and longitude coordinates directly into the frontend state, avoiding mobile-style settings redirections.
+Registration View: Titled "Get started", hosting Full Name, Email, and Password inputs with HIPAA asset labels. Upon successful creation, a temporary intercept sheet asks: "Would you like to finish setting up your Medical Profile and ID now?" with action buttons: [Finish Profile & ID] vs. [Skip for Now].
+2. Core Interactive Viewports
+Web Page 2: Live Help Map (Interactive Viewport & Copilot Framework)
+Expected Live Information & Layout Architecture: A comprehensive split-screen desktop viewport exhibiting a full-screen Manhattan vector map base map, persistent top navigation links (Live Help Map, Insights Dashboard, About Us, User Guide), quick horizontal filter chips (Clinics, Pharmacy, AED, Toilets), and real-time color-coded venue marker pins.
+Four Core Quick Filter Chips & Matching Pin Markers: When a category chip is selected, the map layers dynamically render solid circular pins containing the matching category asset icon.
+Standardized Telemetry Color Legend Semantics:
+🟢 Green (Quiet): Low congestion and optimal capacity states (Under 30% aggregate capacity load).
+🟡 Yellow (Moderate): Balanced operating density (30% – 70% capacity load).
+🔴 Red (Busy): Heavy congestion and peak arrival density (Over 70% capacity load).
+🔵 Blue (No Live Info Mode): Explicitly alerts users that no real-time telemetry is available, or the viewport is locked into a static future prediction snapshot.
+Global Navigation Header Dropdown Controls:
+Language Icon Dropdown: Allows instant switching of the localized system display language. Rows must strictly enforce the dual-naming notation template: [Language Name in its Native Script] ([Language Name in English]) (e.g., Français (French)).
+Avatar Profile Menu: Clicking the avatar dropdown reveals a context container routing directly to Profile, Favorites, and Settings, alongside a red-accented Logout action button.
+Search Bar Advanced Filters UI Logic: Clicking the filter icon inside the search field pulls open a floating overlay. Checking the "Full Wheelchair Access" toggle defers validation until clicking [Apply Filters]. If browser location access is turned off, it intercepts the request and pops up a mandatory Alert Modal: "Location Access Required - To use accessibility tracking filters, please allow location access." [Allow Access] vs. [Cancel].
+Advanced Filters - Dual-State Layout Mutation:
+State 1: "Auto Current Time" = ON (Live Mode): Completely HIDES manual Date and Time input selection rows. The [BUSYNESS LEVEL] section is fully visible. The 12-Hour Forecast Bar Chart inside the Left Drawer is fully rendered.
+State 2: "Auto Current Time" = OFF (Future Prediction Mode): Instantly SHOWS manual Date and Time rows. Completely HIDES the entire [BUSYNESS LEVEL] filter section from view. All venue pins turn Blue. The 12-Hour Forecast Chart inside the Left Drawer is completely removed, replaced by a static text-based predictive capacity tag (e.g., "Predicted Status at [Selected Time]: Quiet").
+Cross-Platform Crowdsourced Display Layer (Read-Only Mode): The web platform operates strictly in Read-Only Mode (suppressing active report submission, confirmation, or resolution buttons).
+Landmark-Bound Alert (Left Panel): Renders a prominent, red-tinted banner at the top of the clinic drawer showcasing the barrier info ("⚠️ Elevator Broken") and validation string ("8 users confirmed").
+Standalone Alert (Map Pop-up): Tapping an independent road pin triggers a compact [Issue Details] floating modal card displaying the report ("⚠️ Ramp Blocked") and isolates the confirmation tally inside a static gray pill container ("🛡️ 12 users confirmed").
+Left Detail Drawer & Open Live Directions Flow: Renders the official Venue Name, Location Info text blocks (Physical Address, Proximity Distance, Phone, Hours), Available Services tags (Bilingual Staff, First-Aid Kit), and the blue [Open Live Directions] action button. Clicking this button instantly closes the drawer and morphs the global header into a multi-row route planning dashboard (Starting Point, Destination, Departure Time inputs).
+Deferred Location Routing Validation: Route planning defaults the starting point to Current Location. The browser's location check is deferred until clicking [Search Route]. If disabled, it displays a centering Alert Modal: "Location Access Required - Location services are required to calculate routes from your current position." [Allow Access] vs. [Cancel]. Turn-by-turn navigation is explicitly excluded due to desktop hardware limitations, offering a static polyline map routing overview and an expanded direction instructions list instead.
+Floating AI Assistant Copilot Button: Tapping the persistent floating blue Assistant Icon Button at the bottom-right corner dynamically toggles open the [ClearPath AI Assistant] card widget overlay, hosting sequential chat messages and a rounded text input container.
+3. Advanced Metrics Control Center
+Web Page 3: Insights Dashboard (Manhattan Analytics Engine)
+Description: A professional, enterprise-grade multi-metric analytical console providing public health data transparency and structural crowdsourced trends across Manhattan.
+Global Scope Control (Multi-Tiered District Filter): An interactive sub-header filter row containing geographic node selectors (such as Uptown, Midtown East, Midtown West, and Downtown). Activating any node appends a specific district parameter (e.g., ?district=midtown_east) to refresh all downstream analytical data modules.
+Component Part Breakdowns & Data Logic:
+Real-Time Density Card: A dynamic Percentage Card displaying real-time aggregate capacity loads across all regional clinics in the selected district, accompanied by short-term volume trend direction vectors (e.g., percentage increase/decrease over the past hour).
+Quick Triage Demand Card (Optimized Routing Model): This card acts as a fastest-routing triage indicator. It dynamically outputs the shortest available live admission wait time (e.g., "12 min wait") detected among the medical facilities inside the currently filtered district scope, guiding users instantly to the least congested emergency option available in that area.
+Best Travel Window Card (Predictive Historical Model): Outputs an optimized time-range recommendation (e.g., "2:30 PM - 4:00 PM") backed by an interactive "Plan Route ↗" link. The backend database dynamically calculates this block by analyzing historical admission logs and occupancy trends for this specific day of the week over the past month, identifying the 24-hour cycle's absolute lowest crowd saturation valley to offer travelers a highly reliable window to plan their visit in advance.
+12-Hour Busyness Prediction Wave-Chart: A smoothed Bézier Area Line Chart mapping a 12-hour timeline against facility capacity loads (0% to 100%), managed by a tab toggle that switches view modes between 12-Hour (Predicted) curves and 7-Day (History) retrospective baselines.
+Proximity & Wait-Time "Fastest Hubs" Leaderboard: A live-updating ranking grid sorting the top 3 optimal healthcare facilities based on a combined travel cost function: [Estimated Clinic Wait Time] + [Real-Time Transit Duration from User's Current GPS Location], displaying active verified language flags (e.g., EN, ES, ZH) and flow status meters.
+4. Unified Documentation Systems
+Web Page 4: About Us (Standalone Information View)
+Expected Live Information: A clean, independent static editorial web page explaining ClearPath’s mission statement ("Bridging the Communication and Accessibility Gaps in Global Healthcare Navigation"), development team background, and engineering frameworks (Dynamic Transparency, Localized Intelligence, Privacy-First Architecture).
+Web Page 5: User Guide Hub (Integrated Sidebar Framework)
+Description: A dedicated, multi-tier knowledge documentation console introducing a persistent left-hand vertical sidebar index menu managing three critical product and policy sections:
+Sub-Page 10a: How To Use ClearPath (Product Guide): Card-based layouts guiding users through operational features: configuring preferences, checking crowds, and anonymous reporting boundaries.
+Sub-Page 10b: Privacy Policy (Synchronized Data Security Disclosures): Detailed parameters regarding data minimization (Anonymous Usage, No Tracking), Local Storage & Preferences usage, and encrypted transport (TLS / AES-256).
+Sub-Page 10c: Terms of Service (Synchronized Platform Rules): A formal document viewer outlining platform usage, clinical scope limits, credential integrity, and limitation of liability disclosures.
+5. Secure Profile & Health Passports
+Web Page 6-1: User Profile Dashboard & Edit Modal Specification 
+Expected Live Information & Form Routing: 
+Main Dashboard Layout: A clean, single-column profile focused strictly on cloud-synced data. Includes an upper light-blue "Clinical Data Privacy" warning banner explicitly stating zero-cloud server storage for medical histories.
+Data Security Displays: * USER ID, FULL NAME, and EMAIL ADDRESS must render with a static text lock icon (🔒) to indicate an uneditable status.
+PHONE NUMBER, NATIONALITY, and SPOKEN LANGUAGES display cleanly below as editable parameters.
+Footer Trigger & QR Handshake Modal: Clicking the prominent blue button [Print Medical Passport via QR Sync >] instantly darkens the screen and opens a centered popup modal displaying a short-lived QR Code (render_token).
+Seamless Routing Handshake: Once the user scans this QR code via their mobile app and the local JSON payload is streamed securely into the session, the modal closes and automatically redirects the user directly to Web Page 6-2.
+Web Page 6-2: Medical Passport Print Preview 
+Expected Live Information: A dedicated standard A4 document viewport compiling user-specific emergency health records into an optimized, bilingual "MEDICAL ALERT / ALERTA MÉDICA" printout sheet template. Includes direct emergency phone records and a primary blue [Print My Medical Pass (PDF)] trigger hook.
+6. Bookmarks & System Utilities
+Web Page 7: Saved Locations (Favorites Grid)
+Expected Live Information: A customized bookmark interface rendering a dynamic card grid of the traveler's prioritized healthcare facilities. Each saved facility block listens to the backend data stream to display dynamic status tags (HIGH CAPACITY, MODERATE, OPTIMAL FLOW, DIVERTING), distance metrics, and an active [Get Directions] routing button.
+Web Page 8: Settings (Data Rights & Preference Hub)
+Expected Live Information: A system configuration panel organized into modular preference blocks: Account Settings, Notification Preferences, Privacy & Security (Legal Documents links), Data Management (Export Data via [Initiate Export]), and a red-accented DANGER ZONE block containing a destructive button to [Delete Account & Erase All Local Data] permanently.
+
