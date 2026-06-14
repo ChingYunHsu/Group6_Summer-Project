@@ -2,6 +2,19 @@ from functools import wraps
 
 from flask import current_app, jsonify, request
 
+# Mock in-memory session store: access_token -> {"user_id": str, "is_guest": bool}
+SESSIONS = {}
+
+
+def get_current_session():
+    """Look up the session for the bearer token on the current request, if any."""
+    header = request.headers.get("Authorization", "")
+    if not header.lower().startswith("bearer "):
+        return None
+
+    token = header[len("Bearer "):].strip()
+    return SESSIONS.get(token)
+
 
 def require_api_key(view_func):
     @wraps(view_func)
