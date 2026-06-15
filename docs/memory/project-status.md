@@ -1,7 +1,7 @@
 # ClearPath Current Project Status
 
 > Updated: 2026-06-10 | openapi.yaml v1.5.0 | grill-with-docs decisions frozen
-> Sprint 2 进行中 | Notion: 仅 D2.1 (ERD) In progress
+> Sprint 2 in progress | Notion: only D2.1 (ERD) In progress
 
 ---
 
@@ -104,7 +104,7 @@ opening_hours, photos, rating, weather_risk, source_confidence,
 created_at, updated_at
 ```
 
-> 注: Data+ML schema 的 venues 表包含 `district` 列，但 Docker schema 尚未同步。详见 `project-issues.md #4`。
+> Note: The Data+ML schema's venues table includes a `district` column, but the Docker schema has not been synced yet. See `project-issues.md #4` for details.
 
 ---
 
@@ -119,7 +119,7 @@ created_at, updated_at
 - **Weather API**: ✅ NWS integration, 1 cached entry
 - **Venue Language**: ✅ LASS data, 63 matched
 - **DQR Pipeline**: `Data+ML/test/6.8-6.12_DB/dqr_cleaning_pipeline.ipynb` (21 cells, 218 lines; 6 shared modules; output → `output/` subdirectory)
-- **Notebook Cell Safety**: Cells 27/31/35/37/46 已注释（已完成或危险操作），cell 14 添加 `finally` 连接清理
+- **Notebook Cell Safety**: Cells 27/31/35/37/46 commented out (completed or dangerous operations), cell 14 has `finally` connection cleanup
 
 ### ETL Row Counts (2026-06-10, corrected)
 
@@ -134,7 +134,7 @@ created_at, updated_at
 | Weather (NWS API) | — | 1 cached |
 | Venue Language (LASS) | 442 | 63 matched |
 
-> 注: 旧版记录的 3,479 venues 是文档计算错误（应为 4,983）。实际 DB 行数为 4,841（OSM Healthcare 少 142 条）。 `[ses_14a4f112bfferlcsOw1C094HjM]`
+> Note: The previously recorded 3,479 venues was a documentation calculation error (should be 4,983). Actual DB row count is 4,841 (142 fewer than OSM Healthcare plan). `[ses_14a4f112bfferlcsOw1C094HjM]`
 
 ---
 
@@ -215,11 +215,11 @@ created_at, updated_at
 
 ## Sprint Pipeline Status
 
-### 已完成
+### Completed
 
-| 项目 | 状态 |
-|------|------|
-| ✅ 19-table Schema (venue_type 统一为 emergencyasset) | 2026-06-10 |
+| Item | Status |
+|------|--------|
+| ✅ 19-table Schema (venue_type unified as emergencyasset) | 2026-06-10 |
 | ✅ ETL data ingestion (7 sources, ~30K rows) | 2026-06-05 |
 | ✅ Mock data (v1.5.0) | 2026-06-09 |
 | ✅ Weather API integration (NWS) | 2026-06-05 |
@@ -230,23 +230,23 @@ created_at, updated_at
 | ✅ users + favorites + notifications tables | 2026-06-09 |
 | ✅ report_categories + ALTER user_reports/confirmations | 2026-06-09 |
 | ✅ busyness_forecasts + venue_embeddings tables | 2026-06-09 |
-| ✅ 10 产品决策冻结 (D1-D10) | 2026-06-09 |
-| ✅ DQR 数据质量报告 | 2026-06-10 |
-| ✅ Notion Sprint Backlog 导出 + 对齐 | 2026-06-10 |
+| ✅ 10 product decisions frozen (D1-D10) | 2026-06-09 |
+| ✅ DQR data quality report | 2026-06-10 |
+| ✅ Notion Sprint Backlog export + alignment | 2026-06-10 |
 | ✅ Flask blueprints + mock endpoints | 2026-06-08 |
 | ✅ Mobile Expo Router (7 pages) | 2026-06-08 |
 | ✅ Web Vite + React (BusynessChart) | 2026-06-10 |
 
-### 进行中 (Sprint 2)
+### In Progress (Sprint 2)
 
-| 项目 | 负责人 | Notion 状态 |
-|------|--------|-------------|
+| Item | Owner | Notion Status |
+|------|-------|---------------|
 | 🔄 12-hour ML forecast (ARIMA/LSTM) | F | **In progress** |
 
-### 待实现功能 (Sprint 2)
+### Pending Features (Sprint 2)
 
-| 项目 | 负责人 | 依赖 | 状态 |
-|------|--------|------|------|
+| Item | Owner | Dependencies | Status |
+|------|-------|--------------|--------|
 | ❌ JWT Auth (backend impl) | E | users table ✅ | Not started |
 | ❌ Profile CRUD (backend impl) | E | users table ✅ | Not started |
 | ❌ Mobile UI Component Binding | D | Mock data ✅ | Not started |
@@ -257,10 +257,10 @@ created_at, updated_at
 | ❌ Cascade delete API | E | users table ✅ | Not started |
 | ❌ Gemini RAG (table ready) | E | venue_embeddings ✅ | Not started |
 
-### 已知问题
+### Known Issues
 
-> 所有技术问题、阻塞项、已解决问题详见 [`project-issues.md`](project-issues.md)。
-> 当前未解决: D2.4 Mock 数据不完整 · D2.5 ARIMA/LSTM 未实现
+> All technical issues, blockers, and resolved items are documented in [`project-issues.md`](project-issues.md).
+> Currently unresolved: D2.4 Mock data incomplete · D2.5 ARIMA/LSTM not implemented
 
 ---
 
@@ -273,8 +273,8 @@ docs/memory/
 ├── execution-plan.md          ← Execution plan (DB schema focus)
 ├── context-terms.md           ← Domain glossary + 10 frozen decisions (D1-D10)
 ├── openapi_gap_finalacceptcriteria.md  ← Gap analysis
-├── sprint-tasks-1-4.md        ← Sprint 1-4 task summary (Notion 对齐)
-├── notion-sprint-backlog-export.md ← Notion 数据导出 (2026-06-10)
+├── sprint-tasks-1-4.md        ← Sprint 1-4 task summary (Notion aligned)
+├── notion-sprint-backlog-export.md ← Notion data export (2026-06-10)
 ├── clearpath-requirements-features.md ← Requirements
 └── MEMORY.md                  ← Index
 

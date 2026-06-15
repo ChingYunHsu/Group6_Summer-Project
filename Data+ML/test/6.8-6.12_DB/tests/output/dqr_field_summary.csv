@@ -1,18 +1,10 @@
 table,column,dtype,non_null,total,missing_pct,nunique,mode,min,max,mean,std
 venues,venue_id,object,4838,4838,0.0,4838,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
-venues,venue_type,object,4838,4838,0.0,3,emergency_asset,,,,
+venues,venue_type,object,4838,4838,0.0,3,emergencyasset,,,,
 venues,name,object,4838,4838,0.0,2782,"Walt Disney/ABC, Inc. AED",,,,
-venues,latitude,float64,4838,4838,0.0,2635,40.7607464,40.5913629,42.8038509,40.76,0.05
-venues,longitude,float64,4838,4838,0.0,2599,-73.9835251,-74.4016511,-73.8000647,-73.98,0.02
+venues,latitude,float64,4838,4838,0.0,2621,0.0,0.0,40.8830448,39.72,6.44
+venues,longitude,float64,4838,4838,0.0,2590,0.0,-74.0228642,0.0,-72.08,11.69
 venues,borough,object,4500,4838,7.0,11,Manhattan,,,,
-venues,district,object,4838,4838,0.0,4,downtown,,,,
-venues,language_tags,object,0,4838,100.0,0,,,,,
-venues,primary_language,object,0,4838,100.0,0,,,,,
-venues,secondary_language,object,0,4838,100.0,0,,,,,
-venues,accessible_status,object,4838,4838,0.0,1,none,,,,
-venues,accessibility_features,object,0,4838,100.0,0,,,,,
-venues,active_warning,int64,4838,4838,0.0,1,0,0.0,0.0,0.0,0.0
-venues,open_now,int64,4838,4838,0.0,1,1,1.0,1.0,1.0,0.0
 venues,address,object,4731,4838,2.2,2659,750 SEVENTH AVENUE,,,,
 venues,phone,object,800,4838,83.5,729,2122417005,,,,
 venues,website,object,505,4838,89.6,478,www.premierhomehealthcare.com,,,,
@@ -21,8 +13,16 @@ venues,photos,object,0,4838,100.0,0,,,,,
 venues,rating,object,0,4838,100.0,0,,,,,
 venues,weather_risk,object,4838,4838,0.0,1,low,,,,
 venues,source_confidence,float64,4838,4838,0.0,5,0.8,0.3,0.9,0.74,0.14
-venues,created_at,datetime64[ns],4838,4838,0.0,8,2026-06-09 15:08:58,,,,
-venues,updated_at,datetime64[ns],4838,4838,0.0,14,2026-06-09 15:08:58,,,,
+venues,language_tags,object,0,4838,100.0,0,,,,,
+venues,primary_language,object,0,4838,100.0,0,,,,,
+venues,secondary_language,object,0,4838,100.0,0,,,,,
+venues,accessible_status,object,4838,4838,0.0,1,none,,,,
+venues,accessibility_features,object,0,4838,100.0,0,,,,,
+venues,active_warning,int64,4838,4838,0.0,1,0,0.0,0.0,0.0,0.0
+venues,open_now,int64,4838,4838,0.0,1,1,1.0,1.0,1.0,0.0
+venues,district,object,4714,4838,2.6,4,downtown,,,,
+venues,created_at,datetime64[ns],4838,4838,0.0,9,2026-06-11 18:43:07,,,,
+venues,updated_at,datetime64[ns],4838,4838,0.0,9,2026-06-11 18:43:07,,,,
 restroom_profiles,venue_id,object,473,473,0.0,473,008920d309a932335a51a1095936ac560a96,,,,
 restroom_profiles,restroom_type,object,392,473,17.1,6,Multi-Stall W/M Restrooms,,,,
 restroom_profiles,operator,object,473,473,0.0,32,NYC Parks,,,,
@@ -42,7 +42,7 @@ healthcare_profiles,operator_name,object,431,1086,60.3,213,NYU Langone Hospitals
 healthcare_profiles,ownership_type,object,431,1086,60.3,6,Not for Profit Corporation,,,,
 healthcare_profiles,main_site_name,object,0,1086,100.0,0,,,,,
 healthcare_profiles,official_source_priority,int64,1086,1086,0.0,2,2,1.0,2.0,1.6,0.49
-emergency_assets,asset_id,int64,3279,3279,0.0,3279,1776,1776.0,5054.0,3415.0,946.71
+emergency_assets,asset_id,int64,3279,3279,0.0,3279,1,1.0,3279.0,1640.0,946.71
 emergency_assets,venue_id,object,3279,3279,0.0,3279,001f64c10f173922baf75f5c203de3231389,,,,
 emergency_assets,asset_type,object,3279,3279,0.0,1,aed,,,,
 emergency_assets,floor,object,3239,3279,1.2,2004,-,,,,
@@ -67,9 +67,9 @@ pedestrian_ramps,dws_condition,object,23625,23625,0.0,6,Missing,,,,
 pedestrian_ramps,ponding,object,23625,23625,0.0,2,No,,,,
 pedestrian_ramps,obstacles_ramp,object,23625,23625,0.0,22,None,,,,
 pedestrian_ramps,obstacles_landing,object,23625,23625,0.0,42,None,,,,
-pedestrian_ramps,created_at,datetime64[ns],23625,23625,0.0,1,2026-06-09 15:09:01,,,,
-pedestrian_ramps,updated_at,datetime64[ns],23625,23625,0.0,1,2026-06-09 15:09:01,,,,
-venue_source_links,source_link_id,int64,4838,4838,0.0,4838,3484,3484.0,8328.0,5905.91,1398.13
+pedestrian_ramps,created_at,datetime64[ns],23625,23625,0.0,2,2026-06-11 18:43:15,,,,
+pedestrian_ramps,updated_at,datetime64[ns],23625,23625,0.0,2,2026-06-11 18:43:15,,,,
+venue_source_links,source_link_id,int64,4838,4838,0.0,4838,1,1.0,4842.0,2420.17,1397.72
 venue_source_links,venue_id,object,4838,4838,0.0,4838,0006c1aef358bc9d07ac1a05258679fbfa71,,,,
 venue_source_links,source_name,object,4838,4838,0.0,5,aed_inventory,,,,
 venue_source_links,source_record_id,object,4838,4838,0.0,4838,0022d470c7e385eaf6952c2942a29dfa7d4a,,,,
@@ -77,12 +77,12 @@ venue_source_links,raw_name,object,4838,4838,0.0,2778,"Walt Disney/ABC, Inc.",,,
 venue_source_links,raw_location_text,object,3710,4838,23.3,1725,750 SEVENTH AVENUE,,,,
 venue_source_links,matched_method,object,4838,4838,0.0,1,single_source,,,,
 venue_source_links,match_confidence,float64,4838,4838,0.0,5,0.8,0.3,0.9,0.74,0.14
-venue_source_links,created_at,datetime64[ns],4838,4838,0.0,8,2026-06-09 15:08:58,,,,
-external_context_cache,cache_id,int64,1,1,0.0,1,8,8.0,8.0,8.0,
+venue_source_links,created_at,datetime64[ns],4838,4838,0.0,9,2026-06-11 18:43:07,,,,
+external_context_cache,cache_id,int64,1,1,0.0,1,1,1.0,1.0,1.0,
 external_context_cache,context_type,object,1,1,0.0,1,weather_current,,,,
 external_context_cache,venue_id,object,0,1,100.0,0,,,,,
 external_context_cache,request_key,object,1,1,0.0,1,weather:manhattan,,,,
-external_context_cache,payload_json,object,1,1,0.0,1,"{""risk_level"": ""low"", ""description"": ""Clear"", ""hum",,,,
-external_context_cache,valid_from,datetime64[ns],1,1,0.0,1,2026-06-09 15:09:02,,,,
-external_context_cache,expires_at,datetime64[ns],1,1,0.0,1,2026-06-09 16:09:02,,,,
-external_context_cache,created_at,datetime64[ns],1,1,0.0,1,2026-06-09 15:09:02,,,,
+external_context_cache,payload_json,object,1,1,0.0,1,"{""risk_level"": ""low"", ""description"": ""Partly Cloud",,,,
+external_context_cache,valid_from,datetime64[ns],1,1,0.0,1,2026-06-11 18:43:16,,,,
+external_context_cache,expires_at,datetime64[ns],1,1,0.0,1,2026-06-11 19:43:16,,,,
+external_context_cache,created_at,datetime64[ns],1,1,0.0,1,2026-06-11 18:43:16,,,,

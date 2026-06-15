@@ -4,9 +4,13 @@ from .config import MYSQL_CONFIG
 from .db import column_exists, table_exists
 
 
-DUPLICATE_OBJECT_CODES = {1050, 1060}
+DUPLICATE_OBJECT_CODES = {1050, 1060}  # MySQL: 表/列已存在
 
+# MIGRATIONS: 数据库迁移定义列表
+# 每个迁移包含 name（名称）、kind（类型）、sql（SQL语句）
+# kind 类型："column"=检查列、"table"=检查表、"index"=检查索引、"always"=每次都执行#
 MIGRATIONS = [
+    # ──── 类型 1: 修改列定义（ MODIFY COLUMN：重复执行安全）────
     {
         "name": "modify venues.venue_type",
         "kind": "always",
@@ -14,6 +18,7 @@ MIGRATIONS = [
         "'restroom','healthcare','emergencyasset','clinic','pharmacy',"
         "'hospital','dentist','laboratory') NOT NULL",
     },
+    # ──── 类型 2: 添加新列────
     *[
         {
             "name": f"add {table}.{column}",
@@ -46,12 +51,14 @@ MIGRATIONS = [
             ("pedestrian_ramps", "district", "ALTER TABLE pedestrian_ramps ADD COLUMN district VARCHAR(32) DEFAULT NULL AFTER borough"),
         ]
     ],
+    # ──── 类型 3: 修改枚举值（把 busyness_scores.level 从 3 级枚举扩展为 4 级）────
     {
         "name": "modify busyness_scores.level to 4-level enum",
         "kind": "always",
         "sql": "ALTER TABLE busyness_scores MODIFY COLUMN level "
         "ENUM('quiet','moderate','busy','no_data') DEFAULT NULL",
     },
+    # ──── 类型 4: 添加唯一约束（防止重复数据,动态添加过程应用）────
     {
         "name": "add emergency_assets unique constraint",
         "kind": "index",
@@ -60,6 +67,7 @@ MIGRATIONS = [
         "sql": "ALTER TABLE emergency_assets ADD UNIQUE KEY "
         "uq_emergency_asset_natural (venue_id, floor, location_type)",
     },
+    # ──── 类型 5: 创建新表（table = 检查表是否存在）────
     {
         "name": "create venue_accessibility",
         "kind": "table",
@@ -98,13 +106,18 @@ MIGRATIONS = [
     },
 ]
 
-
+# migration_is_applied: 检查迁移是否已应用
+# 根据迁移类型检查数据库中是否已存在该列/表/索引
+# 返回：True（已应用）, False（未应用）
 def migration_is_applied(conn, migration):
     if migration["kind"] == "column":
+        # 检查列是否存在
         return column_exists(conn, migration["table"], migration["column"])
     if migration["kind"] == "table":
+        # 检查表是否存在
         return table_exists(conn, migration["table"])
     if migration["kind"] == "index":
+        # 检查索引是否存在（通过 information_schema.STATISTICS）
         with conn.cursor() as cursor:
             cursor.execute(
                 "SELECT COUNT(*) FROM information_schema.STATISTICS "
@@ -119,13 +132,21 @@ def migration_is_applied(conn, migration):
     return False
 
 
+# apply_migrations: 应用所有迁移
+# 遍历迁移列表，跳过已应用的，执行未应用的
+# 返回：{"applied": 已应用数, "skipped": 跳过数}
 def apply_migrations(conn, migrations=MIGRATIONS):
-    applied = skipped = 0
+    applied = skipped = 0   # 统计计数器
+
     for migration in migrations:
         name = migration["name"]
+
+        # 步骤 1：检查是否已应用
         if migration_is_applied(conn, migration):
             skipped += 1
             continue
+
+        # 步骤 2：执行 SQL
         try:
             with conn.cursor() as cursor:
                 cursor.execute(migration["sql"])
@@ -133,8 +154,11 @@ def apply_migrations(conn, migrations=MIGRATIONS):
             applied += 1
         except pymysql.MySQLError as error:
             conn.rollback()
+            # 步骤 3：处理重复对象错误（1050/1060 = 列/表/索引已存在）
             if error.args and error.args[0] in DUPLICATE_OBJECT_CODES:
                 skipped += 1
                 continue
+            # 其他错误：抛出异常
             raise RuntimeError(f"Migration failed: {name}: {error}") from error
+
     return {"applied": applied, "skipped": skipped}

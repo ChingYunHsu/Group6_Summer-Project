@@ -87,6 +87,8 @@ dqr_cleaning_pipeline.ipynb
 
 ## 输出文件
 
+所有生成的 CSV 和 PNG 文件输出到 `tests/output/` 目录。
+
 | 文件 | 内容 |
 |------|------|
 | `venues_clean.csv` | 清洗后场馆（统一 schema） |

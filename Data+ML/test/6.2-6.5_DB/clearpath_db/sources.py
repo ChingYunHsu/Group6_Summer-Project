@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from .config import DATA_ROOT, MANIFEST_PATH
 from .validation import is_manhattan
 
-
+# bundle of all sources together, for ease of passing around
 @dataclass
 class SourceBundle:
     restrooms: list
@@ -15,24 +15,27 @@ class SourceBundle:
     aed: list
     ramps: list
 
-
+# helper function to load manifest json file and return dict
 def load_manifest(path=MANIFEST_PATH):
     with open(path, encoding="utf-8") as handle:
         return json.load(handle)
 
-
+# helper function to load single csv file and return list of dicts
 def _load_csv(path):
     with open(path, encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
 
-
+# helper function to load all sources together into a SourceBundle
 def load_sources(data_root=DATA_ROOT):
+    # load csv by path and json by path, return a SourceBundle
     restrooms = _load_csv(data_root / "Public_Restrooms_20260526.csv")
     parks = _load_csv(
         data_root / "Directory_Of_Toilets_In_Public_Parks_20260526.csv"
     )
+    # load geojson by path, extract features list, return empty list if no features
     with open(data_root / "POI_healtcare.geojson", encoding="utf-8") as handle:
         osm_features = json.load(handle).get("features", [])
+
     nys = _load_csv(data_root / "Health_Facility_General_Information_20260526.csv")
     aed = _load_csv(
         data_root
@@ -41,7 +44,7 @@ def load_sources(data_root=DATA_ROOT):
     ramps = _load_csv(data_root / "Pedestrian_Ramp_Locations_20260526.csv")
     return SourceBundle(restrooms, parks, osm_features, nys, aed, ramps)
 
-
+# helper function to count records in each source, return dict of bundle counts by source name
 def source_counts(bundle):
     return {
         "NYC Public Restrooms": len(bundle.restrooms),
@@ -52,7 +55,7 @@ def source_counts(bundle):
         "Pedestrian Ramps": len(bundle.ramps),
     }
 
-
+# helper function to count records in each source within Manhattan scope, return dict of bundle counts by source name
 def manhattan_counts(bundle):
     def restroom_in_scope(row):
         try:
