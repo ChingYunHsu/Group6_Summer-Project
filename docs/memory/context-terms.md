@@ -23,7 +23,7 @@
 | D7 | `auth_subject` | 不需要 | 邮箱即认证标识 |
 | D8 | 报告类别存储 | 字典表 `report_categories` | 按场馆类型过滤类别 |
 | D9 | RAG embedding 存储 | MySQL JSON/BLOB | 零额外成本，~3500 条场馆数据量足够 |
-| D10 | 医疗数据边界 | 云端加密存储（AES-256-GCM）+ 本地无独立副本 | Web 医疗護照列印需求要求服务端可读取医疗数据 |
+| D10 | 医疗数据边界 | **严格数据分层**: Tier 1 Profile Group(User ID/Email/Name[Read-Only] + Phone/Languages/Nationality[Editable])云端同步; Tier 2 Medical ID(DOB/Gender/Address/Emergency Contact/Blood Type/Allergies/Conditions)100%本地存储Mobile Only，完全隔离于云端MySQL; Web端Medical ID字段禁用; F-14打印通过render_token(JWT 5min)+QR码+P2P加密通道实现 | 2026-06-15 需求变更 |
 
 ---
 

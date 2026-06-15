@@ -197,12 +197,26 @@ src/
 
 | Module | Purpose |
 |--------|---------|
-| `dqr_utils.py` | DB connection, geo utils (`MANHATTAN_BOUNDS`, `haversine_m`, `validate_coords`) |
+| `dqr_utils.py` | DB connection, geo utils (`MANHATTAN_BOUNDS`, `haversine_m`, `validate_coords`), **NYC Traffic API 客户端** (`fetch_traffic_hourly`, `classify_busyness`) |
 | `dqr_io.py` | Load tables, export CSVs, build audit reports |
 | `dqr_checks.py` | 7 quality checks + DQ scoring + D2.7 |
 | `dqr_analysis.py` | Profiling, anomaly detection, GPS duplicate detection |
 | `dqr_cleaning.py` | Cleaning pipeline (never mutates input DataFrame) |
 | `external_ingestion.py` | Traffic (Google Maps) + weather (NWS/OpenWeather) API |
+
+#### Busyness 数据来源 (2026-06-15 确认)
+
+`busyness_scores` 和 `busyness_forecasts` 两表当前 **0 行**。已配置但未导入的数据源：
+
+| 数据源 | 类型 | 客户端位置 | 状态 |
+|--------|------|-----------|------|
+| **BestTime API** (主) | 商业 API — 场馆级拥挤度预测 | `src/settings.py` (配置), `Data+ML/test/6.1_heatmap/test_besttime_heatmap.ipynb` (demo) | ✅ 配置 / ❌ 未导入 |
+| **NYC SODA Traffic** (辅) | 公开 API — 曼哈顿交通流量 | `Data+ML/test/dqr/dqr_utils.py` → `fetch_traffic_hourly()` | ✅ 客户端 / ❌ 未写入 busyness 表 |
+
+- BestTime 限制: venue filter/radar 配额昂贵，需月度限速；`RUN_LIVE_HEATMAP = False` 已禁用
+- NYC Traffic 逻辑: 原始交通数据 → `classify_busyness()` → 4 级分类 (quiet/moderate/busy/no_data)
+- **D2.5 的第一步**: 先将 NYC Traffic 历史数据灌入 `busyness_scores` 作为 ML 训练集
+- **详见**: `docs/memory/project-status.md` → "Busyness Data Sources" 章节
 
 #### Notebooks
 

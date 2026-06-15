@@ -20,7 +20,7 @@
 | D7 | `auth_subject` | 不需要，邮箱即认证标识 |
 | D8 | 报告类别存储 | 字典表 `report_categories`（按场馆类型过滤） |
 | D9 | RAG embedding | MySQL JSON/BLOB（~3500 条数据量足够） |
-| D10 | 医疗数据边界 | 云端加密存储（AES-256-GCM）+ 本地无独立副本 |
+| D10 | 医疗数据边界 | **严格数据分层**: Tier 1 Profile Group 云端同步(Read-Only/Editable); Tier 2 Medical ID 100%本地 Mobile Only; F-14 QR-P2P打印 (2026-06-15 修订) |
 
 ---
 
@@ -143,7 +143,6 @@ Phase 6 (验证+清理)
 | D2.1 | ERD Revision, Schema Updates & District Zoning Setup | Week 4 | ERD update + 4 district nodes | ✅ 2026-06-09 | 5 |
 | D2.2 | MySQL Table Implementation & Index Tuning | Week 4 | DDL scripts + FK constraints + composite indexes | ✅ 2026-06-09 | 5 |
 | D2.3 | Data Parsing & Ingestion | Week 5 | ETL: 349 restrooms, 900 healthcare, 431 NYS, 3,279 AEDs, 63 LASS | ✅ 2026-06-05 | 10 |
-| D2.4 | API & Map Mocking Data Arrays | Week 4 | JSON mock data grouped by lowercase district tokens | ⚠️ 部分完成 | 6 |
 | D2.5 | Zoned Historical Ingestion & ML Model Init (Advance Start) | Week 5 | [High Priority] traffic_hourly.csv fetched; ARIMA/LSTM pending | ⚠️ 进行中 | 10 |
 | D2.6 | Data Deduplication & Multi-Source Cleansing Preprocessing | Week 5 | GPS duplicate detection (grid+haversine, lat-scaled) | ✅ 2026-06-11 | 10 |
 | D2.7 | Database Integrity, Privacy & Constraint Unit Testing | Week 5 | PyTest: 100% venues non-Null district; 12 test cases | ✅ 2026-06-11 | — |

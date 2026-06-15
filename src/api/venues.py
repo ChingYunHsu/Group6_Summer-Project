@@ -1,5 +1,9 @@
+import json as _json
+import os
 from copy import deepcopy
+from datetime import datetime
 
+import pymysql
 from flask import Blueprint, jsonify, request
 
 from auth import require_api_key
@@ -7,6 +11,30 @@ from mock_data import VENUE_BUSYNESS, VENUE_FORECASTS, VENUES
 
 
 bp = Blueprint("venues", __name__)
+
+
+# ── DB helpers ────────────────────────────────────────────────
+
+def _get_db_conn():
+    """Create MySQL connection for busyness queries (per-request)."""
+    return pymysql.connect(
+        host=os.environ.get('CLEARPATH_DB_HOST', '127.0.0.1'),
+        port=int(os.environ.get('CLEARPATH_DB_PORT', '3306')),
+        user=os.environ.get('CLEARPATH_DB_USER', 'clearpath_app'),
+        password=os.environ.get('CLEARPATH_DB_PASSWORD', 'clearpath_app'),
+        database=os.environ.get('CLEARPATH_DB_NAME', 'clearpath'),
+        charset='utf8mb4',
+    )
+
+
+def _level_to_color(level: str) -> str:
+    """Map busyness level to display color (per OpenAPI spec / F-01)."""
+    return {
+        'quiet': 'green',
+        'moderate': 'yellow',
+        'busy': 'red',
+        'no_data': '#2563EB',  # blue — no live telemetry available
+    }.get(level, '#2563EB')
 
 
 @bp.get("/api/v1/venues")
@@ -52,6 +80,49 @@ def get_venue(venue_id: str):
 @bp.get("/api/v1/venues/<venue_id>/busyness")
 @require_api_key
 def get_venue_busyness(venue_id: str):
+    """Return current busyness for a venue.
+
+    Reads from busyness_scores table; falls back to mock data if DB
+    is unavailable or has no matching record.
+    """
+    # --- Try DB first ---
+    try:
+        conn = _get_db_conn()
+        try:
+            with conn.cursor() as cur:
+                now = datetime.now()
+                cur.execute(
+                    "SELECT score, level, estimated_wait_minutes, created_at "
+                    "FROM busyness_scores "
+                    "WHERE venue_id = %s "
+                    "  AND forecast_start_time <= %s "
+                    "  AND forecast_end_time > %s "
+                    "ORDER BY forecast_start_time DESC LIMIT 1",
+                    (venue_id, now, now),
+                )
+                row = cur.fetchone()
+                if row:
+                    score, level, wait_min, created_at = row
+                    return jsonify({
+                        "venue_id": venue_id,
+                        "busyness": {
+                            "busyness_score": score,
+                            "busyness_status": level,
+                            "busyness_color": _level_to_color(level),
+                            "is_future_time_query": False,
+                            "data_mode": "live",
+                            "estimated_wait_minutes": wait_min,
+                            "updated_at": (
+                                created_at.isoformat() + "Z" if created_at else None
+                            ),
+                        },
+                    })
+        finally:
+            conn.close()
+    except Exception:
+        pass  # Fallback to mock
+
+    # --- Fallback to mock data ---
     entry = VENUE_BUSYNESS.get(venue_id)
     if not entry:
         return jsonify({"error": "Venue not found."}), 404
@@ -70,6 +141,50 @@ def get_venue_busyness(venue_id: str):
 @bp.get("/api/v1/venues/<venue_id>/busyness/forecast")
 @require_api_key
 def get_venue_busyness_forecast(venue_id: str):
+    """Return 12-hour busyness forecast for a venue.
+
+    Reads forecast_1h JSON from busyness_scores table; falls back to mock.
+    """
+    # --- Try DB first ---
+    try:
+        conn = _get_db_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT forecast_1h FROM busyness_scores "
+                    "WHERE venue_id = %s AND forecast_1h IS NOT NULL "
+                    "ORDER BY forecast_start_time DESC LIMIT 1",
+                    (venue_id,),
+                )
+                row = cur.fetchone()
+                if row:
+                    forecast_raw = row[0]
+                    forecast_list = (
+                        _json.loads(forecast_raw)
+                        if isinstance(forecast_raw, str)
+                        else forecast_raw
+                    )
+                    # Find best time to go (lowest percent)
+                    best = min(forecast_list, key=lambda x: x.get("percent", 100))
+                    return jsonify({
+                        "venue_id": venue_id,
+                        "forecast": forecast_list,
+                        "best_time_to_go_today": {
+                            "offset_hours": best["offset_hours"],
+                            "percent": best["percent"],
+                            "label": (
+                                "Now"
+                                if best["offset_hours"] == 0
+                                else f"In {best['offset_hours']} hours"
+                            ),
+                        },
+                    })
+        finally:
+            conn.close()
+    except Exception:
+        pass  # Fallback to mock
+
+    # --- Fallback to mock data ---
     forecast = VENUE_FORECASTS.get(venue_id)
     if not forecast:
         return jsonify({"error": "Venue not found."}), 404

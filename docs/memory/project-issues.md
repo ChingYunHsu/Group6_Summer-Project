@@ -78,8 +78,10 @@
 
 ## 📋 P2 — 待确认事项
 
-### 13. ~~医疗数据边界 — 已冻结 (D10)~~ ✅ 已解决 2026-06-09
-- **状态**: ✅ 已确定云端加密存储方案
+### 13. 医疗数据边界 — D10 需求变更 🔄 2026-06-15
+- **状态**: 🔄 已修订
+- **原方案**: 云端加密存储（AES-256-GCM）
+- **新方案**: 严格数据分层 — Tier 1 Profile Group(User ID/Email/Name[Read-Only] + Phone/Languages/Nationality[Editable])云端同步; Tier 2 Medical ID(DOB/Gender/Address/Emergency Contact/Blood Type/Allergies/Conditions)100%本地 Mobile Only; Web端Medical ID字段禁用; F-14打印通过render_token+QR码+P2P加密通道实现
 
 ### 14. ~~RAG 数据层 — 已冻结 (D9)~~ ✅ 已解决 2026-06-09
 - **状态**: ✅ 已创建 venue_embeddings 表
@@ -152,12 +154,12 @@
 | 任务 | 计划状态 | 实际状态 | 偏差 |
 |------|----------|----------|------|
 | D2.1 ERD Revision, Schema Updates & District Zoning | 🔄 In progress | ✅ 已完成 | Schema 完成，ERD 图表已导出 (docs/erd/) |
-| D2.2 MySQL Table Implementation & Index Tuning | ❌ Not started | ✅ 已完成 | 19 tables, 20 FK, composite indexes verified |
-| D2.3 Data Parsing & Ingestion | ❌ Not started | ✅ 已完成 | 7 sources, ~30K rows, clearpath_sources.json |
-| D2.4 API & Map Mocking Data Arrays | ❌ Not started | ⚠️ 部分完成 | 缺少区域分组 mock 数据 |
-| D2.5 Zoned Historical Ingestion & ML Model Init | ❌ Not started | ⚠️ 进行中 | traffic_hourly.csv fetched; ARIMA/LSTM pending |
-| D2.6 Data Deduplication & Multi-Source Cleansing | ❌ Not started | ✅ 已完成 | GPS duplicate detection (grid+haversine, lat-scaled) |
-| D2.7 Database Integrity Unit Testing | ❌ Not started | ✅ 已完成 | 12 pytest cases in test_dqr_modules.py, all pass |
+| D2.2 MySQL Table Implementation & Index Tuning  ✅ 已完成 | 19 tables, 20 FK, composite indexes verified |
+| D2.3 Data Parsing & Ingestion |  | ✅ 已完成 | 7 sources, ~30K rows, clearpath_sources.json |
+<!-- | D2.4 API & Map Mocking Data Arrays | ❌ Not started | ⚠️ 部分完成 | 缺少区域分组 mock 数据 | -->
+| D2.5 Zoned Historical Ingestion & ML Model Init | ❌ Not started  | traffic_hourly.csv fetched; ARIMA/LSTM pending |
+| D2.6 Data Deduplication & Multi-Source Cleansing |  ✅ 已完成 | GPS duplicate detection (grid+haversine, lat-scaled) |
+| D2.7 Database Integrity Unit Testing | ✅ 已完成 | 12 pytest cases in test_dqr_modules.py, all pass |
 
 ---
 
@@ -184,7 +186,7 @@
 | 17 | D7 `auth_subject` | 不需要, 邮箱即认证标识 | grill-with-docs 2026-06-09 |
 | 18 | D8 报告类别存储 | 字典表 `report_categories` (按场馆类型过滤) | grill-with-docs 2026-06-09 |
 | 19 | D9 RAG embedding | MySQL JSON/BLOB (~3500条足够) | grill-with-docs 2026-06-09 |
-| 20 | ~~D10 医疗数据边界~~ | ~~严格本地存储, 不云同步~~ → D10 修订: 云端加密存储 (AES-256-GCM) | grill-with-docs 2026-06-09 → 修订 2026-06-09 |
+| 20 | D10 医疗数据边界 | ~~严格本地~~ → ~~云端加密~~ → **严格数据分层**: Tier 1 标准档案云端同步 + Tier 2 医疗ID 100%本地隔离 + F-14 QR-P2P打印 | grill-with-docs 2026-06-09 → 修订 2026-06-15 |
 | 21 | Chatbot RAG | 已加 POST 端点 | openapi_gap (#2) |
 | 22 | Medical Passport PDF | 已加 GET 端点 | openapi_gap (#5) |
 | 23 | RouteOption per-mode | 已加 `summary_by_mode` | openapi_gap (#13) |

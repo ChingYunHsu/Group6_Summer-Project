@@ -1,0 +1,102 @@
+{
+  "run_id": "20260615T194956Z",
+  "started_at": "2026-06-15T19:49:56.977016+00:00",
+  "completed_at": "2026-06-15T19:50:02.005916+00:00",
+  "timezone": "UTC",
+  "venue_input": {
+    "file_path": "Data+ML/test/6.8-6.12_DB/tests/output/venues_clean.csv",
+    "total_rows": 4838,
+    "unique_venue_count": 4838,
+    "duplicate_venue_id_count": 0
+  },
+  "parameters": {
+    "radii": [
+      100,
+      200,
+      300,
+      400,
+      500
+    ],
+    "source_order": [
+      "citibike",
+      "mta",
+      "traffic"
+    ],
+    "mta_dataset_id": "5f5g-n3cz",
+    "traffic_year": 2025,
+    "page_size": 5000,
+    "connect_timeout": 2,
+    "read_timeout": 5,
+    "max_retries": 3
+  },
+  "sources": {
+    "citibike": {
+      "status": "ok",
+      "api_url": "https://gbfs.lyft.com/gbfs/1.1/bkn/en/station_information.json",
+      "dataset_id": "gbfs_lyft_bkn",
+      "query_text": "station_information + station_status, ttl=60",
+      "fetch_time_s": 1.55,
+      "max_source_timestamp": "2026-06-15T19:49:22+00:00",
+      "data_age_seconds": 40,
+      "raw_count": 2411,
+      "valid_count": 2328,
+      "unique_id_count": 2328,
+      "unique_coord_count": 2328,
+      "rejected_count": 83,
+      "retry_count": 0,
+      "error_type": "",
+      "error_message": ""
+    },
+    "mta": {
+      "status": "ok",
+      "api_url": "https://data.ny.gov/resource/5f5g-n3cz.json",
+      "dataset_id": "5f5g-n3cz",
+      "query_text": "SELECT complex_id, display_name, lat/lng from 5f5g-n3cz",
+      "fetch_time_s": 0.63,
+      "max_source_timestamp": "timestamp_unavailable",
+      "data_age_seconds": null,
+      "raw_count": 445,
+      "valid_count": 445,
+      "unique_id_count": 445,
+      "unique_coord_count": 445,
+      "rejected_count": 0,
+      "retry_count": 0,
+      "error_type": "",
+      "error_message": ""
+    },
+    "traffic": {
+      "status": "ok",
+      "api_url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json",
+      "dataset_id": "7ym2-wayt",
+      "query_text": "SoQL group by segmentid for year 2025, boro=Manhattan",
+      "fetch_time_s": 2.59,
+      "max_source_timestamp": "timestamp_unavailable",
+      "data_age_seconds": null,
+      "raw_count": 28,
+      "valid_count": 28,
+      "unique_id_count": 28,
+      "unique_coord_count": 28,
+      "rejected_count": 0,
+      "retry_count": 0,
+      "error_type": "",
+      "error_message": ""
+    }
+  },
+  "software": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.4.2",
+    "sklearn": "1.6.1"
+  },
+  "artifacts": [
+    "venue_coverage_detail.csv",
+    "coverage_summary.csv",
+    "run_metadata.json",
+    "coverage_report.md",
+    "coverage_by_radius.png",
+    "incremental_coverage.png",
+    "venue_type_coverage_heatmap.png",
+    "uncovered_venue_distribution.png",
+    "traffic_year_profile.csv"
+  ]
+}

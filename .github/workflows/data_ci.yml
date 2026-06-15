@@ -3,17 +3,24 @@ name: ClearPath Data & ML CI (Docker Engine)
 on:
   push:
     branches: [ main ]
-  
+
     paths:
       - 'Data+ML/**'
   pull_request:
     branches: [ main ]
     paths:
       - 'Data+ML/**'
+  workflow_dispatch:
+    inputs:
+      run_integration:
+        description: 'Run integration tests (live APIs)'
+        required: false
+        default: 'false'
+        type: boolean
 
 jobs:
   build-and-test-data:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -33,4 +40,33 @@ jobs:
     - name: Run Pytest Inside Docker Container
       run: |
         docker run --rm clearpath-data-image pytest test_data_skeleton.py
+      working-directory: ./Data+ML
+
+    - name: Run Venue Coverage Offline Tests
+      run: |
+        docker run --rm clearpath-data-image pytest \
+          test/6.15-5.20/tests/test_venue_coverage.py \
+          test/6.15-5.20/tests/test_busyness_ingestion.py \
+          -v --tb=short -m "not integration"
+      working-directory: ./Data+ML
+
+  integration-test:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_integration == 'true'
+    needs: build-and-test-data
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build Data Team Docker Image
+      run: |
+        docker build -t clearpath-data-image .
+      working-directory: ./Data+ML
+
+    - name: Run Integration Tests (Live APIs)
+      run: |
+        docker run --rm clearpath-data-image pytest \
+          test/6.15-5.20/tests/test_venue_coverage.py \
+          -m integration -v --tb=short
       working-directory: ./Data+ML

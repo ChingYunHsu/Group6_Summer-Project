@@ -219,6 +219,7 @@ CREATE TABLE IF NOT EXISTS busyness_scores (
   features_snapshot_id VARCHAR(128),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT fk_busyness_venue FOREIGN KEY (venue_id) REFERENCES venues (venue_id) ON DELETE CASCADE,
+  UNIQUE KEY uq_busyness_venue_time (venue_id, forecast_start_time, model_version),
   CHECK (score <= 100),
   INDEX idx_busyness_venue_time (venue_id, forecast_start_time, forecast_end_time),
   INDEX idx_busyness_created_at (created_at)

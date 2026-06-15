@@ -170,27 +170,41 @@ Acceptance Criteria 使用 BDD "Given-When-Then" 格式。
 
 ### F-12 Medical Profile & Saved Data
 
-- **Fields**: Full name, DOB, nationality, email, phone, address, gender, languages, conditions, medications, allergies, blood type, emergency contact name + phone
-- **Storage**: Local-only (AsyncStorage or local SQLite)
-- **Auto-Population**: Profile → SOS Alert (F-09) + Show Staff Card (F-11)
-- **Delete All Data**: Settings button → complete local wipe
-- **Optional Photo**: Camera/gallery for profile photo
+- **Data Tiering** (2026-06-15 需求变更):
+  - **Tier 1 — Profile Group (Cloud MySQL)**: User ID [Read-Only], Email [Read-Only], Full Name [Read-Only], Phone [Editable & Synced], Languages [Editable & Synced], Nationality [Editable & Synced] → sync via `GET/PUT /api/v1/user/profile`, stored in MySQL `users` table
+  - **Tier 2 — Medical ID Group (100% Mobile Local Storage)**: Date of Birth (DOB), Gender, Address, Emergency Contact, Blood Type, Allergies, Medical Conditions → editable via Mobile App ONLY, completely isolated from cloud MySQL tables, Web fields disabled/greyed out
+- **Web Restriction**: Medical ID input fields on Web Page 5 are disabled/greyed out with a prompt directing users to edit exclusively via Mobile
+- **Auto-Population**: Medical ID → SOS Alert (F-09) + Show Staff Card (F-11) — all from local storage, no cloud read
+- **Delete All Data**: Settings button → complete local wipe (Tier 2) + server-side cascade purge (Tier 1, GDPR F-13)
+- **Optional Photo**: Camera/gallery for profile photo (local-only)
 
 ### F-13 User Sign-Up & Authentication
 
 - **Auth Method**: Email + full name + password (no Google OAuth)
 - **Guest Mode**: Browse map, search clinics, read reports, use chatbot
 - **Auth Required**: Submit report (F-04) / use verification chips (F-05)
-- **Server Sync**: Only saved favorites + notification preferences
-- **Medical Profile**: Encrypted cloud storage (AES-256-GCM) for Web PDF passport printing; local-only previously removed per D10 revision
+- **Server Sync Scope** (2026-06-15 需求变更):
+  - **Cloud Sync** (Tier 1 Profile Group): User ID [Read-Only], Email [Read-Only], Full Name [Read-Only], Phone [Editable], Languages [Editable], Nationality [Editable] → MySQL via `GET/PUT /api/v1/user/profile`
+  - **Local-Only** (Tier 2 Medical ID): DOB, Gender, Address, Emergency Contact, Blood Type, Allergies, Medical Conditions → 100% local on Mobile, never synced to cloud
+- **Medical Profile**: 100% local-only on Mobile; Web fields greyed out with "Edit via Mobile" prompt
 - **Password Recovery**: Email tokenized verification links
-- **GDPR Erasure**: Server-side cascade purge within 24h
+- **GDPR Erasure**: Server-side cascade purge within 24h (Tier 1 data only)
 - **JWT**: Flask-JWT-Extended for all authenticated API
 - **Registration Intercept**: "Finish Profile & ID" / "Skip for Now" prompt
 
 ### F-14 Cross-Platform Medical Passport PDF (Web Only)
 
-- **Entry**: [Print Medical Card] button in User Profile
+- **Entry**: [Print Medical Card] button in User Profile (Web)
+- **Core Logic** (2026-06-15 需求变更): Implements strict data tiering. Medical ID data is 100% local-only on Mobile, never stored on cloud. Web client has no direct access to Medical ID records.
+- **Print Execution Flow**:
+  1. User clicks [Print Medical Card] on Web Page 5
+  2. Web client fetches a short-lived **render_token** (JWT, 5-minute expiry) from backend
+  3. Backend returns render_token → Web client displays it as a **dynamic QR Code**
+  4. User scans the QR code using their **Mobile app camera**
+  5. Mobile app triggers a **temporary frontend P2P encrypted channel** that pushes the local health JSON (Medical ID data) directly to the browser memory
+  6. Web client renders the received data into an **A4 canvas** for immediate printing
+  7. All data is **instantly purged** from browser memory upon tab closure
 - **Bilingual A4**: "MEDICAL ALERT / ALERTA MÉDICA" dual-language layout
-- **Fields**: Identity, blood type, allergies, conditions, contacts
+- **Fields**: Identity, blood type, allergies, conditions, contacts (all from local Mobile storage)
 - **Output**: [Print My Medical Pass (PDF)] → native browser print/save
+- **Privacy**: Zero Medical ID data stored in cloud; zero Medical ID data persisted in browser beyond tab lifetime
