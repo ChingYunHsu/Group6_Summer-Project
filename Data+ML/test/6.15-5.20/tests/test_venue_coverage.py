@@ -314,18 +314,18 @@ class TestSourceIsolation:
 
     def test_failed_source_does_not_stop_others(self, tmp_path):
         """One source failure should not prevent others from succeeding."""
-        from venue_coverage import SourceResult, fetch_citibike, fetch_mta
+        import venue_coverage as vc
 
         # Simulate citibike success, mta failure
-        cb_result = SourceResult(source="citibike", status="ok", points=[])
-        mta_result = SourceResult(source="mta", status="failed",
-                                  error_type="ConnectionError", error_message="timeout")
+        cb_result = vc.SourceResult(source="citibike", status="ok", points=[])
+        mta_result = vc.SourceResult(source="mta", status="failed",
+                                     error_type="ConnectionError", error_message="timeout")
 
         with patch("venue_coverage.fetch_citibike", return_value=cb_result), \
              patch("venue_coverage.fetch_mta", return_value=mta_result):
-            # Both should be callable independently
-            r1 = fetch_citibike()
-            r2 = fetch_mta()
+            # Both should be callable independently via module attribute
+            r1 = vc.fetch_citibike()
+            r2 = vc.fetch_mta()
             assert r1.status == "ok"
             assert r2.status == "failed"
 
