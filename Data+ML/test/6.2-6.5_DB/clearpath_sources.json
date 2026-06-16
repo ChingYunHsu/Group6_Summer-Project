@@ -54,6 +54,15 @@
       "name": "Weather / NYC Urban Heat Portal",
       "local_file": null,
       "storage_role": "external_context_cache"
+    },
+    {
+      "type": "Busyness",
+      "name": "NYC SODA Traffic API 7ym2-wayt",
+      "local_file": null,
+      "storage_role": "busyness_scores",
+      "api_url": "https://data.cityofnewyork.us/resource/7ym2-wayt.json",
+      "ingestion_module": "dqr.busyness_ingestion",
+      "notes": "Hourly Manhattan traffic → busyness classification (quiet/moderate/busy/no_data)"
     }
   ],
   "excluded_local_files": [
