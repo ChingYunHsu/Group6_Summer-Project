@@ -10,6 +10,7 @@ import UserGuide from "./pages/UserGuide";
 import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import MedicalCard from "./pages/MedicalCard";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Link to="/about">About Us</Link>
             <Link to="/guide">User Guide</Link>
             <Link to="/profile">Profile</Link>
+            <Link to="/settings">Settings</Link>
           </nav>
         </header>
 
@@ -36,6 +38,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<EditProfile />} />
           <Route path="/medical-card" element={<MedicalCard />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>
     </BrowserRouter>
