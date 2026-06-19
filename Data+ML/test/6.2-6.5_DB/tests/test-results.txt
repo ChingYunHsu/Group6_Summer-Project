@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.5, pytest-8.3.4, pluggy-1.5.0 -- /opt/anaconda3/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/alex/Documents/COMP47360-Research_Practicum/Group6_Summer-Project
+configfile: pyproject.toml
+collecting ... collected 10 items
+
+tests/test_dedup.py::test_restroom_dedup_filters_region_and_duplicate_names PASSED [ 10%]
+tests/test_dedup.py::test_parks_dedup_keeps_only_unique_manhattan_names PASSED [ 20%]
+tests/test_etl.py::test_restroom_etl_returns_structured_stats_and_preserves_source_names PASSED [ 30%]
+tests/test_identifiers.py::test_source_hash_and_venue_id_are_stable PASSED [ 40%]
+tests/test_import_safety.py::test_package_import_has_no_database_or_network_output PASSED [ 50%]
+tests/test_migrations.py::test_column_migration_is_detected_from_information_schema PASSED [ 60%]
+tests/test_notebook_imports.py::test_notebook_imports_package_without_redefining_business_functions PASSED [ 70%]
+tests/test_schema.py::test_schema_uses_mysql_compatible_create_index_syntax PASSED [ 80%]
+tests/test_validation.py::test_manhattan_boundary_and_district_classification PASSED [ 90%]
+tests/test_validation.py::test_safe_numeric_conversion_uses_defaults PASSED [100%]
+
+- generated xml file: /Users/alex/Documents/COMP47360-Research_Practicum/Group6_Summer-Project/Data+ML/test/6.2-6.5_DB/tests/test-results.xml -
+============================== 10 passed in 0.25s ==============================

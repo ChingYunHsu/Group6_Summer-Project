@@ -1,20 +1,59 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { USER_PROFILE } from "../data/userProfile";
+
+const ALL_LANGUAGES = [
+  "Arabic", "Bengali", "Chinese", "Dutch", "English", "French", "German",
+  "Greek", "Hindi", "Irish", "Italian", "Japanese", "Korean", "Polish",
+  "Portuguese", "Romanian", "Russian", "Spanish", "Turkish", "Ukrainian",
+  "Vietnamese"
+];
+
+const PROFICIENCY_LEVELS = ["Native", "Fluent", "Intermediate", "Basic"];
 
 function Profile() {
   const navigate = useNavigate();
 
+  const [languages, setLanguages] = useState(USER_PROFILE.spoken_languages);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [languageSearch, setLanguageSearch] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState("Fluent");
+
+  const filteredLanguages = ALL_LANGUAGES.filter((language) =>
+    language.toLowerCase().includes(languageSearch.toLowerCase())
+  );
+
+  function handleAddLanguage() {
+    if (!selectedLanguage) return;
+
+    const newLanguage = `${selectedLanguage} (${selectedLevel})`;
+
+    if (!languages.includes(newLanguage)) {
+      setLanguages([...languages, newLanguage]);
+    }
+
+    setShowLanguageModal(false);
+    setLanguageSearch("");
+    setSelectedLanguage("");
+    setSelectedLevel("Fluent");
+  }
+
   return (
-    <main className="profile-page">
-      <div className="profile-title-row">
+    <main className="profile-single-column-page">
+      <section className="privacy-notice">
+        <div className="privacy-icon">🛡</div>
         <div>
-          <h1>Personal & Medical Profile</h1>
+          <h1>Clinical Data Privacy</h1>
           <p>
-            Securely manage your personal identification and critical medical
-            information. This data is used for emergency wayfinding and clinical
-            insights.
+            Your medical critical information is stored exclusively on this
+            mobile device for maximum security. ClearPath does not store health
+            records on our servers. You can securely access and share your data
+            for printing or medical review via an encrypted QR Sync at authorized
+            terminals.
           </p>
         </div>
+      </section>
 
         <div className="profile-actions">
           <button onClick={() => navigate("/profile/edit")}>✎ Edit</button>
@@ -45,78 +84,162 @@ function Profile() {
             </div>
           </div>
 
-          <div className="profile-card">
-            <h3>▧ Contact Information</h3>
-            <p><strong>Phone Number</strong><br />{USER_PROFILE.phone}</p>
-            <p><strong>Email Address</strong><br />{USER_PROFILE.email}</p>
-            <p><strong>Primary Address</strong><br />{USER_PROFILE.address}</p>
+          <div>
+            <h2>Personal Account</h2>
+            <p>Healthcare Intelligence ID: CP-9921024-ER</p>
           </div>
-        </aside>
+        </div>
 
-        <section className="profile-right">
-          <div className="top-cards">
-            <div className="profile-card vital-card">
-              <h3>Vital Signs</h3>
-              <div className="blood-row">
-                <span className="blood-type">{USER_PROFILE.blood_type}</span>
-                <p><strong>Blood Type</strong><br />{USER_PROFILE.donor_status}</p>
-              </div>
-            </div>
-
-            <div className="profile-card language-card">
-              <h3>Spoken Languages</h3>
-              <div className="tag-list">
-                {USER_PROFILE.spoken_languages.map((language) => (
-                  <span key={language}>{language}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="profile-card clinical-card">
-            <h2>▣ Clinical Profile</h2>
-
-            <div className="clinical-columns">
-              <div>
-                <h3 className="warning-heading">△ Allergies</h3>
-                {USER_PROFILE.allergies.map((allergy) => (
-                  <div className="medical-item red-dot" key={allergy.name}>
-                    <strong>{allergy.name}</strong>
-                    <p>{allergy.detail}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div>
-                <h3 className="condition-heading">⌘ Medical Conditions</h3>
-                {USER_PROFILE.conditions.map((condition) => (
-                  <div className="medical-item blue-dot" key={condition.name}>
-                    <strong>{condition.name}</strong>
-                    <p>{condition.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="profile-card">
-            <h2>✱ Emergency Contacts</h2>
-
-            <div className="contacts-grid">
-              {USER_PROFILE.emergency_contacts.map((contact) => (
-                <div className="contact-box" key={contact.name}>
-                  <div className="contact-top">
-                    <strong>{contact.name}</strong>
-                    {contact.primary && <span>Primary</span>}
-                  </div>
-                  <p>{contact.relationship}</p>
-                  <p>{contact.phone}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <button
+          className="outline-profile-button"
+          type="button"
+          onClick={() => navigate("/profile/edit")}
+        >
+          Edit Profile
+        </button>
       </section>
+
+      <section className="identity-panel">
+        <div className="identity-field locked-field">
+          <span>User ID</span>
+          <strong>CP-9921024-ER <small>🔒</small></strong>
+        </div>
+
+        <div className="identity-field locked-field">
+          <span>Full Name</span>
+          <strong>{USER_PROFILE.full_name} <small>🔒</small></strong>
+        </div>
+
+        <div className="identity-field locked-field">
+          <span>Email Address</span>
+          <strong>{USER_PROFILE.email} <small>🔒</small></strong>
+        </div>
+
+        <div></div>
+
+        <div className="identity-field editable-field">
+          <span>Phone Number</span>
+          <input value={USER_PROFILE.phone} readOnly />
+        </div>
+
+        <div className="identity-field editable-field">
+          <span>Nationality</span>
+          <input value={USER_PROFILE.nationality} readOnly />
+        </div>
+
+        <div className="identity-field identity-field-wide">
+          <span>Spoken Languages</span>
+
+          <div className="language-chip-row">
+            {languages.map((language) => (
+              <span
+                className={
+                  language.includes("Native")
+                    ? "language-chip native"
+                    : "language-chip"
+                }
+                key={language}
+              >
+                {language}
+              </span>
+            ))}
+
+            <button
+              className="add-language-chip"
+              type="button"
+              onClick={() => setShowLanguageModal(true)}
+            >
+              + Add Language
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="qr-sync-section">
+        <button
+          className="qr-sync-button"
+          type="button"
+          onClick={() => navigate("/medical-card")}
+        >
+          <span>▦</span>
+          Print Medical Passport via QR Sync ›
+        </button>
+        <p>Clinical records remain local until QR Sync is authorised.</p>
+      </section>
+
+      <footer className="profile-footer">
+        <span>Privacy First</span>
+        <span>Encrypted QR Sync</span>
+        <span>Local Clinical Storage</span>
+      </footer>
+
+      {showLanguageModal && (
+        <div className="language-modal-overlay">
+          <div className="language-modal">
+            <h2>Add Spoken Language</h2>
+
+            <label>
+              Search language
+              <input
+                type="text"
+                value={languageSearch}
+                onChange={(e) => setLanguageSearch(e.target.value)}
+                placeholder="Type a language name..."
+              />
+            </label>
+
+            <div className="language-dropdown">
+              {filteredLanguages.length > 0 ? (
+                filteredLanguages.map((language) => (
+                  <button
+                    key={language}
+                    type="button"
+                    className={
+                      selectedLanguage === language ? "selected-language" : ""
+                    }
+                    onClick={() => setSelectedLanguage(language)}
+                  >
+                    {language}
+                  </button>
+                ))
+              ) : (
+                <p>No languages found</p>
+              )}
+            </div>
+
+            <label>
+              Proficiency
+              <select
+                value={selectedLevel}
+                onChange={(e) => setSelectedLevel(e.target.value)}
+              >
+                {PROFICIENCY_LEVELS.map((level) => (
+                  <option key={level} value={level}>
+                    {level}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <div className="language-modal-actions">
+              <button
+                type="button"
+                onClick={() => setShowLanguageModal(false)}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                onClick={handleAddLanguage}
+                disabled={!selectedLanguage}
+              >
+                Add Language
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

@@ -2,10 +2,20 @@ from copy import deepcopy
 
 from flask import Blueprint, jsonify, request
 
+from auth import SESSIONS
 from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE, AUTH_USERS
 
 
 bp = Blueprint("auth", __name__)
+
+
+def _register_session(user_id: str, is_guest: bool = False) -> dict:
+    response = deepcopy(AUTH_LOGIN_RESPONSE)
+    response["access_token"] = f"mock_access_token_{user_id}"
+    response["refresh_token"] = f"mock_refresh_token_{user_id}"
+    response["user_id"] = user_id
+    SESSIONS[response["access_token"]] = {"user_id": user_id, "is_guest": is_guest}
+    return response
 
 
 def _next_user_id() -> str:
@@ -45,8 +55,7 @@ def register_user():
     }
     AUTH_USERS.append(user)
 
-    response = deepcopy(AUTH_LOGIN_RESPONSE)
-    response["user_id"] = user["user_id"]
+    response = _register_session(user["user_id"])
     response["finish_profile_prompt"] = True
     return jsonify(response), 201
 
@@ -71,9 +80,18 @@ def login_user():
     if not user:
         return jsonify({"error": "Invalid credentials."}), 401
 
-    response = deepcopy(AUTH_LOGIN_RESPONSE)
-    response["user_id"] = user["user_id"]
+    response = _register_session(user["user_id"])
     return jsonify(response)
+
+
+@bp.post("/api/v1/auth/guest")
+def create_guest_session():
+    """Issue temporary credentials for a guest session."""
+    guest_id = f"guest_{len(SESSIONS) + 1}"
+
+    response = _register_session(guest_id, is_guest=True)
+    response["finish_profile_prompt"] = False
+    return jsonify(response), 201
 
 
 @bp.post("/api/v1/auth/reset-password")

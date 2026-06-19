@@ -151,3 +151,7 @@ poetry.lock
 src/__pycache__/
 __pycache__/
 *.pyc
+
+# Local agent configuration (not for GitHub)
+AGENTS.md
+CLAUDE.md
