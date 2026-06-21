@@ -4,12 +4,12 @@ import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
-    Alert,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
@@ -260,7 +260,7 @@ useEffect(() => {
 
           <View style={styles.clinicInfo}>
             <Text style={styles.clinicName}>
-              St. Mary's International
+              St. Mary&apos;s International
             </Text>
 
             <Text style={styles.clinicSub}>

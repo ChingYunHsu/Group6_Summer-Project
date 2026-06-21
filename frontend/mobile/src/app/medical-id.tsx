@@ -16,9 +16,10 @@ import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 import { mockMedicalId } from "../data/mockMedicalId";
 import { mockProfile } from "../data/mockProfile";
-
-const [medicalId, setMedicalId] =
-    useState(null);
+import {
+  loadMedicalId,
+  saveMedicalId,
+} from "../services/medicalIdService";
 
 export default function MedicalIdScreen() {
   const { t } = useTranslation();
@@ -38,6 +39,26 @@ const [newCondition,
 const [newAllergy,
   setNewAllergy] =
   useState("");
+
+const [medicalId, setMedicalId] =
+useState(mockMedicalId);
+
+const [bloodType, setBloodType] =
+  useState(
+    medicalId.blood_type
+  );
+
+const [conditions, setConditions] =
+  useState(
+    medicalId.conditions
+  );
+
+  
+const [allergies, setAllergies] =
+  useState(
+    medicalId.allergies ?? []
+  );
+
 
   const handleSave = async () => {
   try {
@@ -67,9 +88,6 @@ const [newAllergy,
   }
 };
 
-  const [medicalId, setMedicalId] =
-  useState(mockMedicalId);
-
   useEffect(() => {
   async function getMedicalId() {
     try {
@@ -82,8 +100,12 @@ const [newAllergy,
       );
 
       if (savedMedicalId) {
-        setMedicalId(savedMedicalId);
-      }
+    setMedicalId(savedMedicalId);
+
+    setBloodType(savedMedicalId.blood_type);
+    setConditions(savedMedicalId.conditions);
+    setAllergies(savedMedicalId.allergies ?? []);
+}
     } catch (error) {
       console.error(
         "Failed to load medical ID",
@@ -94,36 +116,6 @@ const [newAllergy,
 
   getMedicalId();
 }, []);
-
-    const [bloodType, setBloodType] =
-  useState(
-    medicalId.blood_type
-  );
-
-const [conditions, setConditions] =
-  useState(
-    medicalId.conditions
-  );
-
-  
-const [allergies, setAllergies] =
-  useState(
-    medicalId.allergies ?? []
-  );
-
-useEffect(() => {
-  setBloodType(
-    medicalId.blood_type
-  );
-
-  setConditions(
-    medicalId.conditions
-  );
-
-  setAllergies(
-    medicalId.allergies ?? []
-  );
-}, [medicalId]);
 
   const removeCondition = (
     condition: string
