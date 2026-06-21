@@ -3,31 +3,37 @@ export const featuredLanguages = [
     flag: "🇺🇸",
     native: "English",
     english: "English",
+    code: "en",
   },
   {
     flag: "🇨🇳",
     native: "中文",
     english: "Chinese",
+    code: "zh",
   },
   {
     flag: "🇪🇸",
     native: "Español",
     english: "Spanish",
+    code: "es",
   },
   {
     flag: "🇫🇷",
     native: "Français",
     english: "French",
+    code: "fr",
   },
   {
-    flag: "🇯🇵",
-    native: "日本語",
-    english: "Japanese",
+    flag: "🇮🇹",
+    native: "Italiano",
+    english: "Italian",
+    code: "it",
   },
   {
     flag: "🇩🇪",
     native: "Deutsch",
     english: "German",
+    code: "de",
   },
 ];
 

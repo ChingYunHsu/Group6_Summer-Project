@@ -1,17 +1,19 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { useTranslation } from "react-i18next";
 import {
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
 export default function AuthGatewayScreen() {
+  const { t } = useTranslation();
+
   const handleLoginRegister = () => {
     router.push("/login");
   };
@@ -39,17 +41,14 @@ export default function AuthGatewayScreen() {
         {/* Heading */}
 
         <Text style={styles.title}>
-          Secure Your Medical ID
-        </Text>
+  {t("authGateway.title")}
+</Text>
 
         {/* Description */}
 
         <Text style={styles.subtitle}>
-          Log in to save your chronic
-          conditions, allergies, and emergency
-          contacts. Your data syncs securely
-          and remains encrypted.
-        </Text>
+  {t("authGateway.subtitle")}
+</Text>
 
         {/* Buttons */}
 
@@ -58,8 +57,8 @@ export default function AuthGatewayScreen() {
           onPress={handleLoginRegister}
         >
           <Text style={styles.primaryButtonText}>
-            Log In / Register
-          </Text>
+  {t("authGateway.loginRegister")}
+</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -67,8 +66,8 @@ export default function AuthGatewayScreen() {
           onPress={handleContinueAsGuest}
         >
           <Text style={styles.secondaryButtonText}>
-            Continue as Guest
-          </Text>
+  {t("authGateway.continueGuest")}
+</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

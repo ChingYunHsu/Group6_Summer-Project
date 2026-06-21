@@ -8,10 +8,7 @@ export function useColorScheme() {
   const [hasHydrated, setHasHydrated] = useState(false);
 
   useEffect(() => {
-    const handle = requestAnimationFrame(() => {
-      setHasHydrated(true);
-    });
-    return () => cancelAnimationFrame(handle);
+    setHasHydrated(true);
   }, []);
 
   const colorScheme = useRNColorScheme();

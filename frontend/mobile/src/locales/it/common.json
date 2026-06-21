@@ -1,0 +1,158 @@
+{
+  "common": {
+    "continue": "Continua",
+    "and": "e",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "save": "Salva",
+    "edit": "Modifica"
+  },
+  "language": {
+    "choose": "Scegli la tua lingua",
+    "search": "Cerca altre lingue...",
+    "selected": "Lingua selezionata",
+    "footer": "Continuando, consulterai i nostri"
+  },
+  "legal": {
+    "title": "Aspetti legali e Privacy",
+    "reviewHeading": "Esamina gli accordi",
+    "reviewSubtitle": "Per continuare, consulta i nostri termini e le nostre pratiche sulla privacy aggiornati.",
+    "terms": "Termini di servizio",
+    "termsDescription": "Regolano l'utilizzo della nostra piattaforma e dei nostri servizi.",
+    "agreeTerms": "Accetto i Termini di servizio",
+    "privacy": "Informativa sulla privacy",
+    "privacyDescription": "Descrive come proteggiamo e gestiamo i tuoi dati.",
+    "agreePrivacy": "Accetto l'Informativa sulla privacy",
+    "securityNotice": "Tutti i dati sanitari sensibili sono protetti con crittografia a 256 bit conforme agli standard HIPAA.",
+    "acceptContinue": "Accetta e continua",
+    "termsPreview": "1. Accettazione dei termini\n\nAccedendo a questa applicazione, accetti di essere vincolato dai presenti Termini di servizio.\n\n2. Responsabilità dell'utente\n\nSei responsabile del mantenimento della riservatezza delle informazioni del tuo account.\n\n3. Disponibilità del servizio\n\nPuntiamo a garantire un uptime del 99,9%, ma non assicuriamo un accesso ininterrotto.\n\n4. Modifiche\n\nCi riserviamo il diritto di modificare questi termini in qualsiasi momento con preavviso.\n\n5. Sicurezza dell'account\n\nGli utenti devono adottare misure ragionevoli per proteggere le credenziali di accesso e l'accesso all'account.\n\n6. Limitazione di responsabilità\n\nNon siamo responsabili per perdite derivanti da un uso improprio della piattaforma o da interruzioni al di fuori del nostro controllo.",
+    "privacyPreview": "1. Raccolta dei dati\n\nRaccogliamo solo i dati minimi necessari per fornire i nostri servizi, inclusi i dati di localizzazione per mostrare le cliniche vicine.\n\n2. Utilizzo dei dati\n\nI tuoi dati vengono utilizzati esclusivamente per migliorare l'erogazione del servizio e la personalizzazione.\n\n3. Condivisione con terze parti\n\nNon vendiamo mai i tuoi dati personali. I dati vengono condivisi con partner medici autorizzati solo quando richiedi un appuntamento.\n\n4. I tuoi diritti\n\nHai il diritto di accedere, modificare o eliminare i tuoi dati in qualsiasi momento.\n\n5. Conservazione dei dati\n\nConserviamo solo le informazioni necessarie per fornire i servizi e rispettare gli obblighi legali.\n\n6. Misure di sicurezza\n\nTutte le informazioni mediche sensibili sono crittografate e protette secondo gli standard di sicurezza del settore."
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "permissions": "Autorizzazioni",
+    "enableLocation": "Abilita accesso alla posizione",
+    "account": "Account e App",
+    "changeLanguage": "Cambia lingua",
+    "currentLanguage": "Italiano",
+    "logout": "Disconnetti",
+    "logoutMessage": "La funzionalità di disconnessione sarà collegata all'autenticazione in seguito.",
+    "dangerZone": "Zona di pericolo",
+    "deleteWarning": "L'eliminazione del tuo account è permanente. Tutte le cartelle cliniche e i dati del profilo verranno rimossi.",
+    "deleteAccount": "Elimina il mio account",
+    "deleteAccountMessage": "Questa azione non può essere annullata."
+  },
+
+  "authGateway": {
+    "title": "Proteggi il tuo ID Medico",
+    "subtitle": "Accedi per salvare le tue condizioni croniche, allergie e contatti di emergenza. I tuoi dati vengono sincronizzati in modo sicuro e rimangono crittografati.",
+    "loginRegister": "Accedi / Registrati",
+    "continueGuest": "Continua come ospite"
+  },
+  "editProfile": {
+    "title": "Modifica profilo",
+    "personalProfile": "Profilo personale",
+    "personalInformation": "Informazioni personali",
+    "fullName": "Nome completo",
+    "dateOfBirth": "Data di nascita",
+    "gender": "Genere",
+    "nationality": "Nazionalità",
+    "phoneNumber": "Numero di telefono",
+    "emailAddress": "Indirizzo e-mail",
+    "address": "Indirizzo",
+    "spokenLanguages": "Lingue parlate"
+  },
+  "profileGuest": {
+    "title": "Proteggi il tuo ID Medico",
+    "description": "Accedi per salvare le tue condizioni croniche, allergie e informazioni di emergenza. I tuoi dati vengono sincronizzati in modo sicuro e rimangono crittografati.",
+    "loginRegister": "Accedi / Registrati"
+  },
+  "login": {
+    "welcomeBack": "Bentornato",
+    "signInSubtitle": "Accedi alle tue cartelle cliniche internazionali.",
+    "password": "Password",
+    "emailPlaceholder": "nome@azienda.com",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Accedi",
+    "newHere": "Nuovo utente?",
+    "createAccount": "Crea account",
+    "getStarted": "Inizia",
+    "registerSubtitle": "Assistenza affidabile per viaggiatori internazionali.",
+    "createPassword": "Crea password",
+    "fullNamePlaceholder": "Mario Rossi",
+    "passwordRequirements": "Minimo 8 caratteri",
+    "agreeTerms": "Accetto i Termini di servizio e l'Informativa sulla privacy",
+    "alreadyHaveAccount": "Hai già un account?",
+    "encryption": "Crittografia a 256 bit conforme HIPAA",
+    "finishProfileTitle": "Vuoi completare la configurazione del tuo Profilo e ID Medico?",
+    "finishProfileDescription": "Questo aiuta i Servizi di Emergenza di NYC ad assisterti meglio.",
+    "finishProfile": "Completa Profilo e ID",
+    "skipForNow": "Salta per ora"
+  },
+
+  "profile": {
+    "title": "Profilo e ID Medico",
+    "scanQr": "Scansiona QR Code Web",
+    "scanQrMessage": "L'integrazione della fotocamera verrà collegata successivamente.",
+    "synced": "Informazioni mediche sincronizzate",
+    "lastUpdated": "Ultimo aggiornamento 5 minuti fa",
+    "userId": "ID utente",
+    "fullName": "Nome completo",
+    "email": "E-mail",
+    "phone": "Telefono",
+    "dateOfBirth": "Data di nascita",
+    "gender": "Genere",
+    "nationality": "Nazionalità",
+    "address": "Indirizzo",
+    "medicalId": "ID Medico",
+    "bloodType": "Gruppo sanguigno",
+    "languages": "Lingue",
+    "conditions": "Patologie",
+    "allergies": "Allergie",
+    "savedClinics": "Cliniche salvate",
+    "savedFacility": "Struttura salvata"
+  },
+
+  "showStaff": {
+    "title": "Mostra al personale",
+    "languageBadge": "Spagnolo / Español",
+    "visitorSpeaks": "Questo visitatore parla",
+    "language": "Spagnolo",
+    "needAssistance": "Ha bisogno di assistenza medica.",
+    "translatedEmergency": "Questo visitatore parla spagnolo. Ha bisogno di assistenza medica.",
+    "commonPhrases": "Frasi comuni",
+    "liveTranslate": "Traduzione in tempo reale",
+    "allergies": "Allergie",
+    "respiratory": "Respiratorio",
+    "pain": "Dolore",
+    "translationPlaceholder": "Scrivi nella lingua del visitatore...",
+    "translationResult": "La traduzione apparirà qui dopo l'integrazione del backend.",
+    "medicalSummary": "Riepilogo ID Medico"
+  },
+
+  "location": {
+    "title": "Aiutaci a trovarti",
+    "subtitle": "Utilizzeremo la tua posizione per mostrarti le cliniche e gli ospedali più vicini con i tempi di attesa più brevi.",
+    "enableAccess": "Abilita accesso alla posizione",
+    "enabled": "Posizione abilitata",
+    "permissionGranted": "Autorizzazione GPS concessa",
+    "recommended": "Consigliato per tempi di viaggio accurati",
+    "privacy": "I tuoi dati di posizione sono privati. Non condividiamo mai la tua cronologia delle posizioni o le tue cartelle cliniche con terze parti senza il tuo consenso.",
+    "gpsTip": "Si consiglia vivamente di utilizzare il GPS del dispositivo per la ricerca dei percorsi.",
+    "doLater": "Lo farò più tardi",
+    "permissionRequired": "Autorizzazione alla posizione richiesta",
+    "permissionRequiredMessage": "ClearPath utilizza la tua posizione per mostrare cliniche vicine, farmacie e informazioni sui percorsi.",
+    "unableToRetrieve": "Impossibile recuperare la posizione",
+    "unableToRetrieveMessage": "Assicurati che il GPS sia abilitato sul tuo dispositivo.",
+    "enabledMessage": "I servizi di localizzazione sono stati attivati correttamente.",
+    "error": "Errore di localizzazione",
+    "errorMessage": "Si è verificato un problema durante l'accesso ai servizi di localizzazione."
+  },
+
+  "medicalId": {
+    "title": "Modifica ID Medico",
+    "emergencyProfile": "Profilo di emergenza",
+    "criticalInfo": "Informazioni critiche",
+    "medicalConditions": "Patologie mediche"
+  }
+}

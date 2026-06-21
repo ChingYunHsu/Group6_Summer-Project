@@ -2,41 +2,44 @@ import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
 import {
-    Alert,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Switch,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
+import { useTranslation } from "react-i18next";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
 export default function SettingsScreen() {
+  const { t } = useTranslation();
+
   const [locationEnabled, setLocationEnabled] =
     useState(true);
 
   const handleLogout = () => {
-    Alert.alert(
-      "Logout",
-      "Logout functionality will be connected to authentication later."
-    );
+   Alert.alert(
+  t("settings.logout"),
+  t("settings.logoutMessage")
+);
   };
 
   const handleDeleteAccount = () => {
     Alert.alert(
-      "Delete Account",
-      "This action cannot be undone.",
+  t("settings.deleteAccount"),
+  t("settings.deleteAccountMessage"),
       [
         {
-          text: "Cancel",
+          text: t("common.cancel"),
           style: "cancel",
         },
         {
-          text: "Delete",
+          text: t("common.delete"),
           style: "destructive",
           onPress: () =>
             console.log(
@@ -57,8 +60,8 @@ export default function SettingsScreen() {
 
         <View style={styles.header}>
           <Text style={styles.title}>
-            Settings
-          </Text>
+  {t("settings.title")}
+</Text>
 
           <View style={styles.avatar}>
             <Ionicons
@@ -72,8 +75,8 @@ export default function SettingsScreen() {
         {/* Permissions */}
 
         <Text style={styles.sectionLabel}>
-          Permissions
-        </Text>
+  {t("settings.permissions")}
+</Text>
 
         <View style={styles.card}>
           <View style={styles.row}>
@@ -85,8 +88,8 @@ export default function SettingsScreen() {
               />
 
               <Text style={styles.rowText}>
-                Enable Location Access
-              </Text>
+  {t("settings.enableLocation")}
+</Text>
             </View>
 
             <Switch
@@ -107,8 +110,8 @@ export default function SettingsScreen() {
         {/* Account */}
 
         <Text style={styles.sectionLabel}>
-          Account & App
-        </Text>
+  {t("settings.account")}
+</Text>
 
         <View style={styles.card}>
           <TouchableOpacity
@@ -125,18 +128,14 @@ export default function SettingsScreen() {
               />
 
               <Text style={styles.rowText}>
-                Change Language
-              </Text>
+  {t("settings.changeLanguage")}
+</Text>
             </View>
 
             <View style={styles.trailing}>
-              <Text
-                style={
-                  styles.trailingText
-                }
-              >
-                English (US)
-              </Text>
+              <Text style={styles.trailingText}>
+  {t("settings.currentLanguage")}
+</Text>
 
               <Ionicons
                 name="chevron-forward"
@@ -158,8 +157,8 @@ export default function SettingsScreen() {
               />
 
               <Text style={styles.rowText}>
-                Logout
-              </Text>
+  {t("settings.logout")}
+</Text>
             </View>
 
             <Ionicons
@@ -172,11 +171,9 @@ export default function SettingsScreen() {
 
         {/* Danger Zone */}
 
-        <Text
-          style={styles.dangerLabel}
-        >
-          Danger Zone
-        </Text>
+        <Text style={styles.dangerLabel}>
+  {t("settings.dangerZone")}
+</Text>
 
         <View style={styles.warningBox}>
           <View
@@ -188,14 +185,9 @@ export default function SettingsScreen() {
               color={Colours.danger}
             />
 
-            <Text
-              style={styles.warningText}
-            >
-              Deleting your account is
-              permanent. All medical
-              records and profile data
-              will be removed.
-            </Text>
+            <Text style={styles.warningText}>
+  {t("settings.deleteWarning")}
+</Text>
           </View>
         </View>
 
@@ -209,13 +201,9 @@ export default function SettingsScreen() {
             color={Colours.danger}
           />
 
-          <Text
-            style={
-              styles.deleteButtonText
-            }
-          >
-            Delete my account
-          </Text>
+          <Text style={styles.deleteButtonText}>
+  {t("settings.deleteAccount")}
+</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
