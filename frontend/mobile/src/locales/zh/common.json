@@ -1,0 +1,158 @@
+{
+  "common": {
+    "continue": "继续",
+    "and": "和",
+    "cancel": "取消",
+    "delete": "删除",
+    "save": "保存",
+    "edit": "编辑"
+  },
+  "language": {
+    "choose": "选择您的语言",
+    "search": "搜索其他语言...",
+    "selected": "已选择语言",
+    "footer": "继续即表示您将查看我们的"
+  },
+  "legal": {
+    "title": "法律与隐私",
+    "reviewHeading": "查看协议",
+    "reviewSubtitle": "请查看我们更新后的条款和隐私政策以继续。",
+    "terms": "服务条款",
+    "termsDescription": "规范您对我们平台和服务的使用。",
+    "agreeTerms": "我同意服务条款",
+    "privacy": "隐私政策",
+    "privacyDescription": "说明我们如何保护和管理您的数据。",
+    "agreePrivacy": "我同意隐私政策",
+    "securityNotice": "所有敏感健康数据均采用符合 HIPAA 标准的 256 位加密进行保护。",
+    "acceptContinue": "接受并继续",
+    "termsPreview": "1. 接受条款\n\n访问本应用即表示您同意受本服务条款约束。\n\n2. 用户责任\n\n您有责任维护账户信息的保密性。\n\n3. 服务可用性\n\n我们致力于实现 99.9% 的正常运行时间，但不保证持续不中断访问。\n\n4. 条款修改\n\n我们保留在提前通知的情况下随时修改这些条款的权利。\n\n5. 账户安全\n\n用户必须采取合理措施保护登录凭据和账户访问权限。\n\n6. 责任限制\n\n对于因平台误用或超出我们控制范围的服务中断造成的损失，我们概不负责。",
+    "privacyPreview": "1. 数据收集\n\n我们仅收集提供服务所需的最少数据，包括用于显示附近诊所的位置数据。\n\n2. 数据使用\n\n您的数据仅用于改进服务交付和个性化体验。\n\n3. 第三方共享\n\n我们绝不会出售您的个人数据。只有在您预约时，数据才会与授权医疗合作伙伴共享。\n\n4. 您的权利\n\n您有权随时访问、修改或删除您的数据。\n\n5. 数据保留\n\n我们仅保留提供服务和履行法律义务所需的信息。\n\n6. 安全措施\n\n所有敏感医疗信息均经过加密，并按照行业标准安全实践进行保护。"
+  },
+  "settings": {
+    "title": "设置",
+    "permissions": "权限",
+    "enableLocation": "启用位置访问权限",
+    "account": "账户与应用",
+    "changeLanguage": "更改语言",
+    "currentLanguage": "简体中文",
+    "logout": "退出登录",
+    "logoutMessage": "退出登录功能将在后续与身份验证系统集成。",
+    "dangerZone": "危险区域",
+    "deleteWarning": "删除您的账户是永久性的。所有医疗记录和个人资料数据都将被移除。",
+    "deleteAccount": "删除我的账户",
+    "deleteAccountMessage": "此操作无法撤销。"
+  },
+
+  "authGateway": {
+    "title": "保护您的医疗身份信息",
+    "subtitle": "登录以保存您的慢性病、过敏信息和紧急联系人。您的数据将安全同步并保持加密状态。",
+    "loginRegister": "登录 / 注册",
+    "continueGuest": "以访客身份继续"
+  },
+  "editProfile": {
+    "title": "编辑个人资料",
+    "personalProfile": "个人资料",
+    "personalInformation": "个人信息",
+    "fullName": "姓名",
+    "dateOfBirth": "出生日期",
+    "gender": "性别",
+    "nationality": "国籍",
+    "phoneNumber": "电话号码",
+    "emailAddress": "电子邮箱",
+    "address": "地址",
+    "spokenLanguages": "使用语言"
+  },
+  "profileGuest": {
+    "title": "保护您的医疗身份信息",
+    "description": "登录以保存您的慢性病、过敏信息和紧急情况资料。您的数据将安全同步并保持加密状态。",
+    "loginRegister": "登录 / 注册"
+  },
+  "login": {
+    "welcomeBack": "欢迎回来",
+    "signInSubtitle": "访问您的国际医疗记录。",
+    "password": "密码",
+    "emailPlaceholder": "name@company.com",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "登录",
+    "newHere": "第一次使用？",
+    "createAccount": "创建账户",
+    "getStarted": "开始使用",
+    "registerSubtitle": "为国际旅行者提供可靠医疗服务。",
+    "createPassword": "创建密码",
+    "fullNamePlaceholder": "张伟",
+    "passwordRequirements": "至少 8 个字符",
+    "agreeTerms": "我同意服务条款和隐私政策",
+    "alreadyHaveAccount": "已有账户？",
+    "encryption": "符合 HIPAA 标准的 256 位加密",
+    "finishProfileTitle": "完成您的医疗档案和医疗身份信息设置？",
+    "finishProfileDescription": "这将帮助纽约市紧急服务部门更好地为您提供帮助。",
+    "finishProfile": "完成档案与身份信息",
+    "skipForNow": "暂时跳过"
+  },
+
+  "profile": {
+    "title": "个人资料与医疗身份信息",
+    "scanQr": "扫描网页二维码",
+    "scanQrMessage": "相机集成功能将在后续接入。",
+    "synced": "医疗信息已同步",
+    "lastUpdated": "5分钟前更新",
+    "userId": "用户 ID",
+    "fullName": "姓名",
+    "email": "电子邮箱",
+    "phone": "电话号码",
+    "dateOfBirth": "出生日期",
+    "gender": "性别",
+    "nationality": "国籍",
+    "address": "地址",
+    "medicalId": "医疗身份信息",
+    "bloodType": "血型",
+    "languages": "语言",
+    "conditions": "疾病状况",
+    "allergies": "过敏信息",
+    "savedClinics": "已保存诊所",
+    "savedFacility": "已保存医疗机构"
+  },
+
+  "showStaff": {
+    "title": "向工作人员展示",
+    "languageBadge": "西班牙语 / Español",
+    "visitorSpeaks": "该访客使用",
+    "language": "西班牙语",
+    "needAssistance": "需要医疗协助。",
+    "translatedEmergency": "该访客讲西班牙语，需要医疗协助。",
+    "commonPhrases": "常用短语",
+    "liveTranslate": "实时翻译",
+    "allergies": "过敏",
+    "respiratory": "呼吸系统",
+    "pain": "疼痛",
+    "translationPlaceholder": "输入访客所使用的语言...",
+    "translationResult": "完成后端集成后，翻译结果将显示在此处。",
+    "medicalSummary": "医疗身份信息摘要"
+  },
+
+  "location": {
+    "title": "帮助我们定位您",
+    "subtitle": "我们将使用您的位置来显示距离最近且等待时间最短的诊所和医院。",
+    "enableAccess": "启用位置访问权限",
+    "enabled": "位置已启用",
+    "permissionGranted": "GPS 权限已授予",
+    "recommended": "建议启用以获得准确的出行时间",
+    "privacy": "您的位置数据属于隐私信息。未经您的同意，我们绝不会与第三方共享您的位置历史记录或医疗记录。",
+    "gpsTip": "强烈建议使用设备 GPS 进行路线搜索。",
+    "doLater": "稍后再做",
+    "permissionRequired": "需要位置权限",
+    "permissionRequiredMessage": "ClearPath 使用您的位置来显示附近的诊所、药房和路线信息。",
+    "unableToRetrieve": "无法获取位置",
+    "unableToRetrieveMessage": "请确保您的设备已启用 GPS。",
+    "enabledMessage": "位置服务已成功启用。",
+    "error": "位置错误",
+    "errorMessage": "访问位置服务时发生错误。"
+  },
+
+  "medicalId": {
+    "title": "编辑医疗身份信息",
+    "emergencyProfile": "紧急医疗档案",
+    "criticalInfo": "重要信息",
+    "medicalConditions": "疾病状况"
+  }
+}

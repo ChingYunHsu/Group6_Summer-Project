@@ -1,0 +1,183 @@
+{
+  "common": {
+    "continue": "Continue",
+    "and": "and",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "save": "Save",
+    "edit": "Edit",
+    "add": "Add"
+  },
+
+  "language": {
+    "choose": "Choose your language",
+    "search": "Search other languages...",
+    "selected": "Selected Language",
+    "footer": "By continuing, you will review our"
+  },
+
+  "legal": {
+    "title": "Legal & Privacy",
+    "reviewHeading": "Review Agreements",
+    "reviewSubtitle": "Please review our updated terms and privacy practices to continue.",
+
+    "terms": "Terms of Service",
+    "termsDescription": "Governs your use of our platform and services.",
+    "agreeTerms": "I agree to the Terms of Service",
+
+    "privacy": "Privacy Policy",
+    "privacyDescription": "Details how we protect and manage your data.",
+    "agreePrivacy": "I agree to the Privacy Policy",
+
+    "securityNotice": "All sensitive health data is secured with 256-bit HIPAA compliant encryption.",
+
+    "acceptContinue": "Accept & Continue",
+
+    "termsPreview": "1. Acceptance of Terms\n\nBy accessing this application, you agree to be bound by these Terms of Service.\n\n2. User Responsibilities\n\nYou are responsible for maintaining the confidentiality of your account information.\n\n3. Service Availability\n\nWe strive for 99.9% uptime but do not guarantee uninterrupted access.\n\n4. Modifications\n\nWe reserve the right to modify these terms at any time with prior notice.\n\n5. Account Security\n\nUsers must take reasonable steps to protect login credentials and account access.\n\n6. Limitation of Liability\n\nWe are not liable for losses resulting from misuse of the platform or interruptions outside our control.",
+
+    "privacyPreview": "1. Data Collection\n\nWe collect minimal data necessary to provide our services, including location data for nearby clinic mapping.\n\n2. Data Usage\n\nYour data is used strictly for improving service delivery and personalization.\n\n3. Third-Party Sharing\n\nWe never sell your personal data. Data is only shared with authorized medical partners when you request an appointment.\n\n4. Your Rights\n\nYou have the right to access, modify, or delete your data at any time.\n\n5. Data Retention\n\nWe retain only the information required to provide services and comply with legal obligations.\n\n6. Security Measures\n\nAll sensitive medical information is encrypted and protected using industry standard security practices."
+},
+
+  "settings": {
+    "title": "Settings",
+    "permissions": "Permissions",
+    "enableLocation": "Enable Location Access",
+    "account": "Account & App",
+    "changeLanguage": "Change Language",
+    "currentLanguage": "English (US)",
+    "logout": "Logout",
+    "logoutMessage": "Logout functionality will be connected to authentication later.",
+    "dangerZone": "Danger Zone",
+    "deleteWarning": "Deleting your account is permanent. All medical records and profile data will be removed.",
+    "deleteAccount": "Delete my account",
+    "deleteAccountMessage": "This action cannot be undone."
+  },
+
+  
+  "authGateway": {
+    "title": "Secure Your Medical ID",
+    "subtitle": "Log in to save your chronic conditions, allergies, and emergency contacts. Your data syncs securely and remains encrypted.",
+    "loginRegister": "Log In / Register",
+    "continueGuest": "Continue as Guest"
+  },
+
+  "editProfile": {
+    "title": "Edit Profile",
+    "personalProfile": "Personal Profile",
+    "personalInformation": "Personal Information",
+    "fullName": "Full Name",
+    "dateOfBirth": "Date of Birth",
+    "gender": "Gender",
+    "nationality": "Nationality",
+    "phoneNumber": "Phone Number",
+    "emailAddress": "Email Address",
+    "address": "Address",
+    "spokenLanguages": "Spoken Languages"
+  },
+
+  "profileGuest": {
+    "title": "Secure Your Medical ID",
+    "description": "Log in to save your chronic conditions, allergies, and emergency information. Your data syncs securely and remains encrypted.",
+    "loginRegister": "Log In / Register"
+  },
+
+  "login": {
+    "welcomeBack": "Welcome back",
+    "signInSubtitle": "Access your international health records.",
+    "password": "Password",
+    "emailPlaceholder": "name@company.com",
+    "passwordPlaceholder": "••••••••",
+    "signIn": "Sign In",
+    "newHere": "New here?",
+    "createAccount": "Create Account",
+    "getStarted": "Get started",
+    "registerSubtitle": "Reliable care for international travellers.",
+    "createPassword": "Create Password",
+    "fullNamePlaceholder": "John Doe",
+    "passwordRequirements": "Minimum 8 characters",
+    "agreeTerms": "I agree to the Terms of Service and Privacy Policy",
+    "alreadyHaveAccount": "Already have an account?",
+    "encryption": "256-bit HIPAA compliant encryption",
+    "finishProfileTitle": "Finish setting up your Medical Profile and ID?",
+    "finishProfileDescription": "This helps NYC Emergency Services to assist you better.",
+    "finishProfile": "Finish Profile & ID",
+    "skipForNow": "Skip For Now"
+  },
+
+  "profile": {
+    "title": "Profile & Medical ID",
+
+    "scanQr": "Scan Web QR Code",
+    "scanQrMessage": "Camera integration will be connected later.",
+
+    "synced": "Medical information synced",
+    "lastUpdated": "Last updated 5 minutes ago",
+
+    "userId": "User ID",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "dateOfBirth": "Date of Birth",
+    "gender": "Gender",
+    "nationality": "Nationality",
+    "address": "Address",
+
+    "medicalId": "Medical ID",
+    "bloodType": "Blood Type",
+    "languages": "Languages",
+    "conditions": "Conditions",
+    "allergies": "Allergies",
+
+    "savedClinics": "Saved Clinics",
+    "savedFacility": "Saved Facility"
+  },
+
+  "showStaff": {
+    "title": "Show Staff",
+    "languageBadge": "Spanish / Español",
+    "visitorSpeaks": "This visitor speaks",
+    "language": "Spanish",
+    "needAssistance": "They need medical assistance.",
+    "translatedEmergency": "Este visitante habla español. Necesita asistencia médica.",
+    "commonPhrases": "Common Phrases",
+    "liveTranslate": "Live Translate",
+    "allergies": "Allergies",
+    "respiratory": "Respiratory",
+    "pain": "Pain",
+    "translationPlaceholder": "Type in the visitor's language...",
+    "translationResult": "Translation will appear here after backend integration.",
+    "medicalSummary": "Medical ID Summary"
+  },
+
+  "location": {
+    "title": "Help us find you",
+    "subtitle": "We'll use your location to show the nearest clinics and hospitals with the shortest wait times.",
+    "enableAccess": "Enable Location Access",
+    "enabled": "Location Enabled",
+    "permissionGranted": "GPS permission granted",
+    "recommended": "Recommended for accurate travel times",
+    "privacy": "Your location data is private. We never share your history or medical records with third parties without your consent.",
+    "gpsTip": "Device GPS is highly recommended for route searching.",
+    "doLater": "I'll do this later",
+    "permissionRequired": "Location Permission Required",
+    "permissionRequiredMessage": "ClearPath uses your location to show nearby clinics, pharmacies, and routing information.",
+    "unableToRetrieve": "Unable to Retrieve Location",
+    "unableToRetrieveMessage": "Please ensure GPS is enabled on your device.",
+    "enabledMessage": "Location services have been successfully enabled.",
+    "error": "Location Error",
+    "errorMessage": "Something went wrong while accessing location services."
+  },
+
+  "medicalId": {
+    "title": "Edit Medical ID",
+    "emergencyProfile": "Emergency Profile",
+    "criticalInfo": "Critical Info",
+    "medicalConditions": "Medical Conditions",
+    "addCondition": "Add Condition",
+    "addAllergy": "Add Allergy",
+    "conditionPlaceholder": "Enter condition",
+    "allergyPlaceholder": "Enter allergy"
+  }
+}
+
+

@@ -1,22 +1,24 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
-    Modal,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Switch,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Modal,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
 export default function LoginScreen() {
+  const { t } = useTranslation();
+
   const [isRegisterMode, setIsRegisterMode] =
     useState(false);
 
@@ -68,24 +70,19 @@ export default function LoginScreen() {
             {!isRegisterMode ? (
               <>
                 <Text style={styles.title}>
-                  Welcome back
-                </Text>
+  {t("login.welcomeBack")}
+</Text>
 
-                <Text
-                  style={styles.subtitle}
-                >
-                  Access your international
-                  health records.
-                </Text>
+                <Text style={styles.subtitle}>
+  {t("login.signInSubtitle")}
+</Text>
 
-                <Text
-                  style={styles.label}
-                >
-                  Email Address
-                </Text>
+                <Text style={styles.label}>
+  {t("profile.emailAddress")}
+</Text>
 
                 <TextInput
-                  placeholder="name@company.com"
+                  placeholder={t("login.emailPlaceholder")}
                   placeholderTextColor={
                     Colours.muted
                   }
@@ -94,11 +91,9 @@ export default function LoginScreen() {
                   autoCapitalize="none"
                 />
 
-                <Text
-                  style={styles.label}
-                >
-                  Password
-                </Text>
+                <Text style={styles.label}>
+  {t("login.password")}
+</Text>
 
                 <View
                   style={
@@ -106,7 +101,7 @@ export default function LoginScreen() {
                   }
                 >
                   <TextInput
-                    placeholder="••••••••"
+                    placeholder={t("login.passwordPlaceholder")}
                     placeholderTextColor={
                       Colours.muted
                     }
@@ -145,16 +140,13 @@ export default function LoginScreen() {
                     handleSignIn
                   }
                 >
-                  <Text
-                    style={
-                      styles.primaryButtonText
-                    }
-                  >
-                    Sign In
-                  </Text>
+                  <Text style={styles.primaryButtonText}>
+  {t("login.signIn")}
+</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
+                  testID="switch-to-register"
                   onPress={() =>
                     setIsRegisterMode(
                       true
@@ -180,38 +172,31 @@ export default function LoginScreen() {
             ) : (
               <>
                 <Text style={styles.title}>
-                  Get started
-                </Text>
+  {t("login.getStarted")}
+</Text>
 
-                <Text
-                  style={styles.subtitle}
-                >
-                  Reliable care for
-                  international travellers.
-                </Text>
+                <Text style={styles.subtitle}>
+  {t("login.registerSubtitle")}
+</Text>
 
-                <Text
-                  style={styles.label}
-                >
-                  Full Name
-                </Text>
+                <Text style={styles.label}>
+  {t("profile.fullName")}
+</Text>
 
                 <TextInput
-                  placeholder="John Doe"
+                  placeholder={t("login.fullNamePlaceholder")}
                   placeholderTextColor={
                     Colours.muted
                   }
                   style={styles.input}
                 />
 
-                <Text
-                  style={styles.label}
-                >
-                  Email Address
-                </Text>
+                <Text style={styles.label}>
+  {t("profile.emailAddress")}
+</Text>
 
                 <TextInput
-                  placeholder="name@company.com"
+                  placeholder={t("login.emailPlaceholder")}
                   placeholderTextColor={
                     Colours.muted
                   }
@@ -220,11 +205,9 @@ export default function LoginScreen() {
                   autoCapitalize="none"
                 />
 
-                <Text
-                  style={styles.label}
-                >
-                  Create Password
-                </Text>
+                <Text style={styles.label}>
+  {t("login.createPassword")}
+</Text>
 
                 <View
                   style={
@@ -232,7 +215,7 @@ export default function LoginScreen() {
                   }
                 >
                   <TextInput
-                    placeholder="Minimum 8 characters"
+                    placeholder={t("login.passwordRequirements")}
                     placeholderTextColor={
                       Colours.muted
                     }
@@ -269,6 +252,7 @@ export default function LoginScreen() {
                   }
                 >
                   <Switch
+                    testID="terms-switch"
                     value={agreed}
                     onValueChange={
                       setAgreed
@@ -281,18 +265,13 @@ export default function LoginScreen() {
                     }}
                   />
 
-                  <Text
-                    style={
-                      styles.checkboxText
-                    }
-                  >
-                    I agree to the Terms
-                    of Service and Privacy
-                    Policy
-                  </Text>
+                  <Text style={styles.checkboxText}>
+  {t("login.agreeTerms")}
+</Text>
                 </View>
 
                 <TouchableOpacity
+                  testID="create-account-button"
                   style={[
                     styles.primaryButton,
                     !agreed &&
@@ -303,37 +282,25 @@ export default function LoginScreen() {
                     handleCreateAccount
                   }
                 >
-                  <Text
-                    style={
-                      styles.primaryButtonText
-                    }
-                  >
-                    Create Account
-                  </Text>
+                  <Text style={styles.primaryButtonText}>
+  {t("login.createAccount")}
+</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
+                  testID="switch-to-signin"
                   onPress={() =>
                     setIsRegisterMode(
                       false
                     )
                   }
                 >
-                  <Text
-                    style={
-                      styles.switchText
-                    }
-                  >
-                    Already have an
-                    account?{" "}
-                    <Text
-                      style={
-                        styles.linkText
-                      }
-                    >
-                      Sign In
-                    </Text>
-                  </Text>
+                  <Text style={styles.switchText}>
+  {t("login.alreadyHaveAccount")}{" "}
+  <Text style={styles.linkText}>
+    {t("login.signIn")}
+  </Text>
+</Text>
                 </TouchableOpacity>
               </>
             )}
@@ -346,12 +313,9 @@ export default function LoginScreen() {
               color={Colours.muted}
             />
 
-            <Text
-              style={styles.footerText}
-            >
-              256-bit HIPAA compliant
-              encryption
-            </Text>
+           <Text style={styles.footerText}>
+  {t("login.encryption")}
+</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -363,29 +327,18 @@ export default function LoginScreen() {
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalCard}>
-            <Ionicons
-              name="checkmark-circle"
-              size={64}
-              color={Colours.success}
-            />
+            <View style={styles.sheetHandle} />
 
-            <Text
-              style={styles.modalTitle}
-            >
-              Registration Successful!
-            </Text>
+           <Text style={styles.modalTitle}>
+  {t("login.finishProfileTitle")}
+</Text>
 
-            <Text
-              style={
-                styles.modalDescription
-              }
-            >
-              Would you like to finish
-              setting up your Medical
-              Profile and ID now?
-            </Text>
+            <Text style={styles.modalDescription}>
+  {t("login.finishProfileDescription")}
+</Text>
 
             <TouchableOpacity
+              testID="finish-profile-button"
               style={
                 styles.modalPrimaryButton
               }
@@ -393,28 +346,21 @@ export default function LoginScreen() {
                 handleFinishProfile
               }
             >
-              <Text
-                style={
-                  styles.primaryButtonText
-                }
-              >
-                Finish Profile & ID
-              </Text>
+              <Text style={styles.primaryButtonText}>
+  {t("login.finishProfile")}
+</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
+              testID="skip-for-now-button"
               style={
                 styles.modalSecondaryButton
               }
               onPress={handleSkipForNow}
             >
-              <Text
-                style={
-                  styles.secondaryButtonText
-                }
-              >
-                Skip For Now
-              </Text>
+              <Text style={styles.secondaryButtonText}>
+  {t("login.skipForNow")}
+</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -560,23 +506,26 @@ const styles = StyleSheet.create({
   modalOverlay: {
     flex: 1,
     backgroundColor:
-      "rgba(0,0,0,0.5)",
-    justifyContent: "center",
-    padding: 24,
+      "rgba(0,0,0,0.3)",
+    justifyContent: "flex-end",
   },
 
   modalCard: {
     backgroundColor: Colours.surface,
-    borderRadius: 24,
-    padding: 24,
-    alignItems: "center",
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    paddingHorizontal: 28,
+    paddingTop: 20,
+    paddingBottom: 40,
   },
 
   modalTitle: {
     ...Typography.h3,
     color: Colours.text,
-    marginTop: 16,
+    textAlign: "center",
+     alignSelf: "center",
     marginBottom: 12,
+    maxWidth: 320,
   },
 
   modalDescription: {
@@ -588,19 +537,30 @@ const styles = StyleSheet.create({
   },
 
 modalPrimaryButton: {
-  width: "90%",
+  width: "100%",
   backgroundColor: Colours.primary,
   borderRadius: 999,
   paddingVertical: 18,
   marginBottom: 12,
+  alignSelf: "center",
 },
 
 modalSecondaryButton: {
-  width: "90%",
+  width: "100%",
   borderWidth: 1,
   borderColor: Colours.border,
   borderRadius: 999,
   paddingVertical: 18,
   backgroundColor: Colours.surface,
+  alignSelf: "center",
+},
+
+sheetHandle: {
+  width: 40,
+  height: 5,
+  borderRadius: 999,
+  backgroundColor: Colours.border,
+  alignSelf: "center",
+  marginBottom: 20,
 },
 });
