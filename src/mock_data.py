@@ -514,6 +514,32 @@ DELETE_ACCOUNT_RESPONSE = {
     "purge_deadline": "2026-06-09T23:59:59Z",
 }
 
+# Medical ID — Option B (2026-06): synced server-side instead of on-device
+# SecureStore + QR, per mobile track decision. Alex owns full-table encryption
+# for this data at the DB layer; this mock store represents the plaintext
+# contract the API exposes once that's in place.
+MEDICAL_ID = {
+    "blood_type": "O+",
+    "conditions": ["Asthma"],
+    "allergies": ["Penicillin"],
+}
+
+EMERGENCY_CONTACTS = [
+    {
+        "contact_id": "ec_001",
+        "name": "Maria Rivera",
+        "relationship": "Mother",
+        "phone": "+1 (917) 555-0199",
+    },
+]
+
+EMERGENCY_CONTACT_CREATE_TEMPLATE = {
+    "contact_id": "ec_000",
+    "name": "",
+    "relationship": "",
+    "phone": "",
+}
+
 MEDICAL_PASSPORT_RESPONSE = {
     "status": "generated",
     "pdf_url": "https://example.com/files/medical_passport_u_1001_en.pdf",
