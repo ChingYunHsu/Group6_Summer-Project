@@ -1,8 +1,8 @@
 # ClearPath 现有问题
 
-> 更新日期：2026-06-11 | Commit: 749c57b PR#12 merged | 来源：Sprint 2 数据任务审计
-> 评审日期：2026-06-11 | 评审方法：对比 sprint-tasks-1-4.md 计划 vs 代码实际
-> 最后更新：2026-06-11 | D2.1 ERD 图表已导出
+> 更新日期：2026-06-23 | Commit: 749c57b PR#12 merged | 来源：Sprint 2 数据任务审计 + Sprint 3 正式归属整理
+> 评审日期：2026-06-23 | 评审方法：对比 sprint-tasks-1-4.md 计划 vs 代码实际 + Sprint 3 数据任务正式归档
+> 最后更新：2026-06-23 | Sprint 3 fangxun.wu 任务已归档
 
 ---
 
@@ -126,6 +126,23 @@
 - **状态**: ❌ 未解决
 - **失败场景**: Sprint 3 的 D3.1 (Real-Time Telemetry) 和 D3.2 (12-Hour Forecast) 依赖 ML 模型输出。缺少模型将阻塞 Sprint 3 数据任务。
 - **修复**: 创建独立 notebook 实现 ARIMA/LSTM 拥挤度预测模型，使用 traffic_hourly.csv 作为训练数据。
+
+### 19A. Sprint 3 数据任务（fangxun.wu，2026-06-23）
+- **对象**: `fangxun.wu`
+- **结论**: Sprint 3 的数据工作流统一归属 `fangxun.wu`，并按当前 DB 设计执行
+- **任务清单**:
+  - `MySQL Keyring Configuration & Tablespace Encryption Integration`
+  - `Encrypted User Medical Profile Schema Migration Setup`
+  - `Real-Time MySQL Seed Venues Ingestion & Verification`
+  - `Real-Time Zoned Telemetry Pipeline`
+  - `12-Hour Capacity Forecasting Production Engine`
+  - `Polymorphic Crowdsourced Ingestion Engine & 2-Hour TTL Pipeline`
+- **说明**:
+  - `S3.1` 仅作为加密医疗表前置能力，失败只阻断加密迁移，不阻断无关基础表
+  - `S3.2` 只存 Tier 2 医疗字段，Tier 1 资料仍留在 `users / userProfile`
+  - `S3.3` 作为静态 seed 初始化，不替代 ETL 权威源
+  - `S3.4` / `S3.5` 写入动态 telemetry / forecast 层，不回写静态 `venues`
+  - `S3.6` 仅做过期状态化，不做硬删除
 
 ### 20. ~~D2.7 单元测试缺失~~ ✅ 已解决 2026-06-11
 - **文件**: `Data+ML/test/6.8-6.12_DB/tests/test_dqr_modules.py`

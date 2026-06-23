@@ -1,7 +1,7 @@
 # ClearPath Sprint 1-4 Task Summary
 
 > Sources: Notion Sprint Backlog + Backend Lead Pipeline + Data Lead Pipeline + session-log.md
-> Updated: 2026-06-15 | Progress audit from codebase + memory files
+> Updated: 2026-06-23 | Progress audit from codebase + memory files + Sprint 3 fangxun.wu workstream
 > Team: Hsu Ching Yun (H), fangxun.wu (F), David Irving (D), Joanna Saheed (J), Casey Liew (C), Emmett (E)
 
 ---
@@ -170,6 +170,19 @@
 | D3.5 | **Regional Aggregation Formula** | **P0** | Real-Time Density, Best Travel Window, Fastest Hubs |
 | D3.6 | 2-Hour TTL (with Backend) | P0 | Auto-delete expired reports |
 | D3.7 | ML + Aggregation Unit Tests | P0 | PyTest: regional logic, ranking functions, 95% coverage |
+
+#### fangxun.wu Sprint 3 Data Workstream
+
+> **说明**: 以下任务全部归属 Sprint 3 的 `fangxun.wu` 交付范围，并遵守当前 DB 设计：静态 `venues` 保持不变，实时/预测写动态层，医疗资料写加密表，TTL 采用状态化过期。
+
+| Task | Notes |
+|------|------|
+| MySQL Keyring Configuration & Tablespace Encryption Integration | 仅作为加密医疗表前置能力；失败只阻断需要 `ENCRYPTION='Y'` 的迁移 |
+| Encrypted User Medical Profile Schema Migration Setup | `user_medical_profiles` DDL + `ENCRYPTION='Y'` + `ON DELETE CASCADE`，仅存 Tier 2 医疗字段 |
+| Real-Time MySQL Seed Venues Ingestion & Verification | 静态 seed 初始化，补足基础 venues 数据，不替代 ETL 权威源 |
+| Real-Time Zoned Telemetry Pipeline | Live capacity + wait-time 写入动态 telemetry 层，不回写静态 `venues` |
+| 12-Hour Capacity Forecasting Production Engine | 产出 12h 预测结果到 forecast 层，保持与前端消费结构一致 |
+| Polymorphic Crowdsourced Ingestion Engine & 2-Hour TTL Pipeline | `user_reports` / `report_confirmations` 路由 + Redis/Celery 过期状态化，TTL 不做硬删除 |
 
 ---
 

@@ -1,9 +1,19 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.5.0
+  version: 1.6.0
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
+
+    ## Changelog — v1.6.0
+    - **Medical Profile Server-Side Storage (Phase 7):** D10 revised — medical data
+      now stored server-side in encrypted `user_medical_profiles` table (InnoDB
+      tablespace encryption). Three new endpoints: `GET/PUT/DELETE /api/v1/user/medical-profile`.
+      `medical-passport` render_token endpoint deprecated; medical passport is now
+      generated from server-stored profile data.
+    - **JWT Auth (Phase 7):** `POST /auth/register` and `POST /auth/login` now write
+      to MySQL `users` table with bcrypt password hashing. Returns real JWT access
+      tokens (no refresh token per D10 minimal scope).
 
     ## Changelog — v1.4.1
     - **Fix 1 (Auth Binding):** `GET /user/profile` and `GET /user/settings` upgraded from
@@ -976,13 +986,121 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-  # FIX 2 & FIX 3 — Medical Data Starvation / Server-Side Storage Risk
-  # Per D10, all sensitive medical data is strictly client-side. This endpoint
-  # no longer triggers server-side PDF generation or storage. Instead it returns
-  # a short-lived render_token (signed JWT, 5-min TTL) that authorises the Web
-  # frontend to render the passport client-side after the user scans the mobile
-  # QR code. Zero clinical rows or PDF files are written to the cloud.
+  # Phase 7 — Server-side medical profile (revised D10)
+  # Medical data is now stored server-side in encrypted user_medical_profiles table.
+  # JWT-authenticated CRUD. One row per user. Last-write-wins.
+  /api/v1/user/medical-profile:
+    get:
+      tags: [User]
+      summary: Get current user's medical profile
+      description: >
+        Returns the authenticated user's Tier 2 medical profile from the encrypted
+        `user_medical_profiles` table. Returns empty object if no profile exists.
+        All data comes from JWT identity — no `user_id` parameter accepted.
+      operationId: getMedicalProfile
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Medical profile (or empty object if none exists).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalProfile'
+        '401':
+          description: Invalid or missing bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      tags: [User]
+      summary: Create or update medical profile (upsert)
+      description: >
+        Creates or updates the authenticated user's medical profile.
+        All fields are optional; only provided fields are updated.
+        Conflict strategy: last-write-wins (no versioning).
+      operationId: updateMedicalProfile
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MedicalProfileUpdate'
+      responses:
+        '200':
+          description: Updated medical profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalProfile'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Invalid or missing bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      tags: [User]
+      summary: Delete current user's medical profile
+      operationId: deleteMedicalProfile
+      security:
+        - BearerAuth: []
+      responses:
+        '204':
+          description: Medical profile deleted.
+        '401':
+          description: Invalid or missing bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # DEPRECATED — Old D10 render_token endpoint (kept for backward compatibility)
+  # Replaced by /api/v1/user/medical-profile server-side CRUD.
   /api/v1/user/medical-passport:
+    get:
+      deprecated: true
+      tags: [User]
+      summary: "[DEPRECATED] Issue a render token for client-side medical passport generation"
+      description: >
+        **Deprecated: Use GET /api/v1/user/medical-profile instead.**
+
+        This endpoint is retained for backward compatibility only. New implementations
+        should use the server-side medical profile CRUD endpoints.
+      operationId: getMedicalPassport
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+            example: en
+      responses:
+        '200':
+          description: Render token issued (deprecated).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalPassportResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
     get:
       tags: [User]
       summary: Issue a render token for client-side medical passport generation
@@ -1931,10 +2049,96 @@ components:
           type: string
           format: date-time
 
-    # FIX 2 & FIX 3 — Medical Data / Server-Side Storage Risk
-    # pdf_url removed. No clinical PDF is stored server-side (D10 mandate).
-    # render_token is a short-lived signed JWT (5-min TTL) that the Web frontend
-    # exchanges after QR scan to authorise purely client-side PDF rendering.
+    # Phase 7 — Server-side medical profile schemas
+    MedicalProfile:
+      type: object
+      description: >
+        Tier 2 medical profile stored server-side in encrypted `user_medical_profiles`
+        table (InnoDB tablespace encryption). One row per user. All fields optional.
+      properties:
+        blood_type:
+          type: string
+          enum: [A+, A-, B+, B-, AB+, AB-, O+, O-]
+          description: User's blood type.
+        donor_status:
+          type: boolean
+          description: Organ donor status.
+        severe_allergies:
+          type: array
+          items:
+            type: string
+          description: List of severe allergies (e.g. "Peanuts", "Penicillin").
+        conditions:
+          type: array
+          items:
+            type: string
+          description: List of medical conditions (e.g. "Diabetes", "Asthma").
+        medications:
+          type: array
+          items:
+            type: string
+          description: List of current medications.
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              phone:
+                type: string
+              relationship:
+                type: string
+          description: Emergency contact list.
+        emergency_notes:
+          type: string
+          description: Additional emergency notes (e.g. "Type 1 Diabetic").
+        medical_pass_title:
+          type: string
+          description: Title for the medical pass (e.g. "Medical Alert Card").
+
+    MedicalProfileUpdate:
+      type: object
+      additionalProperties: false
+      description: >
+        All fields optional. Only provided fields are updated (upsert).
+        Conflict strategy: last-write-wins.
+      properties:
+        blood_type:
+          type: string
+          enum: [A+, A-, B+, B-, AB+, AB-, O+, O-]
+        donor_status:
+          type: boolean
+        severe_allergies:
+          type: array
+          items:
+            type: string
+        conditions:
+          type: array
+          items:
+            type: string
+        medications:
+          type: array
+          items:
+            type: string
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              phone:
+                type: string
+              relationship:
+                type: string
+        emergency_notes:
+          type: string
+        medical_pass_title:
+          type: string
+
+    # DEPRECATED — Old D10 render_token schema
+    # Replaced by MedicalProfile (server-side CRUD).
     MedicalPassportResponse:
       type: object
       required: [status]

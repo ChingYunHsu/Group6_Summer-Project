@@ -12,12 +12,16 @@ services:
       - "3306:3306"
     volumes:
       - clearpath_mysql_data:/var/lib/mysql
+      - clearpath_mysql_keyring:/var/lib/mysql-keyring
       - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uclearpath_app", "-pclearpath_app"]
       interval: 10s
       timeout: 5s
       retries: 10
+    command: >
+      --early-plugin-load=keyring_file=keyring_file.so
+      --keyring-file-data=/var/lib/mysql-keyring/keyring
 
   phpmyadmin:
     image: phpmyadmin:latest
@@ -35,3 +39,4 @@ services:
 
 volumes:
   clearpath_mysql_data:
+  clearpath_mysql_keyring:
