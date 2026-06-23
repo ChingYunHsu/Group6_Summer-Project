@@ -1,0 +1,66 @@
+name: ClearPath Backend CI (Poetry Engine)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: false
+        fetch-depth: 1
+
+    - name: Configure Git Safe Directory
+      run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: false # Let Poetry manage it globally
+        installer-parallel: true
+
+    - name: Load cached venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pypoetry/virtualenvs # Cache the global environment
+        key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-root
+      working-directory: ./backend 
+
+  
+    - name: Ensure Pytest is Installed
+      run: poetry run pip install pytest pytest-cov flake8
+      working-directory: ./backend
+
+    - name: Run Backend Linting Check
+      run: |
+        poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      working-directory: ./backend
+
+    - name: Run Pytest with Coverage
+      run: |
+        poetry run pytest tests/ --cov=. --cov-fail-under=60
+      working-directory: ./backend
+      env:
+        PYTHONPATH: .

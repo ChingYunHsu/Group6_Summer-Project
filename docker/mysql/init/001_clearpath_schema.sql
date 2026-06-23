@@ -16,7 +16,7 @@ USE clearpath;
 CREATE TABLE IF NOT EXISTS venues (
   venue_id VARCHAR(36) PRIMARY KEY,
   venue_type ENUM(
-    'restroom', 'healthcare', 'emergency_asset',
+    'restroom', 'healthcare', 'emergencyasset',
     'clinic', 'pharmacy', 'hospital', 'dentist', 'laboratory'
   ) NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS venues (
   accessibility_features JSON,
   -- Gap-fix: warnings
   active_warning BOOLEAN DEFAULT FALSE,
+  open_now BOOLEAN DEFAULT TRUE,
+  district VARCHAR(32),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   CHECK (source_confidence >= 0 AND source_confidence <= 1),
@@ -118,6 +120,7 @@ CREATE TABLE IF NOT EXISTS emergency_assets (
   community_district VARCHAR(64),
   council_district VARCHAR(64),
   last_updated DATE,
+  UNIQUE KEY uq_emergency_asset_natural (venue_id, floor, location_type),
   CONSTRAINT fk_emergency_asset_venue FOREIGN KEY (venue_id) REFERENCES venues (venue_id) ON DELETE CASCADE,
   INDEX idx_emergency_assets_venue (venue_id),
   INDEX idx_emergency_assets_type (asset_type)
@@ -132,6 +135,7 @@ CREATE TABLE IF NOT EXISTS pedestrian_ramps (
   latitude DECIMAL(10, 7) NOT NULL,
   longitude DECIMAL(10, 7) NOT NULL,
   borough VARCHAR(64),
+  district VARCHAR(32),
   on_street VARCHAR(255),
   cross_street_1 VARCHAR(255),
   cross_street_2 VARCHAR(255),
@@ -149,7 +153,7 @@ CREATE TABLE IF NOT EXISTS pedestrian_ramps (
 
 -- -----------------------------------------------------------
 -- user_reports — Crowd-sourced incident reports
--- Phase 3: Added user_id FK (D3), removed reported_by, issue_type → VARCHAR + FK
+-- Phase 3: Added user_id FK (D3), issue_type → VARCHAR + FK
 -- -----------------------------------------------------------
 CREATE TABLE IF NOT EXISTS user_reports (
   report_id VARCHAR(36) PRIMARY KEY,
@@ -159,10 +163,10 @@ CREATE TABLE IF NOT EXISTS user_reports (
   latitude DECIMAL(10, 7) NOT NULL,
   longitude DECIMAL(10, 7) NOT NULL,
   accuracy_meters DECIMAL(8, 2),
-  -- D3: 保留 anonymous (提交后匿名化)
   anonymous BOOLEAN DEFAULT FALSE,
   description TEXT,
   photos JSON,
+  reported_by VARCHAR(50) DEFAULT 'anonymous',
   status ENUM('active', 'resolved', 'expired') NOT NULL DEFAULT 'active',
   expires_in_minutes INT DEFAULT 120,
   default_language VARCHAR(10),
@@ -205,16 +209,17 @@ CREATE TABLE IF NOT EXISTS busyness_scores (
   score_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   venue_id VARCHAR(36) NOT NULL,
   score TINYINT UNSIGNED NOT NULL,
-  level ENUM('quiet','moderate','busy') DEFAULT NULL,
+  level ENUM('quiet','moderate','busy','no_data') DEFAULT NULL,
   estimated_wait_minutes INT UNSIGNED,
   -- Gap-fix: forecast columns
-  forecast_1h INT,
+  forecast_1h JSON,
   forecast_start_time DATETIME NOT NULL,
   forecast_end_time DATETIME NOT NULL,
   model_version VARCHAR(64) NOT NULL,
   features_snapshot_id VARCHAR(128),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT fk_busyness_venue FOREIGN KEY (venue_id) REFERENCES venues (venue_id) ON DELETE CASCADE,
+  UNIQUE KEY uq_busyness_venue_time (venue_id, forecast_start_time, model_version),
   CHECK (score <= 100),
   INDEX idx_busyness_venue_time (venue_id, forecast_start_time, forecast_end_time),
   INDEX idx_busyness_created_at (created_at)
@@ -349,7 +354,7 @@ CREATE TABLE IF NOT EXISTS busyness_forecasts (
   venue_id VARCHAR(36) NOT NULL,
   forecast_for DATETIME NOT NULL,
   predicted_score TINYINT UNSIGNED NOT NULL,
-  predicted_level ENUM('quiet','moderate','busy') NOT NULL,
+  predicted_level ENUM('quiet','moderate','busy','no_data') NOT NULL,
   estimated_wait_minutes INT UNSIGNED,
   model_version VARCHAR(64) NOT NULL,
   generated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -376,5 +381,5 @@ CREATE TABLE IF NOT EXISTS venue_embeddings (
 -- -----------------------------------------------------------
 -- Phase 5: Additional indexes for RAG + search
 -- -----------------------------------------------------------
-CREATE INDEX IF NOT EXISTS idx_venues_district ON venues(district);
-CREATE INDEX IF NOT EXISTS idx_venues_type_district ON venues(venue_type, district);
+CREATE INDEX idx_venues_district ON venues(district);
+CREATE INDEX idx_venues_type_district ON venues(venue_type, district);

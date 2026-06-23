@@ -14,13 +14,16 @@ import {
   featuredLanguages,
 } from "../data/languages";
 
+import { useTranslation } from "react-i18next";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
+import i18n from "../i18n";
 
 console.log("Colours import:", Colours);
 
 export default function LanguageScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const [search, setSearch] = useState("");
 
@@ -55,11 +58,11 @@ export default function LanguageScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        Choose your language
+        {t("language.choose")}
       </Text>
 
       <TextInput
-        placeholder="Search other languages..."
+        placeholder={t("language.search")}
         value={search}
         onChangeText={setSearch}
         style={styles.searchInput}
@@ -76,7 +79,7 @@ export default function LanguageScreen() {
             <Text
               style={styles.selectedLabel}
             >
-              Selected Language
+              {t("language.selected")}
             </Text>
 
             <Text
@@ -135,9 +138,16 @@ export default function LanguageScreen() {
                 selected &&
                   styles.selectedCard,
               ]}
-              onPress={() =>
-                setSelectedLanguage(item)
-              }
+              onPress={() => {
+  setSelectedLanguage(item);
+
+  i18n.changeLanguage(item.code);
+
+  console.log(
+    "Switching to:",
+    item.code
+  );
+}}
             >
               {selected && (
                 <View
@@ -176,22 +186,21 @@ export default function LanguageScreen() {
         }
       >
         <Text style={styles.buttonText}>
-          Continue
+          {t("common.continue")}
         </Text>
       </TouchableOpacity>
 
       <Text style={styles.footer}>
-        By continuing, you will review
-        our{" "}
-        <Text style={styles.linkText}>
-          Terms of Service
-        </Text>{" "}
-        and{" "}
-        <Text style={styles.linkText}>
-          Privacy Policy
-        </Text>
-        .
-      </Text>
+  {t("language.footer")}{" "}
+  <Text style={styles.linkText}>
+    {t("legal.terms")}
+  </Text>{" "}
+  {t("common.and")}{" "}
+  <Text style={styles.linkText}>
+    {t("legal.privacy")}
+  </Text>
+  .
+</Text>
     </View>
   );
 }

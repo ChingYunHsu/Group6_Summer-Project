@@ -2,6 +2,12 @@ from flask import Blueprint, jsonify, request
 
 from auth import ACCESS_TOKEN_TTL, issue_access_token
 from mock_data import AUTH_USERS
+from copy import deepcopy
+
+from flask import Blueprint, jsonify, request
+
+from auth import SESSIONS
+from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE, AUTH_USERS
 
 
 bp = Blueprint("auth", __name__)
@@ -9,6 +15,59 @@ bp = Blueprint("auth", __name__)
 
 @bp.post("/api/v1/auth/login")
 def login():
+def _register_session(user_id: str, is_guest: bool = False) -> dict:
+    response = deepcopy(AUTH_LOGIN_RESPONSE)
+    response["access_token"] = f"mock_access_token_{user_id}"
+    response["refresh_token"] = f"mock_refresh_token_{user_id}"
+    response["user_id"] = user_id
+    SESSIONS[response["access_token"]] = {"user_id": user_id, "is_guest": is_guest}
+    return response
+
+
+def _next_user_id() -> str:
+    user_numbers = []
+    for user in AUTH_USERS:
+        user_id = user.get("user_id", "")
+        if user_id.startswith("u_"):
+            try:
+                user_numbers.append(int(user_id.removeprefix("u_")))
+            except ValueError:
+                continue
+
+    next_number = max(user_numbers, default=1000) + 1
+    return f"u_{next_number}"
+
+
+@bp.post("/api/v1/auth/register")
+def register_user():
+    payload = request.get_json(silent=True) or {}
+
+    required_fields = ["full_name", "email", "password"]
+    missing = [field for field in required_fields if field not in payload]
+    if missing:
+        return jsonify({"error": "Validation failed.", "missing_fields": missing}), 400
+
+    if not isinstance(payload.get("password"), str) or len(payload["password"]) < 8:
+        return jsonify({"error": "Validation failed.", "missing_fields": [], "invalid_fields": ["password"]}), 400
+
+    if any(user["email"] == payload["email"] for user in AUTH_USERS):
+        return jsonify({"error": "Email already registered."}), 409
+
+    user = {
+        "user_id": _next_user_id(),
+        "full_name": payload["full_name"],
+        "email": payload["email"],
+        "password": payload["password"],
+    }
+    AUTH_USERS.append(user)
+
+    response = _register_session(user["user_id"])
+    response["finish_profile_prompt"] = True
+    return jsonify(response), 201
+
+
+@bp.post("/api/v1/auth/login")
+def login_user():
     payload = request.get_json(silent=True) or {}
 
     required_fields = ["email", "password"]

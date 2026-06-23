@@ -1,0 +1,331 @@
+================================================================================
+ClearPath Database ERD — Table Summary
+================================================================================
+
+Table                          Cols   Primary Keys              FKs
+--------------------------------------------------------------------------------
+venues                         24     venue_id                  —
+venue_source_links             9      source_link_id            1 FK(s)
+restroom_profiles              10     venue_id                  1 FK(s)
+healthcare_profiles            9      venue_id                  1 FK(s)
+emergency_assets               10     asset_id                  1 FK(s)
+pedestrian_ramps               17     ramp_id                   —
+user_reports                   18     report_id                 3 FK(s)
+report_confirmations           7      confirmation_id           2 FK(s)
+busyness_scores                11     score_id                  1 FK(s)
+external_context_cache         8      cache_id                  1 FK(s)
+venue_accessibility            5      venue_id                  1 FK(s)
+venue_language                 5      venue_id                  1 FK(s)
+venue_warnings                 5      venue_id                  1 FK(s)
+users                          10     user_id                   —
+user_favorite_venues           3      user_id, venue_id         2 FK(s)
+notification_preferences       10     pref_id                   2 FK(s)
+report_categories              7      category_id               —
+busyness_forecasts             8      forecast_id               1 FK(s)
+venue_embeddings               5      venue_id                  1 FK(s)
+--------------------------------------------------------------------------------
+Total: 19 tables, 181 columns
+
+================================================================================
+DETAILED SCHEMA
+================================================================================
+
+┌─ venues (24 cols) ──────────────────────────────────────────────────┐
+│ PK   venue_id                     VARCHAR(36)          │
+│      venue_type                   ENUM(
+    'restroom', 'healthcare', 'emergencyasset',
+    'clinic', 'pharmacy', 'hospital', 'dentist', 'laboratory'
+  ) NOT NULL │
+│      name                         VARCHAR(255)         NOT NULL │
+│      latitude                     DECIMAL(10, 7)       NOT NULL │
+│      longitude                    DECIMAL(10, 7)       NOT NULL │
+│      borough                      VARCHAR(64)          │
+│      address                      VARCHAR(512)         │
+│      phone                        VARCHAR(64)          │
+│      website                      VARCHAR(512)         │
+│      opening_hours                VARCHAR(512)         │
+│      photos                       JSON                 │
+│      rating                       DECIMAL(3,2)         │
+│      weather_risk                 ENUM('low', 'medium', 'high') │
+│      source_confidence            DECIMAL(4, 3)        NOT NULL │
+│      language_tags                JSON                 │
+│      primary_language             VARCHAR(10)          │
+│      secondary_language           VARCHAR(10)          │
+│      accessible_status            ENUM('full_access', 'partial', 'step_free_route_only', 'none') │
+│      accessibility_features       JSON                 │
+│      active_warning               BOOLEAN              │
+│      open_now                     BOOLEAN              │
+│      district                     VARCHAR(32)          │
+│      created_at                   TIMESTAMP            NOT NULL │
+│      updated_at                   TIMESTAMP            NOT NULL │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ venue_source_links (9 cols) ──────────────────────────────────────┐
+│ PK   source_link_id               BIGINT               │
+│   FK venue_id                     VARCHAR(36)          NOT NULL │
+│      source_name                  VARCHAR(128)         NOT NULL │
+│      source_record_id             VARCHAR(128)         │
+│      raw_name                     VARCHAR(255)         │
+│      raw_location_text            VARCHAR(512)         │
+│      matched_method               ENUM('exact_source_id', 'name_coordinate', 'name_address', 'manual_review', 'single_source') NOT NULL │
+│      match_confidence             DECIMAL(4, 3)        NOT NULL │
+│      created_at                   TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ restroom_profiles (10 cols) ───────────────────────────────────────┐
+│ PKFK venue_id                     VARCHAR(36)          │
+│      restroom_type                VARCHAR(128)         │
+│      operator                     VARCHAR(255)         │
+│      status                       VARCHAR(128)         │
+│      open_seasonal                BOOLEAN              │
+│      open_year_round              BOOLEAN              │
+│      ada_accessible               BOOLEAN              │
+│      handicap_accessible          BOOLEAN              │
+│      changing_station             BOOLEAN              │
+│      additional_notes             TEXT                 │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ healthcare_profiles (9 cols) ─────────────────────────────────────┐
+│ PKFK venue_id                     VARCHAR(36)          │
+│      facility_external_id         VARCHAR(128)         │
+│      facility_type                VARCHAR(255)         │
+│      healthcare_category          VARCHAR(128)         │
+│      healthcare_speciality        VARCHAR(255)         │
+│      operator_name                VARCHAR(255)         │
+│      ownership_type               VARCHAR(128)         │
+│      main_site_name               VARCHAR(255)         │
+│      official_source_priority     TINYINT              NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ emergency_assets (10 cols) ────────────────────────────────────────┐
+│ PK   asset_id                     BIGINT               │
+│   FK venue_id                     VARCHAR(36)          NOT NULL │
+│      asset_type                   ENUM('aed')          NOT NULL │
+│      floor                        VARCHAR(128)         │
+│      location_type                VARCHAR(128)         │
+│      aed_count                    INT                  │
+│      trained_people_count         INT                  │
+│      community_district           VARCHAR(64)          │
+│      council_district             VARCHAR(64)          │
+│      last_updated                 DATE                 │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ pedestrian_ramps (17 cols) ────────────────────────────────────────┐
+│ PK   ramp_id                      VARCHAR(128)         │
+│      corner_id                    VARCHAR(128)         │
+│      latitude                     DECIMAL(10, 7)       NOT NULL │
+│      longitude                    DECIMAL(10, 7)       NOT NULL │
+│      borough                      VARCHAR(64)          │
+│      district                     VARCHAR(32)          │
+│      on_street                    VARCHAR(255)         │
+│      cross_street_1               VARCHAR(255)         │
+│      cross_street_2               VARCHAR(255)         │
+│      ramp_width                   DECIMAL(8, 3)        │
+│      ramp_slope                   DECIMAL(8, 3)        │
+│      dws_condition                VARCHAR(128)         │
+│      ponding                      VARCHAR(128)         │
+│      obstacles_ramp               VARCHAR(255)         │
+│      obstacles_landing            VARCHAR(255)         │
+│      created_at                   TIMESTAMP            NOT NULL │
+│      updated_at                   TIMESTAMP            NOT NULL │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ user_reports (18 cols) ────────────────────────────────────────────┐
+│ PK   report_id                    VARCHAR(36)          │
+│   FK user_id                      VARCHAR(36)          NOT NULL │
+│   FK venue_id                     VARCHAR(36)          │
+│   FK issue_type                   VARCHAR(64)          NOT NULL │
+│      latitude                     DECIMAL(10, 7)       NOT NULL │
+│      longitude                    DECIMAL(10, 7)       NOT NULL │
+│      accuracy_meters              DECIMAL(8, 2)        │
+│      anonymous                    BOOLEAN              │
+│      description                  TEXT                 │
+│      photos                       JSON                 │
+│      reported_by                  VARCHAR(50)          │
+│      status                       ENUM('active', 'resolved', 'expired') NOT NULL │
+│      expires_in_minutes           INT                  │
+│      default_language             VARCHAR(10)          │
+│      fallback_language            VARCHAR(10)          │
+│      created_at                   TIMESTAMP            NOT NULL │
+│      expires_at                   TIMESTAMP            NOT NULL │
+│      source_confidence            DECIMAL(4, 3)        NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   user_id                      → users.user_id │
+│   venue_id                     → venues.venue_id │
+│   issue_type                   → report_categories.category_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ report_confirmations (7 cols) ────────────────────────────────────┐
+│ PK   confirmation_id              BIGINT               │
+│   FK report_id                    VARCHAR(36)          NOT NULL │
+│   FK user_id                      VARCHAR(36)          NOT NULL │
+│      action                       ENUM('still_here', 'resolved', 'not_sure', 'still_out_of_order', 'open_now') NOT NULL │
+│      language                     VARCHAR(10)          │
+│      created_at                   TIMESTAMP            NOT NULL │
+│      client_context               JSON                 │
+│ ────────────────────────────────────────────────────────────── │
+│   report_id                    → user_reports.report_id │
+│   user_id                      → users.user_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ busyness_scores (11 cols) ─────────────────────────────────────────┐
+│ PK   score_id                     BIGINT               │
+│   FK venue_id                     VARCHAR(36)          NOT NULL │
+│      score                        TINYINT              NOT NULL │
+│      level                        ENUM('quiet','moderate','busy','no_data') │
+│      estimated_wait_minutes       INT                  │
+│      forecast_1h                  JSON                 │
+│      forecast_start_time          DATETIME             NOT NULL │
+│      forecast_end_time            DATETIME             NOT NULL │
+│      model_version                VARCHAR(64)          NOT NULL │
+│      features_snapshot_id         VARCHAR(128)         │
+│      created_at                   TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ external_context_cache (8 cols) ──────────────────────────────────┐
+│ PK   cache_id                     BIGINT               │
+│      context_type                 ENUM('google_route', 'distance_matrix', 'weather_current', 'weather_forecast', 'urban_heat_static') NOT NULL │
+│   FK venue_id                     VARCHAR(36)          │
+│      request_key                  VARCHAR(255)         NOT NULL │
+│      payload_json                 JSON                 NOT NULL │
+│      valid_from                   DATETIME             NOT NULL │
+│      expires_at                   DATETIME             NOT NULL │
+│      created_at                   TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ venue_accessibility (5 cols) ─────────────────────────────────────┐
+│ PKFK venue_id                     VARCHAR(36)          │
+│      wheelchair_friendly          BOOLEAN              │
+│      step_free_route              BOOLEAN              │
+│      accessible_toilet            BOOLEAN              │
+│      entrance_width_cm            INT                  │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ venue_language (5 cols) ──────────────────────────────────────────┐
+│ PKFK venue_id                     VARCHAR(36)          │
+│      language_tag                 JSON                 │
+│      language_support_level       ENUM('full', 'partial', 'none') │
+│      chatbot_enabled              BOOLEAN              │
+│      chatbot_welcoming_message    TEXT                 │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ venue_warnings (5 cols) ──────────────────────────────────────────┐
+│ PKFK venue_id                     VARCHAR(36)          │
+│      active_warning               BOOLEAN              │
+│      warning_detail               TEXT                 │
+│      wait_alert                   BOOLEAN              │
+│      replacement_suggestion       JSON                 │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ users (10 cols) ───────────────────────────────────────────────────┐
+│ PK   user_id                      VARCHAR(36)          │
+│      email                        VARCHAR(255)         NOT NULL │
+│      password_hash                VARCHAR(255)         NOT NULL │
+│      display_name                 VARCHAR(128)         NOT NULL │
+│      email_verified               BOOLEAN              │
+│      preferred_language           VARCHAR(10)          │
+│      account_status               ENUM('active','suspended','deleted') │
+│      created_at                   TIMESTAMP            NOT NULL │
+│      updated_at                   TIMESTAMP            NOT NULL │
+│      deleted_at                   TIMESTAMP            │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ user_favorite_venues (3 cols) ────────────────────────────────────┐
+│   FK user_id                      VARCHAR(36)          NOT NULL │
+│   FK venue_id                     VARCHAR(36)          NOT NULL │
+│      created_at                   TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   user_id                      → users.user_id │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ notification_preferences (10 cols) ────────────────────────────────┐
+│ PK   pref_id                      BIGINT               │
+│   FK user_id                      VARCHAR(36)          NOT NULL │
+│   FK venue_id                     VARCHAR(36)          │
+│      notification_type            ENUM('crowd_alert','closure_alert','quiet_hours') NOT NULL │
+│      enabled                      BOOLEAN              │
+│      threshold                    TINYINT              │
+│      quiet_start                  TIME                 │
+│      quiet_end                    TIME                 │
+│      created_at                   TIMESTAMP            NOT NULL │
+│      updated_at                   TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   user_id                      → users.user_id │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ report_categories (7 cols) ───────────────────────────────────────┐
+│ PK   category_id                  VARCHAR(64)          │
+│      display_name                 VARCHAR(128)         NOT NULL │
+│      applies_to_venue_types       JSON                 NOT NULL │
+│      requires_floor_info          BOOLEAN              │
+│      icon_name                    VARCHAR(64)          │
+│      sort_order                   TINYINT              │
+│      is_active                    BOOLEAN              │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ busyness_forecasts (8 cols) ──────────────────────────────────────┐
+│ PK   forecast_id                  BIGINT               │
+│   FK venue_id                     VARCHAR(36)          NOT NULL │
+│      forecast_for                 DATETIME             NOT NULL │
+│      predicted_score              TINYINT              NOT NULL │
+│      predicted_level              ENUM('quiet','moderate','busy','no_data') NOT NULL │
+│      estimated_wait_minutes       INT                  │
+│      model_version                VARCHAR(64)          NOT NULL │
+│      generated_at                 TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─ venue_embeddings (5 cols) ────────────────────────────────────────┐
+│ PKFK venue_id                     VARCHAR(36)          │
+│      embedding                    JSON                 NOT NULL │
+│      text_snapshot                TEXT                 NOT NULL │
+│      model_version                VARCHAR(64)          NOT NULL │
+│      generated_at                 TIMESTAMP            NOT NULL │
+│ ────────────────────────────────────────────────────────────── │
+│   venue_id                     → venues.venue_id │
+└─────────────────────────────────────────────────────────────────┘
+
+================================================================================
+RELATIONSHIPS
+================================================================================
+  venue_source_links.venue_id → venues.venue_id
+  restroom_profiles.venue_id → venues.venue_id
+  healthcare_profiles.venue_id → venues.venue_id
+  emergency_assets.venue_id → venues.venue_id
+  user_reports.user_id → users.user_id
+  user_reports.venue_id → venues.venue_id
+  user_reports.issue_type → report_categories.category_id
+  report_confirmations.report_id → user_reports.report_id
+  report_confirmations.user_id → users.user_id
+  busyness_scores.venue_id → venues.venue_id
+  external_context_cache.venue_id → venues.venue_id
+  venue_accessibility.venue_id → venues.venue_id
+  venue_language.venue_id → venues.venue_id
+  venue_warnings.venue_id → venues.venue_id
+  user_favorite_venues.user_id → users.user_id
+  user_favorite_venues.venue_id → venues.venue_id
+  notification_preferences.user_id → users.user_id
+  notification_preferences.venue_id → venues.venue_id
+  busyness_forecasts.venue_id → venues.venue_id
+  venue_embeddings.venue_id → venues.venue_id

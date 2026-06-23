@@ -1,6 +1,6 @@
 export const mockMedicalId = {
   blood_type: "O+",
-  severe_allergies: [
+  allergies: [
     "Penicillin",
     "Peanuts",
   ],

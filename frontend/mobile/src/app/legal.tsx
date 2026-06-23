@@ -1,20 +1,22 @@
 import Checkbox from "expo-checkbox";
 import { useRouter } from "expo-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
 export default function LegalScreen() {
   const router = useRouter();
+
+  const { t } = useTranslation(); 
 
   const [acceptedTerms, setAcceptedTerms] =
     useState(false);
@@ -33,29 +35,26 @@ export default function LegalScreen() {
         showsVerticalScrollIndicator={true}
       >
         <Text style={styles.title}>
-          Legal & Privacy
-        </Text>
+  {t("legal.title")}
+</Text>
 
-        <Text style={styles.heading}>
-          Review Agreements
-        </Text>
+<Text style={styles.heading}>
+  {t("legal.reviewHeading")}
+</Text>
 
-        <Text style={styles.subtitle}>
-          Please review our updated terms and
-          privacy practices to continue.
-        </Text>
+<Text style={styles.subtitle}>
+  {t("legal.reviewSubtitle")}
+</Text>
 
         {/* TERMS */}
+<View style={styles.card}>
+        <Text style={styles.cardTitle}>
+  📄 {t("legal.terms")}
+</Text>
 
-        <View style={styles.card}>
-          <Text style={styles.cardTitle}>
-            📄 Terms of Service
-          </Text>
-
-          <Text style={styles.cardDescription}>
-            Governs your use of our platform
-            and services.
-          </Text>
+<Text style={styles.cardDescription}>
+  {t("legal.termsDescription")}
+</Text>
 
           <View style={styles.previewBox}>
   <ScrollView
@@ -64,43 +63,15 @@ export default function LegalScreen() {
     style={styles.previewScroll}
   >
     <Text style={styles.previewText}>
-      1. Acceptance of Terms{"\n\n"}
-      By accessing this application,
-      you agree to be bound by these
-      Terms of Service.
-      {"\n\n"}
-      2. User Responsibilities{"\n\n"}
-      You are responsible for
-      maintaining the confidentiality
-      of your account information.
-      {"\n\n"}
-      3. Service Availability{"\n\n"}
-      We strive for 99.9% uptime but
-      do not guarantee uninterrupted
-      access.
-      {"\n\n"}
-      4. Modifications{"\n\n"}
-      We reserve the right to modify
-      these terms at any time with
-      prior notice.
-      {"\n\n"}
-      5. Account Security{"\n\n"}
-      Users must take reasonable
-      steps to protect login
-      credentials and account access.
-      {"\n\n"}
-      6. Limitation of Liability{"\n\n"}
-      We are not liable for losses
-      resulting from misuse of the
-      platform or interruptions
-      outside our control.
-    </Text>
+  {t("legal.termsPreview")}
+</Text>
   </ScrollView>
 </View>
         </View>
 
         <View style={styles.checkboxRow}>
           <Checkbox
+            testID="terms-checkbox"
             value={acceptedTerms}
             onValueChange={setAcceptedTerms}
             color={
@@ -111,28 +82,25 @@ export default function LegalScreen() {
           />
 
           <Text style={styles.checkboxText}>
-            I agree to the Terms of Service
-          </Text>
+  {t("legal.agreeTerms")}
+</Text>
         </View>
 
         {/* PRIVACY */}
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>
-            🛡 Privacy Policy
-          </Text>
+  🛡 {t("legal.privacy")}
+</Text>
 
-          <Text style={styles.cardDescription}>
-            Details how we protect and manage
-            your data.
-          </Text>
+<Text style={styles.cardDescription}>
+  {t("legal.privacyDescription")}
+</Text>
 
           <View style={styles.securityBox}>
             <Text style={styles.securityText}>
-              🔒 All sensitive health data is
-              secured with 256-bit HIPAA
-              compliant encryption.
-            </Text>
+  🔒 {t("legal.securityNotice")}
+</Text>
           </View>
 
           <View style={styles.previewBox}>
@@ -142,47 +110,15 @@ export default function LegalScreen() {
     style={styles.previewScroll}
   >
     <Text style={styles.previewText}>
-      1. Data Collection{"\n\n"}
-      We collect minimal data
-      necessary to provide our
-      services, including location
-      data for nearby clinic mapping.
-      {"\n\n"}
-      2. Data Usage{"\n\n"}
-      Your data is used strictly for
-      improving service delivery and
-      personalization.
-      {"\n\n"}
-      3. Third-Party Sharing{"\n\n"}
-      We never sell your personal
-      data. Data is only shared with
-      authorized medical partners
-      when you request an
-      appointment.
-      {"\n\n"}
-      4. Your Rights{"\n\n"}
-      You have the right to access,
-      modify, or delete your data at
-      any time.
-      {"\n\n"}
-      5. Data Retention{"\n\n"}
-      We retain only the information
-      required to provide services
-      and comply with legal
-      obligations.
-      {"\n\n"}
-      6. Security Measures{"\n\n"}
-      All sensitive medical
-      information is encrypted and
-      protected using industry
-      standard security practices.
-    </Text>
+  {t("legal.privacyPreview")}
+</Text>
   </ScrollView>
 </View>
         </View>
 
         <View style={styles.checkboxRow}>
           <Checkbox
+            testID="privacy-checkbox"
             value={acceptedPrivacy}
             onValueChange={setAcceptedPrivacy}
             color={
@@ -193,11 +129,12 @@ export default function LegalScreen() {
           />
 
           <Text style={styles.checkboxText}>
-            I agree to the Privacy Policy
-          </Text>
+  {t("legal.agreePrivacy")}
+</Text>
         </View>
 
         <TouchableOpacity
+          testID="continue-button"
           disabled={!canContinue}
           style={[
             styles.button,
@@ -209,14 +146,14 @@ export default function LegalScreen() {
           }
         >
           <Text
-            style={[
-              styles.buttonText,
-              !canContinue &&
-                styles.disabledButtonText,
-            ]}
-          >
-            Accept & Continue
-          </Text>
+  style={[
+    styles.buttonText,
+    !canContinue &&
+      styles.disabledButtonText,
+  ]}
+>
+  {t("legal.acceptContinue")}
+</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -290,7 +227,7 @@ const styles = StyleSheet.create({
   },
 
   previewScroll: {
-    height: 140,
+    height: 200,
   },
 
   previewText: {

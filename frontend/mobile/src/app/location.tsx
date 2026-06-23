@@ -2,24 +2,26 @@ import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
 import {
-    Alert,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
-import {
-    getCurrentLocation,
-    requestLocationPermission,
-} from "../services/location";
-
+import { useTranslation } from "react-i18next";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
+import {
+  getCurrentLocation,
+  requestLocationPermission,
+} from "../services/location";
 
 export default function LocationScreen() {
+  const { t } = useTranslation();
+
     const [locationEnabled, setLocationEnabled] =
         useState(false);
 
@@ -35,9 +37,9 @@ export default function LocationScreen() {
 
     if (!granted) {
       Alert.alert(
-        "Location Permission Required",
-        "ClearPath uses your location to show nearby clinics, pharmacies, and routing information."
-      );
+  t("location.permissionRequired"),
+  t("location.permissionRequiredMessage")
+);
 
       return;
     }
@@ -47,9 +49,9 @@ export default function LocationScreen() {
 
     if (!location) {
       Alert.alert(
-        "Unable to Retrieve Location",
-        "Please ensure GPS is enabled on your device."
-      );
+  t("location.unableToRetrieve"),
+  t("location.unableToRetrieveMessage")
+);
 
       return;
     }
@@ -61,17 +63,17 @@ export default function LocationScreen() {
 
     setLocationEnabled(true);
 
-    Alert.alert(
-      "Location Enabled",
-      "Location services have been successfully enabled."
-    );
+   Alert.alert(
+  t("location.enabled"),
+  t("location.enabledMessage")
+);
   } catch (error) {
     console.error(error);
 
     Alert.alert(
-      "Location Error",
-      "Something went wrong while accessing location services."
-    );
+  t("location.error"),
+  t("location.errorMessage")
+);
   } finally {
     setIsLoading(false);
   }
@@ -103,15 +105,13 @@ export default function LocationScreen() {
 
         {/* Header */}
 
-        <Text style={styles.title}>
-          Help us find you
-        </Text>
+       <Text style={styles.title}>
+  {t("location.title")}
+</Text>
 
         <Text style={styles.subtitle}>
-          We&apos;ll use your location to show
-          the nearest clinics and hospitals
-          with the shortest wait times.
-        </Text>
+  {t("location.subtitle")}
+</Text>
 
         {/* Location Card */}
 
@@ -142,14 +142,14 @@ export default function LocationScreen() {
           <View style={styles.locationText}>
             <Text style={styles.locationTitle}>
   {locationEnabled
-    ? "Location Enabled"
-    : "Enable Location Access"}
+  ? t("location.enabled")
+  : t("location.enableAccess")}
 </Text>
 
             <Text style={styles.locationSubtitle}>
             {locationEnabled
-                ? "GPS permission granted"
-                : "Recommended for accurate travel times"}
+  ? t("location.permissionGranted")
+  : t("location.recommended")}
             </Text>
           </View>
 
@@ -166,19 +166,15 @@ export default function LocationScreen() {
           </Text>
 
           <Text style={styles.privacyText}>
-            Your location data is private.
-            We never share your history or
-            medical records with third
-            parties without your consent.
-          </Text>
+  {t("location.privacy")}
+</Text>
         </View>
 
         {/* GPS Tip */}
 
-        <Text style={styles.tipText}>
-          Device GPS is highly recommended
-          for route searching.
-        </Text>
+       <Text style={styles.tipText}>
+  {t("location.gpsTip")}
+</Text>
 
         {/* Continue */}
 
@@ -188,11 +184,9 @@ export default function LocationScreen() {
             router.push("/auth-gateway")
           }
         >
-          <Text
-            style={styles.primaryButtonText}
-          >
-            Continue →
-          </Text>
+          <Text style={styles.primaryButtonText}>
+  {t("common.continue")} →
+</Text>
         </TouchableOpacity>
 
         {/* Skip */}
@@ -203,13 +197,9 @@ export default function LocationScreen() {
             router.push("/auth-gateway")
           }
         >
-          <Text
-            style={
-              styles.secondaryButtonText
-            }
-          >
-            I&apos;ll do this later
-          </Text>
+          <Text style={styles.secondaryButtonText}>
+  {t("location.doLater")}
+</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

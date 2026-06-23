@@ -17,20 +17,19 @@
 | D1 | 认证方式 | 邮箱+密码（bcrypt） | 需求文档明确要求，No OAuth |
 | D2 | Guest 模式 | 无 token = Guest | "No Account Required" 被动访问 |
 | D3 | 匿名报告 | 提交后匿名化，保留 `anonymous` 字段 | 数据库有记录，前端隐藏 |
-| D4 | 拥挤度等级 | 三级 `quiet/moderate/busy`，NULL = 无数据 | 统一 DB 与 OpenAPI |
+| D4 | 拥挤度等级 | **四级** `quiet/moderate/busy/no_data` | 统一 DB 与 OpenAPI，`no_data` 映射 🔵 Blue (F-06) |
 | D5 | 报告类别 | OpenAPI 8 个 issue_type 值 | 产品负责人冻结 |
 | D6 | 确认操作 | 覆盖旧 action，`UNIQUE (report_id, user_id)` | 互斥状态，只保留最新 |
 | D7 | `auth_subject` | 不需要 | 邮箱即认证标识 |
 | D8 | 报告类别存储 | 字典表 `report_categories` | 按场馆类型过滤类别 |
+| D9 | RAG embedding 存储 | MySQL JSON/BLOB | 零额外成本，~3500 条场馆数据量足够 |
+| D10 | 医疗数据边界 | **严格数据分层**: Tier 1 Profile Group(User ID/Email/Name[Read-Only] + Phone/Languages/Nationality[Editable])云端同步; Tier 2 Medical ID(DOB/Gender/Address/Emergency Contact/Blood Type/Allergies/Conditions)100%本地存储Mobile Only，完全隔离于云端MySQL; Web端Medical ID字段禁用; F-14打印通过render_token(JWT 5min)+QR码+P2P加密通道实现 | 2026-06-15 需求变更 |
 
 ---
 
 ## 待决策（Remaining）
 
-| # | 决策项 | 选项 | 影响 |
-|---|-------|------|------|
-| D9 | RAG embedding 存储 | MySQL JSON/BLOB ✅ | 零额外成本，~3500 条场馆数据量级足够 |
-| D10 | 医疗数据边界 | 严格本地存储，不云同步 | 已确认（Final 要求） |
+_所有 10 项产品决策已冻结（2026-06-09），D10 于同日修订为云端加密存储方案。_
 
 ## 认证域
 
@@ -61,8 +60,11 @@
 |------|------|
 | **busyness_scores** | 实时观测（当前时刻拥挤度），保留 `forecast_1h` |
 | **busyness_forecasts** | 未来 12h 时序预测（ML pipeline 写入） |
-| **level** | 拥挤度等级，三级统一：`quiet` / `moderate` / `busy` |
-| **unknown → NULL** | `busyness_scores.level` 允许 NULL 表示无数据；`busyness_forecasts` 不需要（预测总有值） |
+| **level** | 拥挤度等级，**四级统一**：`quiet` / `moderate` / `busy` / `no_data` |
+| **quiet** | 🟢 Green，容量负载 < 30% |
+| **moderate** | 🟡 Yellow，容量负载 30%–70% |
+| **busy** | 🔴 Red，容量负载 > 70% |
+| **no_data** | 🔵 Blue，无实时数据（未来预测模式或实时数据离线），F-06 要求 |
 
 ## 场馆域
 

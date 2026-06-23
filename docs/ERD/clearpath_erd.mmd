@@ -1,0 +1,263 @@
+erDiagram
+
+    %% ClearPath DB — 19 tables, 181 columns
+
+    venues {
+        string venue_id
+        enum venue_type
+        string name
+        float latitude
+        float longitude
+        string borough
+        string address
+        string phone
+        string website
+        string opening_hours
+        json photos
+        float rating
+        enum weather_risk
+        float source_confidence
+        json language_tags
+        string primary_language
+        string secondary_language
+        enum accessible_status
+        json accessibility_features
+        bool active_warning
+        bool open_now
+        string district
+        datetime created_at
+        datetime updated_at
+    }
+
+    venue_source_links {
+        int source_link_id
+        string venue_id
+        string source_name
+        string source_record_id
+        string raw_name
+        string raw_location_text
+        enum matched_method
+        float match_confidence
+        datetime created_at
+    }
+
+    restroom_profiles {
+        string venue_id
+        string restroom_type
+        string operator
+        string status
+        bool open_seasonal
+        bool open_year_round
+        bool ada_accessible
+        bool handicap_accessible
+        bool changing_station
+        string additional_notes
+    }
+
+    healthcare_profiles {
+        string venue_id
+        string facility_external_id
+        string facility_type
+        string healthcare_category
+        string healthcare_speciality
+        string operator_name
+        string ownership_type
+        string main_site_name
+        int official_source_priority
+    }
+
+    emergency_assets {
+        int asset_id
+        string venue_id
+        enum asset_type
+        string floor
+        string location_type
+        int aed_count
+        int trained_people_count
+        string community_district
+        string council_district
+        date last_updated
+    }
+
+    pedestrian_ramps {
+        string ramp_id
+        string corner_id
+        float latitude
+        float longitude
+        string borough
+        string district
+        string on_street
+        string cross_street_1
+        string cross_street_2
+        float ramp_width
+        float ramp_slope
+        string dws_condition
+        string ponding
+        string obstacles_ramp
+        string obstacles_landing
+        datetime created_at
+        datetime updated_at
+    }
+
+    user_reports {
+        string report_id
+        string user_id
+        string venue_id
+        string issue_type
+        float latitude
+        float longitude
+        float accuracy_meters
+        bool anonymous
+        string description
+        json photos
+        string reported_by
+        enum status
+        int expires_in_minutes
+        string default_language
+        string fallback_language
+        datetime created_at
+        datetime expires_at
+        float source_confidence
+    }
+
+    report_confirmations {
+        int confirmation_id
+        string report_id
+        string user_id
+        enum action
+        string language
+        datetime created_at
+        json client_context
+    }
+
+    busyness_scores {
+        int score_id
+        string venue_id
+        int score
+        enum level
+        int estimated_wait_minutes
+        json forecast_1h
+        datetime forecast_start_time
+        datetime forecast_end_time
+        string model_version
+        string features_snapshot_id
+        datetime created_at
+    }
+
+    external_context_cache {
+        int cache_id
+        enum context_type
+        string venue_id
+        string request_key
+        json payload_json
+        datetime valid_from
+        datetime expires_at
+        datetime created_at
+    }
+
+    venue_accessibility {
+        string venue_id
+        bool wheelchair_friendly
+        bool step_free_route
+        bool accessible_toilet
+        int entrance_width_cm
+    }
+
+    venue_language {
+        string venue_id
+        json language_tag
+        enum language_support_level
+        bool chatbot_enabled
+        string chatbot_welcoming_message
+    }
+
+    venue_warnings {
+        string venue_id
+        bool active_warning
+        string warning_detail
+        bool wait_alert
+        json replacement_suggestion
+    }
+
+    users {
+        string user_id
+        string email
+        string password_hash
+        string display_name
+        bool email_verified
+        string preferred_language
+        enum account_status
+        datetime created_at
+        datetime updated_at
+        datetime deleted_at
+    }
+
+    user_favorite_venues {
+        string user_id
+        string venue_id
+        datetime created_at
+    }
+
+    notification_preferences {
+        int pref_id
+        string user_id
+        string venue_id
+        enum notification_type
+        bool enabled
+        int threshold
+        string quiet_start
+        string quiet_end
+        datetime created_at
+        datetime updated_at
+    }
+
+    report_categories {
+        string category_id
+        string display_name
+        json applies_to_venue_types
+        bool requires_floor_info
+        string icon_name
+        int sort_order
+        bool is_active
+    }
+
+    busyness_forecasts {
+        int forecast_id
+        string venue_id
+        datetime forecast_for
+        int predicted_score
+        enum predicted_level
+        int estimated_wait_minutes
+        string model_version
+        datetime generated_at
+    }
+
+    venue_embeddings {
+        string venue_id
+        json embedding
+        string text_snapshot
+        string model_version
+        datetime generated_at
+    }
+
+    %% Relationships
+    venues ||--o{ venue_source_links : "venue_id"
+    venues ||--o{ restroom_profiles : "venue_id"
+    venues ||--o{ healthcare_profiles : "venue_id"
+    venues ||--o{ emergency_assets : "venue_id"
+    users ||--o{ user_reports : "user_id"
+    venues ||--o{ user_reports : "venue_id"
+    report_categories ||--o{ user_reports : "issue_type"
+    user_reports ||--o{ report_confirmations : "report_id"
+    users ||--o{ report_confirmations : "user_id"
+    venues ||--o{ busyness_scores : "venue_id"
+    venues ||--o{ external_context_cache : "venue_id"
+    venues ||--o{ venue_accessibility : "venue_id"
+    venues ||--o{ venue_language : "venue_id"
+    venues ||--o{ venue_warnings : "venue_id"
+    users ||--o{ user_favorite_venues : "user_id"
+    venues ||--o{ user_favorite_venues : "venue_id"
+    users ||--o{ notification_preferences : "user_id"
+    venues ||--o{ notification_preferences : "venue_id"
+    venues ||--o{ busyness_forecasts : "venue_id"
+    venues ||--o{ venue_embeddings : "venue_id"

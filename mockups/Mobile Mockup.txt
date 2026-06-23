@@ -1,0 +1,74 @@
+ClearPath Mobile App - Official Page & Specification List
+Mockup link : https://stitch.withgoogle.com/projects/13086852146672746071?pli=1
+
+
+1. Onboarding & Legal
+Page 1: Onboarding - Language Search
+Description: The initial language preference initialization setup screen. It features a live search bar ("Search other languages...") and a dual-naming grid layout enforcing the notation template: [Language Name in its Native Script] ([Language Name in English]).
+UI Components: Includes a primary blue "Continue" button at the bottom. By continuing, a caption text alerts users that they agree to the platform's Terms of Service and Privacy Policy.
+Page 2: Onboarding - Terms of Service & Privacy Policy
+Description: The regulatory compliance agreement and review page titled "Legal & Privacy". It features individual, explicit checkboxes for the "Terms of Service" and "Privacy Policy".
+Security Standards: Explicitly highlights that all sensitive health data is secured with 256-bit HIPAA compliant encryption. It finishes with a full-width blue "Accept & Continue" action button.
+Page 3: Onboarding - Permissions of Location Access
+Description: The native permission prompt gateway titled "Help us find you". It guides the user to enable location services to unlock real-time clinic mapping and shortest wait times.
+UI Components: Features a primary blue "Enable Location Access" button and a secondary "I'll do this later" option to safely pass.
+Copy Enhancement: Under the primary subtitle, an ultra-short friendly recommendation tip is appended to prevent layout crowding: (Device GPS recommended for route searching.).
+2. Authentication Gateway
+Page 4: Onboarding - Secure Login Wall
+Description: A local data privacy-first marketing screen titled "Secure Your Medical ID". It prompts the user to safeguard chronic conditions and allergies, offering a primary blue "Log In / Register" button and a clear "Continue as Guest" option to bypass authentication.
+Page 5: Onboarding - Login & Registration Workspace
+Description: The localized credential entry dashboard.
+Sign-In View: Titled "Welcome back", hosting input fields for Email Address and Password with a prominent blue "Sign In" button.
+Registration View: Titled "Get started", hosting Full Name, Email, and Password inputs with HIPAA asset labels. Upon successful creation, a temporary intercept sheet asks: "Would you like to finish setting up your Medical Profile and ID now?" with action buttons: [Finish Profile & ID] vs. [Skip for Now].
+3. Core Map & Crowdsourced Reporting
+Page 6-1: Main Map View (Dynamic Telemetry Dashboard)
+Description: The primary map viewport overlayed with a top floating search bar ("Search clinics or pharmacies..."), an advanced filter icon button, and a rapid horizontal category filter chip row supporting Clinics, Pharmacy, and AED categories. Houses a red floating SOS button and a yellow reporting action icon.
+Page 6-2: Reporting System
+Reporting Modal Overlay (Waze-Style 8-Grid & Spatial Routing)
+Description: Activated by tapping the yellow warning/yield sign floating icon.
+Login Requirement: If not logged in ,shows a mandatory alert: "To help keep ClearPath data accurate and prevent spam, you must be logged in to submit or verify community reports. " [Login / Sign Up] vs. [Cancel].
+System GPS Interception: If GPS is disabled, it blocks the gateway and shows a mandatory alert: "Location Services Required - To submit issue reports, please enable your device's system location services." [Go to System Settings] vs. [Cancel].
+Spatial Choice Sheet: Prompts the user with "Where would you like to report this issue?" via two distinct paths:
+Path A: Bind to Nearby Landmark/Venue: Filters established venues within a radius. Once submitted, it integrates a red-tinted Critical Alert Strip into that clinic's detail sheet and superimposes a miniature yellow-and-black exclamation triangle warning badge onto the venue map marker.
+Path B: Drop Pin at Current Location: Binds explicitly to live GPS coordinates, dropping a brand-new Standalone Incident Marker (yellow triangle pin) onto the map viewport.
+Dynamic Grid Content & Category Filtering Logic: Renders a high-contrast 8-grid icon matrix. Under Path B, all options are fully unlocked. Under Path A, the grid automatically hooks into the venue category (Clinics, Pharmacy, AED, Toilets) and hides irrelevant options (e.g., masking "Elevator Broken" if a Public Toilet is chosen).
+Time Isolation Warning: The bottom of the selection view displays a static caption footer rule corrected for typos: "(Reports are always submitted using your current time.)".
+Crowdsourced Verification & Display Layer
+Description: UI containers for users to validate active crowdsourced data.
+Path A Verification (Inside Bottom Sheet): Displays a light-red card header (Community Alert: Wheelchair lift out of order) with an inline confirmation string (Is this still an issue? (3 users confirmed)) and two full-width colored action buttons: [Confirm] (Red) vs. [Resolve] (Light Blue).
+Path B Verification (Map Pop-up Window): Tapping a standalone yellow triangle pin triggers a crisp callout pop-up displaying the issue type, timeline, confirmation tally, and side-by-side horizontal action buttons: [Confirm] (Blue) vs. [Resolve] (White Outline).
+Page 6–3: Interactive Bottom Sheet Filter (Dynamic UI)
+Description: Tapping the filter icon pulls open the "Filters" tray modal. It features an "Auto Current Time" toggle switch with two strict visual states:
+State 1: "Auto Current Time" = ON (Corporate Blue): Completely HIDES the manual [Date] and [Time] selection inputs from the layout hierarchy. The [LIVE STATUS] congestion section (Quiet, Moderate, Busy chips) is fully visible. Medical venue pins render dynamic traffic-light colors.
+State 2: "Auto Current Time" = OFF (Neutral Gray): Instantly SHOWS manual [Date] and [Time] input rows. Completely HIDES the entire [LIVE STATUS] filter section from the DOM view. Map venue markers transform into a uniform Blue palette (No Live Info), except for crowdsourced report markers.
+Page 6-4: Clinic Details Bottom Sheet
+Description: An expandable asset log showcasing selected venue metrics titled with clinic names (e.g., "CityMD Urgent Care"). Houses critical alert strips, verification rows, service summary badges (French Help Available, First-Aid Kit On-Site), and the interactive "12-Hour Wait Time Forecast Chart".
+Dynamic Layout Note: The chart area dynamically disappears entirely if "Auto Current Time" is toggled OFF, replaced by a single static text tag.
+Map Routing Engine
+Description: Dedicated navigation structures triggered during path generation.
+Page 6-5 (Set Starting Point): Allows composition of travel paths. If "Current Location" is selected and location services are disabled, hitting "Search Route" intercepts the flow with a mandatory "Location Services Disabled" modal.
+Page 6-6 (Route Options Grid): Displays transport tabs (Walk, Transit, Drive) alongside multi-modal congestion cards (e.g., Bus M15, Subway 6) tracking transit intervals and duration.
+Page 6-7 (Route Detail & Full Path View): Renders expandable step-by-step walking/transit directions, finishing with a primary blue "Start Navigation" call-to-action.
+4. Assistance
+Page 7: Show Staff
+Description: A full-screen bilingual communication interface designed to bridge language barriers between non-English speaking visitors and clinic staff. It dynamically renders essential visit details, common diagnostic templates, or custom live translations in both English and the visitor's native language using an enforced desk-readable layout (min 32px font). It features automated hardware optimization (100% screen brightness) and integrates local medical profiles for immediate, high-visibility cross-counter reading. 
+Page 8: AI Chatbot Workspace (Gemini RAG Pipeline)
+Description: A real-time multilingual conversational chatbot dashboard titled "Assistant". Features automated language matching tracking indicators (Responding in French - Tap to Change), grounded RAG outputs rendering interactive inline clinic item cards (e.g., "Centre Médical International"), a persistent bottom message input box, and a floating blue mic dictation toggle.
+outbound emergency rescue calls.
+5. Profile & Medical ID Settings
+Profile & Medical ID Workspace
+Description: The primary personal record container running on two alternate display parameters:
+Page 9-1: Guest Mode Dashboard: Displays a locked graphic prompt (Secure Your Medical ID) pushing users toward registration.
+Page 9-2: Login/Register
+Page 9-3:Logged-In Account View: View: A comprehensive split dashboard displaying a sync state tracker card, "Personal Info" fields (User ID [Read-Only], Email [Read-Only], Full Name [Read-Only], Phone, Nationality), a "Medical ID" grid, and a top blue notification banner with an embedded [Scan Web QR Code >] camera handshake button that triggers a native camera permission popup window. 
+Sub-Form Workspaces:
+Page 9-4 (Edit Medical ID): A standalone device-local sub-form sheet utilizing pill-shaped tagging deletion components (X) for quick removal of allergies or medical conditions. [DATA TRANSFER] Date of Birth (DOB), Gender, Address, Emergency Contacts, Blood Type, Allergies, and Medical Conditions rows are moved strictly into this offline local storage (AsyncStorage) scope. 
+Page 9-5 (Edit Profile): A data configuration form for demographic and contact data syncing directly to the cloud MySQL backend. [REGISTRATION LOCK] User ID, Email, and Full Name text containers are strictly disabled/read-only. Only Phone, Nationality, and Languages (utilizing pill-shaped tagging components) can be edited and uploaded via a blue "Save" navbar hook. 
+6. App Configuration
+Page 10: Settings Dashboard
+Description: The centralized global application configuration utility center. Houses a hardware permission toggle for "Enable Location Access", a dropdown row to "Change language", an inline "Logout" button, and a red-tinted, high-risk "DANGER ZONE" command button to "Delete my account" and wipe local storage permanently.
+7. SOS
+
+Page 11: Emergency Alert Overlay (SOS Active Screen)
+Description: A full-screen, high-priority emergency responder overlay utilizing a bright crimson color profile. Renders a prominent live countdown clock (SOS ACTIVE 00:00), automated text-based room-level GPS coordinates, and a centralized Medical ID summary block (Blood Type, Severe Allergies, Conditions, Emergency Contact info).
+Gesture Boundaries: Includes a persistent bottom safety cancel banner requiring a continuous long-press for 3 seconds (HOLD 3S TO CANCEL) to safely abort 
