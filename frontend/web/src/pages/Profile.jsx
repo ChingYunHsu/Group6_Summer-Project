@@ -39,10 +39,6 @@ function Profile() {
               <span>Gender</span>
               <strong>{USER_PROFILE.gender}</strong>
             </div>
-            <div className="info-line">
-              <span>Nationality</span>
-              <strong>{USER_PROFILE.nationality}</strong>
-            </div>
           </div>
 
           <div className="profile-card">
@@ -59,16 +55,7 @@ function Profile() {
               <h3>Vital Signs</h3>
               <div className="blood-row">
                 <span className="blood-type">{USER_PROFILE.blood_type}</span>
-                <p><strong>Blood Type</strong><br />{USER_PROFILE.donor_status}</p>
-              </div>
-            </div>
-
-            <div className="profile-card language-card">
-              <h3>Spoken Languages</h3>
-              <div className="tag-list">
-                {USER_PROFILE.spoken_languages.map((language) => (
-                  <span key={language}>{language}</span>
-                ))}
+                <p><strong>Blood Type</strong></p>
               </div>
             </div>
           </div>
@@ -89,7 +76,7 @@ function Profile() {
 
               <div>
                 <h3 className="condition-heading">⌘ Medical Conditions</h3>
-                {USER_PROFILE.conditions.map((condition) => (
+                {USER_PROFILE.medical_conditions.map((condition) => (
                   <div className="medical-item blue-dot" key={condition.name}>
                     <strong>{condition.name}</strong>
                     <p>{condition.detail}</p>

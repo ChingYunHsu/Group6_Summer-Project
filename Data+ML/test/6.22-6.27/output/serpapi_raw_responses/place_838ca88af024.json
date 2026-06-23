@@ -1,0 +1,983 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1de3a9206ec79711959",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/WKCs_zj8mlIohtJC02KYrw/6a3ac1de3a9206ec79711959.json",
+    "created_at": "2026-06-23 17:26:54 UTC",
+    "processed_at": "2026-06-23 17:26:54 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259379c526cc5:0x57264486ec4db353!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/WKCs_zj8mlIohtJC02KYrw/6a3ac1de3a9206ec79711959.html",
+    "prettify_html_file": "https://serpapi.com/searches/WKCs_zj8mlIohtJC02KYrw/6a3ac1de3a9206ec79711959.prettify",
+    "total_time_taken": 0.6
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJxWxSnDdZwokRU7NN7IZEJlc",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Tend Dental Rockefeller Center",
+    "place_id": "ChIJxWxSnDdZwokRU7NN7IZEJlc",
+    "data_id": "0x89c259379c526cc5:0x57264486ec4db353",
+    "data_cid": "6279782076695556947",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259379c526cc5%3A0x57264486ec4db353&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259379c526cc5%3A0x57264486ec4db353&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.757533599999995,
+      "longitude": -73.9791089
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxWxSnDdZwokRU7NN7IZEJlc",
+    "provider_id": "/g/11nxc5vhkn",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6Mo8Zfs3MyxlV3qTTxJ1_gObMmquZ1_frlheX8hiBB3yJTOjyVohnBTwhy2t7EGAVR29iHz06qX1ymG7guEsE7r0KBsx2fxdrw7GGi1dRPoR9xqTgZDGBvI038L-J292hreedmya4Wizp=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/LyTl73icHcTNToMwAADgJ-rojxlg4oFG0oniJmlw4bI4KC0KFFqQdi_p2bcx8Tt8vz9qWSZ7HwS9IjuptezFaoWp9biIcdnVegjkZEFtgQ2S0-vbV5Lucx1VrSW5d31JZs5dhi7yeM2Hea3QpTW9EudIdZQSn_Hjpy-1GinflMdLmLKkLHDcHW5wP5-RH1go19SmoYHP1DrcusZsIWMdaoqTLmI3c1k9Mvr9BEn0AjIcY2WEaAb_cffe3aaHDUEIgfq_BuMf4gZHvg",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 72
+      },
+      {
+        "stars": 2,
+        "amount": 13
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 5
+      },
+      {
+        "stars": 5,
+        "amount": 364
+      }
+    ],
+    "rating": 4.3,
+    "reviews": 458,
+    "type": [
+      "Dentist"
+    ],
+    "type_ids": [
+      "dentist"
+    ],
+    "menu": {
+      "link": "https://www.hellotend.com/site/services?utm_source=gmb&utm_medium=organic&utm_campaign=rockcenter+2009&utm_content=services",
+      "source": "hellotend.com"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "12 W 48th St 4th Floor, New York, NY 10036",
+    "country": "United States",
+    "booking_link": "https://www.hellotend.com/booking/services?market=new-york-city&studio=rockefeller-center&utm_source=gmb&utm_medium=organic&utm_campaign=rockcenter+2009&utm_content=appt",
+    "website": "https://www.hellotend.com/site/studios/rockefeller-center?utm_source=gmb&utm_medium=organic&utm_campaign=rockcenter+2009&utm_content=web",
+    "phone": "(646) 586-8834",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "Q25C+29 New York",
+    "hours": [
+      {
+        "tuesday": "7 AM\u20138 PM"
+      },
+      {
+        "wednesday": "7 AM\u20138 PM"
+      },
+      {
+        "thursday": "7 AM\u20138 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "8 AM\u20133 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "7 AM\u20138 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259379c526cc5%3A0x57264486ec4db353&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipO4KKi3_uQTqH1kSlVfAGfCp0OAvvYifNEKpv6X=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/home",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEJyymO-NmcSmdw&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "Small daily habits add up \u2014 hydration, a soft-bristle brush, and stress awareness all affect how your teeth feel. Good to know near Rockefeller Center. Details on the page.",
+        "date": "May 30, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNcKoXvxR-JtSAZ_sEcT2mvCvqEo0O8v0vvSaN7=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/home",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEIiY1_j0oI2uuAE&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "Busy Midtown schedule, overdue cleaning. A professional exam and cleaning can catch small issues early and reset your routine. Conveniently near Rockefeller Center at 12 W 48th St, 4th Floor. Details on the page.",
+        "date": "May 29, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMSjS8_ut1bHZK3xjx1n4_sphmtA_lE-sZXBxrj=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/dentist-studios/new-york-city/emergency?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKENH7_LDZjI7Ydw&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "When sudden dental pain or an injury occurs in the heart of Midtown, finding an emergency dentist in Rockefeller Center, NY who can provide immediate, professional care is essential. At Tend Dental, we specialize in rapid relief for urgent concerns such as intense toothaches, broken restorations, swelling, and chipped teeth. Conveniently located near major transit hubs, our studio offers same-day appointments in a calming environment designed to lower the anxiety of an unexpected dental crisis. Our clinicians use state-of-the-art diagnostics to pinpoint the issue quickly and provide clear, honest guidance on the best path to relief. We work with most major insurance plans and focus on getting you out of pain and back to your day efficiently. Don\u2019t wait through the discomfort\u2014reach out for same-day support you can trust. \ud83e\uddb7\u26a1",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPzhvcAD3FCsYhIJ4ZY73HWqjgGiP65rKwaay2R=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/studios/rockefeller-center?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEOzwo43vl8a7VQ&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "At Tend Dental Rockefeller Center, we make high-quality oral care fit seamlessly into the fast-paced rhythm of Midtown Manhattan. As a premier dentist in Rockefeller Center, NY, our studio located just steps from Rockefeller Plaza offers a sophisticated escape from the city rush. Whether you are scheduling a professional cleaning during your lunch break, a comprehensive exam, or exploring cosmetic upgrades like whitening and clear aligners, our team ensures your time is respected and your comfort is prioritized. We offer a judgment-free environment featuring premium amenities like Netflix and noise-canceling headphones to ensure every appointment feels like a restorative pause in your workday. Join the thousands of New York professionals who choose Tend for a dental experience rooted in precision and modern convenience. \ud83c\udfd9\ufe0f\u2728",
+        "date": "Apr 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPmbyOoHEAZ-4O-giYgy85k6pEL2mT0AcT_JcMS=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/dentist-studios/new-york-city/emergency?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEPf6wPHX9Zu84gE&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "When dental pain strikes unexpectedly, finding prompt and professional care is essential. Our emergency dentist in Rockefeller Center, NY provides same-day appointments to address urgent dental issues efficiently and compassionately. Whether you\u2019re experiencing severe tooth pain, a chipped tooth, or a sudden injury, our team is equipped to deliver immediate relief and expert treatment. Located in the heart of Midtown, our studio combines modern technology with a calm atmosphere, making it easier to receive urgent care without added stress. We work with most major insurance providers and ensure that navigating coverage is straightforward. Trust us to provide fast, reliable care whenever emergencies arise. \u26a1",
+        "date": "Mar 30, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOVqF1Max2ZRcTUolgHWeRQBvDmiIMuniUdAmll=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/studios/rockefeller-center?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEI2h0tPVo9KULQ&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "Finding time for dental care in Midtown can be challenging, but having a reliable dentist in Rockefeller Center, NY makes it simple to prioritize your oral health. At Tend Dental Rockefeller Center, we provide thorough, patient-focused care in a modern studio located just steps from Rockefeller Plaza and Radio City Music Hall. Our experienced team offers a wide range of services, from routine cleanings and checkups to clear aligners. Every treatment is delivered with attention to comfort, precision, and clear communication. As a trusted dentist in Rockefeller Center, NY, we make it easy to fit dental visits into busy schedules with flexible hours and weekend appointments. \ud83c\udfd9\ufe0f",
+        "date": "Mar 28, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPWJLpiURa8tYciPLT5W-tkEQzHLXldhgsjvX-L=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/dentist-studios/new-york-city/emergency?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEPe1i7fvi5y8dA&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "Immediate Dental Attention: Emergency Dentist in Rockefeller Center, NY\t\n\nWhen dental pain strikes unexpectedly, finding prompt and professional care is essential. Our emergency dentist in Rockefeller Center, NY, provides same-day appointments to address urgent dental issues efficiently and compassionately. Whether you\u2019re experiencing severe tooth pain, a chipped tooth, or a sudden dental injury, our team is equipped to deliver immediate relief and expert treatment. \ud83d\udcaa\n\nLocated in the heart of Midtown Manhattan, our studio combines modern technology with a calm, comfortable atmosphere, making it easier to receive urgent care without added stress. From initial assessment to personalized treatment plans, every step is designed to restore your oral health quickly and safely.\n\nWe work with most major insurance providers and ensure that navigating coverage is straightforward. Residents and workers in Rockefeller Center and surrounding neighborhoods can trust us to provide fast, reliable, and professional care whenever dental emergencies arise. With a focus on precision and patient comfort, we make urgent dental visits as smooth and stress-free as possible. \ud83c\udf38",
+        "date": "Jan 29, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOKa-6ZRMztoDa9yMzD7tfOzZ2TjiTvkRKabYdj=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/site/studios/rockefeller-center?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEM31kJ7Tn7eKAg&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "Skilled Dentist in Rockefeller Center, NY Offering Personalized Plans\t\n\nFinding time for dental care in Midtown Manhattan can be challenging, but having a reliable dentist in Rockefeller Center, NY makes it simple to prioritize your oral health. At Tend Dental Rockefeller Center, we provide thorough, patient-focused care in a modern, calming studio located just steps from iconic landmarks like Rockefeller Plaza and Radio City Music Hall. \ud83e\uddb7\n\nOur experienced dentists and hygienists offer a wide range of services, from routine cleanings and checkups to cosmetic treatments, clear aligners, and restorative procedures. Every treatment is delivered with attention to comfort, precision, and clear communication, so patients always understand their options and feel confident in their care plan.\n\nAs a trusted dentist in Rockefeller Center, NY, we make it easy to fit dental visits into busy schedules. Flexible hours, weekend appointments, and insurance-friendly policies ensure you get care when you need it. The studio\u2019s modern amenities, including digital X-rays, laser dentistry, and soothing treatment rooms, create an environment designed to reduce stress and make every visit as smooth as possible. \ud83d\ude4c",
+        "date": "Jan 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMrFIvRMg2Zwa_E3vIgpMWXaB4cJIMCzzyxr6KQ=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.hellotend.com/teeth-whitening?utm_source=google&utm_medium=organic&utm_campaign=gbp-posts",
+        "post_link": "https://search.google.com/local/posts?q=Tend+Dental+Rockefeller+Center&ludocid=6279782076695556947&lpsid=CIHM0ogKEI2InfjP38b6NQ&source=sh/x/loc/post&lsig=AB86z5VXmAzcUG_I-gxFq7JBquV6",
+        "description": "Teeth Whitening in Rockefeller Center, NY for Brighter Smiles With Tend Dental\t\n\nTend Rockefeller Center provides professional teeth whitening in Rockefeller Center, NY, offering a brightening experience that feels calm, modern, and convenient. Whether you want to refresh your smile for an upcoming event or simply feel more confident day to day, our Midtown studio makes whitening easy to fit into your routine. \u2705\n\nOur team uses advanced whitening technology designed to lift deep stains and enhance your natural shade with care and precision. Each visit begins with a quick evaluation to ensure whitening is a good fit for your oral health. From there, our clinicians personalize the treatment to match your goals while helping reduce sensitivity. \n\nAt Tend Rockefeller Center, flexibility and clarity are built into every visit. With simple scheduling, thoughtful communication, and a focus on comfort, we make it easy to enjoy a more radiant smile. If you have been searching for reliable teeth whitening in Midtown, our team is ready to help you leave with a renewed, confident glow. \u2728",
+        "date": "Dec 26, 2025"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6Mo8Zfs3MyxlV3qTTxJ1_gObMmquZ1_frlheX8hiBB3yJTOjyVohnBTwhy2t7EGAVR29iHz06qX1ymG7guEsE7r0KBsx2fxdrw7GGi1dRPoR9xqTgZDGBvI038L-J292hreedmya4Wizp=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/LyTl73icHcTNToMwAADgJ-rojxlg4oFG0oniJmlw4bI4KC0KFFqQdi_p2bcx8Tt8vz9qWSZ7HwS9IjuptezFaoWp9biIcdnVegjkZEFtgQ2S0-vbV5Lucx1VrSW5d31JZs5dhi7yeM2Hea3QpTW9EudIdZQSn_Hjpy-1GinflMdLmLKkLHDcHW5wP5-RH1go19SmoYHP1DrcusZsIWMdaoqTLmI3c1k9Mvr9BEn0AjIcY2WEaAb_cffe3aaHDUEIgfq_BuMf4gZHvg"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHxF-b7NiPw9ztx44zWPSA62WEiXzJ4ocBKA-Ls6yghpR-Wtu-se14CYqbkSVzThEHOpUi-QdmwL4FkOytbi5umyFeihZJYWPVzKG7nGCM9OVuQgUp_rhkITYsjwZsGZffX4LMlfI4aokM3=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/5va7hnicHcTdboIwGADQJ6rg7DQu2QUzgj8gMBWEGyNdabsC7fxKkL7krn2bJTsX5_nLjdHw5jgNn02YUqyhPdA7UZ2hnZkQ1TpMAyKAwPGSQyq9zcNH1eIgkmFpzQNjmydHb_6Sr8XF7rAiH3sPhTAfGdefKDc9AjrFq-KnksfMnvh6E-uzQOlXO4TYl_FoKvHat6NPBS93RZ5kdh8sumAVLeOsT9lZX-9cbk8FfA8lBGVdX3AYNfUW35SMZu_D1HVdxP8nqPsDwbxIRg"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-15oMkqZ91sfrLT3eQJjsZU6PfwPEit4BxymTWRwmzn9NSCpGVREswkO2xL7PD1jAAR_8ONd3tevas_m6kXqPuhtHkWVlGpdmISZUMe56t82uFeVzog5or8TiuZRCpu-Ef2_dPQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ieJetXicHcTbboIwGADgJ6qcBNFkF4yBhygWRDTckAUKaCmt_O1Q3nCPsLcx2Xfx_f22UgpYaVrXWrOG86YjCshQ8l6SXs5KzrRGACoBgebhKKZeiAybH-gjXxpQD_vUIvHuDvnZwfWIg5ucfz5fLL0kI5v6ZXTyxTpLAhjp0XzuF_jLuHteUrjHqLIk-fmGgjn0-sCqlRt6ybq1qNj2lJ8PxHaka6qQZBNvbD646U3liS8UCmqzqHD8MRq6rqP2_xL1byJQRjE"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=OCVmT3Q4jZk6O4dXEQHLfA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=213.9315&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/R_pw9nicHc1LCsIwFADA22Rn0p9ihSAigguhFETETUnTtIkmzcM8Uz2Ox_I2istZzeetESGsGAt4VwqjUROYp7JhBoIO3g9WCTCBSu9YTBnqh2tHYewaxOhNx6vtyR3zurhebouq6M67en_oN0S2jbRGjcidgNCESFFINFbRAQKZeJYVRPOsXJKX-CnNaZmncwIGpeYJ-Te9jzxNki-BnzlF"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"All staff are very kind, and I love the set up and customer service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJZrqGo2e04hBSTWsTYxUKO5NTamrBILo6sKdQKcy0sqIVA0g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Excellent service, professionalism, very personable, and amazing facility.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVMofDThvg-0b2BG2bh0fBiegt4BmyuO_WX667B1Wv6sxxq3nRHfw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"My hygienist Katrina eased my anxiety and gave me a very thorough cleaning.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLHDLYdMYfqz1kvIcbGVMpYZu8hHYgo580hHs4w-kyxNrUFZ6U=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Andrea McLendon",
+          "rating": 5,
+          "contributor_id": "106127471075082514311",
+          "user_review_count": 7,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWhhuZEEplGy2c8aW3zGhE9vPKM4CEyIuKKBgHbl19V8K5egB3T1g=s120-c-rp-mo-br100",
+          "description": "The exam was painless and very quick. I appreciated Carmen\u2019s help today and will be back to start my perfect smile journey",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xjdFZVbGhOV1I1UlhRdGNWVmxNWEp0Y1dVMGRtYxAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOlctVUlhNWR5RXQtcVVlMXJtcWU0dmc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn30zcB_zZ0ZJkgVE6NQ4a4UUPmwhlJ3Dw3a-zhzJhrhH34sq7_jP0C5YTuCjnGH4TbxEfr3yWkqtrSP90JMA2KkjTsmhABeqDKULiFeueBkjNa7ZbhZdi09SnksWhzAzG0EapBUDOpCMCs9=k-no"
+            }
+          ],
+          "date": "Edited 3 months ago",
+          "date_iso8601": "2026-03-10T16:22:07+00:00"
+        },
+        {
+          "username": "Karen Brown",
+          "rating": 5,
+          "contributor_id": "118037443865009855952",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUzBAsauUZeZJNRWMyXY9i2FcvndSaZ4jVQPu4PlGHPWv-1iuFM_w=s120-c-rp-mo-br100",
+          "description": "I had such a wonderful experience with Dr. Syed and the entire team at Tend Dental. My procedure was seamless and completely painless. Dr. Syed made me feel so comfortable throughout and provided exceptional care from start to finish.\n\nA special thank you to Candice, the office manager, Melly, the dental assistant, and Vrisha at the welcome bar, who ensured a quick and efficient checkout. The entire team is professional, attentive, and truly dedicated to patient care.\n\nI will absolutely be returning again and again. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aSlNWQXRZWE5NTVVOcmNFOWlRbnBaWlMxWllVRRAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOnZJSVAtYXNMMUNrcE9iQnpZZS1ZYUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-26T22:37:44+00:00"
+        },
+        {
+          "username": "GrannieMe (GrannieMercy)",
+          "rating": 5,
+          "contributor_id": "117002210767868782336",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKTCg2Zen_FJyzbcrAwRpFbgbGPw9acTU47aK4fAm9GzocBtg=s120-c-rp-mo-br100",
+          "description": "Tend at Rockefeller Center is a fantastic practice. It is clean, comfortable, and well run. The dentist took the time to clearly explain everything, which I really appreciated.\n\nBut the biggest kudos go to Therin at the front desk. She is so kind and friendly that you immediately feel welcome and like you matter. She made the experience seamless, from check-in to insurance, payments and scheduling follow-ups. Let's face it: going to the dentist isn't always fun, but she set a tone that was calm and peaceful and that made a difference.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25keVpuWTNkbVU0T1Vkc2VrSmlVR0pzTnpVek9VRRAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOndyZnY3dmU4OUdsekJiUGJsNzUzOUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-01T19:44:20+00:00"
+        },
+        {
+          "username": "Marium",
+          "rating": 5,
+          "contributor_id": "114455758052924564196",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK1ygFIgI3M_UTvWEV5cVG3C5P7f15qFhUw38hLNei5RTwUSA=s120-c-rp-mo-br100",
+          "description": "I had a great time during my appointment at Tend. I love that the office is set up nicely and received a friendly greeting from the front desk as soon I walked in. Dr. Sabrina Syed was incredibly kind and took the time to explain my treatment plan, which I really appreciated. She\u2019s very patient and made the visit feel calm and stress-free.\nOverall, it was a positive experience since visiting the dentist. I would definitely recommend this office to anyone looking for quality dental care!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCQlluWjZja3BQYWpkcWRTMXRURzFoVTFSSVdWRRAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOjBBYnZ6ckpPajdqdS1tTG1hU1RIWVE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-03T20:27:05+00:00"
+        },
+        {
+          "username": "Afsheen Mirza",
+          "rating": 5,
+          "contributor_id": "116303278218861883035",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKwoOS3n1UzcWH2ZAbKJrlzYbQSdz_qxNHnk6Zf8togw9tomA=s120-c-rp-mo-br100",
+          "description": "I was a first time patient here & I had an amazing expirience. I was in a lot of dental pain on a friday afternoon and they were able to see me as an emergency. I saw Dr. syed,  she was so kind and helped me resolve my dental pain. I had an extraction same day and it was completley pain free. Her bedside manner was so comforting, i definitley recommend and will be going back for my recare appointments! 10/10 reccommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2prNVV6bG5UbmxaVFdkWVVtdDZkMWhYWm1wYVFsRRAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOjk5UzlnTnlZTWdYUmt6d1hXZmpaQlE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-24T14:48:42+00:00"
+        },
+        {
+          "username": "Johnson Thai",
+          "rating": 5,
+          "contributor_id": "102723004123460022200",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK4uRKTXQVePcVzK5bxYV1TrYeepHw2LW2XmrXhIQbr7cQHrw=s120-c-rp-mo-br100",
+          "description": "I came to Tend for a whitening treatment, and I was truly impressed by this dental office. The staff was incredibly friendly and accommodating, and they even provided a toiletry kit so I could brush my teeth before the appointment. My hygienist, Katrina, performed both the cleaning and whitening treatment, and she made sure I was comfortable throughout the entire process. I can honestly say it was the most painless cleaning I\u2019ve ever had. My teeth looked so much brighter thanks to the treatment!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sb1l6aHJUSEZoYzA1dFQxUjNiM0F4TUVwTk9WRRAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOmloYzhrTHFhc05tT1R3b3AxMEpNOVE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-01T23:08:10+00:00"
+        },
+        {
+          "username": "N T",
+          "rating": 5,
+          "contributor_id": "101764502291723834094",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJZzTdUmm5rBDRG_WrQ4mE5DRvPyf54yZb4rThb3PeiBbQ5TQ=s120-c-rp-mo-br100",
+          "description": "Amazing office! The staff goes above and beyond to make sure I had a great visit. Katrina walked me to my suite and offered complimentary water. Dental hygienist Nicole was amazing at removing all my tea stains that have been bothering me for the past couple of months.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kbU1TMHlNV05GWm01ZllsTmZSWGhFVHpsTmNHYxAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOmdmMS0yMWNFZm5fYlNfRXhETzlNcGc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-27T01:04:17+00:00"
+        },
+        {
+          "username": "Bella Estrella",
+          "rating": 5,
+          "contributor_id": "112392663006077027160",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWSo1mZ-3thqFIQGKnRofpBkTALCj9qh4GwvqsuQFymiDK2xz4o=s120-c-rp-mo-br100",
+          "description": "I\u2019ve had such a great experience with Tend. The entire team is professional, welcoming, and makes you feel comfortable from the moment you walk in. A special thank you to Dr. Nahcivan, she is incredibly kind, attentive, and truly goes above and beyond. You can tell she genuinely cares about her patients. Highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Kd1YwWnlXRFF0Ykc5RWVUZGlaakYyTURGc1lWRRAB!2m1!1s0x0:0x57264486ec4db353!3m1!1s2@1:CAIQACodChtycF9oOnJwV0ZyWDQtbG9EeTdiZjF2MDFsYVE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-31T11:04:56+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Tennen Harold J DDS",
+            "data_id": "0x0:0xe5b398dc2217f0a2",
+            "data_cid": "16551741126748926114",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe5b398dc2217f0a2&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe5b398dc2217f0a2&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7579954,
+              "longitude": -73.9804146
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe5b398dc2217f0a2%218m2%213d40.7579954%214d-73.9804146&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=yKE_x_qOJ_loSGtIWgbH-TEN-JwfAbcWri2_D-kgCg5R-3z2BDFxS2uVBp_Orsfu8uQVzLVV2WjoxEYOIHk4_3OV2VO77bxx7rFMnAVQ2tCQpxX1BdNlfXotYVF8jrPPVS4M-11jDbSVNVAgk_FQlr-XLt-hVaKd",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "The Dental Scan Center",
+            "data_id": "0x0:0xcd2409f7e0102fe1",
+            "data_cid": "14781950837157539809",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcd2409f7e0102fe1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcd2409f7e0102fe1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7565816,
+              "longitude": -73.9770112
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcd2409f7e0102fe1%218m2%213d40.7565816%214d-73.9770112&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 3,
+            "thumbnail": "https://www.google.com/maps/vt/data=n9cGcyVVD63jxaymWWaQiOZLN0K-kdKyrQmkeJgSdXdiDJ6UjUCE1_V3Ebj_MjyUa18tjuitZLKYFZk6MId3pod55HMbN-PCPzenQ_y797PWAWrEUGjS_dKj0O2lrPmePYCZCEF4gVwX9QIliHDlEqKOQYKuLpk8",
+            "type": [
+              "Dental radiology",
+              "Diagnostic center"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Omnident NY Rockefeller Center",
+            "data_id": "0x0:0xa93eb0174a5b3225",
+            "data_cid": "12195378455044108837",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa93eb0174a5b3225&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa93eb0174a5b3225&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7580616,
+              "longitude": -73.9788647
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa93eb0174a5b3225%218m2%213d40.7580616%214d-73.9788647&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 111,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHKsPrExZ-d8lLHbrfNrQ8d8Tx3LhPZi3fzsq9dUm8T3ezvnEUGnKLfauJywx4cUQaK5oQOUR6jAIlHWW7-i9sHc7nkQJMrHjrZdKs0ZNV1tED7FPaopmvWObLf7tcW3dWMkoYK7_CLMR_6=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Reich Charles DDS",
+            "data_id": "0x0:0xeaa769ec202bf7d1",
+            "data_cid": "16908599788858767313",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeaa769ec202bf7d1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeaa769ec202bf7d1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7580629,
+              "longitude": -73.9788542
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xeaa769ec202bf7d1%218m2%213d40.7580629%214d-73.9788542&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=VxoM02fyU6GI8crXU3frqVLLpZxIiX_3xfk8SuLe3htQi0iiVAuLX_fEp641yI7dc1xHBx6TVO3a90nDKZYH7BNx6swcUL-88i9e89NMY_LlCsOSJUhLhflPLUpJoH0IqBzdoyY5AIVWrkqqpTvwzWVfB16f2vxU",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Emergency Dental Center",
+            "data_id": "0x0:0x64d880465228be37",
+            "data_cid": "7266699038276763191",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x64d880465228be37&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x64d880465228be37&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.756584000000004,
+              "longitude": -73.9770205
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x64d880465228be37%218m2%213d40.756584000000004%214d-73.9770205&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=4RLPvCCBihJ88zOEghV_Len3SwYCSg8bX22KhRj9TNUkiHpvbrjs6nr50_5JbZHq_68ECwDeQiueWLdH4R4g8q-0qqDKj55xVWj8ddTwK108hwjFB7YGAoqmD8xlr5NnnBlRv4BGaopu5yG5rY0LZDqNWyFv2TRp",
+            "type": [
+              "Emergency dental service",
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "tuesday",
+      "live_hash": {
+        "info": "Now: Usually not too busy"
+      },
+      "graph_results": {
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47,
+            "current": true
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 90
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 85
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "3 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjEKLyIrVGVuZCBEZW50YWwgUm9ja2VmZWxsZXIgQ2VudGVyIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjEKLyIrVGVuZCBEZW50YWwgUm9ja2VmZWxsZXIgQ2VudGVyIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

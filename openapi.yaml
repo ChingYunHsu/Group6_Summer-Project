@@ -2056,28 +2056,30 @@ components:
         Tier 2 medical profile stored server-side in encrypted `user_medical_profiles`
         table (InnoDB tablespace encryption). One row per user. All fields optional.
       properties:
+        date_of_birth:
+          type: string
+          format: date
+          description: User's date of birth (YYYY-MM-DD).
+        gender:
+          type: string
+          description: User's gender (e.g. "Male", "Female", "Non-binary", "Prefer not to say").
+        address:
+          type: string
+          description: User's home address.
         blood_type:
           type: string
           enum: [A+, A-, B+, B-, AB+, AB-, O+, O-]
           description: User's blood type.
-        donor_status:
-          type: boolean
-          description: Organ donor status.
-        severe_allergies:
+        allergies:
           type: array
           items:
             type: string
-          description: List of severe allergies (e.g. "Peanuts", "Penicillin").
-        conditions:
+          description: List of allergies (e.g. "Peanuts", "Penicillin").
+        medical_conditions:
           type: array
           items:
             type: string
           description: List of medical conditions (e.g. "Diabetes", "Asthma").
-        medications:
-          type: array
-          items:
-            type: string
-          description: List of current medications.
         emergency_contacts:
           type: array
           items:
@@ -2090,12 +2092,6 @@ components:
               relationship:
                 type: string
           description: Emergency contact list.
-        emergency_notes:
-          type: string
-          description: Additional emergency notes (e.g. "Type 1 Diabetic").
-        medical_pass_title:
-          type: string
-          description: Title for the medical pass (e.g. "Medical Alert Card").
 
     MedicalProfileUpdate:
       type: object
@@ -2104,20 +2100,24 @@ components:
         All fields optional. Only provided fields are updated (upsert).
         Conflict strategy: last-write-wins.
       properties:
+        date_of_birth:
+          type: string
+          format: date
+          description: User's date of birth (YYYY-MM-DD).
+        gender:
+          type: string
+          description: User's gender.
+        address:
+          type: string
+          description: User's home address.
         blood_type:
           type: string
           enum: [A+, A-, B+, B-, AB+, AB-, O+, O-]
-        donor_status:
-          type: boolean
-        severe_allergies:
+        allergies:
           type: array
           items:
             type: string
-        conditions:
-          type: array
-          items:
-            type: string
-        medications:
+        medical_conditions:
           type: array
           items:
             type: string
@@ -2132,10 +2132,6 @@ components:
                 type: string
               relationship:
                 type: string
-        emergency_notes:
-          type: string
-        medical_pass_title:
-          type: string
 
     # DEPRECATED — Old D10 render_token schema
     # Replaced by MedicalProfile (server-side CRUD).

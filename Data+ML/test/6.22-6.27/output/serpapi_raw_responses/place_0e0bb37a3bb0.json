@@ -1,0 +1,409 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1e549579a4f783940e1",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/0aWi-hMfZtHrwvaG2_zl1Q/6a3ac1e549579a4f783940e1.json",
+    "created_at": "2026-06-23 17:27:01 UTC",
+    "processed_at": "2026-06-23 17:27:01 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259a97e01c283:0xee75624abd9052ff!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/0aWi-hMfZtHrwvaG2_zl1Q/6a3ac1e549579a4f783940e1.html",
+    "prettify_html_file": "https://serpapi.com/searches/0aWi-hMfZtHrwvaG2_zl1Q/6a3ac1e549579a4f783940e1.prettify",
+    "total_time_taken": 0.87
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJg8IBfqlZwokR_1KQvUpide4",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Madison Dental Loft",
+    "place_id": "ChIJg8IBfqlZwokR_1KQvUpide4",
+    "data_id": "0x89c259a97e01c283:0xee75624abd9052ff",
+    "data_cid": "17182748026449449727",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a97e01c283%3A0xee75624abd9052ff&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a97e01c283%3A0xee75624abd9052ff&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7510805,
+      "longitude": -73.9796293
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJg8IBfqlZwokR_1KQvUpide4",
+    "provider_id": "/g/1pv0l0ns6",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHOgOET9wN1oQsrZypnOuYZGPQJWXqedoXItA50wLwPCzVCNdaXSPR1vQh9wxH1MqKxwVQEsmIx9c3RzyyI3JeCdJ8-wQ6zQHwWoxv-cWt-0Qhnqy81GXXXJWtZBfuroVMiStd2=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/U-nkkHicHcRRDoIgAADQE6GQq2lbH-ZaaqVSTcm_hiStAhUM9YKdodu09T7e98O1btTStp_csWop6yfrFeuoFJoJbVH5sutGAaqAsv0swQ8_TOt0c_ZMgiRWXTk2Iu0v5TbDcUFaVkkSaX8Ozd5kwZQHSXUlp-yI3ph7ZgjRod0NJscb9YoGjzrHaRwjJ2ZBFbvA4MWEQ1PI4Q1ooQHEXLSji7aEkLjQ5frWdzI_3E-6mq0MghAC_p8C8QPK6EXw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 2
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 3
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 428
+      }
+    ],
+    "rating": 5,
+    "reviews": 438,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental implants provider",
+      "Emergency dental service"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_implants_provider",
+      "emergency_dental_service"
+    ],
+    "menu": {
+      "link": "https://www.nycdental.com/services",
+      "source": "nycdental.com"
+    },
+    "book_online": "https://www.zocdoc.com/practice/madison-dental-loft-dental-and-implant-center-27889?LocIdent=123318&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_PtPw0WT7pE-lzKKhNA-Utx-lo_HlpD54OG7EGXPlRo2KnG4B-entity&rwg_token=AE37R_hrMms4zsIS2V_M9_c-mvfaO2W5JVTL1iO25uIpMbo22s5V9hO09-eQoO5XKHfOWBQLBErFRm7fSDalyAPmj4VCh95xxA%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Checks",
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "30 E 40th St Rm 806, New York, NY 10016",
+    "country": "United States",
+    "website": "https://www.nycdental.com/locations/madison-dental-loft",
+    "phone": "(646) 624-0987",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q22C+C4 New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      },
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259a97e01c283%3A0xee75624abd9052ff&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHOgOET9wN1oQsrZypnOuYZGPQJWXqedoXItA50wLwPCzVCNdaXSPR1vQh9wxH1MqKxwVQEsmIx9c3RzyyI3JeCdJ8-wQ6zQHwWoxv-cWt-0Qhnqy81GXXXJWtZBfuroVMiStd2=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/U-nkkHicHcRRDoIgAADQE6GQq2lbH-ZaaqVSTcm_hiStAhUM9YKdodu09T7e98O1btTStp_csWop6yfrFeuoFJoJbVH5sutGAaqAsv0swQ8_TOt0c_ZMgiRWXTk2Iu0v5TbDcUFaVkkSaX8Ozd5kwZQHSXUlp-yI3ph7ZgjRod0NJscb9YoGjzrHaRwjJ2ZBFbvA4MWEQ1PI4Q1ooQHEXLSji7aEkLjQ5frWdzI_3E-6mq0MghAC_p8C8QPK6EXw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEK7-WqmtEExOlCvv8GK8OI3T8E1hgGF2CyEP_vOswNIYSqIpmv0yzQe4dRqQkyQP1zkgx0ZGs4iPCG3ZuIlrXSCR0vcMTBr38CyKzfPCjU3uZlO6KYQSE1xEFe_Sr7EBMv8weMYg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/hK_1AXicHcRLjoIwAADQE1WKNdqYuNCmEkKQVpwobFx0OkUp35byueEcYW4ziW_x_n4La1uz9zxdoJVqGqXlYGQvmtrK2q5EU3mqNUAYYLwju_DySKMduHeVpXRKNHEOBxFOQnTD1C9UcF6TmbKnS8x4CbO0C9vKwXnhcvN97Xg5c-YvpZpgHpjNi5EA5UOo-0dKrtCJ-HbqESZztPww8v5CQ66TbZTxlPoTPctn2u_oKXZ4lHGmDqMPIQTFZwHqf8gURP0"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=TQB7L8CQnGTtXXesRSnnrg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=207.61415&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/GZjhCXicHc09DsIgGADQ27DJT1NtNSEmOri4VDt0ayh-AgkFUj5bvY638jYaxze9z9siprxjLOMEgLODJbkn-LxKipoYjQeVXKY6jmwWDO1jHIJyfp9UiO4m2-ZQnetjE04tdh3kyzWEyRA99No7CChHlXKfZ4pKo_NATcpkkUVREiuLbU1e6ide0Y0oxZokh9pKTv7PPc5ScP4F86U6Nw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Oh and also the hygienist massaged my mouth/jaw during my deep cleaning today!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI_3iyxsnkVAVSJWVdt1DHdbHkzlQK_MY4reO31ysZjON9imw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Value for money and very experienced and polite staff and doctors\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVCMkU-DO165t1yhLODH_VLtrzXUf1_fd7c5C2ThvJ-6r92U1L9=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Amazing stuff great work and great price I was impressed\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI2E1bmKkmZkZe92hb7Ofxz6qC9NTgl1iu8_JZmAGn3KYI0rA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Justin Sabino",
+          "rating": 5,
+          "contributor_id": "100282699748517935061",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKfCA5ypWaMauVSyLR_w73gGKepNTYA4-zKcVjtmocRQu7zog=s120-c-rp-mo-br100",
+          "description": "Had an amazing experience as a first time patient. The Office Manager Gina was such a pleasure and the front desk staff made me feel very welcome. Anita (the person that did my cleaning)  did an amazing Job making feel comfortable and informed throughout the entire cleaning. She was extremely gentle and I didn't feel a thing. They official have a life time patient.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KdGVGQnBkVWt4ZVRCRkxXYzJOVkoxVEZWbmFHYxAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOmJteFBpdUkxeTBFLWc2NVJ1TFVnaGc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-29T04:25:56+00:00"
+        },
+        {
+          "username": "Alaine Quijano\u2019s",
+          "rating": 5,
+          "contributor_id": "104352488222085973716",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocITbKJEOYPS9E-qAiO5ChW9HDBeMSrbOHPTy1Je3y3cMp0hRg=s120-c-rp-mo-br100",
+          "description": "Dr Perez and staff are wonderful! From the staff at the front desk, to my dental hygienist Anita - they really are top notch.  Dr. Perez meticulously repaired a deep cavity very close to the nerve, and saved me a root canal. I know a lot of people who aren\u2019t fans of dental work. But they really make the whole experience painless. They use technology that I have never seen at other dental offices. The office is meticulous.\nCompassionate, professional, and highly skilled.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aTFFVVm9OR1pJYVMxSmQxZFRURzkzWW5kT1pXYxAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOnZLQUVoNGZIaS1Jd1dTTG93YndOZWc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-12T17:25:29+00:00"
+        },
+        {
+          "username": "Hyunjun Choi",
+          "rating": 5,
+          "contributor_id": "105870498716625675584",
+          "user_review_count": 3,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUCjVykkfRAoyJoZ8vV5iF2NXbiF1bIKYmFNs9l0lCbL1Jy6req=s120-c-rp-mo-br100",
+          "description": "I received cavity treatment from Dr. Sahiba, and I am extremely satisfied with my experience. She made sure the anesthesia was as comfortable and painless as possible, explained the entire treatment process in a very kind and clear way, and carefully checked afterward to make sure I wasn\u2019t experiencing any discomfort.\n\nI\u2019m very happy with the care I received. Thank you so much, Dr. Sahiba!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CVmJsQmxSRmxmTlhveVEzSm9TalpPVUUxT2FXYxAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOnBVblBlRFlfNXoyQ3JoSjZOUE1OaWc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0tQEU19bbZk8eEe6J_eIHx1ZU_ftNd6vMHkV09HyAbAjEobllcH6yDEeONaDh-CtHJYl8rXJfG6XlQ7n4IuR9nRi3Q9jd4HpnzknEAPt6iSBblOmlotjiXtGlEtEe4ABzmzIitRFlwIHph=k-no"
+            }
+          ],
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-24T18:36:54+00:00"
+        },
+        {
+          "username": "Paul Bisson",
+          "rating": 5,
+          "contributor_id": "113608097770316489279",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWPm5XKhlAAILXRLSxEB4qZnB0xKzxhhkvHv2rjuAILoQIGS3eT=s120-c-rp-mo-br100",
+          "description": "I am the Musical Director of a major Cirque du Soleil production and was performing in New York City when I experienced a dental emergency. I searched online and chose Madison Dental Loft, then called their office. From the very first phone call, I was warmly welcomed and offered an appointment just one hour later with Dr. Zhang.\nDr. Zhang and her assistant did an outstanding job. She took excellent care of me, clearly explaining what needed to be done and how she would proceed, which immediately put me at ease. The entire experience was exceptional\u2014I truly felt well cared for from start to finish.\nAs a result, Madison Dental Loft will now serve as the emergency dental office for Cirque du Soleil touring productions in New York City. What more could I say? Thank you very much once again!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201MU4zZDZSR2xXVERNdFNXbEpTelpLY2xocGRrRRAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOm51N3d6RGlWTDMtSWlJSzZKclhpdkE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-18T17:21:38+00:00"
+        },
+        {
+          "username": "Yifan Wu",
+          "rating": 5,
+          "contributor_id": "103225130632490009081",
+          "user_review_count": 4,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUiVYLMNNGa_j3Ak-0AKZSqkA3eQK7RbfhdJwORpd_MXHBY6EGlPg=s120-c-rp-mo-br100",
+          "description": "I have been coming to this dental clinic for many years, and Dr. Kim is truly the best! I also always enjoy my regular cleanings with hygienist Anita. The entire team is professional, caring, and welcoming, and they consistently make every visit a positive experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSNVJHOWZOM3BwYWxkbk1UaGtSSE5GV0ROd2FuYxAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOkR5RG9fN3ppaldnMThkRHNFWDNwanc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T15:46:29+00:00"
+        },
+        {
+          "username": "Char Singleton",
+          "rating": 5,
+          "contributor_id": "113159846866007764564",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKNia-P-kKCrHWl0FjSsWTQv_ei18EVWaIEYw_em-50X51t_A=s120-c-rp-mo-br100",
+          "description": "The office is very compact and clean. The office manages are very polite. Dr. Wu is very detailed in explaining everything that he is going to do. He made sure that I felt as less pain as possible. Also, there is no Long waiting their appointments are pretty much on time. I've never had to wait more than 10 minutes. I would highly Recommend this Dentist office.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GTVMwMDFTSGc0TmxkRmMxbzJhRmR4YlZVelFVRRAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOmFMS001SHg4NldFc1o2aFdxbVUzQUE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-25T01:57:59+00:00"
+        },
+        {
+          "username": "Fernanda Villase\u00f1or Lopez",
+          "rating": 5,
+          "contributor_id": "111092073178329018087",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVw3nsbBO5mHpTVJdFtGBedokdR4SCAShn-tnw6VDKGQfJiuiY=s120-c-rp-mo-br100",
+          "description": "Dr. Zhang and the whole team at Madison Dental Loft are fantastic. The office is clean, on time, and everyone is genuinely kind. They explained everything clearly, checked in often, and made the visit feel calm and easy. Highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oQ01sazJjV2MzWlhWaU56VlJUelprZDNGSFgzYxAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOmhCMlk2cWc3ZXViNzVRTzZkd3FHX3c%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-17T00:52:43+00:00"
+        },
+        {
+          "username": "Rachel Shih",
+          "rating": 5,
+          "contributor_id": "104808016989065099480",
+          "user_review_count": 20,
+          "user_photo_count": 18,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV-5APkBK8lV6F4zFVvzGv16owfXy4S__n585z5Qugg-iNyZaIu=s120-c-rp-mo-ba12-br100",
+          "description": "Highly recommend this dental office! I made an appointment several days ago and was able to confirm an appointment as a new patient very easily. Prior to my appointment, they sent me a form to fill out and just needed to confirm my insurance. I had an appointment with Dr. Perez, and she was amazing! She made me feel super comfy and constantly checked in through the appointment. Shoutout to her mango squishie! Beyond that, all the hygienists and assistants were extremely kind and accommodating. I will have to get their names at my next appointment. Gina and Corey at the front desk, were the cherry on top! Both super helpful, helping me book my next appointments, checking my insurance, and explaining next steps. As an avid dentist avoider, I am looking forward to my next appointment!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21nMlYwZ3hWekZGVjNveGJqaEtRbXgxZDBOTVlXYxAB!2m1!1s0x0:0xee75624abd9052ff!3m1!1s2@1:CAIQACodChtycF9oOmg2V0gxVzFFV3oxbjhKQmx1d0NMYWc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-07T18:26:11+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Midtown Dental Art",
+            "data_id": "0x0:0xf6c84d2add08cd75",
+            "data_cid": "17782547975164710261",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf6c84d2add08cd75&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf6c84d2add08cd75&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751148900000004,
+              "longitude": -73.97971489999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf6c84d2add08cd75%218m2%213d40.751148900000004%214d-73.97971489999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 217,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNhEKxq786G57vOVEektifCvjhfoJQQjX0cwcFrYV3O2onsxzBsavo-Z_bInhe34gk7wKmXLh_-IGC5pm2a406CIi5uCsJtOrQqv45J0OyxtcByHX2eK2qXUGtuyAj8g2eichq9cGEUvM=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Madison Dental Group",
+            "data_id": "0x0:0x819980b16ed0d0ac",
+            "data_cid": "9338636801886179500",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x819980b16ed0d0ac&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x819980b16ed0d0ac&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7597893,
+              "longitude": -73.9737557
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x819980b16ed0d0ac%218m2%213d40.7597893%214d-73.9737557&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 481,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHatgKnsgtiuH3DczH3dBj-jCuBV_2Hpnrn6hhiYXg_j6r61LAVL_30ftV_sLc0TxIenIOjXvUd5i9xp_hxx0iTc32yiEmovlgJUEi8trAanKvH_BpHb-9hU6W0oTDZTrGVm7sx1A=w156-h156-n-k-no",
+            "type": [
+              "Dental clinic",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Dentist",
+              "Orthodontist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Madison Dental Arts",
+            "data_id": "0x0:0xc22f5d4b333d45ff",
+            "data_cid": "13992505144827004415",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc22f5d4b333d45ff&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc22f5d4b333d45ff&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7512258,
+              "longitude": -73.9799875
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc22f5d4b333d45ff%218m2%213d40.7512258%214d-73.9799875&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 23,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFG36NxJIFZgc27tV__z73o8HhOjracx1hO4H_rd-_p2uhAdekMUXU6eNXYml25wg8fQPRaCz2C7N4Cb8NcCNmvnOUgWG_7rXQ0rB0THL_SirIqsj9A0JTVzXqH7yko9P84wnQ1=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Smile Design Manhattan",
+            "data_id": "0x0:0x5952a09fe294b236",
+            "data_cid": "6436383426027500086",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5952a09fe294b236&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5952a09fe294b236&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.761781,
+              "longitude": -73.9723693
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5952a09fe294b236%218m2%213d40.761781%214d-73.9723693&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 564,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHm3A1cLyieTueQL_0NHkn9-AeRBP-ZAxmy5FNIQ_dF_RC6WJNgg6IFQjX4ca1r_R93abWY2AjcxX1QKlvqJt3GN6oztXwnPT6X53d_zJtl8vUyDii9HOJK9lb9HW0hWNFDTtr7DSk9oEQ=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Oral surgeon",
+              "Orthodontist",
+              "Pediatric dentist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "286 Madison Dental",
+            "data_id": "0x0:0x5fa1f38233f95c32",
+            "data_cid": "6891056645396847666",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5fa1f38233f95c32&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5fa1f38233f95c32&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7517681,
+              "longitude": -73.9803915
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5fa1f38233f95c32%218m2%213d40.7517681%214d-73.9803915&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 579,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHHfqMMUra5bsfYcAxQxl0Ci19SiYhOC9WrkWD5hIR5Y-kqLgwOrlZcvpvSe0aaj7EjbIP1M8LJOphOQGsKgecNvE5DLEtO2NWFau3ILQS2kGXmCPCmNGoSwplfEgRqDMlAN6A2IQ=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dental implants periodontist",
+              "Dentist",
+              "Emergency dental service",
+              "Endodontist",
+              "Periodontist",
+              "Teeth whitening service"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiYKJCIgTWFkaXNvbiBEZW50YWwgTG9mdCBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiYKJCIgTWFkaXNvbiBEZW50YWwgTG9mdCBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

@@ -52,6 +52,22 @@ TRAFFIC_SODA_URL = (
 
 SUPPORTED_SOURCES = ("citibike", "mta", "traffic")
 
+# Prediction scope — AED/emergencyasset excluded from busyness prediction
+PREDICTION_SCOPE_MAP = {
+    "emergencyasset": {
+        "prediction_scope": False,
+        "scope_reason": "no_meaningful_busyness_target",
+    },
+    "healthcare": {
+        "prediction_scope": True,
+        "scope_reason": "visit_based_venue",
+    },
+    "restroom": {
+        "prediction_scope": True,
+        "scope_reason": "visit_based_venue",
+    },
+}
+
 DEFAULT_TIMEOUT = (2, 5)  # (connect, read) seconds — SOP §7.2
 DEFAULT_MAX_RETRIES = 3
 RETRY_DELAYS = [1, 2, 4]  # seconds between retries
@@ -556,6 +572,67 @@ def load_venues(venue_file: str | Path) -> tuple[pd.DataFrame, int]:
     df = df.drop_duplicates(subset=["venue_id"], keep="first")
     dup_count = total_before - len(df)
     return df, dup_count
+
+
+def add_prediction_scope(venues_df: pd.DataFrame) -> pd.DataFrame:
+    """Add prediction_scope and scope_reason columns based on venue_type.
+
+    prediction_scope=True  → healthcare, restroom (visit-based, busyness meaningful)
+    prediction_scope=False → emergencyasset / AED (no busyness target)
+    """
+    df = venues_df.copy()
+    df["prediction_scope"] = df["venue_type"].map(
+        lambda vt: PREDICTION_SCOPE_MAP.get(vt, {}).get("prediction_scope", True)
+    )
+    df["scope_reason"] = df["venue_type"].map(
+        lambda vt: PREDICTION_SCOPE_MAP.get(vt, {}).get("scope_reason", "visit_based_venue")
+    )
+    return df
+
+
+def compute_aed_summary(
+    detail_df: pd.DataFrame,
+    radii: list[int],
+) -> pd.DataFrame:
+    """Compute AED/emergencyasset asset-status coverage summary.
+
+    Returns DataFrame with same schema as compute_standalone_coverage,
+    but scope='aed_summary' and only emergencyasset venues.
+    """
+    aed_df = detail_df[detail_df["venue_type"] == "emergencyasset"].copy()
+    if aed_df.empty:
+        return pd.DataFrame()
+
+    rows: list[dict] = []
+    for src in ["citibike", "mta", "traffic"]:
+        dist_col = f"{src}_nearest_distance_m"
+        if dist_col not in aed_df.columns:
+            continue
+        distances = aed_df[dist_col].values
+        venue_count = len(aed_df)
+        prev_covered = 0
+        for radius in radii:
+            covered = int((distances <= radius).sum())
+            rate = covered / venue_count
+            marginal = covered - prev_covered
+            marginal_pp = rate - (prev_covered / venue_count)
+            rows.append({
+                "scope": "aed_summary",
+                "group_name": "venue_type",
+                "group_value": "emergencyasset",
+                "coverage_kind": "standalone",
+                "source_or_combination": src,
+                "radius_m": radius,
+                "venue_count": venue_count,
+                "covered_count": covered,
+                "coverage_rate": round(rate, 6),
+                "incremental_covered_count": marginal,
+                "marginal_gain_pp": round(marginal_pp, 6),
+                "nearest_distance_median": round(float(np.median(distances)), 2),
+                "nearest_distance_p90": round(float(np.percentile(distances, 90)), 2),
+            })
+            prev_covered = covered
+    return pd.DataFrame(rows)
 
 
 # ── Spatial Algorithm ──────────────────────────────────────────

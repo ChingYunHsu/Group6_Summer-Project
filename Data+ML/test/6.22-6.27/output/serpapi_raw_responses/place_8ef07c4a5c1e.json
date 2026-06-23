@@ -1,0 +1,387 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1e0b7942f3c21263fff",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/89RaUk2IVDWj8MBtNb2daA/6a3ac1e0b7942f3c21263fff.json",
+    "created_at": "2026-06-23 17:26:56 UTC",
+    "processed_at": "2026-06-23 17:26:56 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f72154a2a79d:0x7a3e879294569f97!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/89RaUk2IVDWj8MBtNb2daA/6a3ac1e0b7942f3c21263fff.html",
+    "prettify_html_file": "https://serpapi.com/searches/89RaUk2IVDWj8MBtNb2daA/6a3ac1e0b7942f3c21263fff.prettify",
+    "total_time_taken": 0.49
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJnaeiVCH3wokRl59WlJKHPno",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "CityMD West Harlem Urgent Care - NYC",
+    "place_id": "ChIJnaeiVCH3wokRl59WlJKHPno",
+    "data_id": "0x89c2f72154a2a79d:0x7a3e879294569f97",
+    "data_cid": "8808626984806948759",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f72154a2a79d%3A0x7a3e879294569f97&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f72154a2a79d%3A0x7a3e879294569f97&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8108404,
+      "longitude": -73.9531288
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJnaeiVCH3wokRl59WlJKHPno",
+    "provider_id": "/g/11hdzdz9_f",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3ozjNOvOwSSDdveBmb3FxOjp-wIapIuY27oj1RybIA8TxGi47ZzWIKfsIaX9Qb36XwsXwsPTWtgXXF8rVLnAq3gSodzbQYJuLVFOqKqwH6I_7ZKDHb1IyUp7qbsEbKVpEM1l5=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/7uyb2XicHcT_EoEwAADgJ1o_DMWdP3JKE5JI_ONasiRt2TJ6Qc_gbTh3332fdy4E40NVLXOoEEpJmTU8u6e0ElkllJTeVMI4SDngqrVaBlfLhrQtlv7Dl2E4OT2y8Q1D5-kXDEiUMNTsOwYt9PULI8vcPKeXrnFod8g7c5TEgwDDfiz5z2qzEySOHfMezSurhiSkpxYH-1kzjxy_9mrp9tHROHgTF-votWVGjbmNvYjZC73sjaSuaRrI_6eg-gK0SUVE",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 75
+      },
+      {
+        "stars": 2,
+        "amount": 11
+      },
+      {
+        "stars": 3,
+        "amount": 10
+      },
+      {
+        "stars": 4,
+        "amount": 49
+      },
+      {
+        "stars": 5,
+        "amount": 311
+      }
+    ],
+    "rating": 4.1,
+    "reviews": 456,
+    "type": [
+      "Urgent care center",
+      "Doctor",
+      "Laboratory",
+      "Medical clinic",
+      "Women's health clinic",
+      "Pediatric clinic",
+      "Walk-in clinic"
+    ],
+    "type_ids": [
+      "urgent_care_center",
+      "doctor",
+      "laboratory",
+      "medical_clinic",
+      "obstetrics_gynecology_clinic",
+      "pediatric_clinic",
+      "walk_in_clinic"
+    ],
+    "book_online": "https://www.citymd.com/urgent-care-locations/ny/west-harlem?utm_source=ReserveWithGoogle&merchant_id=CITY_1315&rwg_token=AE37R_inhU3LElnCepQ6iUg819ddDjhf3773ajPnWv5ZD0cmo-m2ObRJaYAu7o-2jSVtmkRlKNLX7uzrZisWWUVvT52nAix27Q%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Has online care"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Accepts walk-ins"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "356 W 125th St, New York, NY 10027",
+    "country": "United States",
+    "located_in": "125th St Business Improvement",
+    "website": "https://www.citymd.com/urgent-care-locations/ny/west-harlem?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+    "phone": "(646) 647-1267",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "R26W+8P New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      },
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20138 PM"
+      },
+      {
+        "saturday": "9 AM\u20136 PM"
+      },
+      {
+        "sunday": "9 AM\u20136 PM"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f72154a2a79d%3A0x7a3e879294569f97&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3ozjNOvOwSSDdveBmb3FxOjp-wIapIuY27oj1RybIA8TxGi47ZzWIKfsIaX9Qb36XwsXwsPTWtgXXF8rVLnAq3gSodzbQYJuLVFOqKqwH6I_7ZKDHb1IyUp7qbsEbKVpEM1l5=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/7uyb2XicHcT_EoEwAADgJ1o_DMWdP3JKE5JI_ONasiRt2TJ6Qc_gbTh3332fdy4E40NVLXOoEEpJmTU8u6e0ElkllJTeVMI4SDngqrVaBlfLhrQtlv7Dl2E4OT2y8Q1D5-kXDEiUMNTsOwYt9PULI8vcPKeXrnFod8g7c5TEgwDDfiz5z2qzEySOHfMezSurhiSkpxYH-1kzjxy_9mrp9tHROHgTF-votWVGjbmNvYjZC73sjaSuaRrI_6eg-gK0SUVE"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGI4JMQiNmQxomgIREP4qzmVUR2OP4MwZDSkKbpO_xMWVENVfkz8no4iumEFPuFSvskc7ZrqZucTQpSl2vWKXi46vinO_jli3kz3KQarPuBZ5Vd5JaHUYLzHBPJC5bUfvJpcXM=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/iHC943icHcRLcoIwAADQEyFUQut0pgttoQoCCcinbBxMEdKQj4SgwwG9g7dxpm_xHvduHKV6N82-sxetEG3faNUMWPCx4eMCC2a2UhlYGcpcwwjR9fcO-CEiEUM3wdpd4kJwmVmeJcsYgvBafaU0OMn4eAuL3I3yM51XXACimetB7aWTovitGi6Vxgck0345FUFJwOtEeHz864lNZztA9QD1pnLyX8evt9nPft5uoP_pnLLz5Etchh_XF8uyjO5_bPAngIVFgA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=8z6W3t7WC8ui4H1lBTjBHQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=211.88013&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/oXnZLHicHc1LCsIwEADQ22RnPm3RKAShbroVhC5LjLEdSZvBTFP1ON7K2ygu3-p93gMRpp0Qie7eUwa_IDx8SCu0vI-xD94iJO7iKLISNMzjebIQ9minCBejX-u2pE170DNUjQr16VY3R-bOnQvgJzKjxdSlzMk6guB5j4ktpigqNphiq9nT_qQU11qqkiGQG4xk_-cas1FSfgGwujlh"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great service at this location, friendly staff and knowledgeable doctors.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWcRpuHLxgkV5bvC8xTn7H2Fym98_9TabRZmMDHfZ8P7QpDA4I=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The Front Desk worker, Shayna, was also very kind and got us checked in quickly.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVRbtr47zao7Pi9QTpZyg77iLOAKSKw4QqOZX3jnPIf-0k81W6niQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Julie Norwell",
+          "rating": 5,
+          "contributor_id": "113875566753240473051",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVHu4B8DaA5YB6brEpTc32B5ME1af3Ohdie_1uWDFGGpccE9dFX=s120-c-rp-mo-br100",
+          "description": "Great experience at this CityMD! I needed to see a doctor first thing in the morning for an injury incurred the night before. All staff, from reception to medical, were courteous, informative, and professional. The service was quick and as pain free as I could have hoped. My injury is now healing very nicely and I'm happy to recommend this location to others.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25KTFVuaHdkR1ZHU3pScVpEQlhRemswWDBkMFFuYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOnJLUnhwdGVGSzRqZDBXQzk0X0d0Qnc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-02T16:32:53+00:00"
+        },
+        {
+          "username": "LaVaughn D.",
+          "rating": 4,
+          "contributor_id": "103163529166995236169",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKJY7h9G6qNcJ-p8aD0NKX9zLt6E3hhl3gprMPJsLeMvyZSRg=s120-c-rp-mo-ba12-br100",
+          "description": "1 person ignored my concerns, and I got sicker. A week later, someone else tested and treated successfully.\nAfterCare \"forgot\" to send the prescription to the pharmacy for more than a day. Would've been easier to bring it over myself",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWdWFqRklOMjQzTFdreVVIaHJXRTUyV2tSRlVFRRAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOlVuajFIN243LWkyUHhrWE52WkRFUEE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-05T23:23:12+00:00"
+        },
+        {
+          "username": "Asia Elliott",
+          "rating": 5,
+          "contributor_id": "106797422378289155678",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKK075u4vMLuiE5cy_8dU6mdkGUfJEVMJKrgc3eeFa4a7RDPw=s120-c-rp-mo-ba12-br100",
+          "description": "My experience at at City MD with PA C. Vincent and her staff was amazing. Everyone was professional, patient, helpful, and they all demonstrated active listening skills. I appreciate the service that was received and I'm extremely grateful for the follow-up the next day. I highly recommend City MD located at 356 West 125th Street. The crew at this location is amazing. Kudos to you guys.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21WUlJGaDVUVkZ1YWtabVZFMXpORTR3U0d4T2NIYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOmVRRFh5TVFuakZmVE1zNE4wSGxOcHc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T23:02:28+00:00"
+        },
+        {
+          "username": "Patrice Pearce",
+          "rating": 4,
+          "contributor_id": "102947524244002543695",
+          "user_review_count": 32,
+          "user_photo_count": 13,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXLJqMEFxzKicwkOqm6Pv6ofA7v7T-MsOQVXKyv0KAmdGcG5hY=s120-c-rp-mo-ba12-br100",
+          "description": "Been here several times. Minus 1 star for the QR code check in. I\u2019m old. Thankful to have them nearby, better wait times than the ER for non life-threatening conditions and can just walk in. CVS next door, boom. Shout out to Dr Oduye (?).",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1NldHUXhXbG8zUWkxdlpuZG9lRlJhYjBWRmIzYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOk56WGQxWlo3Qi1vZndoeFRab0VFb3c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-04T23:45:03+00:00"
+        },
+        {
+          "username": "Indi",
+          "rating": 1,
+          "contributor_id": "104741598893502980811",
+          "user_review_count": 109,
+          "user_photo_count": 32,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKbvh6EOXR6IAA10RUyLskEwQBqPyDXTPgydPg_iOjuBaE8whQM=s120-c-rp-mo-ba12-br100",
+          "description": "The care provider Cassandra was pretty rude and dismissive. She never introduced herself  before providing care, did not listen to my symptoms and I felt pressured to get an exam I didn\u2019t ask for. I was really\nclear on my symptoms and reservations, but they had their own agenda. My experience with her was incredibly disheartening and disappointing.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tKVGNXRkJVV1ZPYzBaNlRuSkJaRlYxVTJ0ak0zYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOkJTcWFBUWVOc0Z6TnJBZFV1U2tjM3c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-02T14:37:05+00:00"
+        },
+        {
+          "username": "Fatima Niangado",
+          "rating": 5,
+          "contributor_id": "114771604929813093646",
+          "user_review_count": 17,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLdeMgILabh1cYjrWiGCCixliBPtIC6d_UiSqnDeu54eoDzakE=s120-c-rp-mo-ba12-br100",
+          "description": "Came here for a medical clearance, and every single staff member that I encountered was efficient, understanding, and patient! The facility was also super clean! Special shout out to Dr. Dahan, Guerdy, and Cynthia! Thank you so much\u2665\ufe0f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2paNFRWUmFMWE42ZFhGUU1FTmlTVWxtV2t4bUxYYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOjZ4TVRaLXN6dXFQMENiSUlmWkxmLXc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-19T18:16:24+00:00"
+        },
+        {
+          "username": "Adrienne",
+          "rating": 1,
+          "contributor_id": "115821534982659177251",
+          "user_review_count": 53,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWtN9be2NgbiO-rJ7j1XyVlQUGg2G0MygM58nRjAQHjhKFArSs=s120-c-rp-mo-ba12-br100",
+          "description": "Unprofessional!! The nurse assistant dropped product on the floor in front of me. I asked if she still planned to use it and she said \u201c yes because it was unsealed\u201d!! How gross  smh",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CelRuRnRYM0JDUVcxMlJXbzVkRUo2UkRKc2EyYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOnBzTnFtX3BCQW12RWo5dEJ6RDJsa2c%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-10T17:15:49+00:00"
+        },
+        {
+          "username": "Betty Williams",
+          "rating": 1,
+          "contributor_id": "102649743758341429426",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLcBgWg2Z5AKaQ__9LHfhNpojcJ2ysySZIKlsvbLtKr9ZYO9Q=s120-c-rp-mo-br100",
+          "description": "Visited this location had the worst experience ever\nDoctor GEORGE HAN MD  because it was soon time for closing at one point he was in a hurry\nI didn\u2019t hear what he was saying I asked him to repeat he started to yell so loudly I would never visit this location again so unprofessional.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oMVNXazFTMHhrYmpVM1EyNXpOMTlLVmpZeWIzYxAB!2m1!1s0x0:0x7a3e879294569f97!3m1!1s2@1:CAIQACodChtycF9oOmh1SWk1S0xkbjU3Q25zN19KVjYyb3c%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-13T22:11:34+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "+MEDRITE Manhattanville Urgent Care - Manhattan",
+            "data_id": "0x0:0x96d01be4b88995db",
+            "data_cid": "10867216570007524827",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x96d01be4b88995db&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x96d01be4b88995db&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8133592,
+              "longitude": -73.9560284
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x96d01be4b88995db%218m2%213d40.8133592%214d-73.9560284&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 228,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEP_Af2H7b7kwE955kX3lCzctuB1U8FENalk3M67bAEfIe048x5a8WQ_E-ll_1e7rMRVBJE0PGM4pqFHDDJ3xsvMwgCCVlZ4gEE9Z3ZT4953i-UpOdMYdUbDZlvsSx9Hznzq-uQqA=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Dr. Larry Neuman",
+            "data_id": "0x0:0x8e1039b7b9175cb8",
+            "data_cid": "10236745414260251832",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8e1039b7b9175cb8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8e1039b7b9175cb8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8364062,
+              "longitude": -73.9424094
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8e1039b7b9175cb8%218m2%213d40.8364062%214d-73.9424094&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 20,
+            "thumbnail": "https://www.google.com/maps/vt/data=v43Ss6il7gN6udc-EmyQfiT7BV-Va6Co8yrhQomUwLCEzCaJHii13mCRwhEKTwDBw-xoStZ3cAdo-E8uaLTAizOwZtHebeyQ1ZNA9HMMwhoJwZ5wIBSgKmcK7f_GjO4JCJJ1cVFRNjfkNsLl09jWp_xy-9hI_exX",
+            "type": [
+              "Family practice physician"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "City Prime Health",
+            "data_id": "0x0:0xfee5da43991633d2",
+            "data_cid": "18367326639166469074",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfee5da43991633d2&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfee5da43991633d2&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8154621,
+              "longitude": -73.9577549
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfee5da43991633d2%218m2%213d40.8154621%214d-73.9577549&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 109,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEQg_78Fj_03Xt4gK7IfjLm1N3dWGFsL8w3B4_kxLzz4Vm7fmVqr1J88lPjcYkZEccYqetJoBim_MtQzABu806UsxePvKqo0YDOq4Uq4uRIWyBXyISbS7w93q991ZvnJiabtClz-loYfQ0=w156-h156-n-k-no",
+            "type": [
+              "Medical Center",
+              "Doctor",
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "CityMD",
+            "data_id": "0x0:0xa9958397e80b9e79",
+            "data_cid": "12219817852396084857",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa9958397e80b9e79&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa9958397e80b9e79&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8241844,
+              "longitude": -73.8922311
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa9958397e80b9e79%218m2%213d40.8241844%214d-73.8922311&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 3,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_Grrl3PldQkIWl8V1XM-dzTilDrfXHjJisBxJP-KAM7QXtA8k0DOuwafzkEzbKAbqQQfEQsH4kj8SIhNxfVgIYleM3Ecr1RObUlBkImQFzNgxUxtRGZGjBYzYo2x5mXLEy6v1fw=w156-h156-n-k-no",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Centers Urgent Care of 3rd Ave",
+            "data_id": "0x0:0x53ab6ca722f9127d",
+            "data_cid": "6029031991267627645",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53ab6ca722f9127d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53ab6ca722f9127d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.799369399999996,
+              "longitude": -73.938638
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x53ab6ca722f9127d%218m2%213d40.799369399999996%214d-73.938638&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=5OFQzsvB3EPQXKMJ03E3jBGDfYRgQAPD_Nh1yyMdfFP8IajPIDv-sKPg0TYmylKrl9RYebYXPuOoCJcJtq8y6Pq4tJR6v_BOdmwGCmg_KZFgOMPlUddw9rHlQHYzM4WpIomlIe_ozQnk5ApZf_XdfTLeMdnkIwBm",
+            "type": [
+              "Urgent care center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjcKNSIxQ2l0eU1EIFdlc3QgSGFybGVtIFVyZ2VudCBDYXJlIC0gTllDIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjcKNSIxQ2l0eU1EIFdlc3QgSGFybGVtIFVyZ2VudCBDYXJlIC0gTllDIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

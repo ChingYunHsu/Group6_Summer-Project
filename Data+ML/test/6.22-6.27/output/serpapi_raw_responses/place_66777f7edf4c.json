@@ -1,0 +1,456 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1abaf5fdc88d9c7c964",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/ZnCt_nG--ZJJZ7uOTZL8ew/6a3ac1abaf5fdc88d9c7c964.json",
+    "created_at": "2026-06-23 17:26:03 UTC",
+    "processed_at": "2026-06-23 17:26:03 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a17cc157cf3:0xab759c46b6ff78c2!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/ZnCt_nG--ZJJZ7uOTZL8ew/6a3ac1abaf5fdc88d9c7c964.html",
+    "prettify_html_file": "https://serpapi.com/searches/ZnCt_nG--ZJJZ7uOTZL8ew/6a3ac1abaf5fdc88d9c7c964.prettify",
+    "total_time_taken": 0.69
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ83wVzBdawokRwnj_tkacdas",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Maiden Lane Medical Downtown",
+    "place_id": "ChIJ83wVzBdawokRwnj_tkacdas",
+    "data_id": "0x89c25a17cc157cf3:0xab759c46b6ff78c2",
+    "data_cid": "12354952980292663490",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a17cc157cf3%3A0xab759c46b6ff78c2&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a17cc157cf3%3A0xab759c46b6ff78c2&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7069453,
+      "longitude": -74.0074731
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ83wVzBdawokRwnj_tkacdas",
+    "provider_id": "/g/1td54bqg",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF3BkPkfD1YmoG7jFXETiZ5v-aVq-IvAABm4CfxhSu1IrpUINSlp2RWv6zItX-QHfLWGbyzYHZQme109vFYwOZr5Ivjlu69pMZasbsMflq7UOA_KvcctRO1mA9Te0xFUuFpPI4=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/D3Wg9HicHcRdkoIgAADgE5FQVmMzPVC7FNOPWlnpy04xqJsgJEitB9w7dJtm-h6-139prTYTzxPloFcoVQjeGt4wVVte2x5T0iu0AcwA4-FoG1eYDGZVVOVfKJVqMb6R8_fhNxs6cDneAXUYz6Q_z5_lvkW00Qnd7oXu705u1FF7BvEyX58W178uXWax5AgGjqSPMGuG1N1EOwr0JruYq9nk4j5OQvyzcozZXYgkDg4cPknSEh1Rf_pAEEJQfmagfgP-EERO",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 125
+      },
+      {
+        "stars": 2,
+        "amount": 9
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 29
+      },
+      {
+        "stars": 5,
+        "amount": 447
+      }
+    ],
+    "rating": 4.1,
+    "reviews": 614,
+    "type": [
+      "Gynecologist",
+      "Doctor",
+      "General practitioner",
+      "Medical Center",
+      "Women's health clinic",
+      "Pain management physician"
+    ],
+    "type_ids": [
+      "gynecologist_only",
+      "doctor",
+      "general_practitioner",
+      "medical_center",
+      "obstetrics_gynecology_clinic",
+      "pain_management_physician"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "90 Maiden Ln #300, New York, NY 10038",
+    "country": "United States",
+    "booking_link": "https://maidenlanemedical.com/book-online/",
+    "website": "https://maidenlanemedical.com/location-ny-new-york-lower-manhattan/?utm_source=gmb&utm_medium=referral",
+    "phone": "(646) 290-9560",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "PX4V+Q2 New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      },
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a17cc157cf3%3A0xab759c46b6ff78c2&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNSFj-cnLOChQ9fJxdjtWMDc2NP4u5-5H_7-dGQ=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEJXZycfOoseyRg&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "While mammograms are statistically the best way to diagnose breast cancer in its early stages, they don\u2019t detect all cancers.\n\nIn some cases, the expert physicians at Maiden Lane Medical in New York City use breast ultrasounds to identify and evaluate breast lesions or other abnormal tissue that might not show up clearly on a mammogram.\n\nCall the office or schedule a consultation online today if you have any concerns about your breast health.",
+        "date": "Apr 29, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOINQEgtUC9Yyv9ku9HFTGO0G4TG6y57JafSETL=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEI6m79fSmqeRaQ&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "Maiden Lane Medical physicians have thorough, compassionate providers who prioritize patient care. They listen carefully to each patient and strive to help each person achieve their health care goals.",
+        "date": "Apr 23, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipO3miwzaSRiWv-Dh6ZnAsDaGBFv1d0Irmfl9Vyo=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEMPxuf2T_MmJJQ&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "If you\u2019re between the ages of 40-54 and have a low to average risk of breast cancer, you should have a mammogram every year. From the age of 55, you can have the test every other year for as long as you\u2019re in good health. Talk to your gynecologist about your risk of breast cancer and get personalized advice on how often you should have this potentially life-saving health screening.\n\nWhile you should also check your breasts at home every month, mammograms are the most effective way to detect breast cancer in its early stages. Our advanced technology can identify abnormal tissue and lumps that you can\u2019t feel from the outside. Early detection increases your chances of successful treatment, as smaller tumors often require less invasive treatment.",
+        "date": "Apr 16, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMr43rv7TvrGyk7j82Vh_UCOkpMJkBF9pYWTiTJ=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEKPYjIeSsui63wE&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "At Maiden Lane Medical, we know each patient experiences pain differently, and each treatment plan is custom tailored to meet the specific needs of the individual patient for optimal results.",
+        "date": "Apr 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPlK_ui4khwva1u8Wkq6kfdlmyvirJwxEYq6iQM=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEPDz093ws-GQDg&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "Maiden Lane Medical is a top provider of pain management treatments aimed at relieving chronic and recurrent pain in patients from New York City, NY.\n\nThe team is skilled in state-of-the-art anesthesiology techniques designed to block pain signals and other approaches to help patients feel better and improve their quality of life.\n\nAt Maiden Lane Medical, we know each patient experiences pain differently, and each treatment plan is custom-tailored to meet the specific needs of the individual patient for optimal results.\n\nDon\u2019t wait. Book your appointment with our Pain Management Specialists today!",
+        "date": "Apr 2, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOL1UBZsJra36V2ofC8eiZeM8Oa9nLW_BpCcujb=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEMfvyv_wse2p_AE&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "With several convenient locations, we offer state-of-the-art care based on the patient\u2019s individual needs and treatment goals.\n\nEquipped with the most advanced technology, Maiden Lane Medical offers an array of specialties for patients of all ages, including Cardiologist, Cosmetic, Dermatologist, Diabetes Management, and Endocrinologist.",
+        "date": "Mar 26, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOw8snDdVdZaayyL3tlNBANe3SZD8oIwJFgM3ih=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEN-SwZS88d-hiAE&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "Our tele-pain management services are perfect for patients who are in too much discomfort to come in for an office visit, or for patients who simply prefer to complete their pain management consultation or follow up visit from the comfort of their own home.\n\nOur board-certified pain management physician is able to collect a detailed history, review tests/images and complete a limited musculoskeletal exam remotely, and she will formulate a comprehensive treatment plan, including referrals to physical therapy and for additional testing. Take charge of your symptoms with the convenience of tele-pain management.",
+        "date": "Mar 19, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNBJCI_OSYoPNi5LrGAQCyRjZRZr1djACI8hFjc=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKENf-_-PqofrSUg&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "Even if you\u2019re healthy, you should still have an exam every year to look for signs of possible disease and keep an ongoing record of your health as you get older and your needs change. Pap tests may be performed annually or every other year, depending on your age and other risk factors.\n\nYou can discuss the frequency of Pap tests during your appointment.",
+        "date": "Mar 12, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPfqFpFF4r_zwZWhpJJ3Q103vkFOnhdR22AwCkV=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEKKt2pvpp7OLXg&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "We care about our patients! \n\nCheck out what REAL patients are saying about Maiden Lane Medical and our knowledgeable doctors.",
+        "date": "Mar 5, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNUPBmPXq10RIUiMKZC2ZhCiEU9Ow70lKTkxFGs=h400-no",
+        "cta": "Learn more",
+        "link": "https://maidenlanemedical.com/?utm_source=gmb&utm_medium=referral",
+        "post_link": "https://search.google.com/local/posts?q=Maiden+Lane+Medical+Downtown&ludocid=12354952980292663490&lpsid=CIHM0ogKEK696vnnt6DUfQ&source=sh/x/loc/post&lsig=AB86z5Xa0aQ8hcR-itL0HJigbieT",
+        "description": "Contact Maiden Lane Medical to learn more about how a trusted medical group can help you reach your health and wellness goals. We offer a range of services and are accepting new patients at our New York location.\n\nWe even offer Telemed services!\n\nGetting Well and Staying Well Should Be Simple",
+        "date": "Feb 26, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF3BkPkfD1YmoG7jFXETiZ5v-aVq-IvAABm4CfxhSu1IrpUINSlp2RWv6zItX-QHfLWGbyzYHZQme109vFYwOZr5Ivjlu69pMZasbsMflq7UOA_KvcctRO1mA9Te0xFUuFpPI4=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/D3Wg9HicHcRdkoIgAADgE5FQVmMzPVC7FNOPWlnpy04xqJsgJEitB9w7dJtm-h6-139prTYTzxPloFcoVQjeGt4wVVte2x5T0iu0AcwA4-FoG1eYDGZVVOVfKJVqMb6R8_fhNxs6cDneAXUYz6Q_z5_lvkW00Qnd7oXu705u1FF7BvEyX58W178uXWax5AgGjqSPMGuG1N1EOwr0JruYq9nk4j5OQvyzcozZXYgkDg4cPknSEh1Rf_pAEEJQfmagfgP-EERO"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE00qsFpeN27mF92Tv7LvpgsbK5GWgyYyw1KUeoMziXUGOyLSMolRdkTv35dZ9fys3A1uYToxBWvSalMA73VH9rXkveR1m-bOeQiNEo4xjI9l8SHl2YRKhol9ZpPgFs8-HZqYwb=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/QbRB_3icHcTdboIwGADQJ6oUmMEu8YIlIgZBBfyBu4FdcRS-6gcF9oI-g29jsnNxXs-q6xR-Goas7JkAEJL3yB8ltB1vu1kJjSEUkhIJGu4-OtTuitI7eopHltN4zEq1s9VKYBHM12cxZdNgBkcO4d_tclzvpm0Sgoyvdart-TVnPxPartlnKYxfZ518y9B17JPPHpda89hsSLHjh1u0go_xd8PkIvGllcVBBZLlai88XBA_v2dDsRxMSimp_i9J-wZ3v0T7"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=e03BRiihc95jAs-LmHApyw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=206.59079&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/878Q6HicHc0xDsIgFADQ27AVaLUqJsTUycHJCzQUsXwD5Ue-1F7HW3kbjeOb3uftiTDvhcj0cI4KuBnh5UKu0PAxpTE4g5C5TVGUWpB_xmEyEA5opgRX7eTqeAHwVrX3LlfneOpwmZkdehvATaSjwdznwslYguD4iJnNumnWzOtG7dhifpIb3iq5VQyBrNeS_Z9bKrqW8gvg3ToC"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great experience, kind staff, efficient service, I would visit again!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVWVPF4hIMLbjmUSM6RbwbF4TJzYOvzEZgt6PIoGcGrHM3QosIZ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The people at the front desk are friendly, and the doctors so sweet!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXpy4lDT4Css4rRE1OiFjf8hWoF92IaSWhdu5BLEO4YbeT6rV4Y=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Ellis Burrows",
+          "rating": 5,
+          "contributor_id": "115202102505179190478",
+          "user_review_count": 31,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUJrkO7LADLSUcIFmgbHm3v7vCJ2kqZed_4YkGeITzcQujF9NMQgQ=s120-c-rp-mo-ba12-br100",
+          "description": "Most importantly, was privileged to see a wonderful, well reviewed ob/gyn, Dr Fernando Mariz. Second time have seen him for annual gyn exam. Again, so pleased with his manner, attitude, knowledge and efficiency. It felt like a mini medical review rather than merely a gyn review and a very good exchange of information. Very pleased and will definitely continue to use him as my gyn.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0dVRHdDVNa0pGWkRJNFJtaE9SVkpFVW1GVlVFRRAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOktuTGt5MkJFZDI4RmhORVJEUmFVUEE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-28T18:50:08+00:00"
+        },
+        {
+          "username": "Mariemma Uguccioni",
+          "rating": 5,
+          "contributor_id": "117286877292735170066",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX6v9Z7uJIOmsYMOotv_nyevtcbUnlo9I7z4P_0ZE-CvMEZowD5=s120-c-rp-mo-br100",
+          "description": "I was having difficulty getting a bill accepted by my insurance, and Cathy C from the billing department was amazing help! She went above and beyond to help resolve the issue and ensured the bill was properly processed and paid by my insurance. I truly appreciate her support!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toS1prbHpUemxaUkRaRU9FeE5Telp1ZFcxbk9FRRAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOkhKZklzTzlZRDZEOExNSzZudW1nOEE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T14:33:06+00:00"
+        },
+        {
+          "username": "Svetlana N",
+          "rating": 5,
+          "contributor_id": "109175913298501460603",
+          "user_review_count": 7,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI7O-xdlnw3_sWiLayFBGraINKuiQfG3lYSo4RG8Ij-jEA0iQ=s120-c-rp-mo-br100",
+          "description": "I had stage IV endometriosis and underwent laparoscopic excision surgery with Dr. Davison. From consultation through post-operative care, the experience was outstanding.\nMy case was complex, yet she handled it with remarkable expertise. After reviewing my surgical images, it was clear how extensive the disease was \u2014 and how thoroughly she removed it. Her surgical skill is exceptional.\nWhat stands out just as much as her technical ability is her professionalism and compassion. She explained everything clearly, made me feel supported, and approached my case with seriousness and care.\nMost importantly, I feel significantly better after surgery than I did before. The improvement has been life-changing. I am deeply grateful and would highly recommend her to anyone facing advanced endometriosis.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25FMFdXTkhiVGRMU0haelpYSkhUbU0wTkVoaVRrRRAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOnE0WWNHbTdLSHZzZXJHTmM0NEhiTkE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-24T20:58:51+00:00"
+        },
+        {
+          "username": "Kathleen Campisano",
+          "rating": 1,
+          "contributor_id": "104725526766144501856",
+          "user_review_count": 11,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI-jI6pfJyWt3ajWRehnzek_u2H-0g5I4oEha0CyoII6oLiXA=s120-c-rp-mo-ba12-br100",
+          "description": "I had an IUD inserted by Savita Sukha NP in August. I have never had an IUD before so I was very unfamiliar with the process and the pain associated with insertion. So this provider told me that 800mg of Motrin should be fine, but if I had a low threshold for pain I could get anesthesia or a cervical block. She made it seem like women who got anesthesia were rare and it felt like she was implying that they were being dramatic. The next option was the cervical block, but she explained that generally you have more cramping and pain with the needle from the block so it wasn\u2019t worth it. So naturally, I chose to go with the Motrin route. This is a prescription, by the way, which I never received a script for. I go into the procedure uneducated and unprepared. I had taken over the counter Advil because I was instructed that I would only have some mild cramping. I did not know that she would be dilating my cervix to put the IUD in and I did not know that it would be the worst pain of my life. Not only did I not know this, but I had taken two subways in August heat ALONE to get there. After almost passing out on the table from the pain, they gave me a pad and told me how I\u2019ll probably be in pain for the next couple of days. I\u2019m not trying to be dramatic, but after we were done, I not only felt intense pain, but frankly I felt incredibly violated. I went to this provider because she is a woman and a nurse practitioner and it might sound silly but I thought as a woman and a nurse, that she would advocate for other women. I was so ill prepared and undereducated and it really just felt like my trust was violated. I trusted her knowledge. She gave me such biased and incorrect information about pain management. Later I did more research and I found that American College of Obstetrics and Gynecologists actually recommend giving a cervical block for IUD insertion. I was in excruciating pain for 4 weeks after the insertion because I think she inserted it incorrectly. While she was inserting, the ultrasound technologist said \u201cI can\u2019t see it\u201d and the NP said \u201cno, it\u2019s okay. I think we are good\u201d. I went back a few times to get evaluated by a different doctor in the practice and I was told to just hang in there and that my body is just adjusting to it. Eventually I couldn\u2019t stand the pain anymore and I had it removed. I wanted to just let this go, but I feel like if I don\u2019t share my story then this is going to keep happening to other women. It is 2026. We need to start giving better education and proper pain management for IUD insertion. The are guidelines and recommendations for a reason. Women deserve pain management and we are not being dramatic for needing it.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21Sa1dETlpRVTVUVFRadk5HMW9TMUJJV21SUVkzYxAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOmRkWDNZQU5TTTZvNG1oS1BIWmRQY3c%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-21T06:14:01+00:00"
+        },
+        {
+          "username": "Tian Liao",
+          "rating": 1,
+          "contributor_id": "113158774840394503725",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIAueh2JJJzUuId8fxjS8xWEm5VUjAzbhovMoVJcu3Fct0i7g=s120-c-rp-mo-br100",
+          "description": "I really liked Dr. Davison, but I\u2019m definitely switching providers because of the front desk and billing team\u2019s complete lack of organization and professionalism. I asked multiple times for the estimated rate of an ultrasound procedure, and although they repeatedly promised to check, no one ever followed up. At my final appointment, they simply gave me a code and told me to call my insurance company myself.\n\nLater, I discovered that the code they provided was only for the procedure, but there was something else called an evaluation fee. So I ended up paying nearly triple the expected cost.\n\nUnfortunately, this isn\u2019t an isolated incident. The staff seem indifferent to billing issues and make no effort to help patients navigate their insurance.\n\nIf you don\u2019t want to be surprised with a $2,000 bill, I strongly recommend avoiding this office.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xjMFJXRnpjbk54Y25KM1RtTjZhMWxpZW5jMVkyYxAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOlc0RWFzcnNxcnJ3TmN6a1lienc1Y2c%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-01T15:40:14+00:00"
+        },
+        {
+          "username": "Gianna DiPaolo",
+          "rating": 5,
+          "contributor_id": "112999461635041283531",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjViixM3yhde8xOwTeQ_Bnirrl2Jc1pD7OW69b4Qnu8n_j-bT-W9=s120-c-rp-mo-br100",
+          "description": "Finding a gynecologist in New York can be so hard, and after coming to Maiden Lane Medical I don\u2019t think I\u2019ll ever switch (even after moving to Bushwick!)\n\nEvery time I go in, Savita Sukha makes me feel comfortable and answers any question I have. I also want to give a shoutout to Melissa who did my blood work - about 90% of the time I get spacey or faint and she talked me through the whole thing and was incredibly quick with it.\n\nI\u2019d recommend this office to anyone trying to find a gyno or looking to switch!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kwdFQyZGhiRGRTTTFScVpWRmhVSFZOWTFaRFExRRAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOi0tT2dhbDdSM1RqZVFhUHVNY1ZDQ1E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-31T18:12:38+00:00"
+        },
+        {
+          "username": "Zo\u00eb Wilson",
+          "rating": 1,
+          "contributor_id": "115890009933277101869",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIRl1_ewZOmKfwSfWF2T_cqDMAAUM9MU33ontDTaSWqJ_AKAg=s120-c-rp-mo-br100",
+          "description": "I was recommended to go here by one of my coworkers. I was excited because I thought I was finally going to find a good primary care doctor that specializes in women's health. I was wrong, I was charged hundreds of dollars for tests that I paid $10 (with insurance) at other clinics. In addition, they would submit duplicate claims to my insurance for one visit. I paid all of my bills from the visit I had in April of this year. Fast forward to now, they automatically charged my card for a random amount 7 months after that visit. I tried to call the billing department multiple times today and was not able to talk to anyone. I would recommend not going here, it's overpriced and I regret giving them my credit card information. In hindsight, I would not go here for any medical care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGdVVHbHVRamQ0VHpFNFMzQlplRXM0UVZRMFJGRRAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOjFuUGluQjd4TzE4S3BZeEs4QVQ0RFE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-18T14:59:30+00:00"
+        },
+        {
+          "username": "Jonathon",
+          "rating": 5,
+          "contributor_id": "110569139392786511959",
+          "user_review_count": 25,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLj9DDJ6eCAaUhguEmeJ6rrlUakRmoVX26DQcfVBuzRaggRIA=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Abramson is bar-none the most thorough GP I've ever been to. She is caring and knowledgeable and there is a reason she is recommended by so many. You will know you're in good hands here!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOaVlVeGlXRjloWkRaZmJGVlNNMmxaWDBsRVMzYxAB!2m1!1s0x0:0xab759c46b6ff78c2!3m1!1s2@1:CAIQACodChtycF9oOkNiYUxiWF9hZDZfbFVSM2lZX0lES3c%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-11T19:34:32+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Maiden Lane Medical Walk-In Gynecology",
+            "data_id": "0x0:0xfb8887d21a6f8005",
+            "data_cid": "18124886036808957957",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfb8887d21a6f8005&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfb8887d21a6f8005&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7449717,
+              "longitude": -73.9770424
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfb8887d21a6f8005%218m2%213d40.7449717%214d-73.9770424&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 85,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEy6RcePaZH6vq65dAYcL0YRt9UKCXPDtOmA8C8rgyf786Np031eY8AlyLBpnAFM-WGq-k32FagtrDhFgXUiwtqfj1uUyopZHAFRBLFtUcL235wwRqgQjeyfOWWMlSS9va52m98=w156-h156-n-k-no",
+            "type": [
+              "Women's health clinic",
+              "Doctor",
+              "Obstetrician-gynecologist",
+              "Gynecologist",
+              "Mammography service",
+              "Medical clinic",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Maiden Lane Medical Midtown",
+            "data_id": "0x0:0x46136af0b8fa5a08",
+            "data_cid": "5049497189340568072",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x46136af0b8fa5a08&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x46136af0b8fa5a08&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.752207899999995,
+              "longitude": -73.9804547
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x46136af0b8fa5a08%218m2%213d40.752207899999995%214d-73.9804547&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 774,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGXDJBl8iQqUpohPlAvKRjQv5g6-tmFkT3GjICC0Lq3Yf4bGdg4dt9t44av2-eAsM2hx6KHKK6oy-MSj8RDC2hpgecrIeFlR6FXRqHTo_mlLd23nPbn8RWT2QWP4z543Z9zYx41Eg=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Obstetrician-gynecologist",
+              "Gynecologist",
+              "Mammography service",
+              "Women's health clinic",
+              "Reproductive health clinic",
+              "Urologist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Kenneth Levey, MD MPH FACOG FACS",
+            "data_id": "0x0:0xf867887b332231d1",
+            "data_cid": "17899425306727559633",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf867887b332231d1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf867887b332231d1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7069453,
+              "longitude": -74.0074731
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf867887b332231d1%218m2%213d40.7069453%214d-74.0074731&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 22,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPV2F8MD8V4r5FrTUSuAvzAwTvys_e6KFfj4ZJ6v7Zro8yL9bG-ud1vEIjiLm88XsBXZEiNG3Vhaar4XKHiXN0eGl-8JDUsKo2ecg2HFOpeoWrQfHUcQsRBH1sbS-uB3nWRRoO=w156-h156-n-k-no",
+            "type": [
+              "Gynecologist",
+              "Doctor",
+              "Obstetrician-gynecologist",
+              "Women's health clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Ob/gyn Associates",
+            "data_id": "0x0:0x726778030c1fd4ba",
+            "data_cid": "8243689597408629946",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x726778030c1fd4ba&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x726778030c1fd4ba&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7102874,
+              "longitude": -74.0052209
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x726778030c1fd4ba%218m2%213d40.7102874%214d-74.0052209&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=HDIISBwWfPPPENQkr0iorn0MNxWfQiC5j6Bverr6QDfQ5QNy4EkFfj-P-VuGZf5aUTsEcsZby5kPzv4UILZv_i2ynJx4iJC0XL6ldjhcq2Sny-QLeyXTSg2TLc9FHM3QCTbAW7EIALN8BUtVnOhEK2HUqtF1Yhs_",
+            "type": [
+              "Obstetrician-gynecologist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oi8KLSIpTWFpZGVuIExhbmUgTWVkaWNhbCBEb3dudG93biBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COi8KLSIpTWFpZGVuIExhbmUgTWVkaWNhbCBEb3dudG93biBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

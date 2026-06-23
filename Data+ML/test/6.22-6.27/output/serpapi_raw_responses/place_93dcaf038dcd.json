@@ -1,0 +1,388 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1d295a6949eab5ecf4f",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/eKRr3Ph5Nny8oXBtQHL1RQ/6a3ac1d295a6949eab5ecf4f.json",
+    "created_at": "2026-06-23 17:26:42 UTC",
+    "processed_at": "2026-06-23 17:26:42 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25882db7e4ce5:0x382af7a7c76bc5dd!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/eKRr3Ph5Nny8oXBtQHL1RQ/6a3ac1d295a6949eab5ecf4f.html",
+    "prettify_html_file": "https://serpapi.com/searches/eKRr3Ph5Nny8oXBtQHL1RQ/6a3ac1d295a6949eab5ecf4f.prettify",
+    "total_time_taken": 1.57
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ5Ux-24JYwokR3cVrx6f3Kjg",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Concerned Dental Care - Upper West Side",
+    "place_id": "ChIJ5Ux-24JYwokR3cVrx6f3Kjg",
+    "data_id": "0x89c25882db7e4ce5:0x382af7a7c76bc5dd",
+    "data_cid": "4047319515123140061",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25882db7e4ce5%3A0x382af7a7c76bc5dd&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25882db7e4ce5%3A0x382af7a7c76bc5dd&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.791049199999996,
+      "longitude": -73.9722517
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ5Ux-24JYwokR3cVrx6f3Kjg",
+    "provider_id": "/g/1tm89bpt",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ySI-QlHZtSMnm_EViN_VXw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=112.22349&pitch=-0.5465139&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/7dZ6MnicHc1LCsIwFEDR3WTWpOkPKwRHgg4UpFDESUnTmATSJjTPxi7JJbkbP5M7PPf90gA-bAkJMEsJi5HRm6e0IfEcK-eUldybgIUbyUIJ6MfYT9zYneeTMwNbm2NysYcbNKdp7PatOXftNSLRd8IaOQELks9CYxW_4uwGrHxAkW0qpH9ZeWSUZjjL8qJG3oDQLElxWVQlzWv0393dwmiafgCWsDuj",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 78
+      },
+      {
+        "stars": 2,
+        "amount": 4
+      },
+      {
+        "stars": 3,
+        "amount": 9
+      },
+      {
+        "stars": 4,
+        "amount": 28
+      },
+      {
+        "stars": 5,
+        "amount": 362
+      }
+    ],
+    "rating": 4.2,
+    "reviews": 481,
+    "type": [
+      "Dental clinic",
+      "Cosmetic dentist",
+      "Dentist",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dental_clinic",
+      "cosmetic_dentist",
+      "dentist",
+      "teeth_whitening_service"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "657 Amsterdam Ave, New York, NY 10025",
+    "country": "United States",
+    "located_in": "Mirabeau",
+    "booking_link": "https://concerneddentalcare.com/locations/",
+    "website": "https://concerneddentalcare.com/locations/upper-west-side/?y_source=1_MTM3OTAxMjQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "phone": "(212) 749-2400",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q2RH+C3 New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20137 PM"
+      },
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20137 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25882db7e4ce5%3A0x382af7a7c76bc5dd&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ySI-QlHZtSMnm_EViN_VXw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=112.22349&pitch=-0.5465139&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/c4Fj6HicHc3RCoIwFADQv9mbm5saGYyegnooCEGiF1lruQvTXdpN85v6ov4m6PzA-X48EaaNEImeztEEbkZ4u5AyNLyPsQ_OICRu4yAmKci_httoIGzRjBHuemkO2Tnsr9Qcx6HbtXDq2svM7K2zAdxIejCYujRxMpYgON5jYrNWqmReq3rNFjNrKRVXqihrhkDW6yznVbmqZFGzf_iIk5Z5_gMVfjw6"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH7zwXT0v7swW6rgOFC0-4bUtorYL5SYJozZnm-CAJFZzAKhsXsAjDW0CfdDX-75_FgRV0j_3zO-7rrqzaI0DZF-u2BoCjk8zsDmewmZF-SnJFeGvYp5b1-aya4MW5bdSm530CH=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/z2isLXicHchNUsIwGADQE330wxLrOOMiphOxCKhV-7Nh2hLSKSSpSaBjLugZvI2Om7d4P9-996O7jaJTH8-kMfIkzk7YzmgvtJ91RkVydNA5cBF93rwc6TIJU_mGl8RNxbWVW84QFu27N7Z6InmVmVBrBYxmvA501bvS0SEtkB32aQkJ2XH5-oHDLg5bSKz9DM0jpjWH89W9YcPxJrhUiUn9Ta4zLh4u1UjaOTRfzWJdkHafKxIjW95Nc0SE_t8O9C8RzENS"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ySI-QlHZtSMnm_EViN_VXw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=112.22349&pitch=-0.5465139&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/c4Fj6HicHc3RCoIwFADQv9mbm5saGYyegnooCEGiF1lruQvTXdpN85v6ov4m6PzA-X48EaaNEImeztEEbkZ4u5AyNLyPsQ_OICRu4yAmKci_httoIGzRjBHuemkO2Tnsr9Qcx6HbtXDq2svM7K2zAdxIejCYujRxMpYgON5jYrNWqmReq3rNFjNrKRVXqihrhkDW6yznVbmqZFGzf_iIk5Z5_gMVfjw6"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The Staff was caring & the Doctor paid special attention to my needs.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXwak2jdpJIiOGOJejEEb7S2TchuUL3XaxWHyXlEi8eeshJcdnK=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"//My husband is a tough customer who hates dental visits.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKYNXh06ylE1ZvKzsGbKNDgNceblmRjXQUGgWwiQi5XnJerQA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great service I got my #6 canine tooth pulled with no pain.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLO_oL3l4fnMsSizUbpkc1GOP2eqALazq79Jr0N7tFEN-PQ9WY=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Terrell James",
+          "rating": 5,
+          "contributor_id": "106356776806347407881",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLn5xS0yzRm9XnqbcwKWk-Yzahlja-SKVk4QKeZ_u6pR9PPvg=s120-c-rp-mo-br100",
+          "description": "My first appointment at Concerned Dental was very satisfying.  The staff was very pleasant and professional. They moved in unison and swiftly but my time  didnt feel rushed. I would highly recommend this dental office to everyone.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25VeFoxUmxNSHBWU1VSWmRWaHpOME5pVmpCV2FtYxAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOnUxZ1RlMHpVSURZdVhzN0NiVjBWamc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-27T14:46:55+00:00"
+        },
+        {
+          "username": "Hugo D",
+          "rating": 1,
+          "contributor_id": "110865314098379254642",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIgTIks_Mko6gE3DmKeBNi3vIW_P3bKeGuPZ5N8ZqbeW-T6_g=s120-c-rp-mo-br100",
+          "description": "This place is horrible I recommend to look elsewhere, not only are the bad reviews recent and a red flag that this place operates poorly but, I had booked a appointment as a new patient and I was only 10 min late the front desk lady is extremely rude and uncivilized. She said I'm very very very late to which I replied it's only 10 Mins due to the train. Regardless they refused to see me and she emphasized the next patient was definitely coming so I needed to reschedule i made this appointment 5 months in advance since they could not see me any sooner then that and now I have no appointment I will look elsewhere",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oSWVXVmtja0Z4U205b2JUUlBZVXBKYm1kME4xRRAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOmhIeWVkckFxSm9obTRPYUpJbmd0N1E%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-13T14:42:57+00:00"
+        },
+        {
+          "username": "Alta Rose",
+          "rating": 1,
+          "contributor_id": "116312850985081685496",
+          "user_review_count": 12,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLak5HssK-jiKFQ1eefm14DSsr8JVV5-DbZ824F6msB8-UKRA=s120-c-rp-mo-ba12-br100",
+          "description": "While the individual dentists and technicians at this practice are all very nice, this is unfortunately another sketchy nyc dentist to avoid. I had a scheduled cavity filling and ended up waiting for more than an hour to be seen, having to remind them more than once that I was still waiting. The fillings were incredibly expensive, and I\u2019ve had a lot of pain since that filling, which has never happened before. The ongoing process of trying to schedule another appointment with their horrible AI \u201cassistant\u201d that answers all the phones has been so slow and frustrating that I\u2019ll probably need to schedule with another dentist for corrections. Take your insurance, money, and precious teeth elsewhere.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sR00xVjRSRFpaVWxCQlR6QmpkWFZDWWxwT09VRRAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOnlGM1V4RDZZUlBBTzBjdXVCYlpOOUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-24T17:50:42+00:00"
+        },
+        {
+          "username": "Michael Guzman",
+          "rating": 1,
+          "contributor_id": "105391095881010326666",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJUMmWOyyy6Kocvs2AqYFgmQ5IUsGv2PM6jKUBHsG16JKBGcg=s120-c-rp-mo-ba12-br100",
+          "description": "Horrible experience was only a few minutes late and that they would not see me. We're talking at least 10 min. I wouldn't recommend this as this is not a professional place nor are the people that work there are. Receptionist was very rude. And I booked this appointment months in advance only for them to tell me they won't see me big red flag not a great place for your teeth or your money",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWMFEwTkRTRVJOVW5BeGJHbzBaR2hVYVhkMWJXYxAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOjV0Q0NDSERNUnAxbGo0ZGhUaXd1bWc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-13T14:46:56+00:00"
+        },
+        {
+          "username": "Desrie Jerome",
+          "rating": 5,
+          "contributor_id": "117982839553848343701",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJYN4m4Lb9j0qnosqfSkYtVpCLg1l8CDq_ci7fiIjf9gRElRA=s120-c-rp-mo-br100",
+          "description": "I made an appointment for the first time to get my teeth cleaned. I got there at my appointed time and immediately the receptionist greeted me politely and assisted me. The staff is professional and friendly.\nI am satisfied with the results. Thanking all the staff for a good job!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGUVVGOWZVbmhhYzFoWFp6VTVkVE5SY1RWblRuYxAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOjFQUF9fUnhac1hXZzU5dTNRcTVnTnc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-22T23:20:30+00:00"
+        },
+        {
+          "username": "Nicole",
+          "rating": 1,
+          "contributor_id": "110894909542855368605",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLOHJfDBR-Bd1LNqbhd-doV3UeuFEuIQ3sqtYypeb-cZwUJ_d8=s120-c-rp-mo-br100",
+          "description": "My appointment was years ago, but it\u2019s something that really stuck with me. After this visit, I actually avoided going to the dentist for a while because of how uncomfortable the experience was.\n\nThey recommended a very aggressive and costly treatment plan\u2014removing teeth, even though they were healthy, just because my tooth had been previously chipped and composite bonded. I came in inquiring about the discoloration .They immediately started talking about implants as the first option.\n\nThe first dentist explained the plan, but when I pushed back, they brought in another dentist who came off as very aggressive. The whole situation became overwhelming and emotional, and it didn\u2019t feel like they cared. The focus shifted to costs, insurance, and even suggesting I apply for a loan, which felt really predatory.\n\nAt one point, I overheard them doing something similar with another patient in the next room\u2014she was literally on the phone applying for a dental loan while they stood over her.\n\nI ended up getting a second opinion, and that dentist was surprised by how extreme the original treatment plan was.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKTFNrdE9jRWhSU1VWSlNsSTJWazVFZVRGVlIzYxAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOjJLSktOcEhRSUVJSlI2Vk5EeTFVR3c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-18T17:44:25+00:00"
+        },
+        {
+          "username": "Smiley6993",
+          "rating": 1,
+          "contributor_id": "101284744016711878527",
+          "user_review_count": 9,
+          "user_photo_count": 10,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI3lBwC6lBTXO8-O7q4tLhDRCPSdU0yOSC2avRJcQJxfpTEGA=s120-c-rp-mo-ba12-br100",
+          "description": "Have to get on here to complain about this office and my experience.\nMy first few weeks it all went smoothly.\nFirst visit had xray.\nDeep cleaning\nLots of fillings to be repaired. Everything went well\n2 more visits still satisfied with the work.\nFinal visit Dr starts numbing wrong side I immediately informed him and he said No it's definitely this one OK I said 30 minutes later he comes back to work on me and realized he screwed up and informed me of his mistakes and numb the side.\nMind you that on my first visit discharg they break down of my bill and my copay $ 212 for the work they will be providing. I received  a bill from my insurance stating I owe dental office a balance came to them spoke to a young lady's and she stated if it didn't come from us ignore it\nNow 4 month later I'm getting a bill from them for the mistakes the dentist made\nIt's ridiculous I've been trying to call them for 2 weeks now no answer",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21FNWNWVXRRbHBxYkdneWVqVmpkekptZW04NFVFRRAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOmE5cVUtQlpqbGgyejVjdzJmem84UEE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-09-25T13:03:26+00:00"
+        },
+        {
+          "username": "Samirah Ali",
+          "rating": 5,
+          "contributor_id": "112003624676660118686",
+          "user_review_count": 13,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIFj8zI7HcDp5m1UjBBV2jWA61xP6x8q1oqFnhmCcmfmKzYpg=s120-c-rp-mo-ba12-br100",
+          "description": "I had a wonderful stress-free, professional, friendly, and kind visit today, 2/27/26. I received this wonderful treatment from the dentist,  her assistant,  and Jackie.  Thank you all very much for the GREAT treatment.\nMuch appreciated.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCdlRHSkNkM1pLWkhoeWJVbG1hVTh5UkMxMFRGRRAB!2m1!1s0x0:0x382af7a7c76bc5dd!3m1!1s2@1:CAIQACodChtycF9oOlBvTGJCd3ZKZHhybUlmaU8yRC10TFE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-27T20:43:23+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Concerned Dental Care - Midtown",
+            "data_id": "0x0:0x2a0a0921052485b0",
+            "data_cid": "3029243736784930224",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2a0a0921052485b0&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2a0a0921052485b0&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751129399999996,
+              "longitude": -73.97980410000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2a0a0921052485b0%218m2%213d40.751129399999996%214d-73.97980410000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 112,
+            "thumbnail": "https://www.google.com/maps/vt/data=7kiY3oVLLYqQeqTRzguQ7uZkuvbsTYAfzomd0i_5Ls9RY1At5mYY5jRlht_s2tw6lSuCPbkLY_9PEZZHHXlnBDuOBBCRSY9MkPgaCmN6VO9U0Zgc6kQOLV8MJEj57qoUkmgOsWcTG0mtmF8gwHaJYR_vmokQNN9B",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Upper West Side Dental",
+            "data_id": "0x0:0x4a49e9308f8b94d",
+            "data_cid": "334566626680158541",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a49e9308f8b94d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a49e9308f8b94d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8011128,
+              "longitude": -73.9617208
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4a49e9308f8b94d%218m2%213d40.8011128%214d-73.9617208&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 266,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF588GdTCNUNzxQQjjWAil-zDw8Xk3QTlMlxC1lfE3SMVGh3KTDxk0fAiygep0iAshRMxDBn3GX2N2TTERJLGtBhXS-VGLAafK-dDg3sFSlYkkQ1Izy0tFbVv0ucVcBbSa2BbAn=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dentist",
+              "Emergency dental service",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Central Park West Dental Studio\ud83e\uddb7",
+            "data_id": "0x0:0x53cd40095d13b633",
+            "data_cid": "6038553084334159411",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53cd40095d13b633&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53cd40095d13b633&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790753699999996,
+              "longitude": -73.9655587
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x53cd40095d13b633%218m2%213d40.790753699999996%214d-73.9655587&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 237,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH5aRLHH9Fl10Nw_ts03P8p_pY-5TNiLUkEQmYLbBuEXqlVdPJnVqp-pkAom4-utHD8QinSr9HMVBmqTDCIXQ6O3gtUqke291UAC-kon-xhHuxlLXr8m4FDorP4soBRPP5pBHlsG0_LXBA=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Dental clinic",
+              "Emergency dental service"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Soul Dental Amsterdam",
+            "data_id": "0x0:0xfa25a15bcbeafc51",
+            "data_cid": "18024990499255549009",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfa25a15bcbeafc51&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfa25a15bcbeafc51&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7789092,
+              "longitude": -73.98117
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfa25a15bcbeafc51%218m2%213d40.7789092%214d-73.98117&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 154,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEEYMCBVaVmTGk41HJkxe6u7GuomTgq3wMEhcnjfGeyuuo1FLOb6PFqFL8LyRXmqHRSomeYUUMFEIwZr9hI0JqzdiRpsGJmhCDQVmfiHgxtVPjc4Xg8unwuPbkMAeXWMP_tsbph5A=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Dental365 - Upper West Side",
+            "data_id": "0x0:0xce0158ba89ab432a",
+            "data_cid": "14844243404986729258",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xce0158ba89ab432a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xce0158ba89ab432a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7836517,
+              "longitude": -73.9789531
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xce0158ba89ab432a%218m2%213d40.7836517%214d-73.9789531&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 503,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGiIiqM1j-Fdb7G5t0-IZfB4MeCKNUdBDTp0uRZ9Mv23JNYc3w_JTo1tQsZ3OD0EDNgImgW6AtFMurKYlKa6c88sCJ_IzltoRbXeoN_4UKCKj0KFJ6TeCTQKOCupDzvFXgVa3lx3uGL228=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Emergency dental service",
+              "Endodontist",
+              "Oral surgeon",
+              "Periodontist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjoKOCI0Q29uY2VybmVkIERlbnRhbCBDYXJlIC0gVXBwZXIgV2VzdCBTaWRlIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjoKOCI0Q29uY2VybmVkIERlbnRhbCBDYXJlIC0gVXBwZXIgV2VzdCBTaWRlIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

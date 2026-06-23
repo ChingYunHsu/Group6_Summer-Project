@@ -1,0 +1,424 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1b67dcfbe0f424193de",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/HkHGeinEOoPdJtG3Ao3WiQ/6a3ac1b67dcfbe0f424193de.json",
+    "created_at": "2026-06-23 17:26:14 UTC",
+    "processed_at": "2026-06-23 17:26:14 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258ef7888b847:0x5952a09fe294b236!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/HkHGeinEOoPdJtG3Ao3WiQ/6a3ac1b67dcfbe0f424193de.html",
+    "prettify_html_file": "https://serpapi.com/searches/HkHGeinEOoPdJtG3Ao3WiQ/6a3ac1b67dcfbe0f424193de.prettify",
+    "total_time_taken": 1.57
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJR7iIeO9YwokRNrKU4p-gUlk",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Smile Design Manhattan",
+    "place_id": "ChIJR7iIeO9YwokRNrKU4p-gUlk",
+    "data_id": "0x89c258ef7888b847:0x5952a09fe294b236",
+    "data_cid": "6436383426027500086",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7888b847%3A0x5952a09fe294b236&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7888b847%3A0x5952a09fe294b236&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.761781,
+      "longitude": -73.9723693
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJR7iIeO9YwokRNrKU4p-gUlk",
+    "provider_id": "/g/1vj603d9",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHm3A1cLyieTueQL_0NHkn9-AeRBP-ZAxmy5FNIQ_dF_RC6WJNgg6IFQjX4ca1r_R93abWY2AjcxX1QKlvqJt3GN6oztXwnPT6X53d_zJtl8vUyDii9HOJK9lb9HW0hWNFDTtr7DSk9oEQ=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/y_YpVXicHcTNToMwAADgJ-oodkNr4qETK2NLpYgBvTRb1xRGaSftfthLevZtTPwO3-9PG8LRP0aRadFMO6eNOnk1SmeDsmEm3RDpowfSAx-RgvGe0GxAJJabqVPVSfGNgCzrLQZElcsCfJHrMC0oW3Gxp6J8TuqcaZ2sKD80c7mNR1FitN3Vn3fkIK9NzNfm_J0H9MoSdwvNxRZV0izQXtzyYB7OH1PadTh7y9fY7HBWw7ZmNK3CeJ--99i98KdLDCEE7f8S2D8aAEYK",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 7
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 8
+      },
+      {
+        "stars": 5,
+        "amount": 548
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 564,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental hygienist",
+      "Oral surgeon",
+      "Orthodontist",
+      "Pediatric dentist"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_hygienist",
+      "oral_surgeon",
+      "orthodontist",
+      "pediatric_dentist"
+    ],
+    "menu": {
+      "link": "https://www.smiledesignmanhattan.com/services?utm_source=google_menu",
+      "source": "smiledesignmanhattan.com"
+    },
+    "book_online": "https://nexhealth.info/book/appt/smiledesignmanhattan?lid=23535&rwg_token=AE37R_gl7Cx01n5UK6AiwcfFO_oGIRIr7MO_9kDrL95-I6bBIUP2F3lCnjm-iXFgdfAMSW1Kbdd-9bJ6KV2_rN_mi9u15LEjWw%3D%3D",
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as Asian-owned",
+          "Identifies as Black-owned",
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      },
+      {
+        "parking": [
+          "On-site parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "address": "575 Madison Ave 23rd Floor, New York, NY 10022",
+    "country": "United States",
+    "booking_link": "https://www.smiledesignmanhattan.com/schedule?utm_source=google_apt&ao=Google",
+    "website": "https://www.smiledesignmanhattan.com/?utm_source=gmb_auth",
+    "phone": "(646) 278-4579",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "Q26H+P3 New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20138 PM"
+      },
+      {
+        "wednesday": "9 AM\u20138 PM"
+      },
+      {
+        "thursday": "9 AM\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "9 AM\u20134 PM"
+      },
+      {
+        "sunday": "10:30 AM\u20134 PM"
+      },
+      {
+        "monday": "9 AM\u20138 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c258ef7888b847%3A0x5952a09fe294b236&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHm3A1cLyieTueQL_0NHkn9-AeRBP-ZAxmy5FNIQ_dF_RC6WJNgg6IFQjX4ca1r_R93abWY2AjcxX1QKlvqJt3GN6oztXwnPT6X53d_zJtl8vUyDii9HOJK9lb9HW0hWNFDTtr7DSk9oEQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/y_YpVXicHcTNToMwAADgJ-oodkNr4qETK2NLpYgBvTRb1xRGaSftfthLevZtTPwO3-9PG8LRP0aRadFMO6eNOnk1SmeDsmEm3RDpowfSAx-RgvGe0GxAJJabqVPVSfGNgCzrLQZElcsCfJHrMC0oW3Gxp6J8TuqcaZ2sKD80c7mNR1FitN3Vn3fkIK9NzNfm_J0H9MoSdwvNxRZV0izQXtzyYB7OH1PadTh7y9fY7HBWw7ZmNK3CeJ--99i98KdLDCEE7f8S2D8aAEYK"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYNQw4m7P2Dl63XwZ8v-4O3d92I0IbuaziJlzkk-0cwdoRVHr1_TruovjwQTacjC_3NaUKveGGi34imPK99V0Jry1yYCSRHhpA7otUaHzvR6t42R41JlWGbSc6ogIaX720-9FRDg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/XkKoAnicHcTbCoIwAADQL1pONzSDHqTIS2C67r3EWjLN6cRNR_5hn9DfBJ2H8_2UWndqYVmiRDMuJRfFoIqeyVYXrZ4x2Vi8U4ApoKwgS_M6CK9pbnDjZc5auOhibvMR4B16-k4M48dApyoRU10DyMxTklPU2_dDP8jxZfIDZa_VHaX0uB2LMKwQrpps6_snmPRv-31d7UlUdoEn9ZFG00hcjR2C7UScw8eeuZLH9OI5EPgbsuZLY0MIQfmfgfYHljND7Q"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=2ffnf-UfpTGaQ1dETxtWrg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=4.3621273&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/vQtKenicHc1LDsIgFADA27ArFNr4S4gr49qkxmVDkV9C4aU8ab2Ot_I2Js4F5vvxiFBOjBVcjMEazAphM7E0oKjL2UWjIBSq88wqZ-hf85RUiGdQKYenFNYm29wtDFd148_LsOFjcURPo47BJJSzgjKWSlFpDNFQB4WsUoieeCmOB_JWq-xptxNc7DsCAbWXLfk_NlfJ2_YHB0c6ZQ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Doctors and staff are very personable and provide great dental service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKcFWFkHhD5S-8Hq4vFr0EcV0I_2xCFV2A7aiMoOMrEYATsAw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"First time meeting with the office, its a cool place, great music, art work etc.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVLrCOVIJt5i5YRZDPayZXDwA7iD4_DVfY2FnGuFNGbIRmaA3HcjA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Hands down I give this place 7 stars!!!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJAf860TXAHWY3WyLLeEiyT40-6uuPhMZkFOs2yjvbLWpi91A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Tommy B (Tommy)",
+          "rating": 5,
+          "contributor_id": "107301659710615874232",
+          "user_review_count": 15,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVLrCOVIJt5i5YRZDPayZXDwA7iD4_DVfY2FnGuFNGbIRmaA3HcjA=s120-c-rp-mo-ba12-br100",
+          "description": "First time meeting with the office, its a cool place, great music, art work etc. Not a stuffy place and in a great location should want to go do some shopping or have a great meal after you get your teeth tuned up and looking and feeling good.\nDr lee is very approachable and a seems like great guy an avid music lover so the vibe was top shelf.\nI am considering veneers and I saw him on IG and wanted to get to know the office first and I will say that I felt really good and walk away knowing I would be back.\nYou wont be dissapointed, I m very particular at my age and the place is the real deal.\nCheers TJB",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2prMU5rOVlRVTU1WDNSaWNUZGZVREV6YUhsbFpYYxAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOjk1Nk9YQU55X3RicTdfUDEzaHllZXc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T17:15:38+00:00"
+        },
+        {
+          "username": "Kiara Burton",
+          "rating": 5,
+          "contributor_id": "109914475603202045970",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVaTXWa185kfbaql_XyEuf_RUPuD6xv_SPu6lURCCKmQ3fTsFs=s120-c-rp-mo-br100",
+          "description": "I\u2019m really delayed writing this review, we\u2019ve been traveling so much. I went to Smile dental in January and had a wonderful experience. I started the process of a root canal and everything went incredibly well. Being a couple of months post procedure, I\u2019m still pretty comfortable. My husband and the owner were even able to connect over Opera, as my husband is a producer. We live in SEAsia so it\u2019s really important to us that I get back to Smile dental  to complete the process but overall, I loved my initial visit. The staff made it even more enjoyable as everyone was so welcoming. I would highly recommend this dental office to anyone in the NYC area. If we resided in NYC, this would certainly be our permanent, long term dental care team.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tjelFVbEJZVGxVWVMxMVlWaDNTV2N4WTJOd1UyYxAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOkczQUlBYTlUYS11YVh3SWcxY2NwU2c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-05T04:32:50+00:00"
+        },
+        {
+          "username": "Marc Keller",
+          "rating": 5,
+          "contributor_id": "115712266814882484327",
+          "user_review_count": 5,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVPfgs6B3Ml_ENVGa9KNykfBywc5BPaqBySYKrx0AH9zpm4qv_j=s120-c-rp-mo-br100",
+          "description": "Dr. Gause and team \u2014 thank you for an outstanding year of care.\n\nOver the past year, I\u2019ve worked with your office through an implant, whitening, and Invisalign teeth straightening, and the experience has been exceptional from start to almost finished. The entire staff is professional, friendly, and truly best-in-class.\n\nEvery visit felt like walking into a polished, professional environment with a warm welcome. I was always greeted with engaging conversation (and even offered a bottle of water), the wait times were consistently short, and I never once felt rushed during any appointment. Dr. Gause and the team took the time to explain each step clearly and made the whole process comfortable and confidence-boosting.\n\nIf you\u2019re considering implant work, whitening, or Invisalign, I couldn\u2019t recommend Dr. Gause and his team more highly.\n\nThank you to the entire team!\n\nBest,\nMarc Keller\n\nPs. Will follow up with phots next month. :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWbVRXVkRiWEZSUW5WU2JtSmtZbE5SWmxwUVNFRRAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOkVmTWVDbXFRQnVSbmJkYlNRZlpQSEE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-18T23:23:51+00:00"
+        },
+        {
+          "username": "Amber Singletary",
+          "rating": 5,
+          "contributor_id": "105167491238303562496",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWOizKfKF0U1men6dZgLM_tFamnjgK7BZBZ7HFTbv_kFFJ5WNu4=s120-c-rp-mo-br100",
+          "description": "Smile Design Manhattan is amazing!!!!! Rachel at the front is friendly and lovely. Dr. Meyers is the sweetest and so happy I met her. Samantha was so caring, knowledgeable, fun and patient and a beacon of professionalism. Everyone in the office is so nice and I am starting my Invisalign journey with them and I can\u2019t wait to post before and after photos!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OVlVrZzNZamxKYVZGeWNVczRRa3BrTmpka1ZrRRAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOmNVUkg3YjlJaVFycUs4QkpkNjdkVkE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-24T14:44:19+00:00"
+        },
+        {
+          "username": "Janice Williams",
+          "rating": 5,
+          "contributor_id": "100556067094552040952",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK-sx0kpWBYRAlViexX1dotTk-MYzTvnKsYd84id7e60IMnNQ=s120-c-rp-mo-br100",
+          "description": "Dr. Gause has an absolutely wonderful, comforting approach. His vast knowledge and expertise is apparent as he discussed with me his recommendations based on his findings and my desires. It was easy to settle in with the staff who were pleasant, kind and professional and most of all concerned with my comfort.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxclNWWnVTbGRQZFZkT1ExcDRTVEJ2ZW5FemIwRRAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOk1rSVZuSldPdVdOQ1p4STBvenEzb0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-20T15:57:31+00:00"
+        },
+        {
+          "username": "Sherry Mason",
+          "rating": 5,
+          "contributor_id": "104975039371220422271",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLXeCy-_P-tHNCQdpXoUmHv2kkWBKg9xo6PdviaVQF8ECmsrvY=s120-c-rp-mo-br100",
+          "description": "It was a relief to meet Dr. Meyers. Her feather-light touch, patient/reassuring approach, and whip-smart efficiency combine into perfect results, and (I can't believe I'm saying this) an enjoyable experience at the dentist. Everyone at Smile Design is excellent--Dr. Meyers, Dr. G, Dr. Copeland, and the hygienists and assistants make a great team.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pOR2RUZGlVWEp0U0U5V2RrdGZlbGd3ZWtoSmRFRRAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOjNGdTdiUXJtSE9WdktfelgwekhJdEE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-04T11:56:56+00:00"
+        },
+        {
+          "username": "Stephen Carl Baldwin",
+          "rating": 5,
+          "contributor_id": "115619759743423188571",
+          "user_review_count": 29,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWi1jK9WFgkCeCAVrfbnu5EPJ6ZUv1vmsRccBJ98222iPkdWC9S=s120-c-rp-mo-ba12-br100",
+          "description": "While it's fair to say that none of us relish a visit to any dentist, Smile Designs makes the task of keeping your mouth healthy -- and your smile brilliant -- an enjoyable experience (I never thought I'd say this about any dentist!). Quality of care is unmatched, facilities are state-of-art, and communication is timely, friendly, clear, personalized and supportive. I highly recommend! Also, art lovers will relish the fact that the dental offices double as art gallery. Very cool place to have important dental work done with a plan that works for you. (This is not a paid endorsement, BTW - just notes from my experience).",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kxbU5GZEhTRXhmT1dOa1dqTnZWVEo2WmxabmRuYxAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOi1mNFdHSExfOWNkWjNvVTJ6ZlZndnc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-11T18:59:03+00:00"
+        },
+        {
+          "username": "Isabella Grace",
+          "rating": 5,
+          "contributor_id": "117036560478512375148",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ-LI26U5h4iwA-HwyDDDYPMeGhJZnzceLUhUd--hfFAlmxbw=s120-c-rp-mo-br100",
+          "description": "I had such a great experience at Smile Design Manhattan!! I get nervous for the dentist but everyone was so kind and Dr. Myers instantly put me at ease. I\u2019m so happy to have found a place I can trust.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Cd01HSkhUM3BLTVVWU01FeFpYekI2Y0RjeE1IYxAB!2m1!1s0x0:0x5952a09fe294b236!3m1!1s2@1:CAIQACodChtycF9oOnBwMGJHT3pKMUVSMExZXzB6cDcxMHc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-03T17:29:36+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NYC Smile Spa",
+            "data_id": "0x0:0xb6cff2ce09f38f2e",
+            "data_cid": "13173014401826131758",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7637066,
+              "longitude": -73.970242
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb6cff2ce09f38f2e%218m2%213d40.7637066%214d-73.970242&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 396,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHo3nVn9pbPGrJ3lgGT0iq1jpvwBlmq-5KGVwUSOFuS_4PAjpBIn067_Fz-HqHaOzITcpFdD-G3zGJpR1sttCQO0ixLB4isA2BEEbq9G3fywtqN28FMC4H6GnN1XYEKIMhv9fBNOg=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Endodontist",
+              "Oral surgeon",
+              "Orthodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Smile Design Dental Studio",
+            "data_id": "0x0:0x9f2f3fb263b2825d",
+            "data_cid": "11470456811345314397",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9f2f3fb263b2825d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9f2f3fb263b2825d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7562044,
+              "longitude": -73.9663681
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9f2f3fb263b2825d%218m2%213d40.7562044%214d-73.9663681&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 453,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHj3gG1EdVv79jmqgtbfEJOQgXplxViC11w2eOr3DqQ2g0dD0UWmHritiehOj1J2Xews62M9__NXKB4LQ5jwfOZ3_VZebhUxYrU_sVBe9PHgCYJYRwT15wrHZBfZgc7hLIXxfuftw=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Orthodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Smile Arts of NY",
+            "data_id": "0x0:0xc32902ead13db639",
+            "data_cid": "14062774518997169721",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc32902ead13db639&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc32902ead13db639&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751177999999996,
+              "longitude": -73.97962799999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc32902ead13db639%218m2%213d40.751177999999996%214d-73.97962799999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 799,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH4eRQ3IB0OjIXQMpepWOz9nlUBnPb-QJKpTbgD_4VyjWDyGSUdgAgaxCxXjXL3jVHQ0s5GtZboi5O9cOgQrToS-P3fjUGr1FI54GFdBB7t05IRZzxcjcktGeQyRIBQ_eYPQPM7_w=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "212 Smiling Cosmetic Dentistry",
+            "data_id": "0x0:0xdeb7a02b2d0f3161",
+            "data_cid": "16048471904458060129",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdeb7a02b2d0f3161&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdeb7a02b2d0f3161&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7554419,
+              "longitude": -73.9809681
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdeb7a02b2d0f3161%218m2%213d40.7554419%214d-73.9809681&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 254,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF67sLAH4YuuW-RyfAHGM_7PGYrtu0HF1QzGOjvJb9CBL_tT04RgGaWCyTGl39nDZVBfJUgVLZcbIJWhqCSz7IrGnfOvxxjqMKFKATzxa7czfv8rDxElNm9IjM6QeGVlJtH-Chi=w156-h156-n-k-no",
+            "type": [
+              "Dental implants periodontist",
+              "Cosmetic dentist",
+              "Dentist",
+              "Periodontist",
+              "Prosthodontist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Midtown Dental Design",
+            "data_id": "0x0:0xa13c52e610ed3ca",
+            "data_cid": "726140767924310986",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa13c52e610ed3ca&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa13c52e610ed3ca&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7649855,
+              "longitude": -73.97632449999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa13c52e610ed3ca%218m2%213d40.7649855%214d-73.97632449999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 74,
+            "thumbnail": "https://www.google.com/maps/vt/data=iz6KKjEl-6Kvh1uqongkIGFnEwzghJIlK3NHsyL-Da-7JXqd_4kECXAOfAR_9EqDYnotRrwsgxWTln4Vg7cI32lvj_6Pmu1QGSsTbdoIMRMaSDEUN4Bxebw83kHWskAZGsH-KIAnqWlkgugmdiMskNoJ5Y2s1WnM",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OikKJyIjU21pbGUgRGVzaWduIE1hbmhhdHRhbiBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COikKJyIjU21pbGUgRGVzaWduIE1hbmhhdHRhbiBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

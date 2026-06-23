@@ -1,0 +1,447 @@
+{
+  "search_metadata": {
+    "id": "6a3ac21c41ffc811e1f7eecc",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/fiT28Rg30MyDHFTg88k0lg/6a3ac21c41ffc811e1f7eecc.json",
+    "created_at": "2026-06-23 17:27:56 UTC",
+    "processed_at": "2026-06-23 17:27:56 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f5001e0eb471:0x3a80db15e06ce549!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/fiT28Rg30MyDHFTg88k0lg/6a3ac21c41ffc811e1f7eecc.html",
+    "prettify_html_file": "https://serpapi.com/searches/fiT28Rg30MyDHFTg88k0lg/6a3ac21c41ffc811e1f7eecc.prettify",
+    "total_time_taken": 5.23
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJcbQOHgD1wokRSeVs4BXbgDo",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Century Medical & Dental Center | Manhattan, Harlem",
+    "place_id": "ChIJcbQOHgD1wokRSeVs4BXbgDo",
+    "data_id": "0x89c2f5001e0eb471:0x3a80db15e06ce549",
+    "data_cid": "4215610138224813385",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5001e0eb471%3A0x3a80db15e06ce549&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5001e0eb471%3A0x3a80db15e06ce549&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.804072399999995,
+      "longitude": -73.9353328
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJcbQOHgD1wokRSeVs4BXbgDo",
+    "provider_id": "/g/11vs_f6f1x",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHfPmqeyRuR8pY9C1bUbNEpwpUWjQEJ0poNC2xXKnuqc70DIfm1XKIdCcdLiSPWVRwcjHnK7CdjybcgpJoCn5cNpXq3dwPqxIB8ixIQ-8ouOQYAhaqNH-QmKuFBX91jl0OcV-HkODv6MXiA=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/rHIJCXicHcTLjoIwFADQL6oUzSiauMCqAZkplIlal8MFeQh9WCr4la79G5M5i_N-VX2vzMpx2mo2KaUs28Ka4g5S9IXoJyA7p1QGgUHG8RPKbn5wTTpdPFObeuqyJG52zOhODep4btjugJWkZDrySFgNC7wNr53LozAnkH_Xv8n5lA7QBCJakLx5ZlCqgyTiC6jiepYPiR7DjVePIUOetDG7-NWfpgFiXWT3G750mxbHcELBLd4-5j-89teDizFG1f-AxAfvS0el",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 10
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 8
+      },
+      {
+        "stars": 5,
+        "amount": 197
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 217,
+    "type": [
+      "Medical Center",
+      "Allergist",
+      "Cardiologist",
+      "Dermatologist",
+      "Gastroenterologist",
+      "Gynecologist",
+      "Internist",
+      "Neurologist",
+      "Otolaryngologist",
+      "Urologist"
+    ],
+    "type_ids": [
+      "medical_center",
+      "allergist",
+      "cardiologist",
+      "dermatologist",
+      "gastroenterologist",
+      "gynecologist_only",
+      "internist",
+      "neurologist",
+      "otolaryngologist",
+      "urologist"
+    ],
+    "book_online": "https://bestdoc.com/facilities/century-medical-and-dental-center?practiceId=14&rwg_eid=prac-14&utm_source=google&utm_medium=referral&utm_campaign=reserve_with_google&utm_content=practice&utm_term=prac-14&rwg_token=AE37R_jihWpRKKuAqtYs0KFDrZEKTrQnRD6qzWwaYOx-UUTnnJcWmuMTJJa4MZY31GcFkMbtxmktM5FFlkVZ30ygd51UCdt-kw%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid parking garage",
+          "Paid parking lot"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Assistive hearing loop"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "2315 3rd Ave 1st floor, New York, NY 10035",
+    "country": "United States",
+    "booking_link": "https://www.centurymedicaldental.com/",
+    "website": "https://www.centurymedicaldental.com/harlem-upper-manhattan-10035/",
+    "phone": "(212) 540-5020",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "R337+JV New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20136 PM"
+      },
+      {
+        "wednesday": "8 AM\u20137 PM"
+      },
+      {
+        "thursday": "8 AM\u20136 PM"
+      },
+      {
+        "friday": "8:30 AM\u20136 PM"
+      },
+      {
+        "saturday": "8:30 AM\u20136 PM"
+      },
+      {
+        "sunday": "9 AM\u20133 PM"
+      },
+      {
+        "monday": "8:30 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f5001e0eb471%3A0x3a80db15e06ce549&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMrqU2598LC3ZnJBL3m1RD6xht1gYr8pepdJJ8C=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 540-5020",
+        "post_link": "https://search.google.com/local/posts?q=Century+Medical+%26+Dental+Center+%7C+Manhattan,+Harlem&ludocid=4215610138224813385&lpsid=CIHM0ogKEO_Q5oev5u-43gE&source=sh/x/loc/post&lsig=AB86z5VsUhU4kp_IrhCrix0gJFlO",
+        "description": "Patients experiencing hearing loss, tinnitus, or balance-related symptoms may be evaluated at Century Medical & Dental Center using a focused audiology assessment. Evaluation may include hearing testing such as pure-tone and speech testing, along with diagnostic review to identify underlying causes affecting hearing or balance. Care is provided within a clinical setting addressing hearing and auditory function. Located on 3rd Ave in Harlem near NYC Health + Hospitals/Harlem and accessible via the 2/3 trains, the office is convenient for local patients. Findings help guide next steps and may improve daily communication and hearing clarity. Contact the office to schedule an evaluation. Medicaid and Medicare accepted.\nLearn more: https://www.centurymedicaldental.com/specialties/audiologist/",
+        "date": "Mar 31, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMEbp5oVchwyyp-DP5TRggGjmFT_j_7WZ9zLo5o=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 540-5020",
+        "post_link": "https://search.google.com/local/posts?q=Century+Medical+%26+Dental+Center+%7C+Manhattan,+Harlem&ludocid=4215610138224813385&lpsid=CIHM0ogKEK7j4fTcgPz3lgE&source=sh/x/loc/post&lsig=AB86z5VsUhU4kp_IrhCrix0gJFlO",
+        "description": "Orthopedic Care in Harlem \u2013 10035!\nCentury Medical & Dental Center provides orthopedic evaluation and treatment at our 3rd Ave location in Harlem. Our team assesses joint pain, sports injuries, fractures, and musculoskeletal conditions with personalized care plans and ongoing management.\nConveniently located for patients in Harlem, East Harlem, and Washington Heights within a short walking or transit radius.\nWe accept a wide range of insurance plans, including Medicaid and Medicare. Same- or next-day appointments available, virtual or in-person.\nLearn more: https://www.centurymedicaldental.com/specialties/orthopedic-surgery/",
+        "date": "Feb 23, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPqnUVmXjCu9cOkwWmmeJbqJFqgO-sGRsyNIiwq=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 540-5020",
+        "post_link": "https://search.google.com/local/posts?q=Century+Medical+%26+Dental+Center+%7C+Manhattan,+Harlem&ludocid=4215610138224813385&lpsid=CIHM0ogKEO_q09aqjbPJkgE&source=sh/x/loc/post&lsig=AB86z5VsUhU4kp_IrhCrix0gJFlO",
+        "description": "Comprehensive Medical Care in East Harlem\nCentury Medical & Dental Center provides comprehensive primary and specialty medical care delivered by board-certified doctors focused on personalized treatment and long-term health. Patients benefit from same- or next-day appointments, flexible visit options, and broad insurance acceptance, including Medicaid and Medicare.\nConveniently located near East Harlem, Marcus Garvey Park, and Upper Manhattan.\nLearn more: https://www.centurymedicaldental.com/harlem-upper-manhattan-10035/",
+        "date": "Jan 23, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHfPmqeyRuR8pY9C1bUbNEpwpUWjQEJ0poNC2xXKnuqc70DIfm1XKIdCcdLiSPWVRwcjHnK7CdjybcgpJoCn5cNpXq3dwPqxIB8ixIQ-8ouOQYAhaqNH-QmKuFBX91jl0OcV-HkODv6MXiA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/rHIJCXicHcTLjoIwFADQL6oUzSiauMCqAZkplIlal8MFeQh9WCr4la79G5M5i_N-VX2vzMpx2mo2KaUs28Ka4g5S9IXoJyA7p1QGgUHG8RPKbn5wTTpdPFObeuqyJG52zOhODep4btjugJWkZDrySFgNC7wNr53LozAnkH_Xv8n5lA7QBCJakLx5ZlCqgyTiC6jiepYPiR7DjVePIUOetDG7-NWfpgFiXWT3G750mxbHcELBLd4-5j-89teDizFG1f-AxAfvS0el"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEoc54BF6og2osmiv49tWHvYGKjTf25ObFyyFeM4CCvvIl2GNvxWAkzLClyzH5Fwhrx-ozHoPqLKx3VZz3rJvVxSNyySmwZAkfK4THipelLESrzAkGr1K7CBFk3wFA7lqIMSFZeVxMfi8fA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/w5KdtnicHcTbboMgAADQL6JaL2vXZA_UFG29tIuNzXwcwctAscAQ-Mk972-W7Dyc359BqUUePI8N4abnvGfkWxKB-azIrDaYT16_SIAlkB68Ve8UnjiOoyN64X3A5TTq6FU9Mv2R5l_3Loivn8haRMooSbQ-syCttHlA6oqEWZfFaB2EAdxl_PYschM2rQvFRTemrqytp7WFtMujezYuhBWnWjhIU7HNd8kR0XBFcMee57JGLWlM2Y37Dr6tW9_3wfA_BvMfAOhIdA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=aBxKaNuVhTi9JIbj8lpudw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=100.33825&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/CBadEHicHc1BCsIwEADA3-RmUluFVgiCNxU8ideyTWOzkjaL2Sb1O_7K34ie5zCft2OmuFMq8tNaTmgz4WJ9XBHIIYTBWyCM0oRRpbViN4_dBOj3BFPAXsNhOcNlvrkrNqdj96g9zX0WpmuNRzuxHoFiG5NkMIzeyoGiyLosN8LpsqnFC7JeF4WsqrrcCkI2Thfi_9xD-tEXHOs6nw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great place, great service and friendly staff\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU7QesI7yCUcy2N8vWRTqD-0GxfNIq5llZiBRZ2oWfo93Csff8Z=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Overall, I highly recommend this location for anyone in need of medical care.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXDFbbVDoKVujclnvGJvRLY_8G1XqvmypTF8cEv7U13ueYz_H8C=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Good experience, good work, good people.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUSxnbRaDSjSw1m7yULjZDL-4X9jjgxNfP8M2tm88ohvEVzEGDHZA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Chaima Deen",
+          "rating": 5,
+          "contributor_id": "107200149011110021680",
+          "user_review_count": 9,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL5gOGDZRKZBe-xwfQwb4UKPjZfpFNFFH2Lb61lErukzbIwqQ=s120-c-rp-mo-br100",
+          "description": "This was my first time finding an OBGYN where I truly felt comfortable and cared for. Doctor Sadaf took her time with me, explained everything clearly, and was extremely patient while addressing all of my concerns. She made me feel listened to and at ease throughout the visit.\n\nHer medical assistant and the front desk staff were also amazing very kind, welcoming, and professional. Check-in was quick and smooth, and everyone made the experience stress-free. I\u2019m so happy I found this office and would highly recommend it to anyone looking for a caring and supportive OBGYN.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pNNE1XYzRaMVZGYUdzek5qVnZVVmw0ZURBd05WRRAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOjM4MWc4Z1VFaGszNjVvUVl4eDAwNVE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-03T20:22:20+00:00"
+        },
+        {
+          "username": "Paola Herrera",
+          "rating": 5,
+          "contributor_id": "108744169760050232205",
+          "user_review_count": 25,
+          "user_photo_count": 18,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1rdVzehluzZr1eSJdclXKltMBjH3AB87UECgan_G_jSBVibRr=s120-c-rp-mo-ba12-br100",
+          "description": "The service is excellent! The staff is incredible and highly professional. From the moment you walk in, Kayla greets you with a smile and is very friendly. Brittney is the dental assistant, and she is an absolute sweetheart; she makes you feel comfortable and helps your nerves melt away. Dr. Onyiuke is very kind and attentive\u2014extremely professional in her work. The treatment plan coordinator, Luismar, treats you like family; she is also very friendly and professional, always looking for ways to assist and accommodate your needs, and finding practical, quick, and efficient solutions. Highly recommended!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25wNk5UWk1ObWx4VUZKc2RrTlRaeTF3ZG5wV2FsRRAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOnp6NTZMNmlxUFJsdkNTZy1wdnpWalE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-19T18:01:54+00:00"
+        },
+        {
+          "username": "Manuel Crespo",
+          "rating": 5,
+          "contributor_id": "113049175173541874779",
+          "user_review_count": 12,
+          "user_photo_count": 23,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXSNPOM2Ldecn9HjAY8929mptHaomq78jpnDEQYumnLbd9II5PX6g=s120-c-rp-mo-ba12-br100",
+          "description": "I had an excellent experience with Dr. Ashley Kim DPN from start to finish. She was very professional, highly skilled, and took time to explain everything clearly. Her supporting staff was also excellent \u2014 friendly, efficient, and attentive. Best of all, the wait time was extremely fast and I had no issues at all. I highly recommend Dr. Ashley Kim DPN and her team to anyone needing a podiatrist doctor.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xvd1ZtdzNaWGR4YTNWVVMzTmpUa2hLUldScmRXYxAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOlowVmw3ZXdxa3VUS3NjTkhKRWRrdWc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-02T06:19:31+00:00"
+        },
+        {
+          "username": "Majeed Fab",
+          "rating": 5,
+          "contributor_id": "108703246723871904971",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKMRKNfu1QfCMsO1QPuoQGnJINTtBV52Z724A4X7odlwwWQu8Y=s120-c-rp-mo-br100",
+          "description": "I had an outstanding experience at Harlem Century Medical & Dental. The clinic offers several specialties under one roof, including cardiology, podiatry, dermatology, and more, which makes care very convenient. Dr. Abungu is truly exceptional. His bedside manner is calm, patient, and reassuring, and he takes time to listen and explain everything in detail. His assistant Abdul also has great bedside manners. He is compassionate, attentive, and helps the entire visit run smoothly. This is easily a 5-star clinic.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWdk9EQndjbTFmY3pWaWRtdHhORE01TVVjNE5FRRAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOlVvODBwcm1fczVidmtxNDM5MUc4NEE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-10T21:59:08+00:00"
+        },
+        {
+          "username": "Raymond Leary",
+          "rating": 5,
+          "contributor_id": "109937508883960516682",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWJNd805JOKV3EP6ZB_ays0TI1cw5q2TCQB2suJvtusJ6Xm73aE=s120-c-rp-mo-br100",
+          "description": "I am very pleased of the exceptional treatment I received from Dr. Kim, She did an excellent job in my teeth ans highly recommend everyone to take care of their dental needs at century medical and dental center. Dmitry the treatment coordinator took his time and explained my treatment and treatment options to me that made me feel comfortable and happy I came to this office. The office manager, Kaitlyn and her team always take good care of me and my family. Don't hesitate to make an appointment. All the negative reviews haven't been treated here by this exceptionally professional staff.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25seU1Xc3dRMUp6VVhGRlNGQmxhVWM1U1dabE1HYxAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOnlyMWswQ1JzUXFFSFBlaUc5SWZlMGc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-03T17:08:00+00:00"
+        },
+        {
+          "username": "Constance Evans",
+          "rating": 5,
+          "contributor_id": "110236143616732511878",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKG5_AcNrUbGAQmNiUmRULmUdqMTl25Mj1lMRznVjOSotKPcg=s120-c-rp-mo-br100",
+          "description": "This Medical/Dental Center is a Gold Mind of a find! It is very clean, comfortable, and has Amazing Customer Service. It is wonderfully close to the Metro North Commuter train, so I can go there before or after work without an issue. I am grateful for my new Medical Team. My PCP, Dr. ABUNGU, & my Dentist, Dr. VEKIMA & My Cardiologist Dr. ALEX A. are Incredible! The Medical Assistants TINA& OKSANA are Superb & will be Excellent RNs one day. The Radiologist is\nfabulous. Everyone is so friendly and dedicated. The Front Desk Receptionists-CRYSTAL & VICTORIA are Angels in Disguise. This Medical/Dental Center seems to be a well-kept secret in Harlem. Let's Change That!!! People need to know there is a wonderful health care center in the Neighborhood! One word of advice: It would be great if the Center used more modern technology so that the Clinicians would not have to focus on documentation as well as treatment. There is AI for that now. It\u2019s A Great Place for Staying Well!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xjeVV6ZHdVa2gyUTBKd1JFRnllalpRTmxOU2RWRRAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOlcyUzdwUkh2Q0JwREFyejZQNlNSdVE%7C%7C?hl=en",
+          "date": "Edited a month ago",
+          "date_iso8601": "2026-05-03T18:49:04+00:00"
+        },
+        {
+          "username": "Tiffany Castro",
+          "rating": 5,
+          "contributor_id": "103060487340597552508",
+          "user_review_count": 12,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWuEFP6ahKGzB-nyD6HDLibjcT4es5o0fUYovospT6yuPLkgBxr6g=s120-c-rp-mo-ba12-br100",
+          "description": "The doctors and staff at Century Medical are more than pleasant! Their multi-specialty setup is incredibly convenient at every location, making each appointment and referral a smooth and efficient process. Their service is reliable and consistent across all sites, and I truly appreciate how they always prioritize my health. Englard, Abungu, Tavarez, Roth, Kochin, Barrolle, Woods, Kim, and others \u2014  All providers I trust who are committed to ensuring my health and well-being and delivering exceptional care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGYVptcGZTM0pEU3psWFlUSlhWakphZW14emMzYxAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOkFaZmpfS3JDSzlXYTJXVjJaemxzc3c%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-21T22:49:32+00:00"
+        },
+        {
+          "username": "J GoldSchmidt",
+          "rating": 5,
+          "contributor_id": "110776126529186284416",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXlDWKH0X6jOLLclODP6XNYiV9diFWAXyLMPOva1GPfXI9ckG8=s120-c-rp-mo-br100",
+          "description": "I\u2019ve had a great experience with Century Medical. I\u2019ve been a patient since they opened in 2022, and their wide range of services from dermatology to primary care and dentistry has made it very convenient for me. The team is professional, welcoming, and knowledgeable, and the receptionist is always helpful and courteous. Because of the excellent care and service, I plan to continue visiting regularly.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xcVJrOWlOM0Z0ZWpGVmRrWjRTRVF4UzFOdlNHYxAB!2m1!1s0x0:0x3a80db15e06ce549!3m1!1s2@1:CAIQACodChtycF9oOm1qRk9iN3FtejFVdkZ4SEQxS1NvSGc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-17T16:07:59+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Century Dental Associates",
+            "data_id": "0x0:0x63e64942d455ac82",
+            "data_cid": "7198521605777370242",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x63e64942d455ac82&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x63e64942d455ac82&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7522539,
+              "longitude": -73.98044229999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x63e64942d455ac82%218m2%213d40.7522539%214d-73.98044229999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 162,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGc4CxbjdlJkWQcjV9JUa3FGp7j-xvlXopMPCWBrdwQPbjXgdENIap_0z1RW_6Gtb0XtJeOTTExnb4VX0qZOemGJvDFMz1IBw6GGXF30JqQghh5dxtwzBAQZbARdIqZ7NaWL099DpGCvMw=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Endodontist",
+              "Orthodontist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Zandman Irwin DDS",
+            "data_id": "0x0:0x5a3b073e2cc50855",
+            "data_cid": "6501798450659919957",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5a3b073e2cc50855&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5a3b073e2cc50855&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.793763999999996,
+              "longitude": -73.94268699999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5a3b073e2cc50855%218m2%213d40.793763999999996%214d-73.94268699999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1.8,
+            "reviews": 5,
+            "thumbnail": "https://www.google.com/maps/vt/data=5r5zdfMwlCQC0heZqgnrt0DupOtcamPk1ZPU0XY1WSIhRQPPb7sM2lWa1disljDFh9mrIq9w6b8h4M0O_LykSRCIgDO_uxjClRBlyixBho3q_X_RjoKQq4NTp9qY4hoCtmyeexiBNj9NALI2dhHfNWLGgRU9tIeS",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Centers Urgent Care of 3rd Ave",
+            "data_id": "0x0:0x53ab6ca722f9127d",
+            "data_cid": "6029031991267627645",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53ab6ca722f9127d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53ab6ca722f9127d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.799369399999996,
+              "longitude": -73.938638
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x53ab6ca722f9127d%218m2%213d40.799369399999996%214d-73.938638&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=5OFQzsvB3EPQXKMJ03E3jBGDfYRgQAPD_Nh1yyMdfFP8IajPIDv-sKPg0TYmylKrl9RYebYXPuOoCJcJtq8y6Pq4tJR6v_BOdmwGCmg_KZFgOMPlUddw9rHlQHYzM4WpIomlIe_ozQnk5ApZf_XdfTLeMdnkIwBm",
+            "type": [
+              "Urgent care center"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Century Medical & Dental Center | Brooklyn, Gravesend",
+            "data_id": "0x0:0x9ad341e4711ebc26",
+            "data_cid": "11156333151333039142",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9ad341e4711ebc26&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9ad341e4711ebc26&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.5899691,
+              "longitude": -73.97338069999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9ad341e4711ebc26%218m2%213d40.5899691%214d-73.97338069999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.9,
+            "reviews": 514,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFhTtLunSLDnQGb75fKKTxvm_QAUe61HxHbYwvCi020_2gga3pFWRmr1ug-U4idLlucsT17qJpHfoJGVZFsi9rik8kuutbqCPi_3Wq3LrBYLJLQaCdtbo0CMcDzRVUoKzWIDich-ThqPsM=w156-h156-n-k-no",
+            "type": [
+              "Medical Center",
+              "Allergist",
+              "Dentist",
+              "Family practice physician",
+              "Gynecologist",
+              "Internist",
+              "Neurologist",
+              "Podiatrist",
+              "Pulmonologist",
+              "Urologist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Wilson Adrian J DDS",
+            "data_id": "0x0:0x85c4a099ba6a2f4",
+            "data_cid": "602437855287354100",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x85c4a099ba6a2f4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x85c4a099ba6a2f4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8019999,
+              "longitude": -73.9365791
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x85c4a099ba6a2f4%218m2%213d40.8019999%214d-73.9365791&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=tK5zkpOaCFBbRsQ-P1aSAZw9ecC9SAndFd_7EMVGsvOb623Nm6c6IFRp4NxihNw7sEu1uvfZt45ix-Hcq81dTsKHmfmXe3oymPblYDQYiy1iTQFHxTj1Ch4zzBZvmv6Z_-SrydIH1qo0ys70bkVBPo_KZTKQEbXl",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkYKRCJAQ2VudHVyeSBNZWRpY2FsICYgRGVudGFsIENlbnRlciB8IE1hbmhhdHRhbiwgSGFybGVtIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkYKRCJAQ2VudHVyeSBNZWRpY2FsICYgRGVudGFsIENlbnRlciB8IE1hbmhhdHRhbiwgSGFybGVtIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

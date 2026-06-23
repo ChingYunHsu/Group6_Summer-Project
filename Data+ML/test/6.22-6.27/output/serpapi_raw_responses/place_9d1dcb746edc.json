@@ -1,0 +1,869 @@
+{
+  "search_metadata": {
+    "id": "6a3ac17dbb48adcbd14ed4e5",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/rqYMRwwlkjIZVIs2DPiYEA/6a3ac17dbb48adcbd14ed4e5.json",
+    "created_at": "2026-06-23 17:25:17 UTC",
+    "processed_at": "2026-06-23 17:25:17 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258a8d8fe5c1b:0xc7594d037ba3f984!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/rqYMRwwlkjIZVIs2DPiYEA/6a3ac17dbb48adcbd14ed4e5.html",
+    "prettify_html_file": "https://serpapi.com/searches/rqYMRwwlkjIZVIs2DPiYEA/6a3ac17dbb48adcbd14ed4e5.prettify",
+    "total_time_taken": 2.14
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJG1z-2KhYwokRhPmjewNNWcc",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "NYC Health + Hospitals/Metropolitan",
+    "place_id": "ChIJG1z-2KhYwokRhPmjewNNWcc",
+    "data_id": "0x89c258a8d8fe5c1b:0xc7594d037ba3f984",
+    "data_cid": "14364597163829492100",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c1b%3A0xc7594d037ba3f984&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c1b%3A0xc7594d037ba3f984&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7850202,
+      "longitude": -73.9448902
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc",
+    "provider_id": "/m/05h21l4",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFekSkHM4_exMm211rqor-r0mAReOIxzRFtHnVD-lHEECqGsoMOdrzzcgnCoaz0gTlOPam2AOP-QlMaygGKv-9PMamBuVCBEvgJx9V9P5KaekzN2btjgf7MP2_vfx-aHl0a0Mp7AU42Z1o=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/LKie9HicHcTPTsIwHADgJ_qxrmLISDiUORiQsoK6gxdSa-ni-me0Zc4-pHffxsTv8P3-dDEOYZllunuYKeeUlvcgvXA2ShtnwplMDQFEgJARdjz1ZCP7576m84ucqMF57m_Og0eGnGWzm9J5E2vbPoGuq6q8bYOjzYdPSShbOp6QetEN4waThsFJU_6ttocRCka5Wd_bcl2Naj8VbcEeD1z26Yjf46e6LijDl_E6Aa814ogOC_I6x2-5W33lCCHo_hdg_wCKqUb0",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 244
+      },
+      {
+        "stars": 2,
+        "amount": 36
+      },
+      {
+        "stars": 3,
+        "amount": 75
+      },
+      {
+        "stars": 4,
+        "amount": 138
+      },
+      {
+        "stars": 5,
+        "amount": 1153
+      }
+    ],
+    "rating": 4.2,
+    "reviews": 1646,
+    "type": [
+      "General hospital",
+      "Abortion clinic",
+      "Family planning center",
+      "Hospital"
+    ],
+    "type_ids": [
+      "general_hospital",
+      "abortion_clinic",
+      "family_planning_center",
+      "hospital"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "On-site parking"
+        ]
+      }
+    ],
+    "address": "1901 1st Ave, New York, NY 10029",
+    "country": "United States",
+    "website": "http://www.nychealthandhospitals.org/metropolitan",
+    "phone": "(844) 692-4692",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "Q3P4+22 New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20137 PM"
+      },
+      {
+        "wednesday": "8 AM\u20137 PM"
+      },
+      {
+        "thursday": "8 AM\u20137 PM"
+      },
+      {
+        "friday": "8 AM\u20137 PM"
+      },
+      {
+        "saturday": "8 AM\u20134 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20137 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c1b%3A0xc7594d037ba3f984&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFekSkHM4_exMm211rqor-r0mAReOIxzRFtHnVD-lHEECqGsoMOdrzzcgnCoaz0gTlOPam2AOP-QlMaygGKv-9PMamBuVCBEvgJx9V9P5KaekzN2btjgf7MP2_vfx-aHl0a0Mp7AU42Z1o=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/LKie9HicHcTPTsIwHADgJ_qxrmLISDiUORiQsoK6gxdSa-ni-me0Zc4-pHffxsTv8P3-dDEOYZllunuYKeeUlvcgvXA2ShtnwplMDQFEgJARdjz1ZCP7576m84ucqMF57m_Og0eGnGWzm9J5E2vbPoGuq6q8bYOjzYdPSShbOp6QetEN4waThsFJU_6ttocRCka5Wd_bcl2Naj8VbcEeD1z26Yjf46e6LijDl_E6Aa814ogOC_I6x2-5W33lCCHo_hdg_wCKqUb0"
+      },
+      {
+        "title": "Hospital",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHIg7uoe5tG97rJb0OGCkrEWir8M8g9OoGd-xVnknxqFeDOzdgDsahtukOr5rgmWKBBLPJPmyTgj9lOfDc-I6ad8Nlzgu2Z5_0Trq31Ahk7GSgCY-fpn7gd41Va2W3Sn0Iv0C-eKQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/bL_rhHicHcTdboIwGADQJ6oUEYElXiBsiG4Wo5HojcFSv2qhxbbMnzf0EfY2SzwX5-_Fre3Mh-M03BuAUtCw3jBNlbRM2gFVrQOdQdQg48TFciXiWQ5Br5hvsyjQ8yMmWSL0Z3nW4U8IEVFZje5bKeT9-sVS8qwhNRW3vSDa19CWi-n0u5gX7WMDl6ghp5SifFzV4bJ5Qj_c-we80VfPjbkIsjUkO3TqZAD1yN1Ww9JbS5z_4gSxxWpyczHGiL-nSP4DBYlEyw"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAElv0LakY7koz5PoQq_29xnhoi-8aKQmdWOmTajUNrdJW7fOwP-HW44hSQvtS1NnYfPnAQ9ms25gusyEoTvAC5uo1ibAtLR3JcVevvKdMBQz-aovvMCNAjcj1-qDv-D9XCRB8Bg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/VaLB-3icHcRJDoIwFADQE30BlSgmLsqQGAekTujKYMFWhn61pQ4X9AzexsS3eN-P0PqqRpZVi16HI_K6aFVxZyh1IXWHYWPxqwKmQFkkiWlFotrY86w6DCp8uwnS27HrPaXACwyzGW3ydNlssnIb3_NpOjgvHwlM0n5frKnRayeWh3MiCfUa1XV5q14RbgwJ3Bady4no-ao3ZbvCmFm-8OkbMjRmEcSkZKUDt9BA6O2DlT_0-fjh2LYN4j8D-QOea0TK"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZHMnfGJ0LwfDSP49bppUTt3VorXIiVJ4RhnOdkBJcCqaBghyG9cYMkuRqMB2EOia7HeLD_xj-hm-efBetHLR2SuFwV-T5YXSWXj0eeYXAshAoQogU5lqcIakkw7Smd1pN5T_F=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/W_I6zXicHcTbDoIgAADQLyLp4lptPWhm5rS8ZdpLM0IoFDBw1hf2Df1NW-fhfD9Ua6mWhtHQ6YgIQRrcK_xEgmvM9QiJ1iBSAaSAMqxoHzPLPXshr7c-DIbaSaPZ4irlMdPTXDyL3T33ZwnlhxuzfbTuKpvQ93aBypD1SRfak83hXs09HDiX1wPQFuDaxtoLkknau0MOMrMs0lPxgBiXhaWoJWJBjmbToV3F2DBP29tY7s3s4q6GMYQQ0P8I8B9h7kTW"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF30Gz1EtboZIOqrZsBQwKKozyb0ykIq1QzRk7PkuH6rpQcnLs_ESjgHDYLkYoX2-5ybV9Na4MnS14z618UPJDyoQQOYIZDn623MF0-YrtWzpdSd6tey90ami9wINS_vUjcjhljyg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/bC_2W3icHcTbDoIgAADQLyIhy7Kth5pdrDTJddGXluQwMVChHPxhn9DftHUezvdTKFXLiWVVhd2jQtAqf8m8JYKrnKseEU-L1hIQCaQ1i0LMZksbrgxaqEyk_r5pUznH3XYrjM6gZn6DsDmwUcRea6etMeE7eV3EJV17yY4l4tIHQ52d3PA2CHiMBsZB42O08bTAeJ_4qcedvh0sIUhadTb1Pb47KtcuvD0fbueH8fV9LElZVKWm0w5BCEHxnwD-AwbNRdA"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 10
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 24
+        },
+        {
+          "title": "Other",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "GVS",
+          "data_id": "0x89c258aed5321c6b:0xb59b5696157a3d69",
+          "data_cid": "13086148344860523881",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xb59b5696157a3d69&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xb59b5696157a3d69&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.785232799999996,
+            "longitude": -73.94502899999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xb59b5696157a3d69%218m2%213d40.785232799999996%214d-73.94502899999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "rating": 2.9,
+          "reviews": 24,
+          "type": "Optometrist",
+          "type_id": "optometrist",
+          "address": "1901 1st Avenue RM 1D18, 1st FL, New York, NY 10029",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20134\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHuMzFFLt5kAqm0wMZulJMYw6kHzzyH6TjbHR4fmgYbeShytWCTNd0CL0Etf_g5l4gP5tLEEFPnfOcJGH3U8BTwlnQk6JbXrIlzTvB0tdOvr65u_-FdzG8u0uOUXJ87Og-sXT0=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHuMzFFLt5kAqm0wMZulJMYw6kHzzyH6TjbHR4fmgYbeShytWCTNd0CL0Etf_g5l4gP5tLEEFPnfOcJGH3U8BTwlnQk6JbXrIlzTvB0tdOvr65u_-FdzG8u0uOUXJ87Og-sXT0=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Municipal Credit Union",
+          "data_id": "0x89c258a930dfc8fd:0x31d9c626cb9b992b",
+          "data_cid": "3592120047731710251",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a930dfc8fd%3A0x31d9c626cb9b992b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a930dfc8fd%3A0x31d9c626cb9b992b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7852248,
+            "longitude": -73.94498089999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258a930dfc8fd%3A0x31d9c626cb9b992b%218m2%213d40.7852248%214d-73.94498089999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "rating": 2.8,
+          "reviews": 18,
+          "type": "Credit union",
+          "type_id": "credit_union",
+          "address": "1901 1st Ave, New York, NY 10029",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "sunday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "title": "Eyes & Optics NY Optometrist | Metropolitan Hospital",
+          "data_id": "0x89c258a92537940b:0xacc344e52ad95e5a",
+          "data_cid": "12448869546039271002",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a92537940b%3A0xacc344e52ad95e5a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a92537940b%3A0xacc344e52ad95e5a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7852248,
+            "longitude": -73.944981
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258a92537940b%3A0xacc344e52ad95e5a%218m2%213d40.7852248%214d-73.944981&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "rating": 4.9,
+          "reviews": 13,
+          "type": "Eye care center",
+          "type_id": "eye_care_center",
+          "address": "1901 1st Ave, New York, NY 10029",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20134\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFY6t_HhsGmghIRYbWQ4cqu-YYlIelARrrnW54nWD2MJ4znySyBdVsomoXmwU0SoDND9xRCvT6Eyar1r28pzmSKMLH0QMRl4Vq3xXdiP2venhA5y9Lj79lM9OAjG1SH1WdQ6VpI0IpxkNk=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFY6t_HhsGmghIRYbWQ4cqu-YYlIelARrrnW54nWD2MJ4znySyBdVsomoXmwU0SoDND9xRCvT6Eyar1r28pzmSKMLH0QMRl4Vq3xXdiP2venhA5y9Lj79lM9OAjG1SH1WdQ6VpI0IpxkNk=w86-h86-n-k-no"
+        },
+        {
+          "position": 4,
+          "title": "Destefano Gregory S",
+          "data_id": "0x89c258aed5321c6b:0xac31b7bd52b95a61",
+          "data_cid": "12407900472147008097",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xac31b7bd52b95a61&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xac31b7bd52b95a61&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xac31b7bd52b95a61%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Doctor",
+          "type_id": "doctor",
+          "address": "1901 1st Ave, New York, NY 10029",
+          "location": "Floor 1"
+        },
+        {
+          "position": 5,
+          "title": "Hanowitz-Britt Amy",
+          "data_id": "0x89c258aed5321c6b:0xc52c0fb867554b0",
+          "data_cid": "887984263070569648",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xc52c0fb867554b0&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xc52c0fb867554b0&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xc52c0fb867554b0%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Medical clinic",
+          "type_id": "medical_clinic",
+          "address": "1901 1st Ave, New York, NY 10029",
+          "location": "Floor 1"
+        },
+        {
+          "position": 6,
+          "title": "Alberto-Franci Judy V",
+          "data_id": "0x89c258aed5321c6b:0x4c16f6d03ea1af8c",
+          "data_cid": "5482840970634571660",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4c16f6d03ea1af8c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4c16f6d03ea1af8c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x4c16f6d03ea1af8c%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Social worker",
+          "type_id": "social_worker"
+        },
+        {
+          "position": 7,
+          "title": "Sihler Bonnie B",
+          "data_id": "0x89c258aed5321c6b:0x1a94e3140ec9a15c",
+          "data_cid": "1915405416826249564",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x1a94e3140ec9a15c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x1a94e3140ec9a15c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x1a94e3140ec9a15c%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 8,
+          "title": "Fullwood Marcia D",
+          "data_id": "0x89c258aed5321c6b:0x14baf10a995f1395",
+          "data_cid": "1493771254251852693",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x14baf10a995f1395&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x14baf10a995f1395&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x14baf10a995f1395%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 9,
+          "title": "Siegel Richard A",
+          "data_id": "0x89c258aed5321c6b:0x4e057097d0ce84c9",
+          "data_cid": "5622023507187500233",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4e057097d0ce84c9&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4e057097d0ce84c9&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784443,
+            "longitude": -73.943848
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x4e057097d0ce84c9%218m2%213d40.784443%214d-73.943848&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Social worker",
+          "type_id": "social_worker"
+        },
+        {
+          "position": 10,
+          "title": "Behar Laurie F",
+          "data_id": "0x89c258aed5321c6b:0xd0eb3867b0a0e9e7",
+          "data_cid": "15054188197412137447",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xd0eb3867b0a0e9e7&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xd0eb3867b0a0e9e7&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xd0eb3867b0a0e9e7%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nursing agency",
+          "type_id": "nursing_agency"
+        },
+        {
+          "position": 11,
+          "title": "Mntesinos Eugenia",
+          "data_id": "0x89c258aed5321c6b:0x2f7a9d9dc7346006",
+          "data_cid": "3421220167918837766",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x2f7a9d9dc7346006&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x2f7a9d9dc7346006&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x2f7a9d9dc7346006%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Obstetrician-gynecologist",
+          "type_id": "gynecologist"
+        },
+        {
+          "position": 12,
+          "title": "Liu Peter S",
+          "data_id": "0x89c258aed5321c6b:0x3bf81e58c0c1b855",
+          "data_cid": "4321237209001867349",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x3bf81e58c0c1b855&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x3bf81e58c0c1b855&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x3bf81e58c0c1b855%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nursing agency",
+          "type_id": "nursing_agency"
+        },
+        {
+          "position": 13,
+          "title": "Shivdasani Arpana",
+          "data_id": "0x89c258aed5321c6b:0xf2ba502844924abe",
+          "data_cid": "17490380236726094526",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xf2ba502844924abe&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xf2ba502844924abe&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xf2ba502844924abe%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nursing agency",
+          "type_id": "nursing_agency"
+        },
+        {
+          "position": 14,
+          "title": "Bravate Crystal M",
+          "data_id": "0x89c258aed5321c6b:0x698ecec9c7175525",
+          "data_cid": "7606244186699289893",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x698ecec9c7175525&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x698ecec9c7175525&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x698ecec9c7175525%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 15,
+          "title": "Maxana Wilby-Wallace, ANP",
+          "data_id": "0x89c258aed5321c6b:0xbd4384be9cccb564",
+          "data_cid": "13637890050817308004",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xbd4384be9cccb564&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xbd4384be9cccb564&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xbd4384be9cccb564%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nurse practitioner",
+          "type_id": "nurse_practitioner"
+        },
+        {
+          "position": 16,
+          "title": "Melwani Joti",
+          "data_id": "0x89c258aed5321c6b:0x4f67fc7d1cbf7456",
+          "data_cid": "5721819465880925270",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4f67fc7d1cbf7456&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4f67fc7d1cbf7456&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7852248,
+            "longitude": -73.944981
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x4f67fc7d1cbf7456%218m2%213d40.7852248%214d-73.944981&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Physical therapist",
+          "type_id": "physiotherapist"
+        },
+        {
+          "position": 17,
+          "title": "Lamothe Romus E",
+          "data_id": "0x89c258aed5321c6b:0x70607e28a3cfa8e6",
+          "data_cid": "8097610843024238822",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x70607e28a3cfa8e6&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x70607e28a3cfa8e6&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x70607e28a3cfa8e6%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nursing agency",
+          "type_id": "nursing_agency"
+        },
+        {
+          "position": 18,
+          "title": "Stacy Bloom, R",
+          "data_id": "0x89c258aed5321c6b:0xe903d380bdcd198a",
+          "data_cid": "16790496385660950922",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xe903d380bdcd198a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xe903d380bdcd198a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.785232799999996,
+            "longitude": -73.94502899999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xe903d380bdcd198a%218m2%213d40.785232799999996%214d-73.94502899999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 19,
+          "title": "Tadayon Siamak",
+          "data_id": "0x89c258aed5321c6b:0x6bd8b3f553563546",
+          "data_cid": "7771159023274308934",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x6bd8b3f553563546&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x6bd8b3f553563546&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x6bd8b3f553563546%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 20,
+          "title": "Spalluto Susan L",
+          "data_id": "0x89c258aed5321c6b:0x9689fac166984ab2",
+          "data_cid": "10847476886055439026",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x9689fac166984ab2&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x9689fac166984ab2&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x9689fac166984ab2%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nursing agency",
+          "type_id": "nursing_agency"
+        },
+        {
+          "position": 21,
+          "title": "Williams Neysa M",
+          "data_id": "0x89c258a8d8fe5c05:0x232ec48b48a33533",
+          "data_cid": "2535179742754321715",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c05%3A0x232ec48b48a33533&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c05%3A0x232ec48b48a33533&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258a8d8fe5c05%3A0x232ec48b48a33533%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Midwife",
+          "type_id": "midwife"
+        },
+        {
+          "position": 22,
+          "title": "Ferrante Steven M",
+          "data_id": "0x89c258aed5321c6b:0x4c224934444e2343",
+          "data_cid": "5486027784923784003",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4c224934444e2343&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x4c224934444e2343&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x4c224934444e2343%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Nursing agency",
+          "type_id": "nursing_agency"
+        },
+        {
+          "position": 23,
+          "title": "Shevchenko Tatyana",
+          "data_id": "0x89c258aed5321c6b:0xe13c03e38eba6864",
+          "data_cid": "16229851433023465572",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xe13c03e38eba6864&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xe13c03e38eba6864&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784443,
+            "longitude": -73.943848
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xe13c03e38eba6864%218m2%213d40.784443%214d-73.943848&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 24,
+          "title": "Greenfield Jacqueline",
+          "data_id": "0x89c258aed5321c6b:0xe7d621446619e01f",
+          "data_cid": "16705576445431898143",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xe7d621446619e01f&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0xe7d621446619e01f&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0xe7d621446619e01f%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Midwife",
+          "type_id": "midwife"
+        },
+        {
+          "position": 25,
+          "title": "Distefano Katherine G",
+          "data_id": "0x89c258a8d8fe5c05:0x2b815ce5e940f902",
+          "data_cid": "3134888958157191426",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c05%3A0x2b815ce5e940f902&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c05%3A0x2b815ce5e940f902&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258a8d8fe5c05%3A0x2b815ce5e940f902%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 26,
+          "title": "Doyle Michelle P",
+          "data_id": "0x89c258aed5321c6b:0x1cfb7ec0d468801c",
+          "data_cid": "2088402218878795804",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x1cfb7ec0d468801c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x1cfb7ec0d468801c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x1cfb7ec0d468801c%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 27,
+          "title": "Css Day Treatment Program",
+          "data_id": "0x89c258aed5321c6b:0x65ccd712dd4c6a0d",
+          "data_cid": "7335474369101851149",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x65ccd712dd4c6a0d&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258aed5321c6b%3A0x65ccd712dd4c6a0d&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.784911099999995,
+            "longitude": -73.94417419999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258aed5321c6b%3A0x65ccd712dd4c6a0d%218m2%213d40.784911099999995%214d-73.94417419999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Front desk, nurses, doctors, Service and timing is just amazing.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKCMl9d5f7HxTE93WKg2r7nvy5Rmmdm4BdW36HiO7jClgVUdvcI=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"A lot of homeless people also sleep about in the lobby and stink up the place.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUo9RTuQcziHcxqeri4_oiKcw2w5XnmdQ2AME-JNZwTQlM_BoCP=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The staff was amazing and respectful and created a safe and secured environment.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWu8vMH6OF5gdvKmXBECwEd-kfE2-5gEETz2Fmpy8IkpR5vjX4Bew=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0430 \u0410\u043d\u0438\u043a\u0435\u0435\u043d\u043a\u043e",
+          "rating": 5,
+          "contributor_id": "112649363022483084404",
+          "user_review_count": 5,
+          "user_photo_count": 24,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK4R1KtQJ0qYqR-ASHhmztA5APbOLSUzJ4o3gVEZhns_VuMXg=s120-c-rp-mo-br100",
+          "description": "The women's health of this hospital is excellent. From the moment of pregnancy confirmation to the moment of delivery, everything was amazing, prompt, tactful and caring. So was the delivery day in December 2025. The hospital supports the natural delivery and does not offer unnecessary medical interventions.\n\nDuring pregnancy, I needed additional consultations with highly specialized doctors, both for me and for the baby - the hospital team helped me with this very well.\n\nSpecial thanks to my doctors Lisa Yanowitz, Cynthia Rodriguez and the entire team of obstetricians. The baby and I also continue to be monitored in pediatrics here.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOVWJIWk5kbmhKVEZsTGR6TTFZVk0xY0VVNFJuYxAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOkNUbHZNdnhJTFlLdzM1YVM1cEU4Rnc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0wkOMF1rPZ4mveJDnHXiQI1pNWX5HMI1mtuHvsrU6H0BCIRGVu_ti8TDn4nGNBUdhmnltp4btyg9jeHvsotdhfwZydTtgX56kRog31S-ZD7cWbqzUZs5B354B7T0amcszpF3NDW_vxziZg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2M7tXYCE_c16zw-e-75wwEdavVcWZeTPI0gARt_TloVX0R8xs-tvc9USw2_d0cvGbseR2cheRLkqIa2jMVC_EtMUSqam2gEYraXPhCF2A-7NPItyAcOqTUPyBJDp7g-VUGcTHn4Iabl2DU=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2StUvK1dnyL13gAM3c1yIZ2CXLCSx0h9DFc2OPpor47L6qE_nEQPQwEwN_omaAUro-6LNvAQd4rzuIYH7SXwC3bNmaqErk55c5Rjx4ChQWDsAWyKCf8qIt-Vvkrchpq-nDM1UBMG9A07Q9=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2DpMx6xk7delEjd5p0oqpT-dmKPNzzt4l69IH7oETcIok2JHwkSyFv2ZLMtietk22nos0gGKQBv3FiD4NxBuOeX_AvBnX8mAPKvwUZEntdjHPMlsGuABjbQ-jKSC7ETLPnqnBRgg4wbl6H=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3XVsi9FC_Ma0fsBgkjrJhYonB8vtNYRFAtXE4QzKc0JRuLhLKXyMoNlWra_tFP70uWeIo89u1MlCo7fCFkWGVfSVP9FHETTs7YMvFldH-RdEuj1RyIaS4iU3yJ47YABtarUb3-DSGAnObt=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0heJyn0H2PW8pOi7BAahB9Ui4vP5YmwTgvjSA3CQGHebjA3rhgbjOExMR451-4rNINZHdFOMhXkaPKWyRsFOFNprs9LwYDib4TsWNZE6cVLa8l4tugwhzLKBxtUoiokdGQ8aKBvuHaLLA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0GbOK8Ld6vTXHupt6gT7UN2QN-kv6ABFP4mMCNk5JFM0m-DU4frjyA4c4gpd1AwBmtKto4GWzIY1ValHeU8PA9wh_7mbjWwi4cbaKaq_Pu4DZZKJnVN_hBzs2miK7zc30uLXZM-jZnnqhd=k-no"
+            }
+          ],
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-14T23:16:33+00:00"
+        },
+        {
+          "username": "ine ine",
+          "rating": 5,
+          "contributor_id": "111627106623187558448",
+          "user_review_count": 14,
+          "user_photo_count": 19,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1JeufMn1Y-sl1uegNtgqcJOUkqw38PfmCmY0uI0c6O3efUAc=s120-c-rp-mo-ba12-br100",
+          "description": "\u2b50\u2b50\u2b50\u2b50\u2b50\n\nExtremely professional and incredibly kind. I am deeply grateful to the entire hospital staff. From the very beginning, we received exceptional care, compassion, and respect.\n\nEvery member of the team demonstrated a strong commitment to the well-being of both patients and their families, providing support, comfort, and reassurance throughout the entire process. Their professionalism, dedication, and genuine kindness made a tremendous difference for us.\n\nThank you to everyone for the outstanding care and attention we received. I highly recommend this hospital with complete confidence.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT214bFIzSmtTM2N4UldSSlJsSmFjMUozUjBocldsRRAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOmxlR3JkS3cxRWRJRlJac1J3R0hrWlE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-02T00:42:57+00:00"
+        },
+        {
+          "username": "Helen",
+          "rating": 5,
+          "contributor_id": "117589058093494048938",
+          "user_review_count": 10,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKkmMwJ4CKqnbj-t5IU3jPR3zveX1PH73qi2E-YMvZRDvleCAt2=s120-c-rp-mo-br100",
+          "description": "I was recently admitted to Metropolitan Hospital and wanted to express my gratitude to the care I received. The doctors, nurses, and support staff were professional, attentive, and kind throughout my stay. Dr. Kannan took the time to explain my treatment clearly, and the nursing team checked on me regularly and made sure I am comfortable. The facility was clean and organized. Thanks to Miguel for maintaining my room cleaned. I felt safe and well cared for during a difficult time. Thank you everyone at Metropolitan Hospital for your dedication.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsdFJ6TlNYMVowUnpKNlVqaE5lazVMWDBadVYxRRAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOlltRzNSX1Z0RzJ6UjhNek5LX0ZuV1E%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3QPwPwTCWo0FnAK6WwWS46yEf7DONA8KJ5wRJhyUReZ8VUDecXccsvi8HBqf27KcvU6Ha2WC6gvdsd83CCLswAPo0xj6EGb7jiBD-HFXVXbbmyb1Q7KTJLGzDAfdKefPcKIsp4RLF_TKdD=k-no"
+            }
+          ],
+          "date": "a month ago",
+          "date_iso8601": "2026-04-25T22:26:05+00:00"
+        },
+        {
+          "username": "Sonia Deleon",
+          "rating": 3,
+          "contributor_id": "107945794436122080538",
+          "user_review_count": 3,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW3J18ptnC-MNvY8lfr_h7XDg0LvLQ42uOn-Pz6XIyhH3GDNVw5ww=s120-c-rp-mo-br100",
+          "description": "I Came in as a new patient. It was my first visit So I\u2019m giving it a chance. I felt like the Dr. didn\u2019t really focus on me being there. My vitals were taken but my ears were not checked, My Heart was not listened to. I was not examined at all. The Dr focused on my history which he input into his system. I am hoping my next visit is better.\nSonia DeLeon",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xOdWJ6RlFaQzFMTjJsYVMwRTRSVTFaTjJ4Sk5VRRAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOlNubzFQZC1LN2laS0E4RU1ZN2xJNUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-05T00:10:28+00:00"
+        },
+        {
+          "username": "keila",
+          "rating": 1,
+          "contributor_id": "104427675663169327304",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVKvQ2r9wE3ntVQhjV62hY71CyjVFvT9o6Jx4wvMhHnXu6DtwQ=s120-c-rp-mo-br100",
+          "description": "Honored my appointment time for an iron transfusion at the main building 8th floor. I was then sent to the back to take my BP but after that I was left in the back hallway for more than 30 minutes. I kept asking nurses walking by when will I be seen and they told me my nurse is at lunch. I don\u2019t even know who my nurse is. Then another 20 minutes pass and I\u2019m still waiting. I\u2019m genuinely getting tired of waiting because i am pregnant and hot. I honored my appointment time and I have other places to be. I finally went up to front desk she told me my nurse has been here and that there\u2019s only six seats available on the entire floor which is ridiculous because it\u2019s an infusion center. It was just excuse after excuse. Then I was asked to stay for even longer. I will not be getting my transfusions at this place. This isn\u2019t even the first time they have done this to me. It\u2019s unprofessional and they need better scheduling to avoid conflict.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKdVYxVmZUbWQ0YkdWNk5XcGxOVGhEVFhaaWJFRRAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOlJuV1VfTmd4bGV6NWplNThDTXZibEE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-03T18:39:00+00:00"
+        },
+        {
+          "username": "Dannielle Hall",
+          "rating": 1,
+          "contributor_id": "107210818741794055019",
+          "user_review_count": 18,
+          "user_photo_count": 22,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKnYe83VVTZDTaEEIqfcNnlxFdYQtamz0Y5-P5o27cSfnHMvA=s120-c-rp-mo-ba12-br100",
+          "description": "I initially hesitated to revisit this issue, but it has weighed on me for some time now. I gave birth to my son at Metropolitan Hospital in 2022, and as a first-time mother, my experience was nothing short of horrific. The issues began with Dr. Maria Pollack, who performed my C-section. She began the incision in the completely wrong location; rather than starting below the bikini line, she cut into the far upper right side of my abdomen. The Chief of C-sections, Dr. Jonathan Mays, had to stop her mid-procedure to correct her. Despite the gravity of this mistake, the staff brushed it off, and I am now left with a permanent, physical scar due to a doctor\u2019s carelessness. Furthermore, Dr. Pollack was extremely rough during cervical exams and remained fixated on a natural birth for three days, despite my insistence that a C-section would be necessary. I am writing this so that other expectant mothers know which providers to avoid.\n\nThe trauma continued once my son was admitted to the NICU. At birth, he weighed 4 pounds and 12.4 ounces. On one occasion, I found him sleeping face-down because a nurse had placed him in that dangerous position (an incident I reported to the staff immediately). On another visit, there was blood everywhere coming from his foot due to needle pricks. I also discovered a deep cut on his chin that no one could explain, though I noticed many of the NICU nurses had long nails. My son actually left the NICU weighing less than he did at birth. However, once I brought him home, I was able to get him to a healthy weight within just three days; by his 10-day appointment, he weighed 6 pounds.\n\nThe lack of professionalism extended to the administrative and nursing staff as well. When I called to schedule his 10-day follow-up, the woman on the phone was incredibly rude. When I expressed my discomfort with returning to Metropolitan Hospital, she dismissively told me he was \"too small\" and \"needed to be seen there,\" completely unaware that he had already gained significant weight at home. During my actual appointment, which was about a few weeks after having my son, the doctor who did my exam  randomly told me my blood pressure was high and suggested I \"eat less salty food.\" In reality, I do not eat salty foods; my blood pressure was high simply because I was forced to return to a facility where I felt unsafe and disrespected. To top it off, a nurse yelled at my husband in the waiting room, criticizing the way he was feeding our son. Ironically, we were using a specific method taught to us by a different nurse within that same hospital to help with his reflux. While everyone\u2019s experience is different, I feel that my treatment was racially motivated. The negative experiences at Metropolitan Hospital vastly outweigh the few good doctors and nurses there, and I would never recommend this facility to anyone",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSMk0xZG5hRGxmTlhKWE9IVkVOM2Q1ZUVwVGVGRRAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOjR2M1dnaDlfNXJXOHVEN3d5eEpTeFE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-04T19:43:06+00:00"
+        },
+        {
+          "username": "Danielle Pfannenstiel",
+          "rating": 1,
+          "contributor_id": "114734027953004444790",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIAS3qCdvnIaCQVTimd2GFOxvBSBV7s6fCpTIZX3N3YcdMIng=s120-c-rp-mo-br100",
+          "description": "Do not go here!!! I\u2019ve had complications from a surgical biopsy for almost 4 weeks now. I\u2019ve been to the ET twice (over 12 hours in ER) and I have yet to have anyone take a culture for antibiotics. I am a chronic illness autoimmune patient and ask extreme  risk of sepsis. I\u2019ve seen multiple specialists since, and several urgent messages to my doctors and no one is helping. I\u2019ve been FORCED to take OLD antibiotics I had at home to just get through the pain. I am looking into legal action and I highly don\u2019t recommend this hospital to anyone. I\u2019ve had bad experiences with my PCP, begged for help during emergency situations and now I\u2019m at risk of sepsis because of their neglect. They used DIRTY instruments during my biopsy and that\u2019s why I now have a serious infection. I haven\u2019t been able to get a hold of the medical director and this is a huge death risk. The emergency room is filled with old blood and dirt everywhere. Do not go here if you want to live or get any kind of medical help!!!!! I will be contacting my lawyer!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT210aFJsQkNXVjlHVFROSVZFYzNSV3hEV0VkblgxRRAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOmthRlBCWV9GTTNIVEc3RWxDWEdnX1E%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-31T12:04:36+00:00"
+        },
+        {
+          "username": "NaturalTrini",
+          "rating": 5,
+          "contributor_id": "112460860321186613227",
+          "user_review_count": 153,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKUAT463KEZP23wB3KbvAeB-pGB4OKEgJcIXohiO0nJT2DeqA=s120-c-rp-mo-ba12-br100",
+          "description": "Despite long waits for appointments, all my doctors are there. Dentist, PCP, diabetic counseling, gyn etc. They are fabulous. Dr..Camille Clare (who worked there at the time) did my myomectomy. I had complications, but...I am here now....so you know it went well. The young ppl at the front desk need a little more patience with us older folks because we forget alot and get turned around in our minds. During covid, I got all my testing done there...and everyone was very professional. I will always go to that hospital and I would recommend it 100%",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWZlRXeFJlQzFZY2xSVVNGTXhOMFI0VEc1cGJtYxAB!2m1!1s0x0:0xc7594d037ba3f984!3m1!1s2@1:CAIQACodChtycF9oOjVfTWxReC1YclRUSFMxN0R4TG5pbmc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-27T23:04:35+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Ny Metropolitan Hospitals: Levine Mark S MD",
+            "data_id": "0x0:0x4b62500bf0431edd",
+            "data_cid": "5431992112768032477",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4b62500bf0431edd&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4b62500bf0431edd&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7847533,
+              "longitude": -73.944479
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4b62500bf0431edd%218m2%213d40.7847533%214d-73.944479&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=XfalhAidcilc_tVM9lXNBP8D_9M-tFFSyru5EnrSUMOkceGRBDFsbpAJRO5bDXPWqa6WZIIRaB1c7kTZvLw94rCqpmFP7f_Jq2xf9AoUsiW5vdwftLsVFptOY12CrlwNFs9Bhi84TmuC5NUcXaz6XDYWlNC79MH8",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Metropolitan Health Center",
+            "data_id": "0x0:0x51c50f8f78e6dba8",
+            "data_cid": "5892132796367297448",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x51c50f8f78e6dba8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x51c50f8f78e6dba8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.748863899999996,
+              "longitude": -73.87417359999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x51c50f8f78e6dba8%218m2%213d40.748863899999996%214d-73.87417359999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=Yxazk5C3OqVXDOUMcpGu_4w7NxjuBklNsTo4trXR_dLd3AQyEWz9d8lIt5UHqsnmer_JCVfjp-4DwSf8OCB0PJaoXb4kphae-nBgqZmRfX-IwRCm3LwvrgRUZp8jQQo3zhd_wBkOhMIYVwRgGMaHy2cNWxDj8Cvc",
+            "type": [
+              "Medical group"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjYKNCIwTllDIEhlYWx0aCArIEhvc3BpdGFscy9NZXRyb3BvbGl0YW4gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjYKNCIwTllDIEhlYWx0aCArIEhvc3BpdGFscy9NZXRyb3BvbGl0YW4gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

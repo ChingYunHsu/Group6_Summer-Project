@@ -1,0 +1,719 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1fe703f17673fe32d3c",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/IDgcUUHA7F7Fxh6FkO6TcA/6a3ac1fe703f17673fe32d3c.json",
+    "created_at": "2026-06-23 17:27:26 UTC",
+    "processed_at": "2026-06-23 17:27:26 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2590c9d579dd9:0x927f33ed58d181d6!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/IDgcUUHA7F7Fxh6FkO6TcA/6a3ac1fe703f17673fe32d3c.html",
+    "prettify_html_file": "https://serpapi.com/searches/IDgcUUHA7F7Fxh6FkO6TcA/6a3ac1fe703f17673fe32d3c.prettify",
+    "total_time_taken": 0.9
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ2Z1XnQxZwokR1oHRWO0zf5I",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "VA NY Harbor Healthcare System",
+    "place_id": "ChIJ2Z1XnQxZwokR1oHRWO0zf5I",
+    "data_id": "0x89c2590c9d579dd9:0x927f33ed58d181d6",
+    "data_cid": "10556213146070122966",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x927f33ed58d181d6&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x927f33ed58d181d6&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7370569,
+      "longitude": -73.9774429
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I",
+    "provider_id": "/g/1td6nkv_",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjAXtPiVyZu2diI9RRpLNBCK1QYFeDJa6pNqvcIRST_qHJ0Ne_j5ARt5S9qDddwrMabGiSvDUCn-BOy9wWkk2tNLQtTj45_P8IAR44MWw4-XT6pjAxpJurQNKKZEZ-5GgyPHxPuw=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/IizYD3icHcRLjoIwAADQE1XQASOTzKKIykc7paAiG6Kl4adQaLFyxDnC3MbEt3j_f6WUXHxr2r38mhVdV9zZKNhAu1ayVs5o99AKLgAVQGgQo7CBbg0TiavTlI6LvPIsQvge2etgHl62zPGvS476J_VIFGe96-uIZbUJiTQjq3fyXA2H621XRU_nuG6B_TtZ6tw0C4n2oYxrw8zwyoPEMA5nZYAkXvIavrg_DiEKgnSTAnNXTNh94VH9qLmu66D8TEH7Br4MRLI",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 75
+      },
+      {
+        "stars": 2,
+        "amount": 7
+      },
+      {
+        "stars": 3,
+        "amount": 19
+      },
+      {
+        "stars": 4,
+        "amount": 59
+      },
+      {
+        "stars": 5,
+        "amount": 166
+      }
+    ],
+    "rating": 3.7,
+    "reviews": 326,
+    "type": [
+      "Veterans hospital"
+    ],
+    "type_ids": [
+      "veterans_hospital"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      }
+    ],
+    "address": "423 E 23rd St, New York, NY 10010",
+    "country": "United States",
+    "located_in": "Margaret Cochran Corbin VA Campus",
+    "website": "http://www.nyharbor.va.gov/",
+    "phone": "(212) 686-7500",
+    "open_state": "Open 24 hours",
+    "plus_code": "P2PF+R2 New York",
+    "hours": [
+      {
+        "tuesday": "Open 24 hours"
+      },
+      {
+        "wednesday": "Open 24 hours"
+      },
+      {
+        "thursday": "Open 24 hours"
+      },
+      {
+        "friday": "Open 24 hours"
+      },
+      {
+        "saturday": "Open 24 hours"
+      },
+      {
+        "sunday": "Open 24 hours"
+      },
+      {
+        "monday": "Open 24 hours"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjAXtPiVyZu2diI9RRpLNBCK1QYFeDJa6pNqvcIRST_qHJ0Ne_j5ARt5S9qDddwrMabGiSvDUCn-BOy9wWkk2tNLQtTj45_P8IAR44MWw4-XT6pjAxpJurQNKKZEZ-5GgyPHxPuw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/IizYD3icHcRLjoIwAADQE1XQASOTzKKIykc7paAiG6Kl4adQaLFyxDnC3MbEt3j_f6WUXHxr2r38mhVdV9zZKNhAu1ayVs5o99AKLgAVQGgQo7CBbg0TiavTlI6LvPIsQvge2etgHl62zPGvS476J_VIFGe96-uIZbUJiTQjq3fyXA2H621XRU_nuG6B_TtZ6tw0C4n2oYxrw8zwyoPEMA5nZYAkXvIavrg_DiEKgnSTAnNXTNh94VH9qLmu66D8TEH7Br4MRLI"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=TlvlmJlW65UwA0DPaUIW6A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=330.96173&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/L61HznicHc1BDsIgEADA33ATaKvVmhDTxIuePNj02FDEQrKUjaxUv-Ov_I2J84H5fhwRpr0QiR7WUvZ2Qf-ykFao-RTjBFajT9zEIHIhyD3DOGsPB9Rz9Dd1hQzhDH296ZZWHi-6O_V1y8w4GPB2JhU0piFlTtqQB8snTGxRZblmTpXNjr31oqpK8qYuthVDT8Ypyf7PPWZVSPkD2gA5zQ"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAErZrS4CXwhxy-oKM2qFw7zpyIRoQn8LESoU0Th0qQ2mkocLHOfaVZKwHE9i7vb_ZjVG2dxZcW722zrs9s5zrkcpxUdmC1SPM6uVutqUSykf2u8rQ1PLzlqb69jnMWSd4dhjDDF0w=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/FjXMNnicHcRLjoIwAADQE1VK_SAmLoziJ8IIU0HDxmhBKp8W2jIFbjhH8DYmvsV7_1OlarkwjJKORxnnWZm2MhWEM5UyNSK8MrJaAiKBNFb-T1CsHBELPFlfNe16wI8earbaGur-8MsDNncdzEN4prAJUFVw4u5Pz3sUH_XesV_W3-MW59EOJV1MLhZCg5C2nA6iIHUXJtXaxL43a6NWNSHuiydq5yIwfXcom8fMzpl3wckkoflms4V6qU0IIaDfCWAfZBBGow"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 2
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 18
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Rosa Bridgette",
+          "data_id": "0x89c2590c9d579dd9:0xd02c70fcdd1098cc",
+          "data_cid": "15000488690207201484",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xd02c70fcdd1098cc&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xd02c70fcdd1098cc&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xd02c70fcdd1098cc%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Nurse practitioner",
+          "type_id": "nurse_practitioner",
+          "address": "423 E 23rd St, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 2,
+          "title": "Mc Niff Martha A",
+          "data_id": "0x89c2590c9d579dd9:0x6b1a1d80769e0a1e",
+          "data_cid": "7717513349035854366",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x6b1a1d80769e0a1e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x6b1a1d80769e0a1e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x6b1a1d80769e0a1e%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Doctor",
+          "type_id": "doctor",
+          "address": "423 E 23rd St, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 3,
+          "title": "Scher Gabriel D",
+          "data_id": "0x89c2590c9d579dd9:0x562ce636202a3d95",
+          "data_cid": "6209591106379333013",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x562ce636202a3d95&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x562ce636202a3d95&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.737045699999996,
+            "longitude": -73.9768398
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x562ce636202a3d95%218m2%213d40.737045699999996%214d-73.9768398&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Physical therapist",
+          "type_id": "physiotherapist",
+          "address": "423 E 23rd St, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 4,
+          "title": "Bhanot Vanita",
+          "data_id": "0x89c2590c9d579dd9:0xd23d1ec36d68b6cf",
+          "data_cid": "15149298546247251663",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xd23d1ec36d68b6cf&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xd23d1ec36d68b6cf&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xd23d1ec36d68b6cf%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Physical therapist",
+          "type_id": "physiotherapist",
+          "address": "423 E 23rd St, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 5,
+          "title": "Pinard Richard J Dr",
+          "data_id": "0x89c2590c9d579dd9:0x9eade10d6cc23e25",
+          "data_cid": "11434042476739051045",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x9eade10d6cc23e25&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x9eade10d6cc23e25&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7364685,
+            "longitude": -73.9769477
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x9eade10d6cc23e25%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Social worker",
+          "type_id": "social_worker",
+          "address": "423 E 23rd St, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 6,
+          "title": "Breuer Kenneth P",
+          "data_id": "0x89c2590c9d579dd9:0xcb794ae9fad06d0c",
+          "data_cid": "14661832430677159180",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xcb794ae9fad06d0c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xcb794ae9fad06d0c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7364685,
+            "longitude": -73.9769477
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xcb794ae9fad06d0c%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 7,
+          "title": "Tyler Betty A",
+          "data_id": "0x89c2590c9d579dd9:0xeab140ef6abf7afb",
+          "data_cid": "16911369472785218299",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xeab140ef6abf7afb&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xeab140ef6abf7afb&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xeab140ef6abf7afb%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 8,
+          "title": "Kathleen Woods, NP",
+          "data_id": "0x89c2590c9d579dd9:0x5dfc3e122fa99f93",
+          "data_cid": "6772356187488362387",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x5dfc3e122fa99f93&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x5dfc3e122fa99f93&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x5dfc3e122fa99f93%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Nurse practitioner",
+          "type_id": "nurse_practitioner"
+        },
+        {
+          "position": 9,
+          "title": "Thomas Valerie L",
+          "data_id": "0x89c2590c9d579dd9:0x59d371e0790cee96",
+          "data_cid": "6472642298379038358",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x59d371e0790cee96&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x59d371e0790cee96&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7364685,
+            "longitude": -73.9769477
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x59d371e0790cee96%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Nutritionist",
+          "type_id": "nutritionist"
+        },
+        {
+          "position": 10,
+          "title": "Lovly Ronald M",
+          "data_id": "0x89c2590c9d579dd9:0x944afe1238aa57ac",
+          "data_cid": "10685632420103477164",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x944afe1238aa57ac&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x944afe1238aa57ac&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x944afe1238aa57ac%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 11,
+          "title": "Bryk Timothy N",
+          "data_id": "0x89c2590c9d579dd9:0xb344240574c5d88a",
+          "data_cid": "12917489237057984650",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xb344240574c5d88a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xb344240574c5d88a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xb344240574c5d88a%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 12,
+          "title": "Haines Sandra S",
+          "data_id": "0x89c2590c9d579dd9:0x9aa05b79e9a22932",
+          "data_cid": "11142006057283496242",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x9aa05b79e9a22932&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x9aa05b79e9a22932&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x9aa05b79e9a22932%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Nurse practitioner",
+          "type_id": "nurse_practitioner"
+        },
+        {
+          "position": 13,
+          "title": "Chassagne Ernst",
+          "data_id": "0x89c2590c9d579dd9:0x7d03794849089ca6",
+          "data_cid": "9008177031041031334",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x7d03794849089ca6&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x7d03794849089ca6&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x7d03794849089ca6%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 14,
+          "title": "Ng Nelly K",
+          "data_id": "0x89c2590c9d579dd9:0xfad61f2c3801b8a5",
+          "data_cid": "18074668429276723365",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xfad61f2c3801b8a5&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xfad61f2c3801b8a5&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xfad61f2c3801b8a5%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Physical therapist",
+          "type_id": "physiotherapist"
+        },
+        {
+          "position": 15,
+          "title": "Ramos Nancy Dr",
+          "data_id": "0x89c2590c9d579dd9:0x7fc927161dbca4d9",
+          "data_cid": "9207933889077355737",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x7fc927161dbca4d9&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x7fc927161dbca4d9&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7364685,
+            "longitude": -73.9769477
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x7fc927161dbca4d9%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Nurse practitioner",
+          "type_id": "nurse_practitioner"
+        },
+        {
+          "position": 16,
+          "title": "Scarpulla Anthony",
+          "data_id": "0x89c2590c9d579dd9:0xc65961016994d340",
+          "data_cid": "14292561551131202368",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xc65961016994d340&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xc65961016994d340&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xc65961016994d340%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 17,
+          "title": "Jagroo Denise K",
+          "data_id": "0x89c2590c9d579dd9:0xf354d5a7847e5a22",
+          "data_cid": "17533874164719311394",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xf354d5a7847e5a22&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xf354d5a7847e5a22&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xf354d5a7847e5a22%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Physical therapist",
+          "type_id": "physiotherapist"
+        },
+        {
+          "position": 18,
+          "title": "Graham Casey A",
+          "data_id": "0x89c2590c9d579dd9:0x99ab1251ad9b0334",
+          "data_cid": "11072964250834764596",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x99ab1251ad9b0334&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x99ab1251ad9b0334&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0x99ab1251ad9b0334%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 19,
+          "title": "Creasap Marion C",
+          "data_id": "0x89c2590c9d579dd9:0xf80b596864324621",
+          "data_cid": "17873477851042432545",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xf80b596864324621&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0xf80b596864324621&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7367661,
+            "longitude": -73.9768237
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590c9d579dd9%3A0xf80b596864324621%218m2%213d40.7367661%214d-73.9768237&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I&type=place",
+          "type": "Nurse practitioner",
+          "type_id": "nurse_practitioner"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The prices are cheap and relax and say thank you to the doctors and staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJDOTZP9hlFc67r1H0IDiTbZ8LphD-iCY1XsrItqqMSdlA7CjU=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Food was good quality and low priced surprisingly.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJYovq-_OByiHFD41b8d8myEv8pS9iS4MIOd_aZhDDEQC5-7w=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"People are constantly thanking me for my service .\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU7QrGz-k2AaeqpmNQ5Jb3MjFBLN2kyCeGvbkUpINBLVdvsbQVG=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "les rosen",
+          "rating": 5,
+          "contributor_id": "106400506257230405157",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJDOTZP9hlFc67r1H0IDiTbZ8LphD-iCY1XsrItqqMSdlA7CjU=s120-c-rp-mo-ba12-br100",
+          "description": "This has to be the best hospital in the V.A. the doctors for the most part are part of NYU hospital, which is top hospital in the USA.\nVets. This is the place to trust your health too.\nI have just read many reviews most good some not so good. It is sad they do not have a reply as I would have liked to have answered the nasty one.\nI have been going to the VA for over 20 years and NYC VA is the best.\nYes there are times you msy have to wait because an illness is worse than patient reported.  Guys and girls keep in mind we are getting NYC NYU medical treatment as a thank you for our service. Yes there maybe some small co payment. Ask yourself wh a t would happen to you without the V.A. then one day drop by some of the other VA hospitals go as close as The Bronx or Brooklyn. Go to Long Island beautiful hospital even a golf course however you will not be treated like the NYC doctors or staff. Have to wait go tonthe second floor Cafe. The prices are cheap and relax and say thank you to the doctors and staff.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xNM1VuSndObkIzVmxZMWIzUjJTekJOWDAxd2JrRRAB!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CAIQACodChtycF9oOlM3UnJwNnB3VlY1b3R2SzBNX01wbkE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-23T21:16:49+00:00"
+        },
+        {
+          "username": "shimmeringpath",
+          "rating": 4,
+          "contributor_id": "111221919224621186689",
+          "user_review_count": 313,
+          "user_photo_count": 3031,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXgKPva2isMDTKHwZHtz74CNx3IFEeHxOGxMFwRzHd1MMJV-a2mTQ=s120-c-rp-mo-ba12-br100",
+          "description": "This is the Room Service menu for people who are staying overnight at the VA Hospital on East 23rd street.  You get to choose which different foods and beverages and desserts you want to make up your meal . But  if you're on salt restricted or some type of special diet you can only have certain things . For instance,  you can't have mashed potatoes on salt restricted diet but you can have rice. And you can have the Apple Crisp dessert or jello but you can't have the pudding I believe,  on salt restricted.  My roommate is here since 2 days ago and when i got here realized they hadn't taken a shower yet . As soon as I asked the nurse for a towel and change of pajamas and soap and toothpaste and toothbrush I was given a bunch of stuff promptly,  (see pic) They gave 2 bottles of shampoo and body wash and lotion too.  A towel, pajamas,  toothpaste, toothbrush,  earbuds, stress ball,  eye mask  were also given . But be aware,  you may have to ask for these things . Be proactive.  I don't know if it's just brought over if you don't ask. All the nurses were helpful and nice though.  Feel like there aren't as many staff on weekends though.  Also,  you can call on your own phone to order the food,  so bring your cell phone and a charger. The food is brought up within 45 minutes.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURIdnB5VUlREAE!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CIHM0ogKEICAgIDHvpyUIQ%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3OcgRgIPT9l1GMqFowryYisi6pogUmn0asvnFbpwAsHm5Cq0sZw9O766UwsxpwS66Ya595gpZiAl1GNovotmruJPReRmjiE0lsPaW8DQj-E6Fs2gXO2pJ8ClZaiOkw-4D5R3kx=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0YzbaLXd2_o3TpvkbuiOmFHLmMkpEhu_iDrau8wC9wyU1lzRxxt6GHeWuVjKdITYvF-BHsDPfSims6dACEVPbvWoOCKIR1n6gKJVcielxBAV296AE9_SloV_jV2vKh7pQslvRE=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1mbiI2jBSZvl1T32rmFEnuk0K4AbPezMsSjs3kjEazuRVtkBmH9mp8f3CLk7ENZVi1zcc955sPr-UBUH8Wo2zSfQZkXM4Yz7xi2_bUOcHgnk_ib2muvQwdSQiwBYIvs6bvaF6UUQ=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn02vo5wceRp7JsPbyl2Y4j9upo7tBwGv_hb6G33R1HMpwMiYqR_eqkz-iLKG0ZZs15s1AGnRIzETLPSaC5GehY0DZvwvwSGBEOCmZM-gS39kYfdXQFLYwuPsS3qrqwVXuzX3Ow=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2sGrLvDHbjdg6x91R_ozoJzWXEDXjqgeBc8LwAijwmhTbwQ-CSrucSk75vIdCZwZJpEUqN_13UzM_3JzPtS2_Qpb-by9N6adyPPrHae5t790z_Z_ZQcR1paUkUahjG-gm1qAbQEw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2OtK5kTZQBEE0HkWkbwlATex54f7IlNTM6HxX5u_g2VN2pIIb-eS5Ms2DjB_IO6xrFH6lEryqUkDDHf0n0UJLE2IICOAjLBncS8M_Uv30bDUHXUt3dl50JE2KlV3iaoyJYHts=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn37VzytrkoByUFeaoyGD7u08fjRytU82rqwaojt71WvWMZgn7p3B-gOjhYDURpNCOrI-lROV0nxelJLtnEBTX0mya9sO29lGdKaK3ntR3oeAYhEcf3asLwCjTYr1GyQhoTVJIgj=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1nx7K3Cn91CKlR2IAjqJ7_fSZiTyDn2qrn_Chz6VjtpFecS32WR4lKvzgIz3EPmNtcO4Ns2jtoOo1B9kS8ELWCKXE5Pr8j-6__cUx1hzZXVXLzNHaCvfZsu3NGsMcC01kc6C6ScA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn093C0DlW1-JTPoH9_waAswWvyqJ92a_taYy5sbgLRFtdqUk6Bb9H4pCTvolXi7CnAtbZRrQtTJu_LyttM8OKHWMhKvP0m3xXcuMY2lKh-HkpkVGIylqS1Qc9O32EUrCwnOPQkt=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0jGFxRvBxrBNlgouCZ9oPuVDcE3s2PAJn7yaHNulukQDzjy7Pk5ANA-si7X0yqXD0N_cK9Ozf3yDt6GHv1EuOAn7INVy0JdFfrgx_BuSH-BXQfGaFT1E1XjfTgyHbreeTNRtSzqg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2ISZx0NuxAlTtDEN1-Wamz2XkJKBfPa246GKBwZ2Y_EAitiOboaa02ZSxZVxv9KtWVii12Xri0Cem98S3GD2qOTPpzXcBidJ0mu66m9qT7xyxaKHatfF3N3yYnF01mAr4YQ50=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn32BVCeGTDrpgVvyl_Yci0nzhvIPiHyCuyB3-Ti8N5bFSdWz_WxzBP-EM0eDTVdtgCgkzLgNAxb_mkA0Pd_uP1NsrqnIgtDW-LH8mm_N0jAlhjyUcIYjTgCmpPeLdXopY3t27n_Pw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0NTO3x-2dQwTUw5IM8vkp0iWe4FgDPTgGPw5tbqc4l37Z_Dgomrrdej_XPtQXdvbfdAX6IE959M97UFeg3TQ3oAgpT5bzKKJ7tqTsbSV9vWfobNRArVcHxhQ3g8QD3xVZKJobt=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3YGyEC49RhyPdeU4fVoP97J73BfyoCb8VwJZBVFvaeSydBEUq-jIeNyfvRYzd3zKYuxiyKivmNQ0__EU6g8vjR2H_aXj0ce_cyvw0mbuFdxWWdkhEDL3UR-IoiYCmeuCbEa3SMWQ=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2024-09-16T12:42:01+00:00"
+        },
+        {
+          "username": "Joshua Robles",
+          "rating": 5,
+          "contributor_id": "110414207382642296082",
+          "user_review_count": 12,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU7QrGz-k2AaeqpmNQ5Jb3MjFBLN2kyCeGvbkUpINBLVdvsbQVG=s120-c-rp-mo-br100",
+          "description": "I was there November 10 2025  for a kidney stone procedure. It was beyond exceptional. Everyone had their jobs to do and it was done beyond my expectations . I could have easily gone to Mt Sinai or New York Presbyterian. But all my records are with the VA hospital and since I been going to them for about 6 years now I feel very comfortable.  After I was sent home two days later I had a setback ,in  excruciating pain and literally living two blocks away from NY Presbyterian I chose to go to the VA emergency care. It was 2:30am and 7 minutes later I was on a bed  in the Urgent care with meds in my system pain free. I remember all the faces but not the names in the Urgent Care unit. people are constantly thanking me for my service . But God bless them all at the VA.\nI am now back home resting .",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25vNFlVZ3pkbmd6VTJoM2NsRmlVV0phVEcxNlgzYxAB!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CAIQACodChtycF9oOno4YUgzdngzU2h3clFiUWJaTG16X3c%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-12T18:15:37+00:00"
+        },
+        {
+          "username": "Artist extraordinaire",
+          "rating": 4,
+          "contributor_id": "101294635415670165580",
+          "user_review_count": 146,
+          "user_photo_count": 166,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIFXg0M-scYbUC0E4291K6_cfwCaR5Nwao-J2-TC_w2Chh-bA=s120-c-rp-mo-ba12-br100",
+          "description": "One of the better staffed VA Hospitals that I have experienced . The plus side to this particular VA is that NYU medical staff moonlight there and that can give you access to more modern treatments which are not available at other VA hospitals but the downside is that the VA and NYU medical staff such as interns and resident doctors from the NYU medical school get \u201cpractice\u201d on you and can give you the feeling of being Guinea pigged while getting treated there . So the doctor you see maybe inexperienced but they do report to an attending Physician who oversees and approves their advice and directives.Rescheduling appointments is relatively easy and fast . The answering services is above average in my opinion , they are always polite and hospitable and professional and always accommodating. I currently use this facility as my primary medical care and have never experienced any faculty that was unprofessional .the two things that I feel really need to be addressed and renovated are the VCS patriot store , I think it should be an actual PX with more reasonable prices and more veteran and service member oriented. The biggest update  that should be addressed is the VCS patriot cafe. This chow hall is just unsat and a blemish on the VA as a whole . The food is sub par and  typical and limited , there is very little variety. The staff is friendly and helpful at the cafe , but the over all experience is less to be desired. This is strictly my opinion and I encourage the veterans that use this particular VA to make their own opinions about the chow hall themselves.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURmcFotN1BBEAE!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CIHM0ogKEICAgIDfpZ-7PA%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2G1PYGrN0g6fZvLDWnUm7638pIHyDkynbNnAI4PbWwtrTmjZK7NST9oF6w1K08Evfwko_ylXQ2iY-XkV-dVurvwRzM6YjCZ5MORbRoH8yq2VCXmniwI2rHgMkvhMbnH8GRgZRuHg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2ed0IF3fyPq45bRmN9EyBJ_Wcskxpu7N1Qbps85iAYdgSrqLc2ewHwzjgCqwHwwWgtzpxR2h8w4cb1wQmjeZzXORkMRN98OetPdXz_IU-DSmqBnrjVH2sQ4H38a5AzepMllib6=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1xrPE65uctYcl8v0e9lD1RNf6w-8C8ngJ8Btl444-NdLZiupAoDSSE1_lNaHL0lnIbLia7aGYxksYkA-DnEiqMOuMnoDwhATrr_7sHq-z5s1N92-LeDZCpjwyuDOmrfo7VJfRN=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-01-08T16:16:30+00:00"
+        },
+        {
+          "username": "Garry Jean Pierre",
+          "rating": 1,
+          "contributor_id": "111108916927562225116",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIy4G9-ltXFkDwa9iALeMN4KK-YRxooRIHTKvBcvBcRm-4DeQ=s120-c-rp-mo-br100",
+          "description": "The Urology clinic was amazing I appreciate their help fully. The mental health clinic, no help I went for help and was told everyone in a appointment but heres a number...im not even going to tell a doctor youre here so he could help you...what are you serious, I just left. The ER...what made me really give up, I get my pressure taken fine then nearly everyone is staring at me I guess the lady in front let everyone know that someone that needs mental help is here isnt that nice. Then the mental health nurse comes I could tell she didnt wanna be bothered with me what confirmed it is her ask if I want to \"Harm myself\" I say no\" she rolled her eyes im already feel uneasy. Then people are smiling and looking at me talking to other coworkers, one even laughed. I left, the nurse stops me and says \"Youre waiting because a few people were ahead of you\", then its \"No youre next\" seconds later. Youre a liar. I hate you people! I hope noone ever goes their for help because I cant imagine how many people took their own lives because of this place. Thank you to the Ladies in the Urology clinic for encouraging me to get help. This experience just broke me even more and honestly I dont want to step foot in another VA again ill just buy health care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oNFJVVjZZbXcxY0VGb1NIUmpkV3hvVGxVelRFRRAB!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CAIQACodChtycF9oOnh4RUV6Ymw1cEFoSHRjdWxoTlUzTEE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-11T23:18:47+00:00"
+        },
+        {
+          "username": "Maria Elisa Contreras",
+          "rating": 1,
+          "contributor_id": "105092571329082324661",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLwQb8vVrnAptpka_ywGYV2Fs4bJ5erMtgZ_c-Oh4L5QmwE-g=s120-c-rp-mo-br100",
+          "description": "The way our war heroes are treated at this Veterans Hospital is shameful. From the moment you walk in, the people who are supposed to help with the wheelchairs are terribly inattentive and rude. They talk badly about the doctors and nurses who are actually the ones who do the work. And don't even get me started on the receptionists\u2014they're detestable and ignore the patients. No veteran wants to go to this hospital.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT213MmVrSlBiVmhWYm5RdE5scDZkVTFsVlRsVUxVRRAB!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CAIQACodChtycF9oOmw2ekJPbVhVbnQtNlp6dU1lVTlULUE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-21T01:34:13+00:00"
+        },
+        {
+          "username": "Ronald P. Sanders",
+          "rating": 5,
+          "contributor_id": "107082085103926736334",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKPjeY75qcZ70PjrGL8krsWPyLWSDrW5nkt8eYJoQsfw76FGw=s120-c-rp-mo-ba12-br100",
+          "description": "Great value and even better service! Everything was handled efficiently and professionally. The final result exceeded what I expected, and the attention to detail really stood out. It\u2019s clear a lot of effort goes into delivering great results. Highly recommended without any hesitation.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGSllqbEZjRWRYWmxnd2VEbElPVlZzTTBGWVdXYxAB!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CAIQACodChtycF9oOlFJYjlFcEdXZlgweDlIOVVsM0FYWWc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-05T11:35:05+00:00"
+        },
+        {
+          "username": "Ab CD",
+          "rating": 5,
+          "contributor_id": "114245024220913082097",
+          "user_review_count": 16,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUj6VJ2WZDcUiRDM6JUXw9kvvrkV7CTPb3fs4Q3ciZB-E7QSjlM=s120-c-rp-mo-ba12-br100",
+          "description": "Shoutout to Patricia, Anthony, Marilyn Colon, Cathy and the whole team at 13 North y\u2019all are amazing and my nurse, Queen Patricia was incredible!!! And my Doctor, DR Christopher Whetten was amazing. Very thorough and explained everything in a way I can understand. Thank you all!\nXoxo princess Chaya",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pOaFR6aHNSM0kyZEVGdmJEQlhiSGhsUlVab2FsRRAB!2m1!1s0x0:0x927f33ed58d181d6!3m1!1s2@1:CAIQACodChtycF9oOjNhTzhsR3I2dEFvbDBXbHhlRUZoalE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-03T14:10:41+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NY Manhattan Campus",
+            "data_id": "0x0:0x968dd58de06f7b4e",
+            "data_cid": "10848561882737900366",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x968dd58de06f7b4e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x968dd58de06f7b4e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7371823,
+              "longitude": -73.9767127
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x968dd58de06f7b4e%218m2%213d40.7371823%214d-73.9767127&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.6,
+            "reviews": 5,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEgXBiIf9rAjeWlx7gFPZ_9VoJuAmYfvTvOb1600PsZibL8LVJrZJmTcD1GIuJS9kfPaZsIFhypSLabKrqLox-7pLmdmHaTdw-piP3W0_9Myrk0TcHZVpsKS6n2wfx7wGgteNk=w156-h156-n-k-no",
+            "type": [
+              "Veterans hospital"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "VA Medical Center-Manhattan: Vetter Marion MD",
+            "data_id": "0x0:0x6ab0d26ebd9795be",
+            "data_cid": "7687875936990500286",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6ab0d26ebd9795be&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6ab0d26ebd9795be&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7364685,
+              "longitude": -73.9769477
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6ab0d26ebd9795be%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=-s3A_h7aDGQZceN5cquWZ4boo4ymX9ohFjdxQyofZajxN3RHm30D9GbAtNxVNuFKFjFVdfLlrbV6bCDmE78k7L0D1gSW_NS-tF2jsUgWoskcldf7OAwfUbHdqzLdBUwazBOb-PceVu7Ju_JvkE5QX5_5qtUf0IuB",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "VA Medical Center-Manhattan: Dichter Robert H MD",
+            "data_id": "0x0:0x686e2f14aec1bfe9",
+            "data_cid": "7525003793260462057",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x686e2f14aec1bfe9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x686e2f14aec1bfe9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7364685,
+              "longitude": -73.9769477
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x686e2f14aec1bfe9%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=-s3A_h7aDGQZceN5cquWZ4boo4ymX9ohFjdxQyofZajxN3RHm30D9GbAtNxVNuFKFjFVdfLlrbV6bCDmE78k7L0D1gSW_NS-tF2jsUgWoskcldf7OAwfUbHdqzLdBUwazBOb-PceVu7Ju_JvkE5QX5_5qtUf0IuB",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "VA Medical Center-Manhattan: Rubinstein Morton MD",
+            "data_id": "0x0:0x389329ca8a1c8f65",
+            "data_cid": "4076648037577690981",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x389329ca8a1c8f65&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x389329ca8a1c8f65&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.736744699999996,
+              "longitude": -73.9772634
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x389329ca8a1c8f65%218m2%213d40.736744699999996%214d-73.9772634&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=jKmbqIm4MjcQ0NtwaopK7_ps-GrAirhLmtDXCRbZcxMmyCVd9D1UfkJ_auLk66jlPKaG6eIKsdO-0XVqqR6Ot8Zv-3tB5Hp-X6lU-cCb7dScjG_zZRwQRAnivQVZjRqkm8F7pu18PmW5E1_SKS2Jhk1V0AVTXvmf",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "VA Medical Center-Manhattan: Carey Michael E MD",
+            "data_id": "0x0:0x7a4c982b895d3098",
+            "data_cid": "8812585883612819608",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7a4c982b895d3098&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7a4c982b895d3098&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7364685,
+              "longitude": -73.9769477
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7a4c982b895d3098%218m2%213d40.7364685%214d-73.9769477&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.3,
+            "reviews": 4,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEh2jxRZ5-J-_GcoE4RYTxM56--VDDU7IJhctY3870H4SniDV8o51dFeyWbCm6J0hTs69kqd8SSgsIDB_cUFsgX9KtWQ1T8AiUdnVmntLQg2pey0CXIrB6DEY8ME4cipSxaiGNX=w156-h156-n-k-no",
+            "type": [
+              "Doctor"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjEKLyIrVkEgTlkgSGFyYm9yIEhlYWx0aGNhcmUgU3lzdGVtIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjEKLyIrVkEgTlkgSGFyYm9yIEhlYWx0aGNhcmUgU3lzdGVtIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

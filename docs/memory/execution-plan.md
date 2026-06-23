@@ -99,18 +99,222 @@
 
 ---
 
+## Sprint 2 数据任务 (fangxun.wu)
+
+**目标**: 完成数据库 ERD 修订、数据摄取、模拟数据和 ML 模型初始化  
+**总工时**: Est. 46h
+
+| # | Task | Week | Description | Status | Est. (h) |
+|---|------|------|-------------|:------:|:--------:|
+| D2.1 | ERD Revision, Schema Updates & District Zoning Setup | Week 4 | ERD update + 4 district nodes | ✅ 2026-06-09 | 5 |
+| D2.2 | MySQL Table Implementation & Index Tuning | Week 4 | DDL scripts + FK constraints + composite indexes | ✅ 2026-06-09 | 5 |
+| D2.3 | Data Parsing & Ingestion | Week 5 | ETL: 349 restrooms, 900 healthcare, 431 NYS, 3,279 AEDs, 63 LASS | ✅ 2026-06-05 | 10 |
+| D2.5 | Zoned Historical Ingestion & ML Model Init (Advance Start) | Week 5 | [High Priority] traffic_hourly.csv fetched; ARIMA/LSTM pending | ⏳ 进行中 | 10 |
+| D2.6 | Data Deduplication & Multi-Source Cleansing Preprocessing | Week 5 | GPS duplicate detection (grid+haversine, lat-scaled) | ✅ 2026-06-11 | 10 |
+| D2.7 | Database Integrity, Privacy & Constraint Unit Testing | Week 5 | PyTest: 100% venues non-Null district; 12 test cases | ✅ 2026-06-11 | — |
+
+### DQR Pipeline 重构 (2026-06-11)
+
+- 6 个共享模块 in `Data+ML/test/shared/` (dqr_utils, dqr_io, dqr_checks, dqr_analysis, dqr_cleaning, external_ingestion)
+- Notebook: 21 cells, 218 code lines (from 40 cells, 406 lines)
+- Output moved to `output/` subdirectory
+- All imports consolidated in Cell 2
+- pytest: 12 tests pass (D2.7, GPS grid, export overwrite, import path, clean_venues immutability)
+
+### Park Toilet GPS Fix (2026-06-11)
+
+- 124 zero-coordinate restroom venues fixed using NYC Open Data (`i7jb-7jku`)
+- 93 Manhattan-trusted matches written to DB
+- 3 Bronx Jackie Robinson Park entries deleted (wrong Borough)
+- CSV `Directory_Of_Toilets_In_Public_Parks_20260526.csv` updated: +Latitude/Longitude columns
+- DB: 473 restrooms, 100% GPS, 0 null districts
+
+### D2.5 ARIMA/LSTM 实施计划
+
+#### 当前数据限制
+
+- `traffic_hourly.csv` 是按道路方向和小时聚合的 24 小时年度平均轮廓，不是连续历史时间序列。
+- 当前数据缺少日期、连续时间戳和 `venue_id`，不能直接作为可信的 ARIMA/LSTM 生产训练集。
+- 该文件仅保留为小时轮廓分析和演示基线，不标记为生产训练数据。
+
+#### 实施阶段
+
+1. 历史序列重构: 从 NYC SODA 保留 `yr`、`m`、`d`、`hh`，按道路方向生成 `traffic_timeseries.csv`。
+2. 基线模型: 实现 24 小时季节性朴素预测，作为 SARIMA/LSTM 的最低性能基准。
+3. SARIMA: 使用 Statsmodels SARIMAX 为每条道路方向训练时序模型；数据不足时回退到季节性基线。
+4. LSTM: 使用 PyTorch 训练共享模型，输入过去 24 或 48 小时，输出未来 12 小时。
+5. 场馆映射: 建立道路序列到场馆的空间映射，生成 `venue_traffic_mapping.csv`，字段为 `venue_id`、`series_id`、`distance_m`。
+6. 预测发布: 统一输出 `forecast_for`、`predicted_score`、`predicted_level`、`model_version`，最终写入 `busyness_forecasts`。
+
+数据库写入默认关闭。只有模型通过验证且预测记录具有有效场馆映射后，才允许显式启用写入。
+
+#### 产物与接口
+
+- `traffic_timeseries.csv`
+- `venue_traffic_mapping.csv`
+- `busyness_forecasting.ipynb`
+- SARIMA/PyTorch 模型文件和模型评估报告
+- 连续 12 小时预测结果
+
+`predicted_score` 必须限制在 `0-100`，等级规则如下：
+
+- `< 30`: `quiet`
+- `30-70`: `moderate`
+- `> 70`: `busy`
+
+#### 验收标准
+
+- 每条训练序列至少覆盖 7 天，推荐覆盖 28 天以上。
+- 训练、验证和测试集必须按时间顺序切分，禁止随机切分。
+- SARIMA 或 LSTM 至少一个模型必须优于 24 小时季节性朴素基线。
+- 每次预测必须输出连续 12 个小时，且不得包含重复时间点。
+- 所有预测分数必须位于 `0-100`，等级必须符合统一阈值。
+- 没有有效 `venue_id` 映射的道路预测不得写入 `busyness_forecasts`。
+
+---
+
+## Venue ML Coverage SOP (2026-06-23)
+
+**目标**: 保留原始 venue catalogue，同时明确哪些 venue 可进入 supervised ML。
+
+- 原始 `venues` 不删除。
+- 仅训练有可靠 Google Popular Times / SerpApi busy label 的 venue。
+- 无 label venue 不进入 supervised ML，但仍可在应用层展示。
+- `no_data` 只表示数据可用性，不是预测等级。
+
+### 最小规则
+
+- `label_status` 只保留 `api_not_checked` / `has_popular_times` / `no_popular_times` / `api_error`
+- `prediction_source` 只保留 `ml_model` / `rule_fallback` / `none`
+- `display_level` 只保留 `quiet` / `moderate` / `busy` / `no_data`
+- 只有 `prediction_source = none` 时，`display_level` 才允许为 `no_data`
+- SerpApi 只做候选筛选、匹配和验证，不做全量盲查
+
+### 额度策略
+
+- 先离线筛选，再调用 SerpApi
+- 只对高优先级候选做 Place detail 验证
+- 所有 raw response 必须缓存
+- 预计 labeled set 以 80-180 个 venue 为保守范围
+
+### SerpApi 查询设计
+
+主流程使用 Google Maps Search，而不是普通 Google Search。普通搜索会混入网页结果、百科、新闻和健康文章，不适合作为 venue discovery 主数据源。
+
+整体策略是三步流程：
+
+1. **Discovery**: 用粗类别关键词 + 地理网格批量发现 Google Maps candidates。
+2. **Matching**: 将 candidates 按名称、距离、类别匹配回本地 cleaned venues。
+3. **Validation**: 只对匹配成功且高优先级的 candidates 调 Place Results，检查 `popular_times` / busy score。
+
+Discovery 查询模板：
+
+```text
+engine=google_maps
+type=search
+q=<coarse_category_keyword>
+ll=@<lat>,<lng>,<zoom>z
+hl=en
+gl=us
+```
+
+示例：
+
+```text
+engine=google_maps
+type=search
+q=cafe
+ll=@40.7580,-73.9855,15z
+hl=en
+gl=us
+```
+
+Place validation 查询模板：
+
+```text
+engine=google_maps
+place_id=<google_place_id>
+hl=en
+gl=us
+```
+
+Discovery 阶段收集字段：
+
+| 字段 | 用途 |
+|------|------|
+| `title` | 名称匹配 |
+| `place_id` | 后续 Place Results 查询 |
+| `gps_coordinates` | 空间匹配 |
+| `rating` | 候选优先级 |
+| `reviews` | 候选优先级与热度 proxy |
+| `type` / `types` | 类别匹配 |
+| `address` | 辅助去重和人工审查 |
+
+`data_id` 可保留在 raw response cache 中，但不进入主状态表或核心匹配逻辑。主流程统一以 `place_id` 作为 Google Maps 标识。
+
+粗类别关键词控制在 8-12 个，每类 1-3 个 query phrase：
+
+| 本地大类 | SerpApi query phrase |
+|----------|----------------------|
+| `food_drink` | `cafe`, `coffee shop`, `restaurant` |
+| `health` | `pharmacy`, `hospital`, `urgent care` |
+| `public_service` | `library`, `public restroom`, `community center` |
+| `tourism` | `museum`, `tourist attraction`, `art gallery` |
+| `outdoor` | `park`, `playground` |
+
+预算计算：
+
+```text
+search_budget = keyword_count x grid_cell_count x pages_per_query
+place_budget = remaining_calls_for_popular_times_validation
+```
+
+示例：
+
+```text
+10 keywords x 15 grid cells x 1 page = 150 search calls
+250 monthly quota - 150 search calls = 100 place validation calls
+```
+
+匹配回本地 venue catalogue 的建议规则：
+
+```text
+match_score =
+    name_similarity
+  + distance_score
+  + category_similarity
+
+if distance_m <= 50 and name_similarity >= 0.85:
+    matched
+elif distance_m <= 100 and name_similarity >= 0.75 and category_match:
+    matched
+else:
+    unmatched_google_candidate
+```
+
+Search query 用于批量发现 candidates；Place query 只用于最终 label 验证。不要对每个本地 venue 直接消耗一次 SerpApi 调用。
+
 ## Sprint 3 数据任务（fangxun.wu）
 
 > **说明**: 下列任务全部归属 Sprint 3 的 `fangxun.wu` 工作流，并按现有 DB 设计约束执行：基础 `venues` / `reports` 结构保持稳定，实时与预测结果写入动态层，医疗资料单独进入加密表。
 
-| # | Task | Priority | 说明 |
-|---|------|----------|------|
-| S3.1 | MySQL Keyring Configuration & Tablespace Encryption Integration | P0 | 只作为加密医疗表的前置能力；失败时仅阻断需要 `ENCRYPTION='Y'` 的迁移，不阻断无关基础表 |
-| S3.2 | Encrypted User Medical Profile Schema Migration Setup | P0 | `user_medical_profiles` DDL + `ENCRYPTION='Y'` + `ON DELETE CASCADE`，仅存 Tier 2 医疗字段 |
-| S3.3 | Real-Time MySQL Seed Venues Ingestion & Verification | P0 | 作为幂等初始化 seed，补足静态 `venues` 基础数据，不替代 ETL 权威源 |
-| S3.4 | Real-Time Zoned Telemetry Pipeline | P0 | 实时载入 live capacity / wait-time，写入动态 telemetry 层，不回写静态 `venues` |
-| S3.5 | 12-Hour Capacity Forecasting Production Engine | P0 | 产出 12h 预测结果到预测层/预测表，保持与前端消费的 forecast 结构一致 |
-| S3.6 | Polymorphic Crowdsourced Ingestion Engine & 2-Hour TTL Pipeline | P0 | `user_reports` / `report_confirmations` 路由 + Redis/Celery 过期状态化，TTL 仅更新 `expired` / `status`，不做硬删除 |
+- `S3.1 MySQL Keyring Configuration & Tablespace Encryption Integration`  
+  SOP: 只为加密医疗表提供前置能力；先验证 keyring 和 tablespace encryption，再执行加密迁移；不要把失败扩散到无关基础表。
+
+- `S3.2 Encrypted User Medical Profile Schema Migration Setup`  
+  SOP: 只建 `user_medical_profiles` 一张表；`user_id` 同时做 PK/FK，`ON DELETE CASCADE`，只存 Tier 2 医疗字段，表级 `ENCRYPTION='Y'`。
+
+- `S3.3 Real-Time MySQL Seed Venues Ingestion & Verification`  
+  SOP: 做成幂等 seed；只补齐静态 `venues` 基础数据；执行前后都能重复跑，不把它当 ETL 第二权威源。
+
+- `S3.4 Real-Time Zoned Telemetry Pipeline`  
+  SOP: 只写动态 telemetry 层或预测输入层；实时容量和等待时间不要回写 `venues` 静态表。
+
+- `S3.5 12-Hour Capacity Forecasting Production Engine`  
+  SOP: 输出 12 小时预测结果到 forecast 层；保持结构和前端读取一致；不要把预测逻辑混进静态 venue 记录。
+
+- `S3.6 Polymorphic Crowdsourced Ingestion Engine & 2-Hour TTL Pipeline`  
+  SOP: 保留 report 记录并更新状态；TTL 到期只改 `expired` / `status`，不要硬删除；Path A / Path B 分开处理。
 
 ---
 
@@ -315,234 +519,3 @@ Phase 6 (验证+清理)
 3. **12 小时预测数据失真** — 单值伪造数组无法支撑真实图表
 
 ---
-
-## Sprint 2 数据任务 (fangxun.wu)
-
-**目标**: 完成数据库 ERD 修订、数据摄取、模拟数据和 ML 模型初始化
-**总工时**: Est. 46h
-
-| # | Task | Week | Description | Status | Est. (h) |
-|---|------|------|-------------|:------:|:--------:|
-| D2.1 | ERD Revision, Schema Updates & District Zoning Setup | Week 4 | ERD update + 4 district nodes | ✅ 2026-06-09 | 5 |
-| D2.2 | MySQL Table Implementation & Index Tuning | Week 4 | DDL scripts + FK constraints + composite indexes | ✅ 2026-06-09 | 5 |
-| D2.3 | Data Parsing & Ingestion | Week 5 | ETL: 349 restrooms, 900 healthcare, 431 NYS, 3,279 AEDs, 63 LASS | ✅ 2026-06-05 | 10 |
-| D2.5 | Zoned Historical Ingestion & ML Model Init (Advance Start) | Week 5 | [High Priority] traffic_hourly.csv fetched; ARIMA/LSTM pending | ⏳ 进行中 | 10 |
-| D2.6 | Data Deduplication & Multi-Source Cleansing Preprocessing | Week 5 | GPS duplicate detection (grid+haversine, lat-scaled) | ✅ 2026-06-11 | 10 |
-| D2.7 | Database Integrity, Privacy & Constraint Unit Testing | Week 5 | PyTest: 100% venues non-Null district; 12 test cases | ✅ 2026-06-11 | — |
-
-### DQR Pipeline 重构 (2026-06-11)
-
-- 6 个共享模块 in `Data+ML/test/shared/` (dqr_utils, dqr_io, dqr_checks, dqr_analysis, dqr_cleaning, external_ingestion)
-- Notebook: 21 cells, 218 code lines (from 40 cells, 406 lines)
-- Output moved to `output/` subdirectory
-- All imports consolidated in Cell 2
-- pytest: 12 tests pass (D2.7, GPS grid, export overwrite, import path, clean_venues immutability)
-
-### Park Toilet GPS Fix (2026-06-11)
-
-- 124 zero-coordinate restroom venues fixed using NYC Open Data (`i7jb-7jku`)
-- 93 Manhattan-trusted matches written to DB
-- 3 Bronx Jackie Robinson Park entries deleted (wrong Borough)
-- CSV `Directory_Of_Toilets_In_Public_Parks_20260526.csv` updated: +Latitude/Longitude columns
-- DB: 473 restrooms, 100% GPS, 0 null districts
-
-
-
-Sprint2 重点任务 D2.5 进展说明：
-### D2.5 ARIMA/LSTM 实施计划
-
-#### 当前数据限制
-
-- `traffic_hourly.csv` 是按道路方向和小时聚合的 24 小时年度平均轮廓，不是连续历史时间序列。
-- 当前数据缺少日期、连续时间戳和 `venue_id`，不能直接作为可信的 ARIMA/LSTM 生产训练集。
-- 该文件仅保留为小时轮廓分析和演示基线，不标记为生产训练数据。
-
-#### 实施阶段
-
-1. **历史序列重构**: 从 NYC SODA 保留 `yr`、`m`、`d`、`hh`，按道路方向生成 `traffic_timeseries.csv`。
-2. **基线模型**: 实现 24 小时季节性朴素预测，作为 SARIMA/LSTM 的最低性能基准。
-3. **SARIMA**: 使用 Statsmodels SARIMAX 为每条道路方向训练时序模型；数据不足时回退到季节性基线。
-4. **LSTM**: 使用 PyTorch 训练共享模型，输入过去 24 或 48 小时，输出未来 12 小时。
-5. **场馆映射**: 建立道路序列到场馆的空间映射，生成 `venue_traffic_mapping.csv`，字段为 `venue_id`、`series_id`、`distance_m`。
-6. **预测发布**: 统一输出 `forecast_for`、`predicted_score`、`predicted_level`、`model_version`，最终写入 `busyness_forecasts`。
-
-数据库写入默认关闭。只有模型通过验证且预测记录具有有效场馆映射后，才允许显式启用写入。
-
-#### 产物与接口
-
-- `traffic_timeseries.csv`
-- `venue_traffic_mapping.csv`
-- `busyness_forecasting.ipynb`
-- SARIMA/PyTorch 模型文件和模型评估报告
-- 连续 12 小时预测结果
-
-`predicted_score` 必须限制在 `0-100`，等级规则如下：
-
-- `< 30`: `quiet`
-- `30-70`: `moderate`
-- `> 70`: `busy`
-
-#### Citi Bike 历史行程数据 (2026-06-17 确认)
-
-**数据源**: Lyft Citi Bike System Data — S3 公开下载
-**下载地址**: `https://s3.amazonaws.com/tripdata/{YYYYMM}-citibike-tripdata.csv.zip`
-
-| 系统 | 文件命名 | 月度行数 | 压缩大小 |
-|------|----------|---------|---------|
-| **NYC 全量** | `202605-citibike-tripdata.csv.zip` | 300-500 万行 | 917 MB |
-| Jersey City only | `JC-202605-citibike-tripdata.csv.zip` | ~9.5 万行 | 3.3 MB |
-
-**CSV 字段 (13列)**: `ride_id`, `rideable_type`, `started_at`, `ended_at`, `start_station_name`, `start_station_id`, `end_station_name`, `end_station_id`, `start_lat`, `start_lng`, `end_lat`, `end_lng`, `member_casual`
-
-**本地数据**: `JC-202605-citibike-tripdata.csv.zip` (95,350 行, 3.3 MB) — 仅 Jersey City 区域
-
-**部署策略**: 本地用 JC 月度文件做 feature engineering 原型和模型选型；正式训练放服务器从 S3 按需拉取 NYC 全量数据。
-
-**ML 训练需求**: Phase 3 多源活动指数 (Todolist.md) 需要 Citi Bike 历史行程作为时序特征输入，与 MTA subway ridership + NYC Traffic 构成多源特征集。
-
-#### 验收标准
-
-- 每条训练序列至少覆盖 7 天，推荐覆盖 28 天以上。
-- 训练、验证和测试集必须按时间顺序切分，禁止随机切分。
-- SARIMA 或 LSTM 至少一个模型必须优于 24 小时季节性朴素基线。
-- 每次预测必须输出连续 12 个小时，且不得包含重复时间点。
-- 所有预测分数必须位于 `0-100`，等级必须符合统一阈值。
-- 没有有效 `venue_id` 映射的道路预测不得写入 `busyness_forecasts`。
-
----
-
-## Venue ML Coverage SOP (2026-06-23)
-
-**目标**: 将 4000+ 原始 venue catalogue 保留下来，同时明确哪些 venue 可以进入 supervised ML，哪些只能由规则 fallback 或 `no_data` 表示。
-
-### 核心决策
-
-- 原始 `venues` 不删除，不因为 SerpApi/Google Popular Times 缺失而 drop。
-- Supervised ML 只训练有可靠 Google Popular Times / SerpApi busy label 的 venue。
-- 无 label venue 不是应用范围外，而是 **out of scope for supervised ML**。
-- 应用层可以继续展示无 label venue，但必须区分 `ml_model`、`rule_fallback`、`none/no_data` 来源。
-- `no_data` 是数据可用性状态，不是 ML 要预测的忙碌等级。
-
-### Label 与预测任务定义
-
-预测任务为未来 12 小时连续 busy-level forecast，间隔 1 小时：
-
-```text
-target = quiet | moderate | busy
-horizon = t+1h ... t+12h
-```
-
-Google Popular Times / SerpApi busy score 归一化规则：
-
-```text
-if peak_vol == 0 or popularity data missing:
-    label_status = no_data
-else:
-    ratio = hourly_popularity / peak_vol
-
-    if ratio < 0.3:
-        label = quiet
-    elif ratio < 0.7:
-        label = moderate
-    else:
-        label = busy
-```
-
-训练时只使用 `quiet/moderate/busy`；`no_data` 样本不进入 supervised training 和 evaluation。
-
-### Venue 状态字段
-
-建议在候选清单或派生表中保留以下字段：
-
-| 字段 | 含义 |
-|------|------|
-| `label_status` | `has_popular_times`, `no_popular_times`, `api_not_checked`, `api_error`, `out_of_scope_category` |
-| `ml_eligible` | 是否允许进入 supervised ML training/evaluation |
-| `prediction_source` | `ml_model`, `rule_fallback`, `none` |
-| `display_level` | `quiet`, `moderate`, `busy`, `no_data` |
-| `serpapi_checked_at` | SerpApi 检查时间 |
-| `serpapi_place_id` | Google Maps place id |
-| `serpapi_data_id` | SerpApi/Google Maps data id |
-
-### SerpApi 额度策略
-
-每月 250 次额度不支持先抓取 4000+ venues 再筛选，必须先离线筛选候选，再调用 SerpApi。
-
-1. 从 cleaned venues 中按 `category x district/grid` 做 stratified sampling。
-2. 优先选择 reviews/rating 较高、靠近 Citi Bike station、地理覆盖均衡的 venue。
-3. 每个核心 category 和主要区域设置 minimum quota，避免某类或某区域全丢。
-4. 对候选 venue 调 SerpApi Google Maps Place Results API，检查是否有 `popular_times` / busy score。
-5. 原始 response 必须缓存，后续解析逻辑变更时不得重复浪费额度。
-6. 预计 250 次调用中只有一部分会返回可用 label，因此 ML labeled set 应保守估计为 80-180 个 venue，而不是承诺稳定几百个。
-
-候选优先级可按以下规则实现：
-
-```text
-priority_score =
-    category_importance
-  + log(review_count)
-  + rating_quality
-  + distance_to_nearest_bike_station_bonus
-  + geographic_coverage_bonus
-  - duplicate_or_low_confidence_penalty
-```
-
-### 存储产物
-
-| 产物 | 说明 |
-|------|------|
-| `serpapi_raw_responses` | 原始 JSON、request URL、timestamp、place_id、status、error |
-| `venues_label_status` | 每个 venue 的 label 可用性、ML eligibility、fallback 状态 |
-| `venue_hourly_popularity` | `venue_id`, `day_of_week`, `hour`, `busyness_score`, `peak_vol`, `ratio`, `label` |
-| `venue_ml_candidates.csv` | 可训练 venue 子集 |
-| `venue_coverage_audit.csv` | category / district / grid 覆盖审计结果 |
-
-### Notebook 分工
-
-`dqr_cleaning_pipeline.ipynb` 只负责原始数据质量与清洗：
-
-- 缺失值、重复、坐标合法性
-- borough/district 修正
-- venue 类型、rating、reviews 基础质量检查
-- 输出 cleaned venues
-
-`venue_coverage_walkthrough.ipynb` 负责 ML label coverage 与候选筛选：
-
-- SerpApi candidate selection
-- category coverage audit
-- district/grid geographic coverage audit
-- Citi Bike proximity coverage audit
-- dropped/no_data/out-of-scope reporting
-- final ML-labeled candidate list
-
-实际文件：
-
-- `Group6_Summer-Project/Data+ML/test/6.8-6.12_DB/dqr_cleaning_pipeline.ipynb`
-- `Group6_Summer-Project/Data+ML/test/6.15-5.20/venue_coverage_walkthrough.ipynb`
-
-### Rule Fallback 与展示语义
-
-无 SerpApi label 的 venue：
-
-- ML training: `label_status = no_data`, `ml_eligible = false`
-- ML evaluation: 排除，不计入 accuracy/F1
-- 内部报告: 显示 `no_data`，用于解释 label coverage
-- 应用展示: 可显示 `rule_fallback` 的 `quiet/moderate/busy`，但必须保留 `prediction_source = rule_fallback`
-
-MVP 可先显示 `no_data`；若要保证用户体验，则用规则系统补齐，但不得把 fallback 结果包装成 ML prediction。
-
-### 汇报口径
-
-推荐对 mentor 的说明：
-
-> We keep the full venue catalogue for the application. SerpApi/Google Popular Times availability only defines the supervised ML boundary. Venues with reliable busy labels are used for model training and evaluation; venues without labels remain in the application but are marked as out of scope for supervised ML and handled by rule-based fallback or no_data. This avoids pretending that unlabeled venues have verifiable ML predictions, while preserving product coverage.
-
-### 验收标准
-
-- 原始 venue 总量不因 label 缺失而减少。
-- 每个 venue 都有明确 `label_status` 和 `ml_eligible`。
-- ML train/evaluation 数据集中不得包含 `no_data`。
-- coverage audit 必须输出 category、district/grid、Citi Bike proximity 三类覆盖报告。
-- 若某 category 或区域 label 覆盖为 0，必须在报告中显式标记，不得隐式补入 ML 训练。
-- 所有 SerpApi 原始 response 必须缓存。
-- 最终预测输出必须包含 `prediction_source`，区分 `ml_model` 与 `rule_fallback`。

@@ -125,16 +125,15 @@ class TestMedicalProfileCRUD:
     def test_put_profile(self, client, auth_token):
         """Test creating/updating medical profile."""
         profile_data = {
+            "date_of_birth": "1990-01-15",
+            "gender": "Female",
+            "address": "123 Main St, New York, NY 10001",
             "blood_type": "A+",
-            "donor_status": True,
-            "severe_allergies": ["Peanuts", "Shellfish"],
-            "conditions": ["Diabetes"],
-            "medications": ["Insulin"],
+            "allergies": ["Peanuts", "Shellfish"],
+            "medical_conditions": ["Diabetes"],
             "emergency_contacts": [
                 {"name": "John Doe", "phone": "555-0123", "relationship": "Spouse"}
             ],
-            "emergency_notes": "Type 1 Diabetic",
-            "medical_pass_title": "Medical Alert",
         }
         response = client.put(
             "/api/v1/user/medical-profile",

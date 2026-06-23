@@ -1,0 +1,389 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1c66372f39b5d2c75cd",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/WJNrFdFNETdHYSX-zp61WA/6a3ac1c66372f39b5d2c75cd.json",
+    "created_at": "2026-06-23 17:26:30 UTC",
+    "processed_at": "2026-06-23 17:26:30 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259a6744a171f:0x359369c352256e35!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/WJNrFdFNETdHYSX-zp61WA/6a3ac1c66372f39b5d2c75cd.html",
+    "prettify_html_file": "https://serpapi.com/searches/WJNrFdFNETdHYSX-zp61WA/6a3ac1c66372f39b5d2c75cd.prettify",
+    "total_time_taken": 5.67
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJHxdKdKZZwokRNW4lUsNpkzU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Midtown Dental Group NoMad",
+    "place_id": "ChIJHxdKdKZZwokRNW4lUsNpkzU",
+    "data_id": "0x89c259a6744a171f:0x359369c352256e35",
+    "data_cid": "3860545593204370997",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a6744a171f%3A0x359369c352256e35&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a6744a171f%3A0x359369c352256e35&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7445459,
+      "longitude": -73.98862
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJHxdKdKZZwokRNW4lUsNpkzU",
+    "provider_id": "/g/1vnrlyf6",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6FdGY5ClnJEMOOjS49dgotDIw-s5ZrAoU9XEHvf3I6tBA9YaS4jlFaoGcYH1pwx9uaG57UsfB8S84zXwH9s0WGzKi1zJ2pI2sdEyou6XiWV5hs60nppO7vV23Tw_PU5GN-n8aMw=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/DVBvv3icHcTdboIwGADQJ6qUnyJd4gUqFjSKhqHgzUIKgg7bxq_YjTf0EfY2SzwX5-_Vaa3gw7L6zp20UrZ9M0Dz4FLoRugJl3erVYA4ILDC_e7wHTJ_VbOSLHqxjrZpess8WrdSLxODgJwfocxpEcXPi5v4eh7Sssq8W7-qJONlbCvzQ4eKkWkOl3mQBd5YmJgCPrFxc7XHtaMSB-roVw5-cT0dSQc-Fkql0-fRcT_N1z4nbIdEUG3NzNgYY9S950j8A2nmQ_o",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 7
+      },
+      {
+        "stars": 5,
+        "amount": 476
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 490,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental hygienist",
+      "Dental implants provider",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_hygienist",
+      "dental_implants_provider",
+      "teeth_whitening_service"
+    ],
+    "menu": {
+      "link": "https://midtowndentalgroup.com/family-dentist/",
+      "source": "midtowndentalgroup.com"
+    },
+    "book_online": "https://nexhealth.info/book/appt/midtowndentalgroup?lid=324821&rwg_token=AE37R_jeHvStsCH2LgUN837v5KgeukThSk7M5mZueL54Jo8NioACdpD8pNIksHXT3MBQ3ZvsLVHU5cyrj_zUWlHsd1qqhSCjVQ%3D%3D",
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "address": "1158 Broadway 3rd floor, New York, NY 10001",
+    "country": "United States",
+    "booking_link": "https://app.nexhealth.com/appt/midtowndentalgroup?lid=324821",
+    "website": "https://midtowndentalgroup.com/",
+    "phone": "(212) 213-4029",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "P2V6+RH New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20136 PM"
+      },
+      {
+        "wednesday": "8 AM\u20136 PM"
+      },
+      {
+        "thursday": "8 AM\u20136 PM"
+      },
+      {
+        "friday": "8 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259a6744a171f%3A0x359369c352256e35&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6FdGY5ClnJEMOOjS49dgotDIw-s5ZrAoU9XEHvf3I6tBA9YaS4jlFaoGcYH1pwx9uaG57UsfB8S84zXwH9s0WGzKi1zJ2pI2sdEyou6XiWV5hs60nppO7vV23Tw_PU5GN-n8aMw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DVBvv3icHcTdboIwGADQJ6qUnyJd4gUqFjSKhqHgzUIKgg7bxq_YjTf0EfY2SzwX5-_Vaa3gw7L6zp20UrZ9M0Dz4FLoRugJl3erVYA4ILDC_e7wHTJ_VbOSLHqxjrZpess8WrdSLxODgJwfocxpEcXPi5v4eh7Sssq8W7-qJONlbCvzQ4eKkWkOl3mQBd5YmJgCPrFxc7XHtaMSB-roVw5-cT0dSQc-Fkql0-fRcT_N1z4nbIdEUG3NzNgYY9S950j8A2nmQ_o"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBsz6HNcV5MfRaxMO7P1SVBmTrs5xjvPjoCArD8iyolx-EfpSQVNAqzW4bJnxrybdOQGEZ9oaKuW7E9wxr_5cFhe_dsLGr96_i-wNNY7mKgGdujKotHBfr23uQaiKsNz3ZMEocGA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/UGBZh3icHcRbboJAFADQFY2gFJEm_RgshRQZoTYY_SE4vAtcnDuUkR12Cd1Nk56P8_tTSznis6Z1tbGqAKqumLAQHAZZDHLFodeqEQlHghqNWPxFfQeXrc94YoblR6bCoxWtT4nTfwo0VfsdtbCn4nXXPKBTxC3HU5wwel_OT7f3QYnHLT_Gnnu1IQums-XasxKpyd_qIs3x4Al7mzZkZuxi9UHl5VMbgPSdUmyMKc6aANliXEMXuEdf5rWu66T-n5PhD0z6RnQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=3xqERegA4F8gI2AQkElLyg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=348.37292&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/tgCxuHicHc3BCcIwFADQbXIzadOCrRCkhwqCF12gxBiTj2nzNd-0Xcet3EbwLfC-H0-EaSdEope1lMHOCIsNaYOauxhdsBohcRNHkUtB_j1eJw1hj3qKcFPV8uwv1nX1oXFH2Z0ffTitjpnrYALYidSoMQ0pc9KGIFjuMLFZSVkzr2TbsFXPqqobXm1lKxkCGa8K9n_uMauyKH7WkDnc"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The whole staff is very nice, the place is clean and the service is wonderful.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXh_hW_MT16Da0wCUcx-QXRRlBI9UIepRcgnHolz4B9kabWosNy0Q=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Highly professional team, clear explanation of diagnosis and treatment.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUYC-yYEqzl3qmevqPgCII1RxGHTASs9X6vM1g8ZbVvMuicljUu=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Couldn\u2019t be happier with the attention and the doctor and his team.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLJFQwnYRAtqWYOgnW7sfK6Z6v-JyTfKBzCCsn4unUoRazu=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Dan Sagawaga",
+          "rating": 5,
+          "contributor_id": "117180175496779624363",
+          "user_review_count": 22,
+          "user_photo_count": 40,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUM_jL7N582MUpiuz-Tl51YXZ8_RwvEPnY2NjuyL-OBuTDAzkyHGw=s120-c-rp-mo-ba12-br100",
+          "description": "Found these guys through Zocdoc and they\u2019re the best dental team. Have only done cleanups here but they are always on time, never waited 1 minute in the years that I\u2019ve been coming here and everyone is super friendly, informative, and attentive. Would highly recommend",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201d1Frc3RXRUp2TFhaaVExOURNemxXVlhOQ2NVRRAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOm5wQkstWEJvLXZiQ19DMzlWVXNCcUE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-06T16:59:49+00:00"
+        },
+        {
+          "username": "Catherine Luke O'Rourke",
+          "rating": 5,
+          "contributor_id": "111509767318365887687",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI0_gwF0KMdfNJjs8OYduZfk5mKQQ0vww9cNWc2sE4Sz_zr5g=s120-c-rp-mo-br100",
+          "description": "The folks at Midtown Dental Nomad were gentle and intuitive- they made a nervous nelly like me feel comfortable. The receptionist, Victoria, was super kind and communicative. The offices are modern and clean- I highly recommend Dr. Patel and his team.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSdWJEWTFibU4zUlc1cVNuRXpkbXBRUmpWVFRVRRAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOjRubDY1bmN3RW5qSnEzdmpQRjVTTUE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-18T00:52:32+00:00"
+        },
+        {
+          "username": "julie murphy",
+          "rating": 5,
+          "contributor_id": "118412109775891681530",
+          "user_review_count": 21,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVECkzxXtOvv-cmzXKHrTS-ly_pVjMCHz4q9Pk7ohYaQxeQfw8X=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Grossman and her staff are wonderful! Overall a fantastic experience- very welcoming, clean office, a thorough cleaning and state of the art equipment. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tkRk0xSlpYMGcyTURkMFluSkxMVXhtWDA0eUxXYxAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOkdFM1JZX0g2MDd0YnJLLUxmX04yLWc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-28T23:51:01+00:00"
+        },
+        {
+          "username": "Daianna McCleod",
+          "rating": 5,
+          "contributor_id": "102250659452835636104",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV6mMt_igUE69OVwZlsUJa_Bq6S-GSw3P_agwTIQsij01ehkgqI6w=s120-c-rp-mo-ba12-br100",
+          "description": "Everyone is super nice, polite, professional. Every step was explained to me , all my questions were answered. I felt heard. Victoria was super nice and Mindi was extremely nice, thank you. I would highly recommend this place. Thank you for listening and hearing me.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KR1FuQmlkV294Y1RNdGNVSm1MV1JoZWtoRGJXYxAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOmJGQnBidWoxcTMtcUJmLWRhekhDbWc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-24T03:27:29+00:00"
+        },
+        {
+          "username": "Joe Pineda",
+          "rating": 5,
+          "contributor_id": "105016642344600540000",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKnomnshosCMbXXwjot5rpZjxT2l2hOmJewTC2scIEnVs7Knw=s120-c-rp-mo-ba12-br100",
+          "description": "I enjoyed my visit. Everyone that I talked to was very nice. The doctor that cleaned my teeth had such an aggressively caring touch that it hurt (my fault, probably, maybe... it was). It really convinced me to be more \"consistent\" with my dental hygiene.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1NFMzRmxVMUZVTlhReWVXTkxjMVJ1ZWxweE5tYxAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOk54S3FlU1FUNXQyeWNLc1RuelpxNmc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-15T18:33:55+00:00"
+        },
+        {
+          "username": "zhaoping zhu",
+          "rating": 5,
+          "contributor_id": "110233727913091347509",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ260rRBf7OgAavK5dFdM_WxumLJn2HzZrIFnwDb_lr3iEYaQ=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been seeing Mandy for cleanings for a few years now, and I honestly can\u2019t recommend her enough. When I first came in, my gums were in pretty bad shape. I used to have a lot of bleeding during cleanings, and I assumed it was just genetic since both my parents have the same issue. But with Mandy\u2019s gentle, consistent care, and her helpful tips, my gums have improved so much. Now, cleanings are painless and there\u2019s barely any bleeding. Mandy is always incredibly thorough. She takes her time, explains everything clearly, and makes me feel totally at ease.\n\nDr. Rydstrom is genuine and never pushy. He checks in on my previous dental work and keeps me informed, but has never tried to sell me on unnecessary treatment. I really appreciate that.\n\nThe front desk is very friendly and super accommodating when it comes to scheduling.\n\nI don\u2019t usually write reviews, but I\u2019m genuinely grateful for the care I\u2019ve received here. They helped me realize I don\u2019t have to accept \u201cbad gums\u201d as something I just inherited.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oTFFqUlRibkJrTkZObE1YQmxSRXBJVWxCeWFuYxAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOmhLQjRTbnBkNFNlMXBlREpIUlByanc%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-18T14:21:53+00:00"
+        },
+        {
+          "username": "Coco Eddie",
+          "rating": 5,
+          "contributor_id": "111402741595033377727",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW3IU2jA-QUnRobB1HAaIMLWw30a8ZmCSxbvF-F0JACOXM3yVU=s120-c-rp-mo-br100",
+          "description": "Dr Rydstrom is a skilled cosmetic dentist with an incredible eye for eye aesthetics. He truly cares about the results and the patient. I\u2019m so glad I found him!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWV1NsSkpNaTF3VWs0M2EwRkNjbXR2ZEdkSk4wRRAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CAIQACodChtycF9oOlVWSlJJMi1wUk43a0FCcmtvdGdJN0E%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-23T00:09:27+00:00"
+        },
+        {
+          "username": "Raul Jiminian",
+          "rating": 5,
+          "contributor_id": "114906008041746044742",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUVaND25YgFtJFzk6M0FBAoZwtmweI43jfbH11G6UTuvtDhDN3F=s120-c-rp-mo-br100",
+          "description": "Absolutely incredible! I walked in feeling nervous, but I left feeling completely at ease and genuinely well cared for. From start to finish, the experience was exceptional. Mandy, the dental hygienist, has a bedside manner that\u2019s second to none\u2014warm, welcoming, and incredibly skilled. She made me feel comfortable right away, gave me one of the most thorough cleanings I\u2019ve ever had, and even shared helpful tips to keep my teeth in top shape.\n\nAnd then there\u2019s Dr. Rydstrom\u2014the cherry on top! He\u2019s not just professional; he\u2019s kind, attentive, and truly takes the time to ensure you feel confident about your dental health. Finding a great dentist isn\u2019t easy, but after today, I know I\u2019ve found mine. Highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChRDSUhNMG9nS0VJQ0FnTURRaDlWNRAB!2m1!1s0x0:0x359369c352256e35!3m1!1s2@1:CIHM0ogKEICAgMDQh9V5%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-14T20:02:47+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Midtown Dental Care Associates",
+            "data_id": "0x0:0xbae44c41e7ce4f2c",
+            "data_cid": "13466972631690268460",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbae44c41e7ce4f2c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbae44c41e7ce4f2c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.752382000000004,
+              "longitude": -73.980661
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbae44c41e7ce4f2c%218m2%213d40.752382000000004%214d-73.980661&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 575,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG8eBu0YjUWnKdtBUmBrY4Q8gzRZ4bO_duUvTlDmaHJhz9iJed2Y4blhTL1mAsCm0_1a0YcLCVTX_ByYjsP9UWWA3YqeDtsH92OMynIevdIEPN21Cibqj08cCIpQbHEiaFkwWzvjqvFrEvV=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Oral surgeon",
+              "Pediatric dentist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "New York Midtown Dental PC",
+            "data_id": "0x0:0x4ef7b326bca71037",
+            "data_cid": "5690213633161105463",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4ef7b326bca71037&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4ef7b326bca71037&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7583413,
+              "longitude": -73.984189
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4ef7b326bca71037%218m2%213d40.7583413%214d-73.984189&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 109,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAECvKpeSfl02vOkqtPOq2Z8tse4zGYq3mXaf73paQfNPBJNGc-pdtiA2iU5OeXVqpnHnuSuNXES2i3Dy_QnQuHAXkwfHFsedWYkk6tVf1esHoMS-jYzqSVDC60bGmaPPG7cXIwPmA=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Midtown Dental Art",
+            "data_id": "0x0:0xf6c84d2add08cd75",
+            "data_cid": "17782547975164710261",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf6c84d2add08cd75&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf6c84d2add08cd75&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751148900000004,
+              "longitude": -73.97971489999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf6c84d2add08cd75%218m2%213d40.751148900000004%214d-73.97971489999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 217,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNhEKxq786G57vOVEektifCvjhfoJQQjX0cwcFrYV3O2onsxzBsavo-Z_bInhe34gk7wKmXLh_-IGC5pm2a406CIi5uCsJtOrQqv45J0OyxtcByHX2eK2qXUGtuyAj8g2eichq9cGEUvM=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Castano Periodontics and Dental Implants - formerly Midtown Dental Services",
+            "data_id": "0x0:0xcb4ac3827e5116ee",
+            "data_cid": "14648735703208367854",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcb4ac3827e5116ee&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcb4ac3827e5116ee&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751326899999995,
+              "longitude": -73.97307339999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcb4ac3827e5116ee%218m2%213d40.751326899999995%214d-73.97307339999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 95,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlMsFC0_zS6Fuu9iy7GyBdQ8O1vPxo9Tnc9ylrXiq6bOPqIFjuZhsVGd7qaNVjFK0UNaroDp_P4j6RyLslQpdhso1qQ2e5Q-Ab8kME0piXsGg-0kAMZZr2yxhDh7lr65-yfDxYq6j_eDPb=w156-h156-n-k-no",
+            "type": [
+              "Dental implants periodontist",
+              "Dental implants provider"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Midtown Dental Wellness",
+            "data_id": "0x0:0xd9126b44c4ec58",
+            "data_cid": "61100321870769240",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd9126b44c4ec58&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd9126b44c4ec58&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7597557,
+              "longitude": -73.9737476
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd9126b44c4ec58%218m2%213d40.7597557%214d-73.9737476&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 265,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYzz31TtzFjSAtbTsHLNumJE8eMwxEh8X_HINEZRg-Mq5RipYhNpBHt9PCCMqj4UuNdaa6gc6en45U8awcKgsYxW17LUzfKnjgApkyYXkjWqIj6Ddc8o4n6wfLd8z8SRzYiKfA=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Dental implants provider",
+              "Dentist",
+              "Teeth whitening service"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oi0KKyInTWlkdG93biBEZW50YWwgR3JvdXAgTm9NYWQgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COi0KKyInTWlkdG93biBEZW50YWwgR3JvdXAgTm9NYWQgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

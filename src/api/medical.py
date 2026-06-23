@@ -16,18 +16,20 @@ bp = Blueprint("medical", __name__)
 
 # Allowed fields for medical profile
 ALLOWED_FIELDS = {
+    "date_of_birth",
+    "gender",
+    "address",
     "blood_type",
-    "donor_status",
-    "severe_allergies",
-    "conditions",
-    "medications",
+    "allergies",
+    "medical_conditions",
     "emergency_contacts",
-    "emergency_notes",
-    "medical_pass_title",
 }
 
 # JSON fields that need serialization
-JSON_FIELDS = {"severe_allergies", "conditions", "medications", "emergency_contacts"}
+JSON_FIELDS = {"allergies", "medical_conditions", "emergency_contacts"}
+
+# Date fields validation
+DATE_FIELDS = {"date_of_birth"}
 
 
 def _validate_blood_type(blood_type: str) -> bool:
@@ -45,7 +47,7 @@ def _serialize_profile(row: dict) -> dict:
             profile[field] = None
         elif field in JSON_FIELDS and isinstance(value, str):
             try:
-                profile[field] = json.loads(value)
+                profile[field] = json.loads(value) # 数据库字符串——> JSON对象
             except json.JSONDecodeError:
                 profile[field] = value
         else:
@@ -68,8 +70,9 @@ def get_medical_profile():
     try:
         with conn.cursor() as cur:
             cur.execute(
-                """SELECT blood_type, donor_status, severe_allergies, conditions,
-                          medications, emergency_contacts, emergency_notes, medical_pass_title
+                """SELECT date_of_birth, gender, address,
+                          blood_type, allergies, medical_conditions,
+                          emergency_contacts
                    FROM user_medical_profiles
                    WHERE user_id = %s""",
                 (user_id,),
@@ -80,10 +83,14 @@ def get_medical_profile():
                 return jsonify({})
 
             columns = [
-                "blood_type", "donor_status", "severe_allergies", "conditions",
-                "medications", "emergency_contacts", "emergency_notes", "medical_pass_title",
+                "date_of_birth", "gender", "address",
+                "blood_type", "allergies", "medical_conditions",
+                "emergency_contacts",
             ]
             row_dict = dict(zip(columns, row))
+            # Convert date to string
+            if row_dict.get("date_of_birth"):
+                row_dict["date_of_birth"] = row_dict["date_of_birth"].isoformat()
             return jsonify(_serialize_profile(row_dict))
 
     finally:
@@ -96,14 +103,13 @@ def put_medical_profile():
     """Create or update current user's medical profile (upsert).
 
     Request body (all fields optional):
+        date_of_birth (str): Date of birth (YYYY-MM-DD).
+        gender (str): Gender.
+        address (str): Home address.
         blood_type (str): Blood type (A+, A-, B+, B-, AB+, AB-, O+, O-).
-        donor_status (bool): Organ donor status.
-        severe_allergies (list): List of severe allergies.
-        conditions (list): List of medical conditions.
-        medications (list): List of medications.
+        allergies (list): List of allergies.
+        medical_conditions (list): List of medical conditions.
         emergency_contacts (list): List of emergency contacts.
-        emergency_notes (str): Additional emergency notes.
-        medical_pass_title (str): Title for medical pass.
 
     Returns:
         200: Updated medical profile.
@@ -123,6 +129,14 @@ def put_medical_profile():
     if "blood_type" in update_fields and update_fields["blood_type"] is not None:
         if not _validate_blood_type(update_fields["blood_type"]):
             return jsonify({"error": "Invalid blood type. Must be one of: A+, A-, B+, B-, AB+, AB-, O+, O-"}), 400
+
+    # Validate date_of_birth format if provided
+    if "date_of_birth" in update_fields and update_fields["date_of_birth"] is not None:
+        from datetime import datetime
+        try:
+            datetime.strptime(update_fields["date_of_birth"], "%Y-%m-%d")
+        except (ValueError, TypeError):
+            return jsonify({"error": "Invalid date_of_birth format. Must be YYYY-MM-DD."}), 400
 
     conn = get_db_conn()
     try:
@@ -175,18 +189,23 @@ def put_medical_profile():
 
             # Return updated profile
             cur.execute(
-                """SELECT blood_type, donor_status, severe_allergies, conditions,
-                          medications, emergency_contacts, emergency_notes, medical_pass_title
+                """SELECT date_of_birth, gender, address,
+                          blood_type, allergies, medical_conditions,
+                          emergency_contacts
                    FROM user_medical_profiles
                    WHERE user_id = %s""",
                 (user_id,),
             )
             row = cur.fetchone()
             columns = [
-                "blood_type", "donor_status", "severe_allergies", "conditions",
-                "medications", "emergency_contacts", "emergency_notes", "medical_pass_title",
+                "date_of_birth", "gender", "address",
+                "blood_type", "allergies", "medical_conditions",
+                "emergency_contacts",
             ]
             row_dict = dict(zip(columns, row))
+            # Convert date to string
+            if row_dict.get("date_of_birth"):
+                row_dict["date_of_birth"] = row_dict["date_of_birth"].isoformat()
             return jsonify(_serialize_profile(row_dict))
 
     except Exception as e:
