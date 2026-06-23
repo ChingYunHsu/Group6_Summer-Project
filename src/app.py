@@ -1,6 +1,7 @@
 from flask import Flask
 
 from api.app_state import bp as app_state_bp
+from api.auth import bp as auth_bp
 from api.health import bp as health_bp
 from api.integrations import bp as integrations_bp
 from api.routes import bp as routes_bp
@@ -21,6 +22,7 @@ def create_app() -> Flask:
     app.config["JWT_SECRET"] = settings.jwt_secret
 
     app.register_blueprint(health_bp)
+    app.register_blueprint(auth_bp)
     app.register_blueprint(integrations_bp)
     app.register_blueprint(user_bp)
     app.register_blueprint(routes_bp)

@@ -41,6 +41,7 @@ servers:
 
 tags:
   - name: Health
+  - name: Auth
   - name: Integrations
   - name: Venues
   - name: Busyness
@@ -454,6 +455,40 @@ paths:
                 $ref: '#/components/schemas/ValidationErrorResponse'
         '401':
           description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # FIX 6 — Token Issuance: BearerAuth-gated endpoints (Fix 1) had no way to
+  # actually obtain a token. This issues the signed JWT that clients pass as
+  # `Authorization: Bearer <access_token>` to every BearerAuth endpoint below.
+  /api/v1/auth/login:
+    post:
+      tags: [Auth]
+      summary: Exchange email/password for a bearer access token
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Authenticated. Use access_token as a Bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Invalid email or password.
           content:
             application/json:
               schema:
@@ -1067,6 +1102,33 @@ components:
         service:
           type: string
         version:
+          type: string
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+
+    LoginResponse:
+      type: object
+      required: [access_token, token_type, expires_in, user_id]
+      properties:
+        access_token:
+          type: string
+          description: "Signed JWT (HS256). Pass as `Authorization: Bearer <access_token>`."
+        token_type:
+          type: string
+          example: bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds.
+          example: 3600
+        user_id:
           type: string
 
     IntegrationsStatusResponse:
