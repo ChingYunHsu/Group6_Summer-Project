@@ -1,0 +1,992 @@
+{
+  "search_metadata": {
+    "id": "6a3ac170d08cfeb8c9cde9a9",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/hOBf8cyqu31qMX9vXgg9hA/6a3ac170d08cfeb8c9cde9a9.json",
+    "created_at": "2026-06-23 17:25:04 UTC",
+    "processed_at": "2026-06-23 17:25:04 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259a50516583b:0xa09d469a1f9ce774!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/hOBf8cyqu31qMX9vXgg9hA/6a3ac170d08cfeb8c9cde9a9.html",
+    "prettify_html_file": "https://serpapi.com/searches/hOBf8cyqu31qMX9vXgg9hA/6a3ac170d08cfeb8c9cde9a9.prettify",
+    "total_time_taken": 1.24
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJO1gWBaVZwokRdOecH5pGnaA",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Capsule",
+    "place_id": "ChIJO1gWBaVZwokRdOecH5pGnaA",
+    "data_id": "0x89c259a50516583b:0xa09d469a1f9ce774",
+    "data_cid": "11573484245181327220",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a50516583b%3A0xa09d469a1f9ce774&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a50516583b%3A0xa09d469a1f9ce774&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8215207,
+      "longitude": -73.9372221
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJO1gWBaVZwokRdOecH5pGnaA",
+    "provider_id": "/g/11by_lwskj",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEKSFpjl__Je6EKu7NmhViJa4k_4CearIYdp7xECslnIv2KupBEnnlRZ6JJy029gJiEbEGLap8qJQTDawj0Z1a7ajBzvv5ZKxHNoy57E22b04PmaJcyXyCMA0h_tc48moNmHVyG=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/umgcbXicHcTbDsEwAADQL5rVjCHxMFOXjsUtwl6WqmY1vdFu1A_6Bn8jcR7O98Os1Wbo-5x1WqVSJae1oQ-ipKXStogSfqmNR4xn_HidbW4xTHdTXfGiQLQH0zrKBDtcEQ5vRZhQ_FicLjp6wcRwuWiCtNZjKCXf5j2EHAgGJbrCM5wtse7f0WY_wc8K5G0c4Wr8bppunr7mmXLdCAbBGYRrgRFxR5esYsAKS8K-UJmYH9xs9GwDADz2n3jyB12tRGw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 365
+      },
+      {
+        "stars": 2,
+        "amount": 49
+      },
+      {
+        "stars": 3,
+        "amount": 13
+      },
+      {
+        "stars": 4,
+        "amount": 32
+      },
+      {
+        "stars": 5,
+        "amount": 2356
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 2815,
+    "type": [
+      "Pharmacy",
+      "Delivery service",
+      "Drug store",
+      "Pharmaceutical company",
+      "Vitamin & supplements store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "delivery_service",
+      "drugstore",
+      "pharmaceutical_company",
+      "vitamin_and_supplements_store"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "delivery": true
+    },
+    "address": "122 W 146th St, New York, NY 10039",
+    "country": "United States",
+    "website": "https://www.capsule.com/?utm_source=GMBlisting&utm_medium=organic&utm_campaign=New-York-NY",
+    "phone": "(212) 675-3900",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "R3C7+J4 New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      },
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20138 PM"
+      },
+      {
+        "saturday": "10 AM\u20136 PM"
+      },
+      {
+        "sunday": "10 AM\u20136 PM"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by phone call 1 week ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259a50516583b%3A0xa09d469a1f9ce774&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEKSFpjl__Je6EKu7NmhViJa4k_4CearIYdp7xECslnIv2KupBEnnlRZ6JJy029gJiEbEGLap8qJQTDawj0Z1a7ajBzvv5ZKxHNoy57E22b04PmaJcyXyCMA0h_tc48moNmHVyG=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/umgcbXicHcTbDsEwAADQL5rVjCHxMFOXjsUtwl6WqmY1vdFu1A_6Bn8jcR7O98Os1Wbo-5x1WqVSJae1oQ-ipKXStogSfqmNR4xn_HidbW4xTHdTXfGiQLQH0zrKBDtcEQ5vRZhQ_FicLjp6wcRwuWiCtNZjKCXf5j2EHAgGJbrCM5wtse7f0WY_wc8K5G0c4Wr8bppunr7mmXLdCAbBGYRrgRFxR5esYsAKS8K-UJmYH9xs9GwDADz2n3jyB12tRGw"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "26 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGEi_-gPjTjBdC5OpSm4qoMHe6ioV7lV1GaxdJpiiNvRwOQz3ck8iwOJST4dypvwMrq3l2uRRuEtu4Gk_qbC-zSql99BZ1FfB9kcqExF-rSB0PI8hEdbQ1L3xp5X_INkGQVLA-BplI1sq8=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/pTk8UnicHcTNboIwAADgJ6rQAQ6W7EANMIzya4jxQrQg1Fba0iLMh_Tu2yzZd_jer15rob4Mg_XWquO8Y-2k2hHzQbeDXmF-NzqhAFZAGX6W5NSPAlKDLrsdbqjZOKko77bk-592TXj1ySoYnZdmKwhJHsWc5k8LU5fM6bY82M2veMz7UVrsYyqKKdCTHdFaXjbgWUrmeegEwyvyKJbBEoKxRGYWu33QXHK4sxbhHOs4oVFe7XyABIuhku73DE3TBP3_GAx_kMZG8g"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEGX6RcmrwpSc4raGCJvtxe3GO6UTMrK1lU8lBdcZsmyyDgGLZgxkIe0X5Vcz15bS34Aa9NGa2Zsuk7T8G-qy6ZJwkCOGdyvMaoYZ54gIcmAVD39f37837oY5H43Bx2WsyWU_at=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/kQAFcXicHcRJDoIwFADQE1XAMmniAofUecahG1O_tSQMRVqFekHP4G1MfIv3_SRal6prWVmCW0JKkfGn4hXIQvNCt0DmligVAoWUFa2XmzQakZO_hbyqyx24FSOD6Us3HJOVH-8X1czJ4jDr34Cq3JihIHMqmnTC7ZN3gLfjXXfYjVhnSVibqmca7EOCHsan0zodrMjNvBZMnqnnignk0WGIO3cchDiQZ2_s4n7TPipzjC9M92rHtm2U_AdU_ABI6EO0"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=VlRSivjqPXHzxCp5cZk-4A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=164.05249&pitch=-87.67477&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/6IT-6nicHc1LCsIwEADQ22TX9EP6E4KIG5eiIOKmpDG2o2kzmjGtHskbeRvBd4H3_fRE6Bdx7OlhDAUwE8JsrI9Q8c65zhqF4Ll2QxzSmPrn0I4K7BLV6OAsD3a3h3C9b4-b97zGXJ9ukVgx3TbaghlJDgp94wMnpQms4R16NsksE6yXWV2xl5pkWgie5JmoGQLpXkZVyYtSlCX7fxcXZJokP91pPA0"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great service, extremely helpful staff and excellent messenger service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLdj0JAdqjotd8YWrQjinaUArFf_hJGQubxk6nKAaDGN9Rsfg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The medication shows up at my apartment quickly and for a great price.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUWbhlQyYMaX12j3z2ZdW1EOU6tn6eka-KsfXrBYMOL0Jaltlvsyg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great experience with easy ordering, fast delivery and great GoodRX pricing.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUYcbp4iDRLuN4ta0nYZHmu9mUpg3w_ay-kOH0skatTIFTPmOzW=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Dorsia",
+          "rating": 1,
+          "contributor_id": "115149192229526144887",
+          "user_review_count": 3,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLoq4h9RafCIDwkjPl3p_rqdk9o0sXB0J1RBjKrEgVUhJcPeSo=s120-c-rp-mo-br100",
+          "description": "What happened to Capsule?\n\nSeven years ago, Capsule was fantastic\u2014fast, reliable, and genuinely customer-focused.\n\nToday, it's the exact opposite.\n\nOver the last few years, I've repeatedly dealt with unavailable medications, last-minute cancellations, poor communication, and even security seal issues. At this point, reliability seems to be the exception rather than the rule.\n\nMy advice: don't just read the five-star reviews. Read the one-star reviews too. They tell a very different story and, in my experience, are much closer to the truth. Most of the glowing praise appears to be for the company Capsule USED TO BE\u2014not the company it has become.\n\nA pharmacy's job is simple: have the medication, communicate clearly, and deliver what was promised. Capsule struggles with all three.\n\nThere are enough headaches in life without adding your pharmacy to the list. Save yourself the frustration and look elsewhere.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkbVNURkxlRWxrTURoa1NuVkxkamxhUmkxM1gyYxAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOjdmSTFLeElkMDhkSnVLdjlaRi13X2c%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn29AvgtbNcFs4yEJYu91nEJs5R7F17hOxRB0feoCpf_6tUUEHayrobahmBkOX2QTVKZnnnpWoCkqEdCElec2WqFe3TO8bHxnYYhsxysZw0s9eTkDTWY2ESw6rQlKjeNQMY-YoG53nhNGOOb=k-no"
+            }
+          ],
+          "date": "Edited 2 weeks ago",
+          "date_iso8601": "2026-06-08T18:52:43+00:00"
+        },
+        {
+          "username": "Ed H",
+          "rating": 5,
+          "contributor_id": "102840841742883495477",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKmXnRVMb0nil90YMqZfWMrBXVI5KTQvuYd13MCMkYhyRxycw=s120-c-rp-mo-br100",
+          "description": "My doctor suggested Capsule and I have been using them for years... I can't believe I ever stood on endless lines at Duane Reade or CVS before! Their delivery is quick and ontime, their customer service is amazing -- available by text, phone or email-- and a HUMAN responds quickly. They take my insurance as well as honoring GoodRX coupons. It's a great service and highly recommend!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GaGIxSndablYzTUZKTlJYUkhTRWw0ZUc5cWJGRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOmFhb1JwZnV3MFJNRXRHSEl4eG9qbFE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-08T15:19:57+00:00"
+        },
+        {
+          "username": "Curtis Harris",
+          "rating": 5,
+          "contributor_id": "115356024573864032716",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXNsWUe1ov9vQ69X3u_G_eXHuA3Qf57XiyagU9k8Chdpgyda4fz=s120-c-rp-mo-br100",
+          "description": "I spoke with a customer service rep from Capsule named Heaven, and she did an amazing/fantastic job. She walked me through the current status of my medications, as there is a nationwide shortage of some medications, which is not Capsule's fault, but due to that Heaven, the representative did a great job walking me through what\u2019s going on and how I can best position myself given the current climate for medication supplies for the wholesale supplier. I was very pleased with her help, as well as all the people who work at Capsule. Thanks, Heaven!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWa1lUbEVZMjlOZW5KelMwdEZkbTl1ZG5NMlMwRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOjVkYTlEY29NenJzS0tFdm9udnM2S0E%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-02T16:25:48+00:00"
+        },
+        {
+          "username": "CEO CAPITALIST",
+          "rating": 5,
+          "contributor_id": "106837570115513955354",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUqMMNmLjpC3-kiHDL9kyuE4WCYq6jae8CUfQN7GFq5iTsqFdeo=s120-c-rp-mo-br100",
+          "description": "I had the absolute pleasure of speaking with Joy at Capsule Pharmacy today, and she went above and beyond to help me with my medication pricing concerns. From the very first moment, Joy was incredibly courteous, patient, and professional. She listened carefully to my situation, quickly understood the issue, and took immediate action to resolve it.\nWhat truly stood out was how much she over-extended herself to make sure I was completely taken care of. She was efficient, thorough, and incredibly quick without ever making me feel rushed. Joy didn\u2019t just solve the problem\u2014she explained everything clearly, offered helpful options, and followed through until everything was sorted perfectly.\nThanks to Joy, I feel genuinely cared for as a customer. Her kindness, expertise, and dedication made a potentially stressful situation feel easy and reassuring. I can\u2019t recommend her highly enough!\nIf you\u2019re looking for exceptional service at Capsule Pharmacy, ask for Joy\u2014you\u2019ll be in the best hands possible. Thank you, Joy, for your outstanding help today! \u2b50\u2b50\u2b50\u2b50\u2b50",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21Sa2RubHFYelpDTWxoMU1ESTBiVVpDVFVSUk9WRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOmRkdnlqXzZCMlh1MDI0bUZCTURROVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-11T22:50:01+00:00"
+        },
+        {
+          "username": "Kymberly Cameron",
+          "rating": 5,
+          "contributor_id": "111404807197925852142",
+          "user_review_count": 97,
+          "user_photo_count": 63,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLrAiualqR-viijAbIwA5uveNaGeUeyByAb_YckrExZ1aUuHw=s120-c-rp-mo-ba12-br100",
+          "description": "I started using Capsule to help my mom with ordering her medication. It was really quite simple. The sign up process was easy, as well as  sending in a prescription. Delivery dates and times are always available. The delivery person is always pleasant and on time. I also use the service and will continue to do so. Better than standing in a long line to only be told you have 45 minutes before the script is filled.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21aSmNESTJMWHBDY1RNelJIbHZjMnh1TW1sT1IxRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOmZJcDI2LXpCcTMzRHlvc2xuMmlOR1E%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-30T19:56:39+00:00"
+        },
+        {
+          "username": "Freya Lastname",
+          "rating": 1,
+          "contributor_id": "111426974275597740791",
+          "user_review_count": 1,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVdJVgy-dEzggU2xOCdGRclAMert-k4qTEThyXUXsRX00tOlFs=s120-c-rp-mo-br100",
+          "description": "Won\u2019t refill a prescription because of some internal policy that they expressly clarified is not a legal requirement. They think they know better than my doctor. F.-.-.- these people.\n\nedit: after arguing with them over text for the better part of two days they admitted they were not required by law to withhold my medication and agreed to send them. that\u2019s proof they were just stepping in between my doctor and i without any legal requirement. do not use Capsule",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSdGNWaFZYMmN3UkVaYU1IbDFhR1ZoVFRoYWFVRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOjRtcVhVX2cwREZaMHl1aGVhTThaaUE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-04T18:35:08+00:00"
+        },
+        {
+          "username": "Paula",
+          "rating": 5,
+          "contributor_id": "104639183930496285245",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU7SkgU9ezWqNwnNFtLjcfhI2gnO3B8busu_527dU03a-C36Ec=s120-c-rp-mo-br100",
+          "description": "Capsule Pharmacy has been fantastic. Their delivery service is reliable and convenient, and their response time is amazing. Whenever I\u2019ve had a question, they\u2019ve been quick to help and always professional. By far the best pharmacy experience I\u2019ve had, and I highly recommend them.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tJNFQwaE1ZM1ZrWVd4eE1GRk9Oa2xNZFZST1kwRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOkI4T0hMY3VkYWxxMFFONklMdVROY0E%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-31T18:25:07+00:00"
+        },
+        {
+          "username": "Maritza Lopez",
+          "rating": 5,
+          "contributor_id": "118242557688550754765",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKiMyF8g90Kewlnc6gEL-2zXOfHpfBQAENVCOAdRjfwknSKiw=s120-c-rp-mo-br100",
+          "description": "Great experience with this pharmacy and the delivery driver. The staff was friendly, professional, and efficient, making the entire process easy and stress-free. My medications were prepared quickly and delivered right on time. The driver was amazing, very courteous and helpful, providing excellent service. I truly appreciate the reliability and care shown. I will continue to use capsule pharmacy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25jeVVrUnhjMEpHUVhwMFpqSXljbWRTTUdoQ1NWRRAB!2m1!1s0x0:0xa09d469a1f9ce774!3m1!1s2@1:CAIQACodChtycF9oOncyUkRxc0JGQXp0ZjIycmdSMGhCSVE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-13T01:39:50+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Capsule NYC",
+            "data_id": "0x0:0xd7de9cbb7d7ad53f",
+            "data_cid": "15555042492062291263",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd7de9cbb7d7ad53f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd7de9cbb7d7ad53f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.811499999999995,
+              "longitude": -73.953659
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd7de9cbb7d7ad53f%218m2%213d40.811499999999995%214d-73.953659&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 173,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE5XEC7uONXWX-8pvEHn3kHqbBz3fvsXBPuWf7QOXQUk0_3m9Fbj7aDZuJKH9wX5gYa0wwM9ULpP0ESTyyUKq77NdVl2GJDdcK5rckBv1mhJlrdAGyo0JVkOmg4d02jSKWfsT1Kjw=w156-h156-n-k-no",
+            "type": [
+              "Men's clothing store",
+              "Fashion accessories store"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Walgreens Pharmacy",
+            "data_id": "0x0:0xce75915d2ab6a8e8",
+            "data_cid": "14876956773422901480",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xce75915d2ab6a8e8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xce75915d2ab6a8e8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.823220299999996,
+              "longitude": -73.94327590000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xce75915d2ab6a8e8%218m2%213d40.823220299999996%214d-73.94327590000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 49,
+            "thumbnail": "https://www.google.com/maps/vt/data=KjAw7UuKKlR5gjV9QkFu_gXVeI5kBsscnQrcl33PhS21t9JAfmbEnsQueXz3PkcdcyPVM-neainnNs2OQNBZvkAicjuC01dp4wF7turSzvcBH8_xfVmGinHKaY5XwENoTgOa0CZ2F9WbdPWtIu5Yb4YqIheVin4D",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "CVS Pharmacy",
+            "data_id": "0x0:0xe697911f3a6620db",
+            "data_cid": "16615908913516519643",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe697911f3a6620db&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe697911f3a6620db&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8261028,
+              "longitude": -73.95037549999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe697911f3a6620db%218m2%213d40.8261028%214d-73.95037549999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.9,
+            "reviews": 80,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6TSlW564kjBjpSBfUwC81N2E4Fzzu6hSNy7BgNlC8XBeQQ4rlbmndr13Y5nDLirv-NHjwFrBfkyJ-bPwspSrzuLKnw-ndRKhkkdB3Sk8lCUwmZ6x0_JUqbCEvo5WxcQLVAMZc_I4YQVuq=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Curewell Drugs",
+            "data_id": "0x0:0x298824eb85852e82",
+            "data_cid": "2992682546363707010",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x298824eb85852e82&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x298824eb85852e82&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8466029,
+              "longitude": -73.9385515
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x298824eb85852e82%218m2%213d40.8466029%214d-73.9385515&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 8,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAYNKdI_BAcKG0JBar7yMTZf-SSiW--uU12nsOAVi7UghOhihfVgP-8Wtwj7Rb-QgmVzdhVn_8OM1N6RUMhVPm3gQ_ZxU4eqYKwRozd-ERZErDxmOQV0igCDaI5WxNUaa-YVaU=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Capsule BX NYC",
+            "data_id": "0x0:0x9befd3180f264240",
+            "data_cid": "11236431695599518272",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9befd3180f264240&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9befd3180f264240&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8626071,
+              "longitude": -73.90207930000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9befd3180f264240%218m2%213d40.8626071%214d-73.90207930000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 43,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEOjpZrTRYBjbIIl_I1ESVZOTLCWyVN9f5d1taK837HI0rWSzIKbhdP9G62VXpH1fxG1e7kRuX_VZRFLh27vDQSFNaQNh9H_LCV4P11o-x9ahS6AdodE4ek-2BnRD8p8Hxn62JuBw=w156-h156-n-k-no",
+            "type": [
+              "Clothing store"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "tuesday",
+      "live_hash": {
+        "info": "Not busy",
+        "time_spent": "People typically spend 15 min to 4 hr here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 35
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 25
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 29
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 75
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 87
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 35
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 41
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43,
+            "live_busyness_score": 17,
+            "current": true
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 88
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 30
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 96
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 35
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 83
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 30
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 67
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 98
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 95
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 30
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OhoKGCIUQ2Fwc3VsZSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COhoKGCIUQ2Fwc3VsZSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

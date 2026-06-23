@@ -1,0 +1,973 @@
+{
+  "search_metadata": {
+    "id": "6a3ab5e250849cdaa4e12e68",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/MIhG3cBi3diLyy9U09rm6A/6a3ab5e250849cdaa4e12e68.json",
+    "created_at": "2026-06-23 16:35:46 UTC",
+    "processed_at": "2026-06-23 16:35:46 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/hospital+near+downtown+Manhattan/@40.72,-74.0,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/MIhG3cBi3diLyy9U09rm6A/6a3ab5e250849cdaa4e12e68.html",
+    "prettify_html_file": "https://serpapi.com/searches/MIhG3cBi3diLyy9U09rm6A/6a3ab5e250849cdaa4e12e68.prettify",
+    "total_time_taken": 1.06
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "hospital near downtown Manhattan",
+    "ll": "@40.72,-74.0,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "hospital near downtown Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "NYC Health + Hospitals / Bellevue",
+      "place_id": "ChIJqccvIQxZwokR4PfF_NqTomc",
+      "data_id": "0x89c2590c212fc7a9:0x67a293dafcc5f7e0",
+      "data_cid": "7467693700886689760",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c212fc7a9%3A0x67a293dafcc5f7e0&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c212fc7a9%3A0x67a293dafcc5f7e0&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7396865,
+        "longitude": -73.9762044
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJqccvIQxZwokR4PfF_NqTomc",
+      "provider_id": "/m/0600jt",
+      "rating": 4.4,
+      "reviews": 5740,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Emergency care service",
+        "Emergency room",
+        "Rehabilitation center"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "emergency_care_service",
+        "emergency_room",
+        "rehabilitation_center"
+      ],
+      "address": "462 1st Ave, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(212) 562-4141",
+      "website": "http://www.nychealthandhospitals.org/bellevue/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Comforting, the staff are knowledgeable and caring, and very organized.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEXl6aKhaucHtiz5DMhTpsD7rukRaMxIimGseg-0wH1JQoccE2I-8KRW7WlqHYQOjflI3DDOxCtbFgVSkrxA2b1FCwxjX4ChOgCuxGK9nVYOumlA1RswmmXd692vmAK6Gquxo0=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/9KNDyHicHcTbDoIgAADQLyLRyi5bD8x7rkxrZY9GBiWICSTrA_uH_qat83C-H6pUJ5eWxeh4RIQgrNay7rFoVd2qERbcIp0EWAJpod02b1BQMrdKaaVxrO7vqb-hh076s143RbUxyZ1HsiYADrG9zgXGgZOAeVqcZif2jM959rixZOz7mfHUJSTHfdMb5Fzs0BvMo5x4NCOeNlG6aI_nTHOG7EIOnJdXd-G8OErd6KmNgKvBhhAC-h-D9gdQ9UTg"
+    },
+    {
+      "position": 2,
+      "title": "NewYork-Presbyterian Lower Manhattan Hospital",
+      "place_id": "ChIJpYoZlyJawokRv65psH6e2pI",
+      "data_id": "0x89c25a2297198aa5:0x92da9e7eb069aebf",
+      "data_cid": "10581944541423185599",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2297198aa5%3A0x92da9e7eb069aebf&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2297198aa5%3A0x92da9e7eb069aebf&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.71039,
+        "longitude": -74.00510299999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJpYoZlyJawokRv65psH6e2pI",
+      "provider_id": "/m/0clmlq",
+      "rating": 3.6,
+      "reviews": 535,
+      "type": "Hospital",
+      "types": [
+        "Hospital"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital"
+      ],
+      "address": "170 William St, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(212) 312-5000",
+      "website": "https://www.nyp.org/locations/manhattan/nyp-lower-manhattan-hospital?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_MTM4MTIwMzAtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/new-york-presbyterian-lower-manhattan-hospital-3973?LocIdent=72179&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_ZYmAfYKqFUaLjTdI6Z5d0h-lo_1DA32xVe50aoe-xFQlO2yh-entity&rwg_token=AE37R_ggpu8kyCCaEnIgXQOjmcXCzPo46yaDprE5ZZv5lRrtAE6pT49V8DyD_c6JveFaN18byXSTyvOosD7vTtl-3Me9D5FE4Q%3D%3D",
+      "user_review": "\"The ER docs and ICU docs saved my life!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFm_veNLAs39DGTdwoHu01Jrz505YWbY6iOsYKJKN71X7ORKaLg6vfCW7srYgCcnzwWwz9jsSrTpPGausabiIBDiRBKgxpa2mhapcJfzzw6OYU4lZG8ascq1x9yPdm2sVSs_sGu=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Yk7bWnicHcTdEoFAGADQJ0qbn5IZF2FEmQqRdWPWyhbVrr6y7At6Bm9jxrk430_WNAJGul5kvQ7jnBVpC2lNedWkVdOhvNSZAI2CBroTBeu7My9PzzRYOdCzZ258kXzRIsOr1QANcHLGZh4C9j0_sIyDFW58smLm8zpNLKgxm9JKyUQq-wbbOhaRS1og53w5meWbic9egnTLjAjqXZWSZoh3_eLoDgnQh_Gy39Gl7MJ-Cydw27E0EEJa9p9q1Q-OxkYm"
+    },
+    {
+      "position": 3,
+      "title": "NYU Langone Health",
+      "place_id": "ChIJdUrffUJZwokRwuMqrnBmhUo",
+      "data_id": "0x89c259427ddf4a75:0x4a856670ae2ae3c2",
+      "data_cid": "5369810764853601218",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259427ddf4a75%3A0x4a856670ae2ae3c2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259427ddf4a75%3A0x4a856670ae2ae3c2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7421225,
+        "longitude": -73.9739642
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo",
+      "provider_id": "/m/04jnvn0",
+      "rating": 3.7,
+      "reviews": 529,
+      "type": "Hospital",
+      "types": [
+        "Hospital"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital"
+      ],
+      "address": "550 1st Ave, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(646) 929-7800",
+      "website": "https://nyulangone.org/doctors",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "children": [
+            "Nursing room"
+          ]
+        },
+        {
+          "parking": [
+            "On-site parking",
+            "Paid parking garage",
+            "Paid parking lot",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Assistive hearing loop"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"great, the er was efficient, given pain meds and Iv within 1 hour arriving.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwPF1m2MQS9lVjsAJMccSzenXIj7erOWm-jr4j5ngXK1fvDFqSIULnVnPxQlgGDFFd1fA5flTuH0vYKE_j1y-wMJcppVKfl6K1MNH5xMr-hOc6WHhvdwJYiyJ9xIRFSqy-gbAu8w=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JhZ8MXicHcTbToMwAADQLypQJ7uY7KHJrFzWDUQZPJnYlXZdKZcChf2hn-DfmHgezu-PGIbWvLiuEiuHNw1XbDSsp40emB4c2tQubw2gBhgXJaf0jgKbYFg_kTTbqVwaFBFKswfTRSg3rD9faiD7Z-lrXsSwmg64y8LPo851MqeKvx0wvsIK-ZX6GANvKuPXLwkXYElE2zaPK7WOITkF_kx6IM50fQnEdLVReVui3Ry-46xbAP9G49buLfQ8D4j_KdB__E1FoA"
+    },
+    {
+      "position": 4,
+      "title": "NewYork-Presbyterian Lower Manhattan Hospital Emergency Department",
+      "place_id": "ChIJpYoZlyJawokRLQYQtGD-y9I",
+      "data_id": "0x89c25a2297198aa5:0xd2cbfe60b410062d",
+      "data_cid": "15189513859528394285",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2297198aa5%3A0xd2cbfe60b410062d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2297198aa5%3A0xd2cbfe60b410062d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.710149799999996,
+        "longitude": -74.00475829999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJpYoZlyJawokRLQYQtGD-y9I",
+      "provider_id": "/g/1tdch8ny",
+      "rating": 2.4,
+      "reviews": 115,
+      "type": "Emergency room",
+      "types": [
+        "Emergency room"
+      ],
+      "type_id": "emergency_room",
+      "type_ids": [
+        "emergency_room"
+      ],
+      "address": "83 Gold St, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(212) 312-5070",
+      "website": "https://www.nyp.org/locations/manhattan/nyp-lower-manhattan-hospital?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_MTM4NjQxMTMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"The best emergency room, excellent service.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGPNauHyoyoattEkaAOZEYulHGP5AOh1r5uZep_4XyNF3KxOrDht4ucpAqJrX_ppciuHM5gYWbBacv5sdKg1xaI2mBhS1j91Ci2Dt_vrSQrBbYyInHk1eaC1y1zlhDWykw5g2Gv0Q=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/pgLRjXicHcQ7DoIwAADQEyEU7aCJQxEFNPKJg-JCam1aBGntB6039AjexsQ3vO-HGyP1wvd7Pp0wIVhPraaKiMHQwUyIuPtMao9oT_uozKsOJWWObeqEE9iYdYdRcV7Xtk-TEqKCAwXtmcpmdnL5Zrp7FSrmZmaJRI-tOjVSktame8jq4yXCZIT6umPghbPwHvEDuM3Bqg1j04zqUKnoUrtsSDtA8Qo48O55fHTdE7IwGYNq-QRBEHj8P_GGH4nVRrw"
+    },
+    {
+      "position": 5,
+      "title": "NYC Health + Hospitals/Gotham Health, Gouverneur",
+      "place_id": "ChIJFb1OxitawokR2Wfi0loJ9ew",
+      "data_id": "0x89c25a2bc64ebd15:0xecf5095ad2e267d9",
+      "data_cid": "17074563847934863321",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc64ebd15%3A0xecf5095ad2e267d9&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc64ebd15%3A0xecf5095ad2e267d9&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.713208,
+        "longitude": -73.987787
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFb1OxitawokR2Wfi0loJ9ew",
+      "provider_id": "/m/0cn_cfc",
+      "rating": 3.7,
+      "reviews": 328,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center",
+        "Blood testing service",
+        "Community health center",
+        "Medical billing service",
+        "Medical diagnostic imaging center",
+        "Mental health clinic",
+        "Women's health clinic",
+        "Public medical center",
+        "Radiologist",
+        "STD testing service"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center",
+        "blood_testing_service",
+        "community_health_center",
+        "medical_billing_service",
+        "medical_diagnostic_imaging_center",
+        "mental_health_clinic",
+        "obstetrics_gynecology_clinic",
+        "public_medical_center",
+        "radiologist",
+        "std_testing_service"
+      ],
+      "address": "227 Madison St, New York, NY 10002",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM",
+        "thursday": "8\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "8\u202fAM\u20134:30\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(844) 692-4692",
+      "website": "https://www.nychealthandhospitals.org/locations/gotham-health-gouverneur/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        },
+        {
+          "parking": [
+            "Free street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Their WTC Health Program is organized and professional.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPPIjnR77Wyq4zyQIvGu0TDcHhjgDiKSbEm2XiTyEdBcb8S1k-FB4jwfe05-o6DgF_v_fuHtAQ7ENR-2w676febSIz35_6wxPv2hVJz9jpqvrxBxC3Jk90TF_cDrqePmvWS0bQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/5_rrjXicHcRdDoIgAADgE5GkpdXWg6amtTVMV725SQhpigrizwU7Q7dp63v4vh8mZSN2mvZmxoJyTt-kF6TDvJaklgvMK402AmABhGajS1TaAUJhUV8t6z61q3mKQnXsYeLigBXUfZ3jzKv0xyuZvKeDs028LIHvrIohJ3ANuOlSP1Vp3gfSjizvcgX6YFpmTrI4nI11ag4jUjq7neZt0bSqG53xYJzKLUz8FLtdS1Cl7jHMov2whBAC9h-D-gcsVkQz"
+    },
+    {
+      "position": 6,
+      "title": "Tisch Hospital",
+      "place_id": "ChIJzQtHCQ9ZwokRt0QutuNH8Yg",
+      "data_id": "0x89c2590f09470bcd:0x88f147e3b62e44b7",
+      "data_cid": "9867747301885101239",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f09470bcd%3A0x88f147e3b62e44b7&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f09470bcd%3A0x88f147e3b62e44b7&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.742193,
+        "longitude": -73.9739553
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJzQtHCQ9ZwokRt0QutuNH8Yg",
+      "provider_id": "/g/1tkf1x6s",
+      "rating": 4,
+      "reviews": 374,
+      "type": "Hospital",
+      "types": [
+        "Hospital"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital"
+      ],
+      "address": "550 1st Ave, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(646) 929-7870",
+      "website": "http://nyulangone.org/locations/tisch-hospital?cid=syn_yext&y_entity_id=1105&y_source=1_MTU5MjA1ODQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Spent five days in ICU and they saved my life.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFXqXfAN0OLfo1vcfCGnMCNBNgtxwcKX9t-FStl_9E4-TJ7CWVv-ykjeb2Y3MkcOtBenkbFwdYyobCCPnKJDSWxhuwYtvZc3f_yF5prkVJugEwppJ1Nek7FPjxe43W0l2WQ5gY0=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/0ZHD2XicHcRBjoIwFADQE1WKYIwmLrDaSXCsGI2AGxM6pcQybbUfCif0DN7GxLd471cDYN0yCNommkhjZCs6J57caBAaJtz8B9I6xB1yQZKxo0po8SjqhOHDb23CntfkR-8JWzMJg-e7YgGInqC9LbYxOqdzkl96NKq7qKZltFf8AGuhVUX9XzmaipBM79LNKR-azpfQX3lU30Y6s091STu59damIRNqTrP7IOIox-00P85kiVc-xBij5jtH-gOL4UU-"
+    },
+    {
+      "position": 7,
+      "title": "Emergency Department - Greenwich Village Hospital",
+      "place_id": "ChIJBSBb_pVZwokRnlF1jL56-l4",
+      "data_id": "0x89c25995fe5b2005:0x5efa7abe8c75519e",
+      "data_cid": "6843917542561763742",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25995fe5b2005%3A0x5efa7abe8c75519e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25995fe5b2005%3A0x5efa7abe8c75519e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7378372,
+        "longitude": -74.0009219
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBSBb_pVZwokRnlF1jL56-l4",
+      "provider_id": "/g/1q6h_djk4",
+      "rating": 3.1,
+      "reviews": 317,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Emergency room"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "emergency_room"
+      ],
+      "address": "30 7th Ave, New York, NY 10011",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(646) 665-6000",
+      "website": "https://gvh.northwell.edu/emergency-department?utm_source=provider_listing&utm_medium=partner&utm_campaign=yext",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "On-site parking"
+          ]
+        }
+      ],
+      "user_review": "\"Very clean, very quiet, very professional doctors and nurses.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGPv1Dpq80t0eHN6WW5Mm4k6eNMwP_k3xxsRYkQcvn33-1Qfx7whUXsp1Kk-kIW_SQ1hUu-cAEAqAFJNbyaEZzZT-bH3BhM8YMIa0nNtuF7Ti3NzYOhePTNCMv5FhD-4tVxeci6=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ERHPvHicHcTbDsEwGADgJ_qtTRmRuKjDnNLaGDM3QlOrlG60O_CCnsHbSHwX3_ejnCts3_NuirSyPM9usrTyKXLjpHEtkd-9rLAgLFiPhjzSdBpWeFw8esghOeN-knTYva19yVkdHjVpGrtOdSQqQwjg6NJ0a7Xd2wIvNeh5ctxEWG1LEHRCHzRY8PPrNDm8DzGcZ2SoWC9l8xMy3JVBN74S_k5XSoYxH7GqE6gxtN2ukeLqD2qMEAL1X4D5Af_DQ4I"
+    },
+    {
+      "position": 8,
+      "title": "Presbyterian Downtown Hospital",
+      "place_id": "ChIJTVkNbkpbwokRUWriLMAC6k4",
+      "data_id": "0x89c25b4a6e0d594d:0x4eea02c02ce26a51",
+      "data_cid": "5686360503918684753",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25b4a6e0d594d%3A0x4eea02c02ce26a51&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25b4a6e0d594d%3A0x4eea02c02ce26a51&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.710035999999995,
+        "longitude": -74.005697
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTVkNbkpbwokRUWriLMAC6k4",
+      "provider_id": "/g/11fd4tr8w5",
+      "rating": 3.1,
+      "reviews": 15,
+      "unclaimed_listing": true,
+      "type": "Hospital",
+      "types": [
+        "Hospital"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital"
+      ],
+      "address": "156 William St, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 312-5000",
+      "website": "https://www.nyp.org/lowermanhattan",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Facilities are clean, but improvements in patient flow are needed.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFn8fTlxMJpG4inbZ8KaFeKYAcUWrmUzLj1wQmhjZhgg4qkwfhXGiBbThweXP4gJ_md4UvIc_rjw8EoN-IiQiFaGE7Yt7spKMrarib2ABn1fUmu_wU3VvrTjc47S8wMNeD3YCeB=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Iz88lHicHcRRboIwAADQE1VgNIGY7AM2IYoQyegUfwh0pS3SlrXVGi-4M-w2Jr6P9__HrF3M2vNmFq6oUnQmV0M0VtISaVdYCY8uBmADjJccqvqSZDIem_le7pYccjmc46LPSNEmGB21QI_9FLhasOnMKIW_FzeyU87ToWGOnA6Q7jrxA9Ftizs9uXijKrDlNc_6fBO1NjJLUepe8-EtSWUwInHtHAq_b7qZMIy-YldW5DNsP0j67gLf9wF7jYF8Av93RgQ"
+    },
+    {
+      "position": 9,
+      "title": "Bellevue hospital",
+      "place_id": "ChIJxXujdABZwokRSJPxu9NZ_xE",
+      "data_id": "0x89c2590074a37bc5:0x11ff59d3bbf19348",
+      "data_cid": "1296853983632134984",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590074a37bc5%3A0x11ff59d3bbf19348&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590074a37bc5%3A0x11ff59d3bbf19348&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7394447,
+        "longitude": -73.9764582
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxXujdABZwokRSJPxu9NZ_xE",
+      "provider_id": "/g/11w8p_cphh",
+      "rating": 3.7,
+      "reviews": 46,
+      "unclaimed_listing": true,
+      "type": "General hospital",
+      "types": [
+        "General hospital"
+      ],
+      "type_id": "general_hospital",
+      "type_ids": [
+        "general_hospital"
+      ],
+      "address": "462 1st Ave, New York, NY 10016",
+      "country": "United States",
+      "website": "https://nychealthandhospitals-appservice-east-us.azurewebsites.net/locations/bellevue/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Wonderful staff, expert doctors and compassionate nurses.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHpW7_HO4ReD0BKg_HhK0WxAgWVLM537tWPcZwGVBQz1h1WLqB84FX2sSwHfjUrb27K9wazLG3cz66qNtyVworNZ_4DEqYbqc0twnIhIYtIqkTamv-Swy-FVCgMpfhj8HYbUo_gmsZmSEGi=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/f4uf73icHcRLjoIwAADQE1WKMKImLmBUSkD8oHRgQ6TB1g-U0mqVS7r2NibzFu_zZkq1cmoYN2YNKOf0Vt1l1RHeqKpRA8Jrg7YSEAmk4W7i7dVFLXYKtLZ31Rx6IS0QCyF-uhSn0erHchTekFz7qbftTWbiSHhje_k3lIlGp8uhK4dOONHHPvIt0o9GIlavVPMuzgt7vhBZKQhUuglYkKlAXPfH-gES_QLL9Jeu2hO7jFFWHnhBa5nXycI_z7QJIQTsfwKaL1DmR7c"
+    },
+    {
+      "position": 10,
+      "title": "VA NY Harbor Healthcare System",
+      "place_id": "ChIJ2Z1XnQxZwokR1oHRWO0zf5I",
+      "data_id": "0x89c2590c9d579dd9:0x927f33ed58d181d6",
+      "data_cid": "10556213146070122966",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x927f33ed58d181d6&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590c9d579dd9%3A0x927f33ed58d181d6&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7370569,
+        "longitude": -73.9774429
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2Z1XnQxZwokR1oHRWO0zf5I",
+      "provider_id": "/g/1td6nkv_",
+      "rating": 3.7,
+      "reviews": 326,
+      "type": "Veterans hospital",
+      "types": [
+        "Veterans hospital"
+      ],
+      "type_id": "veterans_hospital",
+      "type_ids": [
+        "veterans_hospital"
+      ],
+      "address": "423 E 23rd St, New York, NY 10010",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(212) 686-7500",
+      "website": "http://www.nyharbor.va.gov/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"I have always received great doctors and nurses as well as receptionist.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGG-m8mVff24uEKEVwVTp2FV_vCm0i3q1Suu3a22eRFEWWtloPp4qKiHre7HDXpSjil2hcltYi0G-5KvVjPbuwSbAwLW79rRn6cGCf52xI59hBy3gxNjNJp61mF8NEarKJSn_ZI=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/9LCkMnicHcRLjoIwAADQE1VKEX-JC0YBFUNQJmXGjdGmULA_aSt6Qs8wtzGZt3h_b2atNgvP4ywYNUo1nDpDe6KkpdKOiBJeow0gBhgvKvLDLUpTIGYC1zUauziL8YC_NUrw-bESsA3ufulccEGIHpO4qixXhR7fs3bT0-lm_aPLruWIEW5_W5iCMHvgrri6obxGw76azvujnJB0VYfouQ3n7OsVNM-8y3d64otklseXPtuV8nzaLgcfQgjY_wTIDx4-Q98"
+    },
+    {
+      "position": 11,
+      "title": "NewYork-Presbyterian/ Lower Manhattan Hospital: Diagnostic Center",
+      "place_id": "ChIJpYoZlyJawokRYKgNyAi2K18",
+      "data_id": "0x89c25a2297198aa5:0x5f2bb608c80da860",
+      "data_cid": "6857775006434044000",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2297198aa5%3A0x5f2bb608c80da860&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2297198aa5%3A0x5f2bb608c80da860&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7103592,
+        "longitude": -74.00510299999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJpYoZlyJawokRYKgNyAi2K18",
+      "provider_id": "/g/12m9gv20j",
+      "rating": 3.9,
+      "reviews": 10,
+      "unclaimed_listing": true,
+      "type": "Diagnostic center",
+      "types": [
+        "Diagnostic center"
+      ],
+      "type_id": "diagnostic_center",
+      "type_ids": [
+        "diagnostic_center"
+      ],
+      "address": "170 William St, New York, NY 10038",
+      "country": "United States",
+      "phone": "(212) 608-7422",
+      "website": "https://www.nyp.org/lowermanhattan",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Nurse staff 5/5, all of them very attentive and caring.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxKhR4b18u10IXnJiPwEUckvLcZlJ5TFXQg2niJz0U_HuXiLTwO2BCgmIXfcRonfqlqdqXHNBM93mjxGPCKbc-t9yr6chzoxbzdXYn0nDPOWaPv8yM2PA7ya-BzQ8uM_dOgyyf=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Xevi-XicHcRRboIwGADgE1UKug1NfAA3pyhSjMbqi5EfaJnQii1CuaBn2G1M_B6-_yfX-qYmllXy4YBJycqsUdkdpNCZ0AOQlcVuCoFCyvLIJr56827Ft6PEdhsbL6kICtL-7OH6WMOpDD52cxozRxRBj_fnRUOL9a6NHH_GqiXNYStFXpd1WtPFxg_Hw-qv-yWzVQJIj839E3gvu6RP6VFg8U2iw4U8XBM6xPsyF-T3sduE5zRixuTT1sYYI_4ekHgBkvxFvw"
+    },
+    {
+      "position": 12,
+      "title": "Northwell Greenwich Village Hospital",
+      "place_id": "ChIJOSan0wpZwokR4TuDNYwK7bE",
+      "data_id": "0x89c2590ad3a72639:0xb1ed0a8c35833be1",
+      "data_cid": "12820915311503162337",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590ad3a72639%3A0xb1ed0a8c35833be1&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590ad3a72639%3A0xb1ed0a8c35833be1&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.737802099999996,
+        "longitude": -74.000909
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOSan0wpZwokR4TuDNYwK7bE",
+      "provider_id": "/g/11x768kqfq",
+      "rating": 3.4,
+      "reviews": 22,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Home health care service"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "home_health_care_service"
+      ],
+      "address": "30 7th Ave, New York, NY 10011",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours",
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours"
+      },
+      "phone": "(646) 665-6000",
+      "website": "https://www.northwell.edu/lenox-health-greenwich-village?utm_source=provider_listing&utm_medium=partner&utm_campaign=yext",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"This is one of the most efficient and friendly hospital I've ever been too.\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Y3rCcPKsm7YBxc3q6_JWzQ&cb_client=search.gws-prod.gps&w=80&h=92&yaw=303.25333&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/xfYO9XicHc1LDsIgFADA27ATqMRv8mKiO93oynTVUIpAQgvysFRP47W8jcYLzHzeNueIW8YwJ63z6HSJbtIeZ1FSE4LxWkaHVIWejRXL9tG3g3R-F-UQXAe1SAd1PmG_qveTEvdlc7y-LkS1jfJODxlQy6QsNeUnptBRE5EUWHNiYTMnT1lAcEHnCyEEiS4rC5z8l1sYoeL8C3KUOW8"
+    },
+    {
+      "position": 13,
+      "title": "DOWNTOWN MANHATTAN PSYCHIATRIC GROUP",
+      "place_id": "ChIJC1O_WBhawokR3Q7yIbn6G5g",
+      "data_id": "0x89c25a1858bf530b:0x981bfab921f20edd",
+      "data_cid": "10960629791181639389",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a1858bf530b%3A0x981bfab921f20edd&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a1858bf530b%3A0x981bfab921f20edd&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7118568,
+        "longitude": -74.0086086
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJC1O_WBhawokR3Q7yIbn6G5g",
+      "provider_id": "/g/1thd2qkf",
+      "rating": 1.8,
+      "reviews": 128,
+      "type": "Psychiatric hospital",
+      "types": [
+        "Psychiatric hospital",
+        "Mental health clinic"
+      ],
+      "type_id": "psychiatric_hospital",
+      "type_ids": [
+        "psychiatric_hospital",
+        "mental_health_clinic"
+      ],
+      "address": "225 Broadway #1605, New York, NY 10007",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM",
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20136\u202fPM",
+        "sunday": "10\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 693-4010",
+      "website": "http://www.downtownpsychiatricgroup.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        }
+      ],
+      "user_review": "\"Very kind and understanding staff\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAECI5imVJOf8ouoj5k-dwxL2dhf-9S5KRHq9GqEo-Hd8fMXjbWfjt58DfvCS7VhpsfZKWpvXPu_L-7eY4u-Rp9SEGtC1S3SkJQEZzzugtuA14ph6HgMH4ZodBuHF1WxeLjTeGE=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/msdRcXicHcTbboIwGADgJ_oFFCaYeIGsoyoeuwhys2TQw0Bpta0aHtB38G1M9l18r6cwRumJ45zEaMCl5CdqNb1WsjO0M4NKnh2uNFQatBNv17s2Rsk8-DsfFhsWSiuboIX6_siGtWAQkWC5x5covSAJuA7Zqmh-c9aYIPxkt4SMD0JpVi5zdSu29ieDMT36FvYqIig1iUdGpF3sUNn3lhsbe74SH5ivsF_Kembxl5c_aNZ80xRN757ruiD-r6B7A-aqQ70"
+    },
+    {
+      "position": 14,
+      "title": "Mount Sinai-Union Square",
+      "place_id": "ChIJ3-ExxphZwokRMTQytqeZMWU",
+      "data_id": "0x89c25998c631e1df:0x653199a7b6323431",
+      "data_cid": "7291778217284875313",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c631e1df%3A0x653199a7b6323431&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c631e1df%3A0x653199a7b6323431&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.734783199999995,
+        "longitude": -73.989535
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU",
+      "provider_id": "/g/1tg_gzk6",
+      "rating": 3,
+      "reviews": 310,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Cancer treatment center",
+        "Cardiologist",
+        "General practitioner",
+        "Internist",
+        "Oncologist",
+        "Radiologist",
+        "Surgical center",
+        "Urgent care center",
+        "Urologist"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "cancer_treatment_center",
+        "cardiologist",
+        "general_practitioner",
+        "internist",
+        "oncologist",
+        "radiologist",
+        "surgical_center",
+        "urgent_care_center",
+        "urologist"
+      ],
+      "address": "10 Union Sq E, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open now",
+      "website": "https://www.mountsinai.org/locations/union-square/services?utm_source=Yext&utm_medium=local_listing&utm_campaign=PACC&y_source=1_MTgwODM0NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Free parking lot",
+            "Free street parking",
+            "On-site parking",
+            "Paid parking garage",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Excellent, clean, efficient services.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1GGScBKdqDnR-9a_ruBeZSJkQwCslD2Cwh8k5DHV81J0gvzMviJ9dZ_pQGBlyX8yXVEFt7XrfO9BssXrfYS1M8qkFV4V0aLSClVeGs2o0oh9xqJgjmvuWkvHYxa5rwgkXqB3S7w=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/0YNFGXicHcXdboIwGADQJ6oUfyIs2YUFxeDcxpp06I0htbZbKwW-QnVv6CP4NprdnHO_KecaeAkCoyYjaa00ogfRcVs7UbsRt-dANoA4IAgWn--FXizDLKOcbI5tWn-huDp0PRF7muvCJ2DSceJVpGfpmkVhjuXwtx1-8vi4PzRFRsy1jK4lW67cvOxOHzEBeL6j4TZq9YpNGa7eaGKYyGBssVXxpc3l73nov_Ww3l2qWeelLlsyoXP_6kOMMVL_clQ_ANilRd4"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1a312eb1458ad7264d7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/dtBzpN5XSHjeBOzDsK5Zeg/6a3ac1a312eb1458ad7264d7.json",
+    "created_at": "2026-06-23 17:25:55 UTC",
+    "processed_at": "2026-06-23 17:25:55 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2590961594d27:0x4f8d34de15a91baf!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/dtBzpN5XSHjeBOzDsK5Zeg/6a3ac1a312eb1458ad7264d7.html",
+    "prettify_html_file": "https://serpapi.com/searches/dtBzpN5XSHjeBOzDsK5Zeg/6a3ac1a312eb1458ad7264d7.prettify",
+    "total_time_taken": 0.85
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJJ01ZYQlZwokRrxupFd40jU8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Apotheco Pharmacy Manhattan",
+    "place_id": "ChIJJ01ZYQlZwokRrxupFd40jU8",
+    "data_id": "0x89c2590961594d27:0x4f8d34de15a91baf",
+    "data_cid": "5732296029163297711",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590961594d27%3A0x4f8d34de15a91baf&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590961594d27%3A0x4f8d34de15a91baf&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7400271,
+      "longitude": -73.97906379999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJ01ZYQlZwokRrxupFd40jU8",
+    "provider_id": "/g/11clytw3r_",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEODbopD-WlT1LXOail_5f006uG2cH1_D3z43r4BJSWW5uKsweb4n9erMGJ8STv-W5As1t0JInWPfnY5gDt6mg57Y9uJr0_kLUrn6o7gEmuMjPrNRZam-Lhfir8FGol_PJMtx0M=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/YJbuPnicHcTbDsEwAADQL6p1ts4l8TAZozbmluJloek6dO3SC-IHfYO_kTgP5_uprW3N0PNEHXS4UlwwZ5imSlombYeqxuOtAdQA48XFcn2PJ6vkotoEELHzs8PqfBUlqiCMXNqlM79MgncY6HCMt4QgtzBPdgnlgOk8xf3t7gEIio1vIZ5LUlTyiHhio4aj3nHgsIblPdtrGakenzQuvxV6uTmdG5DV1VX3p6kSZYFz-4L56OlDCEH9nwL5A7dOQ2c",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 18
+      },
+      {
+        "stars": 2,
+        "amount": 4
+      },
+      {
+        "stars": 3,
+        "amount": 6
+      },
+      {
+        "stars": 4,
+        "amount": 24
+      },
+      {
+        "stars": 5,
+        "amount": 689
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 741,
+    "type": [
+      "Pharmacy",
+      "Wellness center"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "wellness_center"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "amenities": [
+          "Wi-Fi",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "462 2nd Ave, New York, NY 10016",
+    "country": "United States",
+    "located_in": "Kips Bay Court",
+    "website": "https://www.apothecopharmacy.com/location/apotheco-pharmacy-manhattan/?utm_source=GMBlisting&utm_medium=organic",
+    "phone": "(212) 889-0022",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "P2RC+29 New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      },
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEODbopD-WlT1LXOail_5f006uG2cH1_D3z43r4BJSWW5uKsweb4n9erMGJ8STv-W5As1t0JInWPfnY5gDt6mg57Y9uJr0_kLUrn6o7gEmuMjPrNRZam-Lhfir8FGol_PJMtx0M=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YJbuPnicHcTbDsEwAADQL6p1ts4l8TAZozbmluJloek6dO3SC-IHfYO_kTgP5_uprW3N0PNEHXS4UlwwZ5imSlombYeqxuOtAdQA48XFcn2PJ6vkotoEELHzs8PqfBUlqiCMXNqlM79MgncY6HCMt4QgtzBPdgnlgOk8xf3t7gEIio1vIZ5LUlTyiHhio4aj3nHgsIblPdtrGakenzQuvxV6uTmdG5DV1VX3p6kSZYFz-4L56OlDCEH9nwL5A7dOQ2c"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHP_j91F3PvOqGCEVqiF7-hE5P_qSHJxvfXBwrxHlpWCogbQ6tWoRju0TqUn4DmbujP91kzLb8D8Y7egX4kUuJNH2KABnqGiVb7Y0F6Kx3LguVp-aU0ntENg6QZZLu9UcPhkoJe=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/G4p15HicHcTdzoIgAADQJyIxS_PburDSnDk_rLSfm5aMIDWQgHK9YM_Q27R1Ls7nzbTu1J9ltcwZUCFoS4widyy4JlwPsLhZtFMAK6CsAGV5E8ToVPt25KDHv1zOw1JeIw-wcIxOchMn_eOynz3vfdx2u7mgVe7qnVjXBm5lwUeLW2Vq5NvNK60mi8nBI3Q_agqTZPFwFcy4XF7LyjvAyF31TkpN2YFzAbkOM-rmx2Nq_AIj1oiETJ82hBCw3xjwL0EdRFM"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=CvTcmvBjkQCumu8DIYFfLQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=110.23637&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/gf-ROXicHc1LCsIwFADA22RnPq1oFYJgRRDcFNy4KmlMm6dJE8xrqtfxVt5GcC4w349FjGnLWMKnMZjBzBFexqVFVHQIYXBGRUhUB8-yYGgn340K3C6qMcBN1vmifd7fH009-ak6nK7H_twQ3bXagRlRehVTmzJFpRGcoUNMZJZFsSRWFpuKvNUsheC0KFflmkRAbSUn_6cPWQrOfwqfOls"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Excellent service, such prompt response and delivery, couldn't be happier.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXxH9WTg9snlxIL0YEu-t8jfmGMFjBq0rdc0b9UhAC8xmAIXJH1=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Easy refills delivered to your home quickly.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLEqqPzPcnjY-Bc_ld4NVLFiQmsYHB1naJa1zNxZuvxx-EafA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great staff, super helpful and location is easy to get to.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKSv5th4eRQWH6SIw8uhGMPl0GrNjFbZPDlGXrLX555_byIwQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "korra dale",
+          "rating": 3,
+          "contributor_id": "107220206789457351806",
+          "user_review_count": 1721,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI7d6UCsSV781Ne_K3EC7tEIK_3ItoRFbQJF2We2RAxXBPgvg=s120-c-rp-mo-ba12-br100",
+          "description": "Apotheco Pharmacy Manhattan is good for dermatology prescriptions\u2014 they specialize in skin meds, so the pharmacists know their stuff and help get the lowest prices (branded or generic). Free delivery is convenient in the city, and they've coordinated with my derm office okay. It's 3 stars though because I've had delays on fills (waited extra days a couple times), and phone hold times can be long when calling for updates. Solid for specialized needs, but not the fastest\u2014better than chains for derm, but patience required.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SdE9XTkRTekZoTWxsaFIxRTJTVW8wY1hCUmNHYxAB!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CAIQACodChtycF9oOmRtOWNDSzFhMllhR1E2SUo0cXBRcGc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-20T05:43:15+00:00"
+        },
+        {
+          "username": "Caroline B",
+          "rating": 1,
+          "contributor_id": "110213768394854115627",
+          "user_review_count": 60,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLyWNq4n5Z_ujM_Pr8-WU6ZTMD1l1AB5fnmh-rwEP8fIbtxXA=s120-c-rp-mo-ba12-br100",
+          "description": "Rudest customer service after they misdelivered my medication made a big stink and had to speak to multiple rude people and more steps even to get it reordered. What a pain!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5a2VWTlpjbFZzWWtwRGFUZEtWSE10YnkxdFJtYxAB!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CAIQACodChtycF9oOl9keVNZclVsYkpDaTdKVHMtby1tRmc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-27T21:06:36+00:00"
+        },
+        {
+          "username": "Vanessa Deloughry",
+          "rating": 5,
+          "contributor_id": "118377870954157504232",
+          "user_review_count": 5,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLOMguHLuDApKfg3nRq_dFWhOD_d0Ba8JEd2lrDYnEzQwascg=s120-c-rp-mo-br100",
+          "description": "Fast, budget friendly .So convenient.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25FM1ZsVlBkM05KYjJWc05GQXpTMk5WVjFCYVdHYxAB!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CAIQACodChtycF9oOnE3VlVPd3NJb2VsNFAzS2NVV1BaWGc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-13T22:01:53+00:00"
+        },
+        {
+          "username": "Li",
+          "rating": 5,
+          "contributor_id": "108036489924549977301",
+          "user_review_count": 440,
+          "user_photo_count": 3236,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXicN-GlWUMOIRqma86a6c2P0NDwLUHx38eQSwKyXji2DSWnnM=s120-c-rp-mo-ba12-br100",
+          "description": "Fast and friendly delivery.  I liked that the delivery driver calls before he\u2019s there to make sure you\u2019re home.  The employees at the pharmacy were very nice and helpful with any questions I had.  The demeanor is very professional.  The delivery driver rode his bicycle in the frigid cold, wind, and rain at night to bring me my prescriptions - I was very appreciative.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNodEwtZFN3EAE!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CIHM0ogKEICAgIChtL-dSw%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-02-06T15:17:06+00:00"
+        },
+        {
+          "username": "Andy Fata-Chan",
+          "rating": 1,
+          "contributor_id": "110769092774783790147",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWKnCU2jZENiB87ZYoEfy_whfgMLrLecMqWJFKUJie9QzXKJrmH=s120-c-rp-mo-br100",
+          "description": "They said my medication was not covered by insurance which is fine, I made the purchase then they cancelled it without a reason. They told me that had a coupon flipped to make it cheaper but it was still 3x what a local pharmacy charges. I go to another pharmacy and they told me that there wasn\u2019t a pre-authorization form filled out by my doctor so they couldn\u2019t tell me if it was covered. Strange.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKeFlXVllOV1pTZDNGc2N6TTNWMmt5V0UwMlZXYxAB!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CAIQACodChtycF9oOjJxYWVYNWZSd3FsczM3V2kyWE02VWc%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-15T17:00:31+00:00"
+        },
+        {
+          "username": "Brooklyn Roach",
+          "rating": 5,
+          "contributor_id": "110089144925597157744",
+          "user_review_count": 30,
+          "user_photo_count": 34,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUyopgNlxBod_OoXYdGri6IC8XLyLav2kDTWa9fyiRM3yAoyg=s120-c-rp-mo-ba12-br100",
+          "description": "This was my first experience with Apotheco and I have to say their customer service was great. They listened to my detailed delivery instructions and my script was delivered fast. The delivery person was so friendly and the entire process was so easy, everything was packaged nicely as well.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNSbkk2REJBEAE!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CIHM0ogKEICAgICRnI6DBA%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-03-27T14:27:28+00:00"
+        },
+        {
+          "username": "Shannon",
+          "rating": 5,
+          "contributor_id": "112035107856070544461",
+          "user_review_count": 20,
+          "user_photo_count": 13,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUOcoDFngw6BFd0X47GVxgKqp8yhbDMpqRpWtxN6wnv7tSWH-ruEw=s120-c-rp-mo-ba12-br100",
+          "description": "Honestly, this is the best pharmacy. Their customer service is amazing. When calling their store, I have never had to wait on hold longer than a couple minutes. They are super nice and understanding. I was able to get my medication delivered same-day at no extra charge. Definitely recommend! Thank you to all the workers at Apotheco for your great work!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURwbnM2LVNBEAE!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CIHM0ogKEICAgIDpns6-SA%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-08-22T14:12:50+00:00"
+        },
+        {
+          "username": "Dee McCarthy",
+          "rating": 5,
+          "contributor_id": "110330794071397132699",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUu2fbSH0ms4h8NN0-U3XEj2xQIeRcWRq9II-oyY-xkwv395P1vZg=s120-c-rp-mo-br100",
+          "description": "Love Apotheco so much! They are really fast, responsive & knowable. They deliver directly to my doorman with ease, I get notifications when things are on the way & have been delivered. I\u2019ve never had an issue with payment or my prescriptions & I don\u2019t have to go into a pharmacy to pick it up.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN1cnREUm9nRRAB!2m1!1s0x0:0x4f8d34de15a91baf!3m1!1s2@1:CIHM0ogKEICAgICurtDRogE%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2022-07-28T15:26:14+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Manhattan Apothecary by Apotheco Pharmacy",
+            "data_id": "0x0:0x25cf01fee380cf8d",
+            "data_cid": "2724398493832630157",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x25cf01fee380cf8d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x25cf01fee380cf8d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751422399999996,
+              "longitude": -73.98916419999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x25cf01fee380cf8d%218m2%213d40.751422399999996%214d-73.98916419999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 936,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8f_vtWfqgoyIGeGX5MOFr2jcxJU4BMjzcxsFHFJtvkQGGI0EbwMgrzsSe65Kh19Bm00Wz_CnZyAMlEWR2KY3Sc_0KD3kLswaO2NPT_SVknMRRmx3sqx1FWPdoPvEp6pgpv-C5=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Wellness center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Apthorp Pharmacy",
+            "data_id": "0x0:0x1f428b5a672984dc",
+            "data_cid": "2252515984032761052",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1f428b5a672984dc&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1f428b5a672984dc&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7830863,
+              "longitude": -73.9809368
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1f428b5a672984dc%218m2%213d40.7830863%214d-73.9809368&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 343,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE77XFoPhQLZ0haSvDjFuQHtgsCIJ-D3ANhtxNvJqDLyL42R5fjOgWPNJIgjuRvp6OLKTqWAFWXCrYfkWNEfs72Neo4P8rBpZpnvyYMm9F2krEqsqMV-Ikr3E31lQcfzoJGII_amA=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "West 14 Apothecary ( Also Known as West 14 Street Prescription Center)",
+            "data_id": "0x0:0xbbef2185e71a420b",
+            "data_cid": "13542079463517995531",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbbef2185e71a420b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbbef2185e71a420b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.739956,
+              "longitude": -74.00344
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbbef2185e71a420b%218m2%213d40.739956%214d-74.00344&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 209,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSvwaWXy_qTJ411dAoYX0iI1gzQdqX1GJS2fP9C6o55xUq_C_jPGRZDxBYRH27LEvL4OLsXQgS1FVTuuA6DfrHidGoRWj9DIp7PHAm3tyqOrQG0ts03Vj7IGSxL2B_7W4kdo8BLSEa6t5f=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Third Ave Apothecary",
+            "data_id": "0x0:0x141d781f6e1b9e59",
+            "data_cid": "1449446731469790809",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x141d781f6e1b9e59&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x141d781f6e1b9e59&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7625878,
+              "longitude": -73.96560459999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x141d781f6e1b9e59%218m2%213d40.7625878%214d-73.96560459999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 124,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8VS-SmqaOUkVPKg4sloFcAEwnXXhN5LvCoyoB3Q8vWzegXF-ejgalWIdw6xhch9frWa083qipq1Fzkcrlv6zKQLGb1DqIkdeksMREYNKQeuZPohfE1NvUaa4dNqzRMLWnuEVNtM9Hu1Qj=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "AHF Pharmacy - Manhattan",
+            "data_id": "0x0:0x45792bcd56cd4d05",
+            "data_cid": "5006080621723602181",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x45792bcd56cd4d05&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x45792bcd56cd4d05&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7483219,
+              "longitude": -73.9928955
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x45792bcd56cd4d05%218m2%213d40.7483219%214d-73.9928955&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 113,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHFgJOEK5xfvFN7boN6GzgPJOO3bOOvfu3vkJTMTyXXpNCFm1uRNOh-HO9yarin9pTd_LA_-Wi1wm11JoqUuNIbZKLsSk24-x7fe5U0KxinosP5Yn8m-vI9BG9HktxQVCB1baf-NA=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oi4KLCIoQXBvdGhlY28gUGhhcm1hY3kgTWFuaGF0dGFuIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COi4KLCIoQXBvdGhlY28gUGhhcm1hY3kgTWFuaGF0dGFuIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

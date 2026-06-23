@@ -1,0 +1,474 @@
+{
+  "search_metadata": {
+    "id": "6a3ac2178c8a7e5ec671cbc6",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/pao-afbJprQxVkW2S2tBSg/6a3ac2178c8a7e5ec671cbc6.json",
+    "created_at": "2026-06-23 17:27:51 UTC",
+    "processed_at": "2026-06-23 17:27:51 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259f441cdaf83:0x2e60e690b3c1be0c!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/pao-afbJprQxVkW2S2tBSg/6a3ac2178c8a7e5ec671cbc6.html",
+    "prettify_html_file": "https://serpapi.com/searches/pao-afbJprQxVkW2S2tBSg/6a3ac2178c8a7e5ec671cbc6.prettify",
+    "total_time_taken": 0.65
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJg6_NQfRZwokRDL7Bs5DmYC4",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Glow Dental of Midtown Manhattan: Dr. Alina Huang",
+    "place_id": "ChIJg6_NQfRZwokRDL7Bs5DmYC4",
+    "data_id": "0x89c259f441cdaf83:0x2e60e690b3c1be0c",
+    "data_cid": "3341924432674405900",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259f441cdaf83%3A0x2e60e690b3c1be0c&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259f441cdaf83%3A0x2e60e690b3c1be0c&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7487274,
+      "longitude": -73.9847307
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJg6_NQfRZwokRDL7Bs5DmYC4",
+    "provider_id": "/g/11h_z9tw2b",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHvPwsQGuyrpX2Ie5ERZeAhREhX0gp2hFhAClLXXRVuui9ftOkbGZEjmbUKAM64GWpOGw4d33GWE3IRXVCII5X5nXJwwE4MJN7nv2QK7oJuYP5-DXpvULAbDAZTkmDEM41MbIgx=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/SZtBvHicHcTbboIwAADQL6ogF41L9tBIrUVRIF4qj2BtFWgb29LtC_cN-5slOw_n90dYq81HEAwinnGl-MCcYe9OScuknXVqDLg2oDPABLA8VD3cTqU3FXbfb00jwlJUNwyKGgkach2JjYDrYU9pfXHuuXrYY9_iBr3G9ryDxSLBV33EPrnHMb6imNT0siYkpamkufcoKfLDUk5RtVuq3N3KFGRUT-c9bDPYnPoxQ0UyL1rCvz79PAxDIP7vgPwDMTtDSA",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 238
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 245,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental clinic"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_clinic"
+    ],
+    "menu": {
+      "link": "https://dentistinmidtownmanhattan.com/nyc-dental-services/",
+      "source": "dentistinmidtownmanhattan.com"
+    },
+    "book_online": "https://nexhealth.info/book/appt/glow-dental-nyc?lid=333566&rwg_token=AE37R_gJo_4P2hZIG_AwiSmY6eAMsBO1ERL6xOI8eSgyv35UqcPKXv9l80bUe2q5YuGxyBTxsXT4RSK7pI_qjNfhBoOqCRjOSQ%3D%3D",
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "358 5th Ave #406, New York, NY 10001",
+    "country": "United States",
+    "booking_link": "https://app.nexhealth.com/appt/glow-dental-nyc?lid=333566&key=b2d71902-5ce0-43c1-bc95-24cdee27de9a",
+    "website": "https://dentistinmidtownmanhattan.com/",
+    "phone": "(212) 697-8620",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "P2X8+F4 New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20134 PM"
+      },
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "Closed"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259f441cdaf83%3A0x2e60e690b3c1be0c&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNznQUBMJO5xc2Pfg8tcAwIuQBJZZHHr9SlAzlY=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEMKaq-yDsfPtmAE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "At Glow Dental in Midtown Manhattan, we understand that missing teeth can impact both aesthetics and overall well-being. It's important to explore replacement options to maintain long-term oral health. Restoring functionality is a key reason to replace lost teeth, as gaps can hinder chewing and speech.\n\nDental implants restore the natural look and function of teeth, allowing you to eat and smile confidently. They also prevent jawbone deterioration, which can occur after tooth loss, maintaining bone density and avoiding a sunken appearance.\n\nDr. Alina Huang and her team prioritize your comfort while evaluating replacement strategies. Patients appreciate our compassionate care, with one stating, \"Dr. Huang made getting my implants easy and stress-free.\"\n\nWe offer various replacement options, including implants, bridges, and dentures. A qualified dentist will help tailor the best approach for your needs during your visit. Replacing teeth helps maintain alignment among remaining teeth and promotes dental harmony.\n\nFor more information, visit our website or contact Glow Dental to schedule your assessment and enhance your smile today!",
+        "date": "1 day ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMdFjXZ_PW6vRKIiMB_IFHR61730Dv_UYLsEDeT=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEI685eeW49ealQE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "If you struggle with teeth grinding (bruxism), Glow Dental offers a simple solution. Located at 358 5th Ave Suite 406, NYC, we provide professional custom nightguards led by Dr. Alina Huang. These nightguards help minimize discomfort and prevent dental damage.\n\nKey benefits include:\n\n- **Wear and Tear Prevention:** A nightguard cushions your teeth, reducing wear and sensitivity.\n- **Jaw Pain Relief:** It alleviates jaw discomfort and headaches by balancing pressure.\n- **Emergency Prevention:** Nightguards lower the risk of serious dental complications.\n\nPatients rave about their experience at Glow Dental, noting how easy the fitting process is and the improvements in sleep quality. Our nightguards are tailored for optimal fit and comfort.\n\nSchedule a consultation to evaluate your needs. For more information on how nightguards can enhance your oral health, visit Glow Dental\u2019s website. Protect your teeth and improve your sleep with a custom nightguard. Contact us today to book your appointment or connect with Dr. Huang online for tips.",
+        "date": "4 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPQv0HeHYhaHMaA1a0SbwzYAEFfMDYQqO2vxHcR=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEP6d_9TsgPDUgAE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "Stress can impact dental health, and at Glow Dental in Midtown Manhattan, we recognize this connection. Dr. Alina Huang and her team help you maintain a healthy smile amidst life's pressures.\n\nHigh stress can lead to issues like:\n\n- Teeth Grinding (Bruxism): Unconscious grinding can damage teeth and cause discomfort.\n- Gum Disease: Stress weakens the immune system, increasing the risk of gum disease.\n- Dry Mouth: Reduced saliva production allows bacteria to flourish, complicating oral health.\n\nWe create a calming environment and offer tailored treatments. Patients appreciate Dr. Huang\u2019s compassionate approach, noting how her care eases anxiety about dental visits. Regular check-ups are vital for catching stress-related dental problems early. We provide solutions like mouthguards for bruxism to keep your smile healthy.\n\nIncorporating stress management strategies, such as mindfulness, staying active, and relaxation, can improve both mental and dental health. For personalized advice on managing stress's impact on your dental wellness, contact Glow Dental. Visit our website to learn more about our services and Dr. Huang\u2019s patient-focused approach. Schedule your appointment today for a healthier, happier smile!",
+        "date": "6 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOHHR8y9CAf1JCPKOPnTBQD2o1mWBq5OdzO9Fzj=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEN67gZS636jywgE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "At Glow Dental, located at 358 5th Ave Suite 406 in Midtown Manhattan, we specialize in dental implants, a transformative solution for tooth loss. We understand the impact of missing teeth and provide personalized care to enhance your smile. Our dental implants feature a titanium post that acts like a tooth root, securely integrated into your jawbone for long-lasting results.\n\nKey points to consider: \n- **Missing Teeth:** Suitable for individuals with one or more missing teeth from decay or trauma. \n- **Jawbone Health:** A stable jawbone is essential. Dr. Alina Huang will evaluate your situation and discuss options like bone grafting. \n- **Overall Wellness:** Good health and oral hygiene are critical for a successful recovery. \n\nMany patients have had positive experiences with implants, praising our attentive care. Implants not only restore aesthetics but also prevent jawbone loss and maintain facial contours. \n\nIf you\u2019re considering implants, we recommend a consultation to explore your options. At Glow Dental, we create tailored treatment plans using state-of-the-art technology for a safe, comfortable procedure. \n\nReady to regain your confidence? Reach out to schedule an appointment today and discover how we can help enhance your smile.",
+        "date": "Jun 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNB17Ga9Wywjjm9iVj4rDqglm-_In-IJ8V4upMT=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEO7l_8bE64mLLA&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "Tooth sensitivity can cause discomfort when consuming hot, cold, or sweet foods. Managing this issue is essential for oral health. At Glow Dental, led by Dr. Alina Huang, we provide expert treatment options for tooth sensitivity at 358 5th Ave Suite 406, New York, NY 10001. \n\nSensitivity often arises from enamel erosion or gum recession. Common contributors include aggressive brushing, teeth whitening, gum disease, bruxism, and cavities. Identifying the cause is key to alleviating discomfort.\n\nEffective strategies to reduce symptoms include:\n- **Desensitizing toothpaste:** Blocks nerve sensations.\n- **Soft-bristled toothbrush:** Minimizes enamel wear and gum irritation.\n- **Limit acidic foods:** Reduces enamel erosion.\n- **Good oral hygiene:** Protects against gum disease and decay.\n- **Fluoride treatments:** Strengthens enamel and mitigates sensitivity.\n\nMany patients find relief with these methods, evidenced by one who remarked on Dr. Huang\u2019s practical solutions. For personalized care and strategies to manage tooth sensitivity, connect with Glow Dental. Our website offers comprehensive information on services, and follow us on Instagram for tips on maintaining oral health.",
+        "date": "Jun 12, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMwe2bkFhuy9fSj7TYdQMLtdjqvI63BBzpkZgku=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEPj59tzzjKrFeA&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "At Glow Dental in Midtown Manhattan, we prioritize your oral health. Wisdom teeth, or third molars, can cause issues during late adolescence or early adulthood. Common reasons for extraction include:\n\n- Insufficient Jaw Space: Lack of space can lead to impaction, causing pain and swelling.\n- Misalignment Issues: Wisdom teeth may erupt at odd angles, misaligning adjacent teeth.\n- Increased Infection Risk: Partially erupted teeth can trap food and bacteria, increasing gum disease risks.\n\nSymptoms like persistent pain, gum swelling, or difficulty opening your mouth may indicate the need for extraction. Dr. Alina Huang provides comprehensive evaluations to determine the best course of action for each patient. \n\nOur patients appreciate our supportive approach, with one stating, \"Dr. Huang made everything so easy.\" Wisdom tooth extraction is routine here, utilizing advanced techniques for minimal discomfort and quicker recovery. \n\nIf you're looking for a dentist in Midtown Manhattan, Glow Dental offers a welcoming atmosphere focused on long-term dental health. Visit our website for more information or to address your concerns. Contact Glow Dental today to schedule your appointment and ensure your smile stays healthy!",
+        "date": "Jun 10, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipM_N6z7nFFBfaF0c4e-KDL7t_VOUzU3bPIT6a7w=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKENiHxKrExeDCdg&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "Arriving at Glow Dental in Midtown Manhattan for your first appointment is an exciting step towards optimal oral health. Located at 358 5th Ave Suite 406, New York, NY 10001, you'll find a welcoming atmosphere and attentive care from Dr. Alina Huang and her team.\n\nDuring your initial consultation, you can expect a thorough oral assessment, advanced imaging if necessary, and tailored recommendations based on your unique dental history and needs. Patients appreciate the calming and informative experience, reflecting Glow Dental's commitment to exceptional care.\n\nWe utilize advanced technology to ensure comfort and effectiveness during your visit. From warm welcomes to insightful consultations, we prioritize exceptional service at every step. For new patients, our website offers valuable information to prepare for your appointment.\n\nAt Glow Dental, your first visit focuses not just on immediate concerns but also sets the foundation for maintaining a healthy smile. Our goal is to make every patient feel informed and confident about their dental journey. To book your appointment and receive personalized care, visit our website today. We look forward to welcoming you!",
+        "date": "Jun 8, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipM-Tm-ICdrN0jCnZg30nvcyHcEJIQTVQlhQM9Rv=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKENL4x6WB8dKNqgE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "Everyday activities can wear down your teeth, impacting your oral health. At Glow Dental, Dr. Alina Huang and her team offer tips to protect your smile from daily stresses. Common causes of wear include:\n\n- Acidic Foods and Beverages: Citrus fruits, soda, and wine can erode enamel.\n- Hard Foods: Crunching hard candies or ice may chip or break teeth.\n- Teeth Grinding: Bruxism during sleep can significantly wear down teeth.\n\nTo safeguard your teeth, consider these practices:\n\n- Maintain a Balanced Diet: Include crunchy fruits and vegetables, and limit sugary snacks.\n- Use a Soft-Bristled Toothbrush: This helps preserve enamel while cleaning effectively.\n- Consider Mouthguards: Custom mouthguards can reduce grinding damage.\n- Stay Hydrated: Water washes away food particles and sugar, promoting a healthier mouth.\n\nRegular dental visits are essential. At Glow Dental, we identify potential issues early through check-ups and cleanings. Patients appreciate our focus on comfort, with one saying, \"Dr. Huang and her staff make going to the dentist a breeze!\" For personalized advice and more tips on dental care, schedule an appointment with us today. Glow Dental is dedicated to providing superior care and promoting healthy smiles.",
+        "date": "Jun 5, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipO_-6qg8ubZeeKbZGq9kMGr4FBD1Kppxv6L8EO6=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEMLYyLmTg7-mwgE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "Finding a great dentist in Midtown Manhattan is essential for dental health and a beautiful smile. Glow Dental stands out for its focus on patient comfort, advanced solutions, and personalized care led by Dr. Alina Huang. The practice offers a wide range of services, from preventive cleanings to specialized treatments, ensuring comprehensive care tailored to each patient\u2019s needs.\n\nPatients praise Dr. Huang for her compassionate approach and dedication to exceptional service, highlighting how much she cares about her patients. Glow Dental also utilizes state-of-the-art technology to enhance the patient experience, providing effective treatments with minimal discomfort for smooth visits.\n\nLocated at 358 5th Ave Suite 406, NYC, Glow Dental is easily accessible. Interested patients can explore the services offered on the Glow Dental website. Building trust with a dentist is crucial, and the friendly team at Glow Dental encourages open communication to tailor treatment plans to each patient's preferences.\n\nReady to improve your dental journey? Schedule your appointment online today, and experience superior general dentistry focused on promoting healthy smiles! Connect with us to start your path to a healthier smile!",
+        "date": "Jun 3, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPx0UIFg6NJxsN9MpMpF7WXYqJIVBO6YR8QIFtl=h400-no",
+        "cta": "Learn more",
+        "link": "https://dentistinmidtownmanhattan.com/",
+        "post_link": "https://search.google.com/local/posts?q=Glow+Dental+of+Midtown+Manhattan:+Dr.+Alina+Huang&ludocid=3341924432674405900&lpsid=CIHM0ogKEI7quu22xsDWoAE&source=sh/x/loc/post&lsig=AB86z5XU6oDKKtrpFPWMHl2DH0Rp",
+        "description": "At Glow Dental in Midtown Manhattan, we provide exceptional dental care with innovative solutions like Invisalign. This clear aligner technology enhances your smile without traditional metal braces. \n\nInvisalign features customizable, nearly invisible aligners that gently shift your teeth. \n\n- **Subtle Design:** Nearly invisible for discreet treatment.\n- **Comfortable Fit:** Smooth, flexible plastic reduces discomfort.\n- **Easy Hygiene:** Removable aligners allow for better oral care.\n\nPatients appreciate our compassionate care\u2014\u201cVisiting Dr. Huang and her team makes dental visits enjoyable.\u201d Each aligner is designed for precise adjustments, improving not just your smile but also your bite.\n\nConsult with Dr. Alina Huang to address your unique dental needs. Glow Dental offers personalized consultations to help you understand our services. \n\nFor more information about Invisalign, visit our website. With its blend of aesthetics and functionality, Invisalign aligns with our patient-centered approach, making us your ideal Midtown dentist. \n\nSchedule an appointment and stay updated on Facebook. Invest in your dental health\u2014your path to a radiant smile starts here!",
+        "date": "Jun 1, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHvPwsQGuyrpX2Ie5ERZeAhREhX0gp2hFhAClLXXRVuui9ftOkbGZEjmbUKAM64GWpOGw4d33GWE3IRXVCII5X5nXJwwE4MJN7nv2QK7oJuYP5-DXpvULAbDAZTkmDEM41MbIgx=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/SZtBvHicHcTbboIwAADQL6ogF41L9tBIrUVRIF4qj2BtFWgb29LtC_cN-5slOw_n90dYq81HEAwinnGl-MCcYe9OScuknXVqDLg2oDPABLA8VD3cTqU3FXbfb00jwlJUNwyKGgkach2JjYDrYU9pfXHuuXrYY9_iBr3G9ryDxSLBV33EPrnHMb6imNT0siYkpamkufcoKfLDUk5RtVuq3N3KFGRUT-c9bDPYnPoxQ0UyL1rCvz79PAxDIP7vgPwDMTtDSA"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "Today",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF5xmXS4Yx9w-r2uHsB8ylhy2ScT7dAg8mUIeZI9bISx9kjfp-SLFHuq73NKluXIKaxk7SjuyocHV2u4O3a5oHC0xcS-Rmop09bbfsqIPcINiq3IZtIMALfGHUsXOOqOOXnOiHqHIqBrkQD=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/nD32ZnicHcTdDsEwGADQJ6rVRmYSF0PoF6woMu6s9sN-uq5tdE_p2ttInIvz_RRat2rqOFXhDXIh8io1Ku24aHTa6AEXtZO3CnGFlBPuo0MZrsa2jtnoaoM36lxD1HzSV0XvMn7yH2E-qc-Q3iBIgNmgfGUtYtsVMdL3ok1lYtjcbemzl-kFJxfXjKh3HwuywJYzdKxFi4MkyZSEPYfoKT24adiF22xNziqmVFIaN_RJJAE578rDcvYeYoxR8Z-j5gelsUeE"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHFvcJaRc6uEB40EdMU6f8WmOwOIk0iouaPo7h5qzOxN-7qe549TN1NYsEtJP4MXlBJ5JSURYDwwA8Y9wBJJCY9svT2oatvzR-heN3mW8vijuG4Dig6ijIMUnFOZ0Gr0MtoF1GJ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/gU-9HnicHcRRDoIgAADQE6FYatrWh5ZabKKZruzPEYmmUoHSumBn6DZtvY_3_TAp72Kp6x2bazXndUdHQZ-ED5IOUiO81-u7AEQAoXsp3t-8bTgRVGXEHgPfhMElLuyrc-wTlexusOFjlfIFsx7v5IXB4kEt082xgUsRSJSa8anzkYUORVZulPKc0lU-QuvSFVM-45Wc3hlgFM_7ozM17RiZm6a2m3YXF0OYnGH0hLHkoRGhlTIghID9J2D4AevUQ1U"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=7rQ3WrFgMdTEkbr5TCjAVw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=301.33246&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/22SC6XicHc3NDcIgGADQbbgJFOpvQowxevNg0uixoRQLSguBT9B13MptTHwLvO_HAIS0ISRB1Bqy1SXYl3ZpFiQevB-clsEmrPxIckXAPMduktZtg5y87cUynvk1HodT3xweXZw3-_vuUpDqWuWsnkCMMqQ2ZQxSgXUaDyGhIhirkRFsvUJvWQSnFeac1QsULCgjKPo_N59FRekP66s6Dg"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great office location, friendliest staff, doctor is very kind and knowledgeable.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKbFyy3e097mUPS3itLDM2P79FD-xABTLa78rBrBntnTC72rM0=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Courteous and professional service - always feel comfortable in competent hands\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXwWHFD6oraOM_xv6PdS9IEEg7NZoRB85zV5TjDx9tGLsLTiMDE=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great dentist, very good customer service, great cleaning, very nice people\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKx9dqFHjHpEi6MyKQaz3WoH952JRnlu-lk4ESmK9cBSj796g=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Helen Cai",
+          "rating": 5,
+          "contributor_id": "106534462315814143123",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXT-VbUOTaoG75T-3Lp1jwQ50t4Q9shy0e1Y11S99oXjIieHQf0=s120-c-rp-mo-br100",
+          "description": "Dr. Huang at Glow Dental Midtown is exceptional! She provides incredibly thoughtful, attentive care and takes the time to explain everything clearly, which made the entire experience feel calm and reassuring. You can tell she genuinely cares about her patients and the quality of her work.\n\nHer staff is equally impressive! They are responsive, easy to communicate with, and extremely thorough. They provided clear and detailed cost estimates quickly, with no surprises, which I really appreciated.\n\nOverall, a fantastic experience from start to finish. Highly recommend Dr. Huang and the entire Glow Dental Midtown team.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2poUlRqSkhZVWhoTUhJeFpuTndTbFl0TW1GTWQxRRAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOjhRTjJHYUhhMHIxZnNwSlYtMmFMd1E%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T16:34:03+00:00"
+        },
+        {
+          "username": "Maggie Sachson",
+          "rating": 5,
+          "contributor_id": "101004818916076441026",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV8OE44bxexuWQoUhttEmqYmlM30EPLPAb267VBYhFJhO_bfaj1zw=s120-c-rp-mo-br100",
+          "description": "What a wonderful dental practice! The office is clean and bright and the staff is incredibly, friendly and always helpful.  Dr Wismer is delightful, patient and always makes me feel at ease and in good hands.  I am so happy to have found such a great dentist and office in the city.  Highly reccommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaTVJtMWpiM0pSWmpoWlh6TmlNa2MxTkdwTFozYxAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOlZMRm1jb3JRZjhZXzNiMkc1NGpLZ3c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-07T15:48:34+00:00"
+        },
+        {
+          "username": "Biniyam Asnake",
+          "rating": 5,
+          "contributor_id": "103893747096355036430",
+          "user_review_count": 59,
+          "user_photo_count": 30,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX8UimijX-aMJPggxJKtQn1qC1sZRbq6SGsCLMjJzVLMs7UJ-Bj=s120-c-rp-mo-ba12-br100",
+          "description": "Very good experience. They were thorough in their explanations, provided a great cleaning, and scheduled me for follow-up care. I especially appreciated that they called my insurance ahead of time and got cost estimates in advance, which removed any concern about payment. When follow-up care was recommended during the appointment, they had already checked with my insurance and were able to give me an estimate right away. Very professional.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1TGNWODVSa3R3ZFRrNFZWQnpNMEZJTFhFMlZsRRAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOk5LcV85RktwdTk4VVBzM0FILXE2VlE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-16T20:08:49+00:00"
+        },
+        {
+          "username": "Raffaele Illiano",
+          "rating": 5,
+          "contributor_id": "116261483426166928784",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLvqzQl5QtlVH_9pCNqoa1GZbe4vKePbMxoGjNuY5JBzVVyng=s120-c-rp-mo-br100",
+          "description": "I\u2019ve had a consistently great experience with Dr. Huang at Glow Dental. She is incredibly professional, kind, and always takes the time to clearly explain every procedure before and during the appointment. Whether it\u2019s a routine cleaning, a cavity filling, or more involved restoration work, she approaches everything with care and thoroughness.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21VMU5sVjFOakF0U0VsS2VGRnBMV1pIZDBNNU4yYxAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOmU1NlV1NjAtSElKeFFpLWZHd0M5N2c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-20T22:43:51+00:00"
+        },
+        {
+          "username": "Rasprit Kaur",
+          "rating": 5,
+          "contributor_id": "112494183774728901436",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWH1FT0prNq7g15PigeZOoQfGtTR6yzToCe_CLpo89Z3ojmPXfV=s120-c-rp-mo-br100",
+          "description": "As someone who does not like going to the dentist I am so grateful I found Dr Huang! I\u2019ve been going to her for years and there is no one else I could trust more with my teeth. She makes the experience as comfortable as possible. It\u2019s an added bonus that her entire staff is always so sweet. Highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaZllsVnRTVmRJYmpsMGNXdHNPVE5EV0ZFMGNHYxAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOlZfYlVtSVdIbjl0cWtsOTNDWFE0cGc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-11T21:46:43+00:00"
+        },
+        {
+          "username": "Michelle Song",
+          "rating": 5,
+          "contributor_id": "109687924053962818619",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKk7Jt7M9j5h09_uDRpc2XKf8-4rl_437tB719cNxn7Cl2f_g=s120-c-rp-mo-br100",
+          "description": "Glow dental has been my best dentist experience all around:\n- very friendly (receptionist, dr, hygienist, everyone!)\n-clean office w modern machines\n-very honest and transparent about costs upfront (never had such an easy and trustworthy process before)\n-easy to communicate/schedule\n\ni already recommended to friends who also had a great experience!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kxemFHVkRTV1JPVVhCWmJ6VkxaQzFwWDJkSWFIYxAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOi1zaGVDSWROUXBZbzVLZC1pX2dIaHc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-02T17:59:44+00:00"
+        },
+        {
+          "username": "B Mallory",
+          "rating": 5,
+          "contributor_id": "105727762701292643720",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJYUVYq-AGTTLuLxx7P4uoP6sfRDjxYE69s5jA56MUMyNFM53Q=s120-c-rp-mo-br100",
+          "description": "The receptionist, Myra was very accommodating. She was patient and kind, with helping me to find the location. Myra also broke down expected expenses and payments.\nDoctor Wong was very gentle and completely educated me on my problem and gave me a choice of procedures to have it fixed. Excellent first visit! BM",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sNmRtaENiV1ptVG1aSFpWcHVWWGd3Y1hOWVRGRRAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOml6dmhCbWZmTmZHZVpuVXgwcXNYTFE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-20T02:52:46+00:00"
+        },
+        {
+          "username": "vera zadrime",
+          "rating": 5,
+          "contributor_id": "117110280648158158658",
+          "user_review_count": 12,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWqRJcXEpRxrksSXkI53DS4rgZoeL7aRt4WykE1CCZkfnptmes=s120-c-rp-mo-br100",
+          "description": "My experience at glow Dental has been nothing but extraordinary. My doctor Dr Wismer is amazing. The best dentist in the world I would refer her to Family friends and anyone I know. And also, I would love to add on that her staff is so professional so wonderful so caring. I feel like Dr. Wismer  saved my life in every way. There is no one like her she is a genius. She\u2019s top-tier and I couldn\u2019t be happier with her and my experience with her.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GSldGRnNSMWh3ZFUxMlJHNDVVakJSVWs5d01uYxAB!2m1!1s0x0:0x2e60e690b3c1be0c!3m1!1s2@1:CAIQACodChtycF9oOmFJWFFsR1hwdU12RG45UjBRUk9wMnc%7C%7C?hl=en",
+          "date": "Edited 3 months ago",
+          "date_iso8601": "2026-03-20T00:26:45+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Manhattan Dental Studio",
+            "data_id": "0x0:0xe6dc2f0e8c3e03f7",
+            "data_cid": "16635222863128691703",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe6dc2f0e8c3e03f7&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe6dc2f0e8c3e03f7&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7488002,
+              "longitude": -73.98473570000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe6dc2f0e8c3e03f7%218m2%213d40.7488002%214d-73.98473570000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 145,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGt6s8mbXDhtElnhkUAqAwlXpP7QTLhyGZjapUkTfUUQM9G2ZxKYomfaueuVrKQnDKINUN5hYf2Rhzx_WtJFEcva5bkc_I1k9fdaUSzTW-y2vy2kElH9JwbdIeRTePS4wGVWes=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Midtown Dental Group Upper East Side",
+            "data_id": "0x0:0x221f98c3fbd3ebd",
+            "data_cid": "153678243067412157",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x221f98c3fbd3ebd&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x221f98c3fbd3ebd&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.763742,
+              "longitude": -73.9701959
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x221f98c3fbd3ebd%218m2%213d40.763742%214d-73.9701959&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 508,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAExqt-QHlFd2L_CAfA12TWPdy16Mf_Z7zxvLPEsRzBbtrrs9UOIDui-4kidi9PmOxUzA9P1JNDikmInqBSIGsJAah1t6jlA29dQvl5nG8Fx6_Yxx4pQ2wJ8-fYN6Kjo2v5qou_PrIw6Vtei=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Emergency dental service",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Manhattan Dentist",
+            "data_id": "0x0:0x7ae2c980edb65c34",
+            "data_cid": "8854861372944964660",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7ae2c980edb65c34&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7ae2c980edb65c34&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.755395,
+              "longitude": -73.9789033
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7ae2c980edb65c34%218m2%213d40.755395%214d-73.9789033&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 86,
+            "thumbnail": "https://www.google.com/maps/vt/data=CYTuoE630fQt_68WOeLOeZe1uwZk-dMRpUekdR7oCE_XolbhEJaMicxVfh7AElaGW7zs5C2uaNKKcElwaX8AfKZlz1y9ookqJv5ux9XjtUIc3Stmz4etYdol5UxcpNqCPZVc4G3Yx5gVaLpBJtUXt74gIO1jD1Jb",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants periodontist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Glow Dental",
+            "data_id": "0x0:0x2d38aa350f7c62c1",
+            "data_cid": "3258541475272352449",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2d38aa350f7c62c1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2d38aa350f7c62c1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.971770299999996,
+              "longitude": -73.9598848
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2d38aa350f7c62c1%218m2%213d40.971770299999996%214d-73.9598848&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 123,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWgKX-NuPCo3lVHhBSxMaSFupKbtWeGeRnCJ_68BgolKpIRW--hvUxLt5sQfkAgTiO6BWEAoPHv2OBgAWUlP7sWTVdTu7ungigvKe4IIo-SDFPhv5nGI48lMBDkQvlIClycZTB-g=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkQKQiI-R2xvdyBEZW50YWwgb2YgTWlkdG93biBNYW5oYXR0YW46IERyLiBBbGluYSBIdWFuZyBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkQKQiI-R2xvdyBEZW50YWwgb2YgTWlkdG93biBNYW5oYXR0YW46IERyLiBBbGluYSBIdWFuZyBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

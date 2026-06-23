@@ -1,0 +1,1899 @@
+{
+  "search_metadata": {
+    "id": "6a3ab5fbe3e176652b34e882",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/l09ckUSrdqyiFrel6_y-hw/6a3ab5fbe3e176652b34e882.json",
+    "created_at": "2026-06-23 16:36:12 UTC",
+    "processed_at": "2026-06-23 16:36:12 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/pharmacy+near+downtown+Manhattan/@40.72,-74.0,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/l09ckUSrdqyiFrel6_y-hw/6a3ab5fbe3e176652b34e882.html",
+    "prettify_html_file": "https://serpapi.com/searches/l09ckUSrdqyiFrel6_y-hw/6a3ab5fbe3e176652b34e882.prettify",
+    "total_time_taken": 5.99
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "pharmacy near downtown Manhattan",
+    "ll": "@40.72,-74.0,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "pharmacy near downtown Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "Downtown Pharmacy",
+      "place_id": "ChIJz383mCJawokRUoZ_t0ZUvwA",
+      "data_id": "0x89c25a2298377fcf:0xbf5446b77f8652",
+      "data_cid": "53854383254767186",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2298377fcf%3A0xbf5446b77f8652&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2298377fcf%3A0xbf5446b77f8652&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7102698,
+        "longitude": -74.0058543
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJz383mCJawokRUoZ_t0ZUvwA",
+      "provider_id": "/g/1tdy0t67",
+      "rating": 4.4,
+      "reviews": 104,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Drug store",
+        "Medical supply store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "drugstore",
+        "medical_supply_store"
+      ],
+      "address": "165 William St, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM",
+        "thursday": "8\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20137\u202fPM",
+        "saturday": "10\u202fAM\u20135\u202fPM",
+        "sunday": "10\u202fAM\u20135\u202fPM",
+        "monday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 233-0333",
+      "website": "https://www.downtownpharmacy.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Delivery",
+            "Drive-through",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "offerings": [
+            "Passport photos"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit",
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Pharmacists are competent and helpful.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfW3NgPElk0KmDJZ76NmgZ_VdKp-yUf4Fa3hnNxmYxx-ovFgDHF-8OPU05HiG2TYmJhTXIa9wcS5pjNUhTWKtNk-dUd6TwQxoSHiw5m37rib_xpIKXPxjS0m_SE6k3Hf3YHf8=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/pEaF23icHcRdDoIgAADgE5EUaT9bD21plBvZ1MxeXKGCKcKCki7YHbpNW9_D9_1wY5ReOk7H0YhJybrqqasHlb2pejOiUjhMaUA10M46Isd27dcZIizyuxaGYrO_zDwi2KU4laEC77SeBlfEe2JFbi2Qr4BtcADmhyiFLm62kyQXe56cd9fFQGNX3UnKkyw0pAVlWnrJcLQyxs3gCjR7NLfCql14juw9hqKIfa9FuEY5ruerYQwhBPw_Bf0P4vNDyg"
+    },
+    {
+      "position": 2,
+      "title": "New York City Pharmacy",
+      "place_id": "ChIJvYOo_51ZwokRcAqBgoEZR5U",
+      "data_id": "0x89c2599dffa883bd:0x9547198182810a70",
+      "data_cid": "10756594279028689520",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599dffa883bd%3A0x9547198182810a70&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599dffa883bd%3A0x9547198182810a70&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7302143,
+        "longitude": -73.9830656
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJvYOo_51ZwokRcAqBgoEZR5U",
+      "provider_id": "/g/1trvmbs8",
+      "rating": 4.8,
+      "reviews": 91,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "206 1st Ave, New York, NY 10009",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "10\u202fAM\u20137\u202fPM",
+        "wednesday": "10\u202fAM\u20137\u202fPM",
+        "thursday": "10\u202fAM\u20137\u202fPM",
+        "friday": "10\u202fAM\u20137\u202fPM",
+        "saturday": "10\u202fAM\u20135\u202fPM",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 253-8686",
+      "website": "http://www.nycprx.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Curbside pickup",
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "offerings": [
+            "Medication disposal"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "curbside_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"They filled my prescription quickly and explained everything clearly.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-F2g8e7Thpz4ebAvQ1Oh-2LznZo3EFpXYOcgCBKd9Y2mBmGuhlsqoeV5PYB8ghEGl5nT7jawVkx04mJzCcZk11vfFGpZx9qPmASCKgick4Me3zYhJhexjhnmy7lYvAgzaJiI=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/sfEkYHicHcRbjoIwFADQFVWeBjXxoxAggy-Mxlj-nE6nV-lLi4hdoHtwNyaej_N-QdcZO_M8AdGIa80Fu1t2o1p1THUjqqXHjUXUIuvher1tcY6KkE9YsgfjYvaL-22wARQunWp0lBfmSDaUZ-nib0pCmcryDsJeNTuMa5JOOOSlGKt9cjk9Du3gx7JyGW3aIOj_i9I0w_RaS7zLFvxM23jFIkegAjZcQMlnIkiPuTtV55_5I_B9H8F3itQHAbBFEw"
+    },
+    {
+      "position": 3,
+      "title": "Manhattan Apothecary by Apotheco Pharmacy",
+      "place_id": "ChIJf1HjBqxZwokRjc-A4_4BzyU",
+      "data_id": "0x89c259ac06e3517f:0x25cf01fee380cf8d",
+      "data_cid": "2724398493832630157",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259ac06e3517f%3A0x25cf01fee380cf8d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259ac06e3517f%3A0x25cf01fee380cf8d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.751422399999996,
+        "longitude": -73.98916419999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJf1HjBqxZwokRjc-A4_4BzyU",
+      "provider_id": "/g/11f_2n_120",
+      "rating": 4.9,
+      "reviews": 936,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Wellness center"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "wellness_center"
+      ],
+      "address": "147 W 35th St, New York, NY 10001",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136:30\u202fPM",
+        "thursday": "9\u202fAM\u20136:30\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "10\u202fAM\u20132\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136:30\u202fPM"
+      },
+      "phone": "(212) 302-0600",
+      "website": "https://www.apothecopharmacy.com/location/manhattan-apothecary/?utm_source=GMBlisting&utm_medium=organic",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Super easy process and the pharmacist saved me tons of money!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8f_vtWfqgoyIGeGX5MOFr2jcxJU4BMjzcxsFHFJtvkQGGI0EbwMgrzsSe65Kh19Bm00Wz_CnZyAMlEWR2KY3Sc_0KD3kLswaO2NPT_SVknMRRmx3sqx1FWPdoPvEp6pgpv-C5=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Udsdt3icHcRRboIwGADgE1UKDKNLfEClqKyKsA31hWitJQJt5a-AXHBn2G2W7Hv4fn8KYzS8W1ZVuCOhlKj4E3jDlDRcmhFTtSU0IAYILD_e7kufTG55a7LbQ6jXOuThwaM70jh31m--3ub0PrAeyIpsTFvuw3CNg0tHRTNAysdeVNjTeY1xNuQLeXr5tAqyxImObspyHC3d8gO6887Zxp95-l1KmiR178Kjt0kWX1XcBnqshW7Rwpt1NsYYFf8zJP8AjJFE6g"
+    },
+    {
+      "position": 4,
+      "title": "AHF Pharmacy - Manhattan",
+      "place_id": "ChIJsdBq47BZwokRBU3NVs0reUU",
+      "data_id": "0x89c259b0e36ad0b1:0x45792bcd56cd4d05",
+      "data_cid": "5006080621723602181",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259b0e36ad0b1%3A0x45792bcd56cd4d05&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259b0e36ad0b1%3A0x45792bcd56cd4d05&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7483219,
+        "longitude": -73.9928955
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJsdBq47BZwokRBU3NVs0reUU",
+      "provider_id": "/g/11f105dp5j",
+      "rating": 4.8,
+      "reviews": 112,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "352 7th Ave #1206, New York, NY 10001",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6:30\u202fPM",
+      "hours": "Open \u00b7 Closes 6:30\u202fPM",
+      "operating_hours": {
+        "tuesday": "8:30\u202fAM\u20136:30\u202fPM",
+        "wednesday": "8:30\u202fAM\u20136:30\u202fPM",
+        "thursday": "8:30\u202fAM\u20136:30\u202fPM",
+        "friday": "8:30\u202fAM\u20136:30\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20136:30\u202fPM"
+      },
+      "phone": "(212) 284-0060",
+      "website": "https://ahfpharmacy.org/",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Fast efficient convenient and compassionate staff love this pharmacist.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHFgJOEK5xfvFN7boN6GzgPJOO3bOOvfu3vkJTMTyXXpNCFm1uRNOh-HO9yarin9pTd_LA_-Wi1wm11JoqUuNIbZKLsSk24-x7fe5U0KxinosP5Yn8m-vI9BG9HktxQVCB1baf-NA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JbWCAnicHcRREoFAGADgE_1qJWTGQxlJsRtCvDRKbU3ajd0SN3QEtzHje_i-n1zKWkwU5ZZrPco5vaWNSB8JZzJlspfwSqG1gESAUEwfb0rTsalL5p7eZa2NRzHHw8Wb-i4hWkxImzVaW7rBOniFYY1ndoWaLSY5OMR4XR4FM-rgGq3MCI4FelYIufy-b_AyPnsrsSv7A-hGWarvVa8rGBe-fmLjCtqlYS0Mp5Td5jCzUHzJAJvTJ1JVFfL_CbAfwUtEdw"
+    },
+    {
+      "position": 5,
+      "title": "Apotheco Pharmacy Manhattan",
+      "place_id": "ChIJJ01ZYQlZwokRrxupFd40jU8",
+      "data_id": "0x89c2590961594d27:0x4f8d34de15a91baf",
+      "data_cid": "5732296029163297711",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590961594d27%3A0x4f8d34de15a91baf&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590961594d27%3A0x4f8d34de15a91baf&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7400271,
+        "longitude": -73.97906379999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJ01ZYQlZwokRrxupFd40jU8",
+      "provider_id": "/g/11clytw3r_",
+      "rating": 4.8,
+      "reviews": 741,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Wellness center"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "wellness_center"
+      ],
+      "address": "462 2nd Ave, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 889-0022",
+      "website": "https://www.apothecopharmacy.com/location/apotheco-pharmacy-manhattan/?utm_source=GMBlisting&utm_medium=organic",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Wi-Fi",
+            "Free Wi-Fi"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Delivery is quick and easy and the pharmacists are easily accessible.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEODbopD-WlT1LXOail_5f006uG2cH1_D3z43r4BJSWW5uKsweb4n9erMGJ8STv-W5As1t0JInWPfnY5gDt6mg57Y9uJr0_kLUrn6o7gEmuMjPrNRZam-Lhfir8FGol_PJMtx0M=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/YJbuPnicHcTbDsEwAADQL6p1ts4l8TAZozbmluJloek6dO3SC-IHfYO_kTgP5_uprW3N0PNEHXS4UlwwZ5imSlombYeqxuOtAdQA48XFcn2PJ6vkotoEELHzs8PqfBUlqiCMXNqlM79MgncY6HCMt4QgtzBPdgnlgOk8xf3t7gEIio1vIZ5LUlTyiHhio4aj3nHgsIblPdtrGakenzQuvxV6uTmdG5DV1VX3p6kSZYFz-4L56OlDCEH9nwL5A7dOQ2c"
+    },
+    {
+      "position": 6,
+      "title": "Midtown East Pharmacy & Surgical",
+      "place_id": "ChIJlUJfIahZwokRM_omszeRFRk",
+      "data_id": "0x89c259a8215f4295:0x19159137b326fa33",
+      "data_cid": "1807510493874027059",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a8215f4295%3A0x19159137b326fa33&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a8215f4295%3A0x19159137b326fa33&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.746819099999996,
+        "longitude": -73.98344159999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJlUJfIahZwokRM_omszeRFRk",
+      "provider_id": "/g/1tdjs1dy",
+      "rating": 5,
+      "reviews": 20,
+      "unclaimed_listing": true,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "161 Madison Ave PH 2, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "10\u202fAM\u20137\u202fPM",
+        "wednesday": "10\u202fAM\u20137\u202fPM",
+        "thursday": "10\u202fAM\u20137\u202fPM",
+        "friday": "10\u202fAM\u20137\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 213-2444",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "delivery": true
+      },
+      "user_review": "\"The staff is knowledgeable, friendly, and efficient.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEKkCVZ5sFDNpTkGDr7TGM59NGRB1Ewq_WDj6dySJWe2J3K0H6W5f-alQxixuyRIE12WDQonksi8HKBPnPCe8vTo5SGRPS3Gi1K3AzhcVwYr5cqcKC1VVl3q9T73T-E_wmL2qrRZA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/wioaMnicHcRJDoIwAADAF1UoTd0SD2xWrRKWBqIXY2oFBFugKOoPfYK_MXEO8_0Ufd_ouWHUBRrlSuW1uGvRcSV7IfsRVzcjbzTgGmjDDoOosn1auekB66UXNKwiXjdhZIdnAYkd6A_tMfOu4_Mr2WTC2iBqrsYZvoBTHT3L5_0Vr31oZV6kZKXL6Yo6oQxdMX0whRMShwkiJaTIfhc8HfYd5i2nLkzTGrUzNkEM-MfhtrXaLj7YiwGapgmK_xzIHyx1Qz4"
+    },
+    {
+      "position": 7,
+      "title": "Xpress Lane Pharmacy",
+      "place_id": "ChIJ3-ASaxhawokRgHbMQT5q70c",
+      "data_id": "0x89c25a186b12e0df:0x47ef6a3e41cc7680",
+      "data_cid": "5183478511751165568",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a186b12e0df%3A0x47ef6a3e41cc7680&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a186b12e0df%3A0x47ef6a3e41cc7680&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.710523699999996,
+        "longitude": -74.00770899999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ASaxhawokRgHbMQT5q70c",
+      "provider_id": "/g/1yfjpgyvw",
+      "rating": 4.8,
+      "reviews": 107,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Drug store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "drugstore"
+      ],
+      "address": "99 Nassau St #111, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "Closed",
+        "sunday": "10\u202fAM\u20135\u202fPM",
+        "monday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 962-4900",
+      "website": "https://www.xpresslanepharmacy.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "offerings": [
+            "Passport photos"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"I caught the flu on Sun and Xpress Lane delivered my medications on Mon!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH20lsgjX4riJs3MNGIlYdCuYJLGR3ZNsHsgvUe7npoRzREcxKtku6cq8YOPelfz8dEdkqTrYXDjFDzzTBRC_6zBnh247n1mZeJYMlQ7tn61ynJqFQ3DcMD0bhd5WPyue53_XW6=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/adBeMXicHcTdboIwGADQJ0KKVTAmu1DxDwWBuEi5IVnpWqW2wFem9gV9hr3Nkp2L8_sWxrQwd10p8IhrzSUbgPVUK8OUGVF9d3kLDgUH3EWaZM1iN0YS-K2Y9NcIcJxs95LUq4FEx22OywR2wH8-WaBandt8TZ8H0ww-7WbklDL5bWf1um66c0-K8LYJrT0v81Xl26US40mgvHvJIhLLLDDK914q6jYZDmkcoi9RTy_pa2BTXBUX_-PhIYQc8T911B-uwkUb"
+    },
+    {
+      "position": 8,
+      "title": "Pasteur Pharmacy Inc",
+      "place_id": "ChIJCUF3dgdZwokRNvlIz8u-vyY",
+      "data_id": "0x89c2590776774109:0x26bfbecbcf48f936",
+      "data_cid": "2792160076558301494",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590776774109%3A0x26bfbecbcf48f936&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590776774109%3A0x26bfbecbcf48f936&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7475866,
+        "longitude": -73.9819687
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJCUF3dgdZwokRNvlIz8u-vyY",
+      "provider_id": "/g/1tr9pb5n",
+      "rating": 4.7,
+      "reviews": 452,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "53 E 34th St, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM",
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "10\u202fAM\u20133\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 683-3838",
+      "website": "https://www.pasteurpharmacy.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Curbside pickup",
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "amenities": [
+            "Wi-Fi",
+            "Free Wi-Fi"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "curbside_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"An old school pharmacy that delivers personal attention to detail!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFz4RUv_yBrTaXqRS-iIUiX-pSiY7GTvWHWALCzaXx99bKYawk2Nnd-c4L6-NOGuPyg_HCCyHSFptd6so3AmNNEY3xCIS5AGmNDCIZ2uR0PfZtEHX2-QBaP_sEYs6nxeZRdfok=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/PLJDSXicHcRLDoIwFADAEz1BUIwmLmpFIJrKRyOwIVgQCNKiLQge0Dt4GxNnMd9PKWUrVopyL_VJwXlxzzuRPylnMmdyQnmjFK0AKkAoyCVejXbvmX_uk3HzPKXhww-gcs5VCG1QRQvr1F_sCzrgdxoOy-V1H6WvWiMsAzo7GECOVueORWJjPNrBrpWZIbiOGkLMSB-wE8yR1ZAtdmKt81X3FkvTDjXwNqmbCDMSBhvy2M9uvF6_pqqqQvmfAvsB6wdDoQ"
+    },
+    {
+      "position": 9,
+      "title": "Avalon Chemists",
+      "place_id": "ChIJaQMHV4RZwokR9gn3zX4oMVs",
+      "data_id": "0x89c2598457070369:0x5b31287ecdf709f6",
+      "data_cid": "6571077856396773878",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2598457070369%3A0x5b31287ecdf709f6&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2598457070369%3A0x5b31287ecdf709f6&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7240495,
+        "longitude": -73.99135369999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJaQMHV4RZwokR9gn3zX4oMVs",
+      "provider_id": "/g/1tlc8_07",
+      "rating": 4.5,
+      "reviews": 32,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Drug store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "drugstore"
+      ],
+      "address": "7 2nd Ave, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "10\u202fAM\u20136\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 260-3131",
+      "website": "http://www.avalonchemists.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Great prices!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF6Fepbr89zXnZNKIVksjxP66n7mu5BzG3vEYXLXnRQ65mJgLTZhZzqANWotKXaHYW8g1U4Ky-AJTcL7Me5eiYbCOOLRb6lXhAD3GcAVV2RtAwzPFQPjk2gVITiNyjzBURJr0uE=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/BGWHZXicHcRdboIwAADgE1VQRtUlPpQpTkAEglh4k6Zp5adltEztBT2Dt1my7-F7v7jWg_q0rI47MyYl6-ik6Eik0FToGZG9xQYFiALKQkmctsiHPh3qcbU2WFRxeCha1TwSCMWyn1zP7J3fXYkjLLIUun3AorzilflB8UXqEF-_y8uKzc8f4ROgICfR8khdeivrr9MpymrYYY62zp6golhkGt1N4qdJ0y5Ycchv8bMx3jkLRnvabe5z27YB_58A8Qc0Z0QK"
+    },
+    {
+      "position": 10,
+      "title": "Broadway Apothecary",
+      "place_id": "ChIJZS5g165ZwokRhtjBDJ0oKFE",
+      "data_id": "0x89c259aed7602e65:0x5128289d0cc1d886",
+      "data_cid": "5847968771129596038",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259aed7602e65%3A0x5128289d0cc1d886&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259aed7602e65%3A0x5128289d0cc1d886&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7315386,
+        "longitude": -73.9919311
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJZS5g165ZwokRhtjBDJ0oKFE",
+      "provider_id": "/g/11j1h_lr2w",
+      "rating": 4.3,
+      "reviews": 74,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Drug store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "drugstore"
+      ],
+      "address": "779 Broadway, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "10\u202fAM\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 961-6681",
+      "website": "https://apothecarygroup.com/broadway/?utm_source=gmb-broadway&utm_medium=organic&utm_campaign=website",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Prices far below practically all pharmacies in Manhattan!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEZ9TYsrPdqNxFSojCoGLDAlQpr8bP9k3VqvunvxWSrrQV3oNZw5e_h9rlwuEl1eqruNKLHxKuI61cqlRI_GFDwGi2hFLCaasbJYU6U_eB0zp4F6HZD6uGilXY2gFlgWV8eBSGY=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/dbZP1nicHcRdDoIgAADgE5l_5bKtB8vA0jnNsvTFJTGoSBQkXRfsDN2mre_h-35o37dyoeuM2hPCOWFYSSwQb3rc9BPEnzpppYakJnUvidOHtyndQyFFcu3iEWT8vuYw8j2WtmJeJ-7DzruXal7jKRMizW0el8MMV9QVbFAbZuJOqDiMgjFUW8dEHdtvKwj8Ad4sCqL15SLrXXF0jhVeGe92Cpyg9B0Fb-xcWAQwcsrneJXBYjmYhmFo9D_Smh_vt0WJ"
+    },
+    {
+      "position": 11,
+      "title": "New London Pharmacy",
+      "place_id": "ChIJGQcqs7tZwokRk5LLsy4owZs",
+      "data_id": "0x89c259bbb32a0719:0x9bc1282eb3cb9293",
+      "data_cid": "11223295927434056339",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259bbb32a0719%3A0x9bc1282eb3cb9293&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259bbb32a0719%3A0x9bc1282eb3cb9293&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7449265,
+        "longitude": -73.9969184
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJGQcqs7tZwokRk5LLsy4owZs",
+      "provider_id": "/g/1tjypmyx",
+      "rating": 4.6,
+      "reviews": 140,
+      "price": "$$",
+      "extracted_price": null,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Beauty supply store",
+        "Candle store",
+        "Cosmetics store",
+        "Department of motor vehicles",
+        "Homeopathic pharmacy",
+        "Notary public",
+        "Nutritionist",
+        "Perfume store",
+        "Wellness center"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "beauty_supply_store",
+        "candle_store",
+        "cosmetics_store",
+        "department_of_motor_vehicles",
+        "homeopathic_pharmacy",
+        "notary_public",
+        "nutritionist",
+        "perfume_store",
+        "wellness_center"
+      ],
+      "address": "241 W 23rd St, New York, NY 10011",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20138\u202fPM",
+        "wednesday": "9\u202fAM\u20138\u202fPM",
+        "thursday": "9\u202fAM\u20138\u202fPM",
+        "friday": "9\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20137:30\u202fPM",
+        "sunday": "10\u202fAM\u20136:30\u202fPM",
+        "monday": "9\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 243-4987",
+      "website": "http://www.newlondonpharmacy.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned",
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Curbside pickup",
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Wi-Fi",
+            "Free Wi-Fi"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "curbside_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Amazing selection of products and friendly staff!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFCdsahfjE7Jwd0lk-263wv35BLZmwDWCykoKP51ew1JTlObHaSQ2Uy9PMvVrQp_H5LHhVwFe7OGfnPI28-bz0rIQ-HI5l6vsO-GRJbArv2BspBP8lwTXrxGaitv2eCb0KmvWyI=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/tsO9enicHcRdboIwAADgExVKCepMfACc_CplMjV7MYCVOgolbdeOXXBn2G1M9j18f79UqUmubZtR1-o47xj5kkS0fFRkVFbLB7ubJGglkLaPD2Xv78KbrOn983WZmhtkPUAL12jXC_KPwWzP4dzzDHsOMU5asaKJ62OJ3ucXvNcnUU7X2MtjejI7siyi-4gTtALNDxRJCeLEYwstCxC9pY0vNArkFOAVM9VFfEf1Q2lEwgZmgz7PycY4EEJA_2_B-AQG2kPx"
+    },
+    {
+      "position": 12,
+      "title": "CVS Pharmacy",
+      "place_id": "ChIJM1W3_K1ZwokReTE6LEpqMXU",
+      "data_id": "0x89c259adfcb75533:0x75316a4a2c3a3179",
+      "data_cid": "8444647643098526073",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259adfcb75533%3A0x75316a4a2c3a3179&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259adfcb75533%3A0x75316a4a2c3a3179&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7521255,
+        "longitude": -73.9937494
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJM1W3_K1ZwokReTE6LEpqMXU",
+      "provider_id": "/g/11c467rdyg",
+      "rating": 3.4,
+      "reviews": 98,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "5 Pennsylvania Plaza, New York, NY 10001",
+      "country": "United States",
+      "open_state": "Closes soon \u00b7 1:30\u202fPM \u00b7 Reopens 2\u202fPM",
+      "hours": "Closes soon \u00b7 1:30\u202fPM \u00b7 Reopens 2\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "friday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "saturday": "10\u202fAM\u20131:30\u202fPM, 2\u20136\u202fPM",
+        "sunday": "11\u202fAM\u20131:30\u202fPM, 2\u20135\u202fPM",
+        "monday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM"
+      },
+      "phone": "(212) 216-9222",
+      "website": "https://www.cvs.com/store-locator/new-york-ny-pharmacies/5-penn-plaza-on-the-corner-of-8th-ave-and-34th-st-new-york-ny-10001/storeid=10613?WT.mc_id=LS_GOOGLE_RX_10613",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "offerings": [
+            "Naloxone",
+            "Passport photos"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "SNAP/EBT"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "delivery": true
+      },
+      "book_online": "https://www.cvs.com/scheduling/patient-lookup?lob=rximz&flow=vaccine&cid=ls_ph_google_gmb_avail&entryFlow=google&bookType=single&storeId=10613&postalCode=10001&rwg_token=AE37R_g340tzTF70qnXDiWjNYkHW4AXTf_M1OnvJTsP40BsFLdDiYgUXUkHfIXWVUNd1qGe1kHJIVHIaRmgMWF1hahVmZKjMdQ%3D%3D",
+      "user_review": "\"Really helped me get all of my prescriptions filled .\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHWIAwLCXz-8Kb48_QQHGuzEzj7RM8rpJoEBF41pGABk75BPeRd8H7pPT-od8CXWrElqYp6dOwEFZEKtUF7Ex-wHt3gZiMOiKJj0vd76xIlPtnXBIU7j5bf_5Yfw_UzxMO-wrbsJ1Wl3hmN=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/-YaaZHicHcTbCoIwAADQL1oqphtBDxrzmqmRaL0IXtJsueVWE3-y5_4m6Dyc76cXgvGNopBeX3WUdqR98Xaq6SjaUaxq-lA6xkHNAVes5JDeLS_3LbnfFQtAYbVGZZp67mvBywCPEZpYQLHtrDXmWvYdGnbSHhvkQZacAG3QrsgnTJ5nZjaxxM4FhyJzIJ6B9ITeXW5RfAuDQX030Jx9koixsP0MDkZ1LY3zVZbZMkcxkFPFAy0nev84bKWmqiro_9dg_AH5D0ZM"
+    },
+    {
+      "position": 13,
+      "title": "Tribeca Apothecary",
+      "place_id": "ChIJ70Hkox9awokRaYxHU34q6eY",
+      "data_id": "0x89c25a1fa3e441ef:0xe6e92a7e53478c69",
+      "data_cid": "16638877020348451945",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a1fa3e441ef%3A0xe6e92a7e53478c69&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a1fa3e441ef%3A0xe6e92a7e53478c69&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7170111,
+        "longitude": -74.0082834
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ70Hkox9awokRaYxHU34q6eY",
+      "provider_id": "/g/11h06n2v55",
+      "rating": 4.4,
+      "reviews": 82,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Drug store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "drugstore"
+      ],
+      "address": "138 W Broadway, New York, NY 10013",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "10\u202fAM\u20136\u202fPM",
+        "sunday": "10\u202fAM\u20136\u202fPM",
+        "monday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 971-1380",
+      "website": "https://apothecarygroup.com/tribeca/?utm_source=gmb-tribeca&utm_medium=organic&utm_campaign=website",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"They went above and beyond to help me get my prescription.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGBmk1lSv5KpWqcbk9Sn6N6LzxD_C4dGd8RplnxBG-xaC7YMf-RXj1uoFfwXSqZW_CHMom2YI94ZNCHc-N5Ezjyh5KDNeAUjTcTIdOxxdJEPI6igd7se7q65LNcxcEFtXMVN0GSqg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/DbMFLHicHcRNcoIwGADQE0WgFaid6QIRkSqRClZkw9QvMchPAibW6A09Qm_TGd_i_T0qpXr5bhht9TpiQrCWXiQ9g-CKcjUC0RmslwgkkoaX4K_GC6ddY7Xpr73sdwMcmknKHeys7npW-mMSkrdN33I9DZH-8d19fESbvLYuYn685ulQ7Ep_EYvuZR9NxgX2F4CwHdzrW2UvZ5h62zqDLCJrrclnkETOiRFXUndw7BUGDcFc5fE3NsN0YB9XyzRNVD0HxP8ByvtEwQ"
+    },
+    {
+      "position": 14,
+      "title": "Corner Chemists Pharmacy LLC",
+      "place_id": "ChIJefD3MkBbwokRv4omQNUufKM",
+      "data_id": "0x89c25b4032f7f079:0xa37c2ed540268abf",
+      "data_cid": "11780342218733554367",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25b4032f7f079%3A0xa37c2ed540268abf&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25b4032f7f079%3A0xa37c2ed540268abf&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7129008,
+        "longitude": -73.99730439999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJefD3MkBbwokRv4omQNUufKM",
+      "provider_id": "/g/11h0ygh3ff",
+      "rating": 4.8,
+      "reviews": 15,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "24 Catherine St, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "tuesday": "10\u202fAM\u20135\u202fPM",
+        "wednesday": "10\u202fAM\u20135\u202fPM",
+        "thursday": "10\u202fAM\u20135\u202fPM",
+        "friday": "10\u202fAM\u20135\u202fPM",
+        "saturday": "10\u202fAM\u20135\u202fPM",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(646) 869-8881",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned",
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Delivery"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "delivery": true
+      },
+      "user_review": "\"Very helpful\nHad the medicine I needed when other pharmacies didn\u2019t\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHshrvEKbCDdSUuKRUimNoe7E7TPSoW2aU5hqz2jQQnGXsNMr7lVdvLlnVayWwk9Oxb2Gr9aCFTzk4xlWIVGZQdhXyL3dRz5PO4dzsVCgq-q-VKCAas3BmfpknlA-KhRr25bjo=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/0CLj-3icHcRLDoIwFADAExWQT4gmLhAVDYqAUIw7oEiV0kIf_jigd_A2Js5ivh86DB3MVJVRQ6mFqFl1h0qWgg8VH5RStGrdASoBgeqEQdQ4G6DysfILd0mO6d2P02sbiMpe2Ul4FJmepxbtR_0WRdw7QbCXNsPksWMc5-_s2UwPr0L35DR318nYmC-WbbF3jgg9vXcGiUcrPJhkBOzWPeoR9l0nB2PRXrqGMwf5NJa6VdzE_DnRNA3R_yXiP4fDRWQ"
+    },
+    {
+      "position": 15,
+      "title": "Ansonia Pharmacy",
+      "place_id": "ChIJU39-95ZZwokR-mS1uEtQTnw",
+      "data_id": "0x89c25996f77e7f53:0x7c4e504bb8b564fa",
+      "data_cid": "8957184995038160122",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25996f77e7f53%3A0x7c4e504bb8b564fa&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25996f77e7f53%3A0x7c4e504bb8b564fa&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7349343,
+        "longitude": -73.9983433
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJU39-95ZZwokR-mS1uEtQTnw",
+      "provider_id": "/g/1tdw4d1h",
+      "rating": 4.8,
+      "reviews": 21,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Vitamin & supplements store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "vitamin_and_supplements_store"
+      ],
+      "address": "446 6th Ave, New York, NY 10011",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "10\u202fAM\u20135\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 477-0762",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Delivery"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "delivery": true
+      },
+      "user_review": "\"Wonderful, friendly pharmacy with beauty products, gifts, and great service.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH4Q1dT7HoRTX-6enWy6lGfgT_exyDYVY1-S2UsqAmckUOnWxDKtLMie2BUWL1A56oKZDh1I7u73Ws8LdwiI4FvjK8z62z2EBY8xn2bVrfAFv1mRhnrKYALT-6fCZvRl8oW69YC3A=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/0ek_03icHcRdboIwAADgExVo0cKW7KHKnAT2IwNreTFZLZQJLaMF0RvuCLvNEr-H7-9XWtubR9dtpe_UWtetGI0YuFZWKOtw3bl1bwA3wLjk4213JtvFDp7yYKuz_ACwUPSK25eqzo9ivkZszyD4RIX5IR0_F--KzlFi09dGoFVBU0iWWCdlJGEcjIFPTZieLk282EzfSXjD6IaeVyycFfraDxXZTLDLpBoSRtIc4GpdTlkbaoof2NonTxfoeR6Q9zlQ_2OOQ2o"
+    },
+    {
+      "position": 16,
+      "title": "Confucius Pharmacy",
+      "place_id": "ChIJJ4iISyZawokROftRLKjQ7Jw",
+      "data_id": "0x89c25a264b888827:0x9cecd0a82c51fb39",
+      "data_cid": "11307642185137126201",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a264b888827%3A0x9cecd0a82c51fb39&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a264b888827%3A0x9cecd0a82c51fb39&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7145347,
+        "longitude": -73.9968806
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJ4iISyZawokROftRLKjQ7Jw",
+      "provider_id": "/g/1tffvvwl",
+      "rating": 4.5,
+      "reviews": 149,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy",
+        "Surgical supply store"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy",
+        "surgical_supply_store"
+      ],
+      "address": "7 Bowery, New York, NY 10002",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "9\u202fAM\u20136\u202fPM",
+        "sunday": "9\u202fAM\u20136\u202fPM",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 227-0922",
+      "website": "http://www.nymannings.com/",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store shopping"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "delivery": true
+      },
+      "user_review": "\"Super nice staff and pharmacy is kept clean and efficient!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG04aUgBPm5a1m-ogGiz45ANIkLFsmXBL75HKSLsOvrDftZzRkTufUC103x4sfTdCqZ9tWBLxVOzYwSpjZ-AYlDWGklyEmDHvCk42lKLLYCg2KLAxBudmgJqBYxEnmU5usqRVE=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/uRMw3XicHcTdboIwGADQJ6oUhZiZeNECwkajTgUHd4afMttS8CvKeEDfwbcx2bk4r2djTAcry5LNYsa15rIaoLoVujVVa2aFVhbvABWAwCL77bcgIXYuCad75V5shTQPfyfHJdtPwTagfihbulF8ZLC73_za5NNBnIY68Wy8GB2oT6XX5x_mTNmY7qbsceyuOSKZ9M-hkH-B8qO7J5y5jBnLPD6PGRnpUCr-1dNsDFqVuAP0hzRYP2yMMWr-L1D7BuRsRFg"
+    },
+    {
+      "position": 17,
+      "title": "Abacus Pharmacy",
+      "place_id": "ChIJyx-dMZxZwokR8rHkUhdbQcw",
+      "data_id": "0x89c2599c319d1fcb:0xcc415b1752e4b1f2",
+      "data_cid": "14718145212956586482",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599c319d1fcb%3A0xcc415b1752e4b1f2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599c319d1fcb%3A0xcc415b1752e4b1f2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7301177,
+        "longitude": -73.9862797
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJyx-dMZxZwokR8rHkUhdbQcw",
+      "provider_id": "/g/1txy37rh",
+      "rating": 4.7,
+      "reviews": 52,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "168 2nd Ave, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "10\u202fAM\u20135\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 477-6400",
+      "website": "https://abacuspharmacy.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Small business"
+          ]
+        },
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "In-store shopping",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_shopping": true,
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"Excellent prices for medications, and great customer service.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEs3Zr0AdQeIxxDDXhPAFAMDbUmXYxeutMVDE5uYuoETBrrLEadiuEDqJ9-CH6DXEG9Lb6elDpcIhxVL7Mlt3Yn57CMdz3H8MkFuQZsh_Yjd3qsJaINXrVVMUumpVBoRlv6kWgvYg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/0wtyZHicHcRdbsIgAADgE2G7EKsu2QMKak0xdlFWfDFKCbjSUvlxjTf0CN7GZN_D93rqEHr_mSRGw5GyVhkZvXTCdkF2YSRsm6jeA-GBT9BuWzaIeHh0KapLmQ8DxpXeoSWi-HJoKz7IGCjDZBx5tGQ_d64g5_oaCb5tZmCxznBFVrPikkmDe5HrgRUTagLk3XiyoPUDrqe0Wcby6PWJ_9bw5jfnfFs5xughtj2b229zz5ofdefq6-8jTVOg_xegewPmJ0XR"
+    },
+    {
+      "position": 18,
+      "title": "Duane Reade Pharmacy",
+      "place_id": "ChIJy9PMJftbwokRmgdOzGEns9o",
+      "data_id": "0x89c25bfb25ccd3cb:0xdab32761cc4e079a",
+      "data_cid": "15758982822092474266",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25bfb25ccd3cb%3A0xdab32761cc4e079a&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25bfb25ccd3cb%3A0xdab32761cc4e079a&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7115663,
+        "longitude": -74.0114261
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJy9PMJftbwokRmgdOzGEns9o",
+      "provider_id": "/g/11shsfly2l",
+      "rating": 3.6,
+      "reviews": 33,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "185 Greenwich St, New York, NY 10007",
+      "country": "United States",
+      "open_state": "Closes soon \u00b7 1:30\u202fPM \u00b7 Reopens 2\u202fPM",
+      "hours": "Closes soon \u00b7 1:30\u202fPM \u00b7 Reopens 2\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "friday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM"
+      },
+      "phone": "(646) 822-4717",
+      "website": "https://www.walgreens.com/locator/walgreens-185+greenwich+st-new+york-ny-10007/id=15940",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Free parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"The pharmacy staff at this location- wow.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTV3c0GHJXGiRkYRq2LyvO8oojdEOpeVaVG6OBB7hKqrbUrGzPioo6ovOJT0POOT2NHDdXe_J9lU6Hl0ebjkrbIKjlHKgk9OTau8ox7986HYH2cCyvrdNwhzFaCN-e8j82OSQjXw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Q_jTL3icHcRNjoIwGADQE1UqJlhMXPhLhQlFBwmuDJSGWjp82CKoN5wjeJtJ5i3e51f2fWcXjqPlbFID1Fo8rDAc2l60_YTDj1N3FnGLrLNK4mOzomk24zigYR7cTs3ldHe_XgMjAKrasU5kRRZ4bL2ey-huyrMJ3skNwIOBhSlOGEvdmG6rXFxDX589qrEoVWPKQ6Q0jerGZ2nxIPCc-8SjF-ryzWswVTzK977YxEgQRVz2fVT5uBynGGMk_-eo_QPTakUL"
+    },
+    {
+      "position": 19,
+      "title": "Levitt Pharmacy",
+      "place_id": "ChIJe3NIdCpawokRECsuYuU2AA4",
+      "data_id": "0x89c25a2a7448737b:0xe0036e5622e2b10",
+      "data_cid": "1008866675353594640",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2a7448737b%3A0xe0036e5622e2b10&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2a7448737b%3A0xe0036e5622e2b10&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7159176,
+        "longitude": -73.98719009999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJe3NIdCpawokRECsuYuU2AA4",
+      "provider_id": "/g/1tf58tj1",
+      "rating": 4.8,
+      "reviews": 48,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "407 Grand St, New York, NY 10002",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "9\u202fAM\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 475-5760",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "delivery": true
+      },
+      "user_review": "\"They have everything that CVS and Walgreens don\u2019t!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-proxy/ALd4DhGQeEzUWRqD6Q1me6zgyGy3OIeaODq6sWn54k69SZMdt-rE5fG1ktyq_7KvQi9bfs95ddvmAZChQCUfe103xJ8JNJPwpdvbVsVra0jTAQ2AQZ2mlFpJUZP2wlW6YAKyhatSgSGYr67Z9aGniCZGHTlUd-twKwp5V_AAJdHZBKXBE-DseYsHM7SuBxYlXIEMdFofFQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/_AqMMHicHcTJcoIwAADQ6aV_g2wCpTM9hF2o1RQBycVBEsDKnsjip_ZrOtN3eL8vrxVjPX3n-bqSN2XXlTV5UDLmXctIyzZ51_BlT7l-7JaVB594a1UuJPYzSr4HS4ViQ9RnubqrfNiR7GANKk1aZXtX9RDtMeNGWylc8c7W4aIFE7zp14LqCsZTA5BZQTMqiCjIi__mf_nHucfTNabxmAk_JwAlAJHU1E7vR-gozXWipiBYq4yFZeimo6ohPXPbm4lc71RHmGNzMPdKfAHAxx4ygrNhcxYlKfX2WvgwlrQ-7-w9drrCgR-zKAgCV_2fc-0fqrxY_Q"
+    },
+    {
+      "position": 20,
+      "title": "Duane Reade Pharmacy",
+      "place_id": "ChIJdY_gzN5bwokR4wPSu_qLU5c",
+      "data_id": "0x89c25bdecce08f75:0x97538bfabbd203e3",
+      "data_cid": "10904213031803290595",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25bdecce08f75%3A0x97538bfabbd203e3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25bdecce08f75%3A0x97538bfabbd203e3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7154338,
+        "longitude": -74.0054534
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdY_gzN5bwokR4wPSu_qLU5c",
+      "provider_id": "/g/11gmcfq7ng",
+      "rating": 2.9,
+      "reviews": 25,
+      "price": "$$",
+      "extracted_price": null,
+      "type": "Pharmacy",
+      "types": [
+        "Pharmacy"
+      ],
+      "type_id": "pharmacy",
+      "type_ids": [
+        "pharmacy"
+      ],
+      "address": "305 Broadway, New York, NY 10007",
+      "country": "United States",
+      "open_state": "Closes soon \u00b7 1:30\u202fPM \u00b7 Reopens 2\u202fPM",
+      "hours": "Closes soon \u00b7 1:30\u202fPM \u00b7 Reopens 2\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "friday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20131:30\u202fPM, 2\u20137\u202fPM"
+      },
+      "phone": "(212) 227-6168",
+      "website": "https://www.walgreens.com/locator/walgreens-305+broadway-new+york-ny-10007/id=14118",
+      "extensions": [
+        {
+          "service_options": [
+            "Delivery",
+            "In-store pickup",
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "offerings": [
+            "Naloxone"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Quick visit"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Free parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "in_store_pickup": true,
+        "delivery": true
+      },
+      "user_review": "\"The pharmacist is attentive and helpful.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH9SsUKCgJe4ADj8e03un0N7X3gF_JM_UBEEEiI667z1qJYBQ3JXN3J5mnK-6EaTpoSXKtPqXlWqzqE9-PEeO___MYOwqvMcKYxbo-s_QnEwGW00BqFNChv839yrGmc1cVj4hz31A=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/EQhCdHicHcRdToMwAADgExVKOmGY7AFmQUv4y8TBU6NN0zqhpWsHyg09wm5j4vfw3X-lc7N99P1RIk9oLUZ-s_zKtHJcOY_pyRezBcwC6ydN1X4lz_HJdsVREL5Lni57DtFNwSrqkcgoKWmXYow_X8Iw2gJDhrRFpK8QeZhUAUL8_jrrU1-4xvTj2WwGx6DBvKaUlkO9mqVkxfD9oYGlrcJrfoYwNVl1lMsexT_XfGIBe7vs5IaC5LAGEEIg_2dA_QEOVUNo"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.72%2C-74.0%2C14z&q=pharmacy+near+downtown+Manhattan&start=20&type=search"
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "search_metadata": {
+    "id": "6a3ac2243b93e361cd15e204",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/CX2reFyUkE-lx5MDpTvy_w/6a3ac2243b93e361cd15e204.json",
+    "created_at": "2026-06-23 17:28:04 UTC",
+    "processed_at": "2026-06-23 17:28:04 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2598931c5837d:0xc5f5ce6b819dcf67!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/CX2reFyUkE-lx5MDpTvy_w/6a3ac2243b93e361cd15e204.html",
+    "prettify_html_file": "https://serpapi.com/searches/CX2reFyUkE-lx5MDpTvy_w/6a3ac2243b93e361cd15e204.prettify",
+    "total_time_taken": 0.73
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJfYPFMYlZwokRZ8-dgWvO9cU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Soho Smile - Cosmetic Dentist NYC",
+    "place_id": "ChIJfYPFMYlZwokRZ8-dgWvO9cU",
+    "data_id": "0x89c2598931c5837d:0xc5f5ce6b819dcf67",
+    "data_cid": "14264534355897339751",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2598931c5837d%3A0xc5f5ce6b819dcf67&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2598931c5837d%3A0xc5f5ce6b819dcf67&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7252587,
+      "longitude": -74.0037653
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJfYPFMYlZwokRZ8-dgWvO9cU",
+    "provider_id": "/g/1pp2w_kcl",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtkuY2jAHfWDg-uzA02V6tWCZJW0kNSsJah6-C3X7pCFoOIQnh9Oax8zWSjtyX3oq7Tj_0K5uepYo1MLChw_Nszfa1QRWDkMLLtH96A9zUQGzSoq8Kcy3VoI6s0_BBhm5LD6JVMw=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Tr_UvnicHcRRCoIwGADgEy1n0sqgh6VYmVpmuexFZJhDy9_axNoNO0K3Cfoevu9HKNXJuWHchDWqAKpb2cvyyaFVZatGHO5G1UnEJZIG3UdxQz3V9Nm4pusrcyvUa4rHKVHMufgMN1Ei_UIQ5Fjnaed4sNvErbB3xWumWVKr99mCx_RY53g76csuAzMMHDHkkdTXwowPzG3CIFBrm1Bbn-KVTuAx2_K3lcKGSJwvl-I-CVzip-GwGEyMMRL_OWp_qZVEcw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 1
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 205
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 210,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental clinic",
+      "Dental hygienist",
+      "Dental implants provider",
+      "Emergency dental service",
+      "Oral surgeon",
+      "Orthodontist",
+      "Periodontist"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_clinic",
+      "dental_hygienist",
+      "dental_implants_provider",
+      "emergency_dental_service",
+      "oral_surgeon",
+      "orthodontist",
+      "periodontist"
+    ],
+    "menu": {
+      "link": "https://www.sohosmile.com/",
+      "source": "sohosmile.com"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "206 Spring St 5th Floor, New York, NY 10012",
+    "country": "United States",
+    "website": "https://www.sohosmile.com/",
+    "phone": "(212) 334-7330",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "PXGW+4F New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20137 PM"
+      },
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 8 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2598931c5837d%3A0xc5f5ce6b819dcf67&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN7odaZLEbrGd38x9iXqKJm51RdtQxM4cGjPc-c=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEO-umJOGzLPeoQE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Thinking about Porcelain Veneers in New York? Here's something most patients don't know: veneers can actually motivate better oral hygiene habits \u2014 studies show people invest more in their smile health after cosmetic work.\n\n\u2022 Regular checkups protect your veneer investment \u2014 small issues caught early prevent costly repairs down the line.\n\u2022 Plaque buildup around veneers is just as real as with natural teeth, making routine cleanings non-negotiable.\n\u2022 Dr. Ari Koutsoubis and the team at Soho Smile monitor the fit and integrity of your veneers at every visit, catching subtle shifts before they become problems.\n\u2022 Many New York patients are surprised to learn that skipping checkups is one of the top reasons veneers fail prematurely.\n\nIf you're considering porcelain veneers or already have them, consistent dental care is the secret to keeping your smile looking its best for years \u2014 reach out to our New York team to learn more.",
+        "date": "2 hours ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNUHMbB22lG5VHpTnBVfsAB0n5m3wJb82SH1-Ey=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEK2Z6b6ogdCd0gE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Dental Bridges in New York: what happens when you keep putting it off?\n\nA missing tooth rarely stays a \"minor issue\" for long. In a city as demanding as New York, the small problems that come from delaying a dental bridge can quietly compound \u2014 affecting how you eat, speak, and feel day to day. Here is what the waiting actually costs:\n\n\u2022 Neighboring teeth begin to shift into the gap over time, making future restoration more complex and more expensive.\n\u2022 Bone loss in the jaw accelerates without a tooth root present, changing the shape of your face gradually.\n\u2022 Chewing imbalances place extra strain on surrounding teeth, increasing the risk of cracks and wear.\n\u2022 The longer the gap remains, the more preparatory work is often needed before a bridge can even be placed.\n\nDr. Ari Koutsoubis at Soho Smile helps patients in New York understand exactly where they stand \u2014 so they can make informed decisions before a manageable situation becomes a costly one. Early action is simply the smarter, kinder choice for your long-term health and budget.\n\nSchedule your consultation today.",
+        "date": "4 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMnHGOxf7j6IZuryXWsTLaRou0aaTlcHzu81O7m=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKELOuoIm8yd-YiQE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Curious what Dental Bonding in New York actually feels like from start to finish?\n\nMany of our patients arrive at Soho Smile self-conscious about a chipped, gapped, or discolored tooth \u2014 something small that has quietly shaped how they speak, smile, and show up in everyday life. The journey through dental bonding tends to surprise people with how straightforward and comfortable it really is.\n\n\u2022 The process typically begins with a simple consultation where Dr. Ari Koutsoubis evaluates the tooth and selects a composite resin shade matched precisely to surrounding teeth.\n\u2022 Treatment is usually completed in a single appointment \u2014 no lengthy lab wait, no temporary restorations, just a reshaped, polished result the same day.\n\u2022 Many patients leave feeling free to eat, laugh, and speak without mentally editing themselves, noticing the difference in small moments throughout their week.\n\u2022 Because bonding preserves natural tooth structure, patients often describe the experience as one of the least invasive changes with one of the most visible payoffs.\n\nIf a chip, gap, or stain has been holding your smile back, our New York team is ready to walk you through every step \u2014 schedule your consultation at Soho Smile today.",
+        "date": "Jun 16, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPlBpjb6ltjuzml_mM3EbrgfpG9oWgTJuW5BW9R=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEJ2Op6qCtoa3Rw&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Noticing changes in how you chew, speak, or feel about your smile? These early signals are worth paying attention to \u2014 and for many patients exploring Dentures in New York, catching them early makes all the difference.\n\n\u2022 Loose or shifting teeth that make eating certain foods uncomfortable are often one of the first signs to watch for.\n\u2022 Noticeable gaps between teeth or changes in your bite can affect how you speak and feel day to day.\n\u2022 Persistent gum tenderness or bone loss confirmed during a routine exam may indicate it is time to explore tooth replacement options.\n\u2022 If you find yourself avoiding social situations or meals because of your smile, that is a meaningful sign worth discussing with a dentist.\n\nAt Soho Smile in New York, Dr. Ari Koutsoubis combines advanced practice technology with a calm, patient-centered approach \u2014 so every visit feels comfortable and every question gets a clear answer.\n\nSchedule a check-up with our New York team today to learn what your smile is telling you.",
+        "date": "Jun 12, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMIkREdSL2GNomx-Ib2_LVpJuD6d-O8ntn3bDw4=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEKae7rCJrMLPkQE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Looking for Dental Fillings in New York? Here's a quick tip to protect your teeth this season.\n\nAs temperatures drop, tooth sensitivity often spikes \u2014 and that twinge you feel biting into something cold could be a cavity signaling it's time for a filling. Catching decay early means a simpler, faster fix before it becomes a bigger problem.\n\n\u2022 Sip hot drinks slowly this winter \u2014 rapid temperature changes can aggravate weakened enamel and make existing cavities more noticeable.\n\u2022 A cavity left untreated doesn't shrink on its own; dental fillings stop decay in its tracks and restore the tooth's strength.\n\u2022 Modern tooth-colored fillings blend seamlessly with your smile, so there's no need to put off treatment for cosmetic reasons.\n\u2022 Dr. Ari Koutsoubis and the team at Soho Smile help New York patients address cavities comfortably, using the latest materials for long-lasting results.\n\nIf winter sensitivity is sending you a signal, schedule your consultation with our New York team today.",
+        "date": "Jun 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOY51miSjz94_kF8gRJ4LYmV7hV7mU5PpGlgH1r=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKELSt6vXR7_C2tgE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Thinking about skipping your Dental Cleaning in New York because your teeth feel fine? That's one of the most common myths we hear \u2014 and it could be quietly costing you your oral health.\n\nHere's what the research actually shows:\n\n\u2022 Most gum disease and early decay have zero symptoms, so feeling fine doesn't mean everything is fine below the surface.\n\u2022 A professional cleaning removes hardened tartar buildup that no toothbrush or floss can touch \u2014 no matter how well you brush at home.\n\u2022 Routine cleanings give Dr. Ari Koutsoubis a chance to catch small issues before they become costly, complex problems.\n\u2022 New York patients who stay consistent with cleanings tend to spend far less time in the dental chair over the long run.\n\nThe myth that you only need a cleaning when something hurts is one worth retiring for good. At Soho Smile in New York, we make the experience comfortable, judgment-free, and genuinely worth your time.\n\nSchedule your dental cleaning with our New York team today.",
+        "date": "Jun 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNf_41NJg_h-iHDCEpRlZHQAr5uMwvFVDvOQfa7=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/contact-us/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEK758ruY2ZnyrAE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Considering amalgam removal in New York \u2014 but wondering if it's actually safe to have those old silver fillings taken out?\n\nIt's the number one question patients ask Dr. Ari Koutsoubis at Soho Smile before booking, and it's a great one. Here's what you should know:\n\n\u2022 Safe removal protocols use rubber dams, high-volume suction, and sectioning techniques to minimize mercury vapor exposure during the procedure.\n\u2022 Many patients choose amalgam removal to replace aging, cracked, or discolored fillings with tooth-colored composite alternatives that blend naturally.\n\u2022 Not every old filling needs to come out \u2014 a thorough exam helps determine whether removal is the right choice for your specific situation.\n\u2022 New York patients often report feeling more confident in their smile after switching to modern, mercury-free restorations.\n\nIf you have questions about whether amalgam removal in New York is right for you, reach out to our Soho Smile team to schedule a consultation.",
+        "date": "Jun 2, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN-Mcok8azhbOqo-X94ly0EUcVdLG5FWIlIa53X=h400-no",
+        "cta": "Book",
+        "link": "https://www.sohosmile.com/services/porcelain-crowns/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKENyFq4fOttzCCg&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Porcelain Crowns in New York are quietly transforming the way people show up in the world \u2014 and the results speak for themselves.\n\nAt Soho Smile, Dr. Ari Koutsoubis has seen firsthand how a restored smile can shift a person's entire sense of confidence. Whether it's a chipped tooth you've hidden for years or a worn crown that no longer looks natural, porcelain crowns offer a lifelike solution that blends seamlessly with your smile.\n\n\u2022 Porcelain crowns are custom-crafted to match the shape, size, and shade of your natural teeth for a result that looks completely authentic.\n\u2022 New York patients love that modern crown placement is more comfortable and efficient than ever before.\n\u2022 Beyond aesthetics, crowns restore full biting function \u2014 so you can eat, speak, and laugh without hesitation.\n\u2022 Dr. Koutsoubis takes a personalized approach, ensuring each patient feels heard, informed, and confident in their care.",
+        "date": "May 29, 2026"
+      },
+      {
+        "cta": "Learn more",
+        "link": "https://www.sohosmile.com/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEK3etMy-z_Plbw&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Looking for Porcelain Veneers in New York? Your routine dental checkup might be the first step toward getting them.\n\nRegular dental visits do more than keep your teeth clean \u2014 they set the foundation for any cosmetic treatment you might be considering. Dr. Ari Koutsoubis at Soho Smile sees patients across New York who are surprised by how much a simple checkup can reveal about their smile's potential.\n\n\u2022 Routine exams catch small issues early, before they become costly or complicated procedures.\n\u2022 A healthy baseline is essential before placing porcelain veneers, ensuring long-lasting, beautiful results.\n\u2022 Professional cleanings remove buildup that can mask underlying concerns affecting your smile's appearance.\n\u2022 Consistent checkups help you and your dentist build a clear, personalized plan for your ideal smile.\n\nWhether you are maintaining your smile or exploring cosmetic options like porcelain veneers, staying consistent with your dental care is one of the smartest investments you can make in New York's fast-paced lifestyle.",
+        "date": "May 26, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipM16BdTMjXHZFcIBytYfp7Nfaj9i-xFhxiVS4bZ=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.sohosmile.com/",
+        "post_link": "https://search.google.com/local/posts?q=Soho+Smile+-+Cosmetic+Dentist+NYC&ludocid=14264534355897339751&lpsid=CIHM0ogKEL_2tPewydejtAE&source=sh/x/loc/post&lsig=AB86z5Vq-9PJM7cC74S-YQ_C5xqk",
+        "description": "Dental Bridges in New York: what should you do when a dental emergency strikes and you're missing a tooth?\n\nA lost or severely damaged tooth can feel overwhelming, but acting quickly makes all the difference. At Soho Smile, Dr. Ari Koutsoubis helps New York patients restore their smiles with reliable, natural-looking solutions.\n\n\u2022 Dental bridges are a trusted option for replacing one or more missing teeth, closing gaps and restoring your ability to chew comfortably.\n\u2022 In a dental emergency, avoid touching the affected area and contact a dental professional as soon as possible to protect surrounding teeth.\n\u2022 Leaving a gap untreated can cause neighboring teeth to shift over time, making early care essential for your long-term oral health.\n\u2022 New York patients choose dental bridges because they are durable, blend seamlessly with natural teeth, and can often be placed in just a couple of visits.",
+        "date": "May 22, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtkuY2jAHfWDg-uzA02V6tWCZJW0kNSsJah6-C3X7pCFoOIQnh9Oax8zWSjtyX3oq7Tj_0K5uepYo1MLChw_Nszfa1QRWDkMLLtH96A9zUQGzSoq8Kcy3VoI6s0_BBhm5LD6JVMw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Tr_UvnicHcRRCoIwGADgEy1n0sqgh6VYmVpmuexFZJhDy9_axNoNO0K3Cfoevu9HKNXJuWHchDWqAKpb2cvyyaFVZatGHO5G1UnEJZIG3UdxQz3V9Nm4pusrcyvUa4rHKVHMufgMN1Ei_UIQ5Fjnaed4sNvErbB3xWumWVKr99mCx_RY53g76csuAzMMHDHkkdTXwowPzG3CIFBrm1Bbn-KVTuAx2_K3lcKGSJwvl-I-CVzip-GwGEyMMRL_OWp_qZVEcw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFe1_KCybvUneQqaejzyRbHWk28rtXWCGGHMFkmWstOHDw0CrTt3uhX1_mcPnAQi2CntSnY4ktMe_nWZHdkiMzG-octaSVJFZEszgu-5MI6KPf4keR0kbqWBL3XxsgRbxWHbM5M=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/0lQUX3icHcRNcoIwGADQE0WCaMfpjAuKhahN5cca6oYxaQw2kij5qMoFPYO3caZv8R73GuDkXj3vWAcDZa06ys7JVlgD0sBA2MZTJ4eEQ84L089Mh7H0q2V0439fRmbnnfztbzknTA8nLZQsShJCY90wBysyu-CoXUPQ1aVfNSI1YXYYRgYK8z3SQGVl2Jb86APtE2QF7IrNIt6-u151aEznL8t0P9Iyx5qf2dtHUF6dyvmVEU7HdHrxMcao_l8g8wTvj0Xw"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGsvlUisFc2x5NHy_-aoa834YLtWrKvO0KE5gAOd4ArDPxjxyK-IpqyPuI6IuHL0Fp2DwOd-RtZ72N8mTr4xE-6bEIzkA8WqEkBDDFEf6v7iDuhjf2LqdBbG-NMAYaoXorfNUASipQjAZS_=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/54oO5HicHcRLjoIwAADQE1U6iEhMXNS0KAEL_uLoxmD5g7S0BWEuOWtvM8m8xfv8FloLtTKMppjPcs7zJu1VKhlvddrqGeMvIxcKMAWUgSJ6qNFWDc2lVC4zxwXdTQ8Q89iZW7dAX6U_hNAnixyFiYUkjsZqnHzgiW6Kes_2-l0AXWHid5iAo74vTeq8ztIaCbCfxPupkXPtSL3B2CWZPSxL3BdVZgZdsnluAd2jW8y_uczoBZ1KcajQ_fRYv78ghKD4n4H2D2L0Rpk"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=NFgAnS9Gc8Ge4LXcTo0u_A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=269.9891&pitch=-0.57853365&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/NrgJ_nicHc09DsIgGADQ27AV6K9gQkwXuxgXHdwaRAQSWoh8pXomT-RtNI5vep-3BYhpS0iCh9aQnV6je2qfiiixCcF4LaNLWIWJ5JKAXabrLJ3fRTkHdxPHvennEx8UG3RzuKhzoMvYI3UdlXd6BjHJmMaUMUgFzmtsYkKrqKoGWVFxhl7yp45jzniJogNlRUFxu2FtXXct-of3kEVJ6RfSkjuZ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Amazing service, facility and staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXWIPdwa8k889slbH8TpbeC6dx9TtdJqNEUFVKsnLxB7rqO5Uw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Its the friendliest atmosphere and they do great work.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV5NyDOe-K3Y-1-K1wNWiqFAOev3eWdx86B8PJWdZgY4bTlVx82hg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Place is super clean and overall best dentist experience I have ever had.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ9ZAYQfdKb54odUXuAibp2M7LOdAL3r79gJx-Zs9yd2FR8ow=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "m v",
+          "rating": 5,
+          "contributor_id": "113901849183200242134",
+          "user_review_count": 3,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJKQO-Me72EUWSRGOOxTlYVs8n2Gz00nAdWgM_8MgrLlTdSQXcY=s120-c-rp-mo-br100",
+          "description": "I had a great experience at SoHo Smile! When you arrive, you are greeted by Priscilla and Dona at the front. They are friendly, professional and answered all of my questions. I saw Iryna for my cleaning and she did a great job at making sure I was comfortable. Overall, I enjoyed my visit! The staff took care of me every step of the way. Highly recommend SoHo Smile! \ud83e\uddb7\u2728",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0elFtWk1hamhNVFdwMk1HRjZlRzFQYkhWQlEwRRAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOktzQmZMajhMTWp2MGF6eG1PbHVBQ0E%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3UcNjtvUSdJxWmKYEnH_ywZ9kcHmxo2Lf3BIjVolgP4BzVQaOuSmMJbJS-01Zk4QWk3x8bKPuB5M5TB3KE_CF5JH2Y0UUkDo-5S6xF6hf3IbX9cIIcGuBXYgQIvjWwO0EMCSy263pL_ns3=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn30NOYaEn2yUOZAbSg4Ds9ZRY7oyvEh6AmzkzRqPKx-cJor7_Pkz19zAHTdRuCABcCtDO456Emw7wwSTDpP-AKna0-EfsO6-CgMgWcnPJpygSRGgc9Co_M1pspZ3q7i_MSNpL3XyO8Qwz5n=k-no"
+            }
+          ],
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T17:00:01+00:00"
+        },
+        {
+          "username": "D L",
+          "rating": 5,
+          "contributor_id": "103787249221988587383",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLa8LMYz0Eu5XhBQHoCW3FAOm5JaEZOpiw0UEdDa3Boj_1JEvVU=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been going to SohoSmile and honestly couldn\u2019t be happier. The team is super friendly, everything runs on time, and the office always feels welcoming and professional.\n\nEven though I\u2019ve moved further away, I still make the trip because the staff is that great. Dr. John is honest, conservative with treatment, and someone you can truly trust. He explains everything clearly and never pushes unnecessary work.\n\nThe staff goes above and beyond with communication and making sure to accomodate me. Definitely 5 stars \u2014 so glad I have this place.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s5WU4zRkNWVlpwV0ZsemVXbEJSV1paTjBGTGFWRRAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOk9YN3FCVVZpWFlzeWlBRWZZN0FLaVE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-04T02:10:02+00:00"
+        },
+        {
+          "username": "Iryna Hrytsak",
+          "rating": 5,
+          "contributor_id": "112371436559278373905",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJIVCl2ULlKy2ZCZ-pUrTwc9BlKUyIwdEVszdQ36D0CY_H_LQ=s120-c-rp-mo-ba12-br100",
+          "description": "Finding a dental office that combines excellent care with a genuinely kind and professional team isn\u2019t always easy, but Soho Smile truly delivers on both.  I had my front tooth crown replaced by Dr. John, and my main goal was to make sure it matched the rest of my teeth perfectly. Dr. John took his time to get everything just right, carefully matching the color and shape so it blended naturally with my other teeth. I really appreciated how he listened to exactly what I wanted and made sure the final result reflected that. Karen, the dental assistant, was very attentive and made sure I was comfortable the entire time I was in the chair. As a nice bonus, you can even watch TV while you\u2019re getting your treatment, which makes the whole experience much more relaxing.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OdlMyUXpVamhaYmpCUlgzUXdaa1J2VHpjek0wRRAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOnNvS2QzUjhZbjBRX3QwZkRvTzczM0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-23T21:13:13+00:00"
+        },
+        {
+          "username": "Priscilla Valeza",
+          "rating": 5,
+          "contributor_id": "115539524876380729695",
+          "user_review_count": 4,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK1XorSghxxt-3iF41UXSCbENdjOKDh7kjf7MH9F_4yzXoQow=s120-c-rp-mo-br100",
+          "description": "I have dental phobia from my past experiences at other dental practices I\u2019ve been to, so I\u2019ll admit I was quite nervous about coming in for a cleaning\u2014especially since it had been over a year since my last one. However, the front desk staff, Monique and Dona, immediately helped put my mind at ease. They reassured me that the hygienist, Iryna, was not only highly skilled but also very gentle. After experiencing it firsthand, I can say with complete confidence that they were absolutely right. From the moment I entered the room, Iryna greeted me with warmth and reassurance. She even put on one of my favorite shows to watch during the appointment, which helped me relax right away. Throughout the cleaning, she was incredibly attentive and continually checked in to make sure I was comfortable. Dr. John was equally wonderful\u2014truly one of the kindest and most personable doctors I\u2019ve ever met. He took the time to walk me through the next steps of my dental plan in a way that felt supportive and reassuring. I left feeling so happy with the results and genuinely grateful that I chose SoHo Smile for my care. I\u2019ll definitely be returning this summer, now with full confidence that I\u2019m in excellent hands.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kbFVHMTVXV1pyYkc1UVdYaFJhMDFwVVVOWldGRRAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOmdlUG15WWZrbG5QWXhRa01pUUNZWFE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T16:09:02+00:00"
+        },
+        {
+          "username": "Nadine A",
+          "rating": 5,
+          "contributor_id": "117895494690362008338",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX3VL-G3S41uoAyzmsBgUZVoks4ARGe-naHNdn5T5EHc0dnWJWC8Q=s120-c-rp-mo-br100",
+          "description": "Irina did a great job with my cleaning. She was very thorough but I didn\u2019t feel uncomfortable. She also explained everything clearly, showing pictures so I understood what was going on with my teeth. Staff was also really friendly and made me feel at ease upon arrival. I do still have to go back for some follow up but overall my first appointment was good. :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21WRmExOVZUemt4ZGt4YU5HbEVZamhITjI5RmNsRRAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOmVFa19VTzkxdkxaNGlEYjhHN29FclE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-04T00:02:57+00:00"
+        },
+        {
+          "username": "Kiary Torres",
+          "rating": 5,
+          "contributor_id": "117798322531496797823",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVokInQ-MyfxSk1VjdA-gGYECxYMwZNmCktMCQ-zKFgYgj79mxzLw=s120-c-rp-mo-br100",
+          "description": "Great place! The front desk staff are always helpful and communicate well, which makes scheduling really easy. The office has a welcoming and comfortable vibe. Thank you, SoshoSmile! The playlist is a nice bonus, too.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tScExUQXdWbkU1WkdOMlpVTnNiVXg2U1VseWFXYxAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOkRpLTAwVnE5ZGN2ZUNsbUx6SUlyaWc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T16:45:05+00:00"
+        },
+        {
+          "username": "Matt Gagliardo",
+          "rating": 5,
+          "contributor_id": "106403388400114694786",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLUKhBiLH6xFLFBUUn-_2sKwVLq6gAL5XfA-R_cetgYXkH7UA=s120-c-rp-mo-br100",
+          "description": "I cannot recommend this practice enough, especially Dr. Ari! I came in as an emergency after breaking three teeth, and Dr. Ari was absolutely incredible. From the moment I walked in, he made me feel calm and taken care of during what was honestly a pretty stressful situation.\nDr. John and Dr. Ari took the time to thoroughly explain my treatment options and walked me through every step of the process. His skill and attention to detail were amazing, and the results exceeded my expectations. My teeth look significantly better than they had before. Dr. Ari genuinely cares about his patients, as he regularly checks in on how my teeth are doing. When I needed other dental procedures, Dr. John and Dr. Ari also connected me with the best dental surgeons.\nDr. John and the entire team were also wonderful and professional throughout my visits. The office runs smoothly, and everyone made me feel welcome and comfortable. Dr. Ari turned what could have been a nightmare into a positive experience. The absolute best, and I can not thank him enough.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT210NGNWVkNZVzgzWmsxSVltaFpjWGhYVUdSaFQxRRAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOmt4cVVCYW83Zk1IYmhZcXhXUGRhT1E%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-18T00:45:43+00:00"
+        },
+        {
+          "username": "Jorrel Monterey",
+          "rating": 5,
+          "contributor_id": "108927381171679833047",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJD53Ki6NdCee-ptbztax4ZO6aetISVzPXRRL4pEMthMittdRc=s120-c-rp-mo-br100",
+          "description": "I enjoyed my visit in SoHo Smile. The doctor was really nice and accommodating. The staff are also friendly and helpful to me and my family. Highly recommended give them a try to experience the high quality service they provide.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5U05HMU1XRGhFUjJvM2FUSXdhR0pJVTFabFRXYxAB!2m1!1s0x0:0xc5f5ce6b819dcf67!3m1!1s2@1:CAIQACodChtycF9oOl9SNG1MWDhER2o3aTIwaGJIU1ZlTWc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T17:08:57+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NYC Dental Associates",
+            "data_id": "0x0:0x617294ebe5aef2d",
+            "data_cid": "438864906869731117",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x617294ebe5aef2d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x617294ebe5aef2d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7245684,
+              "longitude": -74.0015098
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x617294ebe5aef2d%218m2%213d40.7245684%214d-74.0015098&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 156,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGH1SCabU9PQkQn8OozAvC0ORW3sXa5-Gnf2Fy2y3Tmu0MPsTs3Qk6NDtN79Z_RXFKNF9siUFz_FcmHCN5WFIgKfl3R91L4XOV062q-ChHDuypejP_pd5tvPcpboRpFobmyK7iVBg=w156-h156-n-k-no",
+            "type": [
+              "Dental clinic",
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "NYC Smile Spa",
+            "data_id": "0x0:0xb6cff2ce09f38f2e",
+            "data_cid": "13173014401826131758",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7637066,
+              "longitude": -73.970242
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb6cff2ce09f38f2e%218m2%213d40.7637066%214d-73.970242&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 396,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHo3nVn9pbPGrJ3lgGT0iq1jpvwBlmq-5KGVwUSOFuS_4PAjpBIn067_Fz-HqHaOzITcpFdD-G3zGJpR1sttCQO0ixLB4isA2BEEbq9G3fywtqN28FMC4H6GnN1XYEKIMhv9fBNOg=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Endodontist",
+              "Oral surgeon",
+              "Orthodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Soho Dental Loft - Lee Gold DDS, PC",
+            "data_id": "0x0:0x323f2be75e7a2de9",
+            "data_cid": "3620660898151673321",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x323f2be75e7a2de9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x323f2be75e7a2de9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7250137,
+              "longitude": -73.99761939999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x323f2be75e7a2de9%218m2%213d40.7250137%214d-73.99761939999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 344,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFlwTsvI8hZkREadDGS1UaO_TQpzyfhH3fguEoi64ftpYOV96Pp560k5XTV8sUujnubS7IyYW1xcg_oSMe3ja1VbMudDCXLd3Kulb9tUa7Lk9rc4DoBDV5OARSX5u-XIDibQEXmIbLtig=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "SoHo Dental Group NYC",
+            "data_id": "0x0:0x25cd80eb0b2b6e98",
+            "data_cid": "2723975096622083736",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x25cd80eb0b2b6e98&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x25cd80eb0b2b6e98&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7237243,
+              "longitude": -73.99803159999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x25cd80eb0b2b6e98%218m2%213d40.7237243%214d-73.99803159999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 540,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFmdh-fzdtyXtLkG45r1CgLEAE9VnQxad8CTYeqTmJ9Su9KqG6roDJ9PIsoEkOlTRZnnMKRvnxwjalXMqhxUDRkivD30J00URjElqoxY3L2XIhU2xDW31eQ_wbLPHbU10hjP68g=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dental implants provider",
+              "Emergency dental service"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Smile Village Dental",
+            "data_id": "0x0:0xf3685aee4f4765f",
+            "data_cid": "1096210545523324511",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf3685aee4f4765f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf3685aee4f4765f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7286992,
+              "longitude": -73.99737429999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf3685aee4f4765f%218m2%213d40.7286992%214d-73.99737429999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 117,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF6ay-pQ6K6fDuPGsnwltA7iY_XfNJM6pOnzJJ5K2T3D_FqPrW-Umn7IjKMPDWlFn7jK4NlAoStGVyo3yaG-5ddjJBpDI879Yegg8PIP-okf1cGZqsNtiBKqSMRTb_Vm-1x8dDNdq11s-0=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants periodontist",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Endodontist",
+              "Teeth whitening service"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjQKMiIuU29obyBTbWlsZSAtIENvc21ldGljIERlbnRpc3QgTllDIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjQKMiIuU29obyBTbWlsZSAtIENvc21ldGljIERlbnRpc3QgTllDIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

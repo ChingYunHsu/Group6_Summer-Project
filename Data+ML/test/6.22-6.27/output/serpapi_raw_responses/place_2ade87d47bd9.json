@@ -1,0 +1,485 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1edb9e86902fa06fe17",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/enYlZStcQcMLETVtW7huXA/6a3ac1edb9e86902fa06fe17.json",
+    "created_at": "2026-06-23 17:27:09 UTC",
+    "processed_at": "2026-06-23 17:27:09 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259ac30613c9b:0x8256b738864992ac!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/enYlZStcQcMLETVtW7huXA/6a3ac1edb9e86902fa06fe17.html",
+    "prettify_html_file": "https://serpapi.com/searches/enYlZStcQcMLETVtW7huXA/6a3ac1edb9e86902fa06fe17.prettify",
+    "total_time_taken": 1.34
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJmzxhMKxZwokRrJJJhji3VoI",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Herald Square Dental & The Denture Center",
+    "place_id": "ChIJmzxhMKxZwokRrJJJhji3VoI",
+    "data_id": "0x89c259ac30613c9b:0x8256b738864992ac",
+    "data_cid": "9391895526326768300",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259ac30613c9b%3A0x8256b738864992ac&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259ac30613c9b%3A0x8256b738864992ac&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7519467,
+      "longitude": -73.9911001
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJmzxhMKxZwokRrJJJhji3VoI",
+    "provider_id": "/g/1tdn5037",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPkdFinFKtjo1TSVqOGaXzFvF91Hmz99wCRlcsXNmjvcX-3QCMj6wbw5YjwQyoD4QnjZgF5d77vI9EKJ3rXELt-XnfkenzxfEvmTvSRC1ZXYmRSIs4RNNlsB-Os0dcHC7Gomi1=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/oTs6PHicHcTdDoIgGADQJyJlVs62Lsqkf0ttjborNA0Fqo-gfMGeobdp61yc76fS-gYDx2kqr1MqVTbFE4oHU1IXUneYEk55A8QAgTPaxkk9irZ1Tq6SLDVXeJft75vpibbEkADPRBsENkwbBjQW3DCKvCRc8749296B2-StJt1E8mNJernvm3kQLRfeg0Yrjai81IVsX5fIiJ3J0hAf6UGk2Ry6aRw3MEYbcHM2C_2pElc8tNh1XVT9Z0j-AJv2RQk",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 22
+      },
+      {
+        "stars": 2,
+        "amount": 4
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 10
+      },
+      {
+        "stars": 5,
+        "amount": 385
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 422,
+    "type": [
+      "Dentist",
+      "Dental implants periodontist",
+      "Emergency dental service"
+    ],
+    "type_ids": [
+      "dentist",
+      "dental_implants_periodontist",
+      "emergency_dental_service"
+    ],
+    "book_online": "https://nexhealth.info/book/appt/thesmilist?lid=4876&rwg_token=AE37R_jcz4JCdoD0IUHTdnLUJMninclU9jTq7SjtaVAM7MajXyD0AZWF00vp5Rm7i1Vl_C5CSaZoV0c7F8YT17wrZsq4kOQAyQ%3D%3D",
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "224 W 35th St 16th Floor, New York, NY 10001",
+    "country": "United States",
+    "booking_link": "https://www.heraldsquarecosmeticdental.com/schedule-form/",
+    "website": "https://www.heraldsquarecosmeticdental.com/",
+    "phone": "(212) 689-0024",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "Q225+QH New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20135 PM"
+      },
+      {
+        "wednesday": "8 AM\u20135 PM"
+      },
+      {
+        "thursday": "8 AM\u20135 PM"
+      },
+      {
+        "friday": "8 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20135 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 9 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259ac30613c9b%3A0x8256b738864992ac&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipP11SCUv-a1zK0Y82mDREVMbP_CW6wRZvKlgraJ=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKEPCSz_WAnO7eowE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "The sun is officially at its peak!\n\nHappy Summer Solstice! As we kick off the first official day of summer, it\u2019s the perfect time for a \"\"Seasonal Reset.\"\" The year is halfway through\u2014is your smile where you want it to be?\n\nStart the season with:\n\u2728 A professional whitening to match your summer glow.\n\u2728 A fresh toothbrush for your travel bag.\n\u2728 A cleaning to keep your breath fresh for all those summer BBQs.\n\nThe days are long, but summer flies by! Click the link in our bio to grab a spot in our July calendar before the vacations begin. \ud83e\uddb7\n\n#SummerReady #FirstDayOfSummer #DentalHealth #SmileGlowUp #SolsticeCelebration",
+        "date": "1 day ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOX3CwNJWW1v9i6DKnCzZk5x8hcEgGxzYnUCW7p=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKEKCN8uTeir6M7AE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "It\u2019s Father\u2019s Day, which means the \"\"Dad Jokes\"\" are officially at an all-time high.\n\nOur favorite today? \"When is the best time to go to the dentist?\" \"Tooth-hurty!\" \ud83e\uddb7\n\nToday, we celebrate the dads, grandpas, and father figures who show us how to be brave, stay strong, and\u2014of course\u2014keep us laughing (even when the jokes are cheesy) through it all.\n\nWhether it's post-game celebrations or helping with those first wobbly baby teeth, thanks for everything you do. Wishing all the incredible dads a relaxing and happy Father's Day.\n\n#FathersDay #DadJokes #SmileMonth #DentalHumor #DadSmile",
+        "date": "2 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMqaE7iuIhUliaAlkh8LBpoN72yVj6cE43cdf_t=h400-no",
+        "cta": "Learn more",
+        "link": "https://thesmilist.com/",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKEOuLsty-2av_uAE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "Red, White, and True!\n\nToday we fly the Stars and Stripes in honor of Flag Day. Since 1777, Old Glory has stood as a symbol of our shared history, resilience, and pride.\n\nOur team at The Smilist is proud to serve our communities from Virginia to Massachusetts and keep our neighbors smiling bright. We hope everyone has a safe and beautiful day of celebration!\n\n#FlagDay #OldGlory #CommunityPride #June14 #RedWhiteAndBlue",
+        "date": "Jun 14, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMZmDSO0RTNNRTNg3xDdpgxmImzSBmSu0t6KAQb=h400-no",
+        "cta": "Learn more",
+        "link": "https://thesmilist.com/dental-blog/common-dental-procedures/",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKEJLR-4bk0InP2wE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "Dentistry has its own language, and we know that terms like \"\"composite filling\"\" or \"\"crown\"\" can sound a bit mysterious if you aren't in the field! At The Smilist, we believe that an informed patient is a confident patient.\n\nUnderstanding common procedures doesn't just ease dental anxiety\u2014it helps you take charge of your oral health journey. Whether you\u2019re due for a routine \"\"prophy\"\" (that\u2019s fancy talk for a cleaning!) or you\u2019re curious about restorative options like bridges and implants, we\u2019ve got you covered.\n\nWe\u2019ve created a \"\"Dental Cheat Sheet\"\" on our blog to explain:\n\u2705 What actually happens during a filling.\n\u2705 The difference between a bridge and an implant.\n\u2705 Why routine cleanings are the secret to long-term health.\n\u2705 ...and more!\n\nDemystify your next visit! Read our full guide to common dental procedures below: \ud83d\udc49",
+        "date": "Jun 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMqX7pEmNH5UnBVZkMa3eRgZpj90vJ0PsDXnFxU=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.heraldsquarecosmeticdental.com/overjet-ai-how-herald-square-dental-uses-advanced-technology-to-improve-patient-care/",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKEKaL_Zzrtr_aCA&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "See your smile more clearly with advanced dental technology at Herald Square Dental & The Denture Center. Our latest blog explores how Overjet AI-supported imaging helps patients better understand cavities, bone loss, gum disease, and dental implant treatment planning through enhanced digital X-rays and AI-assisted diagnostics.\n\nLearn how modern technology is helping improve patient education, communication, and personalized care in NYC.",
+        "date": "May 27, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPywjEO4ywdAL8UJGXs7GuJGzp9EeL80zy7PFo7=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKENvP_eDrzaTggAE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "Today, we pause to honor and remember the brave men and women who made the ultimate sacrifice in service to our country.\n\nAt The Smilist, we are incredibly grateful for their courage and for the families they left behind. Our offices are closed today as our team takes this time to reflect and spend time with loved ones.\n\nWishing our entire community a safe and meaningful Memorial Day.#MemorialDay \n\n#TheSmilist #RememberAndHonor #CommunityFirst",
+        "date": "May 25, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOZxPxHm7mSLWt22aIOMqVqTo-CcJVpSoZQ-LA3=h400-no",
+        "cta": "Book",
+        "link": "https://app.nexhealth.com/appt/thesmilist?lid=4876",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKELPI5NKo_P6nRw&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "Brighten Your Smile Just in Time for Summer!\n\nReady for a whiter, more confident smile? Herald Square Dental is offering a special on professional Zoom Teeth Whitening for a limited time!\n\n\ud83e\uddb7 $150 OFF Zoom Whitening\n\ud83d\udc8e Immediate results\n\u23f1\ufe0f Completed in just one visit\n\ud83c\udf89 In-office whitening treatment valued at $500\n\n\ud83d\udcc5 Offer ends June 30, 2026\n\nBook your appointment today with Herald Square Dental!",
+        "date": "May 19, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPzU2v7h3_hrIBek_cBlx6TAWudy_WJ516wOJoS=h400-no",
+        "cta": "Learn more",
+        "link": "https://thesmilist.com/dental-blog/procedures/root-canal-timing-process-questions/",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKEO3LhIi2wNOxBA&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "Let\u2019s clear the air about Root Canals.\n\nIf the words \"root canal\" make you nervous, you aren't alone\u2014but you might be surprised to learn the truth! At The Smilist, we view a root canal as a hero procedure. Why? Because it\u2019s the most effective way to eliminate a painful infection while keeping your natural smile intact.\n\nThe goal isn't just to fix a tooth; it\u2019s to get you back to living your life pain-free.\n\nAre you experiencing any of these?\n\u26a0\ufe0f Persistent tooth pain that keeps you up at night\n\u26a0\ufe0f Extreme sensitivity to hot or cold\n\u26a0\ufe0f Swelling or tenderness in the gums\n\nIf so, a root canal might be the solution you need to feel like yourself again. Our experts use the latest technology to ensure the process is smooth, comfortable, and efficient.Still have questions about the timing, the process, or the recovery? We\u2019ve answered all your top questions in our latest blog post!\n\nClick below to read more!\n\n#TheSmilist #RootCanal #DentalHealth #ToothPainRelief #DentalEducation #SaveYourSmile #OralHealthCare",
+        "date": "May 19, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPE6Mg65goJVf4Ykl3f6W8tt9kp_wDjTxPHIeLI=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKENuzpp3ItN-kqwE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "To the women who give us a million reasons to smile\u2014Happy Mother\u2019s Day! \ud83d\udc90\n\nToday we celebrate the moms, grandmothers, and mother figures who do it all. From being the tooth fairy\u2019s official assistant to teaching us the importance of a healthy smile, you are the heart of the family.\n\nWe hope your day is filled with love, relaxation, and plenty of reasons to show off those pearly whites! \ud83d\ude0a\n\n#MothersDay #TheSmilist #MomsSmile #FamilyDental #CelebrateMoms",
+        "date": "May 10, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMVdKL6mKs3KB0OXGjHrhkbv3HkSmpEhO4DQ2Es=h400-no",
+        "cta": "Learn more",
+        "link": "https://thesmilist.com/dental-blog/procedures/periodontist-guide/",
+        "post_link": "https://search.google.com/local/posts?q=Herald+Square+Dental+%26+The+Denture+Center&ludocid=9391895526326768300&lpsid=CIHM0ogKENuStY_sic6G6gE&source=sh/x/loc/post&lsig=AB86z5WSYRNqeWI_VA0qxpBRmDuX",
+        "description": "Meet the specialist behind your smile\u2019s foundation.\n\nWe often focus on the \"white\" part of our smile, but the \"pink\" part is just as vital! At The Smilist, our Periodontists are the specialists dedicated to the foundation of your oral health: your gums and the bone that supports your teeth.\n\nIf you\u2019ve ever wondered why someone might need to see a \"gum specialist,\" it\u2019s about more than just routine cleaning. Periodontists handle everything from treating advanced gum disease to placing dental implants and performing cosmetic gum contouring.\n\nSigns it might be time to see a Periodontist:\n\ud83d\udea9 Gums that are red, swollen, or bleed easily.\n\ud83d\udea9 A \"receding\" gum line (teeth looking longer than they used to).\n\ud83d\udea9 Persistent bad breath that won't go away.\n\ud83d\udea9 Loose teeth or changes in how your bite feels.\n\nDon't wait for discomfort to take action! Healthy gums are the key to keeping your natural teeth for a lifetime.\n\nWe\u2019ve put together the ultimate Periodontist Guide to help you understand how these specialists protect your health. Click the link to learn more! Read the full guide below!",
+        "date": "May 7, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPkdFinFKtjo1TSVqOGaXzFvF91Hmz99wCRlcsXNmjvcX-3QCMj6wbw5YjwQyoD4QnjZgF5d77vI9EKJ3rXELt-XnfkenzxfEvmTvSRC1ZXYmRSIs4RNNlsB-Os0dcHC7Gomi1=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/oTs6PHicHcTdDoIgGADQJyJlVs62Lsqkf0ttjborNA0Fqo-gfMGeobdp61yc76fS-gYDx2kqr1MqVTbFE4oHU1IXUneYEk55A8QAgTPaxkk9irZ1Tq6SLDVXeJft75vpibbEkADPRBsENkwbBjQW3DCKvCRc8749296B2-StJt1E8mNJernvm3kQLRfeg0Yrjai81IVsX5fIiJ3J0hAf6UGk2Ry6aRw3MEYbcHM2C_2pElc8tNh1XVT9Z0j-AJv2RQk"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFczP6q9Ma-5bjcyKtcsJph8DjFCw67vKiO8fPM3H7w53sP7tHF75XSrRMhbRJC0uNRs0rLGni3KP5c_TASvwdkUMPTBHiii7s_pNp4yGhBMppIZC9m14HAs3tu8BSwNx0Sc9G7HQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/gXxtl3icHcTdToMwGADQJ-ro0rGCiRfAAnVY7GAmZjeL-0Ta_UDlK6vzDX2EvY2J5-Lcf7VzFh-C4KzZrBuG7txO2I4w9K7t3QyGS9BZJIAEg0RVm1OSw49afsXynYSHI9xKB7i2Olod88wv-bU0L9GnkkxwHzJU3Imch2_NWEt9qNcZnaoa6fhc9IaVKoT9Nmmu_uP0KtU2FcYYjntb2cWt0Km09mmXxZf5QiTI3BSlja--aQNxwcXm0c8ppUT_D6T_A5KXRA4"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGPlhqbp3AvZFQCM9R9KCui_JNm0KGpm2PWdLqiJywIwNPMqBozm8U-Ejqn1Yygeb9oTrghhfajeUFxjC7f5jacbavl0ylJwp9RZUTbbqQYaGH1QYJk2Q8N5qGEHsFLbE8iLII=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/qKi5w3icHcRRDoIgAADQE5FYa2lbH-bUNHPScs1-mhCBhgJhmR2wO3Sbtt7H-3543yuztCzBZxMmJRP0YeidyK6nXT8hsrWYMoAYYCwvz9DNi3LBNVYz73kKkb9z9-7Wf9TnJGvhNlLtND9eUl0n4xAPWb7Ta_lunQIEje7scmQUu_JwZ5xfq4YW4avxF9d5UxFcPQUcRTIod38qDhhrVFbRxkZlcpsiJ5vrKNiYMMWBU6dxvBpsCCHg_wnofnJERPg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=WXJrHsIJuL5eHiJYYzM7Dw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=198.45549&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/A8ShMHicHc1BDoIwEADA3_RmCwQimDRePCDRs3Iita50k0IburTqc_yVvzFxPjDfjyHyYSdEoAWAIkLy-AQbNl7x0bnRgvIYuHaTiLkgs063WaHdezU7vMvLtVvacOzWUwUtdn3_Pm8PienboC3CTHJSPgwhclKa0AIffWBJFkXJjCyamr1UknlT87KqyoZ5JG1kxv7Pw0WZZ9kP80s6Lw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Exceptional quality and delivery of service!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWqUDQULxaTP4zZe4Ei3e6F3uS2AFopcynmtiS_tyhXU1bE1ZK1=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Dont walk run away from this place they just want your money!!!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIrqD5rCmvLXbB1xS1aelRGy1oUeFeRcv1ntj3n8vNFFOR81g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Amazing doctors, amazing hygienists, very kind front desk.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI_IvDW3rORxtsU-MnIPD7FNoDEf8eAecSxRrCNor8mpUBVKw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Shirin Knm",
+          "rating": 5,
+          "contributor_id": "105093937640811289502",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJVGb49uNugDFhGfXZPHtUCCvn9ronBsdMmBVsynJUct9wBwA=s120-c-rp-mo-ba12-br100",
+          "description": "Have been coming here forever. Trustable staff! I always feel like I'm in good hands and Dr Shirzadnia has been my dentist for almost 20 years. Sneha is one of the hygienists and she was amazing today. But the whole team is fabulous.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toa2RHSktWaTB0U0hkb1RtUkRUM1ZsUldGdGQyYxAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOkhkdGJKVi0tSHdoTmRDT3VlRWFtd2c%7C%7C?hl=en",
+          "date": "a week ago",
+          "date_iso8601": "2026-06-11T20:04:22+00:00"
+        },
+        {
+          "username": "Kristen Kane",
+          "rating": 5,
+          "contributor_id": "104252837685037433059",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVc5n53n31SvHnx7_ZIFPB6EoxNhmNC_-ehfIYU1RtY3q9o187I=s120-c-rp-mo-br100",
+          "description": "Meet your new dentist - Doctor Shirzadnia\n\nI have been a patient of Doctor Shirzadnia at Herald Square Dental & The Denture Center since 2022.  I initially went there for a consultation to discuss how I might be able to avoid getting dentures on my bottom teeth. I was also curious about getting braces for the top teeth.  That day, Doctor Shirzadnia and I came up with plan that I would get braces and implants.  This was going to be a process because of how my dental insurance worked and my how much I put into my FSA account.  I was really nervous to go to that initial appointment because \u2026TEETH!   Doctor Shirzadnia made me feel better from the start.  He really listened to me and answered all my many questions.   His knowledge, expertise and confidence calmed me, and I knew I was at the right place.  Braces came first.  I would come in to have them tightened about once a month and every time I arrived the entire office staff was super friendly.  I really look forward to seeing Fran, Ro and Stephanie when I walk in every month.\n\nI was going to have the braces for a while until I got my left bottom implants. It is a bridge, and he had to pull a painful tooth so there were a few stages that I went thru with the healing, bone fusion abutments and implants.   I had many questions throughout the whole process and whenever I had a question Doctor Shirzadnia would stop to listen to my question and then explain the answer in a way I understood and he would always make sure that I was comfortable and satisfied with his explanations/answers.   The whole time that I was going thru my treatment, Nicole, the Patient Care Coordinator was working with my insurance company to be sure everything that could be covered, would be covered.  Nicole is super patient and understands that billing and insurance can be confusing to the patient. She will sit with me and go over every line of the patient ledger, benefits claims and anything else related to billing until I am sure I understand.  There were a few times when I thought that the insurance was not going to cover something and she talked me off a ledge because it was covered.\nI can\u2019t leave out the dental assistants Ermal, George and Jeab. They are wonderful and work very well with Doctor Shirzadnia.  Eileen is the Dental Hygienist and I get 3 cleanings every year because of the braces. She is thorough and gentle.\n\nSo, in review I would like to recommend Doctor Shirzadnia and the entire team at Herald Square Dental & The Denture Center for all of your dental needs.  If you are younger than 55 (my age) don\u2019t let the words \u201cdenture center\u201d keep you from going in to see them.  They do ALL the dental \u201cstuff\u201d.    My teeth look amazing. The top braces came off today.  I can eat nuts and crunchy things now.  My life is exponentially better than it was before I walked in that day in 2022.   I have more confidence when I smile. My quality of life without tooth pain is a middle-aged person\u2019s dream come true.  Make the appointment you have been putting off. Go see Dr. Shirzadnia and the Team at Herald Square Dental & The Denture Center!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s4eVVIWmFaemcyUVZBMVJrUlVNbGRSVjFSdFlWRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOk8yUHZaZzg2QVA1RkRUMldRV1RtYVE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-27T20:50:07+00:00"
+        },
+        {
+          "username": "Rita Peters",
+          "rating": 5,
+          "contributor_id": "116761459576298413355",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJxHTCOzTiORWJwmASna9c5Cz9k9Um5iurRcbd29eaDMFVCNyc=s120-c-rp-mo-br100",
+          "description": "Dr. Yam and Amir great! Nicole very efficient and friendly. Front desk neat and orderly. The atmosphere overall was very calming. I was anxious and very unsettled when I arrived for my procedure ,however, because of the staff's professionalism and care I was soon able to relax. I had to come back a week later b/c of physics-scheduling was a breeze and my concerns were immediately resolved.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2prdFVWRXdZWEpOTUdacWRWRmFjVXR1V25rNFgxRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOjktUVEwYXJNMGZqdVFacUtuWnk4X1E%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-04T16:12:49+00:00"
+        },
+        {
+          "username": "John Mascola",
+          "rating": 5,
+          "contributor_id": "112895695671115191998",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLmBFihzjtC-qtDivITC31UwhsbZJz3r0aAlAf1bl_nDMYIbg=s120-c-rp-mo-br100",
+          "description": "I went to the dentist on Wednesday, Feb 4, 2026 for a cleaning and examination.  I have been going to Dr Pasch's practice for almost 30 years now, and the excellent dental care I've always received dates back to the 34th Street location.\n\nYesterday's visit was somewhat routine:  x-rays, a cleaning (that included some scaling and scraping) and then an examination afterwards by Dr Yam.\n\nThe dental hygienist was Madeline.  She was very carful and precise with the x-rays and then the cleaning.  Madeline truly has a light touch!\n\nDr.Yam then did the physical examination afterwards.  He has always been thorough and detailed, with clear explanations provided.  I think that Dr Yam is following in the footsteps of Dr Pasch, a true giant in the field.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5NE5UYzFVVEJDTlVOT1JHWlhRUzFuVkhSRVIwRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOl94NTc1UTBCNUNORGZXQS1nVHRER0E%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-05T13:47:59+00:00"
+        },
+        {
+          "username": "Shawn Chadwick",
+          "rating": 5,
+          "contributor_id": "102411434414897174947",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKQVvIRLYEZ7CCR7xKeTKUDwVt11TnrXxf_YoM8n8GLFIevwg=s120-c-rp-mo-br100",
+          "description": "Dr. Vinciguerra did an excellent job on my teeth.  . He made my crown and  completed the crown restoration all in 1 visit. He did my upper left bridgework in 2 visits. He pulled 2 wisdom teeth in 1 visit with very little pain. He completed a lot of work on my teeth with very little time with great results. I highly recommend Dr. Vinciguerra he is the best that ever did it with a Superb Staff. Front staff are very Pleasant, Professional and Courteous all the times. Now I am happy, Great Job! \u2b50\u2b50\u2b50\u2b50\u2b50",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tvM1ZEaEZjRzlwTUd4RFFWTjJXbUZZZGpWNWNVRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOko3VDhFcG9pMGxDQVN2WmFYdjV5cUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T16:40:38+00:00"
+        },
+        {
+          "username": "Mari",
+          "rating": 2,
+          "contributor_id": "108306996633040309947",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK-dijIn68eR3fanBRA6l3rz_6CVk_M974pnjVExh8YKgLg=s120-c-rp-mo-br100",
+          "description": "I came to this establishment a couple of years ago when my front tooth crown that I got as a teenager fell out. The first time I went was not bad they made the flipper and that was that. I paid about $600. Today I came in because I need a replacement after having a lot of dental work done in the past year. The woman on the phone told me that the price has now almost doubled, to over $1000, but to come in and speak with the doctor because they can possibly help me out. So, my appointment was for 930am. I arrived at 935 and let them know I was there. After almost an hour of waiting and watching everyone else get called I finally asked when I would be seen since my appointment had well passed. They then realized that they never actually even checked me in and that they would be with me in a few. They couldn\u2019t find the forms I filled out online. Then left me there for another 30 mins. At this point I\u2019m getting frustrated so I asked when I would be seen because it\u2019s been an hour and a half. The woman then tries to accuse me of coming in late anyway because she thought I arrived after 10 when I did not. I told them to check their cameras because I was indeed there at 935. Then the doctor finally calls me in just to tell me there\u2019s nothing they can do as far as the price so it was just a big fat waste of my time. Unorganized and unhelpful.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25rM2RtMURaWFJsWjBGa00wdHBZMEZUU2xkM1VWRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOnk3dm1DZXRlZ0FkM0tpY0FTSld3UVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T15:12:05+00:00"
+        },
+        {
+          "username": "Isaiah Alford",
+          "rating": 5,
+          "contributor_id": "108328625870947744281",
+          "user_review_count": 12,
+          "user_photo_count": 10,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU4znyj3ZUdu8NPt1b8nOQ9oNOhuxHu8FbolsWIeZfVOirgVm8=s120-c-rp-mo-ba12-br100",
+          "description": "Sneha has been phenomenal in my dental cleaning process. I had such a great experience with Sneha for my dental cleaning that I felt compelled to share. From the moment I walked in, she created a calm and welcoming environment that immediately put me at ease. Dental visits can sometimes feel stressful, but Sneha has a way of making the entire process feel smooth and comfortable.\n\nWhat really stood out to me was how gentle and thorough she was throughout the cleaning. She took her time, explained each step clearly, and made sure I was comfortable the entire time. There was no rushing, no discomfort\u2014just a very professional and attentive approach that made a huge difference.\n\nThe cleaning itself was surprisingly easy and completely stress-free. Sneha\u2019s technique is excellent, and I could tell she genuinely cares about her patients\u2019 comfort and dental health. She also shared helpful tips for the future without overwhelming me, which I really appreciated, so if you\u2019re someone who gets anxious about dental appointments or just wants a reliable, skilled professional, I highly recommend Sneha. She made what is usually a routine appointment into a genuinely positive experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201WWNHZHhYMUozYlRrd1JuQnlYMkZZZDE5ZmQxRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOm5YcGdxX1J3bTkwRnByX2FYd19fd1E%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-19T16:07:19+00:00"
+        },
+        {
+          "username": "Rhonda Echavarria",
+          "rating": 5,
+          "contributor_id": "102679925674011181874",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUwXZMPzTf0i85B9EV9qquSk7Tb8cC6D2-Bq6CNSXzUENq9__0=s120-c-rp-mo-br100",
+          "description": "I had a wonderful experience @ Herald Square Dental. Madeline, the Hygienist & X-ray Tech was gentle & kind. Amer, who consulted me re: my treatment plan, was patient & understanding. Dr Yam was terrific. He took the time to explain each procedure & why they were needed. He was pleasant & professional. The rest of the staff was also kind & helpful. I highly recommend this practice to everyone. Herald Square Dental delivers high quality service @ all levels.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWdE9XRk5XRUZFTUdGbWNFc3dPVFJYVEdOeFNVRRAB!2m1!1s0x0:0x8256b738864992ac!3m1!1s2@1:CAIQACodChtycF9oOjVtOWFNWEFEMGFmcEswOTRXTGNxSUE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-21T23:02:02+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "The Denture Center",
+            "data_id": "0x0:0x5190e425cd82b1d",
+            "data_cid": "367340522795707165",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5190e425cd82b1d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5190e425cd82b1d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7520003,
+              "longitude": -73.9911786
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5190e425cd82b1d%218m2%213d40.7520003%214d-73.9911786&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 76,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFAkqtu4eORyRjaZ_-JVajtc0lw2cnX203zBi6BPOX-poPB-u8aaNTrcVZEin0BCJzZ3W2WrGoJCAkOov-U9oERPgFqq5gdoDN1hFsjUt_RezkQhgy3AJeLMDCa1A3QR1UkYRR7=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Denture care center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "My NYC Dentist - 34th Street Dental",
+            "data_id": "0x0:0x1d9f26a6aa6358a8",
+            "data_cid": "2134467245661968552",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1d9f26a6aa6358a8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1d9f26a6aa6358a8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7522776,
+              "longitude": -73.991056
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1d9f26a6aa6358a8%218m2%213d40.7522776%214d-73.991056&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 497,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHH3e8ZKiEynNYyXoytiI4MPrPY2QLrv9LwShejG1WjIdacl2pVyte-O3htwReZXXzJLSsdtBglXe7FyI6FCvzNNB2AhkDHZuRlKvcgBOYP-puleJfEXYkkjqQMFvoBrgwQYTWk194oBmrh=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants periodontist",
+              "Periodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Manhattan Smiles Dental",
+            "data_id": "0x0:0xda82cf2532153eb1",
+            "data_cid": "15745375005901668017",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xda82cf2532153eb1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xda82cf2532153eb1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.747437399999995,
+              "longitude": -73.9867093
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xda82cf2532153eb1%218m2%213d40.747437399999995%214d-73.9867093&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 40,
+            "thumbnail": "https://www.google.com/maps/vt/data=QL0TsURr2uNGJVoAR8IoJ6QpEDqtBm_r1vdSIO9a8r-Hqffs8prYV13XDyB_cC4QNZTpdUoawcoNFDSSE87bEeqhD2hMwyqcE7jArgNE8ob0_iLzWimR9XS36KifCn_diouv4fRirV40TF9AOFVyBPeFgznMOFMb",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Core Smiles",
+            "data_id": "0x0:0xb31d97d268abed68",
+            "data_cid": "12906639037068733800",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb31d97d268abed68&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb31d97d268abed68&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.74551350000001,
+              "longitude": -73.9884488
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb31d97d268abed68%218m2%213d40.74551350000001%214d-73.9884488&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 159,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8qKeiHOvoFAS4HiQ78hpJBowmqpfyD78H2Y-5KZherLQ21_2SyawSPf7vsDM3a0y06Dg8u4SfuZE8KeuHKLmZ1EE7j-C474EUetOMB4S2eG_lYR7C0Rl3bWueMYFJ6aeCcWBmIg=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dental implants periodontist",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Prosthodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Manhattan Dental Studio",
+            "data_id": "0x0:0xe6dc2f0e8c3e03f7",
+            "data_cid": "16635222863128691703",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe6dc2f0e8c3e03f7&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe6dc2f0e8c3e03f7&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7488002,
+              "longitude": -73.98473570000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe6dc2f0e8c3e03f7%218m2%213d40.7488002%214d-73.98473570000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 145,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGt6s8mbXDhtElnhkUAqAwlXpP7QTLhyGZjapUkTfUUQM9G2ZxKYomfaueuVrKQnDKINUN5hYf2Rhzx_WtJFEcva5bkc_I1k9fdaUSzTW-y2vy2kElH9JwbdIeRTePS4wGVWes=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjwKOiI2SGVyYWxkIFNxdWFyZSBEZW50YWwgJiBUaGUgRGVudHVyZSBDZW50ZXIgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjwKOiI2SGVyYWxkIFNxdWFyZSBEZW50YWwgJiBUaGUgRGVudHVyZSBDZW50ZXIgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

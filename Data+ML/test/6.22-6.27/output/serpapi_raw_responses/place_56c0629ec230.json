@@ -1,0 +1,397 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1be12eb1458ace33243",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/FmQvsX8Uw71_RCBdOqzZiQ/6a3ac1be12eb1458ace33243.json",
+    "created_at": "2026-06-23 17:26:22 UTC",
+    "processed_at": "2026-06-23 17:26:22 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258fc162f2ab1:0x221f98c3fbd3ebd!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/FmQvsX8Uw71_RCBdOqzZiQ/6a3ac1be12eb1458ace33243.html",
+    "prettify_html_file": "https://serpapi.com/searches/FmQvsX8Uw71_RCBdOqzZiQ/6a3ac1be12eb1458ace33243.prettify",
+    "total_time_taken": 1.96
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJsSovFvxYwokRvT69P4z5IQI",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Midtown Dental Group Upper East Side",
+    "place_id": "ChIJsSovFvxYwokRvT69P4z5IQI",
+    "data_id": "0x89c258fc162f2ab1:0x221f98c3fbd3ebd",
+    "data_cid": "153678243067412157",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fc162f2ab1%3A0x221f98c3fbd3ebd&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fc162f2ab1%3A0x221f98c3fbd3ebd&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.763742,
+      "longitude": -73.9701959
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJsSovFvxYwokRvT69P4z5IQI",
+    "provider_id": "/g/1v8gcz4f",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAExqt-QHlFd2L_CAfA12TWPdy16Mf_Z7zxvLPEsRzBbtrrs9UOIDui-4kidi9PmOxUzA9P1JNDikmInqBSIGsJAah1t6jlA29dQvl5nG8Fx6_Yxx4pQ2wJ8-fYN6Kjo2v5qou_PrIw6Vtei=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/lw3HOnicHcRLcoIwAADQE0VIqqk400X8FqoY_I7dMC3fSEiABIhcsuvexhnf4v3_5VpXamZZPH8bZVJmPGlV0kRS6EToUSRLK6sUiBRQFqF-UJCVqTUIPvk6RttwQVIC0elK4wfEuzT8fh9Mt6UrdRjmv7pplHPeu8uWgXHBYubQcm_OA3Eo9PwlK0pX1POju1Ee-cmhxndOkBMHHZ-IzXRtcHgzZlwFqPemIL35-OsuUTepZRvSxu3xRSfso4e2bYP8dQTEE5E8R3U",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 7
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 5
+      },
+      {
+        "stars": 4,
+        "amount": 6
+      },
+      {
+        "stars": 5,
+        "amount": 488
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 508,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Emergency dental service",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "emergency_dental_service",
+      "teeth_whitening_service"
+    ],
+    "menu": {
+      "link": "https://midtowndentalgroup.com/services/",
+      "source": "midtowndentalgroup.com"
+    },
+    "book_online": "https://nexhealth.info/book/appt/midtowndentalgroup?lid=324815&rwg_token=AE37R_ivQxD4-C4xwqYUZCe7_JPj3hv95EjhO-le1rUt80MbSisQbO7qITmI-IEUY7s9GgPQ9ru5vV_YuZirDbaAx6bPr5t3Aw%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "30 E 60th St Ste 2402, New York, NY 10022",
+    "country": "United States",
+    "booking_link": "https://app.nexhealth.com/appt/midtowndentalgroup?lid=324815",
+    "website": "https://midtowndentalgroup.com/locations/uppereastside/",
+    "phone": "(212) 588-1809",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "Q27H+FW New York",
+    "hours": [
+      {
+        "tuesday": "8:30 AM\u20135 PM"
+      },
+      {
+        "wednesday": "8:30 AM\u20135 PM"
+      },
+      {
+        "thursday": "8:30 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "9 AM\u20134 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 10 weeks ago",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAExqt-QHlFd2L_CAfA12TWPdy16Mf_Z7zxvLPEsRzBbtrrs9UOIDui-4kidi9PmOxUzA9P1JNDikmInqBSIGsJAah1t6jlA29dQvl5nG8Fx6_Yxx4pQ2wJ8-fYN6Kjo2v5qou_PrIw6Vtei=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/lw3HOnicHcRLcoIwAADQE0VIqqk400X8FqoY_I7dMC3fSEiABIhcsuvexhnf4v3_5VpXamZZPH8bZVJmPGlV0kRS6EToUSRLK6sUiBRQFqF-UJCVqTUIPvk6RttwQVIC0elK4wfEuzT8fh9Mt6UrdRjmv7pplHPeu8uWgXHBYubQcm_OA3Eo9PwlK0pX1POju1Ee-cmhxndOkBMHHZ-IzXRtcHgzZlwFqPemIL35-OsuUTepZRvSxu3xRSfso4e2bYP8dQTEE5E8R3U"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGs0ZtL8oNw8Z_qwtCiSBHe7B4r6HiBddYK7s9yjqq4FlHTBpsPMO147GZFKpam9PxacVamK1ZRZwPsoc0E2Ev0oM3WKxLZk7K3LkWIY8dPoCIR8ikBpPcdW8ensQrLAK82KnNN=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/kWG-znicHcRNjoIwGADQEyFFiNRJXFCjYopM_ckQupmQ0gACbeGroif0DN7GxLd471dtrYEf1-1qf1ZpXXXyBnIUWlmp7Ezo3q0MOAIccCOWHttoB4jbBOt0wvx_mOy6OZNYhiQYF3FDyjKnISyf12EItl18IQbY4dcLwh3fUlP0S_YoxF_RU4-f-MRAC7SZb-5IH_yMPhLehtRP2myf45Lp9f6Em5YYJsoMSwXHMYkonlOVpqvJQwg59XfhqA8vwUPN"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=rC0XLqbUy71v4kA0GvGXGg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=193.21877&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/PMLZ5XicHc1LCsIwFADA22RnfhbaCkHERTduhe5KGmPyMG1i80ztdbyVtxGcC8z34xFTPjCWcbEWC9g1wduGvEuauhhdsDpBpiZOrAiG_jWNs4ZwTHqOcFPLmfeX53jdalGqx4l3pes7R8w4mAB2RjXplIdcKGqDECx1KZNVSVkRr2TbkE2vSrR7KkVT1yQBGq84-T_3WJTg_AfUZDnQ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"This is my new place now, good vibes, friendly staff and I feel comfortable.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKNATGctefaOv91QUwGzqL5dwqbJJxZnP0a4FzkE3wnKdiXe5M=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The service at Harlem Dental Associates is exceptional from start to finish.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVzMjF7hI9Qbd-HuSITcyWId7M3L3LgBveWT5fmrkB8a4CTTveg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Office is peaceful and nice, price is super affordable at midtown area.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL7Ea68Ppu9Unhfx-RptFh-xdqP-SBmoxix1DSmZ24wRiassw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Elsa Alfaro",
+          "rating": 5,
+          "contributor_id": "106711342858459012500",
+          "user_review_count": 1,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKD1jtwG6sGhpACB8Wecnr2d_ZRfvPMesZEsyuBFI9s_LGL-A=s120-c-rp-mo-br100",
+          "description": "This place is awesome! I went to Dr Mohan for my appointment. I was greeted as I walked in was seen within 15 minutes. The dental hygienist answered all my questions and Dr Mohan came in to checked her work and examined my teeth. The dental hygienist was amazing. I would recommend this dentist to my friends and family. Very professional and clean place. Accept mostly all insurances. I recommend this place to you if you are looking dentist. See card below.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tsQlVVOXBUM2x2V0hKT01sOW5UMmRYWTNoTmVVRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOklBUU9pT3lvWHJOMl9nT2dXY3hNeUE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1u9tU8dBXSRWzvNgiD5NFA8PXkQV4ryUAlT6Xb5s-fVbm1kbc9snSITio3kKMwqfGedGNUp_OGt-mBarXE9Eb7LloKAUG2XCDLQIeqZaeQJCsBhpPXcCk1O3FOipAioYK1c-O0IJykaXtV=k-no"
+            }
+          ],
+          "date": "6 months ago",
+          "date_iso8601": "2025-11-26T13:48:13+00:00"
+        },
+        {
+          "username": "Edward Grazi",
+          "rating": 3,
+          "contributor_id": "108765469671736236727",
+          "user_review_count": 17,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJPHqUd2z9jW1gjApvhd900PpO6YYrYT3ABrNImyhDVQGy6Jg=s120-c-rp-mo-ba12-br100",
+          "description": "Dentistry is fine. They do excellent work.\nFront desk resembles a cavity.\nCavity needs to be \" drilled out\" and filled with different staff.\nPrices are outrageous\nRecently left Delta Dental.\nAn amout computed in secret is due before they let you out the door. When payment is received from the insurance co, as the out of network benefit, they want to get that too.No receipt, no explanations of anything done. money hungry individuals work that way.\nThe less they share with the patient happier they are.\nThey have seen the last of me.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kxb1NVdFNOM2wxUmxseVkzSklaWGRIWTNvNE5GRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOi1oSUtSN3l1RllyY3JIZXdHY3o4NFE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T20:14:35+00:00"
+        },
+        {
+          "username": "Paul Jeruchimowitz",
+          "rating": 5,
+          "contributor_id": "102560470383523795561",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWM43XJqZeVZ4w2F3J0yq8eMQcwFz6Z9MvTxXI8BaeGiOfCiaa9=s120-c-rp-mo-br100",
+          "description": "Really excellent dental experience.  I had an emergency with an implant that I had done at a different office. The dentist and dental assistant were excellent, connected to my records at the other office and very quickly fixed the issue without any pain and double checked everything related to fit, bite, comfort, etc. Everything was very smooth from numbing to tools/devices, filling. Seems like at the dentist there is always something that requires a second or third attempt but this time everything was done right the first time quickly and efficiently. I recommend both the dentist and dental assistant that helped me today.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WR1RuVmFNVmh3VldwWVN6TkhSM05VWDBseFNsRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOnVGTnVaMVhwVWpYSzNHR3NUX0lxSlE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-11T01:59:49+00:00"
+        },
+        {
+          "username": "Helene Schneider",
+          "rating": 5,
+          "contributor_id": "117997658019843608907",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXSt0Ea59ohJFeDppMTyuqpGr2YIJLecpN9Lm8F8jgsAVBfVjH-=s120-c-rp-mo-br100",
+          "description": "This was my first time at Midtown Dental Group and I had a lovely experience. Firstly, the facility is beautiful and modern. The hygienist was super kind and easy going. My dentist was also incredibly personable, patient-centered and took the time to explain things to me in a way that was both transparent and solution-oriented. Very happy to have Midtown Dental Group as my go-to dentist.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGb05GRllPVlpXVFhaSVRYcEpNV3BtUjFCcllsRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOkFoNFFYOVZWTXZITXpJMWpmR1BrYlE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-27T23:44:32+00:00"
+        },
+        {
+          "username": "John Fleming",
+          "rating": 5,
+          "contributor_id": "103445191381050026208",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWg2XcRb-GQsvKS38GonZyzVinuQj2rtggBqGNTzVJqww6YcyNg=s120-c-rp-mo-br100",
+          "description": "My visit was for my semi-annual cleaning.  As usual, Catherine did an outstanding job. Dr Gross did his very fine review afterwards.\n\nThis was my first in the new location. The prior office seemed more spacious, both the waiting and work areas. My appointment was 8AM.  Hopefully later appointments will not be standing room only.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SNldsQTNZWFUwWDFReFYyRmlWM2hsVms5dVdGRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOmR6WlA3YXU0X1QxV2FiV3hlVk9uWFE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-04T11:33:16+00:00"
+        },
+        {
+          "username": "David Barton",
+          "rating": 5,
+          "contributor_id": "109865503358704968177",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIiDRFxzWlDvJGlOXfApksYR6PikpWdNxDx1mrnwG8lRQ5acw=s120-c-rp-mo-br100",
+          "description": "I had a truly excellent experience with Dr. Dylan Satterson. The work involved extractions and dental procedures that can easily be unpleasant, but the entire process was handled with remarkable care and professionalism. The experience was as painless and comfortable as one could possibly hope for.\nThe office staff was welcoming, attentive, and made me feel well taken care of from start to finish. Dr. Satterson himself has an exceptionally gentle touch, explained things clearly, and followed up far beyond what I expected. I was impressed not only with the results, but with how smooth and reassuring the entire experience was.\nHighly recommended.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1dVNuRlFkbVowVUdVdFdWcHRObFUzU0daQmFsRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOk5uSnFQdmZ0UGUtWVptNlU3SGZBalE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-15T18:03:21+00:00"
+        },
+        {
+          "username": "ena",
+          "rating": 5,
+          "contributor_id": "112122087196158496176",
+          "user_review_count": 17,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWZ0DeRpOBl97Dt55pv5ko27TAUx8C57DLsuMtkE1BwnW9Cmlv3=s120-c-rp-mo-ba12-br100",
+          "description": "i came here to get a fill in after not going to the dentist for 2 years (as you can imagine i was nervous haha) but doctor Mohan and her dental assistants Mohammed (i only heard his name in passing so excuse me if im wrong!) and Jose who took over for Mohammed were so kind and eased my worries. the fill in feels great and im confident it will stay in. Dr Mohan put a lot of care into my treatment after telling her my fill ins always come out and for that i am grateful. i am scheduled back for my second fill in and cleaning and im looking forward to it. i highly recommend coming here!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25SSFVHaExjbXAzVEMxVVEybE9USGN4ZVU1ck5GRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOnRHUGhLcmp3TC1UQ2lOTHcxeU5rNFE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-04T01:26:14+00:00"
+        },
+        {
+          "username": "Natasha Moore",
+          "rating": 5,
+          "contributor_id": "108322786386370079319",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVzMjF7hI9Qbd-HuSITcyWId7M3L3LgBveWT5fmrkB8a4CTTveg=s120-c-rp-mo-br100",
+          "description": "The service at Harlem Dental Associates is exceptional from start to finish. Dr. Riordan brings a rare combination of warmth, thoughtfulness, and outstanding technical expertise, leaving you feeling completely at ease and genuinely well cared for. The experience is further enhanced by her team, who are consistently professional, welcoming, and a pleasure to interact with. I highly recommend Harlem Dental Associates.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1a01EQjJjbko2VG1KbmVVeGpaMHg1WWtoemRsRRAB!2m1!1s0x0:0x221f98c3fbd3ebd!3m1!1s2@1:CAIQACodChtycF9oOk5kMDB2cnJ6TmJneUxjZ0x5YkhzdlE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-31T18:31:59+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "New York Dental Office",
+            "data_id": "0x0:0x9c508f23a2d16155",
+            "data_cid": "11263660051271868757",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9c508f23a2d16155&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9c508f23a2d16155&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7633351,
+              "longitude": -73.9627181
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9c508f23a2d16155%218m2%213d40.7633351%214d-73.9627181&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 469,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHCSKQ-4-77j-5nPJ8QRVa6WLiguyP_jdnUXngYRSq-lW6HRVL9b3264UOzKYZBTOsrs6UB6xPnvTXl1qpylM1Q-Hjzs-pYOET1wWFEYsU0b7qDvnc1D66WtXPQzFADMs19-Ruu=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants periodontist",
+              "Oral surgeon",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "NYC Smile Spa",
+            "data_id": "0x0:0xb6cff2ce09f38f2e",
+            "data_cid": "13173014401826131758",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7637066,
+              "longitude": -73.970242
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb6cff2ce09f38f2e%218m2%213d40.7637066%214d-73.970242&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 396,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHo3nVn9pbPGrJ3lgGT0iq1jpvwBlmq-5KGVwUSOFuS_4PAjpBIn067_Fz-HqHaOzITcpFdD-G3zGJpR1sttCQO0ixLB4isA2BEEbq9G3fywtqN28FMC4H6GnN1XYEKIMhv9fBNOg=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Endodontist",
+              "Oral surgeon",
+              "Orthodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Nuance Dental Studio",
+            "data_id": "0x0:0x33c68ff81c007c12",
+            "data_cid": "3730827637107489810",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x33c68ff81c007c12&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x33c68ff81c007c12&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.763694099999995,
+              "longitude": -73.9702406
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x33c68ff81c007c12%218m2%213d40.763694099999995%214d-73.9702406&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 168,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGa0mAXDfqfnHyAPMHXaIDmJwK3E-Kpf_phAUcnHOVdHrfgQpMnN4Ss8VxNVcqyVWjEv56U35g0reXuUkvfoHjriqoRgxRFav4HXagHejLniIJtvgBlOLgE6rSvWR28QUlF4SRo=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Oral and maxillofacial surgeon",
+              "Pediatric dentist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "New York DMD",
+            "data_id": "0x0:0xa537eb2e7440b1b3",
+            "data_cid": "11905242724728615347",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa537eb2e7440b1b3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa537eb2e7440b1b3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.764044999999996,
+              "longitude": -73.96802199999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa537eb2e7440b1b3%218m2%213d40.764044999999996%214d-73.96802199999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 275,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHaUcnhnnmJMP6It319NqrvogVe3_77igM5f21JR5h2okRj39Cp2errJpy1sgI1S1z4GoB8hAEvMytYAhQwOASxnUbHuelPyT45Aoi8CwmW1kHFV4cfCdWZezwGTm18W4afEaid=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Oral surgeon"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjcKNSIxTWlkdG93biBEZW50YWwgR3JvdXAgVXBwZXIgRWFzdCBTaWRlIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjcKNSIxTWlkdG93biBEZW50YWwgR3JvdXAgVXBwZXIgRWFzdCBTaWRlIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

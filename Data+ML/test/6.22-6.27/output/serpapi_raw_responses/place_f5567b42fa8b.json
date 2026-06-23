@@ -1,0 +1,506 @@
+{
+  "search_metadata": {
+    "id": "6a3ac207cfa2309f8a784d73",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/9ONg3ijKPm1byDtwaJJoKg/6a3ac207cfa2309f8a784d73.json",
+    "created_at": "2026-06-23 17:27:35 UTC",
+    "processed_at": "2026-06-23 17:27:35 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a115e46d915:0xf52cb27f5b311a25!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/9ONg3ijKPm1byDtwaJJoKg/6a3ac207cfa2309f8a784d73.html",
+    "prettify_html_file": "https://serpapi.com/searches/9ONg3ijKPm1byDtwaJJoKg/6a3ac207cfa2309f8a784d73.prettify",
+    "total_time_taken": 0.97
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJFdlGXhFawokRJRoxW3-yLPU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "City Dental Group NYC",
+    "place_id": "ChIJFdlGXhFawokRJRoxW3-yLPU",
+    "data_id": "0x89c25a115e46d915:0xf52cb27f5b311a25",
+    "data_cid": "17666691698328148517",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a115e46d915%3A0xf52cb27f5b311a25&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a115e46d915%3A0xf52cb27f5b311a25&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7053407,
+      "longitude": -74.0138576
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFdlGXhFawokRJRoxW3-yLPU",
+    "provider_id": "/g/1vrqbkbt",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHN3L-PdnvyFeQ5ReOb2nVILOwN45XN8Z-kuQjfOTsVG5pBg294BZbZewbvMGS1Wq8VADh7dA24RR2QL_2Ap0MIIgt0KhPOwUdrSuVnuBb5Q1ZYe_TGwjmuzdW7JcgXms7ItBa9=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/kYLFjXicHcRRboIwAADQExVKhYBL_ChZRDYEig6UHyOla6NSmG1t9II7g7cx8X2857_QelIfrnsRM4ePI78wo9iVjlIzqR06Di6fFKAKKBeXOTnjVT7LQNnL233JSFCxokOyTrPC5n6wy6MWnA05_RZbVSfBFHM09-O2a5ntbutk4zV_UY0_Rdhj5FcVItkB4Qmu05Rr-C3Kwv70142ppYm7gHjtnh22iT0N5tE34Rflu0GFqY6P84X1IIRAvKdAvgDLpkOB",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 14
+      },
+      {
+        "stars": 2,
+        "amount": 7
+      },
+      {
+        "stars": 3,
+        "amount": 2
+      },
+      {
+        "stars": 4,
+        "amount": 11
+      },
+      {
+        "stars": 5,
+        "amount": 279
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 313,
+    "type": [
+      "Dentist",
+      "Dental clinic",
+      "Dental hygienist",
+      "Dental implants provider",
+      "Emergency dental service",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dentist",
+      "dental_clinic",
+      "dental_hygienist",
+      "dental_implants_provider",
+      "emergency_dental_service",
+      "teeth_whitening_service"
+    ],
+    "menu": {
+      "link": "https://citydentalnyc.com/services/?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-menu",
+      "source": "citydentalnyc.com"
+    },
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "11 Broadway Lobby 4, New York, NY 10004",
+    "country": "United States",
+    "booking_link": "https://citydentalnyc.com/contact-us/?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-appt",
+    "website": "https://citydentalnyc.com/?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-listing",
+    "phone": "(212) 425-0505",
+    "open_state": "Open \u00b7 Closes 5:30 PM",
+    "plus_code": "PX4P+4F New York",
+    "hours": [
+      {
+        "tuesday": "9:30 AM\u20135:30 PM"
+      },
+      {
+        "wednesday": "9:30 AM\u20135:30 PM"
+      },
+      {
+        "thursday": "9:30 AM\u20135:30 PM"
+      },
+      {
+        "friday": "9:30 AM\u20134 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9:30 AM\u20135:30 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a115e46d915%3A0xf52cb27f5b311a25&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMBXYkL4NQoaGKP2nXZvGcEtyofuRpuHjLZnOON=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/dental-crowns-lower-manhattan-nyc/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEIX08_aG2Yj2Ew&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "At City Dental Group NYC, dental crowns help rebuild teeth that are weakened, cracked, worn, or damaged by decay. As a caring Family Dentist in Lower Manhattan NYC, our team designs crowns that restore strength, function, and a natural looking appearance.\n\nConveniently located in Lower Manhattan NYC, we focus on durable restorations and comfortable treatment. Patients trust our Family Dentist in Lower Manhattan NYC for dental crowns that protect teeth and restore confident smiles.",
+        "date": "1 hour ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOkzdA73_e84qpJQYlMQVkV_z5OEjw-e5nKMdN3=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/fluoride-treatments/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEOjKpc2yvbre6QE&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "At City Dental Group NYC, fluoride treatment helps strengthen enamel and protect teeth from cavities over time. As an experienced Family Dentist in Lower Manhattan NYC, our team provides quick, safe fluoride applications to support stronger teeth and better preventive care.\n\nServing Lower Manhattan NYC patients, we focus on long term oral health through simple, effective treatments. Trust our Family Dentist in Lower Manhattan NYC for fluoride care that helps reduce decay risk and keeps your smile protected.",
+        "date": "6 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOFSZi5Aev-NKlqIkVsHkL7uTSzWiC-K2JWO2Bo=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/teeth-whitening-lower-manhattan-nyc/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKENaru-3th5yZdw&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "At City Dental Group NYC, we offer affordable teeth whitening services to help brighten stains caused by coffee, tea, wine, aging, and daily habits. As a reliable Family Dentist in Lower Manhattan NYC, our team provides safe whitening options designed for comfort and noticeable results.\n\nLocated in Lower Manhattan NYC, we tailor whitening care to your smile goals and sensitivity needs. Choose our Family Dentist in Lower Manhattan NYC for a cleaner, brighter, and more confident smile.",
+        "date": "Jun 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPaP0STIg50UYZQrI_nEaWRf8TGif0elepp2Qq8=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEI698dGjqp_4Aw&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "At City Dental Group NYC, we provide expert gum disease treatment to help control inflammation, bleeding, infection, and early signs of periodontal issues. As a trusted Family Dentist in Lower Manhattan NYC, our team focuses on restoring gum health and protecting the teeth that support your smile.\n\nConveniently located in Lower Manhattan NYC, we create personalized treatment plans based on your needs and oral health condition. Patients choose our Family Dentist in Lower Manhattan NYC for gentle care, clear guidance, and long term periodontal support.",
+        "date": "Jun 3, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMNmT8ztFMwv4WOzsYKdMebq6Y3hY7jZxvVGATA=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/digital-x-rays/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKENjM0sz7oIzpuAE&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "At City Dental Group NYC, we use advanced dental X-rays to detect issues early and ensure accurate diagnosis. As a trusted Family Dentist in Lower Manhattan, NYC, we provide safe imaging to monitor your oral health and prevent future complications.\n\nServing Lower Manhattan patients, our team focuses on proactive care through early detection. Visit our Family Dentist in Lower Manhattan, NYC for reliable X-rays that support long-term dental health and peace of mind.",
+        "date": "May 27, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOcrjKtuOwTa9bKzczI7s2OlExCYJWIFd5MI6nS=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEMTVyZW6v8vvYQ&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "Straighten your teeth discreetly with custom clear aligners at City Dental Group NYC. As a reliable Family Dentist in Lower Manhattan, NYC, we design personalized aligner plans to improve alignment and enhance your smile.\n\nLocated in Lower Manhattan, we offer modern orthodontic solutions that fit your lifestyle. Choose our Family Dentist in Lower Manhattan, NYC for comfortable, effective teeth straightening without traditional braces.",
+        "date": "May 19, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPyF7QlXSJ6QfMs55zAGDiI3VS6Zpy9iE_yPjKe=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/tmj-treatment-dentist-lower-manhattan-nyc/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEMiPrLynyczpbA&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "If you\u2019re experiencing jaw pain or TMJ discomfort, City Dental Group NYC offers effective treatment options tailored to your needs. As an experienced Family Dentist in Lower Manhattan, NYC, we diagnose the root cause and provide personalized care to relieve pain.\n\nServing Lower Manhattan, our team focuses on restoring comfort and proper jaw function. Trust our Family Dentist in Lower Manhattan, NYC for advanced TMJ solutions that improve your daily quality of life.",
+        "date": "May 13, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNIhyK6dF8RZTBzV72_k78IYZqgGFk6RyOzONrA=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/teeth-cleaning-lower-manhattan-nyc/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEInfpsrj0qr1Jw&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "At City Dental Group NYC, we provide thorough routine teeth cleanings to keep your smile healthy and bright. As a trusted Family Dentist in Lower Manhattan, NYC, our team removes plaque and tartar while helping prevent cavities and gum disease.\n\nConveniently located in Lower Manhattan, we focus on comfortable, preventive care for every patient. Choose our Family Dentist in Lower Manhattan, NYC for regular cleanings that support long-term oral health and a confident smile.",
+        "date": "May 5, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNssV-7uKEspY70KU6gSdMaESAh4GoRTFClwjHt=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/invisalign-dentist-lower-manhattan-nyc/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEKDi64e-3PzcVw&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "Straighten your teeth discreetly with Invisalign from a trusted Family Dentist in Lower Manhattan NYC. We offer Invisalign in Lower Manhattan NYC with a free consultation to assess your smile and create a customized treatment plan.\n\nFamilies who choose a modern family dentist in Lower Manhattan NYC appreciate clear aligners that provide comfort, convenience, and effective results.",
+        "date": "Apr 28, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOcnrY0ciRmgWeEsm0-79QYqmk6cezhYfgla91x=h400-no",
+        "cta": "Book",
+        "link": "https://citydentalnyc.com/services/teeth-cleaning-lower-manhattan-nyc/",
+        "post_link": "https://search.google.com/local/posts?q=City+Dental+Group+NYC&ludocid=17666691698328148517&lpsid=CIHM0ogKEPyenbr7y8CKHw&source=sh/x/loc/post&lsig=AB86z5XOgRHiv9KbQr78UoZl9Y7e",
+        "description": "Routine visits to a skilled Family Dentist in Lower Manhattan NYC help maintain clean and healthy teeth. We provide professional dental cleaning in Lower Manhattan NYC to remove plaque, protect enamel, and support healthy gums.\n\nPatients seeking a proactive family dentist in Lower Manhattan NYC rely on preventive care to reduce cavity risk and maintain bright smiles.",
+        "date": "Apr 21, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHN3L-PdnvyFeQ5ReOb2nVILOwN45XN8Z-kuQjfOTsVG5pBg294BZbZewbvMGS1Wq8VADh7dA24RR2QL_2Ap0MIIgt0KhPOwUdrSuVnuBb5Q1ZYe_TGwjmuzdW7JcgXms7ItBa9=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/kYLFjXicHcRRboIwAADQExVKhYBL_ChZRDYEig6UHyOla6NSmG1t9II7g7cx8X2857_QelIfrnsRM4ePI78wo9iVjlIzqR06Di6fFKAKKBeXOTnjVT7LQNnL233JSFCxokOyTrPC5n6wy6MWnA05_RZbVSfBFHM09-O2a5ntbutk4zV_UY0_Rdhj5FcVItkB4Qmu05Rr-C3Kwv70142ppYm7gHjtnh22iT0N5tE34Rflu0GFqY6P84X1IIRAvKdAvgDLpkOB"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFihURDTIPXMEq6PLot_LLrgsv6n4mgJUWAL6K45T9HRXAE4ZAwO7b9g_JHO1ztLLfAdhGJT5kecpwTfPUwLHrDbfRs-ZYUot_BaZEJh6IL9sr5vYi_KE_zuXxqRDctVxafoJet9A=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/FnchInicHczBDoIgAADQLyJ1qc22DjQtJUpzWurFKSG0SlQoW3_YJ_Q3tS7v-D5vrlQn55p25dMJE4Jd6V3SgYhW0VZNiLhprJOASCA1GO32F7g68zR2kyDKtl5vR1ioEuOByYfdmjeG0iPE9sa0EsePM-iZBRzDWe2wEvmh8VIYN_DE1yixLpR0Y9JE6Yj9wa2bWIIiT3_bsio8xO0AO3KwHvm53Hjl6549-9gl6vCsGoGocuBiNHRdB_wvAe0XvnFFoA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=m-1xQXvyOn1rGJlAU2_wog&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=299.21915&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/l9g14XicHc1NCgIhGADQ27gbHaUgA4lWQZtoEbQbHDMV_PkYv5yZ63SrblO0fKv3eXtEqHvGKk7WYgt2hrDYWDvQ1JXiotUQKjUlscYZ-lcasw7xADqX8FCp48v13tZL5tPpHI83MczFETMOJgabUSUNdaiNojYYoqUOKpmVEBvilZA7suqfpKSCS74lENB41ZP_8yxN8b7_AgImOlo"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I would also like to mention the other staff at the front desk were very kind.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIwtVxA10y9ZZWBQiNwR50HHESSkcFaSK1Z649oqm0myfffYQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Manager, Victoria, discussed price with me and I found that it is reasonable.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLfufYB-8FZfC4NDWZB-bHt2EJtGJ6gES3Eu0hhSPMxISArfQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Best service best customer service..\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVBGWIWI_JhgTUJ6ib1GbA13R2OtjYPsC9CX96Mhc8zbL-lHwzJTg=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Nia Graham",
+          "rating": 5,
+          "contributor_id": "117620696223317578184",
+          "user_review_count": 6,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWzJ0ilDoVe-_ng7A13ZJ7rUKpvJN-VTAAjSeUC6EbnWQYK01dm=s120-c-rp-mo-br100",
+          "description": "Dr Papondo did an amazing job on fixing my grill I got a bridge done, caps fix, and implants. I cried with joy with the amazing results. He fixed Anybody need to get their grill fix go to Dr Papondo  he is going to hook you up in a timely matter. He's patient,  very professional and caring to his patients.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aM1VsZGlRVmxsVmtadFNsOVdVM1ZFUmtSTFVWRRAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOnZ3UldiQVllVkZtSl9WU3VERkRLUVE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn02zq4RozWeWFKCZ-tQBB2MgT5YAXqJUHz3-uSC8XwxGSnEdh2VUlS7FnG7GDFMGGuZTldm89lDtev7Q0eeYpSj4lwAAtBurCg-3bG_OH_y9FGFbQodhsXkhlhpG6_CfkAFbJnjhGYVKVss=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2Uf-zfOoSpdszdTmFoljo0CSPB7m9zNGYhaD8EdhxsK2J77A4dLvnto6Zb9zreue-AKzVRYv_yHPqiGfOGMUnSZj9j-VjuzyTMVC3pRtzerXP-QrZQognnGW49MI1G4exxLHE0fGxvvFA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2r3rAjmLXoE6uXCCFxKNzhGKtniC9_Q7-9jCy1DSvz8srsKQOR0Lx7yM4srEZyEYl5sWMYn8k6pq45dkyLRpQSTULi4B2pVNZYh-dfx8CrDF_QrXtnakPkS3Dw79Iu2Y62_VFh-m_7OGHv=k-no"
+            }
+          ],
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-13T18:51:05+00:00"
+        },
+        {
+          "username": "Gill Jagroop",
+          "rating": 5,
+          "contributor_id": "112571107405271058739",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLoWoasayStZsaYfpPPcdFbKR6a9Stx4bKtSQs9kmtzMsRSZg=s120-c-rp-mo-br100",
+          "description": "First time I went there. Everyone from the receptionist to the dentist and everyone in between was absolutely wonderful. The dentist has a lovely, gentle, but firm touch. He explained everything and gave me options. He submitted my needed claims, even though my insurance usually turns some of the items down. Just an all over great experience!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkSlJFUmtSVVZTVlVVMlIwWm5ZVmxKVUZGcVpWRRAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOjdJRERkRUVSVUU2R0ZnYVlJUFFqZVE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-09-24T23:43:17+00:00"
+        },
+        {
+          "username": "Benji Birchfield",
+          "rating": 5,
+          "contributor_id": "114965961245590751058",
+          "user_review_count": 13,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUob4EwC0AJl4UUv5el1VLPJbhFdrbUCLNfQMeaH8jxC4mDCwMj=s120-c-rp-mo-ba12-br100",
+          "description": "I had my first visit today for a cleaning. I had a great experience all around. They called me back as soon as I finished the paperwork, before my scheduled appointment time. The receptionist, tech, hygienist, and dentist were all polite, professional, concise, and efficient. I gladly scheduled follow-up appointments and will be going here for the foreseeable future.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GcWNtYzBZbGRqUm5nNE5YUTRSVkZKVjJodVFVRRAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOmFqcmc0YldjRng4NXQ4RVFJV2huQUE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-12T22:36:57+00:00"
+        },
+        {
+          "username": "Yaron Ronnie Solomon",
+          "rating": 5,
+          "contributor_id": "102466087708719081801",
+          "user_review_count": 8,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU04SBPQ4D-v-1TO3Yo8Ijohej5QXPwf1vSrNjlR24-LxXzJwkt=s120-c-rp-mo-br100",
+          "description": "I have been going to City Dental since 2021. Great experience with them. I highly recommend Dr. Atsen. He is patient, meticulous and very detailed with his explanations and work. The office is clean and modern. The staff are helpful and easy to deal with.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25neVdIYzRjbWN5TjI1YWR6QkNVVlJaU1dKWlpFRRAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOngyWHc4cmcyN25adzBCUVRZSWJZZEE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-22T20:31:55+00:00"
+        },
+        {
+          "username": "Cedric Mcwilliams",
+          "rating": 5,
+          "contributor_id": "105686406287371896035",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJPV7S-8zh6LAYuun57mmfB-bSbqcrDbW6siRQUUwPemypduw=s120-c-rp-mo-br100",
+          "description": "Great dental clinic with attentive staff and professional service. The treatment was comfortable, and everything was explained clearly, making the experience stress-free.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0d1pucGpXbEYwZGw5UmVuZHJNMnBLVTBzM1NuYxAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOktwZnpjWlF0dl9RendrM2pKU0s3Snc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-21T07:38:30+00:00"
+        },
+        {
+          "username": "Susan Colon",
+          "rating": 5,
+          "contributor_id": "108080253706436352511",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKa_837xgd2dPgWbZKy-lMSeldaVO4HHUUqd1VEkxNz8gznCA=s120-c-rp-mo-br100",
+          "description": "There are not enough words to express my heartfelt thanks to Dr. Papando!! He is beyond amazing, Professional, with a comforting heart. He always makes my experience wonderful especially after today with what was a very big procedure for me. I am grateful to the wonderful staff as well as being so professional and caring, and I want to thank all of you.\u2764\ufe0f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pONU9YcFRTMjVYVkRSWGVXNVZZMnBZZEdreWEzYxAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOjN5OXpTS25XVDRXeW5VY2pYdGkya3c%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-18T18:31:47+00:00"
+        },
+        {
+          "username": "Claudette Sacasa",
+          "rating": 5,
+          "contributor_id": "113201320676221995580",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIzNRXOAqsNn2GwHOKWrsbdzOuhPQqxA9x3HmOmm5dKp4N8aw=s120-c-rp-mo-br100",
+          "description": "Had a wonderful experience from the moment I walked in until I walked out. All the staff members I came in contact with for my care were highly professional and knowledgeable.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25kNVMxUnhOVFZDT1VOTlNrdEZZWFUyVlZselpFRRAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOnd5S1RxNTVCOUNNSktFYXU2VVlzZEE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-21T17:28:11+00:00"
+        },
+        {
+          "username": "Betsy",
+          "rating": 5,
+          "contributor_id": "104500921664380591817",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV8-4qWMWqRDPvWE96Pju_fBSMonmqFclbdufYYYJitXIk6lCgz=s120-c-rp-mo-br100",
+          "description": "I was very happy with my visit from start (making appointment) to finish- meeting with dentist- Dr Kim- he was very thorough with explaining my issues- in between- the assistant - very professional- and hygienist - gentle yet thorough- I will definitely return in 6 months for my next cleaning",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFdFZIZzBMVUZoU2xWdGMySnVkVEo2Ympac2NVRRAB!2m1!1s0x0:0xf52cb27f5b311a25!3m1!1s2@1:CAIQACodChtycF9oOkEtVHg0LUFhSlVtc2JudTJ6bjZscUE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-09T23:35:04+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Sky Dental",
+            "data_id": "0x0:0x32089f56608289a0",
+            "data_cid": "3605306695045253536",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x32089f56608289a0&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x32089f56608289a0&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7086853,
+              "longitude": -74.01154869999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x32089f56608289a0%218m2%213d40.7086853%214d-74.01154869999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 2663,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE_YS86Qx9EV6acFV_upvlPD5Tw1gPt2NROXhlV8GEY8MetecDzSUwQ_eNapgitCNA38SZY3YK76e1CdEIDPc-8GeWP1KfhE9PtNTjq5qA8pNjUMakK5n86JkUzKqypznQ96e0q=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Pediatric dentist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Dental Group of Lower Manhattan",
+            "data_id": "0x0:0xecf1e183eb4481e8",
+            "data_cid": "17073675619042361832",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xecf1e183eb4481e8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xecf1e183eb4481e8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7085538,
+              "longitude": -74.01133229999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xecf1e183eb4481e8%218m2%213d40.7085538%214d-74.01133229999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=oj0DL9xdtdHZ6j24iuzGAmm84mfjQL_-WO1ItXS2Jhmf-SiT_AxqBQ-8-A7YT-gRxPNW1Vr3VKpTu-5ldq4tfyZ4-FivcOL1r93xIUMQR-VInkqiTTXGzUDtj6zLHS6-gWpVs35pofEFytw9u57-F_zGoVevkQNp",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Wall Street Dental Spa",
+            "data_id": "0x0:0x75ffb990d55e0408",
+            "data_cid": "8502718653204923400",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x75ffb990d55e0408&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x75ffb990d55e0408&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7069897,
+              "longitude": -74.0102726
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x75ffb990d55e0408%218m2%213d40.7069897%214d-74.0102726&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 1411,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWQKlWlfSLMtV1r683CZpJf4FZzS5Q2VCi8SwuZQLFp2WOyEAOhnFuFVbdQjf-HfYiLUHw_d6WiN7Dyc-R-KCllt2Ft4AyE7jw-xdN0lklazgz-AiixmZPKIBhrqD_WZgUqKc=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "DDS Group",
+            "data_id": "0x0:0xe4ffcb1f20b2ece6",
+            "data_cid": "16501130894261808358",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe4ffcb1f20b2ece6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe4ffcb1f20b2ece6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7060086,
+              "longitude": -74.0126296
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe4ffcb1f20b2ece6%218m2%213d40.7060086%214d-74.0126296&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 467,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEBFhcAsDikbsdVABGiT4l1fSRXcX03yIRNGXiDT4dkhqvRX49eDbnRYNrIJyAiODhm9dlbekxtRTNnp2JQtPWmT2S0sXh3i17MqqtU9yAnfRnyRPNCIBqnlY4TE4Ks5eV4x8nb3zxFjbEr=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Dental implants provider",
+              "Denture care center",
+              "Emergency dental service",
+              "Endodontist",
+              "Oral surgeon",
+              "Pediatric dentist",
+              "Periodontist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Lumia Dental PLLC",
+            "data_id": "0x0:0xcf4cc81c33ca9911",
+            "data_cid": "14937534087534647569",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcf4cc81c33ca9911&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcf4cc81c33ca9911&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.709371999999995,
+              "longitude": -74.00997500000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcf4cc81c33ca9911%218m2%213d40.709371999999995%214d-74.00997500000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 773,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHWram87G5Cn-E_YwaVkaRL4MqXVxC5MQOQruBNbHn6FrhmnQT50aFEjaUxfWP1AWpbUvEMpz1UhTCug8scsEaGaVZYkcqILfig9ydHNhi36LfiSTteXCYbGmHYr35YC9yntthu=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OigKJiIiQ2l0eSBEZW50YWwgR3JvdXAgTllDIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COigKJiIiQ2l0eSBEZW50YWwgR3JvdXAgTllDIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

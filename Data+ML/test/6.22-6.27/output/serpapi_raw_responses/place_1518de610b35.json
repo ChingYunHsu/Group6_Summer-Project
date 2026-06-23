@@ -1,0 +1,378 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1ef9a1f2cc9ececfa57",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/IJOEfyxHTyXLReVcNKcWsQ/6a3ac1ef9a1f2cc9ececfa57.json",
+    "created_at": "2026-06-23 17:27:11 UTC",
+    "processed_at": "2026-06-23 17:27:11 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259022ac6fd01:0xdf7e40039e4c8b40!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/IJOEfyxHTyXLReVcNKcWsQ/6a3ac1ef9a1f2cc9ececfa57.html",
+    "prettify_html_file": "https://serpapi.com/searches/IJOEfyxHTyXLReVcNKcWsQ/6a3ac1ef9a1f2cc9ececfa57.prettify",
+    "total_time_taken": 0.45
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJAf3GKgJZwokRQItMngNAft8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "My NYC Dentist - 42nd Street Dental",
+    "place_id": "ChIJAf3GKgJZwokRQItMngNAft8",
+    "data_id": "0x89c259022ac6fd01:0xdf7e40039e4c8b40",
+    "data_cid": "16104379701808368448",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259022ac6fd01%3A0xdf7e40039e4c8b40&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259022ac6fd01%3A0xdf7e40039e4c8b40&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.751746,
+      "longitude": -73.980378
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJAf3GKgJZwokRQItMngNAft8",
+    "provider_id": "/g/1tfn3nhg",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNgnYyRScvAnPXS5Mc48uPlOxWu3sdiD3kHB33FSox8UZCtW3tiKpIVln3-SaSV7uYOELHfZPqvwP9xmcB24ES-Q--cvkQJKEyqmgQN3MV1izAzaFFuJxEQF-SQkXW4Cfs1YuOC1xlYewm=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Bwh1-XicHcTdboIwGADQJ_oEVpa5JbtABsE_aNcI4p3psBBKi2sL1Zfc9d7GxHNx_v9aY0b94XmiRQuuFBeN1c0vU9I00iyYGjw-amAatBfhnPRRlnNZ374pmyKJj_R1z8KlxaJwlUX6p_tCfbZCKKXKLQ-n2FTIdNtxXQqJgJ5p-WbrItlllxO-TjN-dwNbvYQJBQLApp5stsntOnCSo30ZdPfofk5Tu3EJSYGS_liF8UUHtS3iwIm6mYfPOfB9H9rnDOQDjIxHFw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 8
+      },
+      {
+        "stars": 2,
+        "amount": 6
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 20
+      },
+      {
+        "stars": 5,
+        "amount": 379
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 417,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental hygienist",
+      "Dental implants periodontist",
+      "Emergency dental service",
+      "Endodontist",
+      "Oral surgeon",
+      "Orthodontist",
+      "Periodontist",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_hygienist",
+      "dental_implants_periodontist",
+      "emergency_dental_service",
+      "endodontist",
+      "oral_surgeon",
+      "orthodontist",
+      "periodontist",
+      "teeth_whitening_service"
+    ],
+    "book_online": "https://www.zocdoc.com/practice/my-nyc-dentist-5956?LocIdent=333961&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_LNrcJ7l6NU6ujUjUngSF_R-lo_xinG8THNhk2kWjgRU-6xWx-entity&rwg_token=AE37R_htHFi_JRs2O3eu7kBcDL1bB6D2VL8SLX6czXuUkFccGx7LScvDm9oR_1Z4pxWDQi887v034O3hah8Yb0Ryx_24qrULNw%3D%3D",
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "address": "286 Madison Ave 7th floor, New York, NY 10017",
+    "country": "United States",
+    "booking_link": "https://local.demandforce.com/b/42nd-street-dental",
+    "website": "http://www.mynyc-dentist.com/",
+    "phone": "(212) 867-8862",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q229+MR New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135:15 PM"
+      },
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20135:15 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 8 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259022ac6fd01%3A0xdf7e40039e4c8b40&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNgnYyRScvAnPXS5Mc48uPlOxWu3sdiD3kHB33FSox8UZCtW3tiKpIVln3-SaSV7uYOELHfZPqvwP9xmcB24ES-Q--cvkQJKEyqmgQN3MV1izAzaFFuJxEQF-SQkXW4Cfs1YuOC1xlYewm=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Bwh1-XicHcTdboIwGADQJ_oEVpa5JbtABsE_aNcI4p3psBBKi2sL1Zfc9d7GxHNx_v9aY0b94XmiRQuuFBeN1c0vU9I00iyYGjw-amAatBfhnPRRlnNZ374pmyKJj_R1z8KlxaJwlUX6p_tCfbZCKKXKLQ-n2FTIdNtxXQqJgJ5p-WbrItlllxO-TjN-dwNbvYQJBQLApp5stsntOnCSo30ZdPfofk5Tu3EJSYGS_liF8UUHtS3iwIm6mYfPOfB9H9rnDOQDjIxHFw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFdhR3QWjI2sVZbBJvfTY_RAgDLKIQWdOZzrGmFWM0vbLpP_NMy2uyU00TxY0t85uB4oH1dDTsOKEqePlaa7K5LfKHNTBRdT2nIkhTEn0_6kO58dySQ_4kN0e8ONX_Y9ql8HVJoVxIjHlzA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/F74cZ3icHcRNcoIwGADQEyGfKC3tTBcwakEw_DSCuMkoiWQkJmiCFS_ZdW_Tmb7F-_3hxvT63bYFn01apVrBBs1ujZKGSTNp1MVue2012tK2n6G881eUF7O8OkeOLvfHYH0_4ZoUfrtI4iivaLp_3j4vq2oD92PSZwRtRmcYtwD4UYPx3CGYq3BKF1in8fLKMnE4vMZucopDhIOCYkdGHcdLCeSlS12Pjl85mXcImJeiHanfrsILy7UqH9E5FE__43sKABb_v7HkH1WxRmA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=gWCk8RaHAzWAxRbejrpn8w&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=309.5362&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/PdzguHicHc3BDcIgFADQbbgJSNW0JsQ0Xjz30mNDESlK4ad8obqNY7mNiW-B9_1MiJCOjCVcjMHsTAG3Gp82oKiN0XqjwCWq48zyluH0nMegnD-BCtFdpe3Pj7pTl_bdt2s3mvsCoS5Ej4P2zgSUs4I0pExRaXTeUAuJFCnEjkxSNDV5qSIr3tB9dRAEHOpJcvJvbjHLLec_3S06Xw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great service and professional staff and great location.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKvQG7h8Ns21SGbLkFq5HLgnsMfu13S9vn_tJzUYVseCQzc1A=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I Highly recommend to others to experience professionals at work.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLn9lkKMmS_b4uLW600-9RMdgNl_mfX8WfwacffUi9OG2FKgg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"My tooth was chipped during a regular cleaning.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXqTHM_bjNsMSZn2VthzSSBSq4acigAHNOrGcPswpSalmAaE5GW=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "susan kowal",
+          "rating": 5,
+          "contributor_id": "113570503811845091613",
+          "user_review_count": 3,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUGKng6CxMMOkkdqCqsHcRpRpO68Yl8j3bnD1E4fN2BL-98OdY=s120-c-rp-mo-br100",
+          "description": "My dentist- Dr Curtin was exceptional. I love 42nd St Dental ( as much as you can love going to the dentist) but replacing a cap was done with care and thoroughness. She took pride in making it look right and matching it to the color of my other teeth.  She was kind and understood my trepidations.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkaFUweDZTR054UzFsWVNYQkRUM05rV0hCdWJtYxAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOjdhU0x6SGNxS1lYSXBDT3NkWHBubmc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-25T23:32:10+00:00"
+        },
+        {
+          "username": "abdul sulaiman",
+          "rating": 5,
+          "contributor_id": "103828138931122938895",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJJ1IiruoGGkxT3NA2ljmH25Z-EH-U1NL82xZZsS5iyTfofvQ=s120-c-rp-mo-br100",
+          "description": "The best Dental company in the US! Staff goes above and beyond and made my smile the priority! I would recommend anyone to come experience Dr Nadolne and his team. BTW Jesse is awesome!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25GTWFsTkxUM2RLYW5GYVlsUXhNRzVmTjI5alNHYxAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOnFMalNLT3dKanFaYlQxMG5fN29jSGc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-10-28T17:42:27+00:00"
+        },
+        {
+          "username": "Jonathan McDowell",
+          "rating": 5,
+          "contributor_id": "102233457415951199551",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWRiKF1_29L70VXg0IHeC3MSr34q6fVk-FPgO2hxifNdBaauNiW=s120-c-rp-mo-br100",
+          "description": "The team provides exceptional care in a clean, calming environment. I\u2019ve been a patient for years and always leave feeling well taken care of. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Kd1ZFUlNjVk5sV1dKU1VrZDJSRFZCTFRORVUxRRAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOnJwVERScVNlWWJSUkd2RDVBLTNEU1E%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-24T15:42:30+00:00"
+        },
+        {
+          "username": "Dawn Epp",
+          "rating": 5,
+          "contributor_id": "105926207454511882561",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL62wNl0KNUS0PXI8eE2Gpv-myPWOlzUB5l3kS_muk3qDkUFSU=s120-c-rp-mo-br100",
+          "description": "Such a wonderful experience!! The office is so bright and new. The reception staff so welcoming and friendly.  I am dentist phobic and the dentist and hygienist put me at ease.   Definitely will be coming back!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxek1FUTJlR1pGWXpGQ2VrbGxaVE5VTkd0bk9VRRAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOk1zMEQ2eGZFYzFCekllZTNUNGtnOUE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-10-30T18:14:16+00:00"
+        },
+        {
+          "username": "olga frani",
+          "rating": 5,
+          "contributor_id": "115924906105745599401",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLWvdcowthROgQAK1DT29mskFjlxrPKeKNaigy_LbtUe0pHzhQ=s120-c-rp-mo-br100",
+          "description": "I highly recommend 42nd Street Dental for all your dental needs.  I have been a patient since 2017 and will continue to visit this place.  The staff are friendly and they are on time with your appointment. Keep up the good work.  Thank you.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWV2FIaEJlVVV6VDJWRVRHUkVhREF4YTNWNVIyYxAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOkVWaHhBeUUzT2VETGREaDAxa3V5R2c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-07T13:48:40+00:00"
+        },
+        {
+          "username": "Addasa Sandy",
+          "rating": 2,
+          "contributor_id": "109480304628956122872",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIN5_pNiKaoEdIipyi8FQPVvvIzyckEGgo7hKJydxHefdDAcg=s120-c-rp-mo-br100",
+          "description": "I saw an advertisement about this office doing Invisalign, saying it's only 50 dollars for consultation. At the time my insurance wasn't active, I got the imaging done, was told it's free when they called me to come back for a follow up to see the imaging. I gave them my insurance to see if they would cover the Invisalign, they billed my insurance $300 for the consultation. Prior to this experience I was eager to get the service done, but this experience deters me. The Invisalign they told me I need cost 5,500 for the course of 8 months. I'll shop around somewhere else. Whoever runs the financial department was nasty when I called to inquire why am I being charged that amount. Saying they never charged anything, lol so why am I receiving a claim that shows me being charged, saying I owe 177.50 after my insurance covered the remaining. I like full transparency and this was misleading, doesn't build a repertoire of trust between the patient and the establishment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s4ellsWTBaVU13YVdGT2VVOXRWWGRaTm5FeGJsRRAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOk8zYlY0ZUMwaWFOeU9tVXdZNnExblE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-02T16:59:07+00:00"
+        },
+        {
+          "username": "Craig Nadolne",
+          "rating": 5,
+          "contributor_id": "101399061921467910088",
+          "user_review_count": 14,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVvBEpEzBJ287YatsgRosb8JWgAysKrJEtbmxbJfx3WXk4M_r7k=s120-c-rp-mo-br100",
+          "description": "What an incredible experience. The Doctors are extraordinarily comforting. I never felt any pain while they\u2019re working. Thank you to all the staff for being so committed on every level.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsM1JFdE1XR1pDVmw5WlpHWnpNR2htTmpkblJYYxAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOll3REtMWGZCVl9ZZGZzMGhmNjdnRXc%7C%7C?hl=en",
+          "date": "Edited a month ago",
+          "date_iso8601": "2026-05-14T20:35:22+00:00"
+        },
+        {
+          "username": "Kimberly Jones Clarke",
+          "rating": 5,
+          "contributor_id": "109321985676136558193",
+          "user_review_count": 10,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXIACmpdiLpGq1xO8dTmAA7BMnUjf2MhI2-TpXpy6ebr-kFj_gD=s120-c-rp-mo-br100",
+          "description": "I cannot begin to express my deepest gratitude to the team. They were professional, fast and efficient with correcting an issue from a previous dentist. I\u2019ve trusted them for over 15 years and have never been let down.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201RFdWTjZVRkJ3VGpobE1ITkNiMWxUTFV0bmIxRRAB!2m1!1s0x0:0xdf7e40039e4c8b40!3m1!1s2@1:CAIQACodChtycF9oOm5DWVN6UFBwTjhlMHNCb1lTLUtnb1E%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-12T22:27:16+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Dr. Mark Nadolne",
+            "data_id": "0x0:0xa7d0dbc0754cb96d",
+            "data_cid": "12092406619137948013",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa7d0dbc0754cb96d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa7d0dbc0754cb96d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7425959,
+              "longitude": -73.9913443
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa7d0dbc0754cb96d%218m2%213d40.7425959%214d-73.9913443&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=GTp0fwiBqBAbigDqYSAL04qZk3B0dkcsZv8iKaHOcf0mZnq161-ThyFQp65e2fJ9ErmjC-5B3NTS0qAYh0swCQMCKBGM4oST-pIU7ZZEBpHWHzOpWI3xfN9ewQB8rsboSW__5rtQNAKuU9Bf2co8te_zvr-Xjpzr",
+            "type": [
+              "Dentist",
+              "Practitioner service location"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Castano Periodontics and Dental Implants - formerly Midtown Dental Services",
+            "data_id": "0x0:0xcb4ac3827e5116ee",
+            "data_cid": "14648735703208367854",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcb4ac3827e5116ee&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcb4ac3827e5116ee&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751326899999995,
+              "longitude": -73.97307339999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcb4ac3827e5116ee%218m2%213d40.751326899999995%214d-73.97307339999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 95,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHlMsFC0_zS6Fuu9iy7GyBdQ8O1vPxo9Tnc9ylrXiq6bOPqIFjuZhsVGd7qaNVjFK0UNaroDp_P4j6RyLslQpdhso1qQ2e5Q-Ab8kME0piXsGg-0kAMZZr2yxhDh7lr65-yfDxYq6j_eDPb=w156-h156-n-k-no",
+            "type": [
+              "Dental implants periodontist",
+              "Dental implants provider"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Dr. Marc K. Wilk, DDS",
+            "data_id": "0x0:0x24ff12edfdc5f4bd",
+            "data_cid": "2665870317800780989",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x24ff12edfdc5f4bd&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x24ff12edfdc5f4bd&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7487026,
+              "longitude": -73.9721756
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x24ff12edfdc5f4bd%218m2%213d40.7487026%214d-73.9721756&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 8,
+            "thumbnail": "https://www.google.com/maps/vt/data=CD-aIfZ9nYwdf0siXuTe6fDaobybKzF1Zz9GrLxB4nj3E9USch_OFm07NrQyiVS4CNT8tVkwKUrCiy9jo-hgMp1n3Mty7gRo40PRW80m5sXoxy72JCKe8o5NyBZs4Uy4OJLsPUL-0kRHyGfMayFrLPccQQLswe5f",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Midtown Dental Care Associates",
+            "data_id": "0x0:0xbae44c41e7ce4f2c",
+            "data_cid": "13466972631690268460",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbae44c41e7ce4f2c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbae44c41e7ce4f2c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.752382000000004,
+              "longitude": -73.980661
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbae44c41e7ce4f2c%218m2%213d40.752382000000004%214d-73.980661&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 575,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG8eBu0YjUWnKdtBUmBrY4Q8gzRZ4bO_duUvTlDmaHJhz9iJed2Y4blhTL1mAsCm0_1a0YcLCVTX_ByYjsP9UWWA3YqeDtsH92OMynIevdIEPN21Cibqj08cCIpQbHEiaFkwWzvjqvFrEvV=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Oral surgeon",
+              "Pediatric dentist",
+              "Teeth whitening service"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjYKNCIwTXkgTllDIERlbnRpc3QgLSA0Mm5kIFN0cmVldCBEZW50YWwgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjYKNCIwTXkgTllDIERlbnRpc3QgLSA0Mm5kIFN0cmVldCBEZW50YWwgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

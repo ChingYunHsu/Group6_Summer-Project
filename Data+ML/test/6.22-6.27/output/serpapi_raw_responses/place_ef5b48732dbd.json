@@ -1,0 +1,412 @@
+{
+  "search_metadata": {
+    "id": "6a3ac18518dc9389977b645a",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/xfStiZow0m8gTssEUktqVQ/6a3ac18518dc9389977b645a.json",
+    "created_at": "2026-06-23 17:25:25 UTC",
+    "processed_at": "2026-06-23 17:25:25 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25951bd3557a7:0x25e4f724faca6735!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/xfStiZow0m8gTssEUktqVQ/6a3ac18518dc9389977b645a.html",
+    "prettify_html_file": "https://serpapi.com/searches/xfStiZow0m8gTssEUktqVQ/6a3ac18518dc9389977b645a.prettify",
+    "total_time_taken": 1.88
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJp1c1vVFZwokRNWfK-iT35CU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Medical Offices of Manhattan - Upper West Side",
+    "place_id": "ChIJp1c1vVFZwokRNWfK-iT35CU",
+    "data_id": "0x89c25951bd3557a7:0x25e4f724faca6735",
+    "data_cid": "2730579012291815221",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25951bd3557a7%3A0x25e4f724faca6735&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25951bd3557a7%3A0x25e4f724faca6735&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7773257,
+      "longitude": -73.9793528
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJp1c1vVFZwokRNWfK-iT35CU",
+    "provider_id": "/g/11t9jvd6fy",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5KYH4zoB7uC2NIeFxSgFrf74KX2U9RUu2TlPOBo0g3axNIVNyHDycsUHMEFqxLsTzNhHZumi60y9CoGZpFp3o7lBOMvsh0unhs6N8NNj98yx1QW_kSeJPSFQBPWl_CmvBqK4KH_SiVyBH=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/z46NtnicHcTBboIwGADgJ0IqMJElO1i2WmVWGKKbF2Ka2qqFoj911JfceW-zZN_h-_1Rfd_Bs-9rFY6kMVILC-LGTduLth9x0_iyA4-DB_4sZ8VlNn_Kvmj0MDi2acAWggylJLdjHGWfQZV8VDbY6HyNDZLhYWCLLXP01XGo6OqNXId32DyYonvbnCbIJamZ7zvShSbWeL26g0K2VTBhU8bOydQN42JXX0qxzEtS4Hyn67S542sWZbQuT1uH6cv3GCHkqf-51_4BTftG2Q",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 74
+      },
+      {
+        "stars": 2,
+        "amount": 16
+      },
+      {
+        "stars": 3,
+        "amount": 9
+      },
+      {
+        "stars": 4,
+        "amount": 20
+      },
+      {
+        "stars": 5,
+        "amount": 1067
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 1186,
+    "type": [
+      "Medical group",
+      "Cardiologist",
+      "Dermatologist",
+      "Endocrinologist",
+      "Gastroenterologist",
+      "Internist",
+      "Podiatrist"
+    ],
+    "type_ids": [
+      "medical_group",
+      "cardiologist",
+      "dermatologist",
+      "endocrinologist",
+      "gastroenterologist",
+      "internist",
+      "podiatrist"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "112 W 72nd St, New York, NY 10023",
+    "country": "United States",
+    "booking_link": "https://www.medicalofficesofmanhattan.com/book-an-appointment/?utm_source=gmb&utm_medium=appnt&utm_campaign=uws",
+    "website": "https://www.medicalofficesofmanhattan.com/",
+    "phone": "(212) 223-0349",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "Q2GC+W7 New York",
+    "hours": [
+      {
+        "tuesday": "7:30 AM\u20137 PM"
+      },
+      {
+        "wednesday": "7:30 AM\u20137 PM"
+      },
+      {
+        "thursday": "7:30 AM\u20137 PM"
+      },
+      {
+        "friday": "7:30 AM\u20135 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "7:30 AM\u20137 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 1 week ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25951bd3557a7%3A0x25e4f724faca6735&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5KYH4zoB7uC2NIeFxSgFrf74KX2U9RUu2TlPOBo0g3axNIVNyHDycsUHMEFqxLsTzNhHZumi60y9CoGZpFp3o7lBOMvsh0unhs6N8NNj98yx1QW_kSeJPSFQBPWl_CmvBqK4KH_SiVyBH=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/z46NtnicHcTBboIwGADgJ0IqMJElO1i2WmVWGKKbF2Ka2qqFoj911JfceW-zZN_h-_1Rfd_Bs-9rFY6kMVILC-LGTduLth9x0_iyA4-DB_4sZ8VlNn_Kvmj0MDi2acAWggylJLdjHGWfQZV8VDbY6HyNDZLhYWCLLXP01XGo6OqNXId32DyYonvbnCbIJamZ7zvShSbWeL26g0K2VTBhU8bOydQN42JXX0qxzEtS4Hyn67S542sWZbQuT1uH6cv3GCHkqf-51_4BTftG2Q"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG_xM0UbzJtqNtEQ1trP4OSPKOhNLdzZQo4gwpWwjoiEtd4fmbvDnM5brdYSWKnpLPm6F44XlahZKI5dw4y1RVnIoei87oimeY6HozboMk_voIDEg3B0JL46RgLrgjY-sZaO8ml=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/i0Rr13icHcTdDsEwGADQJ6p1USMSF8Qw-yd-thuxrdqx9pu1jL2gZ_A2EufifD9c61qNDaPi_R4DYBV9KNrkIDWVupeDMFitUK6QMqZREN-my9PLx7usW-t7oO3Y1E1Ewm3khjzwii6NgbC2PrRXKG1dkIvInnPpD7KmSLYHV9ZeJKwFIcfqzFPXGRQteZubvXSAlqMhlIIm1gq6DPzb6QnO3Gb9GV57xNowr2HXBKn0HI5ENWlNjDHi_3Mkf-RkRc4"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=NULnY_FzG8vGdl08hp_0-Q&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=197.90416&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2r7WbHicHc0xDsIgFADQ27AVaNNoa0Lc7GJMHBycCKVYfkLhR75UPY638jYmvgu878cTYd4JkenuHBVwK8LThVyh4XNKc3AGIXObFlFqQf6xjNFA2KOJCSZ1uhzjVR_eQ1eGKcjOo5bVmdlR2wAukloMZp0LJ2MJguMzZraqpmmZV03fsZdZVd1veS_besMQyHol2f-5paJqKX_ayznb"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The staff (front-desk, assistants, nurses) are all very friendly and responsive.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI__y0KEwXRlSnUYvkpbQQ2nq9fARIfseLxIYHbEm5zz6WYEQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"From the small underground exam closest to the unprofessional staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU4EfwOu2BvTlJIVm9tjT3SMP7hzZIYp6ODdzrI3ETnaJyNu3s=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"She listened and answered questions, gave me referrals as needed.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIO2_F8S1Xep7LDCzvXdYC6mhhFxGFVYWU9xyntReqw2y_eIfXo=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "JC Gaw",
+          "rating": 5,
+          "contributor_id": "107357316459761938749",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJmeYOOY38T2_52muUdhtvlFGdK3zC4aoA5hukz98u0C0AHIww=s120-c-rp-mo-br100",
+          "description": "Dr. Daniel Kim has a great bedside manner and is one of the few doctors who truly takes the time to educate his patients and discuss ideas about their care. That level of attention is rare and very much appreciated.\nYilin, the tech, is also excellent\u2014professional, kind, and efficient. I\u2019ve been coming here for years for my annual check-ups, and every visit is seamless: on time, quick, and efficient without sacrificing quality care. Highly recommend. \u2b50",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WT2REYzBORXR5ZW5abU1VVndURXRWTXpreWJuYxAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOnVOdDc0NEtyenZmMUVwTEtVMzkybnc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T19:24:29+00:00"
+        },
+        {
+          "username": "Michael Fenamore",
+          "rating": 5,
+          "contributor_id": "117601847408965157945",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKTjKIsMfsiBDyWLdCGWeSkIn-lvpo6e7LY2FCt0jbBdnyS6g=s120-c-rp-mo-br100",
+          "description": "I had a physical exam. Dr. Daniel Kim was very thorough and supportive. He spent time going over recent medical reports.  He advised me to follow up with a cardiologist.\nThe additional staff members Yilin, Ciara and Alberto were pleasant, professional and explained the necessary procedures as part of the exam protocol.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGSVdWSTJabkZZWVdWRGEwUTVSR05IY0Zwa1NFRRAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOlFIWVI2ZnFYYWVDa0Q5RGNHcFpkSEE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T19:31:50+00:00"
+        },
+        {
+          "username": "Louise NAUD",
+          "rating": 5,
+          "contributor_id": "108149022104798420289",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVE5Ks40wk-FteJybLE7pimhwGHos5JvzjEPLT-qBQS0cqb7Ish=s120-c-rp-mo-br100",
+          "description": "Dr Kim is an excellent primary care physician. Thoughtful, attentive, and highly knowledgeable. Appointments are thorough without feeling rushed, and communication is clear and professional. I consistently feel well cared for and confident in the medical guidance provided. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkelJIbEZhbVJRTmt3eVZYWmlVVTlpVDFOVWEwRRAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOldzRHlFamRQNkwyVXZiUU9iT1NUa0E%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T19:21:22+00:00"
+        },
+        {
+          "username": "RG",
+          "rating": 5,
+          "contributor_id": "100481765901136462587",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLH5Mr3ok4zXBAYWvWSBuA_pZEs1ZQH5yBrVHVUE8MoWDuHxw=s120-c-rp-mo-br100",
+          "description": "I didn\u2019t have high expectations for my visit as a new patient as I\u2019ve found most visits to Dr\u2019s offices in NYC to be impersonal, disinterested and rushed. I was so happy to have the opposite experience at MOM. I was met and taken back to one of the exam rooms by Emily who is lovely. She took her time and was kind and thorough (she\u2019s going to make a great doctor one day!). She was present throughout my visit aiding Dr. Seilhan and coordinating and setting up a device I need to wear for the next few days. MOM is lucky to have her during her year off before med school!\n\nDr. Seilhan was awesome. She was patient, thorough, asked questions and listened. She was genuinely interested in my care and nothing was rushed. I haven\u2019t had a primary care physician for a few years but that changed today.\n\nShout out to Skye at the front desk who patiently helped me setup my labfinder account!\n\nI would recommend them to anyone!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tkT2JGRm1jelp5V25CMGFWUTNiMDR3VTFGRlZsRRAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOkdObFFmczZyWnB0aVQ3b04wU1FFVlE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-25T19:13:34+00:00"
+        },
+        {
+          "username": "Patricia Penuela",
+          "rating": 1,
+          "contributor_id": "107047842010282097705",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWoDGHgWqYY0oB-5490aZC7pvZRIXgvyEbXm8ATNTIQrpSWTM5Bug=s120-c-rp-mo-br100",
+          "description": "I was disappointed with my experience at this office. I felt there was a strong emphasis on recommending additional services, many of which did not seem necessary in my case. It left me with the impression that financial considerations were prioritized over patient care. I hope the office can work toward a more patient-centered approach.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KaU9YSkxjMHRCYVhSSU9EZzVVVWw0Ykd4MlZuYxAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOmJiOXJLc0tBaXRIODg5UUl4bGx2Vnc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-16T23:29:50+00:00"
+        },
+        {
+          "username": "Vivian Bayles",
+          "rating": 5,
+          "contributor_id": "106617787902675571053",
+          "user_review_count": 2,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXBsNvd2UncZ31EFzHvI4pmiV9FVeLv5A4QiY2TBorzlpXxPAIW=s120-c-rp-mo-br100",
+          "description": "I had a great visit with Dr. Daniel Kim. He took the time to listen and never made me feel rushed. His bedside manner was excellent, warm, attentive, and genuinely caring. I left feeling confident and well taken care of. Would definitely recommend Dr. Kim",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGVFVtd3daR2M1ZVZKNGJXeEVUV05mTjNwT09YYxAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOjFTUmwwZGc5eVJ4bWxETWNfN3pOOXc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-04T19:21:51+00:00"
+        },
+        {
+          "username": "Eugina Noh",
+          "rating": 5,
+          "contributor_id": "103202836156532866903",
+          "user_review_count": 22,
+          "user_photo_count": 44,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUZvHlT-sX0X4EMY79VT65tFQnj8kT6Eex-wkY_knI9lfiP1xN4vg=s120-c-rp-mo-ba12-br100",
+          "description": "The UWS MOM location is always very clean and attentive to patients. I see Dr. Daniel Kim every year for my physical and would recommend him!! Very kind, caring, and friendly. The medical assistants are all very nice and friendly as well.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KUFJUUmxMWEpDV2pORGRVOTZTMDQwUlhOWmRYYxAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOmJPRTRlLXJCWjNDdU96S040RXNZdXc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-20T16:00:06+00:00"
+        },
+        {
+          "username": "Basha H",
+          "rating": 5,
+          "contributor_id": "111223194158887202349",
+          "user_review_count": 24,
+          "user_photo_count": 89,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ2G3TEveZLYducejqoZ6DnkKmLTCWr3HWHt7MpKWVX3woymw=s120-c-rp-mo-ba12-br100",
+          "description": "I found this office on ZocDoc while searching for a new provider for my annual physical. I don\u2019t have any major health concerns (thank Gd), so I just needed a place that was convenient and accepted my insurance (United Healthcare). This clinic checked all the boxes!\n\nThe front desk staff was very kind, and my provider, Hannah Cohan, NP, was great \u2014 very thorough and attentive during the exam.\n\nWhat really stood out to me, though, was how beautiful the clinic is. From the modern architecture to the stunning finishes and fixtures, everything felt clean, calming, and thoughtfully designed from the lobby to the exam rooms. It\u2019s probably the nicest medical office I\u2019ve ever been in.\n\nHighly recommend for anyone looking for a regular Doctor/Nurse Practitioner in a beautiful, professional setting!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSdlZsRklXa1E0VEMxdWVIQjNPWEJIYkV0UGVGRRAB!2m1!1s0x0:0x25e4f724faca6735!3m1!1s2@1:CAIQACodChtycF9oOkRvVlFIWkQ4TC1ueHB3OXBHbEtPeFE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0GeAlEcLhqd9aiuCq18AtC1lhFZ-w4B4_wxOu9sPtt5crhXYepHJvCGg-AODUXgF2aKuHRXR22V54yyXy0wzmYxJwsoZjzgsQRYoI1xajJ0NPXKdQ8nDedQkHotURGaRdpwBGcFtyRkQYC=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1XC-eJ2HT6OKoE9d6UK4ZAQ2589uA-R50pdyhkeRCT2fYh8j6ose-JDg8KxTLPdFCDShKthO57Fm0o6_md08HVsLpfH504hm5YjbmFKhuomGkDjNkgce6KcPv5r8UO8kUMvkB85ND7mnFS=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2-3-qy-Bd1CxFGh3AYVHSmpWREunMiRYETD7K5vdz__rYe0B1pVmkA7WDgaa5WJC1rS4HmpWWys1s71UXMyvtK08z0hKB99ItXW4oaSSpJa_jJpmtsf092dY-PqJ_Qehn0XQN3U5e2NCQ=k-no"
+            }
+          ],
+          "date": "10 months ago",
+          "date_iso8601": "2025-07-24T12:50:43+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Medical Offices of Manhattan - Upper East Side",
+            "data_id": "0x0:0x1769b1904499c5",
+            "data_cid": "6590135814887877",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1769b1904499c5&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1769b1904499c5&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7653174,
+              "longitude": -73.96328489999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1769b1904499c5%218m2%213d40.7653174%214d-73.96328489999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 3299,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-0Rv1_GRObeBa6W2_rbWmTpkxx4xIouLkjM-6cXS-1ZensLbW8PxSdljyOYQn0qQgtwhufG3fzkxZbdY8_NiSpL1g6Eg2_-aP8IB0OoUntrvkM2VyLg5iUR0KsgROICyHotWJBnWGBtaa=w156-h156-n-k-no",
+            "type": [
+              "Medical group",
+              "Cardiologist",
+              "Dermatologist",
+              "Endocrinologist",
+              "Gastroenterologist",
+              "Internist",
+              "Podiatrist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Manhattan West Medical",
+            "data_id": "0x0:0x88b6e59482a3c6d6",
+            "data_cid": "9851313660929230550",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x88b6e59482a3c6d6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x88b6e59482a3c6d6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7774436,
+              "longitude": -73.98676259999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x88b6e59482a3c6d6%218m2%213d40.7774436%214d-73.98676259999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=Lyrv1p8etxkoHXsPFujEdzq8MDafXj7suIkMzerND6_xwV8fywlARdRP1i2n68CxNlS5PwikCJrB_npsKuG6BQ2T2Zo_J8GdsaHpO1-C7cBdW5XsLriRNON65DyD06AHhH2SOuhko7hD6vXM6jtIxo3KAiSii0MW",
+            "type": [
+              "Medical clinic",
+              "Internist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Medical Clinic Manhattan New York | Medical Clinic Manhattan NY",
+            "data_id": "0x0:0xe69ca8d63db71a54",
+            "data_cid": "16617342363202165332",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe69ca8d63db71a54&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe69ca8d63db71a54&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.782281,
+              "longitude": -73.9768964
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe69ca8d63db71a54%218m2%213d40.782281%214d-73.9768964&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 4,
+            "thumbnail": "https://www.google.com/maps/vt/data=0luZELzTLhRAzOfQ10vCgUz0GIKu5or7U7sYRdBhosOxSZkODTGEHSpfKKU0O_X4C_LuXwjUCU5Pf3NCdnG7ZgWmA5519emV-Rkugy8B-_FNOfc3ntpGTCRnNOFb52AkNMZ1W9D-yYrlfN9trgEFe7yfZfZezkFq",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "72nd Street Medical Associates",
+            "data_id": "0x0:0xc02345290a2aa19f",
+            "data_cid": "13844985722033578399",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc02345290a2aa19f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc02345290a2aa19f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7683898,
+              "longitude": -73.9579945
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc02345290a2aa19f%218m2%213d40.7683898%214d-73.9579945&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=fN31OqpMlv_NJV8oqqIANFS2Thn9cFtY4lE3EghE3h6rCXm0_-G8nZL1ms46bRZ_O1MUQaUmZ5P51_zDQGBkh88gQyIz8bufFJVTYAfaE1xFA7G5eAxIoZeoBhyzHugiBwC2bqcZZQtqI6uYqNmRTOMNFQWhOjZ-",
+            "type": [
+              "Medical group",
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Westside Family Medicine",
+            "data_id": "0x0:0xb8504e5f8eeb17c0",
+            "data_cid": "13281201473442224064",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb8504e5f8eeb17c0&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb8504e5f8eeb17c0&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.779036,
+              "longitude": -73.98611
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb8504e5f8eeb17c0%218m2%213d40.779036%214d-73.98611&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 558,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHglXFBHL3qXE17TWzZZ-pkBym0wxK_DFYYtAWPtM6DCxblkaZYNjJEYH8Wkv5R9-t0j_XEOKeDAmvUlTiFU14kvo9nNzRAanFpfKXOCNMs3sUqLgWnN2axsOdQD05X5XO-dJs=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "Family practice physician"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkEKPyI7TWVkaWNhbCBPZmZpY2VzIG9mIE1hbmhhdHRhbiAtIFVwcGVyIFdlc3QgU2lkZSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkEKPyI7TWVkaWNhbCBPZmZpY2VzIG9mIE1hbmhhdHRhbiAtIFVwcGVyIFdlc3QgU2lkZSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}
