@@ -5,6 +5,20 @@ info:
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
 
+    ## Changelog — v1.4.2
+    - **Fix 5 (Medical ID / Emergency Contacts, Option B):** Mobile dropped the
+      on-device SecureStore + QR approach (Option A) after implementation
+      issues. Added `GET`/`PUT /user/medical-id` (`blood_type`, `conditions`,
+      `allergies`) and `GET`/`POST /user/emergency-contacts` plus
+      `PUT`/`DELETE /user/emergency-contacts/{contact_id}`. This data is now
+      synced server-side between Mobile and Web, with full-table encryption
+      applied at the DB layer. **This reverses the client-side-only stance
+      from Fix 2/Fix 3 (D10) for this data** — pending confirmation from
+      whoever owns D10 sign-off that DB-layer encryption satisfies the
+      original compliance requirement. The `medical-passport` endpoint is
+      unaffected and remains D10-compliant (render-token only, no server PDF
+      storage).
+
     ## Changelog — v1.4.1
     - **Fix 1 (Auth Binding):** `GET /user/profile` and `GET /user/settings` upgraded from
       `ApiKeyAuth` to `BearerAuth` (JWT) so the backend can isolate per-user MySQL sessions.
@@ -83,6 +97,7 @@ servers:
 tags:
   - name: Auth
   - name: Health
+  - name: Auth
   - name: Integrations
   - name: Venues
   - name: Busyness
@@ -642,6 +657,40 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  # FIX 6 — Token Issuance: BearerAuth-gated endpoints (Fix 1) had no way to
+  # actually obtain a token. This issues the signed JWT that clients pass as
+  # `Authorization: Bearer <access_token>` to every BearerAuth endpoint below.
+  /api/v1/auth/login:
+    post:
+      tags: [Auth]
+      summary: Exchange email/password for a bearer access token
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Authenticated. Use access_token as a Bearer token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Invalid email or password.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   # FIX 1 — Auth Binding: upgraded from ApiKeyAuth to BearerAuth (JWT)
   # Without a Bearer token the backend cannot resolve the authenticated user's
   # MySQL row; ApiKeyAuth is app-level and does not carry a user identity claim.
@@ -1024,6 +1073,188 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  # FIX 5 — Medical ID / Emergency Contacts (Option B, supersedes D10 client-only mandate)
+  # Mobile dropped the on-device SecureStore + QR approach (Option A) after
+  # implementation issues; Medical ID and emergency contacts are now synced
+  # server-side between Mobile and Web. The DB layer applies full-table
+  # encryption to this data; this reverses the client-side-only stance taken
+  # for Fix 2/Fix 3 on the medical-passport endpoint above, pending D10 sign-off.
+  /api/v1/user/medical-id:
+    get:
+      tags: [User]
+      summary: Get the user's Medical ID
+      operationId: getMedicalId
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Medical ID.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalId'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      tags: [User]
+      summary: Update the user's Medical ID
+      operationId: updateMedicalId
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MedicalIdUpdate'
+      responses:
+        '200':
+          description: Medical ID updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalId'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/emergency-contacts:
+    get:
+      tags: [User]
+      summary: List emergency contacts
+      operationId: listEmergencyContacts
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Emergency contacts.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmergencyContactListResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      tags: [User]
+      summary: Add an emergency contact
+      operationId: addEmergencyContact
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmergencyContactCreateRequest'
+      responses:
+        '201':
+          description: Emergency contact created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmergencyContact'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/user/emergency-contacts/{contact_id}:
+    put:
+      tags: [User]
+      summary: Update an emergency contact
+      operationId: updateEmergencyContact
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: contact_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmergencyContactUpdate'
+      responses:
+        '200':
+          description: Emergency contact updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmergencyContact'
+        '400':
+          description: Validation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Emergency contact not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      tags: [User]
+      summary: Remove an emergency contact
+      operationId: deleteEmergencyContact
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: contact_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Emergency contact removed.
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Emergency contact not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /api/v1/routes/options:
     get:
       tags: [Routes]
@@ -1272,6 +1503,33 @@ components:
         service:
           type: string
         version:
+          type: string
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+
+    LoginResponse:
+      type: object
+      required: [access_token, token_type, expires_in, user_id]
+      properties:
+        access_token:
+          type: string
+          description: "Signed JWT (HS256). Pass as `Authorization: Bearer <access_token>`."
+        token_type:
+          type: string
+          example: bearer
+        expires_in:
+          type: integer
+          description: Token lifetime in seconds.
+          example: 3600
+        user_id:
           type: string
 
     IntegrationsStatusResponse:
@@ -1958,6 +2216,87 @@ components:
         generated_at:
           type: string
           format: date-time
+
+    # FIX 5 — Medical ID / Emergency Contacts (Option B)
+    # Synced server-side between Mobile and Web; DB applies full-table
+    # encryption. Supersedes the client-side-only stance from Fix 2/Fix 3
+    # for this data, pending D10 sign-off.
+    MedicalId:
+      type: object
+      properties:
+        blood_type:
+          type: string
+          example: O+
+        conditions:
+          type: array
+          items:
+            type: string
+        allergies:
+          type: array
+          items:
+            type: string
+
+    MedicalIdUpdate:
+      type: object
+      additionalProperties: false
+      properties:
+        blood_type:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: string
+        allergies:
+          type: array
+          items:
+            type: string
+
+    EmergencyContact:
+      type: object
+      required: [contact_id, name, relationship, phone]
+      properties:
+        contact_id:
+          type: string
+        name:
+          type: string
+        relationship:
+          type: string
+        phone:
+          type: string
+
+    EmergencyContactListResponse:
+      type: object
+      required: [count, items]
+      properties:
+        count:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmergencyContact'
+
+    EmergencyContactCreateRequest:
+      type: object
+      required: [name, relationship, phone]
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        relationship:
+          type: string
+        phone:
+          type: string
+
+    EmergencyContactUpdate:
+      type: object
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+        relationship:
+          type: string
+        phone:
+          type: string
 
     ChatbotRequest:
       type: object

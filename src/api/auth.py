@@ -1,3 +1,7 @@
+from flask import Blueprint, jsonify, request
+
+from auth import ACCESS_TOKEN_TTL, issue_access_token
+from mock_data import AUTH_USERS
 from copy import deepcopy
 
 from flask import Blueprint, jsonify, request
@@ -9,6 +13,8 @@ from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE, AUTH_US
 bp = Blueprint("auth", __name__)
 
 
+@bp.post("/api/v1/auth/login")
+def login():
 def _register_session(user_id: str, is_guest: bool = False) -> dict:
     response = deepcopy(AUTH_LOGIN_RESPONSE)
     response["access_token"] = f"mock_access_token_{user_id}"
@@ -78,27 +84,13 @@ def login_user():
         None,
     )
     if not user:
-        return jsonify({"error": "Invalid credentials."}), 401
+        return jsonify({"error": "Unauthorized. Invalid email or password."}), 401
 
-    response = _register_session(user["user_id"])
-    return jsonify(response)
-
-
-@bp.post("/api/v1/auth/guest")
-def create_guest_session():
-    """Issue temporary credentials for a guest session."""
-    guest_id = f"guest_{len(SESSIONS) + 1}"
-
-    response = _register_session(guest_id, is_guest=True)
-    response["finish_profile_prompt"] = False
-    return jsonify(response), 201
-
-
-@bp.post("/api/v1/auth/reset-password")
-def reset_password():
-    payload = request.get_json(silent=True) or {}
-
-    if "email" not in payload:
-        return jsonify({"error": "Validation failed.", "missing_fields": ["email"]}), 400
-
-    return jsonify(deepcopy(AUTH_RESET_PASSWORD_RESPONSE))
+    return jsonify(
+        {
+            "access_token": issue_access_token(user["user_id"]),
+            "token_type": "bearer",
+            "expires_in": int(ACCESS_TOKEN_TTL.total_seconds()),
+            "user_id": user["user_id"],
+        }
+    )

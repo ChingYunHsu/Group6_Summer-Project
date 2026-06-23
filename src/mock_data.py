@@ -554,6 +554,16 @@ REPORT_CONFIRMATION_TEMPLATE = {
     "report": REPORTS[0],
 }
 
+# Mock credential store backing POST /api/v1/auth/login. Plaintext password
+# is fine here only because this whole file is mock/seed data, not a real DB.
+AUTH_USERS = [
+    {
+        "user_id": "u_1001",
+        "email": "amelia.rivera@example.com",
+        "password": "Password123",
+    },
+]
+
 USER_PROFILE = {
     "user_id": "u_1001",
     "account_state": "logged_in",
@@ -602,6 +612,32 @@ DELETE_ACCOUNT_RESPONSE = {
     "status": "scheduled",
     "message": "Your account deletion has been scheduled and synced data will be purged within 24 hours.",
     "purge_deadline": "2026-06-09T23:59:59Z",
+}
+
+# Medical ID — Option B (2026-06): synced server-side instead of on-device
+# SecureStore + QR, per mobile track decision. Alex owns full-table encryption
+# for this data at the DB layer; this mock store represents the plaintext
+# contract the API exposes once that's in place.
+MEDICAL_ID = {
+    "blood_type": "O+",
+    "conditions": ["Asthma"],
+    "allergies": ["Penicillin"],
+}
+
+EMERGENCY_CONTACTS = [
+    {
+        "contact_id": "ec_001",
+        "name": "Maria Rivera",
+        "relationship": "Mother",
+        "phone": "+1 (917) 555-0199",
+    },
+]
+
+EMERGENCY_CONTACT_CREATE_TEMPLATE = {
+    "contact_id": "ec_000",
+    "name": "",
+    "relationship": "",
+    "phone": "",
 }
 
 MEDICAL_PASSPORT_RESPONSE = {
