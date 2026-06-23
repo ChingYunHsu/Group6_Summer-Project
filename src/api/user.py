@@ -2,7 +2,7 @@ from copy import deepcopy
 
 from flask import Blueprint, jsonify, request
 
-from auth import require_api_key
+from auth import require_api_key, require_bearer_auth
 from mock_data import (
     EMERGENCY_CONTACT_CREATE_TEMPLATE,
     EMERGENCY_CONTACTS,
@@ -36,19 +36,19 @@ def _next_contact_id() -> str:
 
 
 @bp.get("/api/v1/user/profile")
-@require_api_key
+@require_bearer_auth
 def get_user_profile():
     return jsonify(deepcopy(USER_PROFILE))
 
 
 @bp.get("/api/v1/user/medical-id")
-@require_api_key
+@require_bearer_auth
 def get_medical_id():
     return jsonify(deepcopy(MEDICAL_ID))
 
 
 @bp.put("/api/v1/user/medical-id")
-@require_api_key
+@require_bearer_auth
 def update_medical_id():
     payload = request.get_json(silent=True) or {}
 
@@ -73,13 +73,13 @@ def update_medical_id():
 
 
 @bp.get("/api/v1/user/emergency-contacts")
-@require_api_key
+@require_bearer_auth
 def get_emergency_contacts():
     return jsonify({"count": len(EMERGENCY_CONTACTS), "items": deepcopy(EMERGENCY_CONTACTS)})
 
 
 @bp.post("/api/v1/user/emergency-contacts")
-@require_api_key
+@require_bearer_auth
 def add_emergency_contact():
     payload = request.get_json(silent=True) or {}
 
@@ -97,7 +97,7 @@ def add_emergency_contact():
 
 
 @bp.put("/api/v1/user/emergency-contacts/<contact_id>")
-@require_api_key
+@require_bearer_auth
 def update_emergency_contact(contact_id: str):
     payload = request.get_json(silent=True) or {}
 
@@ -126,7 +126,7 @@ def update_emergency_contact(contact_id: str):
 
 
 @bp.delete("/api/v1/user/emergency-contacts/<contact_id>")
-@require_api_key
+@require_bearer_auth
 def delete_emergency_contact(contact_id: str):
     contact = next((item for item in EMERGENCY_CONTACTS if item["contact_id"] == contact_id), None)
     if not contact:
@@ -137,7 +137,7 @@ def delete_emergency_contact(contact_id: str):
 
 
 @bp.get("/api/v1/user/settings")
-@require_api_key
+@require_bearer_auth
 def get_user_settings():
     return jsonify(deepcopy(USER_SETTINGS))
 

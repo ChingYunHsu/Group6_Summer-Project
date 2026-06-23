@@ -18,6 +18,7 @@ def create_app() -> Flask:
     app.config["BESTTIME_API_KEY"] = settings.besttime_api_key
     app.config["GOOGLE_MAPS_API_KEY"] = settings.google_maps_api_key
     app.config["GEMINI_API_KEY"] = settings.gemini_api_key
+    app.config["JWT_SECRET"] = settings.jwt_secret
 
     app.register_blueprint(health_bp)
     app.register_blueprint(integrations_bp)
