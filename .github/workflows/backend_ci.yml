@@ -13,7 +13,6 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -33,22 +32,21 @@ jobs:
       uses: snok/install-poetry@v1
       with:
         virtualenvs-create: true
-        virtualenvs-in-project: false # Let Poetry manage it globally
+        virtualenvs-in-project: true 
         installer-parallel: true
 
     - name: Load cached venv
       id: cached-poetry-dependencies
       uses: actions/cache@v4
       with:
-        path: ~/.cache/pypoetry/virtualenvs # Cache the global environment
-        key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+        path: backend/.venv
+        key: venv-${{ runner.os }}-${{ hashFiles('backend/poetry.lock') }}
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
       working-directory: ./backend 
 
-  
     - name: Ensure Pytest is Installed
       run: poetry run pip install pytest pytest-cov flake8
       working-directory: ./backend
