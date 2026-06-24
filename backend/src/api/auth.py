@@ -1,26 +1,16 @@
+import uuid
 from copy import deepcopy
 
+import pymysql
 from flask import Blueprint, jsonify, request
+from werkzeug.security import check_password_hash, generate_password_hash
 
 from auth import ACCESS_TOKEN_TTL, SESSIONS, issue_access_token
-from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE, AUTH_USERS
+from db import db_cursor, db_transaction
+from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE
 
 
 bp = Blueprint("auth", __name__)
-
-
-def _next_user_id() -> str:
-    user_numbers = []
-    for user in AUTH_USERS:
-        user_id = user.get("user_id", "")
-        if user_id.startswith("u_"):
-            try:
-                user_numbers.append(int(user_id.removeprefix("u_")))
-            except ValueError:
-                continue
-
-    next_number = max(user_numbers, default=1000) + 1
-    return f"u_{next_number}"
 
 
 def _issue_token_response(user_id: str, is_guest: bool = False) -> dict:
@@ -49,18 +39,25 @@ def register_user():
     if not isinstance(payload.get("password"), str) or len(payload["password"]) < 8:
         return jsonify({"error": "Validation failed.", "missing_fields": [], "invalid_fields": ["password"]}), 400
 
-    if any(user["email"] == payload["email"] for user in AUTH_USERS):
+    user_id = str(uuid.uuid4())
+    password_hash = generate_password_hash(payload["password"])
+
+    try:
+        with db_transaction() as cursor:
+            cursor.execute("SELECT 1 FROM users WHERE email = %s", (payload["email"],))
+            if cursor.fetchone():
+                return jsonify({"error": "Email already registered."}), 409
+
+            cursor.execute(
+                "INSERT INTO users (user_id, email, password_hash, display_name) "
+                "VALUES (%s, %s, %s, %s)",
+                (user_id, payload["email"], password_hash, payload["full_name"]),
+            )
+    except pymysql.err.IntegrityError:
+        # Race: another request registered this email between our check and insert.
         return jsonify({"error": "Email already registered."}), 409
 
-    user = {
-        "user_id": _next_user_id(),
-        "full_name": payload["full_name"],
-        "email": payload["email"],
-        "password": payload["password"],
-    }
-    AUTH_USERS.append(user)
-
-    response = _issue_token_response(user["user_id"])
+    response = _issue_token_response(user_id)
     response["finish_profile_prompt"] = True
     return jsonify(response), 201
 
@@ -74,15 +71,14 @@ def login():
     if missing:
         return jsonify({"error": "Validation failed.", "missing_fields": missing}), 400
 
-    user = next(
-        (
-            user
-            for user in AUTH_USERS
-            if user["email"] == payload["email"] and user["password"] == payload["password"]
-        ),
-        None,
-    )
-    if not user:
+    with db_cursor() as cursor:
+        cursor.execute(
+            "SELECT user_id, password_hash FROM users WHERE email = %s",
+            (payload["email"],),
+        )
+        user = cursor.fetchone()
+
+    if not user or not check_password_hash(user["password_hash"], payload["password"]):
         return jsonify({"error": "Unauthorized. Invalid email or password."}), 401
 
     return jsonify(_issue_token_response(user["user_id"]))
