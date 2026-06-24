@@ -40,11 +40,13 @@ jobs:
       uses: actions/cache@v4
       with:
         path: backend/.venv
-        key: venv-${{ runner.os }}-${{ hashFiles('backend/poetry.lock') }}
+        key: venv-${{ runner.os }}-${{ hashFiles('backend/poetry.lock') }}-v1 
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root
+      run: |
+        poetry lock --no-update                                      
+        poetry install --no-interaction --no-root
       working-directory: ./backend 
 
     - name: Ensure Pytest is Installed
