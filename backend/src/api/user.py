@@ -2,12 +2,15 @@ from copy import deepcopy
 
 from flask import Blueprint, jsonify, request
 
-from auth import require_api_key, require_bearer_auth
+from auth import require_api_key, require_bearer_auth, web_readonly_blocked
 from mock_data import (
+    DELETE_ACCOUNT_RESPONSE,
     EMERGENCY_CONTACT_CREATE_TEMPLATE,
     EMERGENCY_CONTACTS,
+    FAVOURITE_CREATE_TEMPLATE,
     FAVOURITES,
     LANGUAGE_OPTIONS,
+    MEDICAL_ID,
     MEDICAL_PASSPORT_RESPONSE,
     NOTIFICATION_PREFERENCES,
     SOS_RESPONSE,
@@ -17,6 +20,33 @@ from mock_data import (
 
 
 bp = Blueprint("user", __name__)
+
+# Registration-locked fields (user_id, email, full_name) are intentionally
+# excluded — they cannot be edited via this endpoint.
+PROFILE_EDITABLE_FIELDS = {"phone", "nationality", "spoken_languages"}
+
+SETTINGS_EDITABLE_FIELDS = {
+    "selected_language",
+    "selected_language_native",
+    "location_access_enabled",
+    "notifications_enabled",
+    "privacy_mode",
+    "guest_mode_enabled",
+    "show_medical_id_on_sos",
+}
+
+NOTIFICATION_PREFERENCES_EDITABLE_FIELDS = {
+    "busyness_alerts_enabled",
+    "push_notifications_enabled",
+    "quiet_hours_enabled",
+    "quiet_hours_start",
+    "quiet_hours_end",
+    "alert_threshold_percent",
+    "preferred_venue_types",
+    "preferred_boroughs",
+}
+
+SOS_FIELDS = {"latitude", "longitude", "share_live_location", "note"}
 
 MEDICAL_ID_EDITABLE_FIELDS = {"blood_type", "conditions", "allergies"}
 
@@ -78,6 +108,8 @@ def update_medical_id():
 @require_bearer_auth
 def get_emergency_contacts():
     return jsonify({"count": len(EMERGENCY_CONTACTS), "items": deepcopy(EMERGENCY_CONTACTS)})
+
+
 @bp.put("/api/v1/user/profile")
 @require_api_key
 def update_user_profile():

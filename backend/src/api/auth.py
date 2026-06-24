@@ -1,27 +1,12 @@
-from flask import Blueprint, jsonify, request
-
-from auth import ACCESS_TOKEN_TTL, issue_access_token
-from mock_data import AUTH_USERS
 from copy import deepcopy
 
 from flask import Blueprint, jsonify, request
 
-from auth import SESSIONS
+from auth import ACCESS_TOKEN_TTL, SESSIONS, issue_access_token
 from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE, AUTH_USERS
 
 
 bp = Blueprint("auth", __name__)
-
-
-@bp.post("/api/v1/auth/login")
-def login():
-def _register_session(user_id: str, is_guest: bool = False) -> dict:
-    response = deepcopy(AUTH_LOGIN_RESPONSE)
-    response["access_token"] = f"mock_access_token_{user_id}"
-    response["refresh_token"] = f"mock_refresh_token_{user_id}"
-    response["user_id"] = user_id
-    SESSIONS[response["access_token"]] = {"user_id": user_id, "is_guest": is_guest}
-    return response
 
 
 def _next_user_id() -> str:
@@ -36,6 +21,20 @@ def _next_user_id() -> str:
 
     next_number = max(user_numbers, default=1000) + 1
     return f"u_{next_number}"
+
+
+def _issue_token_response(user_id: str, is_guest: bool = False) -> dict:
+    """Issue a real JWT (for require_bearer_auth) and mirror it into SESSIONS
+    (for get_current_session), so both auth checks accept the same token."""
+    access_token = issue_access_token(user_id)
+    SESSIONS[access_token] = {"user_id": user_id, "is_guest": is_guest}
+
+    response = deepcopy(AUTH_LOGIN_RESPONSE)
+    response["access_token"] = access_token
+    response["refresh_token"] = f"mock_refresh_token_{user_id}"
+    response["user_id"] = user_id
+    response["expires_in"] = int(ACCESS_TOKEN_TTL.total_seconds())
+    return response
 
 
 @bp.post("/api/v1/auth/register")
@@ -61,13 +60,13 @@ def register_user():
     }
     AUTH_USERS.append(user)
 
-    response = _register_session(user["user_id"])
+    response = _issue_token_response(user["user_id"])
     response["finish_profile_prompt"] = True
     return jsonify(response), 201
 
 
 @bp.post("/api/v1/auth/login")
-def login_user():
+def login():
     payload = request.get_json(silent=True) or {}
 
     required_fields = ["email", "password"]
@@ -86,11 +85,24 @@ def login_user():
     if not user:
         return jsonify({"error": "Unauthorized. Invalid email or password."}), 401
 
-    return jsonify(
-        {
-            "access_token": issue_access_token(user["user_id"]),
-            "token_type": "bearer",
-            "expires_in": int(ACCESS_TOKEN_TTL.total_seconds()),
-            "user_id": user["user_id"],
-        }
-    )
+    return jsonify(_issue_token_response(user["user_id"]))
+
+
+@bp.post("/api/v1/auth/guest")
+def create_guest_session():
+    """Issue temporary credentials for a guest session."""
+    guest_id = f"guest_{len(SESSIONS) + 1}"
+
+    response = _issue_token_response(guest_id, is_guest=True)
+    response["finish_profile_prompt"] = False
+    return jsonify(response), 201
+
+
+@bp.post("/api/v1/auth/reset-password")
+def reset_password():
+    payload = request.get_json(silent=True) or {}
+
+    if "email" not in payload:
+        return jsonify({"error": "Validation failed.", "missing_fields": ["email"]}), 400
+
+    return jsonify(deepcopy(AUTH_RESET_PASSWORD_RESPONSE))
