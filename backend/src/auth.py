@@ -72,3 +72,11 @@ def require_bearer_auth(view_func):
         return view_func(*args, **kwargs)
 
     return wrapped
+
+
+def web_readonly_blocked():
+    """Fix 4: write endpoints reject requests from the read-only Web client."""
+    if request.headers.get("X-Client-Origin", "").lower() == "web":
+        return jsonify({"error": "Forbidden. This action is not available on the Web client."}), 403
+
+    return None

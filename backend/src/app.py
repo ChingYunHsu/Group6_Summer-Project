@@ -26,7 +26,6 @@ def create_app() -> Flask:
     app.register_blueprint(health_bp)
     app.register_blueprint(auth_bp)
     app.register_blueprint(integrations_bp)
-    app.register_blueprint(auth_bp)
     app.register_blueprint(user_bp)
     app.register_blueprint(routes_bp)
     app.register_blueprint(app_state_bp)
