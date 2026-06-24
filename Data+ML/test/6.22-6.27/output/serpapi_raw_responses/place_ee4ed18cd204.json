@@ -1,0 +1,397 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1a86c3283c87e984424",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/Me2kRw2MoL9mA7LJd1ek8Q/6a3ac1a86c3283c87e984424.json",
+    "created_at": "2026-06-23 17:26:00 UTC",
+    "processed_at": "2026-06-23 17:26:00 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25996baac7f79:0xd6a9fc804fd93d1c!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/Me2kRw2MoL9mA7LJd1ek8Q/6a3ac1a86c3283c87e984424.html",
+    "prettify_html_file": "https://serpapi.com/searches/Me2kRw2MoL9mA7LJd1ek8Q/6a3ac1a86c3283c87e984424.prettify",
+    "total_time_taken": 0.95
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJeX-supZZwokRHD3ZT4D8qdY",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Village Dental Medicine",
+    "place_id": "ChIJeX-supZZwokRHD3ZT4D8qdY",
+    "data_id": "0x89c25996baac7f79:0xd6a9fc804fd93d1c",
+    "data_cid": "15468172023206329628",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25996baac7f79%3A0xd6a9fc804fd93d1c&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25996baac7f79%3A0xd6a9fc804fd93d1c&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7334968,
+      "longitude": -74.0000373
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJeX-supZZwokRHD3ZT4D8qdY",
+    "provider_id": "/g/1pv5__1ry",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHRCtyf7jqWfRCR6IIhQQgbyFORdgNn8zYAVWJ0u_1fCG0huh7TX9RGNkTwqzCCLwBgIR7gJ1E29BOYE0nbrWsE7ucBQ-EMc1vj1b-46ZpLjNZTXcbZnp8kWJtBal1pgLI72UyQaQ=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/gKNyKnicHcTRroIgAADQLyKhWlRbD8q8XZ1ZMEvz5S65ClNDCszZH_YJ_U1b5-G8X9JabdaO08rZRHSdaMvelHfeKVsqO-Hd1RHaAG6AcdxDTBv3lxE7Vri-pRUjbBEEklJRjD979i9itXye3VMawv4PVWQLZS9xkq3YNm6S4fYkJBo8ETAsQuRPV97-7ENV3FPj4557FPg7jh41KsB8keuojvMk40Wu9LJJQ-tdWqRFFODpcaQXuhkQhBDI7xyoD6ZsREE",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 14
+      },
+      {
+        "stars": 2,
+        "amount": 4
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 5
+      },
+      {
+        "stars": 5,
+        "amount": 613
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 637,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist"
+    ],
+    "book_online": "https://www.zocdoc.com/practice/village-dental-medicine-11552?LocIdent=38163&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_88f0CV2kSECJhuvf05MxkR-lo_r178B19R10KdxzdPpLtmUh-entity&rwg_token=AE37R_h1P7Ad-2KEtoo6bWxOiUD0bguPA-k44kEYccWRiQwz6ObUhoUG2fugMNDV16Z0sKgN_cYzmRSoo2bKZafGiAeMmCpimg%3D%3D",
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Emergency services",
+          "Pediatric care"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "address": "401 6th Ave, New York, NY 10014",
+    "country": "United States",
+    "booking_link": "https://villagedentalmedicine.com/book-online/",
+    "website": "https://villagedentalmedicine.com/",
+    "phone": "(212) 741-1100",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "PXMX+9X New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      },
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "9 AM\u20132 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25996baac7f79%3A0xd6a9fc804fd93d1c&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNU7IFixogfcOq3WQzMu67kh5svZiuO46qO6N8U=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Village+Dental+Medicine&ludocid=15468172023206329628&lpsid=CIHM0ogKELrKjYmzsfDnfg&source=sh/x/loc/post&lsig=AB86z5UUPATyY5ucGhcTJrKNFMZJ",
+        "description": "We understand that visiting the dentist can feel overwhelming for some people. That's why we've designed our practice with you in mind - spacious treatment rooms, a calming atmosphere, and a team that truly listens to your concerns.\n\nFrom the moment you walk in, you'll notice the difference. Our large terrace and soothing environment help you feel relaxed and at ease. We take the time to understand your needs and work with you to create a treatment plan that fits your life.\n\nAt Village Dental Medicine, we treat every person the way we'd want our own family members to be treated. Your comfort and care are always our top priorities.\n\n#DentalCare #PatientFirst #ComfortableDentistry #NewYorkDentist #QualityCare #DentalHealth",
+        "date": "Jan 31, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOqkw8fxZer5D8D3DsOCMvy8wOYf-xaBWLiYU3j=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Village+Dental+Medicine&ludocid=15468172023206329628&lpsid=CIHM0ogKEJXJtunquqP63wE&source=sh/x/loc/post&lsig=AB86z5UUPATyY5ucGhcTJrKNFMZJ",
+        "description": "Dental care doesn't have to be complicated or stressful. At Village Dental Medicine, we combine advanced technology with a gentle, straightforward approach that puts you at ease.\n\nWe know the dental world can seem full of confusing terms and procedures. That's why we speak in plain language and take time to answer your questions. Whether you're curious about digital x-rays, porcelain crowns, or periodontal treatment, we'll explain everything in a way that makes sense.\n\nOur state-of-the-art practice offers comprehensive services\u2014from preventive care to complete smile transformations\u2014all under one roof. You deserve dental care that's both excellent and accessible.\n\nWe believe in honest, transparent communication. No surprises, no pressure - just quality care delivered with genuine respect for you and your needs.\n\n#DentistryMadeSimple #ModernDental #TransparentCare #NewYorkDentistry #TrustedDentist #ComprehensiveCare #DentalExcellence",
+        "date": "Jan 30, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPxH_BkFwCHhJTSJfvFso4zqFRquKEtY4aLINK9=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Village+Dental+Medicine&ludocid=15468172023206329628&lpsid=CIHM0ogKEPb0vfGO44D_6gE&source=sh/x/loc/post&lsig=AB86z5UUPATyY5ucGhcTJrKNFMZJ",
+        "description": "\ud83c\udf89 Here\u2019s to turning the page and welcoming what\u2019s next.\n\nWishing you a positive and rewarding year ahead.\n\n#HappyNewYear #NewChapter #LookingAhead",
+        "date": "Dec 31, 2025"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOUiulmMaAEc2Jnuxp8v4C6FFp16UpNKw41GR_n=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Village+Dental+Medicine&ludocid=15468172023206329628&lpsid=CIHM0ogKEIeco7jCyPfXqAE&source=sh/x/loc/post&lsig=AB86z5UUPATyY5ucGhcTJrKNFMZJ",
+        "description": "\u2728 Season\u2019s greetings and best wishes for a wonderful Christmas.\n\nMay your days be bright and your celebrations heartfelt.\n\n#MerryChristmas #ChristmasWishes #SeasonalCheer",
+        "date": "Dec 25, 2025"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHRCtyf7jqWfRCR6IIhQQgbyFORdgNn8zYAVWJ0u_1fCG0huh7TX9RGNkTwqzCCLwBgIR7gJ1E29BOYE0nbrWsE7ucBQ-EMc1vj1b-46ZpLjNZTXcbZnp8kWJtBal1pgLI72UyQaQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/gKNyKnicHcTRroIgAADQLyKhWlRbD8q8XZ1ZMEvz5S65ClNDCszZH_YJ_U1b5-G8X9JabdaO08rZRHSdaMvelHfeKVsqO-Hd1RHaAG6AcdxDTBv3lxE7Vri-pRUjbBEEklJRjD979i9itXye3VMawv4PVWQLZS9xkq3YNm6S4fYkJBo8ETAsQuRPV97-7ENV3FPj4557FPg7jh41KsB8keuojvMk40Wu9LJJQ-tdWqRFFODpcaQXuhkQhBDI7xyoD6ZsREE"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAESyAnuou3Nd7mPwY_OOgQuGvQ5n7ORfWPiPQuoBUA4zfPJ-KRmvNZigLAejxVJCiKaaqar-90AO0VWubcUwxJkWS3YBNE_m4NEUG2ZYiF0tgrH3VdGxvEE_OqJ82m439KlbzQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/F6nAcHicHcRdboIwAADgE1U6y-Jcsoe6dBhY-qMBgi8EKxaUUqUtMA-4O-w2Jvsevr_fxrmbfQ-CrkELZYzqam_rQZre1b1bSKMDdbNAWmADzKm4YrL_wb03HtHTSvOpKBlTwkejeO1XbHfOecuFN5sUh48zj0Gy0yM9tOob15c5iz_bpKru1QDWEDOY5f4o02mOr_keFRtKSh1SkkbLQ9F-QaeGLcpO0TwSUrJ7_LbUIVon3fEhPqYXCCFo_pegfwJDc0Qm"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=9FNOSvbgfd4JxWXgFeMAVw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=261.08743&pitch=0.18497534&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/HZg87XicHc3BDoIgGADgt-EWiFJqG2tdPLRVh7bq5hAR2FBY_KE9U0_U29Q6fqfv8zYAIW4JifBQCpJVc7CLcnEVBNbea6dEsBFLP5JECZjn2E3Cul0Qk7c9r5vT-ZI6PfTssNzuulHH_XVGsmuls2oCPooQ25gwCAnWKaxDRDPPc4YMz-sKvcRPG4qzqmQFChak4RmmFavLdcHQPxx84jTLvgDYPBE"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great place and location, friendly staff, fast cleaning/x-ray/checkup\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLmVLxOcp_KxV0o7jLlqSaH4bq2ywJ6bVBvjC7qYiILoqNmdw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Super clean facility, very approachable and professional staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXBk-e0cbpmvpnSu4-NpSycNwiFaJ7PIo6Fa83tJfMK6YBvXTM=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Super chic office, good vibes, sunglasses and music during the cleaning.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK_4RB-WwlLWQuR50XOqBXpywjSN773U9BifKi6ExsGooAz8g=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Mary-Jo Pont",
+          "rating": 5,
+          "contributor_id": "111503893206937102678",
+          "user_review_count": 21,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJJysmsPkW5PpFWDYpf_rZcmKCvG5xgEZsZolfsr3lXyLXa1g=s120-c-rp-mo-ba12-br100",
+          "description": "Dr Chase is wonderful. Caring, gentle and very efficient. Michelle is the best hygienist. All staff are wonderful. I\u2019ve been a patient for several years. Very happy!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSUWRGVmxNRkE0YVVSV2JWb3pWRzluZGxReVRIYxAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOlRQdFVlMFA4aURWbVozVG9ndlQyTHc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T03:05:43+00:00"
+        },
+        {
+          "username": "Sophie T",
+          "rating": 5,
+          "contributor_id": "117044898010691801167",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ-IY14clMy32JWz8JHGWnPfuvEYczPmJYPQodK2t12LWeErdE=s120-c-rp-mo-br100",
+          "description": "I recommend this place to everyone who needs a dentist!! I\u2019ve been going to Village Dental Medicine for a few years now and every visit is genuinely such a pleasant experience. Dr. Clares is the BEST!! He really listens, takes my concerns seriously, and gives honest, thoughtful recommendations without ever making me feel rushed.\n\nThe whole team is great, from the hygienists and techs to the front desk staff. Everyone is kind and professional. The location being right next to west 4th station is also super convenient. I always look forward to my appointments because I know the experience will be easy and not stressful. If you need a dentist, you should go here!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1eFIweEZXa2hDYVVWWFFYcFlSbGxGTFMxemJrRRAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOk5xR0xFWkhCaUVXQXpYRllFLS1zbkE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-11T04:12:38+00:00"
+        },
+        {
+          "username": "David Sisco",
+          "rating": 5,
+          "contributor_id": "104088802591768406484",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWNRgcjVftwDSSusiFkrxtlKd35NV9pI5LjE9ZdQPuiI6YqSTfS=s120-c-rp-mo-br100",
+          "description": "A couple years ago, I had a very bad experience with a dentist. This was my first time getting my teeth cleaned since then, and I was very grateful for how sensitive Dr. Chase and the staff were to my situation. From beginning to end, the appointment was professional, caring, and expedient. I never felt pushed to sign on to  other services, like teeth whitening or invisalign. I'm glad to have found my new dentist!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGak1EYzRjMTgyVjJzM1drNTRUVWxsWWpWQ1RuYxAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOlFjMDc4c182V2s3Wk54TUllYjVCTnc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-19T10:41:38+00:00"
+        },
+        {
+          "username": "Samantha Craig",
+          "rating": 5,
+          "contributor_id": "118258208508520761166",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV-E66Ef3h6qqK-qTUfsA8Rip7jv-U3grwsAwcBjmRHWvtj8ng=s120-c-rp-mo-br100",
+          "description": "A comfortable and refreshing dentist visit! Despite being very busy end of day, staff were lovely. Michelle was kind, accommodating and thorough while doing my cleaning. Dr. Charisse was very pleasant and really took her time to address my concerns and come up with a plan for me. Glad to feel cared about by my dental staff!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21RdE1HeEZNV2cxUTBGelpFaEpVSEZFVmsxUFJuYxAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOmQtMGxFMWg1Q0FzZEhJUHFEVk1PRnc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-29T20:07:06+00:00"
+        },
+        {
+          "username": "Patrick Shields",
+          "rating": 5,
+          "contributor_id": "103641234522736137657",
+          "user_review_count": 7,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWxDd6M9wQirpamB_i3XkTrD-9-oYRDyOits8o0AlfvvNWuVmMp=s120-c-rp-mo-br100",
+          "description": "Exceptional every visit. Thoughtful, helpful. Clean office with great preventative care. And emergency care was more than I could have asked for.\n\nRegular cleanings are quick, painless and thorough. Front office staff are pleasant and helpful when trying to understand insurance and related issues.\n\nConstantly feel lucky that they were recommended to me by a pal.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2poc1pYWXRaMEpaV1ROeUxVd3pWVkpOUzE5ZlkwRRAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOjhsZXYtZ0JZWTNyLUwzVVJNS19fY0E%7C%7C?hl=en",
+          "date": "Edited 2 months ago",
+          "date_iso8601": "2026-04-02T01:31:01+00:00"
+        },
+        {
+          "username": "Trynyty",
+          "rating": 5,
+          "contributor_id": "112363684686102521000",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWTgbM4nnpKNimv2TeQLzrHx2wX2ejQrw2MxqrdRev0FcOlLM9y=s120-c-rp-mo-br100",
+          "description": "Dr. Clares and the hygienist who did my cleaning (so sorry I missed their name!) were amazing and incredibly attentive. I\u2019m so glad I came in, it was a great experience from start to finish.\n\nThank you!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GbFpWVXhUR3hvUWxCVU9VeEVVMFE1UTNWSGQzYxAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOmFlZVUxTGxoQlBUOUxEU0Q5Q3VHd3c%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-27T19:48:52+00:00"
+        },
+        {
+          "username": "Alexandra Hasson",
+          "rating": 5,
+          "contributor_id": "105153005997287805922",
+          "user_review_count": 7,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXDLIFjd4SSjhSOabTpYBGlcL3al8dj6zD7HFoWjzRWwK_7iIjF=s120-c-rp-mo-br100",
+          "description": "I have been going to Dr. Tim for 10+ years. I have recommended him to every single one of my coworkers - and anyone else who will listen. Everyone at VDM is kind, friendly and supportive. 5 stars!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KZmEyeHZUVGRYTTNjNVgzWllWMTluT1hGQ2JHYxAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOmJfa2xvTTdXM3c5X3ZYV19nOXFCbGc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-10T19:12:35+00:00"
+        },
+        {
+          "username": "Roger Vaughn",
+          "rating": 5,
+          "contributor_id": "109063560939492597362",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVpshF_W88noyATvM19wFCJcTLzdGVGhexE20l8ZpMKf7SYAw=s120-c-rp-mo-br100",
+          "description": "The front staff was very welcoming and friendly. Another wonderful hygienist cleaned my teeth and Dr. Culotta provided a great exam and good bill of tooth-health.  Been cared for well for 25 years now.  I love coming to Village Dental.  See you in 6 months.  Happy Holidays! \ud83d\ude18",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25rM01HcG5aR3hWYzFsb1lVUkVRMVZZWjBWcWFuYxAB!2m1!1s0x0:0xd6a9fc804fd93d1c!3m1!1s2@1:CAIQACodChtycF9oOnk3MGpnZGxVc1loYUREQ1VYZ0Vqanc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-05T02:01:17+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Village Dental NYC",
+            "data_id": "0x0:0x2b92a2531c4ada2d",
+            "data_cid": "3139750368071309869",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2b92a2531c4ada2d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2b92a2531c4ada2d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7330427,
+              "longitude": -73.9902582
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2b92a2531c4ada2d%218m2%213d40.7330427%214d-73.9902582&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 458,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFPNC2frojrnQBtwc6DlCFGyR1WUNqOmhO_yd6TDLYWlrcVJpByKHF9LF90vHFnF8XVd5CUDwjzU78ZDpq0xKk_HrKCmZNuD4HIbWYg7UqdxekHIIqWrppZh05Uxe760d3rfnU=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "West Village Dental Studio",
+            "data_id": "0x0:0xc802bdce35168799",
+            "data_cid": "14412290450890590105",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc802bdce35168799&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc802bdce35168799&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7345845,
+              "longitude": -74.0063957
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc802bdce35168799%218m2%213d40.7345845%214d-74.0063957&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 472,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEevwmS0ud71VP0s43UwczboafvIT1o1S3gq6WonA0yEre2k3L_xWWiFMq3HWyhf7_J7A8ZnWcrC9HAT_mSMVh99LikIAecHsdhLMLb7rIdJN-w5UmTIgkTg2NmQnpvbAYbHDrdbw7mstU3=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Smile Village Dental",
+            "data_id": "0x0:0xf3685aee4f4765f",
+            "data_cid": "1096210545523324511",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf3685aee4f4765f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf3685aee4f4765f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7286992,
+              "longitude": -73.99737429999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf3685aee4f4765f%218m2%213d40.7286992%214d-73.99737429999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 117,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF6ay-pQ6K6fDuPGsnwltA7iY_XfNJM6pOnzJJ5K2T3D_FqPrW-Umn7IjKMPDWlFn7jK4NlAoStGVyo3yaG-5ddjJBpDI879Yegg8PIP-okf1cGZqsNtiBKqSMRTb_Vm-1x8dDNdq11s-0=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants periodontist",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Endodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "East Village Dental Center",
+            "data_id": "0x0:0x911957d6624cfc3d",
+            "data_cid": "10455484588201147453",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x911957d6624cfc3d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x911957d6624cfc3d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7225596,
+              "longitude": -73.98026949999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x911957d6624cfc3d%218m2%213d40.7225596%214d-73.98026949999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 634,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG-f2TIb24gp9-DDJWMMBFkrhiGvKHbl0c9vKoLvaciFa5_9AtyAOe90LctHV4yBNaRKb4mwSGeHaeolIQyjHNpBxZSUf5BWM_BDGDvr8sJ4tCeB0qlDdI2Z9fXCDaK4u-USRk=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OioKKCIkVmlsbGFnZSBEZW50YWwgTWVkaWNpbmUgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COioKKCIkVmlsbGFnZSBEZW50YWwgTWVkaWNpbmUgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

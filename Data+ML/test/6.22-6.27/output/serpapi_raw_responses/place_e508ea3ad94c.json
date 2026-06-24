@@ -1,0 +1,524 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1f0cfa2309fa8eb2d1a",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/hZeCTmkLI5mK1d-npaN0iA/6a3ac1f0cfa2309fa8eb2d1a.json",
+    "created_at": "2026-06-23 17:27:12 UTC",
+    "processed_at": "2026-06-23 17:27:12 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259ad080efb8b:0xdf7ac623365ae29d!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/hZeCTmkLI5mK1d-npaN0iA/6a3ac1f0cfa2309fa8eb2d1a.html",
+    "prettify_html_file": "https://serpapi.com/searches/hZeCTmkLI5mK1d-npaN0iA/6a3ac1f0cfa2309fa8eb2d1a.prettify",
+    "total_time_taken": 1.71
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJi_sOCK1ZwokRneJaNiPGet8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "UrgentWay Manhattan",
+    "place_id": "ChIJi_sOCK1ZwokRneJaNiPGet8",
+    "data_id": "0x89c259ad080efb8b:0xdf7ac623365ae29d",
+    "data_cid": "16103401272154710685",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259ad080efb8b%3A0xdf7ac623365ae29d&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259ad080efb8b%3A0xdf7ac623365ae29d&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.754036899999996,
+      "longitude": -73.9925852
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJi_sOCK1ZwokRneJaNiPGet8",
+    "provider_id": "/g/11gdks1_wn",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf9RjZgBxDA1OQ-CcGkBf60hMfnmk39LpgYlrajl0vV5IIkVDdvpCxZIgYAqe3q_Oh3ssETGNmjoQxrZneRXxT2tHUnAmtYGniwBsZ_6kROgTtTr0kC91saa83D4qlChiq2PeW=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Z-6y33icHcRRboIwGADgE1WK3cww8aHAxkg2EcLY4MWQrrTS0gJ_VW7oGbyNid_Dd79J50bYep6WZCWsFZqfgc_MGseNWzE7eGIExACBRw_7XNGPLij6RoRLTP0sRxFLVNhtsPzuzKBI8DWKWs9tr_Glek1TVcX_lzFamlTUdOJkOmaSALyXyX7obb7MjeHF31Ku3eePoYOrE3O6htAcN6rIROnKGaso8KFt30j8MulInqb1gf_urj7GGMnnDJkHlZ1Flw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 66
+      },
+      {
+        "stars": 2,
+        "amount": 3
+      },
+      {
+        "stars": 3,
+        "amount": 5
+      },
+      {
+        "stars": 4,
+        "amount": 13
+      },
+      {
+        "stars": 5,
+        "amount": 313
+      }
+    ],
+    "rating": 4.3,
+    "reviews": 400,
+    "type": [
+      "Urgent care center",
+      "Doctor",
+      "General practitioner",
+      "Medical clinic",
+      "Medical examiner",
+      "Medical office",
+      "Women's health clinic",
+      "Occupational health service",
+      "Physician referral service",
+      "Walk-in clinic"
+    ],
+    "type_ids": [
+      "urgent_care_center",
+      "doctor",
+      "general_practitioner",
+      "medical_clinic",
+      "medical_examiner",
+      "medical_office",
+      "obstetrics_gynecology_clinic",
+      "occupational_health_service",
+      "physician_referral_service",
+      "walk_in_clinic"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Has online care",
+          "Pediatric care"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts walk-ins"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "535 8th Ave 6th floor, New York, NY 10018",
+    "country": "United States",
+    "booking_link": "https://www.urgentway.com/book-an-appointment/",
+    "website": "https://www.urgentway.com/locations/urgent-care-manhattan/",
+    "phone": "(646) 213-0190",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q234+JX New York",
+    "hours": [
+      {
+        "tuesday": "10 AM\u20136 PM"
+      },
+      {
+        "wednesday": "10 AM\u20136 PM"
+      },
+      {
+        "thursday": "10 AM\u20136 PM"
+      },
+      {
+        "friday": "10 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "10 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259ad080efb8b%3A0xdf7ac623365ae29d&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipP-q8CzxwIE15erW6TCwwygyeub6adlwA-EhsDm=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEKiC_t_KiMuqoQE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "Today, We Honor Freedom, Resilience, and Hope.\n\nOn Juneteenth, we pause to reflect on a powerful chapter in history and celebrate the enduring strength, courage, and contributions of African American communities.\n\nAt UrgentWay, we believe that every person deserves to be treated with dignity, respect, and compassion. As healthcare providers, we are privileged to care for individuals and families from all walks of life, and we are committed to creating a welcoming environment where everyone has access to the quality care they deserve.\n\nThis Juneteenth, we honor those who fought for freedom, recognize the progress that has been made, and reaffirm our commitment to supporting healthier, stronger communities for generations to come.\n\nMay we continue to move forward with understanding, kindness, and a shared commitment to a more equitable future.\n\nHappy Juneteenth from all of us at UrgentWay! Urgent Care & Primary Care Centers. \u2764\ufe0f\n\n#Juneteenth #FreedomAndHope #UrgentWay #CommunityCare #HealthcareWithCompassion HealthEquity PrimaryCare UrgentCare StrongerTogether CelebrateFreedom CareForAll",
+        "date": "4 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNIgaZ4Q9qkpqudpWkk0pzEiqcZKBJa0vo4XnRL=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEOKG_7LphIe2kAE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "Sinus Infection Treatment\n\n\u201cHead pounding, nose blocked\u2026 antibiotics delayed?\u201d\nsinus infections dragging on, disrupting work and sleep.\nUrgentWay\u2019s quick diagnosis and treatment clear the pressure fast.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#SinusRelief #UrgentWayClinics #SinusInfectionTreatment #PainRelief #AffordableHealthcare ExpertCare",
+        "date": "5 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipP1Fwwv_sof9LU2y3EzymPq3tLS52e_AL0_mAcr=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEKXJj86o3K7SkAE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "Experience Convenient Care With UrgentWay Telehealth Services! Our virtual care platform allows you to access quality healthcare from the comfort of your own home. With UrgentWay Telehealth, you can connect with our team of experienced healthcare professionals via phone, video, or mobile app. We provide convenient, flexible, and personalized care for a range of medical conditions, from minor illnesses to chronic care management. Say goodbye to long wait times and traveling to a physical clinic. With UrgentWay Telehealth, you can get the care you need, when you need it.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#UrgentWayClinics #ConvenientCare #VirtualHealthcare #Telemedicine",
+        "date": "5 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMsjRfbr8vjG8SI8iEJ6CpFpEAui6SMC4xnKrYm=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKELmI0LyQheK5oQE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "Your Health is Our Priority\n\nAt UrgentWay Clinics, we provide fast, walk-in urgent care with experienced providers and minimal wait times. Your health is our priority \u2014 from minor illnesses to urgent concerns, we\u2019re here when you need us.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#PreventativeCare #HealthAndWellness #UrgentWay #ProactiveHealthcare #StayHealthy #PreventionIsKey #HealthcareInnovation",
+        "date": "Jun 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMMH2-IXV72RJZD8bFlq9pCm-HzJ1o-0b5ne5tj=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEJObsPuYsMmEOA&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "At UrgentWay Clinics, we offer a wide range of lab tests with accurate and reliable results. Our state-of-the-art laboratories and experienced team provide a comfortable and informative testing experience, enabling our healthcare providers to make informed decisions about your care.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/services/labs/\n\n#labtesting #labtest #health #laboratory #wellness anylabtestnow hospital labwork laboratorytest lab medicalassistant urgentway clinics",
+        "date": "Jun 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipO1hiMNfD90w9K2brpG8_2n9RkY_uRjgtIVkQIw=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEO6GkLrm-7a8Mg&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "Stay Healthy For World Cup And Beyond: Preventive Care\n\nUrgentWay Walk-In Medical Center has you covered with fast, same-day care so you don\u2019t miss a match. From flu and infections to routine screenings and wellness visits, we help you stay healthy for the game and beyond.\n\n\u2705 Same-day treatment for quick recovery\n\u2705 Routine screenings & vaccinations\n\u2705 Affordable, fast check-ins\n\u2705 Personalized guidance to stay ahead of illness\n\nVisit us in Bronx, Hicksville, Hempstead, or Manhattan.\n\ud83c\udf10 http://www.urgentway.com\n\n#UrgentWay #WorldCupCare #PreventiveHealth #NYCHealthcare StayHealthy WorldCup WorldCupMatch MatchDay GameDayReady",
+        "date": "Jun 11, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN9z-uweOTajDEnet-q_hQURPp-CwL7f4YPH3Vj=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEIX73YzRvqzVRw&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "Diabetes Treatment\nEssential Care For a Balanced Life\n\nTake control of your diabetes with UrgentWay Clinics. Our expert diabetes doctors offer personalized treatment plans, ongoing support, and education to help you manage your condition and live healthier.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#UrgentWayClinics #DiabetesDoctor #DiabetesManagement #HealthyLifestyle #ComprehensiveCare PersonalizedMedicine DiabetesSupport WellnessExpert",
+        "date": "Jun 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMGRbMO0jVyfALbqJP0E1ZtY5Rt29C0yS7Vr9mX=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEK2J1IajjufIqQE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "UrgentWay Clinics offers comprehensive medical check-ups with experienced healthcare professionals, providing thorough physical exams, medical history reviews, and lab tests to promote overall wellness and address health concerns promptly.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#UrgentWayClinics #MedicalCheckup #HealthCare #NewYork",
+        "date": "Jun 8, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOk1k-BgDbZ7oYzMk9nlTaAMjLuEb6oL-DKzTkN=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKELuzpMyc25PahQE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "At UrgentWay's pediatric urgent care center, we understand the importance of providing prompt and compassionate care to your little ones. Our board-certified provider and medical staff are dedicated to delivering top-notch care for non-life-threatening conditions, from colds and flu to sprains and minor injuries. We strive to create a warm and welcoming environment that puts your child at ease, while our state-of-the-art facilities ensure accurate diagnoses and effective treatment. Trust us to provide the quality care your family deserves, when and where you need it.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#UrgentWay\n#PediatricUrgentCare\n#QualityCare\n#CompassionateCare\n#KidsHealth\nFamilyHealth",
+        "date": "Jun 5, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipP8s8QtgkNsuKWd_jjrrw9PmgZxLxQx0A7w_KQe=h400-no",
+        "cta": "Call now",
+        "phone": "(646) 213-0190",
+        "post_link": "https://search.google.com/local/posts?q=UrgentWay+Manhattan&ludocid=16103401272154710685&lpsid=CIHM0ogKEMfdmuT9tcz5zQE&source=sh/x/loc/post&lsig=AB86z5WmO2bTMnCbkVRwHkgcQnqx",
+        "description": "\ud83d\udc69\u200d\u2695\ufe0f Doctors for Women\u2019s Health\n\u201cCompassionate Care, Every Stage of Life.\u201d\n\nAt UrgentWay\u2019s Women\u2019s Health Clinics, our award\u2011winning providers deliver comprehensive healthcare services for women of all ages. From routine gynecological exams and prenatal care to family planning, menopause management, and treatment for menstrual disorders \u2014 we\u2019re here to support your health journey.\n\nWe also provide STD testing and treatment, cervical cancer screenings, and personalized care plans designed to meet each woman\u2019s unique needs.\n\nWith extended hours and same\u2011day appointments, we make it easy to get the care you need, when you need it.\n\n\ud83d\udc99 Our mission is simple: to provide personalized, compassionate care that empowers women to take charge of their health.\n\nBOOK AN APPOINTMENT OR WALK IN\nhttps://urgentway.com/book-an-appointment/\n\n#DoctorsForWomenHealth #WomensHealth #UrgentWay #CompassionateCare #PreventiveCare Clinics",
+        "date": "Jun 5, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf9RjZgBxDA1OQ-CcGkBf60hMfnmk39LpgYlrajl0vV5IIkVDdvpCxZIgYAqe3q_Oh3ssETGNmjoQxrZneRXxT2tHUnAmtYGniwBsZ_6kROgTtTr0kC91saa83D4qlChiq2PeW=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Z-6y33icHcRRboIwGADgE1WK3cww8aHAxkg2EcLY4MWQrrTS0gJ_VW7oGbyNid_Dd79J50bYep6WZCWsFZqfgc_MGseNWzE7eGIExACBRw_7XNGPLij6RoRLTP0sRxFLVNhtsPzuzKBI8DWKWs9tr_Glek1TVcX_lzFamlTUdOJkOmaSALyXyX7obb7MjeHF31Ku3eePoYOrE3O6htAcN6rIROnKGaso8KFt30j8MulInqb1gf_urj7GGMnnDJkHlZ1Flw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHhJCnyfsNy8zbowhTNsqdY_X6KnW7OJp5NQuZCcT9WMDdTwWERu92GmselI40KGYbw_npukd_zz_-n8kSjpTy5CcxgHhXVXQdE4gFFtmGP7YGAakr60rg-Mas42eolPuKARWNh2Q=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/qeA25XicHcTdboIwGADQJ6p0iH9LvCBMUYkVlAzYDdFS2wxoK18bBm_oI_g2JjsX5_UUxmj4dJxGTCdcKd4wC6yjShomzYSq1uEaEAUEjh-TpPZ34hDI4Q5kWI431YuUwKMqynweyWxxOugZSexPQNNVdvyq0j7bnO3KDVtgzd7DUVjc-lJqW1flOJZILuvLr06HWUD_-E7k33lSbTy-3Zo2jBdF6F_rbo47jo5X8FymmthG_jkjwk3W_QfGGIn_KZJvf29GXg"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFA7Y_Gz8G3w5JLgu1vWw7kpe9uMdCAAZD12fwBzVZbTX8xxLpRIOIk2a-0V_OQo672F_j1bzytX5UWRqO4Bqfvsf-BEOaRSnXyP3QR6YMPSrfMXOezDkp2tcD7b7nIQXE0xBpi=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/6gZqonicHcRLjoIwAADQE1UKqFUTF2VQw0Qs4K-6IdIpMKJttUWQC3oGb2PiW7z3qzRG6YllXUq3V0hZXHit-Z1JYbgwPSavVqE0YBpoC0eruMJzjA7pohst3Gbwuyxq-7FvUKX4uA7_fjA--raTN163O2YbOmrbpUoCElTOCcBdSmI5RM48PdtZ9zR0sN0nN9L3bvlD58CbkVOyFvQZuXEyPITR-p6HlPDOr5RjmI8yJIKYzmDrqf9pY0MIQfmdAfEBAPdD0g"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=tGynItWQ_oWnoQOVaiufoQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=290.62662&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/oUwraHicHc0xCsIwFADQ22QzSYMUKwRHcZIudixpjO2HNP9jflN7HW_lbRTHN73Pe2KmfFQq8zMELhBWgleIeUdOjohjDI4gS4-zKpXiaZmH5CCeyCWEu-Xzli7ctT12CdvrzcHywFb4ofcRQmI7O8p9LpKdZ4hBjpTFao3Zi8ma5iA291OjZW3q2ggC9pPV4v88sNhK6y9C-zsN"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 1
+        },
+        {
+          "title": "Other",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Inspiron Construction",
+          "data_id": "0x89c259f255555555:0xcf00505763037bf9",
+          "data_cid": "14916010302104632313",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259f255555555%3A0xcf00505763037bf9&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259f255555555%3A0xcf00505763037bf9&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.753943,
+            "longitude": -73.992609
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259f255555555%3A0xcf00505763037bf9%218m2%213d40.753943%214d-73.992609&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJi_sOCK1ZwokRneJaNiPGet8&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Construction company",
+          "type_id": "construction_company",
+          "address": "535 8th Ave 12th floor, New York, NY 10018",
+          "location": "Floor 12",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAESMeILyRCMx8V-w0lB_AiaRUrl9cIkUZ7axLaW5iFqDmx9yiyATMBc6ztdnkqs-bSq3PSasHR303WjlpP8Ury-LiTV5fmY4pmsI-YKJMjf37a6NciAT_w_aOdwBC1gjYNUCBhg=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAESMeILyRCMx8V-w0lB_AiaRUrl9cIkUZ7axLaW5iFqDmx9yiyATMBc6ztdnkqs-bSq3PSasHR303WjlpP8Ury-LiTV5fmY4pmsI-YKJMjf37a6NciAT_w_aOdwBC1gjYNUCBhg=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Young Child Expo & Conference",
+          "data_id": "0x89c259ada7efaa49:0xf130673929990805",
+          "data_cid": "17379504457231435781",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259ada7efaa49%3A0xf130673929990805&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259ada7efaa49%3A0xf130673929990805&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.753943,
+            "longitude": -73.992609
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259ada7efaa49%3A0xf130673929990805%218m2%213d40.753943%214d-73.992609&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJi_sOCK1ZwokRneJaNiPGet8&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Training center",
+          "type_id": "training_center",
+          "address": "535 8th Ave, New York, NY 10018",
+          "location": "Floor 1"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Best energy and service, like family HIGHLY RECOMMEND\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIXHILJjU9XK9tkJ4de5rwFC3Bvp9KWkVDpnNJu8duWk3wm4g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I waited until 4:30pm but the staff told me I need to wait more.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX7GHz_2n95h30oKLfWCfltVZk59T5KyaUWfzc20s7lFqdVc9KE5w=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Good place to go and front desk customer service is very helpful.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWgmIos0PRWny93LBiNRQhhyRTsSx86QBo-Kim7EhL3Ct6dm2Yz=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Hamida Qanbari",
+          "rating": 5,
+          "contributor_id": "118020959237945970224",
+          "user_review_count": 53,
+          "user_photo_count": 44,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXwu1Hf5aTJzLQJa6gdbgLWWII0liUaIPleMrg1AOwxNKBsMIl3nQ=s120-c-rp-mo-ba12-br100",
+          "description": "* Definitly a five star Urgent Care given its location in midtown. Perfect for people in the hotels nearby or working in midtown.\n* Caring and professional staffs, the physician actually listens to you!\n* Almost zero wait time\n* For direction, you have to find the building and then go to the 6th floor.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kxTFVGWm5ZMmhhUlhKUFVUZzNhRWxJV1dVMmMxRRAB!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CAIQACodChtycF9oOi1LUFZnY2haRXJPUTg3aElIWWU2c1E%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2UcLytNrv09OCUbbJk_inhhbs66Rkry_xqn4zCV6dkhWrKLFiO2OrX5qQguJ8ALpPl0ENIS24tgccuXYhLneX1CPGTPz5l-pW4KBYcmNLLMIx4jWB3X0TxFR7fkGyylcSQKQzFeKchyHfI=k-no"
+            }
+          ],
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-06T17:24:30+00:00"
+        },
+        {
+          "username": "Zelika Compaore",
+          "rating": 5,
+          "contributor_id": "106731223693511225128",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocITAQQnMeUkllpo3KT_7T_RtHoID5pvYUPRmJgs-tQFkfa2yQ=s120-c-rp-mo-br100",
+          "description": "You may not have any luck getting someone on the phone to book an appointment but the good thing is that they accept walk-ins. It\u2019s a very clean facility with welcoming staff. I was in and out in 45 min (paperwork included) for a physical even as a walk-in. They get 5 stars.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GM2NWZFZRa3RUV0VWMFMyaFdZM05uUzBoU1JVRRAB!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CAIQACodChtycF9oOmF3cVdVQktTWEV0S2hWY3NnS0hSRUE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-09T17:15:09+00:00"
+        },
+        {
+          "username": "Joshua Yaghoobian",
+          "rating": 1,
+          "contributor_id": "115942608555917646449",
+          "user_review_count": 55,
+          "user_photo_count": 23,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJoAUv6RrsXk5Ar9Hxs3na2V1TBcpEuJJkJ_9sXaqWUDb-0iw=s120-c-rp-mo-ba12-br100",
+          "description": "This place is dirty and creepy\n\nThe receptionist is also the nurse?! PA?!\n\nAs soon as a patient left a room I was called in, it would have been impossible to sanitize the room in that time\n\nPHOTO  tray from a previous patient of used medical materials\n\nIf I wasn\u2019t sick I would be from coming here\n\nReally gross and creepy\n\nShouldn\u2019t a medical facility sanitize a room in between patients?!\n\nI was \u201cseen\u201d but not treated at all\nBlood pressure was taken\nPulse was not takes\nI came in with a cough and the doctor did not listen to my lungs\nI was asked what tests I wanted and how I wanted to be treated\u2026\n\nAm I the doctor? What do you do?!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5YVVsUllkRzlDWjBkeU5VMHlNSFkxY205MFRGRRAB!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CAIQACodChtycF9oOl9aUlRYdG9CZ0dyNU0yMHY1cm90TFE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn260ZLBzTcBRa_LHS1U358i_zVYHvPXx6OVhM0fl-t9Ly69pUDoq4lOfWXX9RBVtWdSR0LyafcXYt0geK2uZrSkWklaabiNBWQEukLaQJZy4DJN8ba1LK8PM0q4T3S0EMhiRJ3IzJnUDCY8=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-06-12T19:02:46+00:00"
+        },
+        {
+          "username": "Marlen Hernandez",
+          "rating": 5,
+          "contributor_id": "110353287331991068701",
+          "user_review_count": 3,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKYS2xVE5dYetbMHHSlrpl4fUfzmioWleqHpQ9UTcbNahLoHg=s120-c-rp-mo-br100",
+          "description": "This was my first time in this office and it was a very positive experience! I had the pleasure of meeting their worker Maria who is so kind and definitely makes sure her patients are taken care of! I would definitely recommend this place! It is also very clean!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNweV9hclFREAE!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CIHM0ogKEICAgICpy_arQQ%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2R62bH-luwp1eWPRgFVRIfeYOm0LZr1sf2_BLb6DaDeBhHjEI3m9L2A-fRIe8XlTdpFY_ukTCGYaQmOt6iR2oYT14EZoHn51vXTCZ4bpmdde3bPEpCmohjnCo5Qf4nLNlbJjGI=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2023-08-10T13:34:26+00:00"
+        },
+        {
+          "username": "Vanityy",
+          "rating": 5,
+          "contributor_id": "107271010009019041602",
+          "user_review_count": 4,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUyVzdSIBnTUeuprIFhOnT0jL07l1xIN6y3c-g3P5tDFcWO1a9j=s120-c-rp-mo-br100",
+          "description": "I adore my health and I trust my health and personal business with the Urgent way staff which they are amazing .I was help but 3 Queens today ,Leslie which is the front receptionist and she\u2019s so friendly toward all clients  and make sure we get assist and Maria  she\u2019s was my nurse to get my blood work she\u2019s nice and concerning and my doctor  fortesa she\u2019s was doctor she\u2019s was never attentive and concerning my needs and making sure I\u2019m getting all the help I asked and people like this we need in our health care departments. Thanks urgent way for the care you do for us",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUR1bkphTktnEAE!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CIHM0ogKEICAgIDunJaNKg%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1yZ5DJM1rA3RRMOD8UE-GvHWBL9x7qY4lgeWOYvY20mGxTIxypOkI1Xd-KhdSD-GTl5CbZ0dGBBhv9Wa77PUjNFQsrWeDCOfZjFotPVq0BqbS0qFznsqbJ20Ts1s5I2uq7_0so9g=k-no"
+            }
+          ],
+          "date": "3 years ago",
+          "date_iso8601": "2022-08-15T18:56:30+00:00"
+        },
+        {
+          "username": "Edgar Lora",
+          "rating": 1,
+          "contributor_id": "104307253716236111656",
+          "user_review_count": 24,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWpEw0TlTgJ-cBur5zw2VnviQWXAEg4cR_Dnf8HZ4J_rGmOki7n=s120-c-rp-mo-ba12-br100",
+          "description": "I went  this Dr. Office to do a TLC medical exam . When I was talking with the receptionist I asked her about the TLC medical exam and she said , the Dr doesn't work with TLC medical exam, after that , I said there is a sign at the front you do it, but , she was just keeping saying the Dr. doesn't do it even they are showing a sign they do the medidical exam for TLC.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCM1ZVSTJUbEJZVmxCblkxSktabWhaUWpOeU9IYxAB!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CAIQACodChtycF9oOlB3VUI2TlBYVlBnY1JKZmhZQjNyOHc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-25T17:04:27+00:00"
+        },
+        {
+          "username": "Gacha Mucha",
+          "rating": 5,
+          "contributor_id": "104886516881302530937",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIK-rKVRNLckzbMNOo3s-NPJBXGki_Z_f6f53eO4JG9wUSGfQ=s120-c-rp-mo-br100",
+          "description": "The staff is amazing, very helpful and cheerful and very kind, definitely my favorite care place",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGbWRIRkRhSGc1YjBWQk1EY3hVVGxxYVhCbFVtYxAB!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CAIQACodChtycF9oOlFmdHFDaHg5b0VBMDcxUTlqaXBlUmc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-24T14:23:09+00:00"
+        },
+        {
+          "username": "Virginia Koenig",
+          "rating": 5,
+          "contributor_id": "102026546841227760061",
+          "user_review_count": 11,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWdTpe3weDi8n6bWp3h7FO_jIArvfU9emn87B23PEGY2NXtSQM=s120-c-rp-mo-br100",
+          "description": "I was easily able to make a same day appointment and speak with a Dr regarding a burn I received on my leg while making Thanksgiving dinner (hot turkey grease). The burn looked angry and was of particular concern to my children and other family members. The staff was pleasant, courteous, and professional and both the doctor and the medical assistant displayed empathy and a little humor (which was needed) while being examined. I was also explained to me how I could effectively facilitate the healing process and what to watch for in terms of infection. This is my go to place while at work in NYC when I am. in need and of urgent care. I highly recommend.  I felt very relieved and cared for.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURQeDRXVnlRRRAB!2m1!1s0x0:0xdf7ac623365ae29d!3m1!1s2@1:CIHM0ogKEICAgIDPx4WVyQE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-12-06T02:51:34+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Walk In Clinic of NYC",
+            "data_id": "0x0:0x23ef228ade84cb30",
+            "data_cid": "2589326290595400496",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x23ef228ade84cb30&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x23ef228ade84cb30&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.750637399999995,
+              "longitude": -73.9853428
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x23ef228ade84cb30%218m2%213d40.750637399999995%214d-73.9853428&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 194,
+            "thumbnail": "https://www.google.com/maps/vt/data=xRyjdI-g-dFc_qx_HXYU8TuvDPbJKWkMSG92VpA2L5bFEniiNEWyh_w0SYbDYqguuS9xaX-Fz4tFHc6AHMWdIZaMmwQoqakAbvN4ebdq5jn1xp-lliBT4EjKYJCL2lYj2PircoM8R6PCVqiluuDXsgILTrhXVkp6",
+            "type": [
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Walk in Clinic NYC",
+            "data_id": "0x0:0xe50334ad821a555e",
+            "data_cid": "16502091379432379742",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe50334ad821a555e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe50334ad821a555e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7506286,
+              "longitude": -73.98534810000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe50334ad821a555e%218m2%213d40.7506286%214d-73.98534810000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 108,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHv9pggAru3e5pp29QcKmP2Cf6ZtLVcpUF9h3-g69jHFzXJdOaewHRIp41P9cMIZO7g5NYNbnXKGthawB_giO5dmM9567n9FI-MJOf61Kp1cM2zhHL4JJ2XUV8cUufcDRbQ8qV7pA=w156-h156-n-k-no",
+            "type": [
+              "Walk-in clinic",
+              "Medical clinic",
+              "Medical office",
+              "Urgent care center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiYKJCIgVXJnZW50V2F5IE1hbmhhdHRhbiBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiYKJCIgVXJnZW50V2F5IE1hbmhhdHRhbiBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

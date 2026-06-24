@@ -1,0 +1,373 @@
+{
+  "search_metadata": {
+    "id": "6a3ac22d9c2312b40c694f3b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/u5CVIPjcib4UKXqw_x6TLA/6a3ac22d9c2312b40c694f3b.json",
+    "created_at": "2026-06-23 17:28:13 UTC",
+    "processed_at": "2026-06-23 17:28:13 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2585937970eef:0xcf483c70930b7945!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/u5CVIPjcib4UKXqw_x6TLA/6a3ac22d9c2312b40c694f3b.html",
+    "prettify_html_file": "https://serpapi.com/searches/u5CVIPjcib4UKXqw_x6TLA/6a3ac22d9c2312b40c694f3b.prettify",
+    "total_time_taken": 4.91
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ7w6XN1lYwokRRXkLk3A8SM8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Mount Sinai West Emergency Room",
+    "place_id": "ChIJ7w6XN1lYwokRRXkLk3A8SM8",
+    "data_id": "0x89c2585937970eef:0xcf483c70930b7945",
+    "data_cid": "14936254618375256389",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2585937970eef%3A0xcf483c70930b7945&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2585937970eef%3A0xcf483c70930b7945&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7698019,
+      "longitude": -73.9869302
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ7w6XN1lYwokRRXkLk3A8SM8",
+    "provider_id": "/g/1vntkt4b",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGTTCo5wtWjXUnAFEyUuq_4tE-EDYYSKHh-KH2NCbBKjt6aSUEI9V5z25ASot7mCl2DGj3TARsGZ9XvOQ3I5DoAIA5SkOyvh8slGc_Vb3Ru-Ef2KtMAlwPCTE1nrvJS6Z-m6C_N=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/2rqTxHicHcRbjoIwFADQFVUQpvhI_OiUikjER8FRf8jYIA2WVu0FohucNcxuTDwf5_9PAtzs1HGU9AeVMZUqW1s-hNFQahgI0zjVzSJhkXXIJt1eSZRl1OAefupDrsmcPfP2XnwBQyw8HnmykChZeCk9fyc1BL88Z_Fkj18eJtzAqKHKC6Paz8jORqfJoVtv_RiHhsQE8-v62cmxVZEo9md_1yJ28RJYEdVvaMaG-tEteXBCTUCLdNYPXddF8rNA-g22m0J9",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 81
+      },
+      {
+        "stars": 2,
+        "amount": 8
+      },
+      {
+        "stars": 3,
+        "amount": 8
+      },
+      {
+        "stars": 4,
+        "amount": 12
+      },
+      {
+        "stars": 5,
+        "amount": 54
+      }
+    ],
+    "rating": 2.7,
+    "reviews": 163,
+    "type": [
+      "Emergency room",
+      "Hospital"
+    ],
+    "type_ids": [
+      "emergency_room",
+      "hospital"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "parking": [
+          "On-site parking",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "1000 10th Ave, New York, NY 10019",
+    "country": "United States",
+    "located_in": "Mount Sinai West",
+    "website": "https://www.mountsinai.org/locations/west/care/emergency?y_source=1_MTU5Njg4NzctNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "phone": "(212) 523-6800",
+    "plus_code": "Q297+W6 New York",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2585937970eef%3A0xcf483c70930b7945&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGTTCo5wtWjXUnAFEyUuq_4tE-EDYYSKHh-KH2NCbBKjt6aSUEI9V5z25ASot7mCl2DGj3TARsGZ9XvOQ3I5DoAIA5SkOyvh8slGc_Vb3Ru-Ef2KtMAlwPCTE1nrvJS6Z-m6C_N=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2rqTxHicHcRbjoIwFADQFVUQpvhI_OiUikjER8FRf8jYIA2WVu0FohucNcxuTDwf5_9PAtzs1HGU9AeVMZUqW1s-hNFQahgI0zjVzSJhkXXIJt1eSZRl1OAefupDrsmcPfP2XnwBQyw8HnmykChZeCk9fyc1BL88Z_Fkj18eJtzAqKHKC6Paz8jORqfJoVtv_RiHhsQE8-v62cmxVZEo9md_1yJ28RJYEdVvaMaG-tEteXBCTUCLdNYPXddF8rNA-g22m0J9"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHHl62YTIKPuvCSL2YjvKqvLUd5oGk02JKfUtubKeobeHTPMYwE0U68bkReiXeiMPi64k9_5yZOuF33O5o8U-zVSQLd2V5WEF_NUgrN36tHaDibWJt906OiM2q_R3WLaEVJRHmqVA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/v1Z0mHicHcRLjoIwAADQE1VqOzQ6ySyIg1b-ooXBDRGsUEEqtmDGG3oEb2PiW7zXs9b6qr4No63xpJKyavmg-K2UneadnpTyYlRXBUoFlGFFwaaxKG0JynZrNxrGxdZD2Xl0-9FjR1OuGogc98T0ULhcFpzuIj-725CRWdHEXPxx4UeCfDXz3Pzfh8MS49CUMwYeyXbjHVFipvYyD1h1CzDR9PAritTRc0hC4aM-j3HqHezEiemlT6yf-xRCCOrPJejegfVDpg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=glX6eLgU4RQltw8k5yCNvA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=238.34737&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/_gzmYHicHc1LCsIwEADQ22Rn-tVWIYi4FUFBcFdiHJPBtBnMmNrreCtvo7h8q_d5O2aKqyyL_ADghDASvsDHGWlpQ7AeNGGUJvRZKjJ2z_4yaPRr0kPAq7L-vICdPdXHg-exvc-n7T5thLl0xiMMrHpNsYtJsjaMHqSlKEZVlrVwqly2YtI_Va2s6qZqBCEbp3Lxf24hqSLPv_wjOkI"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Was shocked this time...wonderful staff, clean environment, quick service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWIWb0ksDc0P-nmLWKI1k54JYmm_XykIV1ExShLTCoSW9x8eOXu=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The afternoon shift of nurses are the slowest and rudest people ever.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUxn9GNekHsjNDXidCNTYGRvbJq_unCkL0r6xHem7l27eTh9jCI=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Very unprofessional interrupting the doctor explaining my conditions to me.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW0aIv-i1E9sCwT_ZTWnytHrUqTu2BibhNKiJsXFKdf5rGXRFQL=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "George Benaroya",
+          "rating": 5,
+          "contributor_id": "102310139501387459611",
+          "user_review_count": 603,
+          "user_photo_count": 5427,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV-gjiX4S9rHC0tZJnsMCicoAlrlH0Zt1BxpmSplwNwSyZa3BHA8Q=s120-c-rp-mo-ba12-br100",
+          "description": "Excellent. Absolutely excellent. The Doctors and the Staff are incredible. They should walk and all of us clap as we did for Covid. Dr Henry Ackerman went out of his way to be nice, gentle, explain in simple words everything. Dr Alex Bonilla, the same. He also would come and tell me what would happen next and why. Before that, every nurse and staff member was kind, had a smile when talking to patients. Doctors go to school for so many years and the main satisfaction they have is not money, is to cure. I saw it first hand.  I travel a lot and try to document hospitals. Curious what\u2019s inside like? Take a look. I made sure not to show any faces, just the facilities. I am a Global CFO and teach at NYU. I go around the world telling HS kids \u201cgo to college\u201d. A few weeks ago, one HS asked me \u201cI want to be a doctor. Is it a good idea?\u201d From now on, I\u2019ll be able to tell them why is a yes. Thanks to everyone at this hospital. It\u2019s excellent",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21VM2RIaEhURUZMU20xNVFURktUWHA0WXpoSk5XYxAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOmU3dHhHTEFLSm15QTFKTXp4YzhJNWc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0F0oAZG4ik3CU4ujRzBxPrQT0VCFgDI6xuuBszYhgNIt02eDVbQURgtj0M0OMjIbp6Izwo8qeCc7-7vQePtK3bJvFx736QZuuIHDeQtDkX_tlegrExdWdJ7hzvdSU6WBstEn6wYZwDG8v_=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0_53-fT9lB2Yh9go8BNLtB0lWONMRzIid1FrOJlL36xVxflkkGpgwxAGZszfwC5t4u7dIQiz4VBAhS8ClzQ1O_2Wd1dEBVdAU6nAdBL4fLYt0Lez5C3KfBbINrD56mP2_W6NxzEY52oKs=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1sQZx_6ppR4vxoc11OGjuXJMMQ9yIpRAKpqY7YrC5WksuJZwYPAhvjPRT6lN1l4-iAtfMaUlVPVyTKnvrJKH2FWNTxNlaZDOTGT_6Td4mI4-e6deSrJj3ZZZpAWh0D12I3BduH9lAUKUW1=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2LDnkiDvQ-QH535HXRkdy_rKYiT56TK8fGQ1VsyUDWDMA7SLWGEZUVIPZIIMf7Yf_btn7fF9eYuG6kYm7OvzRRwFwZwKSkW9vrsIq8FiusFBMTGYttw3nvu3knMkxpKmbtI9Y8nRb9054=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0O7AOvLfFYVGYm8u3EfCBxeWinJldxSOGfJZrMinHNR1W1fkyVlMLihfZBVl92gHxEW2UDDNqKLtrxtkeXvDV3gIVZh1BnNiR3LkGVrpQUp4pxjn310KpkEEKWwq7Zv1sj6YrtGMDjKjV6=k-no"
+            }
+          ],
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-31T14:08:30+00:00"
+        },
+        {
+          "username": "Rowan",
+          "rating": 4,
+          "contributor_id": "110226270092046257566",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocISH8Ciwx3cmcht2o8JuzDNxJrQcud-O3iC7MXGizFZ9HZ4cPk=s120-c-rp-mo-br100",
+          "description": "Arrived at 11am on a Sunday and was seen in triage immediately (literally spent zero time in waiting room) and then was seen within 30 minutes by a doctor. Overall the medical staff was excellent and well-informed. I was given pain meds + sent to imaging within the first 4 hours or so.\n\nOnly downsides overall were how crowded the central ER area was (sorta felt like sardines) and the wait time after the imaging - even though I was was told I was going to be admitted/brought upstairs by 5pm, no beds were available until 4am so I had to stay overnight in the ER.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSU1dXeFNRWGszVlY5R2MxWnhSelpLVURSbFNGRRAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOjRSWWxSQXk3VV9Gc1ZxRzZKUDRlSFE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-31T01:06:27+00:00"
+        },
+        {
+          "username": "Nicki Quinn",
+          "rating": 4,
+          "contributor_id": "110513998262726621292",
+          "user_review_count": 35,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUjlAdM3qoeee5V9D-qrHF0yXRbTogcjDaLQyEK02QDoImTb1uwvg=s120-c-rp-mo-ba12-br100",
+          "description": "Most of the Emergency Room staff, nurses, and doctors were all very kind, knowledgeable, and very quick to see us get things moving. We only had one nurse who seemes like she was maybe burnt out and wore earbuds blaring music when dealing with us, which was not great. The emergency room was okay on cleanliness. My spouse was sent to the ER by his doctor and was admitted after 2hours, however, we spent 31hours in the ER waiting to go upstairs, this was the worst part. The ER staff and upstairs staff do not communicate or work together, which makes the admission process extremely long and awful.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFNFprWTJkazAyVEY5RlJYaG1UbmxwUjA1blNVRRAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOkE4ZkY2dk02TF9FRXhmTnlpR05nSUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-07T13:42:33+00:00"
+        },
+        {
+          "username": "Tatyana Miranda",
+          "rating": 1,
+          "contributor_id": "103591107228951012041",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIz2uyDgZ0gloCryS0pdqy3zbU8KzFQKDIjEhPrSK5f3yc2V9Mn=s120-c-rp-mo-br100",
+          "description": "I visited the ER at Mount Sinai for severe pelvic pain during pregnancy and was there from approximately 6:30 PM to 1 AM. I was told a physician would return to explain my imaging results, but instead I was handed discharge paperwork without any explanation. I ultimately had to request to speak with the doctor and was made to walk across the ER in severe pain to find her myself. While struggling to walk, I was repeatedly rushed by staff despite explaining my pain level.\n\nWhen I finally spoke with the physician, I felt dismissed and spoken to with irritation for asking questions about my results and treatment options. I was told my pain was \u201cnormal\u201d and that \u201cnothing was wrong,\u201d despite having significant difficulty walking. I left feeling unheard, unsupported, and without clear guidance regarding my condition.\n\nPatients deserve compassionate communication and respectful care, especially during pregnancy and while in severe pain.\n\nAllison Sauder MD should not be made attending overnight.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25ORk4wVTNPV3RXUW5CS1QzcEhibGRGVlZaalpFRRAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOnNFN0U3OWtWQnBKT3pHbldFVVZjZEE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-19T06:17:00+00:00"
+        },
+        {
+          "username": "Creo-Wise",
+          "rating": 5,
+          "contributor_id": "117314134264725973850",
+          "user_review_count": 31,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWypknxqpUk1qcOwhyYiyHhnBnQvXiO2qxV4Fic954y-EgahzIe=s120-c-rp-mo-ba12-br100",
+          "description": "Came in around 11am. Wasn't too busy yet. Had sharp pain in lower abdomen. Was able to get urine analysis, blood work, and a CT scan with contrast all in about two hours. Nurse staff and doctors were professional, kind, and helpful. Out the door in under three hours and paid on the spot. Wonderful service.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oeWJ6bGZaR0V3ZFZaeFZYTm5OSGxvVlZGNVNuYxAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOnhybzlfZGEwdVZxVXNnNHloVVF5Snc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-06T18:36:00+00:00"
+        },
+        {
+          "username": "Quinn Cahill",
+          "rating": 1,
+          "contributor_id": "100266215216525446375",
+          "user_review_count": 11,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWPR9xDZ2tc-etrFQ0JRPYECDH1sgvuNpHIyhUdJ9JLklwxuMVtqw=s120-c-rp-mo-br100",
+          "description": "Do not go here unless you won\u2019t survive by trying to go anywhere else. They are so disorganized. I was brought to a room and left there with no call button or anything for 90 minutes before a nurse came to check on me. They admitted they forgot to assign a nurse to me. Barely had any face time with any doctors. But when I did, there were 2 different doctors who weren\u2019t communicating with each other and providing different treatment plans. I left feeling worse and more confused. This wasn\u2019t a one off. I was here last year for a different emergency and it was the same shit. Truly don\u2019t come here unless you\u2019re bleeding out and won\u2019t survive trying to make it anywhere else. And if then, they\u2019ll probably not see you or do anything for you for 2 hours.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25KWVF6UnRVVGRKU2kxMVpTMTRlSEoyVEV4UVNVRRAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOnJYQzRtUTdJSi11ZS14eHJ2TExQSUE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-03T01:52:05+00:00"
+        },
+        {
+          "username": "Anastasia Fantasia",
+          "rating": 5,
+          "contributor_id": "112974764040368433131",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWjmrKPU1m1JDzoiNUh_on1x6scQkGAAO4Mh61e1VkNsv4BnKO6=s120-c-rp-mo-br100",
+          "description": "The doctors were so kind. Dr. Jennifer beck, Dr. Rajas karajgikar and Dr.paul grosrenaud helped me relocate my shoulder after a bad fall! They were attentive talked me through the entire process, carful with me and careful with my mental state! the x ray people were a bit tired. The emts were great! Emts in the ambulance let me know every bump and made sure I was okay! Stayed with me till nurses who were  stressed but understanding enough got me. I would recommend this emergency room if they aren\u2019t busy. They gave me good follow up too (lost my earring but through no fault of the staff)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25ad2JYQkZXVmRTVFdGaVFtSXdWVjlzVjNKVWJIYxAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOnZwbXBFWVdSTWFiQmIwVV9sV3JUbHc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-20T00:54:54+00:00"
+        },
+        {
+          "username": "Hailey Katz",
+          "rating": 1,
+          "contributor_id": "117867525680988314964",
+          "user_review_count": 21,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWj5FsVph9rlCPPts_bwKD6zTSAErgjL4NZJWPGkWrhqW04X1zE=s120-c-rp-mo-ba12-br100",
+          "description": "Horrible was there for almost 3 hours just to be told i should see my doctor because they don\u2019t do most tests here? So ridiculous and the staff was so rude for no reason! terrible experience it was so chaotic would never go back here. On top of that they LIED in their report saying they offered me tests that i DECLINED \u2026 scam artists be careful ..",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21vNFZuSnNZMk41T1VKMFJ6VlhVM1YyTTB4NGEwRRAB!2m1!1s0x0:0xcf483c70930b7945!3m1!1s2@1:CAIQACodChtycF9oOmo4VnJsY2N5OUJ0RzVXU3V2M0x4a0E%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-06T22:37:37+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NewYork-Presbyterian / Weill Cornell Medical Center Emergency Department",
+            "data_id": "0x0:0xcec3a2d2293f345",
+            "data_cid": "931183188486910789",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcec3a2d2293f345&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcec3a2d2293f345&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7643895,
+              "longitude": -73.9542301
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcec3a2d2293f345%218m2%213d40.7643895%214d-73.9542301&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.5,
+            "reviews": 151,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGpD-04CizMtmnsQQCWESywOvtN2IMU4l9d1KA0i-8UPGss7XD7H81-IVP0CPVtY_QXplZ5pxJxxLg1a3P60AqSWW6G4PEEJEzKGivKcKP7glx1J-CokKRRz80oT1R8AV-9jYIP=w156-h156-n-k-no",
+            "type": [
+              "Emergency room"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "General Surgery Residency at Mount Sinai West and Mount Sinai Morningside",
+            "data_id": "0x0:0xe083f669c37fad28",
+            "data_cid": "16178045220556877096",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe083f669c37fad28&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe083f669c37fad28&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7698916,
+              "longitude": -73.9857461
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe083f669c37fad28%218m2%213d40.7698916%214d-73.9857461&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=daT3S1QFV3s4c_lWCXXbiKu9Aho7v_xgkkr9gLM6iz1TYd3-iasjhOdmvxvUpo0sdfGR5Ck0yeBEyM5_wg3Tyj_aLmI46d5wcILyCXGupZzGl2EAvYb-b-9KVboD5toT78IMsZzwFAjd0RRYSW3E3PebGXcNusA0",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Emergency Department - Lenox Hill Hospital",
+            "data_id": "0x0:0xd77a0e9366045067",
+            "data_cid": "15526738691547746407",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd77a0e9366045067&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd77a0e9366045067&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7736798,
+              "longitude": -73.9602608
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd77a0e9366045067%218m2%213d40.7736798%214d-73.9602608&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.1,
+            "reviews": 120,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE98NxFHT6-Jw-iL7OR1k6ezCwt46I1EQXdtdpbNHiTxHQPwkbZ7NfaR32CaQlpiGHzIx_H11QBeS1-kbZnWmliUhf9z7jJXt3OhysP-RkPiMw2MYw0TM4DqivUrrm2NnHSFcU=w156-h156-n-k-no",
+            "type": [
+              "Emergency room",
+              "Hospital",
+              "Medical clinic",
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "St Lukes ER",
+            "data_id": "0x0:0x9194a74061cbe508",
+            "data_cid": "10490193327013225736",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9194a74061cbe508&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9194a74061cbe508&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7697168,
+              "longitude": -73.9868805
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9194a74061cbe508%218m2%213d40.7697168%214d-73.9868805&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.8,
+            "reviews": 4,
+            "thumbnail": "https://www.google.com/maps/vt/data=ajFZ-bn13VDoTQfdDJ5SDj4HbwVWDBwr2Vf6Wc22zdhUXWG7F6i5bLC5vZYkXavWEZ6qbgXSuZXWMf7QQHrszDKQ8awl7mZE99zk9CWrUMeh2381_BlUuVQ_Z7YA134QOs-O1qkjkABUdg0LL7Omi0FTnIIINqvO",
+            "type": [
+              "Addiction treatment center",
+              "Care services",
+              "Dermatologist",
+              "Doctor",
+              "Obstetrician-gynecologist",
+              "Hospital department",
+              "Ophthalmologist",
+              "Orthopedic surgeon",
+              "Otolaryngologist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "The Home Depot Emergency Department at NYU Langone Health\u2014Cobble Hill",
+            "data_id": "0x0:0x1b25360e31295b26",
+            "data_cid": "1956029047744584486",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1b25360e31295b26&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1b25360e31295b26&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.6909315,
+              "longitude": -73.99759999999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1b25360e31295b26%218m2%213d40.6909315%214d-73.99759999999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.9,
+            "reviews": 712,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE4gix4Mrwv8wtPws6ocecqbwo1n_Dc8UwwjQaJ7UY9JlNqU1nsXKn9dkfrFZKbbYPe_mgXqcj0eWNJVQL03-yxxFcWQQqHzfTtjlBTUFwWga794JG7rrePSsg05KskU4IG9mXa=w156-h156-n-k-no",
+            "type": [
+              "Emergency room"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjIKMCIsTW91bnQgU2luYWkgV2VzdCBFbWVyZ2VuY3kgUm9vbSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjIKMCIsTW91bnQgU2luYWkgV2VzdCBFbWVyZ2VuY3kgUm9vbSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

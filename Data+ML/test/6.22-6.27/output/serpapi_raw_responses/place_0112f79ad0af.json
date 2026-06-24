@@ -1,0 +1,388 @@
+{
+  "search_metadata": {
+    "id": "6a3ac21280c96384e843adac",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/9CGILDl53FaqeaeG3VhpwA/6a3ac21280c96384e843adac.json",
+    "created_at": "2026-06-23 17:27:46 UTC",
+    "processed_at": "2026-06-23 17:27:46 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2597df2350f9b:0xb647bfb0e680e6ad!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/9CGILDl53FaqeaeG3VhpwA/6a3ac21280c96384e843adac.html",
+    "prettify_html_file": "https://serpapi.com/searches/9CGILDl53FaqeaeG3VhpwA/6a3ac21280c96384e843adac.prettify",
+    "total_time_taken": 0.42
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJmw818n1ZwokRreaA5rC_R7Y",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "CityMD West 39th Urgent Care - NYC",
+    "place_id": "ChIJmw818n1ZwokRreaA5rC_R7Y",
+    "data_id": "0x89c2597df2350f9b:0xb647bfb0e680e6ad",
+    "data_cid": "13134677604751697581",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2597df2350f9b%3A0xb647bfb0e680e6ad&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2597df2350f9b%3A0xb647bfb0e680e6ad&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7536961,
+      "longitude": -73.9865402
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJmw818n1ZwokRreaA5rC_R7Y",
+    "provider_id": "/g/11qmq0_4w0",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwcP3XU8RSptfnyPHQyolFonVuTwiz0IIVSyDftzMsgibE0RnENl_i5dsJASyQiPznygh_cBKo7foLbNEMyUISz4xJNhxz_cBqkrHlCxM4GwN8FhAvi7yQ37LqAa6W6VHoWeL77w=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/6tZxD3icHcnBboIwGADgJ0JqcNYs2aHbUFBoQCbuZrRC21j7o60r7RvuEfY2W3b5Lt_Pt7B2MM9xrEQy4QBcdQ_T3Rlo22k7YXCN-WAiZiITk4rWF5I6ViWfu8W2GWyvfZXVHtQSdPv4cDKgPG8b_97bUBouTyna6pSqg3w6mzVpfC2roD0XB_a6AdxDcaJp6Xd5E2bjmoox_MXtcs_U21jOVo4uloJ8SezrBBc3cpzv520G-67A2L24KUIoEv-ySP8C4NNHVg",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 47
+      },
+      {
+        "stars": 2,
+        "amount": 3
+      },
+      {
+        "stars": 3,
+        "amount": 6
+      },
+      {
+        "stars": 4,
+        "amount": 12
+      },
+      {
+        "stars": 5,
+        "amount": 193
+      }
+    ],
+    "rating": 4.2,
+    "reviews": 261,
+    "type": [
+      "Urgent care center"
+    ],
+    "type_ids": [
+      "urgent_care_center"
+    ],
+    "book_online": "https://www.citymd.com/urgent-care-locations/ny/west-39th?utm_source=ReserveWithGoogle&merchant_id=CITY_1298&rwg_token=AE37R_iFApZ5Do_3TwcRg8p1n-6F5HsrPtSkCHVoc-eK2vgVyY7sxI80vO_Vq5xJUQbolrtgOCgnmpBtiFFkynD5fDyn2HwhbA%3D%3D",
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Has online care"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Accepts walk-ins"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "1412 Broadway, New York, NY 10018",
+    "country": "United States",
+    "website": "https://www.citymd.com/urgent-care-locations/ny/west-39th?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+    "phone": "(646) 518-1777",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "Q237+F9 New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      },
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20138 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2597df2350f9b%3A0xb647bfb0e680e6ad&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwcP3XU8RSptfnyPHQyolFonVuTwiz0IIVSyDftzMsgibE0RnENl_i5dsJASyQiPznygh_cBKo7foLbNEMyUISz4xJNhxz_cBqkrHlCxM4GwN8FhAvi7yQ37LqAa6W6VHoWeL77w=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/6tZxD3icHcnBboIwGADgJ0JqcNYs2aHbUFBoQCbuZrRC21j7o60r7RvuEfY2W3b5Lt_Pt7B2MM9xrEQy4QBcdQ_T3Rlo22k7YXCN-WAiZiITk4rWF5I6ViWfu8W2GWyvfZXVHtQSdPv4cDKgPG8b_97bUBouTyna6pSqg3w6mzVpfC2roD0XB_a6AdxDcaJp6Xd5E2bjmoox_MXtcs_U21jOVo4uloJ8SezrBBc3cpzv520G-67A2L24KUIoEv-ySP8C4NNHVg"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGVLjSyOYAewCNOIIb9X1wkXIKiRIuAZfiHwvW9yJez8gn-CJ8o8Gqa8yIQ0Gy4S0T9Oc55YeppZC4i2oD_W2jogZNRmdQgN_ORrNTYalBXfFPvt_s32IYOo2vxp_yTqfG2OIm6=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/K3ySb3icHcRRboIwAADQE1Vq1QVM_GAYsW5pBYkCP0RrKSjQaitYL-gZdhuTvY_3966MUXruOE01GQkpRcMfmt-Z7AzvzIjJ1hFKA6aBdvwtia5-uP-97CzNfD4EhGJ88tLxcE3xTx3jh5-X9XroD57d8JcrOhBsXOmGt6NrcQRDO93BxKNsNsu4UnkwrZFcFgd0kSIncXuOBClofCdJdmy-03K17U2hJwhnVKL-qQqb3MoQUdx-LYYxhBBU_zPQfQBJmESc"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=i4TFZrxFbY7MABAd1dAq8Q&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=36.08985&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/pffc7nicHc0xDoIwFADQ23SzLYiKJo3Bgc3BxEUXUkqlPyn0S78Fj-OxvI2J7wLv-3FEGA9CRJqspQR2RlisjyvUvA-h91YjRG7CIFImyL2GdtTgj6jHAJ2C4lrfp6Vub7tzdaq6rKue5YWZtjEe7Ehq0BibmDhpQ-At7zGyWeV5wZzK9yV761mtt1yW-3LDEMg4Jdm_eYSkMil_kF45dg"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great attention, kind people, excellent service!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1R-QAcQQWZCQMdjI5T0TUFnUWe2WQgbNfi3ldQsnFqg80MUxK=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Overall, I highly recommend this location and big thank you to the staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXtmybDOyxKSLRJqg6JQTQ_EVz6WChQBRpFz4zM2CpFG8tUZsf5oQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Pretty insensitive thing to say to someone if you work in patient care.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVpjYIN4KhS5ml8ozqRfXrpZsjbdNw_1WxUm8Q8ege6Kx8dCbrI=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Yuval Youtube",
+          "rating": 1,
+          "contributor_id": "114025628712454239835",
+          "user_review_count": 15,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL8sh6AW9IrF88CtgaWDpLEIjTv20RhkqLDishlmVoM56OPZA=s120-c-rp-mo-ba12-br100",
+          "description": "Impatient doctor Leon Sultan looked at my ear, tried to get the wax out, and when he couldn\u2019t, he changed his mind and literally made up the first diagnosis that came to his mind and said I have an ear canal infection and prescribed me ear drops for like 10 days. He either LIED OR DOESNT KNOW MEDICINE!!!!\nSince I didn\u2019t trust him because he dedicated about 1 minute to seeing me, I decided to go right away to the New York eye & ear urgent care, and they confirmed that I did not have any infections in my ear. They dedicated a normal amount of time needed to seeing a patient, and removed the wax stuck in my ear which was the only problem. If I would\u2019ve listened to \u201cDr.\u201d Sultan, then I would still have the same issue 10 days later. Now I still need to pay CityMD $250 for my visit with the \u201cDr\u201d who didn\u2019t do anything other than misdiagnose me, waste my time, and now waste my money too.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Gd09GWkRSVE5STjJkbmFreHJkWHB0TlZoelkyYxAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOnFwOFZDRTNRN2dnakxrdXptNVhzY2c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-25T13:58:24+00:00"
+        },
+        {
+          "username": "David C",
+          "rating": 1,
+          "contributor_id": "105491441640169220527",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVnRSTG16Fn-p5FZpVq1C_eme-3aCpf_EhC8a13MvGv5HKfwgI=s120-c-rp-mo-br100",
+          "description": "I came in for continuation of rabies post-exposure vaccination (dose #3) with full documentation. The provider refused to administer the vaccine, incorrectly insisted I needed HRIG at this stage, and would not explain the medical reasoning.\n\nWhen I asked if the vaccine could be given here or if they could coordinate with another urgent care, the doctor ended the conversation and walked out (\u201cI\u2019m going to step out\u201d). No handoff, no explanation, no attempt to help.\n\nThis was unprofessional, dismissive, and extremely frustrating, especially given the anxiety around rabies exposure. If a clinic is unwilling or unable to manage standard follow-up care, patients should be told respectfully and clearly \u2014 not shut down.\n\nI would not return here for anything time-sensitive or complex.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xUldHeG5URE4wZWtoVWJWUlpTRmx5V2pVNGIxRRAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOm1RWGxnTDN0ekhUbVRZSFlyWjU4b1E%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-06T18:58:59+00:00"
+        },
+        {
+          "username": "Ananya Ghose",
+          "rating": 1,
+          "contributor_id": "101380190862135151529",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVpjYIN4KhS5ml8ozqRfXrpZsjbdNw_1WxUm8Q8ege6Kx8dCbrI=s120-c-rp-mo-br100",
+          "description": "Front desk people were nice, doctor was pretty rude for an urgent care place. Refused to answer questions about follow up appointments because \u201cshe doesn\u2019t deal with billing\u201d. Pretty insensitive thing to say to someone if you work in patient care. Every doctor that me and my family has ever had has answered questions about insurance/ follow ups bc money is inevitably integrated with treatment. Hopefully she gains some professionalism in the future.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20weU56ZHRMVzQwWjFVMVNrbHVTemhmWjJ0ZmRrRRAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOm0yNzdtLW40Z1U1SkluSzhfZ2tfdkE%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-08-25T23:40:14+00:00"
+        },
+        {
+          "username": "Dave Roth",
+          "rating": 5,
+          "contributor_id": "116585599136069224332",
+          "user_review_count": 7,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXFSzdId5feT4V5ZfjSKnenOA5yM0Mztkz8EeNfhn5yORD4P6JM=s120-c-rp-mo-br100",
+          "description": "Walked in w scalp laceration from Impact w a cabinet door.  Dr saw me within 10 min of arrival.  Ended up w 7 stitches in a very visible area of my forehead.  Doc did an outstanding job and I have a barely visible scar.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOU2REazJkV2RvVFd4c1lrdFBYMWhzYW5kNlozYxAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOkNSdDk2dWdoTWxsYktPX1hsand6Z3c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-06T19:58:27+00:00"
+        },
+        {
+          "username": "Venus Keye",
+          "rating": 2,
+          "contributor_id": "108208564134942681466",
+          "user_review_count": 13,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXQqPRnMoNq2lB1ApGc2WAdGocDpkbrV802f6WCQ-VuOp2eI28=s120-c-rp-mo-br100",
+          "description": "I received a COVID test and the outcome was negative only to be informed by the doctor on duty that the results are unreliable.With that being the case why bother administering the test at all!\nThe on duty doctor appearance seemed dishelved.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kTWNEWnhiWGREYlhaS1NqVXRTMnBqVjI5MGRtYxAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOmdMcDZxbXdDbXZKSjUtS2pjV290dmc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-04T23:10:28+00:00"
+        },
+        {
+          "username": "Lee Wilbur",
+          "rating": 5,
+          "contributor_id": "100605283047030336956",
+          "user_review_count": 28,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJKYdKZoARhUvJ8uiqQN4GvMHhjjkemY1CCGefoJSjPL5aycw=s120-c-rp-mo-ba12-br100",
+          "description": "Made an online appointment last night and arrived next morning 45 minutes prior. They took me right in and the doctor/staff were excellent. Quick diagnosis and prescriptions were logged within 20 minutes. Would highly recommend if visiting from out of town and need something quickly.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21aelUzWjVSeTE1UkhFemNqUjRTV2hyYUdKaWNtYxAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOmZzU3Z5Ry15RHEzcjR4SWhraGJicmc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-04T16:17:36+00:00"
+        },
+        {
+          "username": "Susan Tighe",
+          "rating": 1,
+          "contributor_id": "112383253715433856480",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUPFV-zvHpHNIE0w0gzVAS5koDBQpI-6opWGH8BD0Jb_WoiSWF9jA=s120-c-rp-mo-br100",
+          "description": "You can put lipstick on a pig, but it\u2019ll still be a pig sums up my experience at this CityMD.  I took a bad fall after arriving in NYC for a family vacation and was bleeding badly from my mouth. The hotel directed our family to this CityMD for urgent care. I was encouraged by the lack of a line and clean waiting area, but my experience went downhill from there. We had to do an online check in even though the guy at the front desk was doing nothing, which was long and cumbersome given I couldn\u2019t type as I was holding a bloody gauze over my mouth so my frazzled husband had to do it for me.  When we finally got into the exam room, I could barely understand the doctor (who had a thick accent), and the odd tension between him and the nurse was uncomfortable. He looked in my mouth and immediately told me I had to go to the ER. I didn\u2019t get aspirin, a tetanus shot, nothing. I felt like I must be on a candid camera show as the whole experience was such a joke.  The visit was less than five minutes, yet they billed my insurance $300. Also, at this point my family had left to get food (as it was several hours since we\u2019d eaten), so I was left in pain, crying, and trying to make my way to an NYC ER by myself and you cannot catch a cab or car service in front of this CityMD location because cars cannot drive in front of it! And, they had told me to go to the NYU ER, but when I put the address they had given me in the Lyft app the address was coming up as pediatric only. I went back into the CityMD office to clarify where I should go, and the new guy then at the front desk told me I should actually go to Mount Sinai ER (side note to CityMD - don\u2019t send patients to Mount Sinai - that\u2019s incredibly unkind as it\u2019s a madhouse there). I will say that front desk guy was the only person who showed a little bit of care at CityMD by taking pity on me and hailing me a cab; however, the address CityMD gives you for the Mount Sinai ER is actually not for the ER but for the main hospital, so I just found myself waiting again only to be told that I was in the wrong place.  Save yourself time and money - skip CityMD, and seek attention from competent medical professionals.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tjdE5Hc3pVVXRXVG1sS2MySkhMVmRZYWxKd2JrRRAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOkctNGszUUtWTmlKc2JHLVdYalJwbkE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-18T15:42:05+00:00"
+        },
+        {
+          "username": "Melly Mylovely",
+          "rating": 1,
+          "contributor_id": "116071082497025424297",
+          "user_review_count": 209,
+          "user_photo_count": 46,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIs3ViC3XrSSXm9_E0SgrOKkfOrqXa8FR1U5xd2BHTfb1rtPA=s120-c-rp-mo-ba12-br100",
+          "description": "Went there with symptoms,  got tested and left. Told me to wait for instructions and it's been 3 days no1 call and I could have been fired from work waiting for these people. Fired from work thinking these people were professional. Wow never going there again and I only trusted them.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25admFGRlJUSE5PZFZSSVNrVTFWR05hTVRSaFYwRRAB!2m1!1s0x0:0xb647bfb0e680e6ad!3m1!1s2@1:CAIQACodChtycF9oOnZvaFFRTHNOdVRISkU1VGNaMTRhV0E%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-11T16:13:47+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "+MEDRITE Midtown West Urgent Care - Manhattan",
+            "data_id": "0x0:0x9d530fafa0ec8333",
+            "data_cid": "11336421934015218483",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9d530fafa0ec8333&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9d530fafa0ec8333&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7603424,
+              "longitude": -73.996406
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9d530fafa0ec8333%218m2%213d40.7603424%214d-73.996406&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 1858,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEW8-PMavJ-ztKhvrn_wq3t9uIVnrUhq-2CdAxUfpjJKt7KdLMpSuT50BxfMLDPyxmGP4BCxuqw_0FffZlX95uAihmdTmpfUwIKqApdyyKmdb63ddpBi_QWOTL2YdwrtF23eoQ_JA=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Midtown New York Doctors Urgent Care",
+            "data_id": "0x0:0x2be548295e17d4ad",
+            "data_cid": "3163013655807120557",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2be548295e17d4ad&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2be548295e17d4ad&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.74516,
+              "longitude": -73.9802665
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2be548295e17d4ad%218m2%213d40.74516%214d-73.9802665&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 2302,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHhfOVP2h_4kupzqAdrNM_kckQ-jrZ4D_ERTWFOHym6jvzjz6PwShrqAAH24NVJK-BEhzOyCrq2FnAEEavNaSjJs-3Pnn6J1udTyC7XyxJr8DLKc9OBbnhYOX8mtGHRtrJNHqkJSdZzZC0=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "Medical clinic",
+              "Pediatric clinic",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "MiDoctor Health: Hell's Kitchen",
+            "data_id": "0x0:0x7b2abed46f5fa54b",
+            "data_cid": "8875115835297867083",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7b2abed46f5fa54b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7b2abed46f5fa54b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7627531,
+              "longitude": -73.9898523
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7b2abed46f5fa54b%218m2%213d40.7627531%214d-73.9898523&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 804,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEr394yvG-T0yDXG_M63NTvqc_3kli3mj-PFZfK_pcu48S_RhcBJPG1NqeTENnDsGpL8GF6Vo9HZ9A00HcOZNSQTZ44aIEs3kgMKoyoNB8LGlNZdQ4Wms35nNjS5jwiMAgVBivJ=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "Family practice physician",
+              "Internist",
+              "Medical group",
+              "Medical office",
+              "Urgent care center"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "UrgentWay Manhattan",
+            "data_id": "0x0:0xdf7ac623365ae29d",
+            "data_cid": "16103401272154710685",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdf7ac623365ae29d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdf7ac623365ae29d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.754036899999996,
+              "longitude": -73.9925852
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdf7ac623365ae29d%218m2%213d40.754036899999996%214d-73.9925852&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 400,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf9RjZgBxDA1OQ-CcGkBf60hMfnmk39LpgYlrajl0vV5IIkVDdvpCxZIgYAqe3q_Oh3ssETGNmjoQxrZneRXxT2tHUnAmtYGniwBsZ_6kROgTtTr0kC91saa83D4qlChiq2PeW=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "General practitioner",
+              "Medical clinic",
+              "Medical examiner",
+              "Medical office",
+              "Women's health clinic",
+              "Occupational health service",
+              "Physician referral service",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "CityMD Elmwood Park Urgent Care - New Jersey",
+            "data_id": "0x0:0xdb76a3ac00db76b8",
+            "data_cid": "15814007100702160568",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdb76a3ac00db76b8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdb76a3ac00db76b8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.918019699999995,
+              "longitude": -74.1269744
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdb76a3ac00db76b8%218m2%213d40.918019699999995%214d-74.1269744&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.9,
+            "reviews": 84,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGnlgZhFu3dF518O39e6kcE7eQyEOFs_fwB77pbXDGXEJMGCyLzMDJWjquK659waIcgtNVps6lSgUGOQgBS2-kNGi_mBvwYNyh92jvVfCeL0rCFp0bS0XEy2Nl9m1rckt8cclFN=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "Laboratory",
+              "Medical clinic",
+              "Women's health clinic",
+              "Pediatric clinic",
+              "Walk-in clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjUKMyIvQ2l0eU1EIFdlc3QgMzl0aCBVcmdlbnQgQ2FyZSAtIE5ZQyBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjUKMyIvQ2l0eU1EIFdlc3QgMzl0aCBVcmdlbnQgQ2FyZSAtIE5ZQyBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

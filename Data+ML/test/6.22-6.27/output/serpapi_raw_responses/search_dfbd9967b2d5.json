@@ -1,0 +1,1889 @@
+{
+  "search_metadata": {
+    "id": "6a3ab605ae39f307aa4c6977",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/Jv7ZBVcA5sGLJeNxStALYg/6a3ab605ae39f307aa4c6977.json",
+    "created_at": "2026-06-23 16:36:21 UTC",
+    "processed_at": "2026-06-23 16:36:21 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/dentist+office+near+midtown+east+Manhattan/@40.755,-73.965,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/Jv7ZBVcA5sGLJeNxStALYg/6a3ab605ae39f307aa4c6977.html",
+    "prettify_html_file": "https://serpapi.com/searches/Jv7ZBVcA5sGLJeNxStALYg/6a3ab605ae39f307aa4c6977.prettify",
+    "total_time_taken": 0.94
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "dentist office near midtown east Manhattan",
+    "ll": "@40.755,-73.965,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "dentist office near midtown east Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "209 NYC Dental",
+      "place_id": "ChIJb-HkRuRYwokRF5qsEyxejyc",
+      "data_id": "0x89c258e446e4e16f:0x278f5e2c13ac9a17",
+      "data_cid": "2850600632550464023",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e446e4e16f%3A0x278f5e2c13ac9a17&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e446e4e16f%3A0x278f5e2c13ac9a17&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7594146,
+        "longitude": -73.9671025
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJb-HkRuRYwokRF5qsEyxejyc",
+      "provider_id": "/g/1thqbs3j",
+      "rating": 4.9,
+      "reviews": 1846,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental hygienist",
+        "Dental implants provider",
+        "Denture care center",
+        "Emergency dental service",
+        "Orthodontist",
+        "Pediatric dentist",
+        "Periodontist",
+        "Sleep clinic"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_hygienist",
+        "dental_implants_provider",
+        "denture_care_center",
+        "emergency_dental_service",
+        "orthodontist",
+        "pediatric_dentist",
+        "periodontist",
+        "sleep_clinic"
+      ],
+      "address": "209 E 56th St 1st floor, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6:30\u202fPM",
+      "hours": "Open \u00b7 Closes 6:30\u202fPM",
+      "operating_hours": {
+        "tuesday": "7:30\u202fAM\u20136:30\u202fPM",
+        "wednesday": "7:30\u202fAM\u20136:30\u202fPM",
+        "thursday": "7:30\u202fAM\u20136:30\u202fPM",
+        "friday": "7:30\u202fAM\u20135\u202fPM",
+        "saturday": "7:30\u202fAM\u20133\u202fPM",
+        "sunday": "9\u202fAM\u20133\u202fPM",
+        "monday": "7:30\u202fAM\u20136:30\u202fPM"
+      },
+      "phone": "(212) 355-2290",
+      "website": "https://www.209nycdental.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care",
+            "Sedation dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"I got it out (absolutely painless) and an implant put in within an hour.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHxx4onC5mG2wbUHv5trEmV7hQTOE9q-ZO7pMkwqFCEQVtoglejwgDmAt6i-Pe5Kqi1v5VwUJFbdmpXrn3ED8CMV9ioD55tcrPOvwAKmH69f1_3Wkxj2QOTkqt0LLduMjx5gZPKiw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/GYYcTXicHcxLDoIwFADAE1VALIqJC8JHIiKQKBo2JlYsH9sCfVKu6BG8jdHNLOfzrgA6uda0Z2XOqBD0Wb5kORDBoeQwI4JptJOISCQ1Jz1krRNO00JwF7PtXN1O4Yhh8Fm-rLJj4ts9KpJlF7eqD1w_y-H3NYp6zAGrRmmJo742Rpyr0y643Vl3Gbjpeys3zu1aeBgDGdJkVE7EQst-GFfz3E7NPEuObQ_6fn9_xc2EaZFGtdooQ9d1VP0liH8BG_RF3Q"
+    },
+    {
+      "position": 2,
+      "title": "Midtown East Dental",
+      "place_id": "ChIJawhX8ORYwokR_kaawW9Vqis",
+      "data_id": "0x89c258e4f057086b:0x2baa556fc19a46fe",
+      "data_cid": "3146421228149556990",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e4f057086b%3A0x2baa556fc19a46fe&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e4f057086b%3A0x2baa556fc19a46fe&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7597303,
+        "longitude": -73.9689806
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJawhX8ORYwokR_kaawW9Vqis",
+      "provider_id": "/g/1tl_mmpj",
+      "rating": 5,
+      "reviews": 184,
+      "type": "Dentist",
+      "types": [
+        "Dentist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist"
+      ],
+      "address": "150 E 56th St # 1D, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20136\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM",
+        "thursday": "8\u202fAM\u20136\u202fPM",
+        "friday": "Closed",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 755-5656",
+      "website": "http://www.midtowneastdental.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "user_review": "\"Absolutely well designed, modern office with top technology.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZuRm6CFy4-3po3a0Fg1ONEJ_OKAZuFC6mHivnWL4n-7yoO6SwhHvVxDYSPA4mx12p4hc1BEJQOMvaQ9UTAFquV5TXijPTdqu3GeFsfLqIai34K21r2pq9ttFzYY4C7ZhrH_w0=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/DXNvlnicHcRRboIwAADQE1Va2mFcso-KVqZOYDId_BjSMYqTttAWdBfcGbyNyd7Hu_8Ja7V59ryLwJNaqfpSOVP1XElbSTvhqvVqbQA3wHg02aU_dFW49zYI2Y0ArBUuIatRvFuuT_GGFo6FQRs1gzxuiQTTm4qD_Sii4XBd5PuEkvaKfE0ER_PlOo3fhjKdfWSUde7wlH025yT76hxeVcx8b7vXssFk46Pe193MWvab5yScFqKPTiN8GRGEEIj_OZAPyARDQw"
+    },
+    {
+      "position": 3,
+      "title": "Park 56 Dental",
+      "place_id": "ChIJPwrN0ORYwokR3kf_NJj-350",
+      "data_id": "0x89c258e4d0cd0a3f:0x9ddffe9834ff47de",
+      "data_cid": "11376091113438791646",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e4d0cd0a3f%3A0x9ddffe9834ff47de&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e4d0cd0a3f%3A0x9ddffe9834ff47de&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.760504999999995,
+        "longitude": -73.970638
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJPwrN0ORYwokR3kf_NJj-350",
+      "provider_id": "/g/1tfmp99g",
+      "rating": 4.9,
+      "reviews": 969,
+      "type": "Dentist",
+      "types": [
+        "Dentist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist"
+      ],
+      "address": "120 E 56th St, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "tuesday": "7:30\u202fAM\u20135\u202fPM",
+        "wednesday": "7:30\u202fAM\u20134:30\u202fPM",
+        "thursday": "7:30\u202fAM\u20135\u202fPM",
+        "friday": "7:30\u202fAM\u20134\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "7:30\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 826-2322",
+      "website": "https://www.park56dental.com/contact-us?y_source=1_MjA3NzQzNzUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care",
+            "Sedation dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.certify.care/NADG?IsIframe=1&LocationId=F5A2348F-4CAD-4F72-AEF6-76DC94DD9533&FacilityId=0&rwg_token=AE37R_giyGBVsP4KfV2Bgij3kI_cxjJRppVovGHhfmsqFL18KeXhFSlb8P5Xh_A3GK7eojSY5Oo5ChbZrSL4TCmE66EQRgw_Vw%3D%3D",
+      "user_review": "\"They squeezed me in on short notice and quickly resolved my tooth issue.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3RqL58Le5qv3phDo7giUnZNJecoWBDUf7tvdOEqcBhnAs7G3LSOfuHBFLCkgUw-ojUY5HPrh03kkk154BFgMt906WBSOAJRaQ5Ufgx3D7KzEDlXXcXsGGeB3FZUDZMPWBanB6=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/jrR5vHicHcTbboMgAADQL6JiGLVt0gcZXtJqtW2IzjfDEFYsaKGX7Af3DfubJTsP5_dHeT-5TRCMCi2ktXIUdydu3BovjF9wew3k5AB3wAVxfTjqOEGnucCrQuD5gSZFbSS_mOkOO8FtQygbIv_4rJKZE2ViF2WoOFfDPSdp8a4lewJ7YR84r28KIq11iN9IKku_hsuGnKt4d-qPmA3yhWi0_07o2La8dVkmCEo7RruybkhvyHL7DCGEQP3PgfkD9g1C2w"
+    },
+    {
+      "position": 4,
+      "title": "Midtown Dental Group Grand Central",
+      "place_id": "ChIJLWwv_G1ZwokRLRSArUxKMB4",
+      "data_id": "0x89c2596dfc2f6c2d:0x1e304a4cad80142d",
+      "data_cid": "2175320313208771629",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2596dfc2f6c2d%3A0x1e304a4cad80142d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2596dfc2f6c2d%3A0x1e304a4cad80142d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.755315599999996,
+        "longitude": -73.9779325
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLWwv_G1ZwokRLRSArUxKMB4",
+      "provider_id": "/g/11jpylsqzc",
+      "rating": 4.9,
+      "reviews": 366,
+      "type": "Cosmetic dentist",
+      "types": [
+        "Cosmetic dentist",
+        "Dental hygienist",
+        "Dental implants provider",
+        "Dentist",
+        "Emergency dental service"
+      ],
+      "type_id": "cosmetic_dentist",
+      "type_ids": [
+        "cosmetic_dentist",
+        "dental_hygienist",
+        "dental_implants_provider",
+        "dentist",
+        "emergency_dental_service"
+      ],
+      "address": "20 E 46th St #803, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20136\u202fPM",
+        "wednesday": "8\u202fAM\u20136\u202fPM",
+        "thursday": "8\u202fAM\u20136\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 972-1085",
+      "website": "http://midtowndentalgroup.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Sedation dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "book_online": "https://nexhealth.info/book/appt/midtowndentalgroup?lid=324822&rwg_token=AE37R_jNboXHHGLsWh5-rqLVsLyhOlc0vB4BFM4V4eTbBLJdDIF4IO8mZbrO8spBBzO3y6tGyZVLCt6w-Jo8xx6z2D-nm59WYQ%3D%3D",
+      "user_review": "\"Great hygienists, pleasant front desk, and good dentists,.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZiD08KC6-W_F5UdnmFAm04Z7GcZdk3QAs8-lv1IuW0D2CqnM1BSWEhoxcfdiQmQGi8lbTRWePnACAGAkqiperZfDMv5FFos_Qb5Fx52eaH1xEHMVi95dlmGCMfn3HBAYqIiw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/oTrpwXicHcRJDoIwAADAF1WKWEUTDwUsGIOxbkQuRkuBhi5gUXmhf_A3Js5hvp-671u7cBxZe6PKmEryp-UPZnTPdT9iRjlVawGzwDp4t6UNJrmIoL8JpyC7EnQqtCJYwUk-i1leNB7F1gfy5a6fGYzGYadTNzhkq9oMrCwEVTQWvrwf9xnfaRziGDedaPkjL6P0hQgx9krviAxozG-JO6yS9CzmqJAqDtNSe0mAL91avJdvF0II6v8M6B9kBELU"
+    },
+    {
+      "position": 5,
+      "title": "Smile Design Manhattan",
+      "place_id": "ChIJR7iIeO9YwokRNrKU4p-gUlk",
+      "data_id": "0x89c258ef7888b847:0x5952a09fe294b236",
+      "data_cid": "6436383426027500086",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7888b847%3A0x5952a09fe294b236&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7888b847%3A0x5952a09fe294b236&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.761781,
+        "longitude": -73.9723693
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJR7iIeO9YwokRNrKU4p-gUlk",
+      "provider_id": "/g/1vj603d9",
+      "rating": 4.9,
+      "reviews": 564,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental hygienist",
+        "Oral surgeon",
+        "Orthodontist",
+        "Pediatric dentist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_hygienist",
+        "oral_surgeon",
+        "orthodontist",
+        "pediatric_dentist"
+      ],
+      "address": "575 Madison Ave 23rd Floor, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20138\u202fPM",
+        "wednesday": "9\u202fAM\u20138\u202fPM",
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "9\u202fAM\u20134\u202fPM",
+        "sunday": "10:30\u202fAM\u20134\u202fPM",
+        "monday": "9\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(646) 278-4579",
+      "website": "https://www.smiledesignmanhattan.com/?utm_source=gmb_auth",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as Asian-owned",
+            "Identifies as Black-owned",
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care",
+            "Sedation dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "On-site parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "book_online": "https://nexhealth.info/book/appt/smiledesignmanhattan?lid=23535&rwg_token=AE37R_ibPFRrzCHGxeilvLAzTao7mVB1of4M8GNmQPUnNwasHbM3rLE9iKJIXvQPF6CFTDMbGYEYU1OdLFl7lKgT1GX7-7-W9w%3D%3D",
+      "user_review": "\"I left with a brighter smile and a newfound confidence in my oral health.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8aobWnruBx_raTy1S2qxT2qZMqQkTsItNZIWP54UU_j-K6wGZI3Rs0a25X0XCDU3rYkWE707-AsARWsD3GRU8_N83h39xGZr_-glsYSuXdV1o4lxZxG5lWN0PN8MtMYwnbelUAsJ6_00-=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/WNDbaHicHcXBToMwGADgJ-oodGxo4qG6SdDQMEYt9NIwRiBS6ehfAj6lZ9_Gxcv3_f70zt3g0fN0TzadMZ1uZ2htY0bXjm7TmC-vuwFqAIFHM3Ya6GtUm4sY7fy8KlsX3_45mNYimGQ6nYYCEsdkIrJwy7n6RO-7JZYJyQHXQVji8uXAia0GcdzjPaJAcwEHEuc8UiwiPXlYY2kV6jRU57m8fvhmq1e5xqEWDGcsSl1aLeOl1ZzC205hjJ4WH9_r_23Q-Ac9QkWn"
+    },
+    {
+      "position": 6,
+      "title": "Madison Avenue Dentists",
+      "place_id": "ChIJX3sO1f1YwokRsh39cqMpTGM",
+      "data_id": "0x89c258fdd50e7b5f:0x634c29a372fd1db2",
+      "data_cid": "7155139689970474418",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fdd50e7b5f%3A0x634c29a372fd1db2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fdd50e7b5f%3A0x634c29a372fd1db2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.756626399999995,
+        "longitude": -73.9770051
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJX3sO1f1YwokRsh39cqMpTGM",
+      "provider_id": "/g/11c1p4nbt4",
+      "rating": 5,
+      "reviews": 81,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Dental implants provider",
+        "Doctor",
+        "Prosthodontist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "dental_implants_provider",
+        "doctor",
+        "prosthodontist"
+      ],
+      "address": "18 E 48th St #501, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "tuesday": "10\u202fAM\u20135\u202fPM",
+        "wednesday": "10\u202fAM\u20135\u202fPM",
+        "thursday": "10\u202fAM\u20135\u202fPM",
+        "friday": "10\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 688-0103",
+      "website": "https://mavedds.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/madison-avenue-dentists-pc-2970?LocIdent=80970&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_RxSWQbb-o0OacNKiG1xgVx-lo_UoPmt-4aN0WT0uanVMJnoR-entity&rwg_token=AE37R_hPsX_TaDVNzHFmtn8DOUze3-c3zyY0LLbsJCe6mJGz0V_2_-DNgVHdBQZ4NmNNn39dOj3GNidCQPreE_Nce2P93Uoo3A%3D%3D",
+      "user_review": "\"The office is immaculate and efficiently run.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGeGpyaS7DpSjmtmzfqhmH8A-iCwpiQH9QZyLmVMGCZzWi3KMSI8DTnThoo3EFTgnkCAxwQPcm60tiEg9r9h3-WqJGatF7r56PuyJGQ63Hso62M6kstVxStCic6UzQdHjGe_XyF=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/P35jD3icHcTdboIwGADQJ6qwNauyZBcEpcyJoQFx8WYxXddW7I_0Mwgv6DP4Nks8F-dxVwA-vEfRWeGZdE6exTWInjsLwsKMOxNJHxAPKERptWVdSgX147GeL319MmCmv4syxSJFOhu8ZkXCDuPGtCXNDtNe46-y_lwsG9so5_Aqb6TtsvQ2sIobEoNeyaRPFEb7y5oeIZ_3b6S6jmvKCC6CI68l6QK0txoyzcluYr_FiYqf7zH_GF7iOEbqOUf2H6QHRSI"
+    },
+    {
+      "position": 7,
+      "title": "Avenue Dental",
+      "place_id": "ChIJgejDi_tYwokR8-QF1is0mbI",
+      "data_id": "0x89c258fb8bc3e881:0xb299342bd605e4f3",
+      "data_cid": "12869374773066851571",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fb8bc3e881%3A0xb299342bd605e4f3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fb8bc3e881%3A0xb299342bd605e4f3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7591678,
+        "longitude": -73.97535529999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJgejDi_tYwokR8-QF1is0mbI",
+      "provider_id": "/g/11b6httzxw",
+      "rating": 4.9,
+      "reviews": 195,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental clinic"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_clinic"
+      ],
+      "address": "16 E 52nd St #1102, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4\u202fPM",
+      "hours": "Open \u00b7 Closes 4\u202fPM",
+      "operating_hours": {
+        "tuesday": "7:30\u202fAM\u20134\u202fPM",
+        "wednesday": "7:30\u202fAM\u20134\u202fPM",
+        "thursday": "7:30\u202fAM\u20134\u202fPM",
+        "friday": "7:30\u202fAM\u20134\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "7:30\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(646) 590-7525",
+      "website": "http://www.avenuedentalny.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/avenue-dental-36614?LocIdent=60540&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_hCsKe86w6kevJBdhx_e67h-lo_iW84knjE-UaMtvV8ILY09B-entity&rwg_token=AE37R_iz7rpSI7weGg8W9-Ob-5sFeTyynS3gQLOSxfFaua3iN0XxnfbuZABeME8KwuWe7pUHqZayNA5C19MVoza5Ti7P62_WXQ%3D%3D",
+      "user_review": "\"The hygienists, dentists, and James at the front desk are all so lovely.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHgrQPyr6SC5UT6O7ziusNh-rD_SExN-NB59vQoIBqy2zKQgW5kkiSyWqZja0eEyALuxqe9qoSitYeF4XRyVKhtsCHLneM6_qOljgObhTiVAJ3kPrCnTxirt7ZWslk1YjaiTQh=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Vz3VgHicHcRJDoIwAADAF1VwAaOJB0SNK1BBUC9GSdOWYmsXlPpB3-BvTJzDfD_EmIceO05N-h0sBK5Ro5EqBTeIm04p7g5-aFBqoJ0giSALFkusYGKVn4beIfPj4Zs2OiJAzS7pvI1ANPVGTyhWU2l77w3EhccYTW0hz9XVRXMbbJtWopEUKTUntBgc9zbfEKPD5ZajnX-RcV3h-EYymgfrPktUyLOWKjM8F7pm3VN1pRkkk1fXdV1A_peA_wDDOkaF"
+    },
+    {
+      "position": 8,
+      "title": "Studio Smiles NYC",
+      "place_id": "ChIJqWsvSgJZwokRGgJssR-caH4",
+      "data_id": "0x89c259024a2f6ba9:0x7e689c1fb16c021a",
+      "data_cid": "9108701906291393050",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259024a2f6ba9%3A0x7e689c1fb16c021a&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259024a2f6ba9%3A0x7e689c1fb16c021a&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.748366,
+        "longitude": -73.97995039999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJqWsvSgJZwokRGgJssR-caH4",
+      "provider_id": "/g/11_k25n12",
+      "rating": 4.9,
+      "reviews": 610,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental clinic",
+        "Oral surgeon",
+        "Orthodontist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_clinic",
+        "oral_surgeon",
+        "orthodontist"
+      ],
+      "address": "41 Park Ave # 1C, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20136\u202fPM",
+        "wednesday": "8\u202fAM\u20136\u202fPM",
+        "thursday": "8\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20133\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(646) 470-1376",
+      "website": "http://www.studiosmilesnyc.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as Asian-owned",
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Pediatric care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/studio-smiles-nyc-30816?LocIdent=123340&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_gS4xY6YhMkupbJBbE-nFih-lo_JWW5v5iiXUy7K_4KokvWMR-entity&rwg_token=AE37R_jbQLL66e3APjRWIGpzT_B2ru9Jgbrui1dkK9BfpBRoHJipqSO5mE-gY2Q6WHPrCxYI_LgTOVK6hTC7wTtSXkXpRL3Wtw%3D%3D",
+      "user_review": "\"The staff is beyond impeccable and the dentist and hygienist our top-notch.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEnv1Zm-EDsXyE-WLrEWGx2cVidIjrnj4OmWOEweGukFcy0aQNRvYh8lrlRJNaMgqIsGQwd2IyplDB4l9rWlT8aEG0iEZhT-SS3tJ8Mi-PxDxeARmVMIDPsMsudvrN2tAVTE5YzsA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JApL6HicHcTdboIwGADQJ6pUZAkz8aILlUAGAhJQ70hpKFgK61f-fEMfYW-zZOfi_L6FMSMcLUuKw64ZhkbyCbhmgzJcmR0beqsZATFAYJEkTp-Eqnn_6BH14LZRVH5rWvqrzYq2DjqtOufSlxe6cH96ntmGqzTO5rtwpZZZGFdR8xOAny61HWyj9L4c-alLmbsV9XFLHyJH1-vBhG7UomT1Vk6yvogCL4EIpnrWsW1IkdOP-wvIadljjJH4nyH1ByqJRd0"
+    },
+    {
+      "position": 9,
+      "title": "Madison Dental PC - Okon Jonathan E DMD",
+      "place_id": "ChIJhT_8NvxYwokRDrhzhB677Rw",
+      "data_id": "0x89c258fc36fc3f85:0x1cedbb1e8473b80e",
+      "data_cid": "2084527942287996942",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fc36fc3f85%3A0x1cedbb1e8473b80e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fc36fc3f85%3A0x1cedbb1e8473b80e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.757002,
+        "longitude": -73.975867
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJhT_8NvxYwokRDrhzhB677Rw",
+      "provider_id": "/g/1txnqcdq",
+      "rating": 4.9,
+      "reviews": 323,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Emergency dental service",
+        "Oral surgeon"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "emergency_dental_service",
+        "oral_surgeon"
+      ],
+      "address": "425 Madison Ave RM1800, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM",
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "9\u202fAM\u20137\u202fPM",
+        "sunday": "9\u202fAM\u20137\u202fPM",
+        "monday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 380-1165",
+      "website": "https://www.madisondentalpc.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/madison-dental-pc-okon-jonathan-e-dmd-24654?LocIdent=41116&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_qllBeY4lXUOBn4wd0rgSKx-lo_1fkSuvXm8EGbom6na7ea7x-entity&rwg_token=AE37R_gkfh-EdNHlo7BKfPcYzlEHhsVraI69Nzj_puy0hMPbyc7vnuYqsnSNPqfQ69GOOT6shrZGTobqAKacSudC9z5-FMSq6w%3D%3D",
+      "user_review": "\"The office is clean and the staff friendly and helpful.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwq6UgqJhisWwJFHrB5iLl4C0gMFa_GV6gJfgra2WuggMMSzXjwOVtN-qFEL4VfVKLCMzK3iglOo4a3nhzdWDm_lwO61uiMhmSImsWaJnOcT5Yi4hEs3PAjYTN77g5rAPtLvtrlg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/vhtNeXicHcTdboIwGADQJ6qg_JiYeMEcTIECRgfjypAOv1ZLC22xCW-4R9jbLNm5OL8_1JhR7xyHU28FUgLvZ90rIoXphVkROTgwakQ00k5UFednlNgp_IQppUw3Nk2O6i1gOfcPLuCku33UIaR3UN2mmQEwvixfD1vWpkBTEud-fa-z_ICXzGPAS-l3nqDLd_M-3Lgtw_XMMB0up0E3XSpKcg1a5tNYe1X0aK_FdguBiiqTv4zisLdr13UR_Z8g8Qc0MkY9"
+    },
+    {
+      "position": 10,
+      "title": "NYC Dental Professionals",
+      "place_id": "ChIJY2MvPf5YwokRUvdhxvwlUm0",
+      "data_id": "0x89c258fe3d2f6363:0x6d5225fcc661f752",
+      "data_cid": "7877400465814714194",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fe3d2f6363%3A0x6d5225fcc661f752&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fe3d2f6363%3A0x6d5225fcc661f752&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7604658,
+        "longitude": -73.9706313
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJY2MvPf5YwokRUvdhxvwlUm0",
+      "provider_id": "/g/1hg4vvh60",
+      "rating": 4.4,
+      "reviews": 199,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Dental clinic",
+        "Dental implants periodontist",
+        "Emergency dental service",
+        "Endodontist",
+        "Teeth whitening service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "dental_clinic",
+        "dental_implants_periodontist",
+        "emergency_dental_service",
+        "endodontist",
+        "teeth_whitening_service"
+      ],
+      "address": "120 E 56th St #720, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5:30\u202fPM",
+      "hours": "Open \u00b7 Closes 5:30\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20135:30\u202fPM",
+        "wednesday": "8\u202fAM\u20136\u202fPM",
+        "thursday": "8\u202fAM\u20135:30\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 922-9554",
+      "website": "http://nycdentalprofessionals.com/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.zocdoc.com/practice/nyc-dental-professionals-19859?LocIdent=196146&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_nFNADNUNyUS6nEoGPbAkoR-lo_hbREjcYFPUqUvrralMU7eR-entity&rwg_token=AE37R_hZog1P3m8wvK3jMtoq4XvYFGYj7QVfYPxuVhTzHPd_B0RvdhSN1bSZWWRLqwMO4PsBLW9bJBtACyXbFZwn597sr5LoqQ%3D%3D",
+      "user_review": "\"The dentists and hygienists are always so  nice, calm and professional.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFlMG_9I_YGQ4uaqw5FKzr3dK-XmKt0TgyQuRKIC2FYM6fn2Y_g9Jy6zXzMr36g9FMbnn4gWhqfKkqFOKS0so1d15UsWW5E1paV4oWLYncL95Y5PZKkvsiLFm0iogA2zWTEK08I=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/m1psknicHcTbDoIgAADQLyLxgsu2HlyLZmhlN6IXV2TYVFDBWv5g39DftHUezvdTGNPoiWVVhTsSSokq73XecSVNLs2Iq9oSjQZcA22Fm1VahrhKFlkQZWyRev2lfSFMhs69EXCqiYF78U77LYlmDmaJf5cOy0SwfPvDaUg61xcBTq5SeoIW7Z2ULV6THdTKvtnooClFc7u5HD1FYyZ5HCCGNmdSPvUjxjV8KBE6A93PCRxH05cNIQTFfw7kDxSJQ4Q"
+    },
+    {
+      "position": 11,
+      "title": "NYC Dental Center",
+      "place_id": "ChIJ0ZnccQRZwokRZmskRnxF75w",
+      "data_id": "0x89c2590471dc99d1:0x9cef457c46246b66",
+      "data_cid": "11308333589405657958",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590471dc99d1%3A0x9cef457c46246b66&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590471dc99d1%3A0x9cef457c46246b66&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7483698,
+        "longitude": -73.9752108
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ0ZnccQRZwokRZmskRnxF75w",
+      "provider_id": "/g/1hc0zwd2c",
+      "rating": 4.4,
+      "reviews": 255,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental clinic",
+        "Teeth whitening service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_clinic",
+        "teeth_whitening_service"
+      ],
+      "address": "216 E 39th St #1, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "tuesday": "10\u202fAM\u20135\u202fPM",
+        "wednesday": "10\u202fAM\u20135\u202fPM",
+        "thursday": "10\u202fAM\u20135\u202fPM",
+        "friday": "10\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(646) 861-3070",
+      "website": "https://weence.com/dentists/new-york-1/nyc-dental-center/",
+      "extensions": [
+        {
+          "offerings": [
+            "Cosmetic dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible seating"
+          ]
+        }
+      ],
+      "user_review": "\"Received advice on dry mouth and the whole office was so sweet & kind.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjFyroziiTaP-qFlRHDE_bEXp5zzp3Z8EgYdYknAZ9gBAr7IXw7XtPKpqXDLfcnw5CjRFY_vWbSqPuG_g39osHXABszpEIHHjAf9LkrVdYemnfSwOj1nIHgNHmHJZvDXm3uPXN=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JLuJwXicHcTbDoIgAADQL0JtrpVtPVBqWM3oskJfXJHiFVAwlz_YN_Q3bZ2H8_3kWku1MM06tw0mBKvTXqUdFVynXBtUNCaTClAFlAlxeKzgpvTfnRiL4nLHoPXrE3K95OEROR1Hacdzj0XPqOIwdtgKdrOADDOi8U62xN1nlA_TdXnyo-R1e5xb3G8SZjtCIQJXapRegFAJM2dfdddnlDY8Ow-HcsIDxELUoG38cklj95iEy2FiWRbI_1PAf-BrRgc"
+    },
+    {
+      "position": 12,
+      "title": "My NYC Dentist - 42nd Street Dental",
+      "place_id": "ChIJAf3GKgJZwokRQItMngNAft8",
+      "data_id": "0x89c259022ac6fd01:0xdf7e40039e4c8b40",
+      "data_cid": "16104379701808368448",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259022ac6fd01%3A0xdf7e40039e4c8b40&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259022ac6fd01%3A0xdf7e40039e4c8b40&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.751746,
+        "longitude": -73.980378
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJAf3GKgJZwokRQItMngNAft8",
+      "provider_id": "/g/1tfn3nhg",
+      "rating": 4.8,
+      "reviews": 417,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental hygienist",
+        "Dental implants periodontist",
+        "Emergency dental service",
+        "Endodontist",
+        "Oral surgeon",
+        "Orthodontist",
+        "Periodontist",
+        "Teeth whitening service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_hygienist",
+        "dental_implants_periodontist",
+        "emergency_dental_service",
+        "endodontist",
+        "oral_surgeon",
+        "orthodontist",
+        "periodontist",
+        "teeth_whitening_service"
+      ],
+      "address": "286 Madison Ave 7th floor, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20135:15\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20135:15\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 867-8862",
+      "website": "http://www.mynyc-dentist.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/my-nyc-dentist-5956?LocIdent=333961&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_LNrcJ7l6NU6ujUjUngSF_R-lo_xinG8THNhk2kWjgRU-6xWx-entity&rwg_token=AE37R_jpfKQmvZE1ns6lRvfJPXAnXID3ET1SBC64979349kbgTbRNDiVHQ08QMNY8t0XVZzCrxuJcjwHbqKQJXyJmBPXsDMThQ%3D%3D",
+      "user_review": "\"... friendly and accommodating staff, very clean and hygienic office.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1-NlMsk9kEwi9uaTtJKoJzvA1jnKGsj8YkcAh9msiRJAfZIFZ29wmeRRgrboea7SRxonUwxW5k04buL22X7L8JrdUG6DSlZEg_D4CK_q5xomj2s5b9gd8trmQ7T60PQZYBei6Fo7JfXLx=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/mfNd0XicHcTbToMwGADgJ-ooOA418aK6gxZcBtvixs0yuq5Aaf9JixBf0mvfxsTv4vv9qZ2720fP6-qHmQSQnRis6DkYJ4ybcdCevFvELbIe3W5yRV99tOnerSJqOTZkuOwdS4F9f1G_NenatslJcVoTbZuC0Vv5tioDMmpRFLKvQFziXTGBOYzTR6jwvBqyIDjGWcL662EdLXZduZTnxfwlPX-GE-g2sGFF5DVxvc7jfYS3eXl6Fk20gpjdjtn0NPoYY1T_z5H5A8hOR1A"
+    },
+    {
+      "position": 13,
+      "title": "Midtown Dental Group Upper East Side",
+      "place_id": "ChIJsSovFvxYwokRvT69P4z5IQI",
+      "data_id": "0x89c258fc162f2ab1:0x221f98c3fbd3ebd",
+      "data_cid": "153678243067412157",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fc162f2ab1%3A0x221f98c3fbd3ebd&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fc162f2ab1%3A0x221f98c3fbd3ebd&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.763742,
+        "longitude": -73.9701959
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJsSovFvxYwokRvT69P4z5IQI",
+      "provider_id": "/g/1v8gcz4f",
+      "rating": 4.9,
+      "reviews": 508,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Emergency dental service",
+        "Teeth whitening service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "emergency_dental_service",
+        "teeth_whitening_service"
+      ],
+      "address": "30 E 60th St Ste 2402, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "tuesday": "8:30\u202fAM\u20135\u202fPM",
+        "wednesday": "8:30\u202fAM\u20135\u202fPM",
+        "thursday": "8:30\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "9\u202fAM\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 588-1809",
+      "website": "https://midtowndentalgroup.com/locations/uppereastside/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care",
+            "Sedation dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://nexhealth.info/book/appt/midtowndentalgroup?lid=324815&rwg_token=AE37R_hJJDMaVCT7o_N3z4eReAXelU-HRmyllS5qrKGpaGPBGhzqe05ScOwENbuiOGs4IyaM_Y-FtyJE1OIH0saGe3E8uVis6A%3D%3D",
+      "user_review": "\"No pain, very efficient, and my teeth looked and felt amazing.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEZudQjRWYd0VB0hOJgJxWxsIdR53UTiws3aNIvGFFPJYTzqcF4RHBh9NXYlO6GzoF89jt4S_BO2qZEEOJ-_MSIf0ui6ul556re4sypXTmf-d1_1fASMVZ5Zt_kF2dJ5nH-soFeayw5N4kZ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/wbBNSXicHcTdzoIgAADQJyIxxVXbd6GblGxpqf3IjWuAUppY4Gf1kl33Nm2di_N5S2N6vbCsVjqTWqm6FYMWd6Y6IzozYepq1b0GTANt-Zt42_ghHfj2kh4KDvcBlAmpyePw0BFPkbPLz6N2TnH0v8R4Q4r8dWPYTVeBnMfHok285Uvh2fxi3KwMkumNhmFCQLnOogoOZ29oEfLuwtXP_phfK8Dt0q78bL2niJqywVNOULcCWmFxeo4odhv6N9oQQiB_M9B9AVBpRko"
+    },
+    {
+      "position": 14,
+      "title": "Modern Dental of Manhattan",
+      "place_id": "ChIJhT_8NvxYwokR8CkdYdUN5uY",
+      "data_id": "0x89c258fc36fc3f85:0xe6e60dd5611d29f0",
+      "data_cid": "16638001083475372528",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fc36fc3f85%3A0xe6e60dd5611d29f0&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fc36fc3f85%3A0xe6e60dd5611d29f0&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7569869,
+        "longitude": -73.975942
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJhT_8NvxYwokR8CkdYdUN5uY",
+      "provider_id": "/g/11b7q7zcyr",
+      "rating": 5,
+      "reviews": 240,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental hygienist",
+        "Dental implants provider",
+        "Emergency dental service",
+        "Endodontist",
+        "Orthodontist",
+        "Periodontist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_hygienist",
+        "dental_implants_provider",
+        "emergency_dental_service",
+        "endodontist",
+        "orthodontist",
+        "periodontist"
+      ],
+      "address": "425 Madison Ave Rm 500, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "Closed",
+        "sunday": "9\u202fAM\u20132\u202fPM",
+        "monday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 758-1000",
+      "website": "https://www.manhattandentists.com/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"They made a beautiful full crown for my molar out of Zirconia.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMHhPfRwCczeE4Sa6204LWyPr996I1Eka2M_lcjeY8SPgjuox7lvCEB8YOArXKJ4UaAwBPONVp6j5OndHrfZym-q-i-QvvLLENK_itCa0ss78mBfmRTSCIRJDFRndnU76jEzmW=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/3gvL-XicHcRLEoIgAADQE5FUptZMCzX6mqL23zQOoWYCJqTVBTtDt2mmt3jfT65UJUeaVub9TiZEVtKHpDURXFGuOkQwLaskIBJIzcZ-eLNn63mO06h1yZsiPU6MHtS9_QvXw6Gx6KJb0lufS1LQoxXjrHiIp1k2LnKsY2DXh9VS3yZ26-DA31VGMQj4ZV6npxcDd3AFYdN4HvJX56tyEyilaTEnZdEmdhfRcjKN-IVvTaNAb7Yft10IIcj_E8B_-7xDyA"
+    },
+    {
+      "position": 15,
+      "title": "Midtown Dental Care Associates",
+      "place_id": "ChIJKYC3VwBZwokRLE_O50FM5Lo",
+      "data_id": "0x89c2590057b78029:0xbae44c41e7ce4f2c",
+      "data_cid": "13466972631690268460",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590057b78029%3A0xbae44c41e7ce4f2c&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590057b78029%3A0xbae44c41e7ce4f2c&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.752382,
+        "longitude": -73.980661
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJKYC3VwBZwokRLE_O50FM5Lo",
+      "provider_id": "/g/1tfpqlxs",
+      "rating": 4.9,
+      "reviews": 575,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental implants provider",
+        "Oral surgeon",
+        "Pediatric dentist",
+        "Teeth whitening service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_implants_provider",
+        "oral_surgeon",
+        "pediatric_dentist",
+        "teeth_whitening_service"
+      ],
+      "address": "12 E 41st St Ste 1100, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM",
+        "thursday": "8\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20133\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 685-4730",
+      "website": "https://www.midtowndentalcareassociates.com/?utm_source=gmb&utm_medium=organic",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"I cold called and was able to come in at open and my tooth looks brand new.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG-C25IGANPsYgdWOyi21E0_Ww0-Gn5VlBCfvvV7Dw2Eym5TRkfFe4aCqFMZP6q78Dk2yNNygvZas1VOFVwTKNFr_toh6tc4Mw0h2hPSZdyEPg0o2nXMEeLWErKycTk5olDYBVT=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/zgLEO3icHcRdbsIgAADgE2EpWl1M9tAf2hhXZLOh2hdjEMG0ghYs4YQ7w26zxO_h-_tVzj3sOooGNZ9JY-QgXlaM3GgntJtxc4_kwwJugY1SSr77tAI5SjZVSqg9yku7CzcUY3hqPQSVTtiQ5ddpYqvCIxzuSfPTX0uxOOfPsu7o8rn6KHoUCAly6s42ZruS-WZLyvHkjFo6vqg9VEjRfXcJmEpokD7UWHy1eNwG3vSJGYpjxppPH0MIgXrPgf4Hy1pDsQ"
+    },
+    {
+      "position": 16,
+      "title": "DentAlign NYC",
+      "place_id": "ChIJj6ohSgJZwokRwHzeAQapXpY",
+      "data_id": "0x89c259024a21aa8f:0x965ea90601de7cc0",
+      "data_cid": "10835283596766248128",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259024a21aa8f%3A0x965ea90601de7cc0&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259024a21aa8f%3A0x965ea90601de7cc0&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7517567,
+        "longitude": -73.975518
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJj6ohSgJZwokRwHzeAQapXpY",
+      "provider_id": "/g/11j37prsyh",
+      "rating": 4.7,
+      "reviews": 113,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "Floor 54 of the, Chrysler Bldg, 405 Lexington Ave, New York, NY 10174",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4\u202fPM",
+      "hours": "Open \u00b7 Closes 4\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM",
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "9\u202fAM\u20134\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(716) 350-0665",
+      "website": "https://www.nyc-dentalign.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "book_online": "https://www.google.com/maps/reserve/appt/place/ChIJj6ohSgJZwokRwHzeAQapXpY/mid/%2Fg%2F11j37prsyh?sourceurl=https://www.google.com/search?pb%3D!4m8!1m3!1d34001.0928662477!2d-73.965!3d40.755!3m2!1i1920!2i1080!4f13.1!7i20!10b1!12m49!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m22!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!178b1!206b1!209b1!212b1!223b1!232b1!234b1!244b1!246b1!250b1!253b1!258b1!260b1!266b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m6!1s3MTtLTSbmvzPqOyVfCbDlqXpiN9eDtE:2!2s1i:0,t:11886,p:3MTtLTSbmvzPqOyVfCbDlqXpiN9eDtE:2!7e81!12e5!17s3MTtLTSbmvzPqOyVfCbDlqXpiN9eDtE:57!18e15!24m107!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!27m1!1b0!28b0!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!14m1!3b0!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i1080!1m6!1m2!1i1870!2i0!2m2!1i1920!2i1080!1m6!1m2!1i0!2i0!2m2!1i1920!2i20!1m6!1m2!1i0!2i1060!2m2!1i1920!2i1080!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m4!2e2!3m2!1b1!3b1!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i767!77b1%26tbm%3Dmap%26q%3Ddentist%2Boffice%2Bnear%2Bmidtown%2Beast%2BManhattan%26gl%3Dus%26hl%3Den",
+      "user_review": "\"The office is beautiful, spotless, and has an unmatched view.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEOQLfcoZ239HlfEZgjLaSeU2tS2mflFo_gH7LrxaSsraxFrk0PlxmxpwWI8KJcUaqbiphrjN3rDFMTMMxUMPRlf-KzwRN_zL_kfPN4nGgb47SJpYCW6dAe1NvEOLWDaLqjZpg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/f2IAVnicHcRdboIwAADgE1UQjH_JHoiCTktFkRB5IbW2ZVBobbvReEDvsNss2ffw_b4ba5VZe55owgmXkgv6bagmcrB0sBMie48rA4gBxosydO6i-HSGjMgqCFd7weKKtxDntAhsHvRMJLLm-wXUDudGY5fozs-E650ay8_l8UAK_Lx_qUa3KNTbJL2mqSvS7CIYOL7GC6pfsO5YhmbDjt9ni_ygbpty_ojoFP3EJ1huMXy2leIf49T3fdD8T8DwB5WhRaM"
+    },
+    {
+      "position": 17,
+      "title": "Sachar Dental NYC",
+      "place_id": "ChIJ1VhoDf5YwokRMzfP0h2NGb0",
+      "data_id": "0x89c258fe0d6858d5:0xbd198d1dd2cf3733",
+      "data_cid": "13626077306816509747",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fe0d6858d5%3A0xbd198d1dd2cf3733&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fe0d6858d5%3A0xbd198d1dd2cf3733&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.755474899999996,
+        "longitude": -73.9779336
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ1VhoDf5YwokRMzfP0h2NGb0",
+      "provider_id": "/g/11cjj5csv9",
+      "rating": 5,
+      "reviews": 414,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental hygienist",
+        "Dental implants periodontist",
+        "Denture care center",
+        "Orthodontist",
+        "Pediatric dentist",
+        "Periodontist",
+        "Prosthodontist",
+        "Teeth whitening service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_hygienist",
+        "dental_implants_periodontist",
+        "denture_care_center",
+        "orthodontist",
+        "pediatric_dentist",
+        "periodontist",
+        "prosthodontist",
+        "teeth_whitening_service"
+      ],
+      "address": "20 E 46th St Rm 1301, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "8\u202fAM\u20136\u202fPM",
+        "wednesday": "8\u202fAM\u20136\u202fPM",
+        "thursday": "8\u202fAM\u20136\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 752-1163",
+      "website": "https://www.sachardental.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://book.modento.io/sachar-dental/g/google-schedule-link?rwg_token=AE37R_inHzschvfQmlVFE4dsbtSzdkdwURQ8j6I8vwEOlNYOkeK-zUFp5pzfh46iPDWVLJN0XGCzwB0NhJkl7BK6__aKEHjqiA%3D%3D",
+      "user_review": "\"The dentists, the hygienists, and the front office people are all top-notch.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHshJXAk7vca_XQcuHYdmHsrATlmkrVJpUmUr5CU5qyNjtypd9YfKcIZ3MAApeFUgsHORHYUpZGHQVfud0Cafqi-CZhReMTtK5IxhiyCDNuzP-kL8kqCdZlemaJpkY-BEchGOpj=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/vXrA3XicHcTbDoIgAADQLyJszXXZeiC6kKVmi5a-NIcohSgKVvaDfUN_09Z5ON-PsFabGYSlGA2Kui5K3hnesrqyvLIDVitYaAOYAQaiQxBJRIzwLkiOHyy9XiLWkThTxLToVCrZnj1NFW1dTN2mD-6219k0zndsm4x8hDRf08KQ8EhiqpMNic55lzk4zZsbwIk4cv9kd-72JW49Xgbd-wDkfiIbnCUlV6mnZQwWKyY2ob7Pn0PHcYD4z0D1AxFGRnU"
+    },
+    {
+      "position": 18,
+      "title": "Tend Dental Grand Central",
+      "place_id": "ChIJG1nOQ-9ZwokRI4DyxFBMgR0",
+      "data_id": "0x89c259ef43ce591b:0x1d814c50c4f28023",
+      "data_cid": "2126064408880906275",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259ef43ce591b%3A0x1d814c50c4f28023&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259ef43ce591b%3A0x1d814c50c4f28023&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7546667,
+        "longitude": -73.9761572
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1nOQ-9ZwokRI4DyxFBMgR0",
+      "provider_id": "/g/11jdkhsrvl",
+      "rating": 4.4,
+      "reviews": 778,
+      "type": "Dentist",
+      "types": [
+        "Dentist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist"
+      ],
+      "address": "230 Park Avenue Suite ST-1C, New York, NY 10169",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "tuesday": "7\u202fAM\u20138\u202fPM",
+        "wednesday": "7\u202fAM\u20138\u202fPM",
+        "thursday": "7\u202fAM\u20138\u202fPM",
+        "friday": "7\u202fAM\u20138\u202fPM",
+        "saturday": "8\u202fAM\u20133\u202fPM",
+        "sunday": "Closed",
+        "monday": "7\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(646) 535-0969",
+      "website": "https://www.hellotend.com/site/studios/grand-central?utm_source=gmb&utm_medium=organic&utm_campaign=grandcentral+2003&utm_content=web",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"The Dentist & Dental Hygienist were friendly, knowledgeable and thorough.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF50j_SUpFplah-Gxjr_dIYim_C_4mwZ1KiCmttzSrC6KD4B2sHXud9boBS2dH1uUyXgVOyzKy4mfFHjrHOuqOAhmjt3hQcB6fMKYKGQ71WCQvhd-yJ_twSbfpNl40E7evGql7OVGv9VPlB=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/2uW3PXicHcRLroIwAADAE1WKosSXuAAU0OaJhIifTaPlU7GllRYQL-na25g4i_m8qdZS_RkGo5NRKUTJ8lblDRG1zms9IoIbpVSAKKAMZ7eN744_hRVO9tKX7EJB8KwanK1PN449bPH-bKKbx7V-JY03Q0vLHavw2Gbzq3CTcRaa7X44lmk0vNBg8cIPqyaM2kfkUF7pCY2JOyv-0QkFsW0evLijGRg2WPfJtZBbZsGVnXfBg9lRGnTzdMfcRW9CCAH9TUD9BfQzSAY"
+    },
+    {
+      "position": 19,
+      "title": "Central Avenue Dental-Midtown",
+      "place_id": "ChIJL_fojYJZwokR6eSCpCBfbzc",
+      "data_id": "0x89c259828de8f72f:0x376f5f20a482e4e9",
+      "data_cid": "3994515988304553193",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259828de8f72f%3A0x376f5f20a482e4e9&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259828de8f72f%3A0x376f5f20a482e4e9&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7591628,
+        "longitude": -73.9694049
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJL_fojYJZwokR6eSCpCBfbzc",
+      "provider_id": "/g/11lnpxhhv7",
+      "rating": 5,
+      "reviews": 146,
+      "type": "Dentist",
+      "types": [
+        "Dentist"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist"
+      ],
+      "address": "150 E 55th St 7th floor, New York, NY 10022",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "10:30\u202fAM\u20136\u202fPM",
+        "wednesday": "10\u202fAM\u20136\u202fPM",
+        "thursday": "Closed",
+        "friday": "Closed",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "11\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(646) 741-4294",
+      "website": "https://www.centralavedentalny.com/?utm_source=gmb_auth",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/central-avenue-dental-28655?LocIdent=294214&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_rrhQhPAcoEuZyZXRx_nBQx-lo_JodwOY0Nika7UnEpmE9KgB-entity&rwg_token=AE37R_ihS8Sgep1Cd7wQjStONRRWuwN4Hqtbw49ErvrsVUCEXglikANG9j9-Lbg5Aduo2Lbb1ixDiax5BUt1KTMRHPouAddszw%3D%3D",
+      "user_review": "\"Amazing Experience, staff is super friendly and the office is very modern.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFhsWmR2vN8kIxOpSnEq8AduzyNWo9f_aFlSgSHR5Z6jNJIJHTLn5Om5DyAlifA62Ro5ueTNbV_JWsl5Ja3LH25l78JmNFxo5XXbwpSG1i-xeXndNXqyFJjXNKUO0zEXGaDj7Bp=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/zLsdSXicHcTvEoEwAADwJ5r-uCnufJgjGbcotPPFJavU2saK8oKewdu48_vw-36KplF6Yhi8GA5yKXPOWs0eqRQNE80glbWRKw1SDbSBtmRXIa_QcR3aT-JWqy5QkVjcXXRt3z2J5Tg7Jx6P8sgP4WlUErzC_n4jYFDDeY_4LUMjO5SwZXtyOZ5xrDnEyXDj25A7Lq6J10lI6eWloqV1Ax2j4krovfdwScn6EJjvBV0m89KZqenLMk0TFP9TIH5i90RR"
+    },
+    {
+      "position": 20,
+      "title": "Madison Dental Loft",
+      "place_id": "ChIJg8IBfqlZwokR_1KQvUpide4",
+      "data_id": "0x89c259a97e01c283:0xee75624abd9052ff",
+      "data_cid": "17182748026449449727",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a97e01c283%3A0xee75624abd9052ff&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a97e01c283%3A0xee75624abd9052ff&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7510805,
+        "longitude": -73.9796293
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJg8IBfqlZwokR_1KQvUpide4",
+      "provider_id": "/g/1pv0l0ns6",
+      "rating": 5,
+      "reviews": 438,
+      "type": "Dentist",
+      "types": [
+        "Dentist",
+        "Cosmetic dentist",
+        "Dental implants provider",
+        "Emergency dental service"
+      ],
+      "type_id": "dentist",
+      "type_ids": [
+        "dentist",
+        "cosmetic_dentist",
+        "dental_implants_provider",
+        "emergency_dental_service"
+      ],
+      "address": "30 E 40th St Rm 806, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM",
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(646) 624-0987",
+      "website": "https://www.nycdental.com/locations/madison-dental-loft",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Cosmetic dentistry",
+            "Emergency services",
+            "Pediatric care",
+            "Sedation dentistry"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Payment plans"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.zocdoc.com/practice/madison-dental-loft-dental-and-implant-center-27889?LocIdent=123318&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_PtPw0WT7pE-lzKKhNA-Utx-lo_HlpD54OG7EGXPlRo2KnG4B-entity&rwg_token=AE37R_gup4Gn95HWySBwAN2kHLDTRD6euKaRdqETrqqcQbHwOH84R1YmTSSuv25X2FQ-RdsNxfBCRg_N8et_Lyf7HD7jTkxNbw%3D%3D",
+      "user_review": "\"They helped me address and resolve my dental issues quickly.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEK7-WqmtEExOlCvv8GK8OI3T8E1hgGF2CyEP_vOswNIYSqIpmv0yzQe4dRqQkyQP1zkgx0ZGs4iPCG3ZuIlrXSCR0vcMTBr38CyKzfPCjU3uZlO6KYQSE1xEFe_Sr7EBMv8weMYg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/hK_1AXicHcRLjoIwAADQE1WKNdqYuNCmEkKQVpwobFx0OkUp35byueEcYW4ziW_x_n4La1uz9zxdoJVqGqXlYGQvmtrK2q5EU3mqNUAYYLwju_DySKMduHeVpXRKNHEOBxFOQnTD1C9UcF6TmbKnS8x4CbO0C9vKwXnhcvN97Xg5c-YvpZpgHpjNi5EA5UOo-0dKrtCJ-HbqESZztPww8v5CQ66TbZTxlPoTPctn2u_oKXZ4lHGmDqMPIQTFZwHqf8gURP0"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.755%2C-73.965%2C14z&q=dentist+office+near+midtown+east+Manhattan&start=20&type=search"
+  }
+}

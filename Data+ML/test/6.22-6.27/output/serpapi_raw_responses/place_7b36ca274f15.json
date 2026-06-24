@@ -1,0 +1,558 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1819f070090194a0bc8",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/e6sMJy695BDRVAJyqQATVQ/6a3ac1819f070090194a0bc8.json",
+    "created_at": "2026-06-23 17:25:21 UTC",
+    "processed_at": "2026-06-23 17:25:21 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f67660fb23c7:0x66994989947e146f!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/e6sMJy695BDRVAJyqQATVQ/6a3ac1819f070090194a0bc8.html",
+    "prettify_html_file": "https://serpapi.com/searches/e6sMJy695BDRVAJyqQATVQ/6a3ac1819f070090194a0bc8.prettify",
+    "total_time_taken": 1.45
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJxyP7YHb2wokRbxR-lIlJmWY",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "NYC Health + Hospitals/Harlem",
+    "place_id": "ChIJxyP7YHb2wokRbxR-lIlJmWY",
+    "data_id": "0x89c2f67660fb23c7:0x66994989947e146f",
+    "data_cid": "7393021118556017775",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67660fb23c7%3A0x66994989947e146f&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67660fb23c7%3A0x66994989947e146f&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8143104,
+      "longitude": -73.93950869999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY",
+    "provider_id": "/m/0fltl1",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEBAZKdM3M3hI1kvV_xlBmg9OljYLMqT_oEEiDnw7dV51VxT4VAXO5nd8oJe6IfsCh4jGW9ve4KFMo6yaIwzMvOJ9HAcDcH_0k9wqilCktPrYIvlZiAblPfqzq_9KDZbQlouQl2ow=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/-qa0KnicHcTRboIwFADQL0JgoFuX7KEKm8g6IDGovJBZKkWuvWIrVf9wn7C_WbLzcH5_pDFn_eq6IINJi9iCuGpx4aiMUGbC8eS2Z-1w7WiX5l9FT-M5rdKGBSyQid-PZX2D-aklGRx3n2xY1xjHXaTsc1NO_fK2Dku6zaaqecGVmCUHvZDh8WNDRhGm7wxn9-_EPtiYrciS8ogva68nduhg0Zv8sktGqDq6h_wwPIaapFG1LwCvBTyhfbO-53mO_J876g_atUYR",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 339
+      },
+      {
+        "stars": 2,
+        "amount": 35
+      },
+      {
+        "stars": 3,
+        "amount": 55
+      },
+      {
+        "stars": 4,
+        "amount": 90
+      },
+      {
+        "stars": 5,
+        "amount": 990
+      }
+    ],
+    "rating": 3.9,
+    "reviews": 1509,
+    "type": [
+      "Hospital"
+    ],
+    "type_ids": [
+      "hospital"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking",
+          "On-site parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "506 Lenox Ave, New York, NY 10037",
+    "country": "United States",
+    "website": "http://www.nychealthandhospitals.org/Harlem",
+    "phone": "(844) 692-4692",
+    "open_state": "Open 24 hours",
+    "plus_code": "R376+P5 New York",
+    "hours": [
+      {
+        "tuesday": "Open 24 hours"
+      },
+      {
+        "wednesday": "Open 24 hours"
+      },
+      {
+        "thursday": "Open 24 hours"
+      },
+      {
+        "friday": "Open 24 hours"
+      },
+      {
+        "saturday": "Open 24 hours"
+      },
+      {
+        "sunday": "Open 24 hours"
+      },
+      {
+        "monday": "Open 24 hours"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEBAZKdM3M3hI1kvV_xlBmg9OljYLMqT_oEEiDnw7dV51VxT4VAXO5nd8oJe6IfsCh4jGW9ve4KFMo6yaIwzMvOJ9HAcDcH_0k9wqilCktPrYIvlZiAblPfqzq_9KDZbQlouQl2ow=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/-qa0KnicHcTRboIwFADQL0JgoFuX7KEKm8g6IDGovJBZKkWuvWIrVf9wn7C_WbLzcH5_pDFn_eq6IINJi9iCuGpx4aiMUGbC8eS2Z-1w7WiX5l9FT-M5rdKGBSyQid-PZX2D-aklGRx3n2xY1xjHXaTsc1NO_fK2Dku6zaaqecGVmCUHvZDh8WNDRhGm7wxn9-_EPtiYrciS8ogva68nduhg0Zv8sktGqDq6h_wwPIaapFG1LwCvBTyhfbO-53mO_J876g_atUYR"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "20 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxUfzHei1Z3Qi2M3nwWkH4XzDwI-zGlxfgz5VnZEALpS-DOtqV9RssH-Or-va8S4C5FnUT1IwR_jdlos-xMn9sP1f1zBWPJTTYj4hHnSpUo41tpatIbHYY9tFJw_BRI2hKNTmpoSIZ3gB9=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/VP5OyHicHcTdboIwGADQJ_qECiZjyS5gylo3FflR4cY4Bq2KbefXraQvueu9zZKdi_P7I4zR-Oh5gwgmXCk-dF_Y3VslTSfNpFU3j2uEFgG9OFtvr3E6Vr2j3Zk0wfY8XQXS7q80PLi5ZeBehrHnbraTzSJ-0wXMN-ZzF-WIFDZ3-D49FOHzLJVVSZjNj5ePQSGMKxlhRnrikn22LMv6EgoqC12pkBh9Muyd1nVk0qU9Jjmbitd1edOqYE3Ak-jJEt_3QfzfgvwDqGtHNQ"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEihUf_ho6os74bnkD6Z8-vOZhVXFIor8GypFDY5gPqTItFrG2hAk-J3q1yPtX2UaJhCxdnyS7PylUyUB3vOIJBNk7P7KN_fshHluUIrBblKqkW9MFAuwnm8adMvmcTCVoqjebB=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/XcdvinicHcRRboIwGADgE1VQprAlewAUBCN2mXXoi5GC_NrSAi24nnBn8DYm-x6-5x9o3aoPy-LgTGopa14NquqpFLoSekJlY9WtQlQhZfk4-2L-6gbkega5kMp9KwRbLk4eGncnOORRInsvNm20PM5r3O0THfXxDHyGUqebGqzzGbmkEP6Wwny72HBiSOCMuyQNMuZid5OdrwrWfCBJHxR807Gf923kDw_ReJdyOzZ0Hx5kd6-K4PMxtW0bwf8UiReEOkWQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGael1BAihcEUvLBMRZd4eObS5hMhSRb4YGQiYZPOoMMCfwdSkOTLjnfXUTvAfS-B1uHCZH6tSUYcHgX1u8DSHd0ICLKPAVyI7Az-prVhbCfdTHSBJcTEOnEjgVaiyGI4WnrGD2=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/E74tcnicHcRLroIwAADAE1VA8RMTFwUJRUHQAgo7KaVFsSW0aPSCnuHd5iXOYv6-XOterQ2j47MJk5J1dFR0IFJoKvSEyIfBegWIAsqAyeF4h_6VdpYDW0687Bk60amsbRpXeM4jjk-VXfjHtiiTWEaR27xqfI_T8CaaS5Y-YYOBY43ILdFC46wgiF2scbXFqDYDN9wnMH8HS_gB_ZDzym3qFGFnR1IvFt6N5df27Qf2WQz-drp5WaZpAv6bAPEPHO5Dug"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Shopping",
+          "places": 1
+        },
+        {
+          "title": "Services",
+          "places": 1
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 3
+        },
+        {
+          "title": "Parking",
+          "places": 2
+        },
+        {
+          "title": "Other",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Central Harlem Sexual Health Clinic",
+          "data_id": "0x89c2f67615ce4007:0xd59bf728eb24ea6c",
+          "data_cid": "15392167906584619628",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67615ce4007%3A0xd59bf728eb24ea6c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67615ce4007%3A0xd59bf728eb24ea6c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.813862,
+            "longitude": -73.937136
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f67615ce4007%3A0xd59bf728eb24ea6c%218m2%213d40.813862%214d-73.937136&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "rating": 4.2,
+          "reviews": 37,
+          "type": "STD clinic",
+          "type_id": "std_clinic",
+          "address": "2238 5th Ave 1st floor, New York, NY 10037",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 3:30\u202fPM",
+          "hours": [
+            {
+              "tuesday": "8:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "wednesday": "8:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "thursday": "Closed"
+            },
+            {
+              "friday": "8:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8:30\u202fAM\u20133:30\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE75ODCyWkAjO8l2WFEVpMs19fYkp-NmkswsiYiskMWmWvP5FnhnhO-q1Whcq3WYFSPDBSinqxCATfR5aAtjAmBmAGea8zpbW16LkRAsTrb8cWfKE8upszFMCRHNyZWijHWqMHJlQ=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE75ODCyWkAjO8l2WFEVpMs19fYkp-NmkswsiYiskMWmWvP5FnhnhO-q1Whcq3WYFSPDBSinqxCATfR5aAtjAmBmAGea8zpbW16LkRAsTrb8cWfKE8upszFMCRHNyZWijHWqMHJlQ=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "M P G Uptown Parking (Harlem Hospital)",
+          "data_id": "0x89c2f6763d02c1f5:0xdb45a1145021cdcb",
+          "data_cid": "15800211976315063755",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6763d02c1f5%3A0xdb45a1145021cdcb&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6763d02c1f5%3A0xdb45a1145021cdcb&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8141703,
+            "longitude": -73.93742619999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f6763d02c1f5%3A0xdb45a1145021cdcb%218m2%213d40.8141703%214d-73.93742619999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "rating": 4.0,
+          "reviews": 6,
+          "type": "Parking lot",
+          "type_id": "parking_lot",
+          "address": "6 W 137th St, New York, NY 10037"
+        },
+        {
+          "position": 3,
+          "title": "Uptown Parking Corporation",
+          "data_id": "0x89c2f676e98b3bd9:0x7f5dffb496449cc3",
+          "data_cid": "9177772766731214019",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f676e98b3bd9%3A0x7f5dffb496449cc3&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f676e98b3bd9%3A0x7f5dffb496449cc3&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8142287,
+            "longitude": -73.9396101
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f676e98b3bd9%3A0x7f5dffb496449cc3%218m2%213d40.8142287%214d-73.9396101&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "rating": 4.0,
+          "reviews": 3,
+          "type": "Parking garage",
+          "type_id": "parking_garage",
+          "address": "506 Malcolm X Blvd, New York, NY 10037",
+          "location": "Floor 1"
+        },
+        {
+          "position": 4,
+          "title": "Martin Luther King, Jr. Pavilion",
+          "data_id": "0x89c2f76e92702fab:0xc32d6a2a37e3647a",
+          "data_cid": "14064013940906747002",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f76e92702fab%3A0xc32d6a2a37e3647a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f76e92702fab%3A0xc32d6a2a37e3647a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8144043,
+            "longitude": -73.9402276
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f76e92702fab%3A0xc32d6a2a37e3647a%218m2%213d40.8144043%214d-73.9402276&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "rating": 3.7,
+          "reviews": 3,
+          "type": "Hospital",
+          "type_id": "hospital",
+          "address": "506 Malcolm X Blvd, New York, NY 10037",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            },
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHIEB7JhAJmm749uWR4lSn4rA_MIJppDSzCzPDE4-wV6NNDP4dOvIg53NeMHUvAjaOQw1Avhjcte5KtTiQeAY9zNAtC_x-ThS_tgKAWdQaI_QNpzQtZMZ0tQY0CjEXeiE4q1DuF=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHIEB7JhAJmm749uWR4lSn4rA_MIJppDSzCzPDE4-wV6NNDP4dOvIg53NeMHUvAjaOQw1Avhjcte5KtTiQeAY9zNAtC_x-ThS_tgKAWdQaI_QNpzQtZMZ0tQY0CjEXeiE4q1DuF=w86-h86-n-k-no"
+        },
+        {
+          "position": 5,
+          "title": "Affiliation Office",
+          "data_id": "0x89c2f676e98e8b89:0x6f2019d6068bcd1a",
+          "data_cid": "8007428544488262938",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f676e98e8b89%3A0x6f2019d6068bcd1a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f676e98e8b89%3A0x6f2019d6068bcd1a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.814169899999996,
+            "longitude": -73.9397802
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f676e98e8b89%3A0x6f2019d6068bcd1a%218m2%213d40.814169899999996%214d-73.9397802&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Medical clinic",
+          "type_id": "medical_clinic",
+          "address": "506 Malcolm X Blvd #2134, New York, NY 10037",
+          "location": "Floor 1"
+        },
+        {
+          "position": 6,
+          "title": "Charles P. Felton National Tuberculosis Center",
+          "data_id": "0x89c2f6766892a153:0xb2969753d14eb2aa",
+          "data_cid": "12868639371507446442",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6766892a153%3A0xb2969753d14eb2aa&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6766892a153%3A0xb2969753d14eb2aa&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8139353,
+            "longitude": -73.938099
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f6766892a153%3A0xb2969753d14eb2aa%218m2%213d40.8139353%214d-73.938099&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "type": "Training center",
+          "type_id": "training_center"
+        },
+        {
+          "position": 7,
+          "title": "The Viney Group LLC",
+          "data_id": "0x89c2f5dfed18daa9:0x44304c52a54449d4",
+          "data_cid": "4913511111304956372",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5dfed18daa9%3A0x44304c52a54449d4&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5dfed18daa9%3A0x44304c52a54449d4&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8140466,
+            "longitude": -73.9374758
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f5dfed18daa9%3A0x44304c52a54449d4%218m2%213d40.8140466%214d-73.9374758&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "type": "Marketing agency",
+          "type_id": "marketing_agency"
+        },
+        {
+          "position": 8,
+          "title": "Harvest Home Farmer's Market - Harlem Hospital",
+          "data_id": "0x89c2f75217a795e9:0x5d8250db3d37189c",
+          "data_cid": "6738036895054764188",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f75217a795e9%3A0x5d8250db3d37189c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f75217a795e9%3A0x5d8250db3d37189c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.815032599999995,
+            "longitude": -73.93999629999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f75217a795e9%3A0x5d8250db3d37189c%218m2%213d40.815032599999995%214d-73.93999629999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxyP7YHb2wokRbxR-lIlJmWY&type=place",
+          "type": "Farmers' market",
+          "type_id": "farmers_market"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Amazing service from the check in to the staff in the back\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI8a_0aQhVOffwgXRFeku8nrAXOX5uJ3V6ALfTMZvCAJ-6hWcw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"She touched ID\u2019S people, paperwork all the while eating chips.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXclAHrgHpgcX_ffBuc58fSf0Xuts4qiUYWOvxXidhVuSyOM8-_=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"He saw Dr. Camper and she did a wonderful Job fixing his tooth.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ5_iaIQMhsvibfEPZSDX8muL7SSrHzcYoSzRkv-f90fd00Sw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Maryann Marino",
+          "rating": 5,
+          "contributor_id": "101181187104179665601",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK9vEvu4UUgT9X5-skpMVeWRoPFAZGwyNux6ePDm0HP-vxsPg=s120-c-rp-mo-br100",
+          "description": "I would like to recognize Jonathan Ortiz from Patient Finance at Harlem Hospital for providing exceptional customer service and assistance with my health insurance application. From the very beginning, Jonathan demonstrated professionalism, patience, and a genuine commitment to helping me navigate a process that can often be confusing and stressful.\n\nWhat truly sets Jonathan apart is his dedication to going above and beyond for patients. He took the time to explain every step, answered all of my questions thoroughly, and ensured that I understood my options. His responsiveness, attention to detail, and willingness to advocate on my behalf made a tremendous difference in my experience.\n\nIn an environment where quality customer service can sometimes be difficult to find, Jonathan consistently delivers a level of care, compassion, and professionalism that reflects the very best of Harlem Hospital. He treats every patient with dignity and respect and demonstrates the kind of commitment that organizations strive for but rarely find.\n\nHarlem Hospital is fortunate to have an employee like Jonathan Ortiz representing its mission and values. His dedication to helping patients access healthcare coverage is truly commendable, and I am grateful for all of his assistance.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25KT1JqWmFSVFZVZHpKMlRIQktUVTVIYVRSVFJIYxAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOnJORjZaRTVUdzJ2THBKTU5HaTRTRHc%7C%7C?hl=en",
+          "date": "a week ago",
+          "date_iso8601": "2026-06-09T18:46:28+00:00"
+        },
+        {
+          "username": "Ashley Parker",
+          "rating": 5,
+          "contributor_id": "109843096244766398100",
+          "user_review_count": 2,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUx_pIRFRd6m_qHJOHPIfGfFeqb6VBE42ftxFExYKqPuCM3T0U=s120-c-rp-mo-br100",
+          "description": "Sinnamon flowers was a great  employee she was so kind with great hospitality took my sons vitals and brought us to X-rays I really enjoyed visiting although I hate hospitals this was actually my first great experience at a hospital and I definitely think it was due to ms flowers expertise and hospitality thanks so much me and my son loves you for being so kind",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pseFZDMXJlRTVEYTFCVlRuZERObHBDTjNWemFHYxAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOjlxVC1reE5Da1BVTndDNlpCN3VzaGc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1A0wDVWYGNT1nu2q7ZcdUZfATIuaah4VB3WiuGzhE7nhYyRcWA3AtJM8tSP7qOtmuISPY5Q3aM762UpSfpCDIrCkghmbPW8uXd08jcGL3HPeA9l_8tdMu8Q9Vh4zgR-NOBxe6UV-8WmpXs=k-no"
+            }
+          ],
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-02T18:17:00+00:00"
+        },
+        {
+          "username": "Ayanna Suggs",
+          "rating": 5,
+          "contributor_id": "110175521198753083058",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLkSQlgp0HxGYgA58oFYff7z4ydVjR3hKZGRQqNNx6QJKghKA=s120-c-rp-mo-br100",
+          "description": "Over the years, my family and I have witnessed meaningful growth and positive change at Harlem Hospital. I truly appreciate the culture of compassion, dedication, and support demonstrated by the doctors\u2014like Dr. Weir, dentists such as Dr. Camper, and orthopedic specialists like Dr. Dayna Phillips as well as the entire staff. Their willingness to take the time to truly listen to their patients reflects a deep commitment to quality care and makes a lasting difference in the lives of those they serve. Their commitment not only impacts the quality of care but also inspires confidence and trust in the community. I\u2019m especially encouraged by the example this hospital sets for young aspiring Black children, like my daughters , who aspire to work in healthcare. It\u2019s powerful for them to see what\u2019s possible, and I look forward to the continued impact this institution will have on future generations in medicine.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psNGJFdElOVlJ0Y0doMmVsRkJVV1JpVDNaU1ZWRRAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOjl4bEtINVRtcGh2elFBUWRiT3ZSVVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-04T23:09:29+00:00"
+        },
+        {
+          "username": "Tricia Giustra-Jackson",
+          "rating": 5,
+          "contributor_id": "108836475844580581649",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLF-sJJmyfZNcvlx_K5Bu13qJNL5dksBwSXp80Km2qEMjcw1A=s120-c-rp-mo-br100",
+          "description": "Dr. Ameer in the out patient adult behavioral health clinic is the best! She's so easy to talk to! I have severe anxiety but she is very calming and I'm able to discuss how I'm really feeling with her. And the front desk staff is great too, especially Ms. King. It's a very pleasant experience going there for my monthly visits.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2taRFpESXhYMU5XUm05RGN6QjZkelV3WVZwU05rRRAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOkZDZDIxX1NWRm9DczB6dzUwYVpSNkE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-15T03:50:46+00:00"
+        },
+        {
+          "username": "Shakera Choudhury",
+          "rating": 5,
+          "contributor_id": "100588659068839270408",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV88p8KII6_X8YW4MKt6MUlN6Iq2XQRjkPTWUm2dDEpRYXaO6o=s120-c-rp-mo-br100",
+          "description": "Referred to HHC/Harlem Dental at 15 w 136th Street, Extremely professional service by The DDS Dr.Rafid Inam and his Dental Assistant, They were extremely professional and very helpful and made my visit very smooth and tooth extraction were done very professionally without any discomfort. Walk in service is excellent, Building is cleaned and well maintained.\nHHC is always thriving and making it very easy for Patients and Employees to receive great medical services !",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GRVp6ZElOazFZYjFwVFJrWldUMmd4UkRjM01XYxAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOmFEZzdINk1Yb1pTRkZWT2gxRDc3MWc%7C%7C?hl=en",
+          "date": "Edited 4 weeks ago",
+          "date_iso8601": "2026-05-26T01:38:04+00:00"
+        },
+        {
+          "username": "Denise Brown",
+          "rating": 3,
+          "contributor_id": "112202690715101757462",
+          "user_review_count": 16,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIAAr4UDBHZCZwmEEOFBjt9ErQzm6r5X737gd0bNQRpKAakXw=s120-c-rp-mo-ba12-br100",
+          "description": "There\u2019s a saying\u2014you don\u2019t truly appreciate something until you realize how much it matters.\n\nDuring my stay at Harlem Hospital Center, I came to appreciate something many people overlook: the quiet work that keeps patients safe and comfortable every day.\n\nCarlos Rojas from the Environmental Services (EVS) department does exactly that. He comes in, does his job with care and precision, and leaves behind a space that feels clean, fresh, and safe. It may seem simple, but it makes a real difference\u2014especially when you are trying to rest and recover.\n\nWhat stood out to me most is the consistency. Every time Carlos cleaned my room, I could feel the difference. There was a sense of calm and comfort in the environment that helped me feel at ease.\n\nSome roles are essential but often go unnoticed. Carlos is one of those people who shows up, does the job right, and makes a meaningful impact without needing recognition\u2014but he absolutely deserves it.\n\nThank you, Carlos, for your professionalism and care. Your work truly matters.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT204MVducEhMVk5wTUVZdE1sRjRibHByUjNOclRVRRAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOm81WnpHLVNpMEYtMlF4blprR3NrTUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-03T23:58:48+00:00"
+        },
+        {
+          "username": "Erica Smallwood - Torruella",
+          "rating": 4,
+          "contributor_id": "110166428659332567688",
+          "user_review_count": 21,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVjwC9SmFIBGENHk9i1VQafovXFEzTAwf3a5v3YBdyRamZaseJcJw=s120-c-rp-mo-ba12-br100",
+          "description": "My baby had to go to the Harlem hospital recently for head trauma. He had a gash in the middle of the forehead that needed stitches. They assessed him, kept me informed, staff was friendly. One of the ER nurses was masterful at gaining rapport and making us parents feel comfortable. They didn't have a plastic surgeon working but provided an oral maxillofacial resident instead. There were also ants crawling in the room and the windows and walls had like white spray or something running down. Overall, the experience with the staff was good. Could stand to be a bit cleaner.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tsak1sOVRaRVk0WlRsc01uRlZSMGhCV2pWc2FVRRAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOkljMl9TZEY4ZTlsMnFVR0hBWjVsaUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-08T16:19:51+00:00"
+        },
+        {
+          "username": "Melissa Muller",
+          "rating": 5,
+          "contributor_id": "117860121700574062805",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ34Ljg-9J6uexQMkchsLEJBRQhcxRYVKyQTEhQHlkgTSjqhgw=s120-c-rp-mo-br100",
+          "description": "I want to thank everyone at Harlem Hospital for all of their care and patience when I came in via ambulance straight to emergency room In a pretty dire and going through a terrible health scare. The doctor,nurses and staff were all very helpful and comforting when I was struggling with multiple issues. Dr. Sharp helped me so much with setting up much needed and long overdue healthcare information and aftercare. She even organized all necessary specialist and dental referral information and resources along with my discharge paperwork so that I can continue  getting my total health back on track again. I would recommend Harlem Hospital for any emergency health crisis and for all and any health care issues, specialists and providers.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pZMFpWaFZjMFkxYlVOclEzQk1RVzVUUVdZMGJXYxAB!2m1!1s0x0:0x66994989947e146f!3m1!1s2@1:CAIQACodChtycF9oOjY0ZVhVc0Y1bUNrQ3BMQW5TQWY0bWc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-04T23:50:36+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Lenox Hill Hospital",
+            "data_id": "0x0:0x2a367beae7107987",
+            "data_cid": "3041754847164529031",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2a367beae7107987&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2a367beae7107987&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7737304,
+              "longitude": -73.9608219
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2a367beae7107987%218m2%213d40.7737304%214d-73.9608219&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.6,
+            "reviews": 830,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGGK6--5s39VmszUvLHWAVGJFcoKl-g3dV3oeaBB9IyVStZE-3qLbk42AVfSPnE2PEzy9e8bHOx2uIBfeiqaEBmwa4UIeCNR7hwx1gkAFTo-0p7OM92U2BGNHaVOXfpsJuFPKXdapDHqgk=w156-h156-n-k-no",
+            "type": [
+              "General hospital"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "NYC Health + Hospitals/Lincoln",
+            "data_id": "0x0:0xc1f3b54371870533",
+            "data_cid": "13975713369932891443",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc1f3b54371870533&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc1f3b54371870533&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8160855,
+              "longitude": -73.9247762
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc1f3b54371870533%218m2%213d40.8160855%214d-73.9247762&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.6,
+            "reviews": 2430,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG84U_j7LEXej9jZibtgCuvzvelOPkKLnOd0CKYbh29vC4Y6krRcFpojhNhbL1oNpNeTqH2iJATTYhJiIGO9MqlRoRxoV5jOa_Q7MMYUhepMjLSwv81QOIKNVkwMQjw65GT6b6NI0jlx437=w156-h156-n-k-no",
+            "type": [
+              "Hospital",
+              "Emergency room",
+              "Medical Center"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Community Healthcare Network \u2013 Harlem / Helen B. Atkinson",
+            "data_id": "0x0:0x84e9c1903678889f",
+            "data_cid": "9577398907713390751",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x84e9c1903678889f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x84e9c1903678889f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8012008,
+              "longitude": -73.9495474
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x84e9c1903678889f%218m2%213d40.8012008%214d-73.9495474&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 43,
+            "thumbnail": "https://www.google.com/maps/vt/data=psYPTEN3w93hawjqP_JZLn1gn9rXLvA_7j272FwUPaZ_g1H_HEDLzmqJBxr2MCJFsQPnbhNJri_93hipORceFAjDJkrb9sdm5v6yLU6ZQ42oBkKakGOp0chGBzMO58nGSUSOhQ5dVS4dUU7vNwZsV7FWXCSXk_we",
+            "type": [
+              "Community health center",
+              "Family planning center",
+              "Medical clinic",
+              "Mental health clinic",
+              "Mental health service",
+              "Women's health clinic",
+              "Pregnancy care center",
+              "Reproductive health clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjAKLiIqTllDIEhlYWx0aCArIEhvc3BpdGFscy9IYXJsZW0gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjAKLiIqTllDIEhlYWx0aCArIEhvc3BpdGFscy9IYXJsZW0gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

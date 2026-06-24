@@ -1,0 +1,988 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1dbe9639bdcb016ba2c",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/2-WgN3jwQrIKRcaQbSFEwg/6a3ac1dbe9639bdcb016ba2c.json",
+    "created_at": "2026-06-23 17:26:51 UTC",
+    "processed_at": "2026-06-23 17:26:51 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a183ed5cbaf:0x94c47e4e7106d651!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/2-WgN3jwQrIKRcaQbSFEwg/6a3ac1dbe9639bdcb016ba2c.html",
+    "prettify_html_file": "https://serpapi.com/searches/2-WgN3jwQrIKRcaQbSFEwg/6a3ac1dbe9639bdcb016ba2c.prettify",
+    "total_time_taken": 0.33
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJr8vVPhhawokRUdYGcU5-xJQ",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "CityMD Fulton Urgent Care - NYC",
+    "place_id": "ChIJr8vVPhhawokRUdYGcU5-xJQ",
+    "data_id": "0x89c25a183ed5cbaf:0x94c47e4e7106d651",
+    "data_cid": "10719831888417445457",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a183ed5cbaf%3A0x94c47e4e7106d651&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a183ed5cbaf%3A0x94c47e4e7106d651&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7103247,
+      "longitude": -74.0083319
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJr8vVPhhawokRUdYGcU5-xJQ",
+    "provider_id": "/g/11c5zzblsq",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAz-h3iJ-n24o1xNvLfCKtI0mQxfRyD5DDIWlwrBMKwRrWDJibEHSm2ZCqPE5Hbh1G_VlVq_xCeffbJMsiEw8PotPQiATfSqm1jimmG6GlEe7XwyadTqJPK-1OjASoQdmIF_5L=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/E-suR3icHcRdboIwAADgE1Woii5L9tAB409dEaPGFzKwpdWWCq0WvaBn8DZL_B6-15MZc9GfjiPYZNQo1Qhy1aSvVWtIa0a1kk5z0aDWQDsIr_IzitEDsAlPQTueKjisbgvqZyZxZT7Q9T3wgiDZCdt_LzO77ndByqswLuT44Hc49OKKwajcim1XDj6htEqXmof2AyuDc442tOgkPHEpo1kkQjLf2_vfcdOlOAPw94QKlR9l8lN6iy8LXdcF7H0N2n9IZESj",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 73
+      },
+      {
+        "stars": 2,
+        "amount": 14
+      },
+      {
+        "stars": 3,
+        "amount": 9
+      },
+      {
+        "stars": 4,
+        "amount": 35
+      },
+      {
+        "stars": 5,
+        "amount": 342
+      }
+    ],
+    "rating": 4.2,
+    "reviews": 473,
+    "type": [
+      "Urgent care center",
+      "Doctor",
+      "Laboratory",
+      "Medical clinic",
+      "Women's health clinic",
+      "Pediatric clinic",
+      "Walk-in clinic"
+    ],
+    "type_ids": [
+      "urgent_care_center",
+      "doctor",
+      "laboratory",
+      "medical_clinic",
+      "obstetrics_gynecology_clinic",
+      "pediatric_clinic",
+      "walk_in_clinic"
+    ],
+    "book_online": "https://www.citymd.com/urgent-care-locations/ny/fulton?utm_source=ReserveWithGoogle&merchant_id=CITY_1263&rwg_token=AE37R_ioIa0z23MLBGGMqUhJMQYG_klNmJuMNOcNe1Bhy30lgpDLkeIgOFw3UrOi7URtG1i1z-FBDtAkv4DggOzaBPVU1sBO2A%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "offerings": [
+          "Has online care"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Accepts walk-ins"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "138 Fulton St, New York, NY 10038",
+    "country": "United States",
+    "website": "https://www.citymd.com/urgent-care-locations/ny/fulton?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+    "phone": "(212) 271-4896",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "PX6R+4M New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      },
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20138 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "9 AM\u20135 PM"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a183ed5cbaf%3A0x94c47e4e7106d651&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAz-h3iJ-n24o1xNvLfCKtI0mQxfRyD5DDIWlwrBMKwRrWDJibEHSm2ZCqPE5Hbh1G_VlVq_xCeffbJMsiEw8PotPQiATfSqm1jimmG6GlEe7XwyadTqJPK-1OjASoQdmIF_5L=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/E-suR3icHcRdboIwAADgE1Woii5L9tAB409dEaPGFzKwpdWWCq0WvaBn8DZL_B6-15MZc9GfjiPYZNQo1Qhy1aSvVWtIa0a1kk5z0aDWQDsIr_IzitEDsAlPQTueKjisbgvqZyZxZT7Q9T3wgiDZCdt_LzO77ndByqswLuT44Hc49OKKwajcim1XDj6htEqXmof2AyuDc442tOgkPHEpo1kkQjLf2_vfcdOlOAPw94QKlR9l8lN6iy8LXdcF7H0N2n9IZESj"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEZ3gdw8i02xyKOLI5S1_kqSNmQRgtMKjqov0h9iOeE2NRu7vc5DTMAYs4zH_RLoaDwwj-8jMAaU2NiPHiVttlT14L5HznfqbDQQJVB4KycU6jm26D0aBpegApOYVQZhGz6c59Z=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/hRDVZXicHcRJDoIwAADAF1UKAi6JhxqMKJtFJJGLwVpbECjYKsoHfYO_MXEO8_1wpVo517SKj0dMCFbRh6R3IhpFGzUiotZYKwGRQGpoF-IbWmVjdumnBTReby_yN9ZeP926fVjjmKnAKzvxhHxWRHRlhPFj8iSWkwToKM3BPcW-yJ2-L8G0DFB-MMJi5xapUlWim77lDs21OzsYb9Ol6b3JwS5rw3ZgvmwpQ210THHG14NNrFm26HUIIeD_CWh-OJhD7w"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNqUfv9kA2sjeiBxMJSXJjLP6GYKqisd-0WONj8VJD73iK_uxqBobGEpxqxqWWOzahSvKP0dSUOw62x4jdbE3CPuEmEthpdpB9EUJyKTRv3vx-Y-Oa0tytfjRk5lctDOdSGXM=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/zW80sHicHcRdkoIgAADgE5GU_WzN7IMWY6MlbmbWU1NgIprAgkZ7wO6wt2mm7-H7fzFjpF44TsPcQSlE2RSdLn6JaE3RmgERd6eUGhANtOMl8U_trWOV3fp57Y00LyrfbsP0GPJNMg1Okao0BTDHMf86hKuZW0XnzipfXAMkrbIqz_HfhaV9lECaZvgxHdkxp1fkLpMO3ZFhkkp_jrLwGe13vdtbcAL4As3T3PiunjTErDBNg-P2-zGEEAL2mYD2DVIHRRw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEJqpqFPkylG5XIeud0ooWOhy380P18Zot4pDEjj6K3nQ4wx7zwGyQ2jPSk5MTcRqvErq5_t_Rc8hq3qMUR5ls949jdsBWPsnus0Z9gVNLdwaqy6A2K1ae6hQ9JJgd-Il0zyGlXHQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/9HwWWXicHcTdboIwGADQJ6oU-Rks8YJFxsSpLdvUeGNMadpA11K_ItY33CPsbZbsXJzfH-ncAM9BoGQ0E8YIxUfgV2a049rNmPkOxACIAYKgIFvaF2VtB_tKeq-q5LjiY4uNOeykjzJMwuxkXDwsy65L15Gm8XR_ekyVp_OOfPTJ5pM19lZebXJ254Zl0kZ289UkCvI471p4ORDQI-BTLvbb93a6WJ8W83V44amkeV2LFq0UfvhKHd_oYgoxxkj-z5D-Axf2RY0"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Fast service, polite staff and clean environment\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUWjkglzrDG5uoO4riLt0N8mjJm_yicevL3amtDbEXJAyuRhAKUbg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Don't waste your time and energy because the vibe is negative at this location.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIMQWrM8i6QLms8TIQxujN6fuF8SV-HTVCO_zbbj7P2pZdGhw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The place is clean and staffs and doctors are nice.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVBAV6wL-l3mqo08VA4qh-D3GSSB7EbEQMPNWbgje9HD_MSBMha=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Wayne Patin",
+          "rating": 5,
+          "contributor_id": "115034900575910491491",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXll-NPTmo8x2wwEJT-yojxVenNE_A5bmYLbj3Ud2plSDCkMzYe=s120-c-rp-mo-ba12-br100",
+          "description": "I was visiting from out-of-state and having problems with swelling around a damaged toenail nail on my left big toe. They took my Medicare insurance information and only charged me my minimum copay - just what I would have paid in Houston. The doctor was prompt, friendly and prescribed an antibiotic that almost immediately reduced painful swelling. I highly recommend CityMD.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CbVZuUk9lbmMwU0d4ak1VWnJhRmhsVjNoemFHYxAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOnBmVnROenc0SGxjMUZraFhlV3hzaGc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-01T01:54:33+00:00"
+        },
+        {
+          "username": "Michelle Liang",
+          "rating": 5,
+          "contributor_id": "108716675957343256147",
+          "user_review_count": 66,
+          "user_photo_count": 99,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVcBIiyZyfO19GVD_bHpMxQcSZo9b3VOazI1h-K1EXAEjFkTgyR=s120-c-rp-mo-ba12-br100",
+          "description": "Great experience. Very nice doctor and nurse. Got my husband\u2019s x-ray directly at the clinic. Hopefully don\u2019t need to come again, but if either of us need urgent care, we\u2019ll definitely be back!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25NMlowMXdURVYwYUc0ME5GZGZVMkZQZG5SaE9WRRAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOnM2Z01wTEV0aG40NFdfU2FPdnRhOVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T13:47:00+00:00"
+        },
+        {
+          "username": "Leena M.",
+          "rating": 5,
+          "contributor_id": "100329940468160559373",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIr1RDqqcnj-1Gq1M6TxYED6YsJ28t3tKB1O4n8Dme4S9J9bw=s120-c-rp-mo-br100",
+          "description": "Several hours after waking up feeling my bedroom spinning before even opening my eyes, I headed over to the CityMD on Fulton Street in Manhattan. It was early in the morning, the waiting room was empty, the clerk checked me in and I was seen shortly afterwards. This was certainly better than any Emergency Room experience, although my local one is not too bad. After routine vitals and giving a urine sample, I saw a physician who really listened to my symptoms, asked pertinent questions, and much to my surprise immediately identified the problem and its cause.  Some exercises were recommended and an optional medication was prescribed for the dizziness. Fortunately, within a day the problem resolved.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wVFQxZDZPRmhGUzNndFRsaE1NVGxoVkdOT2NFRRAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOmpTT1d6OFhFS3gtTlhMMTlhVGNOcEE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-14T22:53:17+00:00"
+        },
+        {
+          "username": "Jamie Newton",
+          "rating": 2,
+          "contributor_id": "106716032910649838787",
+          "user_review_count": 78,
+          "user_photo_count": 59,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUR4qkTKYhW1j8z1TQqe_GomJorKLV-oJkdWW_h34GihYfNIk8B9g=s120-c-rp-mo-ba12-br100",
+          "description": "Front desk receptionist was great, patient and friendly.\n\nThe nurse who did the check in was also great.\n\nBut whenever I'm told it \"could be this or could be that\" by a doctor, I find that difficult because I've already come up with a list of things it \"could be\" before I arrived. The reason I'm at the doctor's office is to find out what exactly it is.\n\nI wasted my co-pay on my could be diagnosis.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWRk9UVlRNSFpaU1hCV2FteG9OUzFvZURFMFRVRRAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOjVFOTVTMHZZSXBWamxoNS1oeDE0TUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-18T22:17:42+00:00"
+        },
+        {
+          "username": "Christine James",
+          "rating": 5,
+          "contributor_id": "113784499426826814732",
+          "user_review_count": 20,
+          "user_photo_count": 15,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVzaV4FoNTVO3NZYZuaCsSd0bgVUbSnZOA-T4e3_qV-_kfLUpCoQw=s120-c-rp-mo-ba12-br100",
+          "description": "Amazing urgent care. I was in and out within 15 minutes and received fantastic care for my condition. I also saw an MD too, not a PA or NP. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGMFNtbDJSemt5VDFOSFNETTJlbGw0UkdkUmNVRRAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOlF0Sml2RzkyT1NHSDM2ell4RGdRcUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-22T23:19:11+00:00"
+        },
+        {
+          "username": "Florian Eberhardt",
+          "rating": 1,
+          "contributor_id": "110390165894610950996",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJTMcOde3Dl-KEMU5qXJcH81Nx6gKaN0XIX-38YwLt_Gvtv2g=s120-c-rp-mo-br100",
+          "description": "Useless.  Don\u2019t waste your time going there.\n\nCondescending staff refused to share pricing about very standard full health check up or describe what services would be provided as part of the check up.\nNo even willing to provide bull park pricing\u2026\n\nDo better",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25JemJFZzFaM1ZaWDFGSVNYRjZVVjgxUkZwaE1HYxAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOnIzbEg1Z3VZX1FISXF6UV81RFphMGc%7C%7C?hl=en",
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-24T14:40:12+00:00"
+        },
+        {
+          "username": "Exzailya Lebron",
+          "rating": 1,
+          "contributor_id": "102123599995581825861",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLV15-HB3y45etuj83nWPehzei7FKn_gkmZUKSTkR7GG0xENg=s120-c-rp-mo-br100",
+          "description": "I went to CityMD for severe oral pain and clearly explained that the roof of my mouth was raw and inflamed. I was first prescribed magic mouthwash, which no pharmacy was able to provide, making that prescription useless. I was then prescribed viscous lidocaine, which significantly worsened my symptoms, increasing both burning and irritation. This outcome was especially frustrating given how clearly I described my condition. While I understand treatments don\u2019t work the same for everyone, patient concerns and symptom details should be more carefully considered before defaulting to standard prescription. Overall unnecessary and disappointing experience, your better off asking Google and saving your money.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xoYVZEUTRXV1pXTVhkWFVuTXhiamhSYkdGdlExRRAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOlhaVDQ4WWZWMXdXUnMxbjhRbGFvQ1E%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-21T17:23:17+00:00"
+        },
+        {
+          "username": "Nicole Matthews",
+          "rating": 5,
+          "contributor_id": "100590205698881706531",
+          "user_review_count": 36,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKsP0tBPPZo995cIejM9qq8oSEDJWKqolRMzhENp_t4z69rSA=s120-c-rp-mo-ba12-br100",
+          "description": "Amazing and efficient staff. I arrived early (around 9am) and was in and out with thoughtful care in less than fifteen minutes",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s0M1NEQjNNQzExYzJ0eWNITlpibU16U205cFZWRRAB!2m1!1s0x0:0x94c47e4e7106d651!3m1!1s2@1:CAIQACodChtycF9oOk43SDB3MC11c2tycHNZbmMzSm9pVVE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-22T17:35:27+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "ModernMD Urgent Care - Bed-Stuy",
+            "data_id": "0x0:0x4619a341ff63dc0d",
+            "data_cid": "5051247960925658125",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4619a341ff63dc0d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4619a341ff63dc0d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.680290899999996,
+              "longitude": -73.95069579999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4619a341ff63dc0d%218m2%213d40.680290899999996%214d-73.95069579999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 1853,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHXe9WYQ4zC_rXpyxBkYhcOan4tpWJuknnExZQ_vIl_5dRxnhrYOJSd_1UyzH-orUfXbUxzp1o8ZRhRv0Lrx1fatDzWjKgNj736LqR45Jl9tyBFwTaP79QTdQ9YIbA5mgILaMRdQCxqj24=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "Emergency care physician",
+              "Medical clinic",
+              "Men's health physician",
+              "Women's health clinic",
+              "Pediatric clinic",
+              "STD clinic",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Centers Urgent Care of Fulton St",
+            "data_id": "0x0:0xc03cad370c683672",
+            "data_cid": "13852137005827765874",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc03cad370c683672&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc03cad370c683672&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.6796698,
+              "longitude": -73.9293132
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc03cad370c683672%218m2%213d40.6796698%214d-73.9293132&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 286,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGSUj9vUz-aPjr4FuthOgeaNbdUl4URMUAdGBfOqAsIjjF27albgraCBiPicjsyuvPBAz3w-f9MY2ezDcgLsdrG_hTFnft8AD1Xg53Lkn5H0RkyVKGKcm3c4Q2hws4msrxSql3z=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Child health care center",
+              "Diagnostic center",
+              "Emergency care physician",
+              "Medical laboratory",
+              "Women's health clinic",
+              "Occupational health service",
+              "STD testing service",
+              "Walk-in clinic",
+              "X-ray lab"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "HealthNeed Medical Urgent Care Lower East Side NYC",
+            "data_id": "0x0:0xa88ce797997f1204",
+            "data_cid": "12145336933412704772",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa88ce797997f1204&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa88ce797997f1204&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7164977,
+              "longitude": -73.9876453
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa88ce797997f1204%218m2%213d40.7164977%214d-73.9876453&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 88,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEGBeJlG5F_zVNm1whK3_bYwkTiLeWVCgThKQl54SGB3zBbYO_OXOf_7AYsO1GW4Bk6t75JRVjhcaVxya3jEesCffamJd17eyg78Auqj-lvOHhqpUmCEf8weg-sEs5fnsgOvgifb-EFbxP5=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "Medical Center",
+              "Medical clinic",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "BHMA Fulton Mall",
+            "data_id": "0x0:0x832ef006ecf225ea",
+            "data_cid": "9452756580433012202",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x832ef006ecf225ea&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x832ef006ecf225ea&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.68923650000001,
+              "longitude": -73.9823061
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x832ef006ecf225ea%218m2%213d40.68923650000001%214d-73.9823061&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 89,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_WoQPH2QztJ3I-zGMDysgr6iX2h_JeyrbzTV1NLW6skIt1M4JplpPSKwLbn9nBeK6ZQbU1Sho3ozfs7LECNtSvaP52f7nKh2ewp4ziME0ohXVvZeC9yxYNNJvJWNBNMtS-eor=w156-h156-n-k-no",
+            "type": [
+              "Medical office",
+              "Doctor"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "tuesday",
+      "live_hash": {
+        "info": "Less busy than usual"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 26
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 94,
+            "live_busyness_score": 11,
+            "current": true
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 89
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 89
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 89
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 89
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjIKMCIsQ2l0eU1EIEZ1bHRvbiBVcmdlbnQgQ2FyZSAtIE5ZQyBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjIKMCIsQ2l0eU1EIEZ1bHRvbiBVcmdlbnQgQ2FyZSAtIE5ZQyBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

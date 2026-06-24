@@ -1,0 +1,708 @@
+{
+  "search_metadata": {
+    "id": "6a3ac209bc3f0be2de2089be",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/4xyjfchm2bY4POJpvzHGPA/6a3ac209bc3f0be2de2089be.json",
+    "created_at": "2026-06-23 17:27:37 UTC",
+    "processed_at": "2026-06-23 17:27:37 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25998c631e1df:0x653199a7b6323431!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/4xyjfchm2bY4POJpvzHGPA/6a3ac209bc3f0be2de2089be.html",
+    "prettify_html_file": "https://serpapi.com/searches/4xyjfchm2bY4POJpvzHGPA/6a3ac209bc3f0be2de2089be.prettify",
+    "total_time_taken": 0.41
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ3-ExxphZwokRMTQytqeZMWU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Mount Sinai-Union Square",
+    "place_id": "ChIJ3-ExxphZwokRMTQytqeZMWU",
+    "data_id": "0x89c25998c631e1df:0x653199a7b6323431",
+    "data_cid": "7291778217284875313",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c631e1df%3A0x653199a7b6323431&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c631e1df%3A0x653199a7b6323431&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.734783199999995,
+      "longitude": -73.989535
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU",
+    "provider_id": "/g/1tg_gzk6",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHeAou0y-0M_WnIaFl1_qyixfdCLVKjp_zx8N4jdhlQT_hpZHyna_OK9a93Udno9bJEgHqRbkGCNiVHdu_QmW-vI_SpAxnG8ywcbZdL_NPICE2mBMmNRIDpPnjyiZceu88LezjJ=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/44H1InicHcRLEoIgAADQE5H0WWgzLcw-Wkbax2bcMAokmgKFlnTBztBtmukt3vfD21bpqWXVfDwopCxq1mn2IFK0TLQDIhurUBoQDbTlRii-uT5zZQcNgDt8EUG2qof4bsr-Sr0w2VYKv3sbTSrK6_iEuUp9IzK83zqZMz5TIZ18syz8-yG_rT1UJj7tcNxcwDPAR-X2Ym2bF8lTGmIUBd5y1Mx3DToECxWJypQpYZ1th-xdbWavIYQQ8P8EiB_k9EY8",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 126
+      },
+      {
+        "stars": 2,
+        "amount": 25
+      },
+      {
+        "stars": 3,
+        "amount": 10
+      },
+      {
+        "stars": 4,
+        "amount": 21
+      },
+      {
+        "stars": 5,
+        "amount": 128
+      }
+    ],
+    "rating": 3,
+    "reviews": 310,
+    "type": [
+      "Hospital",
+      "Cancer treatment center",
+      "Cardiologist",
+      "General practitioner",
+      "Internist",
+      "Oncologist",
+      "Radiologist",
+      "Surgical center",
+      "Urgent care center",
+      "Urologist"
+    ],
+    "type_ids": [
+      "hospital",
+      "cancer_treatment_center",
+      "cardiologist",
+      "general_practitioner",
+      "internist",
+      "oncologist",
+      "radiologist",
+      "surgical_center",
+      "urgent_care_center",
+      "urologist"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Free street parking",
+          "On-site parking",
+          "Paid parking garage",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "10 Union Sq E, New York, NY 10003",
+    "country": "United States",
+    "booking_link": "https://www.mountsinai.org/locations/union-square/services?y_source=1_MTgwODM0NC03MTUtbG9jYXRpb24ucmVzZXJ2YXRpb25fdXJs",
+    "website": "https://www.mountsinai.org/locations/union-square/services?utm_source=Yext&utm_medium=local_listing&utm_campaign=PACC&y_source=1_MTgwODM0NC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "open_state": "Open now",
+    "plus_code": "P2M6+W5 New York",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25998c631e1df%3A0x653199a7b6323431&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHeAou0y-0M_WnIaFl1_qyixfdCLVKjp_zx8N4jdhlQT_hpZHyna_OK9a93Udno9bJEgHqRbkGCNiVHdu_QmW-vI_SpAxnG8ywcbZdL_NPICE2mBMmNRIDpPnjyiZceu88LezjJ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/44H1InicHcRLEoIgAADQE5H0WWgzLcw-Wkbax2bcMAokmgKFlnTBztBtmukt3vfD21bpqWXVfDwopCxq1mn2IFK0TLQDIhurUBoQDbTlRii-uT5zZQcNgDt8EUG2qof4bsr-Sr0w2VYKv3sbTSrK6_iEuUp9IzK83zqZMz5TIZ18syz8-yG_rT1UJj7tcNxcwDPAR-X2Ym2bF8lTGmIUBd5y1Mx3DToECxWJypQpYZ1th-xdbWavIYQQ8P8EiB_k9EY8"
+      },
+      {
+        "title": "Reception",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGQXuugW0cNNHR9zQ8ttG2zRPEBVdkpivrXF4yb5YEK35POMIgC2QxoWOpRdg8Ogms-3D1L1RpjNKE8wZa4y9DEYldR-C6mbdoN4SAP99CnlSwf3jtt7_jDI6dfdGeDXfXD-ujp=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/-YRvgnicHcRdDoIgAADgE5G_lbb1YGLWLFTa0nppBYqZCgvM6oKdodu09T1830-llJAzTWsqa8Q4Z03Ry-JOeKeKTo0IbzUmJCASSM1LUHrzwjTve5bpBKEVdt-po1RovnESLPb0Jq6Pe760X5fxIYiscRJv18w30yfPYoEpc2LWSmBBY2NgUaMocIbj2X65MDg0FAN_0l4oR_bOS1zX75rdUFq1UtNTDdcTWtKwgHmZQ9DXYj4Yuq6D6j8B3Q8W-EO_"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQ5O8Wgf71dvYvOSbQMToUclQWd_SqCPXJWzgEy6a5vN2CAAGxfRd1it5D2h8Us3w8klsnPuLIFoUfYqtVJaqRqJCtNDIemWOs-pliIZBtCnFXp3bcqH43s9QmMwxFxxPkYL2syrfNWgA5=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/LF0p6nicHcRNcoIwGADQE0X-pKWd6SLF0sIoEC1GuulogOAQEuIXAb1k171NZ_oW7_enNWaAZ8sSrbfgSnFRX6G-MCVNLc2Cqd7iAyAGCCycp6TDEfGzgPLm0anGcsx2J7L5VAUThFbfOx3mh4Te-dvt4eiPqRti_D4328o5G3_ltkEB3hR0AmR-XceRKppSm31y1FudhCZdxXVPM0CDOMdfryaU0WHwTkx_LD14Iv1mmqN5zrty7cLt0qSUY_9lcmzbRu3_DMk_yUZITA"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGRUc4VnkIeAJECaMsrF8RigVwUuKbNxbcVwbgDw1loGt1Bh4ivQGRBzyV8AsX9oWI3dXJD4nvWbVC3lVRHinxGRVgdYvtbzIbMRnfqYzRwunteDUvskxgAtUHFcTYaj2BiynhR=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/rUqa1XicHc5BEoIgAADAF5maHqyZDpil1tgUk6hHIQPTwALF_GBv6Dc1Xfa8nzdTqpNL02yZM6NC0LbqZfUkgquKqxkRd5N20iDSkCY4Hk4NCGFKXMSbuAK7zbpM5HPrwZoinfZ7fBgxQRrTQNutCJXtM7ceTiH0pxfygMwXIoudS74LXD5kGK2dFsGo5mMIEb0Ug8JTjBPIr49igrr_HYJ0kM1IgUqjLTkX5W3u1y_O4ErblmUZ7C8x-BfwQEci"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH-9Q13qC3WZLcxJ0C-5XYZuA0QR-4Llz8Le6Y0KRpt-uCqXSdgX55YH3DiqG0y_0XR79OldWVQZ4ifed7Ep4cPHovugVwYKWRGuotxv9IB_zWB31blLXNX9occpFBDGQ20cflv=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/-aWH1nicHcTRToMwFADQL-q4WHBi4gOwCToyV0xG4WXJLl1ZrLTYls39oN_g35h4Hs7vz-CcsY9BoAa6kFpLJbwVX6hHJ0a3QP0ZSGMJWmKDdLdlH2lJEhbSKadNV-H1FXIS87bzKbCaRJW6PVTivoVNbRzx-cTfe8njuC3p6jwV8H0AXi-TN9U3e9ZF55Pol2sT4a7Us5f7S7tp6sJrd52Tl-xwazIaHlXFtzzRiOY5WxXsDvCk5qdLCABk-B_J-Adpt0LT"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 1
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 13
+        },
+        {
+          "title": "Other",
+          "places": 2
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Ear, Nose, and Throat (ENT) Services at Mount Sinai-Union Square",
+          "data_id": "0x89c25998c6fec959:0x303c2f7f1ee64b21",
+          "data_cid": "3475705235448941345",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x303c2f7f1ee64b21&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x303c2f7f1ee64b21&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734824599999996,
+            "longitude": -73.9897603
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0x303c2f7f1ee64b21%218m2%213d40.734824599999996%214d-73.9897603&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "rating": 4.0,
+          "reviews": 75,
+          "type": "Otolaryngologist",
+          "type_id": "otolaryngologist",
+          "address": "10 Union Sq E # 5B, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_IR8ONGVMeqwyUCZkbZX-2AXy98WHpBl4cHOWa6t38OW6EAxC0djbl4wZz9rNI1yatiCViVTc-8h6IAti9Bg-UiTZLSimrQ7WM5aTmZbj3JBSRYi6OwMA2FDRA0WQz6KR7s7Z=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_IR8ONGVMeqwyUCZkbZX-2AXy98WHpBl4cHOWa6t38OW6EAxC0djbl4wZz9rNI1yatiCViVTc-8h6IAti9Bg-UiTZLSimrQ7WM5aTmZbj3JBSRYi6OwMA2FDRA0WQz6KR7s7Z=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Ankit Shah, MD",
+          "data_id": "0x89c2593f75a0a76b:0x4f27231cea325d5",
+          "data_cid": "356472878761453013",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2593f75a0a76b%3A0x4f27231cea325d5&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2593f75a0a76b%3A0x4f27231cea325d5&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742149,
+            "longitude": -73.9843738
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2593f75a0a76b%3A0x4f27231cea325d5%218m2%213d40.742149%214d-73.9843738&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "rating": 4.9,
+          "reviews": 62,
+          "type": "Cardiologist",
+          "type_id": "cardiologist",
+          "address": "373 Park Ave South 11th & 12th Fl, New York, NY 10016",
+          "location": "Floor 1",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGdh6n-r6V380UAJ2GNkDDY6bJhML9wRCcDX3k2L3gZvVpDvEQFO6VKkyBiOWY8zszW2SFYmzlx9uczbfYSadPbmcX9L04M6U_mMhN8AwwlLbRYlx4_fvjkAyzfchckOUOd9tT0lINPhEU=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGdh6n-r6V380UAJ2GNkDDY6bJhML9wRCcDX3k2L3gZvVpDvEQFO6VKkyBiOWY8zszW2SFYmzlx9uczbfYSadPbmcX9L04M6U_mMhN8AwwlLbRYlx4_fvjkAyzfchckOUOd9tT0lINPhEU=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "Primary Care Services at Mount Sinai-Union Square",
+          "data_id": "0x89c25998c6fec959:0xcf4a095acf9cdbc5",
+          "data_cid": "14936761399762541509",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0xcf4a095acf9cdbc5&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0xcf4a095acf9cdbc5&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7348421,
+            "longitude": -73.9897098
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0xcf4a095acf9cdbc5%218m2%213d40.7348421%214d-73.9897098&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "rating": 4.3,
+          "reviews": 38,
+          "type": "Medical clinic",
+          "type_id": "medical_clinic",
+          "address": "10 Union Sq E Ste 2G, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 7\u202fPM",
+          "hours": [
+            {
+              "tuesday": "8\u202fAM\u20137\u202fPM"
+            },
+            {
+              "wednesday": "8\u202fAM\u20137\u202fPM"
+            },
+            {
+              "thursday": "8\u202fAM\u20137\u202fPM"
+            },
+            {
+              "friday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "9\u202fAM\u20131\u202fPM"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8\u202fAM\u20137\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaRBXYKe0bo0re6E1w-EX2mjt27c1BfAEQ9fmOfKFen9RIiMjMqyg-_IBtKGvLtoJl9gQZlHT7OAjObW7fXAz51pwUlhjhTDSmF5Hsci3H4FgoCqmtKbUsnqyPPH77QHhOtBx0h809fLA=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaRBXYKe0bo0re6E1w-EX2mjt27c1BfAEQ9fmOfKFen9RIiMjMqyg-_IBtKGvLtoJl9gQZlHT7OAjObW7fXAz51pwUlhjhTDSmF5Hsci3H4FgoCqmtKbUsnqyPPH77QHhOtBx0h809fLA=w86-h86-n-k-no"
+        },
+        {
+          "position": 4,
+          "title": "Mount Sinai Fuster Heart Hospital - Union Square",
+          "data_id": "0x89c25998c8957dbf:0xa4a026e43dfbca09",
+          "data_cid": "11862524180228196873",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c8957dbf%3A0xa4a026e43dfbca09&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c8957dbf%3A0xa4a026e43dfbca09&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734824599999996,
+            "longitude": -73.9897603
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c8957dbf%3A0xa4a026e43dfbca09%218m2%213d40.734824599999996%214d-73.9897603&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "rating": 3.9,
+          "reviews": 29,
+          "type": "Cardiologist",
+          "type_id": "cardiologist",
+          "address": "10 Union Sq E Ste 2H, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "8:30\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "8:30\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "8:30\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "8:30\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8:30\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOIZkP62z4jMkyrn8T30T3hsHBqur5nYzcQTj5j_lfhUKsrODsMUBZ8w7UaD2uUL3EqZZzS7_Njg3GUAIL-u1zz0n86M1WTL5unJNeVJ06O7cETiSYR3e9kzIm_77t5vH7ZPB8=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOIZkP62z4jMkyrn8T30T3hsHBqur5nYzcQTj5j_lfhUKsrODsMUBZ8w7UaD2uUL3EqZZzS7_Njg3GUAIL-u1zz0n86M1WTL5unJNeVJ06O7cETiSYR3e9kzIm_77t5vH7ZPB8=w86-h86-n-k-no"
+        },
+        {
+          "position": 5,
+          "title": "Katherine Leaver, MD",
+          "data_id": "0x89c25998c6644e77:0xf30cd7c85125a9bb",
+          "data_cid": "17513610306291870139",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6644e77%3A0xf30cd7c85125a9bb&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6644e77%3A0xf30cd7c85125a9bb&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734800799999995,
+            "longitude": -73.98976499999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6644e77%3A0xf30cd7c85125a9bb%218m2%213d40.734800799999995%214d-73.98976499999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "rating": 5.0,
+          "reviews": 13,
+          "type": "Neurologist",
+          "type_id": "neurologist",
+          "address": "10 Union Sq E #5h, New York, NY 10003",
+          "location": "Floor 1"
+        },
+        {
+          "position": 6,
+          "title": "Thyroid Center at Mount Sinai-Union Square",
+          "data_id": "0x89c25998c6a132bb:0x8f7322906e33f9aa",
+          "data_cid": "10336643573464955306",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6a132bb%3A0x8f7322906e33f9aa&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6a132bb%3A0x8f7322906e33f9aa&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734800799999995,
+            "longitude": -73.98976499999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6a132bb%3A0x8f7322906e33f9aa%218m2%213d40.734800799999995%214d-73.98976499999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 7,
+          "title": "Spine Institute",
+          "data_id": "0x89c25998c6fec959:0x9bd87abb46c8f957",
+          "data_cid": "11229860615613380951",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x9bd87abb46c8f957&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x9bd87abb46c8f957&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7347942,
+            "longitude": -73.98953209999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0x9bd87abb46c8f957%218m2%213d40.7347942%214d-73.98953209999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Medical Center",
+          "type_id": "medical_center"
+        },
+        {
+          "position": 8,
+          "title": "Colorectal Surgery at Mount Sinai-Union Square",
+          "data_id": "0x89c25998c8957dbf:0x23f285a4eff5939e",
+          "data_cid": "2590279679138435998",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c8957dbf%3A0x23f285a4eff5939e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c8957dbf%3A0x23f285a4eff5939e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7348128,
+            "longitude": -73.989475
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c8957dbf%3A0x23f285a4eff5939e%218m2%213d40.7348128%214d-73.989475&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Gastrointestinal surgeon",
+          "type_id": "gastrointestinal_surgeon"
+        },
+        {
+          "position": 9,
+          "title": "Gramercy Park Physicians",
+          "data_id": "0x89c25998c6fec959:0x81e333e46a238224",
+          "data_cid": "9359381506732294692",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x81e333e46a238224&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x81e333e46a238224&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734435,
+            "longitude": -73.99034759999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0x81e333e46a238224%218m2%213d40.734435%214d-73.99034759999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 10,
+          "title": "THANC Foundation",
+          "data_id": "0x89c25998c6fec959:0xcfcc72a30beb53f",
+          "data_cid": "935841806606579007",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0xcfcc72a30beb53f&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0xcfcc72a30beb53f&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734514399999995,
+            "longitude": -73.9896713
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0xcfcc72a30beb53f%218m2%213d40.734514399999995%214d-73.9896713&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Non-profit organization",
+          "type_id": "non_profit_organization"
+        },
+        {
+          "position": 11,
+          "title": "National Parkinson Foundation",
+          "data_id": "0x89c25998c6fec959:0x348c592ad2d8d913",
+          "data_cid": "3786499427172669715",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x348c592ad2d8d913&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x348c592ad2d8d913&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734738799999995,
+            "longitude": -73.9896218
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0x348c592ad2d8d913%218m2%213d40.734738799999995%214d-73.9896218&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Non-profit organization",
+          "type_id": "non_profit_organization"
+        },
+        {
+          "position": 12,
+          "title": "Cayo Chantal J",
+          "data_id": "0x89c25998c6fec959:0x28a8c02545407fee",
+          "data_cid": "2929802823912685550",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x28a8c02545407fee&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x28a8c02545407fee&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734883499999995,
+            "longitude": -73.9897585
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0x28a8c02545407fee%218m2%213d40.734883499999995%214d-73.9897585&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 13,
+          "title": "Meehan Jennifer J",
+          "data_id": "0x89c25998a8c0e97f:0x4716193ac645281d",
+          "data_cid": "5122309366405736477",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998a8c0e97f%3A0x4716193ac645281d&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998a8c0e97f%3A0x4716193ac645281d&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734586,
+            "longitude": -73.9891552
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998a8c0e97f%3A0x4716193ac645281d%218m2%213d40.734586%214d-73.9891552&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 14,
+          "title": "Midwifery Group",
+          "data_id": "0x89c25998c6fec959:0xf54fec3df76e65bc",
+          "data_cid": "17676606813340853692",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0xf54fec3df76e65bc&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0xf54fec3df76e65bc&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734883499999995,
+            "longitude": -73.9897585
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0xf54fec3df76e65bc%218m2%213d40.734883499999995%214d-73.9897585&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Midwife",
+          "type_id": "midwife"
+        },
+        {
+          "position": 15,
+          "title": "Dept Head & Neck Surgery",
+          "data_id": "0x89c25998c6fec959:0x917e42dd6cb95b31",
+          "data_cid": "10483890501344385841",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x917e42dd6cb95b31&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25998c6fec959%3A0x917e42dd6cb95b31&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.734883499999995,
+            "longitude": -73.9897585
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25998c6fec959%3A0x917e42dd6cb95b31%218m2%213d40.734883499999995%214d-73.9897585&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3-ExxphZwokRMTQytqeZMWU&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I couldn't be happier with the service I received from the doctor.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVIji0mRpvP-eQn6izR16LNCDanBj184tObKP3MByC6KpH6T_E-ZA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I spent 45 minutes in the waiting room and then one hour in the doctors room.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV7-QogtZntkTA_D18S2nC4vYTH8-tshOSiivisqaBDw36a-7A3=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The nurses very kind and honest, the staff as well along with the doctors.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVV6MIOofU6nVeUSgzokazqmN-ujvTE_fb15XVdM3vozmxJtH9kLw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Diana Ferreira",
+          "rating": 3,
+          "contributor_id": "104547847995985475506",
+          "user_review_count": 9,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKx-eMUDMdMoPxRKuu-4GQ4IDuK8hKnG5RuwTFNDfrrTPhCWq4=s120-c-rp-mo-br100",
+          "description": "My visit to the Radiology department was disappointing. The receptionist, nurse, and radiology technologist all came across as cold, dismissive, and impatient. Rather than feeling welcomed and cared for, I felt like an inconvenience.\n\nI understand that healthcare professionals have stressful jobs but patients often arrive feeling worried about their health. A little kindness and professionalism can go a long way. Unfortunately, that was not my experience here.\n\nThe only positive was that my appointment started on time",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oWWVWZ3dRa2hsVFZkNlkyWk5PWEpUWHpSYVVuYxAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOnhYeVgwQkhlTVd6Y2ZNOXJTXzRaUnc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-29T13:29:30+00:00"
+        },
+        {
+          "username": "Barquail Bradley",
+          "rating": 1,
+          "contributor_id": "105686069977631906398",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU_zeY_iKnOzTsYB3-cL8rD-uWG257NSOuBmoBcxmpTq2m0QaE=s120-c-rp-mo-br100",
+          "description": "Receptionist was on point.\nHere for it.\n\nThe nurse that took my vitals was lovely. She did her best and actually listened to me regardless of the language barrier.\nLoved that.\n\nThe woman after the nurse didn't listen at all. She marked me for incorrect symptoms. Then suggested Advil.\n\nThe doctor was slightly better but only because he seemed like he cared. He asked for certain tests to be run and then actually forgot that I was even there. The lights in the room had even shut off. That test was neglected would/should have showed that I had a bladder infection but since it didn't happen, I was also prescribed the wrong medication.\n\nVery bad service.\nBut I'm bound to get sick again, so let's see how it goes in the future, haha.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xoaWRVRlFSR0o2YmxKNmQzVmZPRGxDVVhCV1QwRRAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOlhidUFQRGJ6blJ6d3VfODlCUXBWT0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-18T16:14:09+00:00"
+        },
+        {
+          "username": "Maria Horta Os\u00f3rio",
+          "rating": 1,
+          "contributor_id": "116876192624827434782",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLYVBJ0mooRIPxkfi6ACevaNv7WxQQRFvFW77CDp_MP4c9z2Ho=s120-c-rp-mo-br100",
+          "description": "Pediatric cardiology receptionist is the rudest person I\u2019ve come across. An appointment cancelled with no communication instead of apologising and taking the feedback to the doctor she\u2019s very confrontational on the phone instead of any customer service skills. Shocking. This appointment was for a 9 month old. Team needs to learn better manners with parents.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KbFR6bExia3hUZDNsdlExTTBZWFpUTlVvMU1FRRAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOmJlTzlLbkxTd3lvQ1M0YXZTNUo1MEE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-06T20:01:34+00:00"
+        },
+        {
+          "username": "MommyMelly Mellsz",
+          "rating": 5,
+          "contributor_id": "104035244289963325891",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKPdU-y-TVaDJS47Hl6YnSGddfR1VXTGtPgKBPr5qePOLTKng=s120-c-rp-mo-br100",
+          "description": "1st of I wanna say the staffs and doctors are very respectful the facility is extremely big and very clean and feels very welcoming I also wanna say I have quite a few kids and sometimes getting ready, even if I wake up extremely early and get us ready earlier ahead of time somehow I still get there late, which is on my end, but even if I get there extremely late, they would still see me what they would do it\u2019s just probably change your original time to the time that you came in once that doctor has availability. If not, then you will see a doctor that does that practice the same needs of your needs they have a beautiful fish tank and beautiful staff that play soft music with the kids while you wait. I will recommend this facility to anyone. They\u2019re all pretty cool showed laid-back but getting their job done on point with everything. Basically in and out, it\u2019s never a long waiting process with this office. God bless the doctors staff and nurse in this facility and everyone that visits this facility and everyone that\u2019s thinking of visiting this facility I say go for it. It won\u2019t hurt to give it a try if you don\u2019t like it you can always change, but I guarantee you will and you\u2019ll feel at home. God bless.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2poSldXTkpkVlY2UkVWa1Z6UjRTMGxWY1UxVVZuYxAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOjhJWWNJdVV6REVkVzR4S0lVcU1UVnc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-14T19:07:00+00:00"
+        },
+        {
+          "username": "Lisa C",
+          "rating": 1,
+          "contributor_id": "117294780992177393414",
+          "user_review_count": 17,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ33gbxMypucwmjyqZ84xVsmDWYwYUzi0Hicg8PsJRiLGY28Q=s120-c-rp-mo-ba12-br100",
+          "description": "The doctor I have been seeing is great.  However, my issue is that Mount Sinai is committing fraud by upcoding services and charging patients absurd fees for minor procedures. I was given an estimate of nearly $7k for a cortisone injection.  When I looked more closely at the estimate, it showed that the total estimated charges were actually closer to $2k, but I would owe close to $7k.  I\u2019m assuming they were just going to pocket my money for no reason?  Of course, I can\u2019t speak with anyone about this because I keep getting transferred from one department to another on the phone, but everyone says it\u2019s not their problem.  Now I have to find a new provider because of the shady billing practices.  If you\u2019re thinking of seeing any provider through Mount Sinai, I would definitely look elsewhere if you don\u2019t want to be scammed.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWSWJsUkRlR1l5V1docmQzWkVaR2htTkhoVVpHYxAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOkVIblRDeGYyWWhrd3ZEZGhmNHhUZGc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-17T02:04:04+00:00"
+        },
+        {
+          "username": "Kevin Wilson",
+          "rating": 1,
+          "contributor_id": "104091877392619950458",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJqxr1JK1EhiAI_zabV9YtXYwzhGCs-X1N0uzVzAuB0ZH7IAg=s120-c-rp-mo-br100",
+          "description": "Avoid Dr Arpels-Josiah!  He is a fine Cardiologist, but Mt Sinai is unethical and has terrible customer support.  I had an annual test for many years and was charged the same amount each year.  When I told them it was my last test, they charged me an additional $10k \"Location Fee\" without any notice (not included in estimate).  They have been unresponsive and unhelpful when trying to resolve this. Be prepared for significant charges if you choose this location!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kaWVXSjNaMHR0Ulcwd2RuSXdObmt0YVRGcWNFRRAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOmdieWJ3Z0ttRW0wdnIwNnktaTFqcEE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-14T16:16:43+00:00"
+        },
+        {
+          "username": "Sholpan Smakova",
+          "rating": 1,
+          "contributor_id": "115452710343391085583",
+          "user_review_count": 76,
+          "user_photo_count": 22,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI6xox71n9Z6pr2Ek0GM6vu4H7dVk6k-V-kdJlnuhdudy2t3Tw=s120-c-rp-mo-ba12-br100",
+          "description": "If I could give them zero stars I would. Chief medical officer of the location and Dr Espinal both treat patients here like business commodities and focus on billing categories not patient experience",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pRNUxYWnlaMkpqT0hsbGRYaG5hSFZHY1dWd1FuYxAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOjQ5LXZyZ2JjOHlldXhnaHVGcWVwQnc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-13T17:36:27+00:00"
+        },
+        {
+          "username": "Kiara",
+          "rating": 5,
+          "contributor_id": "105671085106070078624",
+          "user_review_count": 15,
+          "user_photo_count": 17,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXId_b754zSNBZo-qCz0ZlK9H62JF0ZP7e884y7OBX53dYWy8Q=s120-c-rp-mo-ba12-br100",
+          "description": "Despite the reviews, I had an amazing experience. The wait was manageable, and the nurse was beyond sweet and caring. I truly appreciated the water pitcher and the 4% lidocaine patch for pain relief. 10/10\u2014would recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCNlJrRk5NVTFMU1V0U1NsZGlUM2h1VlU5aFJuYxAB!2m1!1s0x0:0x653199a7b6323431!3m1!1s2@1:CAIQACodChtycF9oOjB6RkFNMU1LSUtSSldiT3huVU9hRnc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-23T17:36:21+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NY Medical Union Square",
+            "data_id": "0x0:0xb2cd13949eaff9e3",
+            "data_cid": "12883975638015277539",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2cd13949eaff9e3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2cd13949eaff9e3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7358203,
+              "longitude": -73.9941825
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb2cd13949eaff9e3%218m2%213d40.7358203%214d-73.9941825&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 223,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHY8MBcZxdfffAtX8zgG2cJL3Oaebt7KJ89VcrvWVwDiCQ7mWo-Ka21nGLvX1Q-ISTfKb40hb1k3pnbWSQ3tnT-l-WZF1J3pT8yHZLlzcXW1sdPh_45hUYqNGUW0HSMIn0-Q2XbFSfiGxKX=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Dermatologist",
+              "Family practice physician",
+              "General practitioner",
+              "Obstetrician-gynecologist",
+              "Medical Center",
+              "Neurologist",
+              "STD clinic",
+              "STD testing service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Cl\u00ednica sinai",
+            "data_id": "0x0:0x7bd9d3a0e9953a7",
+            "data_cid": "557774801542402983",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7bd9d3a0e9953a7&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7bd9d3a0e9953a7&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7348242,
+              "longitude": -73.98976170000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7bd9d3a0e9953a7%218m2%213d40.7348242%214d-73.98976170000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=k9Rt37peG-bgyslkWPzuypPk4t5jLtrfSFgha1WubUrThInnWzTM-BaeO7Mbdwir6wXPcG1UPoa1OGvFDTJMqzTIMtiwowBFh_NCIfvMMZw_bjnMxcO2iNARey9buQOs5qiL2YJDMyRikPZ6hAqcAgJd4SCqbTFT",
+            "type": [
+              "Government office"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "NYC Headache Specialist",
+            "data_id": "0x0:0xc77741547082d235",
+            "data_cid": "14373028566696907317",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc77741547082d235&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc77741547082d235&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.734824599999996,
+              "longitude": -73.98976019999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc77741547082d235%218m2%213d40.734824599999996%214d-73.98976019999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=bw6P_pjayyjS_XUJO1GtXprP6ywm3DOACgtevOzawvj_RwVol_AHXe7AHtTfawT8-rTBR-VETxTdeAe8SNle_rBBhGWxxpS-NdoPbSxycxHyjtLis1Nxx5baz5aOHL8d6JifpKqLsLYJ-V2br2Uy590g1XSM7j6N",
+            "type": [
+              "Chimney sweep"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Dr. Insung Min, MD",
+            "data_id": "0x0:0xe85dcc7ce86e940a",
+            "data_cid": "16743763826480944138",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe85dcc7ce86e940a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe85dcc7ce86e940a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.73676090000001,
+              "longitude": -73.9918837
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe85dcc7ce86e940a%218m2%213d40.73676090000001%214d-73.9918837&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=ikd9OgKAhPthKmlnNzg-pRK6ySdV2b1R2fEMGxGVAA_8Z36Lu7m3SI4z38hL2HKVl1wy8cgwqbo16uP-G80nLg16Sqv-nZDGRWux-sCXdU-x1uo9RIcOeA3FMoy88Mwlqc1OfdjnPBZYj7DPFyDCFR4tpUaFVZHy",
+            "type": [
+              "Family practice physician"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OisKKSIlTW91bnQgU2luYWktVW5pb24gU3F1YXJlIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COisKKSIlTW91bnQgU2luYWktVW5pb24gU3F1YXJlIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

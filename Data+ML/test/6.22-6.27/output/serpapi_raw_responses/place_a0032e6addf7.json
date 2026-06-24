@@ -1,0 +1,380 @@
+{
+  "search_metadata": {
+    "id": "6a3ac21b6feec4c952192a31",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/yKeKAJd5qnRbhdG3kZi_sQ/6a3ac21b6feec4c952192a31.json",
+    "created_at": "2026-06-23 17:27:55 UTC",
+    "processed_at": "2026-06-23 17:27:55 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259737480fc0b:0xb2cd13949eaff9e3!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/yKeKAJd5qnRbhdG3kZi_sQ/6a3ac21b6feec4c952192a31.html",
+    "prettify_html_file": "https://serpapi.com/searches/yKeKAJd5qnRbhdG3kZi_sQ/6a3ac21b6feec4c952192a31.prettify",
+    "total_time_taken": 0.36
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJC_yAdHNZwokR4_mvnpQTzbI",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "NY Medical Union Square",
+    "place_id": "ChIJC_yAdHNZwokR4_mvnpQTzbI",
+    "data_id": "0x89c259737480fc0b:0xb2cd13949eaff9e3",
+    "data_cid": "12883975638015277539",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259737480fc0b%3A0xb2cd13949eaff9e3&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259737480fc0b%3A0xb2cd13949eaff9e3&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7358203,
+      "longitude": -73.9941825
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJC_yAdHNZwokR4_mvnpQTzbI",
+    "provider_id": "/g/11qb67j_w4",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHY8MBcZxdfffAtX8zgG2cJL3Oaebt7KJ89VcrvWVwDiCQ7mWo-Ka21nGLvX1Q-ISTfKb40hb1k3pnbWSQ3tnT-l-WZF1J3pT8yHZLlzcXW1sdPh_45hUYqNGUW0HSMIn0-Q2XbFSfiGxKX=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/FdHUanicHcTbboIwGADgJ_qlpRpxyS7YFkHAQwPayo2xlVIjtmjrYb7krvc2S_ZdfL8_2vvevQVBp8mgtbbtmptrrtIa3xg_kPYctL0D6cAF8WpBT3G6jeYfsn4elFKx59GrTUKZFWS5b4Qf51k02cjrnW0eX8dPOj4zC_k-xCYp7hxTmJWVysUQaYFPpDeClZR4U0EHrJ7ijPRV9J3WRfeSnGF3WOndcKTX28siWTOUlvOZQUBDLqalOibPnL8_MEII9P8SzB8lkEWn",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 29
+      },
+      {
+        "stars": 2,
+        "amount": 5
+      },
+      {
+        "stars": 3,
+        "amount": 2
+      },
+      {
+        "stars": 4,
+        "amount": 5
+      },
+      {
+        "stars": 5,
+        "amount": 182
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 223,
+    "type": [
+      "Medical clinic",
+      "Dermatologist",
+      "Family practice physician",
+      "General practitioner",
+      "Obstetrician-gynecologist",
+      "Medical Center",
+      "Neurologist",
+      "STD clinic",
+      "STD testing service"
+    ],
+    "type_ids": [
+      "medical_clinic",
+      "dermatologist",
+      "family_practice_physician",
+      "general_practitioner",
+      "gynecologist",
+      "medical_center",
+      "neurologist",
+      "std_clinic",
+      "std_testing_service"
+    ],
+    "book_online": "https://nexhealth.info/book/appt/ny_medical?lid=25476&rwg_token=AE37R_iF7xErWuH141luU0NZfTKU-qCixmPkr9tRbYFrr_QgKC6pwRDf_XRHx_s49YOoNSTl3StfPRE4wgksQmMCVsNIGGZwpA%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "78 5th Ave 7th floor, New York, NY 10011",
+    "country": "United States",
+    "website": "https://www.igorkletsmanmd.com/",
+    "phone": "(212) 988-2924",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "P2P4+88 New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20135 PM"
+      },
+      {
+        "wednesday": "8 AM\u20134 PM"
+      },
+      {
+        "thursday": "8 AM\u20134 PM"
+      },
+      {
+        "friday": "8 AM\u201312 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20135 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHY8MBcZxdfffAtX8zgG2cJL3Oaebt7KJ89VcrvWVwDiCQ7mWo-Ka21nGLvX1Q-ISTfKb40hb1k3pnbWSQ3tnT-l-WZF1J3pT8yHZLlzcXW1sdPh_45hUYqNGUW0HSMIn0-Q2XbFSfiGxKX=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/FdHUanicHcTbboIwGADgJ_qlpRpxyS7YFkHAQwPayo2xlVIjtmjrYb7krvc2S_ZdfL8_2vvevQVBp8mgtbbtmptrrtIa3xg_kPYctL0D6cAF8WpBT3G6jeYfsn4elFKx59GrTUKZFWS5b4Qf51k02cjrnW0eX8dPOj4zC_k-xCYp7hxTmJWVysUQaYFPpDeClZR4U0EHrJ7ijPRV9J3WRfeSnGF3WOndcKTX28siWTOUlvOZQUBDLqalOibPnL8_MEII9P8SzB8lkEWn"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGHFfG_e4liQnGq3__oLcI7DVaLu4YR66XVAEF-5K9X2h86VrVOisaTQMV16zzTI7k3aNLzHW-upbC7GgaFvVxdHdE3hHAcMRVQUrkAjybQPxHWhK74aG2N1llgRg1QkdB_52dykQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ILoFb3icHcRLcoIwAADQE0W-gjrTRfyQOCIaxkZdMTHQxCYSJNAqN_QI3qYzfYv3fsmua-zMcbQMRsIYoaveVi03dVfV3YibmyMaC7gF1oH7jCiIcPKFiirUV1Kje1AUJuXreElZ2ofnPIpOFK4SMN5MT76cRLSlu6tlB7KlXjQMh3WsApalAz6CvrksYiRY8kMfJS5XgcSQb3NKPlsFv58Xsn_go9zEIUN-5mktcuERVc6LsV8-Ffn49VzXBfJ_Duo_TB1DzQ"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3W1Vv8E-4LrR9sY7MLDz0BPLI6EHeM9CCLgvSq_W7VBzYXsc0BbOlAmB2w7B4R5AB4j-D9_vsZPa5yxUfYKtPCdMF-nG5vsEd245fotOStsTsKiVAJM8duSAphSuWmOzapPBRLykgD3c=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/eAaK53icHcTRVoIwGADgJ5pMgRDP8WIDynLEggTxxmMDRwmM_AcGD9l9b9M5fhff32-ldQcrw6grcyaVknXZQ3kVqtVlq2dCNYbsAAlAYBD--nYhGzObp8MyQBa7xi7kTsj8CVPOnh-CTRm6nsfkkHwfMyelU74HgelHVJOGLm4OtWKbUOsL-e5xgAM_2ePP7pxvNfeK8BG1T_YAQbGw7LPSUaLhHbafKXkJl0WfkK5K-qyJplPHaczGi_RNsb7NMcaoui9Q-w9ZGEVr"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=3_zHtXHww5JCr6GyBBbm6g&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=295.97552&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/38Jt9nicHc3BDcIgFADQbbgJFaVaE2JSDzZO4K2hiOUnUEj5gnUct3Ibjcd3ep-3RYzpwFjC2RjMYEqEp3FpFRUdQxidURES1cGzvGZoH36YFLhjVFOAm9z0rw6vXSnicprr89K2g69HoodeOzATSq9i6lOmqDSCM3SMiRTJ-ZZYyZs9WdRPjaDNTghOIqC2siL_5x6yXFfVF_CBOiQ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Clean, friendly staff, minimal wait time and my doctor (Dr Halio) was great!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWGGNg6GoRB-CHQn4lkqPrK-sVu-iCNcU_KJATPMtOUjZ-yAtsE=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Highly Recommended, amazing service, great location!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocISFli0JNKFR58NGraeFQW-LvRcJDQZkmC8dd3f4a9FnwbTiw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"This was hands down the worst experience I\u2019ve ever had with a doctor's office.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI93FNEcRjwDX9Dc5cgy9z7zFTQCbKZgbuE6u7hK4zd0FSb2A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Paul Fisher",
+          "rating": 5,
+          "contributor_id": "102524486843259826972",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWyJoV-cnHWBcN8GpnkEb-AVc4k1-bNV9kf8g8EoX5I99J0ai7ElQ=s120-c-rp-mo-br100",
+          "description": "I came in expecting the usual medical experience: confusing forms, mysterious wait times, and at least one person sighing at a computer. Instead, I was unsettlingly well cared for.\n\nThe staff were too competent. Appointments ran on time. Questions were answered clearly. Tests were explained before I had the chance to Google worst-case scenarios. At one point, I became suspicious since this place was operating with the efficiency of a well-rehearsed heist crew, except the goal was my health.\n\nDoctors listened, staff were kind, and nobody made me feel like an inconvenience for existing. I left with a clear plan, fewer worries, and the odd feeling that adults were fully in charge.\n\nFrankly, if you enjoy chaos and uncertainty, this is not the medical center for you. But if you want professionalism, intelligence, and care delivered with calm confidence, this place is annoyingly excellent. Would absolutely trust them with my health again, but reluctantly, because now my standards are ruined.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGS1EyaE5abmxzTWpZeWVWaDVZMnBGY25abFFuYxAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOlFKQ2hNZnlsMjYyeVh5Y2pFcnZlQnc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-20T00:40:37+00:00"
+        },
+        {
+          "username": "Kat",
+          "rating": 5,
+          "contributor_id": "112468411350737091238",
+          "user_review_count": 7,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJgzar7BOYo5G0GMT6G4mG-Hz2980vrm2vGSH5fR3Qh5oMaEiQQ=s120-c-rp-mo-br100",
+          "description": "I just want to share my recent experience with Dr. Javadi Noosheen at NY Medical. I am not a person to get myself checked out, the most recent months I have been feeling unwell and looking for answers. I appreciate her listening and willingness to find solutions. She is extremely professional and explains things in ways I am able to understand. I cannot stress how important it is for your primary care doctor to do so! Also, side note, the front desk staff and nurses are just as amazing, very polite and helpful. Thank you!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5b1MzVTBSMFJ3VmxaYU9HeFFXa3hWV0VsMmJHYxAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOl9oS3U0R0RwVlZaOGxQWkxVWEl2bGc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-15T19:45:37+00:00"
+        },
+        {
+          "username": "Sam Hodgdon",
+          "rating": 2,
+          "contributor_id": "117624997953449951309",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWi-4ShpXCf-bJtN2LA3Mc6TOyever5MzM-ChC0ds-ph4ffPfttZg=s120-c-rp-mo-br100",
+          "description": "The scheduling availability was very helpful, and most of the staff was kind enough, although a few experiences left a bad taste. During one appointment where I was very sick and just wanted to get back home to lay down, the doctor took a phone call. She said her kid was sick and she needed to take it which I completely understand, but I could hear the person on the other line say it was not an emergency. She proceeded to stay on the phone for almost 5 minutes, while in the room with me, on a non emergent call? She was also clearly sick, and barely wearing a mask which\u2026 yikes.\nDuring my last visit for a medication refill, I felt shamed for not coming in, she said I was \u201cvery overdue\u201d for my annual and had a pretty judgemental tone (at that time I was maybe a month late for my annual visit, if that, and had already told her I was planning on booking it in the next couple weeks once my schedule allowed). That\u2019s not the way to encourage patients to seek care, and it made me feel pretty embarrassed. This was the nail in the coffin, and I have found a different provider.\nI also find it interesting that all of the reviews mentioning disappointment/frustration with their weight loss drug advertising seem to have been deleted. I feel the need to add this to my review, since it\u2019s something that deterred me from seeking care at this office and is something people should know if they\u2019re considering coming here. I have never expressed interest in this, and my doctor has never recommended it. Yet, during the first year and a half I was a patient here, I received three times the amount of emails advertising these medications than I did about the practice or my own care. When I expressed that this was difficult for me and was bringing up past issues that had been resolved and requested to be removed from that list, they claimed there was no way to unsubscribe from those without also missing important practice updates. I will say, the phone representative I spoke to was very kind and apologetic, but that sentiment was not shared by the practice at large. Feels a bit ridiculous to not have a separate email list so that they could be compassionate towards their patients differing needs. I know they can genuinely be helpful for some patients, however I think it\u2019s unethical to send out frequent blanket advertisements for a medication without consideration to who that\u2019s going to.\n\nAll in all, I would not recommend this practice unless you just need a quick checkup and don\u2019t mind being hounded about the latest weight loss deal.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWR04xOXhWV0Z4VUdKSVJ6RnVVVzFxVGxCNlZVRRAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOlVGN19xVWFxUGJIRzFuUW1qTlB6VUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-15T22:43:22+00:00"
+        },
+        {
+          "username": "Adrian",
+          "rating": 5,
+          "contributor_id": "107421746346160655646",
+          "user_review_count": 10,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU4MGEVMTjKRoPcrmPJzJ3dA-yO4RreXHwPPkP3dBjKI0tj4uGN-A=s120-c-rp-mo-ba12-br100",
+          "description": "I had an excellent experience at this clinic. The staff was organized, efficient, and very welcoming from the moment I arrived. The doctor Arina was exceptionally professional, explained everything clearly, and made the entire process feel comfortable. My blood tests were done quickly, without any issues, and I appreciated the attention to detail and the calm atmosphere. I highly recommend this clinic and the doctor Arina for anyone looking for quality medical care and a smooth, stress-free experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21acU0zZzJTRXhVVlRnNVpEZFNYMGhRTVhkeGJWRRAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOmZqM3g2SExUVTg5ZDdSX0hQMXdxbVE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-12T00:57:25+00:00"
+        },
+        {
+          "username": "Melika Ghayoomi",
+          "rating": 5,
+          "contributor_id": "101969348687931182470",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKlFCnOKKrT_S4l0u_uHJ_SSXnbfTA0cy0Dk52mq8QX1-cBVg=s120-c-rp-mo-br100",
+          "description": "Dr. Halio and Odre were great!!! Dr. Halio is incredibly caring, attentive, and kind, and Odre was wonderful as well. The entire staff is friendly, welcoming, and very supportive. I had such a positive experience and felt well taken care of throughout.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21vMFRGWXlaVzlqTVRaUlVXZ3pkRXh2ZEhKcFpXYxAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOmo0TFYyZW9jMTZRUWgzdExvdHJpZWc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-03T23:54:41+00:00"
+        },
+        {
+          "username": "Domenica Albero",
+          "rating": 5,
+          "contributor_id": "110907788406172568763",
+          "user_review_count": 4,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWh8szKk2vou5o266Z66D-BhrGFtqCIL85nRrON3DP8SFI74eRB=s120-c-rp-mo-br100",
+          "description": "Amazing experience with Dr. Kletsman and Dr. Halio! Very thankful for both of them. The nurse/assistant the helped at both appointments was also incredibly kind and efficient! Very grateful to be in their care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wUlgxaHBla1ZZWTNKcGF6QmlXRWxMZUVGMlkzYxAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOmpRX1hpekVYY3JpazBiWElLeEF2Y3c%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-15T00:38:23+00:00"
+        },
+        {
+          "username": "Nickey Foxx",
+          "rating": 4,
+          "contributor_id": "105792060074913175930",
+          "user_review_count": 13,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL3XjnPDaEuZPrkIoAUUcvT3_kbLbPPJwDhw6M0TzDZFqh7EpY=s120-c-rp-mo-br100",
+          "description": "Saw Dr. Bawa.  She was very professional, quite...detailed.\nShe listened.  The Nurse that drew blood was exceptional.  He was efficient, did not feel a thing.  Very clean establishment and not clinical.  Will visit again",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kSlEwMXljVmRVVWpaZk9HSkRjRkEzV25oZk9GRRAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOmdJQ01ycVdUUjZfOGJDcFA3WnhfOFE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-07T12:16:23+00:00"
+        },
+        {
+          "username": "Mandy K",
+          "rating": 5,
+          "contributor_id": "104736631281014496258",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJopnDh0qm_beAXoWSOD44W6-U4UjZiR21B3B9i-HUMcopmyg=s120-c-rp-mo-br100",
+          "description": "I love Dr Javadi....she is so kind and always helps me get to the root of my issues and never makes me feel rushed...I can safely say I  finally have a primary care physician I can trust!!! i even brought my mom to an appointment with her and my mom is so happy that I am in good hands...I have referred so many friends and family to her and NY Medical",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psclpHMWphME42VDB3MldFcFdNakpvUWkxT1duYxAB!2m1!1s0x0:0xb2cd13949eaff9e3!3m1!1s2@1:CAIQACodChtycF9oOjlrZG1ja0N6T0w2WEpWMjJoQi1OWnc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-11-24T14:47:46+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Primary Care Services at Mount Sinai-Union Square",
+            "data_id": "0x0:0xcf4a095acf9cdbc5",
+            "data_cid": "14936761399762541509",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcf4a095acf9cdbc5&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcf4a095acf9cdbc5&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7348421,
+              "longitude": -73.9897098
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcf4a095acf9cdbc5%218m2%213d40.7348421%214d-73.9897098&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 38,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaRBXYKe0bo0re6E1w-EX2mjt27c1BfAEQ9fmOfKFen9RIiMjMqyg-_IBtKGvLtoJl9gQZlHT7OAjObW7fXAz51pwUlhjhTDSmF5Hsci3H4FgoCqmtKbUsnqyPPH77QHhOtBx0h809fLA=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "iMedica Clinic",
+            "data_id": "0x0:0x5cefe7f9d18a2e4e",
+            "data_cid": "6696826231071583822",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5cefe7f9d18a2e4e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5cefe7f9d18a2e4e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7393028,
+              "longitude": -73.99095960000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5cefe7f9d18a2e4e%218m2%213d40.7393028%214d-73.99095960000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=hd-cOM2Ro7LSLvGTYpQZi358-pcXisGbc_WWUMuNv0stLhX35Yh3yYLa-JoecBc0dzyvt6U8AXYuUioTHMZ7pMEf6jIOFl2eUrgVpIfuCHWeLttQyLYqJf7B2Q3qUeIyH0euS8r4ROdlkCBGkIFgjD4EmW2lRByR",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Me Medical",
+            "data_id": "0x0:0x16c953c91ee15115",
+            "data_cid": "1641935662424871189",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16c953c91ee15115&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16c953c91ee15115&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7398455,
+              "longitude": -73.9905981
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x16c953c91ee15115%218m2%213d40.7398455%214d-73.9905981&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=hKCjei_rC9Et0PriN1s_o4JhuE0ffa4PWpJtP1CbhliWhrDQBgKT7dzt2wLGe5LEJkORpKxZfBgtZHGhVfkCh0z6IMMIX6AKrjG0EH1pe29sY7LwlHyd7VpBjlWsKQ0rZRCcO9YIldS0Ks_NFkkLo1Lm5c2s8uqq",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "NYU Medical Out Patient",
+            "data_id": "0x0:0xe94ef720d97f90c1",
+            "data_cid": "16811646179480670401",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe94ef720d97f90c1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe94ef720d97f90c1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.747365699999996,
+              "longitude": -73.9749026
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe94ef720d97f90c1%218m2%213d40.747365699999996%214d-73.9749026&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=eXo_EckKpH43zupxwUOZAaIoOgIbasbPYHS-dvzGOnz9o4X22_NAqEH5LUnli2aNdEUzGukarBq0Fs9T_DsWS07opz9Dt0v94x4fkwkdj_QCMKnYyd3Ggzu9glvCNHBhtBtQBvuwnTOoxWhzJnz0dF5vRbsJZ_Fr",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OioKKCIkTlkgTWVkaWNhbCBVbmlvbiBTcXVhcmUgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COioKKCIkTlkgTWVkaWNhbCBVbmlvbiBTcXVhcmUgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

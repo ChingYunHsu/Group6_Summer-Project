@@ -1,0 +1,405 @@
+{
+  "search_metadata": {
+    "id": "6a3ac23afbbebbb6d205157a",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/l_Sd8kXdFLKrKg09XA91Rw/6a3ac23afbbebbb6d205157a.json",
+    "created_at": "2026-06-23 17:28:26 UTC",
+    "processed_at": "2026-06-23 17:28:26 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25988b9636e09:0x1327e5324f3dbfe9!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/l_Sd8kXdFLKrKg09XA91Rw/6a3ac23afbbebbb6d205157a.html",
+    "prettify_html_file": "https://serpapi.com/searches/l_Sd8kXdFLKrKg09XA91Rw/6a3ac23afbbebbb6d205157a.prettify",
+    "total_time_taken": 0.77
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJCW5juYhZwokR6b89TzLlJxM",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "NYC Health + Hospitals/Gotham Health, Judson",
+    "place_id": "ChIJCW5juYhZwokR6b89TzLlJxM",
+    "data_id": "0x89c25988b9636e09:0x1327e5324f3dbfe9",
+    "data_cid": "1380323815052918761",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25988b9636e09%3A0x1327e5324f3dbfe9&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25988b9636e09%3A0x1327e5324f3dbfe9&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7215504,
+      "longitude": -73.9958868
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJCW5juYhZwokR6b89TzLlJxM",
+    "provider_id": "/g/1w6r95yd",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJLytoEIZBdW2mY8KBbKrirzRrtSMZ-KGenBmk0gCnuv2XmDkQ_UbyLUTnsSV4MhmOGOtG3UOK0sl5ARqRZa11YLRliRztiN1kzbCg8brPbrInKQ3lePsC6tTzSvIELD-X32ig=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Ch-Q63icHcTdboIwGADQJ6oU2Iwx8QLQMCwKFNmUm2VlTSH0R9tPjbygz-DbLNm5OK9nD3B2S8-TfTgTxgjJr47bzmjgGmadUZ44O9Q55Lyo3Fdj9LHNH2A2WRv_fgXqtCAxI3awE7VQ71pEUq5jNWKR6OstOKr1WH037JE3B-3qz7ddr4q0gDRsCoKdfI_ohbY_vn_KqRzoBMPeHyeWiAWzJbOZJlUoeemSORym-pZt8jU6hsEgVncfY4z6_zuk_wCjvEUi",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 9
+      },
+      {
+        "stars": 2,
+        "amount": 3
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 3
+      },
+      {
+        "stars": 5,
+        "amount": 120
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 136,
+    "type": [
+      "Medical clinic",
+      "Doctor",
+      "Free clinic",
+      "General practitioner",
+      "Hospital",
+      "Internist",
+      "Medical group",
+      "Nurse practitioner",
+      "Physical examination center",
+      "Walk-in clinic"
+    ],
+    "type_ids": [
+      "medical_clinic",
+      "doctor",
+      "free_clinic",
+      "general_practitioner",
+      "hospital",
+      "internist",
+      "medical_group",
+      "nurse_practitioner",
+      "physical_examination_center",
+      "walk_in_clinic"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      }
+    ],
+    "address": "34 Spring St, New York, NY 10012",
+    "country": "United States",
+    "booking_link": "https://epicmychart.nychhc.org/MyChart/",
+    "website": "https://www.nychealthandhospitals.org/locations/?distance=10&facility_type=168&view-type=list-view",
+    "phone": "(844) 692-4692",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "P2C3+JJ New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20135 PM"
+      },
+      {
+        "wednesday": "8 AM\u20135 PM"
+      },
+      {
+        "thursday": "8 AM\u20135 PM"
+      },
+      {
+        "friday": "8 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25988b9636e09%3A0x1327e5324f3dbfe9&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJLytoEIZBdW2mY8KBbKrirzRrtSMZ-KGenBmk0gCnuv2XmDkQ_UbyLUTnsSV4MhmOGOtG3UOK0sl5ARqRZa11YLRliRztiN1kzbCg8brPbrInKQ3lePsC6tTzSvIELD-X32ig=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Ch-Q63icHcTdboIwGADQJ6oU2Iwx8QLQMCwKFNmUm2VlTSH0R9tPjbygz-DbLNm5OK9nD3B2S8-TfTgTxgjJr47bzmjgGmadUZ44O9Q55Lyo3Fdj9LHNH2A2WRv_fgXqtCAxI3awE7VQ71pEUq5jNWKR6OstOKr1WH037JE3B-3qz7ddr4q0gDRsCoKdfI_ohbY_vn_KqRzoBMPeHyeWiAWzJbOZJlUoeemSORym-pZt8jU6hsEgVncfY4z6_zuk_wCjvEUi"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "17 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFOOpBBphiKjddrV5gJrLJQMGUv81CwZzFhQmpS9aGFc8qCQ9QKnF6QbWD0uGSqt1tR87txtLVshZxoAV_dlTNxDUujMytZ6_flAYWpQYctui4NZ9mAHUpfJd9bujMuwNJH6zu3x51T2rfV=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/brRv-3icHcrdEoFAGADQJ0rlJ2XGxcqUCbFSRjcN28-i2tV-q3hJ196GcXOuzudNAbiYqGpJB72CsaLMpMgawmrIaugRVqkFFwoRilDR1sc35Gw2fDbj9LK8pmkTjQqvWXl47YYPU7fb-OVQXPHAOrkOMe82tvCydgx8Psw16QZ30GFnjqGDVSRo3DEUJWm597t5KK_rJ8RGkpfoeOD4SEBehn5sVWgR8txLrfNvyNb3FsZLDrqRvu83eTRtdU3TFPqXKPUX7u1IfA"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGpNG8JWNID4x4AmvXpwsAYxSIQH-Lkdj2sdblebxJ-Ne8UISnUf6W-EFTvSJjiGF4YCRmNt3Hb3sUE7lmc9R69e7v_GNBkiijoZODeH8NnCQRggyP0nuczzebjlt8vc-oHdVxb=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/WoRhlXicHcRJDoIwAADAF1VQiIKJB0TWmMoibheTllqW0hJbEf2gb_A3Js5hvp9KqV4uNY1VxoQKQRl5SHLHgivC1QSLTqO9BFgCqTkJTFsn6GFgxUcYbczRdLrh1D-lcx7zKA3Bti2bmSwRI2iMASRWEeW8uM2PwPP3Qx43deCbZzfroDJCZMjCW7AO29ncJovhGsB1W9eNuOw2JLQgd9OM0lei8wd-vwlqmLIGDERYHka0ek51XQfVfwz4DzoGRPc"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=VgCx3d7yqV7_T5vI40pD-A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=202.17163&pitch=88.776085&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/sgqy23icHc09DsIgGADQ27CVQv9AE2KMLu6ma0MRWxJaPuWTtlfyRt5G4_im93mPiBD3eR7xaS0mZxdwq_UxA02HEAZvNbhITZjyxHMcX1M_a-cPoOfgbqodTmt5E9ujFd21TpeKwTk7EtN3xjs7o5o0xC4mitqg85YOEMmiiqIioyp2kmz6J1ZQLnhTEnBoRiUlFaJhsib_7x6S4ox9AY_VOz8"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The location is a little dated but does not take away from the great service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXKANidytJgEwzNCXCRfxdPW-h7__rUW01JiSvdj6rrGutZIfkq2Q=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Staff super friendly especially Felicia at the front desk.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLjwN7jeCma3ySYvzGup6FA1hTB9IK7afaJ4gA3WrpDNIz-Aw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"It\u2019s a safe place for the LGBTQ/A. With a quick turnaround rate.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUkga2Puw3FymQoAJuZ1CJMwvefNAzPBYxaDqxhnIY08WwJMKS9=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "UR1 TRUKING",
+          "rating": 1,
+          "contributor_id": "116722724932474466068",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJhIS7qY-hpQ4itLnjYKBM-CJBtAIK-QzUq1GXZpNT1S74bzg=s120-c-rp-mo-br100",
+          "description": "Judson is a decent place for care but I got to say I'm not a fan of some of the staff. I'm seen at both Gouverneur and Judson but, it feels like 2 totally different places and I don't mean that in a nice way. The heavyset hispanic nurse, is taking my vitals and asking me questions like why you here, but has Airpods on and is in middle of conversation. I say this because she never picks up her phone but after doing my vitals and asking questions goes straight into convo. Like, why am I being asked about myself when you are on the phone. For all I know she talks about me after I leave. I'm sure she does. While we at it, why was she in street clothes? Nearly everyone else has only scrubs but she and another nurse had on jeans.\n\nI never have these problems at Gouverneur. I may wait longer but it's clearly a more professional spot. Think ill be transferring my care there for now on.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xObGMwZHhXWFYzWmxsc1VFSkJPVzlGVUVwWlRWRRAB!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CAIQACodChtycF9oOlNlc0dxWXV3ZllsUEJBOW9FUEpZTVE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-23T02:35:43+00:00"
+        },
+        {
+          "username": "Sara Nahshon",
+          "rating": 1,
+          "contributor_id": "115808689870107528997",
+          "user_review_count": 16,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVDWINm9ZgeC1OUUCkbz89ytCajELRi_QFZCvalZsM63jiXEMw=s120-c-rp-mo-ba12-br100",
+          "description": "*Not a review of the staff, who are all 5 star and I adore!*\n\nIt's been at least six months that several smoke alarms have been chirping low battery very loudly throughout this large office. I feel so much for the staff, especially reception, who has to listen to this all day. Could management disrespect their staff more than to go so long failing to do such a simple repair that would have such a big impact?  (Also not fun being a migraine patient and having to listen to this).\n\nAnd this is besides the fact that the smoke alarms haven't been in operation, surely a fire code violation (hint hint).",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1a1UxZGpjMjV5V1VWSk4wdFhWR0p6YVdKSU1VRRAB!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CAIQACodChtycF9oOk5kU1djc25yWUVJN0tXVGJzaWJIMUE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-07-30T20:24:40+00:00"
+        },
+        {
+          "username": "Carlene Wright",
+          "rating": 5,
+          "contributor_id": "102416360827227451881",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVQAJ41vrJFZbEmR3kk1pCbANXKPShXNURg7PyZKDBqKRhNsRF7=s120-c-rp-mo-br100",
+          "description": "On the behalf of my son, our experience with the Judson Health Clinic was nothing less than excellence. From the time we walked in to leaving, we were treated with respect and kindness. All the staff was attentive to our needs and made sure everything was in place for our visit. Dr. M. Baehser is an excellent doctor. Very detailed, kind, and humorous which made my 20-year-old son with Autism comfortable enough to talk and have an important conversation with him. I would recommend this office to anyone. And it's located in one of the best areas in NYC. After, you can definitely get a bite to eat at one of the fine restaurants located in the area.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN1ekozcVJ3EAE!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CIHM0ogKEICAgICuzJ3qRw%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2022-07-22T17:30:43+00:00"
+        },
+        {
+          "username": "Amy Gavilanes",
+          "rating": 5,
+          "contributor_id": "117232635948458410663",
+          "user_review_count": 12,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWbh4gtk1hdjt81fhwOyCqprnHXhjPvecFfSSeIe5tb2pF8qjE=s120-c-rp-mo-ba12-br100",
+          "description": "I found this clinic after doing research online for a Dr. who specializes in adolescents for my teenage son.  I could not be any happier than I am now after finding Dr. Baehser. . He takes the time to really get to know his patients and goes above and beyond to make sure their needs are met. My son also likes him tremendously and is super comfortable with him. The clinic itself is always spotless and the entire staff is always helpful and friendly. I feel very lucky to have found The Judson Health Clinic.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUQ2cGNpTDNBRRAB!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CIHM0ogKEICAgID6pciL3AE%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2021-10-05T17:48:41+00:00"
+        },
+        {
+          "username": "Hitz Mistry",
+          "rating": 5,
+          "contributor_id": "113461460206217500618",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1YThSe-X_EPNCbqZIhG9R-wZAgsqu7gmysw0jml0C9MKixFIe=s120-c-rp-mo-br100",
+          "description": "First time visiting a healthcare center and doctor in 2 years. Was pleasantly surprised by the great service and excellent staff. Was greeted warmly by Felicia the receptionist on arrival and she was very helpful with the paperwork.\n\nI saw Dr Rachel Bring who made me feel comfortable and at ease. She was easy to communicate with, listened and answered all my questions. I genuinely felt the doctor cared and wanted to help. Definitely recommend this practice.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNvb1kzTFNnEAE!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CIHM0ogKEICAgICooY3LSg%7C%7C?hl=en",
+          "date": "Edited 7 years ago",
+          "date_iso8601": "2019-05-29T23:52:18+00:00"
+        },
+        {
+          "username": "Emily D",
+          "rating": 5,
+          "contributor_id": "106265252810762120355",
+          "user_review_count": 6,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXKANidytJgEwzNCXCRfxdPW-h7__rUW01JiSvdj6rrGutZIfkq2Q=s120-c-rp-mo-br100",
+          "description": "I\u2019ve recently started coming to Judson Health Center and I must say that it is one of the most pleasant health clinics that I\u2019ve been too in a while. The staff is super friendly and helpful. They\u2019re welcoming and have great attitudes. The location is a little dated but does not take away from the great service. The clinic is good for adolescent patients, not only focusing on sexual education but also health issues that some may have like asthma and other things. The nursing staff is fast and gets the job done right when the doctor is ready to see you. I\u2019ve enjoyed my visits so far and highly recommend any young adult to visit this clinic.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURnamFuRU93EAE!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CIHM0ogKEICAgIDgjanEOw%7C%7C?hl=en",
+          "date": "8 years ago",
+          "date_iso8601": "2018-03-22T21:11:10+00:00"
+        },
+        {
+          "username": "Anthony Rios Perez",
+          "rating": 5,
+          "contributor_id": "116621376627251932903",
+          "user_review_count": 6,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX0FY5OEXxtqd5kVpw3qIaQhwNXV3gSZhdtvoRwlU1Bdw3BME_i=s120-c-rp-mo-br100",
+          "description": "As a youth who is open and part of the LGBTQ+ community, I just want to say that going to this clinic is incredible. The nurses are friendly, the environment is pretty cool and small ( I personally don't like hospitals), and Dr. Mark Baehser is probably one of the best doctors I have ever met. Like other doctors don't get to know you like how he does, he listens and takes action to whatever problems or concerns one may have. Plus with the MyChart app now existing, communicating about your health is simple and less time-consuming, which is essential to have nowadays!.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNHMEtfYW9BRRAB!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CIHM0ogKEICAgICG0K_aoAE%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2021-10-18T00:06:16+00:00"
+        },
+        {
+          "username": "Michelle Bello-Navarro",
+          "rating": 5,
+          "contributor_id": "100524388902441436266",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLp4Wp3hR_mk8ztAIkp1DtEZjmDzYwkoYZnrCELG0VPsUIqmFI=s120-c-rp-mo-br100",
+          "description": "Judson Health Center is an outstanding clinic that has staff who genuinely support/care about young adults. Dr. Mark Baehser is friendly and honestly a great doctor! He uses an app to stay in contact which is super helpful when I have concerns, questions or updates. Highly recommend (as I'm still a patient).",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUR3enNtZklREAE!2m1!1s0x0:0x1327e5324f3dbfe9!3m1!1s2@1:CIHM0ogKEICAgIDwzsmfIQ%7C%7C?hl=en",
+          "date": "7 years ago",
+          "date_iso8601": "2018-10-12T01:57:30+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NYC Health + Hospitals/Gotham Health, Jackson Heights",
+            "data_id": "0x0:0xda459024a9a5104f",
+            "data_cid": "15728135760800714831",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xda459024a9a5104f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xda459024a9a5104f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.754135100000006,
+              "longitude": -73.871994
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xda459024a9a5104f%218m2%213d40.754135100000006%214d-73.871994&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 23,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH-sR-7tzetE1mDg9cXT8BjDtX0BqrPGVqYwe4B2lK1Re-LNQmOrJQdbwApJatcUG92DxoC_0No0r1-P9P6ueS4dQ0kF4xYvfnYrGWlFtos0MtBvTzfjBd6KcITxZqoJZF0S1cA=w156-h156-n-k-no-pi-0-ya200-ro0-fo100",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "Free clinic",
+              "General practitioner",
+              "Hospital",
+              "Internist",
+              "Medical group",
+              "Nurse practitioner",
+              "Physical examination center",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "NYC Health + Hospitals/Gotham Health, Clemente",
+            "data_id": "0x0:0xfb6978cd8633dfaf",
+            "data_cid": "18116143800189706159",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfb6978cd8633dfaf&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfb6978cd8633dfaf&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7288448,
+              "longitude": -73.97931799999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfb6978cd8633dfaf%218m2%213d40.7288448%214d-73.97931799999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 21,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8DY0FpGeFLBU3mSf4RpCfcxMVAx-85Q9LYNlyjvHKQkD9J4N4E0JAGVUa4ztv6cNGzg7eQIygahJWwrlrrhi7uP2qFWXFsRIIlOIqNaMfbSPfyKXkTCTwNhNwFAXiVExnD_ab4Q=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Community health center",
+              "Doctor",
+              "Family practice physician",
+              "Internist",
+              "Laboratory",
+              "Medical diagnostic imaging center",
+              "Nurse practitioner",
+              "Women's health clinic",
+              "Public medical center"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Soho Health",
+            "data_id": "0x0:0xb3b2862160d702c",
+            "data_cid": "809284959785021484",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb3b2862160d702c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb3b2862160d702c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7244976,
+              "longitude": -74.0015871
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb3b2862160d702c%218m2%213d40.7244976%214d-74.0015871&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 183,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyWynTxISND1vvXfx27CY5BrTL5uBqRtVg6sw5ERff__B_pG97_7nluAh6Z2qj85UPicanbBUn3L4YB8nnSkGibYFcYyOmHm56tlaKMyU_OYV9i9PBLq1DmTQAU-IXy1WYNBS1=w156-h156-n-k-no",
+            "type": [
+              "Internist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "NYC Langone Health",
+            "data_id": "0x0:0x96dcf0338a118b80",
+            "data_cid": "10870827704715938688",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x96dcf0338a118b80&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x96dcf0338a118b80&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.734698099999996,
+              "longitude": -74.0058067
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x96dcf0338a118b80%218m2%213d40.734698099999996%214d-74.0058067&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 4,
+            "thumbnail": "https://www.google.com/maps/vt/data=qYAtJmJhdTj9JRLMXDNhOdX1cSUAr6DAXwc6IRamoVNF_oGKc7C2tIkP99DVCsKrs_zL93rvfK8F6NTbTwKaIDRMt-taEb-1odo1ryTTwRLRET59enBVCZqdUV2WychsnQHyKkdSiqslOBDfL_sO0FftXeOWuS_E",
+            "type": [
+              "Medical Center"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "New York Downtown Hospital: Goldschmidtt David MD",
+            "data_id": "0x0:0x3e60b2a83e497d19",
+            "data_cid": "4494788863785008409",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3e60b2a83e497d19&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3e60b2a83e497d19&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7102874,
+              "longitude": -74.0052209
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3e60b2a83e497d19%218m2%213d40.7102874%214d-74.0052209&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=HDIISBwWfPPPENQkr0iorn0MNxWfQiC5j6Bverr6QDfQ5QNy4EkFfj-P-VuGZf5aUTsEcsZby5kPzv4UILZv_i2ynJx4iJC0XL6ldjhcq2Sny-QLeyXTSg2TLc9FHM3QCTbAW7EIALN8BUtVnOhEK2HUqtF1Yhs_",
+            "type": [
+              "Doctor"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oj8KPSI5TllDIEhlYWx0aCArIEhvc3BpdGFscy9Hb3RoYW0gSGVhbHRoLCBKdWRzb24gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COj8KPSI5TllDIEhlYWx0aCArIEhvc3BpdGFscy9Hb3RoYW0gSGVhbHRoLCBKdWRzb24gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}
