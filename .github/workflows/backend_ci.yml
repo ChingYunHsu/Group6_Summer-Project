@@ -42,7 +42,7 @@ jobs:
 
     - name: Force update lockfile on CI
       run: |
-        poetry lock --no-update
+        poetry lock
       working-directory: ./backend
  
 
