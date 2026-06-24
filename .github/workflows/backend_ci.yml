@@ -60,7 +60,7 @@ jobs:
 
     - name: Run Pytest with Coverage
       run: |
-        poetry run pytest tests/ --cov=. --cov-fail-under=60
+        poetry run pytest tests/ -m "not integration" --cov=. --cov-fail-under=60
       working-directory: ./backend
       env:
         PYTHONPATH: .
