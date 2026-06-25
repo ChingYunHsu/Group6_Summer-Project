@@ -2,10 +2,11 @@ import uuid
 from copy import deepcopy
 
 import pymysql
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, g, jsonify, request
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from auth import ACCESS_TOKEN_TTL, SESSIONS, issue_access_token
+import token_blacklist
+from auth import ACCESS_TOKEN_TTL, SESSIONS, issue_access_token, require_bearer_auth
 from db import db_cursor, db_transaction
 from mock_data import AUTH_LOGIN_RESPONSE, AUTH_RESET_PASSWORD_RESPONSE
 
@@ -82,6 +83,15 @@ def login():
         return jsonify({"error": "Unauthorized. Invalid email or password."}), 401
 
     return jsonify(_issue_token_response(user["user_id"]))
+
+
+@bp.post("/api/v1/auth/logout")
+@require_bearer_auth
+def logout():
+    """Revoke the presented access token by blacklisting its signature in Redis."""
+    token_blacklist.blacklist_token(g.token, g.token_payload["exp"])
+    SESSIONS.pop(g.token, None)
+    return jsonify({"message": "Logged out."})
 
 
 @bp.post("/api/v1/auth/guest")
