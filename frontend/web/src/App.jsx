@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
 import "./styles/tokens.css";
 import "./App.css";
 
@@ -13,7 +14,12 @@ import MedicalCard from "./pages/MedicalCard";
 import Settings from "./pages/Settings";
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
+  
+
   return (
+    
     <BrowserRouter>
       <div className="app-shell">
         <header className="app-header">
@@ -30,13 +36,13 @@ function App() {
         </header>
 
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Login setUser={setUser} setUserLocation={setUserLocation} />} />
           <Route path="/map" element={<LiveHelpMap />} />
           <Route path="/insights" element={<InsightsDashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/guide" element={<UserGuide />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/edit" element={<EditProfile />} />
+          <Route path="/profile" element={<Profile user={user} />} />
+          <Route path="/profile/edit" element={<EditProfile user={user} />} />
           <Route path="/medical-card" element={<MedicalCard />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
