@@ -25,6 +25,8 @@ class Settings:
     db_max_overflow: int
     db_pool_timeout: int
     db_pool_recycle: int
+    db_encryption_check_enabled: bool
+    redis_url: str
 
 
 def get_settings() -> Settings:
@@ -45,5 +47,7 @@ def get_settings() -> Settings:
         db_max_overflow=int(os.getenv("DB_MAX_OVERFLOW", "20")),
         db_pool_timeout=int(os.getenv("DB_POOL_TIMEOUT", "30")),
         db_pool_recycle=int(os.getenv("DB_POOL_RECYCLE", "1800")),
+        db_encryption_check_enabled=os.getenv("DB_ENCRYPTION_CHECK", "false").lower() == "true",
+        redis_url=os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0"),
     )
 

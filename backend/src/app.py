@@ -1,5 +1,6 @@
 from flask import Flask
 
+import db
 from api.app_state import bp as app_state_bp
 from api.auth import bp as auth_bp
 from api.chatbot import bp as chatbot_bp
@@ -22,6 +23,9 @@ def create_app() -> Flask:
     app.config["GOOGLE_MAPS_API_KEY"] = settings.google_maps_api_key
     app.config["GEMINI_API_KEY"] = settings.gemini_api_key
     app.config["JWT_SECRET"] = settings.jwt_secret
+
+    if settings.db_encryption_check_enabled:
+        db.verify_tablespace_encryption()
 
     app.register_blueprint(health_bp)
     app.register_blueprint(auth_bp)

@@ -4,6 +4,8 @@ from functools import wraps
 import jwt
 from flask import current_app, g, jsonify, request
 
+import token_blacklist
+
 ACCESS_TOKEN_TTL = timedelta(hours=1)
 
 # Mock in-memory session store: access_token -> {"user_id": str, "is_guest": bool}
@@ -50,7 +52,10 @@ def issue_access_token(user_id: str) -> str:
 
 
 def require_bearer_auth(view_func):
-    """Verify a signed JWT bearer token and expose the user id as g.user_id."""
+    """Global token verification gateway: parses the `Authorization: Bearer
+    <token>` header, verifies the JWT signature and expiry, rejects tokens
+    revoked via logout, and populates the request-scoped session context
+    (g.user_id, g.token, g.token_payload) from the sub claim."""
 
     @wraps(view_func)
     def wrapped(*args, **kwargs):
@@ -59,6 +64,9 @@ def require_bearer_auth(view_func):
             return jsonify({"error": "Unauthorized. Bearer token required."}), 401
 
         token = header[len("Bearer "):].strip()
+        if not token:
+            return jsonify({"error": "Unauthorized. Bearer token required."}), 401
+
         secret = current_app.config.get("JWT_SECRET", "")
 
         try:
@@ -68,7 +76,12 @@ def require_bearer_auth(view_func):
         except jwt.InvalidTokenError:
             return jsonify({"error": "Unauthorized. Invalid token."}), 401
 
+        if token_blacklist.is_blacklisted(token):
+            return jsonify({"error": "Unauthorized. Token has been revoked."}), 401
+
         g.user_id = payload.get("sub")
+        g.token = token
+        g.token_payload = payload
         return view_func(*args, **kwargs)
 
     return wrapped
