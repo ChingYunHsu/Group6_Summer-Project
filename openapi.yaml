@@ -1,9 +1,19 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.5.1
+  version: 1.5.2
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
+
+    ## Changelog — v1.5.2
+    - **Fix 13 (Tier 2 Encrypted Medical Profile):** Added
+      `GET`/`PUT`/`DELETE /api/v1/user/medical-profile`, backed by a real
+      MySQL `medical_profiles` table with an application-level (Tier 2)
+      Fernet-encrypted payload column, layered on top of Tier 1 MySQL
+      tablespace encryption. Identity is resolved strictly from the Bearer
+      token's `sub` claim; an explicit `user_id` query parameter is rejected
+      with 400 on every method to prevent one user addressing another's
+      record.
 
     ## Changelog — v1.5.1
     - **Fix 12 (Logout / Token Revocation):** Added `POST /api/v1/auth/logout`
@@ -1168,6 +1178,93 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  # FIX 13 — Tier 2 Encrypted Medical Profile (strict user isolation)
+  # Real MySQL-backed, application-level (Tier 2) encrypted storage, layered
+  # on top of Tier 1 MySQL tablespace encryption. Identity is resolved only
+  # from the Bearer token's sub claim — an explicit user_id query parameter
+  # is rejected on every method to prevent addressing another user's record.
+  /api/v1/user/medical-profile:
+    get:
+      tags: [User]
+      summary: Get the current user's Tier 2 encrypted medical profile
+      description: >
+        Identity is resolved from the Bearer token only. Returns 400 if a
+        user_id query parameter is present.
+      operationId: getMedicalProfile
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Medical profile (decrypted server-side for the caller only).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalId'
+        '400':
+          description: Forbidden — explicit user_id query parameter rejected.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      tags: [User]
+      summary: Create or update the current user's medical profile
+      operationId: upsertMedicalProfile
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MedicalIdUpdate'
+      responses:
+        '200':
+          description: Medical profile created or updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MedicalId'
+        '400':
+          description: Validation failed, or explicit user_id query parameter rejected.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      tags: [User]
+      summary: Delete the current user's medical profile
+      operationId: deleteMedicalProfile
+      security:
+        - BearerAuth: []
+      responses:
+        '204':
+          description: Medical profile deleted (or did not exist).
+        '400':
+          description: Forbidden — explicit user_id query parameter rejected.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
         '401':
           description: Authentication required.
           content:
