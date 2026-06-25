@@ -1,9 +1,18 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.5.0
+  version: 1.5.1
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
+
+    ## Changelog — v1.5.1
+    - **Fix 12 (Logout / Token Revocation):** Added `POST /api/v1/auth/logout`
+      (BearerAuth). Since access tokens are stateless JWTs, logout records the
+      presented token's signature in a Redis blacklist until the token's own
+      `exp`; `require_bearer_auth` now rejects blacklisted tokens with 401
+      on every subsequent request. Redis is a best-effort secondary layer —
+      if unreachable, the blacklist check fails open and the primary JWT
+      signature/expiry check still applies.
 
     ## Changelog — v1.4.2
     - **Fix 5 (Medical ID / Emergency Contacts, Option B):** Mobile dropped the
@@ -213,6 +222,41 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidationErrorResponse'
+
+  # FIX 12 — Logout / Token Revocation
+  # Bearer access tokens are stateless JWTs, so logout cannot delete them
+  # server-side. Instead the presented token's signature is recorded in a
+  # Redis blacklist until its own exp, after which require_bearer_auth
+  # rejects it on every subsequent request.
+  /api/v1/auth/logout:
+    post:
+      tags: [Auth]
+      summary: Revoke the current access token
+      description: >
+        Adds the presented Bearer token's signature to the Redis revocation
+        blacklist for the remainder of its lifetime. Subsequent requests with
+        the same token are rejected with 401.
+      operationId: logout
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Token revoked.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [message]
+                properties:
+                  message:
+                    type: string
+                    example: Logged out.
+        '401':
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
   /api/v1/health:
     get:
