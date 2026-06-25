@@ -2248,6 +2248,7 @@ body,
   margin: 0 0 24px;
   font-size: 28px;
   font-weight: 800;
+  color: black;
 }
 
 .settings-card {
@@ -2257,6 +2258,7 @@ body,
   padding: 24px;
   margin-bottom: 24px;
 }
+
 
 .settings-card h2 {
   margin: 0 0 20px;
@@ -2523,4 +2525,129 @@ body,
     width: 100%;
     margin-left: 0;
   }
+}
+.register-title {
+  margin: 0 0 8px;
+  color: #06152b;
+  font-size: 24px;
+}
+
+.hipaa-label {
+  margin: 0 0 18px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.intercept-overlay,
+.location-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.intercept-sheet,
+.location-modal {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+}
+
+.intercept-sheet h2,
+.location-modal h2 {
+  margin: 0 0 12px;
+  color: #06152b;
+  font-size: 22px;
+}
+
+.intercept-sheet p,
+.location-modal p {
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.intercept-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.location-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.intercept-actions button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.location-actions button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+}
+
+.intercept-actions button:first-child {
+  background: #ffffff;
+  color: #06152b;
+  border: 1px solid #cbd5e1;
+}
+
+.intercept-actions button:first-child:hover {
+  background: #f8fafc;
+}
+
+.cancel-location-button {
+  background: #ffffff;
+  color: #06152b;
+  border: 1px solid #cbd5e1;
+}
+
+.intercept-actions button:last-child,
+.allow-location-button {
+  background: #0047d8;
+  color: white;
+  border: none;
+}
+
+.intercept-actions button:last-child:hover {
+  background: #003cc1;
+}
+
+
+.allow-location-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.location-error {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c !important;
+  padding: 10px;
+  border-radius: 6px;
 }

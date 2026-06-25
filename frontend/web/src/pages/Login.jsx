@@ -1,16 +1,65 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({ setUserLocation }) {
   const navigate = useNavigate();
 
   const [showLocationModal, setShowLocationModal] = useState(false);
+  const [showProfileIntercept, setShowProfileIntercept] = useState(false);
   const [locationError, setLocationError] = useState("");
   const [isRequestingLocation, setIsRequestingLocation] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
+
+  const [loginForm, setLoginForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [registerForm, setRegisterForm] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
 
   function openLocationModal() {
     setLocationError("");
     setShowLocationModal(true);
+  }
+
+  function handleLoginSubmit(e) {
+    e.preventDefault();
+
+    if (!loginForm.email || !loginForm.password) {
+      alert("Please enter your email and password.");
+      return;
+    }
+
+    openLocationModal();
+  }
+
+  function handleRegisterSubmit(e) {
+    e.preventDefault();
+
+    if (!registerForm.fullName || !registerForm.email || !registerForm.password) {
+      alert("Please complete all registration fields.");
+      return;
+    }
+
+    setShowProfileIntercept(true);
+  }
+
+  function handleGuestContinue() {
+    openLocationModal();
+  }
+
+  function handleFinishProfile() {
+    setShowProfileIntercept(false);
+    navigate("/profile/edit");
+  }
+
+  function handleSkipProfile() {
+    setShowProfileIntercept(false);
+    openLocationModal();
   }
 
   function handleAllowAccess() {
@@ -30,7 +79,14 @@ function Login() {
           longitude: position.coords.longitude,
         };
 
-        localStorage.setItem("clearPathUserLocation", JSON.stringify(userLocation));
+        if (setUserLocation) {
+          setUserLocation(userLocation);
+        }
+
+        localStorage.setItem(
+          "clearPathUserLocation",
+          JSON.stringify(userLocation)
+        );
 
         setIsRequestingLocation(false);
         setShowLocationModal(false);
@@ -45,7 +101,7 @@ function Login() {
     );
   }
 
-  function handleCancel() {
+  function handleNotNow() {
     setShowLocationModal(false);
     navigate("/map");
   }
@@ -68,29 +124,114 @@ function Login() {
       <section className="login-form-panel">
         <div className="auth-card">
           <div className="auth-tabs">
-            <button className="active" type="button">
+            <button
+              type="button"
+              className={isRegister ? "" : "active"}
+              onClick={() => setIsRegister(false)}
+            >
               Login
             </button>
-            <button type="button">Register</button>
+
+            <button
+              type="button"
+              className={isRegister ? "active" : ""}
+              onClick={() => setIsRegister(true)}
+            >
+              Register
+            </button>
           </div>
 
-          <label htmlFor="email">Email Address</label>
-          <input id="email" type="email" placeholder="name@company.com" />
+          {!isRegister ? (
+            <form onSubmit={handleLoginSubmit}>
+              <label htmlFor="login-email">Email Address</label>
+              <input
+                id="login-email"
+                type="email"
+                placeholder="name@company.com"
+                value={loginForm.email}
+                onChange={(e) =>
+                  setLoginForm({ ...loginForm, email: e.target.value })
+                }
+              />
 
-          <div className="password-row">
-            <label htmlFor="password">Password</label>
-            <a href="#">Forgot Password?</a>
-          </div>
+              <div className="password-row">
+                <label htmlFor="login-password">Password</label>
+                <a href="#">Forgot Password?</a>
+              </div>
 
-          <input id="password" type="password" placeholder="password" />
+              <input
+                id="login-password"
+                type="password"
+                placeholder="password"
+                value={loginForm.password}
+                onChange={(e) =>
+                  setLoginForm({ ...loginForm, password: e.target.value })
+                }
+              />
 
-          <button
-            className="primary-auth-button"
-            type="button"
-            onClick={openLocationModal}
-          >
-            Sign In to My Account →
-          </button>
+              <button className="primary-auth-button" type="submit">
+                Sign In to My Account →
+              </button>
+            </form>
+          ) : (
+            <form onSubmit={handleRegisterSubmit}>
+              <p className="register-title">Get started</p>
+
+              <p className="hipaa-label">
+                HIPAA-ready protected identity asset setup
+              </p>
+
+              <label htmlFor="register-name">Full Name</label>
+              <input
+                id="register-name"
+                type="text"
+                placeholder="Enter your full name"
+                value={registerForm.fullName}
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    fullName: e.target.value,
+                  })
+                }
+              />
+
+              <label htmlFor="register-email">Email Address</label>
+              <input
+                id="register-email"
+                type="email"
+                placeholder="name@company.com"
+                value={registerForm.email}
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    email: e.target.value,
+                  })
+                }
+              />
+
+              <label htmlFor="register-password">Password</label>
+              <input
+                id="register-password"
+                type="password"
+                placeholder="Create a secure password"
+                value={registerForm.password}
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    password: e.target.value,
+                  })
+                }
+              />
+
+              <p className="hipaa-label">
+                Clinical records remain local-first until authorised sharing.
+              </p>
+
+              <button className="primary-auth-button" type="submit">
+                Create Account →
+              </button>
+            </form>
+          )}
 
           <div className="divider">
             <span></span>
@@ -101,7 +242,7 @@ function Login() {
           <button
             className="guest-button"
             type="button"
-            onClick={openLocationModal}
+            onClick={handleGuestContinue}
           >
             Continue as Guest
           </button>
@@ -112,38 +253,63 @@ function Login() {
         </div>
       </section>
 
+      {showProfileIntercept && (
+        <div className="intercept-overlay">
+          <div className="intercept-sheet">
+            <h2>
+              Would you like to finish setting up your Medical Profile and ID
+              now?
+            </h2>
+            <p>
+              Complete your emergency medical document now, or skip this step and
+              return to it later.
+            </p>
+
+            <div className="intercept-actions">
+              <button type="button" onClick={handleSkipProfile}>
+                Skip for Now
+              </button>
+
+              <button type="button" onClick={handleFinishProfile}>
+                Finish Profile & ID
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {showLocationModal && (
         <div className="location-overlay">
           <div className="location-modal">
             <div className="location-icon">⌖</div>
 
-            <h2>Location Access Required</h2>
+            <h2>Enable Location</h2>
 
             <p>
-              Location services are required to calculate routes from your
-              current position.
+              ClearPath uses your current location to initialise the map matrix
+              viewport and calculate safer healthcare routes.
             </p>
 
-            {locationError && (
-              <p className="location-error">{locationError}</p>
-            )}
+            {locationError && <p className="location-error">{locationError}</p>}
 
-            <button
-              className="allow-location-button"
-              type="button"
-              onClick={handleAllowAccess}
-              disabled={isRequestingLocation}
-            >
-              {isRequestingLocation ? "Requesting..." : "Allow Access"}
-            </button>
+            <div className="location-actions">
+              <button
+                className="cancel-location-button"
+                type="button"
+                onClick={handleNotNow}
+              >
+                Not Now
+              </button>
 
-            <button
-              className="cancel-location-button"
-              type="button"
-              onClick={handleCancel}
-            >
-              Cancel
-            </button>
+              <button
+                className="allow-location-button"
+                type="button"
+                onClick={handleAllowAccess}
+                disabled={isRequestingLocation}
+              >
+                {isRequestingLocation ? "Requesting..." : "Allow Access"}
+              </button>
+            </div>
           </div>
         </div>
       )}
