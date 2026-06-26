@@ -3,12 +3,12 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
@@ -154,7 +154,7 @@ export default function EditProfileScreen() {
           />
 
           <InputField
-            label={t("editProfile.emailAddress")}
+            label={t("editProfile.email")}
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"

@@ -78,7 +78,7 @@ export default function LoginScreen() {
 </Text>
 
                 <Text style={styles.label}>
-  {t("profile.emailAddress")}
+  {t("profile.email")}
 </Text>
 
                 <TextInput
@@ -192,7 +192,7 @@ export default function LoginScreen() {
                 />
 
                 <Text style={styles.label}>
-  {t("profile.emailAddress")}
+  {t("profile.email")}
 </Text>
 
                 <TextInput

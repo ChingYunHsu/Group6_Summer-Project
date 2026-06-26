@@ -1,411 +1,468 @@
-import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
-import { useState } from "react";
 import {
-    FlatList,
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
+import {
+  ActivityIndicator,
+  StatusBar,
+  StyleSheet,
+  View,
 } from "react-native";
 
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import MapView from "react-native-maps";
+
+import { router } from "expo-router";
+
 import { Colours } from "../constants/colours";
-import { Typography } from "../constants/typography";
 
-const mockVenues = [
-  {
-    id: "1",
-    name: "CityMD Urgent Care",
-    category: "Clinic",
-    distance: "0.4 mi",
-  },
-  {
-    id: "2",
-    name: "CVS Pharmacy",
-    category: "Pharmacy",
-    distance: "0.7 mi",
-  },
-  {
-    id: "3",
-    name: "Times Square AED",
-    category: "AED",
-    distance: "0.2 mi",
-  },
-];
+import {
+  getReports,
+  getVenues,
+} from "../services/api";
 
-const categories = [
-  "All",
-  "Clinic",
-  "Pharmacy",
-  "AED",
-];
+import {
+  Report,
+  Venue,
+} from "../types/venue";
+
+import CategoryChips, {
+  Category,
+} from "../components/CategoryChips";
+
+import FilterModal from "../components/FilterModal";
+
+import FloatingActionButtons from "../components/FloatingActionButtons";
+
+import MapSearchBar from "../components/MapSearchBar";
+
+import ReportMarker from "../components/ReportMarker";
+
+import ReportModal from "../components/ReportModal";
+
+import VenueBottomSheet from "../components/VenueBottomSheet";
+
+import VenueMarker from "../components/VenueMarker";
+
+const INITIAL_REGION = {
+  latitude: 40.758,
+  longitude: -73.9855,
+  latitudeDelta: 0.08,
+  longitudeDelta: 0.08,
+};
 
 export default function MapScreen() {
+  const [venues, setVenues] =
+    useState<Venue[]>([]);
+
+  const [reports, setReports] =
+    useState<Report[]>([]);
+
+  const [loading, setLoading] =
+    useState(true);
+
   const [search, setSearch] =
     useState("");
 
-  const [selectedCategory, setSelectedCategory] =
-    useState("All");
+  const [category, setCategory] =
+    useState<Category>("Clinic");
+
+  const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null);
+
+const selectedVenue = useMemo(
+  () => venues.find(v => v.venue_id === selectedVenueId) ?? null,
+  [venues, selectedVenueId]
+);
+
+  const [
+    venueVisible,
+    setVenueVisible,
+  ] =
+    useState(false);
+
+  const [
+    filterVisible,
+    setFilterVisible,
+  ] =
+    useState(false);
+
+  const [
+    reportVisible,
+    setReportVisible,
+  ] =
+    useState(false);
+
+  const [openNow, setOpenNow] =
+    useState(false);
+
+  const [
+    accessible,
+    setAccessible,
+  ] =
+    useState(false);
+
+  const [language, setLanguage] =
+    useState("");
+
+  const [autoCurrentTime, setAutoCurrentTime] =
+  useState(true);
+
+const [liveStatus, setLiveStatus] =
+  useState<
+    "quiet" | "moderate" | "busy"
+  >("moderate");
+
+  async function loadData() {
+    try {
+      setLoading(true);
+
+      const [
+        venueData,
+        reportData,
+      ] = await Promise.all([
+        getVenues({
+          open_now: openNow,
+          accessible,
+          languages: language
+            ? [language]
+            : [],
+        }),
+        getReports(),
+      ]);
+
+      setVenues(venueData);
+      setReports(reportData);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadData();
+  }, [
+    openNow,
+    accessible,
+    language,
+  ]);
 
   const filteredVenues =
-    mockVenues.filter((venue) => {
-      const matchesSearch =
-        venue.name
-          .toLowerCase()
-          .includes(
-            search.toLowerCase()
+    useMemo(() => {
+      return venues.filter(
+        (venue) => {
+          const matchesSearch =
+            venue.name
+              .toLowerCase()
+              .includes(
+                search.toLowerCase()
+              );
+
+          let matchesCategory =
+            false;
+
+          switch (category) {
+            case "Clinic":
+              matchesCategory =
+                venue.venue_type ===
+                "clinic";
+              break;
+
+            case "Pharmacy":
+              matchesCategory =
+                venue.venue_type ===
+                "pharmacy";
+              break;
+
+            case "AED":
+              matchesCategory =
+                venue.venue_type ===
+                "emergencyasset";
+              break;
+          }
+
+          return (
+            matchesSearch &&
+            matchesCategory
           );
-
-      const matchesCategory =
-        selectedCategory === "All" ||
-        venue.category ===
-          selectedCategory;
-
-      return (
-        matchesSearch &&
-        matchesCategory
+        }
       );
-    });
+    }, [
+      venues,
+      search,
+      category,
+    ]);
 
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* Header */}
-
-      <View style={styles.header}>
-        <Text style={styles.title}>
-          Find Care
-        </Text>
-
-        <TouchableOpacity
-          onPress={() =>
-            router.push("/profile")
-          }
-        >
-          <Ionicons
-            name="person-circle"
-            size={34}
-            color={Colours.primary}
-          />
-        </TouchableOpacity>
-      </View>
-
-      {/* Search */}
-
-      <View style={styles.searchContainer}>
-        <Ionicons
-          name="search"
-          size={20}
-          color={Colours.muted}
-        />
-
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Search clinics or pharmacies..."
-          placeholderTextColor={
-            Colours.muted
-          }
-          value={search}
-          onChangeText={setSearch}
-        />
-
-        <TouchableOpacity>
-          <Ionicons
-            name="options"
-            size={20}
-            color={Colours.primary}
-          />
-        </TouchableOpacity>
-      </View>
-
-      {/* Categories */}
-
-      <View style={styles.chipsRow}>
-        {categories.map(
-          (category) => (
-            <TouchableOpacity
-              key={category}
-              style={[
-                styles.chip,
-                selectedCategory ===
-                  category &&
-                  styles.selectedChip,
-              ]}
-              onPress={() =>
-                setSelectedCategory(
-                  category
-                )
-              }
-            >
-              <Text
-                style={[
-                  styles.chipText,
-                  selectedCategory ===
-                    category &&
-                    styles.selectedChipText,
-                ]}
-              >
-                {category}
-              </Text>
-            </TouchableOpacity>
-          )
-        )}
-      </View>
-
-      {/* Placeholder Map */}
-
-      <View style={styles.mapPlaceholder}>
-        <Ionicons
-          name="map"
-          size={60}
+  if (loading) {
+    return (
+      <SafeAreaView
+        style={styles.loader}
+      >
+        <ActivityIndicator
+          size="large"
           color={Colours.primary}
         />
+      </SafeAreaView>
+    );
+  }
 
-        <Text
-          style={styles.mapPlaceholderText}
-        >
-          Interactive Map
-        </Text>
-
-        <Text
-          style={styles.mapPlaceholderSubtext}
-        >
-          React Native Maps integration
-          coming next.
-        </Text>
-      </View>
-
-      {/* Nearby Venues */}
-
-      <Text style={styles.sectionTitle}>
-        Nearby Facilities
-      </Text>
-
-      <FlatList
-        data={filteredVenues}
-        keyExtractor={(item) =>
-          item.id
-        }
-        showsVerticalScrollIndicator={
-          false
-        }
-        renderItem={({ item }) => (
-          <View
-            style={styles.venueCard}
-          >
-            <Ionicons
-              name="medical"
-              size={24}
-              color={
-                Colours.primary
-              }
-            />
-
-            <View
-              style={
-                styles.venueInfo
-              }
-            >
-              <Text
-                style={
-                  styles.venueName
-                }
-              >
-                {item.name}
-              </Text>
-
-              <Text
-                style={
-                  styles.venueMeta
-                }
-              >
-                {item.category} •{" "}
-                {item.distance}
-              </Text>
-            </View>
-          </View>
-        )}
+  return (
+    <SafeAreaView
+      style={styles.container}
+    >
+      <StatusBar
+        barStyle="dark-content"
       />
 
-      {/* Report Button */}
-
-      <TouchableOpacity
-        style={styles.reportButton}
+      <MapView
+        style={
+          StyleSheet.absoluteFill
+        }
+        initialRegion={
+          INITIAL_REGION
+        }
+        showsUserLocation
       >
-        <Ionicons
-          name="warning"
-          size={22}
-          color="#FFFFFF"
+
+              {filteredVenues.map((venue) => (
+          <VenueMarker
+    key={venue.venue_id}
+
+    venue={venue}
+
+    showLiveStatus={
+        autoCurrentTime
+    }
+
+    onPress={() => setSelectedVenueId(venue.venue_id)}
+/>
+        ))}
+
+        {reports.map((report) => (
+          <ReportMarker
+            key={report.report_id}
+            report={report}
+          />
+        ))}
+
+      </MapView>
+
+      {/* ---------------------- Top Overlay ---------------------- */}
+
+      <View style={styles.topOverlay}>
+
+        <MapSearchBar
+          value={search}
+          onChangeText={setSearch}
+          onFilterPress={() =>
+            setFilterVisible(true)
+          }
         />
-      </TouchableOpacity>
 
-      {/* SOS Button */}
+        <CategoryChips
+          selected={category}
+          onSelect={setCategory}
+        />
 
-      <TouchableOpacity
-        style={styles.sosButton}
-        onPress={() =>
+      </View>
+
+      {/* ---------------------- Floating Buttons ---------------------- */}
+
+      <FloatingActionButtons
+        onSOSPress={() =>
           router.push("/sos")
         }
-      >
-        <Text style={styles.sosText}>
-          SOS
-        </Text>
-      </TouchableOpacity>
+        onReportPress={() =>
+          setReportVisible(true)
+        }
+      />
+
+      {/* ---------------------- Filters ---------------------- */}
+
+      <FilterModal
+  visible={filterVisible}
+
+  openNow={openNow}
+
+  accessible={accessible}
+
+  language={language}
+
+  autoCurrentTime={autoCurrentTime}
+
+  onClose={() =>
+    setFilterVisible(false)
+  }
+
+  onApply={(filters) => {
+
+    setOpenNow(filters.openNow);
+
+    setAccessible(filters.accessible);
+
+    setLanguage(filters.language);
+
+    setAutoCurrentTime(
+      filters.autoCurrentTime
+    );
+
+    setLiveStatus(
+      filters.liveStatus
+    );
+
+  }}
+/>
+
+      {/* ---------------------- Report Modal ---------------------- */}
+
+      <ReportModal
+  visible={reportVisible}
+  onClose={() => setReportVisible(false)}
+
+  // TEMP VALUES
+  isAuthenticated={true}
+  locationEnabled={true}
+
+  currentLocation={{
+    latitude: 53.3498,
+    longitude: -6.2603,
+  }}
+
+  nearbyVenues={venues}
+
+  onRequireLogin={() => {
+    console.log("Navigate to login");
+  }}
+
+  onRequireLocation={() => {
+    console.log("Open location settings");
+  }}
+
+  onSubmitVenue={(report) => {
+  setVenues(current =>
+    current.map(venue => {
+      if (venue.venue_id !== report.venueId) {
+        return venue;
+      }
+
+      return {
+        ...venue,
+
+        active_warning: true,
+
+        live_report_count:
+          (venue.live_report_count ?? 0) + 1,
+      };
+    })
+  );
+
+  setReportVisible(false);
+}}
+
+  onSubmitIncident={(report) => {
+
+  const incident: Report = {
+
+    report_id: `local-${Date.now()}`,
+
+    venue_id: undefined,
+    venue_name: undefined,
+    venue_category: undefined,
+
+    issue_type: report.issueType,
+
+    latitude: report.latitude,
+    longitude: report.longitude,
+
+    accuracy_m: 5,
+
+    anonymous: true,
+
+    description: report.description,
+
+    photos: [],
+
+    status: "active",
+
+    created_at: report.timestamp,
+
+    expires_at: new Date(
+      Date.now() + 60 * 60 * 1000
+    ).toISOString(),
+
+    expires_in_minutes: 60,
+
+    confirmations: {
+      count: 0,
+      latest_action: "",
+      latest_action_at: report.timestamp,
+    },
+
+    badge_text: "New Report (local)",
+  };
+
+  setReports(current => [
+    incident,
+    ...current,
+  ]);
+
+  setReportVisible(false);
+}}
+/>
+
+      {/* ---------------------- Venue Sheet ---------------------- */}
+
+      <VenueBottomSheet
+        visible={venueVisible}
+        venue={selectedVenue}
+        autoCurrentTime={autoCurrentTime}
+        onClose={() =>
+          setVenueVisible(false)
+        }
+      />
+
     </SafeAreaView>
   );
+
 }
 
 const styles = StyleSheet.create({
+
   container: {
+
     flex: 1,
+
     backgroundColor:
       Colours.background,
-    padding: 20,
+
   },
 
-  header: {
-    flexDirection: "row",
-    justifyContent:
-      "space-between",
-    alignItems: "center",
-    marginBottom: 16,
-  },
+  loader: {
 
-  title: {
-    ...Typography.h1,
-  },
-
-  searchContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor:
-      Colours.surface,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: Colours.border,
-    paddingHorizontal: 14,
-    marginBottom: 16,
-  },
-
-  searchInput: {
     flex: 1,
-    height: 50,
-    marginLeft: 10,
-    color: Colours.text,
-  },
 
-  chipsRow: {
-    flexDirection: "row",
-    marginBottom: 20,
-  },
-
-  chip: {
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    borderRadius: 999,
-    backgroundColor:
-      Colours.surface,
-    marginRight: 8,
-  },
-
-  selectedChip: {
-    backgroundColor:
-      Colours.primary,
-  },
-
-  chipText: {
-    color: Colours.text,
-  },
-
-  selectedChipText: {
-    color: "#FFFFFF",
-    fontWeight: "700",
-  },
-
-  mapPlaceholder: {
-    height: 220,
-    borderRadius: 20,
-    backgroundColor:
-      Colours.surface,
-    borderWidth: 1,
-    borderColor: Colours.border,
     justifyContent: "center",
+
     alignItems: "center",
-    marginBottom: 20,
-  },
 
-  mapPlaceholderText: {
-    ...Typography.h3,
-    marginTop: 10,
-  },
-
-  mapPlaceholderSubtext: {
-    color: Colours.muted,
-    marginTop: 4,
-  },
-
-  sectionTitle: {
-    ...Typography.body,
-    fontWeight: "700",
-    marginBottom: 12,
-  },
-
-  venueCard: {
-    flexDirection: "row",
-    alignItems: "center",
     backgroundColor:
-      Colours.surface,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: Colours.border,
-    padding: 16,
-    marginBottom: 10,
+      Colours.background,
+
   },
 
-  venueInfo: {
-    marginLeft: 12,
-  },
+  topOverlay: {
 
-  venueName: {
-    fontWeight: "700",
-    color: Colours.text,
-  },
-
-  venueMeta: {
-    color: Colours.muted,
-    marginTop: 2,
-  },
-
-  reportButton: {
     position: "absolute",
-    right: 24,
-    bottom: 110,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: "#F59E0B",
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 5,
+
+    top: 60,
+
+    left: 20,
+
+    right: 20,
+
   },
 
-  sosButton: {
-    position: "absolute",
-    right: 24,
-    bottom: 36,
-    width: 72,
-    height: 72,
-    borderRadius: 36,
-    backgroundColor: "#DC2626",
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 5,
-  },
-
-  sosText: {
-    color: "#FFFFFF",
-    fontWeight: "800",
-    fontSize: 18,
-  },
 });

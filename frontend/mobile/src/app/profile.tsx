@@ -106,23 +106,6 @@ useEffect(() => {
           </Text>
         </View>
 
-        {/* QR Banner */}
-
-        <TouchableOpacity
-          style={styles.qrBanner}
-          onPress={handleScanQR}
-        >
-          <Ionicons
-            name="qr-code-outline"
-            size={20}
-            color="#FFFFFF"
-          />
-
-          <Text style={styles.qrBannerText}>
-  {t("profile.scanQr")}
-</Text>
-        </TouchableOpacity>
-
         {/* Sync Status */}
 
         <View style={styles.syncCard}>
