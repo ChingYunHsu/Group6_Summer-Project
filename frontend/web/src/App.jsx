@@ -15,7 +15,6 @@ import Settings from "./pages/Settings";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [userLocation, setUserLocation] = useState(null);
   
 
   return (
@@ -36,7 +35,7 @@ function App() {
         </header>
 
         <Routes>
-          <Route path="/" element={<Login setUser={setUser} setUserLocation={setUserLocation} />} />
+          <Route path="/" element={<Login setUser={setUser} />} />
           <Route path="/map" element={<LiveHelpMap />} />
           <Route path="/insights" element={<InsightsDashboard />} />
           <Route path="/about" element={<About />} />
