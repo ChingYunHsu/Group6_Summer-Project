@@ -1,0 +1,382 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e54a3f730c6ea63d79b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/G9o22PjDVD4PpcbZUUJ4kw/6a3d3e54a3f730c6ea63d79b.json",
+    "created_at": "2026-06-25 14:42:28 UTC",
+    "processed_at": "2026-06-25 14:42:28 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f6279469115f:0x2c8118be81d03699!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/G9o22PjDVD4PpcbZUUJ4kw/6a3d3e54a3f730c6ea63d79b.html",
+    "prettify_html_file": "https://serpapi.com/searches/G9o22PjDVD4PpcbZUUJ4kw/6a3d3e54a3f730c6ea63d79b.prettify",
+    "total_time_taken": 0.54
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJXxFplCf2wokRmTbQgb4YgSw",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Zen Dentistry - Upper West Side",
+    "place_id": "ChIJXxFplCf2wokRmTbQgb4YgSw",
+    "data_id": "0x89c2f6279469115f:0x2c8118be81d03699",
+    "data_cid": "3206871616165263001",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6279469115f%3A0x2c8118be81d03699&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6279469115f%3A0x2c8118be81d03699&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7934878,
+      "longitude": -73.96965469999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJXxFplCf2wokRmTbQgb4YgSw",
+    "provider_id": "/g/1tfczrj_",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFq2wAKVZ8YJ-uISTZQN6oNT8hxhRNPh7kBV3fJCMfVvf0BxEQJlWw4JJcoeTAGHBg6NaryShMBP5x5Y5zGBLo12YRnQf_99pPsx1HTbd-A5EDCgET6CBQPHmSFaeRDUH6y55JZs47PkuI2=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/kNO8knicHcTNboIwAADgJ6r8aFGX7NAiit1sWuhY4GJcV9oEpMzCQF9y573Nkn2H7_fHDEPvnjyvNcuFtla3anTqJm03qG5YSHv1dO-AdMB5iFHeoP1XOKGXotqUBIzHXFScRpaKjZlNRplZN7hY1iQ-1cV37eM54aR9n1aESKsEOqRYR_Ryu-fmhBmcYQkfB_xqg7DMOl6ft9ueuTlIxccnQDDZxToRUYw5S6_5_qKy3Vsa3SEklVutWTMew-cp8H0fmP8l6P4A7JNE0g",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 11
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 3
+      },
+      {
+        "stars": 4,
+        "amount": 15
+      },
+      {
+        "stars": 5,
+        "amount": 423
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 454,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist"
+    ],
+    "book_online": "https://book.modento.io/zen-96th/g/google-schedule-link?rwg_token=AE37R_ie93t8WfV1E-7y_WJpXKJTVvb8h753KSGG89O-hsvd1hkU57fjlex6GEocKAAMMhVUtXUSJ_8oz0LWQ1nYadMLni06YA%3D%3D",
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "164 W 96th St, New York, NY 10025",
+    "country": "United States",
+    "website": "https://zendentistryupperwestside.com/",
+    "phone": "(212) 749-0600",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q2VJ+94 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "Closed"
+      },
+      {
+        "saturday": "9 AM\u20133 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      },
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFq2wAKVZ8YJ-uISTZQN6oNT8hxhRNPh7kBV3fJCMfVvf0BxEQJlWw4JJcoeTAGHBg6NaryShMBP5x5Y5zGBLo12YRnQf_99pPsx1HTbd-A5EDCgET6CBQPHmSFaeRDUH6y55JZs47PkuI2=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/kNO8knicHcTNboIwAADgJ6r8aFGX7NAiit1sWuhY4GJcV9oEpMzCQF9y573Nkn2H7_fHDEPvnjyvNcuFtla3anTqJm03qG5YSHv1dO-AdMB5iFHeoP1XOKGXotqUBIzHXFScRpaKjZlNRplZN7hY1iQ-1cV37eM54aR9n1aESKsEOqRYR_Ryu-fmhBmcYQkfB_xqg7DMOl6ft9ueuTlIxccnQDDZxToRUYw5S6_5_qKy3Vsa3SEklVutWTMew-cp8H0fmP8l6P4A7JNE0g"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtOdgtK36IYx0FY555zFrwsoGRc-WpE4jPeyFVpAEIRiWw3w5e3BhhVMSVFhmeKKjUNbiG2mzGN3ashlYRaqHQBNk9_7g6saEy51zR5srHWLrI1MOBkDjECmeACAnB4QEnU0UQEZWyi8sl=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/zgN14XicHcTbToMwGADgJ-oodp2HxAuYLSM4NjBA8MZgbVpOLfLXILyk176Nid_F9_ujnZvgwfMGTXbKWjXIL5CzsMZJ43bCjp6aAAlA4AXXNOsD7i4fyiXkENffmNeU0o3PC9goF6ia2L67ypWXU8DivK0WslBJQq3L80vJ9SiTpCvS9za6GbcoJQ3ooc6bz1MWpv392606QMNW6m85hflUPc-xf76E_VPHjqMMjoEJ9xkzBS4y9lqt7R0Mj4uPMUb6f4HMH3buRrs"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=RislkGRnH13JWq6NwD__Ig&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=199.45511&pitch=-88.81173&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/J_DvuXicHc1LDsIgFADA27ArLf0oNSFuTPwsXHTjkiAifZECypPqlbyRtzFxLjDfz4gY06osEz6MwQxmjvAyLhVRURuCdUZFSFSHqcysxPE5nb0Ct47KB7iIAZK7bQe_Y83hdF8c542Ue0v0WWoHxqOYVEwyZYpKIzhDbUxkFnXdklHUPSdvNQvW97TtOsZIBNSjKDinnLFlQ_7fNWTBquoHwqc7yQ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Quick and smooth wait time was minimal and service was great staff is A+\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXI8Mue1HRaD5-SENgcjkJHTbJ3rNpu9dTkcUhTan2VfJrewuD81g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"When my current dentist opened the tooth it smelled like rotten eggs.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWEzSC_E-mPCI3F9SpCcKupEhK1zu9srCVsBgQo9JlpZAHHeEzJ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Dr. Liu did my and my husband\u2019s cleaning and gave me a filling.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUkYm_Ewe7wD_lPibTIxsdORj50tAwvqD8_hYkwc6HPGACQMu-S=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "myriam braunschvig",
+          "rating": 5,
+          "contributor_id": "116217002080698822586",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLd_-8ZKi-htoEtYpLV-Bz1ejS8qtk-ItoQBjy6XxCHkumn4g=s120-c-rp-mo-br100",
+          "description": "Best experience ever.\nThe office is welcoming clean and with a pleasant layout making you feel comfortable .The  staff is helpful and friendly, no wait time.\nDr Weismann is a really special person. He takes his time to explain everything  and his deep cleaning was absolutely painless. He is truly dedicated to his work and I highly recommend him. You will be in good hands.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Bd1RHTlRSamRqTmxKbFpEUXliVEpxYlc0NE9IYxAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOnAwTGNTRjdjNlJlZDQybTJqbW44OHc%7C%7C?hl=en",
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-27T15:37:04+00:00"
+        },
+        {
+          "username": "Taryn Judah",
+          "rating": 5,
+          "contributor_id": "100142790170281592082",
+          "user_review_count": 8,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIYZgY09HOORzCC3dHGpxWKDoJPmzvlFQk9Utz7R625gruZWA=s120-c-rp-mo-br100",
+          "description": "Very kind people. It\u2019s been 5 years since I saw the dentist. They made me feel calm and were SUPER upfront about pricing. They were ready to help me through X-rays if I had any pain at all. It was altogether a great experience. Coming back to have my cavities done too!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t4eVZXWllTVTExY1RaNVQyTk5lWGhOZFVaeFRHYxAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOkxyVWZYSU11cTZ5T2NNeXhNdUZxTGc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-31T16:31:32+00:00"
+        },
+        {
+          "username": "Trinity Rickmers",
+          "rating": 5,
+          "contributor_id": "109806333420470924937",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUbX2R_BsWt7NOE4fet2PzGbtP2yhzJ98J7_1XC2Z2xhn7NecJG=s120-c-rp-mo-br100",
+          "description": "Hadn\u2019t been to the dentist in a few years and was very anxious to go back. The staff made it super easy and the session went by so fast! Great amenities and free teeth whitening is such an awesome service! Totally recommend upper west side Zendentistry!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pNdFJISkpOVGRCTTBONloyNHlZa1puV1RWRVZHYxAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOjMtRHJJNTdBM0N6Z24yYkZnWTVEVGc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-04T22:45:15+00:00"
+        },
+        {
+          "username": "SkyHighDomo (Domo)",
+          "rating": 5,
+          "contributor_id": "112207093649848973348",
+          "user_review_count": 5,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWqONxduLw3G6a8CtHtceR8xH1q-flofJOycH4dwBeZ5qQi34ckUg=s120-c-rp-mo-br100",
+          "description": "Zendentisrty service is top notch! they made sure you walked out feeling confident, clean and comfortable with the service. The doctor makes you comfortable with asking any questions you have about your teeth!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkRFdsTkVUSEJxVFVoM2FHRkpWblJLUlcxelNFRRAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOldDWlNETHBqTUh3aGFJVnRKRW1zSEE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1xWy45ZW_R6og7umiO-pm0YjX_20WHYpSGMRVHEexPJXvea31bzysiDoimRk6dEAqTNKuKj0VFCRE-WWE_sFOAkIbm9n8EfTyo_MhtyXMYOghG_rtmiCRk5UqiTfVJUlTn0-Gpf_ma37k=k-no"
+            }
+          ],
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-06T20:58:09+00:00"
+        },
+        {
+          "username": "Esther Rodriguez",
+          "rating": 5,
+          "contributor_id": "100771660507425525798",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWLsZ2_nN-HhLFe3vTEKTPd0md01GeCC327IByiDRSqlp9jnivtag=s120-c-rp-mo-br100",
+          "description": "The minute I entered the establishment, I was immediately greeted and attended (I did have an appointment). I was aware and informed of the action plan for my cleaning process - whether it were to wait for a moment until my name was called to explaining the steps of what will be done during my session.\n\nThe staff members are knowledgeable and kind, my particular dentist, Dr. Kim took their time to go over every one of my questions/concerns in depth. It was a smooth experience. I think I\u2019ve found my dentist!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pOc2IwcFdiVXhEZUZkM1VuWmZUWFV0TkdOMmFsRRAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOjNsb0pWbUxDeFd3UnZfTXUtNGN2alE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-29T16:17:17+00:00"
+        },
+        {
+          "username": "Jaiquan Winters",
+          "rating": 5,
+          "contributor_id": "104098007545179267218",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX6XdzMqNelLxf2wtwg0YUPTvggspRKEyEm5utF19wxdNOeCpyo=s120-c-rp-mo-br100",
+          "description": "I came to Zen Dentistry today for a service and was nothing short of impressed. Other than the amazing ambience and staff who were very welcoming. The dentist Dr. Kim was very informative. He made sure I understood what was causing said issues with my teeth and gums while performing a cleaning. I\u2019m looking forward to making Zen Dentistry my primary go to for any dental work and would most definitely recommend to family & friends alike.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toclRUZDBaVzlYUjE5clNFazVhVlZpVWw5ZlNWRRAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOkhrTTd0ZW9XR19rSEk5aVViUl9fSVE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-02T19:35:33+00:00"
+        },
+        {
+          "username": "M Serrantes",
+          "rating": 5,
+          "contributor_id": "114723001642616167552",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIKBrCk0uTY_YRRdJH1wnJ2eUyN6e5UVDnZeLf-phkfOJ-haHA=s120-c-rp-mo-br100",
+          "description": "The dental appointment as a new patient was notably pleasant. Jessica at the front desk demonstrated exceptional courtesy and warm hospitality. Dr. KIM and his assistant exhibited a high degree of professionalism. The procedure was conducted with minimal discomfort (as normally expected with all dentists). Strict adherence to aseptic and sterile techniques was maintained. I highly recommend Zen Dentistry in UWS Manhattan.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xOMFdVdHVlWE5QWDA1cGQyRk1UMVF3ZFdkbU1XYxAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOlN0WUtueXNPX05pd2FMT1QwdWdmMWc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-29T22:40:33+00:00"
+        },
+        {
+          "username": "Raquel B",
+          "rating": 5,
+          "contributor_id": "104248494370352644071",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLpaSCu37aWt7Y8AK1ddbf84Lj-cnrJqVnIbII0eEFwuYZK1A=s120-c-rp-mo-br100",
+          "description": "I think I found my regular dentist!! As soon as I walked inside, the energy was great. I was greeted warmly by Jessica. The lady who did my x rays was great. Dr. Lee & Dental assistant was amazing!! Dr. Lee explained every detail before during and after my procedure. No nonsense just handling business with care. I\u2019m grateful!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toTFVXRm9Wekl0TFVRd1JWRXhWR05KVXpKc1RXYxAB!2m1!1s0x0:0x2c8118be81d03699!3m1!1s2@1:CAIQACodChtycF9oOkhLUWFoVzItLUQwRVExVGNJUzJsTWc%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-07T17:03:34+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Shick Robert DDS",
+            "data_id": "0x0:0x4e06084984fc0c75",
+            "data_cid": "5622190296675388533",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4e06084984fc0c75&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4e06084984fc0c75&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7934878,
+              "longitude": -73.9696546
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4e06084984fc0c75%218m2%213d40.7934878%214d-73.9696546&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 5,
+            "thumbnail": "https://www.google.com/maps/vt/data=lH74Lih2MZQdu2PZ0DyJTrSc6gB6VLHZ86MyDoPOVMJicFT4Pl7XRC-Gb3eUk1aY17E8651F8g2Fec1tZdwHq36cJaz_Je15ACPr_mmfTVsW-WbUl7wgyGh5iJnFowocIBquDhvanR2NP0iEjNP-tYIItMU_00Qy",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Smiles on the Upper Westside",
+            "data_id": "0x0:0x179958269c4620ca",
+            "data_cid": "1700487257162916042",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x179958269c4620ca&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x179958269c4620ca&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7921817,
+              "longitude": -73.965509
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x179958269c4620ca%218m2%213d40.7921817%214d-73.965509&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 396,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFVCCzlvwO9jgvXAdmMuUgRsmtR-M_NoipHO1M5x-hbod0Vti3SBc576Hdl_aXbPjU2Zrr-_GEP3dBkMhr8ABs8AyRDlG4mCFPbjSJjY_oWTh-3CjpU4DF_W2928lVTLnrLYTrbSZJACKOD=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Periodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Central Park West Dental Studio\ud83e\uddb7",
+            "data_id": "0x0:0x53cd40095d13b633",
+            "data_cid": "6038553084334159411",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53cd40095d13b633&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x53cd40095d13b633&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790753699999996,
+              "longitude": -73.9655587
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x53cd40095d13b633%218m2%213d40.790753699999996%214d-73.9655587&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 238,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGfI--hxPdr7mL_fYRXqg8jniKvXCqgT0bsLUE98TEvNAjJzf3GhNQEUlh-ZqIc1Ez9Vr7LiJCTFKgpkw1_XMAZZi7_k0nCnc-x9QgZ8KL7Oufnet3TljYA7_VqBWG1V3r81aadppuQSO4=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Dental clinic",
+              "Emergency dental service"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Richard Goldstein DDS",
+            "data_id": "0x0:0xc6fb1585601a0c21",
+            "data_cid": "14338077501251259425",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc6fb1585601a0c21&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc6fb1585601a0c21&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7923943,
+              "longitude": -73.96585759999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc6fb1585601a0c21%218m2%213d40.7923943%214d-73.96585759999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 12,
+            "thumbnail": "https://www.google.com/maps/vt/data=X7R_CDY6K7sDw3URaVzVjwToqE2WBCaz3cCe1GdkWsczIOgnrN0umoX997jpqMBoe18nqdBH2erCAsN2WTH6kx-8glh3q16YL3ayVHo7hWB1YHUtwh9nOGyDTKwk0ru3nUnKQ99jm6eiExx_630mjIWk1F263ZMh",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Emergency dental service"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Upper West Side Dental",
+            "data_id": "0x0:0x4a49e9308f8b94d",
+            "data_cid": "334566626680158541",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a49e9308f8b94d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a49e9308f8b94d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8011128,
+              "longitude": -73.9617208
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4a49e9308f8b94d%218m2%213d40.8011128%214d-73.9617208&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 266,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHFaBHaoFZrYYNjDUInYQEOl5xX9llZwCdt3fgU9dEKeee9OL2SlPDjjhxImR3tT_66v_oOXM1QthiVz60S6mQBQK8BUcjYtU-DQj0my_spV3ADXNZJ1NzcHV0SEMDmTW0mI7P7=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dentist",
+              "Emergency dental service",
+              "Teeth whitening service"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjIKMCIsWmVuIERlbnRpc3RyeSAtIFVwcGVyIFdlc3QgU2lkZSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjIKMCIsWmVuIERlbnRpc3RyeSAtIFVwcGVyIFdlc3QgU2lkZSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

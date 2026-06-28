@@ -1,0 +1,377 @@
+{
+  "search_metadata": {
+    "id": "6a3d3f07271332b8a25d89df",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/N6Dto9DI0il8PAdyC2fvbA/6a3d3f07271332b8a25d89df.json",
+    "created_at": "2026-06-25 14:45:27 UTC",
+    "processed_at": "2026-06-25 14:45:27 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f72eb71417b7:0xf4e62114ccc0f906!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/N6Dto9DI0il8PAdyC2fvbA/6a3d3f07271332b8a25d89df.html",
+    "prettify_html_file": "https://serpapi.com/searches/N6Dto9DI0il8PAdyC2fvbA/6a3d3f07271332b8a25d89df.prettify",
+    "total_time_taken": 1.2
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJtxcUty73wokRBvnAzBQh5vQ",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Bliss Pharmacy",
+    "place_id": "ChIJtxcUty73wokRBvnAzBQh5vQ",
+    "data_id": "0x89c2f72eb71417b7:0xf4e62114ccc0f906",
+    "data_cid": "17646828563116128518",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f72eb71417b7%3A0xf4e62114ccc0f906&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f72eb71417b7%3A0xf4e62114ccc0f906&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.794008999999996,
+      "longitude": -73.9494332
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJtxcUty73wokRBvnAzBQh5vQ",
+    "provider_id": "/g/11h37svdj7",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF16L6OVN7jVaphvwdFJhbpdxTugAPI9oMmdE_noV9KZS1GAdWH0juVp0_pXZDyQmnO74bQ1ECwtWm32BWALSyIgkOuc4yQWnpH9gwqZnBPr9izWmBRhKoiflE0brhJTjk_yNYS4ISLEoA-=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/qNB3n3icHcTbboIwAADQL6qUSTQs2UNxqCjjMgzdeCFSWCvQi7TI8Cf37N-Y7Dycxx8zRulXy-rZckGlpH0z6mYgUphGmAWR3KJKA6KBtlASpR3a2qtwFefRus3Pit2mentglap_TyNFSeDKD177pZC5eywye4dqvIftmCtYqq_ifU65iNdOldr-ZjKYL188jMJsDmgXj8SZUyzU3qXTtRBeMriXO-beJzvKy0_vw2pgh1PblXP0nTlBFvoSgbfJhhAC9j8B4gnHcEf4",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 2
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 123
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 128,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Delivery",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "delivery": true
+    },
+    "address": "1590 Madison Ave, New York, NY 10029",
+    "country": "United States",
+    "phone": "(212) 427-4382",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q3V2+J6 New York",
+    "hours": [
+      {
+        "thursday": "10 AM\u20136 PM"
+      },
+      {
+        "friday": "10 AM\u20136 PM"
+      },
+      {
+        "saturday": "10 AM\u20134 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "10 AM\u20136 PM"
+      },
+      {
+        "tuesday": "10 AM\u20136 PM"
+      },
+      {
+        "wednesday": "10 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f72eb71417b7%3A0xf4e62114ccc0f906&engine=google_maps_posts",
+    "posts": [
+      {
+        "post_link": "https://search.google.com/local/posts?q=Bliss+Pharmacy&ludocid=17646828563116128518&lpsid=CIHM0ogKEJCcopH6992meg&source=sh/x/loc/post&lsig=AB86z5XsI6AHaddflWU-1YfDSrZA",
+        "description": "March 20th 2026 we will be open from 2:30-6:30pm for our holiday. Thank you!",
+        "date": "Mar 19, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF16L6OVN7jVaphvwdFJhbpdxTugAPI9oMmdE_noV9KZS1GAdWH0juVp0_pXZDyQmnO74bQ1ECwtWm32BWALSyIgkOuc4yQWnpH9gwqZnBPr9izWmBRhKoiflE0brhJTjk_yNYS4ISLEoA-=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/qNB3n3icHcTbboIwAADQL6qUSTQs2UNxqCjjMgzdeCFSWCvQi7TI8Cf37N-Y7Dycxx8zRulXy-rZckGlpH0z6mYgUphGmAWR3KJKA6KBtlASpR3a2qtwFefRus3Pit2mentglap_TyNFSeDKD177pZC5eywye4dqvIftmCtYqq_ifU65iNdOldr-ZjKYL188jMJsDmgXj8SZUyzU3qXTtRBeMriXO-beJzvKy0_vw2pgh1PblXP0nTlBFvoSgbfJhhAC9j8B4gnHcEf4"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=6naM36TtveuZnZHzAKwy7g&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=20.29762&pitch=-0.66214776&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/yNNUx3icHc0xDsIgFADQ27AVKDagJsS4mRg3py4NRQQSCkR-qfVKnsjbaBzf9D5vB5DLnpACD2OgerNk_zShNFlhm5INRmVfsE4TqS0BN09jVD4csorJ3ySP6rLhV6hm7mN_eh3Pyyos0uOggzcR5KRyGUrFoDT4YLDNBS2SsQ45yXZbtKqfKGY7wRnKHrSTDcWcs7YTgqN_eE9VtpR-ARuDPFA"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great service, Great customer service, take care of their customers like family.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVq9Ecl8TeyHbirTld-jBcLQqY9oNgD7KjOfSidpa_rfURK3JDvuw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"These guys have our doctors, nurses and therapists for 50 years!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJmWucGMpd4pGSEiLPeoYcP4qLuypZsJz9NYgZhg00-eNCDWg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Always a good experience and staff is always polite and helpful.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIbo9aopbdovqnil_XsFxWXXDrLLZ5qjgH4u31IsY2PJw6xSQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Antonio Dattner",
+          "rating": 5,
+          "contributor_id": "103081900691288363067",
+          "user_review_count": 56,
+          "user_photo_count": 73,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXJbQInBseE2tG4partcmioXOx-Y6a6thjfqAHRMYEB8pLbByWG=s120-c-rp-mo-ba12-br100",
+          "description": "I can\u2019t say enough good things about Bliss Pharmacy. My father has been coming here for more than a decade, and the staff has always been supportive and knowledgeable. Recently he hasn\u2019t been able to visit in person, and the team has been incredibly helpful in coordinating his medications and answering my questions\u2014while also asking about how he\u2019s doing.\n\nIt\u2019s rare to find a pharmacy that combines professionalism with care - Highly recommended.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OTFUwMUtlWEpoVGxOalVVaFZWM3BaYm14d2FYYxAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOmNLU01KeXJhTlNjUUhVV3pZbmxwaXc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-22T16:16:36+00:00"
+        },
+        {
+          "username": "Edward Brunicardi",
+          "rating": 5,
+          "contributor_id": "113311781880827918424",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWqHm55RA2Z8UjjOLu2NYBaN6v-764CvUojgkhnEpvdlNDgijHesw=s120-c-rp-mo-br100",
+          "description": "Best pharmacy experience I\u2019ve ever had. Ahsaan is incredibly knowledgeable, patient, and helpful. Would highly recommend that anyone going through the healthcare system for prescriptions to go to BLISS.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xOSlNUQmFkVVF3VUhBME9IUXdTMWRZYkhwclVWRRAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOlNJSTBadUQwUHA0OHQwS1dYbHprUVE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-02T17:22:27+00:00"
+        },
+        {
+          "username": "Marcia Welch",
+          "rating": 5,
+          "contributor_id": "114509144275763407036",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ3XMxuqxLafLZmjVEQILqolt8KnODpscEdoGae0CC-c4GX5A=s120-c-rp-mo-br100",
+          "description": "Best pharmacy been coming here for years. Never a problem. Highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xJMmVuQjNOSFZGT1dKSWVUbFpOV3Q0TVhZd1ZGRRAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOlI2enB3NHVFOWJIeTlZNWt4MXYwVFE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-09T20:48:52+00:00"
+        },
+        {
+          "username": "Chasity Younts",
+          "rating": 5,
+          "contributor_id": "117503916753628470311",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLzt0d4-vRu18HbrHUrPTWZ4npdJ5J6La7oCwrrGGVfLSPs8Q=s120-c-rp-mo-br100",
+          "description": "10/10. Clean facility, welcoming and quick! Will now use as my normal pharmacy. Didn\u2019t have my medicine in stock and was able to leave and go get it. Will never use another pharmacy. Great experience every time",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSb1JYWlBOM2t3T1haS05YbE5hRWQ2Ykc1b1prRRAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOlRoRXZPN3kwOXZKNXlNaEd6bG5oZkE%7C%7C?hl=en",
+          "date": "Edited 3 months ago",
+          "date_iso8601": "2026-03-20T21:42:38+00:00"
+        },
+        {
+          "username": "Elizabeth Guadalupe",
+          "rating": 5,
+          "contributor_id": "116179825830522816611",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL8W-Uc_tcYIFQMFCXelt0GRNF7A4anL7Aegdz4KWGqUFz3Gw=s120-c-rp-mo-br100",
+          "description": "Very  punctual and courteous and helpful with medication my mom and dad need. I'm so glad I get the blister Packages here.Very kind and considerate.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxb1NFRm5Yek5XTURGU09EYzBWVnBmUjBSU2MyYxAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOk1oSEFnXzNWMDFSODc0VVpfR0RSc2c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-15T16:58:33+00:00"
+        },
+        {
+          "username": "Raimarie Lopez",
+          "rating": 5,
+          "contributor_id": "113181548592500010769",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLdwQ-mEnfOmA8hAYYSbM9ybeHkMNnBuJhf4McTf-8J0oukyw=s120-c-rp-mo-br100",
+          "description": "Mohammed is the most amazing pharmacist EVER, for days I was having issues with my sons doctors sending the prescription for my son and he went above and beyond to assure my son received his prescription and at that it wasnt covered within his insurance so he found a way to get the medicine for my son that was covered within his insurance thank you so much you have no idea how much that meant to me you guys are truly amazing and a blessing! Make sure you come to them they\u2019ll always take care of you guys been going to them for more then ten years",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s5MVNFMWtOSHAzTUZKak9DMVFXUzFOVVdkdmRYYxAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOk91SE1kNHp3MFJjOC1QWS1NUWdvdXc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-12T17:32:47+00:00"
+        },
+        {
+          "username": "Llise",
+          "rating": 5,
+          "contributor_id": "103691220519828879220",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVoaVMhyKbP1r4oZcHDIK_PFpBocX2gUYIk6iC5ftFmwOFD9mkS=s120-c-rp-mo-br100",
+          "description": "Awesome service\u2014great staff\u2014helpful and caring unlike the big chain pharmacies.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xFM2VYQjRha2xIZUU1SE5rcFJMWHAwZGxSSFRVRRAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOlE3eXB4aklHeE5HNkpRLXp0dlRHTUE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-16T16:09:55+00:00"
+        },
+        {
+          "username": "eddie gardener",
+          "rating": 5,
+          "contributor_id": "101445837929474767094",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIlOW9VvPGRARckZ6J5RNBEnYfbdCf9AQU7tKl-M-nHgcjz1Q=s120-c-rp-mo-br100",
+          "description": "I\u2019ve chose this pharmacy for over 10+ years.\nReputable customer service and they have never let me down.\u263a\ufe0f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sU2JFaFpNbVI1UzNsNU0wMVZOa2RWVDNKTFYzYxAB!2m1!1s0x0:0xf4e62114ccc0f906!3m1!1s2@1:CAIQACodChtycF9oOnlSbEhZMmR5S3l5M01VNkdVT3JLV3c%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-20T20:03:25+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Upper Madison Drugs",
+            "data_id": "0x0:0x4b973255ca9887ce",
+            "data_cid": "5446877618380507086",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4b973255ca9887ce&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4b973255ca9887ce&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.793998099999996,
+              "longitude": -73.94950039999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4b973255ca9887ce%218m2%213d40.793998099999996%214d-73.94950039999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 5,
+            "thumbnail": "https://www.google.com/maps/vt/data=dC8Hww3xktUn9Z8PHkyyAiBrjEiHWRj-_2vlqoDPp3scVfTAh6-oH77IJee5r0h83TSi5AVmOk-1CI-WvyPpp_xBSO1xLoEUhM3vHR7ir3Qq6r3lrNY3bNVNs_xp_Kk-cyvJ89i6Ph5szUkRwrRr3-c9gdWsTldo",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Ror Madison Pharmacy",
+            "data_id": "0x0:0xbaae0459e81e79e8",
+            "data_cid": "13451693921195162088",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbaae0459e81e79e8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbaae0459e81e79e8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7958341,
+              "longitude": -73.94806400000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbaae0459e81e79e8%218m2%213d40.7958341%214d-73.94806400000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 23,
+            "thumbnail": "https://www.google.com/maps/vt/data=1mbaCBWUqMto0JpK5WVFFha6RDjgbuygCRIhuwF3AfE1eu2KtC8KD7PHIPY_wuPP_7DM3tBtpzMy_mxB8lIHr_x7jzG-9t4248uEK65cwvN1rDpEUOpWYCQymxOqn0rI43O4wyjW-2TpaKLcKWSt3sbnCBWgb9ff",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Drug Loft Pharmacy",
+            "data_id": "0x0:0x8a3fdeeed011ff01",
+            "data_cid": "9961926018041249537",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8a3fdeeed011ff01&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8a3fdeeed011ff01&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7883575,
+              "longitude": -73.95366369999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8a3fdeeed011ff01%218m2%213d40.7883575%214d-73.95366369999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 22,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGemJoU89jpQUYQ_AwFmZI3IY0KezgfTx52LoURpG9g8Xh7hXVqqBQu2emPpN6S7vVgGUBwphMURmh5pIA6yVO9-NvKNo_ubWDBL9v-NzHcd19bOzG3f5IqiR2Qdl0p5lpN2O94Cw=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Bliss Drugs Inc",
+            "data_id": "0x0:0x37d6839bee537958",
+            "data_cid": "4023548022843734360",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x37d6839bee537958&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x37d6839bee537958&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7433184,
+              "longitude": -73.9173876
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x37d6839bee537958%218m2%213d40.7433184%214d-73.9173876&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 249,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEJiXbqN-xTJ-2e48YK7sqai_bU8Yu-oW12LCBMb4KwfIFgd9NJ4IvMHps7hCg6tqs09P7XXsy0l50ubuF-UiCvBpKOBdJcBiFgEIA2KkUj1T5HXWpSsiYjr8iULMAZxsmVQzFe=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Madison Specialty Pharmacy, Inc.",
+            "data_id": "0x0:0x8e09a066b18e2ade",
+            "data_cid": "10234887991102155486",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8e09a066b18e2ade&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8e09a066b18e2ade&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7965257,
+              "longitude": -73.94703799999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8e09a066b18e2ade%218m2%213d40.7965257%214d-73.94703799999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 14,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHtT-hFQIWtdjHp7l7ORURgKToPocwS3A7Bqsyl3Rt-Sjw8Q6bdHEwy3PIMTuJCwm7HfZz5HyclUKoiQOGJlx_192KGRGB9QA7lGcdK6NaAFbRmQfn5l1IPbaOBbfo6WwxPuWdx=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiEKHyIbQmxpc3MgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiEKHyIbQmxpc3MgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

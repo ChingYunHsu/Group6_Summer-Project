@@ -1,0 +1,419 @@
+{
+  "search_metadata": {
+    "id": "6a3d3efb71b492f18d250eaf",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/WyuANSPWHG76qo7h5ZAuMg/6a3d3efb71b492f18d250eaf.json",
+    "created_at": "2026-06-25 14:45:15 UTC",
+    "processed_at": "2026-06-25 14:45:15 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259dbc4f54a29:0xf90dcf9b7db8b0d2!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/WyuANSPWHG76qo7h5ZAuMg/6a3d3efb71b492f18d250eaf.html",
+    "prettify_html_file": "https://serpapi.com/searches/WyuANSPWHG76qo7h5ZAuMg/6a3d3efb71b492f18d250eaf.prettify",
+    "total_time_taken": 0.38
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJKUr1xNtZwokR0rC4fZvPDfk",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Metropolitan Drugs",
+    "place_id": "ChIJKUr1xNtZwokR0rC4fZvPDfk",
+    "data_id": "0x89c259dbc4f54a29:0xf90dcf9b7db8b0d2",
+    "data_cid": "17946228356877430994",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259dbc4f54a29%3A0xf90dcf9b7db8b0d2&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259dbc4f54a29%3A0xf90dcf9b7db8b0d2&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7847716,
+      "longitude": -73.94707249999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJKUr1xNtZwokR0rC4fZvPDfk",
+    "provider_id": "/g/11fkn1x299",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Ht68d12MWcl8szd-H9xOqw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=309.76132&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/UD_rxnicHc1LDsIgFEDR3TArnzaprQlx2olx6NBQQCCh5Vmepboat-Vu_Ezu8Nz3yyNC3jOWcbEW12ALhM3GXIGiLiUXrYKQqU4TWwVDf5_GWYV4ADWnYOSAbWdEfTzr2OWnqYZ-O90K0eNFx2BnlNmqRXvqyldckqEOMimya4n_5aGKbHhPd61oagIBtZec_C_XtErB-QdkRTla",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 10
+      }
+    ],
+    "rating": 3.9,
+    "reviews": 15,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Delivery",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "delivery": true
+    },
+    "address": "1873 2nd Ave, New York, NY 10029",
+    "country": "United States",
+    "phone": "(212) 423-1110",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q3M3+W5 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      },
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Ht68d12MWcl8szd-H9xOqw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=309.76132&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/M9u1AnicHc1LDoIwEADQ23RnfxgEk8YtG-PSJSmlwiSFjnZs0eN4K29j4rvA-35mIkxHIRI9vKcMviBsPqQdWj7FOAVvERJ3cRFZCZqfy7BaCCe0a4TRdFQ3o9LnqwtNeo-7rt0u98Lc0LsAfiWzWEx9ypysIwieT5hYMVrv2Wx027CXLaaSLT_UqtIMgdxsJPs_t5iNkvIH3K058Q"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Ht68d12MWcl8szd-H9xOqw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=309.76132&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/M9u1AnicHc1LDoIwEADQ23RnfxgEk8YtG-PSJSmlwiSFjnZs0eN4K29j4rvA-35mIkxHIRI9vKcMviBsPqQdWj7FOAVvERJ3cRFZCZqfy7BaCCe0a4TRdFQ3o9LnqwtNeo-7rt0u98Lc0LsAfiWzWEx9ypysIwieT5hYMVrv2Wx027CXLaaSLT_UqtIMgdxsJPs_t5iNkvIH3K058Q"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "UPS Access Point location",
+          "data_id": "0x89c2597de848cadb:0x3cad737fb006f31a",
+          "data_cid": "4372277805497905946",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2597de848cadb%3A0x3cad737fb006f31a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2597de848cadb%3A0x3cad737fb006f31a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7847716,
+            "longitude": -73.94707249999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2597de848cadb%3A0x3cad737fb006f31a%218m2%213d40.7847716%214d-73.94707249999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJKUr1xNtZwokR0rC4fZvPDfk&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Shipping and mailing service",
+          "type_id": "shipping_and_mailing_service",
+          "address": "1873 2nd Ave, New York, NY 10029",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 6\u202fPM",
+          "hours": [
+            {
+              "thursday": "10\u202fAM\u20136\u202fPM"
+            },
+            {
+              "friday": "10\u202fAM\u20136\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "10\u202fAM\u20136\u202fPM"
+            },
+            {
+              "tuesday": "10\u202fAM\u20136\u202fPM"
+            },
+            {
+              "wednesday": "10\u202fAM\u20136\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEBkpnKsaQNUGcqExlnM1ON3ng8iTMGwhnfvZxzQqtJ5WrSdJ8LDBp7NZKXBZ2T0c-EhdkQoAZm1oMVRlAG9aEMNnyuHdQYXaRZdX56yS92p3OEC1QvqhUm7usiHnABffEKXDc-=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEBkpnKsaQNUGcqExlnM1ON3ng8iTMGwhnfvZxzQqtJ5WrSdJ8LDBp7NZKXBZ2T0c-EhdkQoAZm1oMVRlAG9aEMNnyuHdQYXaRZdX56yS92p3OEC1QvqhUm7usiHnABffEKXDc-=w86-h86-n-k-no"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Always has all meds and best staff and prices in town.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW3wgKRlw0ZDsPJRctuMvQCAEYIPR0T3eqNu4vCaiu9_Sn35qGnpQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I just left the store immediately ....very bad experience\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXsBSn8Bq7u4OB370et0C3ywG1Z1ha6w2Id_06jA90QB2dZO4J1cg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Their service is above and beyond\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWwqeAcPPo3-f8epCVwwLk3R2XmohgOFYDOYmY-QRK21Raedy4=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "N Ro",
+          "rating": 1,
+          "contributor_id": "108207797213494802434",
+          "user_review_count": 6,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKjoZgG6awjqYt6Zs4NweC4YeOtsQBJDqjuVo65YYzDfXl5cQ=s120-c-rp-mo-br100",
+          "description": "This is absolutely the worst mom and pop pharmacy that\u2019s supposed to serve the residents which is compromised of a many elderly in Upper East Side/East Harlem. I support small businesses because normally those that do survive the competition of Duane Reade or CVS do right by their community and provide exceptional customer service.\n\nThis pharmacy, Metropolitan Drugs will disappoint and fail at any opportunity to not deliver on even providing subpar level of customer service.\n\nYou get incompetence. In fact, that\u2019s exactly what they strive for every day, how to exhibit to highest and most best level of incompetence.\n\nMy husband spent the whole day trying to get ONE prescription transferred to a CVS because Metropolitan Drugs failed to let us know that they wouldn\u2019t have a frequently prescribed medication ELIQUIS until next week.\n\nNot only did they fail to inform us of the missing prescription, the most incompetent female pharmacy clerk could not transfer ONE prescription medication to CVS so that they can do the job and fill the medicine. Not only did she not do it, she went out of her bestest way to act like the communication was poor, saying things like \u201cI can\u2019t hear you, you\u2019re breaking up.\u201d You get an Oscar for the worst customer service moment delivered to an elderly resident in need.\n\nThank you for making it your priority to prioritize your incompetence instead of doing such a simple task - TRANSFER ONE ELIQUIS PRESCRIPTION to CVS.\n\nCVS wins again. After having to deal with more than one encounter like this, because YES of course this is not the FIRST time this pharmacy has failed us.\n\nMetropolitan Drugs just lost another customer because you royally found a way to be the worst mom and pop pharmacy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205bVlsRjVSWE00T0VsUU5VRjNVWHBSWm5KSk1sRRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CAIQACodChtycF9oOm9mYlF5RXM4OElQNUF3UXpRZnJJMlE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-11-28T20:55:19+00:00"
+        },
+        {
+          "username": "Jonathan Acevedo",
+          "rating": 1,
+          "contributor_id": "113853026637212851278",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIY6FxFxz28M3WZhI0FkNM3vnHIQjFD7MGVO20-vU4cVReYmA=s120-c-rp-mo-br100",
+          "description": "The pharmacist is disrespectful. I was just calling to see if they had an adhd medication in stock. My doctor told me to call around and ask to see if any pharmacies have the medication in stock because there is a national shortage. And I had to be prescribed another medication for the time being until my next appointment. Pharmacist starts getting nasty with me saying he cant tell me. That he has to speak to my doctor. I said sir I just called 10 other pharmacies and they told me they are out. He yelled I CANT TELL YOU THAT I NEED TO SPEAK TO A PRESCRIBER, WE DONT HAVE IT BYE. And hung up the phone on me. Very unprofessional! Smh",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSUFpGSmhlRGcyYkhkS1pXTjFiRWxEYVdNeVFWRRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CAIQACodChtycF9oOjRPZFJheDg2bHdKZWN1bElDaWMyQVE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-13T20:45:58+00:00"
+        },
+        {
+          "username": "Anik Dasgupta",
+          "rating": 5,
+          "contributor_id": "107786483429039446967",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXkdSMGeIvapJ07nmnhUGHgZUGdsmDWGu-tTt7RX171vK3CZM0=s120-c-rp-mo-br100",
+          "description": "Although Ive never walked in to the store, I usually just call in and get my prescription delivered. The lady on the phone is so sweet and just the nicest! One time the pharmacy didn\u2019t have my medicine, she looked for pharmacies nearby by herself and called me to let me know where to get them from. I don\u2019t expect such above and beyond kindness from anyone. I\u2019m glad to be a customer of this pharmacy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURQdzdMeDNnRRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CIHM0ogKEICAgIDPw7Lx3gE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-12-05T05:30:40+00:00"
+        },
+        {
+          "username": "Ina Robinson",
+          "rating": 1,
+          "contributor_id": "106279364432964276945",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLufeM4hZgprgyGulUOA-sbZd6x07Bf_hCs1iQcq_WbYvGNRA=s120-c-rp-mo-br100",
+          "description": "The second time I picked up my RX, they were 10 pills short, they were supposed to have the pills delivered- Never heard anything back and I forgot about them. Third time I picked up, I was 5 pills short. They never answer the phone- when I did get in touch with them, they are not able to help. Horrible Customer Services- Will NEVA use them again.  They are only getting one star b/c I have to rate.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURDb01UZmd3RRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CIHM0ogKEICAgIDCoMTfgwE%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2020-09-10T18:18:10+00:00"
+        },
+        {
+          "username": "Abdul Ahmed",
+          "rating": 1,
+          "contributor_id": "110714987035234943777",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXsBSn8Bq7u4OB370et0C3ywG1Z1ha6w2Id_06jA90QB2dZO4J1cg=s120-c-rp-mo-br100",
+          "description": "Very very rude . disrespectful . Unprofessional and uncourteous  drugstore.  I walked in the store and I was greeted with repulsive comment mingled with ATTITUDE  in the form of '  what do u want * with repulsive gestures .. I was upset and shocked . I just left the store immediately ....very bad experience",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURxcExfYzZRRRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CIHM0ogKEICAgIDqpL_c6QE%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2021-06-29T11:48:25+00:00"
+        },
+        {
+          "username": "Marshall Montalto",
+          "rating": 5,
+          "contributor_id": "108319146790378197961",
+          "user_review_count": 66,
+          "user_photo_count": 39,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW3wgKRlw0ZDsPJRctuMvQCAEYIPR0T3eqNu4vCaiu9_Sn35qGnpQ=s120-c-rp-mo-ba12-br100",
+          "description": "Amazing pharmacy. Always has all meds and best staff and prices in town. I recommend",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNkdjR2b3BRRRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CIHM0ogKEICAgICdv4vopQE%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-02-19T21:13:17+00:00"
+        },
+        {
+          "username": "Mona Maryam",
+          "rating": 5,
+          "contributor_id": "100672188144578622430",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXVu0TMA61x8_7cR702d595YSpz9iLKTqPcfBppHtcz5Wjf7zXCZw=s120-c-rp-mo-br100",
+          "description": "Came here to do a PCR Covid test. It was quick, free and received the result the next day. I recommend this place.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURhMm9LcTlBRRAB!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CIHM0ogKEICAgIDa2oKq9AE%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2021-08-19T12:05:39+00:00"
+        },
+        {
+          "username": "Norm Allen",
+          "rating": 4,
+          "contributor_id": "102355787499547082089",
+          "user_review_count": 16,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLi5WRCwWrx4lj0dRfwL0Dvw4WNcSevOfumKO15PudbcJ9txg=s120-c-rp-mo-ba12-br100",
+          "description": "It's a small store and the staff is friendly. \ud83d\udc4d\nUpdate...I still like this store...but opening up on time (10am) doesn't seem to be of importance.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURPN1kzeERBEAE!2m1!1s0x0:0xf90dcf9b7db8b0d2!3m1!1s2@1:CIHM0ogKEICAgIDO7Y3xDA%7C%7C?hl=en",
+          "date": "Edited 3 years ago",
+          "date_iso8601": "2023-05-16T13:21:02+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "92 Pharmacy",
+            "data_id": "0x0:0x3e972855b940e06e",
+            "data_cid": "4510117900480209006",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3e972855b940e06e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3e972855b940e06e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7866225,
+              "longitude": -73.9451426
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3e972855b940e06e%218m2%213d40.7866225%214d-73.9451426&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 31,
+            "thumbnail": "https://www.google.com/maps/vt/data=49bigM03pllT10UUfvoTfmi5Mc1xPVoDmdnQ-nmQNUYeBNz3xYebXYYW0bqOWo-oiKxNFeLQGCSDuQksAWZOmFJxRNNheMEJ9VXidpfoUnIFUpR2_as6hSzzr0PgyZYEwO5HE29LXGf2BCHmVhoR638rHp3JI7Xu",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Metro Drugs",
+            "data_id": "0x0:0xb526cd8355ffad5a",
+            "data_cid": "13053346533947190618",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb526cd8355ffad5a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb526cd8355ffad5a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7616346,
+              "longitude": -73.96431539999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb526cd8355ffad5a%218m2%213d40.7616346%214d-73.96431539999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 204,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEthR7ySaH-VTELiWm1iqQITBY3BFqvQX-ouVbbKLW9spp2vxUngPvPUiLbEpeoSsTCqt6Niehw0FZ7jhi-Xcoe_gkf2_lj_GzrjTN2MuSlwBx1DapFWWWnD8cVyXtkx_T8Q6J1592geqRA=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Drug Stop Pharmacy",
+            "data_id": "0x0:0x7e8e0faa2e66915e",
+            "data_cid": "9119243519069163870",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7e8e0faa2e66915e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7e8e0faa2e66915e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790355,
+              "longitude": -73.942278
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7e8e0faa2e66915e%218m2%213d40.790355%214d-73.942278&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 32,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFg2ehdiNp26FefLoL5pgKsQ3eF6E2_dJolRbS0gRn-2fIfe7oWuicNmiykOCoBK84MZgbiSXhAUW1OHhMLxOS9os4_dFQeNPkrR5dGf4mW40K-1zHSDf9rLUoQxEFPHAYtuk1ktzk_tMql=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Charlie Pharmacy",
+            "data_id": "0x0:0x6eba543ff02abf3c",
+            "data_cid": "7978782323429261116",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6eba543ff02abf3c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6eba543ff02abf3c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.789648,
+              "longitude": -73.942917
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6eba543ff02abf3c%218m2%213d40.789648%214d-73.942917&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 22,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHZZ74e-fHTzHpf1PgZWuX6fJtv_9DIfNKLmSW9wy30CLUhCDu_p0cx5m1ueF5C-aogczMei8t8PVPxWPCM2SgAw055xayDKDY10iaOSBUxHc0rFr9zrS_ZL8tlD77eNvxh3lra6w=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Second Ave Pharmacy Inc",
+            "data_id": "0x0:0x7c0ea23dd0ec4e75",
+            "data_cid": "8939260696758865525",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7c0ea23dd0ec4e75&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7c0ea23dd0ec4e75&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7965411,
+              "longitude": -73.938463
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7c0ea23dd0ec4e75%218m2%213d40.7965411%214d-73.938463&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 17,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJU6Q0T5WGwy8qtlZWQRugm5YqTB0SxMTuqjZOTyMIraqyg79t_JZou6t0BSA8WiA_Y72uzhrSzjb6aEFiLR1yh_msvfMwp_eC2GqJm0XViFM04QfRiHhTi_tjeGfjeDbhzskRwp_FpME=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiUKIyIfTWV0cm9wb2xpdGFuIERydWdzIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiUKIyIfTWV0cm9wb2xpdGFuIERydWdzIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

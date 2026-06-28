@@ -1,0 +1,181 @@
+scope,group_name,group_value,coverage_kind,source_or_combination,radius_m,venue_count,covered_count,coverage_rate,incremental_covered_count,marginal_gain_pp,nearest_distance_median,nearest_distance_p90
+overall,overall,_all,standalone,citibike,100,1086,465,0.428177,465,0.428177,112.58,187.66
+overall,overall,_all,standalone,citibike,200,1086,1009,0.929098,544,0.500921,112.58,187.66
+overall,overall,_all,standalone,citibike,300,1086,1079,0.993554,70,0.064457,112.58,187.66
+overall,overall,_all,standalone,citibike,400,1086,1080,0.994475,1,0.000921,112.58,187.66
+overall,overall,_all,standalone,citibike,500,1086,1085,0.999079,5,0.004604,112.58,187.66
+venue_type,venue_type,healthcare,standalone,citibike,100,1086,465,0.428177,465,0.428177,112.58,187.66
+venue_type,venue_type,healthcare,standalone,citibike,200,1086,1009,0.929098,544,0.500921,112.58,187.66
+venue_type,venue_type,healthcare,standalone,citibike,300,1086,1079,0.993554,70,0.064457,112.58,187.66
+venue_type,venue_type,healthcare,standalone,citibike,400,1086,1080,0.994475,1,0.000921,112.58,187.66
+venue_type,venue_type,healthcare,standalone,citibike,500,1086,1085,0.999079,5,0.004604,112.58,187.66
+district,district,downtown,standalone,citibike,100,429,215,0.501166,215,0.501166,99.78,165.29
+district,district,downtown,standalone,citibike,200,429,414,0.965035,199,0.463869,99.78,165.29
+district,district,downtown,standalone,citibike,300,429,429,1.0,15,0.034965,99.78,165.29
+district,district,downtown,standalone,citibike,400,429,429,1.0,0,0.0,99.78,165.29
+district,district,downtown,standalone,citibike,500,429,429,1.0,0,0.0,99.78,165.29
+district,district,midtown_east,standalone,citibike,100,303,97,0.320132,97,0.320132,139.51,215.41
+district,district,midtown_east,standalone,citibike,200,303,255,0.841584,158,0.521452,139.51,215.41
+district,district,midtown_east,standalone,citibike,300,303,296,0.976898,41,0.135314,139.51,215.41
+district,district,midtown_east,standalone,citibike,400,303,297,0.980198,1,0.0033,139.51,215.41
+district,district,midtown_east,standalone,citibike,500,303,302,0.9967,5,0.016502,139.51,215.41
+district,district,midtown_west,standalone,citibike,100,168,79,0.470238,79,0.470238,104.24,175.02
+district,district,midtown_west,standalone,citibike,200,168,164,0.97619,85,0.505952,104.24,175.02
+district,district,midtown_west,standalone,citibike,300,168,168,1.0,4,0.02381,104.24,175.02
+district,district,midtown_west,standalone,citibike,400,168,168,1.0,0,0.0,104.24,175.02
+district,district,midtown_west,standalone,citibike,500,168,168,1.0,0,0.0,104.24,175.02
+district,district,uptown,standalone,citibike,100,186,74,0.397849,74,0.397849,119.38,180.41
+district,district,uptown,standalone,citibike,200,186,176,0.946237,102,0.548387,119.38,180.41
+district,district,uptown,standalone,citibike,300,186,186,1.0,10,0.053763,119.38,180.41
+district,district,uptown,standalone,citibike,400,186,186,1.0,0,0.0,119.38,180.41
+district,district,uptown,standalone,citibike,500,186,186,1.0,0,0.0,119.38,180.41
+overall,overall,_all,standalone,mta,100,1086,148,0.13628,148,0.13628,255.42,544.42
+overall,overall,_all,standalone,mta,200,1086,391,0.360037,243,0.223757,255.42,544.42
+overall,overall,_all,standalone,mta,300,1086,664,0.611418,273,0.251381,255.42,544.42
+overall,overall,_all,standalone,mta,400,1086,842,0.775322,178,0.163904,255.42,544.42
+overall,overall,_all,standalone,mta,500,1086,937,0.862799,95,0.087477,255.42,544.42
+venue_type,venue_type,healthcare,standalone,mta,100,1086,148,0.13628,148,0.13628,255.42,544.42
+venue_type,venue_type,healthcare,standalone,mta,200,1086,391,0.360037,243,0.223757,255.42,544.42
+venue_type,venue_type,healthcare,standalone,mta,300,1086,664,0.611418,273,0.251381,255.42,544.42
+venue_type,venue_type,healthcare,standalone,mta,400,1086,842,0.775322,178,0.163904,255.42,544.42
+venue_type,venue_type,healthcare,standalone,mta,500,1086,937,0.862799,95,0.087477,255.42,544.42
+district,district,downtown,standalone,mta,100,429,65,0.151515,65,0.151515,237.06,564.4
+district,district,downtown,standalone,mta,200,429,170,0.39627,105,0.244755,237.06,564.4
+district,district,downtown,standalone,mta,300,429,276,0.643357,106,0.247086,237.06,564.4
+district,district,downtown,standalone,mta,400,429,325,0.757576,49,0.114219,237.06,564.4
+district,district,downtown,standalone,mta,500,429,364,0.848485,39,0.090909,237.06,564.4
+district,district,midtown_east,standalone,mta,100,303,34,0.112211,34,0.112211,321.42,566.17
+district,district,midtown_east,standalone,mta,200,303,76,0.250825,42,0.138614,321.42,566.17
+district,district,midtown_east,standalone,mta,300,303,138,0.455446,62,0.20462,321.42,566.17
+district,district,midtown_east,standalone,mta,400,303,208,0.686469,70,0.231023,321.42,566.17
+district,district,midtown_east,standalone,mta,500,303,246,0.811881,38,0.125413,321.42,566.17
+district,district,midtown_west,standalone,mta,100,168,21,0.125,21,0.125,237.38,586.57
+district,district,midtown_west,standalone,mta,200,168,68,0.404762,47,0.279762,237.38,586.57
+district,district,midtown_west,standalone,mta,300,168,115,0.684524,47,0.279762,237.38,586.57
+district,district,midtown_west,standalone,mta,400,168,133,0.791667,18,0.107143,237.38,586.57
+district,district,midtown_west,standalone,mta,500,168,144,0.857143,11,0.065476,237.38,586.57
+district,district,uptown,standalone,mta,100,186,28,0.150538,28,0.150538,236.01,356.73
+district,district,uptown,standalone,mta,200,186,77,0.413978,49,0.263441,236.01,356.73
+district,district,uptown,standalone,mta,300,186,135,0.725806,58,0.311828,236.01,356.73
+district,district,uptown,standalone,mta,400,186,176,0.946237,41,0.22043,236.01,356.73
+district,district,uptown,standalone,mta,500,186,183,0.983871,7,0.037634,236.01,356.73
+overall,overall,_all,standalone,traffic,100,1086,18,0.016575,18,0.016575,1020.91,2055.35
+overall,overall,_all,standalone,traffic,200,1086,42,0.038674,24,0.022099,1020.91,2055.35
+overall,overall,_all,standalone,traffic,300,1086,88,0.081031,46,0.042357,1020.91,2055.35
+overall,overall,_all,standalone,traffic,400,1086,138,0.127072,50,0.046041,1020.91,2055.35
+overall,overall,_all,standalone,traffic,500,1086,192,0.176796,54,0.049724,1020.91,2055.35
+venue_type,venue_type,healthcare,standalone,traffic,100,1086,18,0.016575,18,0.016575,1020.91,2055.35
+venue_type,venue_type,healthcare,standalone,traffic,200,1086,42,0.038674,24,0.022099,1020.91,2055.35
+venue_type,venue_type,healthcare,standalone,traffic,300,1086,88,0.081031,46,0.042357,1020.91,2055.35
+venue_type,venue_type,healthcare,standalone,traffic,400,1086,138,0.127072,50,0.046041,1020.91,2055.35
+venue_type,venue_type,healthcare,standalone,traffic,500,1086,192,0.176796,54,0.049724,1020.91,2055.35
+district,district,downtown,standalone,traffic,100,429,3,0.006993,3,0.006993,1048.02,1856.57
+district,district,downtown,standalone,traffic,200,429,9,0.020979,6,0.013986,1048.02,1856.57
+district,district,downtown,standalone,traffic,300,429,19,0.044289,10,0.02331,1048.02,1856.57
+district,district,downtown,standalone,traffic,400,429,27,0.062937,8,0.018648,1048.02,1856.57
+district,district,downtown,standalone,traffic,500,429,40,0.09324,13,0.030303,1048.02,1856.57
+district,district,midtown_east,standalone,traffic,100,303,7,0.023102,7,0.023102,771.86,1399.42
+district,district,midtown_east,standalone,traffic,200,303,23,0.075908,16,0.052805,771.86,1399.42
+district,district,midtown_east,standalone,traffic,300,303,49,0.161716,26,0.085809,771.86,1399.42
+district,district,midtown_east,standalone,traffic,400,303,81,0.267327,32,0.105611,771.86,1399.42
+district,district,midtown_east,standalone,traffic,500,303,104,0.343234,23,0.075908,771.86,1399.42
+district,district,midtown_west,standalone,traffic,100,168,5,0.029762,5,0.029762,1077.4,2097.08
+district,district,midtown_west,standalone,traffic,200,168,6,0.035714,1,0.005952,1077.4,2097.08
+district,district,midtown_west,standalone,traffic,300,168,16,0.095238,10,0.059524,1077.4,2097.08
+district,district,midtown_west,standalone,traffic,400,168,22,0.130952,6,0.035714,1077.4,2097.08
+district,district,midtown_west,standalone,traffic,500,168,35,0.208333,13,0.077381,1077.4,2097.08
+district,district,uptown,standalone,traffic,100,186,3,0.016129,3,0.016129,1787.95,2929.66
+district,district,uptown,standalone,traffic,200,186,4,0.021505,1,0.005376,1787.95,2929.66
+district,district,uptown,standalone,traffic,300,186,4,0.021505,0,0.0,1787.95,2929.66
+district,district,uptown,standalone,traffic,400,186,8,0.043011,4,0.021505,1787.95,2929.66
+district,district,uptown,standalone,traffic,500,186,13,0.069892,5,0.026882,1787.95,2929.66
+overall,overall,_all,cumulative,citibike,100,1086,465,0.428177,465,0.428177,,
+overall,overall,_all,cumulative,citibike + mta,100,1086,543,0.5,78,0.071823,,
+overall,overall,_all,cumulative,citibike + mta + traffic,100,1086,548,0.504604,5,0.004604,,
+overall,overall,_all,cumulative,citibike,200,1086,1009,0.929098,1009,0.929098,,
+overall,overall,_all,cumulative,citibike + mta,200,1086,1027,0.945672,18,0.016575,,
+overall,overall,_all,cumulative,citibike + mta + traffic,200,1086,1029,0.947514,2,0.001842,,
+overall,overall,_all,cumulative,citibike,300,1086,1079,0.993554,1079,0.993554,,
+overall,overall,_all,cumulative,citibike + mta,300,1086,1079,0.993554,0,0.0,,
+overall,overall,_all,cumulative,citibike + mta + traffic,300,1086,1079,0.993554,0,0.0,,
+overall,overall,_all,cumulative,citibike,400,1086,1080,0.994475,1080,0.994475,,
+overall,overall,_all,cumulative,citibike + mta,400,1086,1081,0.995396,1,0.000921,,
+overall,overall,_all,cumulative,citibike + mta + traffic,400,1086,1081,0.995396,0,0.0,,
+overall,overall,_all,cumulative,citibike,500,1086,1085,0.999079,1085,0.999079,,
+overall,overall,_all,cumulative,citibike + mta,500,1086,1085,0.999079,0,0.0,,
+overall,overall,_all,cumulative,citibike + mta + traffic,500,1086,1085,0.999079,0,0.0,,
+venue_type,venue_type,healthcare,cumulative,citibike,100,1086,465,0.428177,465,0.428177,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta,100,1086,543,0.5,78,0.071823,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta + traffic,100,1086,548,0.504604,5,0.004604,,
+venue_type,venue_type,healthcare,cumulative,citibike,200,1086,1009,0.929098,1009,0.929098,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta,200,1086,1027,0.945672,18,0.016575,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta + traffic,200,1086,1029,0.947514,2,0.001842,,
+venue_type,venue_type,healthcare,cumulative,citibike,300,1086,1079,0.993554,1079,0.993554,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta,300,1086,1079,0.993554,0,0.0,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta + traffic,300,1086,1079,0.993554,0,0.0,,
+venue_type,venue_type,healthcare,cumulative,citibike,400,1086,1080,0.994475,1080,0.994475,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta,400,1086,1081,0.995396,1,0.000921,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta + traffic,400,1086,1081,0.995396,0,0.0,,
+venue_type,venue_type,healthcare,cumulative,citibike,500,1086,1085,0.999079,1085,0.999079,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta,500,1086,1085,0.999079,0,0.0,,
+venue_type,venue_type,healthcare,cumulative,citibike + mta + traffic,500,1086,1085,0.999079,0,0.0,,
+district,district,downtown,cumulative,citibike,100,429,215,0.501166,215,0.501166,,
+district,district,downtown,cumulative,citibike + mta,100,429,248,0.578089,33,0.076923,,
+district,district,downtown,cumulative,citibike + mta + traffic,100,429,249,0.58042,1,0.002331,,
+district,district,downtown,cumulative,citibike,200,429,414,0.965035,414,0.965035,,
+district,district,downtown,cumulative,citibike + mta,200,429,417,0.972028,3,0.006993,,
+district,district,downtown,cumulative,citibike + mta + traffic,200,429,417,0.972028,0,0.0,,
+district,district,downtown,cumulative,citibike,300,429,429,1.0,429,1.0,,
+district,district,downtown,cumulative,citibike + mta,300,429,429,1.0,0,0.0,,
+district,district,downtown,cumulative,citibike + mta + traffic,300,429,429,1.0,0,0.0,,
+district,district,downtown,cumulative,citibike,400,429,429,1.0,429,1.0,,
+district,district,downtown,cumulative,citibike + mta,400,429,429,1.0,0,0.0,,
+district,district,downtown,cumulative,citibike + mta + traffic,400,429,429,1.0,0,0.0,,
+district,district,downtown,cumulative,citibike,500,429,429,1.0,429,1.0,,
+district,district,downtown,cumulative,citibike + mta,500,429,429,1.0,0,0.0,,
+district,district,downtown,cumulative,citibike + mta + traffic,500,429,429,1.0,0,0.0,,
+district,district,midtown_east,cumulative,citibike,100,303,97,0.320132,97,0.320132,,
+district,district,midtown_east,cumulative,citibike + mta,100,303,118,0.389439,21,0.069307,,
+district,district,midtown_east,cumulative,citibike + mta + traffic,100,303,121,0.39934,3,0.009901,,
+district,district,midtown_east,cumulative,citibike,200,303,255,0.841584,255,0.841584,,
+district,district,midtown_east,cumulative,citibike + mta,200,303,265,0.874587,10,0.033003,,
+district,district,midtown_east,cumulative,citibike + mta + traffic,200,303,267,0.881188,2,0.006601,,
+district,district,midtown_east,cumulative,citibike,300,303,296,0.976898,296,0.976898,,
+district,district,midtown_east,cumulative,citibike + mta,300,303,296,0.976898,0,0.0,,
+district,district,midtown_east,cumulative,citibike + mta + traffic,300,303,296,0.976898,0,0.0,,
+district,district,midtown_east,cumulative,citibike,400,303,297,0.980198,297,0.980198,,
+district,district,midtown_east,cumulative,citibike + mta,400,303,298,0.983498,1,0.0033,,
+district,district,midtown_east,cumulative,citibike + mta + traffic,400,303,298,0.983498,0,0.0,,
+district,district,midtown_east,cumulative,citibike,500,303,302,0.9967,302,0.9967,,
+district,district,midtown_east,cumulative,citibike + mta,500,303,302,0.9967,0,0.0,,
+district,district,midtown_east,cumulative,citibike + mta + traffic,500,303,302,0.9967,0,0.0,,
+district,district,midtown_west,cumulative,citibike,100,168,79,0.470238,79,0.470238,,
+district,district,midtown_west,cumulative,citibike + mta,100,168,86,0.511905,7,0.041667,,
+district,district,midtown_west,cumulative,citibike + mta + traffic,100,168,87,0.517857,1,0.005952,,
+district,district,midtown_west,cumulative,citibike,200,168,164,0.97619,164,0.97619,,
+district,district,midtown_west,cumulative,citibike + mta,200,168,165,0.982143,1,0.005952,,
+district,district,midtown_west,cumulative,citibike + mta + traffic,200,168,165,0.982143,0,0.0,,
+district,district,midtown_west,cumulative,citibike,300,168,168,1.0,168,1.0,,
+district,district,midtown_west,cumulative,citibike + mta,300,168,168,1.0,0,0.0,,
+district,district,midtown_west,cumulative,citibike + mta + traffic,300,168,168,1.0,0,0.0,,
+district,district,midtown_west,cumulative,citibike,400,168,168,1.0,168,1.0,,
+district,district,midtown_west,cumulative,citibike + mta,400,168,168,1.0,0,0.0,,
+district,district,midtown_west,cumulative,citibike + mta + traffic,400,168,168,1.0,0,0.0,,
+district,district,midtown_west,cumulative,citibike,500,168,168,1.0,168,1.0,,
+district,district,midtown_west,cumulative,citibike + mta,500,168,168,1.0,0,0.0,,
+district,district,midtown_west,cumulative,citibike + mta + traffic,500,168,168,1.0,0,0.0,,
+district,district,uptown,cumulative,citibike,100,186,74,0.397849,74,0.397849,,
+district,district,uptown,cumulative,citibike + mta,100,186,91,0.489247,17,0.091398,,
+district,district,uptown,cumulative,citibike + mta + traffic,100,186,91,0.489247,0,0.0,,
+district,district,uptown,cumulative,citibike,200,186,176,0.946237,176,0.946237,,
+district,district,uptown,cumulative,citibike + mta,200,186,180,0.967742,4,0.021505,,
+district,district,uptown,cumulative,citibike + mta + traffic,200,186,180,0.967742,0,0.0,,
+district,district,uptown,cumulative,citibike,300,186,186,1.0,186,1.0,,
+district,district,uptown,cumulative,citibike + mta,300,186,186,1.0,0,0.0,,
+district,district,uptown,cumulative,citibike + mta + traffic,300,186,186,1.0,0,0.0,,
+district,district,uptown,cumulative,citibike,400,186,186,1.0,186,1.0,,
+district,district,uptown,cumulative,citibike + mta,400,186,186,1.0,0,0.0,,
+district,district,uptown,cumulative,citibike + mta + traffic,400,186,186,1.0,0,0.0,,
+district,district,uptown,cumulative,citibike,500,186,186,1.0,186,1.0,,
+district,district,uptown,cumulative,citibike + mta,500,186,186,1.0,0,0.0,,
+district,district,uptown,cumulative,citibike + mta + traffic,500,186,186,1.0,0,0.0,,

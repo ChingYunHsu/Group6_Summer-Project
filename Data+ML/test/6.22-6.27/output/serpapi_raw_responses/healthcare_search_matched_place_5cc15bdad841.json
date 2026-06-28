@@ -1,0 +1,433 @@
+{
+  "search_metadata": {
+    "id": "6a3d3f1f7223f4fa29d3997c",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/Nzv6m27HEWG9x4cyWMUtpQ/6a3d3f1f7223f4fa29d3997c.json",
+    "created_at": "2026-06-25 14:45:51 UTC",
+    "processed_at": "2026-06-25 14:45:51 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25960cddf86db:0xc7e3b726c28fec00!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/Nzv6m27HEWG9x4cyWMUtpQ/6a3d3f1f7223f4fa29d3997c.html",
+    "prettify_html_file": "https://serpapi.com/searches/Nzv6m27HEWG9x4cyWMUtpQ/6a3d3f1f7223f4fa29d3997c.prettify",
+    "total_time_taken": 0.41
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ24bfzWBZwokRAOyPwia348c",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Terra Dental",
+    "place_id": "ChIJ24bfzWBZwokRAOyPwia348c",
+    "data_id": "0x89c25960cddf86db:0xc7e3b726c28fec00",
+    "data_cid": "14403557410361830400",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25960cddf86db%3A0xc7e3b726c28fec00&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25960cddf86db%3A0xc7e3b726c28fec00&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.764613,
+      "longitude": -73.99027199999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ24bfzWBZwokRAOyPwia348c",
+    "provider_id": "/g/11vh_fcqvv",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVO7gR2DVjfWdCaJr-pfac5GA4XKyauot97wnATHmFgohoiqsEXn1McmAmv6PGqenn1ZB9pfxK2vEfBa7vjR0bhTFpW0hTSwG_1gEFd2QaG244iWNBcltBvC1ACJYPvZcqymnZXCIIQ3If=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/ioccvnicHcTNboIwAADgJ6q0iCMu2aEwYGjmwBFhXExXaaujP9ha5lPuvLdZsu_w_f4I54x9DIJRLBdcaz4ONztcqVZuUG5BtQy4sYBaYANc7eovnB3eYr4Pnw8X1p5SsrkCwwhdFTjqtndy024dzwo3LzLnWujzZLNOoVcqsfQPVTENSqE-WRv2vQ19xhIS-8sefoomNy0UzftcHBHP8lNYkyKMonO7S-joEp8inG4-Kt_T6S5V36VlWS9L9jQjCCEQ_1Og_gC0YkdM",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 0
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 0
+      },
+      {
+        "stars": 5,
+        "amount": 287
+      }
+    ],
+    "rating": 5,
+    "reviews": 288,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental clinic",
+      "Emergency dental service",
+      "Orthodontist",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_clinic",
+      "emergency_dental_service",
+      "orthodontist",
+      "teeth_whitening_service"
+    ],
+    "menu": {
+      "link": "https://www.terradental.nyc/services",
+      "source": "terradental.nyc"
+    },
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "438 W 51st St Ste 3B, New York, NY 10019",
+    "country": "United States",
+    "booking_link": "https://mychart.myoryx.com/patient/#/auth/onlineschedule?realm=terra&univers=com",
+    "website": "https://www.terradental.nyc/",
+    "phone": "(212) 937-1079",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "Q275+RV New York",
+    "hours": [
+      {
+        "thursday": "8:30 AM\u20135 PM"
+      },
+      {
+        "friday": "8:30 AM\u20135 PM"
+      },
+      {
+        "saturday": "8:30 AM\u20135 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8:30 AM\u20135 PM"
+      },
+      {
+        "tuesday": "Closed"
+      },
+      {
+        "wednesday": "8:30 AM\u20135 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 2 weeks ago",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVO7gR2DVjfWdCaJr-pfac5GA4XKyauot97wnATHmFgohoiqsEXn1McmAmv6PGqenn1ZB9pfxK2vEfBa7vjR0bhTFpW0hTSwG_1gEFd2QaG244iWNBcltBvC1ACJYPvZcqymnZXCIIQ3If=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ioccvnicHcTNboIwAADgJ6q0iCMu2aEwYGjmwBFhXExXaaujP9ha5lPuvLdZsu_w_f4I54x9DIJRLBdcaz4ONztcqVZuUG5BtQy4sYBaYANc7eovnB3eYr4Pnw8X1p5SsrkCwwhdFTjqtndy024dzwo3LzLnWujzZLNOoVcqsfQPVTENSqE-WRv2vQ19xhIS-8sefoomNy0UzftcHBHP8lNYkyKMonO7S-joEp8inG4-Kt_T6S5V36VlWS9L9jQjCCEQ_1Og_gC0YkdM"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "25 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAESdkjbReT9R2BDwAew4zJeXKnmxnR4hlMNMPi70kOVLUBdtwL4lGDh1x2rH9VqNPaMh3sgAPdeHWgWFE5hbohs9bWxaHHwEAj8j3Pa-kcrlijB9qu5AVoPXTzUjGTvW6RPyLM3aomtKeal=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/j3d-DnicHcTBboIwAADQL6qg4BSTHUpkEgWsDMFrKU1rKa3SatGf3Hl_s2Tv8H5_uLU3s_E8yYMZ05pJ-jB0JFpZquyM6MFjNwOIAcaDqDj1MPnuetGWtIrKRbx1kLrwvaeXgxomVYZc5kWOriu_P9bZOe6sy0K52_L5tBjTqL4XCOc8MAyijqYNa76SJW81N1HbTDhNXQLFWgQIg56M8iri6P5YwlqjS_U-i131bD5K9MryAOvBHiiWn27u-z7g_xOg_gDFzkgc"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5DR6g4WbNjbO7iMOWrAt0Szb_Em-vlg3RtE6flDLIGE9RiPYsP9OIXNILLE7EBeSO8T0obA3wjWEw1HIcex5vEFhiXynebIGDRx0lwWugHuudCCNZBrhvhy1Gk1xz0HlJlc6gAVtBzB7A=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/IOpwRXicHcTNboIwAADgJ6qUMEGX7FCkQg0DhouoF5PW2qKVGlp-5CU9-zZL9h2-90ta-zCfjqOkNxNaC8U7w1umG8sbO2P67oiHAcwA46Ai-7mheB6VvvioaHaleVB_51WLLNxO9ITvoFfCKy32LypKSYyXZV0cTLHMyT4jaYoDHPJtvviFmiJvuFZ4cBPC-Djv8VrW-2fDKYmjcoRqqDqRdN15tcqOYSt7-XTjmztOMFEbxXyBdjacwgB9DS6EEMj_GWj-ADDwRrw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEZJuSK6Qn62HTMMx_cV9YxDc7Tiuv5i6-_yNZJBFZ7wP1LtpvzFXjqL9a7k6cRUywG3DD-X518W9UZLh0VvmpOohWLWb8tW2LuwG_J86G1FM4aS6m5zrRr2Btn4AEseZ2zH2lsE22KxbMZ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/1eFSXHicHcRJDoIwAADAF1WgSgETDxgWg8Vd0V6INoSq0CIti3zSs78xcQ7z_TClKjnVtIKNR7kQeZE1Mqup4CrjakRFqeWVBFQCqbmb1fbp-iRq9ku05QguDnHcp_TkXHqPWod705p3BNL3ikTzgFjdxsCqaofg_Hhh52o9Ed0d31049jxwNg07cY4EM_3UltVasAQnN1slEDddmEY2Co0gnlz3qDSHelfDueIT15cZgcMCFtKHcNnfYjLrDF3XAftPAf8BHh1Fuw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=AF8OVYVlGORykOIbgc2zAw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=205.00499&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/UCsePHicHc0xCsIwFADQ22QzSUOFVgjiojgVHApOJY0x_Zg2H_NNrcfxVt5GcXzT-7wHIkwbIRLdnaMMbkZ4upBWaLiP0QdnEBK3cRS5EDQ8xn4yELZopggXvdtXTXtuw6E5Lbfm2HurXruZ2b6zAdxEejSYupQ5GUsQHPeY2KyVKtmgVV2xxfwk11zKsq4ZAtlBS_Z_rjHrQsov6to6GA"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great atmosphere with superb care and service by Dr. Suh & the staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKFa-RudXTuIrH44usktO59rhmdtVqNmhwHRdJlJ2LrM5siSQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Doctor has put a lot of time and energy into creating the office from scratch.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX-qjBdD7rPfgiqLU4HRRgOTncooF1itn6-gZsPEB4_DdTDfa8=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"These people are smart, hardworking, on top of things, and so nice to work with.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWnpIH4kM37McxhlIyPxGMai0zDGNgcBa3sdT-MYzZ0ZHU4YPt-=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Yike Wang",
+          "rating": 5,
+          "contributor_id": "114557838454321390264",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIRiOrm64X73MwZL5QPMsXfGthHwtiWJrIuXeSbAxBasGCsEQ=s120-c-rp-mo-br100",
+          "description": "I have to say this is the best experience I have ever had for dental visits. Every staff/dentist is sooo sweet kind and professional. You can listen to music with sunglasses on during the whole cleaning. This is the first time that I kinda like and start expecting the next time coming back",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pJMWVYRTNZbXRtVFdSR1gzRnpNM1p3Wms0NFNYYxAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOjI1eXE3YmtmTWRGX3FzM3ZwZk44SXc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3uXEJNZw1Qa19px2lSBpuvGEOvVoAgySkHXVStZvmK67hHmygV4nusL5iWq5YT8Wwypal-zse1SLTF06Nc2P7bioF_iEVnzN5_9mMRi5_pjr2eop6dXV-FX70mqI1vJ5zBr78Uu_MZIWU=k-no"
+            }
+          ],
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-08T03:20:28+00:00"
+        },
+        {
+          "username": "Emily Zhang",
+          "rating": 5,
+          "contributor_id": "102105794609285895418",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJFeLpwXEyrTEjFF7hWto0F2X0F4r0nyEfW2wjuEbkPe5lY-MQ=s120-c-rp-mo-br100",
+          "description": "I highly recommend this dentist office! From start to finish, my experience was exceptional. I was looking for a new dentist in Manhattan, and this place truly exceeded my expectations. The staff is not only professional but also friendly and highly skilled. The office itself is beautifully designed, offering a modern, welcoming atmosphere. They go above and beyond to make your visit as comfortable as possible\u2014offering amenities like Beats headphones for music and Gentle Monster sunglasses to enhance the experience during both procedures and check-ups. If you're looking for top-notch care in a relaxing setting, this is the place to go!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25GNVRUQjBhSEU1YkZodFYyRjBlamgxYUhaRVpFRRAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOnF5TTB0aHE5bFhtV2F0ejh1aHZEZEE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-24T11:53:57+00:00"
+        },
+        {
+          "username": "saomya tangri",
+          "rating": 5,
+          "contributor_id": "108153471257774295442",
+          "user_review_count": 4,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWqHH3xXGiUci_bT8SiWHALUYBBsX-QGXWnQTklSO7u7dxjzgoHAA=s120-c-rp-mo-br100",
+          "description": "Such a wonderful experience, I would give 10 stars if I could. Dr. Suh and her entire team are kind, patient, and passionate about what they do, and explained every part of the dental exam and cleaning process, which I really appreciate. The interiors are beautiful like a spa, and they give you headphones to listen to music during your cleaning! If that wasn\u2019t enough, for my first visit they gave me a free Philips Sonicare toothbrush, and said every subsequent visit they\u2019ll give me a new head! Such a wonderful experience and I\u2019m so glad I found my new dentist :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT213MmFESndjMGt0ZDJWNk1GZHFNWG95YkZSbWFIYxAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOmw2aDJwc0ktd2V6MFdqMXoybFRmaHc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-10T16:48:44+00:00"
+        },
+        {
+          "username": "Amanda Osei",
+          "rating": 5,
+          "contributor_id": "114195042225136605388",
+          "user_review_count": 12,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJhj6_S1fSl_QgL-Sx7MGYxuk25uZyV355zdrsImdk804slXA=s120-c-rp-mo-br100",
+          "description": "This was an elevated and unique dental experience with spa like treatment. The moment I walked in, I was greeted with excellent customer service and kindness. Attentive from start to finish. After having a horrible experience at my previous dental office, I was sceptical, however, my hygienist and Dr. Suh made me feel welcome and heard!  Belise, (my hygienist) managed to clean a stain off my composite bonding which I thought wouldn\u2019t have been easy at all. She seamlessly did it in one cleaning session.\n\nThe welcome gift was greatly appreciated, as well as the Netflix/music option whilst cleaning took place. Looking forward to my next visit!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xRVYxQm9MWFYwZUVGM1UwdE9hbkJ5ZW5kU2FtYxAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOm1EV1BoLXV0eEF3U0tOanByendSamc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-17T01:45:19+00:00"
+        },
+        {
+          "username": "Jameson Bui",
+          "rating": 5,
+          "contributor_id": "100960899661996963003",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVpgDJG7tmhvYi3lW0fBg8Pua6JF2V1b6KGEszLdmCJvXBd8EaX=s120-c-rp-mo-br100",
+          "description": "Hands down the most pleasant dental experience that has ever existed! From the spa-like lobby when you first walk in to the friendly staff, every detail is accounted for. The hygienists are gentle and thorough, the dentists take the time to explain everything clearly, and you can genuinely feel how much they care about your comfort. They even give you headphones to listen to the music of your choice during teeth cleanings. Lucky to have them in the neighborhood. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WVmRXTXRhbTFaVVc1WE0ySXpialU1YVVwcE1rRRAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOnVVdWMtam1ZUW5XM2IzbjU5aUppMkE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-10T16:00:22+00:00"
+        },
+        {
+          "username": "Lisa H",
+          "rating": 5,
+          "contributor_id": "112686157315247483120",
+          "user_review_count": 15,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJE5GHU0WEGPgzPGe8yA8lm2ckbMSdkrMjoe8dwmHkazseLbw=s120-c-rp-mo-ba12-br100",
+          "description": "I had an amazing experience today at Terra! First of all, the venue is very chic and modern, the staff are beautiful and welcoming. As a new patient I had x-rays, hygienist appointment and dental checkup. The service was 5 star, I felt really cared for and special. Everything is spotlessly clean and they had some lovely touches like a tv screen with my name on welcoming me in the check up room. Bose headphones and a remote to select my own choice of music to listen to during treatment. The hygienist was very gentle, usually I dread visits to the hygienist for the pain factor but I experienced no pain. It felt like an afternoon in a spa opposed to the dentist! To top it off I received a welcome gift for being a new patient. I know a lot of people get nervous going to the dentist but if all dentists were like this then people would look forward to their next appointment! Thanks again for a really welcoming visit!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSaVpsa3pWalpQWldOc2VIRlBZV2h3V0VkSU5tYxAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOkRiZlkzVjZPZWNseHFPYWhwWEdINmc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-07T01:28:57+00:00"
+        },
+        {
+          "username": "Christine Malecki",
+          "rating": 5,
+          "contributor_id": "110272455516408448755",
+          "user_review_count": 19,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX7euIiJjO7ImwKJRcBAjhnXatkI_w3i2LmfgkdF0LsxcnljX25=s120-c-rp-mo-ba12-br100",
+          "description": "Wow! Such a lovely experience at Terra. By far the nicest dentist experience I\u2019ve ever had. I love the aesthetic and the office is extremely clean and well kept. They give you headphones for music during your cleaning. Everyone there is very friendly. I was in and out quickly. Definitely recommend going here.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCUWFFRTJOSEJtUjJ4SU5WaERiMFpsU0ZGcFozYxAB!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CAIQACodChtycF9oOlBQaEE2NHBmR2xINVhDb0ZlSFFpZ3c%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1LG0yr9PjQJDGNila-c6zGUzBJW_WT8s2K7ly4GEfYUAEQ_2_7uOt77weLPAWMjfmmAoTdsYXogjR47lxZ84_6HbQiIFhzPlvfb_W1rfO76zNixcYMjK7cdWYJhXRmfRYQaiBwu9LnKFhg=k-no"
+            }
+          ],
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-21T20:35:09+00:00"
+        },
+        {
+          "username": "Lisa Koo",
+          "rating": 5,
+          "contributor_id": "116721955847837284949",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL3t6nf1GUFjJNwSsYDs9UEUi5g0y4XMMiP7ZtwLyB5yWsV_Q=s120-c-rp-mo-br100",
+          "description": "This was the best dentist\u2019s visit that I have ever experienced! Previously, I have struggled so much to find a dentist in Manhattan that I like. After one visit to Terra, I know this will be my go-to dentist! Here\u2019s why:\n\n- Dr. Suh is the most professional dentist ever! She takes time to explain everything to you in a very thorough way. You can tell that she is very experienced and has encountered many different types of patients\u2019 dental situations in the past. Also, she suggests only necessary treatments and never pushes anything unnecessary!\n- I was very impressed by the technology they used. For example, they have a machine that takes a 3D scan of your teeth. I haven\u2019t seen that before at other dentists\u2019 offices. That helped me understand what\u2019s going with my teeth and why certain treatments are needed.\n- The office decor is absolutely gorgeous and clean. It feels more like being at a spa than at a dentist\u2019s office.\n- Every aspect of my interaction with Terra- starting with booking my visit to end of the procedure\u2014 was so seamless and pleasant. The staff is also very responsive. There was zero wait when I arrived at my appointment.\n- They paid a lot of attention to small details that make a patient feel welcome and cozy. For example, they give to each patient a dental-related gift to help them keep better dental hygiene. It\u2019s such a nice touch. Also, they have sunglasses and noise cancelling headphones to make your treatment process feel as comfortable as possible.\n- The location is great! It\u2019s easily accessible by train.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN2cVBmVGFREAE!2m1!1s0x0:0xc7e3b726c28fec00!3m1!1s2@1:CIHM0ogKEICAgICvqPfTaQ%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2MCRdgAsu7t6AgHG4FS80kCPlxX7cHZHWFviPg2vMBacdSTu4OIBikOhImQAjdnPiAacOcg0Pcxka2AGPd2a6p-CPa9UQ0lG4BP7MLXB9Lh0BHNp-PS5Goe_yEKsWBMtl5jXttkQ=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn26SShhp2uqNlIaIa2DaXj0DFAts_8ihOHbudHqOKqItNbXSJCtPQBbhnjtl0V-dowbxt0URihKFqHFMqwD1X6J6Zs72KMLIiA9T5IQ51JzihD4GMAb4vFMlwH_gWQVTi3AjUXL=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3sjo38uPgw8mYMXfjM5xDmZfnH8V08CJaqO5fO6jZZpxEQurilmlI27ZfF0eSY3ckYL8smdmupXHgFhM7c01TTAC-J4JTauFyMBfWfMK-L01rgVy2fPCf2rsEUuclLfPFv42jF=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2024-12-07T16:36:23+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Teoh Michelle DDS",
+            "data_id": "0x0:0xb2852b6c57d5bfd7",
+            "data_cid": "12863735654983778263",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2852b6c57d5bfd7&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2852b6c57d5bfd7&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.770134999999996,
+              "longitude": -73.9858516
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb2852b6c57d5bfd7%218m2%213d40.770134999999996%214d-73.9858516&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=MkUSklsHVSnVViDC0NtUjsYQzfjUhqgmNHEO3vD-F0d7Xb4IHwP5J8FMfMNQ9MTtXwscF3TZNx9s_ErxaPMinen04owchnoLJGgCB2vXzSp8P6CpXCfDWuTUBXMeaiVYEJHK8DLl7Xx2v7OohDO28XpkwqN-u9Pi",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Tara T Moshiri",
+            "data_id": "0x0:0x3ca6d3b145455fb4",
+            "data_cid": "4370413246734491572",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3ca6d3b145455fb4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3ca6d3b145455fb4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7512101,
+              "longitude": -73.9798061
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3ca6d3b145455fb4%218m2%213d40.7512101%214d-73.9798061&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=zxWwY8VZUnG7SNRPkk08vxDKq6l6LE6DUQnmzXW_EFmyOUKmgHTE2RkewSLq0PB6NNMCtFbZSi3i-9U-cl8qQQwqZ_0fI9JUdw4tjEOz7WSODFRSIg0EDINe3zvTqvBKN2yjvkEeoCIJawYR_niYnohiyDFTdnjL",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "David Taricia",
+            "data_id": "0x0:0x16e2b890b4c31a9e",
+            "data_cid": "1649083345218509470",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16e2b890b4c31a9e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16e2b890b4c31a9e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7522776,
+              "longitude": -73.9910798
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x16e2b890b4c31a9e%218m2%213d40.7522776%214d-73.9910798&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=4cyTdptr8RKEdwXLIPlTU6PvatV3AYQFtFYa25JJGQeFR_6Y2HfOSX9Gei_i1Rx-sZDm92Hcya90Vx_xCt3RfBSSClQPCk2yQORKKdIPDwtRP2fNDzfrvECFbWWcc668NpZI_g64LMFSqszEZvpImW5gBhUWWL59",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Dr. Stephanie Tran",
+            "data_id": "0x0:0x72d6f6238509d08d",
+            "data_cid": "8275071997756166285",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x72d6f6238509d08d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x72d6f6238509d08d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7677313,
+              "longitude": -73.9837153
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x72d6f6238509d08d%218m2%213d40.7677313%214d-73.9837153&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=clkGZGC2Hk5xHv7exz29PGI3ry5aps2DCgXwGtYl71zXnrlIeyUrNMIuuy4qaAjmiREsGD4JBmWnMzMSyoRAfkM1MeW7WaTvm-qNFQ2vn6_I03jttLSxKgOqBcD37Ung1wD0eb0LEPJTXKq3rKej_YP18pXcY_Wy",
+            "type": [
+              "Dentist",
+              "Practitioner service location"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Central Park Dentistry - Cosmetic Dentists",
+            "data_id": "0x0:0x86d30b6f8f291d05",
+            "data_cid": "9715121394939403525",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x86d30b6f8f291d05&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x86d30b6f8f291d05&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7649517,
+              "longitude": -73.9750827
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x86d30b6f8f291d05%218m2%213d40.7649517%214d-73.9750827&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 224,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHY5m4x9hXPQMBY05N0RPGwLsHKiFBBvKVeI8vggkwB8Xz_Jia2vzDf90gRZ3AUSKlz8Pli5Z5aZeMbFGuRhUk5SFhvn5DywyP9hqDBjSa4aC6XyhkMd501Fp11DvydhFUDJG0A=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dentist",
+              "Orthodontist",
+              "Pediatric dentist",
+              "Periodontist",
+              "Prosthodontist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oh8KHSIZVGVycmEgRGVudGFsIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COh8KHSIZVGVycmEgRGVudGFsIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

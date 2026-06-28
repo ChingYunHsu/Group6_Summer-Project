@@ -1,0 +1,501 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e4babe7ec9a9e4df5b6",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/tdStXbpau2TSG9OugveXCg/6a3d3e4babe7ec9a9e4df5b6.json",
+    "created_at": "2026-06-25 14:42:19 UTC",
+    "processed_at": "2026-06-25 14:42:19 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a26a1f5705d:0x221fc9476aa4ae98!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/tdStXbpau2TSG9OugveXCg/6a3d3e4babe7ec9a9e4df5b6.html",
+    "prettify_html_file": "https://serpapi.com/searches/tdStXbpau2TSG9OugveXCg/6a3d3e4babe7ec9a9e4df5b6.prettify",
+    "total_time_taken": 0.3
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJXXD1oSZawokRmK6kakfJHyI",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Sunny Dental Care",
+    "place_id": "ChIJXXD1oSZawokRmK6kakfJHyI",
+    "data_id": "0x89c25a26a1f5705d:0x221fc9476aa4ae98",
+    "data_cid": "2458905230136618648",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a26a1f5705d%3A0x221fc9476aa4ae98&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a26a1f5705d%3A0x221fc9476aa4ae98&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.717703,
+      "longitude": -74.000895
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJXXD1oSZawokRmK6kakfJHyI",
+    "provider_id": "/g/1v_w388h",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEAymAojZOviUi_716KalHAAxhAZa8U-4ILt-Pk_pRPoJq46AH4q8kJKqw6lBip7YZe9LzGBCarkcHZTTma3IRkYXBsU4N7Svdlfr5kXYBsMuEUeqTiwn0cuahKZZz0JzZlJTV70qKs9Och=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/1sCYbXicHcTNboIwAADgJ6rUyABNPJTFyI9TVFikF9PUjrIWSmkR5SV39m1M9h2-1x-3tjMrx5F8MauUqiQbDOupai1r7Yyqxqk6A6gBxkHZ_ijQBj0bpH7x4V4X9dWfeymREUIPjjAJCuDGOwsyce1OmUq066HI1YFIUj16Mqw7v8RsuZu24SfpBY1wnjdkEZ9EeQlN4e798_0mf_oPcSlD8zVsCqbzemwhHQhPMZ5gMmGZ5N8-1KlZHihfj3MIIeD_U9C-AYTnR4w",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 10
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 9
+      },
+      {
+        "stars": 5,
+        "amount": 331
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 351,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist",
+      "Dental clinic",
+      "Dental hygienist",
+      "Dental implants periodontist",
+      "Dental implants provider",
+      "Emergency dental service",
+      "Periodontist",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist",
+      "dental_clinic",
+      "dental_hygienist",
+      "dental_implants_periodontist",
+      "dental_implants_provider",
+      "emergency_dental_service",
+      "periodontist",
+      "teeth_whitening_service"
+    ],
+    "menu": {
+      "link": "https://www.sunnydental.us/",
+      "source": "sunnydental.us"
+    },
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as Asian-owned"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Checks",
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      },
+      {
+        "children": [
+          "Nursing room"
+        ]
+      },
+      {
+        "parking": [
+          "Paid parking garage",
+          "Paid parking lot",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "address": "101 Lafayette St Fl 9, New York, NY 10013",
+    "country": "United States",
+    "website": "http://www.sunnydental.us/?utm_campaign=gmb&utm_medium=organic&utm_source=gmb",
+    "phone": "(212) 842-5300",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "PX9X+3J New York",
+    "hours": [
+      {
+        "thursday": "10 AM\u20136 PM"
+      },
+      {
+        "friday": "10 AM\u20136 PM"
+      },
+      {
+        "saturday": "10 AM\u20136 PM"
+      },
+      {
+        "sunday": "10 AM\u20133 PM"
+      },
+      {
+        "monday": "10 AM\u20136 PM"
+      },
+      {
+        "tuesday": "10 AM\u20136 PM"
+      },
+      {
+        "wednesday": "10 AM\u20136 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 5 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a26a1f5705d%3A0x221fc9476aa4ae98&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMiqXFNQXF3fBHmeF8ksGD_CxdRvBihJ6XjWo0=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKENHumd29xqOl7QE&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "How Cosmetic Dentistry Can Improve More Than Just Your Appearance\r\n\r\nA confident smile can positively influence social interactions, professional confidence, and overall self-esteem.\r\nModern cosmetic dentistry focuses on creating natural-looking improvements that complement your facial features while maintaining healthy oral function.\r\nTreatments such as whitening, bonding, veneers, and alignment corrections can address discoloration, uneven spacing, worn teeth, and other cosmetic concerns.\r\n\r\nAt Sunny Dental Care, cosmetic treatment plans are personalised to achieve balanced, refined, and long-lasting results.\r\nSchedule a consultation today to explore options for enhancing your smile naturally. Open Sundays for your convenience.",
+        "date": "1 day ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMg2xBtW424QGTcBoy3zkBJckzxVah3O1dzFjE=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKEPPVi-CFuebHJg&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "Why Tooth Sensitivity Should Never Be Ignored\r\n\r\nSharp discomfort while eating hot, cold, sweet, or acidic foods may seem minor at first, but tooth sensitivity can indicate underlying dental problems.\r\nSensitivity may result from enamel wear, exposed roots, cavities, cracked teeth, gum recession, or teeth grinding.\r\nWithout treatment, the underlying cause may continue progressing and lead to more significant discomfort or structural damage.\r\nEarly evaluation helps identify the source of sensitivity and allows treatment to be tailored to your specific needs.\r\n\r\nBook your dental consultation today at Sunny Dental Care and protect your smile from worsening dental issues. We\u2019re open Sundays for your convenience.",
+        "date": "3 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN6Vid1uFTtixYX-PQ5zg7PulLmt5U4z5U8IcE=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKEICH1Kue28PYRQ&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "How Preventive Dental Exams Help Detect Problems Before Symptoms Begin\r\n\r\nMany dental conditions develop silently without causing pain in the early stages.\r\nRoutine dental exams allow issues such as cavities, gum disease, enamel wear, bite problems, and infections to be identified before they become more serious and expensive to treat.\r\nPreventive care plays an important role in maintaining long-term oral health while helping patients avoid unexpected dental emergencies.\r\n\r\nAt Sunny Dental Care, comprehensive exams are designed to monitor every aspect of your oral health using modern technology and personalised care.\r\nSchedule your preventive dental visit today and stay ahead of future dental concerns. Open Sundays for your convenience.",
+        "date": "5 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPhsFiwNqQ1BSkeiDk1Fybk2eTeMbJwmRYSuvk=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKEKaMivrd2-X_sQE&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "Why Replacing Missing Teeth Early Protects Your Jawbone and Bite\r\n\r\nWhen a tooth is lost, the surrounding jawbone no longer receives the stimulation it needs to maintain strength and density.\r\nOver time, this can lead to bone loss, shifting teeth, bite imbalance, and changes in facial structure.\r\nReplacing missing teeth early helps preserve oral function, maintain alignment, and support long-term dental stability.\r\nModern tooth replacement options are designed to restore both appearance and chewing ability while blending naturally with your smile.\r\n\r\nSchedule a consultation at Sunny Dental Care to explore your replacement options and protect your long-term oral health. We\u2019re open Sundays for your convenience.",
+        "date": "Jun 17, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPDDcJ4iNaslXQoGo3xG2-19phwil9ruvzgDes=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKEMm2i9j4meuwpgE&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "How Small Dental Cracks Can Lead to Bigger Problems Over Time\r\n\r\nTiny cracks in teeth are often difficult to notice in their early stages. However, even minor fractures can gradually worsen due to daily chewing pressure and temperature changes from food and drinks.\r\nIf left untreated, cracked teeth may eventually cause sensitivity, pain while chewing, infection, or structural damage requiring more extensive treatment.\r\nEarly diagnosis allows damaged teeth to be stabilised before complications develop.\r\n\r\nAt Sunny Dental Care, advanced diagnostic technology helps identify hidden cracks and preserve natural teeth whenever possible.\r\nBook your dental examination today to evaluate any discomfort, sensitivity, or bite concerns. Open Sundays for your convenience.",
+        "date": "Jun 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOdTIGT-nPTjWxbZsWHBNPjvXNq4xq1v_GEY4M=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKEJqdi7POhNaa5gE&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "Why Professional Teeth Cleanings Are Essential Even with Good Brushing Habits\r\n\r\nBrushing and flossing daily are important, but home care alone cannot fully remove hardened tartar buildup from every area of the mouth.\r\nOver time, plaque and bacteria can accumulate below the gumline and between teeth, increasing the risk of cavities, gum disease, and persistent bad breath.\r\nProfessional dental cleanings help remove buildup that regular brushing cannot eliminate while allowing early detection of developing oral health concerns.\r\nPatients throughout SoHo and Lower Manhattan rely on preventive cleanings to maintain healthier teeth and gums year-round.\r\nSchedule your professional dental cleaning today and keep your smile healthy and refreshed. We\u2019re open Sundays for your convenience.",
+        "date": "Jun 13, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMcka1ZhNh3HUo03giI-QD8S3LT3G8FFJSzwNk=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKENOE8OnF5_e3Rw&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "The Long-Term Effects of Teeth Grinding on Your Oral Health\r\n\r\nMany people grind or clench their teeth without realising it, especially during sleep. Over time, this excessive pressure can gradually damage teeth, strain the jaw joints, and contribute to headaches or facial discomfort.\r\n\r\nTeeth grinding may lead to worn enamel, tooth sensitivity, cracks, gum recession, and bite changes if left untreated.\r\nEarly diagnosis allows dentists to identify signs of grinding before permanent damage develops.\r\n\r\nAt Sunny Dental Care, we provide personalized solutions to help protect your teeth and reduce stress on your jaw and bite.\r\nBook a consultation today to evaluate signs of teeth grinding and protect your long-term oral health. Open Sundays for your convenience.",
+        "date": "Jun 10, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMaJfA_pSE_xiO3FY37nsEyrZp-MEA2X3_YIDw=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKENG4k9ef8vjJXg&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "Why Early Cavity Treatment Helps Prevent More Complex Dental Problems\r\n\r\nTooth decay often starts small and painless, which is why many patients do not realise a cavity is developing until significant damage has already occurred.\r\nWhen cavities are detected early, treatment is usually simple and conservative. However, delaying care can allow decay to spread deeper into the tooth, increasing the risk of infection, fractures, and the need for root canal treatment or extraction.\r\nRoutine dental exams and digital imaging help identify early signs of decay before symptoms worsen.\r\n\r\nAt Sunny Dental Care, patients across SoHo, Tribeca, Greenwich Village, and Lower Manhattan trust preventive care designed to preserve healthy teeth and reduce long-term dental complications.\r\n\r\nSchedule your dental evaluation today and protect your smile before small issues become larger concerns. We\u2019re open on Sundays for your convenience",
+        "date": "Jun 8, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipO9Vc6oePx8eaJF5B2qbxeeAbcq6B57d4DQr5w=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKEKDj7LHRltK4HQ&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "Are clear aligners effective for adults with mild to moderate alignment issues?\r\n\r\nYes. Clear aligners are highly effective for correcting mild to moderate crowding, spacing, and bite concerns.\r\nThey are designed to fit seamlessly into busy lifestyles, offering both comfort and predictable results through customized treatment plans.\r\n\r\nSchedule your consultation today. We\u2019re open Sundays.",
+        "date": "May 31, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMJWiutwv7K6sKNUxNnAvwwpB_m3WpdQ1VBQ5w=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 842-5300",
+        "post_link": "https://search.google.com/local/posts?q=Sunny+Dental+Care&ludocid=2458905230136618648&lpsid=CIHM0ogKELKTpICVtKqkSg&source=sh/x/loc/post&lsig=AB86z5XoNVFIPYEbNi5MNgGT85zD",
+        "description": "Can gum disease progress even if there is no pain?\r\n\r\nYes. Gum disease often develops without noticeable discomfort in its early stages. However, it can gradually damage the gums and bone supporting your teeth.\r\nRegular dental visits help detect these issues early and allow timely treatment to prevent progression.\r\n\r\nSunny Dental Care is open on Sundays for your convenience.",
+        "date": "May 29, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEAymAojZOviUi_716KalHAAxhAZa8U-4ILt-Pk_pRPoJq46AH4q8kJKqw6lBip7YZe9LzGBCarkcHZTTma3IRkYXBsU4N7Svdlfr5kXYBsMuEUeqTiwn0cuahKZZz0JzZlJTV70qKs9Och=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/1sCYbXicHcTNboIwAADgJ6rUyABNPJTFyI9TVFikF9PUjrIWSmkR5SV39m1M9h2-1x-3tjMrx5F8MauUqiQbDOupai1r7Yyqxqk6A6gBxkHZ_ijQBj0bpH7x4V4X9dWfeymREUIPjjAJCuDGOwsyce1OmUq066HI1YFIUj16Mqw7v8RsuZu24SfpBY1wnjdkEZ9EeQlN4e798_0mf_oPcSlD8zVsCqbzemwhHQhPMZ5gMmGZ5N8-1KlZHihfj3MIIeD_U9C-AYTnR4w"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2l2FiJ-d_eUH5EjHYI8ZB2xD1L7s55iuQiWpv_kkC3Smf4U86OV_YKRtEl8oCO9gj-O6fzv6ISAxLxpDFIOzobnji4hv7c7BgRhFvT0IYEjbw1wFkV3-cUc5rs1UE8b3P9f_XEmp4DZs=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/11UVUHicHcRJDoIwAADAF1X2RRMPKCWgRlQEhQsJFVrWNrYC8ZHe_Y2Jc5jvhwjB-EqSOqItMKW4K1-8fCI6iHIQC0R7CTMOEAdcck7Hc-v4aqd69Q488jL2Ddj4aWBnG3V2lYPFDaN-nesbG_O23WpRX-mxbYZJnu4vAnY23YZL3IDQrN6jGUTOfJiZ6wXhmxZDU-tktJC1wRfijVc5SGFTTMrktYkGUIyMJ1diaBfaaVnld9gz3c34elJkWQbkPwLDD7bGRZo"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ViK98gQEpS1rKH_BALb_JQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=145.33551&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/fEUuGXicHc1LCsIwEADQ22Rn0vQDrRBEQRDrpghuQxpjOpA2QzO2eh1v5W0E3wXe9zMQYdoKkWh2jhZwK8LLhbRBw32MPjiDkLiNo1ikoOE59pOBsEMzRbirG7RN7bsjXuXcnvRhf-n1uWO21zaAm0iNBpNOCydjCYLjHhNbVZ6XbFB5U7O3WZUsK14UVSUZAtlBZez_POKiZJb9AMVrOZ4"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The office is clean and they offer drinks in reception area.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKVAr_SsI1TCPGEXCWcTtrSWe9OxlB1EskNzPBAzDJn1EFS0A=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"All of the staff are super friendly and make the experience comfortable :)\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIPXMTqkJzWfikKYlhMOlnTwECet0uyieNeUaPEJmXu7HjHxw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Highly recommend\u2014quality services.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWN2sqC4goGaYJcz316R3-uRQd0g2-NJcU_k8IdB8wxmD1xvNxv=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Ben Posnick",
+          "rating": 5,
+          "contributor_id": "110471985405048553440",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKqhhNTC3IR07XtG5m9E-ig6SX_0VBke509xVfiDwvrH9R7oQ=s120-c-rp-mo-br100",
+          "description": "Fantastic appointment here. Was nervous about switching to a new dentist, but I immediately felt like I was in good hands. Dr. Kim was incredibly thorough and explained everything to me. They used a new cleaning technology for my cleaning that was painless! This alone would have made me switch years ago. Also very happy that they have the necessary specialists in-house for my needs.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tKMFlucFZXRTl1ZDFCS1MzRlNjRTVmTTFwSVNsRRAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOkJ0YnpVWE9ud1BKS3FScE5fM1pISlE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-01T21:18:09+00:00"
+        },
+        {
+          "username": "Erin Goulding",
+          "rating": 5,
+          "contributor_id": "107937049769776419941",
+          "user_review_count": 8,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKH4Cue5Wfu2tacJdAXXYCsEE0pzuNS2GW6U8l6XyWfAI0dc_l-=s120-c-rp-mo-br100",
+          "description": "Sunny Dental Care is wonderful! I have been several times for cleanings, a filling, and a last-minute retainer repair, and every time has been great. The administrative team is super friendly and helpful, the hygienists are thorough and always make me feel very comfortable, and Dr Kim does a great job explaining everything. The office is clean and bright as well!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0aWIxQmxOMjlJVTNwc1kxUkRTV1ZRVWtWVWFGRRAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOktib1BlN29IU3psY1RDSWVQUkVUaFE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-01T17:11:40+00:00"
+        },
+        {
+          "username": "Collins Lu",
+          "rating": 5,
+          "contributor_id": "112385087464834783285",
+          "user_review_count": 17,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKPV8mpVrF7KjlknRNRIUWagThgCTtvXKr637BQmTuhYlekNQ=s120-c-rp-mo-ba12-br100",
+          "description": "Thanks to Dr. Park for the root canal! It was quick and surprisingly comfortable. Dr. Park was very warm, and you can tell she\u2019s skilled and calm during the procedure. She made me feel comfortable the whole time. I\u2019ve lived in NY for a decade and this was one of my best dental visits. Definitely recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKdVRtcDJiSEZtTVVaeFdWSjBUQzA0V21Oc2NuYxAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOjJuTmp2bHFmMUZxWVJ0TC04WmNscnc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2rFfxxs36Pl14_eepVqfZmORJehKXJDFn3eIT-apYktHTYwJoii_t35EdQX1h2GYcBDud5cTXk7cA88ARYJxc1oEi-SiIcpYR7NBalXAMlKYOvlox30Gswv262IWzgb99fL_6dKDfxzd7Z=k-no"
+            }
+          ],
+          "date": "Edited 3 months ago",
+          "date_iso8601": "2026-02-27T17:19:37+00:00"
+        },
+        {
+          "username": "Lukasz Sulkowski",
+          "rating": 5,
+          "contributor_id": "100011415597034564448",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXcwyTWIWgWeHZ3Xoro2akROwdbC-1OL0mE7zRPGuXpvNa2pCUs=s120-c-rp-mo-br100",
+          "description": "From the moment you walk in, the entire team is incredibly kind and truly attentive to your individual needs.\n\nWhat I appreciate most is their commitment to patient comfort. They consistently check in throughout the entire process to ensure you are doing okay and explain exactly what they are doing. They are meticulous about their work and always make sure everything looks perfect before you leave. If you are looking for a dentist who combines genuine care with high-quality service, this is the place to go.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWNmExWllOSFZSYVdoV1NuWmlZMDVNV2s0NGMwRRAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOkV6a1ZYNHVRaWhWSnZiY05MWk44c0E%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-06T18:28:08+00:00"
+        },
+        {
+          "username": "Emily Han",
+          "rating": 5,
+          "contributor_id": "117570579774944640438",
+          "user_review_count": 12,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUhbR7J6yGrIlpePMFPWWnGvSsmi8WoinBx2xQhCWXMgT_Fb3O4pw=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been to many dental offices over the years, and I\u2019ve finally found one I truly trust. Dr. Daejin Kim and Dr. Jang were attentive and thorough from start to finish, making sure all my needs were met. The entire treatment process was very comfortable, and I\u2019m extremely happy with the results. They were truly impeccable and exceeded my expectations. The office is clean, modern, and comfortable, and the staff are friendly, professional, and very skilled. This is the first dental clinic where I felt genuinely cared for and completely satisfied with the results. Highly recommend Sunny Dental, and I can\u2019t wait for my next appointment!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2twa1dHSTJSazF1TVVWb2JuaHhWRmhqZUhoUlFVRRAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOkpkWGI2Rk1uMUVobnhxVFhjeHhRQUE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-15T19:39:09+00:00"
+        },
+        {
+          "username": "Tenzin Choeying",
+          "rating": 5,
+          "contributor_id": "114549760186271716872",
+          "user_review_count": 5,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUwHVOzdJuOuPETW6tyNRZS48ev4XH4EndnrGlfGKXyqNdF4j6c=s120-c-rp-mo-br100",
+          "description": "Super nice and welcoming office! As a new patient due for cleaning, I spent most of my visit with the hygienist James who was very informative, gentle, and answered all my silly questions! All the staff were very helpful as well. Also a goody bag for new patients~",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT210UU1WcENhREkyZEU4M1UwaEhlRk5rWlZnNVgxRRAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOmtQMVpCaDI2dE83U0hHeFNkZVg5X1E%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-04T16:20:41+00:00"
+        },
+        {
+          "username": "Tim Trotman",
+          "rating": 5,
+          "contributor_id": "107291569146964891946",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ4wv1ojI4PafWj4RvpQqtoZ2_8DXjI0VxKIx4Be877b8cDiQ=s120-c-rp-mo-br100",
+          "description": "Have been going to Sunny Dental for about 6 years now and they have been great. Started taking my daughter there as well and have no regrets. It\u2019s easy to book / change  appointments. They do good work, are  friendly and easy to ask any questions. They have weekend hours which is fantastic. I recommend them all the time.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xObVFXOXFOVkJ3ZW00dGNWZ3lVRTlyYmpoSlIzYxAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOlNmQW9qNVBwem4tcVgyUE9rbjhJR3c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-04T22:57:28+00:00"
+        },
+        {
+          "username": "Jean Tang",
+          "rating": 5,
+          "contributor_id": "109246708347690319502",
+          "user_review_count": 17,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUwCxxfh91TgCgw8nS5YCiUXXy-Dq6ef4rx0FoaB39W6SCEqsno=s120-c-rp-mo-ba12-br100",
+          "description": "I am so happy I was referred to this office. Dr Kim was fantastic, and Annie Tang the hygienist was unbelievably thorough with my cleaning. Also they are one of the few NYC offices with Guided Biofilm Therapy, which does the most gentle cleaning you can imagine: no pain whatsoever. It\u2019s also great that they have an endodontist and periodontist in-office, which means it\u2019s an all in one practice.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxME5IRkplRGd4WmxaNk5UQlBZbHBTUkdGNlIwRRAB!2m1!1s0x0:0x221fc9476aa4ae98!3m1!1s2@1:CAIQACodChtycF9oOk10NHFJeDgxZlZ6NTBPYlpSRGF6R0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-23T17:37:41+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Shu Ping Rong, DDS",
+            "data_id": "0x0:0xc92b2c145b0bcb7e",
+            "data_cid": "14495728291560541054",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc92b2c145b0bcb7e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc92b2c145b0bcb7e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.717703,
+              "longitude": -74.000895
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc92b2c145b0bcb7e%218m2%213d40.717703%214d-74.000895&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 349,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEvUkPe2jwvYOYyyKJbsTMkTXRFx96-YwheUawpy2xqeH5UJxURjUWzja7Cag6NYWosirkyzrKChsamGWxqGUaZGXjRZLqbEdslJD6z8HhOcrceBw85yQY5oLtkxJbrYYkdOxSaqQ=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Bowery Dental",
+            "data_id": "0x0:0x8f8e295c34bc17ec",
+            "data_cid": "10344250870115080172",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8f8e295c34bc17ec&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8f8e295c34bc17ec&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7164833,
+              "longitude": -73.99556679999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8f8e295c34bc17ec%218m2%213d40.7164833%214d-73.99556679999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 221,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGssdxqtIvq5N1WEWE-l0aG4tztG56vB8q8RiuNFE-ysCCtnBC2D0VVjTg6Hx8DpmvkrBleFjLFIDU8-6PRhKfgFHXB9-uMag8_ukuZJa64Qy4JVSlBG69oDbd-iV0sqrAcXHDX=w156-h156-n-k-no",
+            "type": [
+              "Dental clinic",
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Dr. Yuying Zhu, DDS",
+            "data_id": "0x0:0xbecd45a756181ce6",
+            "data_cid": "13748721822438268134",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbecd45a756181ce6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbecd45a756181ce6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.716681699999995,
+              "longitude": -73.99831859999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbecd45a756181ce6%218m2%213d40.716681699999995%214d-73.99831859999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 137,
+            "thumbnail": "https://www.google.com/maps/vt/data=r3LlMnTqZE2Ubjynrz5LeHD8K6UV9Tqj0f-XaiFtZmWlgslO-f7nkYSb8WRkoSd3OfJMfRnTUMceR_qvDg7ZOW9b30x1Y6etMxktI_9p7T12jIDwBnJtfh_MNJ0nszd-MwcCc6Kt7RbgMnc8lYrXMcq5QkEaVqDR",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Dr. Robert Yan",
+            "data_id": "0x0:0xdab54112416eb915",
+            "data_cid": "15759574017715910933",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdab54112416eb915&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdab54112416eb915&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.717703,
+              "longitude": -74.000895
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdab54112416eb915%218m2%213d40.717703%214d-74.000895&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=rbampIskV0hU8RIZjvXvfzmHskBllohae6GkI78iuu9WueGTte7uV838DBfclinfNGT5w1Wmr0RvOtX-gAeIHe4MlAoZ-seyWZRMANyDYJ0tinGCUVUzqOYsr_zkhjShoOPuDeJujsz_xNHzrScdoR8idBkH8nW5",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "N Y Dental Center",
+            "data_id": "0x0:0x71490177f91f5124",
+            "data_cid": "8163057414378049828",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x71490177f91f5124&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x71490177f91f5124&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.713929,
+              "longitude": -73.998209
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x71490177f91f5124%218m2%213d40.713929%214d-73.998209&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=YN2CBjJ0ak-ErvPMSpC7ut90fpc0vfHssDH4yad9qr2nqSexbbyhSgZgkLa60NbHayy8cU3q8WWcX1NHYzHxwzE3kuqV0YjwUkH0WCoeAAeiIIxPu6MlFYUq550_uDEp9347XY2rk3olPuLiM9sZisOE0Q98ElKr",
+            "type": [
+              "Dental clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiQKIiIeU3VubnkgRGVudGFsIENhcmUgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiQKIiIeU3VubnkgRGVudGFsIENhcmUgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

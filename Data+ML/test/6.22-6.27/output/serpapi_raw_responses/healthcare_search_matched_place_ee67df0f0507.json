@@ -1,0 +1,836 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e4d392e0b9f44c17baa",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/uxb6GTFV2punAKOP240s7Q/6a3d3e4d392e0b9f44c17baa.json",
+    "created_at": "2026-06-25 14:42:21 UTC",
+    "processed_at": "2026-06-25 14:42:21 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2599e17845c25:0xa32bfe6c5e398b3f!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/uxb6GTFV2punAKOP240s7Q/6a3d3e4d392e0b9f44c17baa.html",
+    "prettify_html_file": "https://serpapi.com/searches/uxb6GTFV2punAKOP240s7Q/6a3d3e4d392e0b9f44c17baa.prettify",
+    "total_time_taken": 0.29
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJJVyEF55ZwokRP4s5Xmz-K6M",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "14 Street Medical Arts",
+    "place_id": "ChIJJVyEF55ZwokRP4s5Xmz-K6M",
+    "data_id": "0x89c2599e17845c25:0xa32bfe6c5e398b3f",
+    "data_cid": "11757770993571564351",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e17845c25%3A0xa32bfe6c5e398b3f&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e17845c25%3A0xa32bfe6c5e398b3f&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.731601,
+      "longitude": -73.98374799999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJVyEF55ZwokRP4s5Xmz-K6M",
+    "provider_id": "/g/11c0qg688h",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG7sC7O5d8XpSRQ-4ZZ96xT5nVrKh5bnWwnpkTbbZ6yW2YXpSPujb1YOm5nJhAnFKE5gutVRS4MD9tZeXCb5JdErFbBidGNSoXTgiKurTQcGlaIkwdbAzboSTORqB_TklFS0ge_=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/UBFB73icHcrbDoIgAADQLyLtQmVbD1rpypUXWJkvLZBBaWCCs_rBvqG_qfVyns7nLYyp9cyyKjHscaV4xVrNGqqkYdL0qLpZvNaAaqAtN94lpRtM9GISwWKa1ShNwCjPnfEDQ7lvQgGJPHSyLjEh-fh5GBx_J26vpH-MblBuhCv9cAV5a_YpGm2XjslZtiBwU6wan3iXItghlWF-CdsGJzSozuuyK4j7IgrhKL17J1xWPrI5O827vm3bQPylQH4BRSdFGg",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 741
+      },
+      {
+        "stars": 2,
+        "amount": 127
+      },
+      {
+        "stars": 3,
+        "amount": 84
+      },
+      {
+        "stars": 4,
+        "amount": 165
+      },
+      {
+        "stars": 5,
+        "amount": 1222
+      }
+    ],
+    "rating": 3.4,
+    "reviews": 2339,
+    "type": [
+      "Neurologist",
+      "Allergist",
+      "Cardiologist",
+      "Gastroenterologist",
+      "Pain management physician",
+      "Podiatrist",
+      "Pulmonologist",
+      "Rheumatologist"
+    ],
+    "type_ids": [
+      "neurologist",
+      "allergist",
+      "cardiologist",
+      "gastroenterologist",
+      "pain_management_physician",
+      "podiatrist",
+      "pulmonologist",
+      "rheumatologist"
+    ],
+    "book_online": "https://www.zocdoc.com/doctor/linda-jordan-md-805658?LocIdent=116240&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pr_R4Hbu_PNsU2DvW_qQH1wtA-lo_H1shUlj43E2-Y29JLjLuXx-entity&rwg_token=AE37R_iF-WQAzLBzeXqxV6TwEUlBsnM1_0bpMc4_SMfOMDq20-nMaS8CHzXDK_b3ydZL79lyB9GdczyxUNGRkxcEmnyN9TzMyA%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "332 E 14th St, New York, NY 10003",
+    "country": "United States",
+    "booking_link": "https://www.14streetmedical.com/doctors",
+    "website": "https://www.14streetmedical.com/",
+    "phone": "(212) 481-3333",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "P2J8+JG New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20137 PM"
+      },
+      {
+        "wednesday": "9 AM\u20137 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2599e17845c25%3A0xa32bfe6c5e398b3f&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG7sC7O5d8XpSRQ-4ZZ96xT5nVrKh5bnWwnpkTbbZ6yW2YXpSPujb1YOm5nJhAnFKE5gutVRS4MD9tZeXCb5JdErFbBidGNSoXTgiKurTQcGlaIkwdbAzboSTORqB_TklFS0ge_=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/UBFB73icHcrbDoIgAADQLyLtQmVbD1rpypUXWJkvLZBBaWCCs_rBvqG_qfVyns7nLYyp9cyyKjHscaV4xVrNGqqkYdL0qLpZvNaAaqAtN94lpRtM9GISwWKa1ShNwCjPnfEDQ7lvQgGJPHSyLjEh-fh5GBx_J26vpH-MblBuhCv9cAV5a_YpGm2XjslZtiBwU6wan3iXItghlWF-CdsGJzSozuuyK4j7IgrhKL17J1xWPrI5O827vm3bQPylQH4BRSdFGg"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "10 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFpfauwknfHJVyzDNeWf4lZC5bD6iJLtzf9nh5TfQJKtHAFe9oVav_DuyPHe_5sVvLhQ5c_ZKAGQxEs6xgSzsl9_kLToknL9OqOHRCXsygrhZEVQolMXzJoMiwqmLNs0Xao8xuk1aCeQ68=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ZGUDYHicHcTLboJAFADQL0IwLUSadEFAS3BEpzWUsCF0Mg8z41z0DvL4yO77N008i_P3q5zr8c33jXpZSQBp-ID8zsA6bt2KwdWXPXoMPfSTU0l1sutFN4zairyo5iUr-bd4NU0a_mTRpSBuEbFV4VnQYu_yZMdjqLpHmw3zKedtiNWDKBqyttknH3TaYjTJrwVN3GpyBm1JfLwd88-0xlneVbOtKJhDvRRwuIy3KykxqDvYTINedymn0eZ9XAdB4KnnzLP_IelJQQ"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMTQvX6-Oh08Rn-wO3TVyXEFSr5RIQLjz-6PLEHo4haVvMxu6w-m9sCmYNevPrM8wRTDTgK0hYbbUyxkVmBMgJt9lCOzrFcIW1WNORhozGZCq1ksDwekpC9wI9e0R43KKI_1MeB1PxfWdK=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/xhA3OHicHcTbboIwAADQL6q0QYks2YMibojlUhHUF6O1tpFLGa0U-ck972-WeB7O36_QulUfllUJe8Kl5BV7KtZR2WjW6AmVtcVbBagCylokUVoufJyl_cEBsYBz0gAT21n-OvjrXTcjQbp9jMBJtv63nIpL3uPh6RhQu8qrjxHrkw7PDclWGQ-hOF6v-9dQ5vUS8412Ky8euzUNClREMRFy_Dp5P6hUK8PK1nNN4DJIpnYYBmeE2RIlw724hZ8GQQiBeE9B8w9Z2Ea_"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGrQb6v72jeF4itogqxz66U1KZ9CEsXk4UqIabuIDEZv6B9TjJCbtmXJBVgHe_QZ4hv5UwK_QYmyqQPTKz4CQSR6irChlplGMQIu-Z9aoktzHgXvGNWhSa_UNCV1TEfIlLQKZOx=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/4kSWFnicHcRRboIwAADQE1VgYzWY7EMrQ0SZVVDsDwHStUqhQAs6LugZvI2J7-M9H1zrRs0MQ_DPCZOSCdor2hWy1rTWk0JWBmsUKBRQxnwX4nLudTiHw_TjSn_si5asvY8QxlZAHOSqpLTj1s_y3l-6ZIALJ7quUa6rZL04shVNMbH58BXfghSfq_8W76JgtBE-7OGlQ1w0wttivwfEyWSpxxVLBi888UOWxiE6WpH754sNDsjv_ftmmaYJ-PsC1C9xR0UH"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=MDCX01lGm0a2-OAb73J12g&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=202.17303&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/hEqir3icHc1LCsIwEADQ22TX_CpUhSCiIAji1l2ZxtgMJE0wY6rX8VbeRnH5Vu_z9kS5rIUodHeOKro549OF0mTgY0pjcJCxcJuiqEqQf8RhAgybDFPCqzntdxepwiFK0M15O3TtUemR2aG3Ad1EJkIufamcwBIGx8dc2Gy0XjBv9GrJXvCT1Fx1rWxZRrLeSPZ_bqkaJeUXcz84pw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"This facility is packed with top shelf people, starting at the front desk.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXfOIG_9XR0HNqnlfFnRl-9gvEmyIk_nKJx6nz58yUoBwvCuETHsw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Easy check-in, comfortable office, professional staff and best service!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV6_aLJOJggw11TSBB5Vtw4J_PV1W34PBzxwE8-vlHwSYfq6N01=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Amazing experience with the allergy doctor and the staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJzhKZTDrR2wUoReQNeGj8_K0sr3y-0HOsVHkZIh0OA_S2RK4Vy=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Jane Sullebarger",
+          "rating": 2,
+          "contributor_id": "102948493602043385473",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIyNGawRMLUCxqjUY_FUxM4jbUvIpu3gPmV4KJwEu_pr3Un0YQ=s120-c-rp-mo-ba12-br100",
+          "description": "I wouldn\u2019t recommend going here. They want you in and out as fast as possible, I didn\u2019t feel like they cared about me at all. I had an allergy test done and the tech who saw me literally had a kitchen timer and reset it every time he spoke to a new patient. A kitchen timer. He didn\u2019t even try to hide it. He pricked me with the allergy test and then put me in a busy hallway to wait. The reception area is a den of chaos the likes of which I\u2019ve never seen. Josh Safdie levels of stress. I was holding my coat and purse and the girl at reception would. Not. Stop. Handing me paper after paper after paper and clipboards and telling me to scan QR codes even after I asked her twice to slow down. They also forgot my bloodwork.\n\nThe nurses and receptionists seem very nice and were helpful and I could tell they care a lot and  work really hard in a really challenging environment. It\u2019s too much going on in too small of a space.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsMGEwWkpXVzF1Wm1OSWVFSkxSSFJqZDB4bGJWRRAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOll0a0ZJWW1uZmNIeEJLRHRjd0xlbVE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-07T20:41:13+00:00"
+        },
+        {
+          "username": "Elvira Larsen",
+          "rating": 4,
+          "contributor_id": "110991585722877564424",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIoN17o56tYm62vtYb4kCLp8rxCDlx3kXf9vGzGsDxP046ZmCQ=s120-c-rp-mo-br100",
+          "description": "I had good doctors and had many tests but find full explanations of the results are not explained.  They are mostly in a hurry.  I have rare conditions and require high maintenance and wish I could get all the results of all the tests where I am supposed to see the provider and have them explained   unfortunately the one provider had r Mergentheim surgeries as nd was not contacted that he had surgery  himself and went and he was not there.  I was able to see a neurologist instead who addressed some concerns\nI was not prescribed the medication we discussed.\n\nThey are always friendly and helpful.. I have accomplished what I needed all extensive testing where I was stagnation with my care elsewhere.  They are excellent in testing and are always very kind and understanding.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WNVFtdGFkVmd6YVY5TWFVUTVWSEZQZDNsa01VRRAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOnV5QmtadVgzaV9MaUQ5VHFPd3lkMUE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-03T05:25:35+00:00"
+        },
+        {
+          "username": "Ixchel",
+          "rating": 5,
+          "contributor_id": "102070496024349942820",
+          "user_review_count": 3,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ8chHqabwZ93uTWyWqCveeJzet-663bOaDZ6wf8s9xvyT1iQk=s120-c-rp-mo-br100",
+          "description": "Great experience so far. There can be a wait time somedays,  but that is expected of medical offices. I do believe and see that staff make efforts to get everyone seen as fast as possible. They are friendly and take the time to provide information. Raphaela Gassanov PA is great! very patient and took the time to answer my questions. I also appreciate the multiple email, text and printed reminders. It is also very conviently located close to public transportation (off the M, F 14th St. subway station) So far, from the 2 times I have visited it has been good experience. I hope it continues :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wRk0wbDFkM2RyU0dOdWMwNHhhWEUzWWpWeVZWRRAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOmpFM0l1d3drSGNuc04xaXE3YjVyVVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-07T13:26:55+00:00"
+        },
+        {
+          "username": "Oscar Feliciano Jr",
+          "rating": 1,
+          "contributor_id": "110686969905102538912",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLyeSclCjmZt_hUcxgXHg1JESxMU-rIWent5lE8512tmWhe6u0=s120-c-rp-mo-br100",
+          "description": "Your review:\nI have no issue with my primary care doctor and the rest of staff over at 912 Columbus Ave. However, I do have an issue with the Allery Doctor who was very rude and he had a nasty attitude, he was quick to rush me off. He didn't care about my concerns and was quick to give me a wrong evaluation saying I got asthma?? When I'm walking perfectly fine with out huffing and puffing and not losing my breath. He prescribed me a asthma spray?? which I refused to take! And they got to stop rushing me out of there! Also, my primary care referred me to a sleep apnea test, they won't take my insurance. Other issue is that I had a sonogram which required a follow-up appointment which I tried with front desk. They are now saying I can't to a follow-up because they won't take my insurance! You just did a test on me and took my insurance! Now you don't take my insurance! Very confusing and disappointed experience! What the hell is going in this facility! Also, I noticed a lot of people coming in here. It could be crowded at times which I don't like. It's a mixed bunch at front desk. You got some nice ones and you got some with attitude problems like when I called about my follow-up for gastroenterologist, the girl had a nasty attitude and was quick to say we don't accept your insurance and hung up on my face! Really classy! Trained your staff better! This is a medical office and not the projects!\n\nClick a review site below:\n\nPowered by Lauer Media Company",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pBMFUyRXlha1JGTVZFM09YZHpZa2RaTlMxaFNFRRAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOjA0U2EyakRFMVE3OXdzYkdZNS1hSEE%7C%7C?hl=en",
+          "date": "Edited a month ago",
+          "date_iso8601": "2026-05-15T18:24:59+00:00"
+        },
+        {
+          "username": "Oracle Beauty",
+          "rating": 3,
+          "contributor_id": "108402429944722012608",
+          "user_review_count": 4,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL-OhLrf3JEzlp4cR9Y_T4Xg7XMbOJGvW8xMzYYk06sYWt1mw=s120-c-rp-mo-br100",
+          "description": "I gave this medical office a chance to do better.. I appreciate the testing that they provided and their online portal, but I am done with them.  Reaching a human is not easy, especially when you want to speak to a staff from a different office. At the beginning directions for certain testing was not discussed, and led to rescheduling appointments which it frowned upon but it was not my fault.  It took a follow up appointment a month later to find out the pharmacy they sent to never contacted me and now with my pharmacy its been 2 weeks for an authorization but you get the run around and blame the pharmacy. again 2 weeks and no reply.  The bedside manner of the mri tech was not pleasant except for one who I submitted a positive feedback about is Richard at 14th street, he explains every question.  A few times waiting time was bad, but I understand things can get hectic but an hour and half for neurology appointment in the Columbus office was very frustrating.  The columbus office staff are overall pleasant, the checkout process should be more clear, if not you wind up sitting and waiting.  I believe they finally fixed the check in process, meaning I would check in on my phone and then again when I arrive scan code and answer same questions, not too sure, my last appointment I didnt need to do double check in on the app and barcode.  A patient should not have to be on top of staff to do their job, especially when one is dealing with medical concerns, the last thing one needs is lack of communication, and compassion.  An admin that was really helpful I believe his name is Felix, turns out he is no longer with them.  I truly wish to find doctors who listen like Dr Rachunow, I was glad to have met her and have a positive experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWNU56SXlkV2N4ZW5aS1EzcHZPR2c0YmxkaldGRRAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOlV5NzIydWcxenZKQ3pvOGg4bldjWFE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-27T21:02:47+00:00"
+        },
+        {
+          "username": "Victor Henriques",
+          "rating": 1,
+          "contributor_id": "114297710206170548046",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIaKMiubKa7wC6yMFQ9wjAZGivy3DpHbfq0vpXK--yPhQ-3KA=s120-c-rp-mo-br100",
+          "description": "I\u2019m not the type of person who leaves bad reviews but what happened to me at Medical Arts, and I\u2019m sure with other patients as well, needs to be looked at.\nI was diagnosed with disc herniation and stenosis. Had an appointment yesterday at 3:40pm with a pain management doctor, and with a spine specialist today at 10am, both appointments scheduled over 2 weeks ago.\nI arrived early for my 3:40 and while was waiting to check in, got a call from Medical Arts canceling my 10am today because the doctor would not be in office. Had to reschedule for May 19th.\nWaited until 4:30 to be called in for my 3:40 appointment (I was told at the front desk that the doctor likes to take her time with the patients) to hear that yesterday was the doctor\u2019s first day at Medical Arts and she is not yet credentialed so she couldn\u2019t give ANY SORT of treatment or prescribe anything. No injections, no medicine, no physical therapy. Nothing. According to her, she was told by the owner, that same morning, that her credential would be ready in 6 MONTHS and she couldn\u2019t practice but she could offer injections for a few hundred dollars, but she didn\u2019t feel comfortable doing that.\nI was in absolute shock listening to all of that. Medical Arts made me wait 2 weeks plus the hour I waited at the hall, in excruciating pain on my lower back and both legs to hear I couldn\u2019t get any treatment because the doctor isn\u2019t credentialed yet and the other doctor that could do it wasn\u2019t working and they had no idea when he would come back.\nI\u2019ve been taking anti inflammatories for over a month just to be able to function (even though I\u2019m not supposed to due to the side effects), risking my kidneys and liver, and left the practice with no direction, no treatment, nothing. Just the biggest waste of time of my life and a feeling that what I\u2019m going through, and other people too, don\u2019t matter. It depends on a credential or a few hundred dollars.\nI called Medical Arts after I left the facility  and asked why they let me wait all this time, untreated, in pain, to hear what I heard and they told me that by doing what they did I was able to at least see a pain doctor. For what??? To have a chat about the weather?\nThis whole situation was unbelievably unprofessional, I am now left still in pain plus with this feeling that we, the patients, really don\u2019t matter. I\u2019m sure my insurance was billed for this \u201cappointment\u201d and I lost a day (meaning payment) at work because of what they did to me. Who will be held responsible for this? If I miss my appointment with them I have to pay a fee. What about what I missed? And everything I am going through?\nIf you are a patient going to see a pain management or spine specialist, call them and cancel so you don\u2019t have to go through what I went through. If I had known what was going on before, I could\u2019ve booked another appointment to have my problem looked at at least 2 weeks ago and probably wouldn\u2019t be taking the pills I\u2019m taking and would not be in pain anymore.\nI wrote them messages through the patient portal, emailed de patient care supervisor and am waiting for an answer. Let\u2019s just have this registered here too.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSTVJuRXpVbEpOVlVVMFFrdEVUbXMwZUVOWE0yYxAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOkRMRnEzUlJNVUU0QktETms0eENXM2c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-06T12:06:19+00:00"
+        },
+        {
+          "username": "Paul Stetzer",
+          "rating": 4,
+          "contributor_id": "111570009153782233633",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWBb8YV6iFouSzOeUH04XIRvstFRLz7lctU4euf70ObICRQSmA=s120-c-rp-mo-br100",
+          "description": "My appointment with Dr. Wilbur was great: she listens, she reflects, she asks good questions, she offers sound advice. I very much trust her. So, I would definitely recommend her.\n\nAll the back and forth and the form-completing before the actual visit are off-putting. It seems that much of the info already exists. And one reminder a few days before an appointment should;d suffice.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tsamIzY3dXV1pmZUdacGJEUTBjMlJxWHpoQ2JHYxAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOkljb3cwWWZfeGZpbDQ0c2RqXzhCbGc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-16T19:54:19+00:00"
+        },
+        {
+          "username": "Mr. Eejay",
+          "rating": 3,
+          "contributor_id": "101289033583766473225",
+          "user_review_count": 8,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKv5zSutNrK-n35z7L2vWCmQrMoUhlTQBlWEvUrPDOgq7yVRQ=s120-c-rp-mo-br100",
+          "description": "My doctor was amazing. I really liked her energy, and she made me feel very comfortable. That positive experience made me want to continue care with this doctor and this practice.\n\nUnfortunately, the billing experience was very disappointing. While I was signing the paperwork, I specifically asked whether I would be charged because the forms suggested I might be, and I usually am not charged. I made it clear that if I was going to be billed, I did not want to move forward. The staff checked my insurance and told me I would not be charged. However, I later received a bill anyway.\n\nBecause of that, I ended up canceling all of my appointments. It is very frustrating to be told one thing upfront and then be billed afterward.\n\nI also found the communication excessive. They send far too many emails and text messages, which felt overwhelming and unnecessary.\n\nBased on my experience, the doctor was excellent, but the billing and communication practices were not.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aWlFWTnViWG8yU0ZadWJXOUtOV1psYzI1alZXYxAB!2m1!1s0x0:0xa32bfe6c5e398b3f!3m1!1s2@1:CAIQACodChtycF9oOnZZQVNubXo2SFZubW9KNWZlc25jVWc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-20T14:10:29+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "W14 Medical Arts",
+            "data_id": "0x0:0xfbc9be70c8848b3d",
+            "data_cid": "18143241965448497981",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfbc9be70c8848b3d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfbc9be70c8848b3d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7375183,
+              "longitude": -73.99758140000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfbc9be70c8848b3d%218m2%213d40.7375183%214d-73.99758140000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 1051,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF1FMqgus4fhiq_G7M74Sj1V9uPdrpZcA1g9b9dBJqrtav7-wASDfWFOShC5di4njnpBAuUUqjOH-4juN2QxSlOcXqNojribtn1V8tKeZjdmLLedfQC8fpXBnh-qmGH-6tTyxg6=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Radiology Medical Arts",
+            "data_id": "0x0:0xccf79e11f4489c4f",
+            "data_cid": "14769447302934862927",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xccf79e11f4489c4f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xccf79e11f4489c4f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7299193,
+              "longitude": -73.9795773
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xccf79e11f4489c4f%218m2%213d40.7299193%214d-73.9795773&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 339,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEwGJYg77prKyTXDRcD4qeBwfl5X3392SnNPtdvva0fFr0nd26KC2bcie1fsNSejUN72U69FscE8z8jGAu-855J4L441g_dxsAj3kzjRVB22GEf2OifmSob8a8AjaLQ3HcTtyvS=w156-h156-n-k-no",
+            "type": [
+              "Medical diagnostic imaging center",
+              "Diagnostic center",
+              "MRI center",
+              "Neurologist",
+              "Neurophysiologist",
+              "Pain management physician",
+              "Physical therapist",
+              "Radiologist",
+              "Sleep clinic",
+              "X-ray lab"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Fifth Avenue Neurology",
+            "data_id": "0x0:0x4963a0d0cfb726d9",
+            "data_cid": "5288247206161622745",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4963a0d0cfb726d9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4963a0d0cfb726d9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7358615,
+              "longitude": -73.9939231
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4963a0d0cfb726d9%218m2%213d40.7358615%214d-73.9939231&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=LTmKvNLQe_rircMY7DnAJsun09b503schwkgqGWw1aoHBYalAAKZ1bvEjWzE4Oo9Xz-fKrIcVW3aypFTfFIOeYJKOPIo7Lxk_iPqcIwfjoEq5m-MfBPJ1_ZPNFbjhPF1bodmvuwmX-ee-YuVnqgDbMyZE80zqc8d",
+            "type": [
+              "Medical clinic",
+              "Neurologist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "NY Neurology Medicine, PC",
+            "data_id": "0x0:0xb30f861d3f5eb349",
+            "data_cid": "12902678917615104841",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb30f861d3f5eb349&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb30f861d3f5eb349&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7466511,
+              "longitude": -73.99338279999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb30f861d3f5eb349%218m2%213d40.7466511%214d-73.99338279999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=HEqN_sJafmE8E4vi7Y2lx085_OwpvF2yvBp9uWDUtgcdtDHMbOqvnT2oI1QaKBRL8-l_uhnNKXt-GN3RBRwi2RZNIhJ4IdDNv_DlJjv_hIQDZTJHjkgv-IhY9vBkYuWEaEY3AFO_NYck9gdTt6QtS8YpyUA9AWWM",
+            "type": [
+              "Medical clinic",
+              "Neurologist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Institute Of Neurology & Neurosurgery",
+            "data_id": "0x0:0x31a140069bc8b8aa",
+            "data_cid": "3576209976236488874",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x31a140069bc8b8aa&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x31a140069bc8b8aa&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7342392,
+              "longitude": -73.98312709999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x31a140069bc8b8aa%218m2%213d40.7342392%214d-73.98312709999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=Gqq6Q3RQBqTZOsTEPeZujWGQRuEsdogxgPdUx6-S2qpiCWDXJnHuMrlfaFdzVUGHWxxBVdniEvqZHJk03AHeMkjauQpoemG7uh2bm_qSDoRfeSrHhEb0iW6kmMG9R6Sse3tab7k5sNLLDC3_ZbVMcgcg5mVQo5Bc",
+            "type": [
+              "Medical clinic",
+              "Medical laboratory",
+              "Neurologist"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Busier than usual",
+        "time_spent": "People typically spend 30 min to 1.5 hr here"
+      },
+      "graph_results": {
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 24
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 35
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 27
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 27
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 81
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 90
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 98
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 96
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 35
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 94
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 87
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 44,
+            "live_busyness_score": 81,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 90
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 98
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 29
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OikKJyIjMTQgU3RyZWV0IE1lZGljYWwgQXJ0cyBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COikKJyIjMTQgU3RyZWV0IE1lZGljYWwgQXJ0cyBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

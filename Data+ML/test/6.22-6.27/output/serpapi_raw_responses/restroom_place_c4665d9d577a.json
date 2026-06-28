@@ -1,0 +1,961 @@
+{
+  "search_metadata": {
+    "id": "6a3d0a4efda6071bd324dc10",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/ftNLdEavZ5fOcfm_QVwa-w/6a3d0a4efda6071bd324dc10.json",
+    "created_at": "2026-06-25 11:00:30 UTC",
+    "processed_at": "2026-06-25 11:00:30 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2589171b0feaf:0x71e26bb17ec724ac!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/ftNLdEavZ5fOcfm_QVwa-w/6a3d0a4efda6071bd324dc10.html",
+    "prettify_html_file": "https://serpapi.com/searches/ftNLdEavZ5fOcfm_QVwa-w/6a3d0a4efda6071bd324dc10.prettify",
+    "total_time_taken": 0.43
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJr_6wcZFYwokRrCTHfrFr4nE",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Rambles Shed",
+    "place_id": "ChIJr_6wcZFYwokRrCTHfrFr4nE",
+    "data_id": "0x89c2589171b0feaf:0x71e26bb17ec724ac",
+    "data_cid": "8206239881102828716",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2589171b0feaf%3A0x71e26bb17ec724ac&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2589171b0feaf%3A0x71e26bb17ec724ac&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7784335,
+      "longitude": -73.96770049999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJr_6wcZFYwokRrCTHfrFr4nE",
+    "provider_id": "/g/11c3yr74dl",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYaPjKnvRh_TODP0b4zv9MTttTbXdZHbvB81o25O2YoKfNjmX-kNEv-eE7pKAxEv9TgVxEFU-q60KD_9Z9MfTQ-VQ3Rq6ZDjjph1XEeJELC2VE8VrovRz2qpPKJ9H_QI6y_J3p6EDjWw3Z=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/YPZSdnicHcTBToMwAADQLyoUmLiaeECpTroxIJUxLkSw0HQbLWvtNn7S8_7GxHd4919ujNJPrnvkgTNIORzZj2bnTo6Gjcbp5MkdlAadBtqNsjQ_RO_7r0yQ0Ra8ods4g-1itmhDjaFt9V2vWvuy9KT_sPX3kvSpOFXgkGILGH5UJLpii-hQXvHbJ5hCSOIG1WjT0xyUeVBMYR0LobhXYZbg9atf4mV5lraY_UllJEGrJv8Ib00SqBDHYncJ6ueLByEE_P8OjH8y5UWg",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 53
+      },
+      {
+        "stars": 2,
+        "amount": 9
+      },
+      {
+        "stars": 3,
+        "amount": 15
+      },
+      {
+        "stars": 4,
+        "amount": 8
+      },
+      {
+        "stars": 5,
+        "amount": 39
+      }
+    ],
+    "rating": 2.8,
+    "reviews": 124,
+    "type": [
+      "Public bathroom"
+    ],
+    "type_ids": [
+      "public_bathroom"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "East Dr, New York, NY 10024",
+    "country": "United States",
+    "located_in": "Central Park",
+    "website": "https://www.centralparknyc.org/locations?filters=restrooms",
+    "phone": "(212) 310-6600",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "Q2HJ+9W New York",
+    "hours": [
+      {
+        "thursday": "7 AM\u20138 PM"
+      },
+      {
+        "friday": "7 AM\u20138 PM"
+      },
+      {
+        "saturday": "7 AM\u20138 PM"
+      },
+      {
+        "sunday": "7 AM\u20138 PM"
+      },
+      {
+        "monday": "7 AM\u20138 PM"
+      },
+      {
+        "tuesday": "7 AM\u20138 PM"
+      },
+      {
+        "wednesday": "7 AM\u20138 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYaPjKnvRh_TODP0b4zv9MTttTbXdZHbvB81o25O2YoKfNjmX-kNEv-eE7pKAxEv9TgVxEFU-q60KD_9Z9MfTQ-VQ3Rq6ZDjjph1XEeJELC2VE8VrovRz2qpPKJ9H_QI6y_J3p6EDjWw3Z=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YPZSdnicHcTBToMwAADQLyoUmLiaeECpTroxIJUxLkSw0HQbLWvtNn7S8_7GxHd4919ujNJPrnvkgTNIORzZj2bnTo6Gjcbp5MkdlAadBtqNsjQ_RO_7r0yQ0Ra8ods4g-1itmhDjaFt9V2vWvuy9KT_sPX3kvSpOFXgkGILGH5UJLpii-hQXvHbJ5hCSOIG1WjT0xyUeVBMYR0LobhXYZbg9atf4mV5lraY_UllJEGrJv8Ib00SqBDHYncJ6ueLByEE_P8OjH8y5UWg"
+      },
+      {
+        "title": "Inside",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHkPiKS4ufuhJ0QO43PDCW8cUajJecp2khm67dlFavHHguAf_3gzePGEeTrnT6i8z3-cDKR2RQ852A01nchjp-HJsjJJy-VyjAEmjzyiy5y3hQpwMoNp0uA5PLRhkYPn1bs1xMf=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/azE1AXicHcTbbsIgAADQL8LSYl2zxAfiZQ1OR-tl2ZNRpFDaApEypT_oN_g3Jp6H83zIvrfuM4paiUbCGNFy7_iVGd1z3Y-Y6SJhHWAOuAjTTdHgvKH1ajv2lZcEFj9jROez34ztT4pwZpNGdpOPS7s8_ee58Lg6IjFw-rXgu6veTepsQIDNV2VSFlmaYBhrJpUFOXGKkAAOQeFFp4ZQhzQgWdjb2mws9Dil36Vs_qiOzy6-r6vpLYYQAvmeAf0CLEdEcw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbqdAMjyHaEu7WCpU7o40PrHDWIaAf7O6yIJRmifmqTmA3qluhxRiwXbSS3gUJdg7jZ8O6yHsgjW8Wrq-t31-ycr8tZct-lkHlL-qMTxMzIHrHOcqVnDh709S50PUalCHfmd0=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DSgWmnicHcrNToMwAADgJyqUoCuaeGi2ZYUMh2OI2Y0VaIGW0h_C8AF9B9_Gxct3-n5_uHOTffV9wUOPKcVEM9vGUDW6ZnQeVdJnkwXUAuvj7P1jwIebrnHar6Taz6jcTgVSTzAzZFfGFW7RabPGyVl2rdQXiUMtZn4_d8vXLc9DViQ1Q_01eiRiWV9GpdHAhQFYqYnclTogBiKOQKeXe_odE0NOVH-OO47gS_4Ms6ISW9LKGr4tAYQQ8H8pGP8APcxEeQ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I love the location of these bathroom.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW-_yT9PWbWTMuv_RkYKXXzg-mIycAPDm7O4fEi1icTQD232f0=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"One sink has water, one has soap.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXvv4kx4zgThFSKNOt5hkX7voZ6MUUAoUJZQ43E1H_6rTnBsh1V=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"High quality bathrooms\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUTjUhBk2yV-z-bwKo0e-Nrh_aedsXOa9BAOh7Ektj8mC8Fuc4A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Chen Dudu",
+          "rating": 4,
+          "contributor_id": "113570726343754048305",
+          "user_review_count": 5,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKto6QwBh6PUAjOzBPqEfcsBE3v8g7n9RS4JJ8MUMOOgSWUENQ=s120-c-rp-mo-br100",
+          "description": "There\u2019s no way with a \" no bike on sign, only walk. I entered a very quiet restroom. It was like plain and not fancy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s5alJUVmtiRXczYkdsWVEySXhVVGxoWlhob1RuYxAB!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CAIQACodChtycF9oOk9jRTVkbEw3bGlYQ2IxUTlhZXhoTnc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-14T21:58:19+00:00"
+        },
+        {
+          "username": "Joe Valdez",
+          "rating": 1,
+          "contributor_id": "112821539810095106945",
+          "user_review_count": 13,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVbvBp_RQf1yzntg0n_6TXEWSEDEmggNGa0u7GZRO0iJWGzg34Dng=s120-c-rp-mo-ba12-br100",
+          "description": "Restrooms were closed on a Sunday afternoon and there was a crazy long line for the women's room at the Boathouse. Central Park can do better. This is silly.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25jeFJUaEhjbWRpVUhSWlkzSm1kRGhDU1RkUGVWRRAB!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CAIQACodChtycF9oOncxRThHcmdiUHRZY3JmdDhCSTdPeVE%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-08-31T19:36:26+00:00"
+        },
+        {
+          "username": "Tracy Marotta",
+          "rating": 3,
+          "contributor_id": "114350783034702623024",
+          "user_review_count": 489,
+          "user_photo_count": 5259,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW2oXzVtO4GsF3ju-pJCe-VJ3ratcj5Jpr8q7M1nRdCCQQM-obb=s120-c-rp-mo-ba12-br100",
+          "description": "Not the cleanest but had toilet paper on a Saturday afternoon May 2025!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTUNZaG9YMml3RRAB!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CIHM0ogKEICAgMCYhoX2iwE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2y3626bnrRFkI9uAu3cruboGJOP2VRwnqXvOqbdqhHDcRdjr7Ny9z8Dhzqe7mfXcIVHsUJgGbGRJDVCBvyr6SxeEALX9u4Eea6b15zloATk-u8AnH-CjxWWHf4V8EP2fon0h94=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-05-03T21:13:16+00:00"
+        },
+        {
+          "username": "F R",
+          "rating": 4,
+          "contributor_id": "102683654611297541728",
+          "user_review_count": 24,
+          "user_photo_count": 29,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKDFNxUs8MOdaaKS9wukKgVj6fhutZ71NaN5ARPMm9zXeW8iw=s120-c-rp-mo-ba12-br100",
+          "description": "On google maps depending on your location it will tell you to walk down 79th street where there are cars however there\u2019s no entrance!!! You have to go to Belvedere Castle and cross over to Rambles Shed pathway. There\u2019s a sign just follow it. Like this review to help people see it so they can save time and hassle. Especially if you\u2019re elderly, young children, have a condition or really need to go. \ud83d\udc4d\ud83c\udffc",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VPWFMxX19ib2FyUnF3RRAB!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CIHM0ogKEOXS1__boarRqwE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1LIjz1EGUlbH7PHaRON-NgjzzwFR_ViqlFY5JhNwjKq0wIjqkeev2Mim5taJTpYArKcvcyR0DziC8_P2YNV3mPCD4eY7LNqfvl9IyUl0X_kg7FSwW5RbgiZfCA2wK5W8ycjb8=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1scVFEkYEdR93fjrDohpQF08aLysXUWzEHgR4xmqm8fmmydtL97tsgS-yHdle8T6yXPoe60wlaV8N8aYUonr_xQV5f-L1GIoAHE7q9X_hRPOGl1CxU7PomvBTWAnlVbuj3H19d=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-05-13T03:35:45+00:00"
+        },
+        {
+          "username": "Lucas Mercado",
+          "rating": 1,
+          "contributor_id": "112369733052844989510",
+          "user_review_count": 5,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI8cfykOZGlqxCCzpqs4_qLjLSQ1CiiWm8_npisRI9TU7TXlto=s120-c-rp-mo-ba12-br100",
+          "description": "As dingy and disgusting as it gets. Men's room had 3 stalls, one taped off, one's toilet completely backed up and full, and not a single one with a door attached. I'd rather poop my pants, fellas use for #1 only.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTURRaWZhaTNBRRAB!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CIHM0ogKEICAgMDQifai3AE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-11T22:14:31+00:00"
+        },
+        {
+          "username": "Kim Kinsey",
+          "rating": 4,
+          "contributor_id": "107456949570515423068",
+          "user_review_count": 40,
+          "user_photo_count": 34,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocILWAqgzXkzj1qIvdyL0h3FPpbofXOzbJz9899CgU4P4GgKXF_G=s120-c-rp-mo-ba12-br100",
+          "description": "It's only open until sunset, so don't pay attention to any closing time that is after sunset. <SMH> \ud83d\ude44 I can't believe that people are so ignorant that they don't understand that the reason there's no stall doors is to cut down on people having sex and/or doing drugs in these bathrooms.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNIMTl2bGJ3EAE!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CIHM0ogKEICAgICH19vlbw%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-09-10T01:02:10+00:00"
+        },
+        {
+          "username": "Megan Jack",
+          "rating": 1,
+          "contributor_id": "105053909222425774590",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJXKY6uBHJ1KzoLYaxz9JJntJ0nU1uFkCgGgF23LkGWHtxofw=s120-c-rp-mo-br100",
+          "description": "Men\u2019s bathrooms were outrageous! No doors on the cubicles, my brother had to witness a guy taking a dump out in the open ew! Ladies on the other hand were better, didn\u2019t even have those peek through gaps in the doors",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNmX2ZPUWVREAE!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CIHM0ogKEICAgICf_fOQeQ%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-01-01T00:44:02+00:00"
+        },
+        {
+          "username": "Review Guru RESCUE",
+          "rating": 5,
+          "contributor_id": "108628153458706286265",
+          "user_review_count": 215,
+          "user_photo_count": 198,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW-_yT9PWbWTMuv_RkYKXXzg-mIycAPDm7O4fEi1icTQD232f0=s120-c-rp-mo-ba12-br100",
+          "description": "I love the location of these bathroom. It serves quite a few purposes depending on which time of day you might be rambling and stumble upon this structure of poor plumbing. Don\u2019t get your pipes all stuff up over this one. The lack of stall doors serve a purpose that without these amenities, it wouldn\u2019t be so popular.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNydHBIOFJREAE!2m1!1s0x0:0x71e26bb17ec724ac!3m1!1s2@1:CIHM0ogKEICAgICrtpH8RQ%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-07-06T23:39:08+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Restroom",
+            "data_id": "0x0:0xd907d8cdcf06fcff",
+            "data_cid": "15638706609520573695",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd907d8cdcf06fcff&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd907d8cdcf06fcff&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7750978,
+              "longitude": -73.96866399999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd907d8cdcf06fcff%218m2%213d40.7750978%214d-73.96866399999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.6,
+            "reviews": 94,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTFRDF8Peq-ZkA6si9qhTquTVXwVF-69bsj8EjdofbNbUvfVOzORP-bALB-F6WnDofLXFD06vw06rr-F58qCMgogfaQgrHoqkMxO53pF0vZKoMB3jzMzDF0hS4DOFSMTqp2F6u=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Restrooms Bethesda Terrace",
+            "data_id": "0x0:0x6849056126e7eb7a",
+            "data_cid": "7514543368067083130",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6849056126e7eb7a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6849056126e7eb7a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7735846,
+              "longitude": -73.9711119
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6849056126e7eb7a%218m2%213d40.7735846%214d-73.9711119&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.2,
+            "reviews": 108,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPfS57aobB7KZvBnFBaFsEfvwpX1QqMaZWSrIS5U9cLDLzkp_IondsVFufCHIfttttcIq8dJrMog2LXQuOO1Rm-vVn4tPjHRjmw8skeStTfM5qDjmi2bAjOOGQjHli36NwlIg6=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Mineral Springs Public Restrooms",
+            "data_id": "0x0:0x7e96b2b1ee64f5a",
+            "data_cid": "570104660785254234",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7e96b2b1ee64f5a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7e96b2b1ee64f5a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7730678,
+              "longitude": -73.9744097
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7e96b2b1ee64f5a%218m2%213d40.7730678%214d-73.9744097&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 95,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjaNwS-E5VzlqQpJK9tR6fTaY2edPF1q8_dHT0ZJMwLc56uOZGruaaaAwO4xj2yQNqCaIJ0w88f_bp1gk7xZEGh9Kyk1lwmfjsMk9C_RKdGkd3-0Im0CY1N7ZqfQ_7Qk9KGqQ9Sw=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Merchant's Gate Comfort Station",
+            "data_id": "0x0:0x3d67045dcd052423",
+            "data_cid": "4424509959832937507",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3d67045dcd052423&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3d67045dcd052423&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.769113,
+              "longitude": -73.98068959999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3d67045dcd052423%218m2%213d40.769113%214d-73.98068959999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 27,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf7yW9hkoaR3oGbaZpj6g2bD2EqGJpQUei-OjdA17FCfnj8FCbQqJnuVEr-nYkZ7hhf9sLFYkuz6SIRdRezYC5hdhFzJfmoVJObZgyO0iAEpkXMHAyt3djlod7u3rtiT8J9yvzJjEGUmY=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Less busy than usual",
+        "time_spent": "People typically spend 15 min here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 25
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 25
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 27
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 81
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93,
+            "live_busyness_score": 47,
+            "current": true
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 88
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 88
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 81
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 90
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 95
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oh8KHSIZUmFtYmxlcyBTaGVkIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COh8KHSIZUmFtYmxlcyBTaGVkIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

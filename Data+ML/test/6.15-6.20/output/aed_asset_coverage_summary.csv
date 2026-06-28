@@ -1,0 +1,16 @@
+scope,group_name,group_value,coverage_kind,source_or_combination,radius_m,venue_count,covered_count,coverage_rate,incremental_covered_count,marginal_gain_pp,nearest_distance_median,nearest_distance_p90
+aed_summary,venue_type,emergencyasset,standalone,citibike,100,3279,1554,0.473925,1554,0.473925,102.36,178.83
+aed_summary,venue_type,emergencyasset,standalone,citibike,200,3279,3091,0.942665,1537,0.46874,102.36,178.83
+aed_summary,venue_type,emergencyasset,standalone,citibike,300,3279,3267,0.99634,176,0.053675,102.36,178.83
+aed_summary,venue_type,emergencyasset,standalone,citibike,400,3279,3268,0.996645,1,0.000305,102.36,178.83
+aed_summary,venue_type,emergencyasset,standalone,citibike,500,3279,3268,0.996645,0,0.0,102.36,178.83
+aed_summary,venue_type,emergencyasset,standalone,mta,100,3279,409,0.124733,409,0.124733,222.02,446.48
+aed_summary,venue_type,emergencyasset,standalone,mta,200,3279,1442,0.439768,1033,0.315035,222.02,446.48
+aed_summary,venue_type,emergencyasset,standalone,mta,300,3279,2314,0.705703,872,0.265935,222.02,446.48
+aed_summary,venue_type,emergencyasset,standalone,mta,400,3279,2816,0.858798,502,0.153095,222.02,446.48
+aed_summary,venue_type,emergencyasset,standalone,mta,500,3279,3034,0.925282,218,0.066484,222.02,446.48
+aed_summary,venue_type,emergencyasset,standalone,traffic,100,3279,38,0.011589,38,0.011589,1110.46,2069.34
+aed_summary,venue_type,emergencyasset,standalone,traffic,200,3279,111,0.033852,73,0.022263,1110.46,2069.34
+aed_summary,venue_type,emergencyasset,standalone,traffic,300,3279,212,0.064654,101,0.030802,1110.46,2069.34
+aed_summary,venue_type,emergencyasset,standalone,traffic,400,3279,353,0.107655,141,0.043001,1110.46,2069.34
+aed_summary,venue_type,emergencyasset,standalone,traffic,500,3279,466,0.142116,113,0.034462,1110.46,2069.34

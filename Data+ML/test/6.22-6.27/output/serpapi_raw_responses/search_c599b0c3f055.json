@@ -1,0 +1,1812 @@
+{
+  "search_metadata": {
+    "id": "6a3d3842f0114a9f55b93f04",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/CIn_Uf5_lrdYHHmPHFQFfQ/6a3d3842f0114a9f55b93f04.json",
+    "created_at": "2026-06-25 14:16:34 UTC",
+    "processed_at": "2026-06-25 14:16:34 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/clinic+near+downtown+Manhattan/@40.72,-74.0,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/CIn_Uf5_lrdYHHmPHFQFfQ/6a3d3842f0114a9f55b93f04.html",
+    "prettify_html_file": "https://serpapi.com/searches/CIn_Uf5_lrdYHHmPHFQFfQ/6a3d3842f0114a9f55b93f04.prettify",
+    "total_time_taken": 1.16
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "clinic near downtown Manhattan",
+    "ll": "@40.72,-74.0,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "clinic near downtown Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "Walk In Clinic of NYC",
+      "place_id": "ChIJ96Lm5QBZwokRMMuE3ooi7yM",
+      "data_id": "0x89c25900e5e6a2f7:0x23ef228ade84cb30",
+      "data_cid": "2589326290595400496",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25900e5e6a2f7%3A0x23ef228ade84cb30&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25900e5e6a2f7%3A0x23ef228ade84cb30&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.750637399999995,
+        "longitude": -73.9853428
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ96Lm5QBZwokRMMuE3ooi7yM",
+      "provider_id": "/g/1tm8lhng",
+      "rating": 4.8,
+      "reviews": 194,
+      "type": "Walk-in clinic",
+      "types": [
+        "Walk-in clinic"
+      ],
+      "type_id": "walk_in_clinic",
+      "type_ids": [
+        "walk_in_clinic"
+      ],
+      "address": "35W W 36th St. Rm 4w, New York, NY 10018",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "9\u202fAM\u20132\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20137\u202fPM",
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 686-5800",
+      "website": "http://www.walkinclinicnyc.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Dr and front desk very efficient, fast and knowledgeable.\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=sezQTC1sT6zHE8Nm8pqHjg&cb_client=search.gws-prod.gps&w=80&h=92&yaw=0.6239004&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/6-gus3icHc3RCsIgFIDht_EudSvGFkgXEewqCHYfzpme0HmaNmtP02v1No3uf77_-7EpYdwzFtOkdZpBZ4SXdnGDkpoQjNMSIVIVPJsLluzT96MEd0A5BhhE1MulOxaxq5b2VJ99jY_2bojqr8qBHtMayElZavIqTmGgBiPJoubEiqYkb5kFp1W5bTjfEYSkrODkf7mFWRSc_wB_4TmU"
+    },
+    {
+      "position": 2,
+      "title": "Manhattan Medical Arts - W 13th St Union Square",
+      "place_id": "ChIJoY3UdWlZwokRQ43iRAdCqBw",
+      "data_id": "0x89c2596975d48da1:0x1ca8420744e28d43",
+      "data_cid": "2064973028137274691",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2596975d48da1%3A0x1ca8420744e28d43&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2596975d48da1%3A0x1ca8420744e28d43&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.736216999999996,
+        "longitude": -73.9974574
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJoY3UdWlZwokRQ43iRAdCqBw",
+      "provider_id": "/g/11g22zz8ys",
+      "rating": 4.6,
+      "reviews": 1823,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Allergist",
+        "Cardiologist",
+        "Family practice physician",
+        "Neurologist",
+        "Women's health clinic",
+        "STD clinic",
+        "STD testing service",
+        "Travel clinic",
+        "Weight loss service"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "allergist",
+        "cardiologist",
+        "family_practice_physician",
+        "neurologist",
+        "obstetrics_gynecology_clinic",
+        "std_clinic",
+        "std_testing_service",
+        "travel_clinic",
+        "weight_loss_service"
+      ],
+      "address": "492 6th Ave, New York, NY 10011",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20138\u202fPM",
+        "friday": "9\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u201310\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20138\u202fPM",
+        "tuesday": "9\u202fAM\u20138\u202fPM",
+        "wednesday": "9\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(646) 454-9000",
+      "website": "https://manhattanmedicalarts.com/?utm_source=gmb&utm_medium=gmb-west-village",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Great staff, knowledgeable, compassionate and professional.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHkGTYBYwvsdYw-cCChVLKcI3TiWgX7mcQ4il1ImvAdGS9sHO9pyEYrlyzZ7NMcTeZum_b2vl8nRZrSCG3wMFWUURRK5m8WPBhm5EvdPYhRh4Ggyjw9TLI1Jk6H82_BqVJ-NGzG=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/6IQs7XicHcRJDoIwAADAF1U2FzDxAEQLooiIYrmYWEirtIAUaeCDvsHfmDiH-X5o1zViqSiMGhNS14QVb1G0uK66ouomuOYKaQTAAgjFjsJjaXslTJCDZC9yJAF2XXrZBdg3kkdKrguOj9MH03ze2zk8WcI7WM2wRi0bxmwR7nFSZG9-u-s9M6s4a08uNOR-k57PcRzMuJlGDuWzdZ9HiMZ0CsnwlFay87VtOfdM_ea8LlsQwhGupKaqKqD_Mah-g_FEZQ"
+    },
+    {
+      "position": 3,
+      "title": "Walk in Clinic NYC",
+      "place_id": "ChIJ96Lm5QBZwokRXlUagq00A-U",
+      "data_id": "0x89c25900e5e6a2f7:0xe50334ad821a555e",
+      "data_cid": "16502091379432379742",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25900e5e6a2f7%3A0xe50334ad821a555e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25900e5e6a2f7%3A0xe50334ad821a555e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7506286,
+        "longitude": -73.9853481
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ96Lm5QBZwokRXlUagq00A-U",
+      "provider_id": "/g/1th6frq6",
+      "rating": 4.6,
+      "reviews": 108,
+      "type": "Walk-in clinic",
+      "types": [
+        "Walk-in clinic",
+        "Medical clinic",
+        "Medical office",
+        "Urgent care center"
+      ],
+      "type_id": "walk_in_clinic",
+      "type_ids": [
+        "walk_in_clinic",
+        "medical_clinic",
+        "medical_office",
+        "urgent_care_center"
+      ],
+      "address": "35 W 36th St. Ste 7, New York, NY 10018",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 2\u202fPM",
+      "hours": "Closed \u00b7 Opens 2\u202fPM",
+      "operating_hours": {
+        "thursday": "2\u20137\u202fPM",
+        "friday": "2\u20137\u202fPM",
+        "saturday": "12\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "2\u20137\u202fPM",
+        "tuesday": "2\u20137\u202fPM",
+        "wednesday": "2\u20137\u202fPM"
+      },
+      "phone": "(212) 696-5900",
+      "website": "https://walk-in-clinic-ny.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"The Dr was able to address  the issue and provided a solution quickly.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHyfm74b-sDgvd0hhBiuQMJP98LI4rWusn12MbJVOurOxEpee8EGATPOi5trqkotf8IEb5tKTAlRJlG5WYR06PRSWmj-KxyP8yKO16dOOi0KPyiSD5kZz56nXjW0nTfI2Pl2EYhoQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/jeqVa3icHcThEoEwAADgJ5pWLHHnR05Hha10ws-yWlpb2kLe0CN4G3e-H9_3w7Ru1dwwOBuPSilLTntFu1wKTYUe5bIxylaBXAFluGQf1e5mKJrpJANqVT6ukLFl1Ue7gMycrT_p0l4J09plwRH3HX55LaWOt3YTgiuku3stdeH4XoZ0mLg8DvgapecY2iQ-pM0NhK-BOEOITfuKcQVDMlSHFaovb2SL0y2FIil8i3DLOzMZLZ4mhBCw_zkQP8sNRJ0"
+    },
+    {
+      "position": 4,
+      "title": "Midtown New York Doctors Urgent Care",
+      "place_id": "ChIJvRpK0gdZwokRrdQXXilI5Ss",
+      "data_id": "0x89c25907d24a1abd:0x2be548295e17d4ad",
+      "data_cid": "3163013655807120557",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25907d24a1abd%3A0x2be548295e17d4ad&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25907d24a1abd%3A0x2be548295e17d4ad&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.74516,
+        "longitude": -73.9802665
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJvRpK0gdZwokRrdQXXilI5Ss",
+      "provider_id": "/g/1hhhs4q5g",
+      "rating": 4.7,
+      "reviews": 2302,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "Medical clinic",
+        "Pediatric clinic",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "medical_clinic",
+        "pediatric_clinic",
+        "walk_in_clinic"
+      ],
+      "address": "205 Lexington Ave, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20134\u202fPM",
+        "sunday": "9\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 684-4700",
+      "website": "http://www.newyorkdoctorsurgentcare.com/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "offerings": [
+            "IV therapy",
+            "Pediatric care"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage",
+            "Paid parking lot",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Amazing caring staff, smart doctors, and they take insurance!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH51uTBLYnjUVzhp-ZqjAe6dAafkWEwHPEadCEYbwD_tiEXV-_5VH9m4R5InM0IKwxOVMUfOSPTOs1skldOQ7MQpIzlNeM4XsDcspWmXSuUtaNxyQPT0R1Lv2Icfi75RyA1t43Ne6_qC5o=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/IXCUY3icHcTdboIwGADQJ6q0k2q2ZBedkkAmvwKiNwRLAQXauq8M9SF3v7dZsnNxfn86YzS8WdbQLRetUu0gJhBfXEkjpFlwNVqtBsQBgcWiIO6ZS8mUfuyO8prlz06j0-3KxKpmVdMfnNmNnKreOMfzvC3NxSlyVNLcfR3thHrSx97nfA9zP2vCfZSGQKAf6jBe-7H2nkMgfLuALQd9GIv9lJkquD_iKMUJ2X2_eLy5rGnyYMTYy0CsytuGqveZYIxR9z9H8g9RmUbD"
+    },
+    {
+      "position": 5,
+      "title": "NYC Health + Hospitals/Gotham Health, Judson",
+      "place_id": "ChIJCW5juYhZwokR6b89TzLlJxM",
+      "data_id": "0x89c25988b9636e09:0x1327e5324f3dbfe9",
+      "data_cid": "1380323815052918761",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25988b9636e09%3A0x1327e5324f3dbfe9&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25988b9636e09%3A0x1327e5324f3dbfe9&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7215504,
+        "longitude": -73.9958868
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJCW5juYhZwokR6b89TzLlJxM",
+      "provider_id": "/g/1w6r95yd",
+      "rating": 4.6,
+      "reviews": 136,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Doctor",
+        "Free clinic",
+        "General practitioner",
+        "Hospital",
+        "Internist",
+        "Medical group",
+        "Nurse practitioner",
+        "Physical examination center",
+        "Walk-in clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "doctor",
+        "free_clinic",
+        "general_practitioner",
+        "hospital",
+        "internist",
+        "medical_group",
+        "nurse_practitioner",
+        "physical_examination_center",
+        "walk_in_clinic"
+      ],
+      "address": "34 Spring St, New York, NY 10012",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(844) 692-4692",
+      "website": "https://www.nychealthandhospitals.org/locations/?distance=10&facility_type=168&view-type=list-view",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Doctors, nurses and staff are very friendly and informative.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHEflhOMKVcbhnoBPbSaS70f2yEOb5DAXK7IYB0_tUe-HY54SNIfw5Jz9oDq3xfGObEYwh1EL7RoDHufkbM9Pq140VdR3MGQpJfB5t_A6lpCEc6--rBAh3j_qeuDTQ9Onqzzs6W=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/pQFvN3icHcRLjoIwAADQE1WKCAQTF0UaUQcB8ceK2NrSKLZgS5jhgnMGb2PiW7z3vzCm1XPLaoQzqZWqG9Zr9qJKGibNhKqnVbcaUA20hbJd_kAx5o1Ik-2JEiFVmJHiWviQT_9wStwIXbb-ugxhZY4MxKU7K3ZrPribMVBR5_zyVUpwOQgb__h7FcU9f5AkyDp7Bk-3vZOs8nbDQ9dUyGvaJaYeAK8QCededayPDnmQym4ctXdeDDaEEIjvFMgPwgNC9g"
+    },
+    {
+      "position": 6,
+      "title": "CityMD Fulton Urgent Care - NYC",
+      "place_id": "ChIJr8vVPhhawokRUdYGcU5-xJQ",
+      "data_id": "0x89c25a183ed5cbaf:0x94c47e4e7106d651",
+      "data_cid": "10719831888417445457",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a183ed5cbaf%3A0x94c47e4e7106d651&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a183ed5cbaf%3A0x94c47e4e7106d651&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7103247,
+        "longitude": -74.0083319
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJr8vVPhhawokRUdYGcU5-xJQ",
+      "provider_id": "/g/11c5zzblsq",
+      "rating": 4.2,
+      "reviews": 473,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "Laboratory",
+        "Medical clinic",
+        "Women's health clinic",
+        "Pediatric clinic",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "laboratory",
+        "medical_clinic",
+        "obstetrics_gynecology_clinic",
+        "pediatric_clinic",
+        "walk_in_clinic"
+      ],
+      "address": "138 Fulton St, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20135\u202fPM",
+        "sunday": "9\u202fAM\u20135\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 271-4896",
+      "website": "https://www.citymd.com/urgent-care-locations/ny/fulton?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.citymd.com/urgent-care-locations/ny/fulton?utm_source=ReserveWithGoogle&merchant_id=CITY_1263&rwg_token=AE37R_iAv_gAUzDVa8ZrIYNEvtm2AtJQX-IGIaRmZUTUGi2ONFLTwfKuzmyTC79knB7J_9DusQJ-zl-QFjOn7MRbG8RyBfXQGA%3D%3D",
+      "user_review": "\"Amazing customer service, great doctor and impressive video chat follow up!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-Lpu6CFeAQb0A5IIhzewOmLgIJqhx49iMOH3KnrQ4ALJFsA2iq1abcW7hgSrA1MU5pWHlPl-X0-W4pZ6qIpVrLZmS49VMUuSNbyUdFL3RCVs9zWGxVIeS40j9Rs0eGAimfdPmhg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JDyxwXicHcRdDoIgAADgE5GYVLOtB9YyKSzNqc23RAJLFEXXzw07Qrdp63v4vh85DNosLauWzkS0raj5aHjP2mbgzTBhrbKENoAZYCwcHqI73gCqx_na4zgqIJ4RIt_8cVRUkF0nn8itgqPv7Js-QpjuPIOnVWdfCpYtpIh7bAfJTGd-HdbgDEGGdD7viE57mqsYuWmQjPGheCWlR53TOjXuO9s-U8JjBG_uyUC-xZW6lqGSYvWwIYRA_meg-QFaQEQH"
+    },
+    {
+      "position": 7,
+      "title": "CityMD Lower East Side Urgent Care - NYC",
+      "place_id": "ChIJI2-t44BZwokRxjsIkJ5wLf0",
+      "data_id": "0x89c25980e3ad6f23:0xfd2d709e90083bc6",
+      "data_cid": "18243361491871349702",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25980e3ad6f23%3A0xfd2d709e90083bc6&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25980e3ad6f23%3A0xfd2d709e90083bc6&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7184065,
+        "longitude": -73.9869387
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJI2-t44BZwokRxjsIkJ5wLf0",
+      "provider_id": "/g/11b8v9s9x8",
+      "rating": 4.3,
+      "reviews": 575,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "Laboratory",
+        "Medical clinic",
+        "Women's health clinic",
+        "Pediatric clinic",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "laboratory",
+        "medical_clinic",
+        "obstetrics_gynecology_clinic",
+        "pediatric_clinic",
+        "walk_in_clinic"
+      ],
+      "address": "138 Delancey St, New York, NY 10002",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20135\u202fPM",
+        "sunday": "9\u202fAM\u20135\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 609-2541",
+      "website": "https://www.citymd.com/urgent-care-locations/ny/lower-east-side?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.citymd.com/urgent-care-locations/ny/lower-east-side?utm_source=ReserveWithGoogle&merchant_id=CITY_1275&rwg_token=AE37R_gEfo-qyyS_mWYeekHxQ4CxXs5QMo2Fstlw2hMisMB6IoMW6vDGZnDAAqXE4drdf5uZM2inp83bsTPbJ_Fjf3dWynkD8A%3D%3D",
+      "user_review": "\"Friendly and professional staff, short wait times, clean environment.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjdkIP50IZuxR8yTXk2NSQUpjiA5RNcR3veK63_F_Os5J3Ay7QPa2sb15pXGjri5iPPL2GqKVVWITxCHHZGAQzD9qEL-C3QuQcaIpFEGAigi7x-G7DIylAW8vqudzRMqEG8GHc=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/t0CNGXicHcTbDoIgAADQLyJNRlpbD6wM6WJg1_XSipyipihq2g_2Df1NW-fhfD9xXSs9MYwshoOoKKIsbHRYiSKvw7weiOJpREoDoYE2MPN5ir3kkVKGTHppusDp9-fU8nf8oBKJUeCLALbhagSvi-tWoyXEvc3ZzdL3IVJnklQSScbWFilXx-OJ7ruZ510I5u_5uHTXYAZ5w8WNqoVLsIyk3QFiz2mf4ZPTls3jHWxKlzjEE9PX0DRNEP8XIP8B0QpC9Q"
+    },
+    {
+      "position": 8,
+      "title": "Eva Galstian, DO: Family Medicine, NYC",
+      "place_id": "ChIJBX4DgNRbwokRAtf_qwQHios",
+      "data_id": "0x89c25bd480037e05:0x8b8a0704abffd702",
+      "data_cid": "10054856834704987906",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25bd480037e05%3A0x8b8a0704abffd702&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25bd480037e05%3A0x8b8a0704abffd702&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7093746,
+        "longitude": -74.0099791
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBX4DgNRbwokRAtf_qwQHios",
+      "provider_id": "/g/12mkvn6_b",
+      "rating": 4.7,
+      "reviews": 676,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Cardiovascular and thoracic surgeon",
+        "Doctor",
+        "Emergency care physician",
+        "Medical spa",
+        "Physician assistant",
+        "Specialized clinic",
+        "Travel clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "cardiovascular_and_thoracic_surgeon",
+        "doctor",
+        "emergency_care_physician",
+        "medical_spa",
+        "physician_assistant",
+        "specialized_clinic",
+        "travel_clinic"
+      ],
+      "address": "160 Broadway 11th Floor, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20135\u202fPM",
+        "friday": "8:30\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20136\u202fPM",
+        "tuesday": "8:30\u202fAM\u20135\u202fPM",
+        "wednesday": "8:30\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(917) 409-7575",
+      "website": "https://www.familymedicinenyc.com/?utm_source=gmb_auth",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.zocdoc.com/doctor/eva-galstian-do-27139?LocIdent=241316&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pr_7EiUKUWKWk21ZtnrNUM2Nh-lo_BBdlBdXWSkqqS_V-2XFQ9h-entity&rwg_token=AE37R_ipO46N5muCGOcCgxEmTaOHOWfmZWQTmjzLuFmZpvOS0mcjPtSms-dHEyUk8moXitXiUhZ0Huu0CvZAucaQjeP7SjFClA%3D%3D",
+      "user_review": "\"The staff are kind, the office is clean, and it\u2019s clear they genuinely care.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHj08jpm8NsSetgZBG8w6IYIh0ap4Mzxnm37t6jXmI_d1c-vwQoRxXGwVZi-RnyFm6FiWljA81ieXMc76v3Z2yrijWwn2QaBzHTulU-BPuCnv-shARjQFaIdTlrIUcVKdSEtAlJTeJJq9c=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/O3qTbnicHcTNboIwAADgJ6oUWZCZeCiLaFk0gqiMiyGloXT9QVqo-pDe9zYm-w7f34tZ25ul5wkWzFqtW0FHQweilaXKzoiWXtsbQAwwHjrss1-05TDivYz25khtW8WbyIX4BzNY9x-7513JYGFDXkp8bXwCJpfp_F5u3LnqQK4eiQyT7iI4ivyOljuyCKegmj-Gjl-cmmd1_NwWoziB-DB-qQkYhnKeJTVuCjHgEzl_N8e1RSItaJrePsnK-RBCwP4nQL0BlElHyQ"
+    },
+    {
+      "position": 9,
+      "title": "One Medical Primary Care Clinic - FiDi Fulton Street",
+      "place_id": "ChIJe-PvBX9bwokR49T1rSmmq1Y",
+      "data_id": "0x89c25b7f05efe37b:0x56aba629adf5d4e3",
+      "data_cid": "6245268006221763811",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25b7f05efe37b%3A0x56aba629adf5d4e3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25b7f05efe37b%3A0x56aba629adf5d4e3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7103459,
+        "longitude": -74.0097266
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJe-PvBX9bwokR49T1rSmmq1Y",
+      "provider_id": "/g/11t2w6hpxj",
+      "rating": 4.5,
+      "reviews": 52,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "General practitioner",
+        "Medical Center",
+        "Mental health clinic",
+        "Women's health clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "general_practitioner",
+        "medical_center",
+        "mental_health_clinic",
+        "obstetrics_gynecology_clinic"
+      ],
+      "address": "Entrance on, 185 Broadway, Dey St 2nd Floor, New York, NY 10007",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20137\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20137\u202fPM",
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(888) 663-6331",
+      "website": "https://onemedical.com/locations/nyc/fidi-fulton?y_source=1_MTA1Mzk0OTQxMS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/one-medical-135029?LocIdent=372013&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_-_nKwBwZ-UyXvE331HydIw-lo_WNRp_CCkMU2SzT5zOIwiaR-entity&rwg_token=AE37R_hbAK7cB1E8lzrftha5v4N4Z8U6T8qDRAXp0fCpVTN4iNiMXPW5I79n0km3r6VHOaG_z4AaamcygsISteepITxnKii14g%3D%3D",
+      "user_review": "\"A very pleasant and efficient experience, in a clean and comfortable office.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFp46r6GVQqg1AdTsyf7RYODSI4Dam4oFdGEBWvtFuPIaXqsBfyKG27sUedDJ6quXEkxQohONuiQF-2h7NxVdRtAY352ZxourIPuMLxRdHRv6TNF2wzkvEkAPmKQW1fKQRSdXQThQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/VOKKQXicHcRdDoIgAADgE5E_mW5tPdAUM8uEzKy3JirNFBUw64Ydodu09T183w-TshNLTXuw-azivHoUShRDzltZtHKW80arOgFyAYQG4wjXEHWWPdh-ivvKgDQRr9Ihl4N7DCz31lgcUd9bn0eJVBzcsl6sy1fom444FdTd2r3KvHrCnB0idccImMyJppQSCS_zhXmduBqCWO13E6EbMtpJhMznux69GsZNiM9GGWJypBlOGF49DV3XAfufg_YH2NhFXQ"
+    },
+    {
+      "position": 10,
+      "title": "CityMD Financial District Urgent Care - NYC",
+      "place_id": "ChIJ18XmUP1bwokRGj3W5Sjg3TU",
+      "data_id": "0x89c25bfd50e6c5d7:0x35dde028e5d63d1a",
+      "data_cid": "3881504920122572058",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25bfd50e6c5d7%3A0x35dde028e5d63d1a&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25bfd50e6c5d7%3A0x35dde028e5d63d1a&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7064941,
+        "longitude": -74.01126649999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ18XmUP1bwokRGj3W5Sjg3TU",
+      "provider_id": "/g/11hz_kvwp6",
+      "rating": 4,
+      "reviews": 278,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "Laboratory",
+        "Medical clinic",
+        "Women's health clinic",
+        "Pediatric clinic",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "laboratory",
+        "medical_clinic",
+        "obstetrics_gynecology_clinic",
+        "pediatric_clinic",
+        "walk_in_clinic"
+      ],
+      "address": "24 Broad St, New York, NY 10005",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20135\u202fPM",
+        "sunday": "9\u202fAM\u20135\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(646) 647-1259",
+      "website": "https://www.citymd.com/urgent-care-locations/ny/financial-district?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "book_online": "https://www.citymd.com/urgent-care-locations/ny/financial-district?utm_source=ReserveWithGoogle&merchant_id=CITY_1343&rwg_token=AE37R_i9wK_bRqE_J6EhWbwmS0NpXp9i-n7Z_slZzigcroTmVXxsRL9gTBM05SiRQ0S9lgkIT62NlNLWuEQ2zrUuxdIXg0066A%3D%3D",
+      "user_review": "\"The staff were friendly and I waited less than 30 minutes to be seen.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEvucXrGZcLNrNj_zTAIAo3_pHpGGG_ALzPnbMUSAd6u5-HGoYDZ2lthklcBue0BKwihngWwOUTwHxltsDx1MIvuEIaRboeO8a6PwdsVnWZXcMgztd61Tn5jTKvOuw5A2TT0wMdhg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/nn4l23icHcTbDoIgAADQLyKxpmttPdBq6MpLRTdfXCGDisAJSPMP-4T-pq3zcL4fYW1rZkEgxWTEteaSOcM6qpVlyo6ofgW8NYAaYAJU5tsnWvWOnjtc0U3e5Y96IChFelK3SYsxrtFmKNUtO-xRE7sIJFhfltVYWvGUdOEYXKz9XSh-8sWB-OQtrVm-wyzt3Sq97m6aFdNrXPrGHNWpOtOMD7aJQ6KiB1n3hfMRGhMCfdYIPvchhBCI_xSoH3rIRwE"
+    },
+    {
+      "position": 11,
+      "title": "HealthNeed Medical Urgent Care Lower East Side NYC",
+      "place_id": "ChIJl8Yt-EtZwokRBBJ_mZfnjKg",
+      "data_id": "0x89c2594bf82dc697:0xa88ce797997f1204",
+      "data_cid": "12145336933412704772",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2594bf82dc697%3A0xa88ce797997f1204&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2594bf82dc697%3A0xa88ce797997f1204&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7164977,
+        "longitude": -73.9876453
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJl8Yt-EtZwokRBBJ_mZfnjKg",
+      "provider_id": "/g/11k5510p3h",
+      "rating": 4.4,
+      "reviews": 88,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "Medical Center",
+        "Medical clinic",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "medical_center",
+        "medical_clinic",
+        "walk_in_clinic"
+      ],
+      "address": "384 Grand St Front # 3, New York, NY 10002",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20137\u202fPM",
+        "friday": "9\u202fAM\u20137\u202fPM",
+        "saturday": "9\u202fAM\u20137\u202fPM",
+        "sunday": "9\u202fAM\u20137\u202fPM",
+        "monday": "9\u202fAM\u20137\u202fPM",
+        "tuesday": "9\u202fAM\u20137\u202fPM",
+        "wednesday": "9\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(718) 888-8879",
+      "website": "https://www.healthneeduc.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Amazing staff, always very clean, not a long waiting time.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEGBeJlG5F_zVNm1whK3_bYwkTiLeWVCgThKQl54SGB3zBbYO_OXOf_7AYsO1GW4Bk6t75JRVjhcaVxya3jEesCffamJd17eyg78Auqj-lvOHhqpUmCEf8weg-sEs5fnsgOvgifb-EFbxP5=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/W8LczHicHcRJDoIwFADQE1UgWDEmLoBUDBrriLIiUDsIZdBfRb2ka29j4lu870cZ08HEsrRyB7JtpeZ34DfWNoY3ZsDa2pIdIAYILH-92lQ-iQIe6wjPsneyqp1eLdysSPtqf1nyYxLKvVpsNB7uosB9B0VKM3qiIvP8FKgTHYdBNTIejrdJqViePF-5WxIOoRB5HZ8dj7-kN_bv1xLpB52ra3eoQyLGPZcICGDRgKQPeREFIrPiucbT3rFtG6n_DDU_iNxHrg"
+    },
+    {
+      "position": 12,
+      "title": "UrgentWay Manhattan",
+      "place_id": "ChIJi_sOCK1ZwokRneJaNiPGet8",
+      "data_id": "0x89c259ad080efb8b:0xdf7ac623365ae29d",
+      "data_cid": "16103401272154710685",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259ad080efb8b%3A0xdf7ac623365ae29d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259ad080efb8b%3A0xdf7ac623365ae29d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.754036899999996,
+        "longitude": -73.9925852
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJi_sOCK1ZwokRneJaNiPGet8",
+      "provider_id": "/g/11gdks1_wn",
+      "rating": 4.3,
+      "reviews": 400,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "General practitioner",
+        "Medical clinic",
+        "Medical examiner",
+        "Medical office",
+        "Women's health clinic",
+        "Occupational health service",
+        "Physician referral service",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "general_practitioner",
+        "medical_clinic",
+        "medical_examiner",
+        "medical_office",
+        "obstetrics_gynecology_clinic",
+        "occupational_health_service",
+        "physician_referral_service",
+        "walk_in_clinic"
+      ],
+      "address": "535 8th Ave 6th floor, New York, NY 10018",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "thursday": "10\u202fAM\u20136\u202fPM",
+        "friday": "10\u202fAM\u20136\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20136\u202fPM",
+        "tuesday": "10\u202fAM\u20136\u202fPM",
+        "wednesday": "10\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(646) 213-0190",
+      "website": "https://www.urgentway.com/locations/urgent-care-manhattan/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care",
+            "Pediatric care"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"* Caring and professional staffs, the physician actually listens to you!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEawGmbAvXuE2MVYuXZn22XlTXH7DMZRFvWSjLWNVBC4-gAoXHzMRfOXVc0mU3_y5FJ8Y1ozCtCU0ULdX6u2fapaiUNOe8biIMPQAaujYB48qD9R3q6HGs_gVEZ82bclFpOoZ3G=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/i1rwFXicHcTbEoFAAADQL1qtzSVmPKx0YVRE2XoxtbKh2thdDT_oG_yNGefhfD-llK2YalpV6j3GOasKJYoH5Y0sGtmjvNZYKwAVQGh4429v2Mo6p87xkygLeXGiSNogRKo9cccLLw3t52F3XR_8eG4OAMOcuG8vPAckprCO9ONraK-MpM_fpjQjGK1PZKTQOWuzS-QHhZFflt5mizN1TeYD476YhPp95DriyGIrNVBOK7sNeKo7s64PIQTlfwqaH_6fQz4"
+    },
+    {
+      "position": 13,
+      "title": "Medical Associates of Wall Street",
+      "place_id": "ChIJx-yEuyJawokREM53oTZ0oJg",
+      "data_id": "0x89c25a22bb84ecc7:0x98a07436a177ce10",
+      "data_cid": "10997918068024790544",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a22bb84ecc7%3A0x98a07436a177ce10&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a22bb84ecc7%3A0x98a07436a177ce10&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7093746,
+        "longitude": -74.0099791
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJx-yEuyJawokREM53oTZ0oJg",
+      "provider_id": "/g/1trrf3cz",
+      "rating": 3.3,
+      "reviews": 38,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Cardiologist",
+        "Internist",
+        "Medical laboratory",
+        "Medical office"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "cardiologist",
+        "internist",
+        "medical_lab",
+        "medical_office"
+      ],
+      "address": "160 Broadway Suite 500ML, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 233-3040",
+      "website": "https://www.wallstreetmd.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"Excellent practice, well organized extremely professional and amazing Staff.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEEalJRqvMp3ZxOEgSC3j98ikE1r1E7PWv0LhEz8Uf6p3fRKTS3RFSCd7hn41c0kYDkGXctd8HqWbzke1JIUh7pu2GF6ugVy7t9FLiR7cetzbmwghdpfU7Ya4LpoiNiBZaVFdfy=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/UP1wRnicHcRZEoIgAADQE5kQTVgzfbRgm22abX-GCIYJBbZ4wc7QbZrpfbzvR1irTdd1C4EaXClesMqwO1WlZaVtUHV1uTYONY5x--vlRvYJSYpZeHssNDq9VoRHQ3TpeLkk8A4JXu8fIBCk9uKsrVEWzrcRCv1omGJRtiAF8jiS4wO1qTe57c-1ZHA2jQXWVXPstyu-e2Pb8YM8xJTZ-nx9cpHqLMbHpBVolS_zwSnZ-Wn27j0hAMAR_6lT_gAMcUSS"
+    },
+    {
+      "position": 14,
+      "title": "Student Health Center - New York University",
+      "place_id": "ChIJwZVT9ZpZwokRArf7udwL_y4",
+      "data_id": "0x89c2599af55395c1:0x2eff0bdcb9fbb702",
+      "data_cid": "3386438487446894338",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599af55395c1%3A0x2eff0bdcb9fbb702&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599af55395c1%3A0x2eff0bdcb9fbb702&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7294208,
+        "longitude": -73.9932915
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJwZVT9ZpZwokRArf7udwL_y4",
+      "provider_id": "/g/1tdy0t4f",
+      "rating": 2.3,
+      "reviews": 115,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "726 Broadway 3rd and 4th Floors, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 443-1000",
+      "website": "http://www.nyu.edu/health",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"I\u2019ve always been seen on-time and with great attention to detail and care.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFVRKnFsal6Dx69s2FUDgxKHHN9DVK5cofis6gsb_xam9J9ZyRSH54KYsLokmlhXxyXjQL-qmCA6BGwrM1uu_bFUVWQMqz3HOtZ75YCM_5C3mL0Ej3vF9CF342i6e4xeqe6KMf_=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Ap_TknicHcRRboIwGADgE1XQQpcu8YGBlVhQ0cjUF6JNLSql4l-0esGdYbdZsu_h-_2prb3Bp-c1NR4oY1Qje5B3YVorWzsQRnvqBkgAAi9azotrxMoVbxkcGpI4QmHENolyPE3nNCl5KMzpDETBsXIHTWd0_1qt0zDgO8jMVTf11r22lyJDnY4j8jV93vNh31dHtim_i7x743Rh9x_hLs6rMMY68ycX_GA0ZjgYnYkMnOwk4fmpGj-Hvu-j-n-B2j8yeUON"
+    },
+    {
+      "position": 15,
+      "title": "Apicha Community Health Center",
+      "place_id": "ChIJFTmhv4pZwokR_uYOE0TCszw",
+      "data_id": "0x89c2598abfa13915:0x3cb3c244130ee6fe",
+      "data_cid": "4374053260740191998",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2598abfa13915%3A0x3cb3c244130ee6fe&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2598abfa13915%3A0x3cb3c244130ee6fe&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7186431,
+        "longitude": -74.00235359999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFTmhv4pZwokR_uYOE0TCszw",
+      "provider_id": "/g/11bbydr5rm",
+      "rating": 3.6,
+      "reviews": 240,
+      "type": "Community health center",
+      "types": [
+        "Community health center",
+        "Dental clinic",
+        "HIV testing center",
+        "Pediatric clinic",
+        "Pharmacy"
+      ],
+      "type_id": "community_health_center",
+      "type_ids": [
+        "community_health_center",
+        "dental_clinic",
+        "hiv_testing_center",
+        "pediatric_clinic",
+        "pharmacy"
+      ],
+      "address": "400 Broadway, New York, NY 10013",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5:30\u202fPM",
+      "hours": "Open \u00b7 Closes 5:30\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135:30\u202fPM",
+        "friday": "9\u202fAM\u20135:30\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135:30\u202fPM",
+        "tuesday": "9\u202fAM\u20135:30\u202fPM",
+        "wednesday": "9\u202fAM\u20135:30\u202fPM"
+      },
+      "phone": "(212) 334-6029",
+      "website": "https://www.apicha.org/locations/manhattan-clinic/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "user_review": "\"Very clean and comfortable environment,  courteous staff efficient service.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAETqwb36Fibou3sUvkJF3mmW_B2mDa6AYS80tofHS8q3JsQQ46HgVcv4fFcjGZp473bodUkZ_fqFGwMY_UN7z92v36-pYwPmgeYSTKFmtqWXKtQFqirT1kLJLw0RUSVamvC5mgBnw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/70b4GXicHcTbDoIgAADQLyIpTKutB63I2WWZt-zFJSmWIRIkW3_YJ_Q3bZ2H8_3USnVyZhiPGg0o5_RRvmT5JLxVZasGhDODdhIQCaThHPZB46wioQtk4VvBX0jGfeNjxFiauyO2vFhOFk6g4pUXTgTyZRCYlkcT0psVJvf1uTNtVPBr3JzzSuC13mV5vLff01GPLNBl-sBomYXRBjMl0tNGBVjcntGw2fpbDY9xmFxYvxgz6rZ6rocQQlD_J6D9Adp7RX4"
+    },
+    {
+      "position": 16,
+      "title": "CityMD West Village Urgent Care - NYC",
+      "place_id": "ChIJN1WPxJNZwokR6jWhU3ee4zc",
+      "data_id": "0x89c25993c48f5537:0x37e39e7753a135ea",
+      "data_cid": "4027236727140726250",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25993c48f5537%3A0x37e39e7753a135ea&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25993c48f5537%3A0x37e39e7753a135ea&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.731430599999996,
+        "longitude": -74.0014762
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJN1WPxJNZwokR6jWhU3ee4zc",
+      "provider_id": "/g/11g7_k4s58",
+      "rating": 4,
+      "reviews": 282,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "Doctor",
+        "Laboratory",
+        "Medical clinic",
+        "Women's health clinic",
+        "Pediatric clinic",
+        "Walk-in clinic"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "doctor",
+        "laboratory",
+        "medical_clinic",
+        "obstetrics_gynecology_clinic",
+        "pediatric_clinic",
+        "walk_in_clinic"
+      ],
+      "address": "331 6th Ave, New York, NY 10014",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20137\u202fPM",
+        "sunday": "9\u202fAM\u20137\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 219-2659",
+      "website": "https://www.citymd.com/urgent-care-locations/ny/west-village?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.citymd.com/urgent-care-locations/ny/west-village?utm_source=ReserveWithGoogle&merchant_id=CITY_1323&rwg_token=AE37R_i6Vv7a6sPJovY-7tUK8raMCmkB0Z3JNVupy5D9aUd3BRmRftFh5wJXEdLT34rrmqV5rv0Mv0CqyIgfkQnreo1ba-X_5g%3D%3D",
+      "user_review": "\"... team from the friendly front desk staff to the nurse and doctor!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF1QjEJ1_9HUKEUPnPtC9_MHwbL36ZK9wM2lUaqs-CnZ5Cg8vsFCWASv1LQgsHrQSZr8Ng-ZuNG44_ZozDb34beXCPWJLR7LhBbYc3QQaENcbwEL9FxIfCdnHgc-MaweC6rdZeX=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/hbqfN3icHcRdDoIgAADgE5Ga9mNbD0aaFTqpuYoXJ0S4MiihaF2wM3Sbtr6H7_tpjLnpieO0jd8TSomWPzTvmJKGS9Nj6uqImwZMA-1ERY4vUeLhc7zyqjAt13FZyMLAsMpSS5E_JOvQZv22rO8aQEkGUIyfOoG7aPv0EBY67fCWdONcAPLIF0FQEfWeUz-gfA-L3QptRqiZ0QPzMa7jnFEbozB5LU_wKFPBQFZbDofdkfD91Hqu64LmPwPyB6gLQw0"
+    },
+    {
+      "position": 17,
+      "title": "+MEDRITE Tribeca Urgent Care - Manhattan",
+      "place_id": "ChIJm-7u-GlbwokRzMSRv8NaWbs",
+      "data_id": "0x89c25b69f8eeee9b:0xbb595ac3bf91c4cc",
+      "data_cid": "13499921154798896332",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25b69f8eeee9b%3A0xbb595ac3bf91c4cc&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25b69f8eeee9b%3A0xbb595ac3bf91c4cc&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.715886499999996,
+        "longitude": -74.00949969999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJm-7u-GlbwokRzMSRv8NaWbs",
+      "provider_id": "/g/11p73c0nqd",
+      "rating": 4.7,
+      "reviews": 363,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center"
+      ],
+      "address": "139 Chambers St, New York, NY 10007",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20136\u202fPM",
+        "sunday": "9\u202fAM\u20136\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 785-0001",
+      "website": "https://medriteurgentcare.com/center/medrite-tribeca-urgent-care/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended",
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Easy appointments, quick check in, caring, personalized and real human care.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGulEj_A--jQizCDYrHEcyKoyBUycj75cFBTJOv5BV5bGBjLWHBMQweGoEuBlrv40W75KIrH3vl6FfyT85XQXUGTaBundoYoQD-1kTk4tENfFhjMiWFepMmYMQ4QpGCloykrwIUgQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ghDNL3icHcRBjoIwFADQE1Uw0nFi4oIqFEdRm4DIymingqXySVsg9YZzhLmNiW_x_v9qazuz8DxVzyYVQKVEb4Tm0FrR2gmHp1d1BnGDjBce96wJaa8ieQkRkuzxWq1LnUTcbcGR3HE5xzwm2c9hwOSEb5TIXZGQlI2CQtQTpYfAL-Z4u9HJbFBf8d1l3_jMzjnNrqRvf6EEtkbTJmsCG-3vcS3TRxGLLn2WKQtYR1cKXKPHTV6x5Tj1fR_Vnzlq38L4RUA"
+    },
+    {
+      "position": 18,
+      "title": "CityMD Tribeca Urgent Care",
+      "place_id": "ChIJzYSgWx9awokRfl__j8meMCI",
+      "data_id": "0x89c25a1f5ba084cd:0x22309ec98fff5f7e",
+      "data_cid": "2463643584713154430",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a1f5ba084cd%3A0x22309ec98fff5f7e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a1f5ba084cd%3A0x22309ec98fff5f7e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.714715399999996,
+        "longitude": -74.007226
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJzYSgWx9awokRfl__j8meMCI",
+      "provider_id": "/g/11cksb0dy1",
+      "rating": 4.2,
+      "reviews": 258,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "General practitioner"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "general_practitioner"
+      ],
+      "address": "87 Chambers St, New York, NY 10007",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20135\u202fPM",
+        "sunday": "9\u202fAM\u20135\u202fPM",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 335-0594",
+      "website": "https://www.citymd.com/urgent-care-locations/ny/tribeca?utm_source=google&utm_medium=GMB_listings&utm_campaign=citymd_locations_GMB_listings",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "book_online": "https://www.citymd.com/urgent-care-locations/ny/tribeca?utm_source=ReserveWithGoogle&merchant_id=CITY_1368&rwg_token=AE37R_hc9uonDgSNsL307A5rI4Sou6c4SvInJJTNmR5VPoZZizDr4qRSioOCLMqUl6r7qlCWCvdzT5JfjAV_8Gn5uRFJRfeN2w%3D%3D",
+      "user_review": "\"Extremely kind and helpful staff from front desk to nurses to doctor.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFdGyNbPhGLyu98xvHEOLgAXjzqBo8W3dlJmjZih9qiBuQXSkkZWcq_yVO3eJfr3vLt3Bj64tCb0XK4z7Oy60LRWzNYPvAGv4huNuCH6ufVCr51BvTOrXxONvRHXlSFwJ1fqc8=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/C2BSTXicHcRJDoIwAADAFyElRUQTD0AUgqTFJVK9mFiBCkiFLgoP9A_-xsQ5zPfDpHyKhWk2DE5KzssmVyLvKW9l3soJ5Q-zfAqDCkOYXoq2tbe-hQO6pixMBjV33zpa4aT0SDV2PnczeGviR3W-s3l399WW7Ov6nNHuMhwxzOOihzqR0K8cWwZXQDb2OMODA5JdNqJTqr1Q20whFUSOKo5BP7V8fcA9eWOkdxFp9utXbBUddZcvCwBgsP_UaH9sbkTu"
+    },
+    {
+      "position": 19,
+      "title": "NY Medical Union Square",
+      "place_id": "ChIJC_yAdHNZwokR4_mvnpQTzbI",
+      "data_id": "0x89c259737480fc0b:0xb2cd13949eaff9e3",
+      "data_cid": "12883975638015277539",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259737480fc0b%3A0xb2cd13949eaff9e3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259737480fc0b%3A0xb2cd13949eaff9e3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7358203,
+        "longitude": -73.9941825
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJC_yAdHNZwokR4_mvnpQTzbI",
+      "provider_id": "/g/11qb67j_w4",
+      "rating": 4.4,
+      "reviews": 223,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Dermatologist",
+        "Family practice physician",
+        "General practitioner",
+        "Obstetrician-gynecologist",
+        "Medical Center",
+        "Neurologist",
+        "STD clinic",
+        "STD testing service"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "dermatologist",
+        "family_practice_physician",
+        "general_practitioner",
+        "gynecologist",
+        "medical_center",
+        "neurologist",
+        "std_clinic",
+        "std_testing_service"
+      ],
+      "address": "78 5th Ave 7th floor, New York, NY 10011",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4\u202fPM",
+      "hours": "Open \u00b7 Closes 4\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u201312\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 988-2924",
+      "website": "https://www.igorkletsmanmd.com/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://nexhealth.info/book/appt/ny_medical?lid=25476&rwg_token=AE37R_iefVu981tUqClsBTlyFRvFy3pY5uLZNBeYLmIdkRkM5IyWpnAA_QutRIMDbNKHhdzar-hHEmVCL6iIXgQGhBKA1IRyiA%3D%3D",
+      "user_review": "\"No waiting time, clean and beautiful office, and a thorough, kind physician.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFH9pGues8MCTaRD-_PVseaZRtPmmZTLXM2k7CqzWqN3Snt6AJItmvrpxJO95rGBVPTiFLWQj5A8OwdlMTljpHKZONmbzsVwvXMp8JYoUEZVpyFPAxOy46CFG00bB-KQ_Ws4kMZ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/yV56gnicHcRNjoIwGADQE1U64x-auKiMoGihKAPajVFsYITSyldFveCcwduY-Bbv9V8Yo2FsWVXR7eRK5ZW4gmgyVRtRm06mpJVrQBkgsAgLopK485H2rgJs6sSH9Q_aswTEga8Nk5LHqy39LofO5Zlegu6mNgPiL4y8Nfruh6N-400TFv-5qzQ694kdtqeKxtVZz5c8DOTxCUl721Jt-zv1O-OJfriM3MNHb-C4HsbHKVpG-xR6JeWT9gtjjIrPGarfeiFEqw"
+    },
+    {
+      "position": 20,
+      "title": "Maiden Lane Medical Downtown",
+      "place_id": "ChIJ83wVzBdawokRwnj_tkacdas",
+      "data_id": "0x89c25a17cc157cf3:0xab759c46b6ff78c2",
+      "data_cid": "12354952980292663490",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a17cc157cf3%3A0xab759c46b6ff78c2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a17cc157cf3%3A0xab759c46b6ff78c2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7069453,
+        "longitude": -74.0074731
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ83wVzBdawokRwnj_tkacdas",
+      "provider_id": "/g/1td54bqg",
+      "rating": 4.1,
+      "reviews": 615,
+      "type": "Gynecologist",
+      "types": [
+        "Gynecologist",
+        "Doctor",
+        "General practitioner",
+        "Medical Center",
+        "Women's health clinic",
+        "Pain management physician"
+      ],
+      "type_id": "gynecologist_only",
+      "type_ids": [
+        "gynecologist_only",
+        "doctor",
+        "general_practitioner",
+        "medical_center",
+        "obstetrics_gynecology_clinic",
+        "pain_management_physician"
+      ],
+      "address": "90 Maiden Ln #300, New York, NY 10038",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(646) 290-9560",
+      "website": "https://maidenlanemedical.com/location-ny-new-york-lower-manhattan/?utm_source=gmb&utm_medium=referral",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"No wait time...very organized and extremely hospitable office staff.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEGxyhzFrVrZJ8qetoa2phZl4wjX8r4wTcWd0kFmXPQNJh4LWdqLxiRAW0A6E0OLEV6wWls3uPVINeUNzkAfOZ9-_yI9DpHNa1ciBONgQXdAmQOktjfgc4szwVY62IyMaEje7s=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/bClXFXicHcTbDoIgAADQLyKxnF22HmhZ2Qy1lZovzSFC3jChkX5g_9DftHUezvfDlerkyjBqPpswIVhNX5L2RLSKtmpCRGOwTgIigTRQgMMKOfv3wMddH_XpcfGkSmTTjqe1pctk0Vv6QuIcVrsmCUJ85JYX50_v_TijGCLbgb7nRLaOazl7BZGL6RWPFSr8dAnug7vcdgecmeSx8TELkxw1oV-psmDEkqOObvbUHU6ZU9K5XGsTQgj4fwLaH2vgRPo"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.72%2C-74.0%2C14z&q=clinic+near+downtown+Manhattan&start=20&type=search"
+  }
+}

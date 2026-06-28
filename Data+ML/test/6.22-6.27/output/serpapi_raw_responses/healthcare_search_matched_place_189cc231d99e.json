@@ -1,0 +1,460 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ec9d0a88f8ce1e7b225",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/9XW8wc84QsXSNsu51U9STw/6a3d3ec9d0a88f8ce1e7b225.json",
+    "created_at": "2026-06-25 14:44:25 UTC",
+    "processed_at": "2026-06-25 14:44:25 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258841d811b2f:0x2def3e2dc0a7fc72!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/9XW8wc84QsXSNsu51U9STw/6a3d3ec9d0a88f8ce1e7b225.html",
+    "prettify_html_file": "https://serpapi.com/searches/9XW8wc84QsXSNsu51U9STw/6a3d3ec9d0a88f8ce1e7b225.prettify",
+    "total_time_taken": 1.76
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJLxuBHYRYwokRcvynwC0-7y0",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Broadway Chemists",
+    "place_id": "ChIJLxuBHYRYwokRcvynwC0-7y0",
+    "data_id": "0x89c258841d811b2f:0x2def3e2dc0a7fc72",
+    "data_cid": "3309932617367288946",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258841d811b2f%3A0x2def3e2dc0a7fc72&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258841d811b2f%3A0x2def3e2dc0a7fc72&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7878474,
+      "longitude": -73.97643719999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLxuBHYRYwokRcvynwC0-7y0",
+    "provider_id": "/g/1pzx8sr66",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEOuKFc_bzBWWKaB0IfFTGCck8ewe2akRmxa8_gCM377U8ZCPCv78buOHDdUj4tADACw49Pf8yK-24nSBIHogMFFiJnNB3fL1s6jeWyH4nYPfYpSN3dHEXOfKXBju2bG80G316W=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/W5Lt5HicHcRRboIwAADQE1UKJdKZ-EGrgGMC0xl0PwZqWwbaEltk7oKewduY7H2856Oxtjczxzk3aCK1lmc-GH5lWlmu7ITpiyN7A5gBxgmL7LMLl_mQRuxY_5GyTCsCVyL6iinrMB-5V3Wby2-Fj5KuURDs8Dct6C3A9ZAni9Ou9W24COnovxUC31Pg-WpLVomW6yj6eVcZQeLDNdOWl_fEV4dCHPpthk7Jcp-LdE_awatjDGPkTsv56EIIQfM_A-oFsClB_Q",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 0
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 66
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 69,
+    "type": [
+      "Pharmacy",
+      "Beauty supply store",
+      "Drug store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "beauty_supply_store",
+      "drugstore"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Delivery",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "delivery": true
+    },
+    "address": "2350 Broadway, New York, NY 10024",
+    "country": "United States",
+    "website": "http://www.broadwaychemists.com/",
+    "phone": "(212) 877-0888",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "Q2QF+4C New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      },
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 5 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c258841d811b2f%3A0x2def3e2dc0a7fc72&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMhNBhJPKh0eV3QOajNrtNnbKgYf4juOkTPvqIN=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKENmVvpjBt6X7gQE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "When you are choosing personal care, it helps to see brands you recognize. We carry Aveeno, Burt\u2019s Bees, Weleda, and more, so you can pick what fits your routine. Shop here: http://broadwaychemists.com/hygiene-and-cosmetic-products/383655 #BroadwayChemists #NewYorkCity",
+        "date": "2 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNY9aIB6eVdg_BFTw-4YyyT5NLEYKkUDbbhImYc=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEO63993si6OJeA&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "If medication costs are weighing on you, you are not alone. We can help you check whether a generic is available, so you have options that fit your budget. Send a note at http://broadwaychemists.com/contact-us/383519. #BroadwayChemists #NYC",
+        "date": "Jun 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNw8MFeNOeasWFwJEBwRAsdjHmYLPl0vK5h3BJN=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKENaxs8W95srdwAE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "When life feels overwhelming, trust a pharmacy that listens. At Broadway Chemists, we offer affordable pharmaceutical services with personal care. Call us to know more. #BroadwayChemists #NewYorkCity",
+        "date": "Jun 13, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOvesuuKX_AZW2fRUvxNZNUt4wSkHqnD8SSXX6A=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEOj6pJvN8cqhVQ&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "Take advantage of our prescription transfer services and enjoy FREE pickup and delivery. Save money with generics--same components, lower cost. Visit https://www.broadwaychemists.com/ #BroadwayChemists #NYC",
+        "date": "Jun 11, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPg1wnvKKo1BpxnFlOGDVqc0kqzsoeF7L8oQts7=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEMWBk9-35ZPN0gE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "Medication questions can feel like a lot, especially when you are already managing everything else. Our pharmacist is available to help answer questions, so you do not have to sort it out alone. Call us to learn more. #NewYorkPharmacy #pharmacy",
+        "date": "Jun 5, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPTl7ou0kd5gtaHgCjF5f6fM0e3-vAe8rpRoB0B=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKENyX_oqx8Oq1xgE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "Switching pharmacies does not have to add stress. If you want a more personal, attentive experience, we can help with prescription transfers. Visit https://www.broadwaychemists.com/ to learn more. #BroadwayChemists #NewYork",
+        "date": "Jun 3, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNbtt_za9yB8Y4tAuoijvqfxNzrJJvb10V3rgWr=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEN389pmlnv7VvgE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "Looking for a more natural approach to everyday wellness? Homeopathic remedies are available at Broadway Chemists for your wellness needs. Check online at https://www.broadwaychemists.com/ for more options. #BroadwayChemists #NYC",
+        "date": "May 28, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOnc3E4IXb3fp4_5aBjPZR5u8jpJBKsv6I8AJ8H=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEIHD6O6U7YLYyQE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "As the days get sunnier, a little sun protection can be a helpful habit. We carry skin care products that fit into a simple summer routine. If you want help choosing, call us. #NewYork #NewYorkCity",
+        "date": "May 26, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMB5xZcBPWzelCC6JIktMi1whFCKG0kW0VNBGUq=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEKTUhYyekee-xgE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "Allergy season can wear you down. If May allergies are bothering you, we can help you pick an OTC option and answer your questions and tell you what we have in stock. Get in touch with us online at https://www.broadwaychemists.com/ #pharmacy #NY",
+        "date": "May 20, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMwrkObEV4HgFlSt44k4Dk3nYAPcrooCEfAtj9R=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Broadway+Chemists&ludocid=3309932617367288946&lpsid=CIHM0ogKEPvuoofT8I6owAE&source=sh/x/loc/post&lsig=AB86z5VnghV_QdSYIJlyqRzZjJTV",
+        "description": "Revitalize your look and boost your confidence with our premium cosmetic products. Get foundations, blushes, eye shadows, and more. Learn more at https://www.broadwaychemists.com/ #pharmacy #NewYorkPharmacy",
+        "date": "May 18, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEOuKFc_bzBWWKaB0IfFTGCck8ewe2akRmxa8_gCM377U8ZCPCv78buOHDdUj4tADACw49Pf8yK-24nSBIHogMFFiJnNB3fL1s6jeWyH4nYPfYpSN3dHEXOfKXBju2bG80G316W=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/W5Lt5HicHcRRboIwAADQE1UKJdKZ-EGrgGMC0xl0PwZqWwbaEltk7oKewduY7H2856Oxtjczxzk3aCK1lmc-GH5lWlmu7ITpiyN7A5gBxgmL7LMLl_mQRuxY_5GyTCsCVyL6iinrMB-5V3Wby2-Fj5KuURDs8Dct6C3A9ZAni9Ou9W24COnovxUC31Pg-WpLVomW6yj6eVcZQeLDNdOWl_fEV4dCHPpthk7Jcp-LdE_awatjDGPkTsv56EIIQfM_A-oFsClB_Q"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNLRAaMlIA0jc4PwPX4luEIWpd5fEtofAGj16_PVbkOyWg6qsaY6wGgq11w4GlZWffSkiPLIG31VRLtK1cqrcAQ_qfrbwi-jXadXhMsBQWQV1C2P3WLerfZfQiDNJLFqPY3eN_=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/d5izYHicHcTNboMgAADgJ6JKtR6W7EDX1rpRB10ithdjKeAPExEasifcM-xtlvQ7fH-_nfeze4ki3SUrZYzS4uHEws3kxeRX3HxHanaAO-AiREo6omOJz6g96QLFA09JIHWqH_uCzfeN3HsjUT7ArCHVbfz8YSqzrr1kIVcWwpDm-sqk_Bp7gos8gdUZ-w_I7cIRbaxcbqEHQ93e6-7ktpTRCr6tScKwWORV0n5XvuODJZdElM1rgHEcg-45B9M_SupEdQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=jcofOLWVMk-rspwVjLsV-g&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=92.271996&pitch=-87.58334&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/cT7dSXicHc3BDYIwFADQbXqjhYICJo0LYLzhkZRaoFjoD_9bdCU3chsT3wLv-5mIAE9CIG3WUnR2B_eyHhPQfAxh9FaDQ27CImImaHou_aqdP4Neg7ur2YTh2tzayyPZEPZ2brBNRmb6znhnV1KLBuwwctKGnLd8BGS7krJgk5J1xd56V7Xksszq-sjAkZlUUpX8UOV5wf7fEKLK0vQH-Jc8Yg"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Convenient pharmacy with excellent service and a wide variety of products.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLfB3lpo3OIqdnzh8RJKkzVaCJPbCouamqnKA8U_uHNQCQY-Q=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"They are a flashback to what genuine personal customer service can be.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVB9h1kTDbaSUr6TdG42vpaI-jlRuS_ChW9OdPcbhLxnEsn8U4=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Thank goodness for this place.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJO0wlObMRa38UXLGi-gw_hqoWPEuaT8WpKedwbhxqcaiDhWQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Yiannis Zenzefilis",
+          "rating": 5,
+          "contributor_id": "105529197832580966649",
+          "user_review_count": 16,
+          "user_photo_count": 26,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWMzi8r9YWB-jjVTCI9qf4U5vT55Wz05Azi_vV5FDYxgn6dLRhGtQ=s120-c-rp-mo-ba12-br100",
+          "description": "Broadway Chemists is hands down one of the best pharmacies in New York. The staff is incredibly friendly, knowledgeable, and always willing to go the extra mile to help. Prescriptions are filled quickly, and they take the time to answer questions and offer helpful advice. The store is well-organized, clean, and stocked with everything you might need. It\u2019s rare to find such personal service in the city\u2014this place truly makes you feel like a valued customer. Highly recommended!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT210TWNHbFpNamxoZVcxU09XMUJOV2hEUVdsS1YwRRAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CAIQACodChtycF9oOmtMcGlZMjlheW1SOW1BNWhDQWlKV0E%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-22T20:45:31+00:00"
+        },
+        {
+          "username": "Arielle Smith",
+          "rating": 5,
+          "contributor_id": "105883380137174856722",
+          "user_review_count": 23,
+          "user_photo_count": 11,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXNpxBaHf18HhDlDeCQUrtTg4ThMd6eKbX9-aWwenE1Qnz-lr4D=s120-c-rp-mo-ba12-br100",
+          "description": "Broadway Chemists is the best pharmacy! Family owned and operated, always hospitable, personalized service. 10/10 highly recommend. Thank you George, Lucas and Kostas !!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWMGFtUlFhMGhQT1dseU5rNXVNRjlMVVZseVprRRAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CAIQACodChtycF9oOkV0amRQa0hPOWlyNk5uMF9LUVlyZkE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-05T23:37:45+00:00"
+        },
+        {
+          "username": "Al Cohen",
+          "rating": 5,
+          "contributor_id": "107542443173392886540",
+          "user_review_count": 642,
+          "user_photo_count": 7384,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVgLG3kxFuqZU-LtU92er4Q38Vo4WA4K3HWVm0MqUjfPasH91Nd=s120-c-rp-mo-ba12-br100",
+          "description": "Old school family-owned pharmacy where they only do meds/health. It's nice to go back to a place where they take personal responsibility and care about everything. I'm glad this type of pharmacy and business in general still exists on the Upper West Side as impersonal, low-touch national chains take over every block. They're quick and deal with the annoying insurance companies really efficiently.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNKaHBYRTdnRRAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CIHM0ogKEICAgICJhpXE7gE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0VPeYFN9q7KMyAlRqZYvrs1YaYdFylsBwm3WUUcA3HZ7vhFElH1ERbwvJ9dJN9WhcSXftqOQppUo-RKIJYeoHXmL91RsNlyugFWCs4raHLSarX4xUChtlNsI0D1ERhva09nkhY=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2qL0PNZmjDRzh29kKZGxq2t_Vp-FckvPzL3j-GDqnBjU2gno0xuzcDtC-5XYXy9QIdfiEaXwKnKSNCRdpCLrWutW0TnjLFVC5su9MIh_kxAKAR3bFR-yBab1z28IKiYUqFVy4LKg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2AINJcKF_fIymFrSItnkqlkUILYsEV4Y1waoMMmdRAu6cguR5WyZMoaNofYBsas8NkRPaJZZY7aiIRkLNuO3afz60xCr1ZATW3GZmveEr6lfSvntJ4yqnCeoxT2W6Dl-yWB2VE=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2023-06-26T01:27:27+00:00"
+        },
+        {
+          "username": "Zagoren Collective",
+          "rating": 5,
+          "contributor_id": "114633623185968039691",
+          "user_review_count": 5,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWHYOK1Fg7g1ZVPICTv424r8QPgz9GOGRwZwjODicNwXX2DJ5Q=s120-c-rp-mo-ba12-br100",
+          "description": "One of the best parts of living on the Upper West Side is this family owned pharmacy where they know your name, care about your needs and go the extra step in customer service.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2twUVJIcE9ZalZQWlVGV1JYaFNjVFZuZEZFNVluYxAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CAIQACodChtycF9oOkpQRHpOYjVPZUFWRXhScTVndFE5Ync%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-04T16:22:23+00:00"
+        },
+        {
+          "username": "Ryan Trusler",
+          "rating": 3,
+          "contributor_id": "105532752410502728281",
+          "user_review_count": 11,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKgC8YVdxexd9kOjdmx8jxS77WC-OySheHLk6OiqV9Gxvmze6A=s120-c-rp-mo-br100",
+          "description": "First time using this pharmacy. They were unusually hostile and unfriendly when I picked up my prescription, saying that I should have phoned them beforehand.\n\nWeekdays they are open only 9-5, so I had to take off of work to fetch my prescription.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pNd1JVeG9NRkE1ZG1OMlJGaFZlRk5LYmpReFIwRRAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CAIQACodChtycF9oOjMwRUxoMFA5dmN2RFhVeFNKbjQxR0E%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-11T22:03:52+00:00"
+        },
+        {
+          "username": "Assaf Rutenberg",
+          "rating": 5,
+          "contributor_id": "117009860733915677310",
+          "user_review_count": 185,
+          "user_photo_count": 243,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXpU0Xsp-qsjkdJVWh8yj7GlmLzyo9jSHu6Q5X3WSD03nIpHULfUg=s120-c-rp-mo-ba12-br100",
+          "description": "Great experience with the folks here. Very friendly and understanding pharmacist. Wonderful to have a reliable pharmacy so close to home.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNMcXQzX3JBRRAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CIHM0ogKEICAgICLqt3_rAE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2LGnR4AwwG-huxZ9WD2KaOvyzl_MNSoG1bS1oIp5Ql1Eav_0w_GVoJVnbZHqZQMJwXdRhXLdbQU297Yiyfk8weHmzFRSBNgRZ2dQ1CM2RMVxRStOlqzMbvAiRvRC1jjNsxLLCQ=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2024-06-18T01:32:28+00:00"
+        },
+        {
+          "username": "Monica Kunst",
+          "rating": 5,
+          "contributor_id": "112884803961590529750",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJmvimJ5s-gxDk4cLwQjpVAAGmAaA2GU9iSybJL1_ugRrekEQ=s120-c-rp-mo-br100",
+          "description": "What an amazing experience! I am so lucky to have come across Broadway Chemists, their customer service is excellent and they have so many products in stock. I would highly recommend them - they really go above and beyond with your doctors & insurance and delivery is free! Thank you so much Broadway Chemists for all of your help!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURmeWRMbUpBEAE!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CIHM0ogKEICAgIDfydLmJA%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-01-07T20:44:48+00:00"
+        },
+        {
+          "username": "David Coe",
+          "rating": 5,
+          "contributor_id": "104986483536985452521",
+          "user_review_count": 28,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKfvuq-gaKaQL1By8ocb492YTIR9GA1rT3yaEiRQ7YypzfTOg=s120-c-rp-mo-ba12-br100",
+          "description": "Love the service here! Way better than CVS or Duane Reade. Everyone is so nice and never a huge line. And great personalized service.\n\nMy only minor negative is they don't stock some brand name drugs. So I'm still stuck with cvs at times.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTURndnJTUTJnRRAB!2m1!1s0x0:0x2def3e2dc0a7fc72!3m1!1s2@1:CIHM0ogKEICAgMDgvrSQ2gE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-02-25T01:12:03+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Broadway Family Pharmacy",
+            "data_id": "0x0:0x74384da094baf773",
+            "data_cid": "8374528859180824435",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x74384da094baf773&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x74384da094baf773&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7896626,
+              "longitude": -73.9733334
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x74384da094baf773%218m2%213d40.7896626%214d-73.9733334&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 18,
+            "thumbnail": "https://www.google.com/maps/vt/data=OB7UreugLLO44yEtzc0j--HXEjBaCjwPjhtXArnlUaogSyuJCk5T92Ij3WRyrdbEZUDwKTubWRE4Ym7p5jo4GXJCuAcXdm24qLZCrtZiFNyP8m9qzPU1IKRS4eTD_-MA9EIjK8DJY7LzKrU_60xgMFcsuSegsceI",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Broadway Pharmacy",
+            "data_id": "0x0:0x809b248fe568d5bd",
+            "data_cid": "9267040858692703677",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x809b248fe568d5bd&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x809b248fe568d5bd&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8292055,
+              "longitude": -73.9487552
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x809b248fe568d5bd%218m2%213d40.8292055%214d-73.9487552&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 21,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNDcOLQAbmVIFai5jmeuxJVCxEbiw3h9ceisBIZf5zg1Nn9yr280NYKp53FpM__5Wn5DbNZNp1qhsg56rYe81NDOSfZ1cl9yE0RWFWwrA0_yglB4-8yoRY-3bWyz_RsDvh3gid=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "79th St. Pharmacy",
+            "data_id": "0x0:0xc4a6e125808a1f1c",
+            "data_cid": "14170260828754419484",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc4a6e125808a1f1c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc4a6e125808a1f1c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7836413,
+              "longitude": -73.9790684
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc4a6e125808a1f1c%218m2%213d40.7836413%214d-73.9790684&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 56,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNnM_LIJhmYCMcWv-FuDCMwM9vE3MwGls6Zg094O0skjHm4YZIGdJbU4U3HiE3ghu-Um7Y8KZCBHQSUy2MklRTH7rdMZgS3Zh09W00aSZox7MUs4TWMmBevn1L3xj1OQCFqdqzlKBPQve8=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Park West Pharmacy",
+            "data_id": "0x0:0x95377b27b5d7a705",
+            "data_cid": "10752198045855098629",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x95377b27b5d7a705&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x95377b27b5d7a705&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7839147,
+              "longitude": -73.9737737
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x95377b27b5d7a705%218m2%213d40.7839147%214d-73.9737737&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 75,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNsQJjZXtYyhO0KL5exlFVJzbN_4EXdNEPw6nLGq9WcgjRqDziYfmRBA6uMoFSq1T3xxy4XkkwZkxVRW0WJapD51csCqh2J0NJPA6jMfKeVtCjxDKjSpKMBeL11RX2uIl7OXMa6w=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Broadway Pharmacy & Surgical",
+            "data_id": "0x0:0xb335f53bc0254c6e",
+            "data_cid": "12913497143530310766",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb335f53bc0254c6e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb335f53bc0254c6e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8526832,
+              "longitude": -73.9346795
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb335f53bc0254c6e%218m2%213d40.8526832%214d-73.9346795&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 31,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6SIOpoQwsu2AF_IpLIv64Uw71Ae5-0ZlmwqeFbcf2K_mJ-ZWJbiZ4YSXUMoIuOO2IdHb71Zz1NoWNznbmnGuISeOmDcKAivNKprwMO20Eka8LQxUbe4e_DeC4GTctwJDyt3ybjHZ8EZg=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiQKIiIeQnJvYWR3YXkgQ2hlbWlzdHMgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiQKIiIeQnJvYWR3YXkgQ2hlbWlzdHMgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

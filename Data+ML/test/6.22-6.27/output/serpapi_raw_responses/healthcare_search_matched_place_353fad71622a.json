@@ -1,0 +1,363 @@
+{
+  "search_metadata": {
+    "id": "6a3d3f477223f4fd1c393409",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/8uuooE7WFrxpenK6ePbwDw/6a3d3f477223f4fd1c393409.json",
+    "created_at": "2026-06-25 14:46:31 UTC",
+    "processed_at": "2026-06-25 14:46:31 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f61345bacef7:0x774c724d0fd07377!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/8uuooE7WFrxpenK6ePbwDw/6a3d3f477223f4fd1c393409.html",
+    "prettify_html_file": "https://serpapi.com/searches/8uuooE7WFrxpenK6ePbwDw/6a3d3f477223f4fd1c393409.prettify",
+    "total_time_taken": 5.38
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ9866RRP2wokRd3PQD01yTHc",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Uptown Dermatology",
+    "place_id": "ChIJ9866RRP2wokRd3PQD01yTHc",
+    "data_id": "0x89c2f61345bacef7:0x774c724d0fd07377",
+    "data_cid": "8596371464046801783",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f61345bacef7%3A0x774c724d0fd07377&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f61345bacef7%3A0x774c724d0fd07377&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8093329,
+      "longitude": -73.95280079999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ9866RRP2wokRd3PQD01yTHc",
+    "provider_id": "/g/11bwyf62x_",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFEbtBFUpKmfgTHJLm2ztwrzhAdRLX-EsmaHlhyMgMEKPEXmOshjQ0VarLqLPxaWyUeolLUeJeQP2N7EWf5WUSX3fviyMPxRL1JU7yvwytRpmP7Abv4yfHIgRWMqz34YZ8TqYNS=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/vO_Sv3icHcRdToMwAADgE5WfwYIx8QGTEgYFC1uF-QastFNKgVZYuaBn8DYmfg_f7w_XelLPtj1wz2JSsoF-K7p0ctR01FYnhc0mBToFlB3ivPgKI9jq14hMqejZJU6QOOx6W3Ye3kpUA6hEEw_cZCyDKYa1eFP8s3DemwXNCD-ayhAqB0RoQgt8yANY9ceKnGuvX-8mw48SuQkJzLoZXU4CB2G7-qaPT6yssnn3_OvH02W-5ueXzXUcB_D_OzD-AfXTRic",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 17
+      },
+      {
+        "stars": 2,
+        "amount": 7
+      },
+      {
+        "stars": 3,
+        "amount": 3
+      },
+      {
+        "stars": 4,
+        "amount": 6
+      },
+      {
+        "stars": 5,
+        "amount": 102
+      }
+    ],
+    "rating": 4.3,
+    "reviews": 135,
+    "type": [
+      "Dermatologist"
+    ],
+    "type_ids": [
+      "dermatologist"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "258 St Nicholas Ave, New York, NY 10027",
+    "country": "United States",
+    "website": "http://www.uptowndermnyc.com/",
+    "phone": "(212) 222-0075",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "R25W+PV New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20134 PM"
+      },
+      {
+        "saturday": "9 AM\u20131 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "10 AM\u20136 PM"
+      },
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f61345bacef7%3A0x774c724d0fd07377&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFEbtBFUpKmfgTHJLm2ztwrzhAdRLX-EsmaHlhyMgMEKPEXmOshjQ0VarLqLPxaWyUeolLUeJeQP2N7EWf5WUSX3fviyMPxRL1JU7yvwytRpmP7Abv4yfHIgRWMqz34YZ8TqYNS=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/vO_Sv3icHcRdToMwAADgE5WfwYIx8QGTEgYFC1uF-QastFNKgVZYuaBn8DYmfg_f7w_XelLPtj1wz2JSsoF-K7p0ctR01FYnhc0mBToFlB3ivPgKI9jq14hMqejZJU6QOOx6W3Ye3kpUA6hEEw_cZCyDKYa1eFP8s3DemwXNCD-ayhAqB0RoQgt8yANY9ceKnGuvX-8mw48SuQkJzLoZXU4CB2G7-qaPT6yssnn3_OvH02W-5ueXzXUcB_D_OzD-AfXTRic"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGKchSbSxqonZNYEUGwzU_tG_CArranYyKIHoW56KyAZbRvji67PzPuJa4G0BbxoWSfVYxc2skzvKd_MjViQpTC1vCCnz5k1bOtmsbeit0s3Qr_4DOPc_XFFIlpi8H_26zcAfiS=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/3cUEPHicHcRJDoIwAADAFyHFBY2Jh4qCShQQN7w0tCJUsEVaEPpB3-BvTJzDfD-ZlKWY6nqRDXop52mR1CKpCGcyYbJH-FNPS6ERoQkd-rsgh45LshCH7Yuz6y5aHp23OiLpIAtWVcyizl2v-Hlkuh284n3zoObYV369iYcOmOOWn8P7KWpJX-SqcW9o-zjRoDxYRmNZTI1yA3vyKXBCJRCDoELDhecTdLHtdVHSyQr1TUXgnYaztwEA0LL_RGM_D7ZGTA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=5Lp_kp1lDWSjjW6rkBOTaw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=119.74597&pitch=-88.836655&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/oGI7y3icHc1RDoIgGADg2_AmioliG2trPbb1UJuPDokERfknf1pn6kTdpq3vAt_3YxEh7tM04mIMrs5s4F7GxwQU7UPovVHgItVhSleWon1O3aycP4Cag7tLfoZ2BOZPzXUYmnIZj5eb2ojuWu2dmVFOCmIbV4pKo_OG9hDJJvO8IFbmtSBvtUnGaloVvK4IONRWJkJQsStLzsk_fIRVsiz7ARHyPEk"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Awesome staff and service\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWzqkUiWc3IBIUATTJa4xq7n5LfGLL6V0TY9bfvL_uTs4UgoY4=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I had to wait over 40 minutes and then she left in the room and did not return.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUyH5ABTdT-LyXQsbOhXn4bDOWWeWDbIIT7BBjbtK7dySRc1CAhIQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Love the place good doctors great nurses and a very clean place\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWGkcscMINMUieuTThNzM7DpN-RmqgfnCtVT0k6S79y51boFG3seA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "T G",
+          "rating": 5,
+          "contributor_id": "108095356343670306433",
+          "user_review_count": 69,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK0dn2UBKXp1kNenb3_6E2yZvazxxyftWonxxHdc2AogycrRA=s120-c-rp-mo-ba12-br100",
+          "description": "The staff here were some of the kindest, most helpful people I've ever had the pleasure of seeing. This was such a pleasant medical experience, I didn't know that was possible. From the nice ladies in the front to Dr. Curtis, they were all so lovely. I'm so happy to have found this clinic!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21FMlUzTTVWRnBqY0ZFNFpYZGtNMDU1U0dSMmIyYxAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOmE2U3M5VFpjcFE4ZXdkM055SGR2b2c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-16T15:39:11+00:00"
+        },
+        {
+          "username": "DTW",
+          "rating": 2,
+          "contributor_id": "101274671303248217181",
+          "user_review_count": 10,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUNKEudAaVOXsYxNcUywZZYjmfwjky1Tmba19Bg9n10nxj_vCB8=s120-c-rp-mo-br100",
+          "description": "Ugh.  I really want to like this practice. The doctors are good. And some of the PA\u2019s. But the support staff, especially those that answer the phones are inept! You wait on hold for 10 minutes then get sent to voicemail. You leave details and ask for a callback and 80% of the time no one does . The automated system also asks if you want to be called back instead of waiting on hold. You leave your number and\u2026. No callback. I have been a patient here for over 8 years and it just keeps getting worse and worse ( from a customer service standpoint).  Either retrain staff or pay someone else  who\u2019s competent.  You get what you pay for as the saying goes.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WbE5EWk5iVFU1UzNWWVlUaEhhVk5tY0ZZMWNWRRAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOnVlNDZNbTU5S3VYYThHaVNmcFY1cVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T19:24:39+00:00"
+        },
+        {
+          "username": "Sherryl Noble",
+          "rating": 5,
+          "contributor_id": "103243256218436640370",
+          "user_review_count": 40,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLUS3iQDGxTgzRhRY4sCy6UpiuB1czAvMLfqldBD_VxSzOzkA=s120-c-rp-mo-ba12-br100",
+          "description": "As usual, the space is very calming. The front desk workers are polite and thoughtful. The doctor listened to my complaint. She asked questions and also listened to my thoughts on the situation. She examined and prescribed just what I needed, as I'm already seeing good results.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SSWNqbEZXSE5aYzJoM1VrYzVWbUpoVWs5V2ExRRAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOmRIcjlFWHNZc2h3Ukc5VmJhUk9Wa1E%7C%7C?hl=en",
+          "date": "Edited 3 months ago",
+          "date_iso8601": "2026-03-07T17:47:32+00:00"
+        },
+        {
+          "username": "Britiney Clarke",
+          "rating": 5,
+          "contributor_id": "104520164735507863382",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUXrImmKVzXJQfYZfyR3mEIe7GUKdKfdMyiAxfLVVLnbtkxzD8=s120-c-rp-mo-br100",
+          "description": "I really enjoy the care and support given to me at this facility. From the time that I sign in to the time that I leave. They have done an amazing job on my skin. I feel like a new woman. Thank you to the doctors, technicians and the staff over at infinity dermatology uptown.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xnNWRqZHBUVVZRVDBFNGRYTk1aVlV0YW14SFgzYxAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOlg5djdpTUVQT0E4dXNMZVUtamxHX3c%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2025-12-31T17:05:33+00:00"
+        },
+        {
+          "username": "mervin phillip",
+          "rating": 4,
+          "contributor_id": "117329948135050286602",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW9wPUCi_e0-QYTdlv3qJBn_jHT3louXKdM6Mh7m99L8lo01vLN=s120-c-rp-mo-br100",
+          "description": "Thank you for the treatment when I was there very nice people keep up the good work",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aSlNDMVVVVlZsV2pSVlYwTlpUV0prWVV0WlNIYxAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOnZJSC1UUVVlWjRVV0NZTWJkYUtZSHc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-07T18:17:12+00:00"
+        },
+        {
+          "username": "John Campbell",
+          "rating": 5,
+          "contributor_id": "100755272542909985211",
+          "user_review_count": 54,
+          "user_photo_count": 21,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUMkqmH1gqQ3yBh3vZFKhzbxPYcv_dKSVpYCYcFRKZIiimwooMv=s120-c-rp-mo-ba12-br100",
+          "description": "Nick with the customer service line is always professional, considerate and truly the best. I love everyone at this location and have been going for many years. they all get 5 stars from me.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsQ1ZqRlZlRFZ5Y1VOaGNuWm5OekpGTjNaNk1HYxAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOllCVjFVeDVycUNhcnZnNzJFN3Z6MGc%7C%7C?hl=en",
+          "date": "Edited 2 weeks ago",
+          "date_iso8601": "2026-06-10T13:32:53+00:00"
+        },
+        {
+          "username": "Virginia Ayres",
+          "rating": 5,
+          "contributor_id": "114420308454664425301",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJgbIc_TOrDawWMus3wbYLmxK6EVRNs-HNx80FVQXXvqxiCjw=s120-c-rp-mo-br100",
+          "description": "The office is large, clean, and welcoming. The staff is professional and efficient. My procedure went smoothly. My doctor (M. Bruno) explained what she was going to do, and was skilled and reassuring throughout the process. I highly recommend the office.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sQlQwSk5Ta0ZPUmtVdFJuZ3RPVnBLYkRRNFZWRRAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOmlBT0JNSkFORkUtRngtOVpKbDQ4VVE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-07-28T23:58:07+00:00"
+        },
+        {
+          "username": "Amruta Lakhe",
+          "rating": 2,
+          "contributor_id": "100676887433055110980",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIYrCqjUIaY4rI1Hal50F0XC7RW5bdB9mD0gKFU2FFtyQhoUw=s120-c-rp-mo-br100",
+          "description": "While the doctors are good and efficient, the wait time at this clinic uptown is always very long. I always have to wait at least an hour, even if I have an appointment to be seen.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tsUU5XUTRXREo2VEZneFNFaE1TWFJOVW5GMlZFRRAB!2m1!1s0x0:0x774c724d0fd07377!3m1!1s2@1:CAIQACodChtycF9oOklQNWQ4WDJ6TFgxSEhMSXRNUnF2VEE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-07T17:22:36+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "The Dermatology Specialists - Lower Harlem",
+            "data_id": "0x0:0xee0dc7122555fe4c",
+            "data_cid": "17153585436473818700",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xee0dc7122555fe4c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xee0dc7122555fe4c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8097339,
+              "longitude": -73.9474139
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xee0dc7122555fe4c%218m2%213d40.8097339%214d-73.9474139&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 1174,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHKCPMU0sVTrSta4r6aOLDFLpAu_dScrM6dBfAP879syZOMKGIb1tw4N7kkWrJtvTWcLsBzQTfR-9x2lRikB4iQ_BIVrSCwqjcNW5vMMImPhY9VRXRkTLmQ6DHOVJpxwUrEFNJW=w156-h156-n-k-no",
+            "type": [
+              "Dermatologist",
+              "Doctor",
+              "Medical clinic",
+              "Medical spa",
+              "Skin care clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Advanced Dermatology, P.C.",
+            "data_id": "0x0:0x3dd4301507f324aa",
+            "data_cid": "4455238798262084778",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3dd4301507f324aa&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3dd4301507f324aa&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.806769599999996,
+              "longitude": -73.9424573
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3dd4301507f324aa%218m2%213d40.806769599999996%214d-73.9424573&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 130,
+            "thumbnail": "https://www.google.com/maps/vt/data=4lcQJ79K7ZEVpwOVUCg_Sso3HUOtMIVLTmbtJYTNf-I0vXSvq53ykjVaAv6dpn_aQUtw7Se3NimFEAspDTd-NcqHjWwOCxakMncjfvCfXo7Qdu6oF81-DDI8eOrcYa_4IoG-cgGVdsJcpIrE8fg7RDZUnI0tWzxc",
+            "type": [
+              "Dermatologist",
+              "Skin care clinic"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Uptown Dermatology @ Washington Heights",
+            "data_id": "0x0:0x36568406a65b9a46",
+            "data_cid": "3915462090140916294",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x36568406a65b9a46&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x36568406a65b9a46&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.850207000000005,
+              "longitude": -73.93841479999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x36568406a65b9a46%218m2%213d40.850207000000005%214d-73.93841479999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 38,
+            "thumbnail": "https://www.google.com/maps/vt/data=eS97DIDdrxGsnwrbz7ZAWKAHCp-3lW-JMUvVecGn2UaPJXDDMyvZdqMK3gKAFVxCSK1FgDW0mnN9d9DGuP_mf0oxMOztsCUUBiP0lcZyrO5B-AJJ3APHlE2liiBBOLuo0fo3V-nwCjUTcf-mWZV4CXMsttmsrAQO",
+            "type": [
+              "Dermatologist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Radiant Skin Dermatology and Laser | harlem New york",
+            "data_id": "0x0:0x7818c160452a49a3",
+            "data_cid": "8653879303213828515",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7818c160452a49a3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7818c160452a49a3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8030792,
+              "longitude": -73.953777
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7818c160452a49a3%218m2%213d40.8030792%214d-73.953777&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 29,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHXn49PsRgIFyuOvsey5xRNs0UmcKcle_suQrxUiIuxcjglfjOn5r-2gbU6M4kaH8bYxMF2KNrih2aNjKdx3PNEEXZydM2m5PUi6ut2RAjS8H435G1Y6ABH6TMYSoas4YvnsSU=w156-h156-n-k-no",
+            "type": [
+              "Dermatologist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Mount Sinai Morningside Dermatology",
+            "data_id": "0x0:0xd05222aab06b23a7",
+            "data_cid": "15011098624478880679",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd05222aab06b23a7&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd05222aab06b23a7&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.805547999999995,
+              "longitude": -73.962374
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd05222aab06b23a7%218m2%213d40.805547999999995%214d-73.962374&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=cCVVcoThOBUzWnpEL9KKEQPd3ebYFowCXaL0k2ve3B-sE7f4lBz-Ky4LMf8Wnes_ARPm2ifSsWftttBqKSqcFpX1rcqWuydhASPbwau1WMRSvEsvIKyGxDfJUkkD-KI6tC9ewFP5cQVkEAqY_LS9XXAxuYyQIaR4",
+            "type": [
+              "Dermatologist",
+              "Skin care clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiUKIyIfVXB0b3duIERlcm1hdG9sb2d5IE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiUKIyIfVXB0b3duIERlcm1hdG9sb2d5IE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

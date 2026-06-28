@@ -1,0 +1,1413 @@
+{
+  "search_metadata": {
+    "id": "6a3d386910c26d5ea85d6658",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/MybFmga3895jo58Ctato7w/6a3d386910c26d5ea85d6658.json",
+    "created_at": "2026-06-25 14:17:13 UTC",
+    "processed_at": "2026-06-25 14:17:13 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/health+center+near+uptown+Manhattan/@40.81,-73.95,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/MybFmga3895jo58Ctato7w/6a3d386910c26d5ea85d6658.html",
+    "prettify_html_file": "https://serpapi.com/searches/MybFmga3895jo58Ctato7w/6a3d386910c26d5ea85d6658.prettify",
+    "total_time_taken": 0.73
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "health center near uptown Manhattan",
+    "ll": "@40.81,-73.95,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "health center near uptown Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "Riverside Health Center",
+      "place_id": "ChIJDzeC9Cb2wokRRiorLPTrbno",
+      "data_id": "0x89c2f626f482370f:0x7a6eebf42c2b2a46",
+      "data_cid": "8822248154010954310",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f626f482370f%3A0x7a6eebf42c2b2a46&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f626f482370f%3A0x7a6eebf42c2b2a46&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7960371,
+        "longitude": -73.9679519
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJDzeC9Cb2wokRRiorLPTrbno",
+      "provider_id": "/g/11c807z8nz",
+      "rating": 3.8,
+      "reviews": 14,
+      "type": "Community health center",
+      "types": [
+        "Community health center"
+      ],
+      "type_id": "community_health_center",
+      "type_ids": [
+        "community_health_center"
+      ],
+      "address": "160 W 100th St, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 3:30\u202fPM",
+      "hours": "Open \u00b7 Closes 3:30\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20133:30\u202fPM",
+        "friday": "8:30\u202fAM\u20133:30\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20133:30\u202fPM",
+        "tuesday": "8:30\u202fAM\u20133:30\u202fPM",
+        "wednesday": "8:30\u202fAM\u20133:30\u202fPM"
+      },
+      "website": "http://nyc.gov/health",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        }
+      ],
+      "user_review": "\"The health center was VERY clean and organized.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6A6wgNqxf3arnMPZKrRzMiXli1JR4J9L1N0fwFhbArHrEul8KlYZRlC7K8uyha6zt2jKj3xGZTSLbBjb7rGkvAtLJefkCxLVs0IANyp-lxAhiuW8VVD4qdtKzFd2apvjc_fe-jg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/8X7l8XicHcRRboIwAADQE1WKGGQm-6hOcRSJQ4PKzwK1tJQK2BZBbrgj7DYmvo_3_8eNafXCsiR3JqxpmKSdpoo0taG1mZDmZrFWA6KBttA--qmQ7yK3Z9F9KJxM1bt9ilU87sqzLO0gngUfoR3Bot_wHKmtWnfSw_KSxnI1x1735Jk7mqnAwhn89HgI86XI58qvHsiEAS2q1RAmGn6j6NkCOSBedicvSb5m96vB4-Y6zdqHIL8FBYJ99jaEEPD3BNQvHa9GZQ"
+    },
+    {
+      "position": 2,
+      "title": "Manhattanville Health Center",
+      "place_id": "ChIJ6VTjf2n2wokR4AYZErj-jOc",
+      "data_id": "0x89c2f6697fe354e9:0xe78cfeb8121906e0",
+      "data_cid": "16684990786031912672",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6697fe354e9%3A0xe78cfeb8121906e0&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6697fe354e9%3A0xe78cfeb8121906e0&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8154699,
+        "longitude": -73.95666829999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ6VTjf2n2wokR4AYZErj-jOc",
+      "provider_id": "/g/11lm1cz91j",
+      "rating": 3.5,
+      "reviews": 12,
+      "unclaimed_listing": true,
+      "type": "Community health center",
+      "types": [
+        "Community health center"
+      ],
+      "type_id": "community_health_center",
+      "type_ids": [
+        "community_health_center"
+      ],
+      "address": "21 Old Broadway, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4:30\u202fPM",
+      "hours": "Open \u00b7 Closes 4:30\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134:30\u202fPM",
+        "friday": "8\u202fAM\u20134:30\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20134:30\u202fPM",
+        "tuesday": "8\u202fAM\u20134:30\u202fPM",
+        "wednesday": "8\u202fAM\u20134:30\u202fPM"
+      },
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Noticed there isn't one currently, so thought to share.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLQYngQHBtale0kyoZzVk4ZS6vw_J4vDgLIAu_y_Wi4EMQPkE0VWDT7iiI7O4aEgNP12zkDJTcjWUhTnvXtK7-TuKGSnLawUD-48cbkpWwnjoXfx2m5Mq85TsbDGcIRLPHMPPj9w=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/oYcbEXicHcRRkoIgAADQE5FUtNbO9GGDlaUtFmX14xjjomJggVLdcI_QbXam9_Hef4Uxjf52nLoY9rhSvM5bnd-ZkiaXpsfU1eGNBkwD7XhkEwtvHsYnyePlzGR1DsVTnV8Hgc67r86mK9RhHgZemz7TpER-FBPhw0OCqVuWgfuDMp9vSH_wEnhFWZXsCyq7o1m7gLbrxU6Gmd1jgMbsIprEykodfx-D6yi6jUdUX_CCBduQLCNCqomd2j6EEBSfGZD_ApVFTA"
+    },
+    {
+      "position": 3,
+      "title": "Citicares Community Health Center",
+      "place_id": "ChIJ3Q9QunL2wokRN7W_fsEMF4o",
+      "data_id": "0x89c2f672ba500fdd:0x8a170cc17ebfb537",
+      "data_cid": "9950435926893114679",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f672ba500fdd%3A0x8a170cc17ebfb537&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f672ba500fdd%3A0x8a170cc17ebfb537&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8098333,
+        "longitude": -73.9468334
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3Q9QunL2wokRN7W_fsEMF4o",
+      "provider_id": "/g/1tg51c19",
+      "rating": 4.3,
+      "reviews": 72,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "154 W 127th St, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(718) 589-4755",
+      "website": "http://www.urbanhealthplan.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "user_review": "\"Amazing Doctors and medical staffs,\nclean facility all around (:\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSLIKdJf1REgIDM4oFfgEtaO_7g0uGzXYoqksJ45_sFTm4wH9-2_XbEHKQOWKhLmVPdH2gUEydQ832sErWhmVLhiUxZhtNMHNKy377trO4AW0cF_jAC64POLEKB7QJ4z-_A3g=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/B3uCb3icHcRbssEwAADQFUWjDcWMj9wrFU31waX4yZBW4tGGJsZjgfZgN2bu-Tift7L2YgaOc1ZeS2otz-XNlI3QtS1r2xK6cuTFAGGAcXAaZydM59GEFeG-PSNyMpoiHewlsduE-xLexq_VWl9PJkQdboK_Ct1pH7h8tSOUZUnOVFQt04K6ckGeRdbzXEOaXFXLSB0Wj42y8ZTG7On5vm0ShHMoAn7Ev12UJhFhP34Wohfg2JPDextCCNT_AtRfnhRCPA"
+    },
+    {
+      "position": 4,
+      "title": "Amsterdam Family Health Center",
+      "place_id": "ChIJW43JrYJYwokRXFM8i4cfb-4",
+      "data_id": "0x89c25882adc98d5b:0xee6f1f878b3c535c",
+      "data_cid": "17180985770458764124",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25882adc98d5b%3A0xee6f1f878b3c535c&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25882adc98d5b%3A0xee6f1f878b3c535c&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.792521099999995,
+        "longitude": -73.97174749999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJW43JrYJYwokRXFM8i4cfb-4",
+      "provider_id": "/g/1tfz1088",
+      "rating": 3.1,
+      "reviews": 29,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Community health center"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "community_health_center"
+      ],
+      "address": "De Hostos Towers, 690 Amsterdam Ave # 1, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20135\u202fPM",
+        "friday": "8:30\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20138\u202fPM",
+        "tuesday": "8:30\u202fAM\u20135\u202fPM",
+        "wednesday": "8:30\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 865-4104",
+      "website": "http://www.institute.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Doctor and nurses were all lovely, efficient and super helpful.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBm04ZrrKAmDzJ4gGlg8FwPUVb2u2aU785k_jnA7IoVvKhylo5S7WBBpsUDg_s22ubFfXVHHc4FMsk5IYu3v8iqOke3yH4yupEr_Myrxc7NlwVfbEuX1oT2PSuqR13V-LMA7rA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/7AgtvXicHcRJDoIwAADAF1WgQEpMPJQo4oLiQl0uRBosSqHYUhE_6Bv8jYlzmO-naNtGDQ2DF_aACcF4rlUuqajbvG4HVFQGaxSgCigDx6tNiUO_Mp2zlAtcjd9zh00584IuTkgGNbwkyHPL9F5jNBPkuSh6LtwdOvh-o5IxSxWEOguuRxKG1AkiVbqzk7af3u2xLnO7D51eNxOZRr18UbTiHblmE320xB7GO_3YWjYBywgjiUedZZomKP5TUP8ARmdEcA"
+    },
+    {
+      "position": 5,
+      "title": "Mount Sinai-Harlem Health Center",
+      "place_id": "ChIJ5Sr_9Yj3wokRQ_xo76ybUkY",
+      "data_id": "0x89c2f788f5ff2ae5:0x46529bacef68fc43",
+      "data_cid": "5067283697798544451",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f788f5ff2ae5%3A0x46529bacef68fc43&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f788f5ff2ae5%3A0x46529bacef68fc43&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.807890799999996,
+        "longitude": -73.9483328
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ5Sr_9Yj3wokRQ_xo76ybUkY",
+      "provider_id": "/g/11vf8x_gpj",
+      "rating": 3.3,
+      "reviews": 24,
+      "type": "Community health center",
+      "types": [
+        "Community health center"
+      ],
+      "type_id": "community_health_center",
+      "type_ids": [
+        "community_health_center"
+      ],
+      "address": "158 W 124th St, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u201312\u202fAM",
+        "friday": "12\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 523-8672",
+      "website": "https://www.mountsinai.org/locations/harlem-health-center",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Brand new facilities, great staff and doctors\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=YHeLoIipjPSNV6-nz3mcVA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=213.34558&pitch=-88.17906&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JWDVSnicHc1dCsIgAADg2_g2f7a2XCDRW0FEEAx6CudMDacybVYn6krdpugC3_d565RCXCEU0yRlmo3MwTykjUXgUHmvrOTBRCj8iGaCkr6PvePGrgN33gzsvJV7vzPhdjwduqZwr2oU3QaI_iKskS6xKPkkNFT5J05-gCpEkBnFQLO2BE-eWUkqWC3qmoJgktCsoBSSZYsb8N-ufmYE4y9DZDsq"
+    },
+    {
+      "position": 6,
+      "title": "Bronx Health Center",
+      "place_id": "ChIJgaGdKnP2wokRgdHV9XAdTwQ",
+      "data_id": "0x89c2f6732a9da181:0x44f1d70f5d5d181",
+      "data_cid": "310499270309826945",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6732a9da181%3A0x44f1d70f5d5d181&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6732a9da181%3A0x44f1d70f5d5d181&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8057721,
+        "longitude": -73.9402784
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJgaGdKnP2wokRgdHV9XAdTwQ",
+      "provider_id": "/g/11hbqh9_jm",
+      "rating": 4.2,
+      "reviews": 62,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center",
+        "Mental health service"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center",
+        "mental_health_service"
+      ],
+      "address": "51 E 125th St 2nd floor, New York, NY 10035",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "thursday": "10\u202fAM\u20136\u202fPM",
+        "friday": "10\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20136\u202fPM",
+        "tuesday": "10\u202fAM\u20136\u202fPM",
+        "wednesday": "10\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(646) 707-3930",
+      "website": "http://www.bronxhc.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Went to my dental appointment and was pleased with the results.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZ670cA8IFNesB2FNppMraSV3fEGN-m6LcO0y_0uA4El7PMRv0J8nK2Tz1Q7w4uwfJLGBq5PAlnP98YT7f91kT6-_84lo6-wuzpXXeH1zi3bOfbWsUrRKKULkEtrdyoE00oQEr=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/3pIyF3icHcTdboIwGADQJ6p8CANcsouaFH9ABMWpuzFaCxhq27VlRF7QZ_BtTHYuzuvZWKvMp-PwxhvVUtacdYZpKoVlwo6ovDu1MogaZBycZ0WL458gBIqjRZwxMx3HmVIrfd5-exWZZegepHQNjxN02Cc8zFebP1hGIhmXg1uEvd_11TKdTX8_csxFPomOZVhN3LYM0CnyuQxQ3w3qcGBzd7h5l3V12Zud3iTJLm2J1deHJACyIPqrdwEANf9TJN5dlkKN"
+    },
+    {
+      "position": 7,
+      "title": "Settlement Health",
+      "place_id": "ChIJ3R_lUQL2wokRoBW9OxmqU8Q",
+      "data_id": "0x89c2f60251e51fdd:0xc453aa193bbd15a0",
+      "data_cid": "14146837879854011808",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f60251e51fdd%3A0xc453aa193bbd15a0&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f60251e51fdd%3A0xc453aa193bbd15a0&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7909443,
+        "longitude": -73.9441243
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3R_lUQL2wokRoBW9OxmqU8Q",
+      "provider_id": "/g/1tk8d15g",
+      "rating": 3.3,
+      "reviews": 120,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Community health center"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "community_health_center"
+      ],
+      "address": "212 E 106th St #1, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4:45\u202fPM",
+      "hours": "Open \u00b7 Closes 4:45\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20134:45\u202fPM",
+        "friday": "8:30\u202fAM\u20134:45\u202fPM",
+        "saturday": "9\u202fAM\u20134:30\u202fPM",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20134:45\u202fPM",
+        "tuesday": "8:30\u202fAM\u20134:45\u202fPM",
+        "wednesday": "10:30\u202fAM\u20134:30\u202fPM"
+      },
+      "phone": "(212) 360-2600",
+      "website": "https://settlementhealth.org/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "user_review": "\"Every time we visit, we receive excellent care and support.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1xYD9s3jKt_1i9zqiFcDi_eQqJjyNoOVbKkEa4yZowkwdfpUop7fBDBN8MMZQVozzsy-mVhgwrhNFNXvljuZpI_XDEQ5ffd4y3LGsByvdwN41Ahqe5o9y0JRLMi5DwXwx7gXR9Q=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/oOS6MXicHcTdboIwGADQJ6pAgDiW7AJSdVPpVpMRxg2ZpbT8yFdstZY33CPsbZbsXJzfH2mM0s-eN8pwJQDEyG-aXxlMhk9mxeDiCaUR00h76QehQ_oaPL5wosP-YOqgS5a52zLc1ZzO-94ReC_Oh2HzHbkK7GCbVn2CWrcZzshTnle0gGXRDl0KKexVki0p72N_q9RbXeINjdu2iVx43OnM3RtLoiCVM48hcf7-dMy7GNvSPtaiPCX0xQa-7yP5P0PTH6hsRyA"
+    },
+    {
+      "position": 8,
+      "title": "East Harlem Neighborhood Health Action Center",
+      "place_id": "ChIJcdWICQb2wokR5p1lcQLBd9I",
+      "data_id": "0x89c2f6060988d571:0xd277c10271659de6",
+      "data_cid": "15165802486430014950",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6060988d571%3A0xd277c10271659de6&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6060988d571%3A0xd277c10271659de6&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.797602,
+        "longitude": -73.94189899999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJcdWICQb2wokR5p1lcQLBd9I",
+      "provider_id": "/g/1tfqb4p0",
+      "rating": 4.6,
+      "reviews": 40,
+      "type": "Public health department",
+      "types": [
+        "Public health department"
+      ],
+      "type_id": "public_health_department",
+      "type_ids": [
+        "public_health_department"
+      ],
+      "address": "158 E 115th St, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(855) 789-8760",
+      "website": "https://www1.nyc.gov/site/doh/health/neighborhood-health/neighborhood-health-action-centers.page",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Appointment!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEb3yEbfoR-FdWvNEXynqNrZO0pmbu4tV9Udgu1aVkEi-cP6IXwMf4bmXfuGh7yj0nUefmJsbmV4M5e3k6Gk3ve5iAjsptQNR2E6HND6H9nnDqWc-QRgeCEmDVv8q5Zo918fi5hBQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/EXJ4vHicHcRLjoIwAADQExXK8FFMZoFSP5NYhUQk7mzpB7Et2ILhiHOEuc0kvsX7-5XO9Xbl-08ZesIY8WSjZS9qtGPaedQoX_QWUAusn51x0WWIhDMi3JRg21wnjOpZD_h1O8FekTFyVXppxBjcqw61gJ6TQ_0-8oiomo87uZgfUF8YVz-WqCo6xizskl0XTixus4ftXYHLL5TscZ7sU63z4UpBUQq2QSqvpuUQ30waLHkby3Xx_Q4ghEB-pkD_AyJzRSU"
+    },
+    {
+      "position": 9,
+      "title": "Emma L Bowen Community Service Center",
+      "place_id": "ChIJN-DTyHz2wokRI_tIfFLlUlQ",
+      "data_id": "0x89c2f67cc8d3e037:0x5452e5527c48fb23",
+      "data_cid": "6076170989711457059",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67cc8d3e037%3A0x5452e5527c48fb23&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67cc8d3e037%3A0x5452e5527c48fb23&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8255609,
+        "longitude": -73.9471677
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJN-DTyHz2wokRI_tIfFLlUlQ",
+      "provider_id": "/g/1tcygd8r",
+      "rating": 3.3,
+      "reviews": 89,
+      "type": "Mental health service",
+      "types": [
+        "Mental health service"
+      ],
+      "type_id": "mental_health_service",
+      "type_ids": [
+        "mental_health_service"
+      ],
+      "address": "1727 Amsterdam Ave, New York, NY 10031",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20135\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 694-9200",
+      "website": "http://www.bowencsc.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        }
+      ],
+      "user_review": "\"Compassionate staff and meaningful support for healing and growth.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZBxM4eP7TdH64VxzBzPNAGh8A3P9gAPuoDL9gErdUxF40sGJmfUG1Zhj6fRt6_p0PNl80WBqNYLxKl2_lcBr1789iPQqxliwLjgB1phi9SvZCQXu4BnjYJHNaVTRrUvxnlkA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/RhXrdXicHcRdDoIgAADgE5lYzrStB-jHVsaw0sqX1shAIzDBYh2wO3Sbtr6H7_vhxjR65LqCD3pMKSbKTpctVdKU0vSourus0Q7VjnYhwekNzgtk135JhrvLIvBz-0ZvgmHMQzggEYOkU9MkYrP2ktm5D3S8vF-z2Ct4HVw3Jjg1gGARgj164GNiV6J_EhS13jCMKpI-rKheSc2Q1_Aq2j6LSXrofCTr43KBz_lu02ZPK8UNjl8eAMDh_6kjf6WuQ9U"
+    },
+    {
+      "position": 10,
+      "title": "Family Health Center of Harlem",
+      "place_id": "ChIJ9SO75g72wokRGKJWjq2EZe0",
+      "data_id": "0x89c2f60ee6bb23f5:0xed6584ad8e56a218",
+      "data_cid": "17106224640588947992",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f60ee6bb23f5%3A0xed6584ad8e56a218&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f60ee6bb23f5%3A0xed6584ad8e56a218&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.801822699999995,
+        "longitude": -73.9438005
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ9SO75g72wokRGKJWjq2EZe0",
+      "provider_id": "/g/1td0bwcf",
+      "rating": 2.3,
+      "reviews": 309,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Community health center",
+        "Dental clinic",
+        "Mental health clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "community_health_center",
+        "dental_clinic",
+        "mental_health_clinic"
+      ],
+      "address": "1824 Madison Ave, New York, NY 10035",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 423-4500",
+      "website": "http://www.institute.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "user_review": "\"This  clinic  is  clean  and  the  staff  is  very  polite.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-gLRzYB1immBKISI5kmJylEyaicU-iS29btGwBUxinHcWtt-ntRYd04ONT8bSb12QoAEcx9JlNf5WlkN6Z_YPdQz7UQj8WmqqTIZ9qXD5BnqWxkd2LI8FRT7HZtaH43HIaXHH=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/MfYze3icHcRbboJAFADQFY08BIUm_YCIzqih8grCj4GBAmUe4txGdIOuobtp4vk4f68e4Ko-NI31y0UnZcfaX9XeqBTQClhQybXuqhBVSGneKYxGL0DdMX4WvjFw7h9IQuyR7x8seFQDzdCQmG4Nu7ufzYPANAdAAuKi0a2vMHXqpDbMSHoBnd09C7_tnI3hqrwUpyZ6rrPox8n5NKWkdKfzxvbFlM9jYx6Js43TNS6hwtYSk-qM8efd0HUd9e8pEv9InEPh"
+    },
+    {
+      "position": 11,
+      "title": "City Prime Health",
+      "place_id": "ChIJozYVIWr2wokR0jMWmUPa5f4",
+      "data_id": "0x89c2f66a211536a3:0xfee5da43991633d2",
+      "data_cid": "18367326639166469074",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f66a211536a3%3A0xfee5da43991633d2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f66a211536a3%3A0xfee5da43991633d2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8154621,
+        "longitude": -73.9577549
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJozYVIWr2wokR0jMWmUPa5f4",
+      "provider_id": "/g/11c60j6130",
+      "rating": 4.5,
+      "reviews": 109,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center",
+        "Doctor",
+        "Medical clinic"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center",
+        "doctor",
+        "medical_clinic"
+      ],
+      "address": "565 W 125th St, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "thursday": "10\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20133\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 470-1000",
+      "website": "http://www.cityprimehealth.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"Ana was so nice and skilled, the needle for bloodwork was painless!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3WK2Cxm7JS0uc9NkGXg0gvxrPRz3kbOerUshuvOOcvM6-bmlZrXiIXK9FQpEost7zAYsrgS0cdgwgpg520lXxxV0H6VorrlPMkxgMcYM3HzaT3HL9pvRsMeSHa1LVE_aSmrOwvKqaSu0=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Z_2maXicHcTBboIwGADgJ6pUGzWY7EAWNhxW0G4MvSxYm5-FQmtbSsND7r63WbLv8P3-tM5pu4si2ZIFKAVSjFYYrgYnBrfgqo9AW8QtslFSHk9dkpLPfPUc-u0bwyOPj91rDRh8MOV5Jt2tEObDtqMvCu7pBt16eTX1977O45eTTpV12zm5WAMM8ztMoGG9wrIOocLZplLGyJJ2ASi_UJLNzTvJDrH2Z0sFy5rloUq_GtabYvL5o2EjfpqWGGPU_s_R8AfVg0i3"
+    },
+    {
+      "position": 12,
+      "title": "Community Health Center",
+      "place_id": "ChIJhf-XMAb2wokR6ngdTgV6P5E",
+      "data_id": "0x89c2f6063097ff85:0x913f7a054e1d78ea",
+      "data_cid": "10466218222236301546",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6063097ff85%3A0x913f7a054e1d78ea&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6063097ff85%3A0x913f7a054e1d78ea&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7974897,
+        "longitude": -73.93958889999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJhf-XMAb2wokR6ngdTgV6P5E",
+      "provider_id": "/g/1tf08ll7",
+      "rating": 3.7,
+      "reviews": 3,
+      "unclaimed_listing": true,
+      "type": "Medical group",
+      "types": [
+        "Medical group"
+      ],
+      "type_id": "medical_group",
+      "type_ids": [
+        "medical_group"
+      ],
+      "address": "208 E 116th St A, New York, NY 10029",
+      "country": "United States",
+      "phone": "(212) 831-8940",
+      "website": "https://www.ecommunity.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=GpFG6eGn8IsTU1tXvRM0xw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=200.27466&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/1HqrpnicHc1BDsIgEADA33ATaGNqNSHebDx4MZp4M5SuQELLpqxQf-O3_I3GD8x83o4I006IRDMAZQ8F_QIhrVBzG6MNoNEnbuIociXIPcd-0j7sUU_RD6rDQ9dAN7XHdLlWdMvnk1wKM_3dBA8TqQR6No7b8hPnOHCLiRXVSubUtmYvXVQtJa8366Zh6Mk4Jdl_ecSsKim_a8I5ZQ"
+    },
+    {
+      "position": 13,
+      "title": "Center for Comprehensive Health Practice",
+      "place_id": "ChIJLTyz76hYwokRfsMsBfEl_7M",
+      "data_id": "0x89c258a8efb33c2d:0xb3ff25f1052cc37e",
+      "data_cid": "12970127168954483582",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a8efb33c2d%3A0xb3ff25f1052cc37e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a8efb33c2d%3A0xb3ff25f1052cc37e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.796390099999996,
+        "longitude": -73.9478682
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLTyz76hYwokRfsMsBfEl_7M",
+      "provider_id": "/g/1tff_dvb",
+      "rating": 3.8,
+      "reviews": 37,
+      "type": "Community health center",
+      "types": [
+        "Community health center",
+        "Addiction treatment center",
+        "Counselor",
+        "Doctor",
+        "Family planning center",
+        "Medical Center",
+        "Non-profit organization",
+        "Pediatrician",
+        "Social services organization"
+      ],
+      "type_id": "community_health_center",
+      "type_ids": [
+        "community_health_center",
+        "addiction_treatment_center",
+        "counselor",
+        "doctor",
+        "family_planning_center",
+        "medical_center",
+        "non_profit_organization",
+        "pediatrician",
+        "social_services_organization"
+      ],
+      "address": "35 E 110th St 4th Floor, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "7\u202fAM\u20135\u202fPM",
+        "friday": "7\u202fAM\u20135\u202fPM",
+        "saturday": "7:30\u202fAM\u201312\u202fPM",
+        "sunday": "Closed",
+        "monday": "7\u202fAM\u20135\u202fPM",
+        "tuesday": "7\u202fAM\u20135\u202fPM",
+        "wednesday": "7\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 360-7700",
+      "website": "http://www.cchphealthcare.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"All of the staff and healthcare professionals are top notch.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGtqCFc5mvX2mfBeY0nINggxy4tVQNzyz6XIXkfyhlVhsUUnvPGJ3Z2gdz0QuLKz8QjGpKFoKOWaNUWZb0ZyPE0kUMdwNI4LvdQsfveyC47U6IHblGMUrjoYyBSkOLyUqef4PZ9nQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/mVAmgXicHcTbDoIgAADQLzKp7Lr1UK3MNJQ1ynwrRJgX0CAN_7BP6G_aOg_n--Fa12pp2yUfD5iUrKQvRZ9ECk2FHhBZ2axWFlGWstcRRMXa1c12TyZVG4-qbENvQHiQsbdx9AXB3vTT2IuLzPDywhXGoo3c4zgZsbQH6BX4_Rzlbu3vpR9e7xBfkwdITLQDBT6lHfScoE2Rylpqts4MT73Do3RP-JnLm9mcizAwuKGZEyULgVbdEABg8f_EEj-GYEbR"
+    },
+    {
+      "position": 14,
+      "title": "Harlem United's The Nest Community Health Center",
+      "place_id": "ChIJ_3ndYnH2wokRy3rUHI3GHxE",
+      "data_id": "0x89c2f67162dd79ff:0x111fc68d1cd47acb",
+      "data_cid": "1233923132299180747",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67162dd79ff%3A0x111fc68d1cd47acb&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67162dd79ff%3A0x111fc68d1cd47acb&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.813910899999996,
+        "longitude": -73.9439488
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_3ndYnH2wokRy3rUHI3GHxE",
+      "provider_id": "/g/11cs6byb1j",
+      "rating": 3.2,
+      "reviews": 61,
+      "type": "Community health center",
+      "types": [
+        "Community health center",
+        "Dentist",
+        "Doctor",
+        "Non-profit organization"
+      ],
+      "type_id": "community_health_center",
+      "type_ids": [
+        "community_health_center",
+        "dentist",
+        "doctor",
+        "non_profit_organization"
+      ],
+      "address": "169 W 133rd St, New York, NY 10030",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20135\u202fPM",
+        "friday": "8:30\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20137:30\u202fPM",
+        "tuesday": "8:30\u202fAM\u20135\u202fPM",
+        "wednesday": "8:30\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(844) 464-2753",
+      "website": "http://www.harlemunited.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "user_review": "\"The medical professionals are experienced.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFiXuO3_SCy4q6bH8EjW_FjwcHGa1AmQWWRDy3eywjyprmgCuRfFqUdVnZgegYdBSBu5AaXzzy3W3EI5HP8KfLL2ueqPOLPzqOH8Rp54R_vfWX9vsHCj3BTVPkpk6SssI8lyKzN=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/dMp5NHicHcRdDoIgAADgE5kW2aytB7WMlkvSCuvFFSHmL4bk8IKdodu09T1830_WdVwsdL3MwIg1DSupFPRFmrqjdTciTaUzLjQiNKHbaH8obO8ZywAkkaum7ewOrXWOEy_vCdzcxnZ1wDhcKUBVnyv-qpgrw9RrT49zfWWUXR5O5EjTvsXDoAAG660JkbVLfX8iaYsCHw1tAK2Qm9Mweac4nr8FdHPgHM-o4MUsEmJrlWo37Jf92DAMLftPtPoHpkpFdA"
+    },
+    {
+      "position": 15,
+      "title": "NYC Health + Hospitals/Metropolitan",
+      "place_id": "ChIJG1z-2KhYwokRhPmjewNNWcc",
+      "data_id": "0x89c258a8d8fe5c1b:0xc7594d037ba3f984",
+      "data_cid": "14364597163829492100",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c1b%3A0xc7594d037ba3f984&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a8d8fe5c1b%3A0xc7594d037ba3f984&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7850202,
+        "longitude": -73.9448902
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJG1z-2KhYwokRhPmjewNNWcc",
+      "provider_id": "/m/05h21l4",
+      "rating": 4.2,
+      "reviews": 1646,
+      "type": "General hospital",
+      "types": [
+        "General hospital",
+        "Abortion clinic",
+        "Family planning center",
+        "Hospital"
+      ],
+      "type_id": "general_hospital",
+      "type_ids": [
+        "general_hospital",
+        "abortion_clinic",
+        "family_planning_center",
+        "hospital"
+      ],
+      "address": "1901 1st Ave, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20137\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20137\u202fPM",
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(844) 692-4692",
+      "website": "http://www.nychealthandhospitals.org/metropolitan",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "On-site parking"
+          ]
+        }
+      ],
+      "user_review": "\"Front desk, nurses, doctors, Service and timing is just amazing.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGUPEvY0F7fHMOpv-juW-8_fDGPqh64A3V05NzPdAVqBh-G38NT_nHThj1JncH25yuA4TvKkxs0tDfBk7et-_jfJ8e-gUKvY9BStv9fMFWKk4vJ1TLf4zAP6_Qn--pzWLi54I2E=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/YEKWHXicHcRBjoIwFADQE30pUhRNZlGigqBYI0pcsagtFbSgLVW54JxhbjOJb_H-fqUxnZ47zk16o6ptqxvvNX-yVhmuzIi1d6fqNDAN2iE02zckOtKlPaPVVMTbXWeh7gsISrGI6ENOMPFOyM8GeiGnRygh8oIsL1Wcy9pNFIvH_qcnOLdp89bILETYTLmBshZJwKE6pvY8Cw_GzsR2VaQNtombbwQeCJ2UewXQDcXm6uP1ePnzchFCIL8zUP-bGUJL"
+    },
+    {
+      "position": 16,
+      "title": "NYHTC & HANYC Employee Benefit Funds Harlem Health Center",
+      "place_id": "ChIJQ5PeXWv2wokRozvmuS1S-3Y",
+      "data_id": "0x89c2f66b5dde9343:0x76fb522db9e63ba3",
+      "data_cid": "8573536671975750563",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f66b5dde9343%3A0x76fb522db9e63ba3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f66b5dde9343%3A0x76fb522db9e63ba3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8111487,
+        "longitude": -73.953932
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJQ5PeXWv2wokRozvmuS1S-3Y",
+      "provider_id": "/g/1tfcp8c3",
+      "rating": 3.7,
+      "reviews": 99,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center",
+        "Association / Organization"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center",
+        "association_or_organization"
+      ],
+      "address": "133 Morningside Ave, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5:45\u202fPM",
+      "hours": "Open \u00b7 Closes 5:45\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135:45\u202fPM",
+        "friday": "8\u202fAM\u20135:45\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135:45\u202fPM",
+        "tuesday": "8\u202fAM\u20135:45\u202fPM",
+        "wednesday": "8\u202fAM\u20135:45\u202fPM"
+      },
+      "phone": "(718) 606-3863",
+      "website": "http://www.hotelfunds.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Very clean and fast service also friendly staff\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHae9E8h7vOiyTnkEopZny4dGp8g1cXNS5XUnkddJoB2gSH4gwu8iIDRlWnp1H-Zwd7VIol6A6nJHo742G8ZyMRdCguDqKYORnKgbUmgJiG10iDg4YLP97TXZmHgRmVM5MqQTtB=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/x19bmXicHcTdEoFAGADQJ1oVUcy4iEwr8pOQ7thtvprq22U3TU_oGbyNGefifD-F1lLNDKMuRgMQAuq8VfmLCdQ56gETjQFSEaaIMrzD7lh59J5PV27hvPdln2C1EjLD3uaBdMFi6e40Ts9YcR6KxRBO1Iaudcu1H9dXlBYlWcedy1rUE2-CIRWOPQzcrI9ivoTWf25u-xg38Dg3EJaBZZY-2LftYeokadZQiJtLNI6ex0Qv5p1lmiYp_jOCP1M1RAs"
+    },
+    {
+      "position": 17,
+      "title": "Willis Green Jr. Adult Healthcare Center",
+      "place_id": "ChIJwep8eg32wokRJcnhkEcxQMc",
+      "data_id": "0x89c2f60d7a7ceac1:0xc740314790e1c925",
+      "data_cid": "14357529795500296485",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f60d7a7ceac1%3A0xc740314790e1c925&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f60d7a7ceac1%3A0xc740314790e1c925&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.807741199999995,
+        "longitude": -73.9469807
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJwep8eg32wokRJcnhkEcxQMc",
+      "provider_id": "/g/1hhgm183q",
+      "rating": 5,
+      "reviews": 1,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Community health center",
+        "Doctor"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "community_health_center",
+        "doctor"
+      ],
+      "address": "123-125 W 124th St, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 3\u202fPM",
+      "hours": "Open \u00b7 Closes 3\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20133\u202fPM",
+        "friday": "8\u202fAM\u20133\u202fPM",
+        "saturday": "9\u202fAM\u201312\u202fPM",
+        "sunday": "9\u202fAM\u201312\u202fPM",
+        "monday": "8\u202fAM\u20133\u202fPM",
+        "tuesday": "8\u202fAM\u20133\u202fPM",
+        "wednesday": "8\u202fAM\u20133\u202fPM"
+      },
+      "phone": "(212) 531-1300",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=YNULOUYRFI1iuw18k9IaPQ&cb_client=search.gws-prod.gps&w=80&h=92&yaw=64.897125&pitch=-89.054665&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/gGrTEnicHc1dDoIgAADg2_AmP04N21hvbW6tv80HnxoiAQuFCUodqSN1m1oX-L7PW8fowxahEGcp42pk8uYpbcg8h8o5ZSX3JkDhRrQSFPUy9hM3duf55MzAumN7OLXddd8QsyRCH3XDzxcg-puwRk6RBclnoaFKP3F2A1Q-gMQoBprVOXjxxKoC0npD8hJ4E4VmGa0hLouqKsG_u7uVEYy_UpU69Q"
+    },
+    {
+      "position": 18,
+      "title": "ColumbiaDoctors Manhattan Valley - Primary Care",
+      "place_id": "ChIJOduIDwD3wokRnZ5BURncVYc",
+      "data_id": "0x89c2f7000f88db39:0x8755dc1951419e9d",
+      "data_cid": "9751942569436225181",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7000f88db39%3A0x8755dc1951419e9d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7000f88db39%3A0x8755dc1951419e9d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.799122,
+        "longitude": -73.968165
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOduIDwD3wokRnZ5BURncVYc",
+      "provider_id": "/g/11hm15wb10",
+      "rating": 3.5,
+      "reviews": 25,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Doctor",
+        "Family practice physician",
+        "General practitioner",
+        "Home health care service"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "doctor",
+        "family_practice_physician",
+        "general_practitioner",
+        "home_health_care_service"
+      ],
+      "address": "2702 Broadway, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(844) 387-2273",
+      "website": "https://www.columbiadoctors.org/locations/columbiadoctors-manhattan-valley/primary-care?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"Missy drew my blood and found my vein immediately.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEeK0AGSQ4jUzHtJZnxsnbHiPromxe5qMgWXVefPDdnXfF6kMxdCV5RTi5Zp2QssU9l0PXubGnofUP4yNIObuonkXwp5lH99rKQhsaf5WtF6tLwk8KT-DolQO2GQxsNg2KUVXzk=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/OMgQsXicHcRRboIwGADgE1Uqs0ZMfCBTQZnYboKNb4KluNYW-UtAL-gZvM2SfQ_f-1U718Dc83T9MZLWSi06EG1pjRPGjUp782QDqAQEXkhTpsKVSHAY_bDJb_aM3fZkBjBFfKWtvQ2C3HfyyHNR0eXF8Go9Vbvh8pmT78OVnBqfAWSBxpR3RWRsldHJI93si84axfuG6DgI2oTVcK7I0a2n7qtXs-SAllazvR-xAVLpJ1nOn2rRjzHGqP6_ROYP3yRF_A"
+    },
+    {
+      "position": 19,
+      "title": "MWNHC Community Health Center",
+      "place_id": "ChIJp0OUiyb2wokR9Y44P90rm3Y",
+      "data_id": "0x89c2f6268b9443a7:0x769b2bdd3f388ef5",
+      "data_cid": "8546472947114086133",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6268b9443a7%3A0x769b2bdd3f388ef5&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6268b9443a7%3A0x769b2bdd3f388ef5&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7960371,
+        "longitude": -73.9679519
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJp0OUiyb2wokR9Y44P90rm3Y",
+      "provider_id": "/g/1v2gfpsl",
+      "rating": 3,
+      "reviews": 2,
+      "unclaimed_listing": true,
+      "type": "Mental health service",
+      "types": [
+        "Mental health service"
+      ],
+      "type_id": "mental_health_service",
+      "type_ids": [
+        "mental_health_service"
+      ],
+      "address": "160 W 100th St, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 662-0700",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ud1s2kTPAx-_UM4y-ReluQ&cb_client=search.gws-prod.gps&w=80&h=92&yaw=219.27744&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Y8uQkXicHc3bCcIwFADQbfLXvCjUCkEcQFDR7xLTaxJMm9DcNu02ruU2iguc83k7xJT3jGWcAHDxUJJfIeQqaWpjtAF08pmaOLBFMHTz8Bi1D4ekx-h7Nfciy9ftfFyr7n6qt-oKYb4Q8-hM8DCiyqAn46gtP3GKPbUpk6J2nDjVSrLpoqRoqWyauibJo3GKk__yjIsSnH8BcXY5dA"
+    },
+    {
+      "position": 20,
+      "title": "Medical Clinic Manhattan New York | Medical Clinic Manhattan NY",
+      "place_id": "ChIJq6qaM49YwokRVBq3PdaonOY",
+      "data_id": "0x89c2588f339aaaab:0xe69ca8d63db71a54",
+      "data_cid": "16617342363202165332",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2588f339aaaab%3A0xe69ca8d63db71a54&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2588f339aaaab%3A0xe69ca8d63db71a54&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.782281,
+        "longitude": -73.9768964
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJq6qaM49YwokRVBq3PdaonOY",
+      "provider_id": "/g/11fm3t_c99",
+      "rating": 4,
+      "reviews": 4,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "130 W 79th St, New York, NY 10024",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "10\u202fAM\u20136\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(315) 201-0621",
+      "website": "https://www.bmcofny.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Wishing you continued success in serving the community!\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=CCf0GZ3JiS8TtUKkkOu7Iw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=229.54723&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ns_Y8HicHc0xDsIgFADQ27AJlGramhCHDkYdHNTFxVBKgZQWUn6L3sZreRuNF3jv8zYAIW4JiTApBYtVKdincnEVBNbea6dEsBFLP5AlI2DmoRmFdbsgRm9bXtcd3d_zo72UV7id-v48F4eEZPOQzqoReFRikgbr9BMn32IdIkq8pMjwiqGXSJyxCm_WBctRsCANp-i_dH7hGaVfV2I5MQ"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.81%2C-73.95%2C14z&q=health+center+near+uptown+Manhattan&start=20&type=search"
+  }
+}

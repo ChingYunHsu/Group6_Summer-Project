@@ -1,0 +1,580 @@
+{
+  "search_metadata": {
+    "id": "6a3d27433c99baef15cf0839",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/CmNfNjLXam2rcpxbm_vM9w/6a3d27433c99baef15cf0839.json",
+    "created_at": "2026-06-25 13:04:03 UTC",
+    "processed_at": "2026-06-25 13:04:03 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2590b9829f14d:0xedf7f1439bcc8194!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/CmNfNjLXam2rcpxbm_vM9w/6a3d27433c99baef15cf0839.html",
+    "prettify_html_file": "https://serpapi.com/searches/CmNfNjLXam2rcpxbm_vM9w/6a3d27433c99baef15cf0839.prettify",
+    "total_time_taken": 1.18
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJTfEpmAtZwokRlIHMm0Px9-0",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "New York University College of Dentistry",
+    "place_id": "ChIJTfEpmAtZwokRlIHMm0Px9-0",
+    "data_id": "0x89c2590b9829f14d:0xedf7f1439bcc8194",
+    "data_cid": "17147439378915426708",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b9829f14d%3A0xedf7f1439bcc8194&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b9829f14d%3A0xedf7f1439bcc8194&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7378213,
+      "longitude": -73.97840579999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0",
+    "provider_id": "/m/04hhjc",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF0fNSQI5IKpYnX-_vbBVTiMiDcD-q6Mg42DbcxDG-FwZzGzgfD8Mh97Zce9_D4q7PytooFNyjatdaEQSnv59nRh3ezOz6jhFxVopK0iTZVVkhi0V24rkh2yYmWtQ2f8uYpgY4-Zg=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/IhijwXicHcRdDoIgAADgE6Fk9mNbDzXStaZpNUpfnBKCWUCBld6wI3Sbtr6H7_vhxig9s-0rH1pMSnalraYPIoWhwlhE3mymNCAaaHsRR0mz8GEV7ZP1aL1RqTiB_Fku8aEOa0QQuI9D5jqoJG8UAP-V9UHPKjQNuTfJCPVy5N4ncWek9KPuUphzsUr24jnyxI4Pab_txxfuv7FUG1gfMowbXkPsuI-GO116O5rEqaZtqljqgozNXwMIIeD_CRA_xeRFew",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 360
+      },
+      {
+        "stars": 2,
+        "amount": 44
+      },
+      {
+        "stars": 3,
+        "amount": 46
+      },
+      {
+        "stars": 4,
+        "amount": 90
+      },
+      {
+        "stars": 5,
+        "amount": 692
+      }
+    ],
+    "rating": 3.6,
+    "reviews": 1232,
+    "type": [
+      "Dental school",
+      "Dental implants provider",
+      "Dentist",
+      "Endodontist",
+      "Oral and maxillofacial surgeon",
+      "Orthodontist",
+      "Pediatric dentist",
+      "Periodontist",
+      "Prosthodontist"
+    ],
+    "type_ids": [
+      "dental_school",
+      "dental_implants_provider",
+      "dentist",
+      "endodontist",
+      "oral_maxillofacial_surgeon",
+      "orthodontist",
+      "pediatric_dentist",
+      "periodontist",
+      "prosthodontist"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "345 E 24th St, New York, NY 10010",
+    "country": "United States",
+    "booking_link": "http://dental.nyu.edu/patientcare",
+    "website": "http://dental.nyu.edu/",
+    "phone": "(212) 998-9800",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "P2QC+4J New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      },
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF0fNSQI5IKpYnX-_vbBVTiMiDcD-q6Mg42DbcxDG-FwZzGzgfD8Mh97Zce9_D4q7PytooFNyjatdaEQSnv59nRh3ezOz6jhFxVopK0iTZVVkhi0V24rkh2yYmWtQ2f8uYpgY4-Zg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/IhijwXicHcRdDoIgAADgE6Fk9mNbDzXStaZpNUpfnBKCWUCBld6wI3Sbtr6H7_vhxig9s-0rH1pMSnalraYPIoWhwlhE3mymNCAaaHsRR0mz8GEV7ZP1aL1RqTiB_Fku8aEOa0QQuI9D5jqoJG8UAP-V9UHPKjQNuTfJCPVy5N4ncWek9KPuUphzsUr24jnyxI4Pab_txxfuv7FUG1gfMowbXkPsuI-GO116O5rEqaZtqljqgozNXwMIIeD_CRA_xeRFew"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEVQveCIjAQjzaPs21WuZEr8gxzSQ3lR3ll-bwpy80bB-9mfOSEXRHtrhBGHMAdA8_ru1INoyRZwAvknlie9rlltlDeX7lL2D4ZK_Se4ju6U1IRpLZHY5oJ90kTzlS3K__sxQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/mezhynicHcRJDoIwFADQE1WKOICJiypEcC44siGCFYQvJW0R5X4ewtuY-Bbv-8mUquRI0yAzOinnKbBaMpHwUrFSdRL-0NJKokQiqZHtmhbEOdAnm3o5oXl72cqufqxDR5jpqw2oAb4BgOKmeps4niDrcdsEzsl3lcgmM3dFrsSMRK17a_72w4Y8ixLuzBIACmx2GsKya_fCRRSwXl4P9rrnV8vQPff53MLFroXAWESRfNFxo2OMUfY_QeUP9mREQw"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE_ZbVEflpK2R-MErMi_5Aft6t3vMUGqFe5zBfdIACs-zGyY6JO39Yod4_3h2bwDKJ1XJA4SM15HAAW0eNDGmiaCSIqWCIZ80k8oUzsuUi0Bb1KTqUkT6FW639PNib8GeFhUISJIpJOix3s=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/VjTc6XicHcTBboIwAADQL6oUKwRNPFQE1hJQhx3TCxlYaANSsFUnP7nz_mbJ3uH9_ghjBr2yrE6gWaNU0_G75rdK9Yb3Zlapq9UMGlQaaAvv00OLg-JcfgR1N8Tzd5AEt0QWDq6Na9AjYdEYcmfa1BeCfQ2m6HVy6Q4tT-qyKJCYl89tTO1PihdZYjtvGOeQp9voKr_8jIy5T84ebD3FJn1nEm5KOz6OrD26Ye6i5T6VpRfxUDCSUTLQnfxGev20IYRA_F-B_g_NdETV"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=vhKqk0CJxcOCftTVIo43-g&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=4.57542&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/4zvMc3icHc09DsIgGADQ27AVKNL4kxCHTurgYlwbihSItHzKJ6238VrexsR3gff9eETIO8YyPq3FEuwMYbExV6CpS8lFqyFkatLISs3Qv8Z-0iHuQU8p3FTxp8edt8fFnNsBL9dDkqvKEdN3JgY7oRo15C4XitpgiJY6yGRWQkjildhuyFvPStJm3UhBIKDxipP_MqSias5_f-I5pw"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Health & Beauty",
+          "places": 3
+        },
+        {
+          "title": "Other",
+          "places": 3
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "NYU Dental - Urgent Care Ctr.",
+          "data_id": "0x89c2590b9133a8db:0x29e4058525aa17ef",
+          "data_cid": "3018543719665768431",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b9133a8db%3A0x29e4058525aa17ef&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b9133a8db%3A0x29e4058525aa17ef&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7379477,
+            "longitude": -73.9782152
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590b9133a8db%3A0x29e4058525aa17ef%218m2%213d40.7379477%214d-73.9782152&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0&type=place",
+          "rating": 3.0,
+          "reviews": 130,
+          "type": "Academic department",
+          "type_id": "university_department",
+          "address": "345 E 24th St, New York, NY 10010",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 4\u202fPM",
+          "hours": [
+            {
+              "thursday": "8\u202fAM\u20134\u202fPM"
+            },
+            {
+              "friday": "8\u202fAM\u20133\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8\u202fAM\u20134\u202fPM"
+            },
+            {
+              "tuesday": "8\u202fAM\u20134\u202fPM"
+            },
+            {
+              "wednesday": "8\u202fAM\u20134\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjzDSAz-xSa8uyKqdsnB3DSCNTvII3Yiiip7rSTvn5inyrnpk_j5Ipcg6Ohmn_5-zze0o1VB5xS02Us6e0yGGhnpp07agqRoDZvt5O9r4o5ZW6V59g6CJRU3sqXNuXsuHf3Q=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjzDSAz-xSa8uyKqdsnB3DSCNTvII3Yiiip7rSTvn5inyrnpk_j5Ipcg6Ohmn_5-zze0o1VB5xS02Us6e0yGGhnpp07agqRoDZvt5O9r4o5ZW6V59g6CJRU3sqXNuXsuHf3Q=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "University Dental Services",
+          "data_id": "0x89c2590b9133a8db:0xc0650f85016f51a2",
+          "data_cid": "13863504091859079586",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b9133a8db%3A0xc0650f85016f51a2&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b9133a8db%3A0xc0650f85016f51a2&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7379477,
+            "longitude": -73.9782152
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590b9133a8db%3A0xc0650f85016f51a2%218m2%213d40.7379477%214d-73.9782152&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0&type=place",
+          "rating": 5.0,
+          "reviews": 2,
+          "type": "Dentist",
+          "type_id": "dentist",
+          "address": "345 E 24th St, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 3,
+          "title": "Translational Research Center",
+          "data_id": "0x89c2590b918ea9bb:0x20f2084f78f27c7e",
+          "data_cid": "2373969091002268798",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b918ea9bb%3A0x20f2084f78f27c7e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b918ea9bb%3A0x20f2084f78f27c7e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.738087,
+            "longitude": -73.9780236
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590b918ea9bb%3A0x20f2084f78f27c7e%218m2%213d40.738087%214d-73.9780236&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Research institute",
+          "type_id": "research_institute",
+          "address": "421 1st Ave #2, New York, NY 10010",
+          "location": "Floor 1"
+        },
+        {
+          "position": 4,
+          "title": "Advanced Program for International Dentists in Comprehensive Dentistry",
+          "data_id": "0x89c2590b914e7789:0x5beda2043d4820ad",
+          "data_cid": "6624128766023573677",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b914e7789%3A0x5beda2043d4820ad&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b914e7789%3A0x5beda2043d4820ad&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7380046,
+            "longitude": -73.97820449999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590b914e7789%3A0x5beda2043d4820ad%218m2%213d40.7380046%214d-73.97820449999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Doctor",
+          "type_id": "doctor",
+          "address": "345 E 24th St, New York, NY 10010",
+          "location": "Floor 1",
+          "open_state": "Closed \u00b7 Opens 10\u202fAM",
+          "hours": [
+            {
+              "thursday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "10\u202fAM\u20134\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "tuesday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "10\u202fAM\u20135:30\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHgC3yLMq_OhZDTSFplEB49wBEGyB_0kCvbR7ta81_qcW_ETq0_45cYQPFXUiTsU6SRi_F_Xrpx4kdtNpmAJld4TTKQ50coju91W_TynKKgaQ4lHTeZIRGTPeZf3qMzSAajz_ny=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHgC3yLMq_OhZDTSFplEB49wBEGyB_0kCvbR7ta81_qcW_ETq0_45cYQPFXUiTsU6SRi_F_Xrpx4kdtNpmAJld4TTKQ50coju91W_TynKKgaQ4lHTeZIRGTPeZf3qMzSAajz_ny=w86-h86-n-k-no"
+        },
+        {
+          "position": 5,
+          "title": "NYU Oral Cancer Center",
+          "data_id": "0x89c2590b93c55555:0xf667963fa148df50",
+          "data_cid": "17755325255964483408",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b93c55555%3A0xf667963fa148df50&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b93c55555%3A0xf667963fa148df50&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7380728,
+            "longitude": -73.97809020000001
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590b93c55555%3A0xf667963fa148df50%218m2%213d40.7380728%214d-73.97809020000001&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Doctor",
+          "type_id": "doctor",
+          "address": "421 1st Ave, New York, NY 10010",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            }
+          ]
+        },
+        {
+          "position": 6,
+          "title": "Aesthetic Advantage",
+          "data_id": "0x89c2590b9132507d:0x22ff709fb75ccb40",
+          "data_cid": "2521858147629189952",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590b9132507d%3A0x22ff709fb75ccb40&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590b9132507d%3A0x22ff709fb75ccb40&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7379393,
+            "longitude": -73.9783254
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590b9132507d%3A0x22ff709fb75ccb40%218m2%213d40.7379393%214d-73.9783254&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTfEpmAtZwokRlIHMm0Px9-0&type=place",
+          "type": "Point of interest",
+          "type_id": "establishment_poi"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Staff and students treated me with care and great service .\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjULzNBsjjFBOsnBgbEmuncOb5xwapg_-szpVlCpZjUG6gfRj82D=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"My personal experience has been great & I highly recommend NYU Dentistry.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLLYU8Raghk5TU9i_oav2a4fswptJYX4ml-Yet1H-2suHQxNw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I spent 8 years with braces, paid a lot of money, and got no results.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWX1FZwjAxqQm6c3kN_KdEdqmtq4fcQq6eqN216Q855gI0il0A5IQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Michael Rivera",
+          "rating": 1,
+          "contributor_id": "107923697671534236768",
+          "user_review_count": 21,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUog_QCyp_7lK-UzIs49VENonIZgI-WOUWe7w6T8Ay0q6Mzxrg8=s120-c-rp-mo-ba12-br100",
+          "description": "Dr, Elsaba, Office Manager Suelie, Office Manger Diana\nI\\n Have recordings of these conversation that I would look to provide to somebody who is higher than them.\nHorrible accommodation\ndid not provide essential service.\nCanceled by prior appointment. Because staff was away. They rescheduled me for my appointment only to schedule the wrong procedure. Because they scheduled me the wrong procedure, they had to rebook me for a consultation. Because a lady on that day, in October didn't have enough time.  So I had to wait.A month I informed the office manager that if she books me for that appointment I Maybe late, she said no worries.We will accommodate fast forward to today.I arrived an hour late and was told.I need to be rebooked.I I spoke with Office manager Suelie\nWho could not provide much help I insisted with speaking with the consultation manager because nobody can verify office manager. Diana's conversation with me, which should have been noted if there are a Doctor's office. Conversations should be noted situations like that should be noted. And yet my conversation with office manager Diana was not noted. I was rescheduled to tomorrow at 12 PM. Another inconvenience this hospital does not communicate lax communication.  Horrible communication",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGYVRqQkdabWhTUkRGQlZFRkNPVkpRZFZaUWJtYxAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOlFaTjBGZmhSRDFBVEFCOVJQdVZQbmc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1_bwCKB9LR--UYdnBunvLxws5Wv8fJ3IUYNrSUhkxnJX_v8CjwfUWrymZWB49YjqGK7ilvqJ_9uzGmMveC8CE3tTK1sAnV8iItjxT5oXw6hIvn5x0C4a4cg1Y6YmYjLNNW6ADxMPp5PXXb=k-no"
+            }
+          ],
+          "date": "6 months ago",
+          "date_iso8601": "2025-11-25T21:08:00+00:00"
+        },
+        {
+          "username": "Sean Harman",
+          "rating": 5,
+          "contributor_id": "103138220956392819365",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKtTTPDp1dUefSLZTWA_D7pNLfBGD6qDXE_jrRtt2hVlMlSwA=s120-c-rp-mo-br100",
+          "description": "I was nervous about letting students do anything dental wise on me, im the last person to trust that process, however, they were wonderful. They made me feel comfortable. I was very pleased with my visit. The only issue i have was that it took me 2 months to get to just a consultation, and its going to take another 2 months to finally get work done. Its a long waiting process to get to an appointment. Thats just ridiculous. But other than that, wonderful experience!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25NMmFsZ3hhRkZJY201S1dHdHZRVko0VTBreE0yYxAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOnM2algxaFFIcm5KWGtvQVJ4U0kxM2c%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-22T01:46:08+00:00"
+        },
+        {
+          "username": "Kaden Dolan",
+          "rating": 5,
+          "contributor_id": "117793971612412946130",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLEUAPF56pK5PrvqGE9CPcmhMRxU7Pi6xHTq-B_vE62SQsjEC8=s120-c-rp-mo-br100",
+          "description": "Went here for the first time 2 months ago. It is a busy place, but very well organized from my experience. The dental student that worked with me from my first visit was great, and all of his supervising dentists were great as well. I should note I am a transgender man, and doctor appt\u2019s of any kind can be anxiety provoking - especially when legal documents don\u2019t reflect your current self. Anywho, 10/10 for these folks.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xeldrdFhTVXBuY0Rob2REQnRPREJtWHpOWGVtYxAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOm1zWktXSUpncDhodDBtODBmXzNXemc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T01:51:36+00:00"
+        },
+        {
+          "username": "Yuriko Zheng",
+          "rating": 1,
+          "contributor_id": "114730286095606413504",
+          "user_review_count": 5,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW8vfEsOpBmpCTijWVkAXPemg27YQJKmlOHFLnZhTNmuw8TY7Y=s120-c-rp-mo-br100",
+          "description": "bitchy receptionist callers who had me call and wait for them to call me back multiple times just to book a tmj appointment in june. If you work in a place where you\u2019re supposed to take care of patients, be nice, and if you lack the ability to do so, why are you guys even qualified to work there anyway. Having to book a appointment, just to get referred to a different number, and when i called they number they had me do a online form so they can call me back, just for this lady to tell me i have to get my referral faxed in, call them back, and wait for them to call me back to get an appointment that is 4 months from now. When i asked them nicely to repeat because I was confused as to why i have to do all of this when its the 21st century, and not the 1990s,\u201cI already told you this 3 times\u201d. My jaw has been hurting for a week and a half, and i haven\u2019t had any solid food since. Could give the establishment 0 stars if i could.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sS05FRTBkbk5VVHpoUlgyazRVamMzYUVrMFJWRRAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOnlKNEE0dnNUTzhRX2k4Ujc3aEk0RVE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-25T20:46:43+00:00"
+        },
+        {
+          "username": "Khn Bsrn",
+          "rating": 1,
+          "contributor_id": "102366346084491022207",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXC7q56ON3DMhNy4D9kNQ19s2z9mgxIbmTrV4d-8DERcsxtnwTy=s120-c-rp-mo-br100",
+          "description": "Five months, two appointments and still had been waiting for a teeth cleaning and finally cancelled today.  $240 in. The student dentist has taken xrays twice on two seperate appointments around two hours each, two months apart. I used to go here because things were getting done. Just as it is the case with everything else in this country, the quality has dropped here as well. Support your local dentist. Peace.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sa01HeGZUWEpNWjIwME5HTllPV3RxV21sRFRXYxAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOnlkMGxfTXJMZ200NGNYOWtqWmlDTWc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-05T22:06:06+00:00"
+        },
+        {
+          "username": "Navneeth Jayendran",
+          "rating": 2,
+          "contributor_id": "111575076768875808874",
+          "user_review_count": 13,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJF1b6Uo7Os_ziGMMEYZnWNg09RLFADQw-nl2aW92lA60vr8Q=s120-c-rp-mo-ba12-br100",
+          "description": "I scheduled an appointment for imaging that was requested by a health care provider. I sent them the imaging form as requested. After completing the imaging, NYU dentistry did not give any communication regarding the results, so I followed up with an email asking if they had been sent to my provider yet. The person working there told me that normally it would be sent to my provider but also asked if it was not sent. I assumed my provider actually received the results because they usually are slow to communicate and moved on.\n\nMonths later, I was told by my provider that they had not received the imaging results. I contacted NYU records and they told me at the last minute that I had to submit a totally different release of medical records request to get that information sent, and that it was going to take two weeks because of a backlog. They did not offer to expedite anything even though it would be a matter of just sending a Dropbox link by email. So now I will not have imaging ready for my upcoming appointment or will have to reschedule back by another three months or so.\n\nNeedless to say, I will not be using NYU dentistry\u2019s services ever again.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xOQ1h6RmllbWt6VGt0RlZYSTBaVmxDTW14VE5XYxAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOlNCXzFiemkzTktFVXI0ZVlCMmxTNWc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-12T16:48:08+00:00"
+        },
+        {
+          "username": "EvaShawn Hassell",
+          "rating": 5,
+          "contributor_id": "114690480990778240277",
+          "user_review_count": 1,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVqHCHSCoE-fDHjjifbXYvCPSyLH1yDrl6RqqLxl93615IUfige0w=s120-c-rp-mo-br100",
+          "description": "I've spent quite a few years getting my dentures. With the students at NYU and had no complaints, they're very compassionate and affectionate, and I love the way they detailed my dentures.\nIt's so advanced now that every tooth you can pick the pontic  for your dentures.\nAs well as the shade color of the gums, i have nothing bad to say about that school.\nAs a matter of fact, I'm inspired to go back to school to be a dental assistant & hygenist, because that was my trade for 20 years to go back there.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GeVdYSlliVXhyZEVSWGVGSlhRMmhPZDJVeWVuYxAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOmFyWXJYbUxrdERXeFJXQ2hOd2Uyenc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-17T14:49:08+00:00"
+        },
+        {
+          "username": "Laura L",
+          "rating": 3,
+          "contributor_id": "102827696763361245632",
+          "user_review_count": 6,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKg5ohWbepkeQKVS7UX4Y-IPy7AAm_Qgf3LyporxR6zNq90ow=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been coming here for the last couple of months, it depends what doctor/ provider takes your case that you are going to receive a good treatment.\nMy biggest complain here is that if you want to book or reschedule an appointment you have to come straight up to the hospital, because every time I call they pick up and leave me on hold for the longest time and then just hung up, I was in so much pain trying to re schedule an appointment and that\u2019s exactly what happened, I had to come to the hospital as an emergency for them to schedule me, I had to wait 2 hrs for an emergency walk in visit, cause in google says 9am walk ins I got there at 8:30 and they told me they start at 10 am, then again that\u2019s why I tried to speak to someone on the phone I also spoke to the receptionist to change the provider and they told me I had to wait for someone to call during the week or next week, so now I gotta wait for a call to continue my treatment plan with someone else\u2026 if you are lucky you get a good provider from the beginning\u2026 just make your appointments at the hospital\u2026 they aren\u2019t that professional",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5cFlsUkxiaTFDVERnMk9GYzFhRXhSV0RCRlJWRRAB!2m1!1s0x0:0xedf7f1439bcc8194!3m1!1s2@1:CAIQACodChtycF9oOl9pYlRLbi1CTDg2OFc1aExRWDBFRVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-18T16:46:57+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Mt Sinai School of Medicine: Zhou Yu DDS",
+            "data_id": "0x0:0xeac40485894f6b8",
+            "data_cid": "1057290691993204408",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeac40485894f6b8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeac40485894f6b8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790316999999995,
+              "longitude": -73.9537622
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xeac40485894f6b8%218m2%213d40.790316999999995%214d-73.9537622&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=5UnyGlaC0jiT8hrhacyusi_mr7JBSt3DaKQDpPRLqBRWdFGqKnvZfwDjdHSX3inmdgLhIsOMeFpTHdb4QKnxIYdPLbEaWJkgw7WRrsCkrf-EoWPJrFVPay_jLdVwv_JvRJS2QO_QGyuWehATw1OPW3qVqf7ZlX7H",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "University Dental Services",
+            "data_id": "0x0:0xc0650f85016f51a2",
+            "data_cid": "13863504091859079586",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc0650f85016f51a2&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc0650f85016f51a2&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7379477,
+              "longitude": -73.9782152
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc0650f85016f51a2%218m2%213d40.7379477%214d-73.9782152&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=KA_vV_m_KDvs0DqyZcU1uRmUPE23quxFjg8JIKxreCAPAHK0Z1tJ1qoRDrdHEesQi6FaMgX_1SdPHvauL0KadObBY8TRJV0R7qtJVofEojomv5bCFLuJ3IVkWXAXyrD6aOffalrO4kK3KxNKgzCC4a8_gbgf5esA",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "NYU Medical Center Division of Oral and Maxillofacial Surgery",
+            "data_id": "0x0:0xdeb9481c85333e",
+            "data_cid": "62691164197040958",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdeb9481c85333e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdeb9481c85333e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7414255,
+              "longitude": -73.9744025
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdeb9481c85333e%218m2%213d40.7414255%214d-73.9744025&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1.8,
+            "reviews": 12,
+            "thumbnail": "https://www.google.com/maps/vt/data=6-Xkog9bz1zc2WVpbq0p7GFbEqP9GOEN4B08f0qnNQiyomqLOyKhrBG7oq3fi7_qXlIQx-TfNGC_w8vhXnMmwZkUegnWEwsLbnwXBiznkLklLA7Grz8fsaRWfTTLEX_MqdiaUhbHE4ySeuFxpS-uJtIPG7CmGE2_",
+            "type": [
+              "Dental school"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "NEW YORK STATE ACADEMIC DENTAL CENTERS",
+            "data_id": "0x0:0x8ed7c8a053ad73b",
+            "data_cid": "643307254018922299",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8ed7c8a053ad73b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8ed7c8a053ad73b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7600664,
+              "longitude": -73.9798151
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8ed7c8a053ad73b%218m2%213d40.7600664%214d-73.9798151&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGBtYjYVqXHZ_RV7MQSa26-BSU4MXw4F_-4U9pzs1dXTkQxthGvW75cOFB7HsVpequEc9JDzRDiNHfxQ_4vnuszeD84_fOP6D0MN_XrbqgxWywb7RHHLt1O0uqey89qrLqHy9KNLA=w156-h156-n-k-no",
+            "type": [
+              "Dental school"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Dr. Chang W. Ryu, DDS",
+            "data_id": "0x0:0xc9cee89efa6d6fb5",
+            "data_cid": "14541816016329863093",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc9cee89efa6d6fb5&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc9cee89efa6d6fb5&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7379477,
+              "longitude": -73.9782152
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc9cee89efa6d6fb5%218m2%213d40.7379477%214d-73.9782152&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=KA_vV_m_KDvs0DqyZcU1uRmUPE23quxFjg8JIKxreCAPAHK0Z1tJ1qoRDrdHEesQi6FaMgX_1SdPHvauL0KadObBY8TRJV0R7qtJVofEojomv5bCFLuJ3IVkWXAXyrD6aOffalrO4kK3KxNKgzCC4a8_gbgf5esA",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjsKOSI1TmV3IFlvcmsgVW5pdmVyc2l0eSBDb2xsZWdlIG9mIERlbnRpc3RyeSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjsKOSI1TmV3IFlvcmsgVW5pdmVyc2l0eSBDb2xsZWdlIG9mIERlbnRpc3RyeSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

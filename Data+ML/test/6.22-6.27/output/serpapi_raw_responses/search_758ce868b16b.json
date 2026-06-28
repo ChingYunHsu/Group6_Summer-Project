@@ -1,0 +1,1328 @@
+{
+  "search_metadata": {
+    "id": "6a3d2a31a973c45557385f4d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/nh1ZyageF6YZ6vHQ_M0GzQ/6a3d2a31a973c45557385f4d.json",
+    "created_at": "2026-06-25 13:16:33 UTC",
+    "processed_at": "2026-06-25 13:16:33 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/hospital+near+midtown+west+Manhattan/@40.758,-73.9855,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/nh1ZyageF6YZ6vHQ_M0GzQ/6a3d2a31a973c45557385f4d.html",
+    "prettify_html_file": "https://serpapi.com/searches/nh1ZyageF6YZ6vHQ_M0GzQ/6a3d2a31a973c45557385f4d.prettify",
+    "total_time_taken": 1.66
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "hospital near midtown west Manhattan",
+    "ll": "@40.758,-73.9855,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "start": 40
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "hospital near midtown west Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "Mount Sinai Corporate Building",
+      "place_id": "ChIJx_3fPPBZwokR5-j7ThZfiZI",
+      "data_id": "0x89c259f03cdffdc7:0x92895f164efbe8e7",
+      "data_cid": "10559075350765889767",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259f03cdffdc7%3A0x92895f164efbe8e7&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259f03cdffdc7%3A0x92895f164efbe8e7&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7506936,
+        "longitude": -73.97538949999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJx_3fPPBZwokR5-j7ThZfiZI",
+      "provider_id": "/g/11f76747gg",
+      "rating": 2.7,
+      "reviews": 11,
+      "unclaimed_listing": true,
+      "type": "Business administration service",
+      "types": [
+        "Business administration service"
+      ],
+      "type_id": "business_administration_service",
+      "type_ids": [
+        "business_administration_service"
+      ],
+      "address": "150 E 42nd St, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 10\u202fPM",
+      "hours": "Open \u00b7 Closes 10\u202fPM",
+      "operating_hours": {
+        "thursday": "7\u202fAM\u201310\u202fPM",
+        "friday": "7\u202fAM\u201310\u202fPM",
+        "saturday": "7\u202fAM\u201310\u202fPM",
+        "sunday": "7\u202fAM\u201310\u202fPM",
+        "monday": "7\u202fAM\u201310\u202fPM",
+        "tuesday": "7\u202fAM\u201310\u202fPM",
+        "wednesday": "7\u202fAM\u201310\u202fPM"
+      },
+      "website": "https://health.mountsinai.org/blog/new-corporate-center-unifies-mount-sinai/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        }
+      ],
+      "user_review": "\"Employees can get vaccinated here as well.\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=nvjZ_M7wosChtDNJ2NAEHA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=259.48666&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/BlNWkHicHc1hCsIgGADQ2_gvdaPWFkiMCiJoB-jPcM6p4VTml9Ztula3KbrAe5-3BghxR0iERUpIRuZgntLGVeBYea-s5MFELPxMUkFAP-bBcWP3gTtvRubS_dZft9nHg4Zjdym79nRukRh6YY10wKLki9BY5Z-4-BGrEFFmNUWaNSV68czKTYPXdVVVKBgQmlH0XyafWEHpF3wOOYQ"
+    },
+    {
+      "position": 2,
+      "title": "Ciba Health Inc.",
+      "place_id": "ChIJGfoW7aRZwokRbhaR35vcdWw",
+      "data_id": "0x89c259a4ed16fa19:0x6c75dc9bdf91166e",
+      "data_cid": "7815395290400233070",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a4ed16fa19%3A0x6c75dc9bdf91166e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a4ed16fa19%3A0x6c75dc9bdf91166e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7579754,
+        "longitude": -73.98231919999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJGfoW7aRZwokRbhaR35vcdWw",
+      "provider_id": "/g/11p9xrqfd9",
+      "rating": 4,
+      "reviews": 4,
+      "unclaimed_listing": true,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "1185 6th Ave 3rd Floor, Suite 332, New York, NY 10036",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5:30\u202fPM",
+      "hours": "Open \u00b7 Closes 5:30\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135:30\u202fPM",
+        "friday": "9\u202fAM\u20135:30\u202fPM",
+        "saturday": "9\u202fAM\u20135:30\u202fPM",
+        "sunday": "9\u202fAM\u20135:30\u202fPM",
+        "monday": "9\u202fAM\u20135:30\u202fPM",
+        "tuesday": "9\u202fAM\u20135:30\u202fPM",
+        "wednesday": "9\u202fAM\u20135:30\u202fPM"
+      },
+      "phone": "(347) 352-2316",
+      "website": "https://cibahealth.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as Black-owned"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=teiVyYRUXKXyp5hRZzpDDw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=301.75812&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/2HKCRnicHc1LCsIwEADQ22RnPkqxCsFNd-4KSnUjaTo2gbQZmrGxnsZreRvFC7z3eTsiTHshEk0ANHvI6J8Q0goN72PsAxj0ids4iFkJco-hHY0PBzRj9J0m8OflUp-aY7Ng4errC6sqM9vebPAwkk5gJut4n3_iFDveY2JZl5I5vVuzxWS9kYpvi1KtGXqyTkv2X-5x1krKL7LgOio"
+    },
+    {
+      "position": 3,
+      "title": "NYU Medical Center - Neurosurgery",
+      "place_id": "ChIJzQtHCQ9ZwokRYVeT5yRo-mM",
+      "data_id": "0x89c2590f09470bcd:0x63fa6824e7935761",
+      "data_cid": "7204185061645834081",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f09470bcd%3A0x63fa6824e7935761&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f09470bcd%3A0x63fa6824e7935761&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.746052299999995,
+        "longitude": -73.9714357
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJzQtHCQ9ZwokRYVeT5yRo-mM",
+      "provider_id": "/g/1xg5tlph",
+      "rating": 3.7,
+      "reviews": 9,
+      "unclaimed_listing": true,
+      "type": "Hospital department",
+      "types": [
+        "Hospital department"
+      ],
+      "type_id": "hospital_department",
+      "type_ids": [
+        "hospital_department"
+      ],
+      "address": "660 1st Ave #5, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours",
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours"
+      },
+      "phone": "(212) 263-5219",
+      "website": "https://www.med.nyu.edu/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHFaD8n-jEwXS1vd8V-s21maQXPjvecul-T91X73LPzhemrEErNRr2Xf2PHJR4F5Ul3DjhuQGC8wBkFMpectxgHIYckk-cGm3Oz2rIVf014FMc_zzfnjue61aoUfjhOUGc6ygvOQA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/A8_ZZXicHcTdboIwGADQJ6pQQMUlXrDJj0YF3DB4ZchnaVOgJW2BjTf0EfY2Jp6L8_9kxvT6w7Ja5i6olLQlgyYKpDBEmAXIzqK9RqCRtoLsnDdBElU7XyAeTuU3Hh_-FWkHd1VeZnwkMLToZ4PLtXvMZkY6FYbqfFFOWTtZcrh40bJo3R1nQx5_-dNnE516AuaXJvsbNA2CuHPT2VH7a21jLzrBfZ5rwQeywpUsas7SIobVHx3TPNhO2LZtxN4DEi-bMET-"
+    },
+    {
+      "position": 4,
+      "title": "Icahn School of Medicine at Mount Sinai",
+      "place_id": "ChIJ_____wL2wokRvWaU-57VHp0",
+      "data_id": "0x89c2f602ffffffff:0x9d1ed59efb9466bd",
+      "data_cid": "11321721392058361533",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f602ffffffff%3A0x9d1ed59efb9466bd&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f602ffffffff%3A0x9d1ed59efb9466bd&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.790011799999995,
+        "longitude": -73.9537414
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_____wL2wokRvWaU-57VHp0",
+      "provider_id": "/m/09vkkb",
+      "rating": 4.3,
+      "reviews": 105,
+      "type": "Medical school",
+      "types": [
+        "Medical school",
+        "Medical laboratory",
+        "Research foundation"
+      ],
+      "type_id": "medical_school",
+      "type_ids": [
+        "medical_school",
+        "medical_lab",
+        "research_foundation"
+      ],
+      "address": "1 Gustave L. Levy Pl, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 241-6500",
+      "website": "https://icahn.mssm.edu/?utm_source=Yext&utm_medium=local_listing&utm_campaign=MSSM&y_source=1_MTgwODM1MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage",
+            "Paid parking lot"
+          ]
+        }
+      ],
+      "user_review": "\"I wouldn\u2019t trust my newborn in any other medical hands.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGM1o-ez9MDlvN7c6sfLmpZVWxjsEZMGl2qs8gEdVwazimDON9F0pbJpmnu3gVOOArHu7RYgkZ5iZ4FFbb53CtQA3PaFTt4sPOxPkAWfzrSCoEGRYpT1_gcrpLsVw5OvI5KU2bu7w=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/U6VnNnicHcRLDoIwFADAE1VARNTERaOAPyiiYmBjoGJRPq28IoYbegRvY-Is5vvJpRQwU5Qy1weMc1ZmLWQN5bXMajmgvFKYAEQBgYJ9b19gx9U4yvqpuyxfnknHcNtVIg7P7wdYseuUwydMmHUNu6S_V0viTW1VpBtR1a3OQkJws2rNIGJFbNzjkW2nqaEv5B7rfmIf5Qh88vYLfL71zWHBLSeIxFG7MNqIHYSdQV5rY3sapq3ZzTtNVVWU_6eo_gEePUXY"
+    },
+    {
+      "position": 5,
+      "title": "St Vincents Midtown Hospital: Bruno Patricio DO",
+      "place_id": "ChIJJ-yqyVBYwokRL8oPJ1Vk8oI",
+      "data_id": "0x89c25850c9aaec27:0x82f26455270fca2f",
+      "data_cid": "9435714486184954415",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25850c9aaec27%3A0x82f26455270fca2f&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25850c9aaec27%3A0x82f26455270fca2f&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7646993,
+        "longitude": -73.98935279999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJ-yqyVBYwokRL8oPJ1Vk8oI",
+      "provider_id": "/g/1vnrrj7t",
+      "unclaimed_listing": true,
+      "type": "Doctor",
+      "types": [
+        "Doctor"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor"
+      ],
+      "address": "415 W 51st St, New York, NY 10019",
+      "country": "United States",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=VsWbqJKsQ1y9HWCbaSCyoQ&cb_client=search.gws-prod.gps&w=80&h=92&yaw=38.701218&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/mmCpwXicHc09DsIgGADQ27DJTx1sTYhDF6NTY2JHAxThS2jBfljsbbyWt9F4gfc-b59zwj1jmGdr8wK2JHjZgJukqIvRBasSIDVxZItg2T9HPSkIh6SmCIO8Yq8fpzN2Ym2OfavVpV1jR4y-mQB2yhKtmo2nrvzEOQ7UJSRF1px42VRkVUVua7rjohI1SZCNl5z8l3tcpOD8C4XqOak"
+    },
+    {
+      "position": 6,
+      "title": "NewYork-Presbyterian Komansky Children's Hospital",
+      "place_id": "ChIJWRI488NYwokRDULSQMBQhzE",
+      "data_id": "0x89c258c3f3381259:0x318750c040d2420d",
+      "data_cid": "3568910016365871629",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258c3f3381259%3A0x318750c040d2420d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258c3f3381259%3A0x318750c040d2420d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.764801999999996,
+        "longitude": -73.9540549
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJWRI488NYwokRDULSQMBQhzE",
+      "provider_id": "/g/11gbfdk7hr",
+      "rating": 3.2,
+      "reviews": 15,
+      "type": "Children's hospital",
+      "types": [
+        "Children's hospital",
+        "Hospital"
+      ],
+      "type_id": "childrens_hospital",
+      "type_ids": [
+        "childrens_hospital",
+        "hospital"
+      ],
+      "address": "525 E 68th St 6th Floor, New York, NY 10065",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours",
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours"
+      },
+      "phone": "(212) 746-5454",
+      "website": "https://www.nyp.org/komansky?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&y_source=1_MTM4MTIwMjgtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"I can to help a friend.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFYufnpubfFIRs29lVUbgV0QvtoaI2o65DM1b_LkwHvgSf8sx5JGC6ss2l8JZ-TooxWqRFBgtWYZehXLvbwk5BnicF17eBsTPOwfVachFKFKpQVjyq_OOkd4i7pE5AH-AZWkfJx=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/8ql65HicHcRZcoIwGADgE0UWxaUzPkBtqmiLqAXlxZGYRYNJ7B8WT9gz9DbO-D18_3_CWgNvjlOJfo9rzStaA_0lWlmqbI_om8MNIAIInHD9ncoQH2qmTF0yvNiAP6myn5JnbtpYfVr4ehjMvrzyuJLtvOFbNoYuiD_fhwB-NY4LtNO6y-8bHHGbHwoq9qumbGUQqQvB3ohGsFsnLctOROAlXpo0uz7uxySR58FlZD6CcI7CIpcs7qat57ouEq8JUk-3NUVz"
+    },
+    {
+      "position": 7,
+      "title": "NewYork-Presbyterian Medical Group Westchester - Urology",
+      "place_id": "ChIJLZa5omVZwokR0wedD28_iYg",
+      "data_id": "0x89c25965a2b9962d:0x88893f6f0f9d07d3",
+      "data_cid": "9838464607203428307",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25965a2b9962d%3A0x88893f6f0f9d07d3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25965a2b9962d%3A0x88893f6f0f9d07d3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7604249,
+        "longitude": -73.97878349999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLZa5omVZwokR0wedD28_iYg",
+      "provider_id": "/g/11h_1l3zgk",
+      "type": "Urology clinic",
+      "types": [
+        "Urology clinic"
+      ],
+      "type_id": "urology_clinic",
+      "type_ids": [
+        "urology_clinic"
+      ],
+      "address": "51 W 51st St #375, New York, NY 10019",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 305-5201",
+      "website": "https://www.nyp.org/medicalgroups/westchester/locations/new-york-51-west-51st-street?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings&WT.mc_id=yext_doctor_listings",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHY_XdFQYPCQpsNg4o0iMhxl8csNA2bv_18G4oLVPFrcQ_7l67jKVZIP4CJbAVZnreOQVrpHA92gGFCvAkHvarr1wdyeFgTnKgjnAwn83mC3-nguxB7Vj1cm9y-GkSOBVgEfIse=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ZtMc63icHcRJDoIwFADQE1VAiKCJi0pkcEAaTSNuiJb6kaElLYKe0DN4GxPf4n0_Zd93emEYTWlPQEpo-FNzxaTouegnTLYGdBoxjbSB04TUOMrycxGQLPVJpxNwpPnYl6_GYzrB09uQW17oyB1NA8VI7jYzt9rSS5w6_uaG6UUofiBUdRGeTyEM_AHX0XBVyhqLNw_gJLZQCTwKz259Gwl4vlYurSzWzt8orI-HFYX1PdZ8OVqmaaLyP0PiB0DkRII"
+    },
+    {
+      "position": 8,
+      "title": "Mount Sinai Doctors-Urgent Care & Primary Care, Upper West Side",
+      "place_id": "ChIJoWK1wpxYwokRUSMfTYuJXak",
+      "data_id": "0x89c2589cc2b562a1:0xa95d898b4d1f2351",
+      "data_cid": "12204061796631257937",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2589cc2b562a1%3A0xa95d898b4d1f2351&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2589cc2b562a1%3A0xa95d898b4d1f2351&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7896225,
+        "longitude": -73.9701614
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJoWK1wpxYwokRUSMfTYuJXak",
+      "provider_id": "/g/11cfjfpsj",
+      "rating": 4.3,
+      "reviews": 464,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center",
+        "General practitioner"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center",
+        "general_practitioner"
+      ],
+      "address": "638 Columbus Ave, New York, NY 10024",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20138\u202fPM",
+        "friday": "8:30\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20134:30\u202fPM",
+        "sunday": "9\u202fAM\u20134:30\u202fPM",
+        "monday": "8:30\u202fAM\u20138\u202fPM",
+        "tuesday": "8:30\u202fAM\u20138\u202fPM",
+        "wednesday": "8:30\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 828-3250",
+      "website": "https://www.mountsinai.org/locations/msd-upper-west-side?utm_source=Yext&utm_medium=local_listing&utm_campaign=UWSUrgentCare&y_source=1_MTgwODM3MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "Has online care"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"The wait time was very quick and the facility was clean and comfortable.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaCPTyfcq0mtYVp81OuwWShQXfusVTefexSv_KLmRrZi0iwduPbMKWihAmhKbQL-j3lq-yuwcZxn_6-EKSB9___Y1LPNP6NnE9fbPixG8bXd_6hCLiBerN0TC0NNCOPPTWbD1xRg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ioKvIXicHcTbDoIgAADQLyJxbq7aelBrPWiEl2X1woJQKMULkPaJfUJ_09Z5ON-PMKbXa8dphLeou65uuNV8ZJ0yXJkF61qn7jVgGmgnwCh9BvtbhIt3xQbYmsupX7pHO5W5SM-V1aeCV3zOXyRO2my8Siinu8X0EJdSBK2IaZqAh9cM4G0ndp0V8cEuzsMVIeTiJhhhH6ndqqJYzvslPd-JL6JEhnxEsIggQtER46KkW3fO6s3kQgiB-M-A-gGJMUX6"
+    },
+    {
+      "position": 9,
+      "title": "Mt Sinai Faculty Doctors",
+      "place_id": "ChIJ1Viyr1hYwokRUug6WK4jfBU",
+      "data_id": "0x89c25858afb258d5:0x157c23ae583ae852",
+      "data_cid": "1548151603620145234",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25858afb258d5%3A0x157c23ae583ae852&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25858afb258d5%3A0x157c23ae583ae852&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7693375,
+        "longitude": -73.9841028
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ1Viyr1hYwokRUug6WK4jfBU",
+      "provider_id": "/g/12q4r6yys",
+      "rating": 2.6,
+      "reviews": 7,
+      "unclaimed_listing": true,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center",
+        "General practitioner"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center",
+        "general_practitioner"
+      ],
+      "address": "36 W 60th St, New York, NY 10019",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 492-5500",
+      "website": "https://www.mountsinai.org/patient-care/service-areas/medicine/doctors",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFIHcGPJ_ZzqZe1wbZDgTugHi9U8sA8uCXDSXwtZCc7o2l9-f0GKB9Hqn2II61bT5K0iLG2S6s0-Q0m5IuuenAngepCcJnBp3nfdNs21sLJy7e-weVd9pVmSN1eoTEGpm1etK-a=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/liIVM3icHcTdCoIwGADQJ1puRpZBF2rlX0ihRXgTub5mpNvq25B6wZ6htwk6F-f7aY3ROHecrh2PhFKiA4vw5EoakGbEVe8IjYQjQSfYFrt7sE4THm-zU_1-1MCGpl6Kyork5u9nGMxsdFyWx8HUEZ8qt_PJlcZ56CcP6aapx5pqktPbJnZLDynZ0X6SWgsykAJ0xDMZ6rG8Xgp0GW6y1xTIAIeLrw99WTBQ1SrWPQOTk_NiYJRS0v7nRP4A3gRDPg"
+    },
+    {
+      "position": 10,
+      "title": "New York Bone and Joint Specialists",
+      "place_id": "ChIJx1n8adZZwokRe1O006hHJP8",
+      "data_id": "0x89c259d669fc59c7:0xff2447a8d3b4537b",
+      "data_cid": "18384898369265095547",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259d669fc59c7%3A0xff2447a8d3b4537b&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259d669fc59c7%3A0xff2447a8d3b4537b&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.757002,
+        "longitude": -73.976029
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJx1n8adZZwokRe1O006hHJP8",
+      "provider_id": "/g/11md7l1y7r",
+      "rating": 4.4,
+      "reviews": 86,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Orthopedic surgeon",
+        "Orthopedic clinic",
+        "Pain management physician",
+        "Physical therapist",
+        "Podiatrist",
+        "Sports medicine physician",
+        "Urgent care center"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "orthopedic_surgeon",
+        "orthopedic_clinic",
+        "pain_management_physician",
+        "physiotherapist",
+        "podiatrist",
+        "sports_medicine_physician",
+        "urgent_care_center"
+      ],
+      "address": "425 Madison Ave #200, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 759-4553",
+      "website": "https://nyboneandjoint.com/locations/midtown/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking garage",
+            "Paid parking lot",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.zocdoc.com/practice/new-york-bone-and-joint-specialists-1261?LocIdent=330348&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_0HmHyWJHDU25zRIER-LKGB-lo_5okSKD9e-E2x9vb2EevIPh-entity&rwg_token=AE37R_gLj1J3rTWRwBzT_qfxCg6pvd654Zqe2RgHVPeCd3jj_6_YKCoTGJzdKqIFf83V2w7TeltmQfuoUGqQ19kz0SqyAFEIkA%3D%3D",
+      "user_review": "\"Efficient , professional with care, super experience\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEFbCK6N30j_Dl30Nma97ZmJvMxJwN2_DPwhJqau3U3B6bEryseP5veQoB6yrWUGnCQbSCMKoYaZ0wZLIaBeARsrWLIpDLOWFR8QBMN2EObs8ukFnTeGxreuhunE2Y_xvnglc-NRDTRa7Xg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/DcqKS3icHcTNboIwAADgJ6pUmqEu2YFfI0IFpmFyIaVp2kxoWUsBn3Lnvc0Sv8P39yumaTTvjtMLtOFK8Z5ZwzRVcmJy2lA1OHw0gBpgHL_A5cOPky48exjB7zbqEcQDOeyaIZ3zNV2w20bFItIfYtENBV4X66dhxdvMShV4T13fjjIsu88wP6s7aeDSZCcSML8yus5OY5Rd6qTal0GO3fjSmb19JPLKjqtmVlgZu_d2nSXvKcBVdK3I7ot_LFsIIRCvKZD_UmpHNw"
+    },
+    {
+      "position": 11,
+      "title": "HSS Hudson Yards",
+      "place_id": "ChIJ31s8hTJZwokRV6pJtPGqYaU",
+      "data_id": "0x89c25932853c5bdf:0xa561aaf1b449aa57",
+      "data_cid": "11916994044087609943",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25932853c5bdf%3A0xa561aaf1b449aa57&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25932853c5bdf%3A0xa561aaf1b449aa57&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7546241,
+        "longitude": -74.0023133
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ31s8hTJZwokRV6pJtPGqYaU",
+      "provider_id": "/g/11hdr89kp0",
+      "rating": 3.6,
+      "reviews": 17,
+      "type": "Orthopedic clinic",
+      "types": [
+        "Orthopedic clinic"
+      ],
+      "type_id": "orthopedic_clinic",
+      "type_ids": [
+        "orthopedic_clinic"
+      ],
+      "address": "31 Hudson Yards 10th Floor, New York, NY 10001",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(646) 422-5950",
+      "website": "https://www.hss.edu/locations/ny/hudson-yards",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"They have the most up to date equipment and is conveniently located.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEdLTAsiBqA_-OR9XjdOULbSXZYGVG7MQSYxb737MwddmGLoT5rHW_Q3kgswOPkhA51cYRFY7OMu8CvT46NMvjgcvrcs6xrSlKiZJpDLjMEAKrrYj_blqI80caSYLD35Vz1BjqDb48gzbqq=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/9BOJuHicHcTBboIwAADQL6pAEGFLdqhDmdqKCFPrhayFFAtS2iIYf9Kzf7PEd3ivZ9X3nfm0rKZyJ1xK3pQ3U2om275s-wmTV4t3BjADjAV326SGiwJl0FzmCuYg3n-cRBH_IpqeziQ6RD5OUnKnvuvjsSiuEZKZp3-OeeLW3Izxrq6g5zCyXxI_xrfge8imsy0eBGeDZmZ212mzuZzXXYgEXsCN1kTktFGrwGZ_KUGh6x0ezlyokE4D_qBKfY2Obduges9A-w90JEdG"
+    },
+    {
+      "position": 12,
+      "title": "Pure Paws Veterinary Care of Hell's Kitchen",
+      "place_id": "ChIJ-2UGmU1YwokRatlP6pbSGRk",
+      "data_id": "0x89c2584d990665fb:0x1919d296ea4fd96a",
+      "data_cid": "1808708270983993706",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2584d990665fb%3A0x1919d296ea4fd96a&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2584d990665fb%3A0x1919d296ea4fd96a&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7596826,
+        "longitude": -73.996128
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ-2UGmU1YwokRatlP6pbSGRk",
+      "provider_id": "/g/11cncbmjpc",
+      "rating": 4.5,
+      "reviews": 498,
+      "type": "Veterinarian",
+      "types": [
+        "Veterinarian",
+        "Animal hospital"
+      ],
+      "type_id": "veterinarian",
+      "type_ids": [
+        "veterinarian",
+        "animal_hospital"
+      ],
+      "address": "506 W 42nd St, New York, NY 10036",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "thursday": "7\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20137\u202fPM",
+        "saturday": "9\u202fAM\u20133\u202fPM",
+        "sunday": "9\u202fAM\u20133\u202fPM",
+        "monday": "7\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(917) 534-7838",
+      "website": "https://www.purepawsvet.com/hells-kitchen-ny/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "user_review": "\"The doctor and the staff were very friendly and there was no waiting time.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_Gv5KK4VMkLjNWKE8-kgdXQMDNd9Gxx756tpHlSnPuu6asfRDePMgQkZywXoiM6a0p0yK0gwQoKPRRtfokqlhPok5UWIVX6QxpmayFCTi4gcfHr4kgZtsbZpiGoJzbAIhN3Vw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/zERRFXicHcRRboIwGADgE1W6CLiZ7IFMRa2QFhUJLwYrtFjk72wR2AV3Bm-zZN_D9_qV1mozd5xGTicCQDRlZ8oHh9aWrZ1wuDtCG8QNMk5AY6aC1Tl8eoS4aaR2t_hElu9IiWvGokV8_QiHYeb5Vq-bfUu7zi9MlSxKGgmm8rHPoI78Ams8Eix6BoQmia1AfTeSgvKOp02a-WzQ92JcfR1qV_Bq_XCVyK255LoOYftzCTYynqb9Z_-GMUbyf47aP5Q8Rh8"
+    },
+    {
+      "position": 13,
+      "title": "Helen L. & Martin S. Kimmel Hyperbaric and Advanced Wound Center--NYU Langone Medical Center",
+      "place_id": "ChIJyapAWwRZwokRqUozt-PK5xc",
+      "data_id": "0x89c259045b40aac9:0x17e7cae3b7334aa9",
+      "data_cid": "1722568461872482985",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259045b40aac9%3A0x17e7cae3b7334aa9&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259045b40aac9%3A0x17e7cae3b7334aa9&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7473013,
+        "longitude": -73.9749368
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJyapAWwRZwokRqUozt-PK5xc",
+      "provider_id": "/g/1pzs97bnw",
+      "rating": 4.7,
+      "reviews": 30,
+      "type": "Surgical center",
+      "types": [
+        "Surgical center"
+      ],
+      "type_id": "surgical_center",
+      "type_ids": [
+        "surgical_center"
+      ],
+      "address": "240 E 38th St, New York, NY 10016",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 598-6500",
+      "website": "http://nyulangone.org/contact-us",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"The HBO staff was wonderful and took great care of me for 30 treatments.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEE4cCpbjp-CVD7Dz3BTEopYfhej0Xt9n7PMyHPC2UPSE2Q8kbbeMaTPZ7r9awhDgmWBYR_9B5TrqWZiCTHKIgrtMcnmMKeHH5ar-ijKCouUA8sn0atrsdhK64vfNrrxfsPK_NcQQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/i_MX8HicHcRRToMwAADQE3XUwWSY-AGFBNNAimND-CFQSzs22tp2ot5wR_A2Jr6P93sXzmn75HlX4W-4UvzKbpYZqqRj0m2oWjyuLaAWWC8mZXWJsyygSI-zBuiUhumPn9SZ0u0k2AzfXCRDUnznBG2P5JBtq_1lHFkx1KQLTTSsIuVLk7SvfZTsavPRdGdU5_iFG1dQuRSY5fluMOA8Y6Rux3hvJRycse8CPwafU2nM12QJ7ktaVc_rA4QQiP8pkH-y-EWB"
+    },
+    {
+      "position": 14,
+      "title": "WCS Healthcare Partners",
+      "place_id": "ChIJ___PAf5YwokR9wrHoy_yyJg",
+      "data_id": "0x89c258fe01cfffff:0x98c8f22fa3c70af7",
+      "data_cid": "11009315575532292855",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fe01cfffff%3A0x98c8f22fa3c70af7&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fe01cfffff%3A0x98c8f22fa3c70af7&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7543343,
+        "longitude": -73.9773555
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ___PAf5YwokR9wrHoy_yyJg",
+      "provider_id": "/g/11srgjyd9v",
+      "rating": 5,
+      "reviews": 22,
+      "unclaimed_listing": true,
+      "address": "52 Vanderbilt Ave, New York, NY 10017",
+      "country": "United States",
+      "phone": "(646) 813-2020",
+      "website": "https://wcshealth.com/about-us/",
+      "user_review": "\"It is a great company and they really care about you as an individual.\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PuUYGnMgtlipuG5-VT0bIA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=304.6059&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/uR_i83icHc1BCsIwEADA3-TWJFUrVgjiqXgQPKjgSdI0JgtpszTbRl_ju_yN4gdmPm9PhGkrRKLRWprBZoSnDalAzV2MLliNkLiJvZhLQX7q20FD2KEeInTqNF1uzXB0FACnpiquZ9ke9sy0dxPADqSS1aPx3OWfOMaOO0wsq41kXtUL9tJZLeWKr2VVMwQyXkn2Tx5xVqWUX0SUOUs"
+    },
+    {
+      "position": 15,
+      "title": "Mount Sinai West Department of Neurology",
+      "place_id": "ChIJOzBevz32wokRoKNNLeP5hWc",
+      "data_id": "0x89c2f63dbf5e303b:0x6785f9e32d4da3a0",
+      "data_cid": "7459643111922049952",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f63dbf5e303b%3A0x6785f9e32d4da3a0&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f63dbf5e303b%3A0x6785f9e32d4da3a0&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7700721,
+        "longitude": -73.9858725
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRoKNNLeP5hWc",
+      "provider_id": "/g/12lk9lg8p",
+      "rating": 5,
+      "reviews": 1,
+      "unclaimed_listing": true,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "425 W 59th St, New York, NY 10019",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "9\u202fAM\u20131\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20136\u202fPM",
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 523-4000",
+      "website": "https://www.mountsinai.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEM2q93LWhfnyBdLhPy6xWPlo0RJ_GxvGkVTdBmv8n88dl82A2ED6uBp903B4tmsEpZ-VZzdv-jPDpYQKgMKWjoN0n2eU-MvP_8uZkWNyxVrjTAfiTUzWbclwMCSZvhi9QMiYoy=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/xm7JYnicHcRRboIwAADQE1UqGFOW-AFKTNSS4pBGfkwsSIHSdrZU8II7w26zxPfx_n65tdp8eZ7gwaJRqhH1aOonU9LW0i6YGrxGG8AMMF5E0qyPEuz_hMGJ8oec4-rEybyeKBEKng-3_eT2fZFX8eCQRKgSyI_8ZLceYx3CIF7ZwSS6BEX5rhzoyE5fs2ODj7RTKZR-fQHYkRsay56m81Q8uzx6tPnlTe9MvPD2u3S8DTPcXtW8eS0hhIB_ZkD-A02IRT0"
+    },
+    {
+      "position": 16,
+      "title": "Hope TMS and Neuropsychiatric Center",
+      "place_id": "ChIJrbEF3J5ZwokRfNQPaoBoZbY",
+      "data_id": "0x89c2599edc05b1ad:0xb66568806a0fd47c",
+      "data_cid": "13143025988295185532",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599edc05b1ad%3A0xb66568806a0fd47c&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599edc05b1ad%3A0xb66568806a0fd47c&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7643589,
+        "longitude": -73.9765106
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJrbEF3J5ZwokRfNQPaoBoZbY",
+      "provider_id": "/g/11fllf_l8z",
+      "rating": 3.3,
+      "reviews": 10,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "57 W 57th St #808, New York, NY 10019",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 10\u202fAM",
+      "hours": "Closed \u00b7 Opens 10\u202fAM",
+      "operating_hours": {
+        "thursday": "10\u202fAM\u20135\u202fPM",
+        "friday": "10\u202fAM\u20133:30\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20135\u202fPM",
+        "tuesday": "10\u202fAM\u20135\u202fPM",
+        "wednesday": "10\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(646) 578-8152",
+      "website": "http://www.hopetmsofny.com/?utm_source=GMB&utm_medium=organic&utm_campaign=DevOptimization&utm_content=Website",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.zocdoc.com/practice/hope-tms-and-neuropsychiatric-center-31699?LocIdent=52445&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_MNQxJAMLZUSiAng67ve5YR-lo_oKchzpr1dkOn-wAytmuVNx-entity&rwg_token=AE37R_h_NbweOxsRPL1rQwgtkHZKrbkeiLYpoI3tY1HZToq7AEsNqoQHIwcaztk8hxf3ZZ7m3plEbbDvkf6n01k-n8mqX-S4RQ%3D%3D",
+      "user_review": "\"Very good service and kind workers.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbZZ6WZg83skwL2VGs0oW9whVrNX1sLbqEzakM-aaePwDWkEHOnjMHsa5Lfn-pxDngIvIHzEHFEu2zRgLDB_vtFvgMZ3V6lEu77Fbt2lQhmAEDN2XSEzjjfLF-I8a5R9Zef1uUbPiQkbZC=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/oqVIz3icHcTbboMgAADQL6Le0tuSPdiJwwStdqk2vCxgECYWbEFd_Mk972-W7Dyc3x_p3GhfPG-Q0UYYIwY-Wf5sjXZcu01r7p4YLWgtsF5cFpWKESNk1xBxiKxacFi_W980x0XWz-IWWMwecKUqB5TyckkaBdFZ9zmydIs7DcbvRItsztAKUQqncL0InJw-Z5fOIidRvRvgtN-nzIVDJe8xTIrw9gHXvu9wCrID3V6OhHfBdGXlV6UYeXtdAt_3gfy_BfoPv5dHVQ"
+    },
+    {
+      "position": 17,
+      "title": "New York Eye and Ear Infirmary of Mount Sinai - Main Campus",
+      "place_id": "ChIJFWtGP55ZwokRUoNXrEPdYmI",
+      "data_id": "0x89c2599e3f466b15:0x6262dd43ac578352",
+      "data_cid": "7089472046158545746",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.731852499999995,
+        "longitude": -73.9845832
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI",
+      "provider_id": "/m/04g3bdg",
+      "rating": 2.9,
+      "reviews": 573,
+      "type": "Eye care center",
+      "types": [
+        "Eye care center"
+      ],
+      "type_id": "eye_care_center",
+      "type_ids": [
+        "eye_care_center"
+      ],
+      "address": "310 E 14th St, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4\u202fPM",
+      "hours": "Open \u00b7 Closes 4\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 979-4000",
+      "website": "https://www.nyee.edu/?utm_source=Yext&utm_medium=local_listing&utm_campaign=NYEE&y_source=1_MTgwODM2MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Process was smooth and doctors were very thorough when diagnosing my issues.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHgpetD1ndPWsAyTXDuvZf65NU-v5pn8KMoRPA3pIuDyLRIzX_Ikn-AJY0qn6IRVTIgt50iklaNgSbPtIR0YBNgAglizCQ8YwHoy9YkoIQKamkTOEBazIeHXFNzL3bVNH0h6mHlgA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/c1LL-HicHcRRboIwGADgE1VqCMSZ-FDHlnZqBUQGe1mQ1R_T0ta1aOCGO8JuY-L38P3_dd5btwwC1YUzMAaUGJz4bY32QvtZa_oArEOtQy4gKc8koWCFT-b6J_10ZCyqZLh9neOIH9Etsnqx2Zk8JaFlQzJuczZV30xqRD5qfNUxy8uCgY_wRaqGw-GUepbjes2BgLpMr9mivlMzvtTSsGzT9LLYv62biQlavfNpG55KTnEX91QBWd3nGGPUPW-RfgAI7UVw"
+    },
+    {
+      "position": 18,
+      "title": "NewYork-Presbyterian Hospital",
+      "place_id": "ChIJ1bi4eZz2wokRlSozC-09nqM",
+      "data_id": "0x89c2f69c79b8b8d5:0xa39e3ded0b332a95",
+      "data_cid": "11789928962806983317",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f69c79b8b8d5%3A0xa39e3ded0b332a95&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f69c79b8b8d5%3A0xa39e3ded0b332a95&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8407312,
+        "longitude": -73.9430812
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ1bi4eZz2wokRlSozC-09nqM",
+      "provider_id": "/m/0409k7",
+      "rating": 4.3,
+      "reviews": 27,
+      "unclaimed_listing": true,
+      "type": "General hospital",
+      "types": [
+        "General hospital"
+      ],
+      "type_id": "general_hospital",
+      "type_ids": [
+        "general_hospital"
+      ],
+      "address": "Herbert Irving Pavilion, 161 Fort Washington Ave, New York, NY 10032",
+      "country": "United States",
+      "open_state": "Open 24 hours",
+      "hours": "Open 24 hours",
+      "operating_hours": {
+        "thursday": "Open 24 hours",
+        "friday": "Open 24 hours",
+        "saturday": "Open 24 hours",
+        "sunday": "Open 24 hours",
+        "monday": "Open 24 hours",
+        "tuesday": "Open 24 hours",
+        "wednesday": "Open 24 hours"
+      },
+      "phone": "(212) 305-8225",
+      "website": "http://www.nyp.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "parking": [
+            "Paid parking lot"
+          ]
+        }
+      ],
+      "user_review": "\"Neat clean professional attentive great staff!!\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG1JSoqd9T10DlbEa2u76seVgeCp1Q6_bMrUQGeyjDVmvffZSBOrGVUUVGXBU--_yCKcx2nBVBzsTkI4PWh7-HVyYiGQcQHjiD693K8dpvimtn1hiKN5w3wcf2IxomC82dLTCs2Ew=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/RIaLFXicHcRdboIwAADgE1VoUdAlexAwFXGORuh-XoyWQlFoGS0i3tAj7DYmfg_f_0MY0-o3y6qFMymVKmvea94xJQ2XZsJUY5WtBkwDbS2THbksMdzs1V--SKEd1qfVEfWeqzktedBC4h5OH11GMB_PIW2uRfG79z87TLOM4m8_A-AwBjG7IelT_67TSzRNvoQH1nT8qTBhZH2uQnfhxPO8vVaNkVBU8W42OAMrUHRTTTBH-TYNNFoN7wO0bRuI1wzIJ6IuRJc"
+    },
+    {
+      "position": 19,
+      "title": "53rd Street Library",
+      "place_id": "ChIJdXLqYvlYwokRIS_17aA1Q2w",
+      "data_id": "0x89c258f962ea7275:0x6c4335a0edf52f21",
+      "data_cid": "7801137944839139105",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258f962ea7275%3A0x6c4335a0edf52f21&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258f962ea7275%3A0x6c4335a0edf52f21&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.760853999999995,
+        "longitude": -73.977245
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdXLqYvlYwokRIS_17aA1Q2w",
+      "provider_id": "/m/03cvwpw",
+      "rating": 4.6,
+      "reviews": 413,
+      "type": "Public library",
+      "types": [
+        "Public library"
+      ],
+      "type_id": "public_library",
+      "type_ids": [
+        "public_library"
+      ],
+      "address": "18 W 53rd St, New York, NY 10019",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 11\u202fAM",
+      "hours": "Closed \u00b7 Opens 11\u202fAM",
+      "operating_hours": {
+        "thursday": "11\u202fAM\u20136\u202fPM",
+        "friday": "11\u202fAM\u20136\u202fPM",
+        "saturday": "11\u202fAM\u20136\u202fPM",
+        "sunday": "Closed",
+        "monday": "11\u202fAM\u20136\u202fPM",
+        "tuesday": "11\u202fAM\u20136\u202fPM",
+        "wednesday": "11\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 714-8400",
+      "website": "https://www.nypl.org/locations/53rd-street",
+      "description": "Spacious branch library featuring a children\u2019s section, plus modern design, free Wi-Fi, and a cafe.",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Assistive hearing loop",
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "crowd": [
+            "Transgender safespace"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "children": [
+            "Has changing table(s)",
+            "Kid-friendly activities"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"You walk in, go to the front desk, fill out a short form, and hand it over.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF_VPpDqSQ9_vtNl2wcFFjLUVTNfcappaX-qagr7jxEQsM9cMwoKRZN1DM7pnJMThB5rYg1-5sNhxFYATeGiqeQhVO7SfUfiD4jlHicXB9yNvhTfc_1Hnacp7Iz-DWiUodIPr0U=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/EZIrFXicHcRJDoIwFADQE1XAIQQTFxjEkQoKOGwI-ZYWxLbQKuoFPYO3MfEt3vfDtJZqbBg1G_SoELQmd0VaEFwTrnsgbgaVCoFCynBDHF1dP0tD6TX7yMkeGtf9Dny_2iRpjAvIpcyPqMlpa1fPWaQCB4JOrHdnbHmBLfkqiNl01J6ohUYKs6d_cmMyLxsSsXRr74ukKL1hVS9KOE6dF36wuIDMWvAcpL18I-9QJuKyDFszmXSWaZqI_QfEf6soRVc"
+    },
+    {
+      "position": 20,
+      "title": "St Vincents Midtown Hospital: Morton Titus A MD",
+      "place_id": "ChIJJ-yqyVBYwokRPUl7hw3u1VU",
+      "data_id": "0x89c25850c9aaec27:0x55d5ee0d877b493d",
+      "data_cid": "6185111405138233661",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25850c9aaec27%3A0x55d5ee0d877b493d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25850c9aaec27%3A0x55d5ee0d877b493d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7646993,
+        "longitude": -73.98935279999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJ-yqyVBYwokRPUl7hw3u1VU",
+      "provider_id": "/g/1tf03d3w",
+      "unclaimed_listing": true,
+      "type": "Doctor",
+      "types": [
+        "Doctor"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor"
+      ],
+      "address": "415 W 51st St, New York, NY 10019",
+      "country": "United States",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=VsWbqJKsQ1y9HWCbaSCyoQ&cb_client=search.gws-prod.gps&w=80&h=92&yaw=38.701218&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/mmCpwXicHc09DsIgGADQ27DJTx1sTYhDF6NTY2JHAxThS2jBfljsbbyWt9F4gfc-b59zwj1jmGdr8wK2JHjZgJukqIvRBasSIDVxZItg2T9HPSkIh6SmCIO8Yq8fpzN2Ym2OfavVpV1jR4y-mQB2yhKtmo2nrvzEOQ7UJSRF1px42VRkVUVua7rjohI1SZCNl5z8l3tcpOD8C4XqOak"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.758%2C-73.9855%2C14z&q=hospital+near+midtown+west+Manhattan&start=60&type=search",
+    "current": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.758%2C-73.9855%2C14z&q=hospital+near+midtown+west+Manhattan&start=40&type=search",
+    "previous": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.758%2C-73.9855%2C14z&q=hospital+near+midtown+west+Manhattan&start=20&type=search"
+  }
+}

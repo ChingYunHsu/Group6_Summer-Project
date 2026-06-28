@@ -1,0 +1,326 @@
+{
+  "search_metadata": {
+    "id": "6a3d0a57fbe53b6180da3ff2",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/L1kHBc1hXAg0dpkLeelhJw/6a3d0a57fbe53b6180da3ff2.json",
+    "created_at": "2026-06-25 11:00:39 UTC",
+    "processed_at": "2026-06-25 11:00:39 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25b054b1cdceb:0xdf2d040c175ce0e1!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/L1kHBc1hXAg0dpkLeelhJw/6a3d0a57fbe53b6180da3ff2.html",
+    "prettify_html_file": "https://serpapi.com/searches/L1kHBc1hXAg0dpkLeelhJw/6a3d0a57fbe53b6180da3ff2.prettify",
+    "total_time_taken": 0.5
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ69wcSwVbwokR4eBcFwwELd8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "The Battery Park Public Restroom",
+    "place_id": "ChIJ69wcSwVbwokR4eBcFwwELd8",
+    "data_id": "0x89c25b054b1cdceb:0xdf2d040c175ce0e1",
+    "data_cid": "16081514294387990753",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25b054b1cdceb%3A0xdf2d040c175ce0e1&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25b054b1cdceb%3A0xdf2d040c175ce0e1&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7044284,
+      "longitude": -74.0158905
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ69wcSwVbwokR4eBcFwwELd8",
+    "provider_id": "/g/11px7t8hcc",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-XNOmrtqhN7GqlvHjGiVVtX38SB1PBC6Hni9mWakxGxQdcT481cqzmLpQTXoZwzKGd1_WMxD1CSkoolc5phw10qmS0ke1otdFDSkZPConxsZRkY6EZRu6mGkC_yf3sDfeJ8hv=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/rM-jWnicHctNEsEwGADQE0WbKVVmLGiJ8VOtGqobY9JoSJOvlaBc0BnchrF5u_d5c2Mq3beskjutAqAo2U2zKwVlmDItCtIqKo2oRtoaRmEshhOUhit5NTUPu6Qu79MLOW-3JnW8ZISjke9O1bknd0fRkCbO6abtYVq_5KKKNylkj9ec5PiwWzYB9hMBUNJOxR_YrmViC4bB5JMgEVnkg2p0thZ7d5ytb64kwj88T44OTmzm8fvgV2wb8b8UqS-kiUXI",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 21
+      },
+      {
+        "stars": 2,
+        "amount": 5
+      },
+      {
+        "stars": 3,
+        "amount": 12
+      },
+      {
+        "stars": 4,
+        "amount": 11
+      },
+      {
+        "stars": 5,
+        "amount": 18
+      }
+    ],
+    "rating": 3,
+    "reviews": 67,
+    "unclaimed_listing": true,
+    "type": [
+      "Public bathroom"
+    ],
+    "type_ids": [
+      "public_bathroom"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      }
+    ],
+    "address": "Battery Pl &, Washington St, New York, NY 10004",
+    "country": "United States",
+    "located_in": "The Battery",
+    "website": "https://www.nycgovparks.org/parks/battery-park/facilities/bathrooms",
+    "open_state": "Closed \u00b7 Opens 8 AM",
+    "plus_code": "PX3M+QJ New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20134 PM"
+      },
+      {
+        "friday": "8 AM\u20134 PM"
+      },
+      {
+        "saturday": "8 AM\u20134 PM"
+      },
+      {
+        "sunday": "8 AM\u20134 PM"
+      },
+      {
+        "monday": "8 AM\u20134 PM"
+      },
+      {
+        "tuesday": "8 AM\u20134 PM"
+      },
+      {
+        "wednesday": "8 AM\u20134 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by phone call 10 weeks ago",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-XNOmrtqhN7GqlvHjGiVVtX38SB1PBC6Hni9mWakxGxQdcT481cqzmLpQTXoZwzKGd1_WMxD1CSkoolc5phw10qmS0ke1otdFDSkZPConxsZRkY6EZRu6mGkC_yf3sDfeJ8hv=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/rM-jWnicHctNEsEwGADQE0WbKVVmLGiJ8VOtGqobY9JoSJOvlaBc0BnchrF5u_d5c2Mq3beskjutAqAo2U2zKwVlmDItCtIqKo2oRtoaRmEshhOUhit5NTUPu6Qu79MLOW-3JnW8ZISjke9O1bknd0fRkCbO6abtYVq_5KKKNylkj9ec5PiwWzYB9hMBUNJOxR_YrmViC4bB5JMgEVnkg2p0thZ7d5ytb64kwj88T44OTmzm8fvgV2wb8b8UqS-kiUXI"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=l0ZBOaEHo6hiYbkGsN6ETQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=39.19667&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/-YirQHicHc1BCsIwEADA3-Rm0laJVgiCUPSkCF70ItsYm8W0Wcya6nN8lr8RnA_M9-OZKS2VSvxwjjO6kfDlQpoQyC7GLjggTNLGXuVSsX_27QAYVgRDxKsJxXm9h2YbtcdTe9-knW6OB2Hbiw3oBjY9ULqkLBksY3CyoyRGU1Uz4U1VL8QbRjOtZVlrPReEbL0pxL-5xWzKovgBpLI5uQ"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGhNiZYjdHifVa0DYrp439Qp0lP9xG6hSfNqJRLdOg1OTXfgJu9ikq_6tHJwBgIye7idkNY7IHgdtYk3Es8vYUNp_fIFJHK6k3c1GVuGitPDZ-7YMoDv9bd5cs5MSv_tWZyugee=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/z2JwJnicHcRdboIwAADgE1VKUBhL9uDC5EetqBtbeSGuLW0t0moL6gk9g7dZsu_hez6Ec8a-el4nggnXmndssOxCdO9Y7yZEnzxuLCAWWG9eoq2apwLJGh9pJtvqABN8MdMg3hrYlfEtDcW-Redit6Ib7m8-f1peDLFU5yZ0WXF95_mdRZIqhKM849RhFXzYlxF_IdO0-aLIlqEKiJ9WQypdmdQgwmudjPEvnRE7W-_Hxn3X94Ez9nb1IYRA_E9A_wdrf0UJ"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Running water and soap to wash your hands is also a plus.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUoWaNNKkwu-JTKaoqSl_4OLV7UfrqWP9BITRYGGE9c9UEnn4ao=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Pleasantly surprised how clean and well kept this (womens) bathroom is.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKdSkSTrzRZGYW55jbjTaROFx13cm4CZFgyrDOuF3oYbYTa4g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great place to use the restroom.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUHaFizsftA_-7SLbTUVgDtzxKx15T9eOb7f9ggX5Oi_qBwYx-u=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "J Sed",
+          "rating": 3,
+          "contributor_id": "104561467315834462386",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLkkUNWAF31MC0pDI_8c6U3ab8biHodAQqdLHv7MbKl9v6yfg=s120-c-rp-mo-br100",
+          "description": "Overall good to have a public restroom to use for free in New York City. The toilet flushed, doors had locks, and the taps and soap worked. However the water level in the toilet was too high, the locks were slightly stuck and hard to use, the flush was operated by a button and not a sensor and finally the hand dryer was filthy. The only thing giving it its 3 stars is its location, otherwise it likely would have fallen to a 2.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s4emRVNU5NbGRGUm5KaVlWQTRUREZsUVdRMlptYxAB!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CAIQACodChtycF9oOk8zdU5NMldFRnJiYVA4TDFlQWQ2Zmc%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-07T18:07:46+00:00"
+        },
+        {
+          "username": "Rebecca Burnette",
+          "rating": 3,
+          "contributor_id": "102011075440452361673",
+          "user_review_count": 43,
+          "user_photo_count": 279,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXmCD6EgBoGXmK4d0GoVVnrO-E_R27ZmUCdjh_Udph1u40s9TCibw=s120-c-rp-mo-ba12-br100",
+          "description": "It was open 6:15 on a Wednesday, super thankful for that, when everything said they were closed. Had toilet paper, only one sink worked with hot water. Long line after I got out. All in all not bad for a public toilet.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNMd2ZickN3EAE!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CIHM0ogKEICAgICLwfbrCw%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-06-19T22:16:21+00:00"
+        },
+        {
+          "username": "Heather Lynn",
+          "rating": 1,
+          "contributor_id": "112614368457539023557",
+          "user_review_count": 16,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWOx-BUukUG1OHba0IKpYNg0ihmHdK-3ew7uys1iOUWpVUMYkAY=s120-c-rp-mo-ba12-br100",
+          "description": "On a positive note, I found a place to use the restroom. However, despite the fact that there was soap, the water faucets were completely broken and not useable. I'm glad I had hand sanitizer on me! My main reason for writing this review is because the amount of disease that could be spread from fecal matter and people not being able to wash their hands after using the restroom or changing diapers is scary.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUM3M3N2MktREAE!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CIHM0ogKEICAgIC73sv2KQ%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-08-16T03:19:22+00:00"
+        },
+        {
+          "username": "Ti S",
+          "rating": 1,
+          "contributor_id": "115225554147071696001",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLIG9V4xrEwbOYEwvJcm3KYlY7wmQjrnxwZuXmd0o5qcgcpGg=s120-c-rp-mo-br100",
+          "description": "When we went there, the cleaning lady asked us to pay $5 per person. Apparently it's not free depending on the time of day.\nThat's too much to pay for using a public restroom. Be careful!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNIM1l1aU9nEAE!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CIHM0ogKEICAgICH3YuiOg%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-09-07T23:12:27+00:00"
+        },
+        {
+          "username": "Faye",
+          "rating": 1,
+          "contributor_id": "114761664690371574248",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUD099LhSGwm4rb97wnzfj6nggfjFKGq6lb_v0z07zZePHkrp4=s120-c-rp-mo-br100",
+          "description": "this place stunk I had to go poop but it was not a success when I got into the stall there was an unflushed poop in the toilet oh my I said with fright you call this a restroom I was stunned never come here it stinks you deserve to poop in peace because you are worth unless your the one who left that stinker in the toilet ok tata - faye",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNsMGRmMFJ3EAE!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CIHM0ogKEICAgICl0df0Rw%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-11-20T20:17:13+00:00"
+        },
+        {
+          "username": "Y. K.",
+          "rating": 2,
+          "contributor_id": "100291614944645584240",
+          "user_review_count": 22,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLTTW4Xxcqwc8qOp6jfJ_JUs_lPeboO8YObvuG55q-mqzaJdw=s120-c-rp-mo-ba12-br100",
+          "description": "Dirty but at least there was toilet paper available.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psRGRtdGthbVYzYVMxR00wbDJUVVpYVEhvM2QxRRAB!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CAIQACodChtycF9oOjlDdmtkamV3aS1GM0l2TUZXTHo3d1E%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-13T18:10:24+00:00"
+        },
+        {
+          "username": "proverbs31belles",
+          "rating": 5,
+          "contributor_id": "115057510388965913984",
+          "user_review_count": 24,
+          "user_photo_count": 27,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLKEpIr-_NhBnHkqxeLjy2YLtRZFUeGRxJde59PQa3bWNgAsA=s120-c-rp-mo-ba12-br100",
+          "description": "It was clean enough. I've heard NY bathrooms are gross, this looked like a typical public restroom",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VMUFFtS3ZkamQ3SXBBRRAB!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CIHM0ogKELPQmKvdjd7IpAE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-05-28T10:04:28+00:00"
+        },
+        {
+          "username": "Paul Bui-Quang",
+          "rating": 4,
+          "contributor_id": "116406345073533090336",
+          "user_review_count": 7,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJH_crqRRB7hxNOKTqYdVIoJZeaPQZXp9r5JBqyBAitM3TXU4A=s120-c-rp-mo-br100",
+          "description": "Nice building. Clean for serious business. Recommend",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUR4dW9IT2tBRRAB!2m1!1s0x0:0xdf2d040c175ce0e1!3m1!1s2@1:CIHM0ogKEICAgIDxuoHOkAE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2no8WM-0WiEKNzNCq5OfVtgNqpDy3yT5UrPCaGzgh4mwzj5pwqWa1rSQQAILh4Y6RyI9YWI0m4H-AtlSy1ZJ2Cm4aL74jAVPsRPY1rdFaFds7YMwn3zQe78ELgK4qrhilZnmfO=k-no"
+            }
+          ],
+          "date": "3 years ago",
+          "date_iso8601": "2023-06-06T16:38:26+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Public Toilet",
+            "data_id": "0x0:0x17528557f99bcddd",
+            "data_cid": "1680552223859002845",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x17528557f99bcddd&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x17528557f99bcddd&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7114561,
+              "longitude": -74.0113162
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x17528557f99bcddd%218m2%213d40.7114561%214d-74.0113162&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 422,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGBy4QZB1DHnNjRe-zAfqe-2WzpFvYhcBn0kIhQpTP3XF3bUPX2h8r7KFd6NhNP3JY1x_89lVBOycsQeZJUQ_y2TydTK799N6awJDggirLMwZE-CmmjZmWiquWR2YNsS2lTHUvHYg=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Servizi igienici",
+            "data_id": "0x0:0x654b627d32c5b5ad",
+            "data_cid": "7299035910946272685",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x654b627d32c5b5ad&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x654b627d32c5b5ad&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7011715,
+              "longitude": -74.01282379999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x654b627d32c5b5ad%218m2%213d40.7011715%214d-74.01282379999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 4,
+            "thumbnail": "https://www.google.com/maps/vt/data=IbT1lqazj6qUrQx6SYWPYP4POyaiAynq8oD7QAtK_4_jdIX320lJta35BKMmJQK8gk_DtANI0TBswagNeITDtY73p2EEA5HFmbLTQ8FcsBxYMQNJCShp7k7hRyhbPEq9LV--8ZoK4zwViE-4mIeUfXeeLGPmKdBk",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Public Restroom",
+            "data_id": "0x0:0x6eaccb1d6f15253c",
+            "data_cid": "7974972367444452668",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6eaccb1d6f15253c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6eaccb1d6f15253c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7169227,
+              "longitude": -74.0161894
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6eaccb1d6f15253c%218m2%213d40.7169227%214d-74.0161894&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 66,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHD1J3VeCjQYQ8Mo9pKCbpKpLEcGNQiaOzemBHaAtcoYO27KLqecwcJImybibLjdkPFwFJqXfYMTXbak12G1TxPGMq-hlAvYDcyhVv_8zn0DCDh2cpWHKdVydX1G3EJvuIEkPCYCt2pLZuj=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Public Restrooms",
+            "data_id": "0x0:0x99fba6fb71f4dd39",
+            "data_cid": "11095645705836223801",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x99fba6fb71f4dd39&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x99fba6fb71f4dd39&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7054821,
+              "longitude": -74.0038508
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x99fba6fb71f4dd39%218m2%213d40.7054821%214d-74.0038508&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 22,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHmuqKe_opzGS-qOUl_XvfwLKuyYzdru5DWcN_KmR1NVX4VeB4PGQRSdDq0H0x9Kw_WabgRNgcNYBr9IgVbeHY84Fgo4U0BNnquDdZ_JN5v5dlE8Ffd2EJAR1Up2eRuqCNXEH95Gw=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjMKMSItVGhlIEJhdHRlcnkgUGFyayBQdWJsaWMgUmVzdHJvb20gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjMKMSItVGhlIEJhdHRlcnkgUGFyayBQdWJsaWMgUmVzdHJvb20gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

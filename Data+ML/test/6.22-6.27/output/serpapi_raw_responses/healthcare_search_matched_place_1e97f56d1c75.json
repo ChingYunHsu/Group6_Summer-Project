@@ -1,0 +1,361 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e5cbf04d57ca07f32f0",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/UjF37QIKrp9qp6_xha9NnQ/6a3d3e5cbf04d57ca07f32f0.json",
+    "created_at": "2026-06-25 14:42:36 UTC",
+    "processed_at": "2026-06-25 14:42:36 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259a13717bd7b:0x4bdc1b27b8c815b8!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/UjF37QIKrp9qp6_xha9NnQ/6a3d3e5cbf04d57ca07f32f0.html",
+    "prettify_html_file": "https://serpapi.com/searches/UjF37QIKrp9qp6_xha9NnQ/6a3d3e5cbf04d57ca07f32f0.prettify",
+    "total_time_taken": 0.4
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJe70XN6FZwokRuBXIuCcb3Es",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Duane Reade Pharmacy",
+    "place_id": "ChIJe70XN6FZwokRuBXIuCcb3Es",
+    "data_id": "0x89c259a13717bd7b:0x4bdc1b27b8c815b8",
+    "data_cid": "5466273905138734520",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a13717bd7b%3A0x4bdc1b27b8c815b8&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a13717bd7b%3A0x4bdc1b27b8c815b8&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.740317999999995,
+      "longitude": -73.98694019999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJe70XN6FZwokRuBXIuCcb3Es",
+    "provider_id": "/g/11pb7dkrc9",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHaEjLiRVsMOO2StYZ_3X88KirCpRpw6Hj2gBzzWSDP3_ktucFs54NHZwm9RwMLYpL1BBU3CBHh2aREJkal2Z18dhMuZPuXqPCEYCUIqkZJx7D6QWzes7nfh0nFBo8HDmFhrxOT=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/D_ai5XicHcRJDoIwAADAF7GroIkHy5KqIIii0oshFakCbaUlGD7oG_yNiXOY74dIycVC0xpiqRVjVVP2ouwwo7KkUsWs1SouFCwUoa2S3b5ewcJ_ho_0JKI4Ng8yR1fr4jjbR-fylA8z-DQrMI7ng5dY11r2OBDTyQ6ioZ2nQxTmPDQAyCwXQGIWqb-pi8ZEhnMjUY-S_vJKXD93s_WrRpu37c3257EUNr0TnQaAOdBrA9K94-NyMHRdV8h_rNAfLRVEIw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 8
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 16
+      }
+    ],
+    "rating": 3.6,
+    "reviews": 29,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "description": "Department of the Walgreens chain providing prescription medications & other health-related items.",
+    "extensions": [
+      {
+        "service_options": [
+          "Kerbside pickup",
+          "Delivery",
+          "In-store pick-up",
+          "On-site services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair-accessible car park",
+          "Wheelchair-accessible entrance"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "kerbside_pickup": true,
+      "delivery": true
+    },
+    "address": "304 Park Ave S, New York, NY 10010, United States",
+    "country": "United States",
+    "website": "https://www.walgreens.com/locator/walgreens-304+park+ave+south-new+york-ny-10010/id=21315",
+    "phone": "+1 212-685-2047",
+    "open_state": "Open \u00b7 Closes 1:30 pm \u00b7 Reopens 2 pm",
+    "plus_code": "P2R7+46 New York, USA",
+    "hours": [
+      {
+        "thursday": "9 am\u20131:30 pm, 2\u20137 pm"
+      },
+      {
+        "friday": "9 am\u20131:30 pm, 2\u20137 pm"
+      },
+      {
+        "saturday": "9 am\u20131:30 pm, 2\u20136 pm"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 am\u20131:30 pm, 2\u20137 pm"
+      },
+      {
+        "tuesday": "9 am\u20131:30 pm, 2\u20137 pm"
+      },
+      {
+        "wednesday": "9 am\u20131:30 pm, 2\u20137 pm"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 11 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259a13717bd7b%3A0x4bdc1b27b8c815b8&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHaEjLiRVsMOO2StYZ_3X88KirCpRpw6Hj2gBzzWSDP3_ktucFs54NHZwm9RwMLYpL1BBU3CBHh2aREJkal2Z18dhMuZPuXqPCEYCUIqkZJx7D6QWzes7nfh0nFBo8HDmFhrxOT=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/D_ai5XicHcRJDoIwAADAF7GroIkHy5KqIIii0oshFakCbaUlGD7oG_yNiXOY74dIycVC0xpiqRVjVVP2ouwwo7KkUsWs1SouFCwUoa2S3b5ewcJ_ho_0JKI4Ng8yR1fr4jjbR-fylA8z-DQrMI7ng5dY11r2OBDTyQ6ioZ2nQxTmPDQAyCwXQGIWqb-pi8ZEhnMjUY-S_vJKXD93s_WrRpu37c3257EUNr0TnQaAOdBrA9K94-NyMHRdV8h_rNAfLRVEIw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=MnmQBBCEdlDmXLQcPt1RNg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=189.85553&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/mHJ0JnicHc1LCsIwFADA22Rn0lQLrRCEqjsV68pdSWNMHuSHeaZ6HW_lbQTnAvP9WMSU14xlfGiNBfSc4KVdXiRJTYzGaZkgUxU9K5yhffopSHCbJEOEmzgGP_T9dn9zO389DOqM_HIyRE2jcqADCi9THnOhKBWC09SkTGZR1ytiRd215C1nwduOtk3TLEkCVFZU5P_cYxG8qn7n8DoO"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The friendliest pharmacist in the city!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIRAzFFl_JLkrii3ubUL--2Exw1SU9eaAj14P_sdE6W4m6hPV7H=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Right thing to provide actual customer service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUvZdpUvBxmO75CuRBDbOhB4n7pKUsXGHn5l6hFajSeioOPLO8=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Sweetest pharmacists!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXbL-aCSxS18ZhfZhLYVlri3axsCONFeBcDtV2Tr7GvaW_aJ6om=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Sue P",
+          "rating": 1,
+          "contributor_id": "117074257071757467212",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL9nA73VtEK1iRBaLd-Ud5Cjw6zcxUsu0LQukr8Np8pkCtR3g7u=s120-c-rp-mo-br100",
+          "description": "I agree that the pharmacy is a mess.  The pharmacist helped but the techs either don\u2019t seem to care or they lack the memory to fill life-saving medications in a timely manner.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGNWFIWlZRM1l0U25abFdqaGZaVWxWVGtoSVFXYxAB!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CAIQACodChtycF9oOjF5aHZVQ3YtSnZlWjhfZUlVTkhIQWc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-07T20:38:29+00:00"
+        },
+        {
+          "username": "Sarai Kamiya",
+          "rating": 1,
+          "contributor_id": "118165937080018565953",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJgS5MvTPAUracylbLb9jUvVgKP1jj7ZmkPqi_AztYBBtjuh7Th=s120-c-rp-mo-br100",
+          "description": "This is for the pharmacy, not the employees\u2014 they are lovely.\n\nWorst pharmacy I\u2019ve had to ever deal with, trying to figure out why my refill is delayed for days, I call and they tell me its out of stock, and should receive it in a couple of days. Instead of using the \u201cout of stock\u201d status they put it in \u201creviewing prescription\u201d, so it\u2019s been stuck there for another week thanks to this lazy maneuver. Mind you other Walgreens pharmacies always had the courtesy to call me for any issues with my prescription immediately. 0 stars if i could, 1 is too good even.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNIcGVUVktBEAE!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CIHM0ogKEICAgICHpeTVKA%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-09-07T00:37:40+00:00"
+        },
+        {
+          "username": "Kate N",
+          "rating": 5,
+          "contributor_id": "103809727112911873294",
+          "user_review_count": 16,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXjf49FtdTyLS0Vx8KGYVQ5hOOH7tgXXCGGFFdK97UaKRijkzam=s120-c-rp-mo-ba12-br100",
+          "description": "I can\u2019t express enough how I appreciate all the pharmacists here. Their service is the best I\u2019ve experienced in the city. I\u2019ve been sticking with them for over two years for my monthly prescriptions. They help me with all the complications of my insurance and would find ways to help me save more of my out-of-pocket balance. They also often call me to offer their free same-day delivery services, which is impressive. Shout out to Scott and Ellie for being the sweetest!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURodnREMDd3RRAB!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CIHM0ogKEICAgIDhvtD07wE%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-03-09T20:01:03+00:00"
+        },
+        {
+          "username": "Jennifer Hope",
+          "rating": 2,
+          "contributor_id": "109240589556958635369",
+          "user_review_count": 47,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUvZdpUvBxmO75CuRBDbOhB4n7pKUsXGHn5l6hFajSeioOPLO8=s120-c-rp-mo-ba12-br100",
+          "description": "I dislike Walgreens in general, so it would be hard for any location of this pharmacy to impress me. However the store employees, though kind, also were unable to assist me with the service I needed provided, and despite having the best intentions to work with the customer, Walgreens absolute garbage policies make it impossible even for employees who want to help to do the right thing to provide actual customer service. If I could separate the rating I would give the employees 5 stars, and Walgreens ZERO. Forced to split the difference I'm reluctantly giving 2 stars to a terrible pharmacy chain. Do yourself a favor and shop somewhere else if you can afford it.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNSMlBQVFJnEAE!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CIHM0ogKEICAgICR2PPTRg%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-03-24T17:09:12+00:00"
+        },
+        {
+          "username": "Haley Horton",
+          "rating": 5,
+          "contributor_id": "105549831226523370574",
+          "user_review_count": 14,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIZNUWPVxBmhmMk5CDSy1QCutGUUBxyUaInh5rn_yb60V5JeA=s120-c-rp-mo-ba12-br100",
+          "description": "Pharmacy staff is great and promptly helped with my prescription.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GclN5MURhVTFoVDJaR1NrRk1jbDlmWjFnMWVsRRAB!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CAIQACodChtycF9oOmFrSy1DaU1hT2ZGSkFMcl9fZ1g1elE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-07T16:28:55+00:00"
+        },
+        {
+          "username": "yue sun",
+          "rating": 1,
+          "contributor_id": "101548633503437306653",
+          "user_review_count": 10,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVqbsTJN6JYOL7SCjLQdmoqsEKjwry2dpm57Ckoj6HAbZTuK2mk=s120-c-rp-mo-br100",
+          "description": "TBH I would give 0 star if I could. Here is the reason: I picked up medicine for my husband in September, and asked the pharmacist if he needed my husband's insurance, he said (quote on quote): \"No, I need you to pay. \" Then charged me $150. I thought ok, this medicine is not covered by my husband's insurance.\nToday, my husband picked up exactly same medicine from another Walgreen pharmacy, he was charged only $80, cuz he was asked to provide insurance information. So IT IS COVERED BY THE INSURANCE. But the guy I talked to just TOO LAZY TO INPUT IT TO THE SYSTEM. I mean, seriously?? You literally had one job! $70 is several meals! And people need to know that someone here just doesn't take their money seriously and doesn't care at all.  That's very sad.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURHNjQyUURnEAE!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CIHM0ogKEICAgIDG642QDg%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2021-12-10T02:44:14+00:00"
+        },
+        {
+          "username": "Chencheng Zhang",
+          "rating": 1,
+          "contributor_id": "110066219792843759220",
+          "user_review_count": 2,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLnaH2iVcCbMJMhMgj6FHGw20HvSdpjGDcuuXvd9DYuKfne8g=s120-c-rp-mo-br100",
+          "description": "One of the staffs is a racist. She recognized me as asian and roll her eyes and refused to open the pharmacy section at 8am when it was the exact official time to open it. I\u2019m so sick but I didn\u2019t get what I need.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUR1NTl5VFZBEAE!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CIHM0ogKEICAgIDu59yTVA%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2022-08-31T11:51:24+00:00"
+        },
+        {
+          "username": "Sandy Williams",
+          "rating": 1,
+          "contributor_id": "116795104180488492116",
+          "user_review_count": 8,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIoe3ZY271yBHOEktW9n2qFiwpopd1v6Hn_PmqhqU7a3WXbFg=s120-c-rp-mo-br100",
+          "description": "Awful store manager, they double charged me, and offered no help other than to dispute the second charge with the credit card company. Unreal.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNZbUpUcVdnEAE!2m1!1s0x0:0x4bdc1b27b8c815b8!3m1!1s2@1:CIHM0ogKEICAgMCYmJTqWg%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-05-01T00:11:15+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Walgreens",
+            "data_id": "0x0:0xdf113d77c79b50c4",
+            "data_cid": "16073696129721258180",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdf113d77c79b50c4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdf113d77c79b50c4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7403566,
+              "longitude": -73.9871431
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdf113d77c79b50c4%218m2%213d40.7403566%214d-73.9871431&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 6,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf6wf7ohd7vYzbiaa8JpVySMHDYfOAZKE2qITXkfer-c-0Wc4x2E6WsYKSBbhN45B-7oHvzcww5d2CMbQs7iE6AYCuE7wLYFv_-3TK6fsX_6dM5nR9WK3FXfhprU0XXnQ2ZYcr=w156-h156-n-k-no",
+            "type": [
+              "Drug store"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "CVS",
+            "data_id": "0x0:0x4eaacf432506a059",
+            "data_cid": "5668570968290140249",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4eaacf432506a059&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4eaacf432506a059&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.739840099999995,
+              "longitude": -73.9869564
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4eaacf432506a059%218m2%213d40.739840099999995%214d-73.9869564&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 98,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEgikcmS93G09RFJRx5buBxPn9MGpUqUP6pIPYlXaFn7ho3H9o59AJK-V_EXYAuRxOOG2u5LcZ4pc8-B07I0w-9DP1Cw_iP7DBVKM-eaQROCB5ZK9ezrahVIZfVdoDFwxoLhhmt=w156-h156-n-k-no",
+            "type": [
+              "Drug store",
+              "Beauty supply store",
+              "Beer store",
+              "Convenience store",
+              "Cosmetics store",
+              "Greeting card shop",
+              "Perfume store",
+              "Stationery store",
+              "Vitamin & supplements store",
+              "Wine store"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Duanereade By Walgreens",
+            "data_id": "0x0:0xe923e7a53f7da888",
+            "data_cid": "16799525731942901896",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe923e7a53f7da888&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe923e7a53f7da888&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.746696,
+              "longitude": -73.981455
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe923e7a53f7da888%218m2%213d40.746696%214d-73.981455&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=rdcHkloJYpVyfaK9tz1GQxcIT0-LY-Kmuo1Rmr5cG8t-GsthOLCCTnUmTpV0XJ-7Y9C2TEYzYLG2Wyf9usW3lW72sgjRLHTUskZL2mq97eEj-CBArxB8DT39UPyUZ5l5COpGEhSfIUk7gZy6-4Sq6geADuGTPsMM",
+            "type": [
+              "Photography service"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Walgreens",
+            "data_id": "0x0:0x18a6f236f6be3667",
+            "data_cid": "1776373420926056039",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x18a6f236f6be3667&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x18a6f236f6be3667&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7585627,
+              "longitude": -73.9886053
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x18a6f236f6be3667%218m2%213d40.7585627%214d-73.9886053&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 3,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFtlE8CLMEFFwumQIYV6M4O5GDb1mjJQok3s0lpMGY94wOGALfa4_5zxnArzgc6kPfWbKWlnTLlO1RRVsPHmANKD_Ua54k3d9rszsMvDO8ITk9iIID9YLgvUWSECkDxMPj52PlyKsfI5vQ=w156-h156-n-k-no-pi-20-ya8.00001-ro-0-fo100",
+            "type": [
+              "Drug store"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjYKNCIwRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZLCBVbml0ZWQgU3RhdGVzKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjYKNCIwRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZLCBVbml0ZWQgU3RhdGVzKAI&q=local+guide+program"
+  }
+}

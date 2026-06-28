@@ -1,0 +1,994 @@
+{
+  "search_metadata": {
+    "id": "6a3d0a5bdb99ec07831bbf83",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/lLD2blNYiZYC8j5hfy4BKw/6a3d0a5bdb99ec07831bbf83.json",
+    "created_at": "2026-06-25 11:00:43 UTC",
+    "processed_at": "2026-06-25 11:00:43 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259e5c1b0922b:0xf5d137999d86da10!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/lLD2blNYiZYC8j5hfy4BKw/6a3d0a5bdb99ec07831bbf83.html",
+    "prettify_html_file": "https://serpapi.com/searches/lLD2blNYiZYC8j5hfy4BKw/6a3d0a5bdb99ec07831bbf83.prettify",
+    "total_time_taken": 0.69
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJK5KwweVZwokRENqGnZk30fU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Restrooms (Tavern on the Green)",
+    "place_id": "ChIJK5KwweVZwokRENqGnZk30fU",
+    "data_id": "0x89c259e5c1b0922b:0xf5d137999d86da10",
+    "data_cid": "17712999942337255952",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259e5c1b0922b%3A0xf5d137999d86da10&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259e5c1b0922b%3A0xf5d137999d86da10&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.772293,
+      "longitude": -73.9774312
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJK5KwweVZwokRENqGnZk30fU",
+    "provider_id": "/g/11flmcwvx8",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOX_U_bfTL3T7aslm6jYvguECjhyvbjgtoYwkNY0ebPX6HZpVzYaMOKSJOR8byYVA8i6gSFtg4O4pHdHIafEOGWJoxR2nJjdxKi6nPX-iyYYdsnBjOJsj6oAHdZ-1fOHsR6UYDzi9ir6fg=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/NejMiHicHcRJDoIwFADQE1VwSB0SFzhWHIo4UTeGsbRiS_xVwUu69jYmvsX7fnJjShhYVpG3G1xrXqQPSO-xViZVphHrm8VLQDEgsBxvs706cxpcDpco26_a-24IxQ1L9uSP6Vjm9TOS3Gj2um6YnUZegMm5PL5ZuKbLnUv9XlSzo9MTmO9mhndopyQJWYTZlM5Prq78lnJlUi0FVl6ARM1YAmokqQsSa4ckZ9TMKAEfH9jkLfrijjM-fDVt20b5_xipHyisSHs",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 2
+      },
+      {
+        "stars": 2,
+        "amount": 4
+      },
+      {
+        "stars": 3,
+        "amount": 5
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 40
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 55,
+    "unclaimed_listing": true,
+    "type": [
+      "Public bathroom"
+    ],
+    "type_ids": [
+      "public_bathroom"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      }
+    ],
+    "address": "Central Park, W 67th St, New York, NY 10023",
+    "country": "United States",
+    "website": "https://www.centralparknyc.org/locations?filters=restrooms",
+    "open_state": "Closed \u00b7 Opens 8 AM",
+    "plus_code": "Q2CF+W2 New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u201310 PM"
+      },
+      {
+        "friday": "8 AM\u201310 PM"
+      },
+      {
+        "saturday": "8 AM\u201310 PM"
+      },
+      {
+        "sunday": "8 AM\u201310 PM"
+      },
+      {
+        "monday": "8 AM\u201310 PM"
+      },
+      {
+        "tuesday": "8 AM\u201310 PM"
+      },
+      {
+        "wednesday": "8 AM\u201310 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOX_U_bfTL3T7aslm6jYvguECjhyvbjgtoYwkNY0ebPX6HZpVzYaMOKSJOR8byYVA8i6gSFtg4O4pHdHIafEOGWJoxR2nJjdxKi6nPX-iyYYdsnBjOJsj6oAHdZ-1fOHsR6UYDzi9ir6fg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/NejMiHicHcRJDoIwFADQE1VwSB0SFzhWHIo4UTeGsbRiS_xVwUu69jYmvsX7fnJjShhYVpG3G1xrXqQPSO-xViZVphHrm8VLQDEgsBxvs706cxpcDpco26_a-24IxQ1L9uSP6Vjm9TOS3Gj2um6YnUZegMm5PL5ZuKbLnUv9XlSzo9MTmO9mhndopyQJWYTZlM5Prq78lnJlUi0FVl6ARM1YAmokqQsSa4ckZ9TMKAEfH9jkLfrijjM-fDVt20b5_xipHyisSHs"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "15 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFfCO0fO274gnNBSbQsnqqCzZAQf5hp-uhKho3jCEtkRZ1cI8SLgRwcO00CxXyDh9U89bVYFyBxCSE0jHKqwRgKnd8IXaLWnRguo-dS7aIS1atiYrFLB5bx24h5qfT9kylT1-9rlPCkEi9n=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/1KCaE3icHcTBboIwAADQL6oUlEhNdoAOIoGIUNzQG1RoFWyBlgD7yZ39myV7h_f-5Vr36mAYHd9umJSsqydVj1QKXQu9ofJlsF4BqoAy3PMpbd2gwQlsEmu_Y-LkkSpVYhjwz81NG5v3YOIRl9sn9nWb3UwaOiRm2UwTCPFSrJ8cXRxUfV2D1Vsw8eHzGA1zxiJxd8KijL9FxiYJ7mRfhsQs9eM6BrFnV4u14_bQ5Khdu9wEaOzOuPUfSHzMJoQQ8P8pEH9m00a9"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9YzQ1mbLM7KfDoDUyDlNUodHFGz2ZlrElfqhIXXY-_M3vQj-uoVWO7vxadvhKBb5hLX92E-1hS9oqQ82IoN2WtJo3N8xR8DfVGi1sJUjQIF4D3FBkjl0n4dh_2Td_qOEuIYr30OGeH2wi=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/SNp1a3icHcTLcoIwFADQL4qExI7gTBc6AcQHmFYUumEqr4iRKySg9Sdd-zfO9CzO6ym0vqqpYUhBRxVAJYteFV0GjS4aPcrgYlRXhTKFlDHbBvw8c-zkwc3Lcb2ZrEoGLPpjMoggX7jeg_zIzpFlK_w4TlC6oQOvUQ_7QzgZ7r_5IFbz44dYxzZxkCm-bWi5RXwIyEEvgQbW_cti5d47mWoZ1dx3x4y683MtcTPORUp2edqGTu8nHcWhVyzI7fR5MzHGSPyfoeYNUYpGBg"
+      },
+      {
+        "title": "Inside",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-opKbFkxQ0cIUHBL4xK7UGEZf9SxWAgaCrTysIf06jJgKpzzQKsdTkkha5ZGhfSHo1gW6vCHiiC4u7Ga38z8TuoMOjAmh4zcXO8kI0xmbGiskG7wy3p8SPuYmRbcWbaQ8S1C5=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/nLTpr3icHcRdDoIgAADgE6E4TamtB3OFZn-mzupNScFIYaFlXrAzdJu2vofv-2FdJ9VM1-_M1KgQ9F72qnwQ0XZl22lENDqVChAFlO4edhF3l0DIsFjxIYIkSP3FxhpCJ8XLSzWNh8ylufdI3iqooH1b01COYxSqa8I5yycXzKrYFwbN7Kfn17Vn9Q7OTTSipBfb_c1tmDWS0x7xAA5NgWvFsfN6mxLFh_7cHAuSFXmEYsObzF8GhBCw_wS0P2HkRLY"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=isrYGdwnWgiNzwuPAF9ewA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=303.48492&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/fmPxg3icHc0xDsIgFADQ27AJlHZoTYhx0c24GaeGUoSfUCDlF9TjeCtvY-K7wPt-HGLKe8YyrsZgAVMTPI3Pu6SojdF6oxJkquPCSsPQbcsUFPhDUiHCLCGv9_Ncw83C5V236_E0mHokehq1BxNQLirlMReKSiN4Q23KpEohOuKkGHryUlW2vKVd3w2CJEDtJCf_5xGLbDj_ATnUOug"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Clean, no line (unlike south near playground), and had soap/warm water.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1Dm1ZpTjBcGsXlobI9QjqM-rxbC4XJElS1_GwQIgtILn92Xw0=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"It is famous for both it is location and the fine dishes it serves.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXHwY4V0Fbnx7afmTzdS5ApxKBBHwZe-yY7Ax0NDIhmkCRI2Iw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"It was expensive for the quality of the food.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX2XW-lSqYmUICjNv-TgZPl9F0uKvUX88xdmCM9eeULsktP_Gc8uw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Isabella Ross",
+          "rating": 2,
+          "contributor_id": "117274830171351569039",
+          "user_review_count": 4,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKOAqsNllszuEO6FYwoUa124y01A1h0JS22KqZ-YBKpINH6zg=s120-c-rp-mo-br100",
+          "description": "Usually my go to spot but just went in and someone started cleaning the stall next to me and got toilet water all over my dog. I dunno how that's so nasty. Usually great, but v rude experience today",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOWVl6TmtlR28yT0VoWU9VNTBkVjk1WjJ0SE1IYxAB!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CAIQACodChtycF9oOkNYYzNkeGo2OEhYOU50dV95Z2tHMHc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-10T21:45:11+00:00"
+        },
+        {
+          "username": "Dokyung Lee",
+          "rating": 3,
+          "contributor_id": "109869845315710018727",
+          "user_review_count": 337,
+          "user_photo_count": 3142,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX2XW-lSqYmUICjNv-TgZPl9F0uKvUX88xdmCM9eeULsktP_Gc8uw=s120-c-rp-mo-ba12-br100",
+          "description": "The atmosphere is fantastic, but I'm not sure if the taste of the food is worth the price. It was expensive for the quality of the food. \ud83e\udd37\u200d\u2640\ufe0f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURLMW9yMWtnRRAB!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CIHM0ogKEICAgIDK1or1kgE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn32gSyjkd30Hw1ns0rAJd3R9NTdACJFchi06o_NAKY6fEcbOLTwIUkaI0994aC6xP4pUQuBT65SY4SApu430cQ8oqvU8XXsIDK3ejZDA6SPzEd-rZu1Kd0aHYTTf1l68W6UV_s=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0j9hAUH-p1p9gwIt5JauYSbrqDxf6wCN3ctTWTmwKl9Sp5-nOfJgeTJoP-cqBb_BCpzbWzfVRTnkqPXwvekTxjT78ZZ3nFV6yifuDpNHGps3xfpHMYNW6LCseosOCbjMhcMI8HBw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3dRRItiXyKs2qNohF6ODqZfE6wq0RVskpf2lSd_-PGYqMBRHl6DCxiJDurDSu6_YbEYYU-keq2WXYN6WIiUJhRbShF3-MEx9rJ-b6mvGxbQ67CXqG4JAYUfXLSoWpG4_5C1zgw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3FvYxMvrIn7kV22xMRWB1Lik5o1M_nyWcEHTwMaSMMsEEI1vJ88A_dtXGwNILha9-q2Y4hLD2GrgDQ4dQQE_UUIbU9FCgp00Ot8TOwGG1-inyW6EBK29jYJmIt5xg-pW8n4B0=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1B-IFapjkeMXSy7Am7nFrk5gvJZ97VI_DooKYYn4TcUlf8wnG6j0MtJ4CIngtw5qdErWKuQgPPQZoAayaSv-3KcUmTkwArGdEtxoGi0izA8mo906rA5Y7Y8olvTDkTrdS_KPdP_w=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1RPW3WjYX37pd1u4XYNBAHwYL8M3EUG69iSs6j0JRJVHgMHzSwgZXrYReBLaePOE9O75Cy1suK9GtSqwTzSdwSnUue_E6Pt1d6O1KRvcKS3jeHWgJtPQc9FUln2tRSGZif3_IG=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2FU9uwYvG_owSfK-FrwkN_lisRH1KnTQdRVnflUrGqCl8fe6H8BnFZ6834VGvEaH1fPvaHNZ2uhN2DJmzd9RLPriXznzlB-Iwsf-uNUx_yN3-Muul2LRGkLB2et7ivG4ZsJHR6sg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2Txnd5U9mvgXCbynGflBC-q74Uz7geNXBjo3JASej4ah8-lm_Da4NScE9ZQOW2JPqcewyjeW4UK75HvougGVEvPUqYiIt3qNfzj11QIgD75A6mlkAGyg-TmUB8zqmjkTOf4JNh=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2VTv0bUx4kAbQOhENcKaF0ajA6clCjcT3jidHaPzZqArZhbx3Wr1rvAJ2qmSY4FVE7O_3gxImZLr80igEKe9OuUSUG5zwKz9v5TltEFynmp1Si3kGEB9pDi9POKG6FzMxY-bYtwg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1wTPo1VSVnBHUtS0HlYsQBMNOjzLONYP0J7vi7UkTr8N5DAlecDfp0NvJrC_ieEovLsHanxQoX0AFP7L0OvbEArMEENnmdqHRnswZOii1VBO9EGOUzz4cGp_sXoNlVUFDgbqeX=k-no"
+            }
+          ],
+          "date": "5 years ago",
+          "date_iso8601": "2021-05-10T22:13:25+00:00"
+        },
+        {
+          "username": "Daniel Adams",
+          "rating": 5,
+          "contributor_id": "112986588220310150934",
+          "user_review_count": 140,
+          "user_photo_count": 16,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXHwY4V0Fbnx7afmTzdS5ApxKBBHwZe-yY7Ax0NDIhmkCRI2Iw=s120-c-rp-mo-ba12-br100",
+          "description": "Tavern on the Green is an icon of Central Park and New York cuisine. It is famous for both it is location and the fine dishes it serves.\nTavern on the Green has a rich and celebrated history. It\u2019s funny, but it was created as a sheepfold for the sheep of Sheep Meadow. Yes, there were real sheep living and grazing there. There was even a shepherd moving them around. It was turned into the celebrated restaurant that it is today in 1934 as a part of the huge renovations in Central Park at that time.\nIt went through several incarnations through the ages. The Tavern of the Green we know today was opened in 2013 by restaurateurs Jim Caiola and David Salama.\nToday, the menus is a pure classic, serving lunch, dinner and a weekend brunch. My personal favorites for lunch are Shaved Sirloin Steak Sandwich and Salmon Burger. For dinner I usually go with a Roasted Organic Chicken, Grilled Whole Fish, or Organic Scottish Salmon (Tavern serves the finest fish in Manhattan).\nOne thing that never changed was the attitude of the staff \u2013 always calm, helpful and smiling. Sadly, Tavern of the Green is closed today but I really hope that it opens soon enough. Without it Central Park does not feel complete.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN5dHNMczNRRRAB!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CIHM0ogKEICAgICytsLs3QE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0rPm127CORoJauQMMjYvUAQ5tVTyMUwDq7uMGuGMaNa0822Ro60p7aEwBT1FHOT4lV5auFVAvKIxFFQeijm5nF8V5rp1O213kni7JexNhI3ewCosUwXIslSRcLWZo1axJUrH7o=k-no"
+            }
+          ],
+          "date": "5 years ago",
+          "date_iso8601": "2021-01-29T15:03:35+00:00"
+        },
+        {
+          "username": "Steve V",
+          "rating": 5,
+          "contributor_id": "117349478494117470207",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK2e1zUhjMW_JGM3HKS8sJq2r_yrX4vmXov9Lb65yfvm53Xnw=s120-c-rp-mo-br100",
+          "description": "Sorry, y\u2019all do realize these reviews should be for the PUBLIC RESTROOMS at this location, and not for the restaurant, right? I\u2019ve always found them clean, well maintained, and convenient. Oh, and hey, Kevin Baker, who\u2019s the amateur reviewer here?  ; )",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sWVlucHpSakI2VWpCVlMydFRieloxZGxCcFgwRRAB!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CAIQACodChtycF9oOnlYYnpzRjB6UjBVS2tTbzZ1dlBpX0E%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-11T16:32:53+00:00"
+        },
+        {
+          "username": "H Wang",
+          "rating": 5,
+          "contributor_id": "100989246835943672055",
+          "user_review_count": 22,
+          "user_photo_count": 48,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXWrvnEmiD2xsc91BgfOK7hsRT5pbaXQGrYP6aNggky72jDtjTt=s120-c-rp-mo-ba12-br100",
+          "description": "Very clean public restroom at the back of the Tavern.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGVU5sTnZYMkZ6YW5OUFExWmZTRXB2YWxWWmVrRRAB!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CAIQACodChtycF9oOjFUNlNvX2FzanNPQ1ZfSEpvalVZekE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0CyW5A6Gp2pOuOKG7mbxvgFRHkuNXavJWOC5W_70-AsGMrHLWnLzEwRhwUrfeucq-FvhBN91oSf5GTe4BytDUxYHrE_LYCBoELSEKLjiKMKpVYCo5hXnMDQbTY9uS4h78O9zCpbC1H-ZF-=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-06-22T17:15:18+00:00"
+        },
+        {
+          "username": "Sandra Ozuna Moreno",
+          "rating": 5,
+          "contributor_id": "116480902317014772253",
+          "user_review_count": 70,
+          "user_photo_count": 438,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX-KV1VdN4sxkn5RJyj7a1YxldlDOEKFbfKHJbdRqGFfC6yNupQ=s120-c-rp-mo-ba12-br100",
+          "description": "Clean restrooms with all supplies needed. They even have the heater on, it was cold outside.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tNMVQxWlJZbVk0UkVWQk0wUjVjVTB0ZWtsUVMwRRAB!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CAIQACodChtycF9oOkM1T1ZRYmY4REVBM0R5cU0teklQS0E%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-02T18:45:58+00:00"
+        },
+        {
+          "username": "Kevin Baker",
+          "rating": 5,
+          "contributor_id": "100006725190914893949",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVDb1t4qGleeEpATgsvBKyYqKNiM-MuBUypa5udJDIzox6a6itE=s120-c-rp-mo-br100",
+          "description": "Place is a classic staple of beautiful Central Park.\nHey Anthony! You don\u2019t 1-Star a place because it was closed for a world-wide pandemic. That hurts the business. Take your bad rating down and remove yourself from the internet you amateur!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNpMC1YYUlBEAE!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CIHM0ogKEICAgICi0-XaIA%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2020-11-14T18:06:41+00:00"
+        },
+        {
+          "username": "Carlos",
+          "rating": 5,
+          "contributor_id": "101676811121496477313",
+          "user_review_count": 265,
+          "user_photo_count": 189,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXEuEE_j7NwaITi5y_zVJfNJVqucz29BFxf8zso5H7W14_jMUk=s120-c-rp-mo-ba12-br100",
+          "description": "Always clean, warm, and well maintained. How all public bathrooms in Central Park should be! Update: it's open again.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUMwLUtXRVRBEAE!2m1!1s0x0:0xf5d137999d86da10!3m1!1s2@1:CIHM0ogKEICAgIC0-KWETA%7C%7C?hl=en",
+          "date": "Edited 5 years ago",
+          "date_iso8601": "2021-03-29T10:51:23+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Restrooms Bethesda Terrace",
+            "data_id": "0x0:0x6849056126e7eb7a",
+            "data_cid": "7514543368067083130",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6849056126e7eb7a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6849056126e7eb7a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7735846,
+              "longitude": -73.9711119
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6849056126e7eb7a%218m2%213d40.7735846%214d-73.9711119&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.2,
+            "reviews": 108,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPfS57aobB7KZvBnFBaFsEfvwpX1QqMaZWSrIS5U9cLDLzkp_IondsVFufCHIfttttcIq8dJrMog2LXQuOO1Rm-vVn4tPjHRjmw8skeStTfM5qDjmi2bAjOOGQjHli36NwlIg6=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Restroom",
+            "data_id": "0x0:0xd907d8cdcf06fcff",
+            "data_cid": "15638706609520573695",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd907d8cdcf06fcff&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd907d8cdcf06fcff&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7750978,
+              "longitude": -73.96866399999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd907d8cdcf06fcff%218m2%213d40.7750978%214d-73.96866399999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.6,
+            "reviews": 94,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTFRDF8Peq-ZkA6si9qhTquTVXwVF-69bsj8EjdofbNbUvfVOzORP-bALB-F6WnDofLXFD06vw06rr-F58qCMgogfaQgrHoqkMxO53pF0vZKoMB3jzMzDF0hS4DOFSMTqp2F6u=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Mineral Springs Public Restrooms",
+            "data_id": "0x0:0x7e96b2b1ee64f5a",
+            "data_cid": "570104660785254234",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7e96b2b1ee64f5a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7e96b2b1ee64f5a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7730678,
+              "longitude": -73.9744097
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7e96b2b1ee64f5a%218m2%213d40.7730678%214d-73.9744097&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 95,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGjaNwS-E5VzlqQpJK9tR6fTaY2edPF1q8_dHT0ZJMwLc56uOZGruaaaAwO4xj2yQNqCaIJ0w88f_bp1gk7xZEGh9Kyk1lwmfjsMk9C_RKdGkd3-0Im0CY1N7ZqfQ_7Qk9KGqQ9Sw=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Central Park Conservancy Public Toilets",
+            "data_id": "0x0:0x9310e0ae0e68ba88",
+            "data_cid": "10597216961373452936",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9310e0ae0e68ba88&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9310e0ae0e68ba88&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.797175599999996,
+              "longitude": -73.9514197
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9310e0ae0e68ba88%218m2%213d40.797175599999996%214d-73.9514197&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 19,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEXr2TF4dP6JHw5FKoHksz-JAkOTYAvfXdlxJRrwB2r_lydInYE3FwzLXmRC75yLCqP1RcoyA7S134Yj4q5g6HK8WlxByvMVokvnaD-5Xq-926ZUmTi0LIxltj7jCpAyixCfwo=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 95
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 4
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not busy",
+            "busyness_score": 4
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not busy",
+            "busyness_score": 9
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0,
+            "current": true
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 9
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 23
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjIKMCIsUmVzdHJvb21zIChUYXZlcm4gb24gdGhlIEdyZWVuKSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjIKMCIsUmVzdHJvb21zIChUYXZlcm4gb24gdGhlIEdyZWVuKSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}
