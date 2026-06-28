@@ -4,20 +4,13 @@ export const USER_PROFILE = {
   phone: "+1 (917) 555-0118",
   date_of_birth: "1998-04-12",
   gender: "Female",
-  nationality: "Spanish",
   address: "245 W 46th St, New York, NY 10036",
   blood_type: "O+",
-  donor_status: "Universal Donor",
-  spoken_languages: [
-    "Spanish (Native)",
-    "English (Fluent)",
-    "French (Intermediate)",
-  ],
   allergies: [
     { name: "Penicillin", detail: "Severe reaction (Anaphylaxis)" },
     { name: "Latex", detail: "Mild skin irritation" },
   ],
-  conditions: [
+  medical_conditions: [
     { name: "Asthma", detail: "Diagnosed 2005. Managed with Albuterol PRN." },
     { name: "Hypothyroidism", detail: "Daily Levothyroxine 50mcg." },
   ],
