@@ -1,0 +1,538 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e5159eb374d72ac918e",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/99WZ7pMKacs3dWLGnux9HA/6a3d3e5159eb374d72ac918e.json",
+    "created_at": "2026-06-25 14:42:25 UTC",
+    "processed_at": "2026-06-25 14:42:25 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25924442f12d9:0x293c40234ac13bb4!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/99WZ7pMKacs3dWLGnux9HA/6a3d3e5159eb374d72ac918e.html",
+    "prettify_html_file": "https://serpapi.com/searches/99WZ7pMKacs3dWLGnux9HA/6a3d3e5159eb374d72ac918e.prettify",
+    "total_time_taken": 1.34
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ2RIvRCRZwokRtDvBSiNAPCk",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Danny's Pharmacy II",
+    "place_id": "ChIJ2RIvRCRZwokRtDvBSiNAPCk",
+    "data_id": "0x89c25924442f12d9:0x293c40234ac13bb4",
+    "data_cid": "2971320374479895476",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25924442f12d9%3A0x293c40234ac13bb4&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25924442f12d9%3A0x293c40234ac13bb4&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7748695,
+      "longitude": -73.9877319
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2RIvRCRZwokRtDvBSiNAPCk",
+    "provider_id": "/g/11fd73y8m9",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEn2TYKD4FcW5Y-mlWZloWsJ1-A7hP8wfIjelVCZxh5VdLFciaBxGmIfLLLryhx0AS01fb1TcjqAx5k-v4g13BDUCWTdKeD7wPd-UvmG-CCTsJFxT3Zvqq7MPzGDT-FmFMu8i_86Q=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/2_bgWXicHcRRboIwGADgE_3SDhGyxIcKlqi4YKwSeVm0FKq2VCxCtxvuCLvNkn0P3--P7PuHffc8Jf1JY0yjxMuKJzdtL9p-wo32mocFbsF6JP_Y3cmyfWOnTTKlvAhOoFVRKlPYNQYSyjwa69VNqGNcOhkcq4zy63nhUr2qsyx7fkmHyB7h-oIZv3XEBXcYpg32F8khLli1EUk45hUcBp1CHDO7po755dB14Tb_ThMGVNPtK7p-RrPdfMQIIZD_c2j_AHupQ8o",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 5
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 0
+      },
+      {
+        "stars": 5,
+        "amount": 125
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 131,
+    "type": [
+      "Pharmacy",
+      "Drug store",
+      "Fax service",
+      "Herbal medicine store",
+      "Notary public",
+      "Surgical supply store",
+      "Vitamin & supplements store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "drugstore",
+      "fax_service",
+      "herbal_medicine_store",
+      "notary_public",
+      "surgical_supply_store",
+      "vitamin_and_supplements_store"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned",
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "offerings": [
+          "Passport photos"
+        ]
+      },
+      {
+        "amenities": [
+          "Wi-Fi",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Checks",
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid parking garage",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Assistive hearing loop",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "110 West End Ave, New York, NY 10023",
+    "country": "United States",
+    "website": "https://www.dannyspharmacy2.com/",
+    "phone": "(212) 362-0000",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "Q2F6+WW New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "11 AM\u20135 PM"
+      },
+      {
+        "monday": "9 AM\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20137 PM"
+      },
+      {
+        "wednesday": "9 AM\u20137 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25924442f12d9%3A0x293c40234ac13bb4&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEn2TYKD4FcW5Y-mlWZloWsJ1-A7hP8wfIjelVCZxh5VdLFciaBxGmIfLLLryhx0AS01fb1TcjqAx5k-v4g13BDUCWTdKeD7wPd-UvmG-CCTsJFxT3Zvqq7MPzGDT-FmFMu8i_86Q=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2_bgWXicHcRRboIwGADgE_3SDhGyxIcKlqi4YKwSeVm0FKq2VCxCtxvuCLvNkn0P3--P7PuHffc8Jf1JY0yjxMuKJzdtL9p-wo32mocFbsF6JP_Y3cmyfWOnTTKlvAhOoFVRKlPYNQYSyjwa69VNqGNcOhkcq4zy63nhUr2qsyx7fkmHyB7h-oIZv3XEBXcYpg32F8khLli1EUk45hUcBp1CHDO7po755dB14Tb_ThMGVNPtK7p-RrPdfMQIIZD_c2j_AHupQ8o"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGeVWGbFMuraub2Xmq3MsKiXwRx13Pn1-JspQYUpZznnfzQYyHX6apFuMzBBu7rso2HsDo8zg5tPXFcqtvItNXBUDfOzROlwuI1DQ8u6jnMiVDv0X27QzPVEnuTR3xTCrFQ4ozH9w=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/5aYuUnicHcRLDoIwFADAE1V-_hMXICJqUEoEizttEFRsC68V7Q09grcxcRbz_VRSCpgaRl05vZLzsi4UFC3lTBZM9ih_GKUARAGB4cZbfHeXRXZYnoNItSd1tsmjcSLYXEmXvCwnZhZag8B5Ko6asYvG-Tskw5MIVKQ9T41a4HYIPh_rciBjEtBGPldyS7zUv-x0sqs7tbJ8PFbDG4uumf80iT3COs4WTO0T57WftwHucx1OullnmaaJqv8UsR-NG0bQ"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGsnfSgAq7x4W9eByLaFmQcA5nuPdiQkyVRZ3EDnsUiPxK8MNtboWXvm1wcvV50shPnXtSpL4GcqiBA6Gg86zcn96QUzSZc-fHMoLrJMCUce1WJ6_xIIOSN7Uyz3r8F3R-i9Dr6=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/v01zOXicHcRLDoIwFADAE1UgQAUTF_WHH0CQIMaN0WctRGmRVgQu6Bm8jYmzmO8nV6qSI0175OaACcEe9CVpDYIrytUARKmxSiKQSGokCuM78SS_JYw8h62VuXTS-edFGQOx-Su6FvG92--O5nzGZVpE7cYJQnUR2aEpjTc0e1uXecQPKql8y4NnMSHYYw7ugbs4TvvkCOi2DIRfr4NpCtTI1vjUrlbbJBymXW_WzsLcocKd1Xj8NnRdR_l_QPwHoglEfg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=gGMJ1AZFrZTM4e6I5sqXzA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=121.610954&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DUrbQ3icHc1LCsIwFADA22RnPqUtVgjSjaLQnQvppsT4TAJpE5tnql7HU3kbwbnAfD8WMaYNYwlnAMwOluie4NMqKmpCMB5UdInqMLIsGNrHeJmU89uopuCu0uy7o2j73dyfuhLqQ5Xu53dL9GXQ3sGEclQxDSlTVBqdB2piIossipJYWTRr8lKLFIWgteBNVZLoUFvJyT-6hSwF5z_-7Tne"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 2
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "UPS Access Point location",
+          "data_id": "0x89c2597bc5992cb1:0xe1ce5b2501992ac3",
+          "data_cid": "16271042718234913475",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2597bc5992cb1%3A0xe1ce5b2501992ac3&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2597bc5992cb1%3A0xe1ce5b2501992ac3&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7748695,
+            "longitude": -73.9877319
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2597bc5992cb1%3A0xe1ce5b2501992ac3%218m2%213d40.7748695%214d-73.9877319&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2RIvRCRZwokRtDvBSiNAPCk&type=place",
+          "rating": 4.5,
+          "reviews": 2,
+          "type": "Shipping and mailing service",
+          "type_id": "shipping_and_mailing_service",
+          "address": "110 West End Ave, New York, NY 10023",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 7\u202fPM",
+          "hours": [
+            {
+              "thursday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "11\u202fAM\u20135\u202fPM"
+            },
+            {
+              "monday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "tuesday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20137\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG09-_FaWwV-HyNjQ7LSPqDEDnsNRZe0n5EiRINmLPEsSf2kDrPj7ei_hBppZyvVXKRiwc5e3-k9iDRf8aZveh9fbYXx2PdDH9p49YU2gKSoDHumXelCGFPLJvNA8gTY1kpHF_kPA=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG09-_FaWwV-HyNjQ7LSPqDEDnsNRZe0n5EiRINmLPEsSf2kDrPj7ei_hBppZyvVXKRiwc5e3-k9iDRf8aZveh9fbYXx2PdDH9p49YU2gKSoDHumXelCGFPLJvNA8gTY1kpHF_kPA=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Western Union",
+          "data_id": "0x89c259b4a6230ad9:0xc852d185eff7e317",
+          "data_cid": "14434830128862716695",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259b4a6230ad9%3A0xc852d185eff7e317&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259b4a6230ad9%3A0xc852d185eff7e317&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7749184,
+            "longitude": -73.98773969999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259b4a6230ad9%3A0xc852d185eff7e317%218m2%213d40.7749184%214d-73.98773969999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2RIvRCRZwokRtDvBSiNAPCk&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Money transfer service",
+          "type_id": "money_transfer_service",
+          "address": "110 West End Ave, New York, NY 10023",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 7\u202fPM",
+          "hours": [
+            {
+              "thursday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "saturday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "sunday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "monday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "tuesday": "9\u202fAM\u20137\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20137\u202fPM"
+            }
+          ]
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Such a friendly place, and the service was great, fast, and prices are amazing!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLBR22C1fTmaajPzcFzHw6U5q7mgmsccnyS4fWCrD9DtX-y6A=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The interior is clean and packed with a variety of over-the-counter items.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV3ZsyPMrEbmnRJbxSupxbpG5ZfsK3pdnD-bBbakYI8iI5ZpieMkQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Switched from walgreens best choice I have made.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLgWeaLzkdaXK7FYaNYMj_s4BIX38zJUrBQAtjZCY0DqUIwXA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Matthew Inge",
+          "rating": 5,
+          "contributor_id": "101469120635964673748",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWo4xWpztWjA4NJCKbhNQwIPICdlrktc-Kl_T7L85xbSroWnGpc=s120-c-rp-mo-br100",
+          "description": "Those reviews leaving one star have been proven to be fake reviews blackmailing the company to pay them to take away the negative reviews ... This was reported on the local 11 pm news.\n\nI live in the same building that Danny's II is located.  Sevice is always excellent.  Danny is great, as all the pharmacists that work there.  Danny is all for the neighborhood and is grateful for all the neigbors who stop in.  He knows most by name.  The staff is always friendly, helpful and very competent. They even notify me that my prescription is due before I even notice.  And it is ready for me to pickup.  They also deliver.  I also get my flu and COVID shots there.  No hassle ... no stadning in line for hours like I used to do at CVS before Danny's opened here.  Even there were times I needed unusual medicine that most pharmacies don't have in stock, he found what I needed and I was able to pick it up the next day.  If you're looking for a excellent pharmacy, that is friendly and will take care of you ... stop by Danny's II ... make up your own mind and see my review is the truth.  Be healthy",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oM2NrRlFaQzAxWlhSaVpsTlNaMVZXZUU1a1gwRRAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOmh3ckFQZC01ZXRiZlNSZ1VWeE5kX0E%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-07T19:06:02+00:00"
+        },
+        {
+          "username": "Kim Knopfer",
+          "rating": 5,
+          "contributor_id": "108589969342187943524",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLRsxERg4mch7FaUGQ2V-sW3jhXu9dUeS_UxDM8iVLlscMC1Q=s120-c-rp-mo-br100",
+          "description": "Both Danny and Yuri, the pharmacists take exceptional care of my family. They go above and beyond. Phones are answered promptly, deliveries are made quickly and efficiently, and everyone is polite and helpful. I feel very fortunate to have such a reliable pharmacy in my neighborhood. I know I can count on them.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21aM2NEZFBaVFZ0YTJ4bk9HVnJPSGxzTWxwQmNYYxAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOmZ3cDdPZTVta2xnOGVrOHlsMlpBcXc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-17T19:03:54+00:00"
+        },
+        {
+          "username": "Mariesa Porter",
+          "rating": 5,
+          "contributor_id": "118001493550847030157",
+          "user_review_count": 13,
+          "user_photo_count": 10,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ7CDevIIdcA_08CuqG371km3cubB-QuOyI5IW8NS1EOu8Eqg=s120-c-rp-mo-ba12-br100",
+          "description": "Such a breath of fresh air !! Preparing and picking up  prescriptions are fastest I\u2019ve ever experienced. Zero wait times when you call and don\u2019t have to go through lengthy automated systems. Time saving and efficient to the max. They are the best! Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2prNVdWOTVlVEJyTUdWMGNUVmtaa2RpT1VVMlJFRRAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOjk5WV95eTBrMGV0cTVkZkdiOUU2REE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-13T16:29:22+00:00"
+        },
+        {
+          "username": "Ashye Peyrovi",
+          "rating": 5,
+          "contributor_id": "108831389353524470677",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVr4v57u9spZqA-T9J6S6fdVyyEgvfjwC253Mji7rLH7_n-WcVSAg=s120-c-rp-mo-br100",
+          "description": "Danny was unbelievably helpful to me & my family during holiday peak flu season!  He had xoflu in stock when all the mass pharmacies were out. This is my new go to pharmacy\u2014highly recommend for personal touch and hard to find prescriptions. Thank you Danny for being such a delight!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2todFlUaDZkeTFaTlhNeVVqZExabVZZZG1aMkxYYxAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOkhtYTh6dy1ZNXMyUjdLZmVYdmZ2LXc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-21T22:03:14+00:00"
+        },
+        {
+          "username": "Tyler Sanborn",
+          "rating": 5,
+          "contributor_id": "102429339151469935080",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVpbPGrmpWDGSDFH2R4KdphjWjV0jRfiKz92tNfDT5VZ0fyc0Xj=s120-c-rp-mo-br100",
+          "description": "Danny has gone well out of his way to obtain Novavax, a Covid vaccine very few places carry. He and his staff also field what I can only imagine are a ton of calls from (dozens of) folks asking about it. There's definitely a good neighborhood energy to the place!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25jeWVVOVhRVmQxWVUxVFkzaFNjMUkxYVY5dWMzYxAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOncyeU9XQVd1YU1TY3hSc1I1aV9uc3c%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1b5pMTw43_FBROMhEO85OggSbOpJOVjQSbH2T1HmlIZz9ZUNinXJk99uEudo77sbW3vVmUwh8ezYaS5aKsg0YPsEJxbraikqeg9kPTaq_ou_Z-OE9lP72gyH6Z7A0RenZeUaGHBfPcsxo=k-no"
+            }
+          ],
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-25T02:00:11+00:00"
+        },
+        {
+          "username": "Randy Hannig",
+          "rating": 5,
+          "contributor_id": "109391244689154556940",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXMX1lg3oDsAhsYzXhY6oPK66JOQwCzS6Q-EBsI2GVpipwcs52S=s120-c-rp-mo-br100",
+          "description": "Feeling congested with a nasty cough, I popped in to this pharmacy yesterday, and the gentleman at the pharmacy listened then made knowledgeable recommendations.  He told me what worked best and which \u201cmedicines\u201d to avoid.  I appreciate his candor, as the combination of meds he sold me worked like a charm.  I will definitely return in the future!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sUFptNVhRbGw2VlZwaVp6bHJWVUZUWWtWWU1tYxAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOnlPZm5XQll6VVpiZzlrVUFTYkVYMmc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-16T18:47:33+00:00"
+        },
+        {
+          "username": "Ruwan J.",
+          "rating": 5,
+          "contributor_id": "117808460219123378764",
+          "user_review_count": 897,
+          "user_photo_count": 62956,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV3ZsyPMrEbmnRJbxSupxbpG5ZfsK3pdnD-bBbakYI8iI5ZpieMkQ=s120-c-rp-mo-ba12-br100",
+          "description": "small well-run neighborhood pharmacy for Lincoln Square, Hell\u2019s Kitchen, etc. areas. headed here for a vaccination\u2014they do a bunch of them\u2026go to their site or call them for which ones. sadly, no Super Soldier serum is served here but getting my shot was supereasy and the process is straightforward. i was in and out in less than 15 minutes. the interior is clean and packed with a variety of over-the-counter items. the staff is friendly and organized\u2014observed them helping other customers in a friendly manner. would definitely come back here if i had any other vaccine needs and they do notarization too by appointment, i believe.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN0dzdtWllBEAE!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CIHM0ogKEICAgICtw7mZYA%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn32wuxPXbIp5DwJSkd4CxojZWCTTGd6WdUAc_uk8RbggCHRo_j-rEPzE-FXdo3TJSk-3pZTROIzqNlKsRQRp01Fr2v0hXp4vw4q68B01tWhMxc3E5gpfzBTU2OqISeKprFrHIYyIg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3dOl6rwNmqO6M6X0ZgkK2oagbdisM5CKTrqgOq06fUBZJVpE5mdILgXOeTYll1N_htuGeJN0McV6-s_sY9kdhVUKocSn2XMWEflgiPRlVqoafFaKzBvKYfZuOGDb1Ze70JJGLS=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2XpcwHb7Pph2Jfo7m_SnOpMKyhPsrgc2IMyQl3ITTURxd_yYnOmzUYL7IvmRceMsvI2jWyGn29w64sUsTp1Tu02Qo1S82mO9nWd572iEGtNP9AiyR_Siq764XyvHyISn5Hy6a1=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2024-01-31T17:09:25+00:00"
+        },
+        {
+          "username": "Jeffrey Goldstein",
+          "rating": 1,
+          "contributor_id": "104665569479258140453",
+          "user_review_count": 18,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLfAMx82L1iZFwmZMuf6jbfktp8fDNr1JF02jPWrUvvB-eMidZP=s120-c-rp-mo-ba12-br100",
+          "description": "They told me that they would not fill a prescription with my insurance because they would lose money if they did. I understand this is a failure of the healthcare system in this country but it is very frustrating nonetheless.\n\nI was also told that if I mentioned this to the insurance company they would just claim they were out of stock but they then said to me they would happily fill it for me if I paid out of pocket.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSSFRFdEJjalZHVUZoMFYwdE1SMjB5YVZOcVpuYxAB!2m1!1s0x0:0x293c40234ac13bb4!3m1!1s2@1:CAIQACodChtycF9oOlRHTEtBcjVGUFh0V0tMR20yaVNqZnc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-09T20:22:20+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Danny's Pharmacy",
+            "data_id": "0x0:0xab27076cf8634320",
+            "data_cid": "12332834269182509856",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xab27076cf8634320&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xab27076cf8634320&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.822876799999996,
+              "longitude": -73.8735346
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xab27076cf8634320%218m2%213d40.822876799999996%214d-73.8735346&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 54,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEefd3SxFVbTCmdV-8M3lOUNraz6inPEuQVrn29J_MW9bzyt6KdgRCGPKbC-LCAFRDT0lbpM4V5u9fxjSEXo2LkYVO06RblZz5PzGfNSVulKyvPkGPH_WwgXZgL89PL-j8i0nvE=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Fax service",
+              "Greeting card shop",
+              "Lottery retailer"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "79th St. Pharmacy",
+            "data_id": "0x0:0xc4a6e125808a1f1c",
+            "data_cid": "14170260828754419484",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc4a6e125808a1f1c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc4a6e125808a1f1c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7836413,
+              "longitude": -73.9790684
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc4a6e125808a1f1c%218m2%213d40.7836413%214d-73.9790684&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 56,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNnM_LIJhmYCMcWv-FuDCMwM9vE3MwGls6Zg094O0skjHm4YZIGdJbU4U3HiE3ghu-Um7Y8KZCBHQSUy2MklRTH7rdMZgS3Zh09W00aSZox7MUs4TWMmBevn1L3xj1OQCFqdqzlKBPQve8=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Park West Pharmacy",
+            "data_id": "0x0:0x95377b27b5d7a705",
+            "data_cid": "10752198045855098629",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x95377b27b5d7a705&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x95377b27b5d7a705&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7839147,
+              "longitude": -73.9737737
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x95377b27b5d7a705%218m2%213d40.7839147%214d-73.9737737&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 75,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNsQJjZXtYyhO0KL5exlFVJzbN_4EXdNEPw6nLGq9WcgjRqDziYfmRBA6uMoFSq1T3xxy4XkkwZkxVRW0WJapD51csCqh2J0NJPA6jMfKeVtCjxDKjSpKMBeL11RX2uIl7OXMa6w=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Walgreens Pharmacy",
+            "data_id": "0x0:0x58b11482ca02cd15",
+            "data_cid": "6390911898182929685",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x58b11482ca02cd15&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x58b11482ca02cd15&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.770716,
+              "longitude": -73.9876766
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x58b11482ca02cd15%218m2%213d40.770716%214d-73.9876766&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.1,
+            "reviews": 18,
+            "thumbnail": "https://www.google.com/maps/vt/data=M3Wh5cwV6FnUVUt8hSbGmI6mwYwl8wzAnNe5S3sS2dO6GS0STg-xT7ag_jO0sdE8rqZXcW5rdbGxkK1ZshjO_mBERKYvP36vqYhpUnSWBbVy1tQ6VRlThr39XgSd23O2bfkvWhNV1ZSDMlu_Cj7KLBMmTboobd1T",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "New Amsterdam Drug Mart Inc",
+            "data_id": "0x0:0xfa6589548eaefc80",
+            "data_cid": "18042978478393851008",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfa6589548eaefc80&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfa6589548eaefc80&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7926832,
+              "longitude": -73.9715951
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfa6589548eaefc80%218m2%213d40.7926832%214d-73.9715951&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 77,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFfzTArWRKCqbisAZrlO9mY79HWXjWAqSMBiZGbM4g7ftmjsx8tl-rBKwWTXViB3uW5wJkHYg4jgy_9gDTqtLE4htomnjbPj_7sP7MH3yWZEEEwhbatIB97kxapMOAe35ffuIDz=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiYKJCIgRGFubnkncyBQaGFybWFjeSBJSSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiYKJCIgRGFubnkncyBQaGFybWFjeSBJSSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

@@ -1,0 +1,1183 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e4fff596e833ed18949",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/0D4Owt2DbRrQ_n3ujl75Hw/6a3d3e4fff596e833ed18949.json",
+    "created_at": "2026-06-25 14:42:23 UTC",
+    "processed_at": "2026-06-25 14:42:23 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2590782ff9205:0x3574fb31257c6330!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/0D4Owt2DbRrQ_n3ujl75Hw/6a3d3e4fff596e833ed18949.html",
+    "prettify_html_file": "https://serpapi.com/searches/0D4Owt2DbRrQ_n3ujl75Hw/6a3d3e4fff596e833ed18949.prettify",
+    "total_time_taken": 1.29
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJBZL_ggdZwokRMGN8JTH7dDU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Mount Sinai Doctors - East 34th Street Primary Care",
+    "place_id": "ChIJBZL_ggdZwokRMGN8JTH7dDU",
+    "data_id": "0x89c2590782ff9205:0x3574fb31257c6330",
+    "data_cid": "3851979769809494832",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590782ff9205%3A0x3574fb31257c6330&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590782ff9205%3A0x3574fb31257c6330&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.747574,
+      "longitude": -73.9817673
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU",
+    "provider_id": "/g/1tdkn416",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGLNZCDntqOY9EIYKmcfgXitUycodxiauv5zWxTx-2Gcb-5Kca_gF9915o0QBYymSMzUl3faeYH6bE-Oukl-zOITyVcqYBVdgcR23xUI-YB22GCt0gAV5R-O3fQek-dDRUsbF7JLAZJGx8e=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Z1oWE3icHcTLcoIwFADQL7oSYajSmS7AB-KLQgWNmw5cQnB4RJvQBn7Sdf-mMz2L8_uslLrLV8NoKmvCheAN6yX7QtEp1qkJitbgdwkoQRru-zGqXX9_vC6WnXqE1FkFdNdiyS83lQwoCn3L-m97POuTBtPHHOwdZp987ThTW5DIo0P7cRiTxiozRjcv-QrCvm5gDIPTkOKDemnBMTYtnQRAPdP0F4pwN7VjCK0yYjUUyziR-Xq23bvXra_n7O1nSgiB6n-E7g-vL0Zs",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 104
+      },
+      {
+        "stars": 2,
+        "amount": 18
+      },
+      {
+        "stars": 3,
+        "amount": 2
+      },
+      {
+        "stars": 4,
+        "amount": 21
+      },
+      {
+        "stars": 5,
+        "amount": 82
+      }
+    ],
+    "rating": 2.8,
+    "reviews": 227,
+    "type": [
+      "Medical clinic",
+      "General practitioner",
+      "Internal medicine ward"
+    ],
+    "type_ids": [
+      "medical_clinic",
+      "general_practitioner",
+      "internal_medicine_ward"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "55 E 34th St First Floor, New York, NY 10016",
+    "country": "United States",
+    "booking_link": "https://www.mountsinai.org/locations/msd-east-34/team?y_source=1_MTgwODM2OC03MTUtbG9jYXRpb24ucmVzZXJ2YXRpb25fdXJs",
+    "website": "https://www.mountsinai.org/locations/msd-east-34?utm_source=Yext&utm_medium=local_listing&utm_campaign=BIMG&y_source=1_MTgwODM2OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "phone": "(212) 252-6000",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "P2X9+27 New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20138 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "9 AM\u20135 PM"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      },
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 10 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2590782ff9205%3A0x3574fb31257c6330&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGLNZCDntqOY9EIYKmcfgXitUycodxiauv5zWxTx-2Gcb-5Kca_gF9915o0QBYymSMzUl3faeYH6bE-Oukl-zOITyVcqYBVdgcR23xUI-YB22GCt0gAV5R-O3fQek-dDRUsbF7JLAZJGx8e=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Z1oWE3icHcTLcoIwFADQL7oSYajSmS7AB-KLQgWNmw5cQnB4RJvQBn7Sdf-mMz2L8_uslLrLV8NoKmvCheAN6yX7QtEp1qkJitbgdwkoQRru-zGqXX9_vC6WnXqE1FkFdNdiyS83lQwoCn3L-m97POuTBtPHHOwdZp987ThTW5DIo0P7cRiTxiozRjcv-QrCvm5gDIPTkOKDemnBMTYtnQRAPdP0F4pwN7VjCK0yYjUUyziR-Xq23bvXra_n7O1nSgiB6n-E7g-vL0Zs"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8oAnc6MviPhVbSa_6KzjFQHVHWO1E5yS-oI5L_ZeC9RF_BoeR4rTlIRRBHXZv-A7H12iV8A3pF7FAoniE3YlqAyy4ZWR9xPMn7zOfXMqptCW1LbDXs-pRj5oWuugwVa8pkDzQOA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Mv8SeXicHcRBjoIwFADQE1VARNBkFkVtMMoA1QCyIdpUQLG_2qIDN_QIcxsT3-L9v2utpZobRlvbowqganmn-IOB0FzoEYObUUmFmELKwPFvcsXEAyzYNHw2cZ2edsdyuhkuJAnSIIusldPvEKydbVnwxYyS0gdOJ499u6bUD_LiibAbWOMm9bAtiUswiGZlH9o77vtJkdHZXxwKd4jOeXiXepFZ29MyV0jSiwNZ11Wv9OjJ63JIIvzzskzTRPV3hsQHZu5EYQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Mo6e0cWlO5dx7Lry6kxMkg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=36.60205&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/d14ZG3icHc1LDsIgEADQ27ATaLX4SYgXsHHpskE6wqS0kDLS9jgey9uY-C7wvh9PlPJFiEwzABWEJeEKIe-S4S5GF8AkzNzGUZRKkH-Pz8lguCYzRex1GxVI-wj3pl-Pt3lTw9oOjtlnZwPCRHo0KXe5cDKWMAB3KbNF1_WBeV2fT2wzi94rrmQtG5aQrNeS_ZtXLLqS8gfJRjog"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Health & Beauty",
+          "places": 7
+        },
+        {
+          "title": "Other",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Andrew Petelin, MD",
+          "data_id": "0x89c25983a4300001:0x2c188b29d7742929",
+          "data_cid": "3177442548934519081",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25983a4300001%3A0x2c188b29d7742929&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25983a4300001%3A0x2c188b29d7742929&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7476445,
+            "longitude": -73.9817489
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25983a4300001%3A0x2c188b29d7742929%218m2%213d40.7476445%214d-73.9817489&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "rating": 4.8,
+          "reviews": 80,
+          "type": "Internist",
+          "type_id": "internist",
+          "address": "55 E 34th St 5th Fl, New York, NY 10016",
+          "location": "Floor 1",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGspIunFYUpTTWwWWgN5c_N8JoSEFlDoiesqXm0VZapO39bV4LSDUiZd2-vZB_DQWGOLKT0LIFWecbSnsX4Uz04eYJw60wd4CqosftGOjbY4hzjB_O2lTAwxCU9Pp9s6hwP4yAtVw=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGspIunFYUpTTWwWWgN5c_N8JoSEFlDoiesqXm0VZapO39bV4LSDUiZd2-vZB_DQWGOLKT0LIFWecbSnsX4Uz04eYJw60wd4CqosftGOjbY4hzjB_O2lTAwxCU9Pp9s6hwP4yAtVw=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Andres Ortega, DO",
+          "data_id": "0x89c259b3724412f5:0x8b432fbaf63e27fa",
+          "data_cid": "10034916874753288186",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259b3724412f5%3A0x8b432fbaf63e27fa&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259b3724412f5%3A0x8b432fbaf63e27fa&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.747657800000006,
+            "longitude": -73.9817752
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259b3724412f5%3A0x8b432fbaf63e27fa%218m2%213d40.747657800000006%214d-73.9817752&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "rating": 4.8,
+          "reviews": 75,
+          "type": "Internist",
+          "type_id": "internist",
+          "address": "55 E 34th St 5th Fl, New York, NY 10016",
+          "location": "Floor 1",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHLPRJOuYycKgQxTutMbgkXzTQWPzbgG74lNNUon0KtCdmIdmrNFgn6ebVeBtdVfyjlGCU75anuB3frN3J-3ZsrldN718rnuuUKoGxm-yXShb5lJuuLguGTqDJuzMMNUt7Ekk9h8ZFiHzQ=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHLPRJOuYycKgQxTutMbgkXzTQWPzbgG74lNNUon0KtCdmIdmrNFgn6ebVeBtdVfyjlGCU75anuB3frN3J-3ZsrldN718rnuuUKoGxm-yXShb5lJuuLguGTqDJuzMMNUt7Ekk9h8ZFiHzQ=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "NY\u6771\u4eac\u6d77\u4e0a\u8a18\u5ff5\u8a3a\u7642\u6240",
+          "data_id": "0x89c25921c1de2185:0x70b4ec509a68669b",
+          "data_cid": "8121375858987919003",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25921c1de2185%3A0x70b4ec509a68669b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25921c1de2185%3A0x70b4ec509a68669b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7476303,
+            "longitude": -73.9817675
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25921c1de2185%3A0x70b4ec509a68669b%218m2%213d40.7476303%214d-73.9817675&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "rating": 4.3,
+          "reviews": 8,
+          "type": "Medical Center",
+          "type_id": "medical_center",
+          "address": "55 E 34th St 2nd floor, New York, NY 10016",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEXFOt4lTrNj9pI_KcT7PS5Xxw64K1DeUs_1dWudqotN7xwOtEcpYJ-wk4CnssLysSmzO4gJm2fjeTvwdUKVhBfyIZOq25bj7YkAOERI9bULpqhon0HrgV1iOFlmhtnEXfn8Yiswg=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEXFOt4lTrNj9pI_KcT7PS5Xxw64K1DeUs_1dWudqotN7xwOtEcpYJ-wk4CnssLysSmzO4gJm2fjeTvwdUKVhBfyIZOq25bj7YkAOERI9bULpqhon0HrgV1iOFlmhtnEXfn8Yiswg=w86-h86-n-k-no"
+        },
+        {
+          "position": 4,
+          "title": "New York Radiology Associates",
+          "data_id": "0x89c25958d00d739b:0x8f4a9aef42d1863b",
+          "data_cid": "10325235448109172283",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25958d00d739b%3A0x8f4a9aef42d1863b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25958d00d739b%3A0x8f4a9aef42d1863b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.747627,
+            "longitude": -73.9817633
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25958d00d739b%3A0x8f4a9aef42d1863b%218m2%213d40.747627%214d-73.9817633&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "rating": 2.3,
+          "reviews": 7,
+          "type": "Hospital",
+          "type_id": "hospital",
+          "address": "55 E 34th St, New York, NY 10016",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "thursday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "tuesday": "8\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "8\u202fAM\u20135\u202fPM"
+            }
+          ]
+        },
+        {
+          "position": 5,
+          "title": "Ny Health Care",
+          "data_id": "0x89c2590782ff9205:0x67ee4c76fd815e28",
+          "data_cid": "7489007304306679336",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590782ff9205%3A0x67ee4c76fd815e28&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590782ff9205%3A0x67ee4c76fd815e28&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7474791,
+            "longitude": -73.9817734
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590782ff9205%3A0x67ee4c76fd815e28%218m2%213d40.7474791%214d-73.9817734&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "rating": 3.0,
+          "reviews": 2,
+          "type": "Medical clinic",
+          "type_id": "medical_clinic",
+          "address": "55 E 34th St, New York, NY 10016",
+          "open_state": "Open \u00b7 Closes 8\u202fPM",
+          "hours": [
+            {
+              "thursday": "8\u202fAM\u20138\u202fPM"
+            },
+            {
+              "friday": "8\u202fAM\u20138\u202fPM"
+            },
+            {
+              "saturday": "9\u202fAM\u20131\u202fPM"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "8\u202fAM\u20138\u202fPM"
+            },
+            {
+              "tuesday": "8\u202fAM\u20138\u202fPM"
+            },
+            {
+              "wednesday": "8\u202fAM\u20138\u202fPM"
+            }
+          ]
+        },
+        {
+          "position": 6,
+          "title": "Metadon Clinic",
+          "data_id": "0x89c2590775724ccf:0x7e16e1b9e252e75b",
+          "data_cid": "9085697486748837723",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590775724ccf%3A0x7e16e1b9e252e75b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590775724ccf%3A0x7e16e1b9e252e75b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7475641,
+            "longitude": -73.98168280000002
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590775724ccf%3A0x7e16e1b9e252e75b%218m2%213d40.7475641%214d-73.98168280000002&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "type": "Hospital",
+          "type_id": "hospital"
+        },
+        {
+          "position": 7,
+          "title": "nyra",
+          "data_id": "0x89c2590775903213:0x314c2c8cd8bd21b8",
+          "data_cid": "3552263189531795896",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590775903213%3A0x314c2c8cd8bd21b8&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590775903213%3A0x314c2c8cd8bd21b8&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7475538,
+            "longitude": -73.98177360000001
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590775903213%3A0x314c2c8cd8bd21b8%218m2%213d40.7475538%214d-73.98177360000001&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 8,
+          "title": "Tokyo Marine",
+          "data_id": "0x89c2590775b20dad:0xac9abd82744878b5",
+          "data_cid": "12437461688931350709",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590775b20dad%3A0xac9abd82744878b5&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590775b20dad%3A0xac9abd82744878b5&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.747627,
+            "longitude": -73.9817633
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590775b20dad%3A0xac9abd82744878b5%218m2%213d40.747627%214d-73.9817633&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBZL_ggdZwokRMGN8JTH7dDU&type=place",
+          "type": "Point of interest",
+          "type_id": "establishment_poi"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Originally I chose this location based on its proximity to my office.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV0nPAy-9I_02cF782clIPJ1uiYE_cswItxsOs06UdgDa3Jev5qcQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Dr Rice made me wait 1.5+ hours and spent about 45 seconds with me total.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIv02Ip5-S71Cwv4ZrqagLkxCusz8IbrQkby08Pgyi5cWYVDQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"When I questioned how long this policy is in place, it\u2019s not a policy.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI8hwTozWvzrIHiGTK8zkHO5zcWzM4k5yJ8YzxtKfFivBuYDA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Karim Lahlou",
+          "rating": 1,
+          "contributor_id": "102060647371966282985",
+          "user_review_count": 18,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVvgfHva6CTlnHQysQnW0ShZzwNdDkkfMYYtea-BUpND0_uPAvX=s120-c-rp-mo-ba12-br100",
+          "description": "I had visited with Dr. Marissa Pedro at the location above on October 24th, 2025. The doctor sent a prescription to a pharmacy, however they did not have the medication on stock.\n\nI then communicated to the practice that I would like to change the pharmacy two days later, and this is where the problems started.\n\nIn each of the five  following business days which consisted no fewer than 12 phone calls with the supporting staff, no change took place. This is despite the fact that the practice promises responses to patient messages between 24 and 72 hours. Dr. Pedro was clearly not reading my messages.\n\nAfter 72 hours had transpired, the supporting staff escalated this request by sending her additional 'escalated priority messages', promising a resolution within the next 24 hours. However this too came and went. I even scheduled another appointment (that I will be charged $75 for as a no-show) just so I could write in the notes field of the appointment: \"please have the doctor read the messages from myself and the 'Care Team'\".\n\nIt was only on Friday, 24 hours later and more than 100 hours after the original request was sent, and only after messaging other doctors and calling all manner of support hotlines, that she was able to fulfill the request.\n\nDuring the phone call, she made no acknowledgment of her extreme tardiness in getting back to me and she was incredibly dismissive of the situation, saying \"I cannot keep changing where the prescription is sent all the time.\"\n\nThis amounts to a willful neglect of patient needs, not to mention a catastrophic patient experience. Had I been a patient with more significant medication needs, this would have represented a potentially life-threatening situation and tantamount to medical malpractice.\n\nEdit (12/1/2025): Absolutely nothing has happened in the three weeks since filling out the form link provided in the message below.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25kcGNtMVJjbGRUUkhobWJVTm9ZVk5UVkU1cVRtYxAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOndpcm1RcldTRHhmbUNoYVNTVE5qTmc%7C%7C?hl=en",
+          "date": "Edited 6 months ago",
+          "date_iso8601": "2025-12-01T14:47:29+00:00"
+        },
+        {
+          "username": "K S.",
+          "rating": 5,
+          "contributor_id": "117068904852455948721",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWvrHgkP2c6KLAbh1Z56aOUuJXAdIj7Zy7f9_tscEY5sD9wHkF1=s120-c-rp-mo-br100",
+          "description": "Always have a pleasant experience when I'm there to see my primary care physician.  I grateful to be able to schedule an appointment when I need to see her. Plus everyone in the office is always accommodating. Great Job!@",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oMVNHRmFWM1JXTjNCdlRWZFRNelV4WlUxSWFIYxAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOmh1SGFaV3RWN3BvTVdTMzUxZU1IaHc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-07T23:22:16+00:00"
+        },
+        {
+          "username": "Valeria Yulee",
+          "rating": 1,
+          "contributor_id": "104853301737826380092",
+          "user_review_count": 21,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJg6y9EmWHGScEoHtnZrpG-6cBj2kXKLu_H-aG5JQQwnhV0Iw=s120-c-rp-mo-ba12-br100",
+          "description": "Booked this appointment months in advanced (it was the dr\u2019s earliest availability). They canceled it a week before without explanation. When I called they said it was an error and reassured me my appointment was still scheduled. Took time off work and showed up on time the day of only for them to tell me the appointment was canceled and I\u2019d have to wait months again.\n\nStaff was not apologetic or sympathetic.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKaFpGQlRaakZLTFVKWGVsOVZVRU5UZEhCVlZWRRAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOjJhZFBTZjFKLUJXel9VUENTdHBVVVE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-12T17:58:06+00:00"
+        },
+        {
+          "username": "Melissa Ferrara",
+          "rating": 1,
+          "contributor_id": "117882373382440755896",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI8YuuOwiFAJIGqsgJTGOsMx0VsQadkq55JSkkxnw91PED_vQ=s120-c-rp-mo-br100",
+          "description": "I was 5 minutes late and they threatened to cancel my appointment. The front desk staff has zero communication skills and the doctor was incredibly rude. Stay far away.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CdlVGRnVlVlZxWW5CNWEwaGhVbnBvU0ZWaE5VRRAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOnBvUFFueVVqYnB5a0hhUnpoSFVhNUE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-15T17:07:46+00:00"
+        },
+        {
+          "username": "John",
+          "rating": 1,
+          "contributor_id": "104781933802601421037",
+          "user_review_count": 123,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWP5kmn68MKT7bIQqOcozr1ZNZ2845SKQa_9AFHnqTcQ09vGE4=s120-c-rp-mo-ba12-br100",
+          "description": "Quite possibly the worst doctors office I have ever attended. The staff on the 5th floor are just rude and negligible. There were very obvious communication issues between those at the front desk and those in the back and all staff proceeded to just gaslight patients in the waiting from who had been waiting for over 30 minutes extra. The front office staff need to get it together. The doctors and office in general are extremely disorganized. I waited over a month and half  to simply receive a refill on a standard non controlled medication, that I need to take, because the staff in the office simply did not action anything from my calls and refill requests. Over the month and a half long period I called about 4 times and visiting in office with no resolution. Don\u2019t come here.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t4TmVVTXRTV0V3WjFCVlpXRjFlbUZCWjNCMFJHYxAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOkxNeUMtSWEwZ1BVZWF1emFBZ3B0RGc%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-06-26T13:59:26+00:00"
+        },
+        {
+          "username": "Sage he",
+          "rating": 1,
+          "contributor_id": "109156057240290417791",
+          "user_review_count": 19,
+          "user_photo_count": 31,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIFFzXmYqgjEU9XNWxfyq6nBysSmPpP80rBRo8hdjhi6WCJiw=s120-c-rp-mo-ba12-br100",
+          "description": "I had a horrible experience and I'll never go back.\nI scheduled an well-women visit, and what I communicated with the person who was helping to schedule the appointment for me was \"My PCP recommended me to see Doctor Kristien Chu, I'd love to schedule an appointment with her for well-women annual exam, also btw, when I had egg freezing procedure last year in LA, the doctor told me that I have a polyp and suggest me to talk to my doc about it, so I might need to check on that as well\", so their team scheduled the appointment for me showing as \"well-women annual exam\", But when I took the day off, went to my appointment, they did not do an annual exam, they said \"you'll need to go to ultrasound department for the polyp which we don't know if they have availability today, the doctor can see you, but there's nothing we can do today since we did not prep for annual exam\"... so they did no prep the annual exam, and then the doctor came and I told her what what my egg freezing doctor told me, at that point she should recommend me to do an ultrasound, but instead she ambiguously said, I can check if you want to... I'm not a doctor so I chose to trust her and let her to check... then of course she can't see anything.. then I got a bill of $309.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WTGQxODBNaTFxUmtsUlRsOXhXaTAwU3pkQ2MxRRAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOnVLd180Mi1qRklRTl9xWi00SzdCc1E%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-14T21:12:48+00:00"
+        },
+        {
+          "username": "Sharon Porcher-Hilaire",
+          "rating": 4,
+          "contributor_id": "112564278502462592624",
+          "user_review_count": 6,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUWahGHH8u9VaErX2lTE3v_m41p86OYGoI_jsmgda3woQ14Uht-=s120-c-rp-mo-br100",
+          "description": "My virtual appointment was on time.  Received positive information about this location and decided to give it another shot.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25FNE5rNXpYMUZPWm1WUmFsbEhTVUpmVlVWRGJrRRAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOnE4Nk5zX1FOZmVRallHSUJfVUVDbkE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-29T13:40:32+00:00"
+        },
+        {
+          "username": "Deroy Murdock",
+          "rating": 5,
+          "contributor_id": "116770705553249350683",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXgCHhtqahJgbvN12wlVW9QqftTapYoidw7TbuA1Ocw1XD8SpOCQw=s120-c-rp-mo-br100",
+          "description": "For the last 35 years or so, I have had exceptional medical care throughout the Mt. Sinai system and its precursor, Beth Israel Medical Group. My doctors are capable, compassionate, and patient -- no pun intended. I recommend Mt. Sinai in general and all of my doctors, in particular.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsTVZrbzJWMkU0YjAxbFJXOTZPVzlUU20wMVRrRRAB!2m1!1s0x0:0x3574fb31257c6330!3m1!1s2@1:CAIQACodChtycF9oOllMVko2V2E4b01lRW96OW9TSm01TkE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-11-30T23:25:59+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Ny Health Care",
+            "data_id": "0x0:0x67ee4c76fd815e28",
+            "data_cid": "7489007304306679336",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x67ee4c76fd815e28&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x67ee4c76fd815e28&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7474791,
+              "longitude": -73.9817734
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x67ee4c76fd815e28%218m2%213d40.7474791%214d-73.9817734&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=Mj4gwNOX8Im0ESGtFlTHwmIkcMErRAWCyI3Nngmhy7ef4b2pK4QSdyKQF96bQ6Ikil5r03tlkbHda1ACkzPGT3rxZRV6NiPTEGnuTXhRa4B6mCwWvULclyqhbL3kgBNw_Nwy6WBwwvH9TBLzUOBKpcCmcCAAKkAw",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Mount Sinai Doctors-944 Park Avenue",
+            "data_id": "0x0:0x4d339e51a8b9f371",
+            "data_cid": "5562964038292992881",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4d339e51a8b9f371&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4d339e51a8b9f371&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.777400799999995,
+              "longitude": -73.959723
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4d339e51a8b9f371%218m2%213d40.777400799999995%214d-73.959723&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=_eltUepdcfR6T-JIitZQqFY4TMfRX-QZvfgJU_7ZEUTyxbFfE23oVF9jYMKnBvvEl-jX7zRnftQXAFiqAIq0lizcuCsMKpeJb7YHr_-1wQSRfB8gPeUr0bwJBltPBkoksaB1E8Ltp-9zRmyeOjcE9V-wNEp9eF41",
+            "type": [
+              "Doctor",
+              "Cardiologist",
+              "General practitioner"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Abigail Chen, MD",
+            "data_id": "0x0:0xce632a5c1d52efc1",
+            "data_cid": "14871776969624842177",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xce632a5c1d52efc1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xce632a5c1d52efc1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.747575999999995,
+              "longitude": -73.9817552
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xce632a5c1d52efc1%218m2%213d40.747575999999995%214d-73.9817552&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 13,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFgisjwd9vNBSBAr-EECBmZmJqjC6mCu22kVyjlxPo2MQgJ13K3GmT_BvaptpHIhA5ewQLRoZp-2ADGkjlB7HFfU38aJq7QZVCmbSqFn7AyFObrF9YDgFOao0REpM9XPh4f1YIARzdPBSo=w156-h156-n-k-no",
+            "type": [
+              "Internist",
+              "Doctor"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Internal Medicine",
+            "data_id": "0x0:0xcc2f59e3e7baf77b",
+            "data_cid": "14713077343022937979",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcc2f59e3e7baf77b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcc2f59e3e7baf77b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.791541599999995,
+              "longitude": -73.9519571
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcc2f59e3e7baf77b%218m2%213d40.791541599999995%214d-73.9519571&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 12,
+            "thumbnail": "https://www.google.com/maps/vt/data=hY4t4wLt6hBdJzZFiAyfVo9A-qbC6SgLYKpRko2Dy4XKor180UA-oZPvip3ARp_9BV_1vGP34Y3rsueKViMUnkfq86U-jH_g1q_nx4wxE_nl6MOm8BzxmC1N7oTsuyzmH7XkqVsyk_4Kr0m5PofMquzgW2RRBryC",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Sanya Anand, DO",
+            "data_id": "0x0:0x4a246a2cc9b6b478",
+            "data_cid": "5342511798563550328",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a246a2cc9b6b478&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a246a2cc9b6b478&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7446349,
+              "longitude": -73.9747871
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4a246a2cc9b6b478%218m2%213d40.7446349%214d-73.9747871&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 4,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF2aGa1_X3VD3PgjIq3vtGsEbP5C9tKODGiFFOfktLae6a62G7mvUW9zEAB6DLOy2FWpgnCzpcCpWqS99gFZiiDEg3yt8LOW98GvkOZYGJ2bcnUWIUcGwf2LsHmuqdjX9IU-AVCfw=w156-h156-n-k-no",
+            "type": [
+              "Internist"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Less busy than usual",
+        "time_spent": "People typically spend 45 min to 2 hr here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 12
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not busy",
+            "busyness_score": 15
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 17
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 18
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 11
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 25
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 16
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 88
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 83
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 88
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 41
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 37
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 94
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100,
+            "live_busyness_score": 21,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 18
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 16
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 11
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 14
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not busy",
+            "busyness_score": 16
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 17
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 17
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 16
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 13
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 13
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkYKRCJATW91bnQgU2luYWkgRG9jdG9ycyAtIEVhc3QgMzR0aCBTdHJlZXQgUHJpbWFyeSBDYXJlIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkYKRCJATW91bnQgU2luYWkgRG9jdG9ycyAtIEVhc3QgMzR0aCBTdHJlZXQgUHJpbWFyeSBDYXJlIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

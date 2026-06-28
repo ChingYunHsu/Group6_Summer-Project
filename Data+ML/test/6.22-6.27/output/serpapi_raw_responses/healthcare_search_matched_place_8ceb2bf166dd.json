@@ -1,0 +1,336 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e84c29c3ddd05de5fc8",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/2d-YyXVkRJ_t4WodN2HKng/6a3d3e84c29c3ddd05de5fc8.json",
+    "created_at": "2026-06-25 14:43:16 UTC",
+    "processed_at": "2026-06-25 14:43:16 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f63dc79e35c5:0x5035914af3214c44!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/2d-YyXVkRJ_t4WodN2HKng/6a3d3e84c29c3ddd05de5fc8.html",
+    "prettify_html_file": "https://serpapi.com/searches/2d-YyXVkRJ_t4WodN2HKng/6a3d3e84c29c3ddd05de5fc8.prettify",
+    "total_time_taken": 0.47
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJxTWexz32wokRREwh80qRNVA",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Mt. Sinai St. Luke's Outpatient Center",
+    "place_id": "ChIJxTWexz32wokRREwh80qRNVA",
+    "data_id": "0x89c2f63dc79e35c5:0x5035914af3214c44",
+    "data_cid": "5779685447892552772",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f63dc79e35c5%3A0x5035914af3214c44&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f63dc79e35c5%3A0x5035914af3214c44&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.805203299999995,
+      "longitude": -73.9615058
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxTWexz32wokRREwh80qRNVA",
+    "provider_id": "/g/11cm0zm7fh",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEj0esA31uLhD9QdMtBytmsbGRh82tLLxkG_TPrJ43HI70h7B82uHobe-jlFBJI-e6rWQoabQo9VKLKmZGI15_oOIacn0ZkaqfdezmsAbJG8OeG46Mp6PQRqym2Cufzn66srofKVXHU0FXE=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/hRp-RnicHcTdboIwGADQJ6oUcBWXeAGblj8nNZsz3hiohUZoP6QlU1_Sa9_GZOfiPB_S2t68O04n_UkD0HRiNGLgoK3QdsJBOU1vEDfIOGHxxdpwecbChL475vJzzk5rG92sMhXdysCzeX5t6fG7GNKpHyczLGdR4I0xVAKdu1WUJkiQ4ZdBWTGY77I8UweauG9H2CQl1_jQlpf6JO7KhFVKg42gU7LuScG2l5vyPsb6rgkxA9TZbh__4NV-ufhzMcZI_s-RfgE4ZkZt",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 17
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 2
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 7
+      }
+    ],
+    "rating": 2.3,
+    "reviews": 27,
+    "unclaimed_listing": true,
+    "type": [
+      "Hospital"
+    ],
+    "type_ids": [
+      "hospital"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "440 W 114th St, New York, NY 10025",
+    "country": "United States",
+    "website": "http://www.mountsinai.org/locations/st-lukes",
+    "phone": "(212) 523-6500",
+    "open_state": "Open now",
+    "plus_code": "R24Q+39 New York",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEj0esA31uLhD9QdMtBytmsbGRh82tLLxkG_TPrJ43HI70h7B82uHobe-jlFBJI-e6rWQoabQo9VKLKmZGI15_oOIacn0ZkaqfdezmsAbJG8OeG46Mp6PQRqym2Cufzn66srofKVXHU0FXE=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/hRp-RnicHcTdboIwGADQJ6oUcBWXeAGblj8nNZsz3hiohUZoP6QlU1_Sa9_GZOfiPB_S2t68O04n_UkD0HRiNGLgoK3QdsJBOU1vEDfIOGHxxdpwecbChL475vJzzk5rG92sMhXdysCzeX5t6fG7GNKpHyczLGdR4I0xVAKdu1WUJkiQ4ZdBWTGY77I8UweauG9H2CQl1_jQlpf6JO7KhFVKg42gU7LuScG2l5vyPsb6rgkxA9TZbh__4NV-ufhzMcZI_s-RfgE4ZkZt"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=cxUvL0GM_VDRKJqhG0MYpA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=144.61436&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/FNYPS3icHc3RCsIgFADQv_EtdUtGBRJBMKj2EhT0NMxsXnDzlje3fqe_6m-Czg-c78cTYVoJkejpHGVwI8LkQpqh4V2MXXAGIXEbe5ELQf7VXwcDYY1miHDTdjrlg6yb9rw97ncPX8vmghtmr60N4AbSvcHUpszJWILgeIeJjbosFfO6XC7Y24y6UIpXhZpXDIGs15L9n3vMupDyB96FOeI"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"This place should not be training future doctors.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKl3akczWXzzAsT5YyHyuE7zXDtcxG9AGgN-cscUDzbpoeuqQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The ambulance took me here, so I'm stuck.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL48sXWjZEKl90J9Lc60ZtkeTtfznb-LKS1W6Fs9NZLtFhP5g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Unprofessional and inappropriate.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVjW7DxCLHKYXC4mPvMsjCDzEQWb-mT20wnVe7B5dQeS0OpCaWt3A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Cleveland Moore",
+          "rating": 5,
+          "contributor_id": "118218671114737713202",
+          "user_review_count": 15,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVSIoRmJkgeS11MwITrRzxN7WznnSCdvkB0L-rF9M7GTbhti9P1=s120-c-rp-mo-ba12-br100",
+          "description": "A very good *& essential component of the Harlem community and it has sustainable history and independent support from the experience and learning of universal alternative partnerships in the new 21st century multicultural coalliance of its\nLong community and ivy league reputable and high quality international university research advocates for the. Most populated urban metropolitan area\ncoded system design of the future together without a human experience of a live representative .",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0dWFHUk9Na2wzUXpKVk5tMVVPRXR5Vkd4MmNXYxAB!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CAIQACodChtycF9oOktuaGROMkl3QzJVNm1UOEtyVGx2cWc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-12T18:49:18+00:00"
+        },
+        {
+          "username": "Kasha Phillips-Lewis",
+          "rating": 1,
+          "contributor_id": "100121077801340786285",
+          "user_review_count": 32,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJQB1CWcd_XV8zFX_07H44FXe4KTmJb80cYQR2eGfms5L4rQw=s120-c-rp-mo-ba12-br100",
+          "description": "Run away ..... like go to lincoln or Harlem Hospital before you go here.\n\nI have been to clinics that were cleaner, faster and actually helped instead of giggling behind the nurses station",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205R1dHdElXSFF0WmtsMU1rMXNUVWhwWjNweVdVRRAB!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CAIQACodChtycF9oOm9GWGtIWHQtZkl1Mk1sTUhpZ3pyWUE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1VcGqr-RtU2Rfw1JWYrrWuOiNwzjCUjclwmrk5r6PhfXPN5JV7Ry1yefQuJ-c0ZwrPzqCzgSS_ct75caOPJdpJuQ1jn5R-C1VmPUUAHsLIBSej7-xlubc1jey92njk9IiVshnO3D5DelV8=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-06-17T13:08:45+00:00"
+        },
+        {
+          "username": "Gail Morgan",
+          "rating": 1,
+          "contributor_id": "110985782571116422591",
+          "user_review_count": 16,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKl3akczWXzzAsT5YyHyuE7zXDtcxG9AGgN-cscUDzbpoeuqQ=s120-c-rp-mo-ba12-br100",
+          "description": "If I could give no stars i would. All of the bad reviews for this are deserved. I came her for an emergency room visit and was completely ignored repeatedly. The staff here spend more time giggling and talking to each other than they do with their patience. Waited for my son to come back from a CT scan for 2 hours. Three doctors triage him one after the other with no idea of the information given prior. They discharged my son with out telling anyone. No one communicates with the patience. For 3-4 hours no one spoke to me about anything.  Shift changed and no one introduced themselves to let you know who will be handling your care. Thos place is horrible. I would rather go to Lincoln hospital instead of here and Lincoln hospital is known for killing people. They only way to n get result is to be irate or angry and loud for someone to pay attention to you or give a care. This place should not be training future doctors. The training here would greatly impact the health care industry in a negative way. This is like high school here. The giggle and talk to each other but do only part of their work. HORRIBLE PLACE. ADDITUDE CENTRAL. POOR BEDSIDE MANOR. POOR COMMUNICTORS. LAZY PASSING THE BUCK STAFF.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURGcUoybk93EAE!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CIHM0ogKEICAgIDFqJ2nOw%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn30ou7Qr-x9miP2SCsg-BN5KmbfnTGJYUqHEmA8TF02eBb5Zqu2CHWA6GtrVbzfUpO2yqmkUFNAeW2m_aEFElJ5P7O8-Lsp80YtAbSU2TivqYguKt4IRJuZShBwj687DCR6Gc0LFA=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2023-11-04T13:04:28+00:00"
+        },
+        {
+          "username": "Ellen Daniel",
+          "rating": 1,
+          "contributor_id": "102233052217078546026",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL48sXWjZEKl90J9Lc60ZtkeTtfznb-LKS1W6Fs9NZLtFhP5g=s120-c-rp-mo-br100",
+          "description": "I have been lying here with a broken hip for over 8 hours. Still no hydration. A tech set up a tube so I could urinate, and when it didn't work she just walked away and left me in a pool of urine. It's been 4 hours since anyone gave me morphine for the pain. The ambulance took me here, so I'm stuck. Hopefully the orthopedic area is better or I might not make it out of here alive",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNmazhqczR3RRAB!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CIHM0ogKEICAgICfk8js4wE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-01-01T07:45:23+00:00"
+        },
+        {
+          "username": "Donna Brown",
+          "rating": 1,
+          "contributor_id": "102645188849986954469",
+          "user_review_count": 44,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLfaGueU91Jv8xhlOUXkRg8ZiB9SOs1w-66edzKOmfEhc2BMpQ=s120-c-rp-mo-ba12-br100",
+          "description": "It's official , this hospital is a mess .\nI arrived at the emergency entrance with a head injury,  checked in and waited a couple of hours before my name was called . I was then taken to a area to do additional check in and then was seated in a\n\"fast track \" area that was actually disorganized and slow .\nThree patients who arrived after me were seen before me and when I pointed this out to a hospital employee I eventually was seen by a Doctor.\nThe Doctor ordered a CT Scan and hours went by but no one from Radiology came to retrieve me , although the Radiology Dept was picking up people that came after me. The disorganization was amazing , Radiology came to pick up a person who canceled their CT scan  30 minutes earlier but they were still unable to take me.\nI complained again , I asked for the Doctor,  I asked for the Manager,  the Doctor arrived and proceeded to expedite my CT Scan .\nThe Radiology Dept never came to pick me up , the Doctor personally took me over . It appears that my CT scan was ordered and mysteriously canceled,  why?? , by who??\nAfter the CT Scan , no one came to escort me back to the Fast Track area therefore the Radiologist had to do it . I was the longest patient waiting that came through  ER on the day that I was there.\nThe Doctor was great but the hospital is a mess .\nPS . The manager never showed up to speak to me .",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURKeE9LMmZBEAE!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CIHM0ogKEICAgIDJxOK2fA%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-07-11T02:18:27+00:00"
+        },
+        {
+          "username": "Ro Ro",
+          "rating": 1,
+          "contributor_id": "105617507653963318006",
+          "user_review_count": 64,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLWR4jvoJ65P-QNgVHdUKkrEbpAx-bpBZ03zYjbU9BM2jNd0Q=s120-c-rp-mo-ba12-br100",
+          "description": "Family went here for years.  When my dad passed away- here ironically- I asked for copies of his medical records.  I didn't hear back.  I contacted medical records by phone. They asked for a second request in writing.  I sent it.  No records were sent. I called and they said they didn't get the request so I faxed the original.  NEVER GOT RECORDS.  We moved and Statute of limitations passed so I never got the records. After so many decades of care we were very upset by the lack of concern and care for our needs. Unacceptable.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNSbi1UdDhBRRAB!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CIHM0ogKEICAgICRn-Tt8AE%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-04-14T01:48:03+00:00"
+        },
+        {
+          "username": "Anne Hathaway did not spit in my food.",
+          "rating": 3,
+          "contributor_id": "113103218281156962685",
+          "user_review_count": 1119,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX0QZVaY1FBQjv11XNoH_nN0xUXDxFuWT68L231N_NGeo4QfkVg=s120-c-rp-mo-br100",
+          "description": "Yowzers, it seems that this l'Hopital is \"too big to fail!\" But at the risk of being insensitive, I've decided that this free public living room is more than passable. However, it seems that the wifi cuts out after a while.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNfLUxtVTBBRRAB!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CIHM0ogKEICAgIC_-LmU0AE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-01-12T19:07:37+00:00"
+        },
+        {
+          "username": "equasia melinda Morales",
+          "rating": 5,
+          "contributor_id": "108220185154652941822",
+          "user_review_count": 5,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWEkxjtohfIa8xKkRrztZiWXLF2ganuCtBiQCHmrlZqvp31dpHi=s120-c-rp-mo-br100",
+          "description": "Today I had a great visit at the doctors they try there best",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSSE1WOXNiWGx0VFVWSWNWbDVlVUpwZEhoblluYxAB!2m1!1s0x0:0x5035914af3214c44!3m1!1s2@1:CAIQACodChtycF9oOlRHMV9sbXltTUVIcVl5eUJpdHhnYnc%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-06-23T20:03:02+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "St Lukes Roosevelt Hospital: Astua Alfredo J MD",
+            "data_id": "0x0:0x9b47491a5563e58f",
+            "data_cid": "11188992176675874191",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9b47491a5563e58f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9b47491a5563e58f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8058767,
+              "longitude": -73.9614271
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9b47491a5563e58f%218m2%213d40.8058767%214d-73.9614271&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.2,
+            "reviews": 5,
+            "thumbnail": "https://www.google.com/maps/vt/data=kKpJ6zcsQLVR3z7ALqmg9M4xwYwYtEknRD9K93esDyCMXVav1GCaTjCNql5FZznfk--EYYQkieU4ejN7Bl78RcVqrKfG6_kl5hcABvq520TrjCqyLiSrPxG4LdmrKQ69NroGTB9nwxkSaCavE1WZD2MZdA77YP6c",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Mt. Sinai St. Luke's Physician Offices",
+            "data_id": "0x0:0xe5b1728ae058ce0a",
+            "data_cid": "16551136046358253066",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe5b1728ae058ce0a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe5b1728ae058ce0a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8053558,
+              "longitude": -73.9623692
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe5b1728ae058ce0a%218m2%213d40.8053558%214d-73.9623692&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=pO5OxhPsMIfFLXpbHd4pZ8Kr4OsXwXAeVKLqgdPJebx8lcu3Ye_He8AofX7PpoKe4dkgY_EDVb1Nt0ugw69KWRYPKznSq4daGWNOlyQoDoE7dHoMJPxCJYLkKyushG_ywx-VGrLDtkQ0jN3wIRXPR1tuXMv4NJSI",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "St Lukes ER",
+            "data_id": "0x0:0x9194a74061cbe508",
+            "data_cid": "10490193327013225736",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9194a74061cbe508&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9194a74061cbe508&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7697168,
+              "longitude": -73.9868805
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9194a74061cbe508%218m2%213d40.7697168%214d-73.9868805&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.8,
+            "reviews": 4,
+            "thumbnail": "https://www.google.com/maps/vt/data=ajFZ-bn13VDoTQfdDJ5SDj4HbwVWDBwr2Vf6Wc22zdhUXWG7F6i5bLC5vZYkXavWEZ6qbgXSuZXWMf7QQHrszDKQ8awl7mZE99zk9CWrUMeh2381_BlUuVQ_Z7YA134QOs-O1qkjkABUdg0LL7Omi0FTnIIINqvO",
+            "type": [
+              "Addiction treatment center",
+              "Care services",
+              "Dermatologist",
+              "Doctor",
+              "Obstetrician-gynecologist",
+              "Hospital department",
+              "Ophthalmologist",
+              "Orthopedic surgeon",
+              "Otolaryngologist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Mount Sinai Morningside Bone Density Unit",
+            "data_id": "0x0:0xb2743e0857736d89",
+            "data_cid": "12858971041597451657",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2743e0857736d89&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2743e0857736d89&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8047407,
+              "longitude": -73.96049780000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb2743e0857736d89%218m2%213d40.8047407%214d-73.96049780000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=0v_-2jrx_nwS13G3PWAWSv4xLqIbS0c5820iXb7qOQJKQZV1B1kEWY6dZ3n0CW1Mgo8sw1snMlO3x-QFN9r_EXoMbFa1BXgHYXHIq_UlfSq6QcEzQtwzd49Gnll3nbSAlGf2PVG-iddiI1xjAIsncbbnUiHYIL3_",
+            "type": [
+              "Medical diagnostic imaging center"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "St Lukes Roosevelt Hospital: Shah Kaushal MD",
+            "data_id": "0x0:0x814eb1c90408a42d",
+            "data_cid": "9317580155990352941",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x814eb1c90408a42d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x814eb1c90408a42d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8058767,
+              "longitude": -73.9614271
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x814eb1c90408a42d%218m2%213d40.8058767%214d-73.9614271&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=kKpJ6zcsQLVR3z7ALqmg9M4xwYwYtEknRD9K93esDyCMXVav1GCaTjCNql5FZznfk--EYYQkieU4ejN7Bl78RcVqrKfG6_kl5hcABvq520TrjCqyLiSrPxG4LdmrKQ69NroGTB9nwxkSaCavE1WZD2MZdA77YP6c",
+            "type": [
+              "Doctor"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjkKNyIzTXQuIFNpbmFpIFN0LiBMdWtlJ3MgT3V0cGF0aWVudCBDZW50ZXIgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjkKNyIzTXQuIFNpbmFpIFN0LiBMdWtlJ3MgT3V0cGF0aWVudCBDZW50ZXIgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

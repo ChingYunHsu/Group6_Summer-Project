@@ -1,0 +1,458 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e339d26cfc37553c207",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/8_YihZrWU0Jzh03ocfFY7w/6a3d3e339d26cfc37553c207.json",
+    "created_at": "2026-06-25 14:41:55 UTC",
+    "processed_at": "2026-06-25 14:41:55 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f602ffffffff:0x9d1ed59efb9466bd!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/8_YihZrWU0Jzh03ocfFY7w/6a3d3e339d26cfc37553c207.html",
+    "prettify_html_file": "https://serpapi.com/searches/8_YihZrWU0Jzh03ocfFY7w/6a3d3e339d26cfc37553c207.prettify",
+    "total_time_taken": 0.71
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ_____wL2wokRvWaU-57VHp0",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Icahn School of Medicine at Mount Sinai",
+    "place_id": "ChIJ_____wL2wokRvWaU-57VHp0",
+    "data_id": "0x89c2f602ffffffff:0x9d1ed59efb9466bd",
+    "data_cid": "11321721392058361533",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f602ffffffff%3A0x9d1ed59efb9466bd&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f602ffffffff%3A0x9d1ed59efb9466bd&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.790011799999995,
+      "longitude": -73.9537414
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_____wL2wokRvWaU-57VHp0",
+    "provider_id": "/m/09vkkb",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFpAT8QDqCrU4Ccqlouq4BuIGazumMR60kHN1Lkrty8axmv2rcno-45CAhgKi4Fz53RE8ZOHVGGOGjG_pVrmSCUMqFNSEmhRqTMA_ZNwfl-ORVQQuSI8ydQJXG18mCvuPIfKFzUUA=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/ZsaakXicHcRdboIwAADgE1VgomlM9tBVqUwBC0KML8ZUpAql9E8nN9wRvM2SfQ_f-5dbO5iF53V8OmmkbLramVoz2du6txMmhdcMBjADjId2KW1RNKA9pEuFdRlipjrpVPjlYnIenUjyud-u02DbavuC5x_x-NCslyCcYcSbzS2Mxtk0X8Fjtq4IycidnIZKiwKXiYrSYiV4rvYJOh3T57UDWV5R6ooYvi70-0ACKPDD7eLrJhrLEn0-A9_3Af-fgf4P49JFBg",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 11
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 5
+      },
+      {
+        "stars": 4,
+        "amount": 15
+      },
+      {
+        "stars": 5,
+        "amount": 73
+      }
+    ],
+    "rating": 4.3,
+    "reviews": 105,
+    "type": [
+      "Medical school",
+      "Medical laboratory",
+      "Research foundation"
+    ],
+    "type_ids": [
+      "medical_school",
+      "medical_lab",
+      "research_foundation"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid parking garage",
+          "Paid parking lot"
+        ]
+      }
+    ],
+    "address": "1 Gustave L. Levy Pl, New York, NY 10029",
+    "country": "United States",
+    "located_in": "The Mount Sinai Hospital",
+    "website": "https://icahn.mssm.edu/?utm_source=Yext&utm_medium=local_listing&utm_campaign=MSSM&y_source=1_MTgwODM1MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "phone": "(212) 241-6500",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "Q2RW+2G New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      },
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 4 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f602ffffffff%3A0x9d1ed59efb9466bd&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFpAT8QDqCrU4Ccqlouq4BuIGazumMR60kHN1Lkrty8axmv2rcno-45CAhgKi4Fz53RE8ZOHVGGOGjG_pVrmSCUMqFNSEmhRqTMA_ZNwfl-ORVQQuSI8ydQJXG18mCvuPIfKFzUUA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ZsaakXicHcRdboIwAADgE1VgomlM9tBVqUwBC0KML8ZUpAql9E8nN9wRvM2SfQ_f-5dbO5iF53V8OmmkbLramVoz2du6txMmhdcMBjADjId2KW1RNKA9pEuFdRlipjrpVPjlYnIenUjyud-u02DbavuC5x_x-NCslyCcYcSbzS2Mxtk0X8Fjtq4IycidnIZKiwKXiYrSYiV4rvYJOh3T57UDWV5R6ooYvi70-0ACKPDD7eLrJhrLEn0-A9_3Af-fgf4P49JFBg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=rvu_zj3S5LDofflIqoZP4w&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=159.84177&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/J4Bc9HicHc0xDoIwFADQ23SzpQgBTBoXFxMHEzcXUmqBbwr90k-rHsdbeRsT3wXe9zMSYdgJEWixliLYhPC0LmxQ88H7wVmNELjxk4hS0LhO3azB7VHPHm5qiWv7vm8v5eng-94dH_56LhIzXWsc2JnUpDG0IXLShsBZPmBgSeV5wUaVNzV76aRk2fC6kFXFEMiMKmP_p_dRySz7ASkAOsI"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJr-jEDrTFQW3OHI3AWcwct_yNXyXWOq3wk8JC8x8girStu4d3kawtU4YL3zbJd4CncZntGmBvLKSF3hGnEVZTsiQTeNkQeKQsUslhaD7zYh7cbd6pgSpC6R6c5-mk32YvwWdVEuGO6CI=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/y46Vt3icHcTBboIwGADgJ6qwFZGY7MAQUTSwCop4MfrTtK5QGC1WfUjvvs0Sv8P3enKtOzW1rJrjEWtbVtNB0R5aqanUI2gbi3UKgULK8n8SIvwo7tFvOOvzOSlwulhivwAD-nhP9vd9kf5hI7w48G4eu_SZHpwKi5PRW6dc48c5rpxAwkHqqPm-rlfZHPNIhrtDri4kp4kgdEXUVtX8NJs8Sj6Bc-V2LOsCd-PCGDUCf5ZXU1S7cIhSN1h-mQ_bthF_D0j-A3tmR04"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Other",
+          "places": 3
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Alumnae Association Mt Sinai Hospital",
+          "data_id": "0x89c258a0c692447f:0xd776c24ea0849313",
+          "data_cid": "15525810408362644243",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258a0c692447f%3A0xd776c24ea0849313&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258a0c692447f%3A0xd776c24ea0849313&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7888027,
+            "longitude": -73.9535606
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258a0c692447f%3A0xd776c24ea0849313%218m2%213d40.7888027%214d-73.9535606&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_____wL2wokRvWaU-57VHp0&type=place",
+          "rating": 4.0,
+          "reviews": 10,
+          "type": "Association / Organization",
+          "type_id": "association_or_organization",
+          "address": "5 E 98th St #3, New York, NY 10029",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            },
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHmgxRwalbM3nQmWoiPha_6aDKWacO_XP_AmrSBdnchhDUiP3iRtcG6RTLK8pouutKd2wQjHhuDt0jfRWlc9amv9A8-K6hn0R7t2a3UgD4mpA0Vs5GOf7Uupx0RVp7O-tKs1eGyyQ=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHmgxRwalbM3nQmWoiPha_6aDKWacO_XP_AmrSBdnchhDUiP3iRtcG6RTLK8pouutKd2wQjHhuDt0jfRWlc9amv9A8-K6hn0R7t2a3UgD4mpA0Vs5GOf7Uupx0RVp7O-tKs1eGyyQ=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Maria Lafaille Lab",
+          "data_id": "0x89c2590f07eb704b:0xb33cde11601d25ba",
+          "data_cid": "12915441997600073146",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f07eb704b%3A0xb33cde11601d25ba&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f07eb704b%3A0xb33cde11601d25ba&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7886376,
+            "longitude": -73.9524223
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590f07eb704b%3A0xb33cde11601d25ba%218m2%213d40.7886376%214d-73.9524223&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_____wL2wokRvWaU-57VHp0&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Laboratory",
+          "type_id": "laboratory",
+          "address": "1425 Madison Ave #11-26, New York, NY 10029",
+          "location": "Floor 1"
+        },
+        {
+          "position": 3,
+          "title": "Department of urology",
+          "data_id": "0x89c259cbb0717dbd:0x235df0587aa86424",
+          "data_cid": "2548457226967213092",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259cbb0717dbd%3A0x235df0587aa86424&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259cbb0717dbd%3A0x235df0587aa86424&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.788846299999996,
+            "longitude": -73.9526442
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259cbb0717dbd%3A0x235df0587aa86424%218m2%213d40.788846299999996%214d-73.9526442&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_____wL2wokRvWaU-57VHp0&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "Educational institution",
+          "type_id": "educational_institution",
+          "address": "1427 Madison Ave, New York, NY 10029",
+          "location": "Floor 1"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"My niece had a baby here in 2019 and she said the experience was great\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWKILSqigJns6PwrV6i4prXHrUFitoAzIdUAbtA4cq0q4fYtPvy=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Beautiful building + world class staff\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVW18wlhfCvE3yAr5WnSflJsBw896OlZpVu3I2B2RKtre1LxwIX=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great place to learn\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUC1Cr3_tRl5mkMvKYKVi037qLsfB9YcJRvbDXRycrKctVL0t1c=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Heather Gittens",
+          "rating": 4,
+          "contributor_id": "110026308331216383577",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKg-LzDgZ7S0fWnRrf9lw_OaDY9o3Ekmc0QAgnT8pcPAbcfLFE=s120-c-rp-mo-br100",
+          "description": "I brought a few patients here as an Escort, and I like it here. If I knew about Mt. Sinai Medical School before, I would have enrolled here as my favorite school to learn Modern Medicine.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURidnVURXV3RRAB!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgIDbvuTEuwE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-08-05T22:58:55+00:00"
+        },
+        {
+          "username": "Stephanie Ng",
+          "rating": 1,
+          "contributor_id": "103517590043207092106",
+          "user_review_count": 6,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUrlM_taS6v4_TsRNVo6m1r52FFtaGYNrLeMlXOendKKHZWTrKH=s120-c-rp-mo-br100",
+          "description": "I was a transfer from Beth Israel late Friday night. As soon as I got transported to the Labor and Delivery floor, one of the nurses was very rude and told me that my husband & my two kids were not allowed to be on the floor with me and this is not a Daycare. Meanwhile my toddler was already sleeping and my oldest is well behaved enough to stay beside me in my own personal area which had a curtain to cover. I had gotten another nurse to tend to me thank god. Her name was Anna and just super nice! Her kindness was definitely very much appreciated. Later on I heard on the other side of my curtain Anna being asked by that rude nurse why was I here on their floor? Completely none of her concern whatsoever!! Later on I had discovered there was a woman just a couple of feet away from me with her child! This hospital should terminate nurses that clearly and visibly don\u2019t know how to treat patients with respect! On the up side, we need more nurses like Anna!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURROHZPcy13RRAB!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgIDQ8vOs-wE%7C%7C?hl=en",
+          "date": "7 years ago",
+          "date_iso8601": "2018-09-11T18:41:59+00:00"
+        },
+        {
+          "username": "Kit Garcia",
+          "rating": 5,
+          "contributor_id": "115585551819203549466",
+          "user_review_count": 24,
+          "user_photo_count": 122,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW6WZOjnXmmrKdRepC2IrdPpy0Pd46Ynx2wdykxxtph0ok5WEDOoQ=s120-c-rp-mo-ba12-br100",
+          "description": "There\u2019s a graduation from Ican School at Mount Sinai Hospital Lobby on 6/21/22. Grandrates",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNPOTZQVk13EAE!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgICO96PVMw%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0vhA9frENaPZC_9Tkudc2xCBWQdFieuM8vR12m-1zB2EyxARb7zEgphKrNqm00qiBtwQt9QRMP5tNoR_WNXQlTHBnJzWfyCPnWNQJalswy-aNVrf7sCXsXTW_4lZNcGdU4k4_Hug=k-no"
+            }
+          ],
+          "date": "4 years ago",
+          "date_iso8601": "2022-06-22T16:15:23+00:00"
+        },
+        {
+          "username": "Turtle",
+          "rating": 4,
+          "contributor_id": "103386657142552003776",
+          "user_review_count": 178,
+          "user_photo_count": 1085,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXfPwzRvFeuMM4dtecLhRazOnNrbvaP8L9_r2yz5fHDXidFyKI=s120-c-rp-mo-ba12-br100",
+          "description": "Great hospital, students & teachers..",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURRbk1ISEZREAE!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgIDQnMHHFQ%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0jcqQgx6hpjyml3-grXa7AuqXVlaVYR5FE-xqLvfAEycqAbZlsWihUDMgaD3szxM-FJYnV6Kfi1h8MrJuiI6QMGBanNYheFMIoB8zSbFiO3x1OjDSHCiwKqXWt-x4C_dnsYw-l=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3ftOLx05q2NNzU_GPQNmtXyiDfsAWJqq7WxEqC-78uExjgqEZeuNKet3axXVRjwPGjeVfnjdVNr7GPXfmKkkXfFfoKSGombFkPvsClMu2MUJNm8ktkX2xcn046EX4lJBRiHhCiRA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2HNDAnqQKQ7URqpl_Jh4z-TlbWimimhmUIBmxG7KrjrqOYYthY6j-ekZ9W3IVCCnHcHnPS_9-yiTVqdhY_lg1unYIRLnQ4PY8SHGIFV3ThJveRFS6FbjwkLtUuekbpPgNb8E_8kg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0Mpu1C_BA-Dms4WZSex13bhdASaWjrhTt9hJBvaQH_Lwg53H7NV-ccBh7dcXbXZLTpw1JLEXOl5BZvnKF5UOIvhMuLo4inBKfkenbI1yFSL1-jSOVgALiiy0NUGtj8CMTQjoYZKQ=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1UUAW72W66ogs9XnNb0t9ki4GZoVc5XMRe6bItBs0p2NGfD4QfGE3kmJL96a0utGz0JmPlcFjEOk1CbVkCY2wZJenMQjmhLm8j1Kz6fpTklsyOqjPaFhYgbkI5TfS5rmH-KaLbpw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2IwIUVaW1jYGNgXwpEQAfVFfmOuZzrkbs0zWpUAZEoJPrKSDhy7JG_zsZZ9A6vdYAw3unTILxmM50WaLWJxOTdjSgJJFMGZtfmFwtWxGjxn9DeOMF4EMF5ODh4jnaWC11ofmj8=k-no"
+            }
+          ],
+          "date": "8 years ago",
+          "date_iso8601": "2017-09-11T14:21:37+00:00"
+        },
+        {
+          "username": "James Conner",
+          "rating": 5,
+          "contributor_id": "102206448192133626395",
+          "user_review_count": 55,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWKILSqigJns6PwrV6i4prXHrUFitoAzIdUAbtA4cq0q4fYtPvy=s120-c-rp-mo-ba12-br100",
+          "description": "Why, and how, would you believe any review here that does not give any comment or justification of the stars they awarded ?  My niece had a baby here in 2019 and she said the experience was great",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNjOTd6UTR3RRAB!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgICc97zQ4wE%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2020-04-28T22:40:13+00:00"
+        },
+        {
+          "username": "E Lins",
+          "rating": 5,
+          "contributor_id": "102689953783032579406",
+          "user_review_count": 246,
+          "user_photo_count": 214,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV-8IiZYtvfZzZku83J3ndQYwzQMBYwaj-UhHEbGZLKI_bWww=s120-c-rp-mo-ba12-br100",
+          "description": "The place is so clean!! Be prepared to learn a new set of rules, they're everywhere. I think that's what makes this place great: Order becomes commonplace when everyone follows some standards.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURjMkxuNzJnRRAB!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgIDc2Ln72gE%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2020-05-21T20:03:05+00:00"
+        },
+        {
+          "username": "Arianna Reyes",
+          "rating": 5,
+          "contributor_id": "112318367863879964094",
+          "user_review_count": 60,
+          "user_photo_count": 19,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXtAKBaQ1CNeDk3ULqclQs_uKC4W-AeVohUDWhU982T7FR_IqIosw=s120-c-rp-mo-ba12-br100",
+          "description": "I love this hospital. Very clean, staff is friendly and professional. Recommend to anyone for all services. Great cafeteria too!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNxaVktSjhnRRAB!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgICqiY-J8gE%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2021-06-10T20:47:09+00:00"
+        },
+        {
+          "username": "Mark Davis",
+          "rating": 2,
+          "contributor_id": "108965253822186588902",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLjpBHiACZ-ZzV5GATMxeqUaK3bIu0qL9wYvQGNS1NhxKuqrw=s120-c-rp-mo-br100",
+          "description": "Unable to find information on website after many attends a therapist who works with me in Ankeny Iowa. At a clinic called\non with life for brain injury. Haven't found app for SWAPPS",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNCZzR1WkdREAE!2m1!1s0x0:0x9d1ed59efb9466bd!3m1!1s2@1:CIHM0ogKEICAgICBg4uZGQ%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-01-02T23:01:16+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Icahn School of Medicine at Mount Sinai - Alumni",
+            "data_id": "0x0:0x9646aee7f3641ea4",
+            "data_cid": "10828534665303039652",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9646aee7f3641ea4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9646aee7f3641ea4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7899654,
+              "longitude": -73.9529366
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9646aee7f3641ea4%218m2%213d40.7899654%214d-73.9529366&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 8,
+            "thumbnail": "https://www.google.com/maps/vt/data=7hV-ZCyjV5-PtOZf7JciFTG3huqJ6tiJqV2ROWKnz7r-auhwjvE4iwLospBUNyE--9Gqvy1Q45jx1arPBBvOP4RjWab3d0kTKzg_eQn2hb4C4ypcVebrAS0HkEotWUIkiZ0gIcM7QBasYH7S_SNjtefa8vauwZtm",
+            "type": [
+              "Non-profit organization"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Mount Sinai Medical Center",
+            "data_id": "0x0:0x6fb4019e2f9daf6",
+            "data_cid": "503066263308327670",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6fb4019e2f9daf6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6fb4019e2f9daf6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7896393,
+              "longitude": -73.95417420000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6fb4019e2f9daf6%218m2%213d40.7896393%214d-73.95417420000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 19,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxuTCcUljQ9vEspPWgqQ8iOj-0b5nPux9Z4noVyPdp0KRucnkVODFZzMW6eoaPBUDbhSWrLp0my5MDyGexlJNB6fZyUP4wUXyxGrH2OYuAk01PqPuN7abhfDrVQ1_PeXLpQE4m=w156-h156-n-k-no",
+            "type": [
+              "Medical Center"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Mount Sinai School of Medicine Faculty Practice Associates: Travel Medicine",
+            "data_id": "0x0:0x54a0e7b69d72db2e",
+            "data_cid": "6098128666971265838",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x54a0e7b69d72db2e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x54a0e7b69d72db2e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7890595,
+              "longitude": -73.95385139999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x54a0e7b69d72db2e%218m2%213d40.7890595%214d-73.95385139999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=LiMXWhZhy-8HY_4EPmZEIoS7o80UricyyMO5aeD82meJWYVQklk5NjGDd1L4V8_lqRlDi4rBLNKftr2RuyZQ2-wi8935P1U2oX4dFqMnNrvCr0P0Xeej6xswJ-5J7zp4lhtTRgxA2STqo_J1XO5IIysyVqgbClYx",
+            "type": [
+              "Medical school"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Mt Sinai School of Medicine: New Maria S MD",
+            "data_id": "0x0:0xe6aefc39e96512ed",
+            "data_cid": "16622500600330130157",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe6aefc39e96512ed&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe6aefc39e96512ed&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7900357,
+              "longitude": -73.95384589999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe6aefc39e96512ed%218m2%213d40.7900357%214d-73.95384589999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=EYe3Y6jJ4f5oiCSAUpNuqSjL-p0ytB0W4662mUf3eWhBSFiXhBntt_aMCRHQupMQP5BX0TJBqxcYaLK9u-LEDojP8TGcjG92gCa-uMfTViITxkRD1wHM7a6A0TLJ7XpALe7e6a-izUwTa0lQvDpE1zj_Z4n1FVci",
+            "type": [
+              "Pediatrician",
+              "Doctor"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjoKOCI0SWNhaG4gU2Nob29sIG9mIE1lZGljaW5lIGF0IE1vdW50IFNpbmFpIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjoKOCI0SWNhaG4gU2Nob29sIG9mIE1lZGljaW5lIGF0IE1vdW50IFNpbmFpIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

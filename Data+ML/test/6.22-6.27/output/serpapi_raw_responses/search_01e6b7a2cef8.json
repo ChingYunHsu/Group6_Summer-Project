@@ -1,0 +1,1538 @@
+{
+  "search_metadata": {
+    "id": "6a3d384466bc7861d9012893",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/uoGdV8hs0ZUR74ZP84LSJA/6a3d384466bc7861d9012893.json",
+    "created_at": "2026-06-25 14:16:36 UTC",
+    "processed_at": "2026-06-25 14:16:37 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/doctor+near+uptown+Manhattan/@40.81,-73.95,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/uoGdV8hs0ZUR74ZP84LSJA/6a3d384466bc7861d9012893.html",
+    "prettify_html_file": "https://serpapi.com/searches/uoGdV8hs0ZUR74ZP84LSJA/6a3d384466bc7861d9012893.prettify",
+    "total_time_taken": 3.1
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "doctor near uptown Manhattan",
+    "ll": "@40.81,-73.95,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "doctor near uptown Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "Medical Offices of Manhattan - Upper West Side",
+      "place_id": "ChIJp1c1vVFZwokRNWfK-iT35CU",
+      "data_id": "0x89c25951bd3557a7:0x25e4f724faca6735",
+      "data_cid": "2730579012291815221",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25951bd3557a7%3A0x25e4f724faca6735&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25951bd3557a7%3A0x25e4f724faca6735&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7773257,
+        "longitude": -73.9793528
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJp1c1vVFZwokRNWfK-iT35CU",
+      "provider_id": "/g/11t9jvd6fy",
+      "rating": 4.7,
+      "reviews": 1186,
+      "type": "Medical group",
+      "types": [
+        "Medical group",
+        "Cardiologist",
+        "Dermatologist",
+        "Endocrinologist",
+        "Gastroenterologist",
+        "Internist",
+        "Podiatrist"
+      ],
+      "type_id": "medical_group",
+      "type_ids": [
+        "medical_group",
+        "cardiologist",
+        "dermatologist",
+        "endocrinologist",
+        "gastroenterologist",
+        "internist",
+        "podiatrist"
+      ],
+      "address": "112 W 72nd St, New York, NY 10023",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 7\u202fPM",
+      "hours": "Open \u00b7 Closes 7\u202fPM",
+      "operating_hours": {
+        "thursday": "7:30\u202fAM\u20137\u202fPM",
+        "friday": "7:30\u202fAM\u20135\u202fPM",
+        "saturday": "9\u202fAM\u20135\u202fPM",
+        "sunday": "Closed",
+        "monday": "7:30\u202fAM\u20137\u202fPM",
+        "tuesday": "7:30\u202fAM\u20137\u202fPM",
+        "wednesday": "7:30\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 223-0349",
+      "website": "https://www.medicalofficesofmanhattan.com/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Dr. Kim is incredibly knowledgeable, attentive, and compassionate.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGouBU2tQuBZEYrXjjeAfIkOoxjh6pBNFtRTG0P5MUKCgqIS6uav7RPhM00N88pjq3-vlybPXWsI3217qS7TuD_pWuHHaIAgG6zukhRjG_4KLWCn5SEKUe4QOJTHODHb57GKyHK1Qjrw96l=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/diAbyXicHcTNboIwAADgJ6oUEXBLdgB1Levkn6C7GCVdm8Jooa3OveTOe5slfofv75cbo_Sz4wzcWzAp2UCtpnMnR0NHs-jkl8OUBp0G2onytOgjJG3cLE1h44_dcT4IQaPPpM_kt-CBitNXU9YI5v6-IRs2JVVgz9ewzPkewnS9VmLywHW4X_JDqxNv6YZTFdZ2e1KtxficRAwFP7bnpUCnFXlvN6Nf7UhDV0X2VuNsiy9-iMgdE7cQ8-0pGF5uLoQQ8McdGP8BbE1GCA"
+    },
+    {
+      "position": 2,
+      "title": "Manhattan Family Practice",
+      "place_id": "ChIJ4Q2e-ZVYwokRfKUI89hDEUE",
+      "data_id": "0x89c25895f99e0de1:0x411143d8f308a57c",
+      "data_cid": "4688603286138824060",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25895f99e0de1%3A0x411143d8f308a57c&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25895f99e0de1%3A0x411143d8f308a57c&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.775936,
+        "longitude": -73.95969199999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4Q2e-ZVYwokRfKUI89hDEUE",
+      "provider_id": "/g/1tfscrx2",
+      "rating": 4.1,
+      "reviews": 37,
+      "type": "Doctor",
+      "types": [
+        "Doctor",
+        "Medical clinic",
+        "Family practice physician",
+        "General practitioner",
+        "Internist",
+        "Medical Center",
+        "Medical examiner",
+        "Medical office",
+        "Nurse practitioner"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor",
+        "medical_clinic",
+        "family_practice_physician",
+        "general_practitioner",
+        "internist",
+        "medical_center",
+        "medical_examiner",
+        "medical_office",
+        "nurse_practitioner"
+      ],
+      "address": "911 Park Ave, New York, NY 10075",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 288-7193",
+      "website": "http://www.manhattanfamilypractice.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Checks",
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"She\u2019s extremely thorough and professional.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJw2OT8TJLigiFjWk3zrOzp_oCFMp9vNh9j4fpZsolIgDW1_uUOUvZNDCKUBTk17O1rp-M4CqIAU04qORZlI7nP80_kf2Fw9qeyNSnDq-0418jeZhfHbg-oaX0bWy8VQk97JkiTA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/3m5ktHicHcRdDoIgAADgE5FQbmpbD6ZzaiX9aDZfXDkExQDFcnXDjtBt2voevu-HjaPSS8Po2GJGpaQdeWgyVFKMRIyzSt4NqjSoNNCGu08O3A3jaY5TO423DW2CNueL94DfqpResFPOM2FOa9aq0LKLqJ-j8pHh7FkkvrfJ1ilHFkaDAjvT6yM3g2aPj0UXWWJvw5LX82ByevJKTsLvATSR3ZKC1eGNAnm9wFv-ss8H7lgxb1J3NSEIIWD_KyB-v_5EQg"
+    },
+    {
+      "position": 3,
+      "title": "ColumbiaDoctors Manhattan Valley - Primary Care",
+      "place_id": "ChIJOduIDwD3wokRnZ5BURncVYc",
+      "data_id": "0x89c2f7000f88db39:0x8755dc1951419e9d",
+      "data_cid": "9751942569436225181",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7000f88db39%3A0x8755dc1951419e9d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7000f88db39%3A0x8755dc1951419e9d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.799122,
+        "longitude": -73.968165
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOduIDwD3wokRnZ5BURncVYc",
+      "provider_id": "/g/11hm15wb10",
+      "rating": 3.5,
+      "reviews": 25,
+      "type": "Doctor",
+      "types": [
+        "Doctor",
+        "Medical clinic",
+        "Family practice physician",
+        "General practitioner",
+        "Home health care service"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor",
+        "medical_clinic",
+        "family_practice_physician",
+        "general_practitioner",
+        "home_health_care_service"
+      ],
+      "address": "2702 Broadway, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(844) 387-2273",
+      "website": "https://www.columbiadoctors.org/locations/columbiadoctors-manhattan-valley/primary-care?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"Dr Beechum was very thorough and professional.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHXodw1LBgBIYyL91Nhwi3qKzoS2pa4HQ9zkoLpyo-MMvjUopg_7_RNqBUAM24r_B87ilagixLidjZRHtxP1dmpQuuh5RM0wzpCIEzic4mTTKFtRviRt1ga7mryWePiEEzdhTjrJw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/RjN-03icHcRRboIwGADgE1WosjBNfADDghMIdJipL4QU0haBv9JipTfcEXabJfsevt8frrVUO8fp-WbFAFjfzqqdKIy6HfWKwuAwqRBVSDlBnhX3IL5AY3ASsvB4XZItzrgRm8fJwtda1l5cbO0dErkAStNndwbJKr8i2SM8B-nam6rw3Rd9zcQrEU13I7F-5bgZZDHP_I2krrHycIysoN5QlqcPTZ6CaMxqf5iW7zYXUWQbXnbTp9kb7Lou4v9TNP4BZS9HYw"
+    },
+    {
+      "position": 4,
+      "title": "Amsterdam Medical Practice",
+      "place_id": "ChIJSXWIyyH0wokR46rzZVWY4B0",
+      "data_id": "0x89c2f421cb887549:0x1de0985565f3aae3",
+      "data_cid": "2152888114433207011",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f421cb887549%3A0x1de0985565f3aae3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f421cb887549%3A0x1de0985565f3aae3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.845836299999995,
+        "longitude": -73.9329668
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJSXWIyyH0wokR46rzZVWY4B0",
+      "provider_id": "/g/1tg6lh1x",
+      "rating": 4.5,
+      "reviews": 387,
+      "type": "Internist",
+      "types": [
+        "Internist"
+      ],
+      "type_id": "internist",
+      "type_ids": [
+        "internist"
+      ],
+      "address": "2360 Amsterdam Ave M1, New York, NY 10033",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fAM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 256-9038",
+      "website": "http://www.amsterdammedicalpractice.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Dr Guzman took her time to explain to me the results of my test.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE2WT1HU0HtUicCv2QbUr2wiGQJQT6X_4PHrsYZ-yg6xm-qDO1wcyn7slwZyod_aGJcJ1Eo7I0smpi5eyLx80SUicDnQYj_j7OE8KmTVaPSobHapVYRGWGLHn39k89dlp5DRBFx0Q=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Lp_VqXicHczbEoFAAADQL1ptuRQzHlBaMbTpIi9NVlNRu6tdqk_0Cf6G8XIez-ddSMnFTFGqYjjIGcur7CmyhjAqMyoHhNVKzgUgAghl4e7xfWFpka-iACIZlGT10vAlaLS2tLGD_ckpGbmoEfEZ9Pmkq8HDPKgt6akuqvbcs2uS2g5xVIvpGyhqXo6zftcZ8PirTIrjW3LTD5axrf0wdY_sglIexp4d2TtEh9O7Mb1WfGx6y3UH8bxVIYSg-EsA_QLLR0TL"
+    },
+    {
+      "position": 5,
+      "title": "Vinculo Health Medical",
+      "place_id": "ChIJrSdsenL3wokRCXJEBUxfDFM",
+      "data_id": "0x89c2f7727a6c27ad:0x530c5f4c05447209",
+      "data_cid": "5984262784979071497",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7727a6c27ad%3A0x530c5f4c05447209&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7727a6c27ad%3A0x530c5f4c05447209&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8275325,
+        "longitude": -73.9463203
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJrSdsenL3wokRCXJEBUxfDFM",
+      "provider_id": "/g/11swcqgg_w",
+      "rating": 4.9,
+      "reviews": 237,
+      "type": "Family practice physician",
+      "types": [
+        "Family practice physician"
+      ],
+      "type_id": "family_practice_physician",
+      "type_ids": [
+        "family_practice_physician"
+      ],
+      "address": "1786 Amsterdam Ave, New York, NY 10031",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20132\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 548-6557",
+      "website": "http://vinculohealthmedical.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"I always leave feeling reassured, informed, and confident in my care.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGztczYwCzN7BriLYNsiwAfPBoJzTAkcWIXPRNQf78nBPFkMXBw9x52s7lgbhKhveU_ozFNCXCyewBj6b0z7QgqK7-Zj6g3kA_JnPI3mNFIrs_Q8umbvQXm3jxb1kFRRvImfRDelQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/P_ApFHicHcRRTsMgAADQE7F2No5p4gfUdOk2CTQaO3-alFBYKTALK5MbegRvY7L38f5-VQgX_5xlkypW0jk5iasXM3c2CBtW3JlMXjzgHvgMUcI02qXA0ymWiUA8n48n4s8RDRS7fXpHmn_WLW0IG-DWYlrptxbHp9vjg4eT7NVBLeKjc6kiZVv-iIjHTZ8nyOT3AYKvcSMLjbq9pXVhSFXPvmPbq-kX1ppivPVrXTXNUpuheRUTe4nrPM-Bus-B_QdiJEZ2"
+    },
+    {
+      "position": 6,
+      "title": "Great City Medical",
+      "place_id": "ChIJjZeBQnX2wokRyCu_2Kj9J9I",
+      "data_id": "0x89c2f6754281978d:0xd227fda8d8bf2bc8",
+      "data_cid": "15143351173689322440",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6754281978d%3A0xd227fda8d8bf2bc8&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6754281978d%3A0xd227fda8d8bf2bc8&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.800401,
+        "longitude": -73.95268279999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJjZeBQnX2wokRyCu_2Kj9J9I",
+      "provider_id": "/g/1260dksmf",
+      "rating": 4.7,
+      "reviews": 780,
+      "type": "Gynecologist",
+      "types": [
+        "Gynecologist",
+        "Doctor",
+        "Obstetrician-gynecologist",
+        "Medical clinic",
+        "Medical examiner",
+        "Medical office"
+      ],
+      "type_id": "gynecologist_only",
+      "type_ids": [
+        "gynecologist_only",
+        "doctor",
+        "gynecologist",
+        "medical_clinic",
+        "medical_examiner",
+        "medical_office"
+      ],
+      "address": "51 St Nicholas Ave Commercial Unit, New York, NY 10026",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20137\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 281-8600",
+      "website": "https://greatcitymedical.com/?utm_source=google_maps&utm_medium=organic",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "book_online": "https://www.zocdoc.com/practice/great-city-medical-21048?LocIdent=265594&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_Am1Mu9a0NUymuK4dbwdEJB-lo_7Mxn71pzgkW9q31Bwah4ER-entity&rwg_token=AE37R_g8ApFsZ7DhSywVn3zCmv74XMtDB8M8bhS5sVZ6p60WfwgaPW_EFkHRq5ieWQ1evSEgG23pPBx6dQDVu_hAYPn81bRD6A%3D%3D",
+      "user_review": "\"I saw Dr. Yelena Tysba  and she was very professional and courteous.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGHEP_MnX7tPgE-3-M_LXgmkwBoK_4XCo7k5DD7oeDJLPmHn4LaTfXasPsAJeHJjCMjjfRlcpyXzmGMjAwWF7d93ArbXavGBMDssMoS5095Ns9ZCpZe0CTtnPc6ZWrHYPG_bNT0nbR3xqQ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ZA587XicHcTdboIwGADQJ6p0QSQs2UUFhCAl1ZHYcUOg1hJ-WsbXDd1D7n5vY7Jzcf5-O2tneHWcsXM3yhg1yi-QizDaSm03wkyOmgEJQOAQVpwGkqQxq6nmvmUqRi6idc7VNKx7c6y3PDT-4EWRb2SU5WxK9TZvyhtvgAHJZJr1Ie3723kU84P_TAntyXo5-NfAJUvLm-9kTyMAat49HHgFBFU4VxKHpdVM7KrLkn6wpG6LEuv27N4_T2_rC8YYdf8LpJ8LTEZn"
+    },
+    {
+      "position": 7,
+      "title": "Mount Sinai Doctors - West 147th Street",
+      "place_id": "ChIJ_aqVvX72wokRgM_X6Sk5KwM",
+      "data_id": "0x89c2f67ebd95aafd:0x32b3929e9d7cf80",
+      "data_cid": "228339058292019072",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67ebd95aafd%3A0x32b3929e9d7cf80&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67ebd95aafd%3A0x32b3929e9d7cf80&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8243289,
+        "longitude": -73.9410943
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_aqVvX72wokRgM_X6Sk5KwM",
+      "provider_id": "/g/1hhwfsc2x",
+      "rating": 4.3,
+      "reviews": 32,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "General practitioner",
+        "Internal medicine ward"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "general_practitioner",
+        "internal_medicine_ward"
+      ],
+      "address": "2771 Frederick Douglass Blvd, New York, NY 10039",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20137\u202fPM",
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 523-8672",
+      "website": "https://www.mountsinai.org/locations/msd-west-147?utm_source=Yext&utm_medium=local_listing&utm_campaign=MSMPAFDB&y_source=1_MTgwODM1Ny03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible restroom"
+          ]
+        }
+      ],
+      "user_review": "\"She takes such good care of me and all of her Pt's.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnaoVlFqtMSl8Wv645ozeieiIZedVJyxB-O9um7c7crSTNfKMZFaIcgHpiUbtoMIHn_tdlxi7dj1-XwVFuEzjpkwWL0JoYHK5YYeW1o0nkr-DmMnchuDTNd8_tetmdZDx61Rbp=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/D-7qsnicHcTdboIwGADQJ6qU-IMu8UKDBFTYpg6EG6NtBaT0q_RDmC-4Z9jbmHguzv9fgajNh2XJYjjIAXIpWiMaBgqFwgGD2sq1IcwQYy2-ou9q4akzxNK7Y7iX0-QxGY3hKUpRBpng8fq3X5LPWVs7zGHN_hBdN2HmnQOW-7r8uSCEga9OyGVfOvxmk2MXe-3qedNVl2zpGlJ_M05TkdhAVdUQtw4VK1r3EPHpCQXWPHP7ib276HlnU0pJ8Z4R9QIE5kaD"
+    },
+    {
+      "position": 8,
+      "title": "Upper Westside Medical Associates",
+      "place_id": "ChIJLfzxsHz2wokRits4z5i1u-U",
+      "data_id": "0x89c2f67cb0f1fc2d:0xe5bbb598cf38db8a",
+      "data_cid": "16554024523246656394",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67cb0f1fc2d%3A0xe5bbb598cf38db8a&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67cb0f1fc2d%3A0xe5bbb598cf38db8a&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8248485,
+        "longitude": -73.94708949999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLfzxsHz2wokRits4z5i1u-U",
+      "provider_id": "/g/1trchbzj",
+      "rating": 4.1,
+      "reviews": 11,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "Internist"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "internist"
+      ],
+      "address": "464 W 145th St, New York, NY 10031",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 11\u202fAM",
+      "hours": "Closed \u00b7 Opens 11\u202fAM",
+      "operating_hours": {
+        "thursday": "11\u202fAM\u20136:30\u202fPM",
+        "friday": "8\u202fAM\u20133:30\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20133:30\u202fPM",
+        "tuesday": "11\u202fAM\u20136:30\u202fPM",
+        "wednesday": "8\u202fAM\u20133:30\u202fPM"
+      },
+      "phone": "(212) 926-5050",
+      "website": "http://myersb331.wix.com/uwsma",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Dr. Myers and Dr. Sargeant are two very good doctors.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFmwXKSeNgx9Yw72oLUL9TemfeFtL96DMFKnP01CePqI3UDDMyvgQACXGS20bfAPAYtfhO6VCcJ9-9C4oG7inH9fuXViK_fv5eTxtX2-FmV6ndKr4dq3FOKqrO1JckmbzjeBrI=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/YxZWgXicHcRbjoIwFADQFVUKOJhO4keF1EdRMCrBr0mst8VHW6FVdBY4e5jdmHg-zv9f4_3NfQfBtYkHylp1hbuDTljjwfiBsDpQN4eEQy6g5Wp9oUz3Nd_ASj3Jvh9FNt_lZAtaAvM5SbIl46bEYQplO493WbZ8PdSapvV0E-GDpCXde9kUSZWKBUEkHdrp6GRmRN7r6sR_5OMLtk9fR4jpKjFH3g2PbcwK3nZFuBAXffg9w6Sbj_sQY4yazwKZN5nmQy0"
+    },
+    {
+      "position": 9,
+      "title": "Cosmopolitan Medical Practice: Dr. Robin Moore",
+      "place_id": "ChIJ2XgBuJtZwokR-HXeCCE2qx0",
+      "data_id": "0x89c2599bb80178d9:0x1dab362108de75f8",
+      "data_cid": "2137861963628049912",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599bb80178d9%3A0x1dab362108de75f8&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599bb80178d9%3A0x1dab362108de75f8&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8010817,
+        "longitude": -73.9436733
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ2XgBuJtZwokR-HXeCCE2qx0",
+      "provider_id": "/g/11ght6bbjj",
+      "rating": 4.3,
+      "reviews": 12,
+      "type": "Family practice physician",
+      "types": [
+        "Family practice physician",
+        "General practitioner",
+        "Medical clinic",
+        "STD testing service",
+        "Travel clinic"
+      ],
+      "type_id": "family_practice_physician",
+      "type_ids": [
+        "family_practice_physician",
+        "general_practitioner",
+        "medical_clinic",
+        "std_testing_service",
+        "travel_clinic"
+      ],
+      "address": "50C E 118th St, New York, NY 10035",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM Fri",
+      "hours": "Closed \u00b7 Opens 8\u202fAM Fri",
+      "operating_hours": {
+        "thursday": "Closed",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "8\u202fAM\u20138\u202fPM",
+        "sunday": "Closed",
+        "monday": "Closed",
+        "tuesday": "Closed",
+        "wednesday": "Closed"
+      },
+      "phone": "(212) 500-1859",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=DwCyMKNnsP83CV_4-bv0IQ&cb_client=search.gws-prod.gps&w=80&h=92&yaw=190.4617&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/TKfQxnicHc3NDcIgGADQbbiVH220NfnioV6M0ejFa0MpAgkFUhDsNM7lNhoXeO_z1imFuCMkplnKlI0swbykjVXgWHmvrOTBRCz8RDIjST-nwXFj94E7b0Y4lG45ny4uXpt1d-_rasj0eENi6IU10iWIks9CY1V-4uxHrEJEBRqKNLQrtPACrKW43rAtCiYJDRT9k4fPwCj9AhaLOMc"
+    },
+    {
+      "position": 10,
+      "title": "Uptown Dermatology",
+      "place_id": "ChIJ9866RRP2wokRd3PQD01yTHc",
+      "data_id": "0x89c2f61345bacef7:0x774c724d0fd07377",
+      "data_cid": "8596371464046801783",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f61345bacef7%3A0x774c724d0fd07377&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f61345bacef7%3A0x774c724d0fd07377&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8093329,
+        "longitude": -73.95280079999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ9866RRP2wokRd3PQD01yTHc",
+      "provider_id": "/g/11bwyf62x_",
+      "rating": 4.3,
+      "reviews": 135,
+      "type": "Dermatologist",
+      "types": [
+        "Dermatologist"
+      ],
+      "type_id": "dermatologist",
+      "type_ids": [
+        "dermatologist"
+      ],
+      "address": "258 St Nicholas Ave, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20134\u202fPM",
+        "saturday": "9\u202fAM\u20131\u202fPM",
+        "sunday": "Closed",
+        "monday": "10\u202fAM\u20136\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 222-0075",
+      "website": "http://www.uptowndermnyc.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"She is extraordinarily knowledgeable, professional and meticulous.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFEbtBFUpKmfgTHJLm2ztwrzhAdRLX-EsmaHlhyMgMEKPEXmOshjQ0VarLqLPxaWyUeolLUeJeQP2N7EWf5WUSX3fviyMPxRL1JU7yvwytRpmP7Abv4yfHIgRWMqz34YZ8TqYNS=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/vO_Sv3icHcRdToMwAADgE5WfwYIx8QGTEgYFC1uF-QastFNKgVZYuaBn8DYmfg_f7w_XelLPtj1wz2JSsoF-K7p0ctR01FYnhc0mBToFlB3ivPgKI9jq14hMqejZJU6QOOx6W3Ye3kpUA6hEEw_cZCyDKYa1eFP8s3DemwXNCD-ayhAqB0RoQgt8yANY9ceKnGuvX-8mw48SuQkJzLoZXU4CB2G7-qaPT6yssnn3_OvH02W-5ueXzXUcB_D_OzD-AfXTRic"
+    },
+    {
+      "position": 11,
+      "title": "Westside Family Medicine",
+      "place_id": "ChIJ84vRyfdYwokRs8AD4HhCZ-M",
+      "data_id": "0x89c258f7c9d18bf3:0xe3674278e003c0b3",
+      "data_cid": "16386138856132690099",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258f7c9d18bf3%3A0xe3674278e003c0b3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258f7c9d18bf3%3A0xe3674278e003c0b3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.803999399999995,
+        "longitude": -73.9656699
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ84vRyfdYwokRs8AD4HhCZ-M",
+      "provider_id": "/g/11rwxfzqng",
+      "rating": 4.5,
+      "reviews": 729,
+      "type": "Doctor",
+      "types": [
+        "Doctor",
+        "Obstetrician-gynecologist",
+        "Practitioner service location"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor",
+        "gynecologist",
+        "practitioner_service_location"
+      ],
+      "address": "535 W 110th St #1E, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20138\u202fPM",
+        "saturday": "9\u202fAM\u20136\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(212) 280-4740",
+      "website": "http://www.wfmnyc.com/",
+      "extensions": [
+        {
+          "from_the_business": [
+            "Identifies as women-owned"
+          ]
+        },
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly",
+            "Transgender safespace"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Her knowledge and expertise amaze me and she is very compassionate.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH5R4wyjfAVJFXMRqNRLQ6xHLmi6IsCYw4AEurDu3cPIcXGFscQhpoTTa9rgOw8q7xHeF1KqM_T_PH4HhCEt9SGfx4f1QOgC3mKu9e-9lcTNTgmnCawrsoscT5To_6b0uRFVLJu=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/FJnBPHicHcTRboIwFADQL6pAQBxL9kBQrIoIrDH6RPSmtNuAArdN8Qv9Bv_GZOfhvJ5S6wE_HaeV_kIoJVpukE-ges17vQDVOWJAAkjQiYu8_Ivpsgrs47eJz_v0cqzGvMrKcKZZ9xPuMLnaIN6YaW18KHZw2aYIpRwUY7doEif7Ma5mylPvMB5rVhc0oDLZ6Oh728xB45UnkfjdwUScRC2wnImuT252QoXAlkzV4d01VXrO9ubLeq7rEvk_kP4NRsxElA"
+    },
+    {
+      "position": 12,
+      "title": "One Medical Primary Care Clinic - Manhattan Valley 100th & Broadway",
+      "place_id": "ChIJg0HLESb2wokR08tF4tLSe0M",
+      "data_id": "0x89c2f62611cb4183:0x437bd2d2e245cbd3",
+      "data_cid": "4862712025857772499",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f62611cb4183%3A0x437bd2d2e245cbd3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f62611cb4183%3A0x437bd2d2e245cbd3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.797070999999995,
+        "longitude": -73.9703498
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJg0HLESb2wokR08tF4tLSe0M",
+      "provider_id": "/g/11s9c8rk1m",
+      "rating": 4.4,
+      "reviews": 12,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic",
+        "General practitioner",
+        "Medical Center",
+        "Mental health clinic",
+        "Women's health clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic",
+        "general_practitioner",
+        "medical_center",
+        "mental_health_clinic",
+        "obstetrics_gynecology_clinic"
+      ],
+      "address": "2633 Broadway, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(888) 663-6331",
+      "website": "https://onemedical.com/locations/nyc/manhattan-valley-100th-broadway?y_source=1_MTA1Mzk0OTQ4Ny03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "book_online": "https://www.zocdoc.com/practice/one-medical-135029?LocIdent=372018&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_-_nKwBwZ-UyXvE331HydIw-lo_J5n0p_Zj8kSFBJBcIgaH5h-entity&rwg_token=AE37R_hE1PpFGV2PbXXXCLmNl-kjrtCptLmXO8x_IrEPmvJnk0mo8EAO04FFJ7mvuM9wBqtSRCW1c0eG19qDeKuhEoQ6asAfvg%3D%3D",
+      "user_review": "\"Easy to book appointments, connect with your doctor and order refills.\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=RPdKj70d2ZSUaKmwfMR6CA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=295.49524&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/dCwgXnicHc1RCsIgGADg2_iWOtmqBT8jehxBLHrpJZw6NdyUabNu07W6TdEFvu_zNimFuCMkplmptFiVg30qF1eBY-29dooHG7HwI1kKksxj7CduXRP45K2E7iTb-4ZKdj1feDvm4ditD3sk-ptwVk0JouKzMFjnnzh7iXWIKMOWIgM1Qy-egdUVLuuKlSjYJAxQ9F8Gv0BB6RdS5DkZ"
+    },
+    {
+      "position": 13,
+      "title": "Matt Cross, DO",
+      "place_id": "ChIJBcoUYc73wokRYxNIh_UJpO8",
+      "data_id": "0x89c2f7ce6114ca05:0xefa409f587481363",
+      "data_cid": "17267937821386609507",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7ce6114ca05%3A0xefa409f587481363&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7ce6114ca05%3A0xefa409f587481363&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8053327,
+        "longitude": -73.9663266
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJBcoUYc73wokRYxNIh_UJpO8",
+      "provider_id": "/g/11wwmq29ks",
+      "rating": 4.7,
+      "reviews": 35,
+      "type": "Family practice physician",
+      "types": [
+        "Family practice physician"
+      ],
+      "type_id": "family_practice_physician",
+      "type_ids": [
+        "family_practice_physician"
+      ],
+      "address": "Between 111th St And 112th St- Enter, 2875 Broadway, On112th St, New York, NY 10025",
+      "country": "United States",
+      "phone": "(212) 523-1600",
+      "website": "https://profiles.mountsinai.org/matt-cross?utm_source=Yext&utm_medium=physician_listing&utm_campaign=YEXTMD&utm_term=primarycare&y_source=1_MTA4MDg4MjE4Ni03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "book_online": "https://doctor.mountsinai.org/view-availability?doctor-name=matt-cross&pid=0000072500108700410001&officeId=0000072440112019842341&rwg_token=AE37R_jHPjs-SmwGRZ9BJVrZhBDOLQyPeXVr_Rm1dWppz4947fyw_JKv3xbMeUMLZM7ECk1EWlZ2-RH77gkNg98e2DWPZU9dow%3D%3D",
+      "user_review": "\"He explained every detail of my condition and took his time with me.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFiBRf68nwOi0tkwOxzjZHll7ge-g2Y8SlLk-7eOhLa-JRWJds_0l0hkpO26HGttYB_rqKcfU9ePMOPSCgmyvfkJj9tEHGk_nOyVs1H3vKZliiWz1hm77i8yb9srWVSXfXrkPkt=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/fVmKnnicHcTdDsEwGADQJ6p1JLZJXCBY5qdjYbhZqK6tdt2sHzMv6Bm8jcS5ON-PAKjswHG06HV4WXLNHpbVtDTADHRoWTi8sohaZJ1RvN6o0UyOt3nfNw2RGFRDXu_bKdTa4wzx7tFP9FIhjxGxPKNom0ZXm2GNhapItx_OAY7jrL4vaL4LWLwicTLhRfvMVXQLYBrOVWZIu7du2HsuTlrK9O2KwvOk314CW6f75JAfahUrGDYuxhiJ_xSZH5_hRek"
+    },
+    {
+      "position": 14,
+      "title": "Harlem Medical Group",
+      "place_id": "ChIJnyll1XP2wokRix2_fHH9FGQ",
+      "data_id": "0x89c2f673d565299f:0x6414fd717cbf1d8b",
+      "data_cid": "7211667567193038219",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f673d565299f%3A0x6414fd717cbf1d8b&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f673d565299f%3A0x6414fd717cbf1d8b&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8137158,
+        "longitude": -73.9445035
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJnyll1XP2wokRix2_fHH9FGQ",
+      "provider_id": "/g/11ckvb7387",
+      "rating": 2,
+      "reviews": 33,
+      "unclaimed_listing": true,
+      "type": "Medical group",
+      "types": [
+        "Medical group"
+      ],
+      "type_id": "medical_group",
+      "type_ids": [
+        "medical_group"
+      ],
+      "address": "2257 Adam Clayton Powell Jr Blvd, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "9\u202fAM\u20132\u202fPM",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 281-5252",
+      "website": "https://hmgnyc.info/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"Dr. Patel and Dr. PK we appreciate you both.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEhl6Uk22GKzfgvSzIRft8ADSYTt1AbKQYucCLuABImd34JtEJyY9auluS6l8jlZazm2ahpBrZuaTSptgBPUGdi3kxfycYhr7P0q4VuM9JAIadinlCacB8J_0SBgJgtAMmRa5T8uw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/V6tZU3icHcTdboIwGADQJ0IqqIMlu2iVEOpcgOISvDG1QOsoP6Nf5-AN9wh7myU7F-f3RwGM5tl1tfJXchikrq2pJzH0UPewEkPnytE4wjjGxelb1uJI6d259bz4uDTyiy1J3kCAD6wsYI1vx6y0Yv9qMUm6yt9QiOhchtxqy3Y6-NAXvnQeVyOZLpYXbARJ0nNc3f32u5lFqaanFH1u3u0ppDjh1b3Xey5IQK-IEUkl4FOX820R2MfLY40QctT_wun_AC1mRhw"
+    },
+    {
+      "position": 15,
+      "title": "Citicares Community Health Center",
+      "place_id": "ChIJ3Q9QunL2wokRN7W_fsEMF4o",
+      "data_id": "0x89c2f672ba500fdd:0x8a170cc17ebfb537",
+      "data_cid": "9950435926893114679",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f672ba500fdd%3A0x8a170cc17ebfb537&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f672ba500fdd%3A0x8a170cc17ebfb537&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8098333,
+        "longitude": -73.9468334
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3Q9QunL2wokRN7W_fsEMF4o",
+      "provider_id": "/g/1tg51c19",
+      "rating": 4.3,
+      "reviews": 72,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "154 W 127th St, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(718) 589-4755",
+      "website": "http://www.urbanhealthplan.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "Offers free or low-cost care based on individual circumstances"
+          ]
+        }
+      ],
+      "user_review": "\"Dr. Lindsay listens and understand, makes all the difference in the world.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSLIKdJf1REgIDM4oFfgEtaO_7g0uGzXYoqksJ45_sFTm4wH9-2_XbEHKQOWKhLmVPdH2gUEydQ832sErWhmVLhiUxZhtNMHNKy377trO4AW0cF_jAC64POLEKB7QJ4z-_A3g=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/B3uCb3icHcRbssEwAADQFUWjDcWMj9wrFU31waX4yZBW4tGGJsZjgfZgN2bu-Tift7L2YgaOc1ZeS2otz-XNlI3QtS1r2xK6cuTFAGGAcXAaZydM59GEFeG-PSNyMpoiHewlsduE-xLexq_VWl9PJkQdboK_Ct1pH7h8tSOUZUnOVFQt04K6ckGeRdbzXEOaXFXLSB0Wj42y8ZTG7On5vm0ShHMoAn7Ev12UJhFhP34Wohfg2JPDextCCNT_AtRfnhRCPA"
+    },
+    {
+      "position": 16,
+      "title": "American Access Care Physician, PLLC Manhattan",
+      "place_id": "ChIJucOb569YwokRZk8Wt0Q5Xyk",
+      "data_id": "0x89c258afe79bc3b9:0x295f3944b7164f66",
+      "data_cid": "2981164445634809702",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258afe79bc3b9%3A0x295f3944b7164f66&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258afe79bc3b9%3A0x295f3944b7164f66&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.796518899999995,
+        "longitude": -73.9481277
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJucOb569YwokRZk8Wt0Q5Xyk",
+      "provider_id": "/g/11b7kdxbzv",
+      "rating": 4.8,
+      "reviews": 139,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center",
+        "Vascular surgeon"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center",
+        "vascular_surgeon"
+      ],
+      "address": "35 E 110th St 3rd Floor, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "7\u202fAM\u20135\u202fPM",
+        "friday": "7\u202fAM\u20135\u202fPM",
+        "saturday": "7:30\u202fAM\u20132\u202fPM",
+        "sunday": "Closed",
+        "monday": "7\u202fAM\u20135\u202fPM",
+        "tuesday": "7\u202fAM\u20135\u202fPM",
+        "wednesday": "7\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 427-9895",
+      "website": "https://centers.azuravascularcare.com/ny/manhattan/american-access-care-manhattan?y_source=1_ODMxNTE1OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "user_review": "\"Professional, thoughtful and excellent technology\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHiPx6eLb18k07sSBRao6dc1DGStqWVnKvcFMgnYnG3yPMYEnasZs2nHOAZowE3_AH2NZoZaFTM7FSu2DffEaaaxAD1nX3a3epW2i4kqKJWJGJ7Kx0YnG-05Pp1LSt5g0_hyu4j=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/7umzaHicHcxNjoIwGADQE1VaqjIxmUUNfwFxUIwoG1NrLYp-xWlRPKFnmNs4cfOW7-9VW9uaieNcajpQWquL7Iz8FRqsBDsQ-uqo1iBhkHFYPl80LD7l_VjO9uSrwZ4ppkuuxwdB_Kiwt3IN6V2EmYItRPSZZ9sAuKmMC_EPq_QjoDsWu_NKVzxcZV5YdK5_PAac8575BDaUU9mW7mnY3NKkTKLES3v8XyE8ylsyK-xI4V397Ibn7wfBGKP6o0DwBhJXQ10"
+    },
+    {
+      "position": 17,
+      "title": "Medical Clinic Manhattan New York | Medical Clinic Manhattan NY",
+      "place_id": "ChIJq6qaM49YwokRVBq3PdaonOY",
+      "data_id": "0x89c2588f339aaaab:0xe69ca8d63db71a54",
+      "data_cid": "16617342363202165332",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2588f339aaaab%3A0xe69ca8d63db71a54&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2588f339aaaab%3A0xe69ca8d63db71a54&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.782281,
+        "longitude": -73.9768964
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJq6qaM49YwokRVBq3PdaonOY",
+      "provider_id": "/g/11fm3t_c99",
+      "rating": 4,
+      "reviews": 4,
+      "type": "Medical clinic",
+      "types": [
+        "Medical clinic"
+      ],
+      "type_id": "medical_clinic",
+      "type_ids": [
+        "medical_clinic"
+      ],
+      "address": "130 W 79th St, New York, NY 10024",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 8\u202fPM",
+      "hours": "Open \u00b7 Closes 8\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20138\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "10\u202fAM\u20136\u202fPM",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20138\u202fPM",
+        "tuesday": "8\u202fAM\u20138\u202fPM",
+        "wednesday": "8\u202fAM\u20138\u202fPM"
+      },
+      "phone": "(315) 201-0621",
+      "website": "https://www.bmcofny.com/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Wishing you continued success in serving the community!\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=CCf0GZ3JiS8TtUKkkOu7Iw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=229.54723&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ns_Y8HicHc0xDsIgFADQ27AJlGramhCHDkYdHNTFxVBKgZQWUn6L3sZreRuNF3jv8zYAIW4JiTApBYtVKdincnEVBNbea6dEsBFLP5AlI2DmoRmFdbsgRm9bXtcd3d_zo72UV7id-v48F4eEZPOQzqoReFRikgbr9BMn32IdIkq8pMjwiqGXSJyxCm_WBctRsCANp-i_dH7hGaVfV2I5MQ"
+    },
+    {
+      "position": 18,
+      "title": "+MEDRITE Manhattanville Urgent Care - Manhattan",
+      "place_id": "ChIJRTyLhx_3wokR25WJuOQb0JY",
+      "data_id": "0x89c2f71f878b3c45:0x96d01be4b88995db",
+      "data_cid": "10867216570007524827",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f71f878b3c45%3A0x96d01be4b88995db&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f71f878b3c45%3A0x96d01be4b88995db&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8133592,
+        "longitude": -73.9560284
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJRTyLhx_3wokR25WJuOQb0JY",
+      "provider_id": "/g/11tckxfkt0",
+      "rating": 4.7,
+      "reviews": 228,
+      "type": "Urgent care center",
+      "types": [
+        "Urgent care center"
+      ],
+      "type_id": "urgent_care_center",
+      "type_ids": [
+        "urgent_care_center"
+      ],
+      "address": "473 W 125th St, New York, NY 10027",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20136\u202fPM",
+        "saturday": "10\u202fAM\u20133\u202fPM",
+        "sunday": "10\u202fAM\u20133\u202fPM",
+        "monday": "9\u202fAM\u20136\u202fPM",
+        "tuesday": "9\u202fAM\u20136\u202fPM",
+        "wednesday": "9\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 603-9222",
+      "website": "https://medriteurgentcare.com/center/medrite-manhattanville-urgent-care/",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "offerings": [
+            "X-ray"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Accepts walk-ins"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Great attention to detail by the doctor and friendly staff.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3LNiY_QerEpa9o3YhkE7nl930gX7JI-vrQRFY6UxFY5lZVCOKNcUNm-R5aYlizBh3j8FjulxZvFeeeGDoFoYMcjFtsAWnOrRLlp_uJeUdF8p1un4VQX_lusSZkSlj4xM_yLiTUA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/gP0F2XicHcRRboIwGADgE1UwxYkme0BHjYg4YDjLCzFdQ4HftqGtY95wR9htlvg9fH-_wlpt1p4HAs9apVrgzvCRKWm5tDOmbl6rDWIGGS96z_IhinGadbTJ-Rjr60phKoZ4KWGF_fayTPboPuYFoS_VROgC6vP2dMhYld1QsbhS6B4bgfuQ9A6m-k4457s3RRQ9sp5YE33K01ikoBuX8OqLhHruZHDOLw04U9ZDCX0wHZuftPuootfvue_7SDxnSP4D5-RGLg"
+    },
+    {
+      "position": 19,
+      "title": "Physicians Family Health Service: Guardarramas Gabriel R MD",
+      "place_id": "ChIJ3a-lmDv2wokRorFIGjBtz30",
+      "data_id": "0x89c2f63b98a5afdd:0x7dcf6d301a48b1a2",
+      "data_cid": "9065584628286927266",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f63b98a5afdd%3A0x7dcf6d301a48b1a2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f63b98a5afdd%3A0x7dcf6d301a48b1a2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8048821,
+        "longitude": -73.966726
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3a-lmDv2wokRorFIGjBtz30",
+      "provider_id": "/g/1v62jlh2",
+      "rating": 4.2,
+      "reviews": 21,
+      "type": "Family practice physician",
+      "types": [
+        "Family practice physician"
+      ],
+      "type_id": "family_practice_physician",
+      "type_ids": [
+        "family_practice_physician"
+      ],
+      "address": "600 W 111th St #1E, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 222-1142",
+      "website": "https://profiles.mountsinai.org/gabriel-r-guardarramas",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"he's a fantastic person with an outstanding vision for helping people.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAhxCg_463emp4gfx8zkPl1TRGvjys2xzPtww14hBPNLR2bXh_zro4cUuWsgmc4y7QH0Nmol1biVAoeJWvpw3U0UqkluX-5mMeNMS4kz4OL1WWfTxHIBorqY1VJHGu=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/FPZbvXicHcTbDoIgAADQLyJB6bK2HrQHzZVpeamnNhlCCWKCaf5c39HftHUezvfDjWn12rIEd2ZMKSZor2lHVGNoY2ZESYu1GhANtOXGUVK7gcvHLbvhhUNli1k1rqY6Fig9-a_HW9vjFJthQJh7cbQ_2eWF36ZOYZL1hWaS4PcyCWAklUDlPXcVDYtXOzgZzJ616C9gLg80OpxxPeHjHhVFlY7BzlPd84ryMPD7zYAghID_J6D5AaL4Qv0"
+    },
+    {
+      "position": 20,
+      "title": "Dr. Joseph G. Lurio, MD",
+      "place_id": "ChIJW43JrYJYwokRw8ZI4Lhv450",
+      "data_id": "0x89c25882adc98d5b:0x9de36fb8e048c6c3",
+      "data_cid": "11377059923495536323",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25882adc98d5b%3A0x9de36fb8e048c6c3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25882adc98d5b%3A0x9de36fb8e048c6c3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.792521699999995,
+        "longitude": -73.9720001
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJW43JrYJYwokRw8ZI4Lhv450",
+      "provider_id": "/g/1tdyrq05",
+      "rating": 4.3,
+      "reviews": 7,
+      "unclaimed_listing": true,
+      "type": "Family practice physician",
+      "types": [
+        "Family practice physician"
+      ],
+      "type_id": "family_practice_physician",
+      "type_ids": [
+        "family_practice_physician"
+      ],
+      "address": "De Hostos Towers, 690 Amsterdam Ave #1, New York, NY 10025",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20135\u202fPM",
+        "friday": "8:30\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8:30\u202fAM\u20135\u202fPM",
+        "tuesday": "8:30\u202fAM\u20135\u202fPM",
+        "wednesday": "8:30\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 865-4104",
+      "website": "http://www.institute.org/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Great doctor really cares and advocates for his patients\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=rQ8qEtu5FtQPHjmefe7v5w&cb_client=search.gws-prod.gps&w=80&h=92&yaw=290.76526&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/FceohnicHc3bDcIgFADQbfgTsElfJsQvjZ92AkPpLWBoQbgF3ca13EbjAud83gYxpANjCSMAZgsl2Ce4tAuSau-1AxlsosovLO8Zmm0ZV2ndMcjV20nEoXuccKvPOFwv9wVmaHNdiBpvyllYUSSQURmqy0-MfqI6JFJEx4kRfUVesoiq57Rt6qohwaIygpP_Mvss9px_AZVDOd8"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.81%2C-73.95%2C14z&q=doctor+near+uptown+Manhattan&start=20&type=search"
+  }
+}

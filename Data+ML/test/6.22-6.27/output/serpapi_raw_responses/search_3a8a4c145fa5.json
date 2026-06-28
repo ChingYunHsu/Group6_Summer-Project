@@ -1,0 +1,28 @@
+{
+  "search_metadata": {
+    "id": "6a3d29fd06ca7f1daef52572",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/WXBA2gte2aMMUAfgir-l3g/6a3d29fd06ca7f1daef52572.json",
+    "created_at": "2026-06-25 13:15:41 UTC",
+    "processed_at": "2026-06-25 13:15:41 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/hospital+near+downtown+Manhattan/@40.72,-74.0,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/WXBA2gte2aMMUAfgir-l3g/6a3d29fd06ca7f1daef52572.html",
+    "prettify_html_file": "https://serpapi.com/searches/WXBA2gte2aMMUAfgir-l3g/6a3d29fd06ca7f1daef52572.prettify",
+    "total_time_taken": 1.22
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "hospital near downtown Manhattan",
+    "ll": "@40.72,-74.0,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "start": 20
+  },
+  "search_information": {
+    "local_results_state": "Fully empty",
+    "place_results_state": "Fully empty"
+  },
+  "error": "Google hasn't returned any results for this query."
+}

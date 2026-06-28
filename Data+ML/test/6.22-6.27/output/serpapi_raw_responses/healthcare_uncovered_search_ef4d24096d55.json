@@ -1,0 +1,457 @@
+{
+  "search_metadata": {
+    "id": "6a3d270ef6d5ee8b2234e56a",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/0tRdKPfEbcizrQn0gMppFw/6a3d270ef6d5ee8b2234e56a.json",
+    "created_at": "2026-06-25 13:03:10 UTC",
+    "processed_at": "2026-06-25 13:03:10 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/Blavatnik+Family+-+Chelsea+Medical+Center+at+Mount+Sinai/@40.741028,-74.003242,18z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/0tRdKPfEbcizrQn0gMppFw/6a3d270ef6d5ee8b2234e56a.html",
+    "prettify_html_file": "https://serpapi.com/searches/0tRdKPfEbcizrQn0gMppFw/6a3d270ef6d5ee8b2234e56a.prettify",
+    "total_time_taken": 1.73
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "Blavatnik Family - Chelsea Medical Center at Mount Sinai",
+    "ll": "@40.741028,-74.003242,18z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Showing results for type: \"place\" instead of type: \"search\"",
+    "query_displayed": "Blavatnik Family - Chelsea Medical Center at Mount Sinai"
+  },
+  "place_results": {
+    "title": "The Blavatnik Family \u2013 Chelsea Medical Center at Mount Sinai",
+    "place_id": "ChIJwwmo_b5ZwokRgL5i5BD87tk",
+    "data_id": "0x89c259befda809c3:0xd9eefc10e462be80",
+    "data_cid": "15703766100168851072",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259befda809c3%3A0xd9eefc10e462be80&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259befda809c3%3A0xd9eefc10e462be80&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7412622,
+      "longitude": -74.00340039999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJwwmo_b5ZwokRgL5i5BD87tk",
+    "provider_id": "/g/1tr7k9gw",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHJ_h1XBDrjmyJP98JhGJAjnsZjT64LmgGtP0f9fbB2wILVbQoPCMPAKN2VLMyJh549A5p3etvTd8kup6E5iI0steAMcfccGDRTqN1Zwa4XfD7T-0jYkrBWVrqcSBkDtBF8Q8WvQ=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/zVxkXnicHcThEoEwAADgJ5oWRbnzYxMx1S26wh_HrKbU0kbnET2Ct3Hn-_F9P0LrVk0N4y5Gg0LK4s6findMNpo3esBkbRStAkwBZSAaxRVarshJmHvsdWX9JtR1iPAJKht1LJOxFdSFrynM3fyCh_06SC-xpPOQok00TIPwTYRtuchuR1y_kqtTPdvxwr6todIchSxnzPe2ySMyj_3Z2ufeJAGwPFQdztLuwXa48jReOrGTveJZb0IIgfjPQPMDbTpD6g",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 33
+      },
+      {
+        "stars": 2,
+        "amount": 4
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 7
+      },
+      {
+        "stars": 5,
+        "amount": 56
+      }
+    ],
+    "rating": 3.5,
+    "reviews": 104,
+    "type": [
+      "Hospital",
+      "Cancer treatment center",
+      "Dermatologist",
+      "Women's health clinic",
+      "Oncologist",
+      "Urologist"
+    ],
+    "type_ids": [
+      "hospital",
+      "cancer_treatment_center",
+      "dermatologist",
+      "obstetrics_gynecology_clinic",
+      "oncologist",
+      "urologist"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "325 W 15th St, New York, NY 10011",
+    "country": "United States",
+    "booking_link": "https://raa.mountsinai.org/makeappt/index.cfm?pid=00000DDD0000000000031&office_id=00100OOO0000000000031&utm_source=Yext&utm_medium=local_listing&utm_campaign=YEXTAppt&y_source=1_NTgzOTUwOC03MTUtbG9jYXRpb24ucmVzZXJ2YXRpb25fdXJs",
+    "website": "https://www.mountsinai.org/locations/chelsea?utm_source=Yext&utm_medium=local_listing&utm_campaign=MSCC&y_source=1_NTgzOTUwOC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "phone": "(212) 604-6000",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "PXRW+GJ New York",
+    "hours": [
+      {
+        "thursday": "8:30 AM\u20135 PM"
+      },
+      {
+        "friday": "8:30 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8:30 AM\u20135 PM"
+      },
+      {
+        "tuesday": "8:30 AM\u20135 PM"
+      },
+      {
+        "wednesday": "8:30 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259befda809c3%3A0xd9eefc10e462be80&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFHJ_h1XBDrjmyJP98JhGJAjnsZjT64LmgGtP0f9fbB2wILVbQoPCMPAKN2VLMyJh549A5p3etvTd8kup6E5iI0steAMcfccGDRTqN1Zwa4XfD7T-0jYkrBWVrqcSBkDtBF8Q8WvQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/zVxkXnicHcThEoEwAADgJ5oWRbnzYxMx1S26wh_HrKbU0kbnET2Ct3Hn-_F9P0LrVk0N4y5Gg0LK4s6findMNpo3esBkbRStAkwBZSAaxRVarshJmHvsdWX9JtR1iPAJKht1LJOxFdSFrynM3fyCh_06SC-xpPOQok00TIPwTYRtuchuR1y_kqtTPdvxwr6todIchSxnzPe2ySMyj_3Z2ufeJAGwPFQdztLuwXa48jReOrGTveJZb0IIgfjPQPMDbTpD6g"
+      },
+      {
+        "title": "Building",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFFpZ0-sgLXfFa1ApyfyI6B9ugSnsB9yUuhTcYO0C3CHBYXyRycv9t0OEX9bf4rU_tTk7xnrLaktkdDRoogg6kD_fdKSHaiDYi83XOcS7jQ_SE9r74xVXUkmKMMs14WSCS4eLzQTw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ouuRfHicHc1LjoIwAADQE1VKIGAnccFHohFFLGhxQ7BC0WohtIx2bugRvM0YN2_73q9WqV7-GMattSas69itHmU90E6oWqgJ7e4G6yWgEkjD225S7kVRf4RAspg0UWV6vW700vHRyLCQPtL52Ga0SGBgBQu_IHqn6S9SMJkTdGrsIS9Vxt2nGOKKK34Od5-SOTwsm_MKL6pLWFymFkkodq9piedocO3nnuT8vlqvpWkfcIDtOv5Ls8fsYUIIQfuVAvEPB9VFhQ"
+      },
+      {
+        "title": "Reception",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAYENOlzr9QyMVp0gVNSdcpr1Yx_eokpjRuX8sz7Tr58YG5uIwKhPGvlqje98tRMVv2ccc26Iqf-1792RmEhvwceYxNkJR0AYyEZjEB4onRWRlJpIOlOutlJsrckgQNSODhDH8=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/_nkRjnicHcRNjoIwGADQE1UK_sEkLjASBWOROmGms5nFZ20Dlda2gHrBOYO3MZm3eK8_6b1xH0Gg5HQitBaK945b0J3nnZ-AvgbCOAQOuSA9kqpNdynLSKmeNqkeh9pgUZPTGYwN2f2X69Y0tP-O3XP5aecx2877fNzL43ZQt4YnsaeHeogAIFrktwsKl0lEr5kcRuDsTtqC4pQ9sp8mW890R7-oKkxeqrL3qnAWWlGRU7mRm128GkOMMZL_A-rexG5FpQ"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE9kIb99i8r-o9lXl5a7JBbht1OStSnyDEssaSnoSxdUSfy9xqKj3vWSLhCl_Nx6RhLqXMGW6LrJFIu3q_MG6EwslFdm3dqmP07o4P9UQL-P-LiH5Auc6DMlqm4plDX8VxfU7UKRPS5GKU=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/HUbU5XicHcTBboIwAADQL6pgELAmO7CBqBRXbTq5GShI1dJSWib-pHf_Zsne4b1f3NrerBxHcG_WKtWKZjTNwJS0jbQzpjqn7Q1gBhgnwvvDPUrgfVtBeF0OQEFRCL8Md58Vt_NvYol8xokxJZGKTDUllyecdHbzfk8E8S9x3k_BkSNd5OkpQMNuvR09fc7TIHkYsa47r9YddkO1wJAeEMAAXTd-NLIgzoXuFr2Ii-XPdKEhzY6Y-GlGPx5z13UB_58B-QdT4UZd"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=oMIt1ZjzJXqVdKHomSuvvw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=19.017324&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/gReiMHicHc1LDsIgFADA27CTTzXRmhC3fuLKxBg3DaVYnoGC8grqcbyVt9G4nc183hYxpiVjCe_GYAZTIjyMS5OoaB9C74yKkKgOnmXB0I6-HRS4VVRDgE6G_QbF-franm7HbrcO_jDmXIhuG-3ADCi9iqlJmaLSCM7QPiZSZFXNiJVVvSBPVaSoKRfz6c8ioLaSk_9zCVkKzr827Dry"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Doctors and their Staff are very kind and helpful.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWFX9jqEzwcNk-CEz10eK3VB6ZQYiLCjXi_4SIrzd6XMriKNmQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Rosa from the appointment office gave me a good doctor.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI916FDusle2dbUqPKbYAEjJTtysvgvQYsgrXX9Ci04OdUHMQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I had an excellent experience at this facility under the care of Dr. Rosen.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKoh-sJEhujr1gDNwcNdFm_yMnMadci7eYFyFDDQP2Mf4S6BBPB=s40-k-cc-rp-mo"
+        }
+      ],
+      "topics": [
+        {
+          "keyword": "annual mammogram",
+          "mentions": 7,
+          "id": "YlGuOPHyFLY"
+        },
+        {
+          "keyword": "radiologists",
+          "mentions": 6,
+          "id": "IgMvoGl6kuI"
+        },
+        {
+          "keyword": "bone marrow biopsy",
+          "mentions": 2,
+          "id": "UQ6BEDXBFfk"
+        },
+        {
+          "keyword": "ambulatory surgery",
+          "mentions": 2,
+          "id": "I0C5lEzJuJg"
+        },
+        {
+          "keyword": "compassionate care",
+          "mentions": 6,
+          "id": "kCdFNFREgbY"
+        },
+        {
+          "keyword": "wait time",
+          "mentions": 4,
+          "id": "ALvakRP3QVw"
+        },
+        {
+          "keyword": "clean facility",
+          "mentions": 3,
+          "id": "MkHnhfLIqLA"
+        },
+        {
+          "keyword": "kind doctors",
+          "mentions": 3,
+          "id": "BP7_vH1qhHY"
+        },
+        {
+          "keyword": "pain management",
+          "mentions": 2,
+          "id": "hmUbKDbEyaI"
+        },
+        {
+          "keyword": "caring staff",
+          "mentions": 6,
+          "id": "Fu0FNZ9EoKQ"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Evelyn Ortega",
+          "rating": 5,
+          "contributor_id": "102884145589072033097",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUpIrnd2eDEPG6d7SK66059sDl7L8b_jv38lg7pTXzwm2FU6Gr4=s120-c-rp-mo-br100",
+          "description": "I just had a bone marrow biopsy. Chad Robertson performed this procedure.  I\u2019m not exaggerating, when I say, he was amazing. This was my second biopsy, and I was a bit anxious since the first was somewhat painful. However, second time around was much better. From the very beginning, Chad informed me of every step. He told me what I was going to feel and did a five second countdown when applying pressure. I didn\u2019t feel any pain and actually felt like taking a nap. God bless Chad\u2019s hands. If ever you need to do a biopsy- I highly recommend Chad. Thank you!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWR1lWRXlkVkpRYUZneVRGUkJZaTF3Tkc5dWRVRRAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOkVGYVEydVJQaFgyTFRBYi1wNG9udUE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-05T16:17:18+00:00"
+        },
+        {
+          "username": "Ahmed Alklody",
+          "rating": 5,
+          "contributor_id": "113665863359355674573",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUAK_0NgZnTAoH70UorW-GlQ7AmOR6x4Q7dZgSHIryH-b7HL2PZaQ=s120-c-rp-mo-br100",
+          "description": "MOUNT SINAI BETH ISRAEL\n\nI had an exceptionally smooth and positive experience during my procedure. From the moment I arrived, the entire staff, from registration to the nurses and specialists, were welcoming, clear in their communication, and genuinely kind.\nI was very anxious during the waiting period and leading up to anesthesia. One of the nurses, an older woman, noticed my anxiety and took the time to comfort me in a deeply human way. She gently placed her hands on my shoulders and helped calm me emotionally and mentally. That simple gesture was incredibly soothing and came at exactly the right moment. It may seem small, but it made a profound difference in how safe and cared for I felt.\nI don\u2019t think patients experience that level of attentiveness and empathy every day, and I am truly grateful for it. The professionalism, warmth, and compassion of the entire team turned a stressful situation into a very positive experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGQmRHSjNja0V3WlRkS2MzbFdXVEJUVEdaVFdGRRAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOjFBdGJ3ckEwZTdKc3lWWTBTTGZTWFE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-05T20:42:32+00:00"
+        },
+        {
+          "username": "Tee Lam",
+          "rating": 5,
+          "contributor_id": "103649792412017235265",
+          "user_review_count": 80,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI916FDusle2dbUqPKbYAEjJTtysvgvQYsgrXX9Ci04OdUHMQ=s120-c-rp-mo-ba12-br100",
+          "description": "I was so scared to go to a female doctor. Rosa from the appointment office gave me a good doctor. Rosa also was kind and patience with me over the phone. She explained a lot of things to me. I got to meet her today.  Dr. Holtzman is such a good and nice doctor! Her assistant Angelique is very nice too, they both made you feel comfortable. The whole office is nice over there and I didn't wait long for nothing. The best part is everything is right there! All of them need a bonus and raise! I love to go to a place, where I feel comfortable and this is it! Also, I went to do a MRI there and Shonda and Ray was very nice to me. I'm so comfortable around them to the point for me it went fast.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21jMVUxRXdNMDloTTBRNVowbERVV0pvYmxsdUxYYxAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOmc1U1EwM09hM0Q5Z0lDUWJoblluLXc%7C%7C?hl=en",
+          "date": "Edited 4 months ago",
+          "date_iso8601": "2026-02-01T02:43:22+00:00"
+        },
+        {
+          "username": "Irina Kornev",
+          "rating": 5,
+          "contributor_id": "105048054621563014633",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJVFslh4X8adnLLYc_h_uTgZ2QHnFc-YUUIxO0J1TFliEZlsw=s120-c-rp-mo-br100",
+          "description": "Very beautiful facility, amazing staff. Special thanks to laboratory nurses. Wanderful people in chemotherapy department. Registration is fast and efficient. Passing messages to doctors and responses very accurate. And of course Dr. Paula Klein, nurse Nancy Rocklain, Emma. They are the best. Always listen to the patients needs. And all the attending personnel. Happy New Year.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSV1YzQnllWGh5Tm5wQ1RGVm1TMlJ2TFRCNVVYYxAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOjRWV3ByeXhyNnpCTFVmS2RvLTB5UXc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2025-12-25T15:19:52+00:00"
+        },
+        {
+          "username": "A. Lozada",
+          "rating": 5,
+          "contributor_id": "110272364058795631927",
+          "user_review_count": 39,
+          "user_photo_count": 52,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKoh-sJEhujr1gDNwcNdFm_yMnMadci7eYFyFDDQP2Mf4S6BBPB=s120-c-rp-mo-ba12-br100",
+          "description": "I had an excellent experience at this facility under the care of Dr. Rosen. The hospital staff was attentive, professional, and made me feel at ease throughout the process. My procedure was efficient, and I was in and out within a few hours. While I can\u2019t speak for the other doctors, I can confidently say that Dr. Rosen is an exceptional gynecologist. Her expertise, compassionate care, and clear communication truly stood out. I highly recommend her to anyone in need of a skilled and caring GYN specialist.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNQMXMzR1p3EAE!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CIHM0ogKEICAgICP1s3GZw%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2nqh2MaejE0ZKOkRwO9ctSVTh4vh3bEhCa7MEopfvRjJRWgFjWux9u80uPRSng9SqXeb5zaEzcFmZMaz182fkTgQP5uOei1u2QtbisTmAyvQN_pmUYd07WT_h0nUBFr9otGzmVOA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0xnJkFVPitGfOxixcgoTZI5NB7afEYvuOWTZhukaHioAPz_LnUy2Fo4elFH6Y6RYR4wlPSqi3F0Wh9gsjiyS0zyePgyXOxbAgm3cjlp35CA3U0ChRUZuGx-G6PtIT7qpa7p5ro=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1Mrwvwah8jg7qCVWti6YnjW4dJjPrY1PKRhZiVO55-G6GJhM5_yY_OoatjHKuKG_yg0lhqiVF5n2edlT0wTbmfiCNPZTaOijnK2T0vcmBidnUefSslaFYriP3sR3VKBreiZAoL=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3927oIWT_scHEgNnYylmkvBjijxtE0-pirSikfXymi3IJOjPEHfh9RqZfZd-orOYXORPK41fqoKyi7t044Il6a478PT5zJd4-VbvF4V_U134qI_Sm0qIr01LOAUZrS7OSVGXCK=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0XR2qGJ3tgHDMcX4SvgC6tSb8Nj3Cl_ft7VLiio-1SEBT8q8v8LaFZPN348TeI99yId8NL63XIvsceKRgjn_CMNcxkGAx_N6O1fUn8NDQycmVzvaNW-YQgalchrocR9Co7gnY1Ww=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1DbpEePyR6gVQeJRL092_D1M-kdRdukFWAXXngRJkkQh7EX0JdvOI5JcMacAc69WiNcVkaZO1Jkzvl6FZSaF7_ura5TWFvwM28oQ3d9K2gheRlZAIfrtfd1wEGxC_7ZYtDYE_f=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2024-11-24T05:04:50+00:00"
+        },
+        {
+          "username": "david ford",
+          "rating": 5,
+          "contributor_id": "103586642424009822164",
+          "user_review_count": 12,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL3W0c8R37MJbOZ9fX8QfRdHVqIJr0e0eAXSwILAeEJ82uvnA=s120-c-rp-mo-ba12-br100",
+          "description": "Had a second bone marrow biopsy. Jill Wickham who performed procedure was extremely professional prior to procedure. Dr. Patel was anesthesiologist who was very calming before and after procedure. No pain and no memory of any of the procedure. This biopsy procedure should never be performed without sedation. I highly recommend this facility.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tKS1J6bERORUZIUm5SS1VGcExibWd6VVhvelRFRRAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOkJKRzlDNEFHRnRKUFpLbmgzUXozTEE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-18T17:52:23+00:00"
+        },
+        {
+          "username": "S K",
+          "rating": 1,
+          "contributor_id": "104175272496539325050",
+          "user_review_count": 18,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLwroGyeQa8fGMpracO1uEmFpb_ZitRwiQdUTtUFAb7gJfBgg=s120-c-rp-mo-ba12-br100",
+          "description": "Sloppy disorganized team and deeply disappointing, inappropriate, and unprofessional conduct exhibited by the mammogram and ultrasound technicians.\n\nConfirmed my appointment by phone, the Mt Sinai app, and text as well as filled out all the paperwork. Arrived 30 minutes early to an appointment on 12/04 scheduled by my physician on 8/21.\n\nAfter checking in, changing into my gown, and waiting, I was pulled aside by Tatiana, a mammogram technician, in a public space and loudly interrogated about my family history, had my high risk status questioned, and was berated for scheduling a mammogram/ultrasound more often than she personally felt was appropriate. I explained that this testing was ordered by my physician, explained my high risk status, and the changes I had felt since my last exam. Another technician overheard and tried to correct Tatiana, reminding her that any changes warranted further examination (though not the reason for my visit). I was asked to sit back in the waiting area while Tatiana conferred with some authority. She reappeared and without explanation, escorted me for a mammogram where she continued her interrogation about my family history, discounted my high risk status, told me not to worry so much because I am young, breast cancer is rarely dangerous, and my aunt who died because of chemoresistant metastatic breast cancer while still on tamoxifen must\u2019ve ignored symptoms/failed to follow proper protocol because she was a physician.\n\nI was then asked to wait again without any information or details about whether I would be having an ultrasound. After 45 minutes, I was escorted by an ultrasound technician who exhibited similar hostility, behaved as if inconvenienced, and held me personally responsible for being at an appointment scheduled by my physician because she too felt it was too early/often. After the most perfunctory ultrasound with no attempt at being gentle, I was dismissed with the warning that having \u201cimaging this often would be pointless.\u201d\n\nIf there was a scheduling issue, this needed to be addressed internally and preferably in the many weeks prior to a patient\u2019s appointment. It is not the patient\u2019s responsibility to correct nor is it their fault.\n\nI remain deeply disturbed by this experience and urge others to seek care elsewhere. This is not appropriate standard of care.\n\nEdited to add: when I explained that I had a new palpable lump I\u2019d found Tatiana responded that cysts are common in dense breasts (true) and I shouldn\u2019t be worried/should get used to them(dangerous/false).",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21nMFJXc3hhVmd6VFMxTFduTlVkME13ZUVsaWNIYxAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOmg0RWsxaVgzTS1LWnNUd0MweElicHc%7C%7C?hl=en",
+          "date": "Edited 6 months ago",
+          "date_iso8601": "2025-12-08T04:33:16+00:00"
+        },
+        {
+          "username": "J Li",
+          "rating": 1,
+          "contributor_id": "101560709629527324886",
+          "user_review_count": 8,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI1N088kI7_-oYt5kK0zwxQwhAC_G_wQP90Bd14cU8WvGelKQ=s120-c-rp-mo-br100",
+          "description": "Highly recommend switching to NYU or Lenox Hill for anything related to radiology or breast care. I switched and have had a much better experience! It\u2019s impossible to reach anyone by phone (or messaging on their portal for that matter) at Mount Sinai; they often don\u2019t have appointments for months; the people working there are often unfriendly and impatient; and they bill you from a billion different departments so that the cost of care is exorbitant even with insurance. I\u2019ve loved my experiences both with NYU and Lenox Hill. Everyone I interact with is kind and caring, and it\u2019s easy to call and get an appointment! HUGE difference from Mount Sinai :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aT1lrUnlaMFJ1Y3pOSGJrdDRVako0Y0c1bWRIYxAB!2m1!1s0x0:0xd9eefc10e462be80!3m1!1s2@1:CAIQACodChtycF9oOnZOYkRyZ0RuczNHbkt4UjJ4cG5mdHc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-15T19:11:47+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "St Vincent's Cancer Center: Ernst Jeanne",
+            "data_id": "0x0:0x1cd5ab4006257559",
+            "data_cid": "2077755094570726745",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1cd5ab4006257559&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1cd5ab4006257559&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7411653,
+              "longitude": -74.0033708
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1cd5ab4006257559%218m2%213d40.7411653%214d-74.0033708&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=GVu3b39zZsgHxXKM1afftDM1DpqQcavG4ab0mJloYepd2S3WRYPFK5hH-IwDSkLJU2_3wlIG6GNJGiDxdL7_vKWGL_-joGfouHqEFy1n1rv6RlAUJQHjNrhzUnAW76wSRngZBwM8ugVT6xhY030LNqlz1F5U0BVB",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Mt Sinai Hospital: Elsiesy Hussien MD",
+            "data_id": "0x0:0xc1b020c839f1de47",
+            "data_cid": "13956691289558867527",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc1b020c839f1de47&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc1b020c839f1de47&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790316999999995,
+              "longitude": -73.9537622
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc1b020c839f1de47%218m2%213d40.790316999999995%214d-73.9537622&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=5UnyGlaC0jiT8hrhacyusi_mr7JBSt3DaKQDpPRLqBRWdFGqKnvZfwDjdHSX3inmdgLhIsOMeFpTHdb4QKnxIYdPLbEaWJkgw7WRrsCkrf-EoWPJrFVPay_jLdVwv_JvRJS2QO_QGyuWehATw1OPW3qVqf7ZlX7H",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Tisch Cancer Institute at Mount Sinai",
+            "data_id": "0x0:0x3c51dce585d471ec",
+            "data_cid": "4346497993740153324",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3c51dce585d471ec&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3c51dce585d471ec&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790008,
+              "longitude": -73.953732
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3c51dce585d471ec%218m2%213d40.790008%214d-73.953732&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 2.5,
+            "reviews": 8,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGp6Dsi-JqbCgXbnk6Axb2SnOAtTuoqsVIgikKPEhJMS0xig4PySuswce7G4ZG6kt-wfxceL2bCI3Xz0czB8EpWKkiS95VboTm_g3hiMLq-jqMjxpq8sZIW8bo6Pl64xNer8mU=w156-h156-n-k-no",
+            "type": [
+              "Cancer treatment center"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Mt Sinai Hospital: Chokhavatia Sita MD",
+            "data_id": "0x0:0xfb0c3a54f210306f",
+            "data_cid": "18089897939753250927",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfb0c3a54f210306f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfb0c3a54f210306f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790316999999995,
+              "longitude": -73.9537622
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfb0c3a54f210306f%218m2%213d40.790316999999995%214d-73.9537622&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=5UnyGlaC0jiT8hrhacyusi_mr7JBSt3DaKQDpPRLqBRWdFGqKnvZfwDjdHSX3inmdgLhIsOMeFpTHdb4QKnxIYdPLbEaWJkgw7WRrsCkrf-EoWPJrFVPay_jLdVwv_JvRJS2QO_QGyuWehATw1OPW3qVqf7ZlX7H",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Mount Sinai Medical Center",
+            "data_id": "0x0:0x6fb4019e2f9daf6",
+            "data_cid": "503066263308327670",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6fb4019e2f9daf6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6fb4019e2f9daf6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7896393,
+              "longitude": -73.95417420000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6fb4019e2f9daf6%218m2%213d40.7896393%214d-73.95417420000001&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 19,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxuTCcUljQ9vEspPWgqQ8iOj-0b5nPux9Z4noVyPdp0KRucnkVODFZzMW6eoaPBUDbhSWrLp0my5MDyGexlJNB6fZyUP4wUXyxGrH2OYuAk01PqPuN7abhfDrVQ1_PeXLpQE4m=w156-h156-n-k-no",
+            "type": [
+              "Medical Center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OlEKTyJLVGhlIEJsYXZhdG5payBGYW1pbHkg4oCTIENoZWxzZWEgTWVkaWNhbCBDZW50ZXIgYXQgTW91bnQgU2luYWkgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COlEKTyJLVGhlIEJsYXZhdG5payBGYW1pbHkg4oCTIENoZWxzZWEgTWVkaWNhbCBDZW50ZXIgYXQgTW91bnQgU2luYWkgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

@@ -1,0 +1,898 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e98b255a83e0c3ab78b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/2H7ZmPiDDJ1DB3m--CUa4Q/6a3d3e98b255a83e0c3ab78b.json",
+    "created_at": "2026-06-25 14:43:36 UTC",
+    "processed_at": "2026-06-25 14:43:36 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259088044f477:0x601a10d6ab7b2c7f!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/2H7ZmPiDDJ1DB3m--CUa4Q/6a3d3e98b255a83e0c3ab78b.html",
+    "prettify_html_file": "https://serpapi.com/searches/2H7ZmPiDDJ1DB3m--CUa4Q/6a3d3e98b255a83e0c3ab78b.prettify",
+    "total_time_taken": 0.92
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJd_REgAhZwokRfyx7q9YQGmA",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "City Care Family Practice",
+    "place_id": "ChIJd_REgAhZwokRfyx7q9YQGmA",
+    "data_id": "0x89c259088044f477:0x601a10d6ab7b2c7f",
+    "data_cid": "6924865891221580927",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259088044f477%3A0x601a10d6ab7b2c7f&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259088044f477%3A0x601a10d6ab7b2c7f&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.745238,
+      "longitude": -73.9824295
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJd_REgAhZwokRfyx7q9YQGmA",
+    "provider_id": "/g/1tfvtvy7",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHYeA53FRNrUNyAutf-bVF6wtAlEXUy5pWa7V72mLGxkTG4rUeCW3iIDB-3fWccuC7Q5bn7X1CnJXufNZC6m3CLYydEry0zyPGFxf6YhMEHrx8-EnIAv49_Hn8DeCTsEDUzRqaR=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/CbwRhXicHcThEoEwAADgJ5piKtz5MWsVR0cnlT-OWeXUyrZoXtAzeBt3vh_f91Mq1cqZYVQlHBRNU1Ssk0zQhivG1YA2tVG0ElAJpIG24e6OgowhC3pRKOJQo07l4HLw7JdCFUljbbXJ2Tk4o3rt9_e9PxYxwwm8Ld0FgHlCaYednXXhTjrEfJV2eXjEdg3xOtNXIrT51lvf63M7KzckEP0EEL5Ez_H0FPCJy_BeEjd-R49zNH8NTdME5X8K-A_rW0Nn",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 79
+      },
+      {
+        "stars": 2,
+        "amount": 9
+      },
+      {
+        "stars": 3,
+        "amount": 8
+      },
+      {
+        "stars": 4,
+        "amount": 39
+      },
+      {
+        "stars": 5,
+        "amount": 890
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 1025,
+    "type": [
+      "Family practice physician"
+    ],
+    "type_ids": [
+      "family_practice_physician"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "461 Park Ave S 9th floor, New York, NY 10016",
+    "country": "United States",
+    "booking_link": "https://healow.com/apps/practice/city-care-family-practice-194?v=1",
+    "website": "http://www.citycarefamilypractice.com/",
+    "phone": "(212) 545-1888",
+    "open_state": "Open \u00b7 Closes 6:30 PM",
+    "plus_code": "P2W9+32 New York",
+    "hours": [
+      {
+        "thursday": "8:30 AM\u20136:30 PM"
+      },
+      {
+        "friday": "9 AM\u20134:30 PM"
+      },
+      {
+        "saturday": "9 AM\u20134:30 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8:30 AM\u20136:30 PM"
+      },
+      {
+        "tuesday": "8:30 AM\u20136:30 PM"
+      },
+      {
+        "wednesday": "8:30 AM\u20136:30 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259088044f477%3A0x601a10d6ab7b2c7f&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHYeA53FRNrUNyAutf-bVF6wtAlEXUy5pWa7V72mLGxkTG4rUeCW3iIDB-3fWccuC7Q5bn7X1CnJXufNZC6m3CLYydEry0zyPGFxf6YhMEHrx8-EnIAv49_Hn8DeCTsEDUzRqaR=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/CbwRhXicHcThEoEwAADgJ5piKtz5MWsVR0cnlT-OWeXUyrZoXtAzeBt3vh_f91Mq1cqZYVQlHBRNU1Ssk0zQhivG1YA2tVG0ElAJpIG24e6OgowhC3pRKOJQo07l4HLw7JdCFUljbbXJ2Tk4o3rt9_e9PxYxwwm8Ld0FgHlCaYednXXhTjrEfJV2eXjEdg3xOtNXIrT51lvf63M7KzckEP0EEL5Ez_H0FPCJy_BeEjd-R49zNH8NTdME5X8K-A_rW0Nn"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFYoN56-x4_42c1Ij4-wSyyvcJtuwGv9IqJVcOLCxjn81i14V81BITaJzBC9t3FmPpDIDN8sxlTrPGpV72U9wQCvUpZZ8d1FPrpEH4yAoipswoaZ4En5nj72Gv4K6IqgqNuqY40yw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/w7a2tHicHcRRCoIwAADQE02drtSgD7O0WZhRCfkTsUQz3aabTrthR-g2Qe_jfT-llFwsdL0uLa1grKjzXuQdYVTmVGqENXrBBSACCN1L4uPLC64sns3BiG7IJBBXCKjTNA0kkr0KBxe3UUoOe3-sqAOfEKUOXOHzPXqvfFdaQZPwNV7Hjhjrc5eEPLXNi6uO_nDhWeY8YJB0fLNFk8eeXCh2z9CGzmhlm-GAdnPcFm3ct1dkTGqpoGEYoPxPAP0BeclEgw"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSJRU2blJYyTDe4w6hBP8cNPj6lK1qvVstXAWamHitIM42DHXNFR4mTlok_pMAGmjuhqWq2Ax6m-crq0g2K_M6F7qv51nd9igFALAQKDzSR9x8fpaedfB-TT1XUwGFPl81HkCa6Q=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/OR2UQHicHcRRboIwAADQE1UoYxVN9lFHKooQQJzsy7BaW6Wl1FZx3nBH2G2W7H283x_h3GDnnifFy4RrzSW7WXalunesdxOqlccHC6gF1sNFXnaYbNfVLviS68_vOmbhiMSiiGheXJBMobl_WNfgfauSs1tlYRAnTU6qUNVSd4chw0t1uQmzNwF-IAXo1fg8SA8ZIlNzf4X9cXbmBG9wmcbPbTV7RKehZcfTAtQ1bHbjkhQygkn33qLybYS-7wPxPwX9H6_tRDY"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lQ7RH-LnwEGqar5XMeldzA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=122.375595&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/GVeSHnicHc0xDsIgFADQ27AVWpTUmhDjYHTQQSe35pdiIaGA5VvU63gqb2Piu8D7fgxiTGvGEk5a42x1jvapXSoi0CGEwWmINlEVRjZXDM1j7DxYt4ngg-2lO9eXQ3H0ebe_wySuJ-3695aorlXOao9yhJjaNFMEhdZpOsREsuR8SYzkzYq8IMuKc7qohWgEiRaVkSX5R7cwy6osfytQOmY"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The staff and doctors are amazing, with top-tier service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJqRa_9Tnch9oa8cy0_eBFXcZyXnER8FwTA_NYLlb1znypDVg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The environment is spotless and warm with gentle music filling the rooms.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXxJsS9cO_Pz1IQ8QII1lDhcyqbbeO7n6Z2XMmGVCoSY6b5ZLbo=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"This place is completely unprofessional and will try to steal your money.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWbclJglpwADdKUdLY0q7zYXXeruzZ6jilga7_FJ9tN5T1PJF3-Jg=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Nelly Yuki",
+          "rating": 5,
+          "contributor_id": "117802823616769180144",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKcyBzchnO7iOC7jxJrAgdcfgAJsjWqAqqg5CzbH_Nwf14SbQ=s120-c-rp-mo-br100",
+          "description": "Dr. Chung has been my primary doctor for two decades and I've always had a positive experience. He's always explained different issues clearly and helped me with whatever was going on. I trust his medical advice and care. The office is also lovely and in a great location. I've recommended him whenever a friend needs a doctor.\n\nNow that I don't live in NYC anymore, I've come to appreciate him even more! Hence why I'm writing this review now. I found a great PCP where I am now, but establishing GOOD medical care in a new state is challenging and takes a long time. It makes me appreciate so much more the excellent care I've received over the years with my NYC doctors and specialists.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25GV2VEUTJkVU53VFhGUlRVUndTSFJZTlZaa04yYxAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOnFWeDQ2dUNwTXFRTURwSHRYNVZkN2c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T17:46:14+00:00"
+        },
+        {
+          "username": "Travis Samuel",
+          "rating": 5,
+          "contributor_id": "102583996436693454146",
+          "user_review_count": 11,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUWSTt5rO02N_rTy33k3Ms1j-WJ8R1nOYwH1dVNtGL07qgPwLbU=s120-c-rp-mo-br100",
+          "description": "I love City Care Family Practice! I've been coming here for a couple of years, and what I like most about them is that they're always there when I need them. There aren't many places you can go that have experienced doctors that take last minute appointments, and I appreciate them for that. On top of their flexible availability, the staff is also really great. Front desk always helps with making sure I have everything I need prior to my appointment. Susu is also really great and always makes the process go so smoothl. Dr. Karthik is amazing and knowledgeable and always has the answer to my questions. Harry is new but I've had him a few times and he's awesome",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKeVVFWnJVVzVIYjJaa2VYa3dUSGQwWVdodmVYYxAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOjJyUEZrUW5Hb2ZkeXkwTHd0YWhveXc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-14T22:59:28+00:00"
+        },
+        {
+          "username": "Michelle RP (Michelle)",
+          "rating": 5,
+          "contributor_id": "113609162551964871835",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIK54CXZwtHU7b101ie4Y7RsvRnbj_fvMbyJ3Guu7oTX6sx-hQ=s120-c-rp-mo-br100",
+          "description": "Susu the nurse was very kind and sweet. Asked me all my general questions about my medical history with patience and took so many vials of blood without me barely noticing the pinch or pain. Harry the PA answered a lot of my questions and concerns since I have not had a medical check up in a few years. He was compassionate when discussing mental health and issues at\nHome affecting my functional mental health state. I will be recommending city care family practice and even considering switching my son care here as well. Thank you to all the caring and accommodating staff for making my first visit so seamless and easy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OTVFscGtjMkpCZVVjeVV6aEtSWFpGU0hKMVVrRRAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOnNMQlpkc2JBeUcyUzhKRXZFSHJ1UkE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T21:29:32+00:00"
+        },
+        {
+          "username": "Tariq Atwell-Forbes",
+          "rating": 5,
+          "contributor_id": "103076867687219696966",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK-PokUZyYhkyjz-zHtfUUVYXYsnADYkayREyJQExa3Aw2yBg=s120-c-rp-mo-br100",
+          "description": "My appointment went quickly, everyone is straight to the point and looking to get you on your way which is perfect for me. Susu who took my blood was gentle and kind. 10/10 would recommend",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkcFFqRjNNV1ZxT1ROVFRuWTNSR1k0YkROU00wRRAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOjdpQjF3MWVqOTNTTnY3RGY4bDNSM0E%7C%7C?hl=en",
+          "date": "a week ago",
+          "date_iso8601": "2026-06-12T20:14:40+00:00"
+        },
+        {
+          "username": "Zoia Morgan",
+          "rating": 5,
+          "contributor_id": "112115927132893190347",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ3ZSmaPM0fZPH2aQ3go_bdRvvtz_6Kbcp0wMQun2XyswcoQA=s120-c-rp-mo-br100",
+          "description": "Dr K My doctor is very knowledgeable, professional and compassionate! I truly recommend him to be your primary care doctor!\nSuSu Always has a positive attitude, smiling, patient. She is also very professional!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsWVNrNHhaSHBxTldJeVMyRjVSRFZLVjFCR1ZWRRAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOllYSk4xZHpqNWIyS2F5RDVKV1BGVVE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-04T14:33:32+00:00"
+        },
+        {
+          "username": "Amitabh Kamalkant Kapil",
+          "rating": 5,
+          "contributor_id": "108641709606638707633",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKFWp8HtbHSJ80_O8WiyHajJev6AoD_kJl9zIy9vdOQeYEmEQ=s120-c-rp-mo-br100",
+          "description": "As a family, we have been seeing Dr Chung for more than 10 years and he has been super nice as a doctor and as a person. Apart from ensuring our family\u2019s health he also ensures our well being by giving simple health advice\u2026. Special mention of Susu who has been super precise and extremely humble in her approach and team on front desk that are so very helpful and welcoming.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkVlR6WkZTRFJhVTJRM1lscHZSelptTjNaSFkzYxAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOldVTzZFSDRaU2Q3YlpvRzZmN3ZHY3c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-10T20:13:50+00:00"
+        },
+        {
+          "username": "Zack Ordynans",
+          "rating": 5,
+          "contributor_id": "101652129685247007274",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUp8J0c_C5H5gdir-q9kGfG_1KyqNI5LfCVZUlWU17-vqzx-NRh=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been coming to this office for years, and have always found their practice to be thorough and professional. My previous doctor left and I recently saw Dr. Solis, who was attentive and friendly. Overall highly recommended.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tORlVsOXRTVmhHZEhaclR6TjBNazR5VldnelUxRRAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOkNFUl9tSVhGdHZrTzN0Mk4yVWgzU1E%7C%7C?hl=en",
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-26T21:58:09+00:00"
+        },
+        {
+          "username": "Toby Shea",
+          "rating": 5,
+          "contributor_id": "107992681419383643486",
+          "user_review_count": 17,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWKbeEBH5aK6U-lgAIVT3RL1l4EzU-Cz4v4Wi8oCQ3TfnoNVHJp=s120-c-rp-mo-ba12-br100",
+          "description": "I have been going to dr Chung for more than 30 years.  He has a lot of common sense and gives good advice.  I really like the way he communicates - transparent, matter of fact, and easy to understand. Susu was her helper today for my annual check up.  It was all smooth.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wNlozTnJiQzAxUkc1MmFFVnZSVE54VmpWaVUxRRAB!2m1!1s0x0:0x601a10d6ab7b2c7f!3m1!1s2@1:CAIQACodChtycF9oOmp6Z3NrbC01RG52aEVvRTNxVjViU1E%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-27T20:35:18+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Primary Care Doctor in Midtown Manhattan",
+            "data_id": "0x0:0xc974fac2cdd23088",
+            "data_cid": "14516503213505654920",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc974fac2cdd23088&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc974fac2cdd23088&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7506286,
+              "longitude": -73.98534810000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc974fac2cdd23088%218m2%213d40.7506286%214d-73.98534810000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 5,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGF4fX1PUOwtXyG4cqvnsG5QC6YYRvPU-1pkxr0_xIFi4ewxOeJelVPBzFMr_VrRkaXEPaSkGzF4qoL4sBu2lHNHNSZuhl0Y-tR1xJrzPhKQP9KO6yFLSxQWwaPe0sfU__p7DVQ=w156-h156-n-k-no",
+            "type": [
+              "Doctor",
+              "Family practice physician",
+              "Medical office"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Manhattan Family Practice",
+            "data_id": "0x0:0x411143d8f308a57c",
+            "data_cid": "4688603286138824060",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x411143d8f308a57c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x411143d8f308a57c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.775936,
+              "longitude": -73.95969199999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x411143d8f308a57c%218m2%213d40.775936%214d-73.95969199999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 37,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJw2OT8TJLigiFjWk3zrOzp_oCFMp9vNh9j4fpZsolIgDW1_uUOUvZNDCKUBTk17O1rp-M4CqIAU04qORZlI7nP80_kf2Fw9qeyNSnDq-0418jeZhfHbg-oaX0bWy8VQk97JkiTA=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "Family practice physician",
+              "General practitioner",
+              "Internist",
+              "Medical Center",
+              "Medical examiner",
+              "Medical office",
+              "Nurse practitioner"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Lyon Primary Care",
+            "data_id": "0x0:0xbd401b88f7089af9",
+            "data_cid": "13636929946751900409",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbd401b88f7089af9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbd401b88f7089af9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7601624,
+              "longitude": -73.9728788
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbd401b88f7089af9%218m2%213d40.7601624%214d-73.9728788&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 631,
+            "thumbnail": "https://www.google.com/maps/vt/data=IS3KJTa17I7y0b9I0AazTHHRMmnRIud5gsUmGSN4Iue9x7cjqlmVdKlKXkdAaRSNFlEP8mkGBgmg9fBVa3WediOx5653ps9UWeaPzw_O4Z4GGYdujfZPNaqFgrIz0XjUCrlzHwVBiJ1Dc8ahK3_d5z1Fs37HtBLT",
+            "type": [
+              "Medical clinic",
+              "Family practice physician"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Dr. Monica Sharma",
+            "data_id": "0x0:0x2776bc2d291f798e",
+            "data_cid": "2843667116880525710",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2776bc2d291f798e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2776bc2d291f798e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.751101999999996,
+              "longitude": -73.981729
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2776bc2d291f798e%218m2%213d40.751101999999996%214d-73.981729&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 20,
+            "thumbnail": "https://www.google.com/maps/vt/data=R7oR_ELT0lWuJGWtiWXSvXTJRvqc-LyLquKoO7XI_vp4U4jFvPbzH-iHEx-zg2B5x8Qgx66dUo0HjaxNMiofBIyJXODgKZGrXsZbSasxMikHUdAaRIe23pa8TOqe2yRsMxjDdT6MhKP4yOC_u0uChPA0iESuyVKd",
+            "type": [
+              "Family practice physician",
+              "Practitioner service location"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Joshua Shapiro",
+            "data_id": "0x0:0xa2b370579207b9f8",
+            "data_cid": "11723837776389978616",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa2b370579207b9f8&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa2b370579207b9f8&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7498752,
+              "longitude": -73.9786682
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa2b370579207b9f8%218m2%213d40.7498752%214d-73.9786682&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=oWtlyBXf4EktOCjLspydMlikRMW34CoOE_zwXlXPx-snjah0AilxG68tVDsA4ildfw05EK4ek57ILPygw_VBawbjrrU66Lu6-IOCkB7iSNNfB9OMVubKjM34_d6YLNUVLyhS8xWZUx5c2S_zvUwI3V5Tct6RgF4C",
+            "type": [
+              "Family practice physician",
+              "General practitioner"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Busier than usual"
+      },
+      "graph_results": {
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 25
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 35
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 41
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 29
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 66,
+            "live_busyness_score": 100,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 33
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 37
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 15
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 19
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 17
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 11
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 9
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 7
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 9
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiwKKiImQ2l0eSBDYXJlIEZhbWlseSBQcmFjdGljZSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiwKKiImQ2l0eSBDYXJlIEZhbWlseSBQcmFjdGljZSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

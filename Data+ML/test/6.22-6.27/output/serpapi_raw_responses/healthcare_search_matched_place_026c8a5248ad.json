@@ -1,0 +1,777 @@
+{
+  "search_metadata": {
+    "id": "6a3d3eb5217adebde1c951b6",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/5lojUU1kZFUxiUo9u4D0Pw/6a3d3eb5217adebde1c951b6.json",
+    "created_at": "2026-06-25 14:44:05 UTC",
+    "processed_at": "2026-06-25 14:44:05 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f61041695d65:0xadae923df112112c!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/5lojUU1kZFUxiUo9u4D0Pw/6a3d3eb5217adebde1c951b6.html",
+    "prettify_html_file": "https://serpapi.com/searches/5lojUU1kZFUxiUo9u4D0Pw/6a3d3eb5217adebde1c951b6.prettify",
+    "total_time_taken": 6.08
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJZV1pQRD2wokRLBES8T2Srq0",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Community Healthcare Network \u2013 Harlem / Helen B. Atkinson",
+    "place_id": "ChIJZV1pQRD2wokRLBES8T2Srq0",
+    "data_id": "0x89c2f61041695d65:0xadae923df112112c",
+    "data_cid": "12515101209244340524",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f61041695d65%3A0xadae923df112112c&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f61041695d65%3A0xadae923df112112c&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8012008,
+      "longitude": -73.9495474
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJZV1pQRD2wokRLBES8T2Srq0",
+    "provider_id": "/g/1tx168tf",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=mlkRUJanVnpcMtIv0WKsbw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=17.672514&pitch=-0.4407786&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Nige_3icHY1LDsIgFABvw658TC3GhLhW48ZEXRpKEYgUSHmCHskjeRurm9lMMvN5W4CU14RkmLSG4nRN7ql9bpLEJkbjtUwuYxVHUhgB-xj7IJ3fJBmiG8To78fTToZzSOoA20Iv-9xXpPqr8k4HEFnLSVls6lyc4oBNyqiKVYfsDy9ZBeO444sla1FyoKxoKG5byvms_7tbLIJR-gXFzDwj",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 16
+      },
+      {
+        "stars": 2,
+        "amount": 3
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 16
+      }
+    ],
+    "rating": 3,
+    "reviews": 43,
+    "type": [
+      "Community health center",
+      "Family planning center",
+      "Medical clinic",
+      "Mental health clinic",
+      "Mental health service",
+      "Women's health clinic",
+      "Pregnancy care center",
+      "Reproductive health clinic"
+    ],
+    "type_ids": [
+      "community_health_center",
+      "family_planning_center",
+      "medical_clinic",
+      "mental_health_clinic",
+      "mental_health_service",
+      "obstetrics_gynecology_clinic",
+      "pregnancy_care_center",
+      "reproductive_health_clinic"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "Offers free or low-cost care based on individual circumstances"
+        ]
+      }
+    ],
+    "address": "81 W 115th St, New York, NY 10026",
+    "country": "United States",
+    "website": "https://www.chnnyc.org/harlem-health-center/",
+    "phone": "(212) 426-0088",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "R322+F5 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      },
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "8 AM\u20137 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=mlkRUJanVnpcMtIv0WKsbw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=17.672514&pitch=-0.4407786&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/px_TtXicHc1LCsIwEADQ22TXNC2xrUJwreJGUJeSxtgM5jOYMdUzeSJvI_gu8L4fR4R5VdeZHtZSATsjvKzPFWo-pTR5qxEyNynUpanJPcMYNfg16pjgqoK_H45bHU8RzZ42RZx3eZyZGS_Gg42kgsZ8yYWTNgTe8gkzm1XbSuZUuxzYW8-q6XnXt4tGMgQyTlWCSyn6fujYP7ylohohfkWCPLo"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=mlkRUJanVnpcMtIv0WKsbw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=17.672514&pitch=-0.4407786&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/px_TtXicHc1LCsIwEADQ22TXNC2xrUJwreJGUJeSxtgM5jOYMdUzeSJvI_gu8L4fR4R5VdeZHtZSATsjvKzPFWo-pTR5qxEyNynUpanJPcMYNfg16pjgqoK_H45bHU8RzZ42RZx3eZyZGS_Gg42kgsZ8yYWTNgTe8gkzm1XbSuZUuxzYW8-q6XnXt4tGMgQyTlWCSyn6fujYP7ylohohfkWCPLo"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"It\u2019s a bit hidden and hard to find, but was clean and had great service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX9OnXVIA3K1S-lCCcGW_qHZukELEB_3QTsgELKhkwo4EjSWa9vqg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I would highly recommend this location for prenatal care.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLw5dnRSc7IIQMFShx1iOSAZAQqKgK7Qex5X3AcESFz0xkS0A=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Keep away from this place for your dental care!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXLsX7do2f_qMLU8Bhi8NZH9dP6u_SzCtbg_TUmixHMm7FW1FZq=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Monique",
+          "rating": 2,
+          "contributor_id": "102549870239776941048",
+          "user_review_count": 6,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIElnchSUvKXnaXxA0oOshqwtM-qHM_DYMKcSWh2wtPXPEBaw=s120-c-rp-mo-br100",
+          "description": "Receptionist are most helpful although not much they can do.  therapy it hasn\u2019t been clear communication, I\u2019ve haven\u2019t received any contact or updates in about three months after regularly calling, and the one time I do speak to a doctor for a hour long psych evaluation, she only spends 15 minutes with me and is telling me \u201cnow I\u2019m not against smoking but I do recommend to stop smoking cause it kills my braincells\u201d and it ended with giving me medicine prescription that I specifically told her I wasn\u2019t comfortable with. Asked for a new doctor and been waiting on a supervisor call as well to help me set up, that\u2019s been two months ago alreadyzJust terrible with ppl going through actual mental outrage they are terrible with providing support for new clients. It\u2019s my fault for giving so many chances and just not finding a new clinic after so long honestly.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tkeFNrRlVhVGQyU2xSUlZGcElRbEZ2VnpkalpXYxAB!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CAIQACodChtycF9oOkdxSkFUaTd2SlRRVFpIQlFvVzdjZWc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2025-12-31T05:07:42+00:00"
+        },
+        {
+          "username": "K W",
+          "rating": 1,
+          "contributor_id": "101040103672113437103",
+          "user_review_count": 31,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXLsX7do2f_qMLU8Bhi8NZH9dP6u_SzCtbg_TUmixHMm7FW1FZq=s120-c-rp-mo-ba12-br100",
+          "description": "I went to this facility for a dental exam. The x-rays showed a decaying tooth. I made numerous visits to see Dr. Tam and each time she never scheduled the tooth filling. She just kept taking x-rays and telling me to come back. There were times that my appointment was canceled without advance notice. Everytime I went to this office, Dr. Tam kept postponing treatment for my decaying tooth. I went to this office with the same issue at least 5 times and the tooth continued to decay. The office just kept taking x-rays and charging a co-pay. I decided to find another dentist but unfortunately, it was too late. I had to go to the emergency room because an abcess developed and caused a bad infection in my gum due to the decayed tooth. My entire lip/mouth swelled up like a balloon. I was in extreme pain. I had to have the tooth extracted. The tooth is near the front of my mouth. This happened all because Dr. Tam kept postponing treatment. I even went to another location in Brooklyn and when I went there, they started with taking x-rays again even though I had just recently taken x-rays. Just a big money-grab! I would never recommend this dentist to anyone. Avoid going to this facility ( Dr. Tam) for your dental care. Going to this facility caused me unnecessary pain and suffering and caused me to lose a tooth that could have been saved.\nKeep away from this place for your dental care!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURvMDYtdE1BEAE!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CIHM0ogKEICAgMDo06-tMA%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-04-28T15:41:38+00:00"
+        },
+        {
+          "username": "amber everett",
+          "rating": 1,
+          "contributor_id": "100747854458263530739",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWaeUFEFEShm1VvIXA0C9DYJBTdhrsizLw6oDTz0TBF0AykyBSz=s120-c-rp-mo-ba12-br100",
+          "description": "This is the worst place I\u2019ve ever been to in my life. I called Friday about an emergency contraceptive and begged them to please send a new one that day because it was an emergency. They didn\u2019t fill it until that Monday and all the nurse \u201cwe sorry how do you feel about that\u201d I hung up on that lady face. Then some man called me on the same bs. Like what I\u2019m supposed to do?? I can\u2019t take it now so it ain\u2019t no point of calling my pharmacist I can\u2019t take it.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WMVlVWnZNWGxJTm1SeU5rcEZkVFZuWmpoSU1XYxAB!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CAIQACodChtycF9oOnV1YUZvMXlINmRyNkpFdTVnZjhIMWc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-17T19:33:49+00:00"
+        },
+        {
+          "username": "Javier Chavez",
+          "rating": 2,
+          "contributor_id": "109122305607334545530",
+          "user_review_count": 15,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIqmyNXB6G57ODRuUsYi8GxWnImFcr__5Ss4iM1YxI0ooqzewSM=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been going here for over 10 years off and on. First, they don\u2019t have enough appointments for the medical recommendations and treatments they prescribe because they\u2019re always canceling appointments at the last min at least for dental. This leaves one with anxiety and constantly out of care. But the dental work is good if you can get it constantly. Good luck. Less chatting gets you more. Primary care is shift as well and most of the time they are rude practitioners because they\u2019re pushing patient after patient. Still better than nothing\u2026",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUQyNmV6UDl3RRAB!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CIHM0ogKEICAgID26ezP9wE%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2022-05-18T16:29:48+00:00"
+        },
+        {
+          "username": "Gina Green",
+          "rating": 3,
+          "contributor_id": "104496448394228464492",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLnQ5p4_SPTk0WSuBTqlh0hZkyqzeO-D2ZSZbWxLBo6d6D26gE=s120-c-rp-mo-br100",
+          "description": "Though I don't go there often, I can say that I've taken my daughter there through the years and now she takes her children.  The front staff can be iffy when they are overwhelmed.  You can see the push for them to be nice and that still needs some work.  The main complaint I have is that they only have 1 dentist who is actually very good and she is pleasant.  The problem being the ONLY dentist is that their appointments are 3 - 4 months from the time you call.   I just called and the woman told me the end of June or sometime in July.  Not good!!!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURBd2FlTFV3EAE!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CIHM0ogKEICAgIDAwaeLUw%7C%7C?hl=en",
+          "date": "9 years ago",
+          "date_iso8601": "2017-03-28T19:21:56+00:00"
+        },
+        {
+          "username": "K. Manns",
+          "rating": 1,
+          "contributor_id": "113359973554197502307",
+          "user_review_count": 12,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUuQUqLkEb_cM-GZol7qMpMDJJUvZQ5yt7fKkZsZnIAyyw5eZyE=s120-c-rp-mo-ba12-br100",
+          "description": "The service was horrible, customer service was rude and they rescheduled my dentist appointment 3 times, and I had to wait months for the next appointment. I don't have issuance so in that time rates increased and I asked for a discount due to them rescheduling me and they declined.  Once I finally made it to my appointment the new dentist was rude and overworked. She even had the audacity to ask if I wouldn't mind rescheduling my appointment. I refused, she cleaned my teeth but her equipment din't even work. The hygienist was training, which annoyed me because they conversed in Spanish the entire time which I thought was rude. They were clearly using me to help this young lady learn the ropes, which would have been fine if I was at dental school and paying half price. They take advantage of the fact that they are across from the projects. Thankfully I will be getting new issuance soon and will never return. This place is disgusting and needs to be reviewed by the dept of health.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN3Nk1XcThRRRAB!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CIHM0ogKEICAgICw6MWq8QE%7C%7C?hl=en",
+          "date": "10 years ago",
+          "date_iso8601": "2015-12-10T16:30:01+00:00"
+        },
+        {
+          "username": "Haley Rice",
+          "rating": 1,
+          "contributor_id": "101538068275223475599",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWOokgHxnobNVGIqRg-vGWp9yc0kbvZCF2Zj4CmXLBIpvu39aR9=s120-c-rp-mo-br100",
+          "description": "Even after being a patient here for years, it amazes me how there have been no improvement to communication for appointments and between doctors. I was having a sensitive procedure being done and the doctor was having a full on conversation with the intern about what neighborhoods they were living in, I've had the reception make consultations with the wrong doctors for me. So many broken promises from doctors to help. Just a nightmarish waster of time at the expense of your health.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNwMWRiR1pREAE!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CIHM0ogKEICAgICp1dbGZQ%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-08-07T18:15:56+00:00"
+        },
+        {
+          "username": "Michelle Colon",
+          "rating": 1,
+          "contributor_id": "101466624906240725407",
+          "user_review_count": 4,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUzwvi_x9HsPupAQW80hTSwl-GEecNr3HYXDLtiY-dbpXFwKj6K=s120-c-rp-mo-br100",
+          "description": "This place is horrible I had a very very important appointment today and because I arrived a few minutes late the doctor Libby Brubaker denied to see me that is very unprofessional and she shouldn\u2019t be a doctor especially that she doesn\u2019t care about her patients",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SdFNVa3pSMjVQYlcxSU5XazNWRVpEVTJaUVNXYxAB!2m1!1s0x0:0xadae923df112112c!3m1!1s2@1:CAIQACodChtycF9oOmRtSUkzR25PbW1INWk3VEZDU2ZQSWc%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-10T03:25:34+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Community Health Network",
+            "data_id": "0x0:0x2cd1d522e2e38d6a",
+            "data_cid": "3229596753613524330",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2cd1d522e2e38d6a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2cd1d522e2e38d6a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8086945,
+              "longitude": -73.9368392
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2cd1d522e2e38d6a%218m2%213d40.8086945%214d-73.9368392&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=zAoVDTPuGD2kiSSpOkd_CVZbzhrK9M0JBhai2uDatjnDfTBkFfQY2tEnOwekqH3BYPIF2zjPA0ZTOlgYFNjJpMBM55mIJaMxnf8l0niwIJ_-dIn07RdanQtuZNZ2vowL-DGQjG8BgfdSQ-1P-oEbRPUrax2D8xV5",
+            "type": [
+              "Social services organization"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Community Health Center",
+            "data_id": "0x0:0x913f7a054e1d78ea",
+            "data_cid": "10466218222236301546",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x913f7a054e1d78ea&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x913f7a054e1d78ea&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7974897,
+              "longitude": -73.93958889999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x913f7a054e1d78ea%218m2%213d40.7974897%214d-73.93958889999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 3,
+            "thumbnail": "https://www.google.com/maps/vt/data=F8_IflsrLfBO90wkWzM-G8skqPtdch3GX4kR5DjRYiMII_vzpMb8RlZVWQQ-9vLCfuACEjblwrSm9uv3L3dCErPijQQ1STGiivM2KKgzshiXBDr-2UyTxNw6eCuXs_uTlk7ybGGooe8yQm0HPZ434xM02e2UQck0",
+            "type": [
+              "Medical group"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Harmen health center",
+            "data_id": "0x0:0xee6565c1c974da15",
+            "data_cid": "17178248236657596949",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xee6565c1c974da15&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xee6565c1c974da15&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8111487,
+              "longitude": -73.953932
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xee6565c1c974da15%218m2%213d40.8111487%214d-73.953932&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=c_TLe7KmZcmmXhrOUDYjZl8toJCTQq0MtdZJrWM19vrSIORJUXV4vS0_gCFJ_t7tmYOqF5kJIxBfqapYL6eoY3dRTEZa-0pmiySCojH3DgnXm1TgUz-DZSTuVNEI3GBU9PO-I3GVF37b084HEWlEUDqnDU8lfyYt",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Citicares Community Health Center",
+            "data_id": "0x0:0x8a170cc17ebfb537",
+            "data_cid": "9950435926893114679",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8a170cc17ebfb537&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8a170cc17ebfb537&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8098333,
+              "longitude": -73.9468334
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8a170cc17ebfb537%218m2%213d40.8098333%214d-73.9468334&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 72,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHSLIKdJf1REgIDM4oFfgEtaO_7g0uGzXYoqksJ45_sFTm4wH9-2_XbEHKQOWKhLmVPdH2gUEydQ832sErWhmVLhiUxZhtNMHNKy377trO4AW0cF_jAC64POLEKB7QJ4z-_A3g=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "A little busy",
+        "time_spent": "People typically spend 30 min to 2 hr here"
+      },
+      "graph_results": {
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 67
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 67
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 86
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50,
+            "live_busyness_score": 71,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 69
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 17
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Ok4KTCJIQ29tbXVuaXR5IEhlYWx0aGNhcmUgTmV0d29yayDigJMgSGFybGVtIC8gSGVsZW4gQi4gQXRraW5zb24gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COk4KTCJIQ29tbXVuaXR5IEhlYWx0aGNhcmUgTmV0d29yayDigJMgSGFybGVtIC8gSGVsZW4gQi4gQXRraW5zb24gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

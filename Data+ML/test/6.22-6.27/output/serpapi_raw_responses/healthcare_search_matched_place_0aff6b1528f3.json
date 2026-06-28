@@ -1,0 +1,435 @@
+{
+  "search_metadata": {
+    "id": "6a3d3eaa9a1f2cccca9bfd6c",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/EaTiVRMqTMZCZeAT8Am3Cg/6a3d3eaa9a1f2cccca9bfd6c.json",
+    "created_at": "2026-06-25 14:43:54 UTC",
+    "processed_at": "2026-06-25 14:43:54 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2599dffa883bd:0x9547198182810a70!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/EaTiVRMqTMZCZeAT8Am3Cg/6a3d3eaa9a1f2cccca9bfd6c.html",
+    "prettify_html_file": "https://serpapi.com/searches/EaTiVRMqTMZCZeAT8Am3Cg/6a3d3eaa9a1f2cccca9bfd6c.prettify",
+    "total_time_taken": 1.27
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJvYOo_51ZwokRcAqBgoEZR5U",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "New York City Pharmacy",
+    "place_id": "ChIJvYOo_51ZwokRcAqBgoEZR5U",
+    "data_id": "0x89c2599dffa883bd:0x9547198182810a70",
+    "data_cid": "10756594279028689520",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599dffa883bd%3A0x9547198182810a70&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599dffa883bd%3A0x9547198182810a70&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7302143,
+      "longitude": -73.9830656
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJvYOo_51ZwokRcAqBgoEZR5U",
+    "provider_id": "/g/1trvmbs8",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyfUSTof-IAP11io37y-KsXyXQZLelkHjz4xsv6ipXHWaPkuAVta2WAgFla53B1dNpIZf7Q-9Q-UT69lH_vkS8EueVtrVVw5pTUxFgZ0zyI6fAZb1vyvy-j6y9CFByoTJtWZnOIKPHVFqh=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/YGbiU3icHcTBboIwGADgJ_qFysSxZIe6iKBGIUIhvRjGSlE6Wm1B60vuvLcx8Tt8_3-tMUp_OI5ovQmXkgs2aHatZW9Ybya1_HW40lBr0A5OdmmHV7bJD5lsIMYJQifpzS1sdGnLlG6Z6KLz4-2uR_-kyqiokm7AxFTTAvNQVDNvgX52KqbNPIUghTzzAxEdx-7wvhwYMVdCbjOV5feQU_dhY7_B9BuNdrRw9m3wFS6szNamoP0-3iQRCS_t5w25rgvt6xr6J6OhR48",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 2
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 5
+      },
+      {
+        "stars": 5,
+        "amount": 83
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 91,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Curbside pickup",
+          "Delivery",
+          "In-store pickup",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "offerings": [
+          "Medication disposal"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "curbside_pickup": true,
+      "delivery": true
+    },
+    "address": "206 1st Ave, New York, NY 10009",
+    "country": "United States",
+    "booking_link": "https://www.google.com/search?hl=en&gl=US&udm=28&q=New+York+City+Pharmacy&shoprs=Egk6BwoFwofgmQESDLIBCQn5bHkEUYyAoRgCMkMIAhIWTmV3IFlvcmsgQ2l0eSBQaGFybWFjeSIJOgcKBcKH4JkBKhoKFk5ldyBZb3JrIENpdHkgUGhhcm1hY3kYAUgBMi4IHxIWTmV3IFlvcmsgQ2l0eSBQaGFybWFjeSIMsgEJCflseQRRjIChKgIYAUgB&sts=13",
+    "website": "http://www.nycprx.com/",
+    "phone": "(212) 253-8686",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "P2J8+3Q New York",
+    "hours": [
+      {
+        "thursday": "10 AM\u20137 PM"
+      },
+      {
+        "friday": "10 AM\u20137 PM"
+      },
+      {
+        "saturday": "10 AM\u20135 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "10 AM\u20137 PM"
+      },
+      {
+        "tuesday": "10 AM\u20137 PM"
+      },
+      {
+        "wednesday": "10 AM\u20137 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2599dffa883bd%3A0x9547198182810a70&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN2WHAl7DaVY33QvEOtns0b8YScovlhzv0W96Xs=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=New+York+City+Pharmacy&ludocid=10756594279028689520&lpsid=CIHM0ogKEJ3Q5cGotML6iwE&source=sh/x/loc/post&lsig=AB86z5V68ZxZ87MgCPf0TcK_CMh6",
+        "description": "\ud83d\ude9a FREE DELIVERY in the East Village! \ud83d\udc99\n\nGetting your medications just got easier.\nNo travel. No waiting. No extra cost.\n\n\ud83d\udce6 Prescription & OTC delivery \u2014 straight to your door\n\ud83d\udc75 Perfect for seniors, busy families & anyone who values convenience\n\u23f1\ufe0f Fast \u2022 Reliable \u2022 Local care you can trust\n\n\ud83d\udccd Serving East Village residents\n\ud83d\udcde Call or message us today to set up FREE delivery\n\nBecause your health should come with convenience \u2728#instatrip #freedelivery #eastvillage #eastvillageresident #delivery #prescription #convenience #care #residents #values",
+        "date": "Jan 20, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipM0YaiTWTQZ8UA8Fpd65cElKuPhFKnTnLXj8AgZ=h400-no",
+        "cta": "Learn more",
+        "link": "http://www.nycprx.com/",
+        "post_link": "https://search.google.com/local/posts?q=New+York+City+Pharmacy&ludocid=10756594279028689520&lpsid=CIHM0ogKEL-P8Njg_P60Jg&source=sh/x/loc/post&lsig=AB86z5V68ZxZ87MgCPf0TcK_CMh6",
+        "description": "\ud83d\udc8a Medication Made Simple in New York City \ud83d\udc99\n\nManaging multiple medications doesn\u2019t have to be confusing.\nAt New York City Pharmacy, our Unit Dose Pouch Packaging is designed with older adults in mind.\n\n\u2705 Easy-to-open pouches\n\u2705 Clearly labeled by date & time\n\u2705 No pill bottles, no pill sorting\n\u2705 Fewer missed doses, more peace of mind\n\nWhether at home or on the go, pouch packaging helps seniors stay safe, independent, and confident with their medications.\n\n\ud83d\udccd Ask us today how pouch packaging can make daily medications easier for you or your loved ones.\n\n#MedicationMadeEasy #SeniorCare #PouchPackaging #UnitDose #NYCPharmacy #HealthyAging",
+        "date": "Jan 17, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNBMHnzrXrxCnFrbu1nsX88bsph1rdyB8seMRvX=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=New+York+City+Pharmacy&ludocid=10756594279028689520&lpsid=CIHM0ogKEKmbo6jwyr-kAg&source=sh/x/loc/post&lsig=AB86z5V68ZxZ87MgCPf0TcK_CMh6",
+        "description": "NYC pet parents\u2014good news! **New York City Pharmacy** now carries **pet medications** for your furry family\u2014**cats & dogs** (OTC + prescriptions).  \nShop online: **http://www.nycprx.com**        \n\nHave questions or need help finding the right product? Message us or call\u2014we\u2019re happy to help you get what your pet needs.\n\n*Prescription medications require a valid prescription from your veterinarian.*\n\n#NYCPets #PetMedications #CatsOfNYC #DogsOfNYC #NYCPharmacy #PetCare\n\n#furryfamily #otc #petparent #newyork #petmedications #familycats #pharmacy #petcare",
+        "date": "Jan 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMQNlYE3NgyW-ofwPb5s-xnxzr1At_ZC671i4jL=h400-no",
+        "cta": "Learn more",
+        "link": "https://nypost.com/2026/01/14/health/6-simple-ways-to-have-a-younger-brain-into-your-60s-and-beyond/",
+        "post_link": "https://search.google.com/local/posts?q=New+York+City+Pharmacy&ludocid=10756594279028689520&lpsid=CIHM0ogKEN_-2vGMr9vt7AE&source=sh/x/loc/post&lsig=AB86z5V68ZxZ87MgCPf0TcK_CMh6",
+        "description": "NYC neighbors\u2014your health, made simple.  \n**New York City Pharmacy (NYCP)** is here with trusted care, fast refills, and a personal touch\u2014right in the heart of Manhattan.\n\nVisit us on 1st Ave or shop online: **http://www.nycprx.com**  \nQuestions? Message us anytime.\n\n#NYCPharmacy #EastVillage #CommunityPharmacy #NYCPRx #HealthcareWithAPersonalTouch #Manhattan #Pharmacy",
+        "date": "Jan 14, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGyfUSTof-IAP11io37y-KsXyXQZLelkHjz4xsv6ipXHWaPkuAVta2WAgFla53B1dNpIZf7Q-9Q-UT69lH_vkS8EueVtrVVw5pTUxFgZ0zyI6fAZb1vyvy-j6y9CFByoTJtWZnOIKPHVFqh=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YGbiU3icHcTBboIwGADgJ_qFysSxZIe6iKBGIUIhvRjGSlE6Wm1B60vuvLcx8Tt8_3-tMUp_OI5ovQmXkgs2aHatZW9Ybya1_HW40lBr0A5OdmmHV7bJD5lsIMYJQifpzS1sdGnLlG6Z6KLz4-2uR_-kyqiokm7AxFTTAvNQVDNvgX52KqbNPIUghTzzAxEdx-7wvhwYMVdCbjOV5feQU_dhY7_B9BuNdrRw9m3wFS6szNamoP0-3iQRCS_t5w25rgvt6xr6J6OhR48"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEys1nUXTHZfQ1Ua8OpU1wr9eLNL_Pxm_iOFuxF7gfUDsXXgJ7lnzoD29ajs81sQm-qpB5bLFzUY1n_HMlZ0Hjou2qP0SVN8U4d9-gW1gJBDI402tQzB23gDCpy7S7YrvKYBkQAQXKYbvn7=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/yUIII3icHcTdboIwGADQJ6q0qCks8QJEwpQhjXaCN0QZlim0la_4w0t6vbdZ4rk4f6_aGA0fltXU45FQSjRVD1VXKmkqaUalai2hAZWAwPLShF28xROI5Nk22p8Y4QdnrTm5d24VJ3GRPtridx32j5CKEw8gy8SSNnJQge0ezuAQYC26an96jMOB50QW0Vezx9FZ9fY1xZvvxOGTHxeJHRFLP_icYNuwwbfHIpjrJ93QvLutcv_CPJat8uNN0tmdYIxR_b5E8h-Ao0ZR"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFjXdwt-nKMj_kdWOlKAONudDDklGsImlRc-_2qX8PAXXnE4lMiUBI-zeZxjO3k8zRKdnZ86U-FtfOiuNLOaW7OGoUAVPrr-NWmtPipA0IwrZqbb67t8G_ZajvIW4VbnOvcl5qD=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/6evP9HicHcTdCoIwGADQJ_rUykqCLhaWiOlMMMUbyWn-zU3d1OgFe4beJuhcnO-nkrIXB1Wl1UYpOS9pMYliJJzJgkmF8E4tewFEgFCR791adGnifJHAHLdJ2zzC1EHYm3LTbKkl7I4GBNL1EBs-imN21qlbhycb3kXyavCmNd6Bk7PE2IVwkU9cT94VP6I9tniI7v44ghd10q97pNnLmAxZtttLw0qTRzPbkX7PGJ4J3Q7mcVlpmgbVfwLsB5NERTs"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The pharmacist also gave me some options that would fit my budget.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWYTPlmG_JKjND1o_cFEMlCLBIt64xZbMIZmZYU2fndbfctrPk=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Small, personal, no frills excellent prices.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLToStD_5puq4e3wX07QGzNlwYwCgYGZkI4tICwjfPEDQgiiQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "David David",
+          "rating": 5,
+          "contributor_id": "104886910432592292271",
+          "user_review_count": 2,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWRJrtlI_w3U420GUEna8sszp6J-ZzvCbJ2TPenOZTTzEABuiI3=s120-c-rp-mo-br100",
+          "description": "Love this Pharmacy!!! Customer service is great and the staff actually cares.  I took my father for a DMV vision test and the experience was A+.  They also have great products at the store.  Highly recommend!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Gbk5WQnBZa1pPYzFaMFRIZHNVMHgyUlVWUFptYxAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOnFnNVBpYkZOc1Z0THdsU0x2RUVPZmc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-11T13:42:43+00:00"
+        },
+        {
+          "username": "Rainer Turim",
+          "rating": 5,
+          "contributor_id": "103311263312473943843",
+          "user_review_count": 154,
+          "user_photo_count": 76,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVGabOjnVPQ_UwCkJzzSiZgF8cbpL-C_kxsnE-U3A4UyKW53-ba=s120-c-rp-mo-ba12-br100",
+          "description": "My favorite pharmacy! The best pharmacy staff around\u2014 friendly and attentive. I always feel treated respectfully.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKVFkzWkdOa00xTkRSbU1XWXdkSGRsYmpSc2RYYxAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOlJTY3ZGNkM1NDRmMWYwdHdlbjRsdXc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-05T04:59:55+00:00"
+        },
+        {
+          "username": "Sam K",
+          "rating": 5,
+          "contributor_id": "118058231867857843530",
+          "user_review_count": 11,
+          "user_photo_count": 38,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLbywwk5ta7syi3t2gCCX7IEQ2fbMSPS7EKnNE7o0r-Ghag=s120-c-rp-mo-ba12-br100",
+          "description": "good selection of athletic braces, medical supplies, etc",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wdWJqRkZjVTlPUW1GSWVXUjZjRmhDVGxwM2FGRRAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOmpubjFFcU9OQmFIeWR6cFhCTlp3aFE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1EEHMFbIa7v8eGaL9bYUby54rBphuDUJ3Gi8TE_71ugjIDI4HTXkkjDyGHnxOqoI1VoaI4C9TwRBuQRwpFeRJ-JexcuH8vcYN1ELpubwKz2SsIGMCPuOoD_PUWpNsPjlVWwDJxl28OnBY0=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2SHe9XMrIDwHdYHcEgGT9zKiB_TjUUScGJrLEUNQaE_QubyiQiADsgOLUjQ5EHDQpuVDb-TiuICOu6Kj8y-Xbo1ArmdB9v5HXTWnK9GsoXDeTIboDYCd5TUNZ764rTsB6idkhoCJFm5Rg3=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0zTEl66Mb-emJxCt1tMJwkh19DzVjxTaB0cjbwB3mzc_z0MlrlphlyYKUSNNxIpUOb1ExJR2gPOJ2fA9cIOcAUEFltsaCObZTLBJXTRYZwBxf_joVEPMJkTDsxkL1OCHQBI_32pDjuIP8W=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0lLhTiQ8lyzHUmR746Y2LeA_5i9TmB_NIrgZ2u1EcLdpC-hJtlI47nVK9iIXRTIzGK87DaUROZek__e5uPtk8NMDT66nFMtFikS_b7eoDQdRwttYWIc6YUsH51dY4KS1RQ5EVIVJoFlqM=k-no"
+            }
+          ],
+          "date": "a month ago",
+          "date_iso8601": "2026-05-02T18:01:33+00:00"
+        },
+        {
+          "username": "Jessica Perez-Ryan",
+          "rating": 5,
+          "contributor_id": "106665876797000672659",
+          "user_review_count": 15,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIcWmSgvGbxWBJ2W4Kx_7qxpTJfmBaupqaNYSuOaMQKYz2ulw=s120-c-rp-mo-ba12-br100",
+          "description": "Friendly ppl with great service. Quick to fill up your prescriptions. They have a notarist too. Super convenient",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSNmJrcHRYelJsUzJVMFJ5MDBNRVJ3ZG1STGJVRRAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOlR6bkptXzRlS2U0Ry00MERwdmRLbUE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-22T01:34:44+00:00"
+        },
+        {
+          "username": "Jimmy Anderson",
+          "rating": 5,
+          "contributor_id": "108311233279186891014",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKp_qvK_hQb1C-XrI1srPLJ4RB1x06HIx9_kyA8nlMpaPt5qA=s120-c-rp-mo-br100",
+          "description": "Excellent.  pharmacy!   The   staff   is   always   polite   and   professional,   prices   are   reasonable,   and   they.  truly   care   about   customers\u2019.  health.   My.  prescriptions   are   always   ready   on   time \u2014 highly   recommended   for   reliable   service   and   great.  behavior!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Oa2NVaHFhamR0UW1RMFVrNWFSa2haZFdSc1QyYxAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOnNkcUhqajdtQmQ0Uk5aRkhZdWRsT2c%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-04T01:27:53+00:00"
+        },
+        {
+          "username": "Temujin",
+          "rating": 5,
+          "contributor_id": "106922424884891817236",
+          "user_review_count": 82,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXc-tC0PiP2WW0GqHANwcG7HI3jLaDYAFWXWsAVcmhe9jxK_WmZzQ=s120-c-rp-mo-ba12-br100",
+          "description": "I cannot speak highly enough about this pharmacy team. Chintan and Lokesh are not only excellent pharmacists, they are genuinely kind and compassionate people. They embody what it means to be true neighborhood pharmacists.\n\nI still remember when Chintan kindly notarized an adoption paper for me and, with a smile, wished me luck and refused to charge a fee. That simple gesture of generosity spoke volumes about his character.\n\nLokesh, too, is one of the sweetest and most caring individuals you will meet. He consistently goes out of his way to find the best possible deals on medications, always putting patients first.\n\nThis is a pharmacy you can trust with both your health and your heart. I wholeheartedly recommend them as your go-to pharmacists. Support local, especially when it\u2019s a team that serves the community with such compassion and professionalism.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pOSU9HVTBTMU5QYlhSVldIWnNUMGd3U21vM1owRRAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOjNIOGU0S1NPbXRVWHZsT0gwSmo3Z0E%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-22T23:33:24+00:00"
+        },
+        {
+          "username": "Chris Hernandez",
+          "rating": 4,
+          "contributor_id": "110083196604493224779",
+          "user_review_count": 35,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ5onulZzQldiyjudUwozQ89W_L0ObE8C3J3degLskoOHQ2mQ=s120-c-rp-mo-ba12-br100",
+          "description": "Reliable and caring\u2014just what you need in a local pharmacy! The team at New York City Pharmacy is always welcoming and professional. They filled my prescription quickly and explained everything clearly. The store is clean and well-stocked, and they offer helpful extras like wellness advice and friendly smiles. Definitely my go-to pharmacy in the neighborhood!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSQlNrRXROR0ZzY3pOb1lWWjBOMVk1VVZFeVdIYxAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOkRBSkEtNGFsczNoYVZ0N1Y5UVEyWHc%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-16T15:19:47+00:00"
+        },
+        {
+          "username": "Ricky Broyle",
+          "rating": 5,
+          "contributor_id": "102010599440001206885",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ7Zp12q1VqoEWOByHxAyw3tMC4nzAhhVGEcGiXm4gcTjI1hw=s120-c-rp-mo-br100",
+          "description": "Needed quick meds, New York City Pharmacy came through. Friendly staff, clean, easy to find in the neighborhood.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sSFFtZENkR3RNY0VKcWVtcG5Na1prTTBSbWNuYxAB!2m1!1s0x0:0x9547198182810a70!3m1!1s2@1:CAIQACodChtycF9oOnlHQmdCdGtMcEJqempnMkZkM0Rmcnc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-27T21:52:11+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "East Village Prescription Center",
+            "data_id": "0x0:0x2f98d648e4993cf4",
+            "data_cid": "3429726724803869940",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2f98d648e4993cf4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2f98d648e4993cf4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.723634499999996,
+              "longitude": -73.9856156
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2f98d648e4993cf4%218m2%213d40.723634499999996%214d-73.9856156&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 34,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHF-udfwLjmT_b1Dd6MWW_3KsesxGdgSULr2fE0J4NuwZ6czw1ldxB_8a2NcV5_Q8s1GqzFF9QgFUjqBeBoxo5jRpxxiM7qG-SMzx9bwy5y7TfxHuQVsDGDS7_WY_nUFscQT14=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Avenue C Pharmacy",
+            "data_id": "0x0:0x1acb40d67ca502e5",
+            "data_cid": "1930708155216757477",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1acb40d67ca502e5&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1acb40d67ca502e5&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7264942,
+              "longitude": -73.9767079
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1acb40d67ca502e5%218m2%213d40.7264942%214d-73.9767079&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 42,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF1yxmqPBEgCcVKKCbY6O9pUrxPgNmGxMPb-1N0IMtjlyCSqSGLkF3JAWHzqR4_sY_1WmJRf6R980WKwsyqj-rQeRXRhDkFlTZu_b7CbqAj6WfdB7nXVZUIOMz33ktVFqbkYUU=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "NYC Discount Pharmacy Inc",
+            "data_id": "0x0:0xa3d057d63363e86d",
+            "data_cid": "11804031200834873453",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa3d057d63363e86d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa3d057d63363e86d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.758628699999996,
+              "longitude": -73.9623926
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa3d057d63363e86d%218m2%213d40.758628699999996%214d-73.9623926&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 63,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyU6IIDT6yTw0X3VY8opKPwb4KOZHzrv5ldmdM69KbhEBHYR0regthppxqbM_T7g06Ui-_m24pv43w4D1ybwz7rqYVwjBpgDLhz-nCzZlG5KszaGyaNFjrb5Xs8rkOETG4k0qm=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Esquire Pharmacy",
+            "data_id": "0x0:0x91ba126f11b8c77d",
+            "data_cid": "10500725749415724925",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x91ba126f11b8c77d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x91ba126f11b8c77d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.73260090000001,
+              "longitude": -73.9818937
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x91ba126f11b8c77d%218m2%213d40.73260090000001%214d-73.9818937&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 35,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5EzngZGJbUTbc5BVpEbqlZhJoyQFgGe9ShXbaMRXrQna8iROxq4un34cRzH-PV5xRts0aGSshhQGe6xjiVmvzi6TCEEWJIDa-SHaaAsJhS0R_WuM4ukbBKLMqkljov5KE2Gnszw=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Downtown Pharmacy",
+            "data_id": "0x0:0xbf5446b77f8652",
+            "data_cid": "53854383254767186",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbf5446b77f8652&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbf5446b77f8652&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.710269800000006,
+              "longitude": -74.0058543
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbf5446b77f8652%218m2%213d40.710269800000006%214d-74.0058543&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 105,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFEw1SRTndTdSGviyAF9eL9yHEd7jOURVjgcAiUQevc9ZL7F32R7-cRh5M7v3f89VrQBzW077wb9Lix1_TtO9sspzo6I2nqVNDs7ZUN2ISRv9Wcm58onXf1tGJYbODJRnSO_-R2Kw=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store",
+              "Medical supply store"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OikKJyIjTmV3IFlvcmsgQ2l0eSBQaGFybWFjeSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COikKJyIjTmV3IFlvcmsgQ2l0eSBQaGFybWFjeSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

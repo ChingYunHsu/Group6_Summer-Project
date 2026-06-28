@@ -1,0 +1,311 @@
+{
+  "search_metadata": {
+    "id": "6a3d3f2c1f758aac866539e1",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/5Dq605vKOWB9cVVcnMWv4w/6a3d3f2c1f758aac866539e1.json",
+    "created_at": "2026-06-25 14:46:04 UTC",
+    "processed_at": "2026-06-25 14:46:04 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f63b84235a75:0xa7d03826731d7d50!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/5Dq605vKOWB9cVVcnMWv4w/6a3d3f2c1f758aac866539e1.html",
+    "prettify_html_file": "https://serpapi.com/searches/5Dq605vKOWB9cVVcnMWv4w/6a3d3f2c1f758aac866539e1.prettify",
+    "total_time_taken": 1.11
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJdVojhDv2wokRUH0dcyY40Kc",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Duane Reade Pharmacy",
+    "place_id": "ChIJdVojhDv2wokRUH0dcyY40Kc",
+    "data_id": "0x89c2f63b84235a75:0xa7d03826731d7d50",
+    "data_cid": "12092226737281006928",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f63b84235a75%3A0xa7d03826731d7d50&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f63b84235a75%3A0xa7d03826731d7d50&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.804857899999995,
+      "longitude": -73.9657081
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdVojhDv2wokRUH0dcyY40Kc",
+    "provider_id": "/g/11j_206qgd",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=D6iDT7ObNq4pg0CMf5Y1-w&cb_client=search.gws-prod.gps&w=86&h=86&yaw=101.724525&pitch=88.670654&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/nwogKHicHY29DoIwGEXfphv9IbQQk8ZBVnVxcTKllNKk0E9aqT6Sj-TbiC53ODk59_MeU4K4IySmxZi0OpPBPY2PBShsQ7DeKHAR6zCRlZE0PqZuVs7vQc3B9bIVrr3U5-50r8DSw3HgV1ZkpLub9s7MSUajFj1im7fiEnpsIaIsG4HG37xUlowyXJcVLzkCl_TGGyxqKniF_ndDWDeHfgEz3jql",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 6
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 9
+      }
+    ],
+    "rating": 3.4,
+    "reviews": 18,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "2864 Broadway, New York, NY 10025",
+    "country": "United States",
+    "located_in": "Duane Reade",
+    "website": "https://www.walgreens.com/locator/walgreens-2864+broadway-new+york-ny-10025/id=14225",
+    "phone": "(212) 316-5113",
+    "open_state": "Open \u00b7 Closes 1:30 PM \u00b7 Reopens 2 PM",
+    "plus_code": "R23M+WP New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "friday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "saturday": "9 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "sunday": "10 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "monday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "tuesday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "wednesday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 10 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f63b84235a75%3A0xa7d03826731d7d50&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=D6iDT7ObNq4pg0CMf5Y1-w&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=101.724525&pitch=88.670654&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Qv1mZHicHc09DsIgFADg27AVKOmfJsTBruri4tRQpO1LaHnKk-qZPJG30bh_yfd5T0QYt0JEujtHCdyK8HQ-Zmj4GMLonUGI3IZZpFzQ9Jj7xYDfoVkCXHVbQXuuT_3xVuAo94ehvOTZymzfWQ9uIT0bjF1MnIwl8I6PGNmqlSrYpNWmYS-z6lzmvFZFqUqGQHbSTcOrWlZlwf7hENLPyC-wfzs8"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=D6iDT7ObNq4pg0CMf5Y1-w&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=101.724525&pitch=88.670654&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Qv1mZHicHc09DsIgFADg27AVKOmfJsTBruri4tRQpO1LaHnKk-qZPJG30bh_yfd5T0QYt0JEujtHCdyK8HQ-Zmj4GMLonUGI3IZZpFzQ9Jj7xYDfoVkCXHVbQXuuT_3xVuAo94ehvOTZymzfWQ9uIT0bjF1MnIwl8I6PGNmqlSrYpNWmYS-z6lzmvFZFqUqGQHbSTcOrWlZlwf7hENLPyC-wfzs8"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Pharmacy staff very nice.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWwQUW33_HBI1nmYK2k0IcNuN2xg9TzUexQdVGc_Pq-72oDmEBW=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The cashier and the staff are very rude.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVzZIONRisldPI-nMQ7lcfgRHvMnqr0Be0ooDzYbOGp5POT1oc-Zg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Terrible service, unbelievably long lines.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJy2HDn19NN-IEvHqEgcxrKsRdyvLxn_3nqs89ulrbusUa_6-A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Marci Mann",
+          "rating": 1,
+          "contributor_id": "117276249273568663091",
+          "user_review_count": 13,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXPgh3tN3TnIEFt_VJnV2oJPS_wkBCmDCIm0dH3H5YjtfSULUN_7Q=s120-c-rp-mo-ba12-br100",
+          "description": "Three times now I have ordered a refill on the pharmacy's phone system and been told when to pick it up, only to go there and be told it wasn't ready and they have no record of my call. THE PHONE SYSTEM DOES NOT WORK - don't trust it. The people who work there are very nice but the corporate folks need to get on this.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21remQwWXhXSEl3VkVSM2NqUnlVSEJNUmtkd2FrRRAB!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CAIQACodChtycF9oOmkzd0YxWHIwVER3cjRyUHBMRkdwakE%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-12T18:43:03+00:00"
+        },
+        {
+          "username": "Molly B",
+          "rating": 5,
+          "contributor_id": "114567381014635740079",
+          "user_review_count": 11,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWwQUW33_HBI1nmYK2k0IcNuN2xg9TzUexQdVGc_Pq-72oDmEBW=s120-c-rp-mo-br100",
+          "description": "Pharmacy staff very nice. I came in yesterday post dental operation and the pharmacy was very busy. They didn't have my prescription ready yet, but the pharmacist took one look at my face and immediately put it together for me. Great service!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN3a012enJRRRAB!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgICwkMvzrQE%7C%7C?hl=en",
+          "date": "Edited 2 years ago",
+          "date_iso8601": "2023-10-04T06:21:48+00:00"
+        },
+        {
+          "username": "Noel",
+          "rating": 4,
+          "contributor_id": "110273501305438547986",
+          "user_review_count": 103,
+          "user_photo_count": 65,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIRPsdqcAodUaqgPwa0fnzoSWUx5XZ5OQyFaJeBtmAaTeT84w=s120-c-rp-mo-ba12-br100",
+          "description": "NYC's Walgreens, had my RX refilled with friendly staffs and no waiting in line, must have been because of multiple store branch availability.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUR2dXA3VnpRRRAB!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgIDvup7VzQE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-12-19T20:17:01+00:00"
+        },
+        {
+          "username": "Miki Noam",
+          "rating": 1,
+          "contributor_id": "107184868284467046832",
+          "user_review_count": 106,
+          "user_photo_count": 139,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJy2HDn19NN-IEvHqEgcxrKsRdyvLxn_3nqs89ulrbusUa_6-A=s120-c-rp-mo-ba12-br100",
+          "description": "Terrible service, unbelievably long lines. Prescriptions takes literally hours to be prepared.\n\nWas a very good pharmacy about a year ago (2019) but sadly this is no longer the case. avoid at al costs; I anded up at 11:15 pm not picking up my prescription- that was urgent - after waiting first to find out it was not ready and then after two hours for another 45 minutes until i gave up.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNzOHFMZFJBEAE!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgICs8qLdRA%7C%7C?hl=en",
+          "date": "Edited 2 years ago",
+          "date_iso8601": "2023-10-04T06:21:48+00:00"
+        },
+        {
+          "username": "Marcus Folch",
+          "rating": 1,
+          "contributor_id": "107327180117168045356",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLC8DVXIDf0XdlJ8npv3K5tl2Wgp-kICIQo82iZv5DIF2Nqjw=s120-c-rp-mo-br100",
+          "description": "They take a lunch break\u2014close down the entire pharmacy\u2014in the middle of the day, every day, come rain or pandemic. That\u2019s right, nyc is in the midst of a COVID, rsv, and flu outbreak, and they\u2019re out eating food truck.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUQtN2Nld2hBRRAB!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgID-7cewhAE%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2022-12-06T23:31:51+00:00"
+        },
+        {
+          "username": "Joshua Lazarus",
+          "rating": 1,
+          "contributor_id": "106673022580098203673",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU17s46XVHUH99ZUEUDGuTfswBiQfC3xeCAMokaNAzR53lBJh9K=s120-c-rp-mo-ba12-br100",
+          "description": "Everything you'd go there for is under lock and key and nobody will unlock it for you despite there being several employees on site. Rather walk down to the CVS",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURqejdYQUhBEAE!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgIDjz7XAHA%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-05-08T23:09:45+00:00"
+        },
+        {
+          "username": "AlphaOmega997",
+          "rating": 1,
+          "contributor_id": "110572859480596333282",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX-PAYUnLUaly_1rk-eRR2oVMTOAbB0gZcZlVTbE5PDHkkAAa5u=s120-c-rp-mo-br100",
+          "description": "Rudest lady I\u2019ve ever met at the cashier. Other workers also ride, cost nothing to be decent.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUQzOThyOEtREAE!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgID398r8KQ%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-11-20T00:45:47+00:00"
+        },
+        {
+          "username": "Jackson Thompson",
+          "rating": 4,
+          "contributor_id": "103526823688194110849",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXz2m8uWF7fzcnQGYL8RETki9bqy6bIDctr2cnjq8RKQoS_ZBM=s120-c-rp-mo-br100",
+          "description": "In this pharmacy I found the vitamins I need, I like that it is always open although it is a little far away it is worth getting to this pharmacy",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNjczhTSGtRRRAB!2m1!1s0x0:0xa7d03826731d7d50!3m1!1s2@1:CIHM0ogKEICAgICcs8SHkQE%7C%7C?hl=en",
+          "date": "Edited 2 years ago",
+          "date_iso8601": "2023-10-04T06:21:48+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Duane Reade",
+            "data_id": "0x0:0x970d248eb8db1434",
+            "data_cid": "10884396069829678132",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7625776,
+              "longitude": -73.98357039999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x970d248eb8db1434%218m2%213d40.7625776%214d-73.98357039999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbY1FKA3Qs6609T4TMFALENTMdcr3KJqNIVNoMyP5vTyi8ymsel2D0CpHigvwGDUwrrGQvVFFn3dhiZzQ6KGV2GNRK1cJo8NGkox_4Xy8zezQ74tomDyOOzlsfmFDH8aYTVxVm=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "CVS Pharmacy",
+            "data_id": "0x0:0xca8df389df5af72a",
+            "data_cid": "14595589740860995370",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xca8df389df5af72a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xca8df389df5af72a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8041282,
+              "longitude": -73.96725409999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xca8df389df5af72a%218m2%213d40.8041282%214d-73.96725409999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 60,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOreILoqz_ydXqZtF8HfTXWeJ-ZICG5EjS8Wdhmr4WiOJMWtHL5F0t1A2Byr47BDne67fY0KylhHfHvAfaPN3_QRZlXAUCRTBTOAuIyNdQ4qP6fHDgyCF_rPJTopyLXiVZ2LJr6AWCCMD8=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

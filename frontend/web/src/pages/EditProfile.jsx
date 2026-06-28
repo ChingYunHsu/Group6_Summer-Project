@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   USER_PROFILE,
-  LANGUAGE_OPTIONS,
   EMERGENCY_CONTACTS,
 } from "../data/userProfile";
 
@@ -10,17 +9,7 @@ function EditProfile() {
   const navigate = useNavigate();
 
   const [allergies, setAllergies] = useState(USER_PROFILE.allergies);
-  const [conditions, setConditions] = useState(USER_PROFILE.conditions);
-
-  const [languages, setLanguages] = useState(
-    USER_PROFILE.spoken_languages.map((language) => ({
-      language,
-      proficiency: "Fluent",
-    }))
-  );
-
-  const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [selectedProficiency, setSelectedProficiency] = useState("");
+  const [conditions, setConditions] = useState(USER_PROFILE.medical_conditions);
 
   const [contacts, setContacts] = useState(EMERGENCY_CONTACTS);
 
@@ -39,25 +28,6 @@ function EditProfile() {
   const [contactRelationship, setContactRelationship] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [editingContactIndex, setEditingContactIndex] = useState(null);
-
-  function addLanguage() {
-    if (!selectedLanguage || !selectedProficiency) return;
-
-    setLanguages([
-      ...languages,
-      {
-        language: selectedLanguage,
-        proficiency: selectedProficiency,
-      },
-    ]);
-
-    setSelectedLanguage("");
-    setSelectedProficiency("");
-  }
-
-  function removeLanguage(indexToRemove) {
-    setLanguages(languages.filter((_, index) => index !== indexToRemove));
-  }
 
   function openConditionModal() {
     setConditionName("");
@@ -220,78 +190,23 @@ function EditProfile() {
             </select>
           </label>
 
-          <label>
-            Nationality
-            <select defaultValue={USER_PROFILE.nationality}>
-              <option>Spanish</option>
-              <option>Swiss</option>
-              <option>Russian</option>
-              <option>Irish</option>
-            </select>
-          </label>
         </div>
       </section>
 
-      <div className="two-column-edit">
-        <section className="edit-section">
-          <h2>♡ Vital Signs</h2>
-          <label>
-            Blood Type
-            <select defaultValue={USER_PROFILE.blood_type}>
-              <option>O Positive (O+)</option>
-              <option>O Negative (O-)</option>
-              <option>A Positive (A+)</option>
-              <option>A Negative (A-)</option>
-              <option>B Positive (B+)</option>
-              <option>AB Positive (AB+)</option>
-            </select>
-          </label>
-        </section>
-
-        <section className="edit-section">
-          <h2>⚑ Spoken Languages</h2>
-
-          <div className="language-tags">
-            {languages.map((item, index) => (
-              <span key={`${item.language}-${index}`}>
-                {item.language} ({item.proficiency})
-                <button type="button" onClick={() => removeLanguage(index)}>
-                  ×
-                </button>
-              </span>
-            ))}
-          </div>
-
-          <div className="language-edit-grid">
-            <select
-              value={selectedLanguage}
-              onChange={(event) => setSelectedLanguage(event.target.value)}
-            >
-              <option value="">Select Language...</option>
-              {LANGUAGE_OPTIONS.map((language) => (
-                <option key={language.code} value={language.english_name}>
-                  {language.native_name} / {language.english_name}
-                </option>
-              ))}
-            </select>
-
-            <select
-              value={selectedProficiency}
-              onChange={(event) => setSelectedProficiency(event.target.value)}
-            >
-              <option value="">Proficiency</option>
-              <option>Native</option>
-              <option>Fluent</option>
-              <option>Intermediate</option>
-              <option>Basic</option>
-            </select>
-
-            <button type="button" onClick={addLanguage}>
-              +
-            </button>
-          </div>
-        </section>
-      </div>
+      <section className="edit-section">
+        <h2>♡ Vital Signs</h2>
+        <label>
+          Blood Type
+          <select defaultValue={USER_PROFILE.blood_type}>
+            <option>O Positive (O+)</option>
+            <option>O Negative (O-)</option>
+            <option>A Positive (A+)</option>
+            <option>A Negative (A-)</option>
+            <option>B Positive (B+)</option>
+            <option>AB Positive (AB+)</option>
+          </select>
+        </label>
+      </section>
 
       <section className="edit-section">
         <h2>▣ Clinical Profile</h2>

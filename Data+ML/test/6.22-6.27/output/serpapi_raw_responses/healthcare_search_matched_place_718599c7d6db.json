@@ -1,0 +1,357 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e4cf96561e366c6fea4",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/bCeGRFPmer3Zd-6jmU2_jw/6a3d3e4cf96561e366c6fea4.json",
+    "created_at": "2026-06-25 14:42:20 UTC",
+    "processed_at": "2026-06-25 14:42:20 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259f308f9a1ef:0x8e9c134b253e524!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/bCeGRFPmer3Zd-6jmU2_jw/6a3d3e4cf96561e366c6fea4.html",
+    "prettify_html_file": "https://serpapi.com/searches/bCeGRFPmer3Zd-6jmU2_jw/6a3d3e4cf96561e366c6fea4.prettify",
+    "total_time_taken": 0.28
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ76H5CPNZwokRJOVTsjTB6Qg",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Duane Reade Pharmacy",
+    "place_id": "ChIJ76H5CPNZwokRJOVTsjTB6Qg",
+    "data_id": "0x89c259f308f9a1ef:0x8e9c134b253e524",
+    "data_cid": "642256853951309092",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259f308f9a1ef%3A0x8e9c134b253e524&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259f308f9a1ef%3A0x8e9c134b253e524&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7220306,
+      "longitude": -73.99693119999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ76H5CPNZwokRJOVTsjTB6Qg",
+    "provider_id": "/g/11ghdrlhcp",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=OSGH_5rJ6C4HAlRkVUhOqw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=145.55208&pitch=-87.682655&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/6XllanicHc09DsIgAEDh27AVWlOQmBBjHGxcmmh0bShFINKCgEWP5JG8jT_LG7_3fumUfFwhFFOQMs1GZm8e0sbCc6icU1ZybyIUbkRzhZK-j_3EjV17PjkzsPa4azoc9mRbNxt7uJ5Pur1lIPpOWCOnxKLkQWio8lcMboDKR5AZJUD_8uSZVTWGGC9KCrxJQrOCLiGhC4Ix-O8ubmZVWX4AW9w7HA",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 11
+      },
+      {
+        "stars": 2,
+        "amount": 3
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 8
+      }
+    ],
+    "rating": 2.7,
+    "reviews": 23,
+    "price": "$$",
+    "type": [
+      "Pharmacy",
+      "Medical supply store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "medical_supply_store"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "offerings": [
+          "Naloxone"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Checks",
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "60 Spring St, New York, NY 10012",
+    "country": "United States",
+    "located_in": "Duane Reade",
+    "website": "https://www.walgreens.com/locator/walgreens-60+spring+st-new+york-ny-10012/id=14480",
+    "phone": "(212) 925-5307",
+    "open_state": "Open \u00b7 Closes 1:30 PM \u00b7 Reopens 2 PM",
+    "plus_code": "P2C3+R6 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "saturday": "9 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "wednesday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 11 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259f308f9a1ef%3A0x8e9c134b253e524&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=OSGH_5rJ6C4HAlRkVUhOqw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=145.55208&pitch=-87.682655&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/wahSIHicHc1RCsIgGADg2_g23WQuCySih0Yvg6Jeh5lNyU2bf1pn6kTdJui7wPf9GIAQV4REmLWGZHUO9qVdLILEg_eD0zLYiJUfSaoImOd4maR16yAnb6-iO-7ans37Zlu3G3e4n0-me2SkLr1yVk8gRhliHxMGqcA6jYcQURaU1sgIuuToLbOoaoYZoyVHwYIyouAL3HDaMIb-4c0nUZXlD9llO7M"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=OSGH_5rJ6C4HAlRkVUhOqw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=145.55208&pitch=-87.682655&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/wahSIHicHc1RCsIgGADg2_g23WQuCySih0Yvg6Jeh5lNyU2bf1pn6kTdJui7wPf9GIAQV4REmLWGZHUO9qVdLILEg_eD0zLYiJUfSaoImOd4maR16yAnb6-iO-7ans37Zlu3G3e4n0-me2SkLr1yVk8gRhliHxMGqcA6jYcQURaU1sgIuuToLbOoaoYZoyVHwYIyouAL3HDaMIb-4c0nUZXlD9llO7M"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Honestly the rudest staff at the pharmacy check out.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ-GkcfnY9VuEfi4RaD9h8N7OWX-yuQetZdda3IWnDd9kf7TA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Terrible service and I\u2019d go somewhere else but this location is convenient\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVysApXWH3A46hPf-kCpJ6KsTYfIiGnepYbG_1BLgNWsYB37l7k=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "she who shall not be named",
+          "rating": 1,
+          "contributor_id": "110069458656433624971",
+          "user_review_count": 3,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJDlMdNzJ20laa8V0EgTPLB2GQtAnEYRMdEv-HgUAbvdTGEhw=s120-c-rp-mo-br100",
+          "description": "I never write reviews especially negative ones unless absolutely warranted. This Duane Reade doesn't necessarily have the most shining reviews so my one star is being added into the ether - but this complaint is directed towards one employee and one employee only. I live in the neighborhood and I regularly make pickup orders on the walgreens app to limit my in person interaction at this location as little as possible. For some reason every time I come into pickup, Saha who is at the register acts like it is his literal first day on earth. Every single time. He is so consistent in his miserable, helpless, and pathetic attitude its actually kind of impressive. It takes two seconds to ask for my name and to grab my order. I am not in the business of stealing someone else's toilet paper or mascara. Yet it is easier to sneak drugs through Russian airport security or compete and win an Olympic gold medal than for Saha to look at my name on the walgreens app and grab my items. He has me repeat my name multiple times, show him my confirmation message,  point out my name on said message and sometimes even show identification. I understand taking precaution but he is so painfully inefficient, slow and dumb it makes me wonder if he just likes to waste people's time. And to top it all off he still sneers at me with total skepticism regarding my identity once shoving my order into my hands. Everyone else at this location is an absolute gem and doesn't look at me with complete dumbfoundedness when I tell them I'm picking up an order. Except for Saha. I dread when I see him at the counter. Sometimes I try even cutting the line to avoid speaking to him and his lack of helpfulness altogether because our unecessarily extended encounters send me into rage every time. Please for the love of god fire this man. Thank you.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCNFZIQmZNbEZOVHpjM01XMTVkbVY2TW5Bd01rRRAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CAIQACodChtycF9oOlB4VHBfMlFNTzc3MW15dmV6MnAwMkE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-20T00:51:46+00:00"
+        },
+        {
+          "username": "Philip Ujlaki",
+          "rating": 1,
+          "contributor_id": "105926089308968807142",
+          "user_review_count": 11,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWzkXBcOpD8fCN0kd9B5tbaAb0s5R93EIEn_2DvHr7LswrPs9Cx=s120-c-rp-mo-br100",
+          "description": "This is, without exaggeration, one of the worst pharmacies I have ever encountered. The staff are consistently incompetent, dismissive, and shockingly rude. You can be told your prescription is ready, arrive promptly, and then be flat-out refused because they feel like working on their own timeline. Every single visit is a guaranteed waste of time\u2014whether it\u2019s their inability to locate a basic prescription or the absurd discovery that they had my profile duplicated under two different names and never noticed. On my last two visits, I was given open attitude and condescension simply for stating that I was in a rush, as if urgency were an unreasonable request. If you\u2019ve ever seen how pharmacies operate in literally any other country, this place is an embarrassing failure and a complete travesty of what a pharmacy is supposed to be.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xjeFJGUm5XbTlZUkZZM1dHZFZRVEpZYVhKSmVXYxAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CAIQACodChtycF9oOlcxRFRnWm9YRFY3WGdVQTJYaXJJeWc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-02T19:44:35+00:00"
+        },
+        {
+          "username": "Laura Desiree",
+          "rating": 1,
+          "contributor_id": "110872938519938871394",
+          "user_review_count": 10,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV-rlPIJ8xr1fbJwOxpjSx67Xl9eS3MaW6B6nsvwOIsi1WLf0F8=s120-c-rp-mo-br100",
+          "description": "the meanest of the mean, ice cold crew behind the pharmacy counter. But once you learn the protocol of approaching when the desk is clear, stating simply your purpose (and I mean as simple as \"prescription pick up please\"), state your DOB and do not ask a single follow-up question, you are fine.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OZmN5MTJaekZTU1d0S01WVkZUM2RoYTFOdFZsRRAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CAIQACodChtycF9oOmNfcy12ZzFSSWtKMVVFT3dha1NtVlE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-18T19:23:32+00:00"
+        },
+        {
+          "username": "Pam Benning",
+          "rating": 5,
+          "contributor_id": "110697200738481853752",
+          "user_review_count": 31,
+          "user_photo_count": 13,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWUR4mxmXCiyiG0jtwHwAR_8xPAp6zzxywgPp9mG4AaaNx_nyor=s120-c-rp-mo-ba12-br100",
+          "description": "I\u2019ve always been pleased with the service at this Duane Reade on Spring Street and Lafayette. The automated system lets me know when my prescription is ready. They\u2019re usually isn\u2019t a very big line. They also do vaccinations and other injections and it\u2019s easy to get an appointment. There are also good snacks and cosmetics, and there is an elevator to the basement where the pharmacy is.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2taU01GRlJZMUZCUjJjM09GUnhRMlJrV1dOZk5IYxAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CAIQACodChtycF9oOkZSMFFRY1FBR2c3OFRxQ2RkWWNfNHc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-03T21:38:18+00:00"
+        },
+        {
+          "username": "Katie Hazel",
+          "rating": 5,
+          "contributor_id": "113230306518252429815",
+          "user_review_count": 8,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU3QOUgrcWtBHIk1e2qgD5OVcA3R9fLZNjUjy5fGooL5jRxBO1gPQ=s120-c-rp-mo-br100",
+          "description": "Iris at the Duane reade pharmacy was lovely! Getting my flu shot was seamless and the people were friendly :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21ORFpFbHlhbFY1Ymkxd2FWQlpWMmxhVTA1M1dIYxAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CAIQACodChtycF9oOmNDZElyalV5bi1waVBZV2laU053WHc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-15T18:40:17+00:00"
+        },
+        {
+          "username": "Strohm Gaston",
+          "rating": 1,
+          "contributor_id": "106731179301825101571",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUgedadqqDhlw-utN-_whuj827UT_6tXv_UwzsRF5zWDMqj-WsO=s120-c-rp-mo-br100",
+          "description": "Unfortunately, my DR closed and I\u2019ve had to switch to here. It\u2019s been only a few weeks, and the pharmacy staff is the rudest most inconsiderate I\u2019ve encountered. My prescriptions are never filled on time, and I always have to wait. God forbid I ask a question as it appears such an annoyance to them to work with customers.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTURJaXJLUnlnRRAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CIHM0ogKEICAgMDIirKRygE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-04-08T18:16:29+00:00"
+        },
+        {
+          "username": "Alex Herpin",
+          "rating": 1,
+          "contributor_id": "100152322612606323381",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVysApXWH3A46hPf-kCpJ6KsTYfIiGnepYbG_1BLgNWsYB37l7k=s120-c-rp-mo-br100",
+          "description": "This is incorrect the pharmacy closes at 8.\nThe pharmacist are so rude I\u2019ve never experienced anything like it. There\u2019s one woman in particular who makes me feel like an unwelcome freak every time I go in. They are unorganized and lie when they are lazy. My doctor called in a prescription and had proof that the pharmacy received it but the pharmacy kept saying it was cancelled. I had my doctor call them and after 10 min of back and forth they said \u201cohhhh\u201d and magically found my prescription. Terrible service and I\u2019d go somewhere else but this location is convenient",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNlcl8zQnFnRRAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CIHM0ogKEICAgICer_3BqgE%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2022-09-27T12:38:10+00:00"
+        },
+        {
+          "username": "Leah Petersen (LeahStunts)",
+          "rating": 1,
+          "contributor_id": "103790575403101861213",
+          "user_review_count": 49,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV9-SiU7R-a47kRR3o7Bu-Xb4BjhsNSGVNv6UZj71846ufjHtIR=s120-c-rp-mo-ba12-br100",
+          "description": "I had a very difficult time getting my prescription at this pharmacy, unhelpful staff, I was given incorrect information and a billing mistakes were made. It took over two weeks to finally get my prescription filled and billed to my insurance correctly. Staff was unapologetic and difficult to work with.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURZZ3F5dHhnRRAB!2m1!1s0x0:0x8e9c134b253e524!3m1!1s2@1:CIHM0ogKEICAgIDYgqytxgE%7C%7C?hl=en",
+          "date": "7 years ago",
+          "date_iso8601": "2019-05-04T13:33:18+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Duane Reade",
+            "data_id": "0x0:0x970d248eb8db1434",
+            "data_cid": "10884396069829678132",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7625776,
+              "longitude": -73.98357039999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x970d248eb8db1434%218m2%213d40.7625776%214d-73.98357039999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbY1FKA3Qs6609T4TMFALENTMdcr3KJqNIVNoMyP5vTyi8ymsel2D0CpHigvwGDUwrrGQvVFFn3dhiZzQ6KGV2GNRK1cJo8NGkox_4Xy8zezQ74tomDyOOzlsfmFDH8aYTVxVm=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Prescriptions 4 Less",
+            "data_id": "0x0:0xeb516aae697b91ad",
+            "data_cid": "16956451369353187757",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeb516aae697b91ad&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeb516aae697b91ad&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7195527,
+              "longitude": -73.999003
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xeb516aae697b91ad%218m2%213d40.7195527%214d-73.999003&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=xFqf_OeOCxaoW0_XN0ss3iP-XsGAOun7EYJ-Ze-PDkyaVkyzkrBeZz4N7RA6jesgqiwZs7eifblv3jK5K6CEoicCJj3L6go0gHOZRYIF_BeovMUGep0OCM7Q3CmY73ovAH0CBKVDQHchAPXdCtel-npUXZQW4WZE",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "CVS Pharmacy",
+            "data_id": "0x0:0xb5178928e49de15b",
+            "data_cid": "13049049254056550747",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb5178928e49de15b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb5178928e49de15b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7256413,
+              "longitude": -74.0043919
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb5178928e49de15b%218m2%213d40.7256413%214d-74.0043919&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.6,
+            "reviews": 50,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFCCex7XFH0jJ79-jbfqb8OKAGXhgyUa0d27qHuOaCSqKxrqlxMvLoK9DQUQM-CTPJpLluEqQPlUK0daeRphI91bENbXHbPUne_7SWC5HQM5HKYUBc325Oa51aZG0a2IBzVjFtwCZH8y6qU=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Pharmacy Rx",
+            "data_id": "0x0:0xa51512a40de5264c",
+            "data_cid": "11895434486586091084",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa51512a40de5264c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa51512a40de5264c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7074022,
+              "longitude": -74.00442679999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa51512a40de5264c%218m2%213d40.7074022%214d-74.00442679999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1,
+            "reviews": 1,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFzskyz3T2OqevuCZTzRYTlN4pYZ6ayoSwVJaOOlv_M47biHKdlPyH_T_5wkUQyLqbBu41gm38ha6bOKET5crWmqR0gVqivZipM3qidYCOdt6_1kn5rehFq1sgpkq-B3hMO0xxDUfueZeMq=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

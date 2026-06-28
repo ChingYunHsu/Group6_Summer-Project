@@ -1,0 +1,398 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e9afda607953c6483b0",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/X7TqISuH3H4LSKqJcS9E8g/6a3d3e9afda607953c6483b0.json",
+    "created_at": "2026-06-25 14:43:38 UTC",
+    "processed_at": "2026-06-25 14:43:38 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f6754281978d:0xd227fda8d8bf2bc8!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/X7TqISuH3H4LSKqJcS9E8g/6a3d3e9afda607953c6483b0.html",
+    "prettify_html_file": "https://serpapi.com/searches/X7TqISuH3H4LSKqJcS9E8g/6a3d3e9afda607953c6483b0.prettify",
+    "total_time_taken": 0.71
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJjZeBQnX2wokRyCu_2Kj9J9I",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Great City Medical",
+    "place_id": "ChIJjZeBQnX2wokRyCu_2Kj9J9I",
+    "data_id": "0x89c2f6754281978d:0xd227fda8d8bf2bc8",
+    "data_cid": "15143351173689322440",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6754281978d%3A0xd227fda8d8bf2bc8&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6754281978d%3A0xd227fda8d8bf2bc8&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.800401,
+      "longitude": -73.95268279999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJjZeBQnX2wokRyCu_2Kj9J9I",
+    "provider_id": "/g/1260dksmf",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=D9W-xuLk2OH7yAkCSfSnUQ&cb_client=search.gws-prod.gps&w=86&h=86&yaw=282.0675&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/1KaHQ3icHc3PDoIgAIDxt-EmoFtqbay1OnRoa821jg0RgYnAAEWfpufqbfpz-Y6_7_2SMbqwQyhEz3mcFU9OLVyHzFEorBWaU6cCZHZEc46inMbWUKX3jhqrOnLaPrJlugzF9Vyth-HY9I253wBrn0wrbiIJnHomoUhf0dsOChdAInUJ5C8rTaSoC4jLagOcikwSDP6T3s4kx_gDJZ45Cw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 36
+      },
+      {
+        "stars": 2,
+        "amount": 5
+      },
+      {
+        "stars": 3,
+        "amount": 10
+      },
+      {
+        "stars": 4,
+        "amount": 52
+      },
+      {
+        "stars": 5,
+        "amount": 677
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 780,
+    "type": [
+      "Gynecologist",
+      "Doctor",
+      "Obstetrician-gynecologist",
+      "Medical clinic",
+      "Medical examiner",
+      "Medical office"
+    ],
+    "type_ids": [
+      "gynecologist_only",
+      "doctor",
+      "gynecologist",
+      "medical_clinic",
+      "medical_examiner",
+      "medical_office"
+    ],
+    "menu": {
+      "link": "https://greatcitymedical.com/",
+      "source": "greatcitymedical.com"
+    },
+    "book_online": "https://www.zocdoc.com/practice/great-city-medical-21048?LocIdent=265594&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_Am1Mu9a0NUymuK4dbwdEJB-lo_7Mxn71pzgkW9q31Bwah4ER-entity&rwg_token=AE37R_gGTBcjuKtqoiNlC4559DtBOg90u3Nva01CNV_rXxgVe0a5POtoHPdTRgoq_1D_p-U43QNkL605-fVQG-uN5Lk_njowvw%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "51 St Nicholas Ave Commercial Unit, New York, NY 10026",
+    "country": "United States",
+    "website": "https://greatcitymedical.com/?utm_source=google_maps&utm_medium=organic",
+    "phone": "(212) 281-8600",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "R22W+5W New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f6754281978d%3A0xd227fda8d8bf2bc8&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPTDqbOmhjutlslMzrkUandPWsN2vACkvlv0K90=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 281-8600",
+        "post_link": "https://search.google.com/local/posts?q=Great+City+Medical&ludocid=15143351173689322440&lpsid=CIHM0ogKENW8hLD1n43wrAE&source=sh/x/loc/post&lsig=AB86z5X2yifXv_68jtU9HTFMNrPc",
+        "description": "If you are preparing for your immigration medical exam, Great City Medical offers a simple, professional, and stress free experience for your I-693 immigration exam needs. Our experienced medical team understands the importance of accurate paperwork, timely appointments, and compassionate care throughout the immigration process. We help applicants complete the required USCIS medical examination efficiently while making the process as smooth as possible.\n\nAt Great City Medical, patients receive personalized attention, clear guidance, and fast turnaround times for completed I-693 forms. Our clinic is committed to helping individuals and families move forward with confidence during an important step in their immigration journey.\n\nWhether you need vaccinations, a physical exam, or assistance understanding USCIS medical requirements, Great City Medical is here to help. Convenient scheduling, caring staff, and reliable service make us a trusted choice for immigration medical exams. Contact Great City Medical today to schedule your I-693 immigration exam and take the next step toward your future in the United States.",
+        "date": "May 11, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNe19fUXg-Phk7J1Tex9iKzVZJT5fGIU73tFM2H=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 281-8600",
+        "post_link": "https://search.google.com/local/posts?q=Great+City+Medical&ludocid=15143351173689322440&lpsid=CIHM0ogKEM_qm9u9hr3-Yg&source=sh/x/loc/post&lsig=AB86z5X2yifXv_68jtU9HTFMNrPc",
+        "description": "Your health deserves expert, compassionate care in a setting you can trust. Great City Medical, a leading gynecology practice in Manhattan, provides personalized care for women at every stage of life. From routine exams and preventive screenings to advanced treatments, our experienced team is committed to your comfort and well being. We take the time to listen, answer questions, and create care plans tailored to your needs. With a convenient Manhattan location and a patient first approach, Great City Medical makes it easy to prioritize your health. Schedule your visit today and experience care designed around you.",
+        "date": "Apr 22, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOWnHaup7ygUrn9DflUvYyHxxZRJT4MYo7MYqfv=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 281-8600",
+        "post_link": "https://search.google.com/local/posts?q=Great+City+Medical&ludocid=15143351173689322440&lpsid=CIHM0ogKEN3q3N_9g63qHQ&source=sh/x/loc/post&lsig=AB86z5X2yifXv_68jtU9HTFMNrPc",
+        "description": "Need a Green Card medical exam in New York City? Our USCIS authorized civil surgeon provides fast, affordable, and fully compliant immigration medical exams to help you complete Form I 693 with confidence. We understand how important your adjustment of status process is, which is why we offer flexible scheduling, clear guidance, and quick turnaround times.\n\nOur team performs all required physical exams, vaccinations, tuberculosis testing, and lab work in one convenient location. We ensure your paperwork is accurately completed, sealed, and ready for submission to USCIS.\n\nServing individuals and families throughout Manhattan, Brooklyn, Queens, and the Bronx, we are committed to professional care, transparent pricing, and a smooth immigration medical experience from start to finish. Book your appointment today and move one step closer to your permanent residency approval.",
+        "date": "Feb 11, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNgqcdLhYN-h1y89PaeuPrKM1zMMX2p4VVVRxd3=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 281-8600",
+        "post_link": "https://search.google.com/local/posts?q=Great+City+Medical&ludocid=15143351173689322440&lpsid=CIHM0ogKEMmPsZas-NfsUA&source=sh/x/loc/post&lsig=AB86z5X2yifXv_68jtU9HTFMNrPc",
+        "description": "Need a fast, reliable immigration medical exam (Green Card exam) in New York City? Our USCIS-compliant medical exams are performed by an experienced, authorized civil surgeon who understands exactly what immigration officers require. We make the process simple\u2014from vaccinations and lab work to completing Form I-693 accurately and efficiently. With flexible scheduling, clear pricing, and prompt turnaround times, we help reduce delays and stress in your green card application. Conveniently located in NYC, we serve individuals, families, and attorneys who need dependable documentation done right the first time. Book your immigration medical exam today and move forward with confidence.",
+        "date": "Feb 3, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMFWfC1-HDRVdV-GZQNOWKRbO5p61XZs9o8dgM_=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 281-8600",
+        "post_link": "https://search.google.com/local/posts?q=Great+City+Medical&ludocid=15143351173689322440&lpsid=CIHM0ogKEPH5187S9tv49gE&source=sh/x/loc/post&lsig=AB86z5X2yifXv_68jtU9HTFMNrPc",
+        "description": "If you need a USCIS immigration medical exam in Harlem, choosing the right provider can make the process smooth, fast, and stress-free. Our experienced civil surgeon proudly serves individuals and families throughout Harlem with professional, immigration-approved medical exams required for green cards and adjustment of status.\n\nWe provide complete I-693 immigration medical exams, following all current USCIS guidelines to ensure your paperwork is accurate and accepted the first time. During your visit, we review medical history, perform the required physical examination, and administer or verify vaccinations as needed. Our team explains each step clearly, so you know exactly what to expect and what documents to bring.\nWe understand how important timing is when it comes to immigration cases. That\u2019s why we focus on efficient appointments, clear communication, and prompt completion of your sealed I-693 form. Our clinic serves patients from Harlem and surrounding NYC neighborhoods, offering a welcoming, respectful environment for applicants from all backgrounds.",
+        "date": "Jan 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPB3lRqauIShEmkz1pBH3JktScpVvFsN16F49Fq=h400-no",
+        "cta": "Call now",
+        "phone": "(212) 281-8600",
+        "post_link": "https://search.google.com/local/posts?q=Great+City+Medical&ludocid=15143351173689322440&lpsid=CIHM0ogKEJ-7kOHkpZ3FdA&source=sh/x/loc/post&lsig=AB86z5X2yifXv_68jtU9HTFMNrPc",
+        "description": "Need a certified green card medical exam in New York City? Our USCIS-approved medical professionals provide fast, accurate, and fully compliant immigration medical exams (Form I-693) for individuals and families throughout NYC. We guide you through every step of the process, ensuring all required vaccinations, lab work, and documentation are completed correctly\u2014no delays, no confusion.\n\nOur clinic is experienced, efficient, and sensitive to the diverse needs of New York\u2019s immigrant communities. We offer flexible appointment scheduling, clear pricing, and multilingual support to make your visit as smooth and stress-free as possible. Most exams are completed quickly, with prompt turnaround for sealed USCIS-ready paperwork.\n\nWhether you\u2019re applying for a green card, adjustment of status, or immigration benefits, you can trust us to handle your medical exam with professionalism and care.\n\nFor reliable, USCIS-compliant immigration medical exams in New York City, choose a clinic focused on accuracy, speed, and peace of mind.",
+        "date": "Jan 7, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=D9W-xuLk2OH7yAkCSfSnUQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=282.0675&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/vf_qvXicHc3BCsIgGADgt_E2dVJtCySiDh2CiBEdh5mbMqeS_9z2OD1Wb1N0_E7f560BQtwSEuGlFCSjpmBmZWMWBO6876wSwUQs_UBSTkCPw8MJY3dBOG-e_Fjds3k89-xyKpZ9f6jb2t2uSD4aaY1ywAcRYhMTBiHBWIW7ENHEGVshzVlVokX8VDJMN8UaBQNSc4r-TesTzyn9Ap0zOaI"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHTTCLq-sDkyzJ_YqM9OKGQL0W-XUqQUcdKMZGJYU9DxR3w0tR98l9DQet7_3DOHStFGZ3-STJPaRGw3eAJows0G3i6WrTgZXyjmhaGKHBfRHh85mKIZ3X2Yo0oJTBJSTOBB2zmY4wKsMDg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/emKgOXicHcTBboIwAADQL6p0dnNi4gHWrKwVESgRuBjT1XYKVGxN1Z_0vL9Zsnd4v0_t3NkugqDTaKKMUZ28WnkRZnBycBNh-kCdLRAW2CDarPNTlHD-sRqBxaf7g-6aMQ0zRvIV3IK6GvNKfLO0JbSpQnwrkIeuCOddiHPp3ncIZ0npPkmLQMnpZl8Qj2REjbeQoJ_Z9sJVW9-Pvd4TlsSHItHzt559taieNgYaymNa8iyOp4--efXMplgt_QuEEOj_BRj-AOy9RU0"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=D9W-xuLk2OH7yAkCSfSnUQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=282.0675&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/vf_qvXicHc3BCsIgGADgt_E2dVJtCySiDh2CiBEdh5mbMqeS_9z2OD1Wb1N0_E7f560BQtwSEuGlFCSjpmBmZWMWBO6876wSwUQs_UBSTkCPw8MJY3dBOG-e_Fjds3k89-xyKpZ9f6jb2t2uSD4aaY1ywAcRYhMTBiHBWIW7ENHEGVshzVlVokX8VDJMN8UaBQNSc4r-TesTzyn9Ap0zOaI"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The place is clean the staff and the Doctor made me feel comfortable and welcome\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV5wLQt9VwGK-v7UWLujS4VjrLa3NM1ACPWcQzVGdo6Fog1U8htkw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"She ordered blood work an gave me medical referrals.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKHUW8e14lBMxi7QCz5c0z2zY9kCpUXaJfCtFKxQgVwbK9mEBOa=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great people great service\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJzT9QAdoyxpNXGvhqWVX7WtKa3uyFdk3tns3uDJqlYuGvyvA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Neisha D",
+          "rating": 5,
+          "contributor_id": "110287007032852276793",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXEc7xTuyTkJaQpuI8ZTVNaUK2uWc-r1H6rr-jkA59tUdJJG-64=s120-c-rp-mo-br100",
+          "description": "I absolutely love this clinic. It's a one stop shop for all your GYN needs. I used to go to a clinic that needed to gove me referrals for everything, blood work, ultrasound, etc. Not here, they have everything I need in one place. The Doctors are so nice and make uou feel comfortable. Front desk is very accommodating and take care of you quickly. Love it here!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWVVNrTnpTRWRTTjBVeU1qQjRNa1JyTVhacWNtYxAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOlVUSkNzSEdSN0UyMjB4MkRrMXZqcmc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-07T17:42:38+00:00"
+        },
+        {
+          "username": "Bernara Dzhaparova",
+          "rating": 5,
+          "contributor_id": "111647631356397344521",
+          "user_review_count": 12,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXGtV6pqKwkqmnAvmVrliB4dD_fspjVhSEJ5qLpbKqG7NLLbkO-=s120-c-rp-mo-ba12-br100",
+          "description": "I had a really positive experience at this OB-GYN office. The staff was incredibly friendly and welcoming from the moment I walked in, which made the whole visit feel comfortable and stress-free. Dr Tsyba had an excellent bedside manner\u2014patient, attentive, and genuinely caring. She took the time to listen to my concerns and explained everything clearly without rushing. It\u2019s not always easy to find a place where you feel truly heard and cared for, but this office definitely delivers.\nIf you\u2019re looking for compassionate and professional care, this is it.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pjMWNDMWlWVUpsUmpCb1VqaHZjV3c0T0U5MVMwRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOjc1cC1iVUJlRjBoUjhvcWw4OE91S0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-14T22:16:06+00:00"
+        },
+        {
+          "username": "Sarah",
+          "rating": 1,
+          "contributor_id": "112619191241152390130",
+          "user_review_count": 4,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUUP89-nUjrrCDYgO8_xPMenwfK5jzirwpEVpZBXsDfydS7aOR3iQ=s120-c-rp-mo-br100",
+          "description": "I visited Great City Medical and initially had a positive experience with the PA who saw me. She was very kind, attentive, and took my concerns seriously. She listened carefully to my symptoms and made sure appropriate testing was done. I truly appreciated how compassionate and professional she was during my visit.\n\nUnfortunately, the experience with the office afterward was extremely frustrating. I was automatically scheduled for a follow-up appointment five weeks later, but during that time my symptoms became significantly worse. I repeatedly contacted the office explaining that my condition had gotten extremely worse and asked if anything appeared in my test results. Despite expressing my concerns multiple times, my results were withheld and I was not given any information about them. Instead, staff kept telling me they could just move my appointment slightly sooner after I continued calling and demanding answers.\n\nWhen I finally came in for my second appointment, I had to wait approximately three hours past my scheduled appointment time to see the Dr. Tsyba with no explanation for the delay. I arrived on time and repeatedly had to ask the staff if it would soon be my turn because no one communicated what was going on.\n\nWhat makes this even more frustrating is that I was never contacted about my results or advised to come in sooner based on them. Instead, I was left dealing with a worsening infection for longer than necessary. My symptoms progressed to the point where I began experiencing blood in my urine, which caused significant physical discomfort and unnecessary mental stress that could have been avoided with proper communication.\n\nWhile the PA herself was very kind and professional, the lack of communication, withholding of results, and the extremely long wait time made this a very disappointing and stressful experience. I am still struggling with my condition and now feel very hesitant about returning to this office again. I expected much better communication and patient care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21oUFRDMXhTakZNYmpoRlMzRlJURGhrZVZsbk0xRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOmhPTC1xSjFMbjhFS3FRTDhkeVlnM1E%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-14T21:21:53+00:00"
+        },
+        {
+          "username": "Jenny Xu",
+          "rating": 1,
+          "contributor_id": "117779128037645905904",
+          "user_review_count": 17,
+          "user_photo_count": 10,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJNKwCPJDmqDEK-d7w043_yzp7yKPyykqjDqETsUzY1y_tDXkOE=s120-c-rp-mo-ba12-br100",
+          "description": "Clinical care was adequate, but billing transparency and accountability were not.\n\nAt my in-office visit, both the Dr. Tsyba and front-desk staff clearly and confidently told me that a scheduled telehealth follow-up would not result in any additional charge or copay. I found this surprising and asked again; the receptionist reconfirmed (my husband was there as well and witnessed the exchange). Based on these assurances, I proceeded with the visit.\n\nMonths later, I received a $25 bill for that telehealth appointment. After extensive correspondence, the billing office confirmed in writing that there is no formal written policy governing courtesy adjustments and that decisions are made at management\u2019s discretion on a case-by-case basis. Despite acknowledging that discretion exists, they declined to adjust the balance.\n\nI was also never informed, at the time of scheduling or the visit, of any alternative option that would have avoided billing. This distinction was only introduced retroactively.\n\nUltimately, patients should not be assured that a visit will be free of charge and then held financially responsible when that assurance turns out to be incorrect. I intend to pay the balance, but I would not return to this practice due to the lack of billing transparency and accountability.\n\n\u26a0\ufe0fI recommend getting all cost assurances in writing before agreeing to any follow-up visits. They will tell you \u201ceverything is fine and free\u201d and bill you months later with the hope that you\u2019ve forgotten.\n\nEdit:\n\nTheir response to my review is hilarious (as to be expected). Framing a mistake on their end as a mutual \u201cmisunderstanding\u201d \u2014 as if my husband and I aren\u2019t native English speakers who both heard the receptionist give me a SECOND reassurance that the Telehealth follow-up was free \u2014 is a tactless and telling way to minimize what took place. Let this tell you all you need to know about their clinic and how they run their practice.\n\n*They make an error\n*They refuse accountability\n*They frame their clients\u2019 honest reviews as entitlement to free care (when actual cost free alternatives aka forgoing the Telehealth follow-up were not offered) and a \u201cmutual\u201d misunderstanding in order to further infantilize the wronged party",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aM05GaFdSMGROWmxoV1RGSXphbVZWUVV0a05sRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOnZ3NFhWR0dNZlhWTFIzamVVQUtkNlE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2N8iaA_UyFnbFWKH9dGrbNoWMTa0g0hgHXi8L8kFcwkfIyYRH4AWjff_ypvtm10YaU7MWvkxVauKFgqOMPClbKV2d4w1v7WhB1OejE6TKt6N1lWjmKNJT33oInzAvtigpatW1dtw89WRdp=k-no"
+            }
+          ],
+          "date": "Edited 4 months ago",
+          "date_iso8601": "2026-02-06T14:10:56+00:00"
+        },
+        {
+          "username": "Eunice Morato",
+          "rating": 5,
+          "contributor_id": "101237811552056774710",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI2s49XD6TfK9cy453rfdfKP45Ji89LhmYVy3bIE6HD1t9Qrgw=s120-c-rp-mo-br100",
+          "description": "Staff is welcoming and amazing, And my doctor is very offensive always concerned with her patience, and is always available to answer. Any question appointments are very flexible as well.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2poSVdFOWpPSEp1VUdWWVdXSkVlVzA1YlVZeVdsRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOjhIWE9jOHJuUGVYWWJEeW05bUYyWlE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-13T18:35:15+00:00"
+        },
+        {
+          "username": "Tina",
+          "rating": 5,
+          "contributor_id": "110391899518518144612",
+          "user_review_count": 10,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWWP-nzVo3uLzpmX3I6o7m5KCT1KL8MgHWUxVIwH_pmVUOm6qM=s120-c-rp-mo-br100",
+          "description": "The staff and doctors here are the best. I always feel very comfortable for all of my check-ups and I can always tell that the doctor really listens and genuinely cares. This is so important.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pObWJHMWtPVVJ0ZUd0cVJ6bDBhblU0UkhWT1psRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOjNmbG1kOURteGtqRzl0anU4RHVOZlE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-03T10:46:57+00:00"
+        },
+        {
+          "username": "Kiana Osbourne",
+          "rating": 1,
+          "contributor_id": "110907209033002423769",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKk-N-ZP565lvgYcDPGxvZa6a1wGee9G77GH6oOh8dlMP27iw=s120-c-rp-mo-br100",
+          "description": "If I could put 0 stars I would. I saw Yelena Tsyba, DO, the OBGYN to do my annual pap smear and first, I had to wait over an hour to be seen from my appointment time, second the doctor made no effort to explain what was going on during the visit, it was just a silent room and I had to ask all the questions I needed answers to.\n\nLastly, my Pap smear results came back abnormal and NO ONE called me to tell me, to discuss treatment discuss a follow up appointment nothing. The patient portal does not work, I had to call the office after several weeks for them to email my results just to find out I have a lesion on my cervix. This only means that the doctor is not checking the lab work that they sent out and/or they just don\u2019t care enough to follow up with a simple phone call or message.\n\nI ended up going somewhere else for treatment and I say all of this to say, DO NOT book your annuals with this facility, and certainly DO NOT see Yelena Tsyba, DO under any circumstances, patient care is out the window for this doctor and they should be reported for medical negligence.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CNVpYSlVhblpJVkhadFRIY3RRekJJWWtac2IwRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOnB5ZXJUanZIVHZtTHctQzBIYkZsb0E%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-18T16:22:47+00:00"
+        },
+        {
+          "username": "Nashaya Powell",
+          "rating": 5,
+          "contributor_id": "100206509550656735257",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKeOSe5biQACbO1JC5BXmmoFQRjdQT0pDgyiawgz8Lh-LWe7g=s120-c-rp-mo-br100",
+          "description": "The service was great, their was no wait time for me,recommend it a 100%",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT210alVVVkpWamxLT1hwT1RVNVpZVmRqYjNwbWVFRRAB!2m1!1s0x0:0xd227fda8d8bf2bc8!3m1!1s2@1:CAIQACodChtycF9oOmtjUUVJVjlKOXpOTU5ZYVdjb3pmeEE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T18:29:38+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Harlem Gynecology Practice",
+            "data_id": "0x0:0x7d5b412bafd4f667",
+            "data_cid": "9032885133511030375",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7d5b412bafd4f667&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7d5b412bafd4f667&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8187427,
+              "longitude": -73.9451223
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7d5b412bafd4f667%218m2%213d40.8187427%214d-73.9451223&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.9,
+            "reviews": 49,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYb9_wnUUjp7anUhuqbHb9jUYB4xxVfQM_FVI3HW4YOmqcjHqSBRkXZK7C-llIBEFq7GsU0ZOu3enAP975f897PC_aSv35TJs8cU3BPV3otxoe4wYh7ROID7Zk-Prl4MPu3v9jVNQ_MR6t=w156-h156-n-k-no",
+            "type": [
+              "Obstetrician-gynecologist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Ariella Goldman, MD, MPH",
+            "data_id": "0x0:0x7199a1953906835a",
+            "data_cid": "8185751460001514330",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7199a1953906835a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x7199a1953906835a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7894607,
+              "longitude": -73.9540066
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x7199a1953906835a%218m2%213d40.7894607%214d-73.9540066&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=QanCicW3MBsNo_GGrJg38Sc-gc_DAN5DMgO23J3NZPEiIUVHG1BOEwgCCn0xSy9ao8VHfv2Wgffh-OaM4HMdcFlNZZeOnRGS-AgsMD7HS36TM5TA4O1aEn5fl8_ZM13OVuiohmGloiKqCCtfvTNwq1y9PHNmdatL",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Marly Grana",
+            "data_id": "0x0:0x537005251d868ead",
+            "data_cid": "6012311159506898605",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x537005251d868ead&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x537005251d868ead&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.808991999999996,
+              "longitude": -73.93694649999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x537005251d868ead%218m2%213d40.808991999999996%214d-73.93694649999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=3YJYgkj9p3cXMwZdE5GrJhu_0ttI4mrDxubw-2fiIeX6AhC1ql3OydspOx-kuNZT4JR0Uf6DwqWmCfqq0_ICgyQd3x_lkarDCiKGB_sxLKZzpdt3WBgGKxIdrQh2zSSM8hKGMQVE-kYEG6qXZCENV2XNZJthhq7g",
+            "type": [
+              "Internist",
+              "Practitioner service location"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiUKIyIfR3JlYXQgQ2l0eSBNZWRpY2FsIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiUKIyIfR3JlYXQgQ2l0eSBNZWRpY2FsIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

@@ -1,0 +1,763 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e4413f4b6d9548a9f11",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/JQe4SHaYshS3h-6papjYyQ/6a3d3e4413f4b6d9548a9f11.json",
+    "created_at": "2026-06-25 14:42:12 UTC",
+    "processed_at": "2026-06-25 14:42:12 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259a1864005e1:0xe664ef702671d9b!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/JQe4SHaYshS3h-6papjYyQ/6a3d3e4413f4b6d9548a9f11.html",
+    "prettify_html_file": "https://serpapi.com/searches/JQe4SHaYshS3h-6papjYyQ/6a3d3e4413f4b6d9548a9f11.prettify",
+    "total_time_taken": 1.22
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ4QVAhqFZwokRmx1nAvdOZg4",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "HSS Midtown",
+    "place_id": "ChIJ4QVAhqFZwokRmx1nAvdOZg4",
+    "data_id": "0x89c259a1864005e1:0xe664ef702671d9b",
+    "data_cid": "1037603586959678875",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a1864005e1%3A0xe664ef702671d9b&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a1864005e1%3A0xe664ef702671d9b&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7631599,
+      "longitude": -73.9678826
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4",
+    "provider_id": "/g/11np13119m",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwhYGlDk9dV_fVzvf-jt7pup07dsk3mE7iOFVeO6hKMcKaqUjZXtXHw7tfQo8molQShe0CPwZQcgEAcBClE47eJ8MYUIShvMkV52-sLs8KfDqjGjfe89z4lL3_E3tM0ouL=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/94qAqnicHcRRCoIwAADQE01XVtOgDyvTUjORRPuJmJtLp9M2Fbpep-g2Qe_jfT9MqU6udZ0zQyuFKDkZJHlh0SrSKg2LRi87CbAEUrcv57i2vYnlLt_XVpHeafoeKagU6oYOokLWRuOgZ3RISbRifoj9R3-tbpnKvAkpGguzETxOGIG7y3SLcenYeLvjzgKRkxnm12PCxrBOl3MgA2n6dN9XbkWJab0XPDDujqFCKIZgM80ghID9x6D9AY71Q2s",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 2
+      },
+      {
+        "stars": 4,
+        "amount": 0
+      },
+      {
+        "stars": 5,
+        "amount": 32
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 40,
+    "type": [
+      "Orthopedic clinic"
+    ],
+    "type_ids": [
+      "orthopedic_clinic"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "770 Lexington Ave, New York, NY 10065",
+    "country": "United States",
+    "website": "https://www.hss.edu/locations/ny/midtown",
+    "phone": "(646) 618-7777",
+    "open_state": "Open now",
+    "plus_code": "Q27J+7R New York",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259a1864005e1%3A0xe664ef702671d9b&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMtgJIxFGnOfe8Xb7acbuqNw23jupIUucB5QotZ=h400-no",
+        "cta": "Learn more",
+        "link": "https://njtworldcup.com/",
+        "post_link": "https://search.google.com/local/posts?q=HSS+Midtown&ludocid=1037603586959678875&lpsid=CIHM0ogKELbpioznraCdIg&source=sh/x/loc/post&lsig=AB86z5W3fIVaYKUjDy3izJkvvHCG",
+        "description": "FIFA World Cup matches at MetLife Stadium may cause travel disruptions. Please allow extra time to travel and notify your provider with updates. For details, visit NJ Transit.",
+        "date": "Jun 8, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwhYGlDk9dV_fVzvf-jt7pup07dsk3mE7iOFVeO6hKMcKaqUjZXtXHw7tfQo8molQShe0CPwZQcgEAcBClE47eJ8MYUIShvMkV52-sLs8KfDqjGjfe89z4lL3_E3tM0ouL=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/94qAqnicHcRRCoIwAADQE01XVtOgDyvTUjORRPuJmJtLp9M2Fbpep-g2Qe_jfT9MqU6udZ0zQyuFKDkZJHlh0SrSKg2LRi87CbAEUrcv57i2vYnlLt_XVpHeafoeKagU6oYOokLWRuOgZ3RISbRifoj9R3-tbpnKvAkpGguzETxOGIG7y3SLcenYeLvjzgKRkxnm12PCxrBOl3MgA2n6dN9XbkWJab0XPDDujqFCKIZgM80ghID9x6D9AY71Q2s"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEcbt5964MQoatRMQGFnlPaCA-TvSkZ3MrrGwGX1w8xHvnRg2P_6K8WJgtJr6w0lvAWePAtmi4q5v8lOoA06tCgmoBN8TWZWJiCX-T1NixjLY0YIzgbEETQzeCIbnn9LvPbbNOT=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/XbljGHicHcRRboIwGADgE1XKVIImPnSEMZlg0SagL4ttmsIsrdJ_xXhBz-BtTPwevuejBbi4ZRDodjpR1iot_50chDUgDUyE7QN1cUg45AJCy-pMUsFhvohmRWVPsCuq7MtoekoIYn5_Pk6LYcjGrAnH-PbtzU590N_oJ65zBfkQjVh7UktKoO9m17mP9dYSHEGievtZxqw-1nmXNIiFZXf72xzwYX1XPE1ZdZfJmhuz2HjKebllqzHEGKP2vUDmBSv6RD4"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=yDG0ZlOg5YiZRymP4i00jw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=282.96228&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ZqGYnHicHc0xDsIgFADQ27AJlFTTmhAXE0eNm10aiki_gfIjX2qv4628jcbxTe_zHokwb4XI9HCOCrgZ4eVCXqHhPiUfnEHI3KYoSiVofMZhMhB2aKYEV73sD7ILR7--QHde4qkGKe8zs0NvA7iJdDSY-1w4GUsQHPeY2ayVqtmoVduwxfzUKN5ulGoYAtlRS_Z_bqnoSsov6386Fg"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 15
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 4
+        },
+        {
+          "title": "Other",
+          "places": 2
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Halstead Management Company, LLC",
+          "data_id": "0x89c258ef7bf17fd9:0x70265afd3063d06c",
+          "data_cid": "8081246624848007276",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x70265afd3063d06c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x70265afd3063d06c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0x70265afd3063d06c%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "rating": 3.9,
+          "reviews": 112,
+          "type": "Property management company",
+          "type_id": "property_management_company",
+          "address": "770 Lexington Ave, New York, NY 10065",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHOIpw5K5ErPv5v7hVBFjNTHYmGrKDyk1D8qkrx1hIYa-oxx2O13VPz3PGVTar7Z4Peq3GYcrzMPaQy4eU_DhVqdpVwDfgncLpjZ0tpjccaDONqVRQ9_8v5ZchmW3xc12xPhqCl=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHOIpw5K5ErPv5v7hVBFjNTHYmGrKDyk1D8qkrx1hIYa-oxx2O13VPz3PGVTar7Z4Peq3GYcrzMPaQy4eU_DhVqdpVwDfgncLpjZ0tpjccaDONqVRQ9_8v5ZchmW3xc12xPhqCl=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Allied Partners",
+          "data_id": "0x89c258ef7bf17fd9:0xdbdd6dac88eade80",
+          "data_cid": "15842939651958169216",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xdbdd6dac88eade80&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xdbdd6dac88eade80&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0xdbdd6dac88eade80%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "rating": 3.0,
+          "reviews": 22,
+          "type": "Real estate developer",
+          "type_id": "real_estate_developer",
+          "address": "770 Lexington Ave, New York, NY 10065",
+          "location": "Floor 1",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEkkoedO4eJYIw5er1eOQZVn66bdouuNbH-OsXQt1X1rdbJko5a6xYP7BBBGlmECKdrGl76KLF-5Ylr174mAiL9MsatKVag8J5D8ZpJgfyYBt2xce2WkJW5yth2eTOJggFXBpDV8OPiw6bw=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEkkoedO4eJYIw5er1eOQZVn66bdouuNbH-OsXQt1X1rdbJko5a6xYP7BBBGlmECKdrGl76KLF-5Ylr174mAiL9MsatKVag8J5D8ZpJgfyYBt2xce2WkJW5yth2eTOJggFXBpDV8OPiw6bw=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "Michael J. Kelly, MD",
+          "data_id": "0x89c2594d99ab165b:0xefb979fd3286652c",
+          "data_cid": "17273971974137603372",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2594d99ab165b%3A0xefb979fd3286652c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2594d99ab165b%3A0xefb979fd3286652c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631376,
+            "longitude": -73.9677817
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2594d99ab165b%3A0xefb979fd3286652c%218m2%213d40.7631376%214d-73.9677817&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "rating": 5.0,
+          "reviews": 9,
+          "type": "Orthopedic surgeon",
+          "type_id": "orthopedic_surgeon",
+          "address": "770 Lexington Ave 2nd Floor, New York, NY 10065",
+          "location": "Floor 2",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGo2db8jGluxgfDfs6ALkeYTWSBgZRk15Qq-FzPaXkXvqJ9wU3DmD-_nAWModEoTzx3QgZwd4OfUsFV6aWn3p4L32-CbCCiuk8ccQsuP2WsNWO6JoqDxi0HNak6nNHwP2qavFEkqhAZGwTC=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGo2db8jGluxgfDfs6ALkeYTWSBgZRk15Qq-FzPaXkXvqJ9wU3DmD-_nAWModEoTzx3QgZwd4OfUsFV6aWn3p4L32-CbCCiuk8ccQsuP2WsNWO6JoqDxi0HNak6nNHwP2qavFEkqhAZGwTC=w86-h86-n-k-no"
+        },
+        {
+          "position": 4,
+          "title": "Tri-Star Construction Inc",
+          "data_id": "0x89c258ef7bf17fd9:0xd7c58344315f239e",
+          "data_cid": "15547977617475838878",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xd7c58344315f239e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xd7c58344315f239e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0xd7c58344315f239e%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "rating": 4.0,
+          "reviews": 4,
+          "type": "General contractor",
+          "type_id": "general_contractor",
+          "address": "770 Lexington Ave #13, New York, NY 10065",
+          "location": "Floor 1"
+        },
+        {
+          "position": 5,
+          "title": "Glassnote Entertainment",
+          "data_id": "0x89c258ef7bf17fd9:0xc10c519e4ae02162",
+          "data_cid": "13910583089343504738",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xc10c519e4ae02162&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xc10c519e4ae02162&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.763165099999995,
+            "longitude": -73.9678741
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0xc10c519e4ae02162%218m2%213d40.763165099999995%214d-73.9678741&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "rating": 5.0,
+          "reviews": 3,
+          "type": "Record company",
+          "type_id": "record_company",
+          "address": "770 Lexington Ave, New York, NY 10065",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 6:30\u202fPM",
+          "hours": [
+            {
+              "thursday": "10\u202fAM\u20136:30\u202fPM"
+            },
+            {
+              "friday": "10\u202fAM\u20136:30\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "10\u202fAM\u20136:30\u202fPM"
+            },
+            {
+              "tuesday": "10\u202fAM\u20136:30\u202fPM"
+            },
+            {
+              "wednesday": "10\u202fAM\u20136:30\u202fPM"
+            }
+          ]
+        },
+        {
+          "position": 6,
+          "title": "Madison Management LLC",
+          "data_id": "0x89c258ef7bf17fd9:0x868b512b808a10cf",
+          "data_cid": "9694931870127100111",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x868b512b808a10cf&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x868b512b808a10cf&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0x868b512b808a10cf%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Real estate consultant",
+          "type_id": "real_estate_consultant"
+        },
+        {
+          "position": 7,
+          "title": "Jennifer O'Connell, MD",
+          "data_id": "0x89c25927eae9948b:0xf9852e25bc780d0c",
+          "data_cid": "17979827826957225228",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25927eae9948b%3A0xf9852e25bc780d0c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25927eae9948b%3A0xf9852e25bc780d0c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631599,
+            "longitude": -73.9678826
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25927eae9948b%3A0xf9852e25bc780d0c%218m2%213d40.7631599%214d-73.9678826&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Physiatrist",
+          "type_id": "physiatrist"
+        },
+        {
+          "position": 8,
+          "title": "Penmark Management",
+          "data_id": "0x89c259a3e4b1b127:0x4516a6313d738c2a",
+          "data_cid": "4978349168519253034",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a3e4b1b127%3A0x4516a6313d738c2a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a3e4b1b127%3A0x4516a6313d738c2a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.763165,
+            "longitude": -73.967874
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259a3e4b1b127%3A0x4516a6313d738c2a%218m2%213d40.763165%214d-73.967874&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Property management company",
+          "type_id": "property_management_company"
+        },
+        {
+          "position": 9,
+          "title": "HMV Inc",
+          "data_id": "0x89c258ef7bf17fd9:0xc1ba23358049a6f0",
+          "data_cid": "13959508707680823024",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xc1ba23358049a6f0&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xc1ba23358049a6f0&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631557,
+            "longitude": -73.967874
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0xc1ba23358049a6f0%218m2%213d40.7631557%214d-73.967874&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Corporate office",
+          "type_id": "corporate_office"
+        },
+        {
+          "position": 10,
+          "title": "Vanderbilt Appraisal Co LLC",
+          "data_id": "0x89c258ef7bf17fd9:0x7f3a92907de4fbf8",
+          "data_cid": "9167801140751170552",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x7f3a92907de4fbf8&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x7f3a92907de4fbf8&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0x7f3a92907de4fbf8%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Real estate appraiser",
+          "type_id": "real_estate_appraiser"
+        },
+        {
+          "position": 11,
+          "title": "Vanderbilt Properties Insurance",
+          "data_id": "0x89c258ef7bf17fd9:0xa48b4cb7115f9227",
+          "data_cid": "11856654793137164839",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xa48b4cb7115f9227&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xa48b4cb7115f9227&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0xa48b4cb7115f9227%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Insurance agency",
+          "type_id": "insurance_agency"
+        },
+        {
+          "position": 12,
+          "title": "Helmsley Spear Llc",
+          "data_id": "0x89c258ef7bf17fd9:0x5ba801c5d72ff529",
+          "data_cid": "6604530802769261865",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x5ba801c5d72ff529&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x5ba801c5d72ff529&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631656,
+            "longitude": -73.9678617
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0x5ba801c5d72ff529%218m2%213d40.7631656%214d-73.9678617&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Real estate agency",
+          "type_id": "real_estate_agency"
+        },
+        {
+          "position": 13,
+          "title": "Vibration Promotions",
+          "data_id": "0x89c258ef7bf17fd9:0x2024bc0f058726f1",
+          "data_cid": "2316182881078552305",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x2024bc0f058726f1&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0x2024bc0f058726f1&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631653,
+            "longitude": -73.96786780000001
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0x2024bc0f058726f1%218m2%213d40.7631653%214d-73.96786780000001&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Promotional products supplier",
+          "type_id": "promotional_products_supplier"
+        },
+        {
+          "position": 14,
+          "title": "Gerard J. Picaso Division",
+          "data_id": "0x89c258ef7bf17fd9:0xede9670407975c82",
+          "data_cid": "17143346723567393922",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xede9670407975c82&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf17fd9%3A0xede9670407975c82&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.763165099999995,
+            "longitude": -73.9678741
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf17fd9%3A0xede9670407975c82%218m2%213d40.763165099999995%214d-73.9678741&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Property management company",
+          "type_id": "property_management_company"
+        },
+        {
+          "position": 15,
+          "title": "Institute for Next Generation Healthcare",
+          "data_id": "0x89c258ef7bf6aaab:0x57a913ccfe2569bc",
+          "data_cid": "6316601723521952188",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf6aaab%3A0x57a913ccfe2569bc&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf6aaab%3A0x57a913ccfe2569bc&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631557,
+            "longitude": -73.967874
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf6aaab%3A0x57a913ccfe2569bc%218m2%213d40.7631557%214d-73.967874&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Medical laboratory",
+          "type_id": "medical_lab"
+        },
+        {
+          "position": 16,
+          "title": "SACKS REAL ESTATE MANAGEMENT CORP",
+          "data_id": "0x89c2591a05fad899:0xc8c6e55578575a2a",
+          "data_cid": "14467503008228268586",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2591a05fad899%3A0xc8c6e55578575a2a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2591a05fad899%3A0xc8c6e55578575a2a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631599,
+            "longitude": -73.9678826
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2591a05fad899%3A0xc8c6e55578575a2a%218m2%213d40.7631599%214d-73.9678826&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Real estate agency",
+          "type_id": "real_estate_agency"
+        },
+        {
+          "position": 17,
+          "title": "BHS Healthcare Real Estate",
+          "data_id": "0x89c258ef7bf1252d:0xa4efb1edcbd22e04",
+          "data_cid": "11884913576538942980",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf1252d%3A0xa4efb1edcbd22e04&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf1252d%3A0xa4efb1edcbd22e04&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631599,
+            "longitude": -73.9678826
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf1252d%3A0xa4efb1edcbd22e04%218m2%213d40.7631599%214d-73.9678826&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Real estate agency",
+          "type_id": "real_estate_agency"
+        },
+        {
+          "position": 18,
+          "title": "ed",
+          "data_id": "0x89c259b97362cdc3:0x5a02e2553a27de2",
+          "data_cid": "405374704315170274",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259b97362cdc3%3A0x5a02e2553a27de2&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259b97362cdc3%3A0x5a02e2553a27de2&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.763177899999995,
+            "longitude": -73.9678747
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259b97362cdc3%3A0x5a02e2553a27de2%218m2%213d40.763177899999995%214d-73.9678747&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Apartment building",
+          "type_id": "apartment_building"
+        },
+        {
+          "position": 19,
+          "title": "PROPERTIES ASSET MANAGEMENT SERVICES LLC",
+          "data_id": "0x89c258ef7bf1252d:0x1e0d1f1bb0800044",
+          "data_cid": "2165421199620833348",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf1252d%3A0x1e0d1f1bb0800044&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf1252d%3A0x1e0d1f1bb0800044&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631599,
+            "longitude": -73.9678826
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf1252d%3A0x1e0d1f1bb0800044%218m2%213d40.7631599%214d-73.9678826&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Property management company",
+          "type_id": "property_management_company"
+        },
+        {
+          "position": 20,
+          "title": "Melody Hrubes, MD, FACSM",
+          "data_id": "0x89c2591c61389cc5:0x71975072294d79e7",
+          "data_cid": "8185099299018602983",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2591c61389cc5%3A0x71975072294d79e7&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2591c61389cc5%3A0x71975072294d79e7&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631599,
+            "longitude": -73.9678826
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2591c61389cc5%3A0x71975072294d79e7%218m2%213d40.7631599%214d-73.9678826&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Physiatrist",
+          "type_id": "physiatrist"
+        },
+        {
+          "position": 21,
+          "title": "The American Lotus Hallmark",
+          "data_id": "0x89c258ef7bf1252d:0xf3fd277950c3cb67",
+          "data_cid": "17581251922323819367",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf1252d%3A0xf3fd277950c3cb67&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258ef7bf1252d%3A0xf3fd277950c3cb67&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7631599,
+            "longitude": -73.9678826
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258ef7bf1252d%3A0xf3fd277950c3cb67%218m2%213d40.7631599%214d-73.9678826&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4QVAhqFZwokRmx1nAvdOZg4&type=place",
+          "type": "Renter's insurance agency",
+          "type_id": "renters_insurance_agency"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Very nice people work there.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLER_RF71xm6pNBnajWuQzmjhcXEXA8ZUh1l9PjOL_9HYXq9A=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I highly recommend him for you and your family needs.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJRG8CnT_BP_1Lk7iIUu_NCdhX3tmE5wvOta8S7ULDeWzGu6g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Then they give you a bad doctor.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI96Gd0VapsGSwdF8vG4lnGSS6fVIFUUZFust2gR2psctr97A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Margaret Fluhr",
+          "rating": 5,
+          "contributor_id": "103621959271224421394",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJPWUxY97QBICOPfqpWKu5cKlaMrscVkfZ82ni2KVXdJmwp6w=s120-c-rp-mo-br100",
+          "description": "HSS PT is an all around great place. Everyone I\u2019ve met is warm, concerned and helpful. The facility is attractive and extensive- there is a large well equipped gym as well as private rooms. Although I have had pt several times in the past, this is the first time where I have had such a thorough assessment prior to the establishment of a treatment plan. Each session has ended with exercises to do at home, which are relevant and can be accomplished without equipment. I highly recommend them.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5bmVFRllaRVk0VWtJeU0wMVBRelJzU21GVldXYxAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOl9neEFYZEY4UkIyM01PQzRsSmFVWWc%7C%7C?hl=en",
+          "date": "Edited 4 months ago",
+          "date_iso8601": "2026-02-17T16:19:15+00:00"
+        },
+        {
+          "username": "Deborah J Thompson-Grinnard",
+          "rating": 5,
+          "contributor_id": "117678236696994906573",
+          "user_review_count": 2,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJU6jk1fCzWpVUocLc0EJ0CqTp6uRak5QvPpxmebV1wBTJymg=s120-c-rp-mo-br100",
+          "description": "My son Noah needed to get an emergency ACL and meniscus repair surgery. He was misdiagnosed by his previous Orthopedic doctor. Dr. Green, I used to get a second opinion because Noah\u2019s knee was only getting progressively worse. I believe from my first meeting with Dr. Green and after reading his review's I knew that I wanted him to perform the surgery. I also spoke to Dr. Cordasco via a phone conference. He was also kind and knowledgeable about what my son needed to recover. This is the only hospital that I will go to get an Orthopedic surgery. Dr. Green and Dr. Cordasco are experts at what they do. Lori, Dr. Cordasco\u2019s PA is thoughtful and kind and was very diligent in ensuring that Noah received the best Physical Therapy. The Both nurses Erica at Lexington Avenue office and the discharge nurse Jennifer at post surgery were very kind, caring and thoughtful. They all came to discuss the procedure with you before and after the surgery. I love the fact that they will continue to monitor Noah\u2019s progress throughout his stages of recovery and even after that. Noah lost his dad 6 months prior to the surgery. He was grieving and feeling hopeless because of his injuries and not being able to play soccer the sport that he loved. I just want to thank Dr. Green, Dr. Cordasco and Staff for the kindness that you showed Noah. What a great organization. You put the \u201cH\u201c back in the word humanity.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205RVdtcDJVRzVKTFdkUlNXc3hhREEwVHpJNWVGRRAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOm9EWmp2UG5JLWdRSWsxaDA0TzI5eFE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2ISR-bJQfkq0W8sPpfeYtSRlTzijfBYRtjbxVWmXO--9h5DBw-owd77sT8XfJM6oiMB5yfo55sNF4eRwQRE3DA4WFkrfFTEd53j4qIDYz4MKE9rtQJEf6r_X9sPcBArJehLXxSfXqDoeHa=k-no"
+            }
+          ],
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-14T13:22:23+00:00"
+        },
+        {
+          "username": "alex headdy",
+          "rating": 2,
+          "contributor_id": "109726342834711569894",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ4aiG_WHC-pxavwfXpQ3BX9Kn785aBJwVf4BfR_Yg4qm-OYg=s120-c-rp-mo-br100",
+          "description": "The Physical Therapists are great! The office staff - HORRIBLE.\nSome of the rudest scheduling staff I've ever delt with. Trying to make an appointment here is nearly impossible, they schedule weeks out in advance and when i called to reschedule 1 appt (the only one i have ever needed too) they just canceled it and told me nothing else was available for the rest of the year?????? I find that very hard to believe.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkMlMwVnRVWG81WVdGcmVsbE5hRmhxVnpOSFYyYxAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOld2S0VtUXo5YWFrellNaFhqVzNHV2c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-05T21:09:57+00:00"
+        },
+        {
+          "username": "Maria Toloza",
+          "rating": 5,
+          "contributor_id": "111073312727853933520",
+          "user_review_count": 52,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXb67em9Jz6pvCLWlGJeAvEMujgZHaNA8QIjebgZJbdc5jxyAQ=s120-c-rp-mo-ba12-br100",
+          "description": "Joyce my massage therapist and Kyle my PT are truly healers. They know how to listen to patient in this critical recovery from an injury and surgery\nThanks for helping me to be whole again!\n20 starts\n\n6/9/26  addition to previous review\nOne start for HSS customer care, they offered only 30 mts PT. Insurance is charge as a hospital visit. I had to pay additional co payments. I had to leave this place. They are not transparent . Therapists are ok but not enough time to provide quality care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWMlpXNU1iRFJRVUVKc1JWWmpWRkl6TUdScmFsRRAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOjV2ZW5MbDRQUEJsRVZjVFIzMGRralE%7C%7C?hl=en",
+          "date": "Edited 2 weeks ago",
+          "date_iso8601": "2026-06-09T12:03:22+00:00"
+        },
+        {
+          "username": "Kimberly Andrade",
+          "rating": 5,
+          "contributor_id": "102128713113481670169",
+          "user_review_count": 12,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXxuN3dtlrbG4Fo7xMjYz1rNoiw59iGneX2TEQ9jcRXUTiCINQR=s120-c-rp-mo-ba12-br100",
+          "description": "I would like to recognize Dr. Siddiqui for her excellent care and professionalism. She has made a meaningful difference in my treatment, and I would highly recommend her to anyone seeking compassionate, thorough, and effective pain management care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21acVNuQkJRVTltT1dKdWRIaGpXbDlwWnpGS1dFRRAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOmZqSnBBQU9mOWJudHhjWl9pZzFKWEE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-25T19:14:43+00:00"
+        },
+        {
+          "username": "Abul Rahman",
+          "rating": 2,
+          "contributor_id": "117261646549608915640",
+          "user_review_count": 11,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXRoJI2G3yJ3mn70lTsNN2cLcgoy5eXSIUwzWNBSLTWW5YCPqU18A=s120-c-rp-mo-ba12-br100",
+          "description": "The actual PT people are good - but the location is extremely understaffed and receptionists seem overwhelmed and therefore downright rude/unhelpful. You can not get Physical Therapy appointments, they are booked for weeks in advance. Overall not a great experience and too frustrating to deal with - will not be going back. Found another therapy place that books daily/weekly appointments much more easily.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pNeGJrWlRjbVo2ZEVwcVQxQnhhVUZ5TUhJMmNFRRAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOjMxbkZTcmZ6dEpqT1BxaUFyMHI2cEE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-09T17:26:03+00:00"
+        },
+        {
+          "username": "Maria Felisa Shearouse",
+          "rating": 5,
+          "contributor_id": "100730488079684319911",
+          "user_review_count": 89,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLw67LfGYXdubMdl5FKiPggG26zi3tokR5ekMF0z8K0YameVw=s120-c-rp-mo-ba12-br100",
+          "description": "I have received excellent professional, efficient and courteous services from Mariana since last fall for various injuries and Angela is the most efficient and courteous receptionist on the 3rd floor. I do agree with other reviews that some of the receptionists are not as well-trained as most other HSS staff are.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xVd1ZVRTFTelZSVERSQllXTXlTalJIWlVNeU5VRRAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOlUwVUE1SzVRTDRBYWMySjRHZUMyNUE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-05T11:00:34+00:00"
+        },
+        {
+          "username": "Alex Moorehead",
+          "rating": 5,
+          "contributor_id": "112849376449188570689",
+          "user_review_count": 14,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIh6LNJatWj9CNY7rdME2_mR6zl72bFGp-kPwqCRI3SfAxsjQ=s120-c-rp-mo-br100",
+          "description": "Great experience, really helped me to get back to full running -- Amanda Sachdeva is an exceptional physical therapist",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSbVkycFRZMG8zTmxWa1dGaHFTa056V0dKT2RWRRAB!2m1!1s0x0:0xe664ef702671d9b!3m1!1s2@1:CAIQACodChtycF9oOkRmY2pTY0o3NlVkWFhqSkNzWGJOdVE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-29T14:16:58+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "HSS Prosthetics and Orthotics",
+            "data_id": "0x0:0x6b23570dcc43a6f3",
+            "data_cid": "7720109903016339187",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6b23570dcc43a6f3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6b23570dcc43a6f3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7669962,
+              "longitude": -73.9523019
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6b23570dcc43a6f3%218m2%213d40.7669962%214d-73.9523019&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=MnlUdq0c3ZjzJxh7WrsonPJbjAdb8BtjoqLY3fF9biZ9yVP05i-1BVOGWvrGsxNtmiCKzvT1Ak49KRv3B-hO7NsxgY6bKMRpDGwlGJYeL8gvTKU29VTS9HECwCa3M4G5V6sEdYpdzWvdtpr5FT7r0yhvmM4WmakP",
+            "type": [
+              "Orthotics & prosthetics service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Hospital of special surgery",
+            "data_id": "0x0:0x41707c8deaef0cc2",
+            "data_cid": "4715405758830677186",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x41707c8deaef0cc2&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x41707c8deaef0cc2&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7665751,
+              "longitude": -73.9524826
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x41707c8deaef0cc2%218m2%213d40.7665751%214d-73.9524826&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=t_KLFQ4O8QyLFmtEROH-ZK9RjaFyE91EwNe2zDi86O9s3vrnPCkw6LVL76g8UK8uiqCFm3d6xgi2NQ_dFb7y0VVoj68L-_txSmXl2CxChBtw-7QoEWjS65ZlPYsbahnAovYY_lbZPAE_rY_qBhwDZ-9WD6XhGfie",
+            "type": [
+              "Hospital department"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Orthopedics & Sports Medicine",
+            "data_id": "0x0:0xc2dc25a56ca9b996",
+            "data_cid": "14041139130657257878",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc2dc25a56ca9b996&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc2dc25a56ca9b996&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7571923,
+              "longitude": -73.9763885
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc2dc25a56ca9b996%218m2%213d40.7571923%214d-73.9763885&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=RVrcgTHp589MRSwEpUcabIr3xR_uWZ9L4h4ydoyCj-SSQ16Vk0WRcNaZg0YlZgz4zZPDgAylaR-Bm3GB5LOoVqneNtUAnJoy22_bDmK8aiGS8aRxfDNV7CE_7jJ1gd_kWtbzkq92O2YNaf3S-UFyuRKHsG68Ercc",
+            "type": [
+              "Orthopedic clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Park Ave Sports Medcn And Rehabilitation",
+            "data_id": "0x0:0xd9dfd88fd697e18",
+            "data_cid": "981219058645564952",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd9dfd88fd697e18&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd9dfd88fd697e18&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.763614499999996,
+              "longitude": -73.96893
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd9dfd88fd697e18%218m2%213d40.763614499999996%214d-73.96893&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=21pyi5KfTtAhg_-vyhQ-p4KR8sHyj9NQwmJ0PXQgBFTcWqDURg8oun9uKJZxMIMvroAO9ANrQzPsGNwrcjx4BCR2orJ6-KI6PKyLDWe_zyKZITNsZ3JxNZ1ptdsfULC0b7j5Hjl2I6rBvlnl2S2TX2j-YJmX7J8i",
+            "type": [
+              "Orthopedic surgeon"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "OrthoManhattan",
+            "data_id": "0x0:0xed85cbeeddec305c",
+            "data_cid": "17115310185677336668",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xed85cbeeddec305c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xed85cbeeddec305c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7587894,
+              "longitude": -73.97448779999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xed85cbeeddec305c%218m2%213d40.7587894%214d-73.97448779999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 41,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSTAos1GO-gwBkraiUxYkBZv8H3Hirc06nb-wp1Ti0WCJwIDM41yBpx74EFlYr8heWJqwPWJwgE5dy1ytCrW0t0V4MqBDM2RB3eGR3CBdW7sMVXJdYbnIDEaHP-vXaXWRF3soO=w156-h156-n-k-no",
+            "type": [
+              "Orthopedic surgeon"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oh4KHCIYSFNTIE1pZHRvd24gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COh4KHCIYSFNTIE1pZHRvd24gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

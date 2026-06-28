@@ -1,0 +1,366 @@
+{
+  "search_metadata": {
+    "id": "6a3d0a4cac176564c5f483c7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/dnWUgBmxGsdzYkl1o7ijUQ/6a3d0a4cac176564c5f483c7.json",
+    "created_at": "2026-06-25 11:00:28 UTC",
+    "processed_at": "2026-06-25 11:00:28 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258f14ce00117:0x4dec653fb952fb78!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/dnWUgBmxGsdzYkl1o7ijUQ/6a3d0a4cac176564c5f483c7.html",
+    "prettify_html_file": "https://serpapi.com/searches/dnWUgBmxGsdzYkl1o7ijUQ/6a3d0a4cac176564c5f483c7.prettify",
+    "total_time_taken": 0.43
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJFwHgTPFYwokRePtSuT9l7E0",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Public Restroom",
+    "place_id": "ChIJFwHgTPFYwokRePtSuT9l7E0",
+    "data_id": "0x89c258f14ce00117:0x4dec653fb952fb78",
+    "data_cid": "5614974159790734200",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258f14ce00117%3A0x4dec653fb952fb78&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258f14ce00117%3A0x4dec653fb952fb78&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7683603,
+      "longitude": -73.97710289999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFwHgTPFYwokRePtSuT9l7E0",
+    "provider_id": "/g/1pv5wks5f",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGY33hLBe4X5ZkDzmG-OsKCzNTUz-ToKlYlmK2K6Gw3MHb_txXyWxyz1d2klBMMXSKUDCVIIMhI1kQlqZXQ8Q2UuF8QrYxw5FeZnH7p7t1OEqxSDAQaVRANVQeyHBn-mgfiainX=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Sfn5qnicHcRJDoIwAADAF1U2t5h4YFEgFbQqWLgYxUoNpUVbw_JB3-BvTJzDfD9UqUYuNI1Ra1QKUTLyluRVCK4IV6NC1FrZSFBIIDV7F6PK9jPLohuHjPEkr7yh9sFWQneIj8kAjgKyjNXQhFO_taLgelYd7k9dPxg3s2JOFOEDTDw3DcOIhkaF2DPHaI7M5L2eo1fWtZM1yXkwa2bK2K6e3cGz0SXd23GKSB84HNTl_XF5cLxsDV3XAf1fAP4DInBEWw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 19
+      },
+      {
+        "stars": 2,
+        "amount": 12
+      },
+      {
+        "stars": 3,
+        "amount": 25
+      },
+      {
+        "stars": 4,
+        "amount": 28
+      },
+      {
+        "stars": 5,
+        "amount": 77
+      }
+    ],
+    "rating": 3.8,
+    "reviews": 161,
+    "type": [
+      "Public bathroom"
+    ],
+    "type_ids": [
+      "public_bathroom"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "65th Street Transverse, New York, NY 10019",
+    "country": "United States",
+    "website": "https://www.centralparknyc.org/locations?filters=restrooms",
+    "phone": "(212) 310-6600",
+    "open_state": "Closed \u00b7 Opens 8 AM",
+    "plus_code": "Q29F+85 New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20134 PM"
+      },
+      {
+        "friday": "8 AM\u20134 PM"
+      },
+      {
+        "saturday": "8 AM\u20134 PM"
+      },
+      {
+        "sunday": "8 AM\u20134 PM"
+      },
+      {
+        "monday": "8 AM\u20134 PM"
+      },
+      {
+        "tuesday": "8 AM\u20134 PM"
+      },
+      {
+        "wednesday": "8 AM\u20134 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by phone call 6 weeks ago",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGY33hLBe4X5ZkDzmG-OsKCzNTUz-ToKlYlmK2K6Gw3MHb_txXyWxyz1d2klBMMXSKUDCVIIMhI1kQlqZXQ8Q2UuF8QrYxw5FeZnH7p7t1OEqxSDAQaVRANVQeyHBn-mgfiainX=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Sfn5qnicHcRJDoIwAADAF1U2t5h4YFEgFbQqWLgYxUoNpUVbw_JB3-BvTJzDfD9UqUYuNI1Ra1QKUTLyluRVCK4IV6NC1FrZSFBIIDV7F6PK9jPLohuHjPEkr7yh9sFWQneIj8kAjgKyjNXQhFO_taLgelYd7k9dPxg3s2JOFOEDTDw3DcOIhkaF2DPHaI7M5L2eo1fWtZM1yXkwa2bK2K6e3cGz0SXd23GKSB84HNTl_XF5cLxsDV3XAf1fAP4DInBEWw"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "5 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFnikDs0XBbpXJnAlU1fbweffrnz_yYVvvRgZeTKhxsgpqHByr40QBZfY9LresLU-qo8z7-PKUt8zpdt7t4z8t_bU-QHZh9r9U1oOzzT2CT1AUTztVB20QDMO8TBoqYkrmYKX-igNuambWP=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/xg0UJHicHcTBboIwGADgJ6oUNRGW7EA1xgynsLQOuBjB0hqgLe2vzr6kZ9_GZN_hez0lgHEfQdDL2URoLXp-ddw2WgFXMGn0EAjjUOOQC5Jsl3fJWl26lcMFqU3xpZKehW19521rlT8-ysPt9iMqTlP554QZN-Rh5zgnVVvGW8vdlqFRR36BspRB5M0ZFjD3ERxrhvJNJWMbs1DvvafTJQ0TRj0cyBTnq-99RIkey84OZVqgi9hdT0P9m33eQ4wxkv83SL0BbcdI4Q"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHky4bpMZePPXi9f60FbqLE38BmnAes34VxbSD5fuQjcCE-Eew3O-hHlubLbw8MABVsW2ZiLGDaxfJcAfZ_0Qbj_DzzwugS1s5xGQhLcvSxPISt1CcdomRSOecUopiVTxu3jlJyAibU6ZY=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/uFAe_HicHcTBboIwGADgJ6oUq8Yt8VCF6QxOWCcqF2P_FQoCRduO6kN639ss2Xf4fp_SmE6_el4tyaBQqqiF1eIGqjWiNQNQjVd0GoFG2qPxR3Khq8t9xLtNJuL4UL7kE_zGr1FIpvOmpUKTUeo4C8a5TSpYhCgUPdkiuaotj3g_3dB5qvfDrIyWwdnla6B5dsIJr07B49Hbgvl67JaJjOCHufidGX8B36r5ZFsBO9WV6ZezpKrXd1ry3SQ7znofY4zk_4DaP1V0R9k"
+      },
+      {
+        "title": "Exterior",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHafHY2pgdpxRFiF0eS_rf0i_1DyihmlFq9h7VZylIlPhokDlm2memdoVUCQF4lFoGAP_zjL8y3UomhxpPSK7CUCZynOXldTY-HQfRKiwtF0F9DKVINPsx3AgBddGkTCCEeGQ5j=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/nyQm6XicHcTdroIgAADgJyIpz1k_WxeGB222wkqX3bgzQTBBKGhpL9gz9DZtfRff-yWcM3bheVL4I641l-xu2a3SnWOdG1VaedxYUFlgvYBs0zaI_-u4mBhOTb_HDYbsUN5q2JTjcGiEkvg6F9P8PMi1JEK3oVQTxRTVeYZS_COxjgJSPi-b2eBnWonekEMyRRk6D93uJOmxAHFa75Pm4TDE8zDJ11tiez_gK0qj9ojQH4vS38vyMYYQAvG9At0H1thFTw"
+      },
+      {
+        "title": "Inside",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE2TdjBahFzLquQckTB1jmsBPxAgaJsDTr48mU4W9sKhuePm_-iILEOoeQoF_jWY82G6LOR_K8GRVAGMugUFR_TVFw0ME7fMCaejxKsvFTZfIaDlC3FHOf-NHX970duRzOMtyrk84wFrL_W=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/PLpax3icHcTbboIwAADQL6pUJROX7AGUogJySRXdS0NqaeVWR9uh_qTP_s2SnYfzfgmtb-rTsloxn3ApecuMYgOVvWa9nlDZWfymAFVAWW66zxrXn-FL7ZUCPaMfk9EGe9O6U156d3m5U2s82E53sIulCoVhaUfAdRv5iWSZRKQuzs4s-IiSnIROkB_dIDb8gHKCj2iEsb-o4lXJ6nuofhH-rrblul3N0SapwH5zWi7gxeTPJNaPoXHsEQ0RKb7GKYQQiP8p6P8AhkRGzg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=czfrwVn8OJIyDQ4HP4HhMA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=318.62436&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/JJUTqXicHc3dCsIgGADQt_Eu3Y-MFUgEXawgqptuh5mbHziV-aWtx-mtepug8wLn-zGIIW4YizhrjQl0DvDSNq6CpKP3o9UyQKTKTyyVDM1zujsJdhuk8_AQ6j3M-eba8_Gw7K-8u_DOnHZE3XtlQTsUkwyxj4miVAhW0zFEkkVVcWJEtW7JIrOoy5Y2Fa8bEgCVEQX5P4NPoiyKH-wmOf8"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"They need time to clean and check the playground and it's equipment for safety.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXzMhajOa3sja0DW--tkXu0wxEDZfk-KYaiGwJazY9gBxo71HLlJg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Starbucks or beer needs to get out.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXFu2R6a8u3_rvaEQx2Ov1u-ry_8f872MnQe0eBYmwc-yfCIwu-pQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Clean bathroom located on the 3rd floor at either end of the hall.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVJPceGUZozWTrSohd0B2te4WxbYMoaGtYQK4UE3jJEvQlb0gc=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Hans Wurst",
+          "rating": 3,
+          "contributor_id": "115937173299475199118",
+          "user_review_count": 785,
+          "user_photo_count": 2030,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWW8Rca7egMFHjBvaXdcck-38AuFd9FWIU_AnEANCMJG2HM07jpCg=s120-c-rp-mo-ba12-br100",
+          "description": "The opening times are a prank. It was open at 8pm. Don't know when it closes so I would try to correct it. Anyway, had a nice peepee",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Sc1ZVMUNWRmt4Wkd0VE5WZEdYMmhQVjJGUGJGRRAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CAIQACodChtycF9oOnRsVU1CVFkxZGtTNVdGX2hPV2FPbFE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-16T23:21:08+00:00"
+        },
+        {
+          "username": "Bryce",
+          "rating": 5,
+          "contributor_id": "115174125510549714343",
+          "user_review_count": 55,
+          "user_photo_count": 10,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVJPceGUZozWTrSohd0B2te4WxbYMoaGtYQK4UE3jJEvQlb0gc=s120-c-rp-mo-ba12-br100",
+          "description": "Clean bathroom located on the 3rd floor at either end of the hall. Great before a long trip on the subway",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25FdFp6WXhVMlJpWlV4WlZXdG5Ra3haVWpkU05uYxAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CAIQACodChtycF9oOnEtZzYxU2RiZUxZVWtnQkxZUjdSNnc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-08T15:12:26+00:00"
+        },
+        {
+          "username": "Sidharth Sharma",
+          "rating": 1,
+          "contributor_id": "110922140781513780410",
+          "user_review_count": 5,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXpvseeejCeEy33k9TLjF64pSSHKKskmwYPq7S5qJg3iac_aANG=s120-c-rp-mo-br100",
+          "description": "No tissues no soap I don\u2019t know how NYC food department is giving such restaurants license",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OTFdreE9aelJDYUZOamRYQTFjMFJ3TWpGMmFXYxAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CAIQACodChtycF9oOnNLWkxOZzRCaFNjdXA1c0RwMjF2aWc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1feOPFriJUW-VXXc--iPQaNHtSsvWh-g9jTeOT087JtMyB2YAnFfBkAiiEBA0-uzoehgf9km9qomDtmqtfDg1zdHCQdg730u7rAB1_apH_19rb47YZDA-Gvb8_MWvDDBbGmmbsTUxXOdI=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1AHadNjo_P1utrAgZ4BmSlJEP3cwUVDvnPXd0nSoyezfrXwKsnXxjo-jtBlEah3jsp_3dE4I9P8v34j_6QdCmnBI2JDGd2pM0VYf_T9jplTV-OT00EjzSghvC6GsxUpKfX5WusWU3djOPC=k-no"
+            }
+          ],
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-12T02:39:19+00:00"
+        },
+        {
+          "username": "MattyG Gulotta",
+          "rating": 5,
+          "contributor_id": "110361582226627671186",
+          "user_review_count": 95,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLffZ-NWiO12FpUwfmOG7O45ah--n5iN9T6QD0jA4HPjsw1ew=s120-c-rp-mo-ba12-br100",
+          "description": "Surprisingly spacious, with just the right amount of mystery smells to keep you alert. TP supply was generous\u2014no one likes a paper drought. Stall door locked tight, so privacy was on point. The hand dryer was loud enough to drown out your questionable life choices. Would definitely visit again when nature calls on the go. A true oasis in the wild urban jungle.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psTE9YY3dWelZPVXpST1FTMTBTV1kxUW1Wa1dWRRAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CAIQACodChtycF9oOjlLOXcwVzVOUzROQS10SWY1QmVkWVE%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-06-25T18:43:56+00:00"
+        },
+        {
+          "username": "Trent Tate",
+          "rating": 5,
+          "contributor_id": "113707340050478791534",
+          "user_review_count": 21,
+          "user_photo_count": 46,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXFu2R6a8u3_rvaEQx2Ov1u-ry_8f872MnQe0eBYmwc-yfCIwu-pQ=s120-c-rp-mo-ba12-br100",
+          "description": "One of Central Parks greatest locations. Starbucks or beer needs to get out. No line at 4PM on Saturday for men's and small line for women's.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURRcnNxbjBRRRAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CIHM0ogKEICAgIDQrsqn0QE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3wJCGEvp1cJhK55izrvfHIajcOCxsLuCgVz_x6VTzqEsh-Nn9eyYdddQUnizlCAj679zV68W2YZ9-ICYSyEmjM3X0RHMCaz8O7vgIomtm5SHlcx8fM74DNIGx_kX80PE8HWODLow=k-no"
+            }
+          ],
+          "date": "9 years ago",
+          "date_iso8601": "2016-11-26T21:04:26+00:00"
+        },
+        {
+          "username": "Dave Methvin",
+          "rating": 5,
+          "contributor_id": "103348693812294029194",
+          "user_review_count": 507,
+          "user_photo_count": 154,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWpqMFabwW6ry18vPX1GHbXXsVhAvA-X7pS1fBgqbBGHuKWAa5N=s120-c-rp-mo-ba12-br100",
+          "description": "Sometimes when you visit nature, it calls you. This is a decent place to hear the call of nature. The bathrooms are clean and free. If you have kids in tow, there's a playground next door where you can let them burn off some energy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTURRMlBfVjVnRRAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CIHM0ogKEICAgMDQ2P_V5gE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-08T20:50:06+00:00"
+        },
+        {
+          "username": "David Nghiem",
+          "rating": 4,
+          "contributor_id": "111614876606406180805",
+          "user_review_count": 53,
+          "user_photo_count": 183,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWecEGUWDItXV946Kue6Sh2vDDVK1QzYfZmOSb9oLNeRl5MsniM=s120-c-rp-mo-ba12-br100",
+          "description": "Free public restrooms in the middle of city. Not perfectly clean, but when considered how busy this place is, they are clean enough.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURwemZXWnBRRRAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CIHM0ogKEICAgIDpzfWZpQE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2Pir4_kz_wwdLPl7OY6WRmHKr_euLPgm1vWxx80Zk9zsthkvaxdzdy_4GA5wSEv_mDEh7Y4Foi1vlk2A68AYoV7CSGMqs0L5W5hNhJlyt7E_f3ZGsQ2OzEBvEWP8InwH4ozWij=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1fNWTrH3xTaJjuSNDCeEjL9T9oC1lBQJOcD4Uwfs2xiSWOj0NFGVNHqtjOcKLiyuu_6Syqf_B5tCHUIsZVRROlom8wzj_LLTgsyHpQOMg1ojY6thiv6v9mxuCJj_vhbxg8zKC13A=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2023-08-26T19:40:34+00:00"
+        },
+        {
+          "username": "James McElroy",
+          "rating": 5,
+          "contributor_id": "115095709994635865294",
+          "user_review_count": 56,
+          "user_photo_count": 30,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUo1ocF7dwaCRXa_BX_aHLlOouEPY59JfGucf_6rlvwV_o2c5HG=s120-c-rp-mo-ba12-br100",
+          "description": "Got caught short earlier today and these were the nearest option. They were clean, plenty of bog roll and lots of soap in the dispensers. When a Richard the third strikes that urgently, beggars can't be choosers.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUR2bExxcjl3RRAB!2m1!1s0x0:0x4dec653fb952fb78!3m1!1s2@1:CIHM0ogKEICAgIDvlLqr9wE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-12-17T22:10:38+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "550 Madison Ave Bathroom",
+            "data_id": "0x0:0x3fc8d38210059588",
+            "data_cid": "4596155975299601800",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3fc8d38210059588&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3fc8d38210059588&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7613938,
+              "longitude": -73.97374409999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3fc8d38210059588%218m2%213d40.7613938%214d-73.97374409999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 121,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHeXckJ8XjPbZgvzUrHwzC1ytCrmKsUvwfuJcFxxiql4VexiwJwscR8UJUjz0PSp-2r4h0dYmuFe2HjBuNM2MuohxHGgyMlTtmIGf5Gm5H4EauwKNccG_E9u8X7dMIuwGc-p1rITQvkENmq=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "The Arsenal Public Restroom",
+            "data_id": "0x0:0x60c17872589c411b",
+            "data_cid": "6971986130654478619",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x60c17872589c411b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x60c17872589c411b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7674452,
+              "longitude": -73.97142869999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x60c17872589c411b%218m2%213d40.7674452%214d-73.97142869999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.6,
+            "reviews": 57,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyfp75h2VnZRTH_u3xSXa_vHQ-H0-gXgtNPdrR_BkV8xyT1CGZqiV_eM7Yo4q2PfAQcQU_uveS7HnX_Knt4a08OHvS9R4k6yvABjsS564kMsKRleRVoRZIewkVzrAmuiMYzTwBIw=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Merchant's Gate Comfort Station",
+            "data_id": "0x0:0x3d67045dcd052423",
+            "data_cid": "4424509959832937507",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3d67045dcd052423&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x3d67045dcd052423&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.769113,
+              "longitude": -73.98068959999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x3d67045dcd052423%218m2%213d40.769113%214d-73.98068959999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 27,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf7yW9hkoaR3oGbaZpj6g2bD2EqGJpQUei-OjdA17FCfnj8FCbQqJnuVEr-nYkZ7hhf9sLFYkuz6SIRdRezYC5hdhFzJfmoVJObZgyO0iAEpkXMHAyt3djlod7u3rtiT8J9yvzJjEGUmY=w156-h156-n-k-no",
+            "type": [
+              "Public bathroom"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Bryant Park Public Restroom",
+            "data_id": "0x0:0x1ad0cbfaf4a93b53",
+            "data_cid": "1932268518848936787",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1ad0cbfaf4a93b53&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1ad0cbfaf4a93b53&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.754058099999995,
+              "longitude": -73.98267419999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1ad0cbfaf4a93b53%218m2%213d40.754058099999995%214d-73.98267419999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 593,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH7B57y_TfTjMzeTNLaJ_Tvs4SSwzfveW939DyB1JV4HnGtzz0JD7cCxn8KipwBuwVWCNJqQu5hDLjI06ya7nnvsha-1ztT3Dus5tzUvi1kug_0I1XvjT-c6SHH49LYZF1YOwZIRI6mz19x=w156-h156-n-k-no",
+            "type": [
+              "Public wheelchair-accessible bathroom",
+              "Public bathroom"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiIKICIcUHVibGljIFJlc3Ryb29tIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiIKICIcUHVibGljIFJlc3Ryb29tIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

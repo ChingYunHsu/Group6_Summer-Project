@@ -1,0 +1,560 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ea2e171b906d1908330",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/yi1OElDDRraGizb28p_bsw/6a3d3ea2e171b906d1908330.json",
+    "created_at": "2026-06-25 14:43:46 UTC",
+    "processed_at": "2026-06-25 14:43:46 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a1f28ea212f:0x8cc624aa1f7cdf25!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/yi1OElDDRraGizb28p_bsw/6a3d3ea2e171b906d1908330.html",
+    "prettify_html_file": "https://serpapi.com/searches/yi1OElDDRraGizb28p_bsw/6a3d3ea2e171b906d1908330.prettify",
+    "total_time_taken": 1.47
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJLyHqKB9awokRJd98H6okxow",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Tribeca Dental Studio",
+    "place_id": "ChIJLyHqKB9awokRJd98H6okxow",
+    "data_id": "0x89c25a1f28ea212f:0x8cc624aa1f7cdf25",
+    "data_cid": "10143835523789938469",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a1f28ea212f%3A0x8cc624aa1f7cdf25&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a1f28ea212f%3A0x8cc624aa1f7cdf25&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.714841799999995,
+      "longitude": -74.0090704
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJLyHqKB9awokRJd98H6okxow",
+    "provider_id": "/g/1tkr05lp",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAERBebSTMvijlivXrdtuOzZoLq7YfQBImA12mmX10Qri1xpVxaZ2LNfOOQ48iA3t633LSA5NtvqkNncp_N_Jb1qKfqz1ypLr0jXMu4tylaICwNgNgafxUBtuqihnyoOzo5IF4rAEW8l418=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/HMuZ13icHcTbToMwGADgJ2K0gykx8aKYmaCsiPOAu1lYhdKt9PjDgIf03rcx8bv4fn86AOPvwlB20YprzWUz-MYxraBRsGK6D7nxAfOBD8kLLS9k-5o2p_3bbhRnKcbKfcNQLAed29uvtkyznuB131cYlU7gyXxM9WGd07YoyjgRJIKbKMr3ZENhtBeqmDnS49MJ2-fWLng2uUPnajfEMMs6e7hSTnndTu8pDFZ0atbFojfZY-zI9jORMU7urxghFHT_s0D9AdyBSGE",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 38
+      },
+      {
+        "stars": 2,
+        "amount": 5
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 15
+      },
+      {
+        "stars": 5,
+        "amount": 566
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 628,
+    "type": [
+      "Cosmetic dentist",
+      "Dental clinic",
+      "Dental implants periodontist",
+      "Dental implants provider",
+      "Dentist",
+      "Emergency dental service",
+      "Oral surgeon",
+      "Orthodontist",
+      "Pediatric dentist"
+    ],
+    "type_ids": [
+      "cosmetic_dentist",
+      "dental_clinic",
+      "dental_implants_periodontist",
+      "dental_implants_provider",
+      "dentist",
+      "emergency_dental_service",
+      "oral_surgeon",
+      "orthodontist",
+      "pediatric_dentist"
+    ],
+    "menu": {
+      "link": "https://truelark.com/bookonline/#/location?businessId=80613",
+      "source": "truelark.com"
+    },
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking",
+          "Paid parking garage",
+          "Paid parking lot",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "54 Warren St, New York, NY 10007",
+    "country": "United States",
+    "booking_link": "https://truelark.com/bookonline/#/location?businessId=80613",
+    "website": "https://tribecadentalstudio.com/",
+    "phone": "(212) 561-5303",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "PX7R+W9 New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20136 PM"
+      },
+      {
+        "friday": "8 AM\u20136 PM"
+      },
+      {
+        "saturday": "8 AM\u20136 PM"
+      },
+      {
+        "sunday": "8 AM\u20136 PM"
+      },
+      {
+        "monday": "8 AM\u20136 PM"
+      },
+      {
+        "tuesday": "8 AM\u20136 PM"
+      },
+      {
+        "wednesday": "8 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a1f28ea212f%3A0x8cc624aa1f7cdf25&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMxpn90jtZAlNhs-BAwDXN_VhIduDj3zi4ILvRa=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEPDf2PbNkv77nAE&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "A calm, modern dental visit in the heart of Tribeca \ud83e\uddb7\n\nAt Tribeca Dental Studio, we keep things simple: clear answers, modern care, and a team that listens. If you\u2019ve been searching \u201cdentist near me\u201d in New York City or coming in from Jersey City, we\u2019re here for routine visits and bigger smile goals.\n\nPopular services patients ask for:\n\u2022 Teeth whitening for a brighter, natural look \u2728\n\u2022 Porcelain veneers for shape, color, and confidence\n\u2022 Smile makeover planning with a cosmetic dentist \ud83d\ude01\n\u2022 Help when you need an emergency dentist near me \ud83d\udea8\n\nReady to get started? Book an appointment with Tribeca Dental Studio today.",
+        "date": "33 mins ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipO5UwQl6jL53HGZWJ3YGwaciBVEmYeg4lh9_U_h=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEML15KqWzJGuTQ&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Modern care for your everyday smile starts here in Tribeca. \ud83e\uddb7\n\nAt Tribeca Dental Studio, you get a team that focuses on comfort, clear answers, and results you can feel good about. If you\u2019ve been searching \u201cdentist near me\u201d in New York City or coming in from Jersey City, our cosmetic dentist team is here for everything from routine visits to a full smile makeover.\n\nHere are a few popular options:\n\u2022 Teeth whitening for a brighter, cleaner look \u2728\n\u2022 Porcelain veneers to reshape chips or gaps\n\u2022 Dental implants to replace missing teeth with strength and stability\n\nReady to take the next step with your smile? Book a visit with Tribeca Dental Studio today. \ud83d\udcc5",
+        "date": "22 hours ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPCLr-F4axmFChu_oKvYUvGHOc6o3YOPFwjvduG=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEIiho7G47_DvXA&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Care you can feel confident about, right here in Tribeca \ud83e\uddb7\n\nAt Tribeca Dental Studio, our team focuses on comfort, clear answers, and precise work, whether you\u2019re here for routine care or a same-day concern. If you\u2019ve been searching \u201cdentist near me\u201d in New York City or coming over from Jersey City, we make it easy to get the care you need in one place.\n\nNeed help deciding what fits your goals?\n\u2022 Teeth whitening for a brighter smile \u2728\n\u2022 Porcelain veneers for chips, gaps, or uneven edges\n\u2022 A smile makeover plan that feels natural and personalized\n\nIf you\u2019re also trying to find an \u201cemergency dentist near me,\u201d we\u2019ll do our best to see you quickly and get you out of pain. Schedule a visit online to get started.",
+        "date": "22 hours ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMikF8b_DwNEMP4g3tqfTo7gsnEjVxYSFGjemuu=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEKOi7bCDn8agCg&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Ready for a cleaner, brighter smile in Tribeca? \ud83e\uddb7\n\nAt Tribeca Dental Studio, our modern care makes it easier to get the results you want, whether you\u2019re due for a checkup or planning a smile makeover. Many patients from New York City and Jersey City come to us when they search \u201cdentist near me\u201d and want one office that can handle both cosmetic and everyday needs.\n\nWe\u2019re a cosmetic dentist with options that fit your goals:\n\u2022 Teeth whitening for a fresh, natural-looking boost \u2728\n\u2022 Porcelain veneers to refine shape and color\n\u2022 Dental implants to replace missing teeth with a secure feel\n\nIf you\u2019re in pain or something breaks, we can also help when you\u2019re searching for an emergency dentist near me. \ud83d\udccd Book an appointment online and let\u2019s make a plan for your smile.",
+        "date": "22 hours ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipP7vMmUA3ucQNmrdJ4hBE-t4B1ev9p7mq_O5n0g=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEKHP8c2x2dH9Kg&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Walking into Tribeca Dental Studio feels simple and stress-free from the start. One patient shared, \u201cI\u2019m always assured of friendly and thorough service,\u201d and that\u2019s exactly what you can expect at every visit. If you\u2019ve been searching for a dentist near me in New York City or coming in from Jersey City, our team makes it easy to get care that\u2019s clear, kind, and detailed. We offer cosmetic dentist treatments like teeth whitening and porcelain veneers to help you reach your goals, whether you want a small boost or a bigger smile change. Book your visit today and let\u2019s plan a healthier, brighter smile together.",
+        "date": "22 hours ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNFyKsXMtVurpJ0Xv-1UQhqqQP152aC4sV4Mh2Q=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEKOS_NXjtOLThgE&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Snoring and sleep apnea can affect more than your sleep. \ud83d\ude34\n\nTribeca Dental Studio now offers MARPE, an airway treatment for snoring and sleep apnea that aims to fix the cause, not just cover it up. MARPE is not a band aid, it\u2019s a cure focused approach for improving airflow and breathing comfort. If you\u2019ve been searching \u201cDentist Near Me\u201d in New York City or coming in from Jersey City, our Cosmetic Dentist team can check your airway and bite in one visit.\n\nWhat we can help with:\n\u2022 MARPE airway expansion for snoring and sleep apnea \ud83e\uddb7\n\u2022 Invisalign Dentist options for straighter teeth\n\u2022 Smile Makeover planning, including porcelain veneers and teeth whitening\n\nReady to see if MARPE is right for you? Book a consultation with Tribeca Dental Studio today.",
+        "date": "5 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipM6Rngd1RWjMBMFgWQCu_5z7QmhFyBi2WQ1oi5v=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEOyei8aZn7q51AE&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Nothing beats that moment you see your smile and think, \u201cMy teeth look great.\u201d At Tribeca Dental Studio, we love hearing that, because it means your visit felt worth it and your results look natural. If you\u2019ve been searching for a dentist near me in New York City or coming over from Jersey City, our team makes it easy to get the care you need in one place. From teeth whitening near me to porcelain veneers, we help you reach a brighter, more confident look with a plan that fits your goals. And if you need help fast, we\u2019re here when you\u2019re looking for an emergency dentist near me. Book your visit today and let\u2019s make your smile the one you can\u2019t stop showing off.",
+        "date": "5 days ago"
+      },
+      {
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEJuNvsSpwKSnew&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Step into a smile that works as hard as you do. At Tribeca Dental Studio in Manhattan our multidisciplinary team combines precision dental implants, discreet clear aligners, and aesthetic treatments to deliver comfortable, modern results. Discover a personalized plan that fits your life.",
+        "date": "6 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNcbKtnvltyU2wf3fzbLFsXo_qCEY5nHpRlWdm8=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEPO-3PumuZab1QE&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "Your smile goals deserve a modern, comfortable visit. \ud83e\uddb7\n\nAt Tribeca Dental Studio in New York City, our team makes it easy to get the care you need, whether you\u2019re searching \u201cDentist Near Me\u201d for a checkup or you want a Cosmetic Dentist to help plan a real smile upgrade. We welcome patients from nearby neighborhoods and Jersey City too.\n\nHere are a few popular options:\n\u2022 Teeth whitening for a brighter, natural look \u2728\n\u2022 Porcelain veneers for shape, color, and spacing fixes\n\u2022 Dental implants to replace missing teeth and restore function\n\nWant to talk through your next step and build a simple plan? Book an appointment with Tribeca Dental Studio today. \ud83d\udcc5",
+        "date": "Jun 17, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN0oFTuSEHPex6uaiZWed060rBsf8HFjOTXT1KU=h400-no",
+        "cta": "Learn more",
+        "link": "https://tribecadentalstudio.com/",
+        "post_link": "https://search.google.com/local/posts?q=Tribeca+Dental+Studio&ludocid=10143835523789938469&lpsid=CIHM0ogKEK_-4PWpn4KSowE&source=sh/x/loc/post&lsig=AB86z5Xk7trCPP0cSV-DEw34r1yo",
+        "description": "A brighter, healthier smile can start with one visit. \ud83e\uddb7\n\nAt Tribeca Dental Studio in New York City, our cosmetic dentist team keeps appointments calm, modern, and focused on results. If you\u2019ve been searching \u201cdentist near me\u201d or \u201cteeth whitening near me,\u201d we\u2019re here to help patients from Tribeca and across NYC, and we also welcome Jersey City neighbors.\n\nPopular smile goals we help with:\n\u2022 Teeth whitening for a cleaner, fresher look \u2728\n\u2022 Porcelain veneers for chips, gaps, or uneven edges\n\u2022 Smile makeover plans that fit your timeline\n\nNot sure what you need yet? Book a visit and we\u2019ll walk you through your options and next steps. \ud83d\udcc5",
+        "date": "Jun 17, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAERBebSTMvijlivXrdtuOzZoLq7YfQBImA12mmX10Qri1xpVxaZ2LNfOOQ48iA3t633LSA5NtvqkNncp_N_Jb1qKfqz1ypLr0jXMu4tylaICwNgNgafxUBtuqihnyoOzo5IF4rAEW8l418=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/HMuZ13icHcTbToMwGADgJ2K0gykx8aKYmaCsiPOAu1lYhdKt9PjDgIf03rcx8bv4fn86AOPvwlB20YprzWUz-MYxraBRsGK6D7nxAfOBD8kLLS9k-5o2p_3bbhRnKcbKfcNQLAed29uvtkyznuB131cYlU7gyXxM9WGd07YoyjgRJIKbKMr3ZENhtBeqmDnS49MJ2-fWLng2uUPnajfEMMs6e7hSTnndTu8pDFZ0atbFojfZY-zI9jORMU7urxghFHT_s0D9AdyBSGE"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "18 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwA4cTRtS1BRPjJqwz3mdAHneUuvl-PdDHbGNEAJE5OIHX3K4hvcm-oK9QTl9NAkhIs88h8TwL8NF2XSM34W31lsqLmGV6wFY7_lqYChpTDnwQeABnYmhpPpoT_ORHYWE_BEuWNYP35gw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/prLsWnicHcTbboIwAADQL6rAihsu2UNRFC-rBbthn0isDc3sjbXYZB-5d_9myc7DefzKEJx_TRIl4WywdlBi8uKbWxOECTNudTI4D7gHPkEENzdUR5Rz2oZTVrbkazfGH6ivqDbiY7orQK6r-rLBFdpV8-O2PsN9Lu9cA7tfNFQtMLrJrS8KWdB4KPD66Xx6h3kHM-XHg958Psc1e-nVyJbS0ZWJjUClYVo64iztj23Nuqovq6nDjMD5EN9ilqYpkP9zYP4A5d9F-w"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHs7-mzxtyBszY9vdgqzx0MSPDfbDHtNyV-1ZsAvtK6r4k10ozg9xsNWkmsqvP6oL4Sza8dsO6N6e-cBApG65YnjR4CRpjS-GKWkA-qBmErkaH9zKUlkwHNrTG_VdlKY7A4MZbB=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/P80REXicHcTdboIwGADQJ_qkZKwOEy-KGkiYlYk_wZtFC5ZYoMDXIfYFfYa9jYnn4vw_S2NanDlOVX5MpNayKv6w6IVuTNGYidC1I1sEgYAOS_iPYhFOobajeQRoM3_IZWdHsk6T5fWyjAx_HMA9IRtMTHtPuURb6Y_Ij6rGbkio_vZSe_7KcUM5LUAErA3pZ9bctt5i295SCOOjYtAF9apX58i38b5S94j3u_D3kFdxNmXe-nQJ5neXEALlewHNC8wDRRs"
+      },
+      {
+        "title": "Exterior",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-X63HNd8SENPyTzcxVTcD5zYQdhbozoeW_zu9ZmLQlgd5GMwuGiFHaDBrcyD5Bp-PgtTuEQbdnd_eF31lxFr3UR54eGNb72cU9kq9WhevrAsXbi7hG1zmZB36Nj9agA0H5PeSV982-XlD=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/0IRmMXicHcTBboIwAADQL6qAXdUu8QBB4OAaGKjMi5G2adVCGS1D-5Oe9zcmvsP7f0pre_PpeUrCmdBaKD4aPlDdWd7ZGdWtJ3oDqAHGC3NS3MIE1AuYEbYqNyR_VI7e9xWNkfspmGy00_xwciM-tttCCYbSr2lML0l2jqOBPmIU9SAXtho3RcM6duIJDNQ9GeDuG33wlDTLOd3h2y8-SP43hKZuLkuZBq49RnBBrvgsQj9DOS_3eDUHtYrXU-D7PpDvKehesnBGsw"
+      },
+      {
+        "title": "Inside",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjfGpI7y9eypScurHdX0jQpUa9uLj5lJgLyxpQeQzA4ynBK1NUwpM64xXiFlkBduer1CR-qf7T_mYUVV9Q93lEReIdauU4mJXUoCeHQ5pljPmdfqtuQbOTaYWpjwqAXu0jGiWJxlde4RWa=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/CQ-wfHicHcTBboIwGADgJ6qUiDOY7IBmE5k6i1bwtLD2B6yFFtoG8CV33tss2Xf4fn9qa7VZeZ6s57NKqUqCM9Az1Vpo7Yypxqu0Qcwg40WnI3lEsSi3erecQpj0mbk-5jkWRNMidHuxkEm1n0ZNgDyjYGrXH_6RDvrwEoz5_V0-1txB729S1JXLy1dzo9drSMK5fEthxwtHgybJqdpATBZailPDy8468v15KW6ZFkMX5Q6L7T1LRskhSLPidfAxxqj-n6H2D0TJSVQ"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGnqhMXJHEUKYzTSSdRqZvj-Oc6y6Og5nKFMn749yAOJjUanU2YqLvPfr-Im067PMf1_YK3tIJmchK7MbT97ifVLorIFcpmI9IHa8820pFtv3Ly_NYEj_IrmJpGcSluKJwdJvuW=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/vlmAUXicHcRLcoIwAADQE0WiKEhnXLAQTQKCRaq4YWwEUiQfSMDBC_YMvU1nfIv398uMUfrDslpmz2op67YcdNlTKUwpzIxKbtVKA6qBtvzkcHz4O9Gx6IL324zkr1Oa3j-769iAmDqTE9crQYJIuEtv8mPcZDeRLfIuHJOqB4hDx02ial7kxDYIc8qIG32fPPen-gpljwKqOPLQ_rZeL6AKzGiHU3HIt02Beo7VjqbtQPDzjsfhvHnOIYSAvadA_AMmAkRQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ZG0wf1BzpjbnlGiomb6B3A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=77.67414&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/zfubPXicHc1LDsIgEADQ27CTT21aNSHGbnoHNw0gtmMoTGQE9TYey9uY-C7wvp-FCPNBiEx376mArwhPH_IGDZ9TmoM3CJm7tIqiBC2P1UYD4YgmJrjo8yjrVQ1vvNkYRkir7YbtiTk7uQA-kl4N5ikXTsYRBM9nzKzqpmnZopv9jr1M1X3Pu75VLUMgt2jJ_s01Fa2k_AHCNDoG"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The soothing music and massage chair set a relaxing atmosphere.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKZ3ISqwcKvLqxtZcCLFbH4_m8t2iiMAPqPLSS6j8OK0Y_ZnQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Excellent service, terrific quality of work; Olga did an amazing job.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLQtoHZ05k9bDztHeB7iqiTFZGq8f37G3jkMXkCCRBHFzH5sg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Super friendly staff and soothing atmosphere.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU8NQDdw-s-vbu_VdRN9nErAPke1DJXE0lRd8OVBaTGCbFHVLZp=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Jose Miguel",
+          "rating": 5,
+          "contributor_id": "114873731203396752151",
+          "user_review_count": 1,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJQQaI-Mn0x5RoN3pPavRPHZ4GxLu1aqQR9V83RaYbi1L5cuA=s120-c-rp-mo-br100",
+          "description": "I highly recommend this dental office! The doctors are professional, knowledgeable, and genuinely care about their patients\u2019 comfort and oral health. The hygienists are friendly, thorough, and do an excellent job making every visit pleasant and stress-free. The entire staff is welcoming, and the office is clean and well-organized. If you\u2019re looking for quality dental care with a team that truly puts patients first, this is the place to go.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OUVZWZG5XVFk0Y1UxdU1TMTZjV0pwWnpGb2NHYxAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOmNQVVdnWTY4cU1uMS16cWJpZzFocGc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0XJvJgfIulKZInvWtE-wwAgu53eerOTvOHlKn298LFCQd90eWMl2Y7hgL4nj-2c59rSRipYT1hdMObvrKqBlWU7dgXKwv2KMRCRPm6fu_SHgUKzWvLacfS8P_aMzM1780kZifiP9UT7a7g=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1ySFhkmrkZmSliVMNP7U_FJVpl9baUksTomzGOcxTo2jZ8DCi3BVfu2QelDhUzKYu58IWviHQPblzf0p3PD0EpF2Ewh8ieJSt5pA_ecgMXX3zZk6WoJQgyUoOsChEoVqsec661mHprdyk5=k-no"
+            }
+          ],
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-26T16:46:42+00:00"
+        },
+        {
+          "username": "Verdict",
+          "rating": 5,
+          "contributor_id": "109087929868517837424",
+          "user_review_count": 218,
+          "user_photo_count": 428,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjULJRjyMaE7DW744hmI6vf-z08qqaj4cijCjxBBgekfsOdwZ7s=s120-c-rp-mo-ba12-br100",
+          "description": "An absolutely outstanding clinic. The space is modern, impeccably clean, and feels more like a luxury studio than a typical dental office. The staff is professional, attentive, and meticulous, making everything calm and stress-free.\n\nThe doctors are knowledgeable, explain everything clearly, and pay attention to both your health and aesthetics. It's clear they use cutting-edge technology and adhere to the highest standards.\n\nEfficient, comfortable, and truly top-notch service. I highly recommend them.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xb1dsQjRVbkZ0U2xsS1EwcDJWMmRDTkRZeFNHYxAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOm1oWlB4UnFtSllKQ0p2V2dCNDYxSGc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1QnzegHYVTQYaXjaGMUqUmcAioT8JpvWy_Y29thFySjJnHjMjcpzFGrnH43nU2nh-aYkgjYkOc64ANoTQ9NYqwvZa0973m8BhH4pC_FvvnRZ2CH2v8tA5Q9QuoxkUDaHm2OuzgSG1wglg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0V4cbTAFxTSed8827pP3t_x3WMSR8tNIsNhHwdzUlCjRsZpgy1ikJIvuToJkwYSi27SsDmHaoDmmRFDb7ozBO1dkzTNnITIwznSGFYc-QLKaXLBvUYO7S6iPUkqOfgkqK04LYVVLuYYiY=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0mOQtGGYro3-gFBwMRNChv4geqiS6EY_WqySDRumrkAlB8K2oZrF9VEZeCtJarp7yyEGLlzX7KAVz-KIZzX7NZ4pld3E_OyvwqcNM9oQuyTfv8yXl6EeIVhQLWOeD2ACaij_-xjmgEjMF_=k-no"
+            }
+          ],
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-22T18:29:29+00:00"
+        },
+        {
+          "username": "Marina Chechelnytska",
+          "rating": 5,
+          "contributor_id": "102946710676461668603",
+          "user_review_count": 3,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLhNu3GRq6IobQHk_Wd4SV29HjJMGbC3gZ5vOK9siPRwWa2_A=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been going to Tribeca Dental Studio for a while now, and I truly love this place. It feels like a full-service dental office for adults \u2014 you can get everything done in one visit without having to go anywhere else, which is incredibly convenient.\n\nThe dentists are amazing, and the front desk team is always friendly, helpful, and well organized. Special thanks to Dr. Nina \u2014 she is the best dentist, very caring, professional, and attentive. I absolutely love her work and always feel comfortable during my visits.\n\nHighly recommend this office to anyone looking for quality care and a great overall experience!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWYVp6ZG9TekpMUWpscGVHOHhRbXBQWlc5aFozYxAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOlVaZzdoSzJLQjlpeG8xQmpPZW9hZ3c%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn13Hf_JB-sZjMmVk3EjLkxV2Tays9CS7dR5pwh1r62JgZ-iJ_4oZtS7fFMWUZRLyHhHC9SJQXnYvfFdTjEgxvLEVvTthtRBgsgYcDAB1oCHB-gESLMi1WgnrUWE45ZGtM7sf10Jjvn61qGB=k-no"
+            }
+          ],
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-08T17:03:58+00:00"
+        },
+        {
+          "username": "Stasi",
+          "rating": 5,
+          "contributor_id": "100143161948132774011",
+          "user_review_count": 3,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKM02JhXJR_Zot5KOEl7XHUfdBROu25bkz91fdmbjNOjJ9l2cxU=s120-c-rp-mo-br100",
+          "description": "I recently visited the dental office and was very pleased with the quality of service and professionalism of the staff. From the very beginning, I was greeted by friendly administrators who quickly completed all the necessary paperwork.\n\nDr. Lavian conducted a thorough examination and explained all stages of treatment. I appreciated the attention to detail and concern for my comfort. The procedures were painless, and the results exceeded my expectations!\n\nWhen it comes to oral hygiene, their approach is really impressive. Hygienist Irina explained in detail the correct technique for brushing teeth and recommended suitable care products. I received a lot of useful advice on maintaining gum health and preventing disease.\n\nOverall, I had an excellent experience and am now confident in my choice. I recommend this dental office to anyone looking for quality treatment and care for their teeth!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sRFZIbEZZa3Q1T1d0d2RIWXhVMUl3VEVaWmVHYxAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOnlDVHlFYkt5OWtwdHYxU1IwTEZZeGc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn001N7wQE4pX6EP886B16DpUtKDnYiDtECJLjKijfdzibpmqjDhASFLBeYSSXIxmC602eHJLIxJh87A1aLaajxcS_6Mbm5XXa1rlpLypiPEBgw3Lg9pQflTgP9hgrkJkjg5aJPvBp9Thy2R=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1I8ZBbW-xuXNAMYEZ2lZfF8vtehg8eN51niRkhOBRuuFW4q5Hnny2vDNDv0qMXCrnbObpaSsf9knfFa1rn7BCy-ubB14RT7lsEi5bloBQF0bI_ivYd8LrFFo9utmPWFA8PYUdfP1f3UAcJ=k-no"
+            }
+          ],
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-15T13:47:49+00:00"
+        },
+        {
+          "username": "Irene.L.",
+          "rating": 5,
+          "contributor_id": "108419822250268204036",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI-osxaHJ28dlpUra4_9zaYqMNrD2Mn6i-veqMg0ERjDB1iKw=s120-c-rp-mo-br100",
+          "description": "I had a great experience at Tribeca Dental Studio. The office is very clean, modern, and comfortable. The staff is extremely friendly and professional, and they make you feel relaxed right away. The dentist explained everything clearly and made the whole visit quick and painless. It\u2019s clear that they really care about their patients. I highly recommend Tribeca Dental Studio to anyone looking for a great dental clinic. \ud83e\uddb7\u2728",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSbWRVbzJjRVZGWm1SNVVXWTNNbU5YVm5aMVRtYxAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOjRmdUo2cEVFZmR5UWY3MmNXVnZ1Tmc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-06T17:55:44+00:00"
+        },
+        {
+          "username": "Donna Jones",
+          "rating": 5,
+          "contributor_id": "111751732635700823425",
+          "user_review_count": 15,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIgs-gVqGxxd5MKdiD0UqRvTLu9PgJ4c923Dy7PCmR3pkWh2g=s120-c-rp-mo-ba12-br100",
+          "description": "Olga is incredible. Hands down the best dental cleaning I\u2019ve ever had. She\u2019s meticulous, gentle, and clearly takes so much pride in her work. My teeth feel amazing and the whole experience was actually enjoyable (which is saying a lot for a dentist visit!). If you\u2019re going to Tribeca Dental Studio, ask for Olga.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGWVNEbDVOMmRsV0ROd1JuWjRUWEJSZW5GVllWRRAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOjFYSDl5N2dlWDNwRnZ4TXBRenFVYVE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T13:54:26+00:00"
+        },
+        {
+          "username": "Isaac",
+          "rating": 5,
+          "contributor_id": "111037960785252394851",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUM-J4ahFbcSFL9iW6sMiQGuhfmD0ToHlrdCvbXPqzla8Z981Sq=s120-c-rp-mo-br100",
+          "description": "By far the best dental studio I\u2019ve ever been to. Everyone is concerned for your health, your schedule, not to mention your teeth. After a two hour appointment I sat up too quickly and almost passed out. The doctor immediately expressed his concern, the staff brought me water, and they asked me to stay as long as I liked.\n\nA holistic dental studio if I\u2019ve ever seen one. If you\u2019re looking for a place that prioritizes your entire health, not specialized aspects of it \u2014 this your place.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sNVZYVmxWMlI0VFdwSVpsTmFTazFhTVhwaFVHYxAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOml5VXVlV2R4TWpIZlNaSk1aMXphUGc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-01T14:04:04+00:00"
+        },
+        {
+          "username": "Victor Lu",
+          "rating": 5,
+          "contributor_id": "100897217656891116290",
+          "user_review_count": 14,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLKFJzehH8XeOywz6-R8PbzixcLgCIzCDmChZFPBz01mRia1A=s120-c-rp-mo-ba12-br100",
+          "description": "I had an amazing experience at this dental office! Dr. Izhaky and her staff were incredibly caring from start to finish. They made me feel completely comfortable during my cavity treatment and did an outstanding job. You can really tell they take pride in their work and in making patients feel at ease. The office is spotless, modern, and very well maintained. I\u2019m grateful to have found such a professional and compassionate dentist. Would highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xweVVVSnRkMWx6Y1VoT1ZrTkxVWGhWY1RBdFNFRRAB!2m1!1s0x0:0x8cc624aa1f7cdf25!3m1!1s2@1:CAIQACodChtycF9oOlpyUUJtd1lzcUhOVkNLUXhVcTAtSEE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-10T19:29:06+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Tribeca Dental Studio 4 Kids",
+            "data_id": "0x0:0x2be9aea9dcb20430",
+            "data_cid": "3164252257779844144",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2be9aea9dcb20430&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2be9aea9dcb20430&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.714915999999995,
+              "longitude": -74.00903699999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2be9aea9dcb20430%218m2%213d40.714915999999995%214d-74.00903699999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 99,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_ocvNE3F-RzdMITP7vo5HVgfADd6aD_Io7t7cbEY9S-YWaQQqskn0j5P5cBjfCcbRAiOHSPvunFwcfxEnrNcgWPAlyRpwoZHjNgaKVdTFeQHqbpx9v4F5CANsPMoJ4yirne4WuKUt_TXm=w156-h156-n-k-no",
+            "type": [
+              "Pediatric dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Tribeca Pediatric Dentistry",
+            "data_id": "0x0:0x8d0229ed611c7087",
+            "data_cid": "10160729808814502023",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8d0229ed611c7087&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x8d0229ed611c7087&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7157121,
+              "longitude": -74.00861809999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x8d0229ed611c7087%218m2%213d40.7157121%214d-74.00861809999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 8,
+            "thumbnail": "https://www.google.com/maps/vt/data=NBqKCfsvVw0mKmY02UTXM8Xby34VV9jR1vniLD2xzS-mStVnP7j51gc6x94XozBG0FteOeDBLbn4eNZijO4CIYjl4kZNegi7Rx6mfZBT8nSq49FXEFDREPjnB8o__VekVyMRRkTJtCU5xrwd6k9K3GRGmN0I0tVJ",
+            "type": [
+              "Pediatric dentist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Tribeca North Dentistry",
+            "data_id": "0x0:0x832bee532c03ec7d",
+            "data_cid": "9451910283955268733",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x832bee532c03ec7d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x832bee532c03ec7d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.722384,
+              "longitude": -74.01078799999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x832bee532c03ec7d%218m2%213d40.722384%214d-74.01078799999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 52,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE2HOzbh7fDz2JfZeIwLBxU_hhaR4-D-6-u-TPi9OA8EldFKGv-qfeWIEmPE8IV-XAs8xgbDF3ICvmn1fQtlXs7n2ubW1M1Dn1E_4r68nuzKcRL0l3m_2mxM7E59WNPs3pQs-bP_NWIkfg5=w156-h156-n-k-no",
+            "type": [
+              "Pediatric dentist",
+              "Cosmetic dentist",
+              "Dentist",
+              "Orthodontist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Downtown Dental Studio",
+            "data_id": "0x0:0x26a48754b05be010",
+            "data_cid": "2784499267427622928",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26a48754b05be010&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26a48754b05be010&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7093724,
+              "longitude": -74.0099748
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x26a48754b05be010%218m2%213d40.7093724%214d-74.0099748&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 239,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFm33PvNtz2eImL4Ta8r1fuQz4iSdng8levbi-Oup71bAekGzOYKOouUepTj48-7kGgL-uq2EzVAsQlUX9JrwMnMnKfv_cdVMHW2FyHdzTleAaVpL14r2bHxjwf4ygSlZq7P2Ul=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Expert Dental - Tribeca",
+            "data_id": "0x0:0xbd03ec909552c741",
+            "data_cid": "13619989803823187777",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbd03ec909552c741&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbd03ec909552c741&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7144514,
+              "longitude": -74.0090151
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbd03ec909552c741%218m2%213d40.7144514%214d-74.0090151&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 682,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEmg3y9i5Qmx2ZsRrlFPnwqXBC-mjd7g0TTie6kU0uBVQctZBL5qN0ynfSgNnTgHt_EAKYOpQX4oFu23Z31UTdEmDzZhbSFJ1ti43E2AzDvinWe5sRVBzIQnZsICwoqhKJw6HiGoA=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Endodontist",
+              "Oral surgeon",
+              "Orthodontist",
+              "Pediatric dentist",
+              "Periodontist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OigKJiIiVHJpYmVjYSBEZW50YWwgU3R1ZGlvIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COigKJiIiVHJpYmVjYSBEZW50YWwgU3R1ZGlvIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}
