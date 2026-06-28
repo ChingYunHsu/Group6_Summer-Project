@@ -19,6 +19,20 @@ services:
       timeout: 5s
       retries: 10
 
+  redis:
+    image: redis:7-alpine
+    container_name: clearpath-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - clearpath_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: clearpath-phpmyadmin
@@ -35,3 +49,4 @@ services:
 
 volumes:
   clearpath_mysql_data:
+  clearpath_redis_data:

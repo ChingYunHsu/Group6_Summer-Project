@@ -63,8 +63,8 @@ PREDICTION_SCOPE_MAP = {
         "scope_reason": "visit_based_venue",
     },
     "restroom": {
-        "prediction_scope": False,
-        "scope_reason": "low_busyness_signal",
+        "prediction_scope": True,
+        "scope_reason": "visit_based_venue",
     },
 }
 
@@ -577,8 +577,8 @@ def load_venues(venue_file: str | Path) -> tuple[pd.DataFrame, int]:
 def add_prediction_scope(venues_df: pd.DataFrame) -> pd.DataFrame:
     """Add prediction_scope and scope_reason columns based on venue_type.
 
-    prediction_scope=True  → healthcare (high-footfall, busyness meaningful)
-    prediction_scope=False → emergencyasset / AED (no busyness target) + restroom (low signal)
+    prediction_scope=True  → healthcare, restroom (visit-based, busyness meaningful)
+    prediction_scope=False → emergencyasset / AED (no busyness target)
     """
     df = venues_df.copy()
     df["prediction_scope"] = df["venue_type"].map(

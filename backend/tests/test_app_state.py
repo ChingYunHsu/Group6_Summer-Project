@@ -1,3 +1,8 @@
+import uuid
+
+import pytest
+
+
 def test_app_state_without_token_returns_guest_defaults(client):
     resp = client.get("/api/v1/app-state")
 
@@ -20,10 +25,16 @@ def test_app_state_with_guest_token(client):
     assert data["is_authenticated"] is False
 
 
+@pytest.mark.integration
 def test_app_state_with_logged_in_user_token(client):
+    email = f"{uuid.uuid4()}@example.com"
+    client.post(
+        "/api/v1/auth/register",
+        json={"full_name": "Test User", "email": email, "password": "Password123"},
+    )
     login = client.post(
         "/api/v1/auth/login",
-        json={"email": "amelia.rivera@example.com", "password": "Password123"},
+        json={"email": email, "password": "Password123"},
     ).get_json()
 
     resp = client.get(
@@ -47,10 +58,11 @@ def test_app_state_with_unknown_token_falls_back_to_guest(client):
     assert data["is_authenticated"] is False
 
 
+@pytest.mark.integration
 def test_app_state_with_registered_user_token(client):
     register = client.post(
         "/api/v1/auth/register",
-        json={"full_name": "New User", "email": "new.user@example.com", "password": "Password123"},
+        json={"full_name": "New User", "email": f"{uuid.uuid4()}@example.com", "password": "Password123"},
     ).get_json()
 
     resp = client.get(
