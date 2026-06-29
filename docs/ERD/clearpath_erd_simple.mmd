@@ -1,0 +1,37 @@
+flowchart TB
+
+    %% ClearPath DB - 20 tables, PPT-friendly overview
+    %% This simple view prioritizes hierarchy and slide readability.
+
+    core["<b>Core Reference Data</b><br/>venues<br/>users<br/>report_categories"]
+
+    venue_profile["<b>Venue Facility Profiles</b><br/>venue_source_links<br/>restroom_profiles<br/>healthcare_profiles<br/>emergency_assets<br/>pedestrian_ramps"]
+
+    accessibility_context["<b>Access and Live Context</b><br/>venue_accessibility<br/>venue_language<br/>venue_warnings<br/>busyness_scores<br/>busyness_forecasts<br/>external_context_cache<br/>venue_embeddings"]
+
+    user_feedback["<b>Community Feedback Loop</b><br/>user_reports<br/>report_confirmations"]
+
+    user_preferences["<b>Personalized User Settings</b><br/>user_favorite_venues<br/>notification_preferences<br/>user_medical_profiles"]
+
+    core --> venue_profile
+    core --> accessibility_context
+    core --> user_feedback
+    core --> user_preferences
+
+    venues_note["<b>Venue-Centered Relationships</b><br/>venues is the main parent for<br/>profile, access, context, reports,<br/>favorites, and notifications"]
+    users_note["<b>User-Centered Relationships</b><br/>users owns reports,<br/>confirmations, favorites,<br/>notifications, and medical profiles"]
+
+    core -. venue_id .-> venues_note
+    core -. user_id .-> users_note
+
+    venue_profile --> accessibility_context
+    accessibility_context --> user_feedback
+    user_feedback --> user_preferences
+
+    classDef coreBox fill:#eef5ff,stroke:#2f5f9f,stroke-width:1.5px,color:#1f2d3d;
+    classDef domainBox fill:#ffffff,stroke:#637083,stroke-width:1px,color:#202938;
+    classDef noteBox fill:#fff7e6,stroke:#b7791f,stroke-width:1px,color:#202938;
+
+    class core coreBox;
+    class venue_profile,accessibility_context,user_feedback,user_preferences domainBox;
+    class venues_note,users_note noteBox;

@@ -1,6 +1,6 @@
 {
-  "run_id": "20260623T172910Z",
-  "timestamp": "2026-06-23T17:29:10.637761+00:00",
+  "run_id": "20260628T224231Z",
+  "timestamp": "2026-06-28T22:42:31.359740+00:00",
   "venue_input": {
     "total_rows": 4838,
     "venue_types": {
@@ -16,20 +16,20 @@
     }
   },
   "serpapi_usage": {
-    "search_calls": 16,
-    "place_calls": 100,
-    "total_calls": 116,
-    "monthly_quota_remaining": 134
+    "search_calls": 0,
+    "place_calls": 0,
+    "total_calls": 0,
+    "monthly_quota_remaining": 250
   },
   "results": {
-    "total_discovered": 314,
-    "with_popular_times": 31
+    "total_discovered": 80,
+    "with_popular_times": 30
   },
   "label_status": {
-    "api_not_checked": 4501,
-    "no_popular_times": 283,
-    "has_popular_times": 54
+    "api_not_checked": 4799,
+    "has_popular_times": 35,
+    "no_popular_times": 4
   },
   "out_of_scope_count": 3279,
-  "ml_eligible_count": 54
+  "ml_eligible_count": 35
 }
