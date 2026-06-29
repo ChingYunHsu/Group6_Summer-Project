@@ -129,8 +129,9 @@ class TestMedicalProfileCRUD:
             "gender": "Female",
             "address": "123 Main St, New York, NY 10001",
             "blood_type": "A+",
-            "allergies": ["Peanuts", "Shellfish"],
-            "medical_conditions": ["Diabetes"],
+            "severe_allergies": ["Peanuts", "Shellfish"],
+            "conditions": ["Diabetes"],
+            "medications": ["Insulin"],
             "emergency_contacts": [
                 {"name": "John Doe", "phone": "555-0123", "relationship": "Spouse"}
             ],
@@ -211,10 +212,21 @@ class TestCascadeDelete:
             "docker",
             "mysql",
             "init",
-            "002_medical_profile.sql",
+            "004_medical_profile.sql",
         )
         if os.path.exists(ddl_path):
             with open(ddl_path) as f:
                 ddl = f.read()
+            assert "user_id VARCHAR(36) PRIMARY KEY" in ddl
+            assert "FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE" in ddl
+            assert "severe_allergies JSON" in ddl
+            assert "conditions JSON" in ddl
+            assert "medications JSON" in ddl
+            assert "emergency_contacts JSON" in ddl
+            assert "JSON_TYPE(severe_allergies) = 'ARRAY'" in ddl
+            assert "JSON_TYPE(conditions) = 'ARRAY'" in ddl
+            assert "JSON_TYPE(medications) = 'ARRAY'" in ddl
+            assert "JSON_TYPE(emergency_contacts) = 'ARRAY'" in ddl
+            assert "ENGINE=InnoDB" in ddl
             assert "ON DELETE CASCADE" in ddl
             assert "ENCRYPTION='Y'" in ddl
