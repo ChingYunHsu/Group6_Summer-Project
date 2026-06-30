@@ -6,6 +6,7 @@ from api.auth import bp as auth_bp
 from api.chatbot import bp as chatbot_bp
 from api.health import bp as health_bp
 from api.integrations import bp as integrations_bp
+from api.medical import bp as medical_bp
 from api.realtime import bp as realtime_bp
 from api.routes import bp as routes_bp
 from api.reports import bp as reports_bp
@@ -31,6 +32,7 @@ def create_app() -> Flask:
     app.register_blueprint(auth_bp)
     app.register_blueprint(integrations_bp)
     app.register_blueprint(user_bp)
+    app.register_blueprint(medical_bp)
     app.register_blueprint(routes_bp)
     app.register_blueprint(app_state_bp)
     app.register_blueprint(venues_bp)

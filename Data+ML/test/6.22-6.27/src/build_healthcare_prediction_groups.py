@@ -118,7 +118,7 @@ def build_prediction_groups(
 
     labels["prediction_group_id"] = labels["prediction_group_id"].where(labels["venue_type"] == "healthcare", pd.NA)
     labels["prediction_shared"] = labels["prediction_shared"].where(labels["venue_type"] == "healthcare", False)
-    labels["prediction_shared"] = labels["prediction_shared"].fillna(False)
+    labels["prediction_shared"] = labels["prediction_shared"].infer_objects(copy=False).fillna(False).astype(bool)
     labels["group_match_source"] = labels["serpapi_place_id"].where(labels["venue_type"] == "healthcare", pd.NA)
     labels["group_match_source"] = labels["group_match_source"].fillna("")
     labels["group_match_source"] = labels["group_match_source"].where(labels["group_match_source"].astype(str).str.len() > 0, "none")
