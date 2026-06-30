@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { USER_PROFILE } from "../data/userProfile";
 
+
 function Profile() {
   const navigate = useNavigate();
 
@@ -58,7 +59,16 @@ function Profile() {
                 <p><strong>Blood Type</strong></p>
               </div>
             </div>
+          <div className="profile-card language-card">
+            <h3>Spoken Languages</h3>
+
+            <div className="tag-list">
+              {USER_PROFILE.spoken_languages.map((language) => (
+                <span key={language}>{language}</span>
+              ))}
+            </div>
           </div>
+        </div>
 
           <div className="profile-card clinical-card">
             <h2>▣ Clinical Profile</h2>

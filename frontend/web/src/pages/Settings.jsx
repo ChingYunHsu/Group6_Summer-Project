@@ -9,6 +9,7 @@ function Settings() {
   const [emailAlerts, setEmailAlerts] = useState(false);
   const [busynessAlerts, setBusynessAlerts] = useState(true);
   const [locationSharing, setLocationSharing] = useState(true);
+  const languages = USER_PROFILE.spoken_languages ?? [];
 
   function handleExportData() {
     alert("Export request initiated. Live export endpoint will be connected later.");
@@ -31,8 +32,8 @@ function Settings() {
 
             <label>
               Language Preference
-              <select defaultValue={USER_PROFILE.spoken_languages[0]}>
-                {USER_PROFILE.spoken_languages.map((language) => (
+              <select defaultValue={languages[0] || ""}>
+                {languages.map((language) => (
                     <option key={language} value={language}>
                         {language}
                     </option>
