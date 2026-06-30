@@ -17,12 +17,17 @@ BUSY_LEVEL_LABELS = ("quiet", "moderate", "busy")
 
 
 def derive_busy_level(score: object) -> object:
+    """将 busyness_score (0-100) 转为三档，与 ClearPath 前端一致：
+    - 🟢 Green (Quiet):  < 30% capacity load
+    - 🟡 Yellow (Moderate): 30%–70% capacity load
+    - 🔴 Red (Busy): > 70% capacity load
+    """
     if pd.isna(score):
         return pd.NA
     value = float(score)
-    if value <= 33:
+    if value < 30:
         return "quiet"
-    if value <= 66:
+    if value <= 70:
         return "moderate"
     return "busy"
 
@@ -58,6 +63,9 @@ def build_model_feature_blocks() -> dict[str, list[str]]:
             "citibike_nearest_distance_m",
             "mta_nearest_distance_m",
             "traffic_nearest_distance_m",
+            "citibike_distance_bin",
+            "mta_distance_bin",
+            "traffic_distance_bin",
             "citibike_covered_200m",
             "mta_covered_200m",
             "traffic_covered_500m",
@@ -76,6 +84,9 @@ def build_model_feature_blocks() -> dict[str, list[str]]:
             "citibike_nearest_distance_m",
             "mta_nearest_distance_m",
             "traffic_nearest_distance_m",
+            "citibike_distance_bin",
+            "mta_distance_bin",
+            "traffic_distance_bin",
             "citibike_covered_200m",
             "mta_covered_200m",
             "traffic_covered_500m",
@@ -286,6 +297,99 @@ def build_ablation_summary(training: pd.DataFrame) -> pd.DataFrame:
                 "model_name": "Ridge",
                 "feature_count": len(feature_columns),
                 **regression_metric_row(test["busyness_score"], clipped),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def imputed_feature_profile(frame: pd.DataFrame, feature_columns: list[str]) -> pd.DataFrame:
+    rows: list[dict[str, Any]] = []
+    total_rows = len(frame)
+    for column in feature_columns:
+        if column not in frame.columns:
+            rows.append(
+                {
+                    "feature": column,
+                    "status": "missing_column",
+                    "dtype": "missing",
+                    "non_null_rows": 0,
+                    "total_rows": total_rows,
+                    "coverage_pct": 0.0,
+                    "impute_strategy": pd.NA,
+                    "impute_value": pd.NA,
+                    "post_impute_unique_values": 0,
+                    "post_impute_top_value_pct": 0.0,
+                }
+            )
+            continue
+
+        series = frame[column]
+        non_null = int(series.notna().sum())
+        is_numeric = pd.api.types.is_numeric_dtype(series) or pd.api.types.is_bool_dtype(series)
+        strategy = "median" if is_numeric else "most_frequent"
+        value = series.median() if is_numeric else (series.mode(dropna=True).iloc[0] if non_null else pd.NA)
+        filled = series.fillna(value)
+        top_pct = float(filled.value_counts(dropna=False, normalize=True).iloc[0] * 100) if len(filled) else 0.0
+        rows.append(
+            {
+                "feature": column,
+                "status": "ok" if non_null else "all_null",
+                "dtype": "numeric" if is_numeric else "categorical",
+                "non_null_rows": non_null,
+                "total_rows": total_rows,
+                "coverage_pct": round(non_null / total_rows * 100, 1) if total_rows else 0.0,
+                "impute_strategy": strategy,
+                "impute_value": value,
+                "post_impute_unique_values": int(filled.nunique(dropna=False)),
+                "post_impute_top_value_pct": round(top_pct, 1),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def build_low_coverage_imputation_diagnostics(training: pd.DataFrame) -> pd.DataFrame:
+    features = ["rating", "opening_hours", "capacity", "icu_capacity", "facility_level", "facility_short_type", "cms_hospital_type", "cms_rating"]
+    return imputed_feature_profile(training, features)
+
+
+def evaluate_ridge_feature_set(training: pd.DataFrame, feature_columns: list[str]) -> dict[str, Any]:
+    train, _, test = split_training_frame(training)
+    available_features = [column for column in feature_columns if column in training.columns]
+    numeric_columns, categorical_columns = infer_feature_types(training, available_features)
+    pipeline = build_regression_pipeline(Ridge(alpha=1.0), numeric_columns, categorical_columns, scale_numeric=True)
+    pipeline.fit(model_feature_matrix(train, available_features), train["busyness_score"])
+    clipped = np.clip(pipeline.predict(model_feature_matrix(test, available_features)).astype(float), 0, 100)
+    return {"feature_count": len(available_features), **regression_metric_row(test["busyness_score"], clipped)}
+
+
+def build_low_coverage_drop_one_ablation(training: pd.DataFrame) -> pd.DataFrame:
+    blocks = build_model_feature_blocks()
+    capacity_features = blocks["capacity"]
+    drop_candidates = ["rating", "opening_hours", "capacity", "icu_capacity", "facility_level", "facility_short_type", "cms_hospital_type", "cms_rating"]
+    baseline_metrics = evaluate_ridge_feature_set(training, capacity_features)
+    rows = [
+        {
+            "experiment": "capacity_block",
+            "dropped_feature": "none",
+            "status": "ok",
+            **baseline_metrics,
+            "delta_mae_vs_capacity_block": 0.0,
+            "delta_r2_vs_capacity_block": 0.0,
+        }
+    ]
+    for feature in drop_candidates:
+        if feature not in capacity_features:
+            continue
+        reduced = [column for column in capacity_features if column != feature]
+        metrics = evaluate_ridge_feature_set(training, reduced)
+        rows.append(
+            {
+                "experiment": "drop_one_from_capacity_block",
+                "dropped_feature": feature,
+                "status": "ok",
+                **metrics,
+                "delta_mae_vs_capacity_block": round(metrics["mae"] - baseline_metrics["mae"], 3),
+                "delta_r2_vs_capacity_block": round(metrics["r2"] - baseline_metrics["r2"], 3),
             }
         )
     return pd.DataFrame(rows)
