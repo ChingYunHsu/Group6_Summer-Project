@@ -17,6 +17,7 @@ BUSY_LEVEL_LABELS = ("quiet", "moderate", "busy")
 
 
 def derive_busy_level(score: object) -> object:
+<<<<<<< HEAD
     """将 busyness_score (0-100) 转为三档，与 ClearPath 前端一致：
     - 🟢 Green (Quiet):  < 30% capacity load
     - 🟡 Yellow (Moderate): 30%–70% capacity load
@@ -28,6 +29,14 @@ def derive_busy_level(score: object) -> object:
     if value < 30:
         return "quiet"
     if value <= 70:
+=======
+    if pd.isna(score):
+        return pd.NA
+    value = float(score)
+    if value <= 33:
+        return "quiet"
+    if value <= 66:
+>>>>>>> main
         return "moderate"
     return "busy"
 
@@ -63,9 +72,12 @@ def build_model_feature_blocks() -> dict[str, list[str]]:
             "citibike_nearest_distance_m",
             "mta_nearest_distance_m",
             "traffic_nearest_distance_m",
+<<<<<<< HEAD
             "citibike_distance_bin",
             "mta_distance_bin",
             "traffic_distance_bin",
+=======
+>>>>>>> main
             "citibike_covered_200m",
             "mta_covered_200m",
             "traffic_covered_500m",
@@ -84,9 +96,12 @@ def build_model_feature_blocks() -> dict[str, list[str]]:
             "citibike_nearest_distance_m",
             "mta_nearest_distance_m",
             "traffic_nearest_distance_m",
+<<<<<<< HEAD
             "citibike_distance_bin",
             "mta_distance_bin",
             "traffic_distance_bin",
+=======
+>>>>>>> main
             "citibike_covered_200m",
             "mta_covered_200m",
             "traffic_covered_500m",
@@ -300,6 +315,7 @@ def build_ablation_summary(training: pd.DataFrame) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows)
+<<<<<<< HEAD
 
 
 def imputed_feature_profile(frame: pd.DataFrame, feature_columns: list[str]) -> pd.DataFrame:
@@ -393,3 +409,5 @@ def build_low_coverage_drop_one_ablation(training: pd.DataFrame) -> pd.DataFrame
             }
         )
     return pd.DataFrame(rows)
+=======
+>>>>>>> main
