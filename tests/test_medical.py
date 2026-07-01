@@ -212,7 +212,7 @@ class TestCascadeDelete:
             "docker",
             "mysql",
             "init",
-            "004_medical_profile.sql",
+            "004_medical_profiles.sql",
         )
         if os.path.exists(ddl_path):
             with open(ddl_path) as f:
