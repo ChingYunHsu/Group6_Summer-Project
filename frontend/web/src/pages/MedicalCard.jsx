@@ -3,16 +3,17 @@ import "./MedicalCard.css";
 import { useLocation } from "react-router-dom";
 
 function MedicalCard() {
+  const location = useLocation();
+  const profile = location.state?.clinicalPayload || USER_PROFILE;
+
   const primaryContact =
-    USER_PROFILE.emergency_contacts.find((contact) => contact.primary) ||
-    USER_PROFILE.emergency_contacts[0];
-    const location = useLocation();
-    const profile = location.state?.clinicalPayload || USER_PROFILE;
-  
+    (profile.emergency_contacts ?? []).find((contact) => contact.primary) ||
+    (profile.emergency_contacts ?? [])[0] ||
+    null;
+
   function handlePrint() {
     window.print();
   }
-
   return (
     <main className="medical-card-page">
       <section className="medical-preview-header">
@@ -49,7 +50,7 @@ function MedicalCard() {
           <div className="medical-section-grid">
             <div>
               <h4>ALLERGIES / ALERGIAS</h4>
-              {profile.allergies.map((allergy) => (
+              {(profile.allergies ?? []).map((allergy) => (
                 <div className="medical-alert-item red-item" key={allergy.name}>
                   <div className="medical-alert-item-content">
                   <strong>{allergy.name}</strong>
@@ -61,7 +62,7 @@ function MedicalCard() {
 
             <div>
               <h4>MEDICAL CONDITIONS / CONDICIONES MÉDICAS</h4>
-              {profile.medical_conditions.map((condition) => (
+              {(profile.medical_conditions ?? []).map((condition) => (
                 <div className="medical-alert-item blue-item" key={condition.name}>
                   <div className="medical-alert-item-content">
                   <strong>{condition.name}</strong>
