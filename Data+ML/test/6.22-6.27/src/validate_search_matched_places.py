@@ -12,27 +12,19 @@ Default mode is dry-run. Use --live --confirm-live-api to spend SerpAPI quota.
 from __future__ import annotations
 
 import argparse
-import os
 import sys
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
 
-from venue_serpapi import _serpapi_request
+from healthcare_common import apply_label_updates, require_api_key, resolve_path
+from serpapi_client import get_cache_path, serpapi_request
 
 
 DEFAULT_LABEL_FILE = Path("../output/venue_label_status_coverage_view.csv")
 DEFAULT_OUTPUT_FILE = Path("../output/venue_label_status_coverage_view.csv")
-
-
-def resolve_path(path: str | Path) -> Path:
-    p = Path(path)
-    if p.is_absolute():
-        return p
-    return (Path(__file__).parent / p).resolve()
 
 
 def load_validation_targets(label_file: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -56,13 +48,9 @@ def validate_place(
         "type": "place",
         "hl": "en",
     }
-    cache_file = get_serpapi_cache_file(
-        params=params,
-        output_dir=output_dir,
-        cache_prefix="healthcare_search_matched_place",
-    )
+    cache_file = get_cache_path(output_dir, "healthcare_search_matched_place", params)
     cache_hit = cache_file.exists()
-    data = _serpapi_request(
+    data = serpapi_request(
         params,
         api_key,
         output_dir,
@@ -78,50 +66,23 @@ def validate_place(
     }, cache_hit
 
 
-def get_serpapi_cache_file(
-    params: dict[str, Any],
-    output_dir: Path,
-    cache_prefix: str,
-) -> Path:
-    """Mirror venue_serpapi._serpapi_request cache key generation."""
-    import hashlib
-    import json
-
-    cache_params = dict(params)
-    cache_params["engine"] = "google_maps"
-    cache_key = hashlib.md5(
-        json.dumps(cache_params, sort_keys=True).encode()
-    ).hexdigest()[:12]
-    return output_dir / "serpapi_raw_responses" / f"{cache_prefix}_{cache_key}.json"
-
-
 def apply_place_results(
     labels: pd.DataFrame,
     place_results: list[dict[str, Any]],
 ) -> pd.DataFrame:
-    result_by_place = {
-        item["serpapi_place_id"]: item
-        for item in place_results
-    }
-    checked_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    result_by_place = {item["serpapi_place_id"]: item for item in place_results}
     mask = (
         labels["venue_type"].eq("healthcare")
         & labels["label_status"].eq("search_matched_unvalidated")
         & labels["serpapi_place_id"].isin(result_by_place)
     )
-
-    for index, row in labels[mask].iterrows():
-        result = result_by_place[row["serpapi_place_id"]]
-        has_popular_times = bool(result["has_popular_times"])
-        labels.at[index, "label_status"] = "has_popular_times" if has_popular_times else "no_popular_times"
-        labels.at[index, "ml_eligible"] = has_popular_times
-        labels.at[index, "prediction_source"] = "ml_model" if has_popular_times else "rule_fallback"
-        labels.at[index, "display_level"] = "quiet" if has_popular_times else "no_data"
-        labels.at[index, "serpapi_checked_at"] = checked_at
-        labels.at[index, "review_count"] = result.get("reviews")
-        labels.at[index, "rating"] = result.get("rating")
-        labels.at[index, "notes"] = "Validated by SerpAPI Place API from search_matched_unvalidated"
-    return labels
+    return apply_label_updates(
+        labels,
+        result_by_place,
+        id_column="serpapi_place_id",
+        filter_mask=mask,
+        default_note="Validated by SerpAPI Place API from search_matched_unvalidated",
+    )
 
 
 def run_validation(
@@ -147,10 +108,9 @@ def run_validation(
     output_dir = output_file.parent
     planned_cache_hits = 0
     for place_id in places["serpapi_place_id"].dropna().astype(str):
-        cache_file = get_serpapi_cache_file(
-            params={"place_id": place_id, "type": "place", "hl": "en"},
-            output_dir=output_dir,
-            cache_prefix="healthcare_search_matched_place",
+        cache_file = get_cache_path(
+            output_dir, "healthcare_search_matched_place",
+            {"place_id": place_id, "type": "place", "hl": "en"},
         )
         planned_cache_hits += int(cache_file.exists())
     planned_live_calls = unique_place_count - planned_cache_hits
@@ -161,19 +121,14 @@ def run_validation(
     print(f"Cached Place responses available: {planned_cache_hits}")
     print(f"Estimated new live Place API calls: {planned_live_calls}")
 
+    api_key = require_api_key(dry_run, confirm_live_api)
+
     if dry_run:
         print("Dry-run only. No SerpAPI calls will be made.")
         preview_cols = ["venue_id", "venue_name", "district", "serpapi_place_id"]
         available_preview_cols = [col for col in preview_cols if col in places.columns]
         print(places[available_preview_cols].head(20).to_string(index=False))
         return labels
-
-    if not confirm_live_api:
-        raise SystemExit("Refusing live API run without --confirm-live-api.")
-
-    api_key = os.environ.get("SERPAPI_API_KEY")
-    if not api_key:
-        raise SystemExit("SERPAPI_API_KEY is required for live API runs.")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     place_results: list[dict[str, Any]] = []

@@ -92,7 +92,7 @@ def get_venue_busyness(venue_id: str):
             with conn.cursor() as cur:
                 now = datetime.now()
                 cur.execute(
-                    "SELECT score, level, estimated_wait_minutes, created_at "
+                    "SELECT score, level, estimated_wait_minutes, created_at, forecast_end_time "
                     "FROM busyness_scores "
                     "WHERE venue_id = %s "
                     "  AND forecast_start_time <= %s "
@@ -102,7 +102,7 @@ def get_venue_busyness(venue_id: str):
                 )
                 row = cur.fetchone()
                 if row:
-                    score, level, wait_min, created_at = row
+                    score, level, wait_min, created_at, expires_at = row
                     return jsonify({
                         "venue_id": venue_id,
                         "busyness": {
@@ -114,6 +114,9 @@ def get_venue_busyness(venue_id: str):
                             "estimated_wait_minutes": wait_min,
                             "updated_at": (
                                 created_at.isoformat() + "Z" if created_at else None
+                            ),
+                            "expires_at": (
+                                expires_at.isoformat() + "Z" if expires_at else None
                             ),
                         },
                     })

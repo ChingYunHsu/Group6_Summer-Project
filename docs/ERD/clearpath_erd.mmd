@@ -1,10 +1,10 @@
 erDiagram
 
-    %% ClearPath DB — 19 tables, 181 columns
+    %% ClearPath DB — 20 tables, 190 columns
 
     venues {
         string venue_id
-        enum venue_type
+        enum venue_type "restroom|healthcare|emergencyasset|clinic|pharmacy|hospital|dentist|laboratory"
         string name
         float latitude
         float longitude
@@ -240,6 +240,20 @@ erDiagram
         datetime generated_at
     }
 
+    user_medical_profiles {
+        string user_id
+        date date_of_birth
+        string gender
+        text address
+        string blood_type
+        json severe_allergies
+        json conditions
+        json medications
+        json emergency_contacts
+        datetime created_at
+        datetime updated_at
+    }
+
     %% Relationships
     venues ||--o{ venue_source_links : "venue_id"
     venues ||--o{ restroom_profiles : "venue_id"
@@ -250,6 +264,7 @@ erDiagram
     report_categories ||--o{ user_reports : "issue_type"
     user_reports ||--o{ report_confirmations : "report_id"
     users ||--o{ report_confirmations : "user_id"
+    users ||--o| user_medical_profiles : "user_id"
     venues ||--o{ busyness_scores : "venue_id"
     venues ||--o{ external_context_cache : "venue_id"
     venues ||--o{ venue_accessibility : "venue_id"

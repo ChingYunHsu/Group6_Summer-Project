@@ -1,243 +1,178 @@
-"""Medical Profile API endpoints for ClearPath.
-
-Implements GET/PUT/DELETE for user medical profiles.
-All endpoints require JWT authentication via @require_auth decorator.
-Data is stored in encrypted user_medical_profiles table.
-"""
-
 import json
+from copy import deepcopy
 
 from flask import Blueprint, g, jsonify, request
 
-from auth import require_auth
-from db import get_db_conn
+import db
+from auth import require_bearer_auth
+
 
 bp = Blueprint("medical", __name__)
 
-# Allowed fields for medical profile
-ALLOWED_FIELDS = {
+SCALAR_FIELDS = {"date_of_birth", "gender", "address", "blood_type"}
+JSON_FIELDS = {
+    "severe_allergies",
+    "conditions",
+    "medications",
+    "emergency_contacts",
+}
+EDITABLE_FIELDS = SCALAR_FIELDS | JSON_FIELDS
+
+DEFAULT_PROFILE = {
+    "date_of_birth": None,
+    "gender": None,
+    "address": None,
+    "blood_type": None,
+    "severe_allergies": [],
+    "conditions": [],
+    "medications": [],
+    "emergency_contacts": [],
+}
+
+SELECT_COLUMNS = (
     "date_of_birth",
     "gender",
     "address",
     "blood_type",
-    "allergies",
-    "medical_conditions",
+    "severe_allergies",
+    "conditions",
+    "medications",
     "emergency_contacts",
-}
-
-# JSON fields that need serialization
-JSON_FIELDS = {"allergies", "medical_conditions", "emergency_contacts"}
-
-# Date fields validation
-DATE_FIELDS = {"date_of_birth"}
+)
 
 
-def _validate_blood_type(blood_type: str) -> bool:
-    """Validate blood type format."""
-    valid_types = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"}
-    return blood_type in valid_types
+def _reject_explicit_user_id():
+    if "user_id" in request.args:
+        return (
+            jsonify(
+                {
+                    "error": "Forbidden. user_id may not be supplied explicitly; "
+                    "identity is resolved from the access token.",
+                }
+            ),
+            400,
+        )
+    return None
 
 
-def _serialize_profile(row: dict) -> dict:
-    """Convert database row to API response format."""
-    profile = {}
-    for field in ALLOWED_FIELDS:
+def _serialize_profile(row: dict | None) -> dict:
+    profile = deepcopy(DEFAULT_PROFILE)
+    if not row:
+        return profile
+
+    for field in SCALAR_FIELDS:
+        value = row.get(field)
+        if hasattr(value, "isoformat"):
+            value = value.isoformat()
+        profile[field] = value
+
+    for field in JSON_FIELDS:
         value = row.get(field)
         if value is None:
-            profile[field] = None
-        elif field in JSON_FIELDS and isinstance(value, str):
-            try:
-                profile[field] = json.loads(value) # 数据库字符串——> JSON对象
-            except json.JSONDecodeError:
-                profile[field] = value
+            continue
+        if isinstance(value, str):
+            profile[field] = json.loads(value)
         else:
             profile[field] = value
+
     return profile
 
 
+def _db_value(field: str, value):
+    if field in JSON_FIELDS and value is not None:
+        return json.dumps(value)
+    return value
+
+
 @bp.get("/api/v1/user/medical-profile")
-@require_auth
+@require_bearer_auth
 def get_medical_profile():
-    """Get current user's medical profile.
+    rejected = _reject_explicit_user_id()
+    if rejected:
+        return rejected
 
-    Returns:
-        200: Medical profile object (empty if no profile exists).
-        401: Invalid or missing token.
-    """
-    user_id = g.user_id
+    with db.db_cursor() as cursor:
+        cursor.execute(
+            "SELECT date_of_birth, gender, address, blood_type, severe_allergies, "
+            "conditions, medications, emergency_contacts "
+            "FROM user_medical_profiles WHERE user_id = %s",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
 
-    conn = get_db_conn()
-    try:
-        with conn.cursor() as cur:
-            cur.execute(
-                """SELECT date_of_birth, gender, address,
-                          blood_type, allergies, medical_conditions,
-                          emergency_contacts
-                   FROM user_medical_profiles
-                   WHERE user_id = %s""",
-                (user_id,),
-            )
-            row = cur.fetchone()
-
-            if not row:
-                return jsonify({})
-
-            columns = [
-                "date_of_birth", "gender", "address",
-                "blood_type", "allergies", "medical_conditions",
-                "emergency_contacts",
-            ]
-            row_dict = dict(zip(columns, row))
-            # Convert date to string
-            if row_dict.get("date_of_birth"):
-                row_dict["date_of_birth"] = row_dict["date_of_birth"].isoformat()
-            return jsonify(_serialize_profile(row_dict))
-
-    finally:
-        conn.close()
+    return jsonify(_serialize_profile(row))
 
 
 @bp.put("/api/v1/user/medical-profile")
-@require_auth
-def put_medical_profile():
-    """Create or update current user's medical profile (upsert).
+@require_bearer_auth
+def upsert_medical_profile():
+    rejected = _reject_explicit_user_id()
+    if rejected:
+        return rejected
 
-    Request body (all fields optional):
-        date_of_birth (str): Date of birth (YYYY-MM-DD).
-        gender (str): Gender.
-        address (str): Home address.
-        blood_type (str): Blood type (A+, A-, B+, B-, AB+, AB-, O+, O-).
-        allergies (list): List of allergies.
-        medical_conditions (list): List of medical conditions.
-        emergency_contacts (list): List of emergency contacts.
-
-    Returns:
-        200: Updated medical profile.
-        400: Validation error.
-        401: Invalid or missing token.
-    """
-    user_id = g.user_id
     payload = request.get_json(silent=True) or {}
+    invalid_fields = sorted(field for field in payload if field not in EDITABLE_FIELDS)
+    if invalid_fields:
+        return (
+            jsonify(
+                {
+                    "error": "Validation failed.",
+                    "missing_fields": [],
+                    "invalid_fields": invalid_fields,
+                }
+            ),
+            400,
+        )
 
-    # Filter to allowed fields
-    update_fields = {k: v for k, v in payload.items() if k in ALLOWED_FIELDS}
+    with db.db_transaction() as cursor:
+        cursor.execute(
+            "SELECT user_id FROM user_medical_profiles WHERE user_id = %s FOR UPDATE",
+            (g.user_id,),
+        )
+        exists = cursor.fetchone()
 
-    if not update_fields:
-        return jsonify({"error": "No valid fields provided."}), 400
-
-    # Validate blood_type if provided
-    if "blood_type" in update_fields and update_fields["blood_type"] is not None:
-        if not _validate_blood_type(update_fields["blood_type"]):
-            return jsonify({"error": "Invalid blood type. Must be one of: A+, A-, B+, B-, AB+, AB-, O+, O-"}), 400
-
-    # Validate date_of_birth format if provided
-    if "date_of_birth" in update_fields and update_fields["date_of_birth"] is not None:
-        from datetime import datetime
-        try:
-            datetime.strptime(update_fields["date_of_birth"], "%Y-%m-%d")
-        except (ValueError, TypeError):
-            return jsonify({"error": "Invalid date_of_birth format. Must be YYYY-MM-DD."}), 400
-
-    conn = get_db_conn()
-    try:
-        with conn.cursor() as cur:
-            # Check if profile exists
-            cur.execute(
-                "SELECT user_id FROM user_medical_profiles WHERE user_id = %s",
-                (user_id,),
+        if exists:
+            set_fields = [field for field in SELECT_COLUMNS if field in payload]
+            set_clause = ", ".join(f"{field} = %s" for field in set_fields)
+            values = [_db_value(field, payload[field]) for field in set_fields]
+            cursor.execute(
+                f"UPDATE user_medical_profiles SET {set_clause} WHERE user_id = %s",
+                (*values, g.user_id),
             )
-            exists = cur.fetchone()
+        else:
+            profile = deepcopy(DEFAULT_PROFILE)
+            for field in SELECT_COLUMNS:
+                if field in payload:
+                    profile[field] = payload[field]
 
-            if exists:
-                # Update existing profile
-                set_clauses = []
-                values = []
-                for field, value in update_fields.items():
-                    if field in JSON_FIELDS and value is not None:
-                        set_clauses.append(f"{field} = %s")
-                        values.append(json.dumps(value))
-                    else:
-                        set_clauses.append(f"{field} = %s")
-                        values.append(value)
-
-                values.append(user_id)
-                cur.execute(
-                    f"UPDATE user_medical_profiles SET {', '.join(set_clauses)} WHERE user_id = %s",
-                    values,
-                )
-            else:
-                # Insert new profile
-                fields = list(update_fields.keys())
-                values = []
-                for field in fields:
-                    value = update_fields[field]
-                    if field in JSON_FIELDS and value is not None:
-                        values.append(json.dumps(value))
-                    else:
-                        values.append(value)
-
-                placeholders = ", ".join(["%s"] * len(fields))
-                field_names = ", ".join(["user_id"] + fields)
-                value_placeholders = ", ".join(["%s"] + ["%s"] * len(fields))
-
-                cur.execute(
-                    f"INSERT INTO user_medical_profiles ({field_names}) VALUES ({value_placeholders})",
-                    [user_id] + values,
-                )
-
-            conn.commit()
-
-            # Return updated profile
-            cur.execute(
-                """SELECT date_of_birth, gender, address,
-                          blood_type, allergies, medical_conditions,
-                          emergency_contacts
-                   FROM user_medical_profiles
-                   WHERE user_id = %s""",
-                (user_id,),
+            values = [_db_value(field, profile[field]) for field in SELECT_COLUMNS]
+            cursor.execute(
+                "INSERT INTO user_medical_profiles "
+                "(user_id, date_of_birth, gender, address, blood_type, severe_allergies, "
+                "conditions, medications, emergency_contacts) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                (g.user_id, *values),
             )
-            row = cur.fetchone()
-            columns = [
-                "date_of_birth", "gender", "address",
-                "blood_type", "allergies", "medical_conditions",
-                "emergency_contacts",
-            ]
-            row_dict = dict(zip(columns, row))
-            # Convert date to string
-            if row_dict.get("date_of_birth"):
-                row_dict["date_of_birth"] = row_dict["date_of_birth"].isoformat()
-            return jsonify(_serialize_profile(row_dict))
 
-    except Exception as e:
-        conn.rollback()
-        return jsonify({"error": "Failed to update profile.", "detail": str(e)}), 500
-    finally:
-        conn.close()
+        cursor.execute(
+            "SELECT date_of_birth, gender, address, blood_type, severe_allergies, "
+            "conditions, medications, emergency_contacts "
+            "FROM user_medical_profiles WHERE user_id = %s",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
+
+    return jsonify(_serialize_profile(row))
 
 
 @bp.delete("/api/v1/user/medical-profile")
-@require_auth
+@require_bearer_auth
 def delete_medical_profile():
-    """Delete current user's medical profile.
+    rejected = _reject_explicit_user_id()
+    if rejected:
+        return rejected
 
-    Returns:
-        204: Profile deleted successfully.
-        401: Invalid or missing token.
-    """
-    user_id = g.user_id
+    with db.db_transaction() as cursor:
+        cursor.execute("DELETE FROM user_medical_profiles WHERE user_id = %s", (g.user_id,))
 
-    conn = get_db_conn()
-    try:
-        with conn.cursor() as cur:
-            cur.execute(
-                "DELETE FROM user_medical_profiles WHERE user_id = %s",
-                (user_id,),
-            )
-            conn.commit()
-            return "", 204
-
-    except Exception as e:
-        conn.rollback()
-        return jsonify({"error": "Failed to delete profile.", "detail": str(e)}), 500
-    finally:
-        conn.close()
+    return "", 204

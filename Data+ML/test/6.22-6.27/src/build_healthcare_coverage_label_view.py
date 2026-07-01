@@ -14,6 +14,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from healthcare_common import apply_label_updates, resolve_path
+
 
 DEFAULT_BASE_LABEL_FILE = Path("../output/venue_label_status.csv")
 DEFAULT_BATCH_FILE = Path("../output/healthcare_uncovered_batch_results.csv")
@@ -22,34 +24,16 @@ DEFAULT_RESTROOM_AUDIT_FILE = Path("../output/restroom_popular_times_audit.csv")
 DEFAULT_OUTPUT_FILE = Path("../output/venue_label_status_coverage_view.csv")
 
 
-def resolve_path(path: str | Path) -> Path:
-    p = Path(path)
-    if p.is_absolute():
-        return p
-    return (Path(__file__).parent / p).resolve()
-
-
 def apply_batch_results(labels: pd.DataFrame, batch_file: Path) -> pd.DataFrame:
     if not batch_file.exists():
         return labels
     batch = pd.read_csv(batch_file)
     matched = batch[batch["matched"] == True].drop_duplicates("venue_id", keep="last")
     by_id = matched.set_index("venue_id")
-    update_mask = labels["venue_id"].isin(by_id.index)
-
-    for index, row in labels[update_mask].iterrows():
-        result = by_id.loc[row["venue_id"]]
-        has_popular_times = bool(result.get("has_popular_times", False))
-        labels.at[index, "label_status"] = result.get("label_status")
-        labels.at[index, "ml_eligible"] = has_popular_times
-        labels.at[index, "prediction_source"] = "ml_model" if has_popular_times else "rule_fallback"
-        labels.at[index, "display_level"] = "quiet" if has_popular_times else "no_data"
-        labels.at[index, "serpapi_checked_at"] = result.get("checked_at")
-        labels.at[index, "serpapi_place_id"] = result.get("serpapi_place_id")
-        labels.at[index, "review_count"] = result.get("reviews")
-        labels.at[index, "rating"] = result.get("rating")
-        labels.at[index, "notes"] = "Synced from healthcare_uncovered_batch_results.csv"
-    return labels
+    return apply_label_updates(
+        labels, by_id.to_dict("index"),
+        default_note="Synced from healthcare_uncovered_batch_results.csv",
+    )
 
 
 def apply_discovery_matches(labels: pd.DataFrame, discovery_map_file: Path) -> pd.DataFrame:
@@ -58,13 +42,15 @@ def apply_discovery_matches(labels: pd.DataFrame, discovery_map_file: Path) -> p
     discovery = pd.read_csv(discovery_map_file)
     discovery = discovery.drop_duplicates("venue_id", keep="last")
     by_id = discovery.set_index("venue_id")
-    update_mask = (
+    filter_mask = (
         labels["venue_id"].isin(by_id.index)
         & labels["label_status"].isin(["api_not_checked", "search_not_matched"])
     )
-
-    for index, row in labels[update_mask].iterrows():
-        result = by_id.loc[row["venue_id"]]
+    # Discovery matches are not yet validated — override label_status directly
+    result_lookup = by_id.to_dict("index")
+    mask = filter_mask & labels["venue_id"].isin(result_lookup)
+    for index, row in labels[mask].iterrows():
+        result = result_lookup[row["venue_id"]]
         labels.at[index, "label_status"] = "search_matched_unvalidated"
         labels.at[index, "ml_eligible"] = False
         labels.at[index, "prediction_source"] = "pending_place_validation"
@@ -92,28 +78,17 @@ def apply_restroom_audit(labels: pd.DataFrame, restroom_audit_file: Path) -> pd.
     """Merge restroom Popular Times audit rows into the coverage view."""
     if not restroom_audit_file.exists():
         return labels
-
     audit = pd.read_csv(restroom_audit_file)
     if "venue_id" not in audit.columns:
         raise ValueError(f"Missing venue_id in {restroom_audit_file}")
-
     checked = audit[audit["place_checked"] == True].drop_duplicates("venue_id", keep="last")
     by_id = checked.set_index("venue_id")
-    update_mask = labels["venue_id"].isin(by_id.index) & labels["venue_type"].eq("restroom")
-
-    for index, row in labels[update_mask].iterrows():
-        result = by_id.loc[row["venue_id"]]
-        has_popular_times = bool(result.get("has_popular_times", False))
-        labels.at[index, "label_status"] = "has_popular_times" if has_popular_times else "no_popular_times"
-        labels.at[index, "ml_eligible"] = has_popular_times
-        labels.at[index, "prediction_source"] = "ml_model" if has_popular_times else "rule_fallback"
-        labels.at[index, "display_level"] = "quiet" if has_popular_times else "no_data"
-        labels.at[index, "serpapi_checked_at"] = result.get("checked_at", pd.NA)
-        labels.at[index, "serpapi_place_id"] = result.get("serpapi_place_id")
-        labels.at[index, "review_count"] = result.get("reviews", pd.NA)
-        labels.at[index, "rating"] = result.get("rating", pd.NA)
-        labels.at[index, "notes"] = "Synced from restroom_popular_times_audit.csv"
-    return labels
+    filter_mask = labels["venue_id"].isin(by_id.index) & labels["venue_type"].eq("restroom")
+    return apply_label_updates(
+        labels, by_id.to_dict("index"),
+        filter_mask=filter_mask,
+        default_note="Synced from restroom_popular_times_audit.csv",
+    )
 
 
 def build_label_view(
