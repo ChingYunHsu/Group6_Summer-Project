@@ -95,7 +95,7 @@ def get_medical_profile():
         cursor.execute(
             "SELECT date_of_birth, gender, address, blood_type, severe_allergies, "
             "conditions, medications, emergency_contacts "
-            "FROM user_medical_profiles WHERE user_id = %s",
+            "FROM medical_profiles WHERE user_id = %s",
             (g.user_id,),
         )
         row = cursor.fetchone()
@@ -126,7 +126,7 @@ def upsert_medical_profile():
 
     with db.db_transaction() as cursor:
         cursor.execute(
-            "SELECT user_id FROM user_medical_profiles WHERE user_id = %s FOR UPDATE",
+            "SELECT user_id FROM medical_profiles WHERE user_id = %s FOR UPDATE",
             (g.user_id,),
         )
         exists = cursor.fetchone()
@@ -136,7 +136,7 @@ def upsert_medical_profile():
             set_clause = ", ".join(f"{field} = %s" for field in set_fields)
             values = [_db_value(field, payload[field]) for field in set_fields]
             cursor.execute(
-                f"UPDATE user_medical_profiles SET {set_clause} WHERE user_id = %s",
+                f"UPDATE medical_profiles SET {set_clause} WHERE user_id = %s",
                 (*values, g.user_id),
             )
         else:
@@ -147,7 +147,7 @@ def upsert_medical_profile():
 
             values = [_db_value(field, profile[field]) for field in SELECT_COLUMNS]
             cursor.execute(
-                "INSERT INTO user_medical_profiles "
+                "INSERT INTO medical_profiles "
                 "(user_id, date_of_birth, gender, address, blood_type, severe_allergies, "
                 "conditions, medications, emergency_contacts) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
@@ -157,7 +157,7 @@ def upsert_medical_profile():
         cursor.execute(
             "SELECT date_of_birth, gender, address, blood_type, severe_allergies, "
             "conditions, medications, emergency_contacts "
-            "FROM user_medical_profiles WHERE user_id = %s",
+            "FROM medical_profiles WHERE user_id = %s",
             (g.user_id,),
         )
         row = cursor.fetchone()
@@ -173,6 +173,6 @@ def delete_medical_profile():
         return rejected
 
     with db.db_transaction() as cursor:
-        cursor.execute("DELETE FROM user_medical_profiles WHERE user_id = %s", (g.user_id,))
+        cursor.execute("DELETE FROM medical_profiles WHERE user_id = %s", (g.user_id,))
 
     return "", 204

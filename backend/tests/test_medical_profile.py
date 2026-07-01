@@ -22,9 +22,9 @@ class _FakeCursor:
 
         if query.startswith("SELECT date_of_birth, gender, address, blood_type, severe_allergies"):
             self._result = self._table.get(params[0])
-        elif query.startswith("SELECT user_id FROM user_medical_profiles"):
+        elif query.startswith("SELECT user_id FROM medical_profiles"):
             self._result = {"user_id": params[0]} if params[0] in self._table else None
-        elif query.startswith("INSERT INTO user_medical_profiles"):
+        elif query.startswith("INSERT INTO medical_profiles"):
             (
                 user_id,
                 date_of_birth,
@@ -47,18 +47,18 @@ class _FakeCursor:
                 "emergency_contacts": emergency_contacts,
             }
             self._result = None
-        elif query.startswith("UPDATE user_medical_profiles SET"):
+        elif query.startswith("UPDATE medical_profiles SET"):
             values = list(params)
             user_id = values.pop()
             row = self._table[user_id]
-            set_clause = query.removeprefix("UPDATE user_medical_profiles SET ").removesuffix(
+            set_clause = query.removeprefix("UPDATE medical_profiles SET ").removesuffix(
                 " WHERE user_id = %s"
             )
             fields = [part.split(" = ")[0] for part in set_clause.split(", ")]
             for field, value in zip(fields, values):
                 row[field] = value
             self._result = None
-        elif query.startswith("DELETE FROM user_medical_profiles"):
+        elif query.startswith("DELETE FROM medical_profiles"):
             self._table.pop(params[0], None)
             self._result = None
         else:

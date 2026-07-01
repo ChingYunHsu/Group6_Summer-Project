@@ -32,7 +32,18 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+<<<<<<< HEAD
+from ml_modeling import (
+    build_ablation_summary,
+    build_low_coverage_drop_one_ablation,
+    build_low_coverage_imputation_diagnostics,
+    build_model_feature_blocks,
+    derive_busy_level,
+    evaluate_model_family,
+)
+=======
 from ml_modeling import build_ablation_summary, build_model_feature_blocks, derive_busy_level, evaluate_model_family
+>>>>>>> main
 
 
 # ── 常量 ─────────────────────────────────────────────────────────────────────
@@ -320,7 +331,11 @@ def build_feature_registry() -> pd.DataFrame:
         [
             {"feature": "review_count", "group": "SerpAPI label", "priority": "P0", "status": "available_or_nullable"},
             {"feature": "district", "group": "DB direct", "priority": "P0", "status": "implemented_db_venues"},
+<<<<<<< HEAD
+            {"feature": "rating", "group": "DB direct", "priority": "P0", "status": "implemented_db_venues_backfilled_from_serpapi"},
+=======
             {"feature": "rating", "group": "DB direct", "priority": "P0", "status": "implemented_db_venues"},
+>>>>>>> main
             {"feature": "healthcare_subtype", "group": "DB direct", "priority": "P0", "status": "implemented_db_healthcare_profiles"},
             {"feature": "opening_hours", "group": "DB direct", "priority": "P1", "status": "implemented_db_venues"},
             {"feature": "facility_type", "group": "DB direct", "priority": "P1", "status": "implemented_db_healthcare_profiles"},
@@ -339,6 +354,12 @@ def build_feature_registry() -> pd.DataFrame:
             {"feature": "mta_covered_200m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
             {"feature": "traffic_covered_500m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
             {"feature": "urban_activity_spatial_score", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_composite_v1"},
+<<<<<<< HEAD
+            {"feature": "citibike_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_binned_v1"},
+            {"feature": "mta_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_binned_v1"},
+            {"feature": "traffic_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_binned_v1"},
+=======
+>>>>>>> main
             {"feature": "mta_hourly_ridership", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
             {"feature": "citibike_station_activity", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
             {"feature": "nyc_traffic_hourly_volume", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
@@ -521,7 +542,11 @@ def load_db_accessibility_points(paths: PipelinePaths) -> tuple[pd.DataFrame, pd
 
 def load_db_feature_source_audit(paths: PipelinePaths) -> pd.DataFrame:
     query = """
+<<<<<<< HEAD
+        SELECT source_name, matched_method, COUNT(*) AS `rows`, ROUND(AVG(match_confidence), 3) AS avg_match_confidence
+=======
         SELECT source_name, matched_method, COUNT(*) AS rows, ROUND(AVG(match_confidence), 3) AS avg_match_confidence
+>>>>>>> main
         FROM venue_source_links
         GROUP BY source_name, matched_method
         ORDER BY source_name, matched_method
@@ -531,10 +556,17 @@ def load_db_feature_source_audit(paths: PipelinePaths) -> pd.DataFrame:
         tables = read_db_frame(
             paths,
             """
+<<<<<<< HEAD
+            SELECT 'venues' AS source, COUNT(*) AS `rows` FROM venues
+            UNION ALL SELECT 'healthcare_profiles' AS source, COUNT(*) AS `rows` FROM healthcare_profiles
+            UNION ALL SELECT 'pedestrian_ramps' AS source, COUNT(*) AS `rows` FROM pedestrian_ramps
+            UNION ALL SELECT 'venue_source_links' AS source, COUNT(*) AS `rows` FROM venue_source_links
+=======
             SELECT 'venues' AS source, COUNT(*) AS rows FROM venues
             UNION ALL SELECT 'healthcare_profiles' AS source, COUNT(*) AS rows FROM healthcare_profiles
             UNION ALL SELECT 'pedestrian_ramps' AS source, COUNT(*) AS rows FROM pedestrian_ramps
             UNION ALL SELECT 'venue_source_links' AS source, COUNT(*) AS rows FROM venue_source_links
+>>>>>>> main
             """,
         )
     except Exception as exc:
@@ -709,8 +741,36 @@ def build_urban_activity_spatial_features(paths: PipelinePaths, healthcare: pd.D
             merged[col] = merged[col].astype(float)
 
     def _distance_score(series: pd.Series) -> pd.Series:
+<<<<<<< HEAD
+        """距离转 score：0-200m=100分，200-500m=40-100分，>500m=0分，缺失=0分"""
+        score = (1 - series.fillna(500) / 500).clip(lower=0) * 100
+        return score
+
+    def _distance_bin(series: pd.Series) -> pd.Series:
+        """距离分箱：<200m=3, 200-500m=2, 500-1000m=1, >1000m/缺失=0"""
+        bins = pd.cut(
+            series.fillna(1500),  # 缺失值视为超远距离
+            bins=[0, 200, 500, 1000, float('inf')],
+            labels=[3, 2, 1, 0],
+            right=True
+        )
+        return bins.astype(float)
+
+    # 原始距离特征
+    merged["citibike_nearest_distance_m"] = merged["citibike_nearest_distance_m"]
+    merged["mta_nearest_distance_m"] = merged["mta_nearest_distance_m"]
+    merged["traffic_nearest_distance_m"] = merged["traffic_nearest_distance_m"]
+
+    # 分箱特征（用于模型）
+    merged["citibike_distance_bin"] = _distance_bin(merged["citibike_nearest_distance_m"])
+    merged["mta_distance_bin"] = _distance_bin(merged["mta_nearest_distance_m"])
+    merged["traffic_distance_bin"] = _distance_bin(merged["traffic_nearest_distance_m"])
+
+    # score 特征（用于综合评分）
+=======
         return (1 - series.fillna(500) / 500).clip(lower=0) * 100
 
+>>>>>>> main
     citibike_score = _distance_score(merged["citibike_nearest_distance_m"])
     mta_score = _distance_score(merged["mta_nearest_distance_m"])
     traffic_score = _distance_score(merged["traffic_nearest_distance_m"])
@@ -999,9 +1059,13 @@ def build_seasonal_baseline(training: pd.DataFrame) -> pd.DataFrame:
     )
 
 
+<<<<<<< HEAD
+STATIC_FEATURE_COLS = [
+=======
 def build_feature_coverage(training: pd.DataFrame) -> pd.DataFrame:
     """统计每个特征列的非空率（coverage_pct），用于评估特征可用性。"""
     feature_cols = [
+>>>>>>> main
         "review_count",
         "district",
         "rating",
@@ -1030,6 +1094,90 @@ def build_feature_coverage(training: pd.DataFrame) -> pd.DataFrame:
         "mta_covered_200m",
         "traffic_covered_500m",
         "urban_activity_spatial_score",
+<<<<<<< HEAD
+]
+
+TRAINING_ROW_FEATURE_COLS = [
+    "traffic_score",
+    "is_business_hours",
+    "mta_hourly_ridership",
+    "citibike_station_activity",
+    "nyc_traffic_hourly_volume",
+    "urban_activity_proxy_score",
+]
+
+FEATURE_COVERAGE_SPECS = {
+    "review_count": ("venue_static", "review_count"),
+    "district": ("venue_static", "district"),
+    "rating": ("venue_static", "rating"),
+    "healthcare_subtype": ("venue_static", "healthcare_subtype"),
+    "opening_hours": ("venue_static", "opening_hours"),
+    "facility_type": ("venue_static", "facility_type"),
+    "traffic_score": ("training_row", "busyness_score"),
+    "nearest_subway_distance_m": ("venue_static", "nearest_subway_distance_m"),
+    "nearest_citibike_distance_m": ("venue_static", "nearest_citibike_distance_m"),
+    "poi_density_300m": ("venue_static", "poi_density_300m"),
+    "capacity": ("venue_static", "capacity"),
+    "hospital_level": ("venue_static", "facility_level"),
+    "is_business_hours": ("training_row", "is_business_hours"),
+    "mapped_venue_count": ("venue_static", "mapped_venue_count"),
+    "citibike_nearest_distance_m": ("venue_static", "citibike_nearest_distance_m"),
+    "mta_nearest_distance_m": ("venue_static", "mta_nearest_distance_m"),
+    "traffic_nearest_distance_m": ("venue_static", "traffic_nearest_distance_m"),
+    "citibike_covered_200m": ("venue_static", "citibike_covered_200m"),
+    "mta_covered_200m": ("venue_static", "mta_covered_200m"),
+    "traffic_covered_500m": ("venue_static", "traffic_covered_500m"),
+    "urban_activity_spatial_score": ("venue_static", "urban_activity_spatial_score"),
+    "citibike_distance_bin": ("venue_static", "citibike_distance_bin"),
+    "mta_distance_bin": ("venue_static", "mta_distance_bin"),
+    "traffic_distance_bin": ("venue_static", "traffic_distance_bin"),
+    "mta_hourly_ridership": ("training_row", "mta_hourly_ridership"),
+    "citibike_station_activity": ("training_row", "citibike_station_activity"),
+    "nyc_traffic_hourly_volume": ("training_row", "nyc_traffic_hourly_volume"),
+    "urban_activity_proxy_score": ("training_row", "urban_activity_proxy_score"),
+}
+
+
+def infer_feature_dtype(frame: pd.DataFrame, feature: str) -> str:
+    if feature not in frame.columns:
+        return "missing"
+    dtype = frame[feature].dtype
+    if pd.api.types.is_bool_dtype(dtype):
+        return "bool"
+    if pd.api.types.is_integer_dtype(dtype):
+        return "int"
+    if pd.api.types.is_float_dtype(dtype):
+        return "float"
+    if pd.api.types.is_numeric_dtype(dtype):
+        return "numeric"
+    return "category"
+
+
+def summarize_feature_coverage(frame: pd.DataFrame, feature_cols: list[str], scope: str) -> pd.DataFrame:
+    """统计指定特征列的非空率（coverage_pct）。"""
+    rows = []
+    denom = len(frame)
+    for col in feature_cols:
+        if col not in frame.columns:
+            rows.append(
+                {
+                    "feature": col,
+                    "scope": scope,
+                    "dtype": "missing",
+                    "non_null_rows": 0,
+                    "total_rows": denom,
+                    "coverage_pct": 0.0,
+                    "status": "missing_column",
+                }
+            )
+            continue
+        non_null = int(frame[col].notna().sum())
+        rows.append(
+            {
+                "feature": col,
+                "scope": scope,
+                "dtype": infer_feature_dtype(frame, col),
+=======
     ]
     rows = []
     denom = len(training)
@@ -1041,6 +1189,7 @@ def build_feature_coverage(training: pd.DataFrame) -> pd.DataFrame:
         rows.append(
             {
                 "feature": col,
+>>>>>>> main
                 "non_null_rows": non_null,
                 "total_rows": denom,
                 "coverage_pct": round(non_null / denom * 100, 1) if denom else 0.0,
@@ -1050,6 +1199,102 @@ def build_feature_coverage(training: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+<<<<<<< HEAD
+def summarize_single_feature(frame: pd.DataFrame, feature: str, source_col: str, scope: str) -> dict:
+    denom = len(frame)
+    basis = "unique healthcare venue" if scope == "venue_static" else "training row"
+    if source_col not in frame.columns:
+        return {
+            "feature": feature,
+            "scope": scope,
+            "dtype": "missing",
+            "non_null_rows": 0,
+            "total_rows": denom,
+            "coverage_pct": 0.0,
+            "status": "missing_column",
+            "coverage_basis": basis,
+            "source_column": source_col,
+        }
+    non_null = int(frame[source_col].notna().sum())
+    return {
+        "feature": feature,
+        "scope": scope,
+        "dtype": infer_feature_dtype(frame, source_col),
+        "non_null_rows": non_null,
+        "total_rows": denom,
+        "coverage_pct": round(non_null / denom * 100, 1) if denom else 0.0,
+        "status": "ok" if non_null else "all_null",
+        "coverage_basis": basis,
+        "source_column": source_col,
+    }
+
+
+def build_registered_feature_coverage(
+    registry: pd.DataFrame,
+    training: pd.DataFrame,
+    venue_features: pd.DataFrame,
+) -> pd.DataFrame:
+    """Coverage for the 25 registered model/input features only."""
+    frames = {"training_row": training, "venue_static": venue_features}
+    rows = []
+    for feature in registry["feature"]:
+        scope, source_col = FEATURE_COVERAGE_SPECS.get(feature, ("training_row", feature))
+        rows.append(summarize_single_feature(frames[scope], feature, source_col, scope))
+    return pd.DataFrame(rows)
+
+
+def build_training_row_feature_coverage(training: pd.DataFrame) -> pd.DataFrame:
+    """训练行级覆盖率：仅统计随 Popular Times 小时样本变化的字段。"""
+    rows = []
+    for feature in TRAINING_ROW_FEATURE_COLS:
+        _, source_col = FEATURE_COVERAGE_SPECS.get(feature, ("training_row", feature))
+        rows.append(summarize_single_feature(training, feature, source_col, "training_row"))
+    return pd.DataFrame(rows)
+
+
+def build_venue_static_feature_frame(
+    labels: pd.DataFrame,
+    place_features: pd.DataFrame,
+    spatial_features: pd.DataFrame,
+    capacity_features: pd.DataFrame,
+    urban_activity_features: pd.DataFrame | None = None,
+) -> pd.DataFrame:
+    """合成一行一个 healthcare venue 的静态特征表，用于 venue 级覆盖率。"""
+    healthcare = labels[labels["venue_type"].eq("healthcare")].copy()
+    venue_group_map = healthcare[["venue_id", "serpapi_place_id", "review_count"]].rename(
+        columns={"serpapi_place_id": "prediction_group_id"}
+    )
+    venue_frame = venue_group_map.merge(place_features, on="prediction_group_id", how="left")
+    venue_frame = venue_frame.merge(spatial_features, on="venue_id", how="left")
+    venue_frame = venue_frame.merge(
+        capacity_features[
+            [
+                "venue_id",
+                "capacity",
+                "icu_capacity",
+                "facility_level",
+                "facility_short_type",
+                "cms_hospital_type",
+                "cms_rating",
+                "has_capacity_feature",
+                "has_hospital_level_feature",
+            ]
+        ],
+        on="venue_id",
+        how="left",
+    )
+    if urban_activity_features is not None and not urban_activity_features.empty:
+        venue_frame = venue_frame.merge(urban_activity_features, on="venue_id", how="left")
+    return venue_frame.drop_duplicates("venue_id", keep="last")
+
+
+def build_venue_static_feature_coverage(venue_features: pd.DataFrame) -> pd.DataFrame:
+    """Venue 级静态覆盖率：一行一个 healthcare venue，不按 7 天小时样本重复计数。"""
+    return summarize_feature_coverage(venue_features, STATIC_FEATURE_COLS, scope="venue_static")
+
+
+=======
+>>>>>>> main
 def build_training_summary(training: pd.DataFrame) -> pd.DataFrame:
     """输出训练集摘要指标：行数、分组数、venue 数、score 范围、split 分布。"""
     if training.empty:
@@ -1076,7 +1321,11 @@ def build_io_dictionary() -> pd.DataFrame:
             {"field": "hour", "role": "input_feature", "source_group": "popular_times", "description": "Hour of day, 0-23"},
             {"field": "review_count", "role": "input_feature", "source_group": "serpapi_label", "description": "SerpAPI review count used as venue visibility proxy"},
             {"field": "district", "role": "input_feature", "source_group": "db_direct", "description": "venues.district"},
+<<<<<<< HEAD
+            {"field": "rating", "role": "input_feature", "source_group": "db_direct", "description": "venues.rating, backfilled from SerpAPI Place results"},
+=======
             {"field": "rating", "role": "input_feature", "source_group": "db_direct", "description": "venues.rating"},
+>>>>>>> main
             {"field": "healthcare_subtype", "role": "input_feature", "source_group": "db_direct", "description": "healthcare_profiles.healthcare_category"},
             {"field": "opening_hours", "role": "input_feature", "source_group": "db_direct", "description": "venues.opening_hours"},
             {"field": "nearest_subway_distance_m", "role": "input_feature", "source_group": "db_spatial", "description": "Distance to nearest MTA subway station in meters"},
@@ -1158,14 +1407,29 @@ def run_pipeline(project_root: Path | None = None) -> dict[str, Path]:
     capacity_features, capacity_match_audit, capacity_source_audit = build_capacity_features(paths, healthcare)
     db_feature_source_audit = load_db_feature_source_audit(paths)
     training = build_training_frame(labels, popular_times, place_features, spatial_features, capacity_features, urban_activity_features)
+<<<<<<< HEAD
+    venue_static_features = build_venue_static_feature_frame(
+        labels, place_features, spatial_features, capacity_features, urban_activity_features
+    )
+    baseline = build_seasonal_baseline(training)
+    feature_coverage = build_registered_feature_coverage(registry, training, venue_static_features)
+    training_row_feature_coverage = build_training_row_feature_coverage(training)
+    venue_feature_coverage = build_venue_static_feature_coverage(venue_static_features)
+=======
     baseline = build_seasonal_baseline(training)
     feature_coverage = build_feature_coverage(training)
+>>>>>>> main
     training_summary = build_training_summary(training)
     io_dictionary = build_io_dictionary()
     model_metrics, model_predictions, prediction_curve = evaluate_model_family(
         training, build_model_feature_blocks()["full_available"], family_name="full_available"
     )
     ablation_summary = build_ablation_summary(training)
+<<<<<<< HEAD
+    low_coverage_imputation = build_low_coverage_imputation_diagnostics(training)
+    low_coverage_drop_one = build_low_coverage_drop_one_ablation(training)
+=======
+>>>>>>> main
 
     outputs = {
         "status_breakdown": paths.notebook_output_dir / "label_status_breakdown.csv",
@@ -1185,12 +1449,22 @@ def run_pipeline(project_root: Path | None = None) -> dict[str, Path]:
         "training_frame": paths.notebook_output_dir / "ml_training_frame_v1.csv",
         "training_summary": paths.notebook_output_dir / "training_frame_summary.csv",
         "feature_coverage": paths.notebook_output_dir / "feature_coverage_summary.csv",
+<<<<<<< HEAD
+        "training_row_feature_coverage": paths.notebook_output_dir / "training_row_feature_coverage_summary.csv",
+        "venue_feature_coverage": paths.notebook_output_dir / "venue_static_feature_coverage_summary.csv",
+=======
+>>>>>>> main
         "seasonal_baseline": paths.notebook_output_dir / "seasonal_baseline.csv",
         "io_dictionary": paths.notebook_output_dir / "input_output_field_dictionary.csv",
         "model_metrics": paths.notebook_output_dir / "model_metrics_v1.csv",
         "model_predictions": paths.notebook_output_dir / "model_test_predictions_v1.csv",
         "prediction_curve": paths.notebook_output_dir / "prediction_curve_v1.csv",
         "ablation_summary": paths.notebook_output_dir / "ablation_summary_v1.csv",
+<<<<<<< HEAD
+        "low_coverage_imputation": paths.notebook_output_dir / "low_coverage_imputation_diagnostics_v1.csv",
+        "low_coverage_drop_one": paths.notebook_output_dir / "low_coverage_drop_one_ablation_v1.csv",
+=======
+>>>>>>> main
     }
     for key, frame in {
         "status_breakdown": status_breakdown,
@@ -1210,12 +1484,22 @@ def run_pipeline(project_root: Path | None = None) -> dict[str, Path]:
         "training_frame": training,
         "training_summary": training_summary,
         "feature_coverage": feature_coverage,
+<<<<<<< HEAD
+        "training_row_feature_coverage": training_row_feature_coverage,
+        "venue_feature_coverage": venue_feature_coverage,
+=======
+>>>>>>> main
         "seasonal_baseline": baseline,
         "io_dictionary": io_dictionary,
         "model_metrics": model_metrics,
         "model_predictions": model_predictions,
         "prediction_curve": prediction_curve,
         "ablation_summary": ablation_summary,
+<<<<<<< HEAD
+        "low_coverage_imputation": low_coverage_imputation,
+        "low_coverage_drop_one": low_coverage_drop_one,
+=======
+>>>>>>> main
     }.items():
         write_csv(frame, outputs[key])
 
