@@ -4,7 +4,11 @@ import { useLocation } from "react-router-dom";
 
 function MedicalCard() {
   const location = useLocation();
-  const profile = location.state?.clinicalPayload || USER_PROFILE;
+  const routePayload = location.state?.clinicalPayload;
+
+  const profile = routePayload
+    ? { ...USER_PROFILE, ...routePayload }
+    : USER_PROFILE;
 
   const primaryContact =
     (profile.emergency_contacts ?? []).find((contact) => contact.primary) ||
