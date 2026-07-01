@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./styles/tokens.css";
-import "./App.css";
+//import "./App.css";
+import "./purged-styles.css";
 
 import Login from "./pages/Login";
 import LiveHelpMap from "./pages/LiveHelpMap";

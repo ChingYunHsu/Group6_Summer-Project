@@ -1,4 +1,5 @@
 import { USER_PROFILE } from "../data/userProfile";
+import "./MedicalCard.css";
 import { useLocation } from "react-router-dom";
 
 function MedicalCard() {

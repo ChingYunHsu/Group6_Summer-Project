@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+button {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.profile-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  padding: clamp(16px, 2vw, 24px);
+}
+
+.profile-page {
+  text-align: left;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  padding: 20px 30px;
+  background: #f6f8fc;
+  padding: clamp(20px, 4vw, 30px);
+}
+
+.profile-title-row {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 12px;
+}
+
+.profile-title-row h1 {
+  margin: 0 0 4px;
+  font-size: 34px;
+}
+
+.profile-title-row p {
+  max-width: 620px;
+  color: #64748b;
+  line-height: 1.35;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-actions button {
+  background: #0047d8;
+  color: white;
+  border: 0;
+  padding: 13px 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: clamp(12px, 2vw, 24px);
+  align-items: stretch;
+}
+
+.profile-left {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.profile-left,
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.profile-card {
+  text-align:left;
+  background: white;
+  border: 1px solid #cfd8e3;
+  padding: 14px;
+}
+
+.profile-page h1,
+.profile-page h2,
+.profile-page h3 {
+  color: #06152b;
+}
+
+.identity-card {
+  text-align: center;
+  border-top: 4px solid #0050e6;
+  min-height: 383px;
+}
+
+.avatar-box {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+  border: 1px solid #cfd8e3;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  background: #f8fafc;
+}
+
+.identity-card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.verified-badge {
+  display: inline-block;
+  background: #eef2f7;
+  border: 1px solid #d8dee9;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.info-line {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.info-line span,
+.profile-card h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #334155;
+  font-size: 12px;
+}
+
+.profile-card p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.top-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.vital-card {
+  border-left: 4px solid #ef4444;
+}
+
+.language-card {
+  border-left: 4px solid #0047d8;
+}
+
+.blood-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.blood-type {
+  border: 2px solid #ef4444;
+  color: #dc2626;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-list span {
+  background: #eef2f7;
+  border: 1px solid #cfd8e3;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.clinical-card {
+  text-align: left;
+  padding: 0;
+}
+
+.clinical-card h2 {
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #d8dee9;
+  font-size: 20px;
+}
+
+.clinical-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 14px;
+}
+
+.clinical-card h2,
+.profile-card h2,
+.profile-card h3 {
+  color: #06152b;
+  opacity: 1;
+}
+
+.clinical-columns,
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.medical-item {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.medical-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.red-dot::before {
+  background: #dc2626;
+}
+
+.blue-dot::before {
+  background: #0047d8;
+}
+
+.medical-item p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #334155;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.contact-box {
+  border: 1px solid #cfd8e3;
+  background: #f8fafc;
+  padding: 10px;
+}
+
+.contact-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-top span {
+  background: #0047d8;
+  color: white;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .top-cards,
+  .clinical-columns,
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-title-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .profile-actions {
+    width: 100%;
+  }
+
+  .profile-actions button {
+    flex: 1;
+  }
+}
+
+
+/* revised 6-1 */
+
+.profile-page,
+.profile-page * {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.profile-page,
+.profile-page *,
+.profile-page button {
+  font-family: "Inter", Arial, sans-serif !important;
+
+  
+}
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+}
+
+/* Route Planning Dashboard — replaces the search header when
+   "Open Live Directions" is clicked */

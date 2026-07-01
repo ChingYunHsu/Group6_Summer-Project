@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./EditProfile.css";
 import { useNavigate } from "react-router-dom";
 import {
   USER_PROFILE,

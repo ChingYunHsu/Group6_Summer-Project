@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./LiveHelpMap.css";
 import maplibregl from "maplibre-gl";
 import { VENUES } from "../data/venues";
 import { REPORTS, getLandmarkAlertForVenue, getStandaloneAlerts } from "../data/reports";
@@ -48,6 +49,8 @@ function LiveHelpMap() {
   const [routeDepartureTime, setRouteDepartureTime] = useState("");
 
   const [selectedVenueId, setSelectedVenueId] = useState(VENUES[0]?.venue_id);
+  const openVenueDrawerRef = useRef(null);
+  openVenueDrawerRef.current = openVenueDrawer; 
 
   const futureMode = !autoCurrentTime;
 
@@ -95,6 +98,10 @@ function LiveHelpMap() {
       markerEl.className = "venue-pin";
       markerEl.style.backgroundColor = getMarkerColor(venue, futureMode);
       markerEl.innerHTML = `<span>${getIcon(venue.venue_type)}</span>`;
+      markerEl.style.pointerEvents = 'auto';
+      markerEl.style.zIndex = "10";
+      markerEl.style.position = "relative";
+
 
       function handleMarkerPress(event) {
         event.preventDefault();
@@ -102,17 +109,14 @@ function LiveHelpMap() {
        openVenueDrawer(venue);
       }
 
-      markerEl.addEventListener("pointerdown", handleMarkerPress);
-      markerEl.addEventListener("touchstart", handleMarkerPress);
-      const marker = new maplibregl.Marker(markerEl)
+       markerEl.addEventListener("mousedown", (e) => {
+        e.stopPropagation();
+        console.log("marker mousedown:", venue.name);
+        openVenueDrawerRef.current(venue);
+      });
+
+      const marker = new maplibregl.Marker({ element: markerEl })
         .setLngLat([venue.longitude, venue.latitude])
-        .setPopup(
-          new maplibregl.Popup().setHTML(`
-            <strong>${venue.name}</strong><br/>
-            ${venue.borough}<br/>
-            ${futureMode ? "No Live Info Mode" : `${venue.busyness_level} • ${venue.avg_wait_minutes} min wait`}
-          `)
-        )
         .addTo(mapRef.current);
 
       markersRef.current.push(marker);

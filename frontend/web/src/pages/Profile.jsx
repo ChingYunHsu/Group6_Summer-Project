@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { USER_PROFILE } from "../data/userProfile";
+import "./Profile.css";
 
 
 function Profile() {

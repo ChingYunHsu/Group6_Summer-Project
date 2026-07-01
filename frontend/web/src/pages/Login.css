@@ -1,0 +1,403 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+button,
+input {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.login-page {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-surface);
+}
+
+.login-brand-panel {
+  background: linear-gradient(135deg, #003bc2, #0047d8);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+}
+
+.brand-content {
+  max-width: 520px;
+}
+
+.brand-content h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+}
+
+.brand-line {
+  width: 56px;
+  height: 4px;
+  background: white;
+  margin-bottom: 28px;
+}
+
+.brand-content h2 {
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.brand-content p {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+.login-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: #ffffff;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+}
+
+.auth-tabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: 32px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.auth-tabs button {
+  flex: 1;
+  height: 44px;
+  border: 0;
+  background: #f1f3f7;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.auth-tabs .active {
+  background: #ffffff;
+  color: var(--color-text);
+}
+
+.auth-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.auth-card input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  margin-bottom: 20px;
+  border: 1px solid #aeb7c5;
+  background: #ffffff;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.auth-card input::placeholder {
+  color: #94a3b8;
+}
+
+.password-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-row a {
+  font-size: 12px;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.primary-auth-button,
+.guest-button {
+  width: 100%;
+  height: 48px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-auth-button {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  margin-top: 4px;
+}
+
+.guest-button {
+  background: white;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.divider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+.divider span {
+  height: 1px;
+  background: var(--color-border);
+}
+
+.terms {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-brand-panel {
+    min-height: 320px;
+    padding: 48px 32px;
+  }
+
+  .login-form-panel {
+    padding: 40px 24px;
+  }
+}
+
+.location-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 24px;
+}
+
+.location-modal {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+}
+
+.location-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
+.location-modal h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+.location-modal p {
+  margin: 0 0 22px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.location-error {
+  padding: 10px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 6px;
+  color: #be123c !important;
+}
+
+.allow-location-button {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.allow-location-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cancel-location-button {
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+
+/* revised 6-1 */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+}
+.register-title {
+  margin: 0 0 8px;
+  color: #06152b;
+  font-size: 24px;
+}
+
+.hipaa-label {
+  margin: 0 0 18px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.intercept-overlay,
+.location-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.intercept-sheet,
+.location-modal {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+}
+
+.intercept-sheet h2,
+.location-modal h2 {
+  margin: 0 0 12px;
+  color: #06152b;
+  font-size: 22px;
+}
+
+.intercept-sheet p,
+.location-modal p {
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.intercept-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.location-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+.intercept-actions button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.location-actions button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+}
+
+.intercept-actions button:first-child {
+  background: #ffffff;
+  color: #06152b;
+  border: 1px solid #cbd5e1;
+}
+
+.intercept-actions button:first-child:hover {
+  background: #f8fafc;
+}
+
+.cancel-location-button {
+  background: #ffffff;
+  color: #06152b;
+  border: 1px solid #cbd5e1;
+}
+
+.intercept-actions button:last-child,
+.allow-location-button {
+  background: #0047d8;
+  color: white;
+  border: none;
+}
+
+.intercept-actions button:last-child:hover {
+  background: #003cc1;
+}
+
+
+.allow-location-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.location-error {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c !important;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Route Planning Dashboard — replaces the search header when
+   "Open Live Directions" is clicked */
