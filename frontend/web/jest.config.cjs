@@ -8,3 +8,15 @@ module.exports = {
   "^maplibre-gl$": "<rootDir>/src/__mocks__/maplibre-gl.js"
 }
 };
+
+export default {
+  testEnvironment: "jsdom",
+  setupFilesAfterFramework: ["./src/setupTests.js"],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "<rootDir>/src/__mocks__/fileMock.js",
+    "^maplibre-gl$": "<rootDir>/src/__mocks__/maplibre-gl.js",
+  },
+  transform: {
+    "^.+\\.[jt]sx?$": "babel-jest",
+  },
+};
