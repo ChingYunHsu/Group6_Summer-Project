@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DDL_PATH = ROOT / "docker" / "mysql" / "init" / "004_medical_profile.sql"
+DDL_PATH = ROOT / "docker" / "mysql" / "init" / "004_medical_profiles.sql"
 ERD_PATH = ROOT / "docs" / "ERD" / "clearpath_erd.mmd"
 ACTIVE_API_PATH = ROOT / "backend" / "src" / "api" / "user.py"
 MEDICAL_API_PATH = ROOT / "backend" / "src" / "api" / "medical.py"
@@ -17,8 +17,8 @@ def test_medical_profile_migration_has_unique_004_prefix():
     init_files = sorted(path.name for path in (ROOT / "docker" / "mysql" / "init").glob("*.sql"))
     numeric_prefixes = [name.split("_", 1)[0] for name in init_files]
 
-    assert "004_medical_profile.sql" in init_files
-    assert "002_medical_profile.sql" not in init_files
+    assert "004_medical_profiles.sql" in init_files
+    assert "002_medical_profiles.sql" not in init_files
     assert len(numeric_prefixes) == len(set(numeric_prefixes))
 
 
@@ -36,10 +36,10 @@ def test_medical_profile_names_match_between_ddl_api_and_erd():
     stale_storage_fragments = (
         "medical_conditions",
         "encrypted_payload",
-        "FROM medical_profiles",
-        "INTO medical_profiles",
-        "UPDATE medical_profiles",
-        "DELETE FROM medical_profiles",
+        "FROM user_medical_profiles",
+        "INTO user_medical_profiles",
+        "UPDATE user_medical_profiles",
+        "DELETE FROM user_medical_profiles",
     )
 
     for column in canonical_columns:
