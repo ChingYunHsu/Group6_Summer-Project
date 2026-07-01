@@ -49,8 +49,12 @@ function LiveHelpMap() {
   const [routeDepartureTime, setRouteDepartureTime] = useState("");
 
   const [selectedVenueId, setSelectedVenueId] = useState(VENUES[0]?.venue_id);
-  const openVenueDrawerRef = useRef(null);
-  openVenueDrawerRef.current = openVenueDrawer; 
+  const openVenueDrawer = useCallback((venue) => {
+  setSelectedVenueId(venue.venue_id);
+  setRouteDestination(venue.name);
+  setShowRoutePlanner(false);
+  setShowLeftDrawer(true);
+  }, []); 
 
   const futureMode = !autoCurrentTime;
 
@@ -114,7 +118,7 @@ function LiveHelpMap() {
 
       markersRef.current.push(marker);
     });
-  }, [futureMode]);
+  }, [futureMode, openVenueDrawer]);
 
 
   function locationTrackingEnabled() {
