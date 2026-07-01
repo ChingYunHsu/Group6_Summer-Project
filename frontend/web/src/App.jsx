@@ -1,11 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-<<<<<<< HEAD
 import { useState, useEffect, useRef } from "react";
-=======
-import { useState } from "react";
->>>>>>> b070610fdaac01270f40e098d51aa7edad2194c4
 import "./styles/tokens.css";
-//import "./App.css";
 import "./purged-styles.css";
 
 import Login from "./pages/Login";
@@ -21,7 +16,6 @@ import Favourites from "./pages/Favourites";
 
 function App() {
   const [user, setUser] = useState(null);
-<<<<<<< HEAD
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -47,9 +41,6 @@ function App() {
     setUser(null);
     setOpenDropdown(null);
   }
-=======
-  
->>>>>>> b070610fdaac01270f40e098d51aa7edad2194c4
 
   return (
     

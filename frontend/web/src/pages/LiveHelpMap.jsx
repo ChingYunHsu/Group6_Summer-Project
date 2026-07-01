@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import "./LiveHelpMap.css";
 import maplibregl from "maplibre-gl";
 import { VENUES } from "../data/venues";
@@ -109,7 +109,7 @@ function LiveHelpMap() {
        markerEl.addEventListener("mousedown", (e) => {
         e.stopPropagation();
         console.log("marker mousedown:", venue.name);
-        openVenueDrawerRef.current(venue);
+        openVenueDrawer(venue);
       });
 
       const marker = new maplibregl.Marker({ element: markerEl })
@@ -174,14 +174,7 @@ function closeRoutePlanner() {
   setShowRoutePlanner(false);
   setShowLeftDrawer(true);
 }
-function openVenueDrawer(venue) {
-  console.log("Opening drawer for:", venue.name);
 
-  setSelectedVenueId(venue.venue_id);
-  setRouteDestination(venue.name);
-  setShowRoutePlanner(false);
-  setShowLeftDrawer(true);
-}
   
 
 
