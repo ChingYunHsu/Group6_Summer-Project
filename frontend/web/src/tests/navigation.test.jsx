@@ -19,12 +19,14 @@ describe("Navigation bar routing", () => {
 
     render(<App />);
 
-    await user.click(screen.getByText(/Profile/i));
+    await user.click(screen.getByRole("button", { name: /👩🏻‍⚕️/i }));
+
+    await user.click(screen.getByRole("link", { name: /^Profile$/i }));
 
     expect(
-  screen.getByRole("heading", {
-    name: /Personal & Medical Profile/i,
-  })
-).toBeInTheDocument();
+      screen.getByRole("heading", {
+        name: /Personal & Medical Profile/i,
+      })
+    ).toBeInTheDocument();
   });
 });
