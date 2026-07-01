@@ -102,13 +102,6 @@ function LiveHelpMap() {
       markerEl.style.zIndex = "10";
       markerEl.style.position = "relative";
 
-
-      function handleMarkerPress(event) {
-        event.preventDefault();
-       event.stopPropagation();
-       openVenueDrawer(venue);
-      }
-
        markerEl.addEventListener("mousedown", (e) => {
         e.stopPropagation();
         console.log("marker mousedown:", venue.name);
