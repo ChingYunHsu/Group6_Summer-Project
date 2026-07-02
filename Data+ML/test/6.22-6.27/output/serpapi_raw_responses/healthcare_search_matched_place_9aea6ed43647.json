@@ -1,0 +1,709 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e369a1f2cd231f7eff9",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/0PGAUfP8lRNU7tL4Wn-PaQ/6a3d3e369a1f2cd231f7eff9.json",
+    "created_at": "2026-06-25 14:41:58 UTC",
+    "processed_at": "2026-06-25 14:41:58 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259427ddf4a75:0x4a856670ae2ae3c2!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/0PGAUfP8lRNU7tL4Wn-PaQ/6a3d3e369a1f2cd231f7eff9.html",
+    "prettify_html_file": "https://serpapi.com/searches/0PGAUfP8lRNU7tL4Wn-PaQ/6a3d3e369a1f2cd231f7eff9.prettify",
+    "total_time_taken": 0.75
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJdUrffUJZwokRwuMqrnBmhUo",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "NYU Langone Health",
+    "place_id": "ChIJdUrffUJZwokRwuMqrnBmhUo",
+    "data_id": "0x89c259427ddf4a75:0x4a856670ae2ae3c2",
+    "data_cid": "5369810764853601218",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259427ddf4a75%3A0x4a856670ae2ae3c2&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259427ddf4a75%3A0x4a856670ae2ae3c2&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7421225,
+      "longitude": -73.9739642
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo",
+    "provider_id": "/m/04jnvn0",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH9A4NIQoDYCPzi1rRTsd4gsuCkk3O0YzlYVJwQYzh_88R1rQUtkASLdZwd-Hk4GIs8hr28YLkCYSYlV6WbytLADBY_ERB8AsTtXCTqlqerO_6CGQLvQIc1NuQsjsSKSC-WqJPqvlhNxSfY=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/et2xVHicHcTBboIwGADgJ6rAJKYu2aHWRVGClDK1u5BYkG7tqPQvsvGSO-9tlvgdvr9f5f0NnoPAqPmstbY1zQCNk7bzTedn0n4F7Q2QBAQByTOmyXZJ4ixhdi1oPn1EriihjlsYqNbzQygmI467kYlJVRgXkWNvXhOe1u9jjbY63iSAlXvCItVUcGGOi9Plx6dkvRLVa7HCBEp_pmVv-sYdqgXdsPTOEhllA4NP4HtO0anf5f3dqOybX8XLGIVhiNRjibp_i2ZHkw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 132
+      },
+      {
+        "stars": 2,
+        "amount": 18
+      },
+      {
+        "stars": 3,
+        "amount": 21
+      },
+      {
+        "stars": 4,
+        "amount": 45
+      },
+      {
+        "stars": 5,
+        "amount": 315
+      }
+    ],
+    "rating": 3.7,
+    "reviews": 531,
+    "type": [
+      "Hospital"
+    ],
+    "type_ids": [
+      "hospital"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "payments": [
+          "Checks",
+          "Credit cards",
+          "Debit cards"
+        ]
+      },
+      {
+        "children": [
+          "Nursing room"
+        ]
+      },
+      {
+        "parking": [
+          "On-site parking",
+          "Paid parking garage",
+          "Paid parking lot",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Assistive hearing loop"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "550 1st Ave, New York, NY 10016",
+    "country": "United States",
+    "booking_link": "https://nyulangone.org/?cid=syn_yext&y_entity_id=88",
+    "website": "https://nyulangone.org/doctors",
+    "phone": "(646) 929-7800",
+    "open_state": "Open 24 hours",
+    "plus_code": "P2RG+RC New York",
+    "hours": [
+      {
+        "thursday": "Open 24 hours"
+      },
+      {
+        "friday": "Open 24 hours"
+      },
+      {
+        "saturday": "Open 24 hours"
+      },
+      {
+        "sunday": "Open 24 hours"
+      },
+      {
+        "monday": "Open 24 hours"
+      },
+      {
+        "tuesday": "Open 24 hours"
+      },
+      {
+        "wednesday": "Open 24 hours"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 8 weeks ago",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH9A4NIQoDYCPzi1rRTsd4gsuCkk3O0YzlYVJwQYzh_88R1rQUtkASLdZwd-Hk4GIs8hr28YLkCYSYlV6WbytLADBY_ERB8AsTtXCTqlqerO_6CGQLvQIc1NuQsjsSKSC-WqJPqvlhNxSfY=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/et2xVHicHcTBboIwGADgJ6rAJKYu2aHWRVGClDK1u5BYkG7tqPQvsvGSO-9tlvgdvr9f5f0NnoPAqPmstbY1zQCNk7bzTedn0n4F7Q2QBAQByTOmyXZJ4ixhdi1oPn1EriihjlsYqNbzQygmI467kYlJVRgXkWNvXhOe1u9jjbY63iSAlXvCItVUcGGOi9Plx6dkvRLVa7HCBEp_pmVv-sYdqgXdsPTOEhllA4NP4HtO0anf5f3dqOybX8XLGIVhiNRjibp_i2ZHkw"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "13 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGypqNV9X6MvHjyZkwf1udavaXdVgniyLo4Uxk9CMQ8txyquiLKrfuq9F_iAmwcGbrZS99oEirZmsuFw95bm4y9BTLKYWq-OxBqaQtyLgDnWI-VOas620fjN6zFT5QZTBTtvLFFeASaXgHx=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/wUkqsnicHcTBboIwAADQL6rgpsSa7ACb1cWKIzJgXEytUBBpKW2B-pM7-zdL9g7v-Vtp3am149yr1xkTgt0Lo4qeCq4LrmdUtA7rFKAKKMf_CqPG39pOhgnMvMOwu9m8Gcu5uZKBZNeE8dpisfieGvh-iFZ6stLUeN-XRkJ0rv12pNtLn58gFJu6z1tl0AiXl3ZhYRDj_U8qwXEKJIm0xeyDp58gORLlvbjlLfQeKF5GeRzEesAIFf6JZGw3vY1z13VB9T8F_A-ppUle"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHC5Vh8HIhjnbSIHzhYtohG2TVlVUHB8oguC9Fb08wGUT7HBkrLtwwyuj9YJMlAjroi0Q_muKLosQcFUHXibFrlNsedVTuJWHHKVGVSy_xBb69_h4BZS0EZSI0cvJJMRk4SYkOY_w=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/nfxCd3icHcRdDoIgAADgE5n0r209aEvRyjKUshc3yUlK0gQiu2FH6DZtfQ_f90OlfIiFaTI6HlScV6xUouwIb2XZygHhd7N6CIMIQ5jOIYobB66mmFowoHVboAC-aSY59UcJZjiFrsUrtbK9AljaT5M5dJtuK7XuVW1n4Y45dcdvIM7varPlIiZeCs-3wutYJMorTlR4gnCDfYz6_OUWMzunE_eCwPqCAkCeYbg7NhOUNfss10s9BAAY9D8x2h8fDUXL"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGbtvjp4DiF-KGYOP66P1B0BJj_7CyoDxCw-jw9TlF_FVh4iHcCKCxGu2I9z3TVpqprnOqR6fqQiVrAz9ymQbIswnKvW8dqyw_nhUwb_EECeosg0-lCyBBtbCnkSKsi0PoAGqSu=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/OSnLw3icHcRJDoIwAADAF1WqEhQTD1AWlUTABeOJhIoUhC60WPGDvsHfmDiH-X6IUlyuDKMl80nFWNWWgyx7zKgqqZpg1hkVlwBLIA0n2acPJyzUs-GmVwcgCq9xYlnJ1IXurskXaGTeC2nQaPvUBnmQEbPeYBShVzjMtvZ7fsq44D2NxcG6i7TOeudtj11abKWm0fOyvIlR55ScdZH7PiqZrCBo0ei6qkD0cYxkDRPmhOI4rPUUQgjIfwzoD2l9Rbg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMuK1bYc4uyY63GDnyiEdQiiZFXJiW7GejmENmdXfDwlVEfNgUNh_KHhkOHJfQ7g6XKTVYyxf6tEajzRbvnV2d7PcpJ7LiXsnl42j-vYMaSCfE_jYq-DONpcAY2R4zUDfX1Nk=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ekN-rHicHcRZjoIwAADQE5VNAskk80Gkg4GhigvTzo_RQheWwtii4gHnDt7GxPfxnv_CmFF_2HYnFhYfBt7Vk64vdFCmVsaiQ2_zUQOqgbajDSraKMmnzD0T6k8zCRZJrGYJq0LK3y-cyp8wqZseor7CLL51JWSIH5A4ZivRrlcpK0Ie4GxfkvnOAgNPzWN7vqrSq8INHdPwW2KtOt9rwJXkp92SwWND_kC8RiONiLf1H4eYYRe1nzfXcRwg3lOgXk-_RKw"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 3
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 4
+        },
+        {
+          "title": "Parking",
+          "places": 2
+        },
+        {
+          "title": "Other",
+          "places": 4
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Hassenfeld Children\u2019s Hospital at NYU Langone",
+          "data_id": "0x89c259c9cd067499:0x4083f932369d1e5d",
+          "data_cid": "4648833234436431453",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259c9cd067499%3A0x4083f932369d1e5d&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259c9cd067499%3A0x4083f932369d1e5d&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7433787,
+            "longitude": -73.973086
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259c9cd067499%3A0x4083f932369d1e5d%218m2%213d40.7433787%214d-73.973086&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "rating": 4.6,
+          "reviews": 89,
+          "type": "Hospital",
+          "type_id": "hospital",
+          "address": "430 E 34th St, New York, NY 10016",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            },
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxizJ6RQg7bu7dpBAKCew287B6aMjEgPWS9GfeBJdNaDHJ05ZcT72kHhQTDw8rYjBAZRBHBa-Ovmtujp7kmF2yyjUd3sogFNRMHD1yKUi3d7L5OIUZLE6-514ZKWG3JlSWEzjZrg=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFxizJ6RQg7bu7dpBAKCew287B6aMjEgPWS9GfeBJdNaDHJ05ZcT72kHhQTDw8rYjBAZRBHBa-Ovmtujp7kmF2yyjUd3sogFNRMHD1yKUi3d7L5OIUZLE6-514ZKWG3JlSWEzjZrg=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "icon parking",
+          "data_id": "0x89c2590f0288350d:0x52fe4fb3276a2450",
+          "data_cid": "5980304986073605200",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f0288350d%3A0x52fe4fb3276a2450&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f0288350d%3A0x52fe4fb3276a2450&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7416114,
+            "longitude": -73.9747173
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590f0288350d%3A0x52fe4fb3276a2450%218m2%213d40.7416114%214d-73.9747173&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "rating": 2.0,
+          "reviews": 3,
+          "type": "Parking lot",
+          "type_id": "parking_lot",
+          "address": "530 1st Ave, New York, NY 10016",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAbSRJ0yohYYOgCE7pvHqeVIZkAwUjKoszrBa1nMI4mtJb-JjBOwdCinbWiKOLy09pt7O1Do_ZE9Bsw9m7pf6aXJvniV7H7QLa3igArLPuR4nIieadcLxgHBPmncdaYiwJSeVl=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHAbSRJ0yohYYOgCE7pvHqeVIZkAwUjKoszrBa1nMI4mtJb-JjBOwdCinbWiKOLy09pt7O1Do_ZE9Bsw9m7pf6aXJvniV7H7QLa3igArLPuR4nIieadcLxgHBPmncdaYiwJSeVl=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "Bank of America ATM",
+          "data_id": "0x89c2590ab42e2c3d:0xbfce569403efbf0f",
+          "data_cid": "13821079500167823119",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590ab42e2c3d%3A0xbfce569403efbf0f&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590ab42e2c3d%3A0xbfce569403efbf0f&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7430167,
+            "longitude": -73.9729845
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590ab42e2c3d%3A0xbfce569403efbf0f%218m2%213d40.7430167%214d-73.9729845&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "rating": 3.7,
+          "reviews": 3,
+          "type": "ATM",
+          "type_id": "atm",
+          "address": "424 E 34th St, New York, NY 10016",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            },
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAErM8Uz6LoU2qCsLaOqortmIpImIRWfi9QO6jIgeV3GvFY6sQ-RX0Jz_rkPRjBWgef3NrosnTmJHjxmfTUxiS5ncm_f4eV35BfiOCgOEHLJT4zemEdpigo0u1gUo5tQUzCvecz3=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAErM8Uz6LoU2qCsLaOqortmIpImIRWfi9QO6jIgeV3GvFY6sQ-RX0Jz_rkPRjBWgef3NrosnTmJHjxmfTUxiS5ncm_f4eV35BfiOCgOEHLJT4zemEdpigo0u1gUo5tQUzCvecz3=w86-h86-n-k-no"
+        },
+        {
+          "position": 4,
+          "title": "Sid and Ruth Lapidus Health Sciences Library",
+          "data_id": "0x89c2590fb28f7a01:0x1515b9c43b14f6d0",
+          "data_cid": "1519324701763368656",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590fb28f7a01%3A0x1515b9c43b14f6d0&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590fb28f7a01%3A0x1515b9c43b14f6d0&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742067399999996,
+            "longitude": -73.97426329999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590fb28f7a01%3A0x1515b9c43b14f6d0%218m2%213d40.742067399999996%214d-73.97426329999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "University library",
+          "type_id": "university_library",
+          "address": "550 1st Ave, New York, NY 10016",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2dU9tZ0u0fGEtOf8mBRg_g1DcbjKizEgIi-8lQ2slILg-SjrWBv-kQyr54bEgjdq9fwAUCVvYaBj5lRy-83kxQpgBMCI6BthsHlTtDuDaufXnulBGDnEUR7dHyVdzxrQ39r4fsw=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2dU9tZ0u0fGEtOf8mBRg_g1DcbjKizEgIi-8lQ2slILg-SjrWBv-kQyr54bEgjdq9fwAUCVvYaBj5lRy-83kxQpgBMCI6BthsHlTtDuDaufXnulBGDnEUR7dHyVdzxrQ39r4fsw=w86-h86-n-k-no"
+        },
+        {
+          "position": 5,
+          "title": "iPark",
+          "data_id": "0x89c2590e54e1e487:0xa57964e190e6ad45",
+          "data_cid": "11923672408401554757",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590e54e1e487%3A0xa57964e190e6ad45&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590e54e1e487%3A0xa57964e190e6ad45&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7413995,
+            "longitude": -73.9744151
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590e54e1e487%3A0xa57964e190e6ad45%218m2%213d40.7413995%214d-73.9744151&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Parking lot",
+          "type_id": "parking_lot",
+          "address": "530 1st Ave, New York, NY 10016"
+        },
+        {
+          "position": 6,
+          "title": "Bank of America ATM",
+          "data_id": "0x89c259a724a36afb:0x4172b66634606da5",
+          "data_cid": "4716032309891984805",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a724a36afb%3A0x4172b66634606da5&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a724a36afb%3A0x4172b66634606da5&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742132999999995,
+            "longitude": -73.97385109999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259a724a36afb%3A0x4172b66634606da5%218m2%213d40.742132999999995%214d-73.97385109999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "ATM",
+          "type_id": "atm"
+        },
+        {
+          "position": 7,
+          "title": "Internal Medicine Residency Program",
+          "data_id": "0x89c2599222c4cf15:0xb8fc4e9f918074d2",
+          "data_cid": "13329615444357706962",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599222c4cf15%3A0xb8fc4e9f918074d2&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599222c4cf15%3A0xb8fc4e9f918074d2&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742132999999995,
+            "longitude": -73.97385109999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599222c4cf15%3A0xb8fc4e9f918074d2%218m2%213d40.742132999999995%214d-73.97385109999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Training center",
+          "type_id": "training_center"
+        },
+        {
+          "position": 8,
+          "title": "Iannis Aifantis Laboratory",
+          "data_id": "0x89c2590f07c8e13f:0x5cfc04ef1f42ec81",
+          "data_cid": "6700235770688629889",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f07c8e13f%3A0x5cfc04ef1f42ec81&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f07c8e13f%3A0x5cfc04ef1f42ec81&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742067399999996,
+            "longitude": -73.97426329999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590f07c8e13f%3A0x5cfc04ef1f42ec81%218m2%213d40.742067399999996%214d-73.97426329999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Laboratory",
+          "type_id": "laboratory"
+        },
+        {
+          "position": 9,
+          "title": "NF2 Is",
+          "data_id": "0x89c2590f07c8e13f:0x45267fcd76c3d0dc",
+          "data_cid": "4982810558169600220",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f07c8e13f%3A0x45267fcd76c3d0dc&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f07c8e13f%3A0x45267fcd76c3d0dc&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742067399999996,
+            "longitude": -73.97426329999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590f07c8e13f%3A0x45267fcd76c3d0dc%218m2%213d40.742067399999996%214d-73.97426329999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 10,
+          "title": "Coles Student Center of NYU School of Medicine at NYU Langone Health",
+          "data_id": "0x89c259176d7f3725:0x1f65cdd8273338f3",
+          "data_cid": "2262440716077840627",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259176d7f3725%3A0x1f65cdd8273338f3&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259176d7f3725%3A0x1f65cdd8273338f3&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742132999999995,
+            "longitude": -73.97385109999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259176d7f3725%3A0x1f65cdd8273338f3%218m2%213d40.742132999999995%214d-73.97385109999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Medical school",
+          "type_id": "medical_school"
+        },
+        {
+          "position": 11,
+          "title": "MENA APPS MOMENT",
+          "data_id": "0x89c2595eb97510fd:0xc140e42a856e3743",
+          "data_cid": "13925380919107925827",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2595eb97510fd%3A0xc140e42a856e3743&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2595eb97510fd%3A0xc140e42a856e3743&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.742132999999995,
+            "longitude": -73.97385109999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2595eb97510fd%3A0xc140e42a856e3743%218m2%213d40.742132999999995%214d-73.97385109999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Social services organization",
+          "type_id": "social_services_organization"
+        },
+        {
+          "position": 12,
+          "title": "NYU Langone Brain & Spine Tumor Center",
+          "data_id": "0x89c2590065ef194b:0x654a4badf683389b",
+          "data_cid": "7298729356644530331",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590065ef194b%3A0x654a4badf683389b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590065ef194b%3A0x654a4badf683389b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7414038,
+            "longitude": -73.97442149999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590065ef194b%3A0x654a4badf683389b%218m2%213d40.7414038%214d-73.97442149999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Medical Center",
+          "type_id": "medical_center"
+        },
+        {
+          "position": 13,
+          "title": "Lehmann Lab",
+          "data_id": "0x89c2590f0135a401:0x1eeb29991283086e",
+          "data_cid": "2227920178082154606",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f0135a401%3A0x1eeb29991283086e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f0135a401%3A0x1eeb29991283086e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7418306,
+            "longitude": -73.9744557
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2590f0135a401%3A0x1eeb29991283086e%218m2%213d40.7418306%214d-73.9744557&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUrffUJZwokRwuMqrnBmhUo&type=place",
+          "type": "Point of interest",
+          "type_id": "establishment_poi"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Need to check with front desk to know the best direction to go on the service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXeecxR8y7_WNavrurmjARAdiTt3riRUwFthXhpQtJVWxT7EtskdA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"My girlfriend who has no insurance, was treated like literal trash by the staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJMpw0DKaLLgdFiD2rjfrD1UWK6h5K5MVRvd4E4u1h73NF5Mhbx=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Hallway beds is fine because rooms are for critical people who need machines.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVi1ombS8987EEVjZM4JHcze7yLElFqqg1LOsYr_1zQXvs2o-Malg=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Amy Bogatch",
+          "rating": 5,
+          "contributor_id": "117819909878384023665",
+          "user_review_count": 70,
+          "user_photo_count": 66,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV2a9buHjm7Ka5nZjEQXMNief4onjTSygumQz2gmWcvjclKYdR7-g=s120-c-rp-mo-ba12-br100",
+          "description": "I have only wonderful things to say about this hospital, especially the neurosurgery staff. We spent four days split between surgery and the 16th-floor ICU. Every single person we came into contact with\u2014nurses, techs, administrators, and everyone else\u2014was kind, knowledgeable, and genuinely fun! While the room wasn\u2019t the cleanest I\u2019ve ever seen, the excellent care we received is what truly matters. Plus, you can't beat the views! My husband is an avid sailor, and watching the river made his stay so much easier. Thank you to everyone at NYU Langone! I hope we never have to return.\nP.S. Special thanks to the nurses and staff including but not limited to: Kathleen Jennette, Guetty Joseph, Karen Marie Fernandez, Alyssa Hackney, Frankee Cooper, Lauren Deonarine, Julia Flaim, and (Other) Julia. Also, Dr. Khan, Dr. Carter, Danny NP, Madalyn PA, and all of the Neuro Surgery residents. Apologies and thanks to anyone I forgot. You were all amazing!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xoTWNXdEplVmcxVTBWVU4xTm5YME5UWjJZMmNsRRAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOlhMcWtJeVg1U0VUN1NnX0NTZ2Y2clE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-07T13:36:33+00:00"
+        },
+        {
+          "username": "Richie Giordano",
+          "rating": 5,
+          "contributor_id": "112088814221247701601",
+          "user_review_count": 37,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWZ-9hZHUEIQaHYTV0AYPdgDqxC99o-5VGcEgcvdkf1R2a5wKaG=s120-c-rp-mo-ba12-br100",
+          "description": "NYU LANGONE is the only hospital our family will use, especially after the A+ experience when expecting our first child.\n\nThis one will take some time, but I have to express how we feel.\n\nWe learned we were with child right as the pandemic shutdown. We made several calls to pediatricians around the city, and most of them gave us excuses why they wouldn't take us as patients; age of the mother, \"risk factors\", etc., after some independent research we decided to try NYU.\n\nFrom the first experience, my wife was treated with the utmost of respect. Every phase of the process was explained in great detail, every doctor, nurse, and medical professional did not hesitate to repeat anything we didn't understand, and handled my wife's concerns with respect, kindness, and dignity.\n\nOut of the dozens of people that were a part of her natal team, there was one doctor who did not act professionally toward her - we had a telehealth conference and at some point when my wife was asking a question, the doctor laughed and disregarded her question. I immediately voiced my objection to her, and before the day was over she was removed from her care team. The other doctors apologized for this, and there was never a repeat of this treatment.\n\nThe day we checked in for her delivery was nerve racking and (I'll admit) frightening. Everyone we met and worked with treated my wife better than royalty. We spent a few days in the hospital after delivery for several reasons, but each day passed with more care and compassion. By the time we checked out, we had our beautiful baby boy and I had my wife; as healthy and as safe as when we checked in.\n\nWe will forever remember the wonderful doctors, nurses, PAs, and all staff that made this the finest experience it could be.\n\nALL of our medical needs are through the NYU system - we would go to no other hospital if we could help it.\n\nIf you're reading this and are considering having a baby, BYU is for you.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWRk5rYzBVRUU0UWtWR2NYaHNNRXRwZVVKTlRuYxAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOjVFNkc0UEE4QkVGcXhsMEtpeUJNTnc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T21:04:55+00:00"
+        },
+        {
+          "username": "n n",
+          "rating": 5,
+          "contributor_id": "112210511082833168549",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKEmB2HHdOk_7O1MDek3NDLosiKbHOM2He8m-VJotgayOwc3g=s120-c-rp-mo-br100",
+          "description": "The team at NYU was incredibly kind, compassionate, and professional during a very stressful time. A special thank you to Dr. Ruth McCann for her genuine care, empathy, and warmth.\n\nShe made a difficult experience feel much less overwhelming and treated everyone with such respect and humanity. You can truly tell she cares deeply about her patients and the people around them.\n\nNYU is very lucky to have a doctor like her.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWUE0xbHlOa2gwYW1oRmJrWjFkbXcxT1VsSlltYxAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOkVPM1lyNkh0amhFbkZ1dmw1OUlJYmc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-28T23:07:27+00:00"
+        },
+        {
+          "username": "Aleksandr Zagalskiy",
+          "rating": 5,
+          "contributor_id": "113154904064952709959",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW7HReHpCY-K2j6MRntwp5BfKE8qLtv7Ch68lvXl68Ki9gGwTvZGA=s120-c-rp-mo-br100",
+          "description": "I am grateful for the chance to be alive. Two years ago I had the kidney transplant surgery and can't be more happier. Special thanks to Dr. Johnathan Berger,  all nurses and doctors who were next to me during my treatment in the hospital. Great people \ud83d\udc4f,  great  facility. God bless you all. \ud83d\ude4f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25vNU1HeFZXVGxrTTNSeldUZ3diMVpyTlVsb1dHYxAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOno5MGxVWTlkM3RzWTgwb1ZrNUloWGc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-05T20:30:17+00:00"
+        },
+        {
+          "username": "Summer Rosario",
+          "rating": 2,
+          "contributor_id": "110647403253629209950",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUEzDgmY0MAMDdNgszxj57nL9Au3gwAGSQ5jKiLDkmqm151YKl7=s120-c-rp-mo-br100",
+          "description": "I am so sad to write another review since my first one was a glowing 5 stars. As many good experiences I had with NYU, I am beyond disappointed with my recent, and last, experience that I had with them. After surgery in February, I was feel awful in March. I was presenting with all symptoms for my chronic disease, including bleeding and abdominal pain. I went back to NYU and was almost immediately dismissed. Told to follow-up outpatient with my surgeon and GI doctor. I messaged my surgeon, Dr. Simon, whose team redirected me to Dr. Chang, my GI doctor. No tests were ordered; Dr. Chang is prideful of her intelligence, I assume, because she was able to diagnose my symptoms as the very disease that I've had for 12 years and just had surgery for weeks ago. Instead of tests or any in-person follow-up, I was seen for 10 minutes virtually and prescribed Prednisone. I messaged Dr. Chang a week later as I couldn't keep food down. I was vomitting everything I ate and the pain was worse. Again, no in-person follow-up occurred, and this time, not even a virtual visit. Instead, she prescribed an additional medication and sent me on my merry way. After trying NYU's emergency room once more, and being entirely dismissed, I made my way to Mount Sinai. I presented my symptoms and they immediately ordered a scope and an MRI. Lo and behold, it turns out that the disease I was suffering from was at Mayo Score 3 (the most severe it can be) with SEVERE COLON DISTENTION!! I ended up at Mount Sinai for 3 weeks as I ended up needed emergency inpatient surgery because of how severe the disease was. Also, my CURRENT surgeon at Mount Sinai (who I will 100% recommend to anyone over ANY NYU doctor or surgeon) told me that the surgery was difficult because it turns out that Dr. Simon's work was sloppy and left me with so much scarring that turned a 4-5 hour surgery, into an 8 hour surgery. My current surgeon said the scarring was so bad that the team was very close to having to open me up completely rather than doing everything lapriscopically (which didn't happen, thankfully). I am beyond disappointed with NYU and their lack of compassion and ability. Neither time I went to their ER did a proper evaluation ensure. No scope or scan was done, no blood work was properly worked up. Their dismissal of my situation could have killed me had I not been pestering different hospital systems. I will forever be grateful for Mount Sinai for literally saving my life and taking me seriously over NYU, where they would have let me die rather than do their jobs properly. Safe to say my previous 5 stars has been balled up and trashed and burned. I would not recommend NYU for many things. Unless you are presenting something at surface level, don't expect anyone to listen to you or help you. Please advocate for yourself! If you KNOW something is not right, please speak up. Find another hospital that will take you seriously!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OU2NrSTBUVGxPTkZSU2RWZExOR3RaTm1GS1FuYxAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOmNSckI0TTlONFRSdVdLNGtZNmFKQnc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-24T11:18:31+00:00"
+        },
+        {
+          "username": "Rachel Newman",
+          "rating": 5,
+          "contributor_id": "106535439736377928312",
+          "user_review_count": 11,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXXnPIX9hJMktCQaNtPF_nEfJb2RKcy1-bX-cXesjiXFLYQeD_Pnw=s120-c-rp-mo-br100",
+          "description": "I\u2019ve visited this ER a few times for various reasons and they are always so understanding and accommodating. I\u2019ve always felt heard, especially as a woman.\nThe last time I had a visit was for a pretty intense migraine and the nurses put me in a private quiet room. I couldn\u2019t be more grateful for the consideration and care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25sZlprcFVjbkV3WkRoMFJYa3pjRGQ0UjBVeFNFRRAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOnlfZkpUcnEwZDh0RXkzcDd4R0UxSEE%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-06-01T23:04:43+00:00"
+        },
+        {
+          "username": "Krisco813",
+          "rating": 5,
+          "contributor_id": "118292800497911629875",
+          "user_review_count": 23,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVujcydGXkS0KgssyWox0P3EkM3eSPl1RWY_aNQh9waK_SMVAd_=s120-c-rp-mo-ba12-br100",
+          "description": "Went to the ER for some emergency cat scan and overall health help, staff was extremely nice and helpful way bettee than brookdale hands down. I will always come back here. I was treated with respect and decency. Amazing experience overall.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toMlVHYzFTVkJzWTB4RFZGUlBlbTVvTldsVE5FRRAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOkh2UGc1SVBsY0xDVFRPem5oNWlTNEE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-17T02:27:54+00:00"
+        },
+        {
+          "username": "Elizabeth Ramoss",
+          "rating": 1,
+          "contributor_id": "109286007443648911149",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLPPZTxqd1nVCI7Leq8X4SYi6j4uuDMyjnu9b4L99OdhAXN5w=s120-c-rp-mo-br100",
+          "description": "NYU team\n\nI am writing to formally express my concern regarding the care my mother recently received while under your supervision. My mother is a stage 4 cancer patient and is in a highly fragile condition, requiring not only skilled medical attention but also compassion, patience, and gentleness from all staff involved in her care.\n\nDuring a recent interaction, a nurse handled my mother in a manner that I found deeply troubling and unacceptable. While attempting to insert a needle, the nurse forcefully grabbed my mother\u2019s arm and proceeded despite my mother clearly expressing that she was in pain. This approach was not only physically distressing for her but also emotionally upsetting for both of us.\n\nAs my mother\u2019s advocate, I feel it is my responsibility to speak up on her behalf. Patients\u2014especially those in vulnerable conditions\u2014deserve to be treated with dignity, respect, and empathy. Medical professionals are entrusted with the well-being of their patients, and that trust includes providing care that is both competent and compassionate.\n\nI understand that healthcare environments can be demanding; however, that does not excuse rough or dismissive behavior toward patients. If a staff member is unable to provide care with the level of professionalism and sensitivity required, it is important that this be addressed appropriately.\n\nI respectfully request that this matter be reviewed and that appropriate steps are taken to ensure that all patients receive the quality of care they deserve. No patient, especially one battling advanced cancer, should have to endure unnecessary pain or feel disregarded during treatment.\n\nThank you for your attention to this serious matter. I look forward to your response and to seeing improvements that reflect the standards of care your institution represents.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGTVZIUmZRVEk1VEhsTWNXbHJNbkI1WldaaVluYxAB!2m1!1s0x0:0x4a856670ae2ae3c2!3m1!1s2@1:CAIQACodChtycF9oOlFMVHRfQTI5THlMcWlrMnB5ZWZiYnc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-20T14:17:36+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NYU HOSPITAL",
+            "data_id": "0x0:0x5419925da1051560",
+            "data_cid": "6060035704434791776",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5419925da1051560&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5419925da1051560&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7421857,
+              "longitude": -73.97346759999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5419925da1051560%218m2%213d40.7421857%214d-73.97346759999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 27,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHkAuMOYKFpE0OCPNlXU6OfUZEyaNjMEXgVSKS4etcNhmfDqz_1JNNPEgIKhq4y4JAdcbA7WnIlpOpqQ8mVQYGzRGJHw0ymZA7oL7a4KY4of7lCRatT1qi0IjUdGDNUA37X-Ghfow=w156-h156-n-k-no",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "The Home Depot Emergency Department at NYU Langone Health\u2014Cobble Hill",
+            "data_id": "0x0:0x1b25360e31295b26",
+            "data_cid": "1956029047744584486",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1b25360e31295b26&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1b25360e31295b26&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.6909315,
+              "longitude": -73.99759999999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1b25360e31295b26%218m2%213d40.6909315%214d-73.99759999999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.9,
+            "reviews": 712,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHS00tdJoM9ZE9B-uAHvKW8KYYwz0CgcB9IKbqFIVCExq32qbQGsP-353akxEba1BO0nji9rwQXUTOJEUN0avHhtkYm6AGZ_puFcsys5ojcPLlpxfwhDV9QfnuG9sj6cnaaiG-r=w156-h156-n-k-no",
+            "type": [
+              "Emergency room"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "NYU Langone Hospital\u2013Brooklyn",
+            "data_id": "0x0:0x919ca29e69e645d9",
+            "data_cid": "10492440033131644377",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x919ca29e69e645d9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x919ca29e69e645d9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.6465591,
+              "longitude": -74.0206755
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x919ca29e69e645d9%218m2%213d40.6465591%214d-74.0206755&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 2908,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHGX_ZLpxs7K30Ql0DzceCF6eH4AWKix3brbrRl7TsnEn7pgb5CewC5yiou817CS8hJWNoq4py1rSdsN85FhJYDg7p0gsTudvlJOYd7o1bxh-ixpLXk9EsdC0iIbeW2IZiRUNY4jRPJduJ3=w156-h156-n-k-no",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "NYU",
+            "data_id": "0x0:0x924d3cb8040a2680",
+            "data_cid": "10542149063783622272",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x924d3cb8040a2680&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x924d3cb8040a2680&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7473709,
+              "longitude": -73.9750627
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x924d3cb8040a2680%218m2%213d40.7473709%214d-73.9750627&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=gUzim68JTMlnWrBzkUttJ8ySe7gzJzpI7uoRG4btmBJWBWniSjIDY4npT2r66EZEtMIESXg-Byck7Ar6qJs_3o8CvNDmM13ceSsKugp32c-lT3aojvY0TilYnL5ayaDVWrpOgrc7cGP7s1y4xr1v4goZsR13cQSt",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Nyu Medical Center: Li-Hung Sumene",
+            "data_id": "0x0:0xfc97283ca18f7aa2",
+            "data_cid": "18201060659914832546",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfc97283ca18f7aa2&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfc97283ca18f7aa2&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.742139,
+              "longitude": -73.9742231
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfc97283ca18f7aa2%218m2%213d40.742139%214d-73.9742231&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=gLSPsNerO9j51SWCLGljiuPKaQbmMFwMG-eDgAjUk_diuaUw8DezcUYDNJXpkp6XUwxTN13x_Q4t3wjBmYxIrocU-hasVeS0F9LysAOqzlK0f0P80f8Y3oiya5Ov2j694DWfcx2hFZFrWLcSRSfFm_YXLCMr6PvD",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiUKIyIfTllVIExhbmdvbmUgSGVhbHRoIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiUKIyIfTllVIExhbmdvbmUgSGVhbHRoIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

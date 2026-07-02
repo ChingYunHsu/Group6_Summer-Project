@@ -1,0 +1,1122 @@
+{
+  "search_metadata": {
+    "id": "6a3d273855ba6536a298ae7d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/jinFz9u8WZwx_E1Xx8uRdw/6a3d273855ba6536a298ae7d.json",
+    "created_at": "2026-06-25 13:03:52 UTC",
+    "processed_at": "2026-06-25 13:03:52 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2599ee19167dd:0x7f8fc547df25198b!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/jinFz9u8WZwx_E1Xx8uRdw/6a3d273855ba6536a298ae7d.html",
+    "prettify_html_file": "https://serpapi.com/searches/jinFz9u8WZwx_E1Xx8uRdw/6a3d273855ba6536a298ae7d.prettify",
+    "total_time_taken": 1.92
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ3WeR4Z5ZwokRixkl30fFj38",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Duane Reade",
+    "place_id": "ChIJ3WeR4Z5ZwokRixkl30fFj38",
+    "data_id": "0x89c2599ee19167dd:0x7f8fc547df25198b",
+    "data_cid": "9191782276963572107",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599ee19167dd%3A0x7f8fc547df25198b&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599ee19167dd%3A0x7f8fc547df25198b&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7334554,
+      "longitude": -73.9868058
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3WeR4Z5ZwokRixkl30fFj38",
+    "provider_id": "/g/12ml2mtdb",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHZQ5e6iALnDDMf5x_TqJFiNceWNnLuBWADdEMgz9LrD1nL4-K_gt5rTueAcY1SXQ4jDi8ZOKzfoFfBnBSrKmR7odnP16UKxCM4ZWCQpSfXvnk-cTNRLaT0YPy9Vd9381NwbyMp1w=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/AvLs4nicHcRRboIwGADgE1VoBCdL9lCsZhmlA2GivBgtpTD1L6NlqDfcEXYbE7-H7_-vsbYzr45zbqYTpbU6y8HIXmiwEuxE6IujOoOEQcYhCU9P5L1MfTlrCQNK49q_7vOfj1XLhSw4sCEsCK2WsboHrKcYmIeivbJ-nw-SiB3Otqn3Tdt5-Rnda72qQwizPrqsX3QFCZ59RddF7JXFIu2yevsLJyRyvmaH3N0lt2BTBdM55uPxFnd4fBux67qoeS4QPACeT0Rx",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 29
+      },
+      {
+        "stars": 2,
+        "amount": 7
+      },
+      {
+        "stars": 3,
+        "amount": 4
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 25
+      }
+    ],
+    "rating": 2.8,
+    "reviews": 69,
+    "price": "$$",
+    "type": [
+      "Convenience store",
+      "Beauty supply store",
+      "Cosmetics store",
+      "Greeting card shop",
+      "Perfume store",
+      "Stationery store"
+    ],
+    "type_ids": [
+      "convenience_store",
+      "beauty_supply_store",
+      "cosmetics_store",
+      "greeting_card_shop",
+      "perfume_store",
+      "stationery_store"
+    ],
+    "description": "Drugstore & pharmacy chain selling products including cosmetics, vitamins & mini-mart basics.",
+    "extensions": [
+      {
+        "service_options": [
+          "Curbside pickup",
+          "Delivery",
+          "In-store pickup",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "curbside_pickup": true,
+      "delivery": true
+    },
+    "address": "123133 3rd Ave, New York, NY 10003",
+    "country": "United States",
+    "located_in": "Coral Tower",
+    "booking_link": "https://www.google.com/search?hl=en&gl=US&udm=28&q=Walgreens.com&shoprs=EgY6BAoCtU4SDLIBCQlAGQQpD0c5KBgCMi4IAhINV2FsZ3JlZW5zLmNvbSIGOgQKArVOKhEKDVdhbGdyZWVucy5jb20YAUgBMiMIHxILRHVhbmUgUmVhZGUiDLIBCQlAGQQpD0c5KCoCGAFIAQ&sts=13",
+    "website": "https://www.walgreens.com/locator/walgreens-123133+3rd+ave-new+york-ny-10003/id=14265",
+    "phone": "(212) 529-7140",
+    "open_state": "Open \u00b7 Closes 11 PM",
+    "plus_code": "P2M7+97 New York",
+    "hours": [
+      {
+        "thursday": "7 AM\u201311 PM"
+      },
+      {
+        "friday": "7 AM\u201311 PM"
+      },
+      {
+        "saturday": "7 AM\u201311 PM"
+      },
+      {
+        "sunday": "7 AM\u201310 PM"
+      },
+      {
+        "monday": "7 AM\u201311 PM"
+      },
+      {
+        "tuesday": "7 AM\u201311 PM"
+      },
+      {
+        "wednesday": "7 AM\u201311 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 12 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2599ee19167dd%3A0x7f8fc547df25198b&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHZQ5e6iALnDDMf5x_TqJFiNceWNnLuBWADdEMgz9LrD1nL4-K_gt5rTueAcY1SXQ4jDi8ZOKzfoFfBnBSrKmR7odnP16UKxCM4ZWCQpSfXvnk-cTNRLaT0YPy9Vd9381NwbyMp1w=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/AvLs4nicHcRRboIwGADgE1VoBCdL9lCsZhmlA2GivBgtpTD1L6NlqDfcEXYbE7-H7_-vsbYzr45zbqYTpbU6y8HIXmiwEuxE6IujOoOEQcYhCU9P5L1MfTlrCQNK49q_7vOfj1XLhSw4sCEsCK2WsboHrKcYmIeivbJ-nw-SiB3Otqn3Tdt5-Rnda72qQwizPrqsX3QFCZ59RddF7JXFIu2yevsLJyRyvmaH3N0lt2BTBdM55uPxFnd4fBux67qoeS4QPACeT0Rx"
+      },
+      {
+        "title": "Inside",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFR5jLg9k76MFDXN296Ns8tbeOj_OKvkkqH8ohb5kTmekv3BpzVI8YGf8kS6wWayZbP8HLQylkr_pBPXUQqO4wgz3FBFQWHNx9e42bUU7GeAt3sTPSgpitsVriCIlNQ6Mq2l7Ey=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/tWpfo3icHcTvEoEwAADwJ0oparnzoZAcVkP-fXHqZmmrrTaSF_QM3sad34ff95MrJeRI11lu9QjnhOGHxE3GK4Ur1ct4qRMhtUxqUvdiiKgXbIbFirjUsdfB9AhN14YSqBRHxSVaPimtQ8DzdEh3JaZPyxfv_QKc5jdAt3Z7uHbnNAbhCnWMNhfhx8cE1dGgJW8r8AN0COHLxQMzTRJnjj1lyV28JeKu5L65TxYMIntdm8yZdeO2bxiGlv_PtOoHQSJElg"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHZQ5e6iALnDDMf5x_TqJFiNceWNnLuBWADdEMgz9LrD1nL4-K_gt5rTueAcY1SXQ4jDi8ZOKzfoFfBnBSrKmR7odnP16UKxCM4ZWCQpSfXvnk-cTNRLaT0YPy9Vd9381NwbyMp1w=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/AvLs4nicHcRRboIwGADgE1VoBCdL9lCsZhmlA2GivBgtpTD1L6NlqDfcEXYbE7-H7_-vsbYzr45zbqYTpbU6y8HIXmiwEuxE6IujOoOEQcYhCU9P5L1MfTlrCQNK49q_7vOfj1XLhSw4sCEsCK2WsboHrKcYmIeivbJ-nw-SiB3Otqn3Tdt5-Rnda72qQwizPrqsX3QFCZ59RddF7JXFIu2yevsLJyRyvmaH3N0lt2BTBdM55uPxFnd4fBux67qoeS4QPACeT0Rx"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGLPrEpQ4qOQZpzAiLCj33vRVJFu3OmPzpQxXsh6wBejmxfWjCKUlStBYFx4y9HQVuoCWTTJz9HhqTWQsqlRlcybVaudUaycki7KiBFGtE1NFSR3a0en2Ck5HEgJwXL_GhcpPL-Pw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/NiCnanicHcTbboIwAADQL6qg9RJN9gCES5BoiwhuLwvWSoFCiy3j8od-wv5myc7D-X0zraU6GAZncFEIUXDaK_oiotW01QsiGqOQChAFlGGhE64tP0IvV-J1d8ZfcrbKyKkg_InT0OvhuUGzxONNse1g06oZn1nlHK_8ou1Pb1xP-wCnvXCyJAnnfcC6JMOq4zEn0z3N-8c1n0hd7o6l7fnaXZ68Swxzk7Yrp94EbhEOt-jbZ0SiCKDhY1iapgnY_wS0f26KRnw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAENI0FtrTMerMfApvSQx9Tbkcq5UQzswyKDmDiPakLufidEE2Jvuhh_-0nvDKeosOawHhoWYNXRT29MmvQGsyQBMf8_B9umxokKDk3UE6kANA4SdS6-L8jMp_RWMG42P0tZ1YRh=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/GYYPKHicHcRJDoIwAADAF1UqLhETDzXghkXKEpcL0VqoVijSsugHfYO_MXEO8_1wrUs1NYwHH_QyKbMHqxWrqCw0K3SPytzISgWoAspAvkcEcrw1XOgqwqzCKSqbkHRWdBH0OYrJW7Uv187tm38W2zq9XR3H3DQ15wmARWO7TKrduV1xuT96hyAyLZw3ZKleZI7TSTK36ryTwrXFIHbGAnloGF7DMdhO7rhMgj1eDk0f6lP_GPBZ24cQAv6fguIH0XJE4w"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 2
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Western Union",
+          "data_id": "0x89c2599f1d59e6ed:0x552cc1771e567600",
+          "data_cid": "6137493109553395200",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599f1d59e6ed%3A0x552cc1771e567600&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599f1d59e6ed%3A0x552cc1771e567600&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7333646,
+            "longitude": -73.98678749999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599f1d59e6ed%3A0x552cc1771e567600%218m2%213d40.7333646%214d-73.98678749999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3WeR4Z5ZwokRixkl30fFj38&type=place",
+          "rating": 2.0,
+          "reviews": 3,
+          "type": "Money transfer service",
+          "type_id": "money_transfer_service",
+          "address": "125-133 3rd Ave, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "8\u202fAM\u20139\u202fPM"
+            },
+            {
+              "sunday": "8\u202fAM\u20139\u202fPM"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHR19JQ3dH_u8MalemvszegedyIffiGyl6XTJx9udSIOwofeJqNaKO015Z7OQb8A1B02Uk-Xvp7Gm-1B7x6zXZajWd8Oa1gTZcb4ueeZXzlklSJI-uSB3gQmI4uDQDfjn3LvSg=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHR19JQ3dH_u8MalemvszegedyIffiGyl6XTJx9udSIOwofeJqNaKO015Z7OQb8A1B02Uk-Xvp7Gm-1B7x6zXZajWd8Oa1gTZcb4ueeZXzlklSJI-uSB3gQmI4uDQDfjn3LvSg=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Citibank ATM",
+          "data_id": "0x89c2599ee2aec581:0x1890311846bb0c7e",
+          "data_cid": "1769968633892244606",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599ee2aec581%3A0x1890311846bb0c7e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599ee2aec581%3A0x1890311846bb0c7e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7333646,
+            "longitude": -73.98678749999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599ee2aec581%3A0x1890311846bb0c7e%218m2%213d40.7333646%214d-73.98678749999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3WeR4Z5ZwokRixkl30fFj38&type=place",
+          "rating": 0.0,
+          "reviews": 0,
+          "type": "ATM",
+          "type_id": "atm",
+          "address": "125-133 3rd Ave, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            },
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            }
+          ]
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"A nearby CVS finally answered their phone.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUJdHP5Hl3OzNWq3cZJY5AdJ4xtCepX2DP0ICfw4AMXw0a3T-8=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I have lived in nyc 60+ yrs and have been a customer for these past 20 years.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL0nVb1EEf5N8MONc8w4NRTQ-_ZXQFB62ntKhF9pz4aI8E0kg=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Nola Dolan",
+          "rating": 1,
+          "contributor_id": "113068827899536179563",
+          "user_review_count": 93,
+          "user_photo_count": 143,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLLOrmQGvylLNbyu7AiP2g0v492hABTLnzEuwTJbPndX-ONlQ=s120-c-rp-mo-ba12-br100",
+          "description": "If you have 20 mins to wait for someone to unlock the cases then this is a great option. If you don\u2019t plan on moving in to the store it\u2019s faster to walk over to another location than wait here. Can\u2019t even get cotton swabs without having a case unlocked. Find a better business model.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xVelVIVnlWWFZ2Tmw5TVgwRmlVR3RZTVdSR1RsRRAB!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CAIQACodChtycF9oOlUzUHVyVXVvNl9MX0FiUGtYMWRGTlE%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-24T20:33:31+00:00"
+        },
+        {
+          "username": "Emma Nelson",
+          "rating": 1,
+          "contributor_id": "100447323428670489457",
+          "user_review_count": 230,
+          "user_photo_count": 128,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUkYZj7Q4-dXx6wscNyNb13CHupboyLodj4BWScqErKKv5xnRRTfQ=s120-c-rp-mo-ba12-br100",
+          "description": "This Duane Reade sucks. Don\u2019t bother shopping here, go to CVS a few blocks away instead. Everything is locked up and the employees don\u2019t care enough to come unlock things for 5-10 minutes after you press the button calling for help. Tried to do a pickup order to avoid waiting 5-10 minutes and found out the workers don\u2019t even get the order until you get to the store, so I had to wait anyway. Spend your money elsewhere!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GWFRFOWpkRFJaT1RoSlN6QktVRTAwVTA1TlUxRRAB!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CAIQACodChtycF9oOmFXTE9jdDRZOThJSzBKUE00U05NU1E%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-15T03:40:25+00:00"
+        },
+        {
+          "username": "Halina Pavels",
+          "rating": 1,
+          "contributor_id": "104882302348872876469",
+          "user_review_count": 3,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ5z4yQpOA8noRRdlil1DYCr5bYMcTfhh2yWKr06qGj0kSHeQ=s120-c-rp-mo-br100",
+          "description": "Bought haircare color product that turned out to be tampered with.  When I opened the box, some items were missing and the contents of applicator bottle had been replaced by an unknown, discolored,  vile smelling, emulsified fluid.  This was both disgusting and alarming.  Staff was very polite and helpful when I returned the tampered box for a full refund.  I suggested they check their CTV to find the culprit responsible as I had made the purchase only the day prior.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNIellLM0RBEAE!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CIHM0ogKEICAgICHzYK3DA%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3i_c-ZNvvSNCes3tFzXfuT9hbw_Vare1aOWGsqVBCV88VcOFWCHaf9RiXyAaDL2F9edtPsL1W3cGEJCOJiIFVl6VbdlfzK7Kh05WmQeFxWOQKikxYd0p71EF0AZtGTP3THcBjOZA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2wsXu-Z7o8CiIU-WtSb2ztIhegytl22YiWJOEwV5n7xxrmqGmtPBJushgQ4ui_jJL9Vev-nDXbgPmnDVIJvb9js2x1TIX1OY6QJpSzImbz0a0WjiI57qdZqF_ssnMPL5dIFpBQ=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2024-09-07T14:18:12+00:00"
+        },
+        {
+          "username": "Oki Kile",
+          "rating": 2,
+          "contributor_id": "115261529877839995196",
+          "user_review_count": 1,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXgHvBpIJjJfgCZcFWas71JO6Ldvid2tnS_qnuUBSXouQlWrhXY=s120-c-rp-mo-br100",
+          "description": "Store was missing a lot of items I wanted, and most aisles had literally everything under lock and key, including the entire candy aisle.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KRFgxaExiVVExYTNJNGVtTnplRlp3WDJaYU9XYxAB!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CAIQACodChtycF9oOmJDX1hLbUQ1a3I4emNzeFZwX2ZaOWc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn08ZwsrU7khcPO0rKgeFMxWCvgNsSRapTZvtdebjo1VnAiOutODU8zuoyXUu9pvdIBE0PRZXAG6DGBTbSwA5vAuOOlWiWWXVdEWdXOAb2gBqCdrAeN-EgDVPZfr20ZgRWJYxYggWX3Fxej5=k-no"
+            }
+          ],
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-12T09:50:22+00:00"
+        },
+        {
+          "username": "Samuel Chilton",
+          "rating": 1,
+          "contributor_id": "114346937478741821639",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJN7s9Y0GuyFjV8zXkbtni_Kxcij2GBuCWFO4SErkhJNgkDpg=s120-c-rp-mo-br100",
+          "description": "Worst store I\u2019ve ever been to. Got accused of shoplifting just 2 minutes into being inside. Stay away.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxUUxWZHBkbE5mYjJ3M1RVNVRTVEI0UjA5WFVuYxAB!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CAIQACodChtycF9oOk1QLVdpdlNfb2w3TU5TSTB4R09XUnc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-04T03:05:07+00:00"
+        },
+        {
+          "username": "Sara Doe",
+          "rating": 1,
+          "contributor_id": "118424892787503261290",
+          "user_review_count": 7,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKthXbw15F6BlZL81a2TN2A9K46l90_NX6qy_SDWG2h8-dyVA=s120-c-rp-mo-br100",
+          "description": "Quite possibly the most uncaring group of pharmacist I\u2019ve ever had the displeasure of having to deal with. I\u2019ve been trying to refill a necessary to my livelihood medication that I got monthly for the past 10 years of my life for over five weeks now and I have been nothing But patient over the phone and in person they will not give you the time of day. When I show up in person to try to get the medication, they just told me \u201coh we don\u2019t have that\u201d. Not and I\u2019m sorry not we can try to get that to you soon. \u201cI don\u2019t have it\u201c and when I say, when will you have it because it\u2019s been over a month of me trying to refill it they said that my doctor would have to put in a new prescription. I let them know my doctor has done that every week for the past month trying to get this medication filled for me. I truly think these people do not care whatsoever for the patients. Single Worst pharmacy I\u2019ve ever encountered.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21jMk5YSXhaVFJRTnpWYWRqbFBWMmMwYTNWTmVWRRAB!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CAIQACodChtycF9oOmc2NXIxZTRQNzVadjlPV2c0a3VNeVE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-20T21:53:10+00:00"
+        },
+        {
+          "username": "Brooke Peterson",
+          "rating": 1,
+          "contributor_id": "108701324862518158865",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1EmyR6UdggI_olSTYzsUyvTfuGZ9Ai7PAS9qFu_kWoRzq3anO=s120-c-rp-mo-ba12-br100",
+          "description": "This place is a hot piece of garbage. NEVER get your prescriptions here. I got a prescription for 30 pills and they miscounted, gave me 17, and refused to acknowledge their mistake. They also told me that in order to get the remaining I\u2019d need another prescription from the doctor, and even then, it wouldn\u2019t be covered by insurance. I\u2019m so beyond disappointed. Will absolutely NEVER be coming here again.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJMjJrWWU2d3RxT2NBEAE!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CIHM0ogKEI22kYe6wtqOcA%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-05-17T21:32:57+00:00"
+        },
+        {
+          "username": "curators52",
+          "rating": 1,
+          "contributor_id": "100017542493602836091",
+          "user_review_count": 50,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWA8Z2mS39GzQC3T3bsYpnkMVxgYKNMVmb9sNfiDJiN0gEMNKNxtQ=s120-c-rp-mo-ba12-br100",
+          "description": "At 6:30 pm i picked up my \"T\"prescription b/c tomorrow I\u2019m having cardiac surgery . I also went to retrieve a fast Healthy Choice dinner which required help unlocking the freezer. Terra responded to my ring and mumbled something and walked away. I rang again and she returned loudly scolding me for ringing again. I explained I didnt understand why she was yelling at me and I pointed to the HC Beef Merlot dinner and she opened the wrong cabinet. When I corrected her she yelled at me again that I had pointed at the wrong cabinet. I asked her to lower her voice and she scolded me a third time saying \u201cI don\u2019t want to talk to you anymore I just want to get out of here \u201c. Then she opened the right cabinet and I silently walked away and bought milk and nuts too. Terra is still there, me more rarely. Be careful.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURRbHVlR0FnEAE!2m1!1s0x0:0x7f8fc547df25198b!3m1!1s2@1:CIHM0ogKEICAgMDQlueGAg%7C%7C?hl=en",
+          "date": "Edited a year ago",
+          "date_iso8601": "2025-05-06T11:08:22+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Duanereade By Walgreens",
+            "data_id": "0x0:0xe923e7a53f7da888",
+            "data_cid": "16799525731942901896",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe923e7a53f7da888&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe923e7a53f7da888&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.746696,
+              "longitude": -73.981455
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe923e7a53f7da888%218m2%213d40.746696%214d-73.981455&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=FZOJMjgfUSEBvO34dlUSWoTZfoQvSQ43FGa-avT3rNXfz6JNRgl1wl0dpkolfb8PDzhZyn3gLxUD8DPT0JlChuEAdnMvOSS9FkaaccGyg84euzMkRcLJC7KsrEB1bxGbuGNu202FEyd2mz4yWvKj-MS_OD9goUqv",
+            "type": [
+              "Photography service"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Duane Reade Photo",
+            "data_id": "0x0:0x60f657eab5072a81",
+            "data_cid": "6986868537483012737",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x60f657eab5072a81&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x60f657eab5072a81&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.791266300000004,
+              "longitude": -73.9444654
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x60f657eab5072a81%218m2%213d40.791266300000004%214d-73.9444654&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=0piIyH-9MgwdUffUGxHO0TM9iNW2yqNsOvkIIt45F_rBvxGilww-l_GAmyRYwKyOX-_aG0J97CBT1IdWj9SBi4bFI7aMyWEHrjFCt0VhfGl85P1R63eEjb-8UTAs75ULOnL5toY3xTyWshIzSactp2QelYzTy1Dz",
+            "type": [
+              "Photo lab"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "CVS",
+            "data_id": "0x0:0xa1b68debbbbb69ad",
+            "data_cid": "11652657129474189741",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa1b68debbbbb69ad&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa1b68debbbbb69ad&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.731882,
+              "longitude": -73.9824866
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa1b68debbbbb69ad%218m2%213d40.731882%214d-73.9824866&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.9,
+            "reviews": 291,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF79z1kSOG539SvTJCnOWFA8in-I1fI1oRrHpnSkslslsnOMQeiPt9gbNUvZ4RXAtT1xKAL6RlDp9jWo9J_RHmmOqq_qzpILfqVb_uQxobLNe9KlQlcU0TdGI7YcX7z206Q0s8o=w156-h156-n-k-no",
+            "type": [
+              "Drug store",
+              "Beauty supply store",
+              "Beer store",
+              "Convenience store",
+              "Cosmetics store",
+              "Greeting card shop",
+              "Perfume store",
+              "Stationery store",
+              "Vitamin & supplements store",
+              "Wine store"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Now: Usually not too busy",
+        "time_spent": "People typically spend 10-45 min here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "10 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 81
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "10 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 81
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 95
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 85
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 73
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "10 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 43
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 46,
+            "current": true
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 37
+          },
+          {
+            "time": "10 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 29
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 81
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 67
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "10 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 39
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 45
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 40
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 37
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "9 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "10 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oh4KHCIYRHVhbmUgUmVhZGUgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COh4KHCIYRHVhbmUgUmVhZGUgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

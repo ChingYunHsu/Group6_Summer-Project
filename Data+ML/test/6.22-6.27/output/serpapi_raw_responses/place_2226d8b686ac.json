@@ -1,0 +1,485 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1f42f47f8c2f4d0aa17",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/BNQTRXI4NWSD7nPAxbtSRg/6a3ac1f42f47f8c2f4d0aa17.json",
+    "created_at": "2026-06-23 17:27:16 UTC",
+    "processed_at": "2026-06-23 17:27:16 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258e51e770df9:0xff1c9baadef1fe2e!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/BNQTRXI4NWSD7nPAxbtSRg/6a3ac1f42f47f8c2f4d0aa17.html",
+    "prettify_html_file": "https://serpapi.com/searches/BNQTRXI4NWSD7nPAxbtSRg/6a3ac1f42f47f8c2f4d0aa17.prettify",
+    "total_time_taken": 0.34
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ-Q13HuVYwokRLv7x3qqbHP8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "MR Primary Care (formerly Lexington Medical Associates)",
+    "place_id": "ChIJ-Q13HuVYwokRLv7x3qqbHP8",
+    "data_id": "0x89c258e51e770df9:0xff1c9baadef1fe2e",
+    "data_cid": "18382738937206668846",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e51e770df9%3A0xff1c9baadef1fe2e&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e51e770df9%3A0xff1c9baadef1fe2e&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.760990199999995,
+      "longitude": -73.96878079999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ-Q13HuVYwokRLv7x3qqbHP8",
+    "provider_id": "/g/1vhq4mf5",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDYrphM6QF0FYCPltWGrQSatxYl7joNZt817VcWZUYXajw0dUk0RQ3HX5smrqtFofcfWrhvMzMrkTeBUDLftk2yOG8CcTlbSLN0XDxF8j73QbzyNfRBM1eytsZCK2MEM58a20adIDpGT8t=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Oc5qHXicHcTbboIwGADgJ0IKRGmW7EJB0MwyqzAOd1gLDVTK2t8DvuSufRuTfRff608AjObDtqXwZq1SreRXwzVTA_ABZkxd7HY0FjOWsZf7hPbLOCz1KMiCRigqg72EPNb0WMOjlH6nkgqw4_-wvMrKou7u6Jz16EC9TTE3F_0LkWpYk2txI0-i-5SvsnDXQO9O3zEOWCpPx12CivAR4c736Ok5Jc1hRRw-gamCL5esyRzXLqrP23CMUwyfdwchZIn_mTW8AdleR2Y",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 49
+      },
+      {
+        "stars": 2,
+        "amount": 9
+      },
+      {
+        "stars": 3,
+        "amount": 5
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 308
+      }
+    ],
+    "rating": 4.4,
+    "reviews": 375,
+    "type": [
+      "Medical clinic",
+      "Doctor",
+      "Medical Center",
+      "Medical office",
+      "Physical examination center",
+      "Physician referral service",
+      "STD clinic",
+      "STD testing service",
+      "Walk-in clinic",
+      "Weight loss service"
+    ],
+    "type_ids": [
+      "medical_clinic",
+      "doctor",
+      "medical_center",
+      "medical_office",
+      "physical_examination_center",
+      "physician_referral_service",
+      "std_clinic",
+      "std_testing_service",
+      "walk_in_clinic",
+      "weight_loss_service"
+    ],
+    "menu": {
+      "link": "http://places.singleplatform.com/dr-george-p-liakeas/menu?ref=google",
+      "source": "places.singleplatform.com"
+    },
+    "book_online": "https://www.zocdoc.com/practice/mr-primary-care-4088?LocIdent=58316&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_WNc-Qjhsk0KZGOqErv7Mmx-lo_r4zYZ4HP6E2o5mUYWmNbSB-entity&rwg_token=AE37R_idubPOS_qF0M_cnsWaU8buCeC73iFORxnIwSydh-sk83M_9EGdv_wEzH-so6Jw2XR11StY55MczpqB9liruIiQh8XSDg%3D%3D",
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "139 E 57th St 8th Floor, New York, NY 10022",
+    "country": "United States",
+    "website": "https://www.mrhsclinics.com/primary-care-new-york/midtown-manhattan?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=midtown",
+    "phone": "(212) 750-5088",
+    "open_state": "Open \u00b7 Closes 6:30 PM",
+    "plus_code": "Q26J+9F New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20136:30 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      },
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c258e51e770df9%3A0xff1c9baadef1fe2e&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipME6jhoynF9z27OapcdxR-x9ZSwHlKhSJ5ZRDWk=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEOeJ5oWvzNPDggE&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Women's Health Wednesdays: Birth Control and Reproductive Health\t\n\nHave questions about birth control options? Concerned about your menstrual cycle? Women's Health Wednesdays are a great time to talk through your reproductive health in a comfortable, private setting.\n \nEvery Wednesday from 1:00 to 4:30 PM with Dr. Hernandez and Pamela Cameau. Book through ZocDoc.\n \nWe are here to offer judgment-free, expert guidance tailored to you.",
+        "date": "4 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNQnok2z2-3f5MyjmP87SYaVGDm7MfeGvaQDEpa=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEKGHxPLg_sOTag&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "On-Site Lab Testing - Fast and Convenient\t\n\nNeed bloodwork or lab tests? We offer in-office lab testing so you do not have to make a separate trip to an outside facility.\n \nWe test for lipids, blood sugar, thyroid, STDs, urinalysis, and more. Your results and follow-up are handled by your provider right here at the same location.",
+        "date": "Jun 12, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPvuVlaxKzpCd_Pp79S09g9SUaT-xWaoHO2nxOG=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEKX9guOf4sm6OQ&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Same-Day Sick Visits Available\t\n\nGetting sick never happens at a convenient time. We get that.\n \nMR Primary Care in Midtown offers same-day and next-day sick visit appointments for colds, flu, sore throat, UTIs, and more.",
+        "date": "Jun 5, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMhYCvY8Do7HqocqizsABqER1FLDb-n6luJVPl0=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEP6Xh8eW-MmLIw&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Chronic Disease Management at Midtown\t\n\nManaging a chronic condition like diabetes, high blood pressure, or high cholesterol? Our Midtown primary care team provides ongoing, personalized management to keep you healthy and out of the hospital.\n \nWe handle regular monitoring, medication management, and lifestyle guidance. Think of us as your long-term health partner.",
+        "date": "May 29, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPfSO3jAeP0r62Z4oPdUmo7G3FREPMRsXBilnZs=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKELOw-t2_vq2IJw&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Annual Wellness Exams - Covered by Most Insurance\t\n\nYour yearly physical is one of the most important things you can do for your health. At MR Primary Care in Midtown, we make it easy and stress-free.\n \nWe review your health history, run necessary labs, update vaccines, and create a personalized care plan, all in one visit.\n\n Book your annual exam today.",
+        "date": "May 22, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPeDF9-BRUC9BpKaGYtTMjr2ybxPEsd9YPdR5J5=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEL2S6uOp2J6IzwE&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Women's Health Wednesdays: What to Expect\t\n\nCurious about Women's Health Wednesdays? Here is how it works:\n \nEvery Wednesday from 1:00 PM to 4:30 PM\n\nIn person at MR Primary Care, 10022\n\nSeen by Dr. Hernandez and Pamela Cameau\n \nInitial visits and procedures run about 45 minutes. Follow-up visits are shorter, around 15 minutes, so you always have the right amount of time for your care.\n \nOur goal is to keep things simple by handling your evaluation, testing, and follow-up all in one place. Book through ZocDoc.",
+        "date": "May 15, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOOQZjdVb_OB5sibEBQAcrw18sBihj31FCNaBZ_=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEO3P0_Gr4I6EZg&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Introducing Women's Health Wednesdays\n\nWe are excited to offer Women's Health Wednesdays at MR Primary Care in Midtown!\n \n Every Wednesday from 1:00 PM to 4:30 PM, Dr. Hernandez and Pamela Cameau see patients for a range of women's health visits including:\n - Annual exams and Pap smears\n - Birth control counseling\n - Menstrual health concerns\n - Menopause and perimenopause\n - Hormone-related issues\n - Mental health conditions\n - UTI and STD testing and treatment\n \n Book through ZocDoc. In-person visits at our 10022 location.",
+        "date": "May 8, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOT4A03k8C-vYbLy-hUAHorqH5FvxrxKoS9CzDs=h400-no",
+        "cta": "Book",
+        "link": "https://www.mrhsclinics.com/primary-care-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKENWl34iRt726VQ&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Welcome to MR Primary Care - Midtown (10022)\n\nConveniently located in Midtown NYC (10022), MR Primary Care is your destination for comprehensive, high-quality adult primary care.\n \n From annual physicals to chronic disease management, our team is here to support your health every step of the way. We are accepting new patients. Book online today!",
+        "date": "May 1, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPb1YAa6LVYQrxlpXEAsOkc5cXGJDFyrqF-rtVg=h400-no",
+        "cta": "Learn more",
+        "link": "https://www.mrhsclinics.com/primary-care/annual-physicals-in-new-york",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEPvX143GhO6tTw&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "Your yearly physical is one of the most important things you can do for your health. At MR Primary Care in Midtown, we make it easy and stress-free.\n\nWe review your health history, run necessary labs, update vaccines, and create a personalized care plan, all in one visit.\n\nBook your annual exam today.",
+        "date": "Apr 24, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMAvb7NVUPJgwzBDbdXBx9A6xNQ1wrlsSiJj68r=h400-no",
+        "cta": "Book",
+        "link": "https://www.zocdoc.com/practice/mr-primary-care-4088",
+        "post_link": "https://search.google.com/local/posts?q=MR+Primary+Care+(formerly+Lexington+Medical+Associates)&ludocid=18382738937206668846&lpsid=CIHM0ogKEOPN2ZWl5qeqYA&source=sh/x/loc/post&lsig=AB86z5X4xBVNmRJOAm0Lk4SVHs1S",
+        "description": "We are excited to offer Women's Health Wednesdays at MR Primary Care in Midtown!\n\nEvery Wednesday from 1:00 PM to 4:30 PM, Dr. Hernandez and Pamela Cameau see patients for a range of women's health visits, including:\n\n- Annual exams and Pap smears\n- Birth control counseling\n- Menstrual health concerns\n- Menopause and perimenopause\n- Hormone-related issues\n- Mental health conditions\n- UTI and STD testing and treatment\n\nBook online for in-person visits at our Midtown Manhattan location.",
+        "date": "Apr 20, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDYrphM6QF0FYCPltWGrQSatxYl7joNZt817VcWZUYXajw0dUk0RQ3HX5smrqtFofcfWrhvMzMrkTeBUDLftk2yOG8CcTlbSLN0XDxF8j73QbzyNfRBM1eytsZCK2MEM58a20adIDpGT8t=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Oc5qHXicHcTbboIwGADgJ0IKRGmW7EJB0MwyqzAOd1gLDVTK2t8DvuSufRuTfRff608AjObDtqXwZq1SreRXwzVTA_ABZkxd7HY0FjOWsZf7hPbLOCz1KMiCRigqg72EPNb0WMOjlH6nkgqw4_-wvMrKou7u6Jz16EC9TTE3F_0LkWpYk2txI0-i-5SvsnDXQO9O3zEOWCpPx12CivAR4c736Ok5Jc1hRRw-gamCL5esyRzXLqrP23CMUwyfdwchZIn_mTW8AdleR2Y"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "25 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMEexTNNFnTjhEZVOlIoXyInJ7o9HAwa6Zxaq68IFIpwAa221TKFyRAiuj1riN1teiIaoRwEtyTj-ilHZZwmoKktpF-0bgkhdlJePUMAkWqhIhN8UBc5dKKo1iKOXCyAbt9ATPmTKJ-WM=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/im8cv3icHcTdbsIgGADQJ8IWlzld4gWaNlJS7Az-pHcVSaGlfFUw2Jf0fm-zZOfi_L51CKP_ThKrP2YtQGvV06uHBBeUCzMJQ9KOHkmPfEIq_tOTrMzUS3CeO9HprD7tLYXLRF3xBasdic2ifjX3xZLmdIykmc-xYPl0IObZ4YfhOChDGzjELEyiQ8bu6joOwPow5ii9tr2-2UJVx5L057ummi-PG_l5YwywYfvLdiLXsCKiGgQr0LlcR5ymKdL_S-T-AI4TR2E"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMEexTNNFnTjhEZVOlIoXyInJ7o9HAwa6Zxaq68IFIpwAa221TKFyRAiuj1riN1teiIaoRwEtyTj-ilHZZwmoKktpF-0bgkhdlJePUMAkWqhIhN8UBc5dKKo1iKOXCyAbt9ATPmTKJ-WM=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/im8cv3icHcTdbsIgGADQJ8IWlzld4gWaNlJS7Az-pHcVSaGlfFUw2Jf0fm-zZOfi_L51CKP_ThKrP2YtQGvV06uHBBeUCzMJQ9KOHkmPfEIq_tOTrMzUS3CeO9HprD7tLYXLRF3xBasdic2ifjX3xZLmdIykmc-xYPl0IObZ4YfhOChDGzjELEyiQ8bu6joOwPow5ii9tr2-2UJVx5L057ummi-PG_l5YwywYfvLdiLXsCKiGgQr0LlcR5ymKdL_S-T-AI4TR2E"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjxcPwx6IUE7zsV9YIEKg-sJ0hNumlL0CYJqe4orkNPEgS0TKu2YXMvnriZXz75qrcIYPKX2CUQtZbd554Cyd4NzD4IgrnQjOeDccQrLPGSEpWEn9gMbYl4a_SByseiqZi-tqe=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/SidkLnicHcTbDoIgAADQLyKpsFZbD6WszDKcXcSXVsTQMlDALv5g39DftHUezveTW1uZseOUeb8jlBIlbwzXTEnLpe0wdXdEZQAzwDhTEsW36eL6YuT5GgQ7PGzNfkQDHApgljCPmnu5gh5d1hwpfYsIFgnchk2PpuuH1EWWtkO31iygJEx73i622fniush7X1DU-igQWsbXDfcZi_WKzBNcHbAcifWZluh0TGZvw4s6K4Ct-eTZhRCC_D8D8gd670VQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LWnLWQBmCpZwCgmiUj9JqA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=23.948418&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/AQjfiHicHc09DoIwFADg23SzBWQAk8Yom2FxMCQupNZKn-nP0z6LXsdbeRuN4zd9n7clwrQSItHdGMpgZoSncWmBik8xTs4ohMR19CKXguzDn4ICt0YVIpxlP4R-2G99h8e5mzwcru3utmH6NGoHJpD0CtOYMielCZzhEyY2y6qqmZVV27CX-mnJ27qpy4YhkLayYP_nErMsi-ILA6A6Ww"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I\u2019ve been able to get access to refills, new medications, and referrals.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL_xwJgIOcdiTWspg_qDy85jFK2C6fDYqNCzKPxvrYg5BLZxA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Excellent service, polite staff, professional doctor\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLV7_eH7zGY4O1KW0gPvBAPX22AXwDNSaLXw5AsvIRAAm9_cw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Great office and professional staff, the whole vibe seems very clean and nice.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKtbUWxGk97GPXzyiHRWC3s9D46mDKn89CsTXAWaBL5Ao3wJQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Mike Baker",
+          "rating": 5,
+          "contributor_id": "108293436607973328445",
+          "user_review_count": 6,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWUmgT3M6izxCkJaR6o1WNtyvxAKWwEHvbtr2DeAlC8vDR72_Sh=s120-c-rp-mo-br100",
+          "description": "Dr. Liakeas has been my primarily care physician for going on 15 years now, and his exceptional care runs laps around other doctors I\u2019ve seen over the years. Healthcare can be a tough subject for most due to inadequate care from providers, but Dr. Liakeas always takes the time and effort to make sure you feel your needs are met and your questions are answered. The best doctor in NYC, in my opinion.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGeGNGaDBkR0V3ZG5wVFQzazBRbFpXTUdGb2QwRRAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOjFxcFh0dGEwdnpTT3k0QlZWMGFod0E%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-09T16:29:55+00:00"
+        },
+        {
+          "username": "Owen Tressider",
+          "rating": 2,
+          "contributor_id": "107650120537271844134",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXh7yMIlPUgEZXQLlUjBUjW1KB_T6eADs7OcJIhVO4o8Bx9tcml=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been a patient of this practice for several years, back when it was Lexington Medical Associates, and I want to be clear up front that the individual doctors here have been excellent. I\u2019ve received genuinely high-quality care from Linda Jordan, Katelynn O\u2019Keefe (who have both moved on to other practices) and most recently Ester Shavalian. They are all attentive, compassionate, and skilled clinicians.\n\nUnfortunately, the practice itself has declined significantly, particularly since the management change and rebrand to MR Primary Care.\n\nWhat used to be a smooth, accessible office has become very difficult to navigate. Phone access is unreliable, calls frequently disconnect, and reaching a live person can take dozens of attempts. Online scheduling, refill requests, and referrals are confusing and often insufficient for time-sensitive needs. When issues arise that aren\u2019t emergencies but still can\u2019t wait two business days, the lack of reliable human contact is concerning.\n\nThis isn\u2019t just an inconvenience, but also a patient safety issue, especially for elderly patients, people with chronic conditions, or anyone who isn\u2019t comfortable relying entirely on apps and portals. Being told to \u201cwalk in\u201d or go elsewhere when phones don\u2019t work is not a realistic solution for many patients.\n\nAbout a year ago, I had an issue during a routine blood draw that resulted in significant bruising on my arm that lasted over a week. I was extremely disappointed as this was a first for me with Lexington Medical. Since the bruising was quite severe 11 days later, I decided to leave a Google review in the hopes that they would hear my concerns. After I posted the review, a few office administrators as well as the managing doctor, Rohit Reejsinghani, reached out by phone and apologized, which I appreciated. I eventually removed my review in good faith that the practice was taking measures to improve patient safety and communication. However, taken together with the current access problems, it reinforced a sense that systems and oversight have slipped, even though the doctors themselves remain strong.\n\nThe practice also no longer accepts many HMO insurance plans (they now only take PPO), which may further limit access and continuity of care for some patients\n\nI\u2019m sharing this so prospective patients can make an informed decision. If you value responsive staff, reliable phone access, and smooth care coordination, you may find this practice frustrating in its current form.\nWith stronger operational systems, this could once again be an excellent primary care office.\n\nI genuinely hope it improves, as this was once the best doctor\u2019s office I\u2019d ever been to.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGQ01WcFRaVkZPUzBsdVFrUmFhVVp6TmpSbWMyYxAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOjFCMVpTZVFOS0luQkRaaUZzNjRmc2c%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-13T19:42:21+00:00"
+        },
+        {
+          "username": "Ludovica Bonetti",
+          "rating": 3,
+          "contributor_id": "104867775245993581571",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI061gIDnruy5ZkPhNHXzW6ULBBs4ddm-jWOfr0HCbhnI0kgA=s120-c-rp-mo-br100",
+          "description": "I would have loved to give 5 starts because Dr. Shavalian is great!\nCaring and professional!\nUnfortunately however it is absolutely impossible to talk to a person when calling and they NEVER call back. The girls at the front desk are instructed NOT to answer the phone which is extremely unsettling. Being a doctor's office when patients call they expect to be connected to a DOCTOR or have their questioned answered. Patient will call a doctor's office because they need a doctor not to press button and have a recording telling them to leave a message and that they will TEXT back after 24 hours. A patients needs a reply when they call not after 24 hours! This is not acceptable and needs to improve. It sure has changed from when Dr. Liakeas was in charge.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pRemFVbEZlbXRzUVdKSVEybE1RMHhsV0VOa1UyYxAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOjQzaUlFemtsQWJIQ2lMQ0xlWENkU2c%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-08T16:32:38+00:00"
+        },
+        {
+          "username": "YD",
+          "rating": 1,
+          "contributor_id": "113084478142887251023",
+          "user_review_count": 16,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXW3DsDCn4-4pfyaqJIKQ1CXMweHQxPPwE4TZ6PQdF9QOZ4JZQ=s120-c-rp-mo-br100",
+          "description": "Definitely agree with quite a few patients\u2019 recent reviews. The doctors are great just the admin / front desk unhelpful. For some reasons, they never answer the phone. Probably will be my last time visit and very sad!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21odlNrRjBaVVJ5ZFVaWlkxbEtVSFpNVmtkbWFIYxAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOmhvSkF0ZURydUZZY1lKUHZMVkdmaHc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-14T20:33:47+00:00"
+        },
+        {
+          "username": "kev cho",
+          "rating": 4,
+          "contributor_id": "108050118431609249631",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKtbUWxGk97GPXzyiHRWC3s9D46mDKn89CsTXAWaBL5Ao3wJQ=s120-c-rp-mo-br100",
+          "description": "Great office and professional staff, the whole vibe seems very clean and nice. The only issue was it took me a while to be seen and I was already 20 minutes early for my appointment..",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psalVEaFRjRkZXU0RNM05HWktUa05oVTNsdFdsRRAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOjljUDhTcFFWSDM3NGZKTkNhU3ltWlE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2025-12-25T23:09:17+00:00"
+        },
+        {
+          "username": "Wu Meng Hui",
+          "rating": 1,
+          "contributor_id": "111979855243772171133",
+          "user_review_count": 35,
+          "user_photo_count": 11,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ37tMJooSveESJXxzNj_5CBEPGI_Mr13fZnNxvwVreXdzH3Q=s120-c-rp-mo-ba12-br100",
+          "description": "Have a billing issue that went unresolved for months now. I have been calling but there\u2019s never any updates. I don\u2019t know what stage they are at with my issue.\n\nPrice is unclear until I paid. Service is slow and unresponsive.\n\nI don\u2019t know how to reach someone to resolve my issue because they are so opaque with their process.\n\nI\u2019m forced to leave this review.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aVVpXZzNXamRCWjJOSlJIbFdWM0JmTmtOa1NIYxAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOnZUZWg3WjdBZ2NJRHlWV3BfNkNkSHc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-14T13:07:33+00:00"
+        },
+        {
+          "username": "M K",
+          "rating": 1,
+          "contributor_id": "111372149143423771176",
+          "user_review_count": 27,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIBfnqJDW_H2n-65p81R9V9dbaZfgOeqd9lmzGUgDxkiMiT9g=s120-c-rp-mo-ba12-br100",
+          "description": "I would give me a zero if I could. Not sure how people rate them well. They are the worst. Everyone in the office is unhappy, they fight with each other while you are there. They don\u2019t respond to your calls or emails. Find a different doctor.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t4RFlVNUpkaTFoUjJsb1JtTTVkVWxaVlRKUk1GRRAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOkxDYU5Jdi1hR2loRmM5dUlZVTJRMFE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-11T15:19:41+00:00"
+        },
+        {
+          "username": "La Chelle Gopaul",
+          "rating": 5,
+          "contributor_id": "115585879491457691777",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK_CPfHPB3AbNrZsWGFocPhBPunl80hzwJgy7bzbmPOSyXrAA=s120-c-rp-mo-br100",
+          "description": "From the very first visit, they have been thorough, attentive, and genuinely caring. They take the time to listen to my concerns, explain things in clear and understandable language, and never make me feel rushed.\n\nTheir staff is also professional and courteous, and scheduling has always been efficient. Whether it's routine checkups, follow-ups, or managing ongoing health concerns, I always feel like I'm in good hands. I especially appreciate their proactive approach to preventive care and their prompt follow-up with lab results or referrals.\n\nI highly recommend this office to anyone looking for a knowledgeable and compassionate PCP who truly prioritizes their patients' well-being.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWa2N6YzFkVWhJUTJKV01uRlRRMlpZYTJkWVRGRRAB!2m1!1s0x0:0xff1c9baadef1fe2e!3m1!1s2@1:CAIQACodChtycF9oOkVkczc1dUhIQ2JWMnFTQ2ZYa2dYTFE%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-06-25T21:10:49+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Lexington Medical Services PLLC",
+            "data_id": "0x0:0xa3ea9359e67ab3d0",
+            "data_cid": "11811414987060720592",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa3ea9359e67ab3d0&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa3ea9359e67ab3d0&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7630942,
+              "longitude": -73.9649721
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa3ea9359e67ab3d0%218m2%213d40.7630942%214d-73.9649721&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=KqqLiBU8nDiKkbASkgJi5b894wBoTsE4yeahdINO0Z2-L8Nv8DMQqgaOKHky1KsZqmwMqNlN5YuGuqE23qG7X0L9Lo8fKiXYHWh8Jh80p7tROHnydxn90rQ1hjbWRdHRfJXmbIROa_aMfU8a13NJOhKSe0pghCm3",
+            "type": [
+              "Psychologist",
+              "Sleep clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "George Liakeas, MD",
+            "data_id": "0x0:0xd6857bf6d58a24c",
+            "data_cid": "966118599755866700",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd6857bf6d58a24c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd6857bf6d58a24c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7606362,
+              "longitude": -73.9696802
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd6857bf6d58a24c%218m2%213d40.7606362%214d-73.9696802&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=W_jjXGIjCalnF3B-yik2xKRuYml7vYa7LE0aTtA2L1C3DTA8QOCqYUMc66k11Lipk3F0nLQWY3I2uaf8P5N0woGSy7T3OgmctLGHMuEoWk11peFChldRLR-Vk9e57FpKJoSHJf3dNzYo6uG2QI1H6tfondlZgcdA",
+            "type": [
+              "Family practice physician"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Lex Med Group",
+            "data_id": "0x0:0x130778e06f396c6d",
+            "data_cid": "1371197516891647085",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x130778e06f396c6d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x130778e06f396c6d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7517567,
+              "longitude": -73.975518
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x130778e06f396c6d%218m2%213d40.7517567%214d-73.975518&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=dm2HdGBSIgUYE3iFIy8PEP8EUra6yUu_iqgNktKzW7l0xmI944COsIAD3aYd_K3SRDnVQd1h3FC-nJ-GabhfW3MpGYtJO8sCqo3wzaGxEQSjftm-RPcDLYfkMiqXh-ikLm3vxWrHQiJy5-GXvq7rBxFxiEiSp1wt",
+            "type": [
+              "Medical group"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Medical Associates of New York",
+            "data_id": "0x0:0xaea6a1e375a75a71",
+            "data_cid": "12584924207036979825",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xaea6a1e375a75a71&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xaea6a1e375a75a71&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7571185,
+              "longitude": -73.9633835
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xaea6a1e375a75a71%218m2%213d40.7571185%214d-73.9633835&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 20,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH89jBxt3uFVtAM78SSYIXGCK1MfHUCPBU_F5R9_6lfeGHdAIMl2APXKXv2Os3oFU-aatms6PgIc-T0lmdTfwUJwtccOPbls6gqGHlbJQDv6CFrTL9FPkbbk_LnF__BUCmmIXUF6Q=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Cardiologist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Park 55 Medical Associates",
+            "data_id": "0x0:0x16e854f4fe02491c",
+            "data_cid": "1650662674641602844",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16e854f4fe02491c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16e854f4fe02491c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7598792,
+              "longitude": -73.97117709999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x16e854f4fe02491c%218m2%213d40.7598792%214d-73.97117709999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 2,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEGBgUkbnB9Jh0BqNA56HUC5rdznxybALwXUHyeD7HuM13k354hxmA8PReV8vSIY-Nf8VFtRKF3_wrc8ll33sx0mNjr5fPeSEQqzdTnS_anI3OnAtNotzCRhYrraErMDGSIfZa7=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "General practitioner",
+              "Internal medicine ward",
+              "Internist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkoKSCJETVIgUHJpbWFyeSBDYXJlIChmb3JtZXJseSBMZXhpbmd0b24gTWVkaWNhbCBBc3NvY2lhdGVzKSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkoKSCJETVIgUHJpbWFyeSBDYXJlIChmb3JtZXJseSBMZXhpbmd0b24gTWVkaWNhbCBBc3NvY2lhdGVzKSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

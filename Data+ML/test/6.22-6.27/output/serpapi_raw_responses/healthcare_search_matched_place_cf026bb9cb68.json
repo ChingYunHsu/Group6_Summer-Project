@@ -1,0 +1,300 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e566561a6da0b29f0f7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/_9hiJS4xmsrU6e165JC3JA/6a3d3e566561a6da0b29f0f7.json",
+    "created_at": "2026-06-25 14:42:30 UTC",
+    "processed_at": "2026-06-25 14:42:30 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f673d565299f:0x6414fd717cbf1d8b!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/_9hiJS4xmsrU6e165JC3JA/6a3d3e566561a6da0b29f0f7.html",
+    "prettify_html_file": "https://serpapi.com/searches/_9hiJS4xmsrU6e165JC3JA/6a3d3e566561a6da0b29f0f7.prettify",
+    "total_time_taken": 0.51
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJnyll1XP2wokRix2_fHH9FGQ",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Harlem Medical Group",
+    "place_id": "ChIJnyll1XP2wokRix2_fHH9FGQ",
+    "data_id": "0x89c2f673d565299f:0x6414fd717cbf1d8b",
+    "data_cid": "7211667567193038219",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f673d565299f%3A0x6414fd717cbf1d8b&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f673d565299f%3A0x6414fd717cbf1d8b&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8137158,
+      "longitude": -73.9445035
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJnyll1XP2wokRix2_fHH9FGQ",
+    "provider_id": "/g/11ckvb7387",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=dr2zC3klisXf4DFpv3e5XA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=94.80035&pitch=88.28886&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Nga7u3icHY1NDsIgGAVvw06gfwZNiDEaz9CdoZTCF2khgKAeyDt5G6ubt5hJ5n3eJiUf94TEFJRKGVTx8FA2brzA2jltlfAQsXQzyRVJ5j4PiwB78GJxMPIx1K9Tc7MQ-6k9X3xuVNcfkRyu0oJaEo9KBGmwLmsxuBFrH1HhbIvMb56i8F2LGaVNhzwkuVKGa8ZW9_-aXOYVpV_TIjrV",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 23
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 6
+      }
+    ],
+    "rating": 2,
+    "reviews": 33,
+    "unclaimed_listing": true,
+    "type": [
+      "Medical group"
+    ],
+    "type_ids": [
+      "medical_group"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair-accessible entrance",
+          "Wheelchair-accessible toilet"
+        ]
+      },
+      {
+        "amenities": [
+          "Toilet"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "address": "2257 Adam Clayton Powell Jr Blvd, New York, NY 10027, United States",
+    "country": "United States",
+    "website": "https://hmgnyc.info/",
+    "phone": "+1 212-281-5252",
+    "open_state": "Open \u00b7 Closes 5 pm",
+    "plus_code": "R374+F5 New York, USA",
+    "hours": [
+      {
+        "thursday": "9 am\u20135 pm"
+      },
+      {
+        "friday": "9 am\u20135 pm"
+      },
+      {
+        "saturday": "9 am\u20132 pm"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 am\u20135 pm"
+      },
+      {
+        "tuesday": "9 am\u20135 pm"
+      },
+      {
+        "wednesday": "9 am\u20135 pm"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=dr2zC3klisXf4DFpv3e5XA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=94.80035&pitch=88.28886&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YduBJnicHc1hDoIgFADg2_AvQNSGbay1Wmfwn0MkfQvlTV5YnagrdZu2vgt8389EhOkgRKLVe8rgN4SnD2mHlo8xjsFbhMRdnEUuBE2PuV8shCPaJcJghlW9z-U9QGpv1eWKufR1e2Ku71wAv5CZLaYuZU7WEQTPR0xsM0pVbDKq0exlN9NUXEtZ1gyB3GS05kprvWf_7RazKaT8AU-BO2w"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=dr2zC3klisXf4DFpv3e5XA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=94.80035&pitch=88.28886&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YduBJnicHc1hDoIgFADg2_AvQNSGbay1Wmfwn0MkfQvlTV5YnagrdZu2vgt8389EhOkgRKLVe8rgN4SnD2mHlo8xjsFbhMRdnEUuBE2PuV8shCPaJcJghlW9z-U9QGpv1eWKufR1e2Ku71wAv5CZLaYuZU7WEQTPR0xsM0pVbDKq0exlN9NUXEtZ1gyB3GS05kprvWf_7RazKaT8AU-BO2w"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"The waiting area was clean and comfortable, and my wait time was minimal.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXZgcVffT29yZ-K1yf8DI95xk0uG2YqxsgPgu5LxBrD18V5Jy4H=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"They couldn't find it on their system and denied me service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIb8Y7ffYy0nxr0M1DGgHUhzZrukCorHOtEfADND_aBohFkfMkF=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The whole staff is very unorganized.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVxAu6pvTb681chtdXGxSqfyc_3dbF-MT1gGUPa_FaBiVra0ggCnw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Suad Alselwadi",
+          "rating": 5,
+          "contributor_id": "111199969000819835613",
+          "user_review_count": 11,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXZgcVffT29yZ-K1yf8DI95xk0uG2YqxsgPgu5LxBrD18V5Jy4H=s120-c-rp-mo-br100",
+          "description": "Here\u2019s a 5-star review for a doctor\u2019s clinic:\n\n\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f\u2b50\ufe0f\nThe staff was incredibly welcoming and attentive from the moment I walked in. The waiting area was clean and comfortable, and my wait time was minimal. Dr. Rashan  was exceptional patient, thorough, and genuinely listened to all my concerns. They took the time to explain everything clearly and made sure I felt comfortable with the treatment plan. The follow-up process was smooth, and I felt supported every step of the way. Highly recommend this clinic to anyone seeking compassionate and professional care",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURYMV82dHV3RRAB!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgIDX1_6tuwE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-10-31T22:19:36+00:00"
+        },
+        {
+          "username": "mariel valera",
+          "rating": 1,
+          "contributor_id": "114512961284760888249",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWQkKiSps8bKugowU_AbJUXDroxXYT-N6xLdSbo4oNqizsfSQ3A=s120-c-rp-mo-br100",
+          "description": "About two weeks ago I scheduled an appointment. I been to this location before and I can say that I agree with some of the other reviews about the staff being unprofessional. I like the Gynecologist that I was assigned and that\u2019s the only reason why I returned. However, this time I show up to my appointment and they notify me that my insurance is no longer accepted. I got reminder calls and emails about this appointment which is great but I guess no one had the efficiency to notify me that my insurance was no longer  accepted. Then the lady at the front desk had the audacity to tell me \u201c it\u2019s right there in the poster\u201d as if is my fault for this issue. If you consider this location, just make sure that you triple check so they don\u2019t waste your time.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNDeThyMzFnRRAB!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgICCy8r31gE%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2020-09-03T13:49:40+00:00"
+        },
+        {
+          "username": "DivineDuchessofLight",
+          "rating": 5,
+          "contributor_id": "101464345393761968903",
+          "user_review_count": 44,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWKqiQ_Vr_2HIzPLxFMaQaQ4zfQ6o48HN_Vd53WwFPZNNossQB-hw=s120-c-rp-mo-ba12-br100",
+          "description": "My name is TH. They have been my family\u2019s primary medical doctor for years and have made an impact on our lives and wellbeing. I\u2019m very thankful to all of the doctors and staff that has supported me through my ordeal with my mother EH care. My family and I are hoping through the best will she is recovering in the hospital. I hope everything goes smoothly. Dr. Patel and Dr. PK we appreciate you both. \u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\ud83d\ude4f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNqdS0zNHl3RRAB!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgICju-34ywE%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-04-26T08:02:12+00:00"
+        },
+        {
+          "username": "Tommie Porter",
+          "rating": 1,
+          "contributor_id": "107726877844014712080",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVfvGbzaN8lPuTiP_Oa_BeQ8d4FwvTVi8w4_766J0VqDQPuF_U6gg=s120-c-rp-mo-br100",
+          "description": "I had an 11:30am appointment. I showed up on time. I waited in the lobby until 11:50 and then I went to the reception desk and asked how much longer before I would see the doctor. I was informed that there were 3 people ahead of me in line. And so I replied, \"I have an appointment\". And she replies \"so do they\". So when I asked why they make appointments that they cannot keep she looked at me rather puzzled and told me I'd have to wait. Until who knows. So I left.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN3M0pycldBEAE!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgICw3JrrWA%7C%7C?hl=en",
+          "date": "7 years ago",
+          "date_iso8601": "2018-07-30T20:26:29+00:00"
+        },
+        {
+          "username": "R M",
+          "rating": 1,
+          "contributor_id": "106294024896254002847",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK2ebNTvXPiwF1FkFFdCyz4KT1lS79_m0mjJqX1qsi3Or0hZr0=s120-c-rp-mo-br100",
+          "description": "I've been going to this doctor office since it.was.on 125 th st it was really.good.now it's not very great doctors don't listen they are over worked the team that take the notes 4 the doctor before u c the doctor are rude disrespectful don't listen and basically tell u what u need r how u should feel they want u to come in just 2 get refill on medication they abuse ur insurance",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25GeFVsOUxabVp3T1VWbGRqVkNiVlZvYkRaV2NVRRAB!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CAIQACodChtycF9oOnFxUl9LZmZwOUVldjVCbVVobDZWcUE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-11T15:41:07+00:00"
+        },
+        {
+          "username": "Natalie Nunez",
+          "rating": 1,
+          "contributor_id": "111693625335441944317",
+          "user_review_count": 30,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVgdNjGnq3iSR0w_ZnjqJKXgjjulRXsaX5LGDlN-L3kvS_5hvxy=s120-c-rp-mo-ba12-br100",
+          "description": "I do not recommend taking your baby to see the pediatrician here. It\u2019s horrible! Dr.Miles is good when handling the baby HOWEVER she give you no information what so ever when it comes to your child\u2019s health. I left the clinic clueless about what is going on with my baby. I asked her a question regarding if the situation was bad and she had the nerve to tell me I am not asking the right question and proceeded  to ignore my question. Please stay away from here. Also the front desk staff is not friendly. I keep hearing queens is the best for pediatrics!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURtdXRDVHFBRRAB!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgIDmutCTqAE%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2022-01-25T21:23:31+00:00"
+        },
+        {
+          "username": "Aleida Vera",
+          "rating": 1,
+          "contributor_id": "105324086731209165252",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU_Wr-47SY37nlkIMbLRWE2EKYLq_fr-IcCI3pCoiJDb8QgFusf=s120-c-rp-mo-br100",
+          "description": "Terrible,terrible service ! I get different doctors every time I go, I have to see a doctor every 3 months for refills which I can understand but if nothings changed n I don\u2019t have any immediate reason to see a doctor why don\u2019t they give at least a refill n schedule an appointment! No they absolutely are the worst reception I have ever encountered. The receptionist has a rude attitude n does not extend any client courtesy. He makes it difficult or better does not even help with communicating any message to a Doctor! It\u2019s just absolutely wrong . If you have an appointment n get there you\u2019re seen when your seen after they make it so you have to go in ! So dissatisfied n disappointed! Working on changing doctors! Please follow the reviews I am not the only one !",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN1MXBhZUhnEAE!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgICu1paeHg%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2022-07-27T18:35:23+00:00"
+        },
+        {
+          "username": "Mya Larae",
+          "rating": 1,
+          "contributor_id": "104612041383087614312",
+          "user_review_count": 11,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJvOQMXn7gKfTAnx7yV57Pv0nlpONymdUT-bdpIbgh2hBxUuA=s120-c-rp-mo-br100",
+          "description": "One of the worst establishments I\u2019ve been to.  Beyond unprofessional, I got a physical done and I\u2019ve been pulling teeth to try and get a copy of my physical.  It\u2019s been 3 weeks now and I have yet to receive the documents that I\u2019ve paid for.  The doctor gave me his word that they\u2019d email the physical but never did.  I will not be returning to this establishment.  Don\u2019t even waste your time coming here.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNwMDVMc3N3RRAB!2m1!1s0x0:0x6414fd717cbf1d8b!3m1!1s2@1:CIHM0ogKEICAgICp05LsswE%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-08-09T21:13:16+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Harlem Community Physicians",
+            "data_id": "0x0:0xdf62c896dab915ff",
+            "data_cid": "16096648568415786495",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdf62c896dab915ff&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xdf62c896dab915ff&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8126417,
+              "longitude": -73.9409774
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xdf62c896dab915ff%218m2%213d40.8126417%214d-73.9409774&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=x-lSHDaH_OQRGa0cJ5Ruj4tJrvFX39fKd74y1dF4UXVcAu9hNRuZnTIz1AyCr0W8bleTrzjMqLeHcTRRB2PiTsX8VVhlFy_fsbT1sNdjHRgAcrV9o4dIwgLklh2tdmJVvoV6DvQxsMcCii4p2t1J6JHnVStQsPEW",
+            "type": [
+              "Medical clinic",
+              "General practitioner"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Elsa J Reyes Medical PC",
+            "data_id": "0x0:0x2f86268b1c43663a",
+            "data_cid": "3424466945578329658",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2f86268b1c43663a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2f86268b1c43663a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7999862,
+              "longitude": -73.9443082
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2f86268b1c43663a%218m2%213d40.7999862%214d-73.9443082&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 33,
+            "thumbnail": "https://www.google.com/maps/vt/data=XpF-tu6moza0cNEyN4axPI_JCvUY1OMc966VNhZWbQ_2e7-ed2XfRsVt5fd7iapuffoqFCsPgK5dRLjk2SNSr-vRbXEoz0VvUME_Erb7fyEJL7CIyAEZ0x-czVI1kmpNzhxfuRM6yzSK0flyP10mjT0e_qn0T_Td",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjYKNCIwSGFybGVtIE1lZGljYWwgR3JvdXAgTmV3IFlvcmssIE5ZLCBVbml0ZWQgU3RhdGVzKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjYKNCIwSGFybGVtIE1lZGljYWwgR3JvdXAgTmV3IFlvcmssIE5ZLCBVbml0ZWQgU3RhdGVzKAI&q=local+guide+program"
+  }
+}

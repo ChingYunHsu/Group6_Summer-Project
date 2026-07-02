@@ -1,0 +1,797 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e38bd1c20be25ee8974",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/2MuwtN_jKPLzXIQl2Sm7qQ/6a3d3e38bd1c20be25ee8974.json",
+    "created_at": "2026-06-25 14:42:00 UTC",
+    "processed_at": "2026-06-25 14:42:00 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258fd2454a5ff:0xd9cabc15aeb02393!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/2MuwtN_jKPLzXIQl2Sm7qQ/6a3d3e38bd1c20be25ee8974.html",
+    "prettify_html_file": "https://serpapi.com/searches/2MuwtN_jKPLzXIQl2Sm7qQ/6a3d3e38bd1c20be25ee8974.prettify",
+    "total_time_taken": 0.73
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ_6VUJP1YwokRkyOwrhW8ytk",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "The Bayard Hotel",
+    "place_id": "ChIJ_6VUJP1YwokRkyOwrhW8ytk",
+    "data_id": "0x89c258fd2454a5ff:0xd9cabc15aeb02393",
+    "data_cid": "15693562652837028755",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd2454a5ff%3A0xd9cabc15aeb02393&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd2454a5ff%3A0xd9cabc15aeb02393&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7557861,
+      "longitude": -73.97201869999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_6VUJP1YwokRkyOwrhW8ytk",
+    "provider_id": "/g/1tj2pcn0",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGKxAl0y5l1Ms6BXXsOKq7LRDVB_Ee0hG_vhnkrSZQYHOpmNIK80Qde4seajKyL5lpN69ynuoJ8oeTYK2pyWuOaxxFOJ15SKNlIPrxklNr5pSafxwjMRu2m9dkTgVcHLz2IRa-L=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Vq7biXicHcTbDoIgAADQLyLR0i5bD7ZuhmFq6_biHJEsEUi0sB_sG_qbts7D-X5Y0yg9sSzO-r1CyoLTVtOaSNFQ0fSIrKxCaUA00Ja_w3Hpr5DxOexcbm-1NzuddIQewzCZH2bZgkK2yp5MlHV6ic_rSFU4QCMYX-lA0_yOutDlCnvjTrRyM5J0f0aO6o5tlBuzjDa2myLMg11tSo5rV6X5zbzu26R1qvG13BcHsg7fTpDkIJy-bAghYP8JED94ckVS",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 33
+      },
+      {
+        "stars": 2,
+        "amount": 12
+      },
+      {
+        "stars": 3,
+        "amount": 33
+      },
+      {
+        "stars": 4,
+        "amount": 138
+      },
+      {
+        "stars": 5,
+        "amount": 334
+      }
+    ],
+    "rating": 4.3,
+    "reviews": 550,
+    "pricing": {
+      "for_date": {
+        "start": "2026-07-01",
+        "end": "2026-07-02"
+      },
+      "all_options": [
+        {
+          "source": "Evendo",
+          "price": "$201",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszRhxFmZ9zWIYY44Kgru7SyWl4MqjbcVyBv6gT6VVoiF3AcU-_v--SGBAKgNvVYblYkOmnNurQcX6SAICq3DEy_GG1ppWWJgyzB3np4BJNgGNfbVmuwhc2DBPTaV9QZ4Xxhb-JS24aXXg7-80E99biaBRilmfemuV_oWPxjKhsFVuS3lm9_nviyG9ws74stJQ&pcurl=https://evendo.com/stays/best-western-plus-hospitality-house/23694510?check_in%3D2026-07-01%26check_out%3D2026-07-02%26who%3D%255B%257B%2522adults%2522:2,%2522children%2522:%255B%255D%257D%255D%26currency%3DUSD%26language%3Den%26country%3DUS%26utm_source%3Dgoogle%26utm_medium%3Dgooglehotels%26utm_campaign%3Dmapresults%26pdtax%3D32.41%26pdtotal%3D201.32%26prid%3D&s=AD1XQnkzeDnVFNNp_DfaQzfmOHfe"
+        },
+        {
+          "source": "trivago DEALS",
+          "price": "$208",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osz0Bkh1ZvROeoH1sktQ3nFKgEdi_IWJBPV7ERyEG4ZeEyZ485Rw1O5Ltmw0gFdvYxHv9-i1GWSHcMdUThVXsjdA9_2l9YUBoqej0t7nunU8FdwjGQ3_OwBS4hMy30XCAIXZNE0GHyRFQjScCWj9O7Ajl9F_FwLSqZGYeF5qLvZGWo92gaE9zNg-9sYajyvDSGAspJ8J8oTn&pcurl=https://www.trivago.deals/hotels/united-states_ny_new-york/125875_the-bayard-hotel?checkIn%3D2026-07-01%26checkOut%3D2026-07-02%26placeId%3DH125875%26campaignName%3DTrivagoDeals_Google_US%26currencyCode%3DUSD%26dealKey%3DCAIQjQYiDAjO6_TRBhCYzcHHAypaDQAAVUMVAABFQyWkcNdBLQAAYEAwATioBUUAAFVDSgwIyOv00QYQtM-HrgFiClN0YW5kYXJkIFNoAn0AAMhBggEAjQE9ilRDlQH2KGxAmAEBoAH3vkCoAcgGMI0GOLPXB0Dd9A9IAVIIacrXObisFD1YyAY%26countryCode%3DUS%26languageCode%3Den%26rule%3DGoogle_US%26site%3Dmapresults%26ads%3D%26origin%3D31%26priceDisplayedTotal%3D241.69%26priceDisplayedTax%3D59.12%26device%3Ddesktop%26adults%3D2%26children%3D0&s=AD1XQnlAsHzvdZ2g6afW8bBkN-W4"
+        },
+        {
+          "source": "Booking.com",
+          "price": "$227",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osz7QcepiJoy_MOnkYiPg9XpoFelcMbNTaoaEh-OxmfZGFAqWJFNHHOlarSkR4Bulp1Gv0ubAL5LSWVTTySc0s0lhHCcz2VKLIPg4lJORkNaMJNXJdX_8Qpg8B2TTmIlazTeXS8Rn0Y3GvalwXfNKLUju8LLsbbEqIqKFLk7XUtkKvn-iA1OJMwBpoHylzUvRmsL9Q&pcurl=https://www.booking.com/searchresults.en.html?dest_id%3D56113%26highlighted_hotels%3D56113%26dest_type%3Dhotel%26checkin%3D2026-07-01%26checkout%3D2026-07-02%26group_adults%3D2%26req_adults%3D2%26show_room%3D5611313_420833236_0_1_0%26lang%3Den%26selected_currency%3DUSD%26exrt%3D1.00000000%26ext_price_total%3D263.52%26ext_price_tax%3D61.92%26xfc%3DUSD%26hca%3Dm%26group_children%3D0%26req_children%3D0%26%26no_rooms%3D1%26ts%3D1782377186%26edgtid%3DEeMNR9x4RJW7xwb11Ufk8g%26efpc%3DIBtgomO1Ki8%26utm_source%3Dmetagha%26utm_medium%3Dmapresults%26utm_campaign%3DUS%26utm_term%3Dhotel-56113%26utm_content%3Ddev-desktop_los-1_bw-6_dow-Wednesday_defdate-1_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-10_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20260701_ppt-%26aid%3D2127489%26label%3Dmetagha-link-MRUS-hotel-56113_dev-desktop_los-1_bw-6_dow-Wednesday_defdate-1_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-10_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20260701_ppt-&s=AD1XQnmoUwsfrLy8YFhXypU7ho21"
+        },
+        {
+          "source": "Traveluro",
+          "price": "$208",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OsxJqarNEq-dwyZtj-WvV_5Qw_m7qM-V8clFLaHrv7NNns9L2KbC1m7v6w0fjRAjnMP6fBtUK2Rm159Kj7iJAH2ZNisvYpSx3l4a5FhdG8ddrOz2vYUs-4rV5VfpEIqB-swqpL-r8ktvuaSZkTeZrkx0QkCz8n1j0qU_TPUowLrPgS4uCjKa0zUD&pcurl=https://www.traveluro.com/hotels/united-states_ny_new-york/125875_the-bayard-hotel?checkIn%3D2026-07-01%26checkOut%3D2026-07-02%26placeId%3DH125875%26campaignName%3DGoogle_US%26currencyCode%3DUSD%26dealKey%3DCAIQqwEiDAi94vTRBhDM4MSDAypaDQAAVUMVAABFQyWkcNdBLQAAYEAwATioBUUAAFVDSgwItOL00QYQzMiiqgNiClN0YW5kYXJkIFNoAn0AAMhBggEAjQE9ilRDlQH2KGxAmAEBoAH3vkCoAcgGMKsBOLPXB0Dd9A9IAVII-7KDO3LMUOBYyAY%26countryCode%3DUS%26languageCode%3Den%26rule%3DGoogle_US%26site%3Dmapresults%26origin%3D31%26ads%3D%26priceDisplayedTotal%3D241.69%26priceDisplayedTax%3D59.12%26device%3Ddesktop%26adults%3D2%26children%3D0&s=AD1XQnnfE2q3cogITRm2oi1ETQxL"
+        },
+        {
+          "source": "Vio.com",
+          "price": "$213",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswUmefQBD87m6O9e3N2hreWYtY35n8LDO44LOeFQRhp4lys_1VlkC22N_cExA84bv8Vq875Mk1mXSPbrNUUAr14IspyFG4vuesUs_8tiuTGjQhUNfUjVgClnNBDWfAc3c1uZ9cunSZFvNlgyllZ5Df5fIi-L2m2w0s3qeBGfCY6XTiIVw5rgJut&pcurl=https://deals.vio.com/?sig%3D73aca13c7f952d2641c156f3e69125e1eb497c325f122828ee5aa8797168b9a12d32303331333438363233%26turl%3Dhttps%253A%252F%252Fwww.vio.com%252FHotel%252FSearch%253FcheckIn%253D2026-07-01%2526checkOut%253D2026-07-02%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1205861%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D247.69%2526deviceType%253Ddesktop%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Ddefault%252526gsite%25253Dmapresults%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1205861%252526day%25253D01%252526month%25253D07%252526year%25253D2026%252526los%25253D1%252526price%25253D247.69%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DUS_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253DrMqQ29uMbsACgt1cHNod2hjOWJZSRjJzPTRBiACOIK46-gHQhkI9o-Iiay785lIENySARjEEyChGyoDVVNE&s=AD1XQnkTY6adID9syGi5dLzOHlYS"
+        },
+        {
+          "source": "goseek.com",
+          "price": "$213",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw4mCPB2k-ddJk1g9ep--jU_jr9ZLvyvQWy6kQuOCJkGrTTQLW1R-hKYoIuLH5buAwPPq7FBrqdvnqJFt9el7l_qAM2t84qewCG1wYGnWnocB8tWDMOwUeBpdEiavdsIlr_jiBm55NSIxXdckvB5COy8NEavXCHofQ32O3rG4k0U715cDZcBeqikU5RNmoMwQ&pcurl=https://deals.goseek.com/?sig%3D34c47a49c3e8320dca5a5dda0da2a460c1bc23afde972e2894a4ff0b6052fb53383131303836353931%26turl%3Dhttps%253A%252F%252Fwww.goseek.com%252FHotel%252FSearch%253FcheckIn%253D2026-07-01%2526checkOut%253D2026-07-02%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1205861%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D247.69%2526deviceType%253Ddesktop%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Ddefault%252526gsite%25253Dmapresults%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1205861%252526day%25253D01%252526month%25253D07%252526year%25253D2026%252526los%25253D1%252526price%25253D247.69%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DUS_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253DiHhuodK6hrQCgt1cHNod2hjOWJZSRjr3vTRBiAEOIK46-gHQhkI9o-Iiay785lIENySARjEEyChGyoDVVNE&s=AD1XQnlLYdTWLma6l7MGe2KqLX9T"
+        },
+        {
+          "source": "Etrip.net",
+          "price": "$213",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw1fh5swD6hpiNZOsH2rfsA4U2psMYDe8wvg5XdMHEjjRxt-gE9aqThRsU1o55KRtVRkp7e6KXL9NG0yTFN7DBG5DeORsHBFVPpXk3Q05EgJ21Hom1urBGRR5LUJhZEc367_JEmiBbdia3XP5nCSCCFbYfN_IyeqVdKS41PGptfLwP35Wo&pcurl=https://deals.etrip.net/?sig%3De9cc68956712e1e5d60f579a67e54afadd83f5d631dc9782cc50d47864de2f2c2d32303330363031313335%26turl%3Dhttps%253A%252F%252Fsearch.etrip.net%252FHotel%252FSearch%253FcheckIn%253D2026-07-01%2526checkOut%253D2026-07-02%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1205861%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D247.69%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Ddefault%252526gsite%25253Dmapresults%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1205861%252526day%25253D01%252526month%25253D07%252526year%25253D2026%252526los%25253D1%252526price%25253D247.69%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DUS_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253DrMqQ29uMbsACgt1cHNod2hjOWJZSRjJzPTRBiACOIK46-gHQhkI9o-Iiay785lIENySARjEEyChGyoDVVNE&s=AD1XQnkZDvLIRAN0BfBypm9U93sy"
+        },
+        {
+          "source": "dealbase.com",
+          "price": "$213",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Osw_VMLxEFFSNLelDaJxy8RYa-ldsBcxizlBzHXZy24ATz_8qh3aQ_wCI704mUrpzMx0W4vxOlSXvsks8FNakmS819E3YbFzwY6pHzdL-ioj4Vc-pv837k6twY1dZxjGbfMmY-B0u6HI6DJsFenqmfHo4G1r38smWQQiUl0wSbnjdzn7ucrpm49X6Mu4TDXFoArWzg&pcurl=https://deals.dealbase.com/?sig%3Dd24b78db5ff27b2a7633c125e8c1eb65fcdd29bfbe8d2468da3702f8e475011131373338383435313339%26turl%3Dhttps%253A%252F%252Fwww.dealbase.com%252FHotel%252FSearch%253FcheckIn%253D2026-07-01%2526checkOut%253D2026-07-02%2526currency%253DUSD%2526forceCurrencyChange%253D1%2526lang%253Den%2526forceLanguageChange%253D1%2526rooms%253D2%253A%2526utm_source%253Dgha%2526utm_medium%253Dcpc%2526hotelId%253D1205861%2526userCountry%253DUS%2526profile%253Dr2d2m73kn8%2526preferredRate%253D247.69%2526deviceType%253Ddesktop%2526label%253Dsrc%25253Dgha%252526cltype%25253Dhotel%252526datype%25253Ddefault%252526gsite%25253Dmapresults%252526vf%25253D0%252526ucountry%25253DUS%252526udevice%25253Ddesktop%252526hotel%25253D1205861%252526day%25253D01%252526month%25253D07%252526year%25253D2026%252526los%25253D1%252526price%25253D247.69%252526currency%25253DUSD%252526cid%25253D%252526listid%25253D%252526rateid%25253DUS_D%252526closerateid%25253D%252526promo%25253D0%252526isPrivateRate%25253D0%252526isAudienceUser%25253D0%252526isPaidClick%25253D0%252526%2526cp%253DnUJ0qVNDi3kCgt1cHNod2hjOWJZSRi91vTRBiACOIK46-gHQhkI9o-Iiay785lIENySARjEEyChGyoDVVNE&s=AD1XQnlusySp9po1WPQ8MGDsx6fj"
+        },
+        {
+          "source": "Bluepillow.com",
+          "price": "$264",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Oswcc_6OSCwOEuytYgxqX34IJrHI3Hy--BPiL-C__FhnhdGbRDTlqoQVqxGm4uPZ4P2Ez54BAnm-mcxBlm9JFUvR2ZTTUiKii15nJt9M-7785PgQicD9BZUFfjJVQQBgf6SZhmccRRFOGwb1S1_HzGb-0ygkipcygXhW0WEbgnr5OXWC_KfJLYAtwQ&pcurl=https://www.bluepillow.com/search/594396ef7c00cb0e643bf90a?begin%3D2026-07-01%26end%3D2026-07-02%26block_id%3D-b,iBJ1XCyTqkO7qeS6vFchxMnwBAodapOdHS_q6ohn-UvQ3MoTdsG0G4XFp44P0I8d,-bkng-Hotel%26fees%3D61.92%26tax%3D61.92%26total%3D263.52%26adults%3D2%26childs%3D0%26infants%3D0%26childrens%3D0%26country%3DUS%26currency%3DUSD%26language%3Den%26source%3Dmapresults%26utm_campaign%3Dhotel%26prid%3Ddomestic&s=AD1XQnlkgx4nIhYXS1H-cNq6SSZ5"
+        },
+        {
+          "source": "pricetravel.com",
+          "price": "$245",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OswK3PaxmfndGJgvviLP53UJ3BE8QBPKY7EG8P5fo-fYJh5xELqWTJh2v4gBYjIIygjD5XfSnUL9k7_g5pgWX6vFyTD56S6VTzeSlRr85wjpgbmKrxzNwdXBdhMblRpjqDHiv_nzX40TdhL7bUu5El7P2NTW8ynv6mAqycLvVMqjMtqDOiPCl9M_boTMqJk&pcurl=https://www.pricetravel.com/en/hotel/best-western-plus-hospitality-house?source%3Dgoogle-ha-usa%26currency%3DUSD%26ct%3DUS%26room1.adults%3D2%26room1.kids%3D%26room1.agekids%3D%26rooms%3D1%26checkin%3D2026-07-01%26checkout%3D2026-07-02%26hotelid%3D110530%26CampaignToken%3D%26utm_source%3Dgha%26utm_medium%3Dppc%26utm_campaign%3Dghamx%26pr%3D216.32%7C35.66%7Ctrue%7C27148806&s=AD1XQnnA58qhDgsV9BU1WssUiJa2"
+        },
+        {
+          "source": "Closest Hotel",
+          "price": "$230",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80Oswm21LqhQWJ_6DZwpbR8nBQi4bw-iCyIFe0SNg3G-GlGy5hH4jW0uPmopJgbSQMvQsUMU_pdFwuNmwTeLG7WimXqjcpjUZgVOZiA_YhTUhj2-67_4IM9JfZRffi1wdU1_G1IQJ0yL1n1623_J7I7aeo3Eu9q9GIfwyfjeHHCQ5x5RIUrK8OVYCkSsmko_h02dYCdpG12fC_b71cS5hL&pcurl=https://closesthotel.com/googleRedirMainSearch.php?checkInYear%3D2026%26checkInMonth%3D07%26checkInDay%3D01%26checkOutYear%3D2026%26checkOutMonth%3D07%26checkOutDay%3D02%26numberOfNights%3D1%26numberOfAdults%3D2%26numberOfChildren%3D0%26numberOfGuests%3D2%26hotelID%3D888641%26roomID%3D200808219%26currency%3DUSD%26deviceType%3Ddesktop&s=AD1XQnmj-EacbAIlFEOLV730vz-O"
+        },
+        {
+          "source": "eDreams",
+          "price": "$227",
+          "link": "https://www.google.com/travel/lodging/clk?pc=AA80OszANnvDahYAsPDVSH-K7HRq9d80nLilm7WtkAfOpnGfdZBjm3mN0aUdcTYnqxcUHu4oW0vh7vTIRtWrQSlfqyvYSvA61_Z2UaDV5CWNpUXkt7MYP48Mn2DOeaiSypvGMbniI6AvqGGijToX5YwogGlQ7nyy2xXMHg0u06we5jKEZY522WRy&pcurl=https://accommodation.edreams.net/Hotel-Search?selected%3D888641%26startDate%3D2026-07-01%26endDate%3D2026-07-02%26adults%3D2%26children%3D%26mpf%3D263.52%26cur%3DUSD%26mpj%3D61.92%26wapb3%3D%7Cc.506950%7Cl.en_US%7Ct.meta%7Cs.ghs%26MDPCID%3DeDreams-US.DPS.Edreams.MetaSearch-GHA.HOTEL%26mpl%3DUSD%26numberOfRooms%3D1%26locale%3Den_US%26rffrid%3Dh4p.hcom.US.ghaodigeo.000.000.kwrd%3D%26pos%3DEDREAMS_US%26rateplanid%3D404275382%26mctc%3D10%26utm_medium%3Dmetasearch%26utm_campaign%3D217136%26utm_term%3Dhotel%26utm_source%3DFREEBOOKING&s=AD1XQnlcmORHOgNiBFEqbXF3blJn"
+        }
+      ]
+    },
+    "type": [
+      "Hotel"
+    ],
+    "type_ids": [
+      "hotel"
+    ],
+    "description": "Unfussy suites with kitchens in a relaxed hotel offering complimentary breakfast & Wi-Fi. A 9-minute walk from Grand Central Station, this relaxed all-suite hotel is a mile from the Empire State Building and 2 miles from Central Park. Straightforward 1- or 2-bedroom suites feature kitchens, free Wi-Fi, DVD players and flat-screen TVs, as well as dining tables and pull-out sofas. Upgraded suites add balconies or terraces. A breakfast buffet is complimentary. Other amenities include a business center and a courtyard with sitting areas. There are also 2 restaurants.",
+    "amenities": [
+      "Free Wi-Fi",
+      "Free breakfast",
+      "Parking",
+      "Accessible",
+      "Air-conditioned",
+      "Pet-friendly",
+      "Kid-friendly",
+      "Restaurant",
+      "Kitchens in some rooms",
+      "Smoke-free"
+    ],
+    "address": "145 E 49th St, New York, NY 10017",
+    "country": "United States",
+    "website": "https://www.bestwestern.com/en_US/book/hotel-rooms.33114.html?iata=00171880&ssob=BLBWI0004G&cid=BLBWI0004G:google:gmb:33114",
+    "check_in_time": "3:00\u202fPM",
+    "check_out_time": "11:30\u202fAM",
+    "phone": "(212) 753-8781",
+    "plus_code": "Q24H+85 New York",
+    "location_summary": {
+      "neighborhood": {
+        "title": "Midtown East",
+        "data_id": "0x89c258e29b293dbb:0x971e98d1228d637c",
+        "data_cid": "10889308973023716220",
+        "place_id": "ChIJuz0pm-JYwokRfGONItGYHpc"
+      },
+      "description": "The Empire State Building & 5th Avenue shopping, plus Grand Central Terminal & the UN Headquarters.",
+      "ratings": {
+        "total": {
+          "value": 4.812678353389994,
+          "verdict": "Excellent for visitors"
+        },
+        "proximity_to_things_to_do": {
+          "value": 4.862541135813905,
+          "verdict": "Excellent"
+        },
+        "proximity_to_transit": {
+          "value": 4.598402325969743,
+          "verdict": "Excellent"
+        },
+        "airport_access": {
+          "value": 4.409999541256645,
+          "verdict": "Great"
+        }
+      },
+      "things_to_do": [
+        {
+          "title": "The Museum of Modern Art",
+          "data_id": "0x89c258f97bdb102b:0xea9f8fc0b3ffff55",
+          "data_cid": "16906389583988522837",
+          "place_id": "ChIJKxDbe_lYwokRVf__s8CPn-o",
+          "description": "Works from van Gogh to Warhol & beyond plus a sculpture garden, 2 cafes & The Modern restaurant.",
+          "rating": 4.6,
+          "reviews": 58699,
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR29jonVEhaIEWAUbk8OlLIKJSmVP2PW5rdU6eUlnie2nme3BGy",
+          "gps_coordinates": {
+            "latitude": 40.7614327,
+            "longitude": -73.97762159999999
+          }
+        },
+        {
+          "title": "Times Square",
+          "data_id": "0x89c25855c6480299:0x55194ec5a1ae072e",
+          "data_cid": "6132018978369701678",
+          "place_id": "ChIJmQJIxlVYwokRLgeuocVOGVU",
+          "description": "Bustling destination in the heart of the Theater District known for bright lights, shopping & shows.",
+          "rating": 4.7,
+          "reviews": 240828,
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSTvnG_OSk957bv3W9eO1-RMf4_evZikUvqQh_3nU4Xz3aElV9r",
+          "gps_coordinates": {
+            "latitude": 40.7579747,
+            "longitude": -73.9855426
+          }
+        },
+        {
+          "title": "Grand Central Terminal",
+          "data_id": "0x89c25a21fb011c85:0x37513b7f1821408b",
+          "data_cid": "3986032562251317387",
+          "place_id": "ChIJhRwB-yFawokRi0AhGH87UTc",
+          "description": "Iconic train station known for its grand facade & main concourse, also offering shops & dining.",
+          "rating": 4.7,
+          "reviews": 7254,
+          "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPk9bM8tCGCt9-xuy7E4YA-btyYR7ebeyL6-CwbVlJ1652YWRu",
+          "gps_coordinates": {
+            "latitude": 40.7533582,
+            "longitude": -73.9768041
+          }
+        }
+      ],
+      "transit": [
+        {
+          "title": "51 St",
+          "data_id": "0x89c258fcc865c095:0x7c0f2a9f344e9f2c",
+          "data_cid": "8939410648619458348",
+          "place_id": "ChIJlcBlyPxYwokRLJ9ONJ8qD3w",
+          "gps_coordinates": {
+            "latitude": 40.7571231,
+            "longitude": -73.9719142
+          },
+          "travel_options": [
+            {
+              "mode": "Walking",
+              "time": "3 min"
+            }
+          ]
+        },
+        {
+          "title": "Grand Central Terminal",
+          "data_id": "0x89c25a21fb011c85:0x37513b7f1821408b",
+          "data_cid": "3986032562251317387",
+          "place_id": "ChIJhRwB-yFawokRi0AhGH87UTc",
+          "gps_coordinates": {
+            "latitude": 40.7533582,
+            "longitude": -73.9768041
+          },
+          "travel_options": [
+            {
+              "mode": "Walking",
+              "time": "9 min"
+            }
+          ]
+        },
+        {
+          "title": "33 St",
+          "data_id": "0x89c259a93038fe09:0x8ad8abf2fc358491",
+          "data_cid": "10004935632305357969",
+          "place_id": "ChIJCf44MKlZwokRkYQ1_PKr2Io",
+          "gps_coordinates": {
+            "latitude": 40.748565,
+            "longitude": -73.9885175
+          },
+          "travel_options": [
+            {
+              "mode": "Walking",
+              "time": "32 min"
+            }
+          ]
+        }
+      ],
+      "airports": [
+        {
+          "title": "John F. Kennedy International Airport",
+          "data_id": "0x89c26650d5404947:0xec4fb213489f11f0",
+          "data_cid": "17028024512003641840",
+          "place_id": "ChIJR0lA1VBmwokR8BGfSBOyT-w",
+          "gps_coordinates": {
+            "latitude": 40.6397222,
+            "longitude": -73.77888899999999
+          },
+          "travel_options": [
+            {
+              "mode": "Driving",
+              "time": "35 min"
+            },
+            {
+              "mode": "Transit",
+              "time": "49 min"
+            }
+          ]
+        },
+        {
+          "title": "Newark Liberty International Airport",
+          "data_id": "0x89c252e1c5ec0cef:0xb3f3b437c5d7f286",
+          "data_cid": "12966905903765254790",
+          "place_id": "ChIJ7wzsxeFSwokRhvLXxTe087M",
+          "gps_coordinates": {
+            "latitude": 40.692499999999995,
+            "longitude": -74.168611
+          },
+          "travel_options": [
+            {
+              "mode": "Driving",
+              "time": "38 min"
+            },
+            {
+              "mode": "Transit",
+              "time": "57 min"
+            }
+          ]
+        },
+        {
+          "title": "LaGuardia Airport",
+          "data_id": "0x89c25f8983424db5:0x772fc4660e9666b3",
+          "data_cid": "8588298957029271219",
+          "place_id": "ChIJtU1Cg4lfwokRs2aWDmbEL3c",
+          "gps_coordinates": {
+            "latitude": 40.7772222,
+            "longitude": -73.8725
+          },
+          "travel_options": [
+            {
+              "mode": "Driving",
+              "time": "23 min"
+            },
+            {
+              "mode": "Transit",
+              "time": "32 min"
+            }
+          ]
+        }
+      ]
+    },
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGKxAl0y5l1Ms6BXXsOKq7LRDVB_Ee0hG_vhnkrSZQYHOpmNIK80Qde4seajKyL5lpN69ynuoJ8oeTYK2pyWuOaxxFOJ15SKNlIPrxklNr5pSafxwjMRu2m9dkTgVcHLz2IRa-L=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Vq7biXicHcTbDoIgAADQLyLR0i5bD7ZuhmFq6_biHJEsEUi0sB_sG_qbts7D-X5Y0yg9sSzO-r1CyoLTVtOaSNFQ0fSIrKxCaUA00Ja_w3Hpr5DxOexcbm-1NzuddIQewzCZH2bZgkK2yp5MlHV6ic_rSFU4QCMYX-lA0_yOutDlCnvjTrRyM5J0f0aO6o5tlBuzjDa2myLMg11tSo5rV6X5zbzu26R1qvG13BcHsg7fTpDkIJy-bAghYP8JED94ckVS"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "24 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZs4TUf1B880hhbPu_iGlkmx_fuJ4NQktdwbYtGcUpt8N-8mFXy9dkva8akPMhp7De-AFPeo802ah2d_m-0B2j9gjwvTLVTHGPKm3UAjC3O1--Q8asPHl6SLH9toXaGxbMsKxbukUL41sR=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ls7bMHicHcrdToMwGADQJ_pG-YkWEy-YBohjs1Mw0xtSSkellBK_MvApvfZtZrw5V-f3Rzk34Z3nDSrcdNZ2g5xRfgk7Ojm6jbDG6yYEgYBewg5HnaQfGJXV2d9SSpRq2Fx_ZoM2a32en6K_4NqleXeZqCZHD0BNevqOW33hlGu2V9Pto4QkZdJSEnAVtLUBsg36uOuXS1m8lXnGdiaskv4hfPYBjpQjy4eb1yKPnT3xbG32uFubWVdF5OPL_eITQkD9K2C8AoQRRpY"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEN_3fya-0cN_TJlTS3pEPiA_4wTVX-48-H45lV1OPywjJEyhBsveABgEkZH6Zh8YKMDJjGZQSRfkWI8k5iTRruNZdnMoxVNoksDIUtaNOJ8dYOsiqwEM7FaZ0R5JeEQtldjF8Z=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2Vm8KXicHcRdboIwAADgE1VqAG2W7AFjnXah_Ig4-0JIqRTaUWarjBPuDLuNid_D9_8nnRvtm-dp6S9aY1ot7lbcuBmcGNyCm2-vHS3gFlgvSmmmIkwr_zrXAHJaFUQXR3_EaRdVwVSUXyBAYB-Eulwm6Tz1BM9yYx8i2rRYsf2KSXT5jLek_2DZMb-q8wGpsCvy252yZojNb0mNstvDydU0Iai5JLb7mXC83tUM5iEROHO66XeIvU9LCCGQrzkYnvQTQ_I"
+      },
+      {
+        "title": "Rooms",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFknp2DPLnHkR626rZ5xFCGBOPnv4AGcqjLKOpYEsYgOzfEP3UkbtJo6AhbgYr3yum74BT1n8Mf7A3sn_4bqewDVrh_n0ttI1eOVMEPe6bFZWzgNX1oEzec9DHeQBemCoNEPGjr=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/IlX1w3icHcRbjoIwFADQFSEgiI6JH0UK6ihU4wt_TGiubURusa3jyAZnDe5mEs_Hef9Ja1szdt2bDHpCKXGDhwHNFVpA2-OqcUVrHG4c4xKWr2uS1tj2E7bEWb2J-pE-DX7TaRYXDH9CkvH7dfldtCU1pSi6C2XBrq7sQkVEVqLUwevRDMN46-NodRmSwOA5rO7wTPZantGzdu5DsV9RBlGVng6dyI--oh3wr2QG6xiaqcopy6568vQ9z3PkZ-7gP0KNRIs"
+      },
+      {
+        "title": "Exterior",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFdcKdawp9h6IkXVrUvIsM0jYl15gBs9Wi-m6J1yMz3cS2qUVrQ7Eyz57IR1TfksZn_RsqDh8sNDaSbOPIU-X4JMIWodNnfSyEDll5iGl9o_CkCns1DzH4XjJjod6nkFjOmCHVN=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/UuFPkHicHcTdEoFAGADQJ1q1KDLjgvKzmfKTEjeGLa12201fmHpBz-BtzDgX5_thdV3CSNME63UypTKRPiGtqJJ1KusOVYWWlYAoINAmG3_LJ_OErpLLu7SYSXgcVeGLgKfnR4GNbArW4Y4K08WN1_Zo0H2EUbUdzJrWGJAd3t84nOR5Bw-HDcF3LsF1vSEhivuuRw4q8eUtaGaOEMZ9ISx1trktATvtsh_nbq4SU_J5vi7sZeSP31jXdcT-UyR_ZVxEtg"
+      },
+      {
+        "title": "Food & drink",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGabmDFQ1DPSZBPewcy323OFpc2My4wfcW8m1X7Kf2yT1ErFY-TONrKReaaht5z-6NLrmo5l3Ykte0lZxOGxCQnNPKedn_9pTo0y3FYu9VDgE0zpf66DhLdGfSF39aEWFk-Y3gy=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/IwMrs3icHcRdDoIgAADgE5EoZdnWQ6X4YPlTrrKXZoSwqcCEZnTBztBt2voevu-HG6P00nE6jiZMStbRp6YDkcJQYSZE9g5TGhANtLPO06Jdx_W9D3HhhvnxusnpSCzyUIYV8fZ2OjbkvOjdyzxpPFu60YArUGbpkBxoXXMzewM_3Q29nHWoag2F3fWVxa9tIdI8oQ9xC1QpoUW4egankEXwrRrfD_nuETdHjII6OuMWVIjZ1ehCCAH_T4D4Af04Q4M"
+      },
+      {
+        "title": "From visitors",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBo_hp3WAbU7-w5wHAn6tDXFTlHcxwzordNPVwmzuoiN1OA61bYXaA4LfajAPqmgKmKIE7VjC-UAWNbEjnYiQ07RhxBEzjkkEa_Juq_GvccRvTLAz50nG1ejCmV0oT8vkS0suTpg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/yPC_0XicHcRRboIwGADgE1VKnLAs2cOvojgNQ4cgTwQqthbaoi3UcMMdwduY-D18z39mTKe_HKdl0wlVirZ1r-s7UdLU0kyIEg7tNCIaaQfiaN9AOFcF66YZVEcf2ZkNQXpmeVolbUgedlT3cxSnVoy9ukbuL3hulZ9K-NhdSg7xTdCt2G4CP-ULdIQsqgIu8-se-wf2mAcjb5qgLH76W7EeCDkMyQ7GGZZrt-YLkWKVfA7NH9Z90tFv62KMEXtPkHwBJMJGJQ"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGy4NsqS3fHM1rv2eJ6SrAr3avG8oDtzFDnT1N8TmfiYS5A2zepZSPIooUvMcqJl7ymyRvEOaEgUXAJDf2j0DJSDNq9upQXrbp1IoHXvAzHKhibQLwFroqU_1V6eX-yfx0g-6szOw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/zgc543icHcRRboIwGADgE1Va2Jgz2UOTqsgmyioL28uiTSluwF_aWoQb7gi7jYnfw_f_Vzun7SIImjqaKQDVyIuVRkDnZOdmAtpAaYuERTag-yz_pevxIbM9j6pkS4wPZRpzQ0109Os5MDetWHcg2fzQVudP_kjDSeovvt8AFH4r-rR5Gtvx3S93x6UqSpqyKvzBLOUs658vOi_NSZMNJKWnU_Jan0_527Ay0Bff5COWJRqrK1YottNueBkIxhjV9wXqbguSRgA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF4Pl1dxhpG6pDZtQrYt5XMfqt92ajth8Qqdk2enJTkkcSheZ4GBVwbInHDHq2bbCFoKF2jsngKH_l_Tscazn0hhzUjWJCk-u4mpc49BI_jOyxWYBmWF1LRvcXsoj3RH4X1BLxcTw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/bnMyx3icHcTdDsEwGADQJ6r9KEHiwsjMvzE2bhb71Jp2azstG2_oEbyNxLk43w81RumBZRW03cqlzAvy0OQOUhgiTAtkaeVKI9BIW6PtOuQjH28L59pQNe2qydmE95PpJKtbZfruhRnaC6srd4mYR5zDnpIznnrHOpuJYBJUbpaNfbnwXaZFvgjSIo00XN7CpvR9YPF8zNEDlwpw35ulbPNq4pNXxr6z3D0h0ZK1dwFOHG_ZQFQPa8e2bUT_AxI_YUZGhA"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Food & Drink",
+          "places": 2
+        },
+        {
+          "title": "Other",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "Toscana 49",
+          "data_id": "0x89c258fd268ddac9:0xc918a489f62060db",
+          "data_cid": "14490512713511362779",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd268ddac9%3A0xc918a489f62060db&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd268ddac9%3A0xc918a489f62060db&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.755748499999996,
+            "longitude": -73.97215539999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd268ddac9%3A0xc918a489f62060db%218m2%213d40.755748499999996%214d-73.97215539999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_6VUJP1YwokRkyOwrhW8ytk&type=place",
+          "rating": 4.5,
+          "reviews": 1261,
+          "type": "Italian restaurant",
+          "type_id": "italian_restaurant",
+          "address": "143 E 49th St, New York, NY 10017",
+          "location": "Floor 1",
+          "open_state": "Closed \u00b7 Opens 12\u202fPM",
+          "hours": [
+            {
+              "thursday": "12\u201310\u202fPM"
+            },
+            {
+              "friday": "12\u201310\u202fPM"
+            },
+            {
+              "saturday": "12\u201310\u202fPM"
+            },
+            {
+              "sunday": "12\u201310\u202fPM"
+            },
+            {
+              "monday": "12\u201310\u202fPM"
+            },
+            {
+              "tuesday": "12\u201310\u202fPM"
+            },
+            {
+              "wednesday": "12\u201310\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHzOljV7JeXIDgeA8NIJx4Wgzadyeb4PDc_QpHhI0hY4I2BIuBHr0TH0GkwiAFVLwzdH_eG7zEnJQweBDeJZm8qrLRUJdxUmIUfnxhS_M46mWI9p61GJhQxOWEGBj4tnh4wCB83Fw=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHzOljV7JeXIDgeA8NIJx4Wgzadyeb4PDc_QpHhI0hY4I2BIuBHr0TH0GkwiAFVLwzdH_eG7zEnJQweBDeJZm8qrLRUJdxUmIUfnxhS_M46mWI9p61GJhQxOWEGBj4tnh4wCB83Fw=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Abaita - Kosher Dairy",
+          "data_id": "0x89c258fd278f6211:0x847b53f5c50e87a0",
+          "data_cid": "9546316150180054944",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd278f6211%3A0x847b53f5c50e87a0&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd278f6211%3A0x847b53f5c50e87a0&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7557,
+            "longitude": -73.9720694
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd278f6211%3A0x847b53f5c50e87a0%218m2%213d40.7557%214d-73.9720694&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_6VUJP1YwokRkyOwrhW8ytk&type=place",
+          "rating": 4.6,
+          "reviews": 1119,
+          "type": "Kosher restaurant",
+          "type_id": "kosher_restaurant",
+          "address": "145 E 49th St, New York, NY 10017",
+          "location": "Floor 1",
+          "open_state": "Closed \u00b7 Opens 11:30\u202fAM",
+          "hours": [
+            {
+              "thursday": "11:30\u202fAM\u20139:15\u202fPM"
+            },
+            {
+              "friday": "11:30\u202fAM\u20132\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "10\u202fAM\u20139:15\u202fPM"
+            },
+            {
+              "monday": "11:30\u202fAM\u20139:15\u202fPM"
+            },
+            {
+              "tuesday": "11:30\u202fAM\u20139:15\u202fPM"
+            },
+            {
+              "wednesday": "11:30\u202fAM\u20139:15\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFXwEzdFuijLXqlCJsPqSVGTWB0e-h1JFAksGhM11goQqTHoj-tsJ9IgKeVaziJesCrDQwAzemRw6XfiXhiglEsIDfPV-BoQtNqw9Hup8XLPxDdCHa-9T6dwbrs1R5iHcfGIDOZ9w=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFXwEzdFuijLXqlCJsPqSVGTWB0e-h1JFAksGhM11goQqTHoj-tsJ9IgKeVaziJesCrDQwAzemRw6XfiXhiglEsIDfPV-BoQtNqw9Hup8XLPxDdCHa-9T6dwbrs1R5iHcfGIDOZ9w=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "Services by Michael",
+          "data_id": "0x89c259d5174359c3:0x51f044cb0f6cdf60",
+          "data_cid": "5904294750410563424",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259d5174359c3%3A0x51f044cb0f6cdf60&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259d5174359c3%3A0x51f044cb0f6cdf60&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.755748499999996,
+            "longitude": -73.97215539999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259d5174359c3%3A0x51f044cb0f6cdf60%218m2%213d40.755748499999996%214d-73.97215539999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_6VUJP1YwokRkyOwrhW8ytk&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Corporate office",
+          "type_id": "corporate_office",
+          "address": "143 E 49th St, New York, NY 10017",
+          "location": "Floor 1"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Breakfast was included, Great waffles, pastries, eggs, Coffe right downstairs.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIf1G7vkJC5agymRjauq_3mClAFTnwOnn9gUCrIpHm-15ywKw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Small place, yet very friendly staff and excellent service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVOckedmZbRQwPW2TdE7x1kCRHbT4l4Rw5oFe-RuHaOtjUGSTrJkw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Area has some nice restaurants and a few right there (Italian, Pizza, Kosher).\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUZAN2r25EEGOJWf0qA5sEV0ILUjSpSU0FAhx1EgB0Y1XILfOBJ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Sarah Curtis",
+          "rating": 1,
+          "contributor_id": "114739805057822429766",
+          "user_review_count": 32,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUFK3uXF5Ca_LiuGkWzbAZJunvnYxiUO_2XVO-Vr9LrD6aJF9nB=s120-c-rp-mo-ba12-br100",
+          "description": "We booked our accommodation months ago wanting to ensure that everything was well organised before leaving New Zealand, we booked with Best Western as we knew the brand & thought we could rely upon it.\n\nWe woke up to an email a few weeks ago stating that the hotel needed major renovations and would now be closed at the time of our booking.  We were offered the choice of cancelling our booking, changing our travel dates or asking for help to find an alternative.\n\nWe asked for help to find an alternative luckily at the same time we decided to look ourselves and found accommodation (cheaper and better look at hotel Marriott if you want options and a brand you can actually rely upon).\n\nWe this morning have received an email from Best Western to say that the hotel is not a Best Western anymore and they are basically washing their hands of us, all our communications need to be held with the hotel itself and not with Best Western all we are trying to do at this point is get confirmation that our booking has been cancelled and we have had not had any progress with the hotel directly, nor Best Western.\n\nIt's pretty clear, there is a copy & paste response to these reviews, so I wasn\u2019t going to post this, but please be aware, this hotel & the brand don\u2019t seem to be able to be relied upon.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOa1FqWktaM2x0VVd0WmRYRXdTMk14YTJOQ1dXYxAB!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CAIQACodChtycF9oOkNkQjZKZ3ltUWtZdXEwS2Mxa2NCWWc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-03T23:04:05+00:00"
+        },
+        {
+          "username": "pavan",
+          "rating": 3,
+          "contributor_id": "107074980700978708007",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJO1N2qJTltAYWNZal4ueAbhiU8gr6FhPvAyGJIJEFGuR7MrdM=s120-c-rp-mo-br100",
+          "description": "The location is perfect and close to most of the main attractions and subway. Rooms are spacious but there are issues with stove burners and clogged bathtub.\nMain issue I see is with the staff. They are sometimes not polite in talking with a customer.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xBNVJtUmhSM1JhVjNabGFIUkVNM2hZYW1aRE5sRRAB!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CAIQACodChtycF9oOlA5RmRhR3RaV3ZlaHREM3hYamZDNlE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-07-25T23:30:14+00:00"
+        },
+        {
+          "username": "Dominika Badtke",
+          "rating": 1,
+          "contributor_id": "108624217587798102703",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK88F3w7iE7UAFijs_uTKirV7pUVOJrTVLfdgLCLya2QrfXJA=s120-c-rp-mo-br100",
+          "description": "I booked a stay at this hotel several months ago, planning a trip to New York well in advance \u2013 with a group of 6 people. Less than a month before our arrival, we received a message saying that the hotel would be closed due to renovations and would not be able to accommodate us. They suggested changing the dates of our stay, which is simply not possible \u2013 our flight tickets have been booked for a long time and the entire trip was carefully planned in advance. We sent a message asking how the hotel could help us in this situation, but we never received any response. We were just left without any support. Organizing a trip for 6 people is already a logistical challenge, and now \u2013 at the last minute \u2013 we have to look for a new hotel in New York, which of course comes with additional costs and stress. If you\u2019re planning renovations, guests should be informed well in advance \u2013 not have their reservation confirmed and then canceled just a few weeks before arrival. This is completely unprofessional. I definitely do not recommend this hotel.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21zNVJXZFJOMGhHUWs1VGIzWlFRM2hWYVhKeGRVRRAB!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CAIQACodChtycF9oOms5RWdRN0hGQk5Tb3ZQQ3hVaXJxdUE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-01T11:11:26+00:00"
+        },
+        {
+          "username": "Mrs. ILoveToTeach",
+          "rating": 5,
+          "contributor_id": "118190769704486859457",
+          "user_review_count": 57,
+          "user_photo_count": 170,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWOaRTNgjzCVHHcogHUmpgHjAPqVt4W4xVtAN3zKl6-1fyPSEw=s120-c-rp-mo-ba12-br100",
+          "description": "The front desk was so helpful and friendly. She helped us navigate our way to Grand Central station and made recommendations for food and sights. The room was clean and spacious enough for our family. The fridge and microwave were a bonus. The in room coffee was convenient. The restroom was clean spacious and fully stocked with necessities. The walk was not bad to Central Park, Times Square, Grand Central station and 5th Ave. we ate at local eateries and was not disappointed.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pOTk16TnhWVlJhVDAxMWNHbGFWMk0wTUd0ZmRGRRAB!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CAIQACodChtycF9oOjNNMzNxVVRaT011cGlaV2M0MGtfdFE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1EJPbm1m3TX19KEU5WPfIif-1Sp4d-tHZrVZR_7rDpPei5dYFvveEa0-71-5JgK4L7pd3W9EAimn02XAyZ2PFDcJW4SwIXPRNFMBklc2CF8_IMQlMbtjr9k0CF-Qdqhngn-TFyp1Guh9E1=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0HDHoxCAhvnir4JFL4ILMJcnQPICCJKmpSkg_M-5t3sG9BfvPluRCua4kL0j0XGbot7FdW_p_JwzkPYDxnp857yemJmgDX9jS19jeYsRSfDe11diDVXWbeqYExpSonw2SxEcjyfmm3wtI=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2dM61xZm47KeyVC0NQebzxF-4f_QLgxAXY7alKSLslJ6GMvNnkPSzM4fg-uss-WfUnnNv3aLSXbF9hIbZSVCD9pAyuGUruLsqiEocqWCbuO2YK6FiTyiNFISmf9EnFjp2GFD1mSUH1plXU=k-no"
+            }
+          ],
+          "date": "11 months ago",
+          "date_iso8601": "2025-06-29T16:05:24+00:00"
+        },
+        {
+          "username": "Sara Pate",
+          "rating": 3,
+          "contributor_id": "100653406430991695551",
+          "user_review_count": 6,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL7YLDo3SAh4kqp0X1fyJuz9M9YqAQLiX_cWThcf_W9GT_C7A=s120-c-rp-mo-br100",
+          "description": "Location was great. Stayed in a penthouse the room was extremely ran down for the price. Toilet in master room doesn\u2019t flush, reported this they plunged it, still didn\u2019t work. Second bathroom the shower doors couldn\u2019t be opened without nearly falling off rails. The door to balcony in our room didn\u2019t lock. The stairwell does have access to the balcony. Just being in a city I would have loved to feel more secure in my room. They did have a sign next to the door to explain how to lock the door but this door did not lock. Also just replace the blinds on the door walking into a room with blinds looking like this was not pleasant. I spent a lot of money on a room I thought would be a great value it wasn\u2019t. I will not be returning. Breakfast was always full so we had to bring food back to our room which was fine considering the food needed to be heated. Room was extremely hot.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURfb3BiX0V3EAE!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CIHM0ogKEICAgID_opb_Ew%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2RbnHii4TPVpEI0AybSPKTwznMWnLqpNQpEDEj17Prs7xQg2v7RN65hLHOzzC9OrefSy508NYI5ncc33zhTw_5fvVRfucjjNMiNP5ghWd4pqB0tiLbweO7jooSMtSHA6Zg52XEPA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0ciIuE7PKTDuqN9Z-_jI9FS28ptgf-TJqElQTLDW0Tbr3KZQaYy_dfuJ3gRKEoxh6O1mNO-X0iemiUOFl17dJaZRQCPVmrS_2U0pw11_5KQ_8GURR4hNVX5uBxpo1B4TV1dEqd=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-01-22T21:36:33+00:00"
+        },
+        {
+          "username": "Trip.com Member",
+          "rating": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/local-reviews/AJMZ0QeCck1CfANpZm9bBk3PHtP97Kh9k25HZfvq9yAWlN3BaIyjSHUPEfWkhAJmuYiJsH-_6g=s120-c-br100",
+          "description": "Great place, comfortable, clean, delicious. I really liked it",
+          "link": "https://www.trip.com/hotels/detail?hotelid=715356&Allianceid=810504&Sid=1394411&utm_medium=cpc&utm_campaign=HPA&utm_source=google#review",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-02T23:59:59+00:00"
+        },
+        {
+          "username": "Florin Olteanu",
+          "rating": 5,
+          "contributor_id": "113258388813907573169",
+          "user_review_count": 30,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL3E1Cibd7L7dLBhQljzvK5VRiFUssm862f7CviCvvtI8nBgA=s120-c-rp-mo-ba12-br100",
+          "description": "Our group of 3 stayed here for 5 nights and we felt wonderful!\nThe apartment size was very big for NY, the kitchen was fully equipped and the bed and the extensible sofa were very comfortable.\nWe chose this hotel based on room size but the most important side was its location. Walking distance to Times Square and Central Park, 2 major subway stations within 5 minutes made it very suitable for our needs.\nHad there been 10 stars available, I'd have given them all to the staff! From cleaning to breakfast, they were very discreet but helpful and did everything to make us stay here again.\nI strongly recommend this place!\nKeep up the good work!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNyaXNmZ093EAE!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CIHM0ogKEICAgICrisfgOw%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-07-05T20:29:55+00:00"
+        },
+        {
+          "username": "Drew L",
+          "rating": 5,
+          "contributor_id": "103697403320058031294",
+          "user_review_count": 9,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXsPgWfpPC1VEGLvaeZFgfY5XxsKlQRjNNylTDBCRx87udLxg5sUQ=s120-c-rp-mo-ba12-br100",
+          "description": "Had a brilliant experience here for 6 nights. Having an actual roomy, clean apartment (cleaned every two days!)  meant the kids could have their own room but we could also help ourselves to a decent breakfast from the restaurant in the morning if we wanted to. The staff were super friendly and helpful and the building is situated in a great location for tourist sites. In fact there was a bus stop right outside that went straight west on 49th street to the docks for the river cruise, which was handy. :) Only downside is that the breakfast room can easily become full, so you have to take your breakfast back to your room if no tables are free, however we mainly ate at diners for the experience and just used the free breakfast to load up if we were in a hurry. Would definitely use again.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURicnJ5UDhBRRAB!2m1!1s0x0:0xd9cabc15aeb02393!3m1!1s2@1:CIHM0ogKEICAgIDbrryP8AE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn11i2GqrcIf_1RwRz8iFqcgec4FQQ4f4lDK97NE67DCwitvsIV4LEaxfxvrtvWsTQROqiLbJTus-ASsZtpiMy8IlVNinpkXgGvv1eJLyKVEq1fffBtMGZaTQL4-xPBSP7shg6g=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2024-08-06T10:26:13+00:00"
+        }
+      ],
+      "source": [
+        {
+          "name": "Trip.com",
+          "source_icon": "https://www.gstatic.com/travel-hotels/branding/b8089cb0-34b4-458c-8749-9bc4614baba4.png",
+          "source_review_count": 102,
+          "reviews": [
+            {
+              "rating": 4.3,
+              "rating_scale": 5,
+              "username": "Trip.com Member",
+              "description": "Great place, comfortable, clean, delicious. I really liked it",
+              "date": "4 months ago",
+              "date_iso8601": "2026-02-02T05:00:00+00:00"
+            }
+          ]
+        }
+      ]
+    },
+    "similar_places_nearby": [
+      {
+        "position": 1,
+        "title": "Residence Inn by Marriott New York Manhattan/Midtown East",
+        "data_id": "0x89c258fd4063a2db:0x22c815fb1787999b",
+        "data_cid": "2506277360807418267",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd4063a2db%3A0x22c815fb1787999b&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd4063a2db%3A0x22c815fb1787999b&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.754791,
+          "longitude": -73.972489
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd4063a2db%3A0x22c815fb1787999b%218m2%213d40.754791%214d-73.972489&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 4.4,
+        "reviews": 1400,
+        "thumbnail": "https://lh4.googleusercontent.com/proxy/OpFE8_alI7NuYmoUhpDhw1gWlBZipCl_jcaYNlo2vV14UpLiqynD16uE4R28Vx2jaEzw1PIo0z-H4EDHq0Wojv443GLnzCNRSTK9JApf3rqskN_xhvL-lkqb_I0ww4HZTY4ssvc_Jcghl_oPDdoOhXnA7f72kQ=w135-h90-k-no",
+        "description": "Funky all-suite hotel with free Wi-Fi",
+        "distance": "0.1 mi away",
+        "price": "$269"
+      },
+      {
+        "position": 2,
+        "title": "The Lexington Hotel, Autograph Collection",
+        "data_id": "0x89c258fd13eb84b7:0x8a62aa162b6be755",
+        "data_cid": "9971719537146193749",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd13eb84b7%3A0x8a62aa162b6be755&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd13eb84b7%3A0x8a62aa162b6be755&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.754892999999996,
+          "longitude": -73.973308
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd13eb84b7%3A0x8a62aa162b6be755%218m2%213d40.754892999999996%214d-73.973308&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 3.9,
+        "reviews": 3759,
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfmwBEZVNNPPkqxoYJeANL3jEM4LkJY1XRDL7GCzc_7tuGSqbEtEPXe2cngj8kq-Jb6aIKERQ0dWARtQfUQKiAaih0w2i9jSnW7Y7-0_2hTuevr1qj-wIz_jcJp1DkrPpL4jdO3q5CfBTs=w159-h90-k-no",
+        "description": "4-star hotel for $9 less",
+        "distance": "0.1 mi away",
+        "price": "$173"
+      },
+      {
+        "position": 3,
+        "title": "Hotel 48LEX New York",
+        "data_id": "0x89c258fd1699a7e9:0xf9d38fc125ba6443",
+        "data_cid": "18001890195254436931",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd1699a7e9%3A0xf9d38fc125ba6443&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd1699a7e9%3A0xf9d38fc125ba6443&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.755311999999996,
+          "longitude": -73.972956
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd1699a7e9%3A0xf9d38fc125ba6443%218m2%213d40.755311999999996%214d-73.972956&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 3.9,
+        "reviews": 836,
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGwKc1gjqXpC26vv_ebV5jI3JAsjOqtQr9R94zhvFn85rjMV0PZPWHKQIktwcuUDWCi4D0edm_9lMFvOfn743h30G1AE4mOuf1shTVsqgfARl5ChjsO6O309URYiLkQsbRKdHA8=w159-h90-k-no",
+        "description": "4-star hotel for $49 less",
+        "distance": "0.1 mi away",
+        "price": "$133"
+      },
+      {
+        "position": 4,
+        "title": "San Carlos Hotel",
+        "data_id": "0x89c258fcd51e27df:0xc0d49c4d757d2c50",
+        "data_cid": "13894902606842375248",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fcd51e27df%3A0xc0d49c4d757d2c50&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fcd51e27df%3A0xc0d49c4d757d2c50&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.756015,
+          "longitude": -73.971445
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fcd51e27df%3A0xc0d49c4d757d2c50%218m2%213d40.756015%214d-73.971445&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 4.5,
+        "reviews": 915,
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHYV3pEMhZGoEbUQz5Ume62E9yGcHvfHLRXl9t0jLYh5qdbw_8HXi8ocAwEQZJmUdUlVaDz1joY2mQQLgXMobYwTvWYOgpM4uX2-thJknEPwogRJXIm2mvai10oZ2w02-2xs5wd=w97-h90-k-no",
+        "description": "4-star hotel for only $4 more",
+        "distance": "0.1 mi away",
+        "price": "$186"
+      },
+      {
+        "position": 5,
+        "title": "The Fifty Sonesta Hotel New York",
+        "data_id": "0x89c258e32bf6e34b:0x50363464ef4fe779",
+        "data_cid": "5779864779892975481",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e32bf6e34b%3A0x50363464ef4fe779&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e32bf6e34b%3A0x50363464ef4fe779&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.756085999999996,
+          "longitude": -73.971079
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258e32bf6e34b%3A0x50363464ef4fe779%218m2%213d40.756085999999996%214d-73.971079&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 4.1,
+        "reviews": 1592,
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGg0PSj3pmZeRPJPe0Cjr2WjXH5SSgC_-rbNu9RFBIvJMjVlXH30YzE-EklgOoKdiZLKGkvfquvUCwQPaOPPKtPuysjJANr7-jBNgEecxZDbFo_95HHF7QpEqz38MTPfs1ZEXVAAij3rtxG=w135-h90-k-no",
+        "description": "4-star hotel for only $22 more",
+        "distance": "0.1 mi away",
+        "price": "$205"
+      },
+      {
+        "position": 6,
+        "title": "InterContinental New York Barclay by IHG",
+        "data_id": "0x89c258fd0f074277:0x833b2d19475adb0c",
+        "data_cid": "9456201429189057292",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd0f074277%3A0x833b2d19475adb0c&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd0f074277%3A0x833b2d19475adb0c&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.755663,
+          "longitude": -73.973528
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd0f074277%3A0x833b2d19475adb0c%218m2%213d40.755663%214d-73.973528&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 4.3,
+        "reviews": 3781,
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFTZiFogNoA7fGufnYZeDgjqwJisboDQtmiUKwaKBKMZtpjsb1P2rs--cLGPrwm8Tx3VkX7oM_cejoV_YqzJfnH8QerAm4YKPTQ0uSk21ZYCJEPyCFumuRpZcwt_Yrj7Q3I-9Oq=w169-h90-k-no",
+        "description": "Refined hotel with dining & a lounge",
+        "distance": "0.1 mi away",
+        "price": "$255"
+      },
+      {
+        "position": 7,
+        "title": "The Bernic Hotel New York City, Tapestry Collection by Hilton",
+        "data_id": "0x89c258fd427babfd:0x83d480befe6daada",
+        "data_cid": "9499359071831960282",
+        "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258fd427babfd%3A0x83d480befe6daada&engine=google_maps_reviews&hl=en",
+        "photos_link": "https://serpapi.com/search.json?data_id=0x89c258fd427babfd%3A0x83d480befe6daada&engine=google_maps_photos&hl=en",
+        "gps_coordinates": {
+          "latitude": 40.754407,
+          "longitude": -73.97263099999999
+        },
+        "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258fd427babfd%3A0x83d480befe6daada%218m2%213d40.754407%214d-73.97263099999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+        "rating": 4.2,
+        "reviews": 866,
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaR7YshZMaQJl3HKiwRf5KQv6j2lE5yoM2ApC0Wy7MQbhQd52iGsKtCirGvPa6rlwKBS2_C98k9zYX_0GsU_0fCo0icPbJgdyhi_U_omlEjW3EE5Jq8xrxd8Pq24D3wYplXbc=w135-h90-k-no",
+        "description": "4-star hotel for only $4 more",
+        "distance": "0.1 mi away",
+        "price": "$187"
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiMKISIdVGhlIEJheWFyZCBIb3RlbCBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiMKISIdVGhlIEJheWFyZCBIb3RlbCBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

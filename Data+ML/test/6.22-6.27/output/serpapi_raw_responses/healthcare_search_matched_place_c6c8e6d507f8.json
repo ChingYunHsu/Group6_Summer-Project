@@ -1,0 +1,356 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ef073d22489006920fd",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/1sCAJhEvH7_mBJa7shjH8Q/6a3d3ef073d22489006920fd.json",
+    "created_at": "2026-06-25 14:45:04 UTC",
+    "processed_at": "2026-06-25 14:45:04 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2590587a0b8c5:0x25d527b0c94eee0c!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/1sCAJhEvH7_mBJa7shjH8Q/6a3d3ef073d22489006920fd.html",
+    "prettify_html_file": "https://serpapi.com/searches/1sCAJhEvH7_mBJa7shjH8Q/6a3d3ef073d22489006920fd.prettify",
+    "total_time_taken": 0.73
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJxbighwVZwokRDO5OybAn1SU",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Natures Cure Pharmacy",
+    "place_id": "ChIJxbighwVZwokRDO5OybAn1SU",
+    "data_id": "0x89c2590587a0b8c5:0x25d527b0c94eee0c",
+    "data_cid": "2726128789687823884",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590587a0b8c5%3A0x25d527b0c94eee0c&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590587a0b8c5%3A0x25d527b0c94eee0c&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.744169,
+      "longitude": -73.9747853
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJxbighwVZwokRDO5OybAn1SU",
+    "provider_id": "/g/1tfcd2ks",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=6Nzgwg1w5DOyKdYYyJveeA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=225.68184&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/HoFqE3icHc1NDsIgEEDh27ATirFNY0KMiStNdN2VoXSESWiZFATrabyWt_Fn85bfe79cShS3QsQ0A6SMUAgf4OOKNLchWA-aMHITRpGlSO4-9pNGvyM9BRxUc37aYmWpD5flNHTdcswAe2b6q_EIU1IR9Gwct-UrzmHgliIrqm2Y-2XRRa3XNW9a2W4YYTJOVex_uYWsZFV9AJWXOeY",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 59
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 65,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Delivery",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "delivery": true
+    },
+    "address": "324 E 34th St, New York, NY 10016",
+    "country": "United States",
+    "website": "http://healthycornerpharmacy.com/locations/",
+    "phone": "(212) 545-9393",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "P2VG+M3 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "10 AM\u20135 PM"
+      },
+      {
+        "monday": "9 AM\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20137 PM"
+      },
+      {
+        "wednesday": "9 AM\u20137 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=6Nzgwg1w5DOyKdYYyJveeA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=225.68184&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/wyn34nicHc0xCsIwFADQ22QzaUpbqhBEcFLQuVNJ02_6IW2C-SbW43grbyM6vul93hNRiDshIt0BKCHkgE9wcRM0t95bBzpg5MbPIklB02MeFo1uH_TicVTN5WWzlbk-Xtfz2HXrKQEcmBl64xAWUrMOsY-JkzaEDrgNkWVVlhWbVLlt2ap_qnnTyrZiAclMqmD_5-aTkkXxBQ8cOn0"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=6Nzgwg1w5DOyKdYYyJveeA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=225.68184&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/wyn34nicHc0xCsIwFADQ22QzaUpbqhBEcFLQuVNJ02_6IW2C-SbW43grbyM6vul93hNRiDshIt0BKCHkgE9wcRM0t95bBzpg5MbPIklB02MeFo1uH_TicVTN5WWzlbk-Xtfz2HXrKQEcmBl64xAWUrMOsY-JkzaEDrgNkWVVlhWbVLlt2ap_qnnTyrZiAclMqmD_5-aTkkXxBQ8cOn0"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Received our necessary medications quickly and delivered to the hospital!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJwYBqQMa0jcACYeUtV4d8BnkEsr30oQZUQMqt_qfQovyavhw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"All staff and delivery people are Simply they best!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLyuAB09hmPqNF6eEoNEehyGwMn2X9qsFRbzQyF0O4Xg5wT9w=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Yan Gindin",
+          "rating": 5,
+          "contributor_id": "112321535634908971920",
+          "user_review_count": 301,
+          "user_photo_count": 31,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ0xlVc85XdB94vakvMTSKXMQ1fjrn84wDFcQ2ncJBGJJHuuA=s120-c-rp-mo-ba12-br100",
+          "description": "The pharmacy is neighborhood fixture. They always provide top notch service, knowledgeable about the prescriptions and eager to make sure that patients walk away happy. The pharmacy owner, president and ceo, Eduard, makes sure that the pharmacy is run to serve the needs of the patients, the pharmacist herself is very knowledgeable and provides top notch service, the pharmacy tech Manisha is absolute joy to deal with",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT200MU5tRk9MWFZEUTNFMExVbzNXR3BsVUU5NGFWRRAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOm41NmFOLXVDQ3E0LUo3WGplUE94aVE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-04T21:56:35+00:00"
+        },
+        {
+          "username": "Cherish-Marie Collins",
+          "rating": 5,
+          "contributor_id": "114007002200423945198",
+          "user_review_count": 26,
+          "user_photo_count": 17,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWJQv4ggeEOEQ2jg0YyVM21z_Qb7s5p2hqLlA5J4KpApajGKCLX=s120-c-rp-mo-ba12-br100",
+          "description": "I would rate them 10 stars if I could. Staff are incredibly friendly. Pharmacy is always stocked with my daughter's prescriptions and one of the best parts delivery with in the 5 boroughs.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kRVZGWTNRazUwZWtGYVIyRkxjV1V5WjJGRloyYxAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOmdEVFY3Qk50ekFaR2FLcWUyZ2FFZ2c%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-11T22:45:15+00:00"
+        },
+        {
+          "username": "Daniel Vaccaro",
+          "rating": 5,
+          "contributor_id": "103358376597977463800",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIiYcNWRO86001nmhQHkvixtgefMJSEOzk4p70rLm_hSCRZHw=s120-c-rp-mo-br100",
+          "description": "I have been coming here for years. The pharmacists and staff are incredibly friendly and efficient, always going beyond expectations to ensure I get what I need. It is reassuring to receive such great care. I can't imagine going anywhere else.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2taT2NFVk9WVVZXVWxaaFZreG9jbGwwYm1aV1VuYxAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOkZOcEVOVUVWUlZhVkxocll0bmZWUnc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-16T16:04:39+00:00"
+        },
+        {
+          "username": "Miranda Jacob",
+          "rating": 5,
+          "contributor_id": "101157648238913342357",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI2Qr3E1NW75CkqxDYqhkegia_uuT6iEsnKn-_5PZjkJH2EYWU=s120-c-rp-mo-br100",
+          "description": "Came to get a document notarized.\nMake sure you print your document.\nQuick. Simple. Great service.\nHighly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kxeVlYUmhiVEpHTTNGSWN6ZzNMWFp5YVZadFQzYxAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOi1yYXRhbTJGM3FIczg3LXZyaVZtT3c%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-07T17:22:35+00:00"
+        },
+        {
+          "username": "Tanya Bukai",
+          "rating": 5,
+          "contributor_id": "117725210427118087156",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLGql3DSq1nng0PvEtw2W8cx9dScbFbcGkChH5FBGT_7AZjoA=s120-c-rp-mo-br100",
+          "description": "I have been using nature cure pharmacy for almost two years now. The staff are incredibly kind, attentive, and go out of their way to make sure I get my daughter\u2019s supplies on time! Every month someone contacts me to schedule delivery refills- like what other pharmacy does that anymore? They are quick to assist, and If there\u2019s ever a problem they always contact me in advance to help solve the issue. Everyone I interacted with was knowledgeable and genuinely helpful, creating a welcoming and professional atmosphere. It\u2019s clear that they truly care about their customers\u2019 well-being. I highly recommend Nature Cure Pharmacy to anyone looking for excellent service and a friendly, efficient team. Thank you!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KYU4yRnNXV0YzYkVsWk1HaHhjMVpXYVdGc1lrRRAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOmJaN2FsWWF3bElZMGhxc1ZWaWFsYkE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-05T02:27:39+00:00"
+        },
+        {
+          "username": "Tatiana Krosh",
+          "rating": 5,
+          "contributor_id": "110204115705502083595",
+          "user_review_count": 5,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVJXQZOH6n3APABHmuLnMmbXCXALYD63i5frUff6vQSVa-BWMcAEA=s120-c-rp-mo-br100",
+          "description": "This pharmacy is the best! My family has been their client for more than three years.\nSincere, kind and understanding employees work there.\nThey are in a difficult position and solve every problem related to obtaining medicines.\nThey provide those rare medicines for serious diseases (like my child's) that are difficult to find in New York.\nThe employees are always polite, answer calls and call back if necessary.\nThey explain how to use this or that medicine, how to store it.\nI wish they had more kind customers. I hug every employee. Thank you for your work. \ud83d\ude4c\ud83d\ude4f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OVFgxQkJhRzlxU2tzemF6WjRUSFpuYW1sS05VRRAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOnNTX1BBaG9qSkszazZ4THZnamlKNUE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-09-26T13:01:01+00:00"
+        },
+        {
+          "username": "Jennifer Nugent",
+          "rating": 5,
+          "contributor_id": "103946557933475639685",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKbIPgpHNBurh1BY3cNHoXYD2yQ-kGRP5yg_k1EhXvs20xA=s120-c-rp-mo-br100",
+          "description": "I love this pharmacy. They are so helpful. They check in monthly to make sure my kids have all their medical supplies. They help me with last minute prescription refills, and insurance, billing, and coverage. The team is so caring and kind. I am so happy we found this pharmacy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tORVUyeDBkazVUVDFONGJURXlVSEk1WVhObWFrRRAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOkNEU2x0dk5TT1N4bTEyUHI5YXNmakE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-14T12:56:22+00:00"
+        },
+        {
+          "username": "Lara",
+          "rating": 5,
+          "contributor_id": "117537628874089145892",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI9HDiOZHYV3lnznd1DLkW2usiFToSnHs8TNyAPFuV7JTuK2A=s120-c-rp-mo-br100",
+          "description": "I\u2019m really grateful to this pharmacy for their attentive and reliable service! \ud83c\udf38\nThey always have insulin and all the diabetes supplies I need \u2014 test strips, sensors, and other essentials. The pharmacists are kind, professional, and always ready to help with advice and explanations.\n\nIt gives me peace of mind knowing that I can always count on this pharmacy to have everything I need for my health. Truly an excellent place, highly recommended!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tZeFYzTkZOaTFNUlU5VGNHOTJVbE5zT0drNU1IYxAB!2m1!1s0x0:0x25d527b0c94eee0c!3m1!1s2@1:CAIQACodChtycF9oOkYxV3NFNi1MRU9TcG92UlNsOGk5MHc%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-21T20:34:09+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Pasteur Pharmacy Inc",
+            "data_id": "0x0:0x26bfbecbcf48f936",
+            "data_cid": "2792160076558301494",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26bfbecbcf48f936&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26bfbecbcf48f936&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7475866,
+              "longitude": -73.9819687
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x26bfbecbcf48f936%218m2%213d40.7475866%214d-73.9819687&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 452,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGlpNBXfLMkeP-iptzq4WOLiFJpI28T3iVcjvW2xm8nzBndDY9LE9H8sk4AcwO3-kluRcnH_-eWHmJySEvu0d1gYlN_z2BF2N7fzgggP0R4wbHFVvdIZA4VP8vWkeLG9i6f1VFI=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Nature's Prescriptions",
+            "data_id": "0x0:0x52465a3938338c3d",
+            "data_cid": "5928525161282374717",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x52465a3938338c3d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x52465a3938338c3d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7430957,
+              "longitude": -73.955269
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x52465a3938338c3d%218m2%213d40.7430957%214d-73.955269&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 76,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFcIh5hsHM0I3Th569Xp85VigzYu0HDAvCx4pVHMjzpdbMpXVyAuwgOMdTM_kDuY7ULh9dlvgE4pxh13Snyyu0Gvg27l2QKGoH7OckHOTehVA7Q6MkPAJ-uuKrJhFCfqGyhW3qW=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Walgreens Pharmacy",
+            "data_id": "0x0:0x693f0b881e273d21",
+            "data_cid": "7583792976764550433",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x693f0b881e273d21&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x693f0b881e273d21&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7460904,
+              "longitude": -73.9781248
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x693f0b881e273d21%218m2%213d40.7460904%214d-73.9781248&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.5,
+            "reviews": 46,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGixzNTgNUHlX5Jb-aUSNFwTjsstIhy9iz2x3yiXJL-CHkxSLcAATo0Y2sO6pdFeZztDi9P6jmoyD3qdaKNSj3CZ4MkZJvXyoNjqO_ucbyyoER3-Di1dS94NVdGvbW7-mnIWBlW=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "CVS Pharmacy",
+            "data_id": "0x0:0x14278b0e33954685",
+            "data_cid": "1452282297961498245",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x14278b0e33954685&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x14278b0e33954685&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7449717,
+              "longitude": -73.9770424
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x14278b0e33954685%218m2%213d40.7449717%214d-73.9770424&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 27,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHaHlKkmQIZZei2YxudewAjHZUXUJliQUiYSJvHeNQSzwPY8ySBZR4srph5V-4_DOPujgNx95F3xopXX856jwcBU0pt-LQGkHhCGrvKgzCSNxzfeLveePSJ3_1To_9l2IBsYda3ydXyBvfX=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Clean Care Pharmacy",
+            "data_id": "0x0:0xd24860001c5b6541",
+            "data_cid": "15152466499880052033",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd24860001c5b6541&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd24860001c5b6541&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.749405599999996,
+              "longitude": -73.9758351
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd24860001c5b6541%218m2%213d40.749405599999996%214d-73.9758351&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=dovnzyrdEpJ1a64qsTcrUSd-jjqOD3y-qO7prx2Zfpwd9YqVVWBXbtq73mi_BZMwkPlb9mctOlzYF11nPg5Bm8yImc7hcNWTSRXSQeq4pHYcwUYXreIj_YiZwqwXYds19pGaFW_NS1qj_74NmQBzGSTUHix3sugH",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OigKJiIiTmF0dXJlcyBDdXJlIFBoYXJtYWN5IE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COigKJiIiTmF0dXJlcyBDdXJlIFBoYXJtYWN5IE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

@@ -1,0 +1,1085 @@
+{
+  "search_metadata": {
+    "id": "6a3ac198bd1731611ec179e4",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/7_1hFt76IrqhJbXrx9BH9Q/6a3ac198bd1731611ec179e4.json",
+    "created_at": "2026-06-23 17:25:44 UTC",
+    "processed_at": "2026-06-23 17:25:44 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f63dbf5e303b:0x7bd728896053e9c8!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/7_1hFt76IrqhJbXrx9BH9Q/6a3ac198bd1731611ec179e4.html",
+    "prettify_html_file": "https://serpapi.com/searches/7_1hFt76IrqhJbXrx9BH9Q/6a3ac198bd1731611ec179e4.prettify",
+    "total_time_taken": 1.49
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJOzBevz32wokRyOlTYIko13s",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Mount Sinai West",
+    "place_id": "ChIJOzBevz32wokRyOlTYIko13s",
+    "data_id": "0x89c2f63dbf5e303b:0x7bd728896053e9c8",
+    "data_cid": "8923645757149669832",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f63dbf5e303b%3A0x7bd728896053e9c8&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f63dbf5e303b%3A0x7bd728896053e9c8&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7698391,
+      "longitude": -73.98716639999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s",
+    "provider_id": "/g/113flyn1d",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLuOpfdzz8jVLnfkszigw2wC6TNDGm8tHU61CX0h0sadTlDLLEu7t70wUMlC-p8_xsuPEFHSUxJLzTZxEnYRRv1yznMcMWQ4ja4CzkhA3Vw-2XeSzOua9zLUVJTA6OOD70yZOjcg=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/QAzZpXicHcTbDoIgAADQLyKxmlpbD06t1jC6qF1emkOF1NAFhPGHfUJ_09Z5ON8Pk7IXc8tq2WREu462pRLlk3RcllyOSPewaC8AEUBY_m67b_wlUrivCmO8OkO8aoS5Uz3WgZNsw9XDk-vUsYMzZFDkRdKGCEXKlS7UadwGoPdug1C7aLk-psMGmeQ6RPxyOLzst-ExiU_7aZ1PA9Mwf5JpMD6XR4NVPjMozTaJ72AcuvB9xTWhC21DCAH7TwD_ATehRbA",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 349
+      },
+      {
+        "stars": 2,
+        "amount": 54
+      },
+      {
+        "stars": 3,
+        "amount": 38
+      },
+      {
+        "stars": 4,
+        "amount": 50
+      },
+      {
+        "stars": 5,
+        "amount": 316
+      }
+    ],
+    "rating": 2.9,
+    "reviews": 807,
+    "type": [
+      "Hospital",
+      "Emergency room",
+      "Urgent care center"
+    ],
+    "type_ids": [
+      "hospital",
+      "emergency_room",
+      "urgent_care_center"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "parking": [
+          "On-site parking",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "1000 10th Ave, New York, NY 10019",
+    "country": "United States",
+    "website": "https://www.mountsinai.org/locations/west?utm_source=Yext&utm_medium=local_listing&utm_campaign=MSR",
+    "phone": "(212) 523-4000",
+    "open_state": "Open 24 hours",
+    "plus_code": "Q297+W4 New York",
+    "hours": [
+      {
+        "tuesday": "Open 24 hours"
+      },
+      {
+        "wednesday": "Open 24 hours"
+      },
+      {
+        "thursday": "Open 24 hours"
+      },
+      {
+        "friday": "Open 24 hours"
+      },
+      {
+        "saturday": "Open 24 hours"
+      },
+      {
+        "sunday": "Open 24 hours"
+      },
+      {
+        "monday": "Open 24 hours"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 9 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f63dbf5e303b%3A0x7bd728896053e9c8&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMaW-j2znss5WnWvNfw2_POMzGsOYgwZzKrjS7i=h400-no",
+        "cta": "Learn more",
+        "link": "https://health.mountsinai.org/blog/riding-the-new-wave-of-ai-in-health-care/",
+        "post_link": "https://search.google.com/local/posts?q=Mount+Sinai+West&ludocid=8923645757149669832&lpsid=CIHM0ogKEL3r4f2Mvon6Lg&source=sh/x/loc/post&lsig=AB86z5Wvml-UA-dvczQlyc-bK20V",
+        "description": "The health care industry has overwhelmingly embraced artificial intelligence (AI) technology in all aspects\u2014clinical, academic, administrative, and more\u2014and with the breakneck speed of progress in this area, it\u2019s little wonder the field is seeing an outpouring of innovation.\n\nBut innovation works best when all players collectively work together to create a wave that uplifts everyone.",
+        "date": "Jun 9, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOigKPr7Nj_8g0ZQA1wR2gn3AZ-1rHMvrOWkBQV=h400-no",
+        "cta": "Learn more",
+        "link": "https://health.mountsinai.org/blog/cant-sleep-waking-up-tired-try-these-sleep-specialist-tips/",
+        "post_link": "https://search.google.com/local/posts?q=Mount+Sinai+West&ludocid=8923645757149669832&lpsid=CIHM0ogKEIiJ-sSviOK7lQE&source=sh/x/loc/post&lsig=AB86z5Wvml-UA-dvczQlyc-bK20V",
+        "description": "In this Q&A, Andrew W. Varga, MD, PhD, a Mount Sinai neuroscientist who specializes in sleep, explains how to sleep better and how to know if you might have a sleep disorder.",
+        "date": "May 21, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOkBISFRUVWh59m74fCRjmRBfiDt8VwGVzvMUmu=h400-no",
+        "cta": "Learn more",
+        "link": "https://health.mountsinai.org/blog/addressing-the-cognition-concerns-of-multiple-sclerosis-patients/",
+        "post_link": "https://search.google.com/local/posts?q=Mount+Sinai+West&ludocid=8923645757149669832&lpsid=CIHM0ogKEKKHnqKu76Gcag&source=sh/x/loc/post&lsig=AB86z5Wvml-UA-dvczQlyc-bK20V",
+        "description": "Multiple sclerosis (MS) patients often worry that the disease will diminish their ability to think and remember, along with their motor skills. Sarah Levy, PhD, Assistant Professor of Neurology at the Icahn School of Medicine at Mount Sinai, is working to address these concerns, studying the impact of MS on the brain and cognition and uncovering new possibilities for early interventions.",
+        "date": "Mar 30, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOjRyecye4m1amJ9Ut1Y4N_IIvWjmts6HGzVo04=h400-no",
+        "cta": "Learn more",
+        "link": "https://health.mountsinai.org/blog/colorectal-cancer-is-rising-among-younger-people-heres-what-we-know/",
+        "post_link": "https://search.google.com/local/posts?q=Mount+Sinai+West&ludocid=8923645757149669832&lpsid=CIHM0ogKELuAsYnurcKq8QE&source=sh/x/loc/post&lsig=AB86z5Wvml-UA-dvczQlyc-bK20V",
+        "description": "In this Q&A, Pascale White, MD, MBA, MS, FACG, Director of Health Equity in Action for Liver and Digestive Diseases (HEALD), and Associate Professor of Medicine (Gastroenterology and Liver Disease), Icahn School of Medicine at Mount Sinai, discusses warning signs younger people should look out for and when to see a doctor.",
+        "date": "Feb 26, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOBvXH560o2iIS---RYsxouCQzT81TbBvjRn29z=h400-no",
+        "cta": "Learn more",
+        "link": "https://health.mountsinai.org/blog/strep-throat-what-parents-need-to-know-about-the-infection/",
+        "post_link": "https://search.google.com/local/posts?q=Mount+Sinai+West&ludocid=8923645757149669832&lpsid=CIHM0ogKEO2zisqPjtWBigE&source=sh/x/loc/post&lsig=AB86z5Wvml-UA-dvczQlyc-bK20V",
+        "description": "In this Q&A, Tessa Scripps, MD, a pediatrician and Assistant Professor at the Icahn School of Medicine at Mount Sinai, explains what causes strep throat, how to recognize the symptoms and treat them, and ways to help prevent the infection and keep it from spreading.",
+        "date": "Feb 3, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLuOpfdzz8jVLnfkszigw2wC6TNDGm8tHU61CX0h0sadTlDLLEu7t70wUMlC-p8_xsuPEFHSUxJLzTZxEnYRRv1yznMcMWQ4ja4CzkhA3Vw-2XeSzOua9zLUVJTA6OOD70yZOjcg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/QAzZpXicHcTbDoIgAADQLyKxmlpbD06t1jC6qF1emkOF1NAFhPGHfUJ_09Z5ON8Pk7IXc8tq2WREu462pRLlk3RcllyOSPewaC8AEUBY_m67b_wlUrivCmO8OkO8aoS5Uz3WgZNsw9XDk-vUsYMzZFDkRdKGCEXKlS7UadwGoPdug1C7aLk-psMGmeQ6RPxyOLzst-ExiU_7aZ1PA9Mwf5JpMD6XR4NVPjMozTaJ72AcuvB9xTWhC21DCAH7TwD_ATehRbA"
+      },
+      {
+        "title": "Hospital",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEy2mI9y5JbIEL2hJTyrNkUje8dNF1rbP16QfktAzk0HbYfqBrrbKfSXgEl41NXKoUpB2EfRe9_83zjdjwgM7daIiD_8dgLu-_9dhg2-vLnB8SblhGnCIqZaVPaV6y-3Wq2HVwtGg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/GPym7nicHcRRboIwAADQE1WgqIMlfsBkiiJBUXT7IZSWdoAttFWCN_QI3maJ7-O9nkzrTn0aRsvsCRWCtuSmiCwF14TrSSmuBu0UKBVQhpfE-8YLRngN3XG2QWEQQbY5jjJuTjVxcPxtSZRY833VaO_RmGv0U_W-lGhbpRcatFMrvmzFqfNhUB2Imzv2o8b1QHcfuAj_lrmDaXQDuYsZheAecd9JUctW_Cvsf4ssKbL5COxzD9fZoFd0MVimaQL2vgT8H9GiRQ4"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEr0vAdOC90eJeVJjZ4Kfm80shuM1MS7AyZmiJh0cJ1T52bqTOaxaf37tHCwOBQ5NQyxfnsSD7tVFpGOvibbuamrx9ZMLLkD8Ud3ChShuUVR-akGcDrh0xQ_dTnbq2hvw0PtgoE=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/l_YtYXicHcRLroIwFADQFVUuokFNHCD4fEERkc-AyQuUwvUhLdLycYWuwd2YeAbn_UKlWrnRtDsas0qI6s56yToquGJczahotKqVhEoiNetyDmpr38FgFb69BuayxP1PF8eyWYHE3tO90LSeaXNzEairR8t5_oj8bMpKw1S_9ujvguU5eE4ll6FjquSnPfjDLc_7rOmmdeqdTrWzigvDxhD7OLmSrD5Qp0OYgr8i4vljjsMIF1WJ_XbUAYDgd0r4BzUFRP4"
+      },
+      {
+        "title": "Reception",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEsjbNNRssUUqaNyG3C3ohyRqYRazqgbQqx1mVP-0hSnrrvymHcKssi03ZRvxU43nZYrb0fOT1OLUHmSooZ5nVlFxYc2jjIhAC_r_oa9h5Q8pzJohLoNPJd46UUwkoiWqq7dqAHFQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/xRBhI3icHcTRboIwFADQL6oUq24z8YEYlTlTAa0GXgxUpCL00l5U8A_3CfubJZ6H8_er2rbBqeNUig0KgKLK75hbCbrNdTuQUDtFg0QiQccLeHjzFlhmnEeIQpiU9ys2Z6D6yMRR-jJFFprOrQ8BoWqnrX30tS9_EK-UJdGjEyOmk9hm9LLdu9uN8OsdQDLWh2rZxXJYlt_Km5_sCdIvNQ4_m9ca1AZ4sD6PJkI8b3A9GvNxNp6_DGdPl1JK1HtJ9D-8y0dR"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGh2DSh1MZY9g8HHpQTeChCq1hn-Uktddel6fiY7V9XX_GMPspCIW0jaCfRO-HwA6AAoEEVJskKwPe_s_m-KXHoCMmG3TqeXmYhsDC_5ZL7jwgBZSAH4Pf1eN0gFVRdKD1RXKo6=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DOTQmnicHcRbcoIwFADQFUUSH_iY8SMNllSKIigGfpgOhKTyCHrjsMSuwd040_NxXn_a2gE2jtPq2UQZo1r5BPkoTW9lbyel6Rw1ACoBgUOjw6mhvp56iSZhnq3VivPhdJZMszvRPbo0tqpk69a_2TJdC1H4YQQD-7ri2w-r4yPiI3UpNbtduocmGCNZQNGhQHDDws6fne9SdJkGjxWL_Ht5G9VHnlA-j2oiD1h9pnEVeCQWgXG3I8EYI_1_ifo39wxDMg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=M4VgxfTmYswhqoHZ7W7R4Q&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=119.22875&pitch=88.46897&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/KSzelHicHc3BDcIgFADQbbgJLUGhJsSrFw8ao9FLg0iBBArKl9aRHMltTHwLvO_HAeSyJqTA0xio3kzZzyaURVbYpmSDUdkXrFMktSXgXvE2Kh82WY3J3-WOnew8HOOlTO6Rtld-5ge2R_rW6-DNCDKqXPpSMSgNPhhsc0GTpJQhJ2kn0FtNsm07TKngS5Q9aCeFwGwlOo7-3ZCqbJvmB5yWO9g"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Food & Drink",
+          "places": 2
+        },
+        {
+          "title": "Shopping",
+          "places": 2
+        },
+        {
+          "title": "Recreations",
+          "places": 2
+        },
+        {
+          "title": "Services",
+          "places": 9
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 14
+        },
+        {
+          "title": "Parking",
+          "places": 2
+        },
+        {
+          "title": "Other",
+          "places": 4
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "MORTON WILLIAMS SUPERMARKETS",
+          "data_id": "0x89c25858c2bcb969:0xd66e47bfc5d6091b",
+          "data_cid": "15451366260538214683",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25858c2bcb969%3A0xd66e47bfc5d6091b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25858c2bcb969%3A0xd66e47bfc5d6091b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7689628,
+            "longitude": -73.9852025
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25858c2bcb969%3A0xd66e47bfc5d6091b%218m2%213d40.7689628%214d-73.9852025&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "rating": 3.9,
+          "reviews": 557,
+          "type": "Supermarket",
+          "type_id": "supermarket",
+          "address": "917 9th Ave, New York, NY 10019",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            },
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE_oHB1tVmqq4rd75bv3-E3cdb5nc8ZyQRsQectTT4u-kmwZSNT0vLQ1WRxPWlUBv4ohkqndI-HPzu1tc_u1RoX_BURZj22z3u-mgiPRIZP_KHsh5m9tNm5_e0n1syyW9n-Ur8=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE_oHB1tVmqq4rd75bv3-E3cdb5nc8ZyQRsQectTT4u-kmwZSNT0vLQ1WRxPWlUBv4ohkqndI-HPzu1tc_u1RoX_BURZj22z3u-mgiPRIZP_KHsh5m9tNm5_e0n1syyW9n-Ur8=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Saadi Ghatan, MD",
+          "data_id": "0x89c25859483f20af:0xb3b686f0bf5fe96a",
+          "data_cid": "12949686147111446890",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xb3b686f0bf5fe96a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xb3b686f0bf5fe96a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7698438,
+            "longitude": -73.98953060000001
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xb3b686f0bf5fe96a%218m2%213d40.7698438%214d-73.98953060000001&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "rating": 5.0,
+          "reviews": 80,
+          "type": "Neurosurgeon",
+          "type_id": "neurosurgeon",
+          "address": "521 W 57th St 6th Fl, New York, NY 10019",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "9\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "9\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG-BiaY-QwXLGzZvhozN293xA2qQwGxNNZRyklDDrFqYffVObSV_z5FjnpocGe9riv620eXEOeAGlDPbyZ8J_LnnIBx0GYqX8QJPc_Mi3KG88uKK5MZSyLlunfFatwfPIyiRbBCrF2xla0=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG-BiaY-QwXLGzZvhozN293xA2qQwGxNNZRyklDDrFqYffVObSV_z5FjnpocGe9riv620eXEOeAGlDPbyZ8J_LnnIBx0GYqX8QJPc_Mi3KG88uKK5MZSyLlunfFatwfPIyiRbBCrF2xla0=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "Mount Sinai West Parking",
+          "data_id": "0x89c25858d8795943:0xb69e273c0c6defe4",
+          "data_cid": "13158998300083220452",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25858d8795943%3A0xb69e273c0c6defe4&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25858d8795943%3A0xb69e273c0c6defe4&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7696859,
+            "longitude": -73.9866424
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25858d8795943%3A0xb69e273c0c6defe4%218m2%213d40.7696859%214d-73.9866424&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "rating": 4.1,
+          "reviews": 38,
+          "type": "Parking garage",
+          "type_id": "parking_garage",
+          "address": "1000 10th Ave, New York, NY 10019",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            },
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZAW-pgVj0jcNu1-7VA931XbR9AOX0gMc_rFPSSwXQjNe8w-AZ5M-cEi_Jcoo1ql5ZqCVMiwctg9SXs3rXe4H0B0GQdQJFf4UxHmEd9uK10rGc9iXefCJsVFEX1yY0ioZdtt5-=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGZAW-pgVj0jcNu1-7VA931XbR9AOX0gMc_rFPSSwXQjNe8w-AZ5M-cEi_Jcoo1ql5ZqCVMiwctg9SXs3rXe4H0B0GQdQJFf4UxHmEd9uK10rGc9iXefCJsVFEX1yY0ioZdtt5-=w86-h86-n-k-no"
+        },
+        {
+          "position": 4,
+          "title": "Aleta St. James- Master Energy Healer & Intuitive Life Coach",
+          "data_id": "0x89c258595dfdfb67:0x174bcd74754dc59d",
+          "data_cid": "1678661186193573277",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258595dfdfb67%3A0x174bcd74754dc59d&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258595dfdfb67%3A0x174bcd74754dc59d&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769646300000005,
+            "longitude": -73.98858129999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258595dfdfb67%3A0x174bcd74754dc59d%218m2%213d40.769646300000005%214d-73.98858129999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "rating": 5.0,
+          "reviews": 36,
+          "type": "Coaching center",
+          "type_id": "coaching_center",
+          "address": "881 10th Ave, New York, NY 10019",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 5\u202fPM",
+          "hours": [
+            {
+              "tuesday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "wednesday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "thursday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "friday": "10\u202fAM\u20135\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "10\u202fAM\u20135\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF95EfxvL7qaPhc9CunHOUuZ9PkeImDN3WvopXp_HAtSg_2lvWlaRRiJpgKEqfJr5AsK1-bvSSoWHD-xz_T0tip1YGfXRxIpZ0lkt28xRxefvHMqj9t7rDjRuykP_XZzvLTeLs9JzbEx7U=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF95EfxvL7qaPhc9CunHOUuZ9PkeImDN3WvopXp_HAtSg_2lvWlaRRiJpgKEqfJr5AsK1-bvSSoWHD-xz_T0tip1YGfXRxIpZ0lkt28xRxefvHMqj9t7rDjRuykP_XZzvLTeLs9JzbEx7U=w86-h86-n-k-no"
+        },
+        {
+          "position": 5,
+          "title": "Ultimate USA Weddings",
+          "data_id": "0x89c259a9b3117469:0x331ecf2ae257301b",
+          "data_cid": "3683609328328585243",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a9b3117469%3A0x331ecf2ae257301b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a9b3117469%3A0x331ecf2ae257301b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769160199999995,
+            "longitude": -73.98556409999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259a9b3117469%3A0x331ecf2ae257301b%218m2%213d40.769160199999995%214d-73.98556409999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "rating": 5.0,
+          "reviews": 13,
+          "type": "Wedding planner",
+          "type_id": "wedding_planner",
+          "address": "One Columbus Place, Columbus Pl, New York, NY 10019",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            },
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMHXaXxSI5DfkYRmUIEWOUwRgab3MnXsvxDzxH9tnisqkUCIxz3N0Kkj-I904qEX5cx3G_yLrUMlAjIfkdTG_55uJ9wiqK9Us1Wjq6Th1ujFaXrhNWstwj_uaBrYql-OsKbHoY=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEMHXaXxSI5DfkYRmUIEWOUwRgab3MnXsvxDzxH9tnisqkUCIxz3N0Kkj-I904qEX5cx3G_yLrUMlAjIfkdTG_55uJ9wiqK9Us1Wjq6Th1ujFaXrhNWstwj_uaBrYql-OsKbHoY=w86-h86-n-k-no"
+        },
+        {
+          "position": 6,
+          "title": "Farmer's Fridge",
+          "data_id": "0x89c259d94c2903c7:0xc934b6a309ac1b96",
+          "data_cid": "14498413911770667926",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259d94c2903c7%3A0xc934b6a309ac1b96&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259d94c2903c7%3A0xc934b6a309ac1b96&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769998199999996,
+            "longitude": -73.9874797
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259d94c2903c7%3A0xc934b6a309ac1b96%218m2%213d40.769998199999996%214d-73.9874797&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Health food restaurant",
+          "type_id": "health_food_restaurant"
+        },
+        {
+          "position": 7,
+          "title": "Davis Doors NYC",
+          "data_id": "0x89c2591c6f304d65:0x8134ffcac9b49d94",
+          "data_cid": "9310347576114191764",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2591c6f304d65%3A0x8134ffcac9b49d94&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2591c6f304d65%3A0x8134ffcac9b49d94&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769633299999995,
+            "longitude": -73.9874306
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2591c6f304d65%3A0x8134ffcac9b49d94%218m2%213d40.769633299999995%214d-73.9874306&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Door supplier",
+          "type_id": "door_supplier"
+        },
+        {
+          "position": 8,
+          "title": "TD Bank ATM",
+          "data_id": "0x89c258594bac2bab:0x8d221dfc65bfff61",
+          "data_cid": "10169723878432046945",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258594bac2bab%3A0x8d221dfc65bfff61&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258594bac2bab%3A0x8d221dfc65bfff61&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7695712,
+            "longitude": -73.9862426
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258594bac2bab%3A0x8d221dfc65bfff61%218m2%213d40.7695712%214d-73.9862426&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "ATM",
+          "type_id": "atm"
+        },
+        {
+          "position": 9,
+          "title": "Urban Associates",
+          "data_id": "0x89c25858d944d95f:0x5030782f225ec05c",
+          "data_cid": "5778250465751777372",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25858d944d95f%3A0x5030782f225ec05c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25858d944d95f%3A0x5030782f225ec05c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769359099999996,
+            "longitude": -73.9857925
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25858d944d95f%3A0x5030782f225ec05c%218m2%213d40.769359099999996%214d-73.9857925&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Property management company",
+          "type_id": "property_management_company"
+        },
+        {
+          "position": 10,
+          "title": "Spiguel Eugenie A",
+          "data_id": "0x89c25859483f20af:0x24be4ff9b1f8f97d",
+          "data_cid": "2647641564791765373",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x24be4ff9b1f8f97d&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x24be4ff9b1f8f97d&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7698062,
+            "longitude": -73.9871606
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0x24be4ff9b1f8f97d%218m2%213d40.7698062%214d-73.9871606&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Medical clinic",
+          "type_id": "medical_clinic"
+        },
+        {
+          "position": 11,
+          "title": "Roosevelt Hospital Medical Library",
+          "data_id": "0x89c25859483f20af:0xf73a320c8de06ac8",
+          "data_cid": "17814606305518709448",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xf73a320c8de06ac8&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xf73a320c8de06ac8&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7697168,
+            "longitude": -73.9868805
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xf73a320c8de06ac8%218m2%213d40.7697168%214d-73.9868805&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Library",
+          "type_id": "library"
+        },
+        {
+          "position": 12,
+          "title": "Dr. Eric M Ganz",
+          "data_id": "0x89c25859483f20af:0xe3dbea18b8bcf942",
+          "data_cid": "16418974258408782146",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xe3dbea18b8bcf942&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xe3dbea18b8bcf942&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7696913,
+            "longitude": -73.9868596
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xe3dbea18b8bcf942%218m2%213d40.7696913%214d-73.9868596&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Obstetrician-gynecologist",
+          "type_id": "gynecologist"
+        },
+        {
+          "position": 13,
+          "title": "Sabine M. Jeudy, CNM",
+          "data_id": "0x89c25859483f20af:0x717934816f3559d",
+          "data_cid": "511039020561814941",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x717934816f3559d&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x717934816f3559d&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7655469,
+            "longitude": -73.98047240000001
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0x717934816f3559d%218m2%213d40.7655469%214d-73.98047240000001&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Midwife",
+          "type_id": "midwife"
+        },
+        {
+          "position": 14,
+          "title": "John Jay Athletics--The Doghouse",
+          "data_id": "0x89c259c4055b0805:0x181d4b9901076368",
+          "data_cid": "1737628151754220392",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259c4055b0805%3A0x181d4b9901076368&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259c4055b0805%3A0x181d4b9901076368&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769669,
+            "longitude": -73.9868054
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259c4055b0805%3A0x181d4b9901076368%218m2%213d40.769669%214d-73.9868054&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Sports complex",
+          "type_id": "sports_complex"
+        },
+        {
+          "position": 15,
+          "title": "Mount Sinai West Interventional Radiology",
+          "data_id": "0x89c259381451f7b7:0x9a4ecec23762d009",
+          "data_cid": "11119051863572533257",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259381451f7b7%3A0x9a4ecec23762d009&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259381451f7b7%3A0x9a4ecec23762d009&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769697099999995,
+            "longitude": -73.98686719999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259381451f7b7%3A0x9a4ecec23762d009%218m2%213d40.769697099999995%214d-73.98686719999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Medical group",
+          "type_id": "medical_group"
+        },
+        {
+          "position": 16,
+          "title": "Valerie Roggenbuck, PA",
+          "data_id": "0x89c25859483f20af:0xd54796f0ea46e3a9",
+          "data_cid": "15368418214891938729",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xd54796f0ea46e3a9&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xd54796f0ea46e3a9&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7696913,
+            "longitude": -73.9868596
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xd54796f0ea46e3a9%218m2%213d40.7696913%214d-73.9868596&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 17,
+          "title": "Cummings Jeanne A",
+          "data_id": "0x89c25859483f20af:0xe206fa8ffae2549f",
+          "data_cid": "16286980598728381599",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xe206fa8ffae2549f&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xe206fa8ffae2549f&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769731500000006,
+            "longitude": -73.9873197
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xe206fa8ffae2549f%218m2%213d40.769731500000006%214d-73.9873197&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 18,
+          "title": "Dr. Natasha Dumra, DO",
+          "data_id": "0x89c25859483f20af:0xb998665241990e6c",
+          "data_cid": "13373551596950589036",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xb998665241990e6c&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xb998665241990e6c&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7699942,
+            "longitude": -73.98747039999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xb998665241990e6c%218m2%213d40.7699942%214d-73.98747039999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Internist",
+          "type_id": "internist"
+        },
+        {
+          "position": 19,
+          "title": "The Peppers",
+          "data_id": "0x89c2585948dbc7a5:0xb5c04f913da501e7",
+          "data_cid": "13096555201616478695",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2585948dbc7a5%3A0xb5c04f913da501e7&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2585948dbc7a5%3A0xb5c04f913da501e7&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7692051,
+            "longitude": -73.9855721
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2585948dbc7a5%3A0xb5c04f913da501e7%218m2%213d40.7692051%214d-73.9855721&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Advertising agency",
+          "type_id": "advertising_agency"
+        },
+        {
+          "position": 20,
+          "title": "SusanRae Photography",
+          "data_id": "0x89c25858ddd63fb9:0x4d1879dfd3503140",
+          "data_cid": "5555324142591422784",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25858ddd63fb9%3A0x4d1879dfd3503140&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25858ddd63fb9%3A0x4d1879dfd3503140&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7695106,
+            "longitude": -73.9859068
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25858ddd63fb9%3A0x4d1879dfd3503140%218m2%213d40.7695106%214d-73.9859068&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Wedding photographer",
+          "type_id": "wedding_photographer"
+        },
+        {
+          "position": 21,
+          "title": "Sidman Ila S",
+          "data_id": "0x89c25859483f20af:0xa1d595d4252b3062",
+          "data_cid": "11661391548534960226",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xa1d595d4252b3062&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xa1d595d4252b3062&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7697168,
+            "longitude": -73.9868805
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xa1d595d4252b3062%218m2%213d40.7697168%214d-73.9868805&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Psychologist",
+          "type_id": "psychologist"
+        },
+        {
+          "position": 22,
+          "title": "Twardon Group",
+          "data_id": "0x89c258593a56b11b:0x8f906797b206dae8",
+          "data_cid": "10344882245294545640",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258593a56b11b%3A0x8f906797b206dae8&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258593a56b11b%3A0x8f906797b206dae8&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769998199999996,
+            "longitude": -73.9874797
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258593a56b11b%3A0x8f906797b206dae8%218m2%213d40.769998199999996%214d-73.9874797&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Psychologist",
+          "type_id": "psychologist"
+        },
+        {
+          "position": 23,
+          "title": "Ace It!",
+          "data_id": "0x89c259a2ffb44ebb:0xd1f1556e8a43c776",
+          "data_cid": "15127966556568668022",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a2ffb44ebb%3A0xd1f1556e8a43c776&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a2ffb44ebb%3A0xd1f1556e8a43c776&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7693338,
+            "longitude": -73.98569979999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259a2ffb44ebb%3A0xd1f1556e8a43c776%218m2%213d40.7693338%214d-73.98569979999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Tutoring service",
+          "type_id": "tutoring_service"
+        },
+        {
+          "position": 24,
+          "title": "Ob Gyn Clinic",
+          "data_id": "0x89c25859483f20af:0xc959bb6d04500eae",
+          "data_cid": "14508833751448948398",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xc959bb6d04500eae&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xc959bb6d04500eae&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769731500000006,
+            "longitude": -73.9873197
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xc959bb6d04500eae%218m2%213d40.769731500000006%214d-73.9873197&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Obstetrician-gynecologist",
+          "type_id": "gynecologist"
+        },
+        {
+          "position": 25,
+          "title": "Perinatal Associates",
+          "data_id": "0x89c25859483f20af:0x987268938534dd03",
+          "data_cid": "10984957423914376451",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x987268938534dd03&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x987268938534dd03&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7698062,
+            "longitude": -73.9871606
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0x987268938534dd03%218m2%213d40.7698062%214d-73.9871606&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Doctor",
+          "type_id": "doctor"
+        },
+        {
+          "position": 26,
+          "title": "John M. Lubrano, RPAC",
+          "data_id": "0x89c25859483f20af:0xd94d187835d18db2",
+          "data_cid": "15658198384015150514",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xd94d187835d18db2&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0xd94d187835d18db2&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7696913,
+            "longitude": -73.9868596
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0xd94d187835d18db2%218m2%213d40.7696913%214d-73.9868596&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Physician assistant",
+          "type_id": "physician_assistant"
+        },
+        {
+          "position": 27,
+          "title": "Mount Sinai Roosevelt - Valet Parking",
+          "data_id": "0x89c2585947a4a913:0x813afcf70265f7f8",
+          "data_cid": "9312033317369280504",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2585947a4a913%3A0x813afcf70265f7f8&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2585947a4a913%3A0x813afcf70265f7f8&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769633299999995,
+            "longitude": -73.9874306
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2585947a4a913%3A0x813afcf70265f7f8%218m2%213d40.769633299999995%214d-73.9874306&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Parking garage",
+          "type_id": "parking_garage"
+        },
+        {
+          "position": 28,
+          "title": "Anselmo Joseph",
+          "data_id": "0x89c25859483f20af:0x713009a23ebf38",
+          "data_cid": "31859490303164216",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x713009a23ebf38&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25859483f20af%3A0x713009a23ebf38&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769731500000006,
+            "longitude": -73.9873197
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25859483f20af%3A0x713009a23ebf38%218m2%213d40.769731500000006%214d-73.9873197&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Physician assistant",
+          "type_id": "physician_assistant"
+        },
+        {
+          "position": 29,
+          "title": "Gramercy Capital Corporation",
+          "data_id": "0x89c258f6206a5671:0x4d981170228685db",
+          "data_cid": "5591238110693721563",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258f6206a5671%3A0x4d981170228685db&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c258f6206a5671%3A0x4d981170228685db&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769174899999996,
+            "longitude": -73.9855688
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c258f6206a5671%3A0x4d981170228685db%218m2%213d40.769174899999996%214d-73.9855688&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Stock broker",
+          "type_id": "stock_broker"
+        },
+        {
+          "position": 30,
+          "title": "Radio Streaming",
+          "data_id": "0x89c25858c1451cd3:0xca8268aa8dee94fb",
+          "data_cid": "14592340824368780539",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25858c1451cd3%3A0xca8268aa8dee94fb&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25858c1451cd3%3A0xca8268aa8dee94fb&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.769178,
+            "longitude": -73.98517919999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25858c1451cd3%3A0xca8268aa8dee94fb%218m2%213d40.769178%214d-73.98517919999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Television studio",
+          "type_id": "television_station"
+        },
+        {
+          "position": 31,
+          "title": "Ayana Blasse Books",
+          "data_id": "0x89c2594a30dc8663:0x1e967bfadc566f26",
+          "data_cid": "2204085385013128998",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2594a30dc8663%3A0x1e967bfadc566f26&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2594a30dc8663%3A0x1e967bfadc566f26&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7699163,
+            "longitude": -73.9875267
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2594a30dc8663%3A0x1e967bfadc566f26%218m2%213d40.7699163%214d-73.9875267&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJOzBevz32wokRyOlTYIko13s&type=place",
+          "type": "Book store",
+          "type_id": "book_store"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"It has been the best experience with staff from reception to the doctors.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXCLSGXNm7jmlXqQA193vGH0lAnu3Pw51_W3JoblnYJ9G9mxFlDkw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Surgery gets cancelled and doctor still hasn't ordered any food for her.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXKIbS-bYNmuTZfNy1vRHZBL3UliTzmIyCeTKw9qZVT19yuFuPp=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"My 90 year old Aunt with dementia fractured her shoulder.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL3zjOXFCQFfiR6dNieMG_RJPTPfGJk9FvYdvys7u6YYOQzLzsu=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Qinchi Zhang",
+          "rating": 5,
+          "contributor_id": "117469746609394075639",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXO1W5VUhySJmTfGkcGBa-5vQTBc_czPpwbxjey9aTtV9-ooXmMHA=s120-c-rp-mo-br100",
+          "description": "My wife and I just delivered our 1st child here at Mount Sinai West. It was a fantastic experience!\n\nFrom a staff standpoint, we are super grateful to the nurses both on the delivery floor (Evelyn, Aba, and Emily) and to Devonni and Grace on the recovery/nursery floor. They took special care of my wife during the challenging times and they were extremely patient, informative, and fun to be around, throughout the 2.5 days of our stay.\n\nAlso, special thanks to our OBGYN, Dr. Jeffrey Yu! He brilliantly guided the pregnancy through all trimesters and delivery. He is professional, pleasant to be around, and attentive. Dr. Yu managed our anxieties, a Type-A Manhattan professional woman :), and he did it with a blend of seriousness and subtle humor. We highly recommend and trust this physician.\n\nLastly, the facilities at the hospital were great. I recommend taking their Maternity hospital tour beforehand to get a personal perspective. We enjoyed our rooms and the hospital food was surprisingly good. They are trying to make the stay more akin to an hotel stay with room service.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGRlRIVjJMVk0yVVVOYU56YzFWSFpDT1RCdlQwRRAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOkFFTHV2LVM2UUNaNzc1VHZCOTBvT0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-16T07:11:46+00:00"
+        },
+        {
+          "username": "Maria Aivazidou",
+          "rating": 5,
+          "contributor_id": "111576026428067133384",
+          "user_review_count": 4,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXDs-pXO8DwTQiR3gGpTrr11MdbaJ5FDsMTa0J1sw7RdObb-jk=s120-c-rp-mo-br100",
+          "description": "I would like to express my sincere gratitude for the exceptional care my partner received during our visit to the Emergency Department on March 19, 2026, due to a serious respiratory issue, as well as throughout his subsequent hospitalization.\n\nFrom the very first moment we arrived at the Emergency Department, the medical and nursing staff demonstrated remarkable professionalism, efficiency, and compassion. Despite the high-pressure environment, they responded promptly, carried out all necessary examinations without delay, and ensured that my partner felt safe and well cared for. Their calm and reassuring attitude made a very stressful situation much more manageable for both of us.\n\nFollowing his admission, the quality of care remained consistently outstanding. The doctors were highly attentive, knowledgeable, and always willing to explain the treatment plan in a clear and respectful manner. The nursing staff provided continuous support with kindness, patience, and genuine concern for his well-being. It was evident that teamwork and dedication to patient care are core values of this department.\n\nWhat stood out the most was not only the high level of medical expertise, but also the humanity and empathy shown throughout the entire experience. We felt that my partner was treated not just as a patient, but as a person.\n\nThank you all for your hard work, dedication, and professionalism. Your efforts truly made a difference, and we are deeply grateful. Maria Aivazidou",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GbFFuSlRNRVJ1ZURCbVVUaG1VVXhNVVZreFUzYxAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOmFlQnJTMERueDBmUThmUUxMUVkxU3c%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-30T08:53:50+00:00"
+        },
+        {
+          "username": "Happy26!",
+          "rating": 5,
+          "contributor_id": "109844920990325386816",
+          "user_review_count": 107,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIvTG8SXyARav0NfZyXMFcZ5dT2ihUHaIM5aHhuLuVvzJymBg=s120-c-rp-mo-ba12-br100",
+          "description": "This hospital is doing much better than the 2.9 rating on Google suggests. A 4.5 or so would be a better reflection of what it offers. The location has been investing in upgrading the hospital to make it more modern, both in terms of medical care and the physical environment. No hospital can achieve a perfect 5-star rating. There are areas that could use improvement, such as post-surgery rooms and the ability for family members to stay overnight after major surgeries. Some staff members could benefit from a change in attitude, and some nurses could be more attentive, especially given the patients who arrive with life-threatening conditions and the need for greater understanding.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSM2NUaFRibUkzT0d0Sk0xQlJTa1pEVXpoUWNIYxAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOkR3cThTbmI3OGtJM1BRSkZDUzhQcHc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-14T06:03:50+00:00"
+        },
+        {
+          "username": "Devon Ott-Barilli",
+          "rating": 5,
+          "contributor_id": "115984658651908881855",
+          "user_review_count": 172,
+          "user_photo_count": 104,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVxAKhFav5Hv3IiPKvHtI-drrqtNmeE4jl1ZKVX9nP6CF6uWP7WLw=s120-c-rp-mo-ba12-br100",
+          "description": "I had the most amazing delivery experience at MSW.\n\nI had a scheduled induction, and the L&D team was incredible. From start to finish, I felt so well attended. As a nervous first time mom who needed a Foley balloon and Pitocin, the anesthesiologists alleviated so much pain with the epidural and regular check-ins. Our nurse Erika was a star; she kept me entertained and distracted throughout the entire process so I didn't freak out. She was knowledgeable, intuitive and so kind, even taking photos we'll cherish for the rest of our lives throughout the delivery; I truly don't know what I would've done without her. Last in L&S, my delivery with Dr Thornton from Viva Eve was seamless and relatively painless. He knew exactly when to push me and when to give me a second to recuperate. Lisa helped get me, dad and baby wrapped and ready for our final destination, and she was so sweet. I am so grateful to the entire team who helped for their support and brilliance.\n\nMoving to the postpartum room, I was shocked at how nice the single room was. It felt brand new, well maintained, and perfectly private to enjoy our new sweetie. Visiting hours were 9-9 with flexibility on # of visitors and how many guests in the room during daytime hours. Meals were ordered on the TV, the bed was comfy, and the staff regularly evaluated me and baby and restocked the room with every supply I could ever need. We even got a huge goodie bag to go home with, filled with mama and baby supplies.\n\nFrom Monday @ 1AM - Wednesday @ 12:30PM (we were excited to check out early and get to our own bed), we had the most amazing and beautiful delivery experience as first time parents. We will forever be grateful to the team at MSW for this gift. \u2763\ufe0f",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2twb1lUQm9UbEZQV2tGUk9FcG1VbE14WDJ0cU1FRRAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOkpoYTBoTlFPWkFROEpmUlMxX2tqMEE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2Do9LG08qGCtSXKANzSlaj6dmWreTLSEh8bX5DZtZ1tlhHR_OBxHYCJ6HM5CRzzzKlIeCzzIYw5iD_PRA4TxZGyzOP6jzd9kFpR2P52oiBoAn2CJ4B5uFQsSbla5IqxPUU28FD_4NcNZLU=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn12Y6874iwPYSZSVNaPoSY60g5UD765J6oGNLc6W2Jlv7ekk23r1mp-69KPNsxTf3hzgFchkaKqKRxM4w5XHmgIQyzJlRbeGL2s69xKVu78w1-dbeYOI6f6AIDrpf49UcB5B95k9Llp7Sj-=k-no"
+            }
+          ],
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-10T05:17:12+00:00"
+        },
+        {
+          "username": "Jeannine Manthey",
+          "rating": 1,
+          "contributor_id": "108904079763380521617",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocII0tUYITZxA_Hc9JSofnFG92gAKUBpFJN9Y_dISsy-KTrqDA=s120-c-rp-mo-br100",
+          "description": "One of the most unwelcoming, uncomfortable hospitals Ihave ever been to. Flew from Calif to be with my daughter for her delivery. First nurses we encountered were not very pleasent. Was told I could not be in the room with her. Only her husband and Doula. I have never been told Icouldn't be with any of my daughters when they delivered ( I have 6) They wouldn't let me wait in the waiting room on the floor where there are comfortable chairs, a table and a vending machine, they said I had to go to the lobby. No comfortable seating, just 6 hard wood/metal backed chairs, a couple of tables. Very uninviting/welcoming. Soooo disappointed.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xObVZWRjRUbWRpVTJ0ZlNqZGpaVTExY0hOR1IwRRAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOlNmVVF4TmdiU2tfSjdjZU11cHNGR0E%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-02T06:57:20+00:00"
+        },
+        {
+          "username": "Alexandria Briana",
+          "rating": 1,
+          "contributor_id": "109071260996378676203",
+          "user_review_count": 20,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXzTA8IHrc8JdbRfeaoG6DPl1byni7QC01u5vDb_GWeqSDcB7GEOA=s120-c-rp-mo-ba12-br100",
+          "description": "The emergency department at Mount Sinai West needs serious oversight. I am writing this based on my mother\u2019s recent visit, and it is not the first negative experience my family or I personally has had here.\nMy mother came in extremely ill. Instead of properly evaluating her, the staff focused on running her insurance and dismissed her symptoms without performing the necessary tests. She was sent home without any real answers or treatment. My mother is currently in another emergency room due to your staff\u2019s negligence. (In need of surgery)\n\nMy mother could have died.\n\nThere is a consistent pattern at this hospital of dismissing pain, especially when it comes to Black patients. My mother\u2019s complaints were not taken seriously, and the consequences could have been fatal. This was not just poor care \u2014 it was dangerous negligence.\nNo one should leave an emergency room worse than when they arrived. This department needs accountability, better training, and a complete reassessment of how patients are treated.\n\nThis situation warrants serious review. No patient should be sent home while critically ill, and no family should have to fear that bias or negligence played a role in their care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsZlNrbFFNVXh1WVdaa1ZUWlBVRGM0WVhwMlRVRRAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOllfSklQMUxuYWZkVTZPUDc4YXp2TUE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-01T20:04:09+00:00"
+        },
+        {
+          "username": "Poochie Beats",
+          "rating": 1,
+          "contributor_id": "100561368900450036040",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXW1uZIhcQmPj2bHKY05kyDypQBczva38Ehc4TRCH8DVLpXUoKW=s120-c-rp-mo-br100",
+          "description": "If I could give 0 stars I 100% would. Jersey native here, I was in New York for the weekend attending an event and suffered a seizure and was brought to Mount Sinai West from NYFD EMS while unconscious. Regained by consciousness while in the hospital, didn't get to choose where I went obviously. Now I am stuck with a $51,000 bill because they claim my visit was not an emergency visit and claim there is nothing can to do to help, MEANWHILE on my billing invoice it has \"Emergency Room - General\". This hospital does not care and are only wanting the $ and not actually there for their patients. Horrible",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2paM1UwZDRWbkJ3TXpkRmQyeHlSRXhDV1hOVVdXYxAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOjZ3U0d4VnBwMzdFd2xyRExCWXNUWWc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T20:48:38+00:00"
+        },
+        {
+          "username": "Bren ABG",
+          "rating": 1,
+          "contributor_id": "108937443353838006442",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJbt3sSFxmlETaJkga6DJWeTNqSuoEVoOHGmV_1nS0LALbQP7Sq=s120-c-rp-mo-br100",
+          "description": "Adawale Omoloju from the pharmacy department is I'm sorry... the worst. I spoke to him over the phone recently and he was extremely rude and of no help. I was transferred to him and he could not answer basic questions on electrolyes for a constipated patient and gave me all the wrong answers for my cousins medications!!! Happens to be that my niece did a rotation with him a couple years ago and says she tried to avoid him at all costs because all her friends told her he is extremely rude and comes with a bad ego. He also never taught them anything and asked rude personal questions such as what religion they are, which violates company policy. Very haughty man with bad character. If it were me, I would have him removed. Speaking to him was the brick that broke the camels back. Will never come back to this hospital or recommend anyone here.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pKek9ERXhSMUJDYTNOT1gzRXlObU50VlRsVmFuYxAB!2m1!1s0x0:0x7bd728896053e9c8!3m1!1s2@1:CAIQACodChtycF9oOjJzODExR1BCa3NOX3EyNmNtVTlVanc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-06T04:36:00+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "General Surgery Residency at Mount Sinai West and Mount Sinai Morningside",
+            "data_id": "0x0:0xe083f669c37fad28",
+            "data_cid": "16178045220556877096",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe083f669c37fad28&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe083f669c37fad28&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7698916,
+              "longitude": -73.9857461
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe083f669c37fad28%218m2%213d40.7698916%214d-73.9857461&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=daT3S1QFV3s4c_lWCXXbiKu9Aho7v_xgkkr9gLM6iz1TYd3-iasjhOdmvxvUpo0sdfGR5Ck0yeBEyM5_wg3Tyj_aLmI46d5wcILyCXGupZzGl2EAvYb-b-9KVboD5toT78IMsZzwFAjd0RRYSW3E3PebGXcNusA0",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Mount Sinai",
+            "data_id": "0x0:0xeed01bc3d3bcffaf",
+            "data_cid": "17208284704067616687",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeed01bc3d3bcffaf&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeed01bc3d3bcffaf&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.790904399999995,
+              "longitude": -73.95336739999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xeed01bc3d3bcffaf%218m2%213d40.790904399999995%214d-73.95336739999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 5,
+            "thumbnail": "https://www.google.com/maps/vt/data=_QJUiAkVCzAWLlj_intI17Lzxl85ymo6dQ4PN5zDTXRLayeEIFjDU2NZQzI1aJGx0cAWgJUWLTn_djesigxWHx92KVehBYkjo0U9aiXo7xhvA9sXAExFc5ZV7KiCanrrYCliauPZCAypRxg1VBMsz85EyENctSm-",
+            "type": [
+              "Religious institution"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Mt Sinai Faculty Doctors",
+            "data_id": "0x0:0x157c23ae583ae852",
+            "data_cid": "1548151603620145234",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x157c23ae583ae852&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x157c23ae583ae852&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7693375,
+              "longitude": -73.9841028
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x157c23ae583ae852%218m2%213d40.7693375%214d-73.9841028&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.6,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHw3VEjWB3MdFBWgdtj3DE2hcuoJimO_KX-ZHNIs9nihAqOLA6AjvS55a6Ap29qd4FyJ3QaQntcoqebCHe4tcIkI7ijWndB1Kgt0MpidtHtZGNc6LlbyEFg85brZuS8iGS4HQrV=w156-h156-n-k-no",
+            "type": [
+              "Medical Center",
+              "General practitioner"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "NYU Langone Health",
+            "data_id": "0x0:0x4a856670ae2ae3c2",
+            "data_cid": "5369810764853601218",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a856670ae2ae3c2&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a856670ae2ae3c2&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7421225,
+              "longitude": -73.9739642
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4a856670ae2ae3c2%218m2%213d40.7421225%214d-73.9739642&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 529,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGNVvhjGEYGXhJScsCIifouAobuMpKdnPVit38sBiTb6nPsClfKqnTTE6u5iYf91tUF_7cnUHXwmUsmYR3n96a533gasz2X7elVxNnlRbBTh02I_iVpSjtk2lTOzN8L2hDNLHezisU86JS-=w156-h156-n-k-no",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Mount Sinai Medical Center",
+            "data_id": "0x0:0x6fb4019e2f9daf6",
+            "data_cid": "503066263308327670",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6fb4019e2f9daf6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6fb4019e2f9daf6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7896393,
+              "longitude": -73.95417420000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6fb4019e2f9daf6%218m2%213d40.7896393%214d-73.95417420000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 19,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEcXKeXBx1lJSSrqFXOwpurgjVK5abEiPeCzYbn5KuQ6q0VTrllCBGqgHfpSLUcWeQWE_UzhG8yIpIPNjaxLlCwq-oRiFb5UiXVWV65veyaP6UNGk5x12xCxq033k-vS1TGEtxB=w156-h156-n-k-no",
+            "type": [
+              "Medical Center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiMKISIdTW91bnQgU2luYWkgV2VzdCBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiMKISIdTW91bnQgU2luYWkgV2VzdCBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

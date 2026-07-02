@@ -1,0 +1,423 @@
+{
+  "search_metadata": {
+    "id": "6a3ac16eb255a81566ea3e39",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/hULS9xGUcZVI-Gij9TQU8Q/6a3ac16eb255a81566ea3e39.json",
+    "created_at": "2026-06-23 17:25:02 UTC",
+    "processed_at": "2026-06-23 17:25:02 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259faa9866719:0x1769b1904499c5!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/hULS9xGUcZVI-Gij9TQU8Q/6a3ac16eb255a81566ea3e39.html",
+    "prettify_html_file": "https://serpapi.com/searches/hULS9xGUcZVI-Gij9TQU8Q/6a3ac16eb255a81566ea3e39.prettify",
+    "total_time_taken": 1.7
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJGWeGqfpZwokRxZlEkLFpFwA",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Medical Offices of Manhattan - Upper East Side",
+    "place_id": "ChIJGWeGqfpZwokRxZlEkLFpFwA",
+    "data_id": "0x89c259faa9866719:0x1769b1904499c5",
+    "data_cid": "6590135814887877",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259faa9866719%3A0x1769b1904499c5&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259faa9866719%3A0x1769b1904499c5&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7653174,
+      "longitude": -73.96328489999999
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJGWeGqfpZwokRxZlEkLFpFwA",
+    "provider_id": "/g/1tddt32s",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-0Rv1_GRObeBa6W2_rbWmTpkxx4xIouLkjM-6cXS-1ZensLbW8PxSdljyOYQn0qQgtwhufG3fzkxZbdY8_NiSpL1g6Eg2_-aP8IB0OoUntrvkM2VyLg5iUR0KsgROICyHotWJBnWGBtaa=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/dT5TsXicHcRfE4EwAADwTzSt0HXuPMiRiP5heOlqZrFsaYvlS3r2bdz5Pfy-n1KpWo4Moyr7PSoErUgrSYMFV4SrHhZ3g9YSYAmkMYk2MZvMAUyeZuYlYUHc3EZW1hTovq2Z1gPtizZgtzWw8SEF5olwGRTIiXR6rm5deIw5fMRUvcr24vUvb6ZPxfnoZJtrWgcmtWfUykAeOb4LQ7HjqnmytbXvAjq87hK4kjQJ_Wm3EAotXY48V-X5-GVCCEH5HwP-A-bGSEU",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 228
+      },
+      {
+        "stars": 2,
+        "amount": 27
+      },
+      {
+        "stars": 3,
+        "amount": 20
+      },
+      {
+        "stars": 4,
+        "amount": 83
+      },
+      {
+        "stars": 5,
+        "amount": 2941
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 3299,
+    "type": [
+      "Medical group",
+      "Cardiologist",
+      "Dermatologist",
+      "Endocrinologist",
+      "Gastroenterologist",
+      "Internist",
+      "Podiatrist"
+    ],
+    "type_ids": [
+      "medical_group",
+      "cardiologist",
+      "dermatologist",
+      "endocrinologist",
+      "gastroenterologist",
+      "internist",
+      "podiatrist"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "201 E 65th St, New York, NY 10065",
+    "country": "United States",
+    "located_in": "Manhattan House",
+    "website": "https://www.medicalofficesofmanhattan.com/",
+    "phone": "(212) 879-4700",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "Q28P+4M New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20137 PM"
+      },
+      {
+        "wednesday": "8 AM\u20137 PM"
+      },
+      {
+        "thursday": "8 AM\u20137 PM"
+      },
+      {
+        "friday": "8 AM\u20136 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20137 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 1 week ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259faa9866719%3A0x1769b1904499c5&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-0Rv1_GRObeBa6W2_rbWmTpkxx4xIouLkjM-6cXS-1ZensLbW8PxSdljyOYQn0qQgtwhufG3fzkxZbdY8_NiSpL1g6Eg2_-aP8IB0OoUntrvkM2VyLg5iUR0KsgROICyHotWJBnWGBtaa=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/dT5TsXicHcRfE4EwAADwTzSt0HXuPMiRiP5heOlqZrFsaYvlS3r2bdz5Pfy-n1KpWo4Moyr7PSoErUgrSYMFV4SrHhZ3g9YSYAmkMYk2MZvMAUyeZuYlYUHc3EZW1hTovq2Z1gPtizZgtzWw8SEF5olwGRTIiXR6rm5deIw5fMRUvcr24vUvb6ZPxfnoZJtrWgcmtWfUykAeOb4LQ7HjqnmytbXvAjq87hK4kjQJ_Wm3EAotXY48V-X5-GVCCEH5HwP-A-bGSEU"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGH3v7kycA_9SajdQ6Yo6IXuXquovFZyjDAqeA1UeqMn9xIeQLlsquAf1Lgy1U2vBBk7Dmn29P1yBZCwodActTK-0Q7rwH5UDtdeb_YHxwHfjlzCFMgkRVtKGr-jItX-gwZV33IbQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/6c2ADnicHcRdDoIgAADgE6GiK2dbD5grXdakspkvrZBw_kAKSnbDjtBt2voevu-nVOopF6bZlI7BhGANHSTtieCKcmUQ0ZrsKQGRQJoo2eMabUJndOuJoKt3vFUFnl_EPMqGrBvEuM6nKkAdRTCl3Y57r4jiuJHdgB4wZhNM7dH3azdoue0lcPLzlRYFIuq0BRZ2ex3O0kAV9H69hC8dPqrmvVrvWH04q-2mB1WkMsB0fnac6I6XGlqWBcr_BPAfLb5F5w"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGH3v7kycA_9SajdQ6Yo6IXuXquovFZyjDAqeA1UeqMn9xIeQLlsquAf1Lgy1U2vBBk7Dmn29P1yBZCwodActTK-0Q7rwH5UDtdeb_YHxwHfjlzCFMgkRVtKGr-jItX-gwZV33IbQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/6c2ADnicHcRdDoIgAADgE6GiK2dbD5grXdakspkvrZBw_kAKSnbDjtBt2voevu-nVOopF6bZlI7BhGANHSTtieCKcmUQ0ZrsKQGRQJoo2eMabUJndOuJoKt3vFUFnl_EPMqGrBvEuM6nKkAdRTCl3Y57r4jiuJHdgB4wZhNM7dH3azdoue0lcPLzlRYFIuq0BRZ2ex3O0kAV9H69hC8dPqrmvVrvWH04q-2mB1WkMsB0fnac6I6XGlqWBcr_BPAfLb5F5w"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=mwDvKhwfIbGQnCKvFDMzPA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=20.128521&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/hXf373icHc1bCgIhFADQ3fiXOlIwBRLRUMQQ1AoGx2y84Iu8abWcdtVuij7P1_m8LWLKK8Yy3ozBAqYmeBiXZ0nRKcbJGZUgUx09Kw1De_djUODWSYUIF-lrV3pbr4dxfw7bvuy64-u0IXoctAMTUHqV8pALRaURnKFTyqRKIebESrFsyVP9xGkj2oVoSALUVnLyf66xyIbzLw6MOmI"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Great customer care love the atmosphere, and amazing staff and doctor\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI3sSxIfHzxVnZelH4AOQCsXJ0th9NO4ET5JW1lV3qK_Notdg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"A bit of a wait, but excellent service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJa5UY5vsqVe3EFO9vd6YEEvfKiSsRb5_xSWLg_TTasvg_TTg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"This place does not care about patient care, only money.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU_oTVIZXJWxX7bgnyPt4gNT5tU_r6bnqMplNGzoeRC7v1xxRo=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Winnie",
+          "rating": 5,
+          "contributor_id": "106087955342673441523",
+          "user_review_count": 1,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXHQvM7Uz6ipuTnKdgiX1KmiRu3UGfi0d0tueKn8MUSFzJxlT4k=s120-c-rp-mo-br100",
+          "description": "I had my first appointment with Dr. Julian recently, and I was genuinely impressed with the whole experience. The waiting area was clean, bright, and very tidy and well-kept. This environment and comfortable seating made the short wait much more pleasant. The staffs were polite, helpful, and made check-in quick and easy. I appreciated how smoothly everything ran.\n\nWhen I met Dr. Julian, she immediately made me feel at ease. She was friendly, approachable, and took the time to ask questions and really listen to my concerns. She explained things in a way that was so easy to understand and was very patient with me.\n\nAs a first-time visitor, I was a bit nervous, but the whole experience was smooth and reassuring. I left feeling informed, cared for, and confident that I'm in good hands. Highly recommend this medical facility and especially Dr. Julian to anyone looking for a thorough and compassionate doctor.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tsTk9WWmZaVUZNY1dkMFRVdG5hbkpMTVZwUGJtYxAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOklNOVZfZUFMcWd0TUtnanJLMVpPbmc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0KRsLj4sfzUR6c2rtwkdZJ3lArP7C0NqghT2_tfWVtQSqP2Bt0Exrm96XDZzkVmFb5KmmPSrr0rCmtEmTBdFsTIJkuPXEPYlbAe7i4L6wuRQyZ4rUXgBqRO5SIDEPzR4Gz1yL_gHH6jew=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1JFMmrWFLDmtiFjYSgbA6ljVpIl3754EPRg9Iw276DagQOav9e29rSoM6VFeZ4mfm2lzl57NDybjDzfuVsa5MM4wOUdAw35I_cS1Fyg99FSSoo5CF0JiLFSX-z0mXyiKDeeHBSTJ2AOAfh=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2japE-nNQSjEC4fDylIUJv6hmaopGKyvl0Eoug4LjieZjigbWFe0Z6golebRjIIrChBbV756Rt6Aewex-rfbOGcjF81nuCPeKVFkWI2Xnopywrzitsq2cDnUMpMaxJjDJEN8GYi2yqudiB=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1MOnzVmCjXU3-JoQkRy3lYdboWcEMdqpvARaymKzDC5cBk5ZHJxpEa5tAd8mPZrmWsHTdobmsdtyYHlhDxWld73b4HkLVTMzD7iBnlwXFL7qJVFZCQ13xsW_rhQGdt3-dBMCk58lS2qIY=k-no"
+            }
+          ],
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-07T17:57:10+00:00"
+        },
+        {
+          "username": "Samantha G",
+          "rating": 1,
+          "contributor_id": "104976319619750701028",
+          "user_review_count": 38,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVxDiGdYqWtyJWAEZ4ZdHnfr8nUcv3cMg1fCVnCI7x5ROdEWL0=s120-c-rp-mo-ba12-br100",
+          "description": "Avoid this place at all costs.\n\nThe high 4.7 rating feels misleading\u2014it\u2019s hard to believe it reflects genuine patient experiences.\n\nThey require you to keep a credit card on file, assuring you that no charges will be processed without your authorization. However, they later send emails stating they will authorize charges to your card themselves, which feels contradictory and concerning.\n\nThe doctors seem rushed and unprepared. Time with an actual \u201cdoctor\u201d last only a couple of minutes, and it doesn\u2019t appear that they review your chart beforehand. Despite the brief and unproductive visit, you\u2019re still billed for an additional charge for the interaction. They will tell you that you need to get your heart further reviewed because something looks just a little bit off. And next thing you know you\u2019ve had 4 add ons to the appointment that you didn\u2019t need. I was fasting all day, you would have thought they would have had me done my blood work when I got there. It was 2 hours of nonsense later.\n\nThe lab department is even more disappointing, cramped, unclean, and extremely uncomfortable. I was stuck twice and they wiggled the needle in my veins. I\u2019ve never had a more horrific experience.\n\nThere are far better options out there. I strongly recommend choosing another provider.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t4VlpHbzVaREpZYzBaT2NXTkJVSGRTVUZsVVVXYxAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOkxVZGo5ZDJYc0ZOcWNBUHdSUFlUUWc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-04T20:21:58+00:00"
+        },
+        {
+          "username": "Guadalupe Maceda-Guzman",
+          "rating": 5,
+          "contributor_id": "113553993671930492631",
+          "user_review_count": 15,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWSdm19uebVcWjN00rHOIadIUxI3NgckpPdPxC7UHl34tTChLGd=s120-c-rp-mo-ba12-br100",
+          "description": "As a first time patient it was delightful to find the location easily. Walking in everything was organized and easy to follow. Everyone at the front desk were very helpful, friendly and made my check in a breeze.\nI went in to see p.a Oriana Santarelli and couldn\u2019t be more grateful for the visit with her. She was very thorough and helpful with all my questions. P.A Oriana Santarelli listened to all my medical doubts and concerns and went beyond my expectations. I have never been given  full attention as a patient as this time at MOM. I must also add Kim who prepared me to see Oriana was friendly and made the intake easy. I loved everyone\u2019s positive energy.I feel very comfortable making a follow-up and also recommending my family to this practice.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s5Mk9GOUNOM2t3YWsxemFqRjJhbWhvYkRkTU5HYxAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOk92OF9CN3kwak1zajF2amhobDdMNGc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-11T15:37:28+00:00"
+        },
+        {
+          "username": "tanya casilla",
+          "rating": 5,
+          "contributor_id": "117531089452525054048",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIJ_ojThB3LWlZXmo56bYplUjLrb0dwav-Y3ONXJOC2ad22iw=s120-c-rp-mo-br100",
+          "description": "I\u2019m so grateful to have such a wonderful primary care doctor. She is compassionate, thorough, and always follows up on my concerns. She remembers me and my full medical history, which makes every visit feel personal and reassuring. Highly recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pGVFJXZEtMVjlXVlZGMlJGbHhRbGxxZDFKMk5WRRAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOjFTRWdKLV9WVVF2RFlxQllqd1J2NVE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-19T19:00:04+00:00"
+        },
+        {
+          "username": "Emmanuel B",
+          "rating": 1,
+          "contributor_id": "117732722723819491531",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJNeJW_lVcRPLBMCNHcQml0Ew8tzWhKPg7AnVIqn2GpHIdLxg=s120-c-rp-mo-br100",
+          "description": "If I could give zero stars, I would. Medical Offices of Manhattan has completely failed in basic patient care and communication, crossing the line into  negligence.\n\nI take a GLP-1 medication strictly for diabetes management. It is supposed to be on auto-refill, but the clinic failed to process it. Upon realizing I was completely out of my medication, I emailed them immediately yesterday, explicitly stating the urgency and that I did not want to miss a dose. I received absolute silence.\n\nAfter missing the start of my cycle, I emailed them four more times the following morning. Still zero response. I finally had to track someone down via their live chat, only to be told they wanted me to come in for an \"annual visit\" before refilling my prescription. I have explained to this office multiple times that my diabetes management is separate, yet it constantly falls on deaf ears. It feels like they are deliberately hijacking my healthcare and withholding essential medication just to force an unnecessary office visit and squeeze more money out of a patient.\n\nAfter I pushed back on the chat, they promised the provider would send the prescription to my pharmacy by 5:30 PM. They did absolutely nothing. I contacted the chat again, explicitly stating that I had now missed a day of my medication and would be escalating the issue. Again: nothing. No call back, no email back, and no refill.\n\nThis is not what healthcare looks like. Withholding necessary medication for administrative or financial reasons is dangerous and completely unacceptable. Avoid this practice if you value reliable care, responsive communication, and providers who actually put your health first.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OV1QwUjZTMFJCVkVsSGJqUlNTMEl6UVVFeVdrRRAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOmNWT0R6S0RBVElHbjRSS0IzQUEyWkE%7C%7C?hl=en",
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-03T00:43:21+00:00"
+        },
+        {
+          "username": "Caitlin Keck",
+          "rating": 5,
+          "contributor_id": "110367254602004599875",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIR3D63dJrWpRl_XBx6WJEdxT6JsepfoDMCvY5ShcyMHAsUoJs=s120-c-rp-mo-br100",
+          "description": "I\u2019ve seen a few endocrinologists (and plenty of other doctors) over the years, and Dr. Victoria Finn really stands out. She\u2019s incredibly kind, patient, and genuinely empathetic. I never feel rushed during appointments, and she always takes the time to answer all of my questions thoroughly. You can tell she really cares and puts in the effort to help.\n\nThe front desk staff are also super friendly and pleasant to talk to, which makes the whole experience even better.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tWVFYzSjNWMTlRVkRJNE5GaGFWR1J5YzNjdFJrRRAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOkVTV3J3V19QVDI4NFhaVGRyc3ctRkE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-18T20:54:34+00:00"
+        },
+        {
+          "username": "Jere Andrews",
+          "rating": 1,
+          "contributor_id": "100085316617816588123",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIInJvJBfdSv9WuILWQ4MDFCPaBG5HRTXu8aAlg1GQtFn3BOw=s120-c-rp-mo-br100",
+          "description": "I wish I had paid closer attention to the negative reviews before coming here\u2014especially the one that said, \u201cAvoid this place at all costs.\u201d Unfortunately, I only saw it after my visit, and now I understand why it was written. I believe that most of these positive reviews are fake.\n\nI don\u2019t expect medical providers to work for free, but it seems here that the purely financial incentive trumps professionalism and genuine concern for patient care. There is zero indication that your health is important to them.\n\nFrom the start, the experience was frustrating. The receptionist spent nearly 10 minutes insisting that I leave a credit card on file. I calmly explained that I preferred to pay any copay at the time of service, but she continued to push the issue. When she came back a second time to insist again, I even offered to cancel the appointment if it was a problem. They ultimately proceeded, but the visit itself was just as disappointing.\n\nAfter seeing the physician, I was supposed to have blood work done. Instead, I was left sitting in the exam room with no instructions or follow-up. After waiting about 15 minutes, I had to go out and ask what was going on\u2014only to find out I was supposed to go to an entirely different location. No one had told me.\n\nIt didn\u2019t stop there. I confirmed my pharmacy with them twice, yet they still sent my prescription to a different pharmacy of their choosing. Even more concerning, due to my overall disappointment, I declined referrals to multiple specialists. However, two days later, those referrals were processed anyway. I was contacted by a cardiologist\u2019s office about an appointment I explicitly did not request.\n\nIn short, I agree with the post: \"Avoid at all costs.\"",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25RNWNqaGpOVU0yYjJ4NWJteElSR1JZUzI4dFpGRRAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOnQ5cjhjNUM2b2x5bmxIRGRYS28tZFE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-06T00:09:17+00:00"
+        },
+        {
+          "username": "Katie-Grace",
+          "rating": 1,
+          "contributor_id": "104068666709736018512",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLpeZnUlk0XhBjSMe8G20p1Qfh6lroc7KUwDGnPIXZ39tvR1w=s120-c-rp-mo-br100",
+          "description": "I was reluctant to write this review because I\u2019ve personally seen some great providers at MOM (both upper east side and upper west side locations). What I am immensely disappointed in is the MOM health care system itself.\n\nMy biggest grievance has been with how the glp-1 team operates. This program requires you see another team of providers other than your PCP should you wish to try this set of medications. The program allows you to schedule with anyone on the team virtually and requires daily weighs in on a scale they provide. I have had many side effects on these medications and what this team/program does not provide is ANY on call support. I\u2019ve had three separate visits to the ER, all predicated by over week-long instances of severe and debilitating vomiting and it has been impossible to get anyone on this team to call back - even harder to speak to a doctor. Communication attempts include nothing short of text messages, unanswered calls, voice mails, and emails. At least one of the hospitalizations, in my opinion, could have been avoided should I have been allowed to speak on the phone or at least schedule a last-minute appointment for nausea medical management. I\u2019m still waiting for a call back after 2 weeks for the worst vomiting episode yet - for which I\u2019m currently hospitalized.  Even the ER doctors how neglected I was by this care team.\n\nI not only feel like this team has completely failed me, but mind you, this is also where my pcp is located. First of all, it\u2019s entirely evident how little the glp1 and your primary care providers are in communication with one another throughout your treatment. Second of all, I find it even more problematic how communication attempts fall to deaf ears in primary care as well. After failing to reach my glp-1 team,  I was told a doctor would not call me back because she my PCP was on maternity leave. Am I not entitled to medical support from any other providers whilst my pcp on leave? If you cannot get ahold of a primary care doctor during an emergency health crisis, then what\u2019s the point of having a primary care doctor at all?\n\nAll this to say, I caution anyone thinking of choosing this health care system to think twice before trusting them with your care. It shouldn\u2019t take a patient leaving a Google review for a call back.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWbFRXdEJVamxRTWprdE1WWTJXbnB3U1VoV1JYYxAB!2m1!1s0x0:0x1769b1904499c5!3m1!1s2@1:CAIQACodChtycF9oOjVlTWtBUjlQMjktMVY2WnpwSUhWRXc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-23T11:55:50+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Medical Offices of Manhattan - Midtown",
+            "data_id": "0x0:0xb1f339f557c7d230",
+            "data_cid": "12822656289956418096",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb1f339f557c7d230&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb1f339f557c7d230&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7563552,
+              "longitude": -73.9696464
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb1f339f557c7d230%218m2%213d40.7563552%214d-73.9696464&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 3476,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6NVvZYQc7c6o7n0yHjpkadf3WgsCl8G4DDd0-b966UUdxrElfZIsXk9zzNBxRT_g8tIeIreodd2TYLeCSBf3eYPfqz1n4I-UDYwRmFqPmzRmPpL2D-6tsuD435sG__BsW0U0=w156-h156-n-k-no",
+            "type": [
+              "Medical group",
+              "Cardiologist",
+              "Dermatologist",
+              "Endocrinologist",
+              "Gastroenterologist",
+              "Internist",
+              "Podiatrist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Manhattan Family Practice",
+            "data_id": "0x0:0x411143d8f308a57c",
+            "data_cid": "4688603286138824060",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x411143d8f308a57c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x411143d8f308a57c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.775936,
+              "longitude": -73.95969199999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x411143d8f308a57c%218m2%213d40.775936%214d-73.95969199999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 37,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwEgWZqF-QryROC3BDsJ3Ch5gCLaQMOK-wvg6nRs8_xUX4o5T7CITlJBl58WRKQenDvwvY2r3vZZa3EcGu1c1wefmRMFQvcIMyvGcAprzl1sRcp74B3y1aaEUrlSjJcPCu3WjMFg=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "Family practice physician",
+              "General practitioner",
+              "Internist",
+              "Medical Center",
+              "Medical examiner",
+              "Medical office",
+              "Nurse practitioner"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "One Medical Primary Care Clinic - Upper East Side",
+            "data_id": "0x0:0x4a1351793859738c",
+            "data_cid": "5337699564442448780",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a1351793859738c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4a1351793859738c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7656053,
+              "longitude": -73.9639775
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4a1351793859738c%218m2%213d40.7656053%214d-73.9639775&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 34,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHMP-AYaJkZmIElJPCU9eiYzrNCse220c1Xm0iqdGv2p0FxnooGJF_ZzeciCxWf88gD5rJE1d8ETV8njrCWNefP5LMBap2uRknfuFkgAYhiM4s9sMa4n6QJ1MCkEWLUuuqo_Ne6=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "General practitioner",
+              "Medical Center",
+              "Mental health clinic",
+              "Women's health clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Medical Associates East",
+            "data_id": "0x0:0x85b273943b2ae04c",
+            "data_cid": "9633889633383931980",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x85b273943b2ae04c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x85b273943b2ae04c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7674034,
+              "longitude": -73.96121790000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x85b273943b2ae04c%218m2%213d40.7674034%214d-73.96121790000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1.5,
+            "reviews": 2,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGFvI0I5M7GfGvP-RJEVcHYhvQM6Z61yos4gNcvu_UJTCjuz4yOVogNCffSM3hTYgvNFtIBBYFxGWTu0iT9F4GxZOp-KQJOXMuB68FDY7Yg0wetU7gh95FdSIa0umS-nOjai4gZGg=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Rheumatologist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Medical Office",
+            "data_id": "0x0:0x209be6c7d31e4a2e",
+            "data_cid": "2349725376518703662",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x209be6c7d31e4a2e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x209be6c7d31e4a2e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8224409,
+              "longitude": -73.9413789
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x209be6c7d31e4a2e%218m2%213d40.8224409%214d-73.9413789&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkEKPyI7TWVkaWNhbCBPZmZpY2VzIG9mIE1hbmhhdHRhbiAtIFVwcGVyIEVhc3QgU2lkZSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkEKPyI7TWVkaWNhbCBPZmZpY2VzIG9mIE1hbmhhdHRhbiAtIFVwcGVyIEVhc3QgU2lkZSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

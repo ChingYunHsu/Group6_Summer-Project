@@ -1,0 +1,517 @@
+{
+  "search_metadata": {
+    "id": "6a3ac232484c0970f1538479",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/zVrLEajxW1H71jj4DmkDeg/6a3ac232484c0970f1538479.json",
+    "created_at": "2026-06-23 17:28:18 UTC",
+    "processed_at": "2026-06-23 17:28:18 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f69b9ae9d833:0x27bff071752b797d!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/zVrLEajxW1H71jj4DmkDeg/6a3ac232484c0970f1538479.html",
+    "prettify_html_file": "https://serpapi.com/searches/zVrLEajxW1H71jj4DmkDeg/6a3ac232484c0970f1538479.prettify",
+    "total_time_taken": 1.67
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJM9jpmpv2wokRfXkrdXHwvyc",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "CUIMC/Milstein Hospital Building",
+    "place_id": "ChIJM9jpmpv2wokRfXkrdXHwvyc",
+    "data_id": "0x89c2f69b9ae9d833:0x27bff071752b797d",
+    "data_cid": "2864272258118678909",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f69b9ae9d833%3A0x27bff071752b797d&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f69b9ae9d833%3A0x27bff071752b797d&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8415162,
+      "longitude": -73.942993
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJM9jpmpv2wokRfXkrdXHwvyc",
+    "provider_id": "/g/1th1dnjh",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSlbs438H_I_jGL00iThEplEcdanmAwJYKl_F9t3oZ_vV9AO1ScQbAFylBPajUVRt3dANSSZewozqSc7rW53g5Z4e9CrwpKgNAb143ebmXTmzttNc53RRRTpHKFW01bybr0CPN7g=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/vSzA6HicHcRdDoIgAADgE5k4dGZbD9Qyy0Ym9ueLC2JYoZBQrm7YEbpNW9_D9_3U1mozcl1Zw4FQSkj-MLxjqrW8tQOmGldo4zDjGBdleHNDMZHU-HCYVIvqOl8BcCnqmZYzdj61DeqXx1RWcWShKqvnLkJrj7ANRfFLTrLTdbvLLTwjTEjJe_W-ExZ2-wCKoPR5NO16nQqMqOdDTptD0bytxSyAeZ4XOknjPfDoi3ZgmuFQjHsPAODU_5nT_gDNyUTJ",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 39
+      },
+      {
+        "stars": 2,
+        "amount": 8
+      },
+      {
+        "stars": 3,
+        "amount": 10
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 92
+      }
+    ],
+    "rating": 3.7,
+    "reviews": 153,
+    "type": [
+      "Hospital"
+    ],
+    "type_ids": [
+      "hospital"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "On-site parking",
+          "Paid parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "177 Fort Washington Ave, New York, NY 10032",
+    "country": "United States",
+    "located_in": "NewYork-Presbyterian / Columbia University Irving Medical Center",
+    "website": "https://www.columbiadoctors.org/",
+    "phone": "(212) 305-2500",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "R3R4+JR New York",
+    "hours": [
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      },
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "9 AM\u20135 PM"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSlbs438H_I_jGL00iThEplEcdanmAwJYKl_F9t3oZ_vV9AO1ScQbAFylBPajUVRt3dANSSZewozqSc7rW53g5Z4e9CrwpKgNAb143ebmXTmzttNc53RRRTpHKFW01bybr0CPN7g=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/vSzA6HicHcRdDoIgAADgE5k4dGZbD9Qyy0Ym9ueLC2JYoZBQrm7YEbpNW9_D9_3U1mozcl1Zw4FQSkj-MLxjqrW8tQOmGldo4zDjGBdleHNDMZHU-HCYVIvqOl8BcCnqmZYzdj61DeqXx1RWcWShKqvnLkJrj7ANRfFLTrLTdbvLLTwjTEjJe_W-ExZ2-wCKoPR5NO16nQqMqOdDTptD0bytxSyAeZ4XOknjPfDoi3ZgmuFQjHsPAODU_5nT_gDNyUTJ"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFPpi-VEju1rpf_ZnxEJI1_4pud-LPEgCHZWncFedY_DELuGaxKkYm81N_TSdtQ8MSF0GTzhGaVcfYsO0PxW8FWSLnojXuqCTamCRxqDNu7-dNcr578hSFiujLwoJMCcLz-KyhRcg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/fVDSEHicHcTdDoIgGADQJyJx1XJtXTQT-yGzdJndOPdpkCWQwLLesEfobdo6F-f74cYoPXWcOx8OmJTsXltddyCFqYUZgGwdpjQCjbQzj6P9bU5idUXHoLFupy7FWfTBeuUWI2UrROOA-ctzJoDUVV4sAmrDst_c8tZzoyJNKrP3tgnBYfrmYXmES653OO4zj2QJFbI52Yeflq1_6B-LyE5QFUE3nng8IVfb0Kdcb32gb7R58QOw2dPFGCP-H5D4ARCfRe0"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZt9MPUlr4L6vvOIn2kbN7nlaOaSy7GzqVyGSvu8DlfeVcsDyDqsRpVfXBzBkfXt2LTBTD7JuLcGZ4leepiR_2QymhdS1wNcu4GFJ6rIrntgbUBXmGdC0ttdeIXUeTl7TNLZvu=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/i5LMSHicHcTdCoIwGADQJ5qaSVbQRSYOw9TyB_Emck4N5_zZN8NesGfobYLOxfl-GoBB7FWVNWul7vuaUSnoRHoOlINC-k6tB4GIQEI9hv61PTo57C5hwibD28xz4HK9LXyTs0fwiBYTv8d0wdEstzaraEqEvdijuA1plVlvq60y0L3Yim3zLD2Cc4NROjxvd_26dE0ZrV4-kQZ2zpvJnTjURWJlHS5PGkBJ3SyhMTNj38tneXitNE1DzX-C-A_rp0ZZ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=zWrGXVZMJoBgWb60lMOwNw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=285.51495&pitch=2.0226781&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/pDIzjXicHc3BCsIgHIDxt_GWTtnWFkjQJQhWtxZdhjNzgpsy_2n1SL1Rb9Po-P0u3_czAPiwISTArBREo5I3T2XDygusndNWCW8Clm4kkRIYHmM_CWO3XkzO3Pi7nfeX87U5uJ1u-zKzzSkdE5J9J61RE_BR-NCFiEFIMFZh7QNKnLEcDZzVFXqJpaoCFzSvC-QNyMVxxli5rij6_-4ucpplP9LBO_U"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Food & Drink",
+          "places": 3
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "The heights cafe",
+          "data_id": "0x89c2f7a311b19b5f:0x39a30b4bd1a321b8",
+          "data_cid": "4153175701633311160",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7a311b19b5f%3A0x39a30b4bd1a321b8&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7a311b19b5f%3A0x39a30b4bd1a321b8&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.841459799999996,
+            "longitude": -73.9429967
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f7a311b19b5f%3A0x39a30b4bd1a321b8%218m2%213d40.841459799999996%214d-73.9429967&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJM9jpmpv2wokRfXkrdXHwvyc&type=place",
+          "rating": 2.7,
+          "reviews": 9,
+          "type": "Cafeteria",
+          "type_id": "cafeteria",
+          "address": "177 Fort Washington Ave, New York, NY 10032",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 4:30\u202fPM",
+          "hours": [
+            {
+              "tuesday": "7\u202fAM\u20134:30\u202fPM"
+            },
+            {
+              "wednesday": "7\u202fAM\u20134:30\u202fPM"
+            },
+            {
+              "thursday": "7\u202fAM\u20134:30\u202fPM"
+            },
+            {
+              "friday": "7\u202fAM\u20134:30\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "7\u202fAM\u20134:30\u202fPM"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHymSUYwt-MA_yHwj2QoykzLBB_d-8JLpOCoiL59NEu0YdEjFhKjn_gZMG9W61_IRDXRfa8l8tVbinueVHrkIem5LrYlYkG-B_ES7m5xt7RAjKI_7CJuiS1DmN7cVEQLb6NlnYdcA=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHymSUYwt-MA_yHwj2QoykzLBB_d-8JLpOCoiL59NEu0YdEjFhKjn_gZMG9W61_IRDXRfa8l8tVbinueVHrkIem5LrYlYkG-B_ES7m5xt7RAjKI_7CJuiS1DmN7cVEQLb6NlnYdcA=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Milstein Hospital Cafe",
+          "data_id": "0x89c2f70032940419:0x88975bb9736f063e",
+          "data_cid": "9842436362705241662",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f70032940419%3A0x88975bb9736f063e&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f70032940419%3A0x88975bb9736f063e&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8415469,
+            "longitude": -73.9440947
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f70032940419%3A0x88975bb9736f063e%218m2%213d40.8415469%214d-73.9440947&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJM9jpmpv2wokRfXkrdXHwvyc&type=place",
+          "rating": 4.3,
+          "reviews": 4,
+          "type": "Restaurant",
+          "type_id": "restaurant",
+          "address": "161 Fort Washington Ave, New York, NY 10032",
+          "location": "Floor 1"
+        },
+        {
+          "position": 3,
+          "title": "Farmer's Fridge",
+          "data_id": "0x89c2f71ece14ac45:0x1bb6206b90d6cc12",
+          "data_cid": "1996819131148979218",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f71ece14ac45%3A0x1bb6206b90d6cc12&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f71ece14ac45%3A0x1bb6206b90d6cc12&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.8412426,
+            "longitude": -73.9409706
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2f71ece14ac45%3A0x1bb6206b90d6cc12%218m2%213d40.8412426%214d-73.9409706&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJM9jpmpv2wokRfXkrdXHwvyc&type=place",
+          "rating": 4.0,
+          "reviews": 3,
+          "type": "Health food restaurant",
+          "type_id": "health_food_restaurant",
+          "address": "622 W 168th St, New York, NY 10032",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            },
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRVXg8ejEOD8n6qB_1ILhPats3W4rJD6kMkv0G5mS_Obtm4KUcKKt_-1abkPLdRhJJjZPhUoRb0y-ojQnBXRWU5N1VFCBDGWCRbzFxB3K6Yf9RUbuq-Q7Ib0vGLIPKIYvtwwuwvg=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRVXg8ejEOD8n6qB_1ILhPats3W4rJD6kMkv0G5mS_Obtm4KUcKKt_-1abkPLdRhJJjZPhUoRb0y-ojQnBXRWU5N1VFCBDGWCRbzFxB3K6Yf9RUbuq-Q7Ib0vGLIPKIYvtwwuwvg=w86-h86-n-k-no"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I think more attention to such a frequently used restroom should be addressed.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU00HcZAUXC0oXGCSad51aH1P_9tM0HqBOAiPBUfmZBhZNMnA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I was there for my cousin, who was getting nauseous from the smell of the food.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV2lat3Op7IBh-Xpr-Kf31cO8ql9iiCmgOTzu_-8qlNRM_xH_jq=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The place is always clean and staff are friendly.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVJ_BF5q-r8PyxhqtLwrRHbLPJYYUycKqONNhdYBA9MHXoWUQ-n=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "CWM",
+          "rating": 2,
+          "contributor_id": "105549530182941409097",
+          "user_review_count": 22,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV2lat3Op7IBh-Xpr-Kf31cO8ql9iiCmgOTzu_-8qlNRM_xH_jq=s120-c-rp-mo-ba12-br100",
+          "description": "Doctors, NPs, PAs, RNs are all top notch. But I have been waiting 8 hours to get a returned call from Patient Relations director, Mr. Cabrera. I called at approx 1 pm to lodge a complaint against the apathetic supervisor at the first desk upon entering Interventional Cardiology. Mr. Cabrera secretary listened to my explanation and told me he would call back \" in a few minutes\". At 4:30 I called again abd was told he would call me back \"in a few minutes\". It's now 9 p.m. Call me crazy but I don't think he's going to call. And this is a perfect example of \"poop rolls downhill\". No wonder why the Supervisor at the Interventional Cardiology desk would not come out of her office and speak to me after I complained to the young lady behind the counter that a gentleman was eating a sandwich and drinking a smoothie right underneath the \"No Food/No Drink\" sign! Literally! The young lady conveyed my message to her supervisor and her supervisor sent her back to me to say \"he is allowed because he is between procedures\". Huh?? Really? While there are patients sitting there who haven't eaten in 10 hours, but it's OK for him? What?? I was there for my cousin, who was getting nauseous from the smell of the food. Why the hell is the sign there, and in what world is that a reasonable response? Give the man a room to eat his lunch in and follow your own damn rules. So,  it is no surprise that 4 of the 5 napkin dispensers in the cafeteria were empty, or that all the hooks on the doors in the bathrooms are gone, and that  Mr. Cabrera in Patient Relations probably won't call me back. Like I said, poop rolls downhill.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCdVZYTXRPVWd3V204MFJIUmxiWGRWWkZCSGRVRRAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOlBuVXMtOUgwWm80RHRlbXdVZFBHdUE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2XAOdkOtvhKCqcA3MdayMnvacoJaFeO5eYfDiEGK8luzRpGiNT7rI6qNiyMQ_WJArAaidyrbh2cgmfIO8x2P9LxRRTdgTmv4RmMp2xm5wvq14V_NuYA3kE92_W6CpQpg-EOZLIXfZLqyet=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn25tknn9RpHgtjZgbD4-KHFOg9uIPW-O6leu-q3fgEtbxmkK3XdgfFaDdqXzu0bM_wmDe-3EVq78nYNpy1YzWPwAxkSnkcxz0QcHuDrZ7gFx11t-b4oZNfmnW3_aHz5F2z9mUrFV9YiIap1=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1sVm86Eyo9AEZZ0M_LjsorQ5KhWNK0QKjeUsga2WARKCgAwFki-InIq6Psup-woRYVoCPVVQclmBg7Irf12CuVYailTs7M-1UwUw7dp3b-KocsnIZHVY79DoR41DkxXutjicaKZvsZG8A=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3MiaE2mm5DBkq--cox2GQTZyNKNOa2pB4LxhfCWD9vSLs3jpcGZx2NLxi5h3US0151acBicY1JGsHCm_-qevE73LkTj8B6Zsi2qG-peYgx8YOIKx1-Tu6nHQWeiwIIPf7yOX6Xjumo7JH8=k-no"
+            }
+          ],
+          "date": "Edited 7 months ago",
+          "date_iso8601": "2025-10-27T11:44:24+00:00"
+        },
+        {
+          "username": "Jenniffer Medina",
+          "rating": 5,
+          "contributor_id": "111500665490423869294",
+          "user_review_count": 36,
+          "user_photo_count": 6,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL01JiX-HON1FspsSmeSt8ylIb3mGdTYcUpjUqgP7hA6IDhGA=s120-c-rp-mo-ba12-br100",
+          "description": "I want to express my sincere gratitude for the excellent care my mom received at this hospital. It was truly a 10 out of 10 experience in every sense.\n\nFrom the very beginning, the service was impeccable. The valet parking team was kind and efficient, making our arrival smooth and stress-free. The front desk and registration staff treated us with respect, patience, and a genuine willingness to help at all times.\n\nOne thing I truly appreciated is that every step of the process was explained with complete clarity, which gave us a great sense of comfort and confidence throughout.\n\nThe nurses were outstanding\u2014attentive, caring, and always paying close attention to every detail. They also explained every instruction clearly and patiently, making sure we fully understood everything, which made a huge difference in our experience.\n\nThe doctors demonstrated a high level of professionalism, explaining everything clearly and showing a true commitment to their patients\u2019 well-being.\n\nI would especially like to recognize Dr. Nana Sarpong, who is simply exceptional. His compassion, professionalism, dedication, and the way he communicates made a remarkable difference. He is a doctor who truly inspires trust and shows genuine passion for what he does.\n\nOverall, the entire team exceeded our expectations. You can truly feel the compassion, dedication, and excellence in service at this hospital.\n\nThank you for taking such wonderful care of my mom. Highly recommended!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSclgxWjZlV1V6ZUdSdFZub3lWblZyUTNGdmJrRRAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOlRrX1Z6eWUzeGRtVnoyVnVrQ3FvbkE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-31T14:12:58+00:00"
+        },
+        {
+          "username": "PhilYouIn",
+          "rating": 3,
+          "contributor_id": "112540335994182974312",
+          "user_review_count": 1352,
+          "user_photo_count": 5007,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJQ-JgsqvI0znqPuw2yRsf87MTEmx98cpVjT3g8EUQZJDVcMg=s120-c-rp-mo-ba12-br100",
+          "description": "Being 70 years old, I have had a plethora of experience with hospitals. Mostly concerning family and friends. So I know what I\u2019m talking about when it comes to such facilities.\nMilstein is an excellent facility. My brother spent a week here recovering from pneumonia. Everyone he encountered was professional and exhibited the utmost care and concern. Several times when he hit the button for help, an attendant magically appeared within seconds. It\u2019s clean, quiet and the place to be, if you must.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kSGEyTnBZMGQ2ZHpKb1FYaHJkMWx4YVdOMlNuYxAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOmdHa2NpY0d6dzJoQXhrd1lxaWN2Snc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-09T18:08:13+00:00"
+        },
+        {
+          "username": "Herschel Friedman",
+          "rating": 5,
+          "contributor_id": "115095866910373974806",
+          "user_review_count": 17,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIvzkUSvOJc0e-S8aY33l-JY4Ty0-2J7LqrnJfYO2LBMQy61Q=s120-c-rp-mo-ba12-br100",
+          "description": "I had an great experience in the heart catheter lab with the medical team. Very professional and warm.  And recovery? WOW  Exceptional!!\nSpecial shout out to the amazing staff on the fifth floor. Every single one of you took very good care of me. I had a most enjoyable stay with you. Thank you so much!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxM1VGOWZUemcxU214RWJsaExTbU5YUzFOUk4yYxAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOk13UF9fTzg1SmxEblhLSmNXS1NRN2c%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-20T20:54:01+00:00"
+        },
+        {
+          "username": "Adam Khan",
+          "rating": 1,
+          "contributor_id": "116206365534993794519",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLctYUgoJAQjgYRRIC0e6rXatU04yqX0HdHJACG0tDA0_3TnQ=s120-c-rp-mo-br100",
+          "description": "Columbia University hospital cares more about profits than patient care. We had to wait over and hour just to get discharged as the travel nurses and cardiologist dont know how to communicate. A simple discharge order took an hour. Don't come here while nurses are being treated like subhumans as you get terrible care.\n\nEdit: we actually had to wait 2 hours just to he discharged . Even worse, the PA and the fellow both gave different information. They didnt even inform us that the reason my father-in-law had to stay overnight was because the fellow induced a mechanical arrhythmia, while doing cathertization. Completely irresponsible, they didnt even say he had an arrhythmia. Im lucky I have some medical knowledge but I wouldn't send my dog to this hospital, they would discharge him with cat medication and follow up asking about my frog.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205WGFXNW9WVkU0U0RORWRuZHdUMVpyTkhWUGQwRRAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOm9XaW5oVVE4SDNEdndwT1ZrNHVPd0E%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-31T19:50:24+00:00"
+        },
+        {
+          "username": "Stanislav Tsarkov",
+          "rating": 1,
+          "contributor_id": "116802319941104601545",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKAM_CGg_YmRaRwslPb3xNeW0utI8xHH8WuSgdrcXXJhUjrdA=s120-c-rp-mo-br100",
+          "description": "NewYork-Presbyterian Milstein Hospital in particular interventional radiology is the most incompetent crowd(i can call them medical professionals). If you want actual treatment DO NOT COME HERE. Nobody does anything and nobody knows anything. The procedure was scheduled for 12 pm, we were told to come at 11 am in order not to delay. it started at 1 pm because of that delay we were late to the treatment center and could not start IV treatment. But guess what, I was able to go to mychart and download and after visit summary at 12:15 pm. The procedure didn't even start but \"You saw Alyssa Villafana; ERNST GARCON; and Luis De La Cruz on Thursday November 13, 2025. The following issues were addressed: \" isn't that amazing? Incompetent facility with incompetent bunch of,I dont even know what to call them. Im sitting right next to the procedure room and people walk in and out during the procedure with the light in use on and radiation sign telling that Caution Radiation Area.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GcVlWUnRjRTFGUnpOVGRWaGliVmhoTmsxUVEzYxAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOmFqYVRtcE1FRzNTdVhibVhhNk1QQ3c%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-13T18:19:13+00:00"
+        },
+        {
+          "username": "Arthur Glauberman",
+          "rating": 5,
+          "contributor_id": "107011581015319368608",
+          "user_review_count": 1057,
+          "user_photo_count": 23673,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUF_clVoSZmScPHXT5Ms-BUb8Jmo72X-xWBoI2U0vBLB_o86Ax6=s120-c-rp-mo-ba12-br100",
+          "description": "If you need to have surgery and want the finest medical care, you will want to come to the Milstein Hospital at Columbia Presbyterian Hospital. One of my relatives recently had surgery and spent a few days as a patient. She had a gorgeous view overlooking the Hudson River and the George Washington Bridge. Her surgeon was considered one of the best in his field and the nursing care was excellent!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNpZ1pqMjhRRRAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CIHM0ogKEICAgICigZj28QE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0Hlu1YWjHt2UEWZ0duLXubJt4VzzyMEAus06g-kwqGmO0G47riTsTzYPgAMHXkN16KHaKRfwOdteXQEc_zL5ObbS2VtLRcUSi0MqxTqZIlxpX90eh9qma2yCjPTPP17GwAfeg=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2mnZrMla0Y6B-uyIoT7eW8z3Niygqbf0j-VYXV1FM-CTfzf-BMLp84bY_GiKnHhu4CGd57nJu3iptMtb1Q66EfE5V-W1PmKPlRbYuCmKjjqC7RU0-7ab9RhRbuWuNX7RehARiyTA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0mFC7hOnrku1PMtOA9qshVfjJbGNOFgLS6H9vimYcdNlnoIQjExLACh5bZVM7SFXGadK7sPfRA_-xgyV5IV-ld6aJ8kpwT33tOYW8kuYX9MpBJbjtZlf4aAiTRpVyPbXxCeGA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2JuNf802gYDUtxkJRqRsyr6VvWfRbOVrFmQpQi90Nnm8Mosa0rtf9HvXMgC_ldngOXFJuHggCTrp6t5xwLi_VFIGuIA87C4x4LhL8zyw50EK5rQ5V1ApWyavk1OuByl6n4pkvIfA=k-no"
+            }
+          ],
+          "date": "5 years ago",
+          "date_iso8601": "2020-11-04T16:57:15+00:00"
+        },
+        {
+          "username": "Debra Harmon",
+          "rating": 5,
+          "contributor_id": "110084060916249682701",
+          "user_review_count": 7,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX8iXbF8z5CepE9fIi_oq7hDxyznPx7jCt3aoqB3VkmfgxoFpIX6Q=s120-c-rp-mo-br100",
+          "description": "OK, I wanted to share my visit in the hospital here my nurse was Anecia just got back from strike truly amazing Mafr me so very comfortable and safe a true bless to the staff here. Thank you",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tZNGRsZERRWHBmYzNNMldEbFRhRzlDYkdGd2NHYxAB!2m1!1s0x0:0x27bff071752b797d!3m1!1s2@1:CAIQACodChtycF9oOkY4dldDQXpfc3M2WDlTaG9CbGFwcGc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0jkkFZ5MsuXnckT_CaRJOZHA0VbdAAU4xI7Z_MFj57VJ0IZt5dlUHLO6JgWTqMOPeP6IpaTIdu4zO8-wyAZRg-QOGZ5sL4Pbo2s3jIGQdw8ks2ZnVV_K3XGUh-Rw-iOJ_XYu3hTkIqDoI=k-no"
+            }
+          ],
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-27T21:29:26+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "NewYork-Presbyterian Hospital",
+            "data_id": "0x0:0xa39e3ded0b332a95",
+            "data_cid": "11789928962806983317",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa39e3ded0b332a95&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa39e3ded0b332a95&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8407312,
+              "longitude": -73.9430812
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa39e3ded0b332a95%218m2%213d40.8407312%214d-73.9430812&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 27,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEOdUTdMypxvSMy0h9aY54wfZza14yAjJlS2azltCIVOlByHShIi7N8_lfBnGW89iJptnyETQcOHAh2D6f4DVm-9_xlRPvML3h98wAkbvxsktmONaQcD4JHuPnyBnXsdYw0zfXVuRqpJ7ga=w156-h156-n-k-no",
+            "type": [
+              "General hospital"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Columbia University Irving Medical Center",
+            "data_id": "0x0:0x51966d2b2cd4c1df",
+            "data_cid": "5879006395781923295",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x51966d2b2cd4c1df&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x51966d2b2cd4c1df&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.841459799999996,
+              "longitude": -73.9429968
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x51966d2b2cd4c1df%218m2%213d40.841459799999996%214d-73.9429968&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.4,
+            "reviews": 19,
+            "thumbnail": "https://www.google.com/maps/vt/data=G50Zb_1YV0opIlu2IdNO55O1Zv7siVsv2Dxdh1N1x0DkiYZ8_S96ZBm2Du29mo_6_ORHTSTGDNHRJFz0WyEysHj7HuFDbNl9ws5Jp1S0Nbb-WKvut3xGrePhiAKitVxAKL4ruyiYUGwQWVn8eJN16nd0tBsgLdYa",
+            "type": [
+              "Hospital"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "ColumbiaDoctors Interventional Radiology - NewYork-Presbyterian Milstein Hospital",
+            "data_id": "0x0:0xe7f638def34b0b3f",
+            "data_cid": "16714609597247851327",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe7f638def34b0b3f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe7f638def34b0b3f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.841269,
+              "longitude": -73.94303359999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe7f638def34b0b3f%218m2%213d40.841269%214d-73.94303359999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=bq43Su1FOeqywkDzuQOW3oo-waF-LQ09LrpMFGFeNiSJPFdoiHnYFT9C8BeYPmSdKuwEOcpqlqBhVpG2xvzPvpQIhil8DgB-oTwMr7Ej1wLD323OfP78hRy6Qj0s95vJHG5amQa62oSUS0-znlmYSaHAn7QfmSI_",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Vivian and Seymour Milstein Family Heart Center",
+            "data_id": "0x0:0x4300ebd2424b2123",
+            "data_cid": "4828118088829051171",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4300ebd2424b2123&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x4300ebd2424b2123&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.840713699999995,
+              "longitude": -73.9434966
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x4300ebd2424b2123%218m2%213d40.840713699999995%214d-73.9434966&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 29,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZLyzgXJU3_mpy37v3iwdrl3HSAXafOBfRmLVsxOehJPL4q7O3qTY5i5jY6-tx4nf7RK3EPkYrcp4UkgejJEyN-iI4OgPjI-lKkFz4yJS0YNIc9nPVQKnUd18hRQSutURCbsGw8g=w156-h156-n-k-no",
+            "type": [
+              "Heart hospital"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "NewYork-Presbyterian Hospital Service Building",
+            "data_id": "0x0:0x569b510070ea3284",
+            "data_cid": "6240670770988200580",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x569b510070ea3284&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x569b510070ea3284&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8409068,
+              "longitude": -73.9432978
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x569b510070ea3284%218m2%213d40.8409068%214d-73.9432978&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 5,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNOetYEJmuwVbBepyayQIbKkWgH2y28hEsgKd6jCp5RdYPb0UNo4SAGF8jplJIWD2TPiACgM7ksjc8ocHZLPF3kqzSVW4sARUhTLv0k6MJ_RSpOaYrYIHJ7dGSO7hcL7BnOTbc=w156-h156-n-k-no",
+            "type": [
+              "Hospital"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjMKMSItQ1VJTUMvTWlsc3RlaW4gSG9zcGl0YWwgQnVpbGRpbmcgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjMKMSItQ1VJTUMvTWlsc3RlaW4gSG9zcGl0YWwgQnVpbGRpbmcgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

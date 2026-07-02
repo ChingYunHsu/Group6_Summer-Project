@@ -1,0 +1,340 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ee12f47f8e03d76deba",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/gkahhV7A157RwuH5ZTHtJg/6a3d3ee12f47f8e03d76deba.json",
+    "created_at": "2026-06-25 14:44:49 UTC",
+    "processed_at": "2026-06-25 14:44:49 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f7db37596c51:0xf3c26961bafdbc40!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/gkahhV7A157RwuH5ZTHtJg/6a3d3ee12f47f8e03d76deba.html",
+    "prettify_html_file": "https://serpapi.com/searches/gkahhV7A157RwuH5ZTHtJg/6a3d3ee12f47f8e03d76deba.prettify",
+    "total_time_taken": 1.21
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJUWxZN9v3wokRQLz9umFpwvM",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Duane Reade Pharmacy",
+    "place_id": "ChIJUWxZN9v3wokRQLz9umFpwvM",
+    "data_id": "0x89c2f7db37596c51:0xf3c26961bafdbc40",
+    "data_cid": "17564717365168290880",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7db37596c51%3A0xf3c26961bafdbc40&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7db37596c51%3A0xf3c26961bafdbc40&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8164796,
+      "longitude": -73.9471842
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJUWxZN9v3wokRQLz9umFpwvM",
+    "provider_id": "/g/11g4cp3d3k",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=09Ipj3kO-aE4AhogxD88Tw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=316.6327&pitch=-89.39666&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/kp2DanicHc29DsIgFEDht2ErtGKQmhBjooOTi7uhiHCVlpuCpT6Rz-Tb-LOc8Tvvl88Z05qxlEdr8wS2IMw2pAo1dTG6YDVCoib2bGpY9o--GzSEDeohwkXV7QFv_H6s9H659dHNOylPhZjubALYIatk9Wg8deUrjvFCHSZSlBTE__LURfFGUMEXK4KQjVeVbClvhRDkP7vGSTV1_QHYhzqE",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 3
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 3
+      }
+    ],
+    "rating": 2.9,
+    "reviews": 9,
+    "price": "$$",
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "offerings": [
+          "Naloxone"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "300 W 135th St, New York, NY 10030",
+    "country": "United States",
+    "located_in": "Duane Reade",
+    "website": "https://www.walgreens.com/locator/walgreens-300+w+135th+st-new+york-ny-10030/id=14382",
+    "phone": "(212) 491-6015",
+    "open_state": "Open \u00b7 Closes 1:30 PM \u00b7 Reopens 2 PM",
+    "plus_code": "R383+H4 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "friday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "saturday": "9 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "sunday": "10 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "monday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "tuesday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "wednesday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 12 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f7db37596c51%3A0xf3c26961bafdbc40&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=09Ipj3kO-aE4AhogxD88Tw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=316.6327&pitch=-89.39666&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/WveryXicHc1LDsIgEADQ27Ar_dBga0KMiS5cuXHfUMQySstERqhH8kjexsR3gff9OCKM27KM9LSWEtiMsFofC9R8CmHyViNEbsJcprok95rHRYPfoV4CXFXVn_AuHudCH9u9C9N66LpLZmYcjAe7kJo1xiEmTtoQeMsnjCyrpmmZU03fsbfOStSSS9FsGAIZp4qu56KXUrJ_dwtJ1VX1A1SFOxs"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=09Ipj3kO-aE4AhogxD88Tw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=316.6327&pitch=-89.39666&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/WveryXicHc1LDsIgEADQ27Ar_dBga0KMiS5cuXHfUMQySstERqhH8kjexsR3gff9OCKM27KM9LSWEtiMsFofC9R8CmHyViNEbsJcprok95rHRYPfoV4CXFXVn_AuHudCH9u9C9N66LpLZmYcjAe7kJo1xiEmTtoQeMsnjCyrpmmZU03fsbfOStSSS9FsGAIZp4qu56KXUrJ_dwtJ1VX1A1SFOxs"
+      }
+    ],
+    "user_reviews": {
+      "most_relevant": [
+        {
+          "username": "Roberto Francescangeli",
+          "rating": 2,
+          "contributor_id": "109289651895823839305",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUKV0iB4sEGdIKNFYlOhwWVzJFIkKozjOieLOZ3zIQuyf6QE283=s120-c-rp-mo-ba12-br100",
+          "description": "A bit slow in refilling some medications and terrible in transferring prescriptions to other pharmacies. Beware that they usually close earlier than what they say on the door.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21JMGIzRnBha2xtVFhaYWJGaEdlVXQ0VjJGRU1YYxAB!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CAIQACodChtycF9oOmI0b3FpaklmTXZabFhGeUt4V2FEMXc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-24T01:13:19+00:00"
+        },
+        {
+          "username": "Daniel C",
+          "rating": 1,
+          "contributor_id": "113637587407221742596",
+          "user_review_count": 36,
+          "user_photo_count": 39,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIdvRM38sZt9tpg4_a-V9jHQCCDp8T6DC1bwM8gG4FIBC2v2YtU=s120-c-rp-mo-ba12-br100",
+          "description": "Please note that this pharmacy is successfuly taking down negative reviews. I guess that's a service you can buy from Google.\n\nMy original negative review (along with the dozens of others that were previously here), speak to the incredible rudeness of the pharmacy manager.\n\nThese are THE WORST, absolutely incompetent pharmacy staff in the city and that says volumes. Instead of ordering new stock of medicine, they wait for the customer to call them days later before attempting to order the meds. And they WILL make you wait at least two hours despite there being only three people in line ahead of you on the phone. And they WILL hang up on you not once, not twice, but three times. Absolute garbage staff at an absolutely garbage pharmacy.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNuczdXUjFBRRAB!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgICns7WR1AE%7C%7C?hl=en",
+          "date": "Edited 2 months ago",
+          "date_iso8601": "2026-04-24T22:55:34+00:00"
+        },
+        {
+          "username": "Marley Jaeger",
+          "rating": 1,
+          "contributor_id": "101884696990188533176",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVIP0YmkhofD7aNVGkg82HSeSLoqrTl0hK6Qa-YupbFCMDEaO1k=s120-c-rp-mo-br100",
+          "description": "Person on the phone in the pharmacy was so rude and condescending today. Have called a dozen other pharmacies asking the same questions related to the ADHD medication shortage, and no where else has given me any difficulty. I\u2019m just trying to get my meds in a really hard time to get them- I don\u2019t need to be catching strays on the phone with the pharmacy! :(",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN2dWUtUU9nEAE!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgICvue-QOg%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-12-12T19:54:44+00:00"
+        },
+        {
+          "username": "Ava Gardener",
+          "rating": 2,
+          "contributor_id": "109539523094402088489",
+          "user_review_count": 49,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJOA09M5sqdF023lMRWeutkV6RYbnc5SCdAgEIIZC4AWjMpXg=s120-c-rp-mo-ba12-br100",
+          "description": "I am changing to a farther-away pharmacy because I am so tired of dealing with this one. Wait times are incredibly long even when it is not busy. The pharmacists often insist I have no prescriptions available until I pull up the app and show them I do. This back and forth has taken up to 45 minutes before.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURDb2JyQVJREAE!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgIDCobrARQ%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2020-09-30T01:56:53+00:00"
+        },
+        {
+          "username": "Jeff VanZeilen",
+          "rating": 5,
+          "contributor_id": "107994769426655717581",
+          "user_review_count": 8,
+          "user_photo_count": 25,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXFmFCMxTsVD3VAHlDtC43hK2I6DnlnyeVm8kuzqHJ86pflaD0L=s120-c-rp-mo-ba12-br100",
+          "description": "Warren and the rest of the staff in the pharmacy are incredibly caring and thoughtful. Not to mention patient. Thank you all for your attentiveness and patience when the rest of us feel like sh*t.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUR4MUw3SXdRRRAB!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgIDx1L7IwQE%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-06-02T15:14:17+00:00"
+        },
+        {
+          "username": "Mikalai Satsura",
+          "rating": 1,
+          "contributor_id": "107810418089865979512",
+          "user_review_count": 40,
+          "user_photo_count": 15,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJP-ViJ25BsVdQpYjLqToRdcOpSq6M6ueMDckAittWQXU2vEw=s120-c-rp-mo-ba12-br100",
+          "description": "Rude staff! Doesn\u2019t want to do their work",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURmcDQ3RjJ3RRAB!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgIDfp47F2wE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-01-10T18:11:52+00:00"
+        },
+        {
+          "username": "Imzadde",
+          "rating": 5,
+          "contributor_id": "114133655986559621075",
+          "user_review_count": 75,
+          "user_photo_count": 43,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWlXerNj5AVLT4P6OQ7ioOHdFzZ_TBf_hujlgDDrMuHiUxXJi6A=s120-c-rp-mo-ba12-br100",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN4dE9YTFFnEAE!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgICxtOXLQg%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-05-11T16:42:25+00:00"
+        },
+        {
+          "username": "Carlos javier Rivera",
+          "rating": 5,
+          "contributor_id": "103504269421573023740",
+          "user_review_count": 15,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLQ7x3Ob0vD7CiaJyLIVC56FfLecHBneTgsGgA2UHKpAQLa14ls=s120-c-rp-mo-ba12-br100",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURLelBYOFRREAE!2m1!1s0x0:0xf3c26961bafdbc40!3m1!1s2@1:CIHM0ogKEICAgIDKzPX8TQ%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2021-05-02T20:12:25+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Duane Reade",
+            "data_id": "0x0:0x970d248eb8db1434",
+            "data_cid": "10884396069829678132",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7625776,
+              "longitude": -73.98357039999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x970d248eb8db1434%218m2%213d40.7625776%214d-73.98357039999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbY1FKA3Qs6609T4TMFALENTMdcr3KJqNIVNoMyP5vTyi8ymsel2D0CpHigvwGDUwrrGQvVFFn3dhiZzQ6KGV2GNRK1cJo8NGkox_4Xy8zezQ74tomDyOOzlsfmFDH8aYTVxVm=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Duane Reade Photo by Walgreens",
+            "data_id": "0x0:0xcb9a73eef85e2833",
+            "data_cid": "14671166206319142963",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcb9a73eef85e2833&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xcb9a73eef85e2833&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.823115,
+              "longitude": -73.9433389
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xcb9a73eef85e2833%218m2%213d40.823115%214d-73.9433389&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.3,
+            "reviews": 3,
+            "thumbnail": "https://www.google.com/maps/vt/data=8otdyeeQwJ8Hc0l2S-9Uw4Btr7gxotU21qlcz0OHnLr4GkGWp_bYVr4CQTqyj2Fb0NsYpHFU2CVGqljph30onT9py5YUwPFwNP4Q1rkXFLoMF4sZnsw63jZOGiA6PqA2LoBVBdKmrDJ1ECEq2kQfE0F86kFObi5c",
+            "type": [
+              "Photo lab"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Red Ribbon Pharmacy Inc",
+            "data_id": "0x0:0x1a219a70f4ec2e66",
+            "data_cid": "1882955929153711718",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1a219a70f4ec2e66&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1a219a70f4ec2e66&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8213614,
+              "longitude": -73.9397974
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1a219a70f4ec2e66%218m2%213d40.8213614%214d-73.9397974&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 411,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE6i68O--hTNE6oqR7yPU29Vu8giErT7tIsqiw61fiweSw5vIK0Ky8F_9BXBaaOQ1qVBH_03fGF4p0NM6NTGLV9su90iq2IYpMSwlWERUdxzOjUllztPsYdeh3hdrhZ-M7DkFLWcQ=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Lenox Terrace Drug",
+            "data_id": "0x0:0xb20781279df67dc3",
+            "data_cid": "12828364070742031811",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb20781279df67dc3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb20781279df67dc3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.813035600000006,
+              "longitude": -73.9389456
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb20781279df67dc3%218m2%213d40.813035600000006%214d-73.9389456&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 66,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHyqSht-omIvFQqDoJ830X8aKp7VSB73R57SwB9UIbum3c6pvyogL2gmIBPOPK2l9MVl-UjoKSlHzV0wcexz7ZId_47c-lwUZdmM73Bx961y64i1uw58vpDDFu3jJFABRFdccw=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

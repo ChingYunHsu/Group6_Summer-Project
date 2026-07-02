@@ -1,0 +1,407 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e6b89ec196f725b58a7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/AZmG00oHiWK4ARqq_ytZPw/6a3d3e6b89ec196f725b58a7.json",
+    "created_at": "2026-06-25 14:42:51 UTC",
+    "processed_at": "2026-06-25 14:42:51 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a2102ebf09d:0x4c97145a62edd983!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/AZmG00oHiWK4ARqq_ytZPw/6a3d3e6b89ec196f725b58a7.html",
+    "prettify_html_file": "https://serpapi.com/searches/AZmG00oHiWK4ARqq_ytZPw/6a3d3e6b89ec196f725b58a7.prettify",
+    "total_time_taken": 1.28
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJnfDrAiFawokRg9ntYloUl0w",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Sound Dental NYC",
+    "place_id": "ChIJnfDrAiFawokRg9ntYloUl0w",
+    "data_id": "0x89c25a2102ebf09d:0x4c97145a62edd983",
+    "data_cid": "5518902246805199235",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2102ebf09d%3A0x4c97145a62edd983&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2102ebf09d%3A0x4c97145a62edd983&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.715835999999996,
+      "longitude": -74.0030572
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJnfDrAiFawokRg9ntYloUl0w",
+    "provider_id": "/g/11h76lpm1q",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPta7EZmCn3qUnbw3Z9RTdEISDvqCGEIYZoI5CgapmZxA9fafz5qgYRPBNbtK_HpjShu4-5q3Nn2Sz-VwMp-qIlCr4GWA2o40PXikc1pV1e8BCj6EHUytVpH2MR4WNyJ6vgZpb=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/S9FH-HicHcRJDoIwAADAF1V2t8QDVCJoJAiK0ouBikWFLraK8kHf4G9MnMN8P7VSXE41ramtAWGMNNVDVnfMqKqoGmDWaoRLgCWQmhtHm5sbxKoY-aiF1BI7WnYWmiTbkx-m86eACz_MEQsdSAreopc7ORfn3hEkT2IvKtXqGPBrWj9s4Agrombag6xbcyDCBt7txd41ma3Hh8sNGzwzqrEHr0M_2L1VxgNzndj76L0cPgni5awzdF0H9X8M6A8-PUP6",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 2
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 88
+      }
+    ],
+    "rating": 4.9,
+    "reviews": 91,
+    "type": [
+      "Dentist",
+      "Cosmetic dentist"
+    ],
+    "type_ids": [
+      "dentist",
+      "cosmetic_dentist"
+    ],
+    "book_online": "https://www.zocdoc.com/practice/sound-dental-nyc-58546?LocIdent=116661&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_iskt_lTuv0Sm5aMG-_xWuh-lo__5-6bwF9iE23NrSKF2TBgx-entity&rwg_token=AE37R_iLnv8hq5UY472TWSKDrkkxxVzLvYxZXN3zuBJZYLR9rXd-UKgOKuWuvWn4DEO6hL-5WIVQ8rWHlRH8jJ3iQHL2x2tbow%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "42 Lafayette St, New York, NY 10013",
+    "country": "United States",
+    "website": "http://sounddentalnyc.com/",
+    "phone": "(917) 261-6464",
+    "open_state": "Closed \u00b7 Opens 10 AM Fri",
+    "plus_code": "PX8W+8Q New York",
+    "hours": [
+      {
+        "thursday": "Closed"
+      },
+      {
+        "friday": "10 AM\u20133 PM"
+      },
+      {
+        "saturday": "10 AM\u20133 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "Closed"
+      },
+      {
+        "tuesday": "10 AM\u20137 PM"
+      },
+      {
+        "wednesday": "10 AM\u20137 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a2102ebf09d%3A0x4c97145a62edd983&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHPta7EZmCn3qUnbw3Z9RTdEISDvqCGEIYZoI5CgapmZxA9fafz5qgYRPBNbtK_HpjShu4-5q3Nn2Sz-VwMp-qIlCr4GWA2o40PXikc1pV1e8BCj6EHUytVpH2MR4WNyJ6vgZpb=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/S9FH-HicHcRJDoIwAADAF1V2t8QDVCJoJAiK0ouBikWFLraK8kHf4G9MnMN8P7VSXE41ramtAWGMNNVDVnfMqKqoGmDWaoRLgCWQmhtHm5sbxKoY-aiF1BI7WnYWmiTbkx-m86eACz_MEQsdSAreopc7ORfn3hEkT2IvKtXqGPBrWj9s4Agrombag6xbcyDCBt7txd41ma3Hh8sNGzwzqrEHr0M_2L1VxgNzndj76L0cPgni5awzdF0H9X8M6A8-PUP6"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZKxiy7Uj1T5GvuN20DvSjdaJ5o0vqq_3JBmmbHBEP0NK6tPZtxoJ5K42GrX9MFX4QVqqvbU9vBAJtf_sy9U3ErgH3UduWZvDXp9gX0onsUTBVV5hwVxPvb3X8C415X3PwoEh4Jg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/byfZVXicHcRdDoIgAADgE5kYUtnWg5bVcDlaYcyXlmbQj6KCaEfsCN2mre_h-36E1rWa2_ZLwBGXkr-KThVtLitdVHqUy9LmtbJyZSnbJ_H-6a_TaLi_p_ThHNHGdPEYrMzhcb1gJIFpmjPEQVlm2yAkII4mmqR6kBhF7njTMm-3Zu4-aRqTUc8EPta3s3p7FIYt30J67U6pWbHa4wzIStFjkCRI9MlATAbZbOk6iEHSy1C4mC96BwBgif-5Vf0Atq1ElQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=sSgJ7STZij5RAbgCiBa5lg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=311.2944&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/8UhCVHicHc1BDsIgEADA33ATCrbRmhCj3jxaT14aighraCHuSvU5PsvfmDgfmO8nEGXcCIH0cI4KuDnDy0VcZMN9Sj46kwG5TaMoUlB4jsNkIG6zmRJcNXb-uOrOF7g3p93gD7A3TfTMDr2N4CbSo8nYY-FkLEF03Gdks1aqZkGrds3eZtZLKblq65plIBt0xf7NLRUtq-oHtAw52Q"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Clean office, fast and personable service, and quick clean and filling!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWmNd7DxQ3z74DccjXZYNWx9wnjJ1S_pXSAe93LPZxQ9fJelReZ9Q=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"He is a music lover and you will enjoy the chill vibes and energy.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW1e8T93XESAkXPgs_Z9l4upX4snQvg0F0GLkSYwpYn62wndrxL=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I've gotten many compliments on my smile after my Invisalign treatment.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL4KPAJan-YPQ15jB4VueNRqn3DRGYdhJYBw0SMRoUt-6nHeA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Nader Shirazi",
+          "rating": 5,
+          "contributor_id": "102675830085661814396",
+          "user_review_count": 25,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI5DdnO3PWrz78A959O0Gf_ZuqlF9-YI8oZKFxmO-CiyRclNwE=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Shahabi is the real deal. It\u2019s honestly rare to find a dentist like him these days. No dealing with five or six different people, interns, or endless upselling. No one trying to sell you toothbrushes or unnecessary products in between appointments. You see him directly, he explains everything clearly, gives you all the available options without being pushy, and simply does what\u2019s needed professionally and honestly.\n\nHe genuinely cares about the patient, not selling treatments. I can\u2019t believe dentists like him still exist. Absolutely amazing experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21acWNrNVhZV3B5ZFhoWFVYSXpUR1pvTWpCTU5GRRAB!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CAIQACodChtycF9oOmZqck5XYWpydXhXUXIzTGZoMjBMNFE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-22T17:54:17+00:00"
+        },
+        {
+          "username": "Izzi lyn",
+          "rating": 5,
+          "contributor_id": "116333906956805804604",
+          "user_review_count": 30,
+          "user_photo_count": 140,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUOOZciPdFLq7sY86nZYIBMqHCGhv84SGjVmnVFYWt3glJfnvpC=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Shahabi is gentle , welcoming and his office is beautiful! He listened to my concerns and answered all my questions. When being treated by a dentist I want a thorough exam and a gentle cleaning. The service was exceptional, when it came to the insurance process it was seamless. Everything was disclosed upfront the staff checked my plan prior to my visit which is always a plus! Insurance can be a foreign language sometime and when the office staff makes it simple to understand it\u2019s a win win. Thank you for a great visit and an awesome experience!  Oh by the way I listened to my favorite artist while my pearly whites were getting shined!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNVMU0zUGVREAE!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CIHM0ogKEICAgICU1M3PeQ%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2qmt_WrvEECNnTKhxExH400TCqiXRXiJk9s47SJJ7pbZZ4D9TIoaHAa8q_gwsBDeKWik9dccRFBuYnTlA6BAjZjACISCANu7QnTWxQEY5AaS5rsKqwii4OrA1eRVlDVij3EREA=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0almrD_qVGfKQHzHhhbWXsOB-Ah-ZRgJYo9Ppl1uiQHPamJUTzuz-I_yamEGKBg294BKAp_mkiigfWLspxMjKgt-WmKGUxgLiRXTmwc8wX4YJT5IHAsvKOK5o-SxBVghZZ7cc=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn15b4BSAnOT4bXCwlL4DvN20tblQkn9XdwUpbNIvvF33gK6RnG6r07gnNy4uyEq0eJPz9bgk7AuI1DeH5kVmX6Z64yte9G65M6aEt1YLVE0XUXZiyftVGhPsGNGenPwM_ybD6UcFQ=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1n89atHdiDktrDHAg-TmtfBQXbwQJNmrdwNxolh_H6XbrW58uvu2kZDXZGjNl-crJSKnPT2M8PfaDrh8VQe8ezjrSIu3UJRnkaewvJyJtE6lVCx3R4DKVe6fOqfaYHRCkce4Pohw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn237p5Zi3dBjwn5ix4Gy1mJMYqnQtl82eyBGj8MNd6v1r3yVbT2YvTUCAh4aGl9LsqKdknOMVRRXHNxgwI6Kw2ZgibDqXNbBy7CKe2FUXFdVuTs_OwCk8JGL9VX9eaXs5infSAK=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2a1FKyaT06NxzCrpVNLKappVGjeR9r6mcUUlLYVkjCBDbvFOU4PcBu9IBNuIz1RxXtqOKqIKWpohQHa6-8R5E5b58y-KbWsQYpu0zMt5BkqZdNdlA3PaNb6juuc0idXOSBz2O1uw=k-no"
+            }
+          ],
+          "date": "6 years ago",
+          "date_iso8601": "2019-07-19T00:50:48+00:00"
+        },
+        {
+          "username": "Laura S.",
+          "rating": 5,
+          "contributor_id": "106769803805114323136",
+          "user_review_count": 7,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVyScs315Q32ktIC2xx8phkzdIt1K29GsUfeMvZJJhw0uIhaNzT=s120-c-rp-mo-br100",
+          "description": "Amir Shahabi, DDS - He is an amazing dentist. From his professionalism, to communication, caring and his spotless dentistry. Sound Dental NYC is all up-to-date on dental tech stuff. He did my Invisalign \ud83d\ude01; hands down to him. I definitely recommend him.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201SFRsRkdXR0pzVWpReFFtbFJRamRtTFdKQmFuYxAB!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CAIQACodChtycF9oOm5HTlFGWGJsUjQxQmlRQjdmLWJBanc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-02T18:07:59+00:00"
+        },
+        {
+          "username": "Jessika Weir Reeves",
+          "rating": 5,
+          "contributor_id": "110317072383026130437",
+          "user_review_count": 27,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWhrawOcXo96OdEgYseRsDFspKls3r1wBi0Pioa49YINYlk9Wdc=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Amir Shahabi is the best. I was super nervous to see a dentist and he was so caring, kind and knowledgeable. He went over my dental plan and made me feel at ease about the whole experience. I\u2019m honestly looking forward to getting the work done.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTUN3MmRxSjRnRRAB!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CIHM0ogKEICAgMCw2dqJ4gE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-19T20:54:20+00:00"
+        },
+        {
+          "username": "Erika Jansen",
+          "rating": 5,
+          "contributor_id": "104056334723400919332",
+          "user_review_count": 6,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX4xhHWVKitNVQNsvEOkk0Pp2sur5juJub4qGOdo00VCxY7QVwd2Q=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Shahabi is fantastic!! He is extremely talented and very thorough. I had a very painful cavity and went to schedule an appointment which was effortless and easy! They were able to be very accommodating with my schedule and fit me in as soon as possible. Dr. Shahabi was able to do a basic filling in my tooth and I went back to feeling great! Such an amazing experience for me! Would recommend to everyone!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25jNVZqSjNUM0ZaTFZObFYzbFNUVEpRWkVKYWRVRRAB!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CAIQACodChtycF9oOnc5VjJ3T3FZLVNlV3lSTTJQZEJadUE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-22T20:22:22+00:00"
+        },
+        {
+          "username": "La Lulu",
+          "rating": 5,
+          "contributor_id": "108817440756886904911",
+          "user_review_count": 52,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW4no2BEnZ5oOXTRM7pd5_JY0QOQzEZtfKqBQ65X4gZ-9a38ZKKvg=s120-c-rp-mo-ba12-br100",
+          "description": "I had a wonderful experience at Sound Dental with Dr. Shahabi. From the moment I walked in, I felt completely safe and well taken care of. The office is spotless and has a calm, welcoming atmosphere. Dr. Shahabi has a great hand\u2014gentle, precise, and confident. I highly recommend this office to anyone looking for excellent care in a clean and professional environment!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTURJbzlPdy13RRAB!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CIHM0ogKEICAgMDIo9Ow-wE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-04-12T17:07:15+00:00"
+        },
+        {
+          "username": "Dylan Mortimer",
+          "rating": 5,
+          "contributor_id": "106792364553092185816",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLsV0tJ3nZVUfhvwW6VW6A20LvwIpScgZdaxfBj98l2oPmYFoo=s120-c-rp-mo-br100",
+          "description": "Dr. Shahabi is by far the best dentist I\u2019ve been to. He is very considerate of pain tolerance and is efficient. He\u2019s also transparent with insurance costs (where they may apply). I have been coming back for years because he does great work. My teeth haven\u2019t hurt since I\u2019ve started seeing him. One of my favorites parts about seeing him is the ambiance of his office. He always has an amazing playlist going. Look no further than DR. Shahabi for your next appointment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNRbUxyR2J3EAE!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CIHM0ogKEICAgMCQmLrGbw%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-01T17:31:17+00:00"
+        },
+        {
+          "username": "Kristina And Barbara",
+          "rating": 5,
+          "contributor_id": "104335713993926412380",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUWk_YPLvtpvkX6mj35LHpBGSJW2XTmgssCOLFd35CRBtHue-n8=s120-c-rp-mo-br100",
+          "description": "I have been going to Dr. Amir Shahabi for about six months now and he is the best! He is one of the kindest and caring doctors out there. I go annually for check ups and cleanings and he is very professional. He is extremely amazing at his job and I would recommend him to anyone!!! :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1TVJHTjBXbG81VmtoME9IbFlSRVE1T0hJMU1GRRAB!2m1!1s0x0:0x4c97145a62edd983!3m1!1s2@1:CAIQACodChtycF9oOk5MRGN0Wlo5Vkh0OHlYREQ5OHI1MFE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-22T20:20:58+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Sound Dentistry",
+            "data_id": "0x0:0xf52dcfcbc23f29df",
+            "data_cid": "17667005387288553951",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf52dcfcbc23f29df&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf52dcfcbc23f29df&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.76134880000001,
+              "longitude": -73.9646471
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf52dcfcbc23f29df%218m2%213d40.76134880000001%214d-73.9646471&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=AWTmJXXAjXqcdLk7O9jz-GabL5DC-pzFXKKGA8WqKgxrCrZ8znTCYmz1RI82dJI95Bb2wMXNFLywe6Axcf_NMkzjzvl5QpnjWHeuDf8_Hv0VZ_bwSi1punxW56yG49oMeFVPyrtFZpu9KkFE7ZFQIdKRldTg448f",
+            "type": [
+              "Dentist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Sunny Dental Care",
+            "data_id": "0x0:0x221fc9476aa4ae98",
+            "data_cid": "2458905230136618648",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x221fc9476aa4ae98&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x221fc9476aa4ae98&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.717703,
+              "longitude": -74.000895
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x221fc9476aa4ae98%218m2%213d40.717703%214d-74.000895&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 351,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEAymAojZOviUi_716KalHAAxhAZa8U-4ILt-Pk_pRPoJq46AH4q8kJKqw6lBip7YZe9LzGBCarkcHZTTma3IRkYXBsU4N7Svdlfr5kXYBsMuEUeqTiwn0cuahKZZz0JzZlJTV70qKs9Och=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dental implants periodontist",
+              "Dental implants provider",
+              "Emergency dental service",
+              "Periodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Downtown Dental Studio",
+            "data_id": "0x0:0x26a48754b05be010",
+            "data_cid": "2784499267427622928",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26a48754b05be010&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26a48754b05be010&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7093724,
+              "longitude": -74.0099748
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x26a48754b05be010%218m2%213d40.7093724%214d-74.0099748&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 239,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFm33PvNtz2eImL4Ta8r1fuQz4iSdng8levbi-Oup71bAekGzOYKOouUepTj48-7kGgL-uq2EzVAsQlUX9JrwMnMnKfv_cdVMHW2FyHdzTleAaVpL14r2bHxjwf4ygSlZq7P2Ul=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "West Village Dental Studio",
+            "data_id": "0x0:0xc802bdce35168799",
+            "data_cid": "14412290450890590105",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc802bdce35168799&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc802bdce35168799&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7345845,
+              "longitude": -74.0063957
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc802bdce35168799%218m2%213d40.7345845%214d-74.0063957&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 472,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFwzfJlns9BJaDTOwjio0We3M-UWSkJ7MNtbenbOz4S7QJXvp_-lthTyX43j8qspauTDAkIoe8o2BeleKdr4Rob6TITPElckdC04gbFP6Ey5S33gyT7GhqpVmN_b-pFDuC6VohA0RkZeecN=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "My NYC Dentist - Hudson Street Dental",
+            "data_id": "0x0:0xeca9313f12dc29be",
+            "data_cid": "17053215610984212926",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeca9313f12dc29be&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xeca9313f12dc29be&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7265687,
+              "longitude": -74.00812239999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xeca9313f12dc29be%218m2%213d40.7265687%214d-74.00812239999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 293,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFdQEaAyNNHZXu9xJFrbNCJunGAFlHcaiR3F7y_wGmCeQxUAfPYRKHhuJdTvoOyuyzoDfrttB3gODL9ZDezd7QM5Q6N_G7YyKatKVASfHZHAQlT6eCkwPGPLdeOYpc3tp6dmid3XnBwYJS8=w156-h156-n-k-no",
+            "type": [
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiMKISIdU291bmQgRGVudGFsIE5ZQyBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiMKISIdU291bmQgRGVudGFsIE5ZQyBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

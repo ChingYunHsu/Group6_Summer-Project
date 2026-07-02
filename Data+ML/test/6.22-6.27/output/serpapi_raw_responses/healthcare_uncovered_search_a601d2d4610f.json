@@ -1,0 +1,990 @@
+{
+  "search_metadata": {
+    "id": "6a3d271f7af899ef4797638d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/3-cUuZsZO0-ZEwEjOUVlpw/6a3d271f7af899ef4797638d.json",
+    "created_at": "2026-06-25 13:03:27 UTC",
+    "processed_at": "2026-06-25 13:03:27 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/New+York+Eye+%26+Ear+Outpatient+Center/@40.732468,-73.984802,18z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/3-cUuZsZO0-ZEwEjOUVlpw/6a3d271f7af899ef4797638d.html",
+    "prettify_html_file": "https://serpapi.com/searches/3-cUuZsZO0-ZEwEjOUVlpw/6a3d271f7af899ef4797638d.prettify",
+    "total_time_taken": 1.23
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "New York Eye & Ear Outpatient Center",
+    "ll": "@40.732468,-73.984802,18z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "New York Eye & Ear Outpatient Center"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "New York Eye and Ear Infirmary of Mount Sinai - Main Campus",
+      "place_id": "ChIJFWtGP55ZwokRUoNXrEPdYmI",
+      "data_id": "0x89c2599e3f466b15:0x6262dd43ac578352",
+      "data_cid": "7089472046158545746",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.731852499999995,
+        "longitude": -73.9845832
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI",
+      "provider_id": "/m/04g3bdg",
+      "rating": 2.9,
+      "reviews": 573,
+      "type": "Eye care center",
+      "types": [
+        "Eye care center"
+      ],
+      "type_id": "eye_care_center",
+      "type_ids": [
+        "eye_care_center"
+      ],
+      "address": "310 E 14th St, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4\u202fPM",
+      "hours": "Open \u00b7 Closes 4\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 979-4000",
+      "website": "https://www.nyee.edu/?utm_source=Yext&utm_medium=local_listing&utm_campaign=NYEE&y_source=1_MTgwODM2MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Gender-neutral restroom",
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Process was smooth and doctors were very thorough when diagnosing my issues.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHgpetD1ndPWsAyTXDuvZf65NU-v5pn8KMoRPA3pIuDyLRIzX_Ikn-AJY0qn6IRVTIgt50iklaNgSbPtIR0YBNgAglizCQ8YwHoy9YkoIQKamkTOEBazIeHXFNzL3bVNH0h6mHlgA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/c1LL-HicHcRRboIwGADgE1VqCMSZ-FDHlnZqBUQGe1mQ1R_T0ta1aOCGO8JuY-L38P3_dd5btwwC1YUzMAaUGJz4bY32QvtZa_oArEOtQy4gKc8koWCFT-b6J_10ZCyqZLh9neOIH9Etsnqx2Zk8JaFlQzJuczZV30xqRD5qfNUxy8uCgY_wRaqGw-GUepbjes2BgLpMr9mivlMzvtTSsGzT9LLYv62biQlavfNpG55KTnEX91QBWd3nGGPUPW-RfgAI7UVw"
+    },
+    {
+      "position": 2,
+      "title": "Ear Institute at New York Eye and Ear Infirmary of Mount Sinai",
+      "place_id": "ChIJbVi08gpZwokREvHdmJFbeZU",
+      "data_id": "0x89c2590af2b4586d:0x95795b9198ddf112",
+      "data_cid": "10770740664726319378",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590af2b4586d%3A0x95795b9198ddf112&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590af2b4586d%3A0x95795b9198ddf112&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7369813,
+        "longitude": -73.9813485
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJbVi08gpZwokREvHdmJFbeZU",
+      "provider_id": "/g/1hc6vkk3q",
+      "rating": 3.5,
+      "reviews": 36,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Ophthalmologist",
+        "Otolaryngologist"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "ophthalmologist",
+        "otolaryngologist"
+      ],
+      "address": "380 2nd Ave 9th Floor, New York, NY 10010",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 979-4200",
+      "website": "https://www.nyee.edu/care/ent/ear-institute?utm_source=Yext&utm_medium=local_listing&utm_campaign=NYEE_2Ave&y_source=1_MTExNTM0NzMtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"I\u2019ve always been treated very good with the front desk and doctors.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHYA2Gm62MFAdNnfuPKtZfGDQa1SEbGOdXaEmkw-sw-DGibJHS-RlUvlHxkaJZD1aG44_kAAuBcKn7D_ATL14mjac22-7PJBVQtAwRE6ipfa5pkaTtbKlB0N_OCohypmNGlL1g=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/WmeJ83icHcTbToMwAADQLypQZJAs8aEIKwFksE2jeyGlXO01a5H5g_7D_sbE83Aev7O12uxdl89PzqTUxIfVDDeqpB2kdagS7qQNoAYYF9VVw1D2iXwsQv_1gPpKjmtd2OuIk4bAc9rhY_9BUsE2YDaQ4KXLszM48bdvnt0Zya8JJDgIWobQGtNCRkmLLiUMxBehvg-iOo_fG4u2UxoueiQ7zcjFdgWPvao9vqj5R4sK8xJOzxv0PA_M_1Mg_wCPVUMH"
+    },
+    {
+      "position": 3,
+      "title": "New York eye and ear",
+      "place_id": "ChIJE_7ETgBZwokROwFn1Telz_0",
+      "data_id": "0x89c259004ec4fe13:0xfdcfa537d567013b",
+      "data_cid": "18289018270996955451",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259004ec4fe13%3A0xfdcfa537d567013b&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259004ec4fe13%3A0xfdcfa537d567013b&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7319493,
+        "longitude": -73.9845869
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJE_7ETgBZwokROwFn1Telz_0",
+      "provider_id": "/g/11y32jbt9r",
+      "rating": 3,
+      "reviews": 2,
+      "unclaimed_listing": true,
+      "type": "Parking garage",
+      "types": [
+        "Parking garage"
+      ],
+      "type_id": "parking_garage",
+      "type_ids": [
+        "parking_garage"
+      ],
+      "address": "310 E 14th St, New York, NY 10003",
+      "country": "United States",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=DzomlTvHXqyT-XQZbvSvHA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=203.96321&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/WF21LnicHc1RCsIgGADg2_g2dRtECySCHvYa7WH0Es6Z_uD22zRtnaZrdZuiC3zf521j9GHHWIiL1jGBzh6e2oXCS2oQjdPSQ6AKJ5ZKFu1jGmYJbu_ljDCK4wsn16W2v69d0Z8uQzqn9kDUcFUO9BxF0HJRlpr8ExccqfGBZLHlxIqmIqvMouI1bTZ1VRIPUVnByX-5YRIl51-pzzoK"
+    },
+    {
+      "position": 4,
+      "title": "New York Eye and Ear Infirmary of Mount Sinai-Union Square",
+      "place_id": "ChIJUVgX9CZZwokR8mGkhSpi2fs",
+      "data_id": "0x89c25926f4175851:0xfbd9622a85a461f2",
+      "data_cid": "18147644108236415474",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25926f4175851%3A0xfbd9622a85a461f2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25926f4175851%3A0xfbd9622a85a461f2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7348727,
+        "longitude": -73.98966089999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJUVgX9CZZwokR8mGkhSpi2fs",
+      "provider_id": "/g/11w8xbzw6x",
+      "rating": 5,
+      "reviews": 6,
+      "type": "Ophthalmologist",
+      "types": [
+        "Ophthalmologist",
+        "Medical clinic"
+      ],
+      "type_id": "ophthalmologist",
+      "type_ids": [
+        "ophthalmologist",
+        "medical_clinic"
+      ],
+      "address": "10 Union Sq E #3j, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 4\u202fPM",
+      "hours": "Open \u00b7 Closes 4\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 844-6800",
+      "website": "https://www.nyee.edu/about/locations/union-square?y_source=1_MTA3NzkzMTA4Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D&y_source=1_MTA3NzkzMTA4Mi03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "crowd": [
+            "LGBTQ+ friendly"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Free parking lot",
+            "Free street parking",
+            "On-site parking",
+            "Paid parking garage",
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Dr. Thomas Quehl is very caring and a professional at best.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH9lbD1pgVEceCat4d4fYju81EVeu5Mn0jtGKU1MFYQFZZlsB68K9UvKb8YPs-tpZh5cQ1bJJbgRd5JLXAf8SZnqMm_GDcU3azf0ge-EhG_NvsSAw6JA_ESJYMczquuRpmnpW9tCcYxaUCn=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/a1TJn3icHcTBboIwGADgJ6q0UQws2aFDxJRhRIJbuRD4LW0USl1bXXzJnfc2S_Ydvt8f5ZyxL0EwquVCzrMchbfiC2bthHYLmKdAGovAIhvQw7680l089hti5CkFkXRudV4N_OIjkp6EDwuNLy7La1JsebltmtG-raM8ru95H_GDRc40KoSS9Iz18ngO2fsnHaKq0bdiarMN1MvuOWApUKqydn-3FX2sGW3TivECnjfvj2bS5iN2CfDvrk7064NgjJH6H5D-A05xR0E"
+    },
+    {
+      "position": 5,
+      "title": "Manhattan Eye, Ear & Throat Hospital",
+      "place_id": "ChIJ68gu7-hYwokRqeQnYiWf07g",
+      "data_id": "0x89c258e8ef2ec8eb:0xb8d39f256227e4a9",
+      "data_cid": "13318163505974076585",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e8ef2ec8eb%3A0xb8d39f256227e4a9&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e8ef2ec8eb%3A0xb8d39f256227e4a9&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7641061,
+        "longitude": -73.96334379999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ68gu7-hYwokRqeQnYiWf07g",
+      "provider_id": "/m/04g3bpm",
+      "rating": 4.1,
+      "reviews": 165,
+      "type": "Medical Center",
+      "types": [
+        "Medical Center"
+      ],
+      "type_id": "medical_center",
+      "type_ids": [
+        "medical_center"
+      ],
+      "address": "210 E 64th St, New York, NY 10065",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 838-9200",
+      "website": "https://meeth.northwell.edu/?utm_source=provider_listing&utm_medium=partner&utm_campaign=yext",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"The staff was incredible and made my procedure 100 times easier.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGMx4L6nHhQBOlpiWQd2d6QoSDToqIHTX0q_nIaQasfLuyMWkBzo4ScOnjjkvY7u9KQhXMLucMn1ZmAAirSimRAKLEdYpfbtb4XTPr0Y1rYhy6I4AFi-jn0l7svu37LELPZTu-0=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/X8d6L3icHcTbDoIgAADQL0KxnK62HmhZObEk3VJfWqGJNzCBbj_YN_Q3bZ2H8_0wpQY5N82OTY1KiKortSxHKrgquTKo6M1qkIBKIE0U7UiLNuHTxg7fMrLcd0N9JMWkcIiIV4m4-dskhbcT98_kLK9Yv8Jju3wLO6Z73jTtPXP1LCAsDbGmIbfyHqF6jOv-gALsFdlwvaiLnSbRCDNrzNjL8W20rkHDYefKu5662MNRnmgAFw8LQgjYfwr4D6O4RPI"
+    },
+    {
+      "position": 6,
+      "title": "New York Eye and Ear Infirmary of Mount Sinai - Tribeca",
+      "place_id": "ChIJ0UU9_PVbwokRgIXI-zsMY_M",
+      "data_id": "0x89c25bf5fc3d45d1:0xf3630c3bfbc88580",
+      "data_cid": "17537874825677669760",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25bf5fc3d45d1%3A0xf3630c3bfbc88580&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25bf5fc3d45d1%3A0xf3630c3bfbc88580&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7170446,
+        "longitude": -74.00556879999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ0UU9_PVbwokRgIXI-zsMY_M",
+      "provider_id": "/g/11j8lpbxvx",
+      "rating": 2.5,
+      "reviews": 21,
+      "type": "Eye care center",
+      "types": [
+        "Eye care center",
+        "Ophthalmologist",
+        "Otolaryngologist"
+      ],
+      "type_id": "eye_care_center",
+      "type_ids": [
+        "eye_care_center",
+        "ophthalmologist",
+        "otolaryngologist"
+      ],
+      "address": "77 Worth St, New York, NY 10013",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 6\u202fPM",
+      "hours": "Open \u00b7 Closes 6\u202fPM",
+      "operating_hours": {
+        "thursday": "8:30\u202fAM\u20136\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "8:30\u202fAM\u20136\u202fPM"
+      },
+      "phone": "(212) 966-3901",
+      "website": "https://www.nyee.edu/about/locations/tribeca?utm_source=Yext&utm_medium=local_listing&utm_campaign=NYEE_tribeca&y_source=1_MTExNTM0NjQtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Extremely knowledgeable and professional.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNxAW_R1uKJwkf7QaG_3Ujp6oHvhBSzzWElXnDOvQwnvWyoRph4yWPj5L35J4mKzNqg9NsdQLW0gGPDt2iEuhirlFWD1zRgsLlF0doBi1lFPSI_Bch3SiO1y-GKjzRO4dd9h2uUA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/bz9wCHicHcRLjoIwAADQE1VaQSeauIAgjEL4htQdMYVpwdoytoD0hh7B25j4Fu_9YloPam9ZnNkrKiXl7ajaB5FCt0KviLxbdFCAKKAsN0vymxskTxfXBRqj83z7-8mvYW1X_bCVvxPzSmPwkV-En075LCa8yGJgzoKzfhPbm7Nzj0zyT3eJavIYQxpmvl53x5F1Dx5gH5mCqpgHsJFeh3iQlafaI8wuuxQtIIx6U6RO0-zYeqzcw4wghIB9J0B8AEdMRcs"
+    },
+    {
+      "position": 7,
+      "title": "Laser Vision Correction Center - New York Eye & Ear Infirmary",
+      "place_id": "ChIJR3XuR55ZwokROwiTFrkVdcM",
+      "data_id": "0x89c2599e47ee7547:0xc37515b91693083b",
+      "data_cid": "14084187294362961979",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e47ee7547%3A0xc37515b91693083b&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e47ee7547%3A0xc37515b91693083b&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.732403999999995,
+        "longitude": -73.984524
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJR3XuR55ZwokROwiTFrkVdcM",
+      "provider_id": "/g/11cp5dfv0k",
+      "rating": 3.7,
+      "reviews": 3,
+      "type": "Eye care center",
+      "types": [
+        "Eye care center",
+        "Ophthalmology clinic"
+      ],
+      "type_id": "eye_care_center",
+      "type_ids": [
+        "eye_care_center",
+        "ophthalmology_clinic"
+      ],
+      "address": "230 2nd Ave 1st floor, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 979-4600",
+      "website": "https://www.nyee.edu/care/eye/laser-vision-correction?utm_source=Yext&utm_medium=local_listing&utm_campaign=NYEE-laser-vision",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGXxtRP0SbB3XQ7UHeJrbvj-new64xDjlVRYgeGTQ3yljZ_le7thhawFOi4toivqYoOFL1bPQSaWQ6JFet_PmBFrDOvmIlIFjQm8OFlUxAzVIpSebIWhNRnVwd2vhJdU25ws-6_8A=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/Hwbyb3icHcRLDoIwFADAE1VQFI2JC4wpQoxQEPxsCOALFUuLtFL0hh7B25g4i_l-qFKtXBoGo9aoEqJi8JTQlYIr4GpUisaoWolKiaThhHtyd9zToKLQjIu1dSLzZAt-V_Q14qDt6bCpWRqdK3APxHqx-pIxmCtKc42D21SJW_84iwDvxkVI4vxIbB-DysJmjbtN0Dce83BNmkWAWTI479RrYyi8I91HPNXXSU_9azKZaYnsbOGs9Ng0TUT_l4j_AFg1Rls"
+    },
+    {
+      "position": 8,
+      "title": "Ny Eye & Ear Infirmary",
+      "place_id": "ChIJ4wiUPohZwokRwySzDp-J2Eo",
+      "data_id": "0x89c259883e9408e3:0x4ad8899f0eb324c3",
+      "data_cid": "5393211870015595715",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259883e9408e3%3A0x4ad8899f0eb324c3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259883e9408e3%3A0x4ad8899f0eb324c3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7184789,
+        "longitude": -73.9964735
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4wiUPohZwokRwySzDp-J2Eo",
+      "provider_id": "/g/1txc7yy1",
+      "rating": 4,
+      "reviews": 4,
+      "type": "Doctor",
+      "types": [
+        "Doctor"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor"
+      ],
+      "address": "128 Mott St ROOM 608, New York, NY 10013",
+      "country": "United States",
+      "open_state": "Open now",
+      "phone": "(212) 343-8399",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEE_qTk8mdg5eGkjzjTYFdcJMaNPpbPH6HV-ilJO1ppXL1L6hCXyAYErhQjc72T4EOSjE8aQNx2_ZejLlvtszUkGeSJ34o4Q-dH-Sl1KUVCIn5WY57DpMVngZ4bA7lcyzlVCNgCmg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/h6MZhXicHcTRroIgAADQLyK1NFtbD84oMzOdZtlLK2QQIlBQ9-Yf9gn9TVvn4Xze1Bilp5bF6WhApCQcPzS-IykMFmaAZGcRpQHSQFtBluZtAOHpVraTriEeXrasZ2W9aFC8OaeZumTROKrAlcdbR6lD4iRjGh5eQQ3vNGfIH5Yu3BYMTs55-j88HTFL-NPoftcucRGPXOnmoIlAwZ31rgpXwtvXnj9Xm0qQo3sJfI5ePa_ClIQdmf05tm0D-hsB8QXGIkSt"
+    },
+    {
+      "position": 9,
+      "title": "New York Eye and Ear Infirmary of Mount Sinai - East 102nd Street",
+      "place_id": "ChIJ185LzVX3wokRKyvNhGG1A9Q",
+      "data_id": "0x89c2f755cd4bced7:0xd403b56184cd2b2b",
+      "data_cid": "15277253791415348011",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f755cd4bced7%3A0xd403b56184cd2b2b&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f755cd4bced7%3A0xd403b56184cd2b2b&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.791384199999996,
+        "longitude": -73.9519108
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ185LzVX3wokRKyvNhGG1A9Q",
+      "provider_id": "/g/11h1vdqw7f",
+      "rating": 2.3,
+      "reviews": 8,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Ophthalmology clinic"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "ophthalmology_clinic"
+      ],
+      "address": "17 E 102nd St Ste 1410, New York, NY 10029",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 241-0939",
+      "website": "https://www.nyee.edu/about/locations/east102?y_source=1_MTExNTM0NjktNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "user_review": "\"I felt heard, understood, and cared for throughout the entire process.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEcBEmsSVsEzY-5SDmaR-qHvnboRug4drqqhBifm4YFg8rXwJ8_B9ozgASkoSynweoyf8GCfW8tr2c_KSpa0YQua2rzYwhA74R_aic8lDQgStL-aOXFJYUagOYGL3By7oZBWhp4=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/VdckG3icHcRNjoIwGADQE1VQMdZJXFBFjZpRaPypG1IrtEboB20ZAhf0DN5mEt_ifd7Kucr-eF6hxgMJIIussZkRoF2m3UBA6cnKImGR9cLjb_wKI0Gi0tKzjXqGJnRZ8gTVmz99h6SRwcPUtSLPvAzYSmJzbbc4JTPoZUhfQDvdZtDleL3IL9iZkUh3tOI-ixs-Mj1rVTgNkpQ_BS6WsaRuj_jhutqyE5cHtt6PSTeFG7moKpi3Q9_3kfoukP4H70dF1g"
+    },
+    {
+      "position": 10,
+      "title": "New York Eye & Ear Infirmary: Levine Elie MD",
+      "place_id": "ChIJFWtGP55ZwokR0bdeAtzmdfU",
+      "data_id": "0x89c2599e3f466b15:0xf575e6dc025eb7d1",
+      "data_cid": "17687296944174446545",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0xf575e6dc025eb7d1&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0xf575e6dc025eb7d1&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7319493,
+        "longitude": -73.9845869
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokR0bdeAtzmdfU",
+      "provider_id": "/g/1tfq5kt8",
+      "rating": 3.7,
+      "reviews": 3,
+      "unclaimed_listing": true,
+      "type": "Doctor",
+      "types": [
+        "Doctor"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor"
+      ],
+      "address": "310 E 14th St, New York, NY 10003",
+      "country": "United States",
+      "phone": "(212) 979-4000",
+      "website": "https://www.nyee.edu/",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGkln_5-evwqGrTGDpvNkA9Xqnhi_KBN4PBAvfvugFsD4hrZ7PM5zk0HetbaEr4_MBcKx4hHfmdIFIzOyutiiQl8rOpch4BLADdkRKN87-wvrPyDIpC4kHjrjObXol01qGN34wj=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/e5p5dnicHcTNboIwAADgJ6rUWOJP4qGMCQQtuHgwu5BZK4XWtrSlTF9wz7C3MfE7fP9_3HvjNlEk-WLWat1KNjpmqVaeKT-j-h61xgHqgItwTY4CZ0KqJgYsTENmT1lqAhF4fR4U75oyIahOcLiFsd25FHH7vawP8VPAnPnLz6dFzSGh5S_i-e1-LXbFs3qMvuuOcmUrQzlK9ji9iq-SrJZgCrZ-pIX5QCLvbV9dzlrC-ZCRBZr67TSHEAL-ngL1AtMsRaY"
+    },
+    {
+      "position": 11,
+      "title": "New York Eye and Ear Infirmary of Mount Sinai - East 85th Street",
+      "place_id": "ChIJVePax5NZwokR9X1JPbTDJe8",
+      "data_id": "0x89c25993c7dae355:0xef25c3b43d497df5",
+      "data_cid": "17232394728092827125",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25993c7dae355%3A0xef25c3b43d497df5&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25993c7dae355%3A0xef25c3b43d497df5&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7772538,
+        "longitude": -73.9529275
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJVePax5NZwokR9X1JPbTDJe8",
+      "provider_id": "/g/11fxcftsph",
+      "rating": 2.3,
+      "reviews": 3,
+      "type": "Hospital",
+      "types": [
+        "Hospital",
+        "Ophthalmology clinic"
+      ],
+      "type_id": "hospital",
+      "type_ids": [
+        "hospital",
+        "ophthalmology_clinic"
+      ],
+      "address": "234 E 85th St, New York, NY 10028",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "9\u202fAM\u20135\u202fPM",
+        "friday": "9\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "9\u202fAM\u20135\u202fPM",
+        "tuesday": "9\u202fAM\u20135\u202fPM",
+        "wednesday": "9\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 731-3355",
+      "website": "https://www.mountsinai.org/locations/msd-east-85/ent?y_source=1_MTExNTM0NjUtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Prompt attention and short waiting period.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEfpRKkGzFS11BgdeK9eel4_VOyoefqnZWCHSXtZgTuiCrrWzm-88uHfscVJQNWp1q35VHEXhzAlNmOEpCb5eDdLj2mT5nL0GtRdS37ccESROTGFGs73myb-b6iS1akv0rD3qU1=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/FJwys3icHcRdboIwAADgE1XadUxnsgeGCFEDShkQX5ZRSlHoD7Ro5IKeYbdZsu_h-3221mqzdpy-xQuuFO_ZZNhIlbRM2gVVwuHaAGqAcbxjfOq8oNHpvgvnLUHok9ds_85Y__qdJw_FmkGeCz8ipT3zbLr441jMAqxWU9QYmu9OcaHRgN08Csp29vpYJIH2K5dt6sP1RWSuPMDQpjXBS0oDkiZZuA3NEotHBaq3C0E_3Q2OGzx8oY87ghCC9n8K5B-AdkRG"
+    },
+    {
+      "position": 12,
+      "title": "NYU Langone Eye Center",
+      "place_id": "ChIJgQAQebtZwokR6o2My9xb_Qs",
+      "data_id": "0x89c259bb79100081:0xbfd5bdccb8c8dea",
+      "data_cid": "863947707390922218",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259bb79100081%3A0xbfd5bdccb8c8dea&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c259bb79100081%3A0xbfd5bdccb8c8dea&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.749598299999995,
+        "longitude": -73.9739599
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJgQAQebtZwokR6o2My9xb_Qs",
+      "provider_id": "/g/11hdfdztpg",
+      "rating": 2.9,
+      "reviews": 110,
+      "type": "Eye care center",
+      "types": [
+        "Eye care center"
+      ],
+      "type_id": "eye_care_center",
+      "type_ids": [
+        "eye_care_center"
+      ],
+      "address": "222 E 41st St #3rd/4t, New York, NY 10017",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 5\u202fPM",
+      "hours": "Open \u00b7 Closes 5\u202fPM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20135\u202fPM",
+        "friday": "8\u202fAM\u20135\u202fPM",
+        "saturday": "Closed",
+        "sunday": "Closed",
+        "monday": "8\u202fAM\u20135\u202fPM",
+        "tuesday": "8\u202fAM\u20135\u202fPM",
+        "wednesday": "8\u202fAM\u20135\u202fPM"
+      },
+      "phone": "(212) 263-2573",
+      "website": "https://nyulangone.org/locations/eye-center",
+      "extensions": [
+        {
+          "service_options": [
+            "Onsite services"
+          ]
+        },
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointment required",
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards",
+            "NFC mobile payments"
+          ]
+        },
+        {
+          "parking": [
+            "Paid street parking"
+          ]
+        }
+      ],
+      "service_options": {
+        "onsite_services": true
+      },
+      "user_review": "\"Professional, courteous, minimal wait.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHoOBEki68LRY57qLh75eHfWkWYvkdSmzhmhlTRkBDEM2ZRVouL_JSvgW6R_gLSn8Y5KAj0THSOILBC8h-TEDtyk04csVtJHPbEOa7V7cLNw0gZBW64RORv0V194DACV2f3lgePsw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/WTUFH3icHcRdDsEwAADgE9WK_ZF42GzJUDbd0mVehKqWbitaW7ihI7iNxPfwfT_CmJueWlYtxgOuFK_ZU7MHVa1hrRlQ1Vj8pgHVQFtBttnKIFFpGMuL6yNcOd4dCc9hybmUZdXJU968RSPqAsswitejHSbqifbLvOOli_cc5a1fOavgCoskTxconPsCFHFkXhLaVBOzTLJjnB484lG06SHfhaVr4xR3kAwndhTMyeg8rjnLdD_rhxBCIP5T0P4Ahb5Dgw"
+    },
+    {
+      "position": 13,
+      "title": "New York Eye and Ear Infirmary - Forest Hills",
+      "place_id": "ChIJkfJ-qCBewokRUgV0V1xebmA",
+      "data_id": "0x89c25e20a87ef291:0x606e5e5c57740552",
+      "data_cid": "6948595025776477522",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25e20a87ef291%3A0x606e5e5c57740552&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25e20a87ef291%3A0x606e5e5c57740552&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.719575999999996,
+        "longitude": -73.842075
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJkfJ-qCBewokRUgV0V1xebmA",
+      "provider_id": "/g/1tdm4nch",
+      "rating": 2.8,
+      "reviews": 14,
+      "type": "Otolaryngology clinic",
+      "types": [
+        "Otolaryngology clinic",
+        "Doctor"
+      ],
+      "type_id": "otolaryngology_clinic",
+      "type_ids": [
+        "otolaryngology_clinic",
+        "doctor"
+      ],
+      "address": "108-12 72nd Ave 3rd floor, Forest Hills, NY 11375",
+      "country": "United States",
+      "phone": "(718) 544-9300",
+      "website": "http://www.nyee.edu/about/locations/forest-hills",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        },
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        },
+        {
+          "planning": [
+            "Appointments recommended"
+          ]
+        },
+        {
+          "payments": [
+            "Credit cards",
+            "Debit cards"
+          ]
+        }
+      ],
+      "user_review": "\"Dr.Ukrainsky treated my ear very well.\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=KIA6tAj78lXaEmMO4AKVRA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=114.25524&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/nIAGjHicHc1fCsIgHADg2_iWf4arFUj40EOMCHqI3sI5U8NNmb9m3aZrdZuiC3zf5-0AUt4QkmEyBmZvSvJPE_IiKWxjtMGo5DPWcSAzI-AeQzcqH7ZJjdH3ot3LJcj7qgkXtRsORy7b80ki3V118GYEkY2atMO2_MQp9timjIpoKHJiXaGXKoIxjqu6rjhKHrQTFP2XW5wFo_QLNGs4tQ"
+    },
+    {
+      "position": 14,
+      "title": "The New York Eye and Ear Infirmary - Upper East Side",
+      "place_id": "ChIJ1XGHY8BYwokRfSQCjtHV9Qg",
+      "data_id": "0x89c258c0638771d5:0x8f5d5d18e02247d",
+      "data_cid": "645657217604920445",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258c0638771d5%3A0x8f5d5d18e02247d&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c258c0638771d5%3A0x8f5d5d18e02247d&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.770349499999995,
+        "longitude": -73.95691889999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ1XGHY8BYwokRfSQCjtHV9Qg",
+      "provider_id": "/g/1trchb9b",
+      "rating": 4.5,
+      "reviews": 2,
+      "type": "Otolaryngology clinic",
+      "types": [
+        "Otolaryngology clinic",
+        "Plastic surgeon"
+      ],
+      "type_id": "otolaryngology_clinic",
+      "type_ids": [
+        "otolaryngology_clinic",
+        "plastic_surgeon"
+      ],
+      "address": "1430 2nd Ave #110, New York, NY 10021",
+      "country": "United States",
+      "open_state": "Temporarily closed",
+      "hours": "Temporarily closed",
+      "phone": "(212) 535-2298",
+      "extensions": [
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=QIf6AoOToVXchMKLTW5Kdg&cb_client=search.gws-prod.gps&w=80&h=92&yaw=119.70943&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/oai9nHicHc1LCsIwFADA22RnPv4rBHEpVUQo6k7S9DUJpH2hiY3exmt5G8ULzHzeNqUQN4zFNACk0UEO7gk-ToKiBtF4UMFFqrFjo2DJPrq6V85vg-rRNfK8b5c7PFV4uWl7LA_VdVE2huj6rr2DPskIatCWmvwTB2yoCZFkuebEymJKXipLIQq64sV8RoJL2kpO_kuLoxScfwFnWzlV"
+    },
+    {
+      "position": 15,
+      "title": "New York Eye & Ear Radiology",
+      "place_id": "ChIJFWtGP55ZwokRGG6olyFyKRo",
+      "data_id": "0x89c2599e3f466b15:0x1a29722197a86e18",
+      "data_cid": "1885163407635148312",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x1a29722197a86e18&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x1a29722197a86e18&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.7318919,
+        "longitude": -73.9845859
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRGG6olyFyKRo",
+      "provider_id": "/g/1wz53mh3",
+      "rating": 2.6,
+      "reviews": 7,
+      "unclaimed_listing": true,
+      "type": "Doctor",
+      "types": [
+        "Doctor"
+      ],
+      "type_id": "doctor",
+      "type_ids": [
+        "doctor"
+      ],
+      "address": "310 E 14th St #1, New York, NY 10003",
+      "country": "United States",
+      "open_state": "Temporarily closed",
+      "hours": "Temporarily closed",
+      "phone": "(212) 979-4397",
+      "extensions": [
+        {
+          "amenities": [
+            "Restroom"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=M5K0DhRA46DSaA4_Ni6Gxw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=217.66444&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JXPo1XicHc1tCsIgGADg2_gvdWH2ARKDQT-iftQBhnNv-oKbMm2u23StblN0gef5vF3OMR0YS3kCyDNCibiAT6uoqQ3BetAREzVhYHPFsnsO3ajRH6MeA_bqsjnzxt1qIZu7rkV7RXlaCjFdazzCmFUCPRlHbfmJU-ipjYkUtePEqf2avHRR62pLpRRCkIjZOMXJf3mEWVWcfwElWDif"
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e439d26cfca97108934",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/cEvtgimB38mgiAc-B7P-_Q/6a3d3e439d26cfca97108934.json",
+    "created_at": "2026-06-25 14:42:11 UTC",
+    "processed_at": "2026-06-25 14:42:11 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a264b888827:0x9cecd0a82c51fb39!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/cEvtgimB38mgiAc-B7P-_Q/6a3d3e439d26cfca97108934.html",
+    "prettify_html_file": "https://serpapi.com/searches/cEvtgimB38mgiAc-B7P-_Q/6a3d3e439d26cfca97108934.prettify",
+    "total_time_taken": 0.58
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJJ4iISyZawokROftRLKjQ7Jw",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Confucius Pharmacy",
+    "place_id": "ChIJJ4iISyZawokROftRLKjQ7Jw",
+    "data_id": "0x89c25a264b888827:0x9cecd0a82c51fb39",
+    "data_cid": "11307642185137126201",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a264b888827%3A0x9cecd0a82c51fb39&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a264b888827%3A0x9cecd0a82c51fb39&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7145347,
+      "longitude": -73.9968806
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJ4iISyZawokROftRLKjQ7Jw",
+    "provider_id": "/g/1tffvvwl",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF02VzO0D3J6JJ-u1qu8CiEYtMkxJgHuyRxmUtccIn9ixRls7aD5-3ilsmh7mV5P74GIddj7DsJcKKcPMz_i2g0rH3TYumUmn6mC6VJuKVTOdMOJFxJ_xWBD0dK4n6gWPr56u1L=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/75z38nicHcTbDoIgAADQLyIxFautB9MuYqY1L-upNXRoCZrAon6wb-hv2joP5_tppBzEwjC6xprQvqddrUQ9kp7LmssJ6ZlBBwGIAMLw0sPx7m3gtHgnMLAwwhgo86Fmfrs-y_iuMd2p10mzXBIS8nmrT51wr4EDrLYTrHFZ4aSuvQ2r6uYGApMoImn8vrRTCsedlZ0VyxlHzEcFVlGRJVWc4I3GF12uAlhFNke0TEcHKXO_fJoQQtD8J4D_ABGrQ6M",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 18
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 129
+      }
+    ],
+    "rating": 4.5,
+    "reviews": 149,
+    "type": [
+      "Pharmacy",
+      "Surgical supply store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "surgical_supply_store"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store shopping"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "delivery": true
+    },
+    "address": "7 Bowery, New York, NY 10002",
+    "country": "United States",
+    "located_in": "Confucius Plaza",
+    "website": "http://www.nymannings.com/",
+    "phone": "(212) 227-0922",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "P273+R6 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "9 AM\u20136 PM"
+      },
+      {
+        "sunday": "9 AM\u20136 PM"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      },
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25a264b888827%3A0x9cecd0a82c51fb39&engine=google_maps_posts",
+    "posts": [
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipPg5g7xGpShhyh73TzQoG6vGsSeA42z_1-AGCE-=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Confucius+Pharmacy&ludocid=11307642185137126201&lpsid=CIHM0ogKEJHA3vymzPet5gE&source=sh/x/loc/post&lsig=AB86z5XHwfxWWYZNmWGQkVHf8gqO",
+        "description": "Stay healthy this summer with support from Confucius Pharmacy. Speak with our pharmacist to learn more about how we can help you and your family stay safe all season long!",
+        "date": "17 hours ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipMq7JC431KBdfloALqQs4odqCdN4CmDqwE8dX0b=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Confucius+Pharmacy&ludocid=11307642185137126201&lpsid=CIHM0ogKEJ-kj_Lj8IqEZg&source=sh/x/loc/post&lsig=AB86z5XHwfxWWYZNmWGQkVHf8gqO",
+        "description": "No matter what you have planned this summer, we\u2019re here to make sure you and your family have the tools you need to stay healthy. Speak with our pharmacist to learn how Confucius Pharmacy can help support you through the season.",
+        "date": "5 days ago"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipM0vRh_EYcWkskU0T_HoOvRnnBhoWmGcj1jpY8z=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Confucius+Pharmacy&ludocid=11307642185137126201&lpsid=CIHM0ogKEPOm5PKhpP3b4wE&source=sh/x/loc/post&lsig=AB86z5XHwfxWWYZNmWGQkVHf8gqO",
+        "description": "Speak with our pharmacist for personalized guidance on the travel kit and medicine kit essentials we recommend for a safe and healthy summer.",
+        "date": "Jun 3, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipN6N5gAuQiSUyIjdrmk48byw1yZZIxGAp6R96Ox=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Confucius+Pharmacy&ludocid=11307642185137126201&lpsid=CIHM0ogKEKb6kb7E-euTCQ&source=sh/x/loc/post&lsig=AB86z5XHwfxWWYZNmWGQkVHf8gqO",
+        "description": "Today we remember and honor the brave men and women who made the ultimate sacrifice for our country.\nFrom all of us at Mannings, thank you to those who served and the families who continue to carry their legacy forward.\nWishing everyone a safe Memorial Day weekend. \ud83c\uddfa\ud83c\uddf8",
+        "date": "May 25, 2026"
+      },
+      {
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNFr12WGtFRREmC46b9CPSlBxKQdSk7yAblv4pA=h400-no",
+        "post_link": "https://search.google.com/local/posts?q=Confucius+Pharmacy&ludocid=11307642185137126201&lpsid=CIHM0ogKEPrNnNrZhuibrwE&source=sh/x/loc/post&lsig=AB86z5XHwfxWWYZNmWGQkVHf8gqO",
+        "description": "If having asthma feels overwhelming, Confucius Pharmacy is here to help simplify things for you with personalized care and support. Speak with our pharmacist to learn how we can help.",
+        "date": "May 13, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF02VzO0D3J6JJ-u1qu8CiEYtMkxJgHuyRxmUtccIn9ixRls7aD5-3ilsmh7mV5P74GIddj7DsJcKKcPMz_i2g0rH3TYumUmn6mC6VJuKVTOdMOJFxJ_xWBD0dK4n6gWPr56u1L=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/75z38nicHcTbDoIgAADQLyIxFautB9MuYqY1L-upNXRoCZrAon6wb-hv2joP5_tppBzEwjC6xprQvqddrUQ9kp7LmssJ6ZlBBwGIAMLw0sPx7m3gtHgnMLAwwhgo86Fmfrs-y_iuMd2p10mzXBIS8nmrT51wr4EDrLYTrHFZ4aSuvQ2r6uYGApMoImn8vrRTCsedlZ0VyxlHzEcFVlGRJVWc4I3GF12uAlhFNke0TEcHKXO_fJoQQtD8J4D_ABGrQ6M"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEnIxy3OCshncFbfNi_4Zkj4ZjABqdpf8pTl_yRJAPSZaNl2DK8y0MJcHdXY4IHQ_OPjDAaJ8z9YhUR21EONKt0NX4g61525i3pfQiqE2e-jwPVbotk4WSJP4z28OTqB-Z0J8vDd_64Zqzz=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/cbQeMXicHcTbTsMgAADQL2KllC1o4gOzNRuLlG5TN16ajV7oxUIFne1P-uzfmHgezu-P9t66-yDodbSojan78tOVH8oMvhz8Qpn3oLYOKAdcQAXPOpoM2-8pSh-dHtTTteJNjmXXYtnS9VjYithjn097RsVBXniP4h2Z4DNTm-J0xttNlqeijemFkfnurF_2KExSvvOQn3C9Cpdo2US2ypoxQSVob-L1anyH3w5M4BmR9DiugYSMfMVFvsJynOeHWwghBPp_BYY_UX9Fvg"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=DmEW4fU4AZiq-lLLI36Iqw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=185.071&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/nZiRoXicHc1RCsIgGADg2_g2dWvVCiSCehjsNYJehjM3f9Dp8k_rNl2r2wR9F_i-H4MY4p6xiA-tMYHOAV7axiJIOnk_WS0DRKq8Y6lkaJ5umCXYQ5Czh7s4ufO1Hi_18QZLYbuuXW3aJRM19MqCnlE4GWIfE0WpEKymU4gki6qqiRHVriFvmUXZrCnfliQAKiM4-S-jT6Lk_AdVMTk1"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Amazing pharmacy great people great staff very fun highly recommend thanks guys\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXaJUNF3dLnJAalprDPTSwXQZYInTJp2VsB4RK1TDsjePUpS5ko=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Nice staffs, Very good quality of services.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLu5UkC5uILnbrwZJpY5uWwnA3c-maKQyYp3CW2GH1pFNc6mQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The atmosphere is well lighted, place is clean and orderly.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLNnwZEulKHS1UxTu1Z6H4_3WyAEIMvuPFroRZdFw71ldQ50g=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Julie Wang",
+          "rating": 5,
+          "contributor_id": "111713182427734477116",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXiF6NNVPYwzYoRF3i8bUZcVbN38vj2H0WhG_ANsv7eEhvHLBLO=s120-c-rp-mo-br100",
+          "description": "Best pharmacy ever! Our go to pharmacy for years. The team is very friendly.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Bd1NteG5VVlpQTVhkSlExcHdObVJ1Wld4VU0xRRAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOnAwSmxnUVZPMXdJQ1pwNmRuZWxUM1E%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1iu2-4bofbRpEzJJCvtI14ocjGTWYnZBs0raxc2CUfmW-g8-EZwRVYaqwB4if4MCunmWg5t2DbOXWuh-86fcrxrbuPMCmdX0bJutKUCn3r-DIYagTdttbw7UkQo_OSjgrhE_Vx29qZHZU=k-no"
+            }
+          ],
+          "date": "Edited 6 months ago",
+          "date_iso8601": "2025-12-09T13:21:36+00:00"
+        },
+        {
+          "username": "Massi",
+          "rating": 5,
+          "contributor_id": "107614933894989919143",
+          "user_review_count": 8,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU4I8kYFad8tO432a7Wh28qPWjeXWFmt-o-UNkOvgSVIHhI8wI1=s120-c-rp-mo-br100",
+          "description": "The workers are very friendly and easy to talk to. Very efficient and fast. The worker would also explain the medication for you and I find that super helpful (I don't have this experience in CVS or other pharmacy). 10/10 would recommend switching to this place.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tGcGVYbGtORWREUW0xR1NHZFhSVTlRWTJaYWJGRRAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOkFpeXlkNEdDQm1GSGdXRU9QY2ZabFE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-22T01:45:11+00:00"
+        },
+        {
+          "username": "Brian Xu",
+          "rating": 5,
+          "contributor_id": "104407805122363618845",
+          "user_review_count": 3,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLBbaG0m7BGjJey38H3Yq564J3-fIddaGq4V4Jr2_PakXFmBA=s120-c-rp-mo-br100",
+          "description": "I got a dmv test here and the employees are so nice! Price is cheaper than eyeglasses stores and they also have a cute Christmas tree \ud83d\ude02",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkZlVWbERabVZJVmpGYU5HUmpXVUkzWkVGRk9GRRAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOldfUVlDZmVIVjFaNGRjWUI3ZEFFOFE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0y5phNC5TxmyxvcABsX54ubJkQsZGSEzfBtlBEQ60FWQHYAuFVXiPFK6xXkroxFVsMC_dyBEcnb0DiwbNkcAnR7opmUqdSR0SIgH-UaCAxPr0syeEaAXByXD0RBu1JPg-KuNKXEpLEMCE=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2q_3S-OIyMB7PmrNtgd4OS3BPNo4GSIiyeDsdF-tV9st7Yba3TL0UkLvBwwmO2NSDICSSYhdvpKm3E3nKZpC28_w5MpUj0x31LCWY45uuTfR7yCXLEIhI0SAo02OS23R6rg3an6HJ0DiXO=k-no"
+            }
+          ],
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-06T07:06:52+00:00"
+        },
+        {
+          "username": "David Zheng",
+          "rating": 1,
+          "contributor_id": "117774591510836663535",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV4hg5OR4622gtmtkkXJkWam2OxLQXd-PKyaLB3nDZe6uPtJmk=s120-c-rp-mo-br100",
+          "description": "I called on Friday around 3 PM and unfortunately had a negative experience. The person I spoke with seemed rushed and unwilling to help. When I offered to call back at a more convenient time, I was told she would be busy all day. The interaction felt dismissive and unprofessional which was disappointing.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1NVkzRXdibkJpTTFnd1pUVlBlRzEwUkZScFZtYxAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOk55Y3EwbnBiM1gwZTVPeG10RFRpVmc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-23T20:16:50+00:00"
+        },
+        {
+          "username": "Andi",
+          "rating": 5,
+          "contributor_id": "105680214340512498849",
+          "user_review_count": 4,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJIkqrJFFF6eb87dFM7HW4vz6TKyF71S-lg07UTMJsRlBd5xQ=s120-c-rp-mo-br100",
+          "description": "Amy is the BEST!!!!\nAthena is the BEST!!!\nEveryone is the BEST!!!\nSo friendly, welcoming, amiable, efficient and knowledgeable. Never, ever any long wait time.\nDefinitely my go-to place for my meds!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25RNVNUTjZkVzQzWjNSV1lVSk9XbEZhWWtwRVYyYxAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOnQ5STN6dW43Z3RWYUJOWlFaYkpEV2c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-16T19:56:41+00:00"
+        },
+        {
+          "username": "Roger",
+          "rating": 5,
+          "contributor_id": "113831384870537670865",
+          "user_review_count": 5,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVx2OGusvnp1_WNn-TziJGM9nDIJw3dd61LONNzuTFgwZeX9xPz=s120-c-rp-mo-br100",
+          "description": "This is a great neighborhood pharmacy! Every one in the community comes here for all their needs because the staff is super friendly and knowledgeable. Athena, the pharmacist knows everyone and is always really helpful and supportive. Definitely recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURqdDdQc2VBEAE!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CIHM0ogKEICAgIDjt7PseA%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1R2sNcFXRTVn0hKMmDwzxe7b-0czvFkzHgkx5c97dEOmBLv2pNuH8FuKx1XFVvtWU4sT2EghLp2QigTzRN1jFttDIfP1gsYh6z7YIowqdjvdMxEY_jvXXLzbqBicR0c1DKaGNelw=k-no"
+            }
+          ],
+          "date": "2 years ago",
+          "date_iso8601": "2024-05-08T17:17:04+00:00"
+        },
+        {
+          "username": "Steve C.",
+          "rating": 5,
+          "contributor_id": "111114074651299306767",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLVzBtpm1cFrxL-TVjFUpqxFRO4XJhhgOxhPMvVJf0qa2G89A=s120-c-rp-mo-br100",
+          "description": "I've had a great experience every time I've visited this pharmacy! The staff is always so kind, professional, and incredibly helpful. They go above and beyond to make sure everything is taken care of, and they're happy to answer any questions. I especially want to give a shout out to Athena - She's amazing! Super knowledgeable, friendly, and really takes the time to make sure customer feel supported. highly recommend this pharmacy for top-noth service!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25oaFNYQmpNVGxPTFZJeGFtTXdVbU40VlVrNE9FRRAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOnhhSXBjMTlOLVIxamMwUmN4VUk4OEE%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-05T21:10:49+00:00"
+        },
+        {
+          "username": "DAVID AMPHETA",
+          "rating": 5,
+          "contributor_id": "102202745275239252970",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXaJUNF3dLnJAalprDPTSwXQZYInTJp2VsB4RK1TDsjePUpS5ko=s120-c-rp-mo-br100",
+          "description": "Amazing pharmacy great people great staff very fun highly recommend thanks guys",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21sT2J6QndXbmxOUTBWMlJXMTBNV0ZmUWxSaFluYxAB!2m1!1s0x0:0x9cecd0a82c51fb39!3m1!1s2@1:CAIQACodChtycF9oOmlObzBwWnlNQ0V2RW10MWFfQlRhYnc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-29T14:55:53+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Fuzhou Pharmacy",
+            "data_id": "0x0:0xac8b27c40f9539af",
+            "data_cid": "12433074919314897327",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xac8b27c40f9539af&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xac8b27c40f9539af&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7139822,
+              "longitude": -73.9934941
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xac8b27c40f9539af%218m2%213d40.7139822%214d-73.9934941&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.2,
+            "reviews": 13,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGKNdMLmYpRjhXCFlDyIzuYRsnygFfEB-g1vtQ3CsrJlnK2rDwLyVUVD51W_Y7M6R5IEYuQ8m4fZryaR4HtdH_ZiGwMoAMUrxa619yUy--pPFU4bPvM4m4AZXcrWB5CGHL2ZK1I=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Harmony Pharmacy",
+            "data_id": "0x0:0xd17d813a72d96525",
+            "data_cid": "15095363614050706725",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd17d813a72d96525&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd17d813a72d96525&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.718689499999996,
+              "longitude": -73.9965368
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd17d813a72d96525%218m2%213d40.718689499999996%214d-73.9965368&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.6,
+            "reviews": 14,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFGpnTda8nuSFx7TA_SLYhr3ToV-bG4P-6llEVbukewqGVVZRWqjvPONTHULPGiFrtYYwobg2JUlkwWiRunQK8SSVOEyYgN_dpyg3fa_tnRvgH9KXt2YVKYILSg_mqhuuwUjuwzRQ=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Beauty supply store",
+              "Lottery retailer",
+              "Toiletries store",
+              "Vitamin & supplements store"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Manhattan Chinatown Pharmacy",
+            "data_id": "0x0:0x15865281a8dd0435",
+            "data_cid": "1551017838513030197",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x15865281a8dd0435&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x15865281a8dd0435&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.716298699999996,
+              "longitude": -73.9967784
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x15865281a8dd0435%218m2%213d40.716298699999996%214d-73.9967784&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 13,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG7LoWN9-dkfb1pC_G_qg7yFaoQB7as9fy-RRyytMvG8hyjwGH0wdJD-vIOIXJGDJQsvyn1PFGQ6N2WMDQLJyKlQc09RLSPFEWf6gYUVGMSMt8HZSZNzI_Q4K9NmcnDRRw_1j6O-w=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Minh Pharmacy Inc",
+            "data_id": "0x0:0x975da6adb395d534",
+            "data_cid": "10907057137533703476",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x975da6adb395d534&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x975da6adb395d534&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7188276,
+              "longitude": -73.99634019999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x975da6adb395d534%218m2%213d40.7188276%214d-73.99634019999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3JqjK6DD3NG_7p4rEInxaODpGbXJaucyZZmfBZauIuMwfnGeSKQL7TVTOpC6UV9W6WET7GZie2J6VXpoGFsFiqylaH4FQC1536hOwxT0vnhTWpHMh4BHaaP8vynuNVg9YAht2=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiUKIyIfQ29uZnVjaXVzIFBoYXJtYWN5IE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiUKIyIfQ29uZnVjaXVzIFBoYXJtYWN5IE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

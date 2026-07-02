@@ -1,0 +1,927 @@
+{
+  "search_metadata": {
+    "id": "6a3d0a3a2088af45c73ace1b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/2ssHsmnH1Gw5CL9wiTz2zw/6a3d0a3a2088af45c73ace1b.json",
+    "created_at": "2026-06-25 11:00:10 UTC",
+    "processed_at": "2026-06-25 11:00:10 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/public+toilet+near+uptown+Manhattan/@40.81,-73.95,14z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/2ssHsmnH1Gw5CL9wiTz2zw/6a3d0a3a2088af45c73ace1b.html",
+    "prettify_html_file": "https://serpapi.com/searches/2ssHsmnH1Gw5CL9wiTz2zw/6a3d0a3a2088af45c73ace1b.prettify",
+    "total_time_taken": 5.76
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "public toilet near uptown Manhattan",
+    "ll": "@40.81,-73.95,14z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "start": 20
+  },
+  "search_information": {
+    "local_results_state": "Results for exact spelling",
+    "query_displayed": "public toilet near uptown Manhattan"
+  },
+  "local_results": [
+    {
+      "position": 1,
+      "title": "Public Restroom",
+      "place_id": "ChIJpUHjfwD3wokRnOPLy2rUSfg",
+      "data_id": "0x89c2f7007fe341a5:0xf849d46acbcbe39c",
+      "data_cid": "17891064549856764828",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7007fe341a5%3A0xf849d46acbcbe39c&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7007fe341a5%3A0xf849d46acbcbe39c&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8291689,
+        "longitude": -73.94431159999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJpUHjfwD3wokRnOPLy2rUSfg",
+      "provider_id": "/g/11xn56zs58",
+      "rating": 2,
+      "reviews": 1,
+      "unclaimed_listing": true,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "1841 Amsterdam Ave, New York, NY 10031",
+      "country": "United States",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Yx6hUBl0UF9mgkXgXK8M5g&cb_client=search.gws-prod.gps&w=80&h=92&yaw=126.932304&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/l6zN6HicHc3BDcIgFADQbbgJtNWmNfkx8eDFeGxST4ZS_BBpIQWhjuNYbqNxgfc-bx2jD3vGQlyUismo7M2qbNh4QdE5tEp4E6h0E0sFi_o5DbMw9uDF7MwI17XW3dHy7tRO-OixPzeXHRI53KQ1ao4QlFikpph_4uJGij6QDA0nGtqSvESGoqxpW5UV3xJvotTAyb-5uwQF51-Zcjlv"
+    },
+    {
+      "position": 2,
+      "title": "Public Restroom",
+      "place_id": "ChIJ26C94H73wokRDFQu2R2W6TI",
+      "data_id": "0x89c2f77ee0bda0db:0x32e9961dd92e540c",
+      "data_cid": "3668628426411889676",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f77ee0bda0db%3A0x32e9961dd92e540c&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f77ee0bda0db%3A0x32e9961dd92e540c&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8298609,
+        "longitude": -73.9526515
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ26C94H73wokRDFQu2R2W6TI",
+      "provider_id": "/g/11fmh3zdj9",
+      "rating": 3.1,
+      "reviews": 7,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Playground, Ten Mile River, New York, NY 10031",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 870-3070",
+      "website": "https://www.nycgovparks.org/parks/riverside-park-recreation-area/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "user_review": "\"Very clean toilet with liquid soap and toilet paper.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGEBeJ_XpV2nVCdBJ8QfC1Vu4B6QeOq8DO9cBxSu65DpngrdVKN8f3yY98u4f45kNywFccqoMlaAo95ptTdyEp-_EnRocvitUBKOV-rU8e0-x2-cDOYXszMHpRkEo3U5-Gyk7hu=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/32KH5nicHcTRboIwFADQL7qCAq6Y7IEK02gE0dHgk1kuBQysrbRV8Qf3Df6Nyc7Def21xii9cJy-9SaNlE3PreYDSmG4MBOUv06jNKAG7UT7NO-iVUL55lwqNhNsWdENyevllFmfznOeXUmchUgfRzsPYiWaoWLblNTeeAqJ9Ws_6NLx_oV4lbv-J5JhoMx3NSYKzok4SLxdTEG3GYOhINyFxwwwzk6lfu7W6tAl0isCWI3dR2s_71PXdaH9H0G8AffLQ88"
+    },
+    {
+      "position": 3,
+      "title": "Public Toilet ( $ )",
+      "place_id": "ChIJL6eKvJ_2wokRtoqHvjPhJGM",
+      "data_id": "0x89c2f69fbc8aa72f:0x6324e133be878ab6",
+      "data_cid": "7144082521272584886",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f69fbc8aa72f%3A0x6324e133be878ab6&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f69fbc8aa72f%3A0x6324e133be878ab6&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.846126,
+        "longitude": -73.93786759999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJL6eKvJ_2wokRtoqHvjPhJGM",
+      "provider_id": "/g/11f57j04v2",
+      "rating": 2,
+      "reviews": 6,
+      "unclaimed_listing": true,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Plaza de Las Americas, 651 W 175th St, New York, NY 10033",
+      "country": "United States",
+      "phone": "(212) 795-1600",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "user_review": "\"It's a one stall automatically cleaning public bathroom.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFznLQrtPtmfBhiTOS-X0rFuX6FxIUspxReUcagTMv6KlmMQ5o1xnYU2kUPIasclbyqltb5pAtWnRFPRR3gxf2CQWVkyirytYzoH8h7gEk0ZM1iMYXg5ju5VismnG2NBdxBxlSN4A=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/YAZt1nicHcRREoFAGADgE622CGPGQxlhKBVR3ljZTdtu2j82N3QEtzHje_i-HwZQq4lhcNbvUSkpz1uVN0QKyAX0iKwMWitEFFKGEwZR6XhvsYkaCKG6uazYb3coxY3XpkNPrxJV6zhPyJnu_edwzSs_sqWpRZZYZRKuzorwS_fgcLFrB44i9sI47lN9s2bR8VB2RdNB9pbLMRvReYlPvln4WUrte2sfClWJhRW4V-1qvgsGzvRlYowR-0-Q-AG7X0dO"
+    },
+    {
+      "position": 4,
+      "title": "Public bathroom",
+      "place_id": "ChIJXyFfuXL3wokRP-mRFbThJx0",
+      "data_id": "0x89c2f772b95f215f:0x1d27e1b41591e93f",
+      "data_cid": "2100895914763872575",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f772b95f215f%3A0x1d27e1b41591e93f&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f772b95f215f%3A0x1d27e1b41591e93f&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.815656,
+        "longitude": -73.9490433
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJXyFfuXL3wokRP-mRFbThJx0",
+      "provider_id": "/g/11ry6wzbpn",
+      "rating": 4.1,
+      "reviews": 7,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "St Nicholas Av, W 133rd St, New York, NY 10027",
+      "country": "United States",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH2m1B3E5w4o6dYPyMIpak9MT9_x3KZWuMhhq6Cy3CTHRz1ZA1zb_kWW4Wn8IZsZbjKidKzDxMXmBhl3EpeClI0oKDA5MWXwPgOQ_yGK9u3yECXFTaGr78JomQkVtmsBcS_hGSuNA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/adBCjHicHcRdDoIgAADgE5ka9mNbD2hmxigtF-aLK3JSiljgTG_YEbpNW9_D9_0wpRq50PWKgVEhRFHlrcxfVNQqr9WICq4XjdSo1KQOw11Uws2Ymw7wJp0lprdz2OOguZQ2ju3sDVBKWszYc-r2wI03h8FMoTlcs5IQi9TzIJXp9YHuNzSs3jjhDquA1-RuFRgCreAEk6QLi32U9T6yW9B7brKOL_5rNt8KHpUnxaVDjxnzj-0OLjvTMAyN_ada_QOZ6kTh"
+    },
+    {
+      "position": 5,
+      "title": "Public Restroom",
+      "place_id": "ChIJJVOvlr73wokR_GZAXo8bbUs",
+      "data_id": "0x89c2f7be96af5325:0x4b6d1b8f5e4066fc",
+      "data_cid": "5435030627881608956",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7be96af5325%3A0x4b6d1b8f5e4066fc&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7be96af5325%3A0x4b6d1b8f5e4066fc&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.827936799999996,
+        "longitude": -73.9399613
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJJVOvlr73wokR_GZAXo8bbUs",
+      "provider_id": "/g/11m_jfxr3x",
+      "rating": 1.7,
+      "reviews": 3,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Bradhurst Ave &, W 152nd St, New York, NY 10039",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/jackie-robinson-park_manhattan/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible restroom"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=jklr7Xpf9mSc-DG-pPMtHw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=32.121098&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/JaKWFHicHc09DsIgGADQ27CVnzrYmhAXE11MTFzcDKUUUChf4LPobbyWt9F4gfc-b4cIZcNYwWwMLt5U8E8TSgOK2pRsMAp8oTpFtgiG7hGHWfmwBTUnP8rbPeT1BaY-nnWz2zdwOuKhEj1cdfBmRlmMytpRW39iTiO1UEiVHSdO9i15qSpXLRWt4H1HwKN2kpP_MqVFCs6_g6U5mw"
+    },
+    {
+      "position": 6,
+      "title": "Public Restroom",
+      "place_id": "ChIJGXukgaL3wokRwy8FL95Q1_k",
+      "data_id": "0x89c2f7a281a47b19:0xf9d750de2f052fc3",
+      "data_cid": "18002946950638677955",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7a281a47b19%3A0xf9d750de2f052fc3&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7a281a47b19%3A0xf9d750de2f052fc3&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.825937499999995,
+        "longitude": -73.9413125
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJGXukgaL3wokRwy8FL95Q1_k",
+      "provider_id": "/g/11rv9nyldp",
+      "rating": 1.8,
+      "reviews": 6,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "R3G5+9F, New York, NY 10039",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/jackie-robinson-park_manhattan/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance",
+            "Wheelchair accessible parking lot"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGDi7HmRtAwcehSCgVZJBkZSrx2oG4AYQjQ5SSQDCc1QLZ8aw3Zge8bXr-MMY3sYDeQ6Y0Ns-RXWkinBdJJd14l0cpjm2acrhIguMXex0vj5CTMEGg1p5NRzwPLJPVrWjk3Etxd=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/WEp3YnicHcRdCoIwAADgE02nZknQg2lYouI0Sn2rOTZ_J9tM6YKdodsEfQ_f98OUmuRe13tmaZRz2pNZEoH5qMioNMwHnU4SYAmk7qYJ6tzAb3bnIVPuggnLPXqrwmNX5WI1ebBxS9QiO8-R72EDRZXzWKyKEudZCBDHpSVLn6BtCRMJsuLeNeOxDsPa2PQQT-1gPrBgFzrHBVnhq7W9a3wKqDHZSfZe0ihMb-LedtZJrfVhMSCEgP3HYPwBHBpENg"
+    },
+    {
+      "position": 7,
+      "title": "Restroom at Carl Schurtz Park",
+      "place_id": "ChIJdUJWcVJZwokRX8kjDTd7gNs",
+      "data_id": "0x89c2595271564275:0xdb807b370d23c95f",
+      "data_cid": "15816777367699048799",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2595271564275%3A0xdb807b370d23c95f&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2595271564275%3A0xdb807b370d23c95f&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.773609199999996,
+        "longitude": -73.9450438
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJdUJWcVJZwokRX8kjDTd7gNs",
+      "provider_id": "/g/11j2np4rvt",
+      "rating": 3.5,
+      "reviews": 6,
+      "unclaimed_listing": true,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "1 Gracie Square, New York, NY 10028",
+      "country": "United States",
+      "open_state": "Open \u00b7 Closes 2\u202fPM",
+      "hours": "Open \u00b7 Closes 2\u202fPM",
+      "operating_hours": {
+        "thursday": "7\u202fAM\u20132\u202fPM",
+        "friday": "7\u202fAM\u20132\u202fPM",
+        "saturday": "7\u202fAM\u20132\u202fPM",
+        "sunday": "7\u202fAM\u20132\u202fPM",
+        "monday": "7\u202fAM\u20132\u202fPM",
+        "tuesday": "7\u202fAM\u20132\u202fPM",
+        "wednesday": "7\u202fAM\u20132\u202fPM"
+      },
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAETbeu7sqVeQdxs4ZBpPW0lxkj3rKc7FUIc9jOxuYd2zSJIR67149Cr3bjkkezBnO2PltjfkvS9WNDnc1itzuAEEiYXPIPZ44P8TIbovyRvkC0OHUrNh-LGtk0yjMK3GkeCu1LVWA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/7PCTJXicHcRLEoIgAADQE5GYTmYzLcys7KNkH6ulRBoYmICZN-wI3aaZ3uJ9P4VSlRwZRllYvVyIvCRakhoLrghXPSweRl5JgCWQhoeiLfOCfUa0I59Hsr220r5MKpTCsmXUqlfYmR1C7NK41edrv9stw2TgmLbr11ZGGSPdhMd9VCp6Y83OTaMpx-ZdddoLgvv5hEJ0sW003IeZaN5Jw3wYLw51VID1XDH4ppuVNWfE1-b6mHrjlwkhBMV_DPgPKD1Ffw"
+    },
+    {
+      "position": 8,
+      "title": "Restroom, Information",
+      "place_id": "ChIJ4wpQGlRfwokRZLmxiDa4SF8",
+      "data_id": "0x89c25f541a500ae3:0x5f48b83688b1b964",
+      "data_cid": "6865940176287414628",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25f541a500ae3%3A0x5f48b83688b1b964&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25f541a500ae3%3A0x5f48b83688b1b964&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.783049899999995,
+        "longitude": -73.9307515
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ4wpQGlRfwokRZLmxiDa4SF8",
+      "provider_id": "/g/11c1_vzk_l",
+      "rating": 3,
+      "reviews": 6,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "1 Wards Meadow Loop, New York, NY 10035",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "user_review": "\"Pro tip: it\u2019s in the orange building.\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG9fIxZZPnxTPk0xv-i4URg0o3K1piiY1eY9EXSVGfK3VWXFhHuFa_6uDYOPaat1xnhHu9yo3QcQfmcHkvqn4JWYXFdOuLJMtzqTiNaakhSQvEnPCCaPRNAFu9VaBxVDyn7oU2hDg=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/AbDP6HicHchJDoIwAADAF1WKEA0mHlDEHYsLixfTVGgJ2qJtsfpDn-BvNF7mMJ83U6qRA8u6MKdDhaCXQsviTgRXBVcdIq4WbSQgEkjLR1Fc-1OvnJvjEXGzRzU0Lajcw5ZC4Sztpqpyu8i9SbZLpuXSSdIsZDMd4lNPB_kGYaxsw3_jPYUTk7i8klnd3ri7SPMsPG_0arFWr9u-ijCu2S5uJxyNxxhtIz_UXoJHJgmevC8OXRbQ4cOGEAL2lwD-BRTvRhM"
+    },
+    {
+      "position": 9,
+      "title": "Public Restroom",
+      "place_id": "ChIJ79D0aSX1wokRq1g07mtG8to",
+      "data_id": "0x89c2f52569f4d0ef:0xdaf2466bee3458ab",
+      "data_cid": "15776749874004121771",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f52569f4d0ef%3A0xdaf2466bee3458ab&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f52569f4d0ef%3A0xdaf2466bee3458ab&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8139694,
+        "longitude": -73.9211978
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ79D0aSX1wokRq1g07mtG8to",
+      "provider_id": "/g/11h3fr0q6w",
+      "rating": 2.5,
+      "reviews": 8,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Clark Playground, E 145th St, Bronx, NY 10454",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/clark-playground/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJUVUfbrRVY_8pZNq_ROkVFwF4LsDfZ8R3RwTaufHe7IAXx7l5RZOVlORvdHbb5pkdOL7U3rA77LncjFtELiZqUfq8QNZuUrHOSe9Ss6xO5Aqwadz7uVR309FfsPoXnumr42tbvw=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/MCqfHXicHcRdboIwAADgEyEosuKSPTTZGDOEal0b1xcjpYUJttAfa3bDHWG3Mdn38P399s5N9jmOxz5ddFp3o_BWGK6VE8otuL7G3WQjbiMbw129H-D7llAiG4Pp1ymfWD2fMBpoEYp1ZV8ly3GKw-fZy1KAD3i8gzHDDNER4VtbNk02DS2qAEkNBKBS_FK4t-qbzUTO-b5mnpgSHcTmYJ_uKINzOLc_wFOcJptC2p0-Kn8165VrbuElLJMkifr_eaQeB1BGAg"
+    },
+    {
+      "position": 10,
+      "title": "Public Restroom",
+      "place_id": "ChIJP9uDdAD1wokRtSrVSnFr0Rk",
+      "data_id": "0x89c2f5007483db3f:0x19d16b714ad52ab5",
+      "data_cid": "1860386255411686069",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5007483db3f%3A0x19d16b714ad52ab5&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5007483db3f%3A0x19d16b714ad52ab5&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8295363,
+        "longitude": -73.9216201
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJP9uDdAD1wokRtSrVSnFr0Rk",
+      "provider_id": "/g/11xknycxqt",
+      "rating": 3.7,
+      "reviews": 3,
+      "unclaimed_listing": true,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Bronx, NY 10452",
+      "country": "United States",
+      "website": "https://www.nycgovparks.org/facilities/restrooms/1963",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHcOJr81XcZYKV0XtlyUEijq5NcHqE3uWDJqGQX3JgpZDN0sCOTBaGX9xEa4HKusY7PjYkzz7kTfiOnbZzX1QPyAXbLzr5zj_fSqyni8B6X7a70BgaGX-gFVZf1qDDaiAZ8NZP3w0gJnpih=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/EN57aHicHctLjoIwAADQE1VK0IExcQHCSHDCJ_5KNxNsoBSYQmmJ0ku69jYaN2_3no9aqUGuDaOrrQXte9qVkyxH0nNVcrUg_b9BBwmIBNJw0zhr3ZAk0eiYiOB8f4ZIdfMpYI1YxSQUgTVd_EjsMmRFdMB-DOU2OXrFDn3fg2IZ7ieZ22mTt1rb7bFiCb9ijcwsnV10_dXjSjd_1UHMnDneF7ILG3r0nQH9OePKFL5fMBc7MU6tG6QRH1i9uZkQQlB_JIC_AJtER1U"
+    },
+    {
+      "position": 11,
+      "title": "Public Restroom",
+      "place_id": "ChIJN-G0v971wokR-V8lYhpLI98",
+      "data_id": "0x89c2f5debfb4e137:0xdf234b1a62255ff9",
+      "data_cid": "16078777671330652153",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5debfb4e137%3A0xdf234b1a62255ff9&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5debfb4e137%3A0xdf234b1a62255ff9&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.809531299999996,
+        "longitude": -73.91700519999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJN-G0v971wokR-V8lYhpLI98",
+      "provider_id": "/g/11vy4h309b",
+      "rating": 3.7,
+      "reviews": 3,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "511 E 141st St, Bronx, NY 10454",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/peoples-park/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=TJNkMfiVPdABP3PocCSMSw&cb_client=search.gws-prod.gps&w=80&h=92&yaw=34.575977&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/6ddpU3icHc1RCsIgGADg2_iWutZYCySqt2AxWPQa5v7pT27KtFm36VrdpugC3_d5mxh92DAW4gQQZ4Tk8Qk2LLyk2jltQXoMVLmBzRmL5jHcRol26-XosBPn4-le93hput2-yRunDm3dJqJuV2URxigCyEkZqtNPnFxHtQ8kiTUnRlRL8pJJ5CtalEVVlsRjVEZw8l96N4uM8y9rKzlp"
+    },
+    {
+      "position": 12,
+      "title": "Public Restroom",
+      "place_id": "ChIJ0eO83h31wokRwqdm68_IINI",
+      "data_id": "0x89c2f51ddebce3d1:0xd220c8cfeb66a7c2",
+      "data_cid": "15141322742552766402",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f51ddebce3d1%3A0xd220c8cfeb66a7c2&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f51ddebce3d1%3A0xd220c8cfeb66a7c2&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8173172,
+        "longitude": -73.9048348
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ0eO83h31wokRwqdm68_IINI",
+      "provider_id": "/g/11fjd95x9l",
+      "rating": 3,
+      "reviews": 2,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Abigail Playground, Bronx, NY 10455",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/abigail-playground/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLeXZ543VJ3AA8-_Wm-YxsN3UlQA9E3-MMQYdcD-2z_CW8yX51nHYe3-eUoDTPuriqgDPmTqtaRzJ10Q-Frod3alNDA9TrLZCxwiyT1yYIEtRAVN-YTwht6cVOhX47O7Y8wNyZ=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ddh8inicHcRRCoIwGADgE_2pLUuDHkYaFbU0pjlfQuZwkbpyE7MLdoZuE_Q9fN-PNOahl5ZVSzSplKpq0WvRcdUa0ZoJV41VPTRwDdrCEYnveHMQWe7OULpHGHtwvTTAXpqgpI6xHyI4HmNW8gCm7-v64o2Z67RbJhCIRAU06rvbswqihj5NcX7vHTuGTadKVNQkwD7tDvn6NdxG6oxsF5ozTgkwOkgz5-lJZrPFacG8gYz5anBs2wb5n0P7A3H2QsA"
+    },
+    {
+      "position": 13,
+      "title": "Public Bathroom",
+      "place_id": "ChIJTxEpD1dfwokRBIYkNiMxOMk",
+      "data_id": "0x89c25f570f29114f:0xc938312336248604",
+      "data_cid": "14499393027621291524",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25f570f29114f%3A0xc938312336248604&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c25f570f29114f%3A0xc938312336248604&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.78373,
+        "longitude": -73.9262616
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTxEpD1dfwokRBIYkNiMxOMk",
+      "provider_id": "/g/11cmt0tvf5",
+      "rating": 3.3,
+      "reviews": 4,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "11 Wards Meadow Loop, New York, NY 10035",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20137\u202fPM",
+        "friday": "8\u202fAM\u20137\u202fPM",
+        "saturday": "8\u202fAM\u20137\u202fPM",
+        "sunday": "8\u202fAM\u20137\u202fPM",
+        "monday": "8\u202fAM\u20137\u202fPM",
+        "tuesday": "8\u202fAM\u20137\u202fPM",
+        "wednesday": "8\u202fAM\u20137\u202fPM"
+      },
+      "phone": "(212) 860-1899",
+      "website": "https://www.nycgovparks.org/parks/wards-island-park/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "unsupported_extensions": [
+        {
+          "accessibility": [
+            "Assistive hearing loop",
+            "Wheelchair accessible restroom",
+            "Wheelchair accessible seating"
+          ]
+        }
+      ],
+      "user_review": "\"Facilities are nice & clean too!\"",
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=A7EPzd7TD18j6i_PXnMGRA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=236.27391&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/oKd0aHicHc3dCsIgGADQt_EufzbYTyAxKLoKRnTR3TBn-oVTmTarp-m1epuiFzjn8zYphbgmJKZZqbSAygEeysZVEFh7r60SASKWfiILI8ncp4sTYDdBOA8j7-pd_xrr05Y1twqG_uwO-2OH5GWQFpRLPCoxS4N1_omzH7EOEWXeUGR4W6CnyLwoK1zUZctQgCQNp-i_XP3CGaVfOhQ40Q"
+    },
+    {
+      "position": 14,
+      "title": "Public Restroom",
+      "place_id": "ChIJK8QsurP1wokRzUfMsRdza2E",
+      "data_id": "0x89c2f5b3ba2cc42b:0x616b7317b1cc47cd",
+      "data_cid": "7019830989791446989",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5b3ba2cc42b%3A0x616b7317b1cc47cd&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5b3ba2cc42b%3A0x616b7317b1cc47cd&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.827161499999995,
+        "longitude": -73.9145889
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJK8QsurP1wokRzUfMsRdza2E",
+      "provider_id": "/g/11h34gz5xp",
+      "rating": 2.6,
+      "reviews": 5,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Arcilla Playground, Bronx, NY 10451",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/arcilla-playground/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
+      "title": "Public Restroom",
+      "place_id": "ChIJ3a3N9s_1wokRHoG2yv-LCJU",
+      "data_id": "0x89c2f5cff6cdaddd:0x95088bffcab6811e",
+      "data_cid": "10738987242198827294",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5cff6cdaddd%3A0x95088bffcab6811e&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5cff6cdaddd%3A0x95088bffcab6811e&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.808926,
+        "longitude": -73.9193243
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ3a3N9s_1wokRHoG2yv-LCJU",
+      "provider_id": "/g/11w3d1kw_5",
+      "rating": 1,
+      "reviews": 1,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "488 E 139th St, Bronx, NY 10454",
+      "country": "United States",
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/saw-mill-playground/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=WhYg86Ieiv2YwYSG6HakmA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=214.80727&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/IHe-SHicHc3BDcIgFADQbbgJlJi2mhDjST17MD0ZSr_wIxRSEHQb13IbjQu893nbnGPaMpbyApALQo34BJdWUVETgnGgIiaqg2elYdk-_DgrdLuo5oCTvNjB9O0JsIihDudDe1R3vyd6vGqHMGeZQC3aUlN_4hImamIiVfacWLkR5KWqFM2a9rwTHYmYtZWc_JdbKLLh_AtxSTlu"
+    },
+    {
+      "position": 16,
+      "title": "Public Restroom",
+      "place_id": "ChIJyw5bysX1wokRK7hD98RVP-w",
+      "data_id": "0x89c2f5c5ca5b0ecb:0xec3f55c4f743b82b",
+      "data_cid": "17023419420934125611",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5c5ca5b0ecb%3A0xec3f55c4f743b82b&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5c5ca5b0ecb%3A0xec3f55c4f743b82b&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8350276,
+        "longitude": -73.92658829999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJyw5bysX1wokRK7hD98RVP-w",
+      "provider_id": "/g/11w3dkb99z",
+      "rating": 1,
+      "reviews": 1,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "80 W 166th St, Bronx, NY 10452",
+      "country": "United States",
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/nelson-playground/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=8WQcj1WeqFnfAFwbZl0vGA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=204.73456&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/ggkLhnicHc3NDcIgGADQbbjJT61aTYjppZ49NfFiKP0KGApYEHQb13IbjQu893nrlEI8EBLTApCygRLME2xcBYGV98qCCCZi6WeSGUn6MQ9OGHsMwnkz8qY_yxvr4d65qe3KcLE0n1okh6u0BlziEcQiNVblJy5-xCpEVHhDkeb7Cr1E4RWt8W5db7YomCQ1p-i_TD5zRukXdrA5gA"
+    },
+    {
+      "position": 17,
+      "title": "Public Restroom",
+      "place_id": "ChIJW8WMxdn1wokR3jieElvG3co",
+      "data_id": "0x89c2f5d9c58cc55b:0xcaddc65b129e38de",
+      "data_cid": "14618058059971180766",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5d9c58cc55b%3A0xcaddc65b129e38de&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5d9c58cc55b%3A0xcaddc65b129e38de&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8099014,
+        "longitude": -73.91046949999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJW8WMxdn1wokR3jieElvG3co",
+      "provider_id": "/g/11kjh2c4s8",
+      "rating": 1.5,
+      "reviews": 4,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "441 Jackson Ave, Bronx, NY 10455",
+      "country": "United States",
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/st-marys-park/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEd8-1z_WWYKKZ3NzzgWV7aVPgK0qEOpJzUnKXIl47oBiTjIqqVZYgpeA8xy-2yHJWl83T-hrXAnG_0RjU37eUxZcYYwMP-lB4DKHXRNw6f-Wwt-3lhbyXcbLuoAoUOWJI4IM0YAA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/-sg2yXicHcRRboIwGADgE_1SLRlkiQ81MxOqyIxQyouZXdfquhZsDcINd4TdZsm-h-_3R4fQ-ecoMhrPlHPKyLuXN-FskDbMhPuOVOdBePARKYu3L7L-SGE-nRjjlLa4mCbF6uS9LhVF_Xrf5VNlaZOZOHGry_Ga9X3dctVJkj5GWIybnJkUH0HfGmJfT-hwrXAiq0crOB92JZhV_EI3zaEYnj6BDQGw0eexEeft3RFX7VmexdkOcUKWwxwhBPp_AfYPsjdEXA"
+    },
+    {
+      "position": 18,
+      "title": "Public Restroom",
+      "place_id": "ChIJ9QHCP5j2wokRmKAcf47T_-k",
+      "data_id": "0x89c2f6983fc201f5:0xe9ffd38e7f1ca098",
+      "data_cid": "16861428138869825688",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6983fc201f5%3A0xe9ffd38e7f1ca098&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6983fc201f5%3A0xe9ffd38e7f1ca098&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8472638,
+        "longitude": -73.9462939
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ9QHCP5j2wokRmKAcf47T_-k",
+      "provider_id": "/g/11cs1bnv2q",
+      "rating": 3.3,
+      "reviews": 10,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Hudson River Greenway, New York, NY 10032",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/fort-washington-park/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "user_review": "\"Perfectly adequate and well maintained restrooms\"",
+      "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRKFQUmERBeH3vNRHlstjyR2ZxY6FqkPMYhKOQRmSV8EVzQX-fgrjTYO78JL_yKyV3RYq38vTQbDp3VeF0LQ6q5jvEeQgRXZs_lQHS0B1VtQZGyHFcFNEnsBTQbVrYPW0imRltvA=w1000-h1000-c-n",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/cMUag3icHcrdboIwGADQJ6pUmylZ4gVEOjIc8lXtKDcma7oilt92THxDH2FvM-PNuTp_99K5zr56ninJTLetNurHqkG2jVONm8m29nRnkbTIekGWwiWgLKFwrCMWqpiMKYuNddXEFsVVLGl_yT5EmeyA1XvuR_wGOfrWQ3UQu5X_vj1NycQJEz3xxwN8bTrCFcVbWPYv1Rgp0Cwv7MlAvMfhnDso3qaYSppGjQ0fnw8i-8Tnmhk3BuvfOcYYlU8lav4BzjdFHw"
+    },
+    {
+      "position": 19,
+      "title": "Public Restroom",
+      "place_id": "ChIJYUfwqmT1wokRvcp2qbKprtU",
+      "data_id": "0x89c2f564aaf04761:0xd5aea9b2a976cabd",
+      "data_cid": "15397430760838711997",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f564aaf04761%3A0xd5aea9b2a976cabd&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f564aaf04761%3A0xd5aea9b2a976cabd&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.8128616,
+        "longitude": -73.91342689999999
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJYUfwqmT1wokRvcp2qbKprtU",
+      "provider_id": "/g/11y57ytz87",
+      "rating": 1,
+      "reviews": 1,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "429 Jackson Ave, Bronx, NY 10454",
+      "country": "United States",
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/st-marys-park/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=yGSIqYj69YjebyX7qh6ZfA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=113.83872&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/iGs_cnicHc1LDoIwFADA23RnP5DwMWkMK-PajbgxpTzakkILrVRu47W8jcYLzHzeOkYfjoSEuALEzUDy5gU2HLzAyjllQXgTsHQT2RiJ-jl1szD25MXsTM_38_WytGNRtyN0-61cdHEfGiS7h7QG5sgDiFVqrNJPXF2PlQ8o8YoizesM7SJxxnJc5VWZIW-i1Jyi_zK4jTNKv4XEOao"
+    },
+    {
+      "position": 20,
+      "title": "Public Restroom",
+      "place_id": "ChIJrcvJbpL1wokRkaW9Ew3sZ3Q",
+      "data_id": "0x89c2f5926ec9cbad:0x7467ec0d13bda591",
+      "data_cid": "8387932371910763921",
+      "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f5926ec9cbad%3A0x7467ec0d13bda591&engine=google_maps_reviews&hl=en",
+      "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f5926ec9cbad%3A0x7467ec0d13bda591&engine=google_maps_photos&hl=en",
+      "gps_coordinates": {
+        "latitude": 40.821365199999995,
+        "longitude": -73.9259896
+      },
+      "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJrcvJbpL1wokRkaW9Ew3sZ3Q",
+      "provider_id": "/g/11gy78n7r6",
+      "rating": 2.3,
+      "reviews": 3,
+      "type": "Public bathroom",
+      "types": [
+        "Public bathroom"
+      ],
+      "type_id": "public_bathroom",
+      "type_ids": [
+        "public_bathroom"
+      ],
+      "address": "Franz Sigel Park, Bronx, NY 10451",
+      "country": "United States",
+      "open_state": "Closed \u00b7 Opens 8\u202fAM",
+      "hours": "Closed \u00b7 Opens 8\u202fAM",
+      "operating_hours": {
+        "thursday": "8\u202fAM\u20134\u202fPM",
+        "friday": "8\u202fAM\u20134\u202fPM",
+        "saturday": "8\u202fAM\u20134\u202fPM",
+        "sunday": "8\u202fAM\u20134\u202fPM",
+        "monday": "8\u202fAM\u20134\u202fPM",
+        "tuesday": "8\u202fAM\u20134\u202fPM",
+        "wednesday": "8\u202fAM\u20134\u202fPM"
+      },
+      "phone": "(212) 639-9675",
+      "website": "https://www.nycgovparks.org/parks/franz-sigel-park/facilities/bathrooms",
+      "extensions": [
+        {
+          "accessibility": [
+            "Wheelchair accessible entrance"
+          ]
+        }
+      ],
+      "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=sQDz4059zL83gF_FjXGItA&cb_client=search.gws-prod.gps&w=80&h=92&yaw=273.89877&pitch=0&thumbfov=100",
+      "serpapi_thumbnail": "https://serpapi.com/images/url/-hW76HicHc1RCsIgGADg2_iWuq2YCySCWAS99NbbcM7UcFPmn9ZO07W6TdEFvu_zNgAhbgmJMCsFyaoc7FO5uAoCa--1UyLYiKUfSSoImMfYT8K6XRCTtwOPl8OypptmObNKt117vx5PsEey76SzagIelZilwTr_xNkPWIeIMmcUGd6U6CUyL-sKs4bVNQoWpOEU_ZebT7yg9AtENDj5"
+    }
+  ],
+  "serpapi_pagination": {
+    "next": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.81%2C-73.95%2C14z&q=public+toilet+near+uptown+Manhattan&start=40&type=search",
+    "current": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.81%2C-73.95%2C14z&q=public+toilet+near+uptown+Manhattan&start=20&type=search",
+    "previous": "https://serpapi.com/search.json?engine=google_maps&gl=us&google_domain=google.com&hl=en&ll=%4040.81%2C-73.95%2C14z&q=public+toilet+near+uptown+Manhattan&start=0&type=search"
+  }
+}

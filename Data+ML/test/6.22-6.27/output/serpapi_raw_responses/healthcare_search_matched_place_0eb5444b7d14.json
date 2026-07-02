@@ -1,0 +1,425 @@
+{
+  "search_metadata": {
+    "id": "6a3d3eb11f758ab2d5c82512",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/I2kfeLrQ_q5yp6QKhU5v8g/6a3d3eb11f758ab2d5c82512.json",
+    "created_at": "2026-06-25 14:44:01 UTC",
+    "processed_at": "2026-06-25 14:44:01 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258e5a66f638f:0x4f9c91e71b92d9f9!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/I2kfeLrQ_q5yp6QKhU5v8g/6a3d3eb11f758ab2d5c82512.html",
+    "prettify_html_file": "https://serpapi.com/searches/I2kfeLrQ_q5yp6QKhU5v8g/6a3d3eb11f758ab2d5c82512.prettify",
+    "total_time_taken": 0.79
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJj2NvpuVYwokR-dmSG-eRnE8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "New York General Dentistry",
+    "place_id": "ChIJj2NvpuVYwokR-dmSG-eRnE8",
+    "data_id": "0x89c258e5a66f638f:0x4f9c91e71b92d9f9",
+    "data_cid": "5736620447149251065",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e5a66f638f%3A0x4f9c91e71b92d9f9&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e5a66f638f%3A0x4f9c91e71b92d9f9&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7619525,
+      "longitude": -73.9689326
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJj2NvpuVYwokR-dmSG-eRnE8",
+    "provider_id": "/g/1tgny3v1",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFfy2O91uJgwiGTr3_Zh7pcisUt8KMoIsM2JgeqiZ09aFHSIH-KVJ2r__3-NyO34hjcbEeTvp0kDne562vXZoHb7xZfqBlQSTC01ImOh5_XYfOXxKktoS67D4UUl4ihIchEisji=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/1KHg1nicHcRJDoIwAADAF1XKJmriAUVliaABDHIh2pS2ghRpWXyhb_A3Js5hvh8qZStWilJTfUY4JzXuBe4QbyRu5Azxp0JaAZAAQrFP4bmy9-Vbi5Zq75ORHZJOL3JqtYiJVC6CI_fEUfMJfrEcLm97N_ZcEFx8rSsKHYTvSDfoA913OBlaWDkNNufakOXcvVtTXr429TlOtlD1nhE1i-xaRtkUVJLHc8sx0rQ2GPUQ3THxYOtRhRAC-h-B5gcvbUQ_",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 0
+      },
+      {
+        "stars": 5,
+        "amount": 367
+      }
+    ],
+    "rating": 5,
+    "reviews": 372,
+    "type": [
+      "Dental clinic",
+      "Cosmetic dentist",
+      "Dental hygienist",
+      "Dental implants periodontist",
+      "Emergency dental service",
+      "Orthodontist",
+      "Teeth whitening service"
+    ],
+    "type_ids": [
+      "dental_clinic",
+      "cosmetic_dentist",
+      "dental_hygienist",
+      "dental_implants_periodontist",
+      "emergency_dental_service",
+      "orthodontist",
+      "teeth_whitening_service"
+    ],
+    "book_online": "https://nexhealth.info/book/appt/new-york-general-dentistry?lid=533&rwg_token=AE37R_gaqDNe2CBeyJDtmKM_-j43hnGhzGEW5bauGHr9YJ6_zzQB9l_GOcpUC861oyDEeXr3V61cIrzcwbECvakvUGbzCXO9cw%3D%3D",
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "offerings": [
+          "Cosmetic dentistry",
+          "Emergency services",
+          "Pediatric care",
+          "Sedation dentistry"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "Payment plans"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "address": "133 E 58th St Ste 409, New York, NY 10022",
+    "country": "United States",
+    "website": "https://newyorkgeneraldentistry.com/?utm_source=GMBlisting&utm_medium=organic",
+    "phone": "(212) 838-0842",
+    "open_state": "Open \u00b7 Closes 5:30 PM",
+    "plus_code": "Q26J+QC New York",
+    "hours": [
+      {
+        "thursday": "8:30 AM\u20135:30 PM"
+      },
+      {
+        "friday": "8:30 AM\u20134 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8:30 AM\u20135:30 PM"
+      },
+      {
+        "tuesday": "8:30 AM\u20135:30 PM"
+      },
+      {
+        "wednesday": "8:30 AM\u20135:30 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c258e5a66f638f%3A0x4f9c91e71b92d9f9&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFfy2O91uJgwiGTr3_Zh7pcisUt8KMoIsM2JgeqiZ09aFHSIH-KVJ2r__3-NyO34hjcbEeTvp0kDne562vXZoHb7xZfqBlQSTC01ImOh5_XYfOXxKktoS67D4UUl4ihIchEisji=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/1KHg1nicHcRJDoIwAADAF1XKJmriAUVliaABDHIh2pS2ghRpWXyhb_A3Js5hvh8qZStWilJTfUY4JzXuBe4QbyRu5Azxp0JaAZAAQrFP4bmy9-Vbi5Zq75ORHZJOL3JqtYiJVC6CI_fEUfMJfrEcLm97N_ZcEFx8rSsKHYTvSDfoA913OBlaWDkNNufakOXcvVtTXr429TlOtlD1nhE1i-xaRtkUVJLHc8sx0rQ2GPUQ3THxYOtRhRAC-h-B5gcvbUQ_"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "9 days ago",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFK_YnbPZ2A7RHLJZZxE3K86AS_N5Pb9pDWnSUi0KlppEeCDzc2pWS9QckP1L_LD7eowwrMDS2FZy53PUVAtyfoxTqX4kLUMn0nir2dF6y8R0IBBXGAN6456LcWEqsOR5_PGBWjISchyu1D=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/CiSPu3icHcTBboIwAADQL0IKCOoSD2UFdVSsdAzHhcRaQWFtpTXIfnLn_Y2J7_D-_xpjlH6z7a7xJrWUdcfvmvdMCsOFmTD5Y9dKW0xb2oYk3bcwTqpvcSSlC2fZGn-U5SPyknkAaZX65LhQqBA0v4CkUyri7-iXuaqgiz1riYMrjGZcDkO_RdSNy9H3SP4FzXiWj8_bYdrifCuAuPTuKQ7GeQY2YXhYwTSY-gFmRXTTu8yvyCosrhvKmvHuoOXgAACs5jWzxBPv7EVq"
+      },
+      {
+        "title": "Tooth",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGYdqPY8TLf3kzWDfWkAomRHW4dPR-O_30lDjiAjeFjjLZFk9Qh3BOJ-y2NYB5mOjcx1sJUkzqJkjQof35GreQ6G04B_8HBB0342DX5TMtkykvlJjXzUp0RgVSXjfcWIbJg8q8C=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/K2Ot8nicHcTbboIwAADQL6oUC4Yt2QOVADZOLl4AX0yspawFCrbzwg_6Df7Nkp2H8341xgz607LaBs24Urxlv5pdqeoN682Mqs7igwZUA2356SaTflRdxrTydusayakI6kL6qsvjwrmkOUhOCLaB-PEFC4VYH0P5kTUIJwQ855sKu10i6MPWZC-nkUiRqRq50ZVliwg6-OTFGEPkzIPS3X0b-ZS3lohy2g8w54dtKWparM6Ee6O3_LrbEELQ_E9B_wf99EN0"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEHp6SwmhiI3QS6CpQ4XBmpbZbcl573QnIlFbMy0xv2eu47jOwUEtH6fBMDpMY1nwrkOK8EQmVUIvmN96PjzQ_l4HQNJS5iz3xg7zllh-5zvwxXdsN0LA2wL6eZyHtB5fbQj3Hnmw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/UOQSrnicHcRRboIwAADQE1WqheKW-AHKUjZBG-Ki_pjQVSq2pbGVIjf0CN7GZO_jvZ7COWM_g0AKNGm6rpH8bvmNddpx7SasU0FjLGAW2CDZlvSaZMTgyitxyRGt8NLQcJ8qUx9rJqMYUZ3Lr7p4wKGf8XsYtxu_yxzB57RYmeIw1f523fzMM6p-d3mvyg-8bUd6kiGh5XcVXUY0NPEopQDR2Pth_2dLuE5mfo358UFcGp1r2iKilV_4KYQQiP8Z0G_jNkWS"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=eI4QcX955sKuTDLdQ0AGLQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=17.638792&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2zZs83icHc1RCoIwGADg2-ytbS5NDUYEQUS-CD30JnP-ucF0o_3Ouk636jZB3wW-78cghrhnLOITAJOFNdgXuLgJio7ejw5UsJFqP7GUMTTL1M_KukNQs7eDhEve6ntdFPG63E7N0PLjuWmJ7jvtLMwoJxViFxNFpdE6oGOIZJVC5MRIUVfkrVaZlXS3rcpakGBRG8nJ_3n4JDPOf66UOWU"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Excellent service and very kind and professional staff!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWddcq4ADLEit57DCKnUF9rsMf0khdVKof8PM9Erdq2on49Ko2l=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Super friendly staff and doctor.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL5SpEDRUWuzHsIycq5fvcEZ2dnVoxPNEhxFP-gsXxsFSZGAg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The services provided are efficient and of high quality dental care .\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV52IxG9MS4VaMFk_-L9xfSj6tQZVb3JUXpfNYm1uzKTavVYQMtnA=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Sabine Veslin",
+          "rating": 5,
+          "contributor_id": "114314118794499869352",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJu-QCaQNBb0t0ABr76ghBE4KvkAQnrtDUHmPJMCA6n1o8TlgII=s120-c-rp-mo-br100",
+          "description": "I recently took my daughter to see Dr. Chern for a consultation regarding some concerns I had about her front teeth. Dr. Chern went above and beyond to make my daughter feel comfortable and answered to all of my questions with compassion and thoroughness. She took her time to provide detailed explanations and thoughtful recommendations. We are looking forward to continuing treatment there. Thank you for your time and care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xnd2FXSlZVa1UwZUdWalFWTnVlVUV0VVRoZmRFRRAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOlgwaWJVUkU0eGVjQVNueUEtUThfdEE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-12T18:58:58+00:00"
+        },
+        {
+          "username": "Jennifer Barrett",
+          "rating": 5,
+          "contributor_id": "118006430380831613898",
+          "user_review_count": 11,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX6F0LNRu7uBWtj3REEgF3btT_pDXP88itFOLoycZvXdnUvsYsq=s120-c-rp-mo-br100",
+          "description": "For someone who has a fear of dentists and was well overdue for a cleaning (horribly overdue)\nDr Chern\u2019s  professionalism and sensitivity  to my situation made me feel extremely comfortable and did that with a smile, a sense of humor and much grace.\n\nA big shout out to Dr. Chern\u2019s team as well.  Denise at reception is amazing and Kiana was epic as well with her matter of fact sense of humor and professionalism.\n\nTheir cutting edge technology for teeth cleaning was painless and highly effective at the hands of a skillful dentist.\n\nHighly recommend- and an office with a window!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SWk0yWXdSelZoV1VwWFpYQlJhRUpvVUVOc1ZrRRAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOmRZM2YwRzVhWUpXZXBRaEJoUENsVkE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1Dc0ltKGfgq8izhS2aZe8gJas5uujVtCSN7EU9rei3HYDWpVyGvxyrAu3RS8wxmTU7Q9QrbwZm96yXmMC5-r8MIVW8IdFRhEwQuunbrk04Kdvi1sEvsCScLZ_kccKHFHjLDsxR-gtTAbw=k-no"
+            }
+          ],
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-14T11:42:07+00:00"
+        },
+        {
+          "username": "David Westover",
+          "rating": 5,
+          "contributor_id": "116089168056289208102",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKOEJrdZcsT0xVvZNDBFOoKoxwtZhW2oMvUS-XKHQlMObWCUw=s120-c-rp-mo-br100",
+          "description": "New York General Dentistry offers exceptional dental services. The staff is extremely nice and well-organized, and most importantly, they genuinely care for their patients. I got a filling done there, and everything was very fast and hassle-free. The environment is pleasant and modern technology is used.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CaVdGaGxZVVJoTlZsR1lXWlNObHBHTW1SeFZYYxAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOnBiWFhlYURhNVlGYWZSNlpGMmRxVXc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-13T17:48:49+00:00"
+        },
+        {
+          "username": "Asela Baena",
+          "rating": 5,
+          "contributor_id": "100218774796340229216",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWaxteFDfgr_rQufTaYknHiCU94VZokaUWPF-DVPFvBownQ4BY=s120-c-rp-mo-ba12-br100",
+          "description": "Fantastic dental clinic! The staff is welcoming, professional, and attentive, making every visit comfortable. The dentist explained each step clearly and ensured a painless experience. The clinic is clean, modern, and well-equipped. I left feeling confident in my treatment and highly recommend this clinic for quality dental care.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21WaE4xQktPVkpCVHpSVFYyeGFTR2t0Wm5GM1VWRRAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOmVhN1BKOVJBTzRTV2xaSGktZnF3UVE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-19T18:54:46+00:00"
+        },
+        {
+          "username": "Miguel Villalpando",
+          "rating": 5,
+          "contributor_id": "109281000703434924632",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXtmyTwxDPq8--js0bmpN7kr5vpHLwS1glkxSwTbUij6N_V2oI=s120-c-rp-mo-ba12-br100",
+          "description": "Highly recommend this dental clinic! The staff is professional, friendly, and attentive, making every visit smooth and comfortable. The dentist is thorough, explains procedures clearly, and ensures a painless experience. The clinic is clean, modern, and well-organized. I left feeling well cared for and confident in my treatment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21rMlRHaExjVXBZT1V3MGJHNW1USEpvTkd0cWRYYxAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOmk2TGhLcUpYOUw0bG5mTHJoNGtqdXc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-19T18:37:38+00:00"
+        },
+        {
+          "username": "Christine Persinger",
+          "rating": 5,
+          "contributor_id": "116469946309322700300",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLdgLBcqBd6qdm8wGzv3Nu5y2jth4WiWDfnc1bzN2l298IVFw=s120-c-rp-mo-br100",
+          "description": "Dr. Chern is amazing. She is so patient, listens, and is gentle but thorough. I\u2019ve never felt so comfortable at a dentist before.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5aFNXdElUV3Q2UkcxTFFtTXdVSEo2ZG1KS1RFRRAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOl9hSWtITWt6RG1LQmMwUHJ6dmJKTEE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-19T01:41:58+00:00"
+        },
+        {
+          "username": "Melissa Hodge",
+          "rating": 5,
+          "contributor_id": "112847347263737803487",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWwWEwjS9WKBQ-IMwAsaMYP7bqFoveqYRtEfQYS3ieERuSZit_h=s120-c-rp-mo-br100",
+          "description": "A Truly Life Changing Experience\nI've always struggled with intense dental anxiety and have dreaded every visit until now. From the moment I walked in she made me feel genuinely safe, seen, and understood. She took the time to listen without rushing, explained everything clearly, and approached my care with such compassion that it completely changed how I view going to the dentist.\nThis turned out to be the easiest and most comforting experience I've ever had in a dental office. I actually left in tears\u2026 but this time, they were tears of relief and happiness.\nIf you're someone who fears the dentist, I can\u2019t recommend her enough. She didn\u2019t just treat my teeth she helped heal years of anxiety.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWdE0zSjZWMlpzYmw5RWRscDRNa3BPUkU5aFRsRRAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOjVtM3J6V2Zsbl9Edlp4MkpORE9hTlE%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-24T23:43:51+00:00"
+        },
+        {
+          "username": "Malwina Burny",
+          "rating": 5,
+          "contributor_id": "108314009274157812741",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWAeiJEDUuH-sQ6TKu1jwEqL_xLFfbtV8Dulz1ZuB3K9_Sr_II2=s120-c-rp-mo-br100",
+          "description": "Absolutely fantastic spcialist. I\u2019ve seen a lot of dentists for this specific reason but she was the first who successfully treated me for white spots correction and explained everything thoroughly. I\u2019m dealing with a lot of other health issues and she is very knowledgeable about human health in general which felt very refreshing to hear the holistic adviced that might help with my oral health. Highly recommended!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25ReVlrbEpXWE5MYzFoRVJrTjNhSGhxYW1KSlJFRRAB!2m1!1s0x0:0x4f9c91e71b92d9f9!3m1!1s2@1:CAIQACodChtycF9oOnQyYklJWXNLc1hERkN3aHhqamJJREE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-21T18:39:14+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "SDNY Dental",
+            "data_id": "0x0:0x473c044e0a9a46ab",
+            "data_cid": "5132982408527365803",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x473c044e0a9a46ab&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x473c044e0a9a46ab&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7610509,
+              "longitude": -73.968041
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x473c044e0a9a46ab%218m2%213d40.7610509%214d-73.968041&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 44,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBX7HhIHeAPDme9jK4-rsker96x0YWb0VLjwVVSFi37C1UgaVjYHYMRZT3gJ1wrdqnR6iAZxILDurF5zFzZJYUPFdWpypuG5uf0vw7gtToO9tTuAbAUm4T1JHqwkqoUfNQZys=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental laboratory"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "New York Dental Office",
+            "data_id": "0x0:0x9c508f23a2d16155",
+            "data_cid": "11263660051271868757",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9c508f23a2d16155&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9c508f23a2d16155&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7633351,
+              "longitude": -73.9627181
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9c508f23a2d16155%218m2%213d40.7633351%214d-73.9627181&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 470,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHCSKQ-4-77j-5nPJ8QRVa6WLiguyP_jdnUXngYRSq-lW6HRVL9b3264UOzKYZBTOsrs6UB6xPnvTXl1qpylM1Q-Hjzs-pYOET1wWFEYsU0b7qDvnc1D66WtXPQzFADMs19-Ruu=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dental implants periodontist",
+              "Oral surgeon",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "NYC Smile Spa",
+            "data_id": "0x0:0xb6cff2ce09f38f2e",
+            "data_cid": "13173014401826131758",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb6cff2ce09f38f2e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7637066,
+              "longitude": -73.970242
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb6cff2ce09f38f2e%218m2%213d40.7637066%214d-73.970242&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 396,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHrAwpUHtvK_Va5ZleC2RAxhpM0uM1-tUCuYCJ7w2gzUgcbjHTndFDSogG06uLKzs9Xb-83s1qphz8gr1iiFO2u7ZgMKrt8eji61BVk5d6VqGutdVYF7Kmz9BaFCxTZBzhFxKKppw=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental hygienist",
+              "Endodontist",
+              "Oral surgeon",
+              "Orthodontist",
+              "Teeth whitening service"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "New York DMD",
+            "data_id": "0x0:0xa537eb2e7440b1b3",
+            "data_cid": "11905242724728615347",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa537eb2e7440b1b3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa537eb2e7440b1b3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.764044999999996,
+              "longitude": -73.96802199999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa537eb2e7440b1b3%218m2%213d40.764044999999996%214d-73.96802199999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 275,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFVVi6lVzfoQwVw4239-YFqLTGlIM8gd6w5vikd3ZF3WwG0Np1E89ppXGSstof6zJ8ZC2yzV-eoA8A5-n7LO5ayeltLS19Pm5C1_ZEly5inG5hvmq54twVyW3_2EeCSbELJs0s9=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Cosmetic dentist",
+              "Dental implants provider",
+              "Oral surgeon"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Aesthetic Dentistry of New York",
+            "data_id": "0x0:0xebc7128fc4ae2aa6",
+            "data_cid": "16989568527967857318",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xebc7128fc4ae2aa6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xebc7128fc4ae2aa6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7583516,
+              "longitude": -73.97836219999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xebc7128fc4ae2aa6%218m2%213d40.7583516%214d-73.97836219999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 10,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFPCVUddk_VH-phDN17vsaCOurf0CdOuqstf60aigbbiE_KJpind9sczEoaRMNI0YlHLEUSOPchw8ISWTrJ__KMKG39Eqnl_jMm3YFkqzaQRHcmPW2RAq0mc3kFnXv0xbB-OYYQ=w156-h156-n-k-no",
+            "type": [
+              "Cosmetic dentist",
+              "Dental clinic",
+              "Dentist"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oi0KKyInTmV3IFlvcmsgR2VuZXJhbCBEZW50aXN0cnkgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COi0KKyInTmV3IFlvcmsgR2VuZXJhbCBEZW50aXN0cnkgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

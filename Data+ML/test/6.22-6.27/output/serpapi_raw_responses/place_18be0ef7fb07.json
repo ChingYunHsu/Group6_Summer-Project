@@ -1,0 +1,483 @@
+{
+  "search_metadata": {
+    "id": "6a3ac1fbfbbebbb6e80f3b74",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/02f9vjBH-rprcSmO4pnncQ/6a3ac1fbfbbebbb6e80f3b74.json",
+    "created_at": "2026-06-23 17:27:23 UTC",
+    "processed_at": "2026-06-23 17:27:23 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25a2bc64ebd15:0xecf5095ad2e267d9!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/02f9vjBH-rprcSmO4pnncQ/6a3ac1fbfbbebbb6e80f3b74.html",
+    "prettify_html_file": "https://serpapi.com/searches/02f9vjBH-rprcSmO4pnncQ/6a3ac1fbfbbebbb6e80f3b74.prettify",
+    "total_time_taken": 1.79
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJFb1OxitawokR2Wfi0loJ9ew",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "NYC Health + Hospitals/Gotham Health, Gouverneur",
+    "place_id": "ChIJFb1OxitawokR2Wfi0loJ9ew",
+    "data_id": "0x89c25a2bc64ebd15:0xecf5095ad2e267d9",
+    "data_cid": "17074563847934863321",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc64ebd15%3A0xecf5095ad2e267d9&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc64ebd15%3A0xecf5095ad2e267d9&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.713208,
+      "longitude": -73.987787
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFb1OxitawokR2Wfi0loJ9ew",
+    "provider_id": "/m/0cn_cfc",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE0Q-tTOIRJ9mfoKCXfVC0uGuEOWYtfKParll3JxamAw8lBIWd-aVPjsnzjhbB8-sbU5poxaWo7sUMEPNnMkRPHDEM_qlC8ikaSSVA0tvyrhhvIrKo7JA6r-SiJBIUJ0LXlw03o=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/xOWIc3icHcTdToMwGADQJ-qoIW5osouCRCnCujF-dmU6BDoo_VhbxvQFfQbfxsRzcX5_hLWTeXYcKdxVB9DJZjaNrkHZRtlVDaPTTQbVBhmHsHQ_kBDvkT3uogN9GluIg6otAjy_zuGuPNk2ZlxL6dI7H8niST8qPxEvWG_Udy_OvofMOX-c4M5L2Jg8CVmqkuHA3l7C5OMqA-8y8CwrCLa3Ly3ELdIxbChZa5RdqB_lFL9XcsEubJcHjDES_9dI_QF1TETa",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 68
+      },
+      {
+        "stars": 2,
+        "amount": 17
+      },
+      {
+        "stars": 3,
+        "amount": 27
+      },
+      {
+        "stars": 4,
+        "amount": 47
+      },
+      {
+        "stars": 5,
+        "amount": 169
+      }
+    ],
+    "rating": 3.7,
+    "reviews": 328,
+    "type": [
+      "Medical Center",
+      "Blood testing service",
+      "Community health center",
+      "Medical billing service",
+      "Medical diagnostic imaging center",
+      "Mental health clinic",
+      "Women's health clinic",
+      "Public medical center",
+      "Radiologist",
+      "STD testing service"
+    ],
+    "type_ids": [
+      "medical_center",
+      "blood_testing_service",
+      "community_health_center",
+      "medical_billing_service",
+      "medical_diagnostic_imaging_center",
+      "mental_health_clinic",
+      "obstetrics_gynecology_clinic",
+      "public_medical_center",
+      "radiologist",
+      "std_testing_service"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "Offers free or low-cost care based on individual circumstances"
+        ]
+      },
+      {
+        "parking": [
+          "Free street parking"
+        ]
+      }
+    ],
+    "address": "227 Madison St, New York, NY 10002",
+    "country": "United States",
+    "booking_link": "https://epicmychart.nychhc.org/MyChart/",
+    "website": "https://www.nychealthandhospitals.org/locations/gotham-health-gouverneur/",
+    "phone": "(844) 692-4692",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "P276+7V New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20137 PM"
+      },
+      {
+        "wednesday": "8 AM\u20135 PM"
+      },
+      {
+        "thursday": "8 AM\u20137 PM"
+      },
+      {
+        "friday": "8 AM\u20135 PM"
+      },
+      {
+        "saturday": "8 AM\u20134:30 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20137 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE0Q-tTOIRJ9mfoKCXfVC0uGuEOWYtfKParll3JxamAw8lBIWd-aVPjsnzjhbB8-sbU5poxaWo7sUMEPNnMkRPHDEM_qlC8ikaSSVA0tvyrhhvIrKo7JA6r-SiJBIUJ0LXlw03o=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/xOWIc3icHcTdToMwGADQJ-qoIW5osouCRCnCujF-dmU6BDoo_VhbxvQFfQbfxsRzcX5_hLWTeXYcKdxVB9DJZjaNrkHZRtlVDaPTTQbVBhmHsHQ_kBDvkT3uogN9GluIg6otAjy_zuGuPNk2ZlxL6dI7H8niST8qPxEvWG_Udy_OvofMOX-c4M5L2Jg8CVmqkuHA3l7C5OMqA-8y8CwrCLa3Ly3ELdIxbChZa5RdqB_lFL9XcsEubJcHjDES_9dI_QF1TETa"
+      },
+      {
+        "title": "Reception",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEaq3yva6z6L4oaiUzxRx_3Nq729UeDzS8ChX4RBS_VI78awUPT8gje3q-E3rkPOvgJvHJg17zUVzVLyRhSJv2UAkdUGgI04EB437OaFJlNj2EJUfPbyOdfcqIpq7G5guVt17xw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/K6eOZXicHcTbboMgAADQL6JecMUt2YPdXCtp1Gkxe2sYpbBqRQr1wg_uG_Y3S3oezt-vtHYwL57XSbgSSomO3w2_MdVb3tsVU1dPDAYwA4yXlPlnm6RUw2Wka7feR4r-EDdX8xHmGoXPhL-7On6TX1G1qY9NhmI6kfIQiwuHGqTw1pbFKPC4wyJAjjSu2S-VrPEYkqQ9ka3I_CjdRBAV9AN3-SVMMTmX30txOjOdDRptn8S9sQGap9cp8H0fyMcM9P8o00P0"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG3AaqnAPJzTXltv18HwulsE2WahTz9axq77yU1ehgZPjLBAMRIlYpSCCRQ09BDGWmPcVKCZyCRebDcZaXCJgxYu5JcNlfVBIgFgRPrCwFEasEj4jyjSnlq7nQtcXbbveN9-KL_=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/SnV2e3icHcTbDoIgAADQLyK1y8y2HpDsYuXQbuZLQ0YwI9TAzH6wb-hv2joP5_sRxlR6YllSDHq8LLlkjWYPWirDlOnR8m7xSgOqgbYgjuIbXAwgqRXE4XufSvN0xsu2kTron4jYvz3yql23OzhM8AwXGx9uk5U8VzuEktj2_NnidMf0uEZZhxKWz2hGUhTy17kZhTSS16O_4nOe4Adq5wHRQTEsumKnZO2q2NA0z58s8sB6c5m2jm3bQPynQP0AhXxFSQ"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Shopping",
+          "places": 1
+        },
+        {
+          "title": "Services",
+          "places": 1
+        },
+        {
+          "title": "Other",
+          "places": 1
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "NYC Health + Hospitals/Gouverneur Farmstand",
+          "data_id": "0x89c25a2bc3e39c1d:0x4777a639ea487453",
+          "data_cid": "5149767466595415123",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc3e39c1d%3A0x4777a639ea487453&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc3e39c1d%3A0x4777a639ea487453&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.712688199999995,
+            "longitude": -73.9884963
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25a2bc3e39c1d%3A0x4777a639ea487453%218m2%213d40.712688199999995%214d-73.9884963&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFb1OxitawokR2Wfi0loJ9ew&type=place",
+          "rating": 4.2,
+          "reviews": 13,
+          "type": "Farmers' market",
+          "type_id": "farmers_market",
+          "address": "Jefferson Street &, Madison St, New York, NY 10002",
+          "location": "Floor 1",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFil-xqGtEginRhnCkdtVINxiT4oN4mXNW6Ssju-G-P7vGQhCiQ-B0-oa_NcOFKtQCm3WdueFDIhoyN3_QNbGfIRK_5JiCwXjfKJNSi4Uhi-iV-tUm-A2tcOPwnbPWmas2pjZQ=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFil-xqGtEginRhnCkdtVINxiT4oN4mXNW6Ssju-G-P7vGQhCiQ-B0-oa_NcOFKtQCm3WdueFDIhoyN3_QNbGfIRK_5JiCwXjfKJNSi4Uhi-iV-tUm-A2tcOPwnbPWmas2pjZQ=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "New York City Medicaid Office",
+          "data_id": "0x89c25a2bc64ebd15:0xf1327b4dbce24476",
+          "data_cid": "17380089485787808886",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc64ebd15%3A0xf1327b4dbce24476&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a2bc64ebd15%3A0xf1327b4dbce24476&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7130952,
+            "longitude": -73.987797
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25a2bc64ebd15%3A0xf1327b4dbce24476%218m2%213d40.7130952%214d-73.987797&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFb1OxitawokR2Wfi0loJ9ew&type=place",
+          "rating": 3.9,
+          "reviews": 7,
+          "type": "Government office",
+          "type_id": "government_office",
+          "address": "227 Madison St, New York, NY 10002"
+        },
+        {
+          "position": 3,
+          "title": "ABC Maintenance.",
+          "data_id": "0x89c25b1279971f19:0x9b0593e033061660",
+          "data_cid": "11170497041900377696",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25b1279971f19%3A0x9b0593e033061660&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25b1279971f19%3A0x9b0593e033061660&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7131857,
+            "longitude": -73.98755179999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25b1279971f19%3A0x9b0593e033061660%218m2%213d40.7131857%214d-73.98755179999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFb1OxitawokR2Wfi0loJ9ew&type=place",
+          "rating": 5.0,
+          "reviews": 1,
+          "type": "Chimney sweep",
+          "type_id": "chimney_sweep",
+          "address": "227 Madison St, New York, NY 10002",
+          "location": "Floor 1",
+          "open_state": "Open 24 hours",
+          "hours": [
+            {
+              "tuesday": "Open 24 hours"
+            },
+            {
+              "wednesday": "Open 24 hours"
+            },
+            {
+              "thursday": "Open 24 hours"
+            },
+            {
+              "friday": "Open 24 hours"
+            },
+            {
+              "saturday": "Open 24 hours"
+            },
+            {
+              "sunday": "Open 24 hours"
+            },
+            {
+              "monday": "Open 24 hours"
+            }
+          ],
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1OS-HNuOowm-HpldwJm_tzcHomHga4pOLMe8PhHfNM2dy0CDUNKsy-aHZTb6IRqRhm_kPoQMsKg3VAJeSdpXO_MrDjyMCm8ntKs4-pD3X6G1vnycqNeH__Lql6RGOW4JYjz-9bQ=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1OS-HNuOowm-HpldwJm_tzcHomHga4pOLMe8PhHfNM2dy0CDUNKsy-aHZTb6IRqRhm_kPoQMsKg3VAJeSdpXO_MrDjyMCm8ntKs4-pD3X6G1vnycqNeH__Lql6RGOW4JYjz-9bQ=w86-h86-n-k-no"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Good experience with the staff from MDs to assistants.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWB7U6eYYK2onndJfT_kWTbTV8V85V8juNT5wtLIiZ1n4EBbj1ixw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Its a good place to see all your doctors in one facility.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUvJe3hWR9H3xf_9PxUCE-ly8u16TQ3Bqh4I0VPZlb3U_uMtyU-=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The exam rooms were also very well kept, stocked, and clean.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUnDunouQSK2sbLkIIBq82ZhYLDqoBCqy5qHThbxZ4Msw_aPNHu=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "F A",
+          "rating": 1,
+          "contributor_id": "102250824278644152877",
+          "user_review_count": 28,
+          "user_photo_count": 50,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLc_r1ryGMzzCm4pdGHBaeiqXEeHu5xzq6dJGhgyTILEiDDVA=s120-c-rp-mo-ba12-br100",
+          "description": "I went in for a dental appointment on 02/5/26. It had been quite a while since I had been to the dentist due to other persistent health issues. For starters, Dr.Kathy Yeung is polite. After speaking with Dr. Yeung, I was directed across the hall to the Hygienist. This is where the torture chamber began.\n\nThe Hygienist (whose name I can't remember), does NOT have adequate communication skills, or good bed side manner. I walked in cordial and polite. He said hello and wasn't conversational AT ALL about what he was doing or why he was doing it. The Hygienist was going beneath my gumline to clean, and it literally felt like he was striking my gum with a sharp instrument repeatedly in complete silence. I stopped him. Spat blood, and asked what he was doing. He only said, \"You have alot of calcium.\" Then he continued in silence going back to the same area scraping. The pain was sharp and excruciating!! My reflexes slapped his hand away from my mouth! He replied, \"You can't slap my hand like that.\" Even though he was ignoring my pain.\n\nI spat in the sink, and once again it was blood. Only THEN did he explain what he was doing and said \"you can schedule a deep clean and numbing for that.\" So he KNOWS what he was doing was notoriously painful, yet he continued on. He started a third time on my lower teeth. I felt his hand slip into my gum again. Sharp and PAINFUL. Blood. Again. That's when I jumped up and said, \"I want to speak to my Dentist! I want someone else to do this.\"\n\nI went directly to Dr. Yeung and explained exactly what was happening with the Hygienist. She listened and further explained my Xrays. But I was still adamant about seeing another hygienist. The PROBLEM with the Hygienist was that he was NOT treating me like a *human being*. Anyone with sharp tools in your mouth scraping can be extremely painful. And it WAS. Instead of him checking in with me, adjusting, or informing me on what he was doing and why, he sat there continuously scraping even though he knew I was in pain. He did it THREE TIMES. I had to STOP him 3 times. And he acted irritated that I had to stop him. From the very beginning, he should have EXPLAINED everything! Instead he sat in silence ignoring my pain. And I don't care if he has worked at Gouverneurs for a long time. It's possible that patients just don't complain about his work.\n\nAs I was walking back towards the room, he requested to Dr. Yeung that I see another provider. Thank God we were on the same page about THAT!!!! I had already told him I wanted someone else ANYWAY.\n\nI was then placed with Hygienist Ashley Hui Huang. She was great! She listened, was polite, informative, respectful and checked in with me as she cleaned my teeth. I wasn't squirming in pain while in the chair. She did all of what the other Hygienist DIDN'T do. That's exactly how I knew I made the RIGHT decision to seek another hygienist instead of the first one. If a patient is in pain, you don't keep doing what you're doing ignoring them and acting like they are a nuisance to you.\n\nHe was essentially attempting to do some scaling without NUMBING me. He knew exactly what he was doing which is why he suggested scheduling a \"deep cleaning\" where I would be numbed! Because, that's what USUALLY happens when cleaning is happening beneath the gum line because it extremely painful. I am DEFINITELY reporting this incident to higher entities. I also will not be returning to this hospital for care. There's some other things that were deeply disturbing during my visit.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25JMFRVVk9NMmxVTkdwSk5uVjFRVmcxZUdkVmNrRRAB!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CAIQACodChtycF9oOnI0TUVOM2lUNGpJNnV1QVg1eGdVckE%7C%7C?hl=en",
+          "date": "Edited 4 months ago",
+          "date_iso8601": "2026-02-12T02:01:39+00:00"
+        },
+        {
+          "username": "Desery Martinez",
+          "rating": 2,
+          "contributor_id": "116383478173168983496",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW26yFml0PFL6KEFLndzL06Vh45BJCpJVpLFoP1kNYiWRqXVtU=s120-c-rp-mo-ba12-br100",
+          "description": "227 Madison\nABSOLUTELY SHOCKING CONDUCT from Head Nurse - Door Slammed in My Face.\n\nI had a deeply unsettling and unprofessional experience on the 7th Floor. I approached the Head Nurse, Ms. Joseph, at the nurse's station with a simple, respectful question regarding the person I was visiting.\n\nThe Head Nurse responded with an immediate and hostile display of impatience. They didn't even allow me to finish my sentence before barking, \"I'm busy,\" and slammed the office door shut right in my face.\nThis aggressive and completely unacceptable behavior is a massive failure in professionalism and human decency, especially from someone in a leadership role in patient care. Visitors should not be treated with such contempt. The nurse's hostile reaction speaks volumes about the unit's culture. Management needs to address this specific incident immediately. I am truly shocked by this lack of respect.\n\nThe facility and employees were very nice. She was the only one that was unprofessional.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psRGVUQnNkM05YZDBnemNVazBUSFJYZERoWFJVRRAB!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CAIQACodChtycF9oOjlDeTBsd3NXd0gzcUk0THRXdDhXRUE%7C%7C?hl=en",
+          "date": "Edited 7 months ago",
+          "date_iso8601": "2025-10-29T15:43:03+00:00"
+        },
+        {
+          "username": "Joann Ramos",
+          "rating": 1,
+          "contributor_id": "104138154177573182235",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKdWSoXdrMsVRFOqYy1wJBcEYfsbmQZlV35xOCFa2tsSu0lrbA=s120-c-rp-mo-br100",
+          "description": "This place is a rat hole. The staff on the 7 floor are horrible. My elderly mother was there and she suffered greatly. They never answered the call bell. They disconnected the bell and she developed a horrible bed sore. Stay away it\u2019s horrible",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25Ga1dFOU9hVmxSYzA5clRGODBjazlwVkhsMmVIYxAB!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CAIQACodChtycF9oOnFkWE9OaVlRc09rTF80ck9pVHl2eHc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-05T21:33:16+00:00"
+        },
+        {
+          "username": "Nicole Williams",
+          "rating": 1,
+          "contributor_id": "113455046278674750802",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVtJyknhwmN-ygz7TFVaCkPK2PtS3Ndi_sNf0Z4hB_9Lzxf-prO=s120-c-rp-mo-br100",
+          "description": "THIS IS THE WORST PLACE IN iTHE WORLD. NOBODY DOES THEIR JOB OR KNOW ANYTHING. DO NOT COME HERE. I ONLY HIT ONE STAR BECAUSE IT WOULDNT LET ME POST WITHOUT A SELECTION OTHER THAN THAT THIS PLACE SHOULD BE INSPECTED AND CLOSED FOR GOOD.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOTGFVTkRWelExWjNsdGVIRlZlbHBDT1V4blduYxAB!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CAIQACodChtycF9oOkNLaUNDVzQ1Z3lteHFVelpCOUxnWnc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-13T14:44:24+00:00"
+        },
+        {
+          "username": "Ashleigh Batton",
+          "rating": 4,
+          "contributor_id": "109280033977517706201",
+          "user_review_count": 37,
+          "user_photo_count": 102,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVB_GnfaW_VtMTLiQzfh8FGE3kzbDhQAf1FZISBr5F1smiN9Cjn=s120-c-rp-mo-ba12-br100",
+          "description": "Was fourth in line at 9am for COVID testing. Still waiting an hour later - the woman controlling the line is skipping people ahead at her discretion.\n\nEmpty testing booths, while everybody waits in this bureaucratic mess!\n\n12/19 update: New person/black male managing the line - I  got in line at 8:45am and was tested and on my way at 9:02am. There was no line skippery and everything was efficient!\n\n4 stars because I wish they offered longer hours!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURHN1pXd0RnEAE!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CIHM0ogKEICAgIDG7ZWwDg%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2h8tK_SfFuAnbtFE832dYxq6anzv3ArSoFu8PpnTMieAzLYAXjZ9B-BAkQiCORcTpFJYSEabrztmdUMpmvbKtuJdRuQ0bWlbOMSOl9KrjdH8UYEzlUZUu3Wzjaou6dXiSJn5I=k-no"
+            }
+          ],
+          "date": "Edited 4 years ago",
+          "date_iso8601": "2021-12-19T15:53:30+00:00"
+        },
+        {
+          "username": "Kelly E",
+          "rating": 1,
+          "contributor_id": "109891991411565378279",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIJvDQJ9SaZp5nYu66BzdeE_8-38qRxUHzWMb-pzJq9quIpQw=s120-c-rp-mo-br100",
+          "description": "If your podiatrist recommends that the hospital's company make your insoles, be prepared to lose your money. If Ortho-Rite makes your insoles incorrectly, they won't refund you or correct the mistake. They'll simply steal your money, and neither the doctor nor the hospital will be held responsible.\nIt's annoying. They took a long time to deliver them and made two mistakes. The insoles bent my foot outward. Both Dr. Akkerman and the assistant director told me that $100 is nothing (to them, but it is to me),as if they were telling me to cry for $100. It was annoying. They spoke to me like that. They shouldn't work in a hospital; they have no empathy for patients.\nArroyo. When I arrived at the hospital, I thought he was a receptionist; I saw him sitting there doing nothing, with another receptionist and a nurse talking. I was 15 minutes late, and my appointment had previously been canceled for 15 minutes, so I rushed to check in since I saw he wasn't doing anything. I wanted to check in. He responded as if he was angry, prepotent\"wait\" I was surprised, I thought this is not good for customer service, then I noticed they had a problem, I didn't know it was the assistant director , so I thought it was a receptionist, it was annoying, then my problem I found out it was the assistant director,I think, 2 problems in 1 hour, it's poor management, he said it wasn't the first time the company had done a poor job. It's happened before. Why do you keep recommending this company? Of course I'm going to report them. They're not going to  steal my money.\nThe hospital shouldn't give more work to Ortho-Rite. If they only steal money, that makes hospital an accomplices.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkalYwbFlaM0ZtTW1OMlkybHZkSFZ0VkZoMU5FRRAB!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CAIQACodChtycF9oOjdjV0lYZ3FmMmN2Y2lvdHVtVFh1NEE%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-17T04:02:34+00:00"
+        },
+        {
+          "username": "Darianny Rodriguez",
+          "rating": 1,
+          "contributor_id": "105624213016541162957",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWCkBWmLDe3jUGGGAO9EKATp5FYjYebwxIVvaKC4UEMn0ZaHcCbJw=s120-c-rp-mo-br100",
+          "description": "NEVER ATTEND THE OBGYN\u2019S OFFICE IN THIS HOSPITAL. Most useless, unprofessional, and rude individuals I have ever came across in a hospital setting. The nurse taking my sisters vitals gave us unsolicited medical advice and treated us like we were idiots for wanting to bring up our concerns with the actual doctor. I wish I knew her name to write it down here, but she was downright nasty and condescending while not even being qualified to speak on what my sister and I were there for. The OBGYN Ruby Ko was no better. She was rude, unprofessional, and basically incompetent. She told me I had to leave the room while my sister asked if I could stay to help her emotionally. They told me I had to leave because the room was \u201ctoo small\u201d but I was sat quietly in a chair in a corner. I had to hear my sisters screams from the waiting room and I was unable to support her. Terrible experience. Never come to this hospital.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTURBdUtENDdRRRAB!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CIHM0ogKEICAgMDAuKD47QE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-02-06T20:51:39+00:00"
+        },
+        {
+          "username": "Melody Craig",
+          "rating": 1,
+          "contributor_id": "113895632983277840869",
+          "user_review_count": 135,
+          "user_photo_count": 208,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUnDunouQSK2sbLkIIBq82ZhYLDqoBCqy5qHThbxZ4Msw_aPNHu=s120-c-rp-mo-ba12-br100",
+          "description": "This clinical environment is extremely clean and well kept. There isn't a whole lot of space for seating in either waiting area that I saw (2). There is clear signage posted and the support staff is very good and efficient/helpful. The exam rooms were also very well kept, stocked, and clean. My review is on the space and support staff only, as I have a different view of the clinician I saw and will not be returning because of my experience with her.\n\nUpdating review to reflect my experience with Lisa Ma, DNP. I went in to establish Lisa as my PCP. When we were going through my medications, she told me she could only give me one refill of my Venlafaxine- as a psychiatrist had to prescribe after this and she wasn't able to refill it. I'd never had this happen before and thought it was weird, and even questioned her on it, but chalked it up to rules possibly being different in NYC, as we had just moved from out of state. She kept telling me I needed referrals for everything, despite my telling her I already had diagnoses and records from my doctors in Illinois that I brought with me. She ended up giving me 7 referrals, that were not needed at all. I will give her kudos for spending so much time with me, and actually charting all of my issues. I have many chronic illnesses as well as mental health issues, and I didn't feel rushed at all. That being said, the way she treated me after the initial conversations and my explanations regarding my illnesses and history is disgusting. I had literally just finished telling her I was in an abusive household as a child, had a boatload of trauma (especially regarding my body/weight) and that I have eating disorder tendencies and have starved myself in the past. When she got up to do my physical examination, she told me I was \"grossly overweight\". This was shocking, to say the least, and it really blindsided me. Then, when she lifted my shirt- she said/asked, \"you've been pregnant?\", to which I said no. She then commented on my having a lot of stretchmarks for not having been pregnant, I told her this was a result of my having previously been over 350lbs and I had had massive weight loss of 150 lbs in my early 20s. She then started to lecture me on how to go to the gym and what things I needed to do, as if I was ignorant. I mentioned that I had gained 40lbs back, after sudden chronic illness 6 years ago, and that I knew what to do because I had been a personal trainer. That I am consistently working out, and it's a slower going modified workout due to chronic pain and illness. If I overdo anything, it can make me bedridden for weeks, and I explained that I am still finding what the right amount of working out while maintaining a normal life looks like for me. She just looked at me and said, \"You know you're too large\". It's like she didn't believe that I knew my own body well enough. This was, to put it lightly, extremely triggering for me, as it is very reminiscent of abuse from my childhood home and former partners, which I definitely discussed with her. I have never been treated this way by a medical \"professional\", and shocked isn't even the right word. I bawled after leaving. My husband and I were so blindsided it was smothering and horrible experience with her, it was so unexpected I feel like we couldn't react.\n\nI did receive a phone call at a later date to discuss the provider's behavior- and I'm happy to have had the follow up, unfortunately I do not recall the gentleman's name with which I spoke, but he was extremely professional and empathetic. If I recall correctly, I believe he was in a position above the medical providers. I also received a letter from a person in a patient liaison type of position if I were to need further assistance. These things are very appreciated, and I'm hoping that through my initial conversation in above mentioned phone call, that no other women or patients will have to deal with such abhorrent behavior from someone that is supposed to be a trusted part of their care team. I cannot and will not recommend Lisa Ma in any way.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURUODZfaExBEAE!2m1!1s0x0:0xecf5095ad2e267d9!3m1!1s2@1:CIHM0ogKEICAgIDT86_hLA%7C%7C?hl=en",
+          "date": "Edited a year ago",
+          "date_iso8601": "2024-09-25T18:38:14+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Gouverneur Health Care Services: Malek Barri J",
+            "data_id": "0x0:0x9833a246d43749",
+            "data_cid": "42840968526051145",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9833a246d43749&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9833a246d43749&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.713208,
+              "longitude": -73.987787
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9833a246d43749%218m2%213d40.713208%214d-73.987787&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=sjm_bMHzv95Pb6ZqQ2eR1ZIqPyerR_DsJzIgLWoI67TfUbFwbf8lGb8gAJGCkv4PPqTP_dlfJfmuAFHP0o6qy0EZDCakVbEXoA7Z7iaWy1tL6SEWGZ0Pd_LP-VfzwP8s2FrREgLqAKmEGOogAKB7cRBCrbz-85qV",
+            "type": [
+              "Medical clinic",
+              "Professional services"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Gouverneur Health Care Services: Coun David H MD",
+            "data_id": "0x0:0xc4827dc58d8255e4",
+            "data_cid": "14160018465842419172",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc4827dc58d8255e4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xc4827dc58d8255e4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.712953899999995,
+              "longitude": -73.98803579999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xc4827dc58d8255e4%218m2%213d40.712953899999995%214d-73.98803579999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 4,
+            "thumbnail": "https://www.google.com/maps/vt/data=4bbjRj_OwE73k7yyVwVYhFVoFCRBs3VPtvzSVnVnuuQ-S-fSjzpjyAdx6laen-x9PImQ6hhQSpUcCPCatmGu0PoR9WAPXVeB1f3Mtef-lUmcapgWljgh9mF0N49zlN4Dp5bJN69uE_gUQoFBA-4QHC3d7tF5eoVq",
+            "type": [
+              "Internist"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Gouverneur Health Care Services: Johnson Oluwatumini MD",
+            "data_id": "0x0:0x9fe1d1da63fdca5d",
+            "data_cid": "11520720057701091933",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9fe1d1da63fdca5d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9fe1d1da63fdca5d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.713208,
+              "longitude": -73.987787
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9fe1d1da63fdca5d%218m2%213d40.713208%214d-73.987787&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=sjm_bMHzv95Pb6ZqQ2eR1ZIqPyerR_DsJzIgLWoI67TfUbFwbf8lGb8gAJGCkv4PPqTP_dlfJfmuAFHP0o6qy0EZDCakVbEXoA7Z7iaWy1tL6SEWGZ0Pd_LP-VfzwP8s2FrREgLqAKmEGOogAKB7cRBCrbz-85qV",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Gouverneur Health Care Services: Velazquez Edgar M MD",
+            "data_id": "0x0:0x36162ff4ae9c4197",
+            "data_cid": "3897355255483744663",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x36162ff4ae9c4197&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x36162ff4ae9c4197&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.713107199999996,
+              "longitude": -73.9877319
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x36162ff4ae9c4197%218m2%213d40.713107199999996%214d-73.9877319&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=fHj2hWTLQmVYUvvjn2SrHqJKuKIExeBOb3KVAjvPybnUc_HmSc_0k_pFsNhGr8wKhk44BpmyqGedd3WTSBC6vNJCSmhCNz-JJB0LPja7fNyE6qNUcKq7B3zokX3g8EW7YgEKTdpj0Jaq7AMVk7hcrNxkWZRnhpvz",
+            "type": [
+              "Psychiatrist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Gouverneur Clinic",
+            "data_id": "0x0:0x534c668eb187ec3",
+            "data_cid": "375142822901743299",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x534c668eb187ec3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x534c668eb187ec3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7184082,
+              "longitude": -73.9886746
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x534c668eb187ec3%218m2%213d40.7184082%214d-73.9886746&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 15,
+            "thumbnail": "https://www.google.com/maps/vt/data=uCS2AEOsQFjlnUlPl8Ayfbs58uO_UMxl8BbUDNAo4-aOy0zZwMTA0UVtxBzj_-uuvSciYvfVh4aItyvkw_zovmXIeyaZ8wredvZ3KdZckUs5ROFEhnhv6Af4AtkGzJXHi4Tw2pl186c2UU8T-3A6KXRgDqzIg-DF",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OkMKQSI9TllDIEhlYWx0aCArIEhvc3BpdGFscy9Hb3RoYW0gSGVhbHRoLCBHb3V2ZXJuZXVyIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COkMKQSI9TllDIEhlYWx0aCArIEhvc3BpdGFscy9Hb3RoYW0gSGVhbHRoLCBHb3V2ZXJuZXVyIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

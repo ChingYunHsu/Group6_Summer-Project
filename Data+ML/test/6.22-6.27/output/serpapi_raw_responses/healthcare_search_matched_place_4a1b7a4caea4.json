@@ -1,0 +1,337 @@
+{
+  "search_metadata": {
+    "id": "6a3d3f4002ab8c6b377ca7da",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/mldAcprIltqyXusvCN9sfw/6a3d3f4002ab8c6b377ca7da.json",
+    "created_at": "2026-06-25 14:46:24 UTC",
+    "processed_at": "2026-06-25 14:46:24 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f6732a9da181:0x44f1d70f5d5d181!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/mldAcprIltqyXusvCN9sfw/6a3d3f4002ab8c6b377ca7da.html",
+    "prettify_html_file": "https://serpapi.com/searches/mldAcprIltqyXusvCN9sfw/6a3d3f4002ab8c6b377ca7da.prettify",
+    "total_time_taken": 0.8
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJgaGdKnP2wokRgdHV9XAdTwQ",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Bronx Health Center",
+    "place_id": "ChIJgaGdKnP2wokRgdHV9XAdTwQ",
+    "data_id": "0x89c2f6732a9da181:0x44f1d70f5d5d181",
+    "data_cid": "310499270309826945",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f6732a9da181%3A0x44f1d70f5d5d181&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f6732a9da181%3A0x44f1d70f5d5d181&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8057721,
+      "longitude": -73.9402784
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJgaGdKnP2wokRgdHV9XAdTwQ",
+    "provider_id": "/g/11hbqh9_jm",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=T2n-5zjZBMXAvh1jdmJadw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=14.717864&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/_BqlrnicHc09DsIgGIDh27AViqltY0JMHU3cHIyL-QoINBRIQVBP47W8jT_LOz7v-6VTCnFDSEyLlCkbWYK5SxurAFh5r6yEYCLmfiaZkqRv8-jA2G0A541gx5Wr1s_pvDuchqzpJOY9iIL4eOHWSJdYlLBwjVX5iosXWIWICutbpH95QGG0wR3t-rZBwSSuWY3-l6vPjNb1B3rxOaM",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 12
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 48
+      }
+    ],
+    "rating": 4.2,
+    "reviews": 62,
+    "type": [
+      "Medical Center",
+      "Mental health service"
+    ],
+    "type_ids": [
+      "medical_center",
+      "mental_health_service"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      }
+    ],
+    "address": "51 E 125th St 2nd floor, New York, NY 10035",
+    "country": "United States",
+    "booking_link": "https://booking.appointy.com/dentalworkny?sr=1071413",
+    "website": "http://www.bronxhc.com/",
+    "phone": "(646) 707-3930",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "R345+8V New York",
+    "hours": [
+      {
+        "thursday": "10 AM\u20136 PM"
+      },
+      {
+        "friday": "10 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "10 AM\u20136 PM"
+      },
+      {
+        "tuesday": "10 AM\u20136 PM"
+      },
+      {
+        "wednesday": "10 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f6732a9da181%3A0x44f1d70f5d5d181&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=T2n-5zjZBMXAvh1jdmJadw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=14.717864&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/82y1xnicHc1LCsIwFADA22TXpCnVViGILgV3LsRNeU1jk5If5pmox_FW3kZwLjDfj0aMactYwrtSmI0q0TyVTVUEOocwWwXRJCqDY5kz1A83ejB2F8EHM4lz46vVe7keTpd91nyZ3BGmQuQ4SGuUR-EgpiFliiDRWEXnmEgRTdMSLZpNT15QBG9px7t-3ZJoUGpRk_9zC1nwuv4B8906Og"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE8jDTJjvRH9qqQsyjFGJBirn5g3XZd-0tkfAETiuRHFeWuNWYaJrROHE-c4Mf8igz7JtgIXAyQojvDX0fMqjbLnETy38YeMvgk0_2DgfR2RXWLwaNhiJaHVaQQdh1PBt_v57u6Pg=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YbUyF3icHcRRboIwGADgE1WqzMmW7AEDyhphtCED92Kwlr8U1wotGHbDHcHbLNn38D1-pXM3--p5V-kvwBi4itGKgRvthHYLbr49uFnELbJemGe0C-NARQVRE0te-p7aWe32ZNsOeg1-9XVB2HVNGBftyJKdKMesPNZkYB9JjPhT2gQt_GyIg_cqnKlRU1ThJu3V-aDjYvaDo0gn6PBpFUHDVqwqD_c6ky2pk8-a0otc5lt3mtab8TmHt_sSY4zk_xzpPwUhRYY"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=T2n-5zjZBMXAvh1jdmJadw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=14.717864&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/82y1xnicHc1LCsIwFADA22TXpCnVViGILgV3LsRNeU1jk5If5pmox_FW3kZwLjDfj0aMactYwrtSmI0q0TyVTVUEOocwWwXRJCqDY5kz1A83ejB2F8EHM4lz46vVe7keTpd91nyZ3BGmQuQ4SGuUR-EgpiFliiDRWEXnmEgRTdMSLZpNT15QBG9px7t-3ZJoUGpRk_9zC1nwuv4B8906Og"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I\u2019m very satisfied with Lenox medical staff, doctors & nurses.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWDwwhrT-uA_70w7cmnSWQkI395hVHG-jzTEe5dT2fe5p36xuv66A=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Omg this place is so very unprofessional.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXFdl95Eb1g96IU9PwEmtsa3bf1v1LwDAWfT5SgJLJiI-aWAqDP=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"There\u2019s a great coffee shop nearby if you have a little wait too :)\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK7G9z40zGRoQp2JZYEzpbqXmP2BlYk4Xzd9h09gwHtNtfMrQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Bradley Ubiera",
+          "rating": 1,
+          "contributor_id": "105559873183646926732",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXGOGPbvDdfqcoARXlhfP7sHkdtsHMjMlTzfFZLoVy9rW0kDHob=s120-c-rp-mo-br100",
+          "description": "If I could leave zero stars I would. I had an appointment for the psychologist, I show up and no one told me that the Dr wasn\u2019t even there and that she would do the appointment over the phone.\n\nThen, I spend all day waiting for a call from said Dr and I never got one. It\u2019s clear these people are just there to clock in and collect a check but no actual work gets done.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCa0xWbE5Wa053TkRkS1gwcDRVVEpvVUVOV1pIYxAB!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CAIQACodChtycF9oOjBkLVlNVkNwNDdKX0p4UTJoUENWZHc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-08T21:11:12+00:00"
+        },
+        {
+          "username": "Zachary Kramer",
+          "rating": 1,
+          "contributor_id": "112141833166275260676",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUGPeK2NsvoM8D3eddyuPsPDTeg0JrhwahXshfVvHXrSqqs6Gqo=s120-c-rp-mo-br100",
+          "description": "Incredibly disorganized. They call you every day to make an appointment and keep calling every day even after you\u2019ve made one. Front desk is incredibly rude and no one has any clue what is going on. After hounding me for weeks about an appointment I\u2019d already made, when I showed up they told me they couldn\u2019t see me because the doctor on my insurance card didn\u2019t match their doctor\u2014despite the fact that I\u2019ve been seen here already multiple times. Don\u2019t waste your time with these people.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5eU1YcEZTV1kxZVdsMU1XZHpiRXhuTVU4M09GRRAB!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CAIQACodChtycF9oOl9yMXpFSWY1eWl1MWdzbExnMU83OFE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-06T14:56:52+00:00"
+        },
+        {
+          "username": "l l",
+          "rating": 5,
+          "contributor_id": "117187644021676853781",
+          "user_review_count": 4,
+          "user_photo_count": 9,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK7G9z40zGRoQp2JZYEzpbqXmP2BlYk4Xzd9h09gwHtNtfMrQ=s120-c-rp-mo-br100",
+          "description": "I\u2019ve been coming here for several years, the front desk is always on point and makes sure to accommodate you as best they can.\n\nDoctor Yana is wonderful, she listens, is very thorough and doesn\u2019t leave anything behind. She explains everything in a way everyone can understand. She also finds solutions with you for you to have different outlets to get better.\n\nThe practice is super well located and takes most insurance. There\u2019s a great coffee shop nearby if you have a little wait too :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURzNE9pbVFBEAE!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CIHM0ogKEICAgIDs4OimQA%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2020-02-20T17:07:24+00:00"
+        },
+        {
+          "username": "Keiko Tokita",
+          "rating": 1,
+          "contributor_id": "109055417364259070757",
+          "user_review_count": 109,
+          "user_photo_count": 73,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVPNyqirnLIdkXNVGE5tELBlCg9-xr7_PlPi7wEM9T0o_kh_CSDmg=s120-c-rp-mo-ba12-br100",
+          "description": "I think you really want to avoid here if your condition is more serious because it could be dangerous. The place was a bit better when it was at old location. This is affordable and quick check up clinic but admin is an absolute mess to the point you can't even make an appointment and/or they assign you without even asking and miss the appointments without your knowledge. And there's NO WAY you can communicate with them.\nBut most concerning is their sloppiness for the medication. They don't refill your meds and not even answering calls which potentially lead your health to a risk.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURCMEpHenRRRRAB!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CIHM0ogKEICAgIDB0JGztQE%7C%7C?hl=en",
+          "date": "Edited 2 years ago",
+          "date_iso8601": "2023-10-30T19:12:25+00:00"
+        },
+        {
+          "username": "Lenox Esthetics",
+          "rating": 5,
+          "contributor_id": "105310939517052180486",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW12uqUfr6XfFn3uxEhZjzfda7BlmpI8eOMvuAPw9Mnjp9ve4I=s120-c-rp-mo-br100",
+          "description": "Me and my husband have been a patient at Lenox Medical for the past 3yrs. We both saw Yana as she's our primary physician. She's amazing and to the point. We have also seen the cardiologist Dr. Sanghi for regular precautionary check ups and he is very good too. So far we are really very pleased with the clinic and their services. All the staff are very kind and helpful and it's a very clean establishment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUQwak5IellnEAE!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CIHM0ogKEICAgID0jNHzYg%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2019-10-25T16:02:17+00:00"
+        },
+        {
+          "username": "Harlem Prime LLC",
+          "rating": 1,
+          "contributor_id": "104814657052169261352",
+          "user_review_count": 1,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKOSbNvTAZccNpVB774XCbvtpQNoGuKqC-IQH_q9g4P4Zrwkg=s120-c-rp-mo-br100",
+          "description": "Very unprofessional . What is the point of giving patients an appointment when make them wait for 2 hours. They are so friendly with the homeless around there , that they give them access to to patients' toilet at anytime. The waiting area is dirty, the toilet  is dirty, the lady who take care the medicals appointments at he front desk is rude to people , she always on her phone. I won't return there. That's it. I'm switching  to another doctor office.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUQ2X01Yd3lBRRAB!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CIHM0ogKEICAgID6_MXwyAE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3h3zyTSjjZNmPd-YHgBH31YZaaTGBzvQshjGTycnXECMLfmtk-Rpt0BuxtgU8llcgEkqVJ3ruEe6hJEIVtPFoTdnGbfqf9d1I2xVIGnK8H8dfeaOu7X0LE9qNe6CQXe9fhf4jT=k-no"
+            }
+          ],
+          "date": "4 years ago",
+          "date_iso8601": "2021-09-23T21:56:44+00:00"
+        },
+        {
+          "username": "astra williams",
+          "rating": 5,
+          "contributor_id": "107120303769680409533",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJhDvjvD1VEbeupDN7JbG8ULGg6xyIkHhi-QDvFgRzFTR_xSw=s120-c-rp-mo-br100",
+          "description": "The staff at Lenox Medical Services is wonderful! They are professional, considerate, helpful, and kind. I appreciate that there's never much wait time for my appointments, and they now have some weekend appointments. I definitely recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNzNElpbV9RRRAB!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CIHM0ogKEICAgICs4Iim_QE%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2020-01-18T17:33:56+00:00"
+        },
+        {
+          "username": "D",
+          "rating": 1,
+          "contributor_id": "101185877935582375177",
+          "user_review_count": 102,
+          "user_photo_count": 162,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWUPZwSbsFq3OJS74K4eoQJA99oabkxMR8YKavLBH3_9_P7SeMXCg=s120-c-rp-mo-ba12-br100",
+          "description": "No matter what time of day, or day of the week no one answers the phones. I have been put on hold for damn near two hours just so I can be told my appointment was canceled. You can\u2019t make an appointment and the women behind the desk act as if it\u2019s not a big deal. This is by far one of the worst medical offices I have ever dealt with in my life. Perhaps it\u2019s based on the clientele that they generally take. Imagine the police were not only to where they don\u2019t answer the phones but they don\u2019t respond to messages. They need to shut it down! What type of medical office never picks up the phone? Maybe hire a better staff because when he comes to make an appointment these people have no idea.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNtXzdpZkNnEAE!2m1!1s0x0:0x44f1d70f5d5d181!3m1!1s2@1:CIHM0ogKEICAgICm_7ifCg%7C%7C?hl=en",
+          "date": "4 years ago",
+          "date_iso8601": "2022-01-14T19:50:14+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Lenox Dental Arts, Dental Work NY",
+            "data_id": "0x0:0x71ea6bf5c0b441d1",
+            "data_cid": "8208491974080348625",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x71ea6bf5c0b441d1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x71ea6bf5c0b441d1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8058229,
+              "longitude": -73.940276
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x71ea6bf5c0b441d1%218m2%213d40.8058229%214d-73.940276&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.9,
+            "reviews": 192,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEpZDdCmokdfS8JzqnRLPWEaVPo0O4gGhzPtuKLdPGpZjAHbj2G7gemR3FzqQ9pruXbNLfYyLNksFxYTqDmg3RGRbw1NDLgPtIPfGzo8ng_XJuAyfGSbpeGuwUA8JqeGDqU0m0-=w156-h156-n-k-no",
+            "type": [
+              "Dentist",
+              "Dental clinic",
+              "Dental hygienist",
+              "Dental implants periodontist",
+              "Dental implants provider"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "CityMD East 125th St Urgent Care- Manhattan",
+            "data_id": "0x0:0xf9986417300d0585",
+            "data_cid": "17985235162657260933",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf9986417300d0585&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf9986417300d0585&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8043969,
+              "longitude": -73.9367274
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf9986417300d0585%218m2%213d40.8043969%214d-73.9367274&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 47,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFab-5hXlEcAXyDpSe2YWfpPqm1r02kc8YQai9RwBmNBx9llR4Oj9RobPvA8dKQ0khTfAmIZWFNucKQXptJ1jFrs3-fpdJFhamUenFpNZu_1fykxVz3tmkMLMjBvDT8i6115CPr=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "Laboratory",
+              "Medical clinic",
+              "Women's health clinic",
+              "Pediatric clinic",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "EmblemHealth Neighborhood Care Harlem",
+            "data_id": "0x0:0xb4f51ab70e5e62a3",
+            "data_cid": "13039357669643543203",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb4f51ab70e5e62a3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb4f51ab70e5e62a3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8097321,
+              "longitude": -73.94903850000001
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb4f51ab70e5e62a3%218m2%213d40.8097321%214d-73.94903850000001&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.6,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFD2R9vrZQcwFu0IcTOMgEuEZ7Aa57ZKUOZ02ruq6hpCP1pCuYBOCo5C2qIXA81s0O5clBZnMpzANiadX89QTzc_kazplkIA6cYSpWRk0POHDq-llrwMEZMmC-5rrasQsCbOCeC=w156-h156-n-k-no",
+            "type": [
+              "Community health center",
+              "Health insurance agency"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiYKJCIgQnJvbnggSGVhbHRoIENlbnRlciBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiYKJCIgQnJvbnggSGVhbHRoIENlbnRlciBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

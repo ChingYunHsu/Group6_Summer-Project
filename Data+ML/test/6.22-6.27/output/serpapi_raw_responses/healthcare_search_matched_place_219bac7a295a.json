@@ -1,0 +1,381 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e76532a17a242860b4f",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/Do923vSRhtH2TmaBB4vN-w/6a3d3e76532a17a242860b4f.json",
+    "created_at": "2026-06-25 14:43:02 UTC",
+    "processed_at": "2026-06-25 14:43:02 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f67c35ffe971:0x10d3356546e7aeab!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/Do923vSRhtH2TmaBB4vN-w/6a3d3e76532a17a242860b4f.html",
+    "prettify_html_file": "https://serpapi.com/searches/Do923vSRhtH2TmaBB4vN-w/6a3d3e76532a17a242860b4f.prettify",
+    "total_time_taken": 0.92
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJcen_NXz2wokRq67nRmU10xA",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Sugar Hill Pharmacy",
+    "place_id": "ChIJcen_NXz2wokRq67nRmU10xA",
+    "data_id": "0x89c2f67c35ffe971:0x10d3356546e7aeab",
+    "data_cid": "1212371433790353067",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f67c35ffe971%3A0x10d3356546e7aeab&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f67c35ffe971%3A0x10d3356546e7aeab&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.8256544,
+      "longitude": -73.9431482
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJcen_NXz2wokRq67nRmU10xA",
+    "provider_id": "/g/1thx9kd5",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH-80yU_fxqPZl0zvpm28DZl1rIHzE4NWwOsG2znTqRmXslRvmkjeheF3v3ELOV_Why3oZRWp7memRkZv_6P4xI_1Akj_mUFVKckZSNAwNMiNudg8dAF8XjniURiIUHJxAQ8ez0QvzTLgZA=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/_jWc5HicHcTBboMgAADQL6JibTayZAeS1enWUXW1Nlw4UAaKoC0WLT-58_6myd7h_f2qaRrdSxT1KlnJYZC9uDlx5YOdhJ1WfDCRHB3gDrgIF6TUOAMI3mv2s1wK2sPgR7NGb7SPr3kWthvSzHv3vg72cKnMyfWVN7oTSqSJT7a7_ZE16p4MtGrGZyNMpalnT8VmyVmMdcdMnR4_uabfBM_kqyW3s0RnnKJTZ9u6avM6-1hwiUSApQ-HnaT4dY4hhED9z4F9ACAwSLE",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 1
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 1
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 18
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 22,
+    "type": [
+      "Pharmacy",
+      "Appliance store",
+      "Cleaning products supplier",
+      "Household goods wholesaler",
+      "Vitamin & supplements store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "appliance_store",
+      "cleaning_products_supplier",
+      "household_goods_wholesaler",
+      "vitamin_and_supplements_store"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "In-store pickup",
+          "In-store shopping"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "in_store_pickup": true
+    },
+    "address": "752 St Nicholas Ave, New York, NY 10031",
+    "country": "United States",
+    "phone": "(212) 281-8300",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "R3G4+7P New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "10 AM\u20134:30 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      },
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f67c35ffe971%3A0x10d3356546e7aeab&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH-80yU_fxqPZl0zvpm28DZl1rIHzE4NWwOsG2znTqRmXslRvmkjeheF3v3ELOV_Why3oZRWp7memRkZv_6P4xI_1Akj_mUFVKckZSNAwNMiNudg8dAF8XjniURiIUHJxAQ8ez0QvzTLgZA=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/_jWc5HicHcTBboMgAADQL6JibTayZAeS1enWUXW1Nlw4UAaKoC0WLT-58_6myd7h_f2qaRrdSxT1KlnJYZC9uDlx5YOdhJ1WfDCRHB3gDrgIF6TUOAMI3mv2s1wK2sPgR7NGb7SPr3kWthvSzHv3vg72cKnMyfWVN7oTSqSJT7a7_ZE16p4MtGrGZyNMpalnT8VmyVmMdcdMnR4_uabfBM_kqyW3s0RnnKJTZ9u6avM6-1hwiUSApQ-HnaT4dY4hhED9z4F9ACAwSLE"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGdaYOh-BnV6rsveeZIoGIR5tVE_ydwOk4-aoANCDAh8J3GCLD0QuxAs00wbE9u2hXyUt6jfdJ6hcYdzbXTSbUILr1ZN0TN_EUVvavJ7MOjkNSyzo-vXSaVpS0mTl5Dil9rjFH84vWVmpD9=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/gYgb-HicHcTNboIwAADgJ6rUqUyW7FAFGcSVKVDRi4HS0fFXQksRXnLnvc0Sv8P398uV6uSbYdR8tSiEKGo2SNZT0SrWqgUVjVF0ElAJpIG-8KlCbp5eAw52LTF7qRm7ecL1zhtFnPuUj0G1BqlAeG8jvvVX7v5ow9PwQBLCMXOs4YUnU6zM8jv3TU6v-ZwlUZjF3rFf3jCM8N2JiU61__oZlBUOp1kAnYQp6ULYRPXG_qmtvjx8bNf6QprOtt7HJYQQ8OcUtP-NtEdA"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=IOm2tWNNAkAJHJVL21gcEA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=134.57657&pitch=88.46276&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/IiBoZXicHc3NDcIgGADQbbgJBfunCTE9mGhj6k2PDSICEQqRT6ojOZLbmPgWeN-PAYhpTUiCh1KQrZqjfSmXFlFgHYJ2SkSbsAyeZErAPP1lEtZtopiCvfL90TM4D0N37_pdfzowquW2Q_IySmfVBNyLmMaUMQgJ1imsY0IzZ6xEhrNVi95i5nRZ4qqpqwZFC9LwtsVlzZoa_btbyJwWxQ9DqDro"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Firstly, they are the nicest pharmacist ever.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVFyQN-1C8SkZyCBQUCYLe610TXiYNOJ1rHoEFmKY62JgdCmRgY=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"A very clean & well stocked neighborhood pharmacy.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV0EhRs6r9j3IKzGqglTTXbFEGMPxZgGzAtZl2t7MCv74DXh21TpQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I'm so grateful for personalized service - efficient and respectful.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXgy8QC9223MtfkiuV-yhNzgzHE6jydnSbNpx0gaI8rnpppGLzw=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Lynn E. Brice (HarlemzFlyGirl)",
+          "rating": 3,
+          "contributor_id": "102306114181993861198",
+          "user_review_count": 186,
+          "user_photo_count": 528,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV0EhRs6r9j3IKzGqglTTXbFEGMPxZgGzAtZl2t7MCv74DXh21TpQ=s120-c-rp-mo-ba12-br100",
+          "description": "A very clean & well stocked neighborhood pharmacy.  The staff are friendly & attentive. My prescription was ready in 5 minutes.\n\nThe pharmacist is a bit rude & crass for reasons unbeknownst to me. Mz doctor had to interject when she heard the dialog and his condescending. Sure did have him on speaker- she witnessed firsthand what I was talking about Ewww.. He quickly humbled his arrogant little self as she spoke with him.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURac2FHMkVBEAE!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgIDZsaG2EA%7C%7C?hl=en",
+          "date": "Edited a year ago",
+          "date_iso8601": "2025-04-24T01:39:29+00:00"
+        },
+        {
+          "username": "nicole",
+          "rating": 5,
+          "contributor_id": "104153436356371613209",
+          "user_review_count": 5,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX74Lk0guA9OVfvNQXwlc70QD9CDtZz8HwsfZBDIp5S8-9EFucc=s120-c-rp-mo-br100",
+          "description": "Great pharmacy. I get all my prescriptions filled here. There\u2019s never a long line, and no one rushes you. Much prefer it over any of the big chains. Just as affordable. - four year update; it\u2019s still my pharmacy. They go the extra mile! And they are well stocked in terms of convincence items as well . \ud83d\ude4c\ud83c\udffd\ud83e\udd70",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNVZ296MFJnEAE!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgICUgoz0Rg%7C%7C?hl=en",
+          "date": "Edited 2 years ago",
+          "date_iso8601": "2024-03-23T13:48:48+00:00"
+        },
+        {
+          "username": "Faunna",
+          "rating": 5,
+          "contributor_id": "112751199495353114573",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVFyQN-1C8SkZyCBQUCYLe610TXiYNOJ1rHoEFmKY62JgdCmRgY=s120-c-rp-mo-br100",
+          "description": "I love this place for many reasons! Firstly, they are the nicest pharmacist ever. They help with all questions and make you feel welcome. I feel like I have known them forever when it's only been a couple of months. If they don't have the medicine they will order it for you. If they are closed, they have a drop off box so they can have it ready for you first thing in the morning. It also has that local business charm that many places like Duane Reade and Rite Aid don't have.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN3dlppNkdBEAE!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgICwvZi6GA%7C%7C?hl=en",
+          "date": "10 years ago",
+          "date_iso8601": "2016-01-28T14:21:41+00:00"
+        },
+        {
+          "username": "lily singer",
+          "rating": 5,
+          "contributor_id": "102481375875313567951",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWbBA6n2ZS9npFhWANEIrWg2mimh-XiQq5HJq9vmmZ4ujVcKBkU=s120-c-rp-mo-br100",
+          "description": "Switched to this pharmacy when I moved to the neighborhood 3 years ago. I love them so much - a true community business. They know your name, they remember your prescriptions, they are kind and helpful and go the extra mile to take care of you when you are in need.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN5cU9xNmhBRRAB!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgICyqOq6hAE%7C%7C?hl=en",
+          "date": "5 years ago",
+          "date_iso8601": "2021-01-17T23:46:41+00:00"
+        },
+        {
+          "username": "Rachel Taliaferro",
+          "rating": 5,
+          "contributor_id": "107143191855166969633",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUDM4s-YR2pRmCKIS0S0QqFqVNWoeQBPku69OAkehQAoANrNhuO2Q=s120-c-rp-mo-br100",
+          "description": "Best pharmacy in the neighborhood. The staff is nice and helpful, and it's well stocked for a neighborhood pharmacy. I can pick up over the counter medications as well as prescriptions, plus hair supplies, random household goods, toys / baby supplies, etc. It's great to know they are here, because otherwise you have to go up or down five blocks to 145 or over to Broadway.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNnNEtxUmJnEAE!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgICg4KqRbg%7C%7C?hl=en",
+          "date": "9 years ago",
+          "date_iso8601": "2017-05-14T04:12:24+00:00"
+        },
+        {
+          "username": "Thia Stephan",
+          "rating": 5,
+          "contributor_id": "115827531991269374228",
+          "user_review_count": 20,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWHnNN-5QbPfwav67ovKTjmSNp_ZGpwFol--uUOENS9sY-zThl-=s120-c-rp-mo-ba12-br100",
+          "description": "Sugar Hill Pharmacy is the best! Excellent customer service in both the store and the actual pharmacy. Definitely a treasure in the neighborhood. Try them instead of the big chains in the area - you'll be glad you did.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURBM2M3cXlRRRAB!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgIDA3c7qyQE%7C%7C?hl=en",
+          "date": "10 years ago",
+          "date_iso8601": "2015-08-18T12:58:59+00:00"
+        },
+        {
+          "username": "Amy Harbo",
+          "rating": 5,
+          "contributor_id": "113166620198528113648",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXgy8QC9223MtfkiuV-yhNzgzHE6jydnSbNpx0gaI8rnpppGLzw=s120-c-rp-mo-br100",
+          "description": "If you are looking for a pharmacy where you're treated like a human being, this is the place to come. I'm so grateful for personalized service - efficient and respectful. They never get a prescription wrong, unlike the mega-pharmacies in the neighborhood. A+",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURJbjZ1M2tRRRAB!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgIDIn6u3kQE%7C%7C?hl=en",
+          "date": "7 years ago",
+          "date_iso8601": "2019-01-28T18:56:05+00:00"
+        },
+        {
+          "username": "Michael Talassazan",
+          "rating": 5,
+          "contributor_id": "104458015157274271994",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWFQ3GzUSTb2MtzceD8X9vOyooXMaRNqSQNEkMSG0nzubU4SKaA=s120-c-rp-mo-br100",
+          "description": "Friendly and fast service.  I would recommend them.  You definitely feel that your business is appreciated which seems rare and lacking in the bigger pharmacy chains today.\n\nThank you Sugar Hill.  :)",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURnbHZDTFNBEAE!2m1!1s0x0:0x10d3356546e7aeab!3m1!1s2@1:CIHM0ogKEICAgIDglvCLSA%7C%7C?hl=en",
+          "date": "11 years ago",
+          "date_iso8601": "2014-11-23T03:29:34+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Smart Aid Pharmacy",
+            "data_id": "0x0:0xbc84277ad042f51a",
+            "data_cid": "13584025784489800986",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbc84277ad042f51a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbc84277ad042f51a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8243076,
+              "longitude": -73.9442566
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbc84277ad042f51a%218m2%213d40.8243076%214d-73.9442566&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 37,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF4Ow6mdOVVqrzsHPQKEiMzTwPh1TayRR--KDWbECMQqoMxb_cKrUg3-3FigQh2VfqBZkMMtNGcMulyQLNBEM8oFlEUqvTFlaO62gWaE1ohNlU-ZlF83HY3kyKv3s_SIk2ZXeU=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Vitamin & supplements store"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "San Nicholas Pharmacy",
+            "data_id": "0x0:0x941f3c2507bcb95a",
+            "data_cid": "10673315771632630106",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x941f3c2507bcb95a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x941f3c2507bcb95a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8444614,
+              "longitude": -73.9375067
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x941f3c2507bcb95a%218m2%213d40.8444614%214d-73.9375067&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 10,
+            "thumbnail": "https://www.google.com/maps/vt/data=hCbRV0iDjtDYypA6HngQ-8Z9Y6awUcWMDzo-zfbQYhsXvKwsBbCZwETC9BSyOSqjocG3qFbfe-mGakEqJMEDs0Rtz6Y3LexEFbAtmUWcqPZfJak9nMjXozS88wvGAmAsorJCeVa5ns029bdjHcCBRCgLcE_CDqLT",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "145th St Pharmacy",
+            "data_id": "0x0:0xf8338aa792822ab1",
+            "data_cid": "17884790997540547249",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf8338aa792822ab1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xf8338aa792822ab1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8227976,
+              "longitude": -73.9425984
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xf8338aa792822ab1%218m2%213d40.8227976%214d-73.9425984&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.8,
+            "reviews": 16,
+            "thumbnail": "https://www.google.com/maps/vt/data=sLInjbXtD8pZSAv9SqevcE7C7Bt9FtyWQDvaR8JYAo1G_vJ2tJATwxs61YjId69C8q6F8u9aX20i27Te2hYWVE4Vbh-Ay9Cn4xLTupGuHut-4U3ta1F2atB30_J7KqddQWpR_j7lD1fKLzjtmK48up4Ce97LAMRD",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "KINGS PHARMACY & SURGICALS",
+            "data_id": "0x0:0x577a678549a57e48",
+            "data_cid": "6303464450622324296",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x577a678549a57e48&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x577a678549a57e48&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.819224399999996,
+              "longitude": -73.944788
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x577a678549a57e48%218m2%213d40.819224399999996%214d-73.944788&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4,
+            "reviews": 3,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHBr3z1EO_1pVYfRF5pUYssJ16Z-x1zK09A1XPc67tKa3haWqidDdO4qJCDsf7teHrFse5jc9nhUDlNmifiDZDVBFLN_05Toqs_Q_vQFZQXPLzmSWsWYT5O2f5r6fPy9RL_FjGY=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "My Pharmacy Inc",
+            "data_id": "0x0:0xd63546b6c43d0c2a",
+            "data_cid": "15435321048672570410",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd63546b6c43d0c2a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd63546b6c43d0c2a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8150759,
+              "longitude": -73.9405515
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd63546b6c43d0c2a%218m2%213d40.8150759%214d-73.9405515&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.9,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFcgVJCFgi2fMNKp6k7z9ARHd3cc48I8Eoc-42xTrRKEudvYNhWylNavqIag5YeB9AfIax6ndm_khcuiJtek2Orp7-qtFGdkadUMRq75AT1qwh7rLXpEg9LnkvDsyIEsr5uJKvv=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiYKJCIgU3VnYXIgSGlsbCBQaGFybWFjeSBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiYKJCIgU3VnYXIgSGlsbCBQaGFybWFjeSBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

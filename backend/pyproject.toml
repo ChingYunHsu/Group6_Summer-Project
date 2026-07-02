@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "ClearPath"
+version = "0.1.0"
+description = "Waze-style mobile and web app for vulnerable tourists with real-time accessibility alerts, crowd reports, and ML-powered busyness predictions in Manhattan"
+authors = ["Emmett Quinn, Casey Liew, Hsu Ching Yun, David Irving, Joanna Saheed, Fangxun Wu"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.3"
+python-dotenv = "^1.0.1"
+pyjwt = "^2.9.0"
+pandas = "^2.2.0"
+numpy = "^1.26.0"
+requests = "^2.31.0"
+pyproj = "^3.6.0"
+pymysql = "^1.1.0"
+dbutils = "^3.1.0"
+redis = "^5.0.0"
+cryptography = "^43.0.0"
+scikit-learn = "^1.4.0"
+matplotlib = "^3.8.0"
+
+[tool.pytest.ini_options]
+timeout = 30
+markers = [
+    "integration: marks tests that hit live APIs (deselect with '-m not integration')",
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest-timeout = "^2.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"

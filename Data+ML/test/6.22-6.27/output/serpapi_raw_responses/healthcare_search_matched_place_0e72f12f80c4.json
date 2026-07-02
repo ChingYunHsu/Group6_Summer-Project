@@ -1,0 +1,334 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e789c2312d14b3995f7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/QxddKEWEdR2EempJmdOrCw/6a3d3e789c2312d14b3995f7.json",
+    "created_at": "2026-06-25 14:43:04 UTC",
+    "processed_at": "2026-06-25 14:43:04 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2585ad8b286a3:0x79ef6f661ba6b15b!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/QxddKEWEdR2EempJmdOrCw/6a3d3e789c2312d14b3995f7.html",
+    "prettify_html_file": "https://serpapi.com/searches/QxddKEWEdR2EempJmdOrCw/6a3d3e789c2312d14b3995f7.prettify",
+    "total_time_taken": 1.13
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJo4ay2FpYwokRW7GmG2Zv73k",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Manhattan Surgery Center",
+    "place_id": "ChIJo4ay2FpYwokRW7GmG2Zv73k",
+    "data_id": "0x89c2585ad8b286a3:0x79ef6f661ba6b15b",
+    "data_cid": "8786363882364383579",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2585ad8b286a3%3A0x79ef6f661ba6b15b&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2585ad8b286a3%3A0x79ef6f661ba6b15b&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7689192,
+      "longitude": -73.9936647
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJo4ay2FpYwokRW7GmG2Zv73k",
+    "provider_id": "/g/11bwpzd1gg",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lQIkjmThMR-78qNimy8V7A&cb_client=search.gws-prod.gps&w=86&h=86&yaw=25.532791&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/gvqd_3icHc1LDsIgFEDR3TArtDW11YQYhw400RinhtInPIWCBYvdjdtyN34md3ju-6Vj9GHJWIgDQBwRkscnmJB5QZVzyoDwGKh0lo0Fi_ph216gWXnRO-y42W9uV3vU20NWN_cd2qk51Wsi27M0CH3kAcQgNVXpKw6uo8oHkngzJ_qXSSReVrSalfWiIB6j1Dwn_8vFjbzI8w9vLTlm",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 9
+      },
+      {
+        "stars": 2,
+        "amount": 2
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 0
+      },
+      {
+        "stars": 5,
+        "amount": 39
+      }
+    ],
+    "rating": 4.2,
+    "reviews": 50,
+    "unclaimed_listing": true,
+    "type": [
+      "Surgical center",
+      "Doctor"
+    ],
+    "type_ids": [
+      "surgical_center",
+      "doctor"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      }
+    ],
+    "address": "619 W 54th St, New York, NY 10019",
+    "country": "United States",
+    "website": "http://manhattansc.com/",
+    "phone": "(212) 231-7778",
+    "plus_code": "Q294+HG New York",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lQIkjmThMR-78qNimy8V7A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=25.532791&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DLBWWHicHc0xDsIgFADQ27AV2mrT1oQYRwdNNMa1QcTyFcpXvtRex1t5G43jm97nbYkwLoSI9DCGEpgR4WVczFDxPoTeGYUQuQ5epEKQffrToMAtUQ0BztLt1rerP9jNPqub-xb81BzrFdOnTjswA0mvMHYxcVKawBneY2SjLMs5s7JsGzapnypezcq6LRgCaStz9n8uIckiz7_npzn9"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lQIkjmThMR-78qNimy8V7A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=25.532791&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DLBWWHicHc0xDsIgFADQ27AV2mrT1oQYRwdNNMa1QcTyFcpXvtRex1t5G43jm97nbYkwLoSI9DCGEpgR4WVczFDxPoTeGYUQuQ5epEKQffrToMAtUQ0BztLt1rerP9jNPqub-xb81BzrFdOnTjswA0mvMHYxcVKawBneY2SjLMs5s7JsGzapnypezcq6LRgCaStz9n8uIckiz7_npzn9"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I wish more medical facilities had the same demeanor as your staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIw0BN77TdWbsXqWgIi64HGLOtzxtXsaN0Axfh-64SMIoZ1iA=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Im very happy that my doctor choose this place!\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUL4CH2HO9eFW4MMtBRuijYUOK-rpVglouIlEvCvyt52rjKnYQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I had knee meniscus repair and went home with a knee brace.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUIT1vdV9MftJjpy71eAbbLNpcGimD_fEL9BDAqCjzAIEuLznI3YQ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Eva-Lynn Podietz",
+          "rating": 5,
+          "contributor_id": "105012521446218124063",
+          "user_review_count": 122,
+          "user_photo_count": 82,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXR_3ZJlTbpSBdfWWWeVE5iD9Hm_I01-Oyx_IhCV3xzIeh2PzQ=s120-c-rp-mo-ba12-br100",
+          "description": "I had bunion surgery at MSC this morning.  It was such a good experience.   Heated blankets,  a wonderful team of nurses,  anesthesiologist and doctor that worked incredibly well together made the surgery easy.  The team clearly cared about me and we had great conversations while they prepped me and helped me get back on my feet to leave.   Clean, punctual, friendly, computers worked,  and i was well- monitored the whole time.  Recommend highly!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xNNWVrdEtTM0J5VkZWVU9HTjBaell4VVdJMlVFRRAB!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CAIQACodChtycF9oOlM5ektKS3ByVFVUOGN0ZzYxUWI2UEE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-12T20:00:38+00:00"
+        },
+        {
+          "username": "Emily Scarpa",
+          "rating": 5,
+          "contributor_id": "106613486187918114698",
+          "user_review_count": 9,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocK_GHQqsqIH-cRJxr9w1YSnKu82W21qxvk_gCh2EUx_MzXIdQ=s120-c-rp-mo-br100",
+          "description": "I had surgery here yesterday for a deviated septum and the staff and especially nurses were all so professional and fun! They created a caring and positive environment that alleviated as much of my anxiety as possible, especially Nicolette and Michael! When they put a needle in my hand for the IV, that started a fight or flight response since I'd never hand a needle in my hand before, so they quickly helped me as I felt I was about to pass out, laying me down and getting me ice packs, and waited to continue the pre-surgery steps until those symptoms passed - no one rushed me out of that. When I was woken up after surgery, I was actually sleeping and dreaming, so I was pulled out of a dream and very confuised, and instinctively reached to make sure my hair was okay lol, and the nurses all assured me I looked great though I'm sure it was quite the opposite, but I loved the optimism! I have sentimental rings for passed on loved ones that I wear daily, and my doctor held them in his pocket during my surgery. Seconds after waking up the nurses were asking where on my hands they go so I could immediately have them back on, and I really appreciated that as well. Honestly a 10/10 experience, and really grateful for the care I received.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5UFZFVmphamxEVEdaa01GVjRWekkwWm5CTFRuYxAB!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CAIQACodChtycF9oOl9PVEVjajlDTGZkMFV4VzI0ZnBLTnc%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-11T16:17:39+00:00"
+        },
+        {
+          "username": "Kenneth Sundaresan",
+          "rating": 5,
+          "contributor_id": "111127209828691793759",
+          "user_review_count": 54,
+          "user_photo_count": 19,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUTjIggIg8KMVQGj-oxudFon5rIgJ9N_3ejnUSFxNvLz9w6j_cU=s120-c-rp-mo-ba12-br100",
+          "description": "I recently had my meniscus repair surgery at Manhattan Surgery Center, and I cannot express how grateful I am for the exceptional care I received! From the moment I walked in, the reception staff was welcoming and efficient, making the check-in process smooth and hassle-free.\n\nThe nursing staff was nothing short of excellent. They were attentive, kind, and made sure I felt comfortable throughout my entire experience. Their professionalism and compassion truly stood out, and I felt like I was in great hands every step of the way.\n\nThe care I received was exquisitely good, from pre-operative preparation to post-operative recovery. I was thoroughly informed about each step of the process, which helped ease my anxiety and made me feel confident in my surgery.\n\nOverall, I highly recommend Manhattan Surgery Center to anyone in need of surgical care. Their outstanding team provides an exceptional level of service, and I am so grateful for the excellent care I received during my meniscus repair surgery. Five stars all the way! Thank you for making my experience as positive as possible!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNBeWJMWU1BEAE!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CIHM0ogKEICAgMCAybLYMA%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-02-02T01:15:37+00:00"
+        },
+        {
+          "username": "Michael Laverty",
+          "rating": 5,
+          "contributor_id": "109102526992660112792",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUAnh8lw-Unormg3k4D8eLfrDcrtFTbl3jZavKgAtle6E2XnPt4lA=s120-c-rp-mo-br100",
+          "description": "My son had surgery yesterday and it was a surprisingly positive experience. Everyone was kind and professional and took good care of us. A special thank you to Andrew from billing/benefits coordination who went over and above to help us with an insurance issue. Truly extraordinary customer service!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUR3N1lfQVF3EAE!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CIHM0ogKEICAgMDw7Y_AQw%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-27T16:47:41+00:00"
+        },
+        {
+          "username": "Michael Tsitsires",
+          "rating": 5,
+          "contributor_id": "100191496705647867039",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJgrZh6NAoaFrhjOyvsgATrRdCEKdnbN8BPVDgaDYNREm5U3w=s120-c-rp-mo-br100",
+          "description": "My life partner had cataracts with emphasis on \"HAD\" that is Until she met\nDoctor Kenneth Rosenthal\nBefore she could not see one foot in front of her. I had to read everything to her and describe what was on TV.\nSo I Googled Ophthalmologist and cataracts\nand ( Thanks to GOOGLE )\nfound ...\nDoctor  Kenneth Rosenthal\nUpon meeting the good doctor though very professional Doctor Rosenthal was kind compassionate  truly listened took time to explain all concerns in everyday language.\n(And had a sense of humor.)\nWe felt like we were speaking to a friend and  immediately got the feeling that this man truly cares about you and feels for you. We knew we had come to the right place.\nThe surgery was performed at. Manhattan Surgery Center\n( 619 west 54th street ) across from Dewitt Clinton Park The center is convenient to transportation , a friendly security guard Jim welcomed us at the front door. Upstairs the waiting room was very clean the atmosphere was relaxing\n(one lady fell asleep ) my wife uses a walker so the receptionist came to our seat , the room is comfortable\nNOT Noisy... NOT Institutional no stark lighting , everyone is polite patient helpful and friendly. The surgery was fast and painless and my wife could see immediately afterward.\nWould I recommend Manhattan Surgery Center to a friend ?\nAbsolutely !!!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTUNRMXQtM2RnEAE!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CIHM0ogKEICAgMCQ1t-3dg%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-03-04T08:27:34+00:00"
+        },
+        {
+          "username": "Simon Smith",
+          "rating": 5,
+          "contributor_id": "103029038927746571814",
+          "user_review_count": 13,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVoTMUK8v0-HFV6wObwXTxaI-yoXK8tBfxCCLfhf1rU5mDGx2k=s120-c-rp-mo-br100",
+          "description": "Very professional from the minute I walked in. Compassion and smiles all around, which is exactly what you want to see and hear before surgery. Very impressed in every way with the entire team. If surgery can be called \u201cenjoyable\u201d it would be at MSC.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tSdmREbEVTbFIyTWtORE56WTFORXMzWlhob1JWRRAB!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CAIQACodChtycF9oOkRvdDlESlR2MkNDNzY1NEs3ZXhoRVE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-08T18:30:18+00:00"
+        },
+        {
+          "username": "Mike P",
+          "rating": 1,
+          "contributor_id": "117491297897186688776",
+          "user_review_count": 31,
+          "user_photo_count": 50,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUIT1vdV9MftJjpy71eAbbLNpcGimD_fEL9BDAqCjzAIEuLznI3YQ=s120-c-rp-mo-ba12-br100",
+          "description": "An advise to be vigilant with your medical bills! I had knee meniscus repair and went home with a knee brace. I was told by the surgical center that everything is bundled with the surgical bill including the crutches and knee brace. I was surprised getting a bill from the knee brace company and owing them a balance after the insurance paid them. What is shocking is the amount charge with the knee brace during surgery was 598$ but when I searched the exact knee brace on the website, it just cost 189$!! This is definitely an overcharge!!\nBeware guys, be meticulous with the medical bills you're receiving and always question them.\nWhen you go for a knee surgery and would need a brace. GET IT ONLINE AND BRING YOUR OWN KNEE BRACE!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VKYmYtUFQ5cEpqZ01REAE!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CIHM0ogKEJbf-PT9pJjgMQ%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2GwdedqUMUHo2Z1OH5Cg4RJV7uy0XAIrGwEhLUhUkJutHfpjYqvh0-U43Mffg9_MQ31AhIRmbsKYhxzMXZTot0y_-KCG_LC9-OMR5nftB_NTBV1quyamomoTygeezQoeHQFu67bQ=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2025-05-29T18:28:47+00:00"
+        },
+        {
+          "username": "Aditya Sridhar",
+          "rating": 5,
+          "contributor_id": "102277671422082781895",
+          "user_review_count": 91,
+          "user_photo_count": 444,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI5Ma9O2VxUGO5dPMjo0mXrbH-Gd-UEEFEZK8Q7Kf13ou6BWYE=s120-c-rp-mo-ba12-br100",
+          "description": "Nurses and front office staff were friendly and professional. Anesthesiologist was professional and made sure I was calm going into the surgery. I\u2019ve never felt anxious and the staff deserves all the credit to keeping me comfortable.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURieE1qMHdnRRAB!2m1!1s0x0:0x79ef6f661ba6b15b!3m1!1s2@1:CIHM0ogKEICAgIDbxMj0wgE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-08-02T03:18:37+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Midtown Surgery Center",
+            "data_id": "0x0:0x38db95f33c077657",
+            "data_cid": "4097033157940311639",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x38db95f33c077657&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x38db95f33c077657&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.763366,
+              "longitude": -73.9619735
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x38db95f33c077657%218m2%213d40.763366%214d-73.9619735&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 34,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF2j0HUs2b6Cs2gJXOwZ5jVNoPfSwS0WXfNQKdAIMusm5gxNUNelzt4asBpb8qUYHh7WubFMeV8qj8PQGTgZmDiRakaJ_onKIfi2O5LO9Ut_gjCtC-ndyead5xwQ-WBhnnDyO60=w156-h156-n-k-no",
+            "type": [
+              "Surgical center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Fifth Avenue Surgery Center",
+            "data_id": "0x0:0x388e821e6010dd92",
+            "data_cid": "4075337779789225362",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x388e821e6010dd92&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x388e821e6010dd92&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7812991,
+              "longitude": -73.96038399999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x388e821e6010dd92%218m2%213d40.7812991%214d-73.96038399999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.5,
+            "reviews": 34,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE3B7DgWSXzZrGz1gFXZcr9XQZ050T7KtAe-9O7jztrk-VDnFZFBUsnqzdmCcWPY2x7dfXdmLEKEt38H1zB2NUleDaWsakAf2PjtDs2HtFFmiGueh2bg3dub0tH9PjLxhLiVcbCd75rR_MQ=w156-h156-n-k-no",
+            "type": [
+              "Surgical center"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "New York Center For Ambulatory Surgery",
+            "data_id": "0x0:0x6f080c56d5c8f36b",
+            "data_cid": "8000658305117123435",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6f080c56d5c8f36b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6f080c56d5c8f36b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.763392599999996,
+              "longitude": -73.9620487
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6f080c56d5c8f36b%218m2%213d40.763392599999996%214d-73.9620487&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=BGZVwDIibe_t2Hj1U0XMVcXsgREq1QtN9FGW0nV4tr1DUI3tAMRPnm-Dq8OiEK6aGhA7oIpeMHWkx0R2uXzOS1owN6awVH5Lx27lwrklEEQJ-SOnqG9ydQMcBtt0FTJlCbi9FEFRdeNQ-bVgcbjKsb6T_kMPH9uR",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Surgicare of Manhattan",
+            "data_id": "0x0:0x9e612fa6d9ffc27b",
+            "data_cid": "11412455324402041467",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9e612fa6d9ffc27b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x9e612fa6d9ffc27b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.749910799999995,
+              "longitude": -73.9717539
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x9e612fa6d9ffc27b%218m2%213d40.749910799999995%214d-73.9717539&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 90,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH9sK_eB-UOKjwiMG8v40z0uLo6TIyrGRbZj2d-ZMVgUYQhAQfgqVuYvyYSYfKVzq08dd_1OX6ipGl0hIebVW51bo9ECD-npQPelrOiQbCCa7E0IksbsKEHnD8iTOqnTzx7lf1s=w156-h156-n-k-no",
+            "type": [
+              "Surgical center"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Ambulatory Surgery Center - Mount Sinai West",
+            "data_id": "0x0:0xbab22c34a8973cb0",
+            "data_cid": "13452863641587498160",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbab22c34a8973cb0&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbab22c34a8973cb0&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7697168,
+              "longitude": -73.9868805
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbab22c34a8973cb0%218m2%213d40.7697168%214d-73.9868805&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 1,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=ajFZ-bn13VDoTQfdDJ5SDj4HbwVWDBwr2Vf6Wc22zdhUXWG7F6i5bLC5vZYkXavWEZ6qbgXSuZXWMf7QQHrszDKQ8awl7mZE99zk9CWrUMeh2381_BlUuVQ_Z7YA134QOs-O1qkjkABUdg0LL7Omi0FTnIIINqvO",
+            "type": [
+              "Surgical center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OisKKSIlTWFuaGF0dGFuIFN1cmdlcnkgQ2VudGVyIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COisKKSIlTWFuaGF0dGFuIFN1cmdlcnkgQ2VudGVyIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

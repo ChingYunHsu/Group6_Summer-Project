@@ -1,0 +1,1184 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ec09a1f2cd069d71cf4",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/C1x1H8_JwEsXcQcNQvE2Dw/6a3d3ec09a1f2cd069d71cf4.json",
+    "created_at": "2026-06-25 14:44:16 UTC",
+    "processed_at": "2026-06-25 14:44:16 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2599e3f466b15:0x6262dd43ac578352!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/C1x1H8_JwEsXcQcNQvE2Dw/6a3d3ec09a1f2cd069d71cf4.html",
+    "prettify_html_file": "https://serpapi.com/searches/C1x1H8_JwEsXcQcNQvE2Dw/6a3d3ec09a1f2cd069d71cf4.prettify",
+    "total_time_taken": 0.2
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJFWtGP55ZwokRUoNXrEPdYmI",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "New York Eye and Ear Infirmary of Mount Sinai - Main Campus",
+    "place_id": "ChIJFWtGP55ZwokRUoNXrEPdYmI",
+    "data_id": "0x89c2599e3f466b15:0x6262dd43ac578352",
+    "data_cid": "7089472046158545746",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.731852499999995,
+      "longitude": -73.9845832
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI",
+    "provider_id": "/m/04g3bdg",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaeUgjwa-Z5DxPsqhPwi6m3p4RSYFT1KWPItoUJ_wTLocQbffkT6w62EyBTpfiPrpsw6If5JRjECnAdmG4jEhrQK3ZJMLwukdPAjZmDbsA6cdKJf9apIfapunuzhhYZiEjtldfMw=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/XH6XNHicHcRRDoIgAADQE5GWxlZbH1TW1GpYtpY_zVBEVCDBUd2wI3Sbtt7H-36YMUrPHadl3qiSsmrLQZc9kcKUwoyI7JxKaUA00A7Ch6RB27w8V9zmIJuun1g_GLY17DzlH0_XTTqOLzg08hzdbLqTJLlT2qTQwknwWqaK1rhX2sKQTqMjD1YCFd3W5wHrk9jLov3ODk2BEc-69V0jSIo4orNchTRXgxjejF2zOuCmLejeLuzYdV3A_hMgfmgzR2k",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 259
+      },
+      {
+        "stars": 2,
+        "amount": 30
+      },
+      {
+        "stars": 3,
+        "amount": 23
+      },
+      {
+        "stars": 4,
+        "amount": 39
+      },
+      {
+        "stars": 5,
+        "amount": 222
+      }
+    ],
+    "rating": 2.9,
+    "reviews": 573,
+    "type": [
+      "Eye care center"
+    ],
+    "type_ids": [
+      "eye_care_center"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "310 E 14th St, New York, NY 10003",
+    "country": "United States",
+    "website": "https://www.nyee.edu/?utm_source=Yext&utm_medium=local_listing&utm_campaign=NYEE&y_source=1_MTgwODM2MS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "phone": "(212) 979-4000",
+    "open_state": "Open \u00b7 Closes 4 PM",
+    "plus_code": "P2J8+P5 New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20134 PM"
+      },
+      {
+        "friday": "8 AM\u20134 PM"
+      },
+      {
+        "saturday": "8 AM\u20134 PM"
+      },
+      {
+        "sunday": "8 AM\u20134 PM"
+      },
+      {
+        "monday": "8 AM\u20134 PM"
+      },
+      {
+        "tuesday": "8 AM\u20134 PM"
+      },
+      {
+        "wednesday": "8 AM\u20134 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by phone call 10 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x6262dd43ac578352&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGaeUgjwa-Z5DxPsqhPwi6m3p4RSYFT1KWPItoUJ_wTLocQbffkT6w62EyBTpfiPrpsw6If5JRjECnAdmG4jEhrQK3ZJMLwukdPAjZmDbsA6cdKJf9apIfapunuzhhYZiEjtldfMw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/XH6XNHicHcRRDoIgAADQE5GWxlZbH1TW1GpYtpY_zVBEVCDBUd2wI3Sbtt7H-36YMUrPHadl3qiSsmrLQZc9kcKUwoyI7JxKaUA00A7Ch6RB27w8V9zmIJuun1g_GLY17DzlH0_XTTqOLzg08hzdbLqTJLlT2qTQwknwWqaK1rhX2sKQTqMjD1YCFd3W5wHrk9jLov3ODk2BEc-69V0jSIo4orNchTRXgxjejF2zOuCmLejeLuzYdV3A_hMgfmgzR2k"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGE2ROBSSUlTqdsjejOyNfGtCX53cp2LOJWed0UwgChFZtjxwolzkBvMvx9FZSVymb8ncwoEpv_z-5ZDVkc3qD7j9KuuiBMOb4GD-s93KQyQgJePB9dGru71qKPMS0GeTNsqI-h=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Xzpe-nicHcRJDoIwAADAFxWqaBQTDwLaCLKJouFiYqmtgBRo2fygb_A3Js5hvh8mZSVWqlowTaGc04K0gjSYl5KUUsH8pdJKACyAUDeBF-YbtJ0efSOKzsWpTkVGMn_0Hkia17mGq-nBty8kheeemmyXyGzoefHOjc7tBn2XRPH4ui9L3PNt1d3eYJ5YcY612lpkutO2T8P17zNkAaFrTjiG1CaBoaeoaReT2gncCCJy8kS9B2zdTyCEgP3HoPwBvpZFKg"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHJtoh3EqQI4fkzqyaJ76wqw4pWY-oV3TxMnIKuooXLH4LSf2A2BO7SDlvt5VTw3NLskN4al0IEszmssLjI8QDLlcNPbgVcRXNNqQzGDBHCdYiKB43g_Ca1cxJ9FKQmIS7mS4E=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/KKHHyXicHcRBcoIwFADQE0XQxKKd6QKElkBMTXFQVw6mGFoCAX8slgP2Dr2NM77F-_-rrO3g2XF0hSfKGKXLK5QXaVpbtnYiTeOoDpAEBI6_4aL248SaCke9oORcj_1vkXhPQz-QbndAJsfb27ql6dWYPYsJy84zfxa8e1mof-w83w6YM6g5KbRLIxgbAPZNFyJkWvLNSeXyY895L8a3MIhXn4evNCBYHVfFVN6S5WsqGpp5TUail2Hqui6qHkvU3gEaBEOk"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH90xtOMyWD0xooKUVMvWCUbX-BS8PfvnUVLppwX-E2ZbH_9uhRXNRLgYlromrN3dcDZ4vB2wULPuA5a0QEU209d_vCX78DPgFUFOITD2wXqnVeRh2M4UX5QH19QElp582tAJNRQQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/mRSp6XicHcTRroIgAADQLyKJclfbejC1eUtNLIzbS7uRwZYBCWp9Yp_Q37R1Hs77JazVZuY4jZiMuFK8qTtTt0xJW0s7YurmcG0AM8A4QZHja5D48GE32XMfwYdSa1Jl_T4kJwoWW6-49JJUqdYDBTE6nJKj34mS5mXK_5pW3dp8cmbRYdov0EDSogvcf4hjgqB_PvYh_fGigi_JcvO7i9BA77KqS4GyKaEuTsY-jhvtesgGq7zEeD6MIYRAfGdAfgCdZkNu"
+      }
+    ],
+    "at_this_place": {
+      "type": [
+        {
+          "title": "Services",
+          "places": 1
+        },
+        {
+          "title": "Health & Beauty",
+          "places": 4
+        },
+        {
+          "title": "Parking",
+          "places": 1
+        },
+        {
+          "title": "Other",
+          "places": 2
+        }
+      ],
+      "places": [
+        {
+          "position": 1,
+          "title": "International Haircutters",
+          "data_id": "0x89c2599e3e0b569f:0x217d4a20dfba8682",
+          "data_cid": "2413166480393406082",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3e0b569f%3A0x217d4a20dfba8682&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3e0b569f%3A0x217d4a20dfba8682&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7318575,
+            "longitude": -73.98417950000001
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599e3e0b569f%3A0x217d4a20dfba8682%218m2%213d40.7318575%214d-73.98417950000001&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "rating": 4.1,
+          "reviews": 59,
+          "type": "Beauty salon",
+          "type_id": "beauty_salon",
+          "address": "320 E 14th St A, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 7\u202fPM",
+          "hours": [
+            {
+              "thursday": "10\u202fAM\u20137\u202fPM"
+            },
+            {
+              "friday": "10\u202fAM\u20137\u202fPM"
+            },
+            {
+              "saturday": "10\u202fAM\u20136\u202fPM"
+            },
+            {
+              "sunday": "10\u202fAM\u20136\u202fPM"
+            },
+            {
+              "monday": "10\u202fAM\u20137\u202fPM"
+            },
+            {
+              "tuesday": "10\u202fAM\u20137\u202fPM"
+            },
+            {
+              "wednesday": "10\u202fAM\u20137\u202fPM"
+            }
+          ],
+          "thumbanil": "//lh3.googleusercontent.com/proxy/mJ5t_C5PS5KRjssmiaJ7XwVDIDOkXAUSLM9D1v6hyMZz3slKZw5XLGIvLUiqAEUNsAwxjtw04KnGgNyv2jRL5kES07vpRw8Z4yq7PeRMYa5igqkX4TGp9gEtjEyhuzy5yaJMfpVWquktjvmHZXpi8VVIIatsdW4dOrqsdOHat9SHZjso4HJeEkfGUMx1Y48gB_cw4zsMpg=w86-h86-n-k-no",
+          "thumbnail": "//lh3.googleusercontent.com/proxy/mJ5t_C5PS5KRjssmiaJ7XwVDIDOkXAUSLM9D1v6hyMZz3slKZw5XLGIvLUiqAEUNsAwxjtw04KnGgNyv2jRL5kES07vpRw8Z4yq7PeRMYa5igqkX4TGp9gEtjEyhuzy5yaJMfpVWquktjvmHZXpi8VVIIatsdW4dOrqsdOHat9SHZjso4HJeEkfGUMx1Y48gB_cw4zsMpg=w86-h86-n-k-no"
+        },
+        {
+          "position": 2,
+          "title": "Valerie Elmalem, MD",
+          "data_id": "0x89c25a48ffffffff:0x75f6f6b348c93e94",
+          "data_cid": "8500252596589117076",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25a48ffffffff%3A0x75f6f6b348c93e94&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c25a48ffffffff%3A0x75f6f6b348c93e94&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7319203,
+            "longitude": -73.98458699999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c25a48ffffffff%3A0x75f6f6b348c93e94%218m2%213d40.7319203%214d-73.98458699999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "rating": 3.3,
+          "reviews": 11,
+          "type": "Ophthalmologist",
+          "type_id": "ophthalmologist",
+          "address": "310 E 14th St #319S, New York, NY 10003",
+          "location": "Floor 1",
+          "thumbanil": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLZJpI3RMrE3sOqdiDcku_73-LB1rtc7ShmtrnfTIMRqcdY3wrlx-DRsHCLsTtlabxHP5tP70ph-x1RNiNNaeLBIKInDjkUeL82OxrhuPicNCbPjr231T7xN16BhwwitN-fMigWA=w86-h86-n-k-no",
+          "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLZJpI3RMrE3sOqdiDcku_73-LB1rtc7ShmtrnfTIMRqcdY3wrlx-DRsHCLsTtlabxHP5tP70ph-x1RNiNNaeLBIKInDjkUeL82OxrhuPicNCbPjr231T7xN16BhwwitN-fMigWA=w86-h86-n-k-no"
+        },
+        {
+          "position": 3,
+          "title": "NYC Contact Lens Specialists",
+          "data_id": "0x89c2599e40415555:0x62f4ef27251e183a",
+          "data_cid": "7130587061439830074",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e40415555%3A0x62f4ef27251e183a&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e40415555%3A0x62f4ef27251e183a&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7319493,
+            "longitude": -73.9845869
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599e40415555%3A0x62f4ef27251e183a%218m2%213d40.7319493%214d-73.9845869&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "rating": 3.0,
+          "reviews": 6,
+          "type": "Eye care center",
+          "type_id": "eye_care_center",
+          "address": "Eye and Ear/Mt Sinai, South Building, 310 E 14th St #304, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Closed \u00b7 Opens 1\u202fPM",
+          "hours": [
+            {
+              "thursday": "1\u20136\u202fPM"
+            },
+            {
+              "friday": "8:30\u202fAM\u201312\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "Closed"
+            },
+            {
+              "tuesday": "1\u20135\u202fPM"
+            },
+            {
+              "wednesday": "Closed"
+            }
+          ]
+        },
+        {
+          "position": 4,
+          "title": "New York eye and ear",
+          "data_id": "0x89c259004ec4fe13:0xfdcfa537d567013b",
+          "data_cid": "18289018270996955451",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259004ec4fe13%3A0xfdcfa537d567013b&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259004ec4fe13%3A0xfdcfa537d567013b&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7319493,
+            "longitude": -73.9845869
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259004ec4fe13%3A0xfdcfa537d567013b%218m2%213d40.7319493%214d-73.9845869&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "rating": 3.0,
+          "reviews": 2,
+          "type": "Parking garage",
+          "type_id": "parking_garage",
+          "address": "310 E 14th St, New York, NY 10003",
+          "location": "Floor 1"
+        },
+        {
+          "position": 5,
+          "title": "Glaucoma Associates Of New York",
+          "data_id": "0x89c2599e3f466b15:0x8a01f794fa3f810",
+          "data_cid": "621531354464778256",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x8a01f794fa3f810&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f466b15%3A0x8a01f794fa3f810&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7318919,
+            "longitude": -73.9845859
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599e3f466b15%3A0x8a01f794fa3f810%218m2%213d40.7318919%214d-73.9845859&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "rating": 1.0,
+          "reviews": 1,
+          "type": "Association / Organization",
+          "type_id": "association_or_organization",
+          "address": "310 E 14th St, New York, NY 10003",
+          "location": "Floor 1",
+          "open_state": "Open \u00b7 Closes 3:30\u202fPM",
+          "hours": [
+            {
+              "thursday": "7:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "friday": "7:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "saturday": "Closed"
+            },
+            {
+              "sunday": "Closed"
+            },
+            {
+              "monday": "7:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "tuesday": "7:30\u202fAM\u20133:30\u202fPM"
+            },
+            {
+              "wednesday": "7:30\u202fAM\u20133:30\u202fPM"
+            }
+          ]
+        },
+        {
+          "position": 6,
+          "title": "Ophthalmology Surgical Associates",
+          "data_id": "0x89c2599e3f443907:0x1b8aec0720828276",
+          "data_cid": "1984658101164474998",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f443907%3A0x1b8aec0720828276&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e3f443907%3A0x1b8aec0720828276&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7318919,
+            "longitude": -73.9845859
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599e3f443907%3A0x1b8aec0720828276%218m2%213d40.7318919%214d-73.9845859&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "type": "Ophthalmologist",
+          "type_id": "ophthalmologist"
+        },
+        {
+          "position": 7,
+          "title": "GMC CHATHAM",
+          "data_id": "0x89c259cff4c632c9:0x64685ef2e9fe4a43",
+          "data_cid": "7235137198771554883",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259cff4c632c9%3A0x64685ef2e9fe4a43&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c259cff4c632c9%3A0x64685ef2e9fe4a43&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.7319487,
+            "longitude": -73.98458819999999
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c259cff4c632c9%3A0x64685ef2e9fe4a43%218m2%213d40.7319487%214d-73.98458819999999&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "type": "Corporate office",
+          "type_id": "corporate_office"
+        },
+        {
+          "position": 8,
+          "title": "ALX",
+          "data_id": "0x89c2599e43d6c665:0xcab5e549086136bc",
+          "data_cid": "14606833068282033852",
+          "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2599e43d6c665%3A0xcab5e549086136bc&engine=google_maps_reviews&hl=en",
+          "photos_link": "https://serpapi.com/search.json?data_id=0x89c2599e43d6c665%3A0xcab5e549086136bc&engine=google_maps_photos&hl=en",
+          "gps_coordinates": {
+            "latitude": 40.732071,
+            "longitude": -73.984859
+          },
+          "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x89c2599e43d6c665%3A0xcab5e549086136bc%218m2%213d40.732071%214d-73.984859&engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFWtGP55ZwokRUoNXrEPdYmI&type=place",
+          "type": "Apartment building",
+          "type_id": "apartment_building"
+        }
+      ]
+    },
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Overall all the doctors and staff are very kind and helpful at this facility.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIpcFN3uRy1OK6s5J6CNiInh0jSWE-NI2WuNSbdiNyz6mGXrg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Place is somewhat run down - but many NYC medical facilities are.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI3jZcV4loR8Vt1twV1r0mawI5xevGV-zEvNFnzdGUbi9WoSQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I appreciate the staff\u2019s hard work but this was a really bad patient experience.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ70v7RD7QJ4uJ_1r5NgPs4n7JCnLGdcWDg6gSBOh2h-1RZ6A=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Vivian Cruz",
+          "rating": 5,
+          "contributor_id": "118339847705835999871",
+          "user_review_count": 155,
+          "user_photo_count": 308,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW_Jc0vbHi15c0BcWacJdlB0ebgNh6uFHkX5VYwmBZJvFzQqdQ=s120-c-rp-mo-ba12-br100",
+          "description": "I had an excellent experience during my annual ophthalmology visit with Paul A. Sidoti, MD at NYEE. Dr. Sidoti was extremely professional and brought over 30 years of experience, which was evident throughout the visit. The examination was thorough and top quality, and I felt confident and well cared for every step of the way. I am very grateful to his wonderful assistant, Julianne Velez, for recommending Dr. Sidoti. Her guidance led me to an outstanding physician and a truly positive experience..",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pSV2RsUlZiWFZNUTJ4emFUQXlNMTlPU1ZKbmJVRRAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOjRWdlRVbXVMQ2xzaTAyM19OSVJnbUE%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn22kgqnApvVpWkD0txLB4UQKO2NNduGH8IZ6fbG_2npKOKCyrQJOo_iuXB7l1X_FtuKRRC1M0bHJvwV8d2EghYoDd8hc1yVia4QWTmq1SKeLl6d6yd3dl9EH7lsN93DlWw0vJew0LIhNLKw=k-no"
+            },
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn2M37UrYBQdTmhot1mcS_iPvaRIeMjXOfpEfhOwO6R_QqoQQc1ZlL9qSiAINQBCG0vTgH3Fy9_czBVGip0lxnniIHVzw6SA1cU8qmAxnT71D7b1cVjvx23wAIBrZe4clumf2zSGOWd8I536=k-no"
+            }
+          ],
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-08T12:15:54+00:00"
+        },
+        {
+          "username": "Phil Boudreaux",
+          "rating": 3,
+          "contributor_id": "116302086513309908080",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX_B6g9EJ9pKY7S8b61H58HfdTnGrL4GlXpA_xeylT9SW_JeKve=s120-c-rp-mo-br100",
+          "description": "UPDATE  2/27/26\nPublic Relations contacted me and resolved the scheduling issue along with appointment scheduling supervisor at the Retina Center.\nThey have assured me that what has happened is not how they would like to operate,  and they are looking into the situation.\nI am happy with the outcome from our conversations, although probably not completely resolved for future appointments, time will tell.\nI'm changing the review from 1 star to 3 stars they still have work to do.\n\nOriginal review:\nI have been coming here twice a month for the last 6 years. Dr's are great, but appointments FORGET IT. They are arrogant and insulting. Their right hand has no idea what the left hand is doing.\nI get calls to confirm appointment that I never made,  they cancel appointments already made.\nYou get a different reason for cancelation from each person you speak with.\nThey canceled and dont inform you, leading you to take time off from work and life, then making take unnecessary trips to the retina center only to be told you have no appointment. Forget about calling them to confirm, they dont answer the phone.\nOh and dont get me started on the wait time just to be seen at your appointment.\nIf I didn't have such shitty insurance,  I leave in a heartbeat .",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25nNFQzUk9ZMlZTTVRabVRra3dkMVl4TkhsMGIzYxAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOng4T3ROY2VSMTZmTkkwd1YxNHl0b3c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-27T16:38:43+00:00"
+        },
+        {
+          "username": "Michael Carlucci",
+          "rating": 5,
+          "contributor_id": "111160992210662039705",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXbh-f7REylSFrRT5wDYl5jKxzzZPIsNcXCKyUyFrppVHUhULkp=s120-c-rp-mo-br100",
+          "description": "Recently my wife had a procedure done at NYEE by Dr. Mark Courey. Aside from the fact that he is one of the best doctors in his field (the compliments of whom could take up a lengthy post), my wife and I had an excellent experience at NYEE. From the security guards to the Admissions staff to the Unit Clerks, Nursing Assistants, Patient Flow Coordinator to the Recovery Room nurses and all the rest of the staff who were involved - everyone was friendly, professional, and compassionate, despite the fact that we arrived there at 5:30 AM in subfreezing weather! We have been to this facility a few times in the past and have always had a similar experience. It's nice to meet so many people who care about their patient's and their family's well being all time . Well done!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tJMFFrTjBiVWRWTlU5ME5XaG9PV3BHTVhkbU5uYxAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOkI0QkN0bUdVNU90NWhoOWpGMXdmNnc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-30T18:07:33+00:00"
+        },
+        {
+          "username": "Erica Hollingsworth",
+          "rating": 5,
+          "contributor_id": "111320735442882768063",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVpv7K9OJhva5ksjvwVQOzho-ZMdpOYZHXB2SI-EXAX90UMHrQLzQ=s120-c-rp-mo-ba12-br100",
+          "description": "This five star review I am leaving is solely for the Lead sleep technologist Nurse Tatiana Majjul and staff that assisted me at 310 E 14th Street on site.\n\nTatiana was very attentive, kind, understanding, and patient.  This was my first time ever having an in lab sleep study done so it was an experience.  There has been issues with a Mount Sinai coordinator in the sleep scheduling department that hasn't been very helpful as well as her attitude.  Tatiana assisted me with my concerns upon arrival, was very helpful, and made sure I was comfortable. It was a compelling morning for me considering the unnecessary negative interactions I had with the coordinator Marieta, but I am glad that I was treated with respect and care on site.  Thanks for being in the Healthcare field Tatiana and I hope your dedication to patient care is recognized.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2swdFV6aFJRems0ZDNKQ1FsUm9iVEowUTNSM2JGRRAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOk0tUzhRQzk4d3JCQlRobTJ0Q3R3bFE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-18T05:35:41+00:00"
+        },
+        {
+          "username": "Michael Carlucci",
+          "rating": 5,
+          "contributor_id": "111955750900149968482",
+          "user_review_count": 7,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWXDdS4dcm6mp4G_pBislfiH6g9vRvz6uIoK4sWgZZgnGycq-s=s120-c-rp-mo-br100",
+          "description": "Recently my wife had a procedure at NYEE performed by Dr. Mark Courey, one of the best physicians in his field (of whom a long, separate excellent review could be written). Our experience at NYEE was terrific. From the security guards to the Admitting staff to the Unit clerk, the Nursing Assistant, Patient Flow Coordinator, OR and Recovery Room nurses and staff, the care was outstanding, and all our questions asked during our stay were answered calmly and professionally; remarkable since we arrived there at 5:30 AM. and it was10 degrees outside! We have been to this facility 2 other times in the past, and I am happy to say that the care then was excellent also. It's so nice to see such a group of people that are so dedicated to the needs of their patients. Well done!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xOTUxUUTBhMUZIT0VST2JIaG1PVFJwVWtwZmVYYxAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOlNMLTQ0a1FHOERObHhmOTRpUkpfeXc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-30T21:00:05+00:00"
+        },
+        {
+          "username": "Yorgun Savasci",
+          "rating": 1,
+          "contributor_id": "104455214873469653247",
+          "user_review_count": 19,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVFCp22RixIk0Ectn2TBwPOtrtYTIOykZ2jLGRV-WAw3MzDS9EQ=s120-c-rp-mo-ba12-br100",
+          "description": "Oh my God, I just read other reviews! I was not the only one, there is a repeating theme  of appointmet issues, rude behavior of front desk staff, ratially biased treatment of patients.. I  also saw an organizational failure between the registration and administrative staff of clinics. Doctor tells you to come for a certain date yet they do not give you an official appointment that day so you end up going there and waiting for hours as a walk in patient! If you are an elderly person or immune suppressed patient or handicapped patient, they dont seem to care much! It feels like a third world country in that waiting room! They yell at you to get in long lines, they yell at you when you try to explain something, taking their personal frustration out on you, they yell at you to call you in clinic! It is as if you are there begging for money or something! If you are not there for an urgent situation, dont go there!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21jMFNYaG9RbXgyY2t4aVdGWmpaMVU0VnpCeFYzYxAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOmc0SXhoQmx2ckxiWFZjZ1U4VzBxV3c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-21T01:46:35+00:00"
+        },
+        {
+          "username": "Paula T",
+          "rating": 1,
+          "contributor_id": "103581416280097903967",
+          "user_review_count": 18,
+          "user_photo_count": 11,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJIsOGH1we6TWSf6Sd5lHyUpaN_bbYQNHr4zWDwMQIw-0EC1-b2=s120-c-rp-mo-ba12-br100",
+          "description": "No complaints about the doctor at all who did my son's procedure but the wait time is ridiculous. What's the point of having a scheduled surgery time and have you arrive 3 hours early just to sit around.  Poor kid was hungry and thirsty by the time he had his surgery which was only a short 30 minute procedure. Had us arrive at 9:15, intake took about 15-20 minutes, didn't go into the O.R. until 12:40. For a 9 year old boy who is hungry, thirsty, and scared, this is not acceptable. They only allow one parent in the recovery room also and are quick to kick you out. Had to have the doctor tell the nurse it was OK as he wanted to explain things to both parents.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tvMGVtSk5aVkZrVDJwVFMwSm1VR3RHTW5OS1VIYxAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOko0emJNZVFkT2pTS0JmUGtGMnNKUHc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-24T21:18:03+00:00"
+        },
+        {
+          "username": "Mayuko Nakatsuka",
+          "rating": 1,
+          "contributor_id": "109027368105019266141",
+          "user_review_count": 7,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWVEzUXC2jb2gwc0qHLpVMFlHBs4I0Cn6RGC_a8QgHTGRe0m3U=s120-c-rp-mo-br100",
+          "description": "I\u2019m extremely frustrated with my experience here. It has been over three weeks since my last visit, and I still have not received my prescription due to repeated administrative errors.\n\nThe office sent the prior authorization to my health insurance instead of my prescription benefit manager, despite me clearly explaining multiple times that DC37 handles prescriptions. I also dropped off the prior authorization form twice in person, and both times it was lost.\n\nOver the course of three weeks, I called more than 10 times and left a message every single time, yet my concerns were not addressed. It wasn\u2019t until I contacted the Patient Advocate\u2019s Office that the issue finally reached the nurse manager.\n\nWhen the nurse manager followed up, I was told that a nurse had called me the day before. However, I received no missed call and no voicemail.\n\nThis level of disorganization and lack of communication is unacceptable, especially when it delays necessary medication. Based on my experience, I cannot recommend this office except in an emergency. If you work for the city and use DC37 benefits, be aware that you may experience significant delays in receiving your prescription.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pRelUxQkxYeTFUUVc5dlVYcHBOMUUzUzBsNFJIYxAB!2m1!1s0x0:0x6262dd43ac578352!3m1!1s2@1:CAIQACodChtycF9oOjQzU1BLXy1TQW9vUXppN1E3S0l4RHc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-24T14:31:34+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Manhattan Eye, Ear & Throat Hospital",
+            "data_id": "0x0:0xb8d39f256227e4a9",
+            "data_cid": "13318163505974076585",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb8d39f256227e4a9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb8d39f256227e4a9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7641061,
+              "longitude": -73.96334379999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb8d39f256227e4a9%218m2%213d40.7641061%214d-73.96334379999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.1,
+            "reviews": 165,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH1fusP01QV8TJS1Q-L22yjuDVW2hEUlIqTMLroK2taT2fJc7kb-6efQQKLMvpE5dtJ81zMvr7kWFg38xzCr20CjMAMvR9QENh8vLlGUoWS9k2jJH-Qgtw8XF8hZb-YPsZ3fA5cNA=w156-h156-n-k-no",
+            "type": [
+              "Medical Center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "New York eye and ear",
+            "data_id": "0x0:0xfdcfa537d567013b",
+            "data_cid": "18289018270996955451",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfdcfa537d567013b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfdcfa537d567013b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7319493,
+              "longitude": -73.9845869
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfdcfa537d567013b%218m2%213d40.7319493%214d-73.9845869&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 2,
+            "thumbnail": "https://www.google.com/maps/vt/data=hkjlyeTUeqbq-mWqIIKYw-zBZ9adW3LF910o7n1YaDiR2nht8dTLKnUuN_7ft1r2ApENnv98cEB-WERgCCETZkgkax5_Yw7khxsJuPfR84PlM0TOkrysInQjrCrcV1FaBYkwp78tFob_pO9pXWLJj866pPCKw8oQ",
+            "type": [
+              "Parking garage"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Pediatric Ophthalmology at Mount Sinai",
+            "data_id": "0x0:0xe7e1822ad3557c4b",
+            "data_cid": "16708779212967083083",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe7e1822ad3557c4b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe7e1822ad3557c4b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7319487,
+              "longitude": -73.98458819999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe7e1822ad3557c4b%218m2%213d40.7319487%214d-73.98458819999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.8,
+            "reviews": 9,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwQhqxqevKTTEZu67x4856lUy7JOHgcWP8-0httfxSg9I95_jg7tbdihv5PSLKIC-2vXF8Obum0-A9Sw-jL7OJxz5bRq7EUCc5gojaLR3EMxsQ7RvzblDPJEM9OUGdv47tIUyj=w156-h156-n-k-no",
+            "type": [
+              "Pediatric ophthalmologist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Eye Institute of New York",
+            "data_id": "0x0:0x50ed61b9b39eea4d",
+            "data_cid": "5831424542725040717",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x50ed61b9b39eea4d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x50ed61b9b39eea4d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7346511,
+              "longitude": -73.983559
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x50ed61b9b39eea4d%218m2%213d40.7346511%214d-73.983559&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=Ft6eCMU8iGj22abIrpbe8PIQMRbnmCmHtZDaHTVPqfMr9-EjGtWYl0d6pcuQvuUZIrm1B9b-SEANvbpZVClFaYn-NT9am3K7e4IyLg9yFb0yqLZSv9t4TuMPGpHRO0vubKoYAhSWaaUCfqn-maHpzDmwFwPEZI7C",
+            "type": [
+              "Ophthalmologist"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "As busy as it gets",
+        "time_spent": "People typically spend 1.5-4 hours here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not busy",
+            "busyness_score": 5
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 5
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 6
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not busy",
+            "busyness_score": 8
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 7
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 7
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 8
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 7
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 83
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 85
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 80
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 90
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 92
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 96
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 96
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 75
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 91
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 94
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 88
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 83
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 47
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80,
+            "live_busyness_score": 94,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 86
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 82
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 80
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 95
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 98
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 96
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 92
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 86
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 71
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not busy",
+            "busyness_score": 10
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not busy",
+            "busyness_score": 13
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not busy",
+            "busyness_score": 15
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not busy",
+            "busyness_score": 13
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 11
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 8
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 8
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 8
+          },
+          {
+            "time": "4 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Ok4KTCJITmV3IFlvcmsgRXllIGFuZCBFYXIgSW5maXJtYXJ5IG9mIE1vdW50IFNpbmFpIC0gTWFpbiBDYW1wdXMgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COk4KTCJITmV3IFlvcmsgRXllIGFuZCBFYXIgSW5maXJtYXJ5IG9mIE1vdW50IFNpbmFpIC0gTWFpbiBDYW1wdXMgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

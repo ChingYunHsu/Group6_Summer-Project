@@ -1,0 +1,395 @@
+{
+  "search_metadata": {
+    "id": "6a3ac16b277143d6dab82b28",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/qsdHe5ovewFgLh9ymqELKA/6a3ac16b277143d6dab82b28.json",
+    "created_at": "2026-06-23 17:24:59 UTC",
+    "processed_at": "2026-06-23 17:24:59 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c258e317a4946d:0xb1f339f557c7d230!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/qsdHe5ovewFgLh9ymqELKA/6a3ac16b277143d6dab82b28.html",
+    "prettify_html_file": "https://serpapi.com/searches/qsdHe5ovewFgLh9ymqELKA/6a3ac16b277143d6dab82b28.prettify",
+    "total_time_taken": 2.46
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJbZSkF-NYwokRMNLHV_U587E",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Medical Offices of Manhattan - Midtown",
+    "place_id": "ChIJbZSkF-NYwokRMNLHV_U587E",
+    "data_id": "0x89c258e317a4946d:0xb1f339f557c7d230",
+    "data_cid": "12822656289956418096",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c258e317a4946d%3A0xb1f339f557c7d230&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c258e317a4946d%3A0xb1f339f557c7d230&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7563552,
+      "longitude": -73.9696464
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJbZSkF-NYwokRMNLHV_U587E",
+    "provider_id": "/g/1pv013l96",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6NVvZYQc7c6o7n0yHjpkadf3WgsCl8G4DDd0-b966UUdxrElfZIsXk9zzNBxRT_g8tIeIreodd2TYLeCSBf3eYPfqz1n4I-UDYwRmFqPmzRmPpL2D-6tsuD435sG__BsW0U0=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/8X5uRnicHcRLDoIwFADAE1WqYP0kLsQqkhiCKCJuiLalRKBFXv1xQO_gbUycxXw_hTENTC2rKuye1FpW4g6iZVoZoUyP6dqSDSAGCKx5GGzLuUeCw-OUbtmIET1S-L2-NuWZ53YiYVGNPYdSjtFlQkgc81e7rPKTD8dy0nWB-4r2mRwbX_it0JwP9ulGLHZubos0zG9dXzk-imn6jOrVLay7qA6bzYAiYuBOHXsIXpa5kOAYz559jDEq_jOkfgAYQ8w",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 285
+      },
+      {
+        "stars": 2,
+        "amount": 46
+      },
+      {
+        "stars": 3,
+        "amount": 20
+      },
+      {
+        "stars": 4,
+        "amount": 83
+      },
+      {
+        "stars": 5,
+        "amount": 3042
+      }
+    ],
+    "rating": 4.6,
+    "reviews": 3476,
+    "type": [
+      "Medical group",
+      "Cardiologist",
+      "Dermatologist",
+      "Endocrinologist",
+      "Gastroenterologist",
+      "Internist",
+      "Podiatrist"
+    ],
+    "type_ids": [
+      "medical_group",
+      "cardiologist",
+      "dermatologist",
+      "endocrinologist",
+      "gastroenterologist",
+      "internist",
+      "podiatrist"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "211 E 51st St, New York, NY 10022",
+    "country": "United States",
+    "website": "https://www.medicalofficesofmanhattan.com/",
+    "phone": "(212) 398-1709",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "Q24J+G4 New York",
+    "hours": [
+      {
+        "tuesday": "8 AM\u20137 PM"
+      },
+      {
+        "wednesday": "8 AM\u20137 PM"
+      },
+      {
+        "thursday": "8 AM\u20137 PM"
+      },
+      {
+        "friday": "8 AM\u20136 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20137 PM"
+      }
+    ],
+    "hours_last_updated": "Updated by this business 1 week ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c258e317a4946d%3A0xb1f339f557c7d230&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG6NVvZYQc7c6o7n0yHjpkadf3WgsCl8G4DDd0-b966UUdxrElfZIsXk9zzNBxRT_g8tIeIreodd2TYLeCSBf3eYPfqz1n4I-UDYwRmFqPmzRmPpL2D-6tsuD435sG__BsW0U0=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/8X5uRnicHcRLDoIwFADAE1WqYP0kLsQqkhiCKCJuiLalRKBFXv1xQO_gbUycxXw_hTENTC2rKuye1FpW4g6iZVoZoUyP6dqSDSAGCKx5GGzLuUeCw-OUbtmIET1S-L2-NuWZ53YiYVGNPYdSjtFlQkgc81e7rPKTD8dy0nWB-4r2mRwbX_it0JwP9ulGLHZubos0zG9dXzk-imn6jOrVLay7qA6bzYAiYuBOHXsIXpa5kOAYz559jDEq_jOkfgAYQ8w"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG0p_ZqWm54k3yblPDaVWciYVRdUqdzhb7xPatO0P0MN3yOrwA1rsS55Y1y7mf7neYANqHo5Fq4JG7snSdz0kv7Qdz9Mt5PzwU2xK5Gc_M8WCOqmc_tsMz2PIGQead_UmaW_B2P=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/W2fqMnicHcRRboIwAADQEyEFbDpN9oEusrkAZQYJ-2mwrWCgLaXdkF5wZ9htTHwf7_-vs3Y0W98fumjVKtUO_MfwiSppubQrqoTfjsajxjN-jLOijxMwkm9dCbjuo-Uy4LfmXNFbff5ipWauu6A7bmwOMEizaMmnOQ4mc4KwDhYkrkjyOs70u4IHvT4myMgTc6D_RQVzm9RC7OYyvH_ChJL0pdrnWlBiTepC_JEUvGGkFE1FdiF-nQMAgNc9p558AIbpRQE"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFUG8cuZPEoI3GWdXtghvZ5cRYMy_i_XE0It8HtUFap5atEZSIWCxoFe7PtzQq_zAZX1rG6cmprE_0T3tqkcWy8dC7s0k1rluv0ESjj4yJvbfla99hSUxcjS0s6UMN7KdYAG2Go=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/TdzDrXicHcTREoFAFADQL0qbUMx4aMy2YphIU3ppckur0qa9RX7QN_gbM87D-X44YiMXqlpxfZQLkVdZJ7MWRI1ZjSMQdzVvpAJSkarl7g-lZfvMhC5yqXB0FqQh5ryPpnA874b4FoeUOGiu0beTZpogjTwnWL2EnRkuvg-P-G1FodayGdyblsbkpOOjhGAw05UhSam1VdcT6hXFZNj0l2uVzOfc819QeETO_N3e2KZni42ZWD41QojC_4NS_wCb80Un"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=kdJ92TcEvYrkr4skGUnoIg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=20.784912&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/c81YD3icHc0xDsIgFADQ27AJlDSxNSFOxuisg1NDKdKfUiD9X6rX8VbeRuP4pvd5j0QZd0IgLc5RAbdmeLqAm2y4T8kHZzIgt2kWpRI0PuY-Ggj7bGKCQU_DuVUXeyi3ZVpqnI7XmE6e2b6zAVwkPZuMHRZOxhIEx31GtmqlajZq1TbsZX6SfNvUbaVYBrKjluz_3FPRlZRfEEc6gg"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Well maintained office, personable staff, and quality care from the doctor.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW21DXHjp-VA4HgtQoLStMoPi__cCpu0HtuEz21POaIIhVd1qqH=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Service quick, and front desk has some really great people working there.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIu6M59Vz3bxC97Y9Ei5k0hfWU3SL6SVd_RhMlDcaRK15m6cw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"One thing, the trash can in the room i was in was full and it was a bit gross.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjW_oLIINOOdAYfG3kPJ3dwllE7eyRL_K3k91wodzUyg27jF5papVg=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Jonathan Loaiza",
+          "rating": 5,
+          "contributor_id": "107392652254993871836",
+          "user_review_count": 1,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXE9ALMyzldYEsCouPuIsVf0j7jS4IEprGnXh4aoO83pmci6kA=s120-c-rp-mo-br100",
+          "description": "I can\u2019t say enough great things about Stacy. From the moment I walked into the office, she made me feel comfortable, heard, and genuinely cared for. She is incredibly professional, knowledgeable, and patient but what really stands out is her compassion.\n\nDuring a time when I\u2019ve been dealing with health concerns, Stacy took the time to explain everything clearly, answer my questions, and make sure I understood the next steps. She never made me feel rushed, and she always treated me with kindness and respect.\n\nIt\u2019s rare to find someone who balances medical expertise with such a warm bedside manner. She truly goes above and beyond for her patients, and it shows.\n\nThe office is lucky to have her and so are the patients.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xoVFVsaFFiSEZhUlRadVYxcFBWalJ6YW10dWFXYxAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOlhTUlhQbHFaRTZuV1pPVjRzamtuaWc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0U6XkBFj3v9l9zfqDXWgwBisbttjGA29DKXG5LhbRDGBYALitztEF7OCSbSKxHlLj4vrmWWfjUFLL0UQgqzrH1kXpJqHftwIu3eWeEACXNLKwk4TyWbYY9iRtqzxW-TUGWaztxweVxVHY=k-no"
+            }
+          ],
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-12T00:05:35+00:00"
+        },
+        {
+          "username": "Seyithan Ayhan",
+          "rating": 5,
+          "contributor_id": "112913502089772804574",
+          "user_review_count": 8,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI7lt1QtJueW5dOU3Qf7mygO_yYK6maU757uhk0hLEr1HXnKQ=s120-c-rp-mo-ba12-br100",
+          "description": "Had a great experience here. Everyone was friendly and it was super efficient; I didn't wait at all. Stacy was my medical assistant and ran me through the preliminary work. With a smile on her face she told me all my numbers look bad, but that's my fault so it's OK. She was nice about it. Tamia was my take home equipment specialist genius and took the time to make sure I understood how to use everything. She even quizzed me 3 times on everything. I did poorly, but again that's my fault. Next time I will study. Dr. Govi had excellent bedside manner, was receptive to all my questions, and explained things in the right amount of detail. He also did not do anything to increase my blood pressure higher than it already is. End to end one of the best experiences I've had at a medical office. Like walking into a bar where everybody knows you but instead of taking your cash they take your blood. Highly recommend.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCYVFtMURTWGhGTURCc2FtNTBjeTFYZDNCdFUwRRAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOlBaQm1DSXhFMDBsam50cy1Xd3BtU0E%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-17T22:35:58+00:00"
+        },
+        {
+          "username": "Sebastian Gonzales",
+          "rating": 5,
+          "contributor_id": "115888596137814982621",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIEsEqzlYlwAGwmbjq8IMLBajufMk_X3yUeh7Yu4W3FEf81qQ=s120-c-rp-mo-br100",
+          "description": "I had a great experience at this office during my yearly physical. The nurses and staff were kind, quick and efficient every step along the way. I have had Lynn Zhang as my primary care doctor for over a year now and has been great every visit. She is very thorough with her work and always gives me in depth explanations I can understand. Would highly recommend visiting for any needs.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaSFNrVm1hSGRqV2pSUldEUlJRa2xqWWpadlRFRRAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOlZHSkVmaHdjWjRRWDRRQkljYjZvTEE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-18T18:13:54+00:00"
+        },
+        {
+          "username": "susan",
+          "rating": 5,
+          "contributor_id": "108480269525921102816",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIM_Cyfh449WKzPqQjZVDwupptz-YmBSX2WEgHq_MG0yfEJRQ=s120-c-rp-mo-br100",
+          "description": "I have gone to MOM for years and always have a positive experience. I have a regular  doctor there but she was not available.I wasn\u2019t feeling well, so they gave me an immediate appointment.with Dr.Neville.I can\u2019t say enough about her, she was professional, caring, thorough and patient. She had reviewed my entire medical history and asked all the right questions.After spending some time with me and discussing options, she came up with a medical resolution. I highly recommend Dr. Neville and MoM. The entire staff is professional , courteous and responsive.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCYVZIZDJYMlpPTTI4dGRFOHdVVTFMTUVaSGIxRRAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOjBaVHd2X2ZOM28tdE8wUU1LMEZHb1E%7C%7C?hl=en",
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-23T19:31:44+00:00"
+        },
+        {
+          "username": "Lm Reyes",
+          "rating": 5,
+          "contributor_id": "109577073637033554862",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXm98cIx37tmboS-Rae8LwE4E9jiHc_W3HhAG1hu_QkNW6JXZVtZQ=s120-c-rp-mo-br100",
+          "description": "I had an excellent experience at Medical Offices of Manhattan. From the moment I arrived, the staff was warm, organized, and attentive. The check\u2011in process was smooth, and I never felt rushed at any point. My provider took the time to listen carefully, explain everything clearly, and make sure all my concerns were addressed. The office itself is clean, modern, and very well\u2011run, which made the entire visit comfortable and stress\u2011free.\n\nWhat stood out most was the level of compassion and efficiency\u2014every team member I interacted with was genuinely committed to providing high\u2011quality care. It\u2019s rare to find a medical practice that combines professionalism, kindness, and thoroughness so seamlessly.\n\nHighly recommended to anyone looking for reliable, top\u2011tier medical care in Manhattan.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xWVVtMXFlbU5wZUZoVWVFY3hhV3RETkVRdGEzYxAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOm1YUm1qemNpeFhUeEcxaWtDNEQta3c%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-02-26T20:33:16+00:00"
+        },
+        {
+          "username": "Ritu Shah",
+          "rating": 5,
+          "contributor_id": "111698467501546100220",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXzztj3FY4NXwxw3eeWgNEM2eQaK3nSAQFg-Q2UhZfnargTQPGq=s120-c-rp-mo-br100",
+          "description": "Jessenia (Jessie) is great! She is super sweet to talk to. She explains everything and asks for consent before she does any procedure.\nShe is very professional and it takes the fear out of a checkup.\n\nDr. Jonathan Jennings is the friendliest physician I\u2019ve ever met and the checkup was a breeze.\n\nDestiny was very good and quick with my ultrasound.\nPrincess at the front desk was really helpful.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25STmNrdEhlbTVOVmxoWmFFbDRSV1JsT0ZWdWRVRRAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOnRNcktHem5NVlhZaEl4RWRlOFVudUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-13T19:36:51+00:00"
+        },
+        {
+          "username": "Aleksandra Bardymova",
+          "rating": 5,
+          "contributor_id": "102186834629812892791",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUNQFeyh9L-h6I92tI9RsJjbkbmP0pbBZU7v3VgoX_exqbTqFDy=s120-c-rp-mo-br100",
+          "description": "I had a great experience at Medical Offices of Manhattan. Olivia Lucchesi, PA, was wonderful to work with \u2014 very kind, attentive, and professional.\nShe really listens to your concerns, takes the time to explain everything clearly, and makes sure all necessary examinations and tests are done. I felt heard, cared for, and confident in the care I received.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201MFRuVnhSV1ZQV2tKMFRDMWlZVXhuY21kcFJtYxAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOm50TnVxRWVPWkJ0TC1iYUxncmdpRmc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-18T14:40:44+00:00"
+        },
+        {
+          "username": "Cherrie",
+          "rating": 5,
+          "contributor_id": "115209035022631710644",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUGil6fvQcrV5UfFO2p6FwE1DEC9mf48mhuYBZ7F6jIgnElhZqp=s120-c-rp-mo-br100",
+          "description": "I had such a great experience at the Medical Offices of Manhattan on 51st Street. Jessenia, the Medical Assistant, truly stood out- she\u2019s incredibly caring, kind, and attentive. She made me feel comfortable right away and handled everything so professionally. You can tell she genuinely cares about patients and takes pride in her work. Highly recommend this clinic, especially because of staff like her!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tkQ2NYRnBXVkZuY0c5T1EwTkljV05IYWpSRGNVRRAB!2m1!1s0x0:0xb1f339f557c7d230!3m1!1s2@1:CAIQACodChtycF9oOkdCcXFpWVFncG9OQ0NIcWNHajRDcUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-21T19:40:38+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Medical Offices of Manhattan - Upper East Side",
+            "data_id": "0x0:0x1769b1904499c5",
+            "data_cid": "6590135814887877",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1769b1904499c5&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x1769b1904499c5&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7653174,
+              "longitude": -73.96328489999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x1769b1904499c5%218m2%213d40.7653174%214d-73.96328489999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 3299,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF-0Rv1_GRObeBa6W2_rbWmTpkxx4xIouLkjM-6cXS-1ZensLbW8PxSdljyOYQn0qQgtwhufG3fzkxZbdY8_NiSpL1g6Eg2_-aP8IB0OoUntrvkM2VyLg5iUR0KsgROICyHotWJBnWGBtaa=w156-h156-n-k-no",
+            "type": [
+              "Medical group",
+              "Cardiologist",
+              "Dermatologist",
+              "Endocrinologist",
+              "Gastroenterologist",
+              "Internist",
+              "Podiatrist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Manhattan Medical HealthCare",
+            "data_id": "0x0:0xee7d372967970dae",
+            "data_cid": "17184952404086820270",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xee7d372967970dae&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xee7d372967970dae&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7596275,
+              "longitude": -73.968622
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xee7d372967970dae%218m2%213d40.7596275%214d-73.968622&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.8,
+            "reviews": 51,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFWXyVeUiOxxCDKPCXc4zICfXXwRQlzNCzWZPzMgBT7a4RpYCqftLsiolcFkBr5bPOoGYAy1jNWYLczmdmZ83W3dCGKEzjx5m9JqJ0igBQ6CxcXZSM5PeBcxXPJdzOKvEyxNV2fCosob3hw=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Internist",
+              "Sports medicine physician"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Midtown Medical Associates",
+            "data_id": "0x0:0x788ab9085f662f55",
+            "data_cid": "8685958276948832085",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x788ab9085f662f55&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x788ab9085f662f55&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7623368,
+              "longitude": -73.993293
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x788ab9085f662f55%218m2%213d40.7623368%214d-73.993293&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=i6kedMDgcmcgoIfblSd967a6MVINJgiHHruERwOFcZhccWDg_bVpyOln6dpAjPnRFbkfFR5DvetNI_OLJSB032qxSrln7v4vzt2fS06LBHz3gUC7qH6PCZiY5E7NK0rj_IhKdEVT93c1fCg9k3Dv8hAR0k_LVCAv",
+            "type": [
+              "Medical clinic",
+              "Doctor",
+              "Internist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Midtown East Family Medicine PLLC-In Office and Telehealth visits",
+            "data_id": "0x0:0xb2072ac74c3d5abf",
+            "data_cid": "12828269099054095039",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2072ac74c3d5abf&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2072ac74c3d5abf&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7615203,
+              "longitude": -73.96988019999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb2072ac74c3d5abf%218m2%213d40.7615203%214d-73.96988019999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 27,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEf4hQeMlcQuwxbnAwehDQ6MLKOGt3bHmQSg8apd11L6McD_2SZfp_zdshi6yAk8r_KefV0atphUf2zmOggoozRL2ePg1iCGwDW57U3FV9e2bCq5txj1la-FaV2va3CqOm47GOn4Q=w156-h156-n-k-no",
+            "type": [
+              "Medical office",
+              "Blood testing service",
+              "Doctor",
+              "Family practice physician",
+              "STD testing service",
+              "Urgent care center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjkKNyIzTWVkaWNhbCBPZmZpY2VzIG9mIE1hbmhhdHRhbiAtIE1pZHRvd24gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjkKNyIzTWVkaWNhbCBPZmZpY2VzIG9mIE1hbmhhdHRhbiAtIE1pZHRvd24gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e9e526c480f97e9e30d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/JvlrMtRwZFNX_vGxrFWLQA/6a3d3e9e526c480f97e9e30d.json",
+    "created_at": "2026-06-25 14:43:42 UTC",
+    "processed_at": "2026-06-25 14:43:42 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2593db25fa989:0xdfeca86470864bc5!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/JvlrMtRwZFNX_vGxrFWLQA/6a3d3e9e526c480f97e9e30d.html",
+    "prettify_html_file": "https://serpapi.com/searches/JvlrMtRwZFNX_vGxrFWLQA/6a3d3e9e526c480f97e9e30d.prettify",
+    "total_time_taken": 0.47
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJialfsj1ZwokRxUuGcGSo7N8",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Upper East Apothecary",
+    "place_id": "ChIJialfsj1ZwokRxUuGcGSo7N8",
+    "data_id": "0x89c2593db25fa989:0xdfeca86470864bc5",
+    "data_cid": "16135456714299689925",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2593db25fa989%3A0xdfeca86470864bc5&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2593db25fa989%3A0xdfeca86470864bc5&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.774575399999996,
+      "longitude": -73.9567512
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJialfsj1ZwokRxUuGcGSo7N8",
+    "provider_id": "/g/11sbgzrt8h",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOGjzr5uA-iLeZZ7Rnc6CSdlfnYVGKuON-utb3tUMLMpjYuWsyRF_K8xT542KubKLcYMQpW8C66kfCcJCpcIMHdbQiBXDM5qVezE28LVkbeFIojcXh83gaNbwdvi3mN-19R3YLoiKZfMo=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/OWeaP3icHcRNUoMwGADQE6XQRhCdcYFosSahgkoLG8d8hP8msUms9pDuvY0zvsX7_emt1eba8-YeLzqlulk4I46gpBXSLkAdvE4bBAYZL37K8ilOt-l4PgYuRgMVdX1ZSAiT52ZuZVWmxG0z5CzH9pVRpsfK7cx3sX4j0ddLcLEijhMKFcv1LkrCcGoTeEw0bNhDw_Phdn_Hgo9SnO9XES0nLtYbNcK-j3D3nvFT8zngQ4aWVwWuqBpI3TJ1c1r6vo_6_wHJP0_uRro",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 1
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 37
+      }
+    ],
+    "rating": 4.8,
+    "reviews": 40,
+    "type": [
+      "Pharmacy",
+      "Drug store"
+    ],
+    "type_ids": [
+      "pharmacy",
+      "drugstore"
+    ],
+    "extensions": [
+      {
+        "from_the_business": [
+          "Small business"
+        ]
+      },
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup",
+          "In-store shopping"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible parking lot"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "1401 3rd Ave, New York, NY 10075",
+    "country": "United States",
+    "website": "http://uppereastapothecary.com/",
+    "phone": "(212) 260-4900",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "Q2FV+R7 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20136 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20136 PM"
+      },
+      {
+        "tuesday": "9 AM\u20136 PM"
+      },
+      {
+        "wednesday": "9 AM\u20136 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGOGjzr5uA-iLeZZ7Rnc6CSdlfnYVGKuON-utb3tUMLMpjYuWsyRF_K8xT542KubKLcYMQpW8C66kfCcJCpcIMHdbQiBXDM5qVezE28LVkbeFIojcXh83gaNbwdvi3mN-19R3YLoiKZfMo=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/OWeaP3icHcRNUoMwGADQE6XQRhCdcYFosSahgkoLG8d8hP8msUms9pDuvY0zvsX7_emt1eba8-YeLzqlulk4I46gpBXSLkAdvE4bBAYZL37K8ilOt-l4PgYuRgMVdX1ZSAiT52ZuZVWmxG0z5CzH9pVRpsfK7cx3sX4j0ddLcLEijhMKFcv1LkrCcGoTeEw0bNhDw_Phdn_Hgo9SnO9XES0nLtYbNcK-j3D3nvFT8zngQ4aWVwWuqBpI3TJ1c1r6vo_6_wHJP0_uRro"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF5oCwlHRiBzDP3Qeu6ZwdVXmnHDMlmvnnWDgMJUkBl15QORLmBBW300PaeUfj9Xjn8PSNOs1sCDhHzQ8Ep-jKGQWgBwsl2VbsyrESFCQohml4MP2VYE5o4TCcPjng3V4l2X83wmw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Elrx9XicHcTdboIwGADQJ6oUCoYt2YUFHHFDW53AdqddbcX-ED9cM99wj7C3WbJzcX5_9DSN8BhFRpOZ8l4ZeQN5Fd5N0k0z4W2kRkACEEQLtuaXxTLzRTD19kzvJSNc3uYf4bPtravLxtgv57pSNav9hZo445vtq6W0Ixizg9yfhod-cDnbrTcQQ1Hq-s7zakTDyzPvFA1gkvYI39dqtyy419akDUva9yrz6Vsh2OAUaVOT9DkJNjyFGGOM9P8CuT_XsUTQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=JLqQRC5llWoq4ef5CVrKCA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=134.53806&pitch=-1.9587233&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Byu3EXicHc1RDoIgGADg2_AmiEhpG2vNt-qlHurRIaGwoaD8YZ2pE3Wbtr4LfN-PAQhxR0iERWtIVq_BvrSLWZB48H5wWgYbsfIjSZSAeY7dJK3bBzl5-xDH83y5Nty5u59L3fPmtpyaA1Jdq5zVE4hRhtjGhEEqsE7jIUS0iqIokRFFXaG3XAVlJeasyjcoWFBGZBTXvNoWjKF_2PskaJ7_AObeO78"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Excellent service provided by excellent staff.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXa5U703ElFaBBKcnllTHOkHhVaaR_62t4uOIBplu6L-e5s7_jh=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"This pharmacy sells supplements that expired over a year ago.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWrUs-9vqZrPcmXpS0abX_f6CUT2sS0AsrU0tnQA3v191GDTT7f=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Will def use this place again & will recommend for sure.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWemBA4faZo6D_r0ybdtsjNGOOYoh7SQNeDCEcMZQ6BbJdpY0kJ=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Sherley Slocumb",
+          "rating": 5,
+          "contributor_id": "102114596093952631705",
+          "user_review_count": 117,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXBFjJvgcwnXXHoF6fDO9fVSF8CZuZZS4_4oWTqjlI145ChWuPK-g=s120-c-rp-mo-ba12-br100",
+          "description": "Service is great-delivery was on time and yes the medication placed in a cute bag is a great touch.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s5eVJETkhWbU5IT0daaVdFOUJORzlRU21aWmJIYxAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CAIQACodChtycF9oOk9yRDNHVmNHOGZiWE9BNG9QSmZZbHc%7C%7C?hl=en",
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-26T12:50:53+00:00"
+        },
+        {
+          "username": "Andrea Lew",
+          "rating": 5,
+          "contributor_id": "112225583288768641425",
+          "user_review_count": 29,
+          "user_photo_count": 32,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUmjuowVb38SVwXGO0iCOtP7Ut3MEnu4G9GmlPTzAGHdkqibKKzQw=s120-c-rp-mo-ba12-br100",
+          "description": "Awesome service!! Loved the home delivery, too. A+ all around.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xsSGIySlhWbk41T1RkYWFrZFFObk5qYzNWcFdFRRAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CAIQACodChtycF9oOllHb2JXVnN5OTdaakdQNnNjc3VpWEE%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-17T19:00:35+00:00"
+        },
+        {
+          "username": "Rafael Pi Roman",
+          "rating": 5,
+          "contributor_id": "101604127932716639399",
+          "user_review_count": 6,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUFQoMWr8i4NwqyzD1U8CsskvUKCSe5cPbYlvOmSWscyi2QeagY=s120-c-rp-mo-br100",
+          "description": "I had an urgent concern about the delivery of my medication because *I* was mistaken about today\u2019s date, thinking the delivery was today instead of tomorrow. Aileen, the person who responded to my call could not have been nicer or more patient. And despite my anxiety she was able to figure out my mistake quickly, always treating me kindly and politely. She really deserves these 5 Stars and MORE, if they were available! Thanks for hiring such good people.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toc1VVcGFjazVJYWxSSldGTkpRbHB0TjIxdWJrRRAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CAIQACodChtycF9oOkhsUUpack5IalRJWFNJQlptN21ubkE%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-15T18:59:20+00:00"
+        },
+        {
+          "username": "Mina Mina",
+          "rating": 5,
+          "contributor_id": "106376542825730408586",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWemBA4faZo6D_r0ybdtsjNGOOYoh7SQNeDCEcMZQ6BbJdpY0kJ=s120-c-rp-mo-br100",
+          "description": "Great service!  Great delivery service! Got delivered meds on time & they came to Long Island City Queens and whole time they text update you very often throughout whole process from prescription receipt to fill to delivery with clear messages and/or instructions to fill out address info, signatures etc. Excellent driver, he sent updates, few proof pictures along the way and he was very kind! And tipped my driver cuz service is excellent & they save you so much time not having to deal with the hassle of pick up! Will def use this place again & will recommend for sure.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pCV2EzSmtNeTB6VldwWmEwTm1TRFJhTUd0TE9YYxAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CAIQACodChtycF9oOjBWa3JkMy0zVWpZa0NmSDRaMGtLOXc%7C%7C?hl=en",
+          "date": "11 months ago",
+          "date_iso8601": "2025-07-15T15:37:17+00:00"
+        },
+        {
+          "username": "Aleksandra LaJeunesse",
+          "rating": 2,
+          "contributor_id": "108319884645400788342",
+          "user_review_count": 20,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWrUs-9vqZrPcmXpS0abX_f6CUT2sS0AsrU0tnQA3v191GDTT7f=s120-c-rp-mo-ba12-br100",
+          "description": "This pharmacy sells supplements that expired over a year ago. Staff does not seem surprised or was apologetic when I brought this to their attention. Purchased in January 2026, product expired in October 2024 per photo.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t4UFdrbENRa3N0VkU5SFZXbE5VVUk0ZUZGNU5YYxAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CAIQACodChtycF9oOkxPWklCQkstVE9HVWlNUUI4eFF5NXc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1cajh1W6Se5CE1Y0UIcxlpp9uo2Y5ey_5Xn1ttzm6KvfHotGc2ptDt_TsFzQdZwBJGeXkv3pBT59u9QkEVcxvVoaLRxIgmKT2C1DTcGHv6IsY5o5iRDy4aIOvpa8xueKc0_dzfo949N4OW=k-no"
+            }
+          ],
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-17T12:45:16+00:00"
+        },
+        {
+          "username": "Danata Leenas",
+          "rating": 5,
+          "contributor_id": "109218790901533160513",
+          "user_review_count": 12,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJWb39ekTJzjEzx9AX6ouZtwghpVPCAeV6TQJXPayrAeX2S3A=s120-c-rp-mo-br100",
+          "description": "Very smooth process. Easy to communicate and super fast delivery.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21aQ01VOTViVTAxVDFKbFdtZGxMVGRTUWtWaE1uYxAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CAIQACodChtycF9oOmZCMU95bU01T1JlWmdlLTdSQkVhMnc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-09T15:16:01+00:00"
+        },
+        {
+          "username": "Brenda Grammer",
+          "rating": 5,
+          "contributor_id": "103859713927475478887",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJBHuVxUHXYI0AnWCykBsNRQL6NNAdcdR8AbPnZlWKxylNjxQ=s120-c-rp-mo-br100",
+          "description": "Wow! What a great experience! When I contacted the pharmacy, the phone was answered right away and the order was placed quickly and professionally.\nI was contacted when the order was placed,  filled and again when it was sent out for delivery.\nThe order was delivered during the time frame stated.  I was contacted as a reminder and again I was updated with a new estimated time shortly before delivery.\nThe contact had a driver tracker link and I was able to meet the driver at the exact time stated.\nWhat a great pharmacy!! Thank you for your professionalism and courtesy! I highly recommend you!\n\nOn time delivery. Efficient Coordination. Fast Shipping/Refills.  Great Communication.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURIbWMzbG1nRRAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CIHM0ogKEICAgIDHmc3lmgE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-09-17T18:51:08+00:00"
+        },
+        {
+          "username": "Deborah Jackson-Adams",
+          "rating": 5,
+          "contributor_id": "100538565738101296018",
+          "user_review_count": 5,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKjcEj20ca222alxi7x8igLZE8es2T1oke6Ofr66v4AWnjEMA=s120-c-rp-mo-br100",
+          "description": "Upper East Apothecary is one of the best experiences I've had with great customer service, quick response, and delivery, and courteous representatives with good phone etiquette.   I appreciate the quality of service they provide.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUR2NnJtSXFRRRAB!2m1!1s0x0:0xdfeca86470864bc5!3m1!1s2@1:CIHM0ogKEICAgIDv6rmIqQE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-12-19T14:54:04+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Third Ave Apothecary",
+            "data_id": "0x0:0x141d781f6e1b9e59",
+            "data_cid": "1449446731469790809",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x141d781f6e1b9e59&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x141d781f6e1b9e59&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7625878,
+              "longitude": -73.96560459999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x141d781f6e1b9e59%218m2%213d40.7625878%214d-73.96560459999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.7,
+            "reviews": 125,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF8VS-SmqaOUkVPKg4sloFcAEwnXXhN5LvCoyoB3Q8vWzegXF-ejgalWIdw6xhch9frWa083qipq1Fzkcrlv6zKQLGb1DqIkdeksMREYNKQeuZPohfE1NvUaa4dNqzRMLWnuEVNtM9Hu1Qj=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Drug store"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Madison Apothecary",
+            "data_id": "0x0:0x550530d64b2ef5da",
+            "data_cid": "6126356565049931226",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x550530d64b2ef5da&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x550530d64b2ef5da&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.779213999999996,
+              "longitude": -73.960385
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x550530d64b2ef5da%218m2%213d40.779213999999996%214d-73.960385&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.9,
+            "reviews": 45,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHjvby42qo3Lf9_FlVbM_WNOMNYTdPH_8Iw7mnZWO6_nRNIT3El5YSrSn0qasDB4waBHTBK15JT7JF4AlkBdecXm6hPeQIsqtLnLIG8L9YLioLH2tblceXoYMUptIF-ugCjP9YMqQ=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "eScript360 Pharmacy",
+            "data_id": "0x0:0xbeb7cd8e4210ff26",
+            "data_cid": "13742678798821818150",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbeb7cd8e4210ff26&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbeb7cd8e4210ff26&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.766526500000005,
+              "longitude": -73.9573187
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbeb7cd8e4210ff26%218m2%213d40.766526500000005%214d-73.9573187&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 714,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGajFve3SjMBqgl8ys8rMvcBj63aXWCmmYL-KC5BPVqe-nLBt5MFVfHsX0La9OxAK--c8wG6LsBaC9WwKapM4cF1ztesSrJxVBJnTR8Etp2Bs38HEhxOsLRITZu4s9wQX3ZEMOyCVgtLJU=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Rx Exclusive",
+            "data_id": "0x0:0xe56325a18da68f09",
+            "data_cid": "16529096433176317705",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe56325a18da68f09&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe56325a18da68f09&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7689127,
+              "longitude": -73.9609641
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe56325a18da68f09%218m2%213d40.7689127%214d-73.9609641&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 18,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGgPu80k5R_62xs9Qgqs_glVzh8cv_FpIpjEektUDx-wb_AzjALeb0DzQurp__HpwH8-tAnQv7fWGwMGTHKw7amAweUbxM1ITg_vIyng91PDcqRXQT5iJHGhAMQ77dT8pbkRbuX=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Healarian Pharmacy",
+            "data_id": "0x0:0x31c3bf655b675973",
+            "data_cid": "3585920170363148659",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x31c3bf655b675973&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x31c3bf655b675973&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.783212,
+              "longitude": -73.95100599999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x31c3bf655b675973%218m2%213d40.783212%214d-73.95100599999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 95,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGuniEh1fWu-XERLS0MdJcOUMdzWpJrHjyw9u-pDcw4rWAtVhxLJ9muVKc1B13uN7MYesHfnuUdyyMlW6N56L_Eyvbf0pLLcwnTIQ-Ske1Y9TKiOle2BYN36NBZZLXrv178j1wkYvlNp8Qx=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy",
+              "Health consultant",
+              "Vitamin & supplements store",
+              "Wellness center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OigKJiIiVXBwZXIgRWFzdCBBcG90aGVjYXJ5IE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COigKJiIiVXBwZXIgRWFzdCBBcG90aGVjYXJ5IE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}
