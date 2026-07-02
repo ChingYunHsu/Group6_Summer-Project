@@ -9,7 +9,7 @@ USE clearpath;
 -- -----------------------------------------------------------
 -- medical_profiles — Encrypted medical information
 -- One row per user; removing a user eradicates the profile through CASCADE.
--- ENCRYPTION='Y' requires MySQL keyring plugin (see docker-compose.yml)
+-- Application-level encryption is handled by the backend payload encryption key.
 -- -----------------------------------------------------------
 CREATE TABLE IF NOT EXISTS medical_profiles (
   user_id VARCHAR(36) PRIMARY KEY,
@@ -35,5 +35,4 @@ CREATE TABLE IF NOT EXISTS medical_profiles (
     CHECK (emergency_contacts IS NULL OR JSON_TYPE(emergency_contacts) = 'ARRAY')
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
-  COLLATE=utf8mb4_0900_ai_ci
-  ENCRYPTION='Y';
+  COLLATE=utf8mb4_0900_ai_ci;

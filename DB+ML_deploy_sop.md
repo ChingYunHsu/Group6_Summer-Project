@@ -94,6 +94,19 @@ The current `docker-compose.yml` starts the following services:
 - `clearpath-redis`: Redis 7, port `6379`
 - `clearpath-phpmyadmin`: phpMyAdmin, port `8080`
 
+Current minimal deployment uses the standard `mysql:8.4` image without MySQL keyring startup flags. Do not add these options unless the image and MySQL keyring component configuration have been updated and tested:
+
+```yaml
+--early-plugin-load=keyring_file.so
+--keyring_file_data=/var/lib/mysql-keyring/keyring
+```
+
+For this minimal deployment, keep the backend setting:
+
+```env
+DB_ENCRYPTION_CHECK=false
+```
+
 Start the services:
 
 ```bash
@@ -120,7 +133,7 @@ When the Docker volume is created for the first time, MySQL automatically execut
 docker/mysql/init/001_clearpath_schema.sql
 docker/mysql/init/002_add_busyness_unique_constraint.sql
 docker/mysql/init/003_add_user_profile_fields.sql
-docker/mysql/init/004_medical_profile.sql
+docker/mysql/init/004_medical_profiles.sql
 docker/mysql/init/005_seed_venues.sql
 ```
 
@@ -137,7 +150,7 @@ If the MySQL volume already exists, the init SQL scripts will not automatically 
 ```bash
 docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/002_add_busyness_unique_constraint.sql
 docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/003_add_user_profile_fields.sql
-docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/004_medical_profile.sql
+docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/004_medical_profiles.sql
 docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/005_seed_venues.sql
 ```
 
@@ -522,6 +535,14 @@ DROP TABLE IF EXISTS stg_prediction_curve_v1;
 ```
 
 To re-import, simply re-execute Section 8. Do not delete the MySQL Docker volume unless you intend to rebuild the entire database.
+
+The current minimal compose file should only keep the MySQL data volume:
+
+```yaml
+clearpath_mysql_data:
+```
+
+Do not add a `clearpath_mysql_keyring` volume for this deployment path. A keyring volume alone does not enable MySQL keyring support and can cause confusion if the corresponding MySQL startup options are not supported by the image.
 
 ## 13. Operations to Avoid During Deployment
 
