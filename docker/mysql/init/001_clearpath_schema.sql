@@ -152,6 +152,39 @@ CREATE TABLE IF NOT EXISTS pedestrian_ramps (
 );
 
 -- -----------------------------------------------------------
+-- users — Account base (D10: no medical data on server)
+-- -----------------------------------------------------------
+CREATE TABLE IF NOT EXISTS users (
+  user_id VARCHAR(36) PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  display_name VARCHAR(128) NOT NULL,
+  phone VARCHAR(64),
+  nationality VARCHAR(128),
+  spoken_languages JSON,
+  email_verified BOOLEAN DEFAULT FALSE,
+  preferred_language VARCHAR(10) DEFAULT 'en',
+  account_status ENUM('active','suspended','deleted') DEFAULT 'active',
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deleted_at TIMESTAMP NULL,
+  INDEX idx_users_email (email)
+);
+
+-- -----------------------------------------------------------
+-- report_categories — Issue type dictionary (D8)
+-- -----------------------------------------------------------
+CREATE TABLE IF NOT EXISTS report_categories (
+  category_id VARCHAR(64) PRIMARY KEY,
+  display_name VARCHAR(128) NOT NULL,
+  applies_to_venue_types JSON NOT NULL,
+  requires_floor_info BOOLEAN DEFAULT FALSE,
+  icon_name VARCHAR(64),
+  sort_order TINYINT UNSIGNED DEFAULT 0,
+  is_active BOOLEAN DEFAULT TRUE
+);
+
+-- -----------------------------------------------------------
 -- user_reports — Crowd-sourced incident reports
 -- Phase 3: Added user_id FK (D3), issue_type → VARCHAR + FK
 -- -----------------------------------------------------------
@@ -285,24 +318,6 @@ CREATE TABLE IF NOT EXISTS venue_warnings (
 -- D1: 邮箱+密码 (bcrypt), D2: Guest 无 token, D7: 邮箱即认证标识
 -- -----------------------------------------------------------
 
--- users — Account base (D10: no medical data on server)
-CREATE TABLE IF NOT EXISTS users (
-  user_id VARCHAR(36) PRIMARY KEY,
-  email VARCHAR(255) UNIQUE NOT NULL,
-  password_hash VARCHAR(255) NOT NULL,
-  display_name VARCHAR(128) NOT NULL,
-  phone VARCHAR(64),
-  nationality VARCHAR(128),
-  spoken_languages JSON,
-  email_verified BOOLEAN DEFAULT FALSE,
-  preferred_language VARCHAR(10) DEFAULT 'en',
-  account_status ENUM('active','suspended','deleted') DEFAULT 'active',
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  deleted_at TIMESTAMP NULL,
-  INDEX idx_users_email (email)
-);
-
 -- user_favorite_venues — Cross-device venue bookmarks
 CREATE TABLE IF NOT EXISTS user_favorite_venues (
   user_id VARCHAR(36) NOT NULL,
@@ -334,17 +349,6 @@ CREATE TABLE IF NOT EXISTS notification_preferences (
 -- NEW TABLES — Phase 3: Report System (2026-06-09)
 -- D5: OpenAPI 8 issue types, D8: 字典表按场馆类型过滤
 -- -----------------------------------------------------------
-
--- report_categories — Issue type dictionary (D8)
-CREATE TABLE IF NOT EXISTS report_categories (
-  category_id VARCHAR(64) PRIMARY KEY,
-  display_name VARCHAR(128) NOT NULL,
-  applies_to_venue_types JSON NOT NULL,
-  requires_floor_info BOOLEAN DEFAULT FALSE,
-  icon_name VARCHAR(64),
-  sort_order TINYINT UNSIGNED DEFAULT 0,
-  is_active BOOLEAN DEFAULT TRUE
-);
 
 -- -----------------------------------------------------------
 -- NEW TABLES — Phase 4: Busyness Forecast (2026-06-09)
