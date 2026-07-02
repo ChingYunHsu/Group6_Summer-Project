@@ -1,0 +1,989 @@
+{
+  "search_metadata": {
+    "id": "6a3d3eafacb3e4a90e22109d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/7qCFRkInvpXbhWAQOD90bA/6a3d3eafacb3e4a90e22109d.json",
+    "created_at": "2026-06-25 14:43:59 UTC",
+    "processed_at": "2026-06-25 14:43:59 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259bb2472711f:0x4623b7074bd88fdb!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/7qCFRkInvpXbhWAQOD90bA/6a3d3eafacb3e4a90e22109d.html",
+    "prettify_html_file": "https://serpapi.com/searches/7qCFRkInvpXbhWAQOD90bA/6a3d3eafacb3e4a90e22109d.prettify",
+    "total_time_taken": 1.52
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJH3FyJLtZwokR24_YSwe3I0Y",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Mount Sinai Doctors - West 23rd Street",
+    "place_id": "ChIJH3FyJLtZwokR24_YSwe3I0Y",
+    "data_id": "0x89c259bb2472711f:0x4623b7074bd88fdb",
+    "data_cid": "5054084448804966363",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259bb2472711f%3A0x4623b7074bd88fdb&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259bb2472711f%3A0x4623b7074bd88fdb&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7457563,
+      "longitude": -73.9987405
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJH3FyJLtZwokR24_YSwe3I0Y",
+    "provider_id": "/g/1thky55q",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFP6tsB6VTLMIVy_APJmvDIwQMWihq1Eqj1oyAxmbe-q_ZqcwxuEBRRtcuLGEsHg6vndfT3Zfzw_-SElYX7ax8NcfARMqNwGN982cgTOObvsdvkQhOleVRVi6gTUvySRaUB5kglFw=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/zjeOI3icHcRdboIwAADgE1VAI3NL9lAiOo38VcTNF6K1tEqhdi0teEOP4G1M_B6-54NpfVNfjsPZZESFoJx0ivxj0WrS6hEWjUNvCmAFlAPTOKvhIvW1Cvwi30SrYihhum7MfGWzaH9h0gvl1RMD7JsTAbI8SGz7LgwQ0rjbLEP1Q33Tnqt8cqjutgTbkP_9fhz7WYwriCIZ22X8ORtjmifJyaizqTOWcFKg4uLTfGeGLTrugmlN-cJ-W891XcDeY9C-AHerRzE",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 64
+      },
+      {
+        "stars": 2,
+        "amount": 13
+      },
+      {
+        "stars": 3,
+        "amount": 11
+      },
+      {
+        "stars": 4,
+        "amount": 9
+      },
+      {
+        "stars": 5,
+        "amount": 219
+      }
+    ],
+    "rating": 4,
+    "reviews": 316,
+    "type": [
+      "Medical clinic",
+      "General practitioner",
+      "Internal medicine ward",
+      "Urgent care center"
+    ],
+    "type_ids": [
+      "medical_clinic",
+      "general_practitioner",
+      "internal_medicine_ward",
+      "urgent_care_center"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "309 W 23rd St, New York, NY 10011",
+    "country": "United States",
+    "booking_link": "https://www.mountsinai.org/locations/msd-west-23/team?y_source=1_MTgwODM2MC03MTUtbG9jYXRpb24ucmVzZXJ2YXRpb25fdXJs",
+    "website": "https://www.mountsinai.org/locations/msd-west-23?utm_source=Yext&utm_medium=local_listing&utm_campaign=BIMG&y_source=1_MTgwODM2MC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+    "phone": "(212) 256-7000",
+    "open_state": "Open \u00b7 Closes 8 PM",
+    "plus_code": "P2W2+8G New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20138 PM"
+      },
+      {
+        "friday": "8 AM\u20138 PM"
+      },
+      {
+        "saturday": "9 AM\u20135 PM"
+      },
+      {
+        "sunday": "9 AM\u20135 PM"
+      },
+      {
+        "monday": "8 AM\u20138 PM"
+      },
+      {
+        "tuesday": "8 AM\u20138 PM"
+      },
+      {
+        "wednesday": "8 AM\u20138 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 10 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259bb2472711f%3A0x4623b7074bd88fdb&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFP6tsB6VTLMIVy_APJmvDIwQMWihq1Eqj1oyAxmbe-q_ZqcwxuEBRRtcuLGEsHg6vndfT3Zfzw_-SElYX7ax8NcfARMqNwGN982cgTOObvsdvkQhOleVRVi6gTUvySRaUB5kglFw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/zjeOI3icHcRdboIwAADgE1VAI3NL9lAiOo38VcTNF6K1tEqhdi0teEOP4G1M_B6-54NpfVNfjsPZZESFoJx0ivxj0WrS6hEWjUNvCmAFlAPTOKvhIvW1Cvwi30SrYihhum7MfGWzaH9h0gvl1RMD7JsTAbI8SGz7LgwQ0rjbLEP1Q33Tnqt8cqjutgTbkP_9fhz7WYwriCIZ22X8ORtjmifJyaizqTOWcFKg4uLTfGeGLTrugmlN-cJ-W891XcDeY9C-AHerRzE"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFhXCn1x7OA6IyCjEmXdahXwTpYmVeCs1T2GLYKsFgwaD0UmwvfUzYyNE2nt3wPesyyZAgzY8Hf3Bz_NPCnf7433nZEG4j2e9psV6mdMzTieRMHveAA6TvPSKCDeJq57XZeaJFltQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/wvJTEXicHcRbcoIwFADQFSGPWLCd8SON4KsiKjrAT4fBS6KSQHtTUthhl9DddKbn4_z-CK07fLHtRpAJb1vewBfCZ9UqDUpPqlbavEOrQgttmsSHB41ExpT7Heypvx7YPZTZtRSZSbtcXoChm3rLt3yLETflwjlL09fnMR_i0FOamARwGArKx3y2qsnr-B4nTNXBlBBVhMvp3YPnDi--vO7G9AbH3aoHSv20T05btoDNx1OQFVBuokYf5sZ1HMcS_1eW-gMkDUWk"
+      },
+      {
+        "title": "Videos",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEpSXYNy2nev1R647WEkYYvbLWDIu90uGF6wqGSUp6djnyp94xHco4IJoeiodN-9PzQzvGpU4f78WSSKquSC_KbLYjzGoSW_a-YUU-kCgMOwsA-jgKlP9jlUbz5Xz1eKXWf66nbbQ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/AWn4sHicHcRdboIwAADgE1XAYR0meyCoTHEM1jSlT8bWWgbY1pUf7Q09wm6zZN_D9_us-97Yled19ctMai07MVjxw7XqhepnXF89aSzgFlgvLvKyjTcGVTR_zJUYgy8YLsmmpXRkB7LeDZE_pFs43VKEDTw36mGi8P7Odbjba_GtzzmICle6MTU4vCxfCULZbUDJMWMH2rhUI3I8AYoxaBP58TnZGDQy64qo6TBzi8oFIqvIBULFWPk2Bb7vg_p_DtQf9CFFiQ"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=e_7avt2vCFopuz5kYFi_vQ&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=234.52986&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/mfkjwnicHc1LDoIwEADQ23RnCwj-ksaFCXuXrppSRzqx0Ikdinocb-VtJC7f6n0_npnSQanEDwDOCDPhE0JakZV9jH0AS5iki4PKpWI_Dd1oMRzJjhGvGszWZq7yqY00vZv7pUWTz8J1xgWEkfVgKZmUJVvHGED2lMSsq6oWXlf7nXjZRetaNgs2gpCd14X4P7eYdVkUPyabOsI"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Mt. Sinai @ 23rd Street is staffed by very kind and professional people.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJnOTl22OQxjYWIBG5XX4emVhDCcx39dAtnNI_HD8sKtrgpqw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I could not be happier with the service and attention they have provided me.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI_0n8yArhnOY9GF1qtI5RzyddnP0na5p5iR4up_q9Mf-l6OQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The quality of providers and service level all very good.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjU9QbiP30Z_9xfmyilsMINRYuGt8X9c9tOstisRbcG4Y_N54Koh=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Annie Bamfield",
+          "rating": 5,
+          "contributor_id": "115674914462936358232",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUGrYojYQ1MzUsR5QxjRb08d2YaBC0sBOKMgHGedGh_zZOXMgx1Tw=s120-c-rp-mo-br100",
+          "description": "The staff are friendly and welcoming. The doctor is understanding and caring and takes the time to address patients\u2019 needs. The support staff is also friendly and patient. I would highly recommend this clinic to friends, family, and the community.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xaMVRsazFXV0phWjFKZk1WbEZibGQzZEdsNVZHYxAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOlZ1Tlk1WWJaZ1JfMVlFbld3dGl5VGc%7C%7C?hl=en",
+          "date": "3 weeks ago",
+          "date_iso8601": "2026-05-30T00:55:13+00:00"
+        },
+        {
+          "username": "Fran H",
+          "rating": 5,
+          "contributor_id": "102518773649405872755",
+          "user_review_count": 4,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVSpUwIkDZII5GMnUt6c8x4aRS4rHzY44DRGPHC_oMI_g3bL8RF=s120-c-rp-mo-br100",
+          "description": "Nice and friendly staff. I told my family members where to go for fantastic care. It\u2019s hard to find a good doctor and a team that cares. Dr. Arnouk is a great doctor.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aaldHNXBSVXRzTnpCYVlsYzVNVjk2VFhkd2JVRRAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOnZjWG5pRUtsNzBaYlc5MV96TXdwbUE%7C%7C?hl=en",
+          "date": "4 weeks ago",
+          "date_iso8601": "2026-05-27T22:11:28+00:00"
+        },
+        {
+          "username": "Kim Le",
+          "rating": 5,
+          "contributor_id": "103677643272546598565",
+          "user_review_count": 50,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLKjdfGroRBZstbcUiivVSPYk-A2F844O7rVcStYWXSewZPDA=s120-c-rp-mo-ba12-br100",
+          "description": "I had an appointment with Dr Arnouk on Friday which I booked on the app.\nThe app is wonderful to book an appointment when I needed at my convenience. My complaint is my right knee hurt when I walked downstairs and I have an out of state trip on Sunday. He gave me a shot for my arthritis knee.  I felt better.\nI appreciate him and his team very much for a wonderful treatment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tNNFpEbHZjR2t4TnpSTlNYQmFPR2Q1V0RKTGJWRRAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOkM4ZDlvcGkxNzRNSXBaOGd5WDJLbVE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-15T13:10:15+00:00"
+        },
+        {
+          "username": "Kate Wood",
+          "rating": 5,
+          "contributor_id": "105990755943102561590",
+          "user_review_count": 6,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXPFs68sCwEHEiA-y1VDujj_eoPlbUphLtS7czBvjfRb9Ruw4TS=s120-c-rp-mo-br100",
+          "description": "I cannot speak highly enough about Dr. Kimberly Peters (board\u2011certified in Neurology) at Mount Sinai\u2019s 309 W 23rd Street office.\n\nDr. Peters was kind, compassionate, direct, thorough, and incredibly knowledgeable. She listened closely, asked thoughtful questions, and took the time to truly understand what was going on. She explained all of my options clearly, and I left feeling grateful and relieved to be in the care of someone I fully trust. She provided a strong treatment plan (with detailed notes in the Mount Sinai app), made it clear she was available for follow\u2011up questions, and scheduled my next appointment before I left.\n\nThe front desk staff was efficient and kind, I was seen on time, and my prescription was called in immediately. I\u2019m also extremely grateful to the scheduler who found me a last\u2011minute appointment (IYKYK).\n\nI had an excellent experience with Dr. Peters and highly recommend her to anyone suffering from migraines.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tkRFptdFFWbFJaTlhsMVQySXplbEF0TjE5WlYxRRAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOkdDZmtQVlRZNXl1T2IzelAtN19ZV1E%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-09T14:41:28+00:00"
+        },
+        {
+          "username": "Tray Willia",
+          "rating": 1,
+          "contributor_id": "115992010735054184602",
+          "user_review_count": 18,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX1CrF0Pe-WzyTGs4rgZsF8YhtQTUgK_UkuinIhTub5L0_sz0FrLw=s120-c-rp-mo-ba12-br100",
+          "description": "Love this place but Zocdoc wouldnt allow me to schedule with my regular doctor, Chuey. So I went along with their system that I had to make an appointmentwith this guy. Worst experience ever!  I will never see the Physician Assistant Eduardo Yarur again.!!Absolutely no bedside manner, spoke over me, insisted I hadn't been there in years (to finally look in the system and see that wasn't true) Pointed out how many years late I was to request  a procedure and that I needed a physical first but then gave me the referral..I told him he was incredibly negative and got my bag and left.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2psZmFqRlFSa1k1WkRGalgyUXRjRmsyUXkxbk1uYxAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOjlfajFQRkY5ZDFjX2QtcFk2Qy1nMnc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-10-29T22:18:16+00:00"
+        },
+        {
+          "username": "Moses Salomon",
+          "rating": 2,
+          "contributor_id": "111438026404173586366",
+          "user_review_count": 14,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX7rxIF_2kajCmRbVDJgs0B4RTs9vmcMsQpnrREqpYn0OG2hvnk=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Chuey is a really good doctor in his own right but unfortunately you are only as good as your staff. If you are looking for a practice that will honestly fight for you as a patient to get you prior authorizations for hard to get medication, this is not the practice.\n\nFrom his nurse, Josue to the practice manager, Chanel, it was a bad experience all around. When you have a nurse that arrogantly swears up and down they sent the right form to the insurance only to call the insurance to confirm otherwise is quite aggravating. I requested to speak with the manager and it took 3 whole days for someone to get back to me. I wish Chuey would choose different staff but maybe it's not up to him. I've been going here for 7 years and its unfortunate this is how it ended.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t3ekxUWjBZVlJvU0VwU04zQmlkVVF6TW1sTWIwRRAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOkwzLTZ0YVRoSEpSN3BidUQzMmlMb0E%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-08T16:26:18+00:00"
+        },
+        {
+          "username": "Douglas D",
+          "rating": 5,
+          "contributor_id": "104058188350151201522",
+          "user_review_count": 41,
+          "user_photo_count": 132,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX-DbhtiPlnBl7bVcyj1s68nXI2f2SV9oEg9Vu3nQL-nIMRxfs=s120-c-rp-mo-ba12-br100",
+          "description": "Treated very well and professionally.Doctor Mazzola has kept a track record history of the pain  I had receive a while back from an auto incident,better then all my past doctors and surgeons combined,which will help in my case.The office has been wonderful in keeping my pain meds,referrals,reports,follow-ups and continued support of my health in check and in good standards so far.Thank you all DJD.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xkSU5ERmZMVEpUVjJvMWJVOVVaWGRDT1Rsd04xRRAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOldINDFfLTJTV2o1bU9UZXdCOTlwN1E%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn1leNDJMCZw73Zutwf2cb7XRlwzdFcmuyBIx67LCx8JHmu3DZ_QxoDLybv-3GgU6v5MefvH2AFi-8MaW3bZt31ylhu8aFpOUOTwHDCiKeW_-OZvIhDe6i9sdJIx1GrPbkqsc7cCMNA4BuQ=k-no"
+            }
+          ],
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-05T12:41:27+00:00"
+        },
+        {
+          "username": "Bitsy Brawler",
+          "rating": 1,
+          "contributor_id": "106445530790671215452",
+          "user_review_count": 1,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJ_kb0_wK8Y7JcGGEILx2Ji3uiBl-HMeexJkP1dqQHkXt_rLg=s120-c-rp-mo-br100",
+          "description": "Extremely unethical practices. They called 20 minutes before the appointment, yelled at me and then cancelled the appointment. When I called and told them I had been waiting over a week for the appointment, they scheduled me with a different doctor two hours later and jacked up the price significantly. Mt Sinai is a true example of how incredibly evil medical care is in the United States. I've been travelling internationally for eight years and literally no other country is like this.\n\nDayshana Bankem needs to be fired immediately, and so does the doctor who flaked.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25wa1oyZG9jVUZOWjJwM05FcFlNMEpLUTNoYVUyYxAB!2m1!1s0x0:0x4623b7074bd88fdb!3m1!1s2@1:CAIQACodChtycF9oOnpkZ2docUFNZ2p3NEpYM0JKQ3haU2c%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-13T12:58:52+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "CityMD Chelsea Urgent Care - Manhattan",
+            "data_id": "0x0:0xaf4711be565c8c36",
+            "data_cid": "12630083189174209590",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xaf4711be565c8c36&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xaf4711be565c8c36&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.74646,
+              "longitude": -74.0016946
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xaf4711be565c8c36%218m2%213d40.74646%214d-74.0016946&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.2,
+            "reviews": 61,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFmneAn0VsZM6eFzsSrwVPrz2IQYWL5apqeQpHEDSESTnW1brJRaBSeiJuoO4IkI83euHRGkqUwLsCnPHGzVvwUBTqtKNEX3vT2okzs9RPLFfeZLoeM1UZ6tjuJY6MwUyiRwisElg=w156-h156-n-k-no",
+            "type": [
+              "Urgent care center",
+              "Doctor",
+              "Laboratory",
+              "Medical clinic",
+              "Women's health clinic",
+              "Pediatric clinic",
+              "Walk-in clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Mt Sinai Faculty Doctors",
+            "data_id": "0x0:0x157c23ae583ae852",
+            "data_cid": "1548151603620145234",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x157c23ae583ae852&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x157c23ae583ae852&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7693375,
+              "longitude": -73.9841028
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x157c23ae583ae852%218m2%213d40.7693375%214d-73.9841028&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.6,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFIHcGPJ_ZzqZe1wbZDgTugHi9U8sA8uCXDSXwtZCc7o2l9-f0GKB9Hqn2II61bT5K0iLG2S6s0-Q0m5IuuenAngepCcJnBp3nfdNs21sLJy7e-weVd9pVmSN1eoTEGpm1etK-a=w156-h156-n-k-no",
+            "type": [
+              "Medical Center",
+              "General practitioner"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Mt. Sinai St. Luke's Physician Offices",
+            "data_id": "0x0:0xe5b1728ae058ce0a",
+            "data_cid": "16551136046358253066",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe5b1728ae058ce0a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe5b1728ae058ce0a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8053558,
+              "longitude": -73.9623692
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe5b1728ae058ce0a%218m2%213d40.8053558%214d-73.9623692&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=pO5OxhPsMIfFLXpbHd4pZ8Kr4OsXwXAeVKLqgdPJebx8lcu3Ye_He8AofX7PpoKe4dkgY_EDVb1Nt0ugw69KWRYPKznSq4daGWNOlyQoDoE7dHoMJPxCJYLkKyushG_ywx-VGrLDtkQ0jN3wIRXPR1tuXMv4NJSI",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Mount Sinai Queens-Family Health",
+            "data_id": "0x0:0x683d7f03328a5215",
+            "data_cid": "7511299405233410581",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x683d7f03328a5215&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x683d7f03328a5215&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7659771,
+              "longitude": -73.931296
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x683d7f03328a5215%218m2%213d40.7659771%214d-73.931296&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 78,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAG61WtEn-XKCZXTrtDQC0XMgPrNe7OQJe_1Qn5ssip0Q-OTlt8Z9Q-SYnuaJOvca2Q1dY_sv1K4yG1qZcA_mWzKNRovF1H6DNr8gORLVgWmrkkZsmmTR2m1nTEq6tcVctJWdm2W7g=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Dentist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Mount Sinai Doctors-Forest Hills",
+            "data_id": "0x0:0xe103ee6b4f4cbf40",
+            "data_cid": "16214065228123258688",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe103ee6b4f4cbf40&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe103ee6b4f4cbf40&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7275906,
+              "longitude": -73.85432449999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe103ee6b4f4cbf40%218m2%213d40.7275906%214d-73.85432449999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.5,
+            "reviews": 268,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFLJkjeFUwNjE-BDpzGy4BNSv-vBYBE_4DIInFs1pio4WgtQiunhHEi3TWBTVfQWMYXsPovLKQruS5Ip4RFqgsBnUGU3SW-DSMYRPqp1ZNz1DJ20TyXNKM183DVSCnGViAl19WSpQ=w156-h156-n-k-no",
+            "type": [
+              "Doctor",
+              "General practitioner"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Less busy than usual",
+        "time_spent": "People typically spend 45 min to 1.5 hr here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not busy",
+            "busyness_score": 18
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 16
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 24
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 52
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not busy",
+            "busyness_score": 18
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 12
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 98
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 90
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 26
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 56
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 24
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 24
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 86,
+            "live_busyness_score": 21,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 84
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 60
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 24
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 36
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 32
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 26
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 24
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 28
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 26
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not busy",
+            "busyness_score": 20
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not busy",
+            "busyness_score": 18
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not busy",
+            "busyness_score": 12
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjkKNyIzTW91bnQgU2luYWkgRG9jdG9ycyAtIFdlc3QgMjNyZCBTdHJlZXQgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjkKNyIzTW91bnQgU2luYWkgRG9jdG9ycyAtIFdlc3QgMjNyZCBTdHJlZXQgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

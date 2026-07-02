@@ -1,0 +1,793 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ef8529e4b9e3fb3325d",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/CWuf210e2O6wFf0YJz7-CA/6a3d3ef8529e4b9e3fb3325d.json",
+    "created_at": "2026-06-25 14:45:12 UTC",
+    "processed_at": "2026-06-25 14:45:12 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259a537d0814d:0x2b7a4533c78299b1!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/CWuf210e2O6wFf0YJz7-CA/6a3d3ef8529e4b9e3fb3325d.html",
+    "prettify_html_file": "https://serpapi.com/searches/CWuf210e2O6wFf0YJz7-CA/6a3d3ef8529e4b9e3fb3325d.prettify",
+    "total_time_taken": 1.47
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJTYHQN6VZwokRsZmCxzNFeis",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Union Health Center",
+    "place_id": "ChIJTYHQN6VZwokRsZmCxzNFeis",
+    "data_id": "0x89c259a537d0814d:0x2b7a4533c78299b1",
+    "data_cid": "3132892579482474929",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259a537d0814d%3A0x2b7a4533c78299b1&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259a537d0814d%3A0x2b7a4533c78299b1&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.745785399999995,
+      "longitude": -73.9939849
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJTYHQN6VZwokRsZmCxzNFeis",
+    "provider_id": "/g/11b5pl0hzl",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=emarbM2ljsfasRhHDJw49w&cb_client=search.gws-prod.gps&w=86&h=86&yaw=226.59407&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/EVl4AXicHc1NDsIgEEDh27ATaFOrNSFuXBgTN17ATOkUMLQQBovexmt5G382b_m998vmHGknBOWEmBeHJboHelpF4CYE4xGiI67DJJZKZHuf-hmc30eYgxsUTpD6c-1vNAJd7PFwKk1XmO6v2jucsyKEpC035SumMHATiRW1bZn95QlF1XXL110jNyy6rK2S7H8Zw6IqKT-lwzoI",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 25
+      },
+      {
+        "stars": 2,
+        "amount": 6
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 3
+      },
+      {
+        "stars": 5,
+        "amount": 48
+      }
+    ],
+    "rating": 3.5,
+    "reviews": 82,
+    "type": [
+      "Medical clinic"
+    ],
+    "type_ids": [
+      "medical_clinic"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      }
+    ],
+    "address": "160 W 26th St, New York, NY 10001",
+    "country": "United States",
+    "website": "http://www.unionhealthcenter.org/",
+    "phone": "(212) 924-2510",
+    "open_state": "Open \u00b7 Closes 6 PM",
+    "plus_code": "P2W4+8C New York",
+    "hours": [
+      {
+        "thursday": "8 AM\u20136 PM"
+      },
+      {
+        "friday": "8 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "8 AM\u20136 PM"
+      },
+      {
+        "tuesday": "8 AM\u20136 PM"
+      },
+      {
+        "wednesday": "10 AM\u20136 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=emarbM2ljsfasRhHDJw49w&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=226.59407&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/X4tcRnicHc1LDsIgEADQ27ATKKmfmhA3LoyJGy_QTJEWDBTSGUGv4628jdHlW73P2xFl3AuBtFhLxdua_dMGXGXgU0pTsJA9cpOiKI0g94jDDD4cMszJ37SNsAwXFe44Al7d6XiubVeZGXoTvJ1JR8jYY-EEhnywfMrIqlaqZU6rbsde8NOGr7tWbln2ZJyW7P-MqehGyi8fjjqf"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAE-RhwQ0fqUU4pBHHXl949sQ5dPquTHDovPm9tS0rMl_zp3VlciYOqCBbTO25chd7qMjxqOHTI-MnqqLCHhH4StDqDrsSr6T90xrsLjE9UUwEv5B4KZFqijFAmX9GhjgyhBlp2l=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/DX5iTHicHcTdboIwGADQJ6pUhS018YI_10UREFjUGxMro2Kh_doquhf0GXwbk52L83pya5WZOY7g01EjZSPqq6k1k72teztisnMaZRAzyDh-ts4vfow2fMjxL1SVqwJKt4K4xOTeKYNrSSN5yzpiC6wTcfhT0x_BzrsUwuBYphOP8dMnJO0dUlp-o6QHWIWUU7ewEUTaFPqjJPiuzaqNSVUN8c0L3OV-Aed24Xdb8sXb5sEDoSZiPowxxoj_z1D_Bln5ROE"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=emarbM2ljsfasRhHDJw49w&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=226.59407&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/X4tcRnicHc1LDsIgEADQ27ATKKmfmhA3LoyJGy_QTJEWDBTSGUGv4628jdHlW73P2xFl3AuBtFhLxdua_dMGXGXgU0pTsJA9cpOiKI0g94jDDD4cMszJ37SNsAwXFe44Al7d6XiubVeZGXoTvJ1JR8jYY-EEhnywfMrIqlaqZU6rbsde8NOGr7tWbln2ZJyW7P-MqehGyi8fjjqf"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Very satisfied with the quality of service at the UHC.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXFA4a8p1rWCewncNXj4MZ10WFFwCeFeKi1wAkd9q8hm9jQx_4U=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I spent my day visiting Quest and got no blood and urine test.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLlWDcmws1zhzcts7ASts7-g2HLKWK9r5twy3-mdNAe3GSm-g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The staff is supportive, dedicated, committed to providing quality service.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVlLiKPbDB4dI03bA_zBoXTnICBnSrmkWtuZZJiAsr4ZXBgCPuG=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "mohammed naji",
+          "rating": 5,
+          "contributor_id": "100133740324499941214",
+          "user_review_count": 9,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIRfYGv2wrnVMt_0IEKONiwhLtyDvwe0ZBkju4AJaF_QJAZevU=s120-c-rp-mo-ba12-br100",
+          "description": "I have been going here for about a year now. It\u2019s a great place with great people. Everyone genuinely cares and does their best to take care of you. The clinic is clean, and the staff are very kind and professional. Dr. Vanderveen is one of the best primary care doctors I have ever met. He always makes sure I am well taken care of and always receive the proper treatment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xOalMxWnVOM2hhWWpKbUxUVlBOVEpaZVU5UmJuYxAB!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CAIQACodChtycF9oOlNjS1ZuN3haYjJmLTVPNTJZeU9Rbnc%7C%7C?hl=en",
+          "date": "Edited 2 months ago",
+          "date_iso8601": "2026-04-22T20:42:25+00:00"
+        },
+        {
+          "username": "Elliott",
+          "rating": 5,
+          "contributor_id": "107730873060263838493",
+          "user_review_count": 256,
+          "user_photo_count": 2028,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX8S6I1yct5347Z3RQ7iTMcWQg_qvNQWkkViJHKzx-gpRGj26U=s120-c-rp-mo-ba12-br100",
+          "description": "My doctor Neil Pasco is outstanding and goes above and beyond and his nurse is 5 stars but unfortunately my appointment on 7/25/25 at 11 was not nice all of the female desk agents on the 4th floor of 26st in Manhattan was unpleasant and unprofessional but there was a shining star the one male desk agent he was calm and went above and beyond to help me. He was also 5 stars along with my doctor and nurse.  While it's true a few bad apples can spoil a bunch . This time those few good ones made my day! I have a update to this review. This union health center responded to my review and asked me to call and speak to a supervisor. I called and had to leave a message with a desk receptionist and a message will be returned.  that was yesterday 8/20/25 this morning 8/21/25  a supervisor named Louis Carrasco called me this morning I was sleep and when I woke I called back and once again I had to leave a message for the supervisor lol phone tag !  But this center is overall 5 stars and these 5 star centers should be duplicated. Hopefully when I return a better experience will be had. Update 9/2/25 I want to thank supervisor Louis Carrasco for responding and professionally and thoughtfully handling my issue. once again 5 stars for the 5 star center!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25kUWRVVldSR1I1VlZaNldVZE1XV2hGUkVWaVEyYxAB!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CAIQACodChtycF9oOndQdUVWRGR5VVZ6WUdMWWhFREViQ2c%7C%7C?hl=en",
+          "date": "Edited 9 months ago",
+          "date_iso8601": "2025-09-02T21:39:49+00:00"
+        },
+        {
+          "username": "Mohamed Sammy Hussien",
+          "rating": 1,
+          "contributor_id": "103741215989290151417",
+          "user_review_count": 33,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWcw_ISjwgccWJlaMVyVzWHA3RxYZgQjFcs2-u49pDlMuvtqbrt=s120-c-rp-mo-ba12-br100",
+          "description": "I\u2019ve always had positive experiences at this office, especially with Dr. Caroline Coicou \u2014 she\u2019s truly exceptional, compassionate, and always takes the time to care for her patients. Unfortunately, our most recent visit was disappointing. Since Dr. Coicou was fully booked, we were scheduled with Dr. Terry Seetoe. Due to heavy traffic and an accident near the Queens Midtown Tunnel, we arrived late \u2014 but the office was empty when we got there. The front desk staff, who were kind as always, informed us that the doctor would not see us. We explained that we had driven 1.5 hours and that my elderly father had taken a fall the day before and needed medical attention. Despite this, Dr. Seetoe declined to see him. It was disheartening to feel that compassion and flexibility were missing in a situation involving an elderly patient in need. While the staff is generally wonderful, this particular with this specific doctor experience left us disappointed.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VKR0F6SVQtd2Zya0JnEAE!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CIHM0ogKEJGAzIT-wfrkBg%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2025-05-09T10:59:07+00:00"
+        },
+        {
+          "username": "Daniela Rodriguez",
+          "rating": 5,
+          "contributor_id": "117290425218794700067",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX0v32r9WoXo2lgNbvs4Mnn70ah_uM-W1NWJENVz56f-IWLJQQX=s120-c-rp-mo-br100",
+          "description": "Literally the best pcp ive ever had. The people here are really nice and treat patients well. They see you pretty quickly once you arrive for your appointment, and Ive never had to wait more than 10 minutes to be seen in the last 3-4 years ive been coming here. I hate commuting but I happily commute my hour long ride on the train to get here.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSd1ZHaDNOa0pvVm5vMk16TmhhMmRwZFcwM2RGRRAB!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CAIQACodChtycF9oOlRwVGh3NkJoVno2MzNha2dpdW03dFE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-05T21:45:26+00:00"
+        },
+        {
+          "username": "Inspired",
+          "rating": 1,
+          "contributor_id": "100529500353516865254",
+          "user_review_count": 134,
+          "user_photo_count": 415,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKGckXcNuGGjm01CxJQhHywu7eiSDJ7ah2yGkWosf7F-L82vw=s120-c-rp-mo-ba12-br100",
+          "description": "This clinic may work great for people with Medicaid or other subsidized health insurances but I would avoid this place at all cost as a PPO insurance holder. First of all, they prescribed so much blood work that I literally fainted during the draw. This is just as a part of the annual routine checkup. Next, when I called them to inquire about my test results, they hung up on me. When I called to resend my prescription to the pharmacy, they hung up on me. The staff is very unprofessional, and it seems like everyone has an attitude present at city-sponsored hospitals. I felt like they absolutely do not care about my health, well-being, or comfort. They will bill your insurance  but won't give any answers or follow up.\n\nUpdate: 6 month after my checkup visit I received a bill for the balance that my insurance did not cover (it should have covered my annual check up but this is a different story). My name on the bill is misspelled, and the phone line that is responsible for handling bill questions is not working. I will definitely stay away from this sloppy nightmare in the future.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUM3M0tpdmJ3EAE!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CIHM0ogKEICAgIC73Kivbw%7C%7C?hl=en",
+          "date": "Edited a year ago",
+          "date_iso8601": "2025-06-05T11:33:06+00:00"
+        },
+        {
+          "username": "Caroline Weston",
+          "rating": 1,
+          "contributor_id": "110924676305703284341",
+          "user_review_count": 9,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWMJqMP53TGxaB_szEi-HWt07Ck_pACs7mK1ILuMtAmIYyXkNbukw=s120-c-rp-mo-br100",
+          "description": "Absolutely ridiculous. I have tried to have a therapy consultation three times now. First time was cancelled. Okay no problem, rescheduled. Therapist never called me. I call the center, my phone number is wrong in their system\u2026 even though they called me to reschedule the first time. Whatever, I really need counseling, so I reschedule again for this morning. The therapist did not call again. I will not be looking for care from this clinic any longer- although even if I wanted to, I\u2019m not sure they\u2019d provide it.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUN0ck1lYWpBRRAB!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CIHM0ogKEICAgICtrMeajAE%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-01-29T15:41:21+00:00"
+        },
+        {
+          "username": "Anson Lum",
+          "rating": 1,
+          "contributor_id": "108609697063839380228",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLlWDcmws1zhzcts7ASts7-g2HLKWK9r5twy3-mdNAe3GSm-g=s120-c-rp-mo-br100",
+          "description": "I had a doctor visit this Wednesday. The doctor was very nice and professional. They assigned me a yearly check up. The worst thing is they didn't send any request or letter to the Quest Diagnostic where they sent me to take the blood and urine test. I spent my day visiting Quest and got no blood and urine test. Can you imagine how pissed I was? I wondered who made that big mistake. The assistant (male)I believe.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNsb0lqcURBEAE!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CIHM0ogKEICAgICloIjqDA%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-11-12T16:26:30+00:00"
+        },
+        {
+          "username": "tufan banerjee",
+          "rating": 5,
+          "contributor_id": "113153727653510725098",
+          "user_review_count": 22,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVK5dfjXdO-DoUKJ4eozFA6lrsjL9kB_KhFmEi24PqFzBwg7AkzAg=s120-c-rp-mo-ba12-br100",
+          "description": "i have been going to this place for years,all my doctors and my testing are in the same building!people who work there are true professionals and very helpful in every way!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toeWVHMUxVMUpHVUUxeFNXWTBlV2RQZUdoS2VWRRAB!2m1!1s0x0:0x2b7a4533c78299b1!3m1!1s2@1:CAIQACodChtycF9oOkhyeG1LU1JGUE1xSWY0eWdPeGhKeVE%7C%7C?hl=en",
+          "date": "10 months ago",
+          "date_iso8601": "2025-08-06T21:17:17+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Union Community Health Center - (Third Ave.)",
+            "data_id": "0x0:0x18a8ab492cd42e1",
+            "data_cid": "111053648985670369",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x18a8ab492cd42e1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x18a8ab492cd42e1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8534362,
+              "longitude": -73.89193569999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x18a8ab492cd42e1%218m2%213d40.8534362%214d-73.89193569999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.4,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF7JjVmO6i2uR2JEHJZrk9qMkkhuxE2WMlHfTTeXwReKA6V6-MeyVHeDxuJwlunpTkJFLU2eV3a5xHC94GstS7ouj_Nvv1OOxZ9e2icLcRH_1tn5kvV-OTw712bLZFzoiNtuWIo=w156-h156-n-k-no",
+            "type": [
+              "Medical Center"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "NY Medical Union Square",
+            "data_id": "0x0:0xb2cd13949eaff9e3",
+            "data_cid": "12883975638015277539",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2cd13949eaff9e3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb2cd13949eaff9e3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7358203,
+              "longitude": -73.9941825
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb2cd13949eaff9e3%218m2%213d40.7358203%214d-73.9941825&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 223,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGFpk_9zXfEE9M_Ur1bW9bHeMHFS7lmr9qTRdqwHVoT1uiawQg5deBflkLvgrMdzTR9MCqml6g81ZREDilnLVLeqhKenWaB6V_6yuzQq_QC2K2we_RVLONHl6yKH8DYSWFnl6NyYyL17TMZ=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Dermatologist",
+              "Family practice physician",
+              "General practitioner",
+              "Obstetrician-gynecologist",
+              "Medical Center",
+              "Neurologist",
+              "STD clinic",
+              "STD testing service"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Metro Community Health Center - Manhattan",
+            "data_id": "0x0:0x6124ee087a77dc07",
+            "data_cid": "6999981441022417927",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6124ee087a77dc07&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6124ee087a77dc07&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7379971,
+              "longitude": -73.97822049999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6124ee087a77dc07%218m2%213d40.7379971%214d-73.97822049999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=zAZ_Z1KR1gMzbjCiWGC99ms4d5LxwYGd9SnC6l1hHW1AlBsgggNftqCon9tJFUtsYD1eZ2kgweiNuGyz0dePkoQjWjll2fl2O8jmK4cLT0R0CHPJJtO_SsH5pwOmdfHHeIfKh8vC8oNId01w1dl29L4-bFt549Fn",
+            "type": [
+              "Community health center",
+              "Health care facility"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Union Community Health Center",
+            "data_id": "0x0:0xd3e476a60bcd7c1c",
+            "data_cid": "15268459092227488796",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd3e476a60bcd7c1c&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xd3e476a60bcd7c1c&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8506782,
+              "longitude": -73.8656038
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xd3e476a60bcd7c1c%218m2%213d40.8506782%214d-73.8656038&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.2,
+            "reviews": 17,
+            "thumbnail": "https://www.google.com/maps/vt/data=6WL5OC9Bzw2P4tjXmtmYDSu44rN9NwGIIdiWNIsPFC0GI8EBFvPJ_EdYquP7EJncJE4X7jO3rBmCZnbyQcR7GUinJUr-2wN1SSXH1ieHQMZPpNC4q_tPflr5D-yBa-E9OJxO7avvo5KPs6o-WZCEXiwCznJKZt6W",
+            "type": [
+              "Medical clinic",
+              "Community health center"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "NYU Langone Ambulatory Care Chelsea",
+            "data_id": "0x0:0xba4b064ca882584d",
+            "data_cid": "13423830040622291021",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xba4b064ca882584d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xba4b064ca882584d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7457165,
+              "longitude": -73.9939271
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xba4b064ca882584d%218m2%213d40.7457165%214d-73.9939271&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.4,
+            "reviews": 86,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEyZbyYc8TbWU_cuHZiOWBzFZDKsWRadOf_L9AVRm3lTnbDRpUZnR0sPkpnBFAsYRjSivRLpUe2xD69Akfq352T2bGU5z2ljAAqdMkzdUdwEn9-RwRHG_QSYBHL9qszL817DB1NXw=w156-h156-n-k-no",
+            "type": [
+              "Home health care service"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Less busy than usual",
+        "time_spent": "People typically spend 1-2.5 hours here"
+      },
+      "graph_results": {
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 22
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 80
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 85
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 58
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 75
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 77
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 49
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 50
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 93
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 79
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 79,
+            "live_busyness_score": 32,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 62
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 64
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 41
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 37
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 54
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 66
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 29
+          },
+          {
+            "time": "5 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OiYKJCIgVW5pb24gSGVhbHRoIENlbnRlciBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COiYKJCIgVW5pb24gSGVhbHRoIENlbnRlciBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

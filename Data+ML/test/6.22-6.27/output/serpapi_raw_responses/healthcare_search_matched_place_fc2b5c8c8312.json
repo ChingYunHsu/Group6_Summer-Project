@@ -1,0 +1,978 @@
+{
+  "search_metadata": {
+    "id": "6a3d3ebc5c262261accb6381",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/LwvuAvvCeFytmNhbgRubpQ/6a3d3ebc5c262261accb6381.json",
+    "created_at": "2026-06-25 14:44:12 UTC",
+    "processed_at": "2026-06-25 14:44:12 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c25bd553ab2479:0xcc2c02f1f3cac3d3!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/LwvuAvvCeFytmNhbgRubpQ/6a3d3ebc5c262261accb6381.html",
+    "prettify_html_file": "https://serpapi.com/searches/LwvuAvvCeFytmNhbgRubpQ/6a3d3ebc5c262261accb6381.prettify",
+    "total_time_taken": 0.62
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJeSSrU9VbwokR08PK8_ECLMw",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "CVS Pharmacy",
+    "place_id": "ChIJeSSrU9VbwokR08PK8_ECLMw",
+    "data_id": "0x89c25bd553ab2479:0xcc2c02f1f3cac3d3",
+    "data_cid": "14712137320913093587",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c25bd553ab2479%3A0xcc2c02f1f3cac3d3&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c25bd553ab2479%3A0xcc2c02f1f3cac3d3&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7149298,
+      "longitude": -73.9826705
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJeSSrU9VbwokR08PK8_ECLMw",
+    "provider_id": "/g/11c468lh7m",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjJdzij4VvB8MWVRsMW3YKs_xS4Z8vdE2GBZkOcK-sKpdweAKxERS0UUlATh83AOWhH8I1XO6WQL8b89eCmaA111aat0tCILbopfW3VHd0EezIL-ltCu2WbjyUXU-7U6LJWQdJ=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/HoLBv3icHcTbDsEwAADQL6q1JpTEQy0LuzBDV7zI1tZqZl20rj_oG_yNxHk434-ytjUjx6mV2ym1Lmt5M_LKdWNlYztcX5yyNYAbYByyXKRn4leheJ-qXnaf4DnLVmbO3F1kDs91b4_vwu9OJ_tzwiNgolY8JIme_moNKa3JRmGXJEzNcIC2SZ-lMS7wUHqXnCCE8txC6wVxodsjc7OZgL58BzGorXfrsqJ60S0FA9qPQ5aKcPxAEEKg_nPQ_ADa0EKj",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 18
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 3
+      },
+      {
+        "stars": 4,
+        "amount": 4
+      },
+      {
+        "stars": 5,
+        "amount": 18
+      }
+    ],
+    "rating": 3.1,
+    "reviews": 43,
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "book_online": "https://www.cvs.com/scheduling/patient-lookup?lob=rximz&flow=vaccine&cid=ls_ph_google_gmb_avail&entryFlow=google&bookType=single&storeId=2939&postalCode=10002&rwg_token=AE37R_gJkqMhXG9Al-Xvvt-DHBmJqhpJOJkZjIVsmKSyJmH4OXAvrG2cp_jjUgX7qnvaA8xgIr_qzdlibtHKfRWGIbRUposD5A%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store shopping",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance"
+        ]
+      },
+      {
+        "offerings": [
+          "Medication disposal",
+          "Naloxone",
+          "Passport photos"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments",
+          "SNAP/EBT"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_shopping": true,
+      "delivery": true
+    },
+    "address": "500 Grand St, New York, NY 10002",
+    "country": "United States",
+    "located_in": "CVS",
+    "website": "https://www.cvs.com/store-locator/new-york-ny-pharmacies/500-grand-st-on-the-corner-of-willett-st-new-york-ny-10002/storeid=2939?WT.mc_id=LS_GOOGLE_RX_2939",
+    "phone": "(212) 677-1008",
+    "open_state": "Open \u00b7 Closes 1:30 PM \u00b7 Reopens 2 PM",
+    "plus_code": "P278+XW New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "friday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "saturday": "9 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "sunday": "10 AM\u20131:30 PM, 2\u20136 PM"
+      },
+      {
+        "monday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "tuesday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      },
+      {
+        "wednesday": "9 AM\u20131:30 PM, 2\u20139 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c25bd553ab2479%3A0xcc2c02f1f3cac3d3&engine=google_maps_posts",
+    "posts": [
+      {
+        "title": "Schedule a MMR Vaccine at CVS",
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipNh1DVlGMIK2zpbkgd8nSl96ilGuqJAoVRC254t=h400-no",
+        "cta": "Book",
+        "link": "https://www.cvs.com/immunizations/mmr",
+        "post_link": "https://search.google.com/local/posts?q=CVS+Pharmacy&ludocid=14712137320913093587&lpsid=CIHM0ogKELKBiNSRj_KPJA&source=sh/x/loc/post&lsig=AB86z5UiOdaGIJAcfWAYdpMwathZ",
+        "description": "Help protect against measles, mumps and rubella with up to two doses of the MMR vaccine for children and adults. Age and other restrictions apply.* It\u2019s no cost with most insurance. Plus, get a $5 off $20 coupon* after vaccination.",
+        "duration": "Feb 23 - Dec 31",
+        "date": "Feb 23, 2026"
+      },
+      {
+        "title": "Get 14 no-cost vaccines with most insurance*",
+        "media": "https://lh3.googleusercontent.com/geougc/AF1QipOq6zeakwwp6-YtWMPxr4v8sNh6v-M3m-MfFPap=h400-no",
+        "cta": "Book",
+        "link": "https://www.cvs.com/immunizations/get-vaccinated?cid=google-flu",
+        "post_link": "https://search.google.com/local/posts?q=CVS+Pharmacy&ludocid=14712137320913093587&lpsid=CIHM0ogKEPjA6cv229uDKQ&source=sh/x/loc/post&lsig=AB86z5UiOdaGIJAcfWAYdpMwathZ",
+        "description": "Stay protected with vaccines like shingles, RSV, HPV, Hep B & More. Plus, get a $5 off $20 coupon with any vaccine.* Restrictions apply.",
+        "duration": "Jan 1 - Jul 31",
+        "date": "Jan 1, 2026"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjJdzij4VvB8MWVRsMW3YKs_xS4Z8vdE2GBZkOcK-sKpdweAKxERS0UUlATh83AOWhH8I1XO6WQL8b89eCmaA111aat0tCILbopfW3VHd0EezIL-ltCu2WbjyUXU-7U6LJWQdJ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/HoLBv3icHcTbDsEwAADQL6q1JpTEQy0LuzBDV7zI1tZqZl20rj_oG_yNxHk434-ytjUjx6mV2ym1Lmt5M_LKdWNlYztcX5yyNYAbYByyXKRn4leheJ-qXnaf4DnLVmbO3F1kDs91b4_vwu9OJ_tzwiNgolY8JIme_moNKa3JRmGXJEzNcIC2SZ-lMS7wUHqXnCCE8txC6wVxodsjc7OZgL58BzGorXfrsqJ60S0FA9qPQ5aKcPxAEEKg_nPQ_ADa0EKj"
+      },
+      {
+        "title": "Latest",
+        "last_updated": "Today",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEQnpxo2znxXQjMJD6zdvhniO-a-vi75NZcnFx7ZPnb7A4DLNzKhpJzvqsASRXwm-ob-X7S6s-6wbb07AQPRSUupMocb0PHF9Ll73lF8G-vgJ2q4EH2ce2KR5iMlxJmimZ0gT9xQcpNRAY3=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YnHzIHicHcTBboIwGADgJ_qlA6XTZIcmyAwKUtCEcVs70rKVtlqEhpf0vLdZsu_w_T7lOFq3CwIlo5UwRqju4bo7N3rs9LjiZgiEdcAduICUBf0he6qtN-GifUO_8yyJl69J6v4MnzD1eFO0XKcet6VmmKyTU7Ecpc2W6eZIXTXzAIZBg-vYQTwzhjChZVVfHzY3nKHykG5PCkcqfX2HSWThbb0_hLwLj9Wmz5XPhn5okbhsPeW2qMhH9Da_IIRA_s9B_wG0Mkat"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFkQBD7ilRkBGUO_oaoRRQQXQeF3ySTkFvt1BeJ4_pN91ta7nCwPuCBTjcp54Y8vZdKRpVBv9g2H9fnLJ9lmsy9FCIqMgK2s0vOxcg084J1TEdAlorrvLUUB1jNd-FCtzAe2SsLbnYz3h8=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/RUSVGHicHcTNToMwAADgJ-poATNq4oGiVRmylYFxXpZZanF0baVd9_OQ3n0bE7_D9_szeG_dbRSpIZlJY6QSRycmbrQX2s-4OUTSOsAdcFG-qtmY05GR-_mXakby2C23ZmeahrE3JmhyWbcjDR4RUaZbW2Pkd3NdnFbHgrR7bm_STRbe-0VjX0nAMn7Cn7oqsTq4C6bF8_eLXMQOhuWZS5ilJWof-lyZaQpV1xG0r3tAC3_NRbx21YfeXJMhuzshCCEY_udA_wEjNEZn"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_j3ZhGnXeowpzNEf_D91t1biWDh9M_KC7eP00W2hmGHVfjy1LB_rJG4cWmndKVaegttcT_79QPKWCOFI44TcewA_6jnqvGRTtA0l5R0QRNCdrQEgsnweLbzVbYYNbuX771Ypd=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/qr80BXicHcThEoEwAADgJ0ob0eXOj4QiUl1X8mentTapLW10vKBn8DbufD--74cp1cm5rjdsMqJC0IY8JOmx4IpwNcKi1WknNSw1qdthEN1sD9WTM3P5iYihewfrCq0sqGBxzVbMOiDfMUkIQDZmreulVf2C-yXqd66Bs5aXfnohVCmcINOKQj9zjputYSSYDDaa1fz-dONE2aCZxiCKA6fsozWVfCD74p0WeR4Uj5NpwrwrFwMEAGjsP9b4D0coRIA"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I enjoyed shopping at the CVS at 500 Grand Street.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUvZrRrpZeV7sqLyzez5Y07X16TQOHIn9bWZ1Gl6NM-sEXPFO_3Yg=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"Horrible hours, poor selection, and always long checkout lines.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWp22jKSLkeVeceXrEfCWVEDqHOPKzDeDV946R_qfkm_AyIlLM=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"It's terrible how this store manager doesn't hire the right people.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUDON2SkagJLGrwjnL0rlj3r7kwvypK5d3B3htDtBwBfFtG1-N8=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Hafsa Ibrahim",
+          "rating": 3,
+          "contributor_id": "114197119616662788552",
+          "user_review_count": 2,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX5awUmnf7bUcTX9X0wdRJ8vgyNUBe9fser8bK4Yd0-CRJ5MjlY=s120-c-rp-mo-br100",
+          "description": "CVS Pharmacy at 500 Grand is fine, they're helpful & quick to fill scripts that they have in stock. BUT: Website fails to update pharmacy hours: dont expect service after 7pm on any given day of the week",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xvMFZHa3paMGR0TFhOU1RtMTNUbmR4WHpaVFdXYxAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CAIQACodChtycF9oOlo0VGkzZ0dtLXNSTm13TndxXzZTWWc%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn0v0NkL9fLIBaNi0soFFBZJGzCKk4L5LJKaEhSBwVTXHzTcJo3xPyrxXOwzVcx9CHYepWdogAcOR75Y0h3iK6vOXvvLCIbJpw59RhgPrnQSRZHd221rg4PG5xpVURRRTqrebDvFarp8UMvu=k-no"
+            }
+          ],
+          "date": "2 weeks ago",
+          "date_iso8601": "2026-06-10T09:43:13+00:00"
+        },
+        {
+          "username": "Michele J.E. Sevik",
+          "rating": 1,
+          "contributor_id": "115053147353105608842",
+          "user_review_count": 9,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLNH-kn09XaPrSXJasUWa3IZ2udryxEVYUypCz2a9XML2MFhmQ=s120-c-rp-mo-br100",
+          "description": "Worst pharmacy I have ever experienced. Staff is disorganized, incompetent, unable to deal with insurance, unable to fill scripts properly. This branch is completely inadequate and unreliable.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2s1dlVscEpSbVo0YWxsSGR6aEJTMDlPUm1KM1RuYxAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CAIQACodChtycF9oOk5vUlpJRmZ4allHdzhBS09ORmJ3Tnc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-19T16:01:04+00:00"
+        },
+        {
+          "username": "Juan Huertas",
+          "rating": 5,
+          "contributor_id": "102396730089010649653",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL9sTzluqoizJrtJy-wk7ETcFMawa7Xb8NciMrDS2n3y3hM8w=s120-c-rp-mo-br100",
+          "description": "CVS is changing its staff and hiring pharmacists like Liz. She's smart, professional, and always has a smile for everyone.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2kwMVZqaFJTRFZwT1hGU1VHdzVMVkZuZEhoNWQwRRAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CAIQACodChtycF9oOi01VjhRSDVpOXFSUGw5LVFndHh5d0E%7C%7C?hl=en",
+          "date": "Edited 3 months ago",
+          "date_iso8601": "2026-03-19T13:56:11+00:00"
+        },
+        {
+          "username": "Lendy Santiago",
+          "rating": 5,
+          "contributor_id": "111998294546052973098",
+          "user_review_count": 149,
+          "user_photo_count": 22,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXYaTECaTdocFB4JQ-w4ygi4GviTdfPcCNZh3H6l9lOzEGgnD_2-A=s120-c-rp-mo-ba12-br100",
+          "description": "I've been a pharmacy customer of this particular CVS for 26 years. That's how long they've (CVS) has been open.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21WaFIzbFFNMDQyUzFrek9WaDZZVGxxYkhCTmVrRRAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CAIQACodChtycF9oOmVhR3lQM042S1kzOVh6YTlqbHBNekE%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-02-03T22:52:48+00:00"
+        },
+        {
+          "username": "Peter M",
+          "rating": 1,
+          "contributor_id": "115288374831620050827",
+          "user_review_count": 30,
+          "user_photo_count": 78,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWJBgvnr62ErooDq9g5rBJufLfo8td4Wge0dxUu8KCEj7AxOtzu=s120-c-rp-mo-ba12-br100",
+          "description": "This is the worst location, unmanaged slow \ud83d\udc0c don't use them for pharmacy.\nMinus 1 if there's was a slot for this!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tvM1JFVkxSa28wV0hsaVExQnRhMkkzVm1KMGJIYxAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CAIQACodChtycF9oOko3REVLRko0WHliQ1Bta2I3VmJ0bHc%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-01T19:34:24+00:00"
+        },
+        {
+          "username": "Allison Robinson",
+          "rating": 5,
+          "contributor_id": "108838634985771267557",
+          "user_review_count": 151,
+          "user_photo_count": 206,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWyD2c3AiFxpYYqyMI19zSys5C0e2Jukn5HWGz38-vD3rmCabJp=s120-c-rp-mo-ba12-br100",
+          "description": "I recently had a positive experience at this CVS pharmacy, despite the occasional long lines. Despite the wait times, I must say that the staff's professionalism and dedication to customer service truly shone through. The moment I walked in, I was greeted with a warm smile, and the staff members were quick to acknowledge the lines and assure customers that they were doing their best to expedite the process.\n\nWhat impressed me the most was the pharmacy team's ability to maintain a sense of calm and composure, even during peak hours. They efficiently multi tasked, addressing questions from multiple customers while still maintaining accuracy in dispensing medications. The staff also took the time to explain medications and offer advice, showing a genuine concern for their customers' well-being.\n\nDespite the long lines, I felt valued as a customer, and the staff's dedication to providing excellent service made the wait more bearable. CVS also offers a convenient online prescription refill service, which I found incredibly helpful to avoid the lines on busier days.\nSo overall while long lines can be a common occurrence at CVS, the exceptional customer service and professionalism of the staff more than make up for it. I appreciate their commitment to their customers' health and well-being, and I will continue to choose CVS for my pharmacy needs.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURadWJIZVl3EAE!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CIHM0ogKEICAgIDZubHeYw%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-10-04T13:32:27+00:00"
+        },
+        {
+          "username": "C K",
+          "rating": 1,
+          "contributor_id": "116073182241908663866",
+          "user_review_count": 16,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUDON2SkagJLGrwjnL0rlj3r7kwvypK5d3B3htDtBwBfFtG1-N8=s120-c-rp-mo-ba12-br100",
+          "description": "The pharmacy cashier (a black heavy set female) was extremely rude to me and I just decided to not continue my purchase with her and that I was going to complete my purchase at self check out so she yelled at me and said \"you have to buy that before you leave the store,\" as if I were going to steal it.\nShe and the store manager refused to give me her name so I could not make a complaint, but I called and made the complaint already.\nPeople like that shouldn't be working behind store counters.\nIt's terrible how this store manager doesn't hire the right people.\nTo run a business and keep the customers coming back,  you have to be good with them and hire people who know how to interact with the public.\nI could see this store going out of business and hoping it does!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNueExfZWhBRRAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CIHM0ogKEICAgICnxL_ehAE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-09-22T23:16:32+00:00"
+        },
+        {
+          "username": "Josie Velez",
+          "rating": 5,
+          "contributor_id": "117920101924578767076",
+          "user_review_count": 26,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUvZrRrpZeV7sqLyzez5Y07X16TQOHIn9bWZ1Gl6NM-sEXPFO_3Yg=s120-c-rp-mo-ba12-br100",
+          "description": "I enjoyed shopping at the CVS at 500 Grand Street. It's convenient and they always have what I need. I enjoy getting my prescriptions with the pharmacy. The pharmacy always has my prescriptions. Thank you very much for the kindness of all the employees at CVS.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURqbXZPMThRRRAB!2m1!1s0x0:0xcc2c02f1f3cac3d3!3m1!1s2@1:CIHM0ogKEICAgIDjmvO18QE%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-05-02T01:55:38+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "People Choice Pharmacy",
+            "data_id": "0x0:0xb5552c883651ceac",
+            "data_cid": "13066398857423867564",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb5552c883651ceac&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb5552c883651ceac&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.714303799999996,
+              "longitude": -73.9816028
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb5552c883651ceac%218m2%213d40.714303799999996%214d-73.9816028&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.4,
+            "reviews": 49,
+            "thumbnail": "https://lh4.googleusercontent.com/proxy/s5rJNP74KaRxWa3lLnYVxFZD3gWb7argFy2WSOUShyPJvwpSr6_7DjV6uPqBhjawhjBoyBNHWTe53v8ocSO54OCaK1DGhIdXG-ZC_0TnJEqC0SuaJNkSSH2u8aczeVP0VATOb6bMopIXaInpoTBjtEkMr3GxsbrXfB8tUqKgTOdY=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Minh Pharmacy Inc",
+            "data_id": "0x0:0x975da6adb395d534",
+            "data_cid": "10907057137533703476",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x975da6adb395d534&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x975da6adb395d534&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7188276,
+              "longitude": -73.99634019999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x975da6adb395d534%218m2%213d40.7188276%214d-73.99634019999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 7,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH3JqjK6DD3NG_7p4rEInxaODpGbXJaucyZZmfBZauIuMwfnGeSKQL7TVTOpC6UV9W6WET7GZie2J6VXpoGFsFiqylaH4FQC1536hOwxT0vnhTWpHMh4BHaaP8vynuNVg9YAht2=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Walgreens Pharmacy",
+            "data_id": "0x0:0x26822e735bd9162e",
+            "data_cid": "2774831393410717230",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26822e735bd9162e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x26822e735bd9162e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.719034199999996,
+              "longitude": -73.98863879999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x26822e735bd9162e%218m2%213d40.719034199999996%214d-73.98863879999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.3,
+            "reviews": 15,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUdtMZ2g1Frhi1Bj5lm_edzU86_nXh9cWHwX61uCzbC7-VzCeIePL-LMx1aWv88G4schQD9kgQ7daC75WgJPAynu6bYY26kwf604_eK9bLknsGEooabWk-bXajpBT6L8NCZ-o2ng=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "popular_times": {
+      "current_day": "thursday",
+      "live_hash": {
+        "info": "Now: Usually not too busy",
+        "time_spent": "People typically spend 10 min to 2 hr here"
+      },
+      "graph_results": {
+        "sunday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "monday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 29
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 21
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "tuesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 76
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "wednesday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 59
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 51
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 42
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 34
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 27
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually not too busy",
+            "busyness_score": 31
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "thursday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 46
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 48,
+            "current": true
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 48
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 100
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually as busy as it gets",
+            "busyness_score": 87
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 78
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 72
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 70
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "friday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 38
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually not too busy",
+            "busyness_score": 44
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 63
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 65
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 68
+          },
+          {
+            "time": "6 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 74
+          },
+          {
+            "time": "7 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "8 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ],
+        "saturday": [
+          {
+            "time": "6 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 AM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "10 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "11 AM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "12 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "1 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 57
+          },
+          {
+            "time": "2 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 53
+          },
+          {
+            "time": "3 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "4 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 55
+          },
+          {
+            "time": "5 PM",
+            "info": "Usually a little busy",
+            "busyness_score": 61
+          },
+          {
+            "time": "6 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "7 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "8 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "9 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "10 PM",
+            "busyness_score": 0
+          },
+          {
+            "time": "11 PM",
+            "busyness_score": 0
+          }
+        ]
+      }
+    },
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,Oh8KHSIZQ1ZTIFBoYXJtYWN5IE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COh8KHSIZQ1ZTIFBoYXJtYWN5IE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

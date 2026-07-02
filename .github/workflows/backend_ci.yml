@@ -9,11 +9,11 @@ on:
     branches: [ main ]
     paths:
       - 'backend/**'
+      - '.github/workflows/**'
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -30,27 +30,39 @@ jobs:
         python-version: '3.11'
 
     - name: Install Poetry
-      uses: snok/install-poetry@v1
-      with:
-        virtualenvs-create: true
-        virtualenvs-in-project: false # Let Poetry manage it globally
-        installer-parallel: true
+      run: |
+        pipx install poetry
 
-    - name: Load cached venv
-      id: cached-poetry-dependencies
+
+    - name: Configure Poetry to use local virtualenv
+      run: |
+        poetry config virtualenvs.create true
+        poetry config virtualenvs.in-project true
+      working-directory: ./backend
+
+    - name: Force update lockfile on CI
+      run: |
+        poetry lock
+      working-directory: ./backend
+ 
+
+    - name: Set up Poetry Cache
       uses: actions/cache@v4
       with:
-        path: ~/.cache/pypoetry/virtualenvs # Cache the global environment
-        key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+        path: backend/.venv
+        key: venv-${{ runner.os }}-poetry-${{ hashFiles('backend/poetry.lock') }}-v99
+        restore-keys: |
+          venv-${{ runner.os }}-poetry-
+    
 
     - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root
+      run: |
+        poetry install --no-interaction --no-root
       working-directory: ./backend 
 
-  
-    - name: Ensure Pytest is Installed
-      run: poetry run pip install pytest pytest-cov flake8
+    - name: Ensure Pytest and Lint tools are ready
+      run: |
+        poetry run pip install pytest pytest-cov flake8
       working-directory: ./backend
 
     - name: Run Backend Linting Check

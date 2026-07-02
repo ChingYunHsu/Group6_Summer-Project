@@ -1,0 +1,281 @@
+{
+  "search_metadata": {
+    "id": "6a3d3eadbb48add86f323d68",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/e-L6sykqZ3C4wc5XbXI4EQ/6a3d3eadbb48add86f323d68.json",
+    "created_at": "2026-06-25 14:43:57 UTC",
+    "processed_at": "2026-06-25 14:43:57 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259f86d577efd:0x599f1c77e248accb!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/e-L6sykqZ3C4wc5XbXI4EQ/6a3d3eadbb48add86f323d68.html",
+    "prettify_html_file": "https://serpapi.com/searches/e-L6sykqZ3C4wc5XbXI4EQ/6a3d3eadbb48add86f323d68.prettify",
+    "total_time_taken": 0.38
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJ_X5XbfhZwokRy6xI4nccn1k",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Columbia Primary Care - Midtown",
+    "place_id": "ChIJ_X5XbfhZwokRy6xI4nccn1k",
+    "data_id": "0x89c259f86d577efd:0x599f1c77e248accb",
+    "data_cid": "6457911691895680203",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259f86d577efd%3A0x599f1c77e248accb&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259f86d577efd%3A0x599f1c77e248accb&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7603402,
+      "longitude": -73.9790617
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ_X5XbfhZwokRy6xI4nccn1k",
+    "provider_id": "/g/11hm168b8v",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=c2S5b2nl_zM5pinOFv4log&cb_client=search.gws-prod.gps&w=86&h=86&yaw=72.83277&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/aJbOkXicHc1NDsIgEEDh27ATKlrbmBB37owLD9BQijAJZSYFQb2M5_I2_mze8nvvl8-Z0l6IlBdrcwFbCe42pBVp7hBdsJogcYOzKGuR_W0eo4ZwIB0RJmXkpR1lDMPz1BLE87FsAzpmxsEEsDGrZPViPHf1Ky44cUeJVdXvmP_loavqJO83susYQTZeNew_uWJR66b5AFAeOZI",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 1
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 0
+      },
+      {
+        "stars": 5,
+        "amount": 0
+      }
+    ],
+    "rating": 1,
+    "reviews": 1,
+    "type": [
+      "Medical clinic",
+      "Doctor",
+      "Family practice physician",
+      "General practitioner",
+      "Home health care service"
+    ],
+    "type_ids": [
+      "medical_clinic",
+      "doctor",
+      "family_practice_physician",
+      "general_practitioner",
+      "home_health_care_service"
+    ],
+    "extensions": [
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      }
+    ],
+    "address": "51 W 51st St Ste 340, New York, NY 10019",
+    "country": "United States",
+    "website": "https://www.columbiadoctors.org/columbia-primary-care?utm_source=yextgmb&utm_medium=organic&utm_campaign=yext_doctor_listings",
+    "phone": "(844) 387-2273",
+    "open_state": "Open \u00b7 Closes 5 PM",
+    "plus_code": "Q26C+49 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20135 PM"
+      },
+      {
+        "friday": "9 AM\u20135 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20135 PM"
+      },
+      {
+        "tuesday": "9 AM\u20135 PM"
+      },
+      {
+        "wednesday": "9 AM\u20135 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=c2S5b2nl_zM5pinOFv4log&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=72.83277&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2AwDLXicHc1BDsIgEADA33ATWmzTakK8eTMefECzRYRNKGxkpepvfJa_MXE-MN9PYKayV6rw3Tmu6FbCp4tlQyB9zj46ICzS5kXVVnF4LHMCjAeClPFqrL70s05xep96wnQ-1i5mL-w82YgusVmAylSqZLCM0UlPRaxG604Eo3ejeMFqBi3HrR4GQcg2mEb8m1uupm2aH8i1Oik"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGBQ6HiyYfJnzF6UzF4AKoiYe2wRGCXVdeoTlEbapYwdantdqJaBsr4a-yHSarwerGelaDSnd8nForxw-RX8GPRgNoIYQX7VAtSMbPbztutKnyShGFH769NB0IIegk6UnVCRHjS=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/YPzIynicHcRLDoIwFADAE1XwE_wkLkCloJEAVQLLArWo-IptTYULegZvY-Is5vtptO7UyrLaZjriQvCWvRSTlQDNQI8q8bB4p1ClkLLcOEruLvYSJ7j2xWUPg--cB3_mHsS1YBOT4k2e1Uyc2l1Ju8LUFHT93FNPyRlFfUCoNExi1tItgXoBvpBvg9J8geOURyIsknyeuZocy7gc9EsfoCcN9oO5s4w8OwwZvztnyDZpcCNrM7ZtGzX_KwQ_5j9F2A"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=c2S5b2nl_zM5pinOFv4log&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=72.83277&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/2AwDLXicHc1BDsIgEADA33ATWmzTakK8eTMefECzRYRNKGxkpepvfJa_MXE-MN9PYKayV6rw3Tmu6FbCp4tlQyB9zj46ICzS5kXVVnF4LHMCjAeClPFqrL70s05xep96wnQ-1i5mL-w82YgusVmAylSqZLCM0UlPRaxG604Eo3ejeMFqBi3HrR4GQcg2mEb8m1uupm2aH8i1Oik"
+      }
+    ],
+    "user_reviews": {
+      "most_relevant": [
+        {
+          "username": "Erin Ehsani",
+          "rating": 1,
+          "contributor_id": "110570686236201720998",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVVe_vgET3L8cg9EMVYH1rakdnFaua5AP5zyW14z3fwy-i-IX0Ztg=s120-c-rp-mo-br100",
+          "description": "Office does not offer courtesy or grace period and will refuse to see you, even after waiting six months for an appointment, if you are 9 minutes late. Completely understand the need for punctuality, but commuting in NYC is always a wildcard and most places extend a short grace period to accommodate the many variables that are not in one\u2019s control.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURyc3RYSk9nEAE!2m1!1s0x0:0x599f1c77e248accb!3m1!1s2@1:CIHM0ogKEICAgIDrstXJOg%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-07-16T13:38:17+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "ColumbiaDoctors - Midtown",
+            "data_id": "0x0:0xb016416abdc9ca37",
+            "data_cid": "12688400926869408311",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb016416abdc9ca37&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xb016416abdc9ca37&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7603402,
+              "longitude": -73.97906019999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xb016416abdc9ca37%218m2%213d40.7603402%214d-73.97906019999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.7,
+            "reviews": 126,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHuF8TvWnaPlwFilNAG4nexJKequZMOLfCviJoLFEEd48uwcxzJuuA45dMwpJM7z9hhT2SeiDnOZLpe4kBN7p9WM4OgTtT48tvnYRuphm9vXdCe_3XtF7jv3noZ9lHmQOmvccb6nA=w156-h156-n-k-no",
+            "type": [
+              "Medical Center",
+              "Allergist",
+              "Cardiologist",
+              "Dentist",
+              "Dermatologist",
+              "Endocrinologist",
+              "Gastroenterologist",
+              "Orthopedic surgeon",
+              "Pediatrician",
+              "Radiologist"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Columbia Dermatology - Midtown",
+            "data_id": "0x0:0xecaf12a67b47731",
+            "data_cid": "1065929426257344305",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xecaf12a67b47731&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xecaf12a67b47731&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7600803,
+              "longitude": -73.9785751
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xecaf12a67b47731%218m2%213d40.7600803%214d-73.9785751&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 4.9,
+            "reviews": 488,
+            "thumbnail": "https://www.google.com/maps/vt/data=dEAzhJpCI9iuP4SX-NWcbIA0r1FNIz-omHFGHDvE6zIswwnf2wlqaT8jNhOM1GD4IAi6uLvW_KXn-S4aB8HBcVKOtGMdZq4Ma21XUzGx2-O4-M6LRv3vCXKL6LDdTq9_uazlSvPsVlWEnBejHdB5og8UWmI_nimp",
+            "type": [
+              "Skin care clinic"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Columbia Nurse Practitioner Group",
+            "data_id": "0x0:0xe08228bba64c399a",
+            "data_cid": "16177537597882251674",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe08228bba64c399a&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe08228bba64c399a&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.841304199999996,
+              "longitude": -73.9410487
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe08228bba64c399a%218m2%213d40.841304199999996%214d-73.9410487&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.3,
+            "reviews": 11,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEFBtLKZCEPsTM96DH1Lv5qds1tzG18O8lhJiIsPUraRnsu6fNcf1NbUNtyiwm1NINZxmu8iqNa_UJxFCC52py8cj52Ya1RDb6ht2YsUKGHgV3TsvSuffq4eCK7lp9-ohIWjYQ=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic",
+              "Nurse practitioner"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Manhattan Primary Care - New York",
+            "data_id": "0x0:0xbee19a32ec7e7b57",
+            "data_cid": "13754444280472959831",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbee19a32ec7e7b57&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xbee19a32ec7e7b57&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.767340999999995,
+              "longitude": -73.983822
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xbee19a32ec7e7b57%218m2%213d40.767340999999995%214d-73.983822&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.3,
+            "reviews": 18,
+            "thumbnail": "https://www.google.com/maps/vt/data=Gmv2lgZm8hMvqRIuminZjRTFulmqrSjb98eFvS-4JPW8UQxgpsCYEQTkH95gFaTm2nn7m77g4hfKJTooqSXUmhUWq8GThzpzcCOO6Rydt2-PrKRDImQyWwcmNLuBe96WBYKd1_LcT4r4r54a3BUlmrQlQ5KrsVYY",
+            "type": [
+              "Doctor"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Columbia University Physician",
+            "data_id": "0x0:0x85a92474a216ba7f",
+            "data_cid": "9631269361462721151",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x85a92474a216ba7f&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x85a92474a216ba7f&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.868960699999995,
+              "longitude": -73.9167032
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x85a92474a216ba7f%218m2%213d40.868960699999995%214d-73.9167032&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=ofEltqHUT_ufQ9U6pfAOeFm9swVkMmCE-1ifpvM90deli6yq85lodDqqWAq0qB6oqNt6HAubRqFr08GUN3fN8Z-uBuG9zGG2uJMWPDYC9DjSDNi_chDBWiJRzI96228AXE-_pnNp5OJz0XP4ypNPlhy5VFinCl45",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjIKMCIsQ29sdW1iaWEgUHJpbWFyeSBDYXJlIC0gTWlkdG93biBOZXcgWW9yaywgTlkoAg&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjIKMCIsQ29sdW1iaWEgUHJpbWFyeSBDYXJlIC0gTWlkdG93biBOZXcgWW9yaywgTlkoAg&q=local+guide+program"
+  }
+}

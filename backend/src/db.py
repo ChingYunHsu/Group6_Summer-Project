@@ -24,9 +24,17 @@ _settings = get_settings()
 _pool = None
 
 
-def _get_pool() -> PooledDB:
+def _get_pool() -> "PooledDB":
     global _pool
     if _pool is None:
+        try:
+            from dbutils.pooled_db import PooledDB
+        except ModuleNotFoundError as exc:
+            raise RuntimeError(
+                "dbutils is required when opening a real MySQL connection. "
+                "Install backend dependencies before using database-backed endpoints."
+            ) from exc
+
         _pool = PooledDB(
             creator=pymysql,
             mincached=0,

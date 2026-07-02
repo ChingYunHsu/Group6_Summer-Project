@@ -1,0 +1,363 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e69c986af56a90fda4e",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/diErHsMWX0ecDR3eyiwbFA/6a3d3e69c986af56a90fda4e.json",
+    "created_at": "2026-06-25 14:42:49 UTC",
+    "processed_at": "2026-06-25 14:42:49 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259b3f6bbdb3f:0x53e66329ee7a667f!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/diErHsMWX0ecDR3eyiwbFA/6a3d3e69c986af56a90fda4e.html",
+    "prettify_html_file": "https://serpapi.com/searches/diErHsMWX0ecDR3eyiwbFA/6a3d3e69c986af56a90fda4e.prettify",
+    "total_time_taken": 0.64
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJP9u79rNZwokRf2Z67ilj5lM",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Nao Medical - Primary Care Stuytown",
+    "place_id": "ChIJP9u79rNZwokRf2Z67ilj5lM",
+    "data_id": "0x89c259b3f6bbdb3f:0x53e66329ee7a667f",
+    "data_cid": "6045628581537277567",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259b3f6bbdb3f%3A0x53e66329ee7a667f&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259b3f6bbdb3f%3A0x53e66329ee7a667f&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7322147,
+      "longitude": -73.9822004
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJP9u79rNZwokRf2Z67ilj5lM",
+    "provider_id": "/g/11wxv8kz15",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHojKxY8L6CDGb5rvrbVsWjqjKHl7ACzNoJwwTofTSiDLRdIk8rgZj_1d34nQHbyr0GM-WAu7PwioazQK6tQJxB3trlV6n5s9vTgGuzDiMHdsfd4fszmPd_c-1QkZxmuQRZKUfa=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/Gwpma3icHcRLDoIwFADAE1UgKH4SFygJKGqookQ2Rloo31b7iiAX9AzexsRZzPeTK_WAhabVuTliQrA6bSGVRHCVcjUiotHYAxABBJodHHBle6L0--tsZ60dN5nIl0wuEJXP0vfqqb0eDmLbdaHIwlPh7I50U80ki8ubQc0xx17ylrq7R5HdToOuEPcB-5bC235lKllfLD6B-Stkbjs4xd6jkNFxBkMT0BtBBq7ivmnxMfbP2X3ZGbquo_w_QfwH0YhGTw",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 2
+      },
+      {
+        "stars": 2,
+        "amount": 1
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 2
+      },
+      {
+        "stars": 5,
+        "amount": 45
+      }
+    ],
+    "rating": 4.7,
+    "reviews": 50,
+    "type": [
+      "Medical Center",
+      "Internist",
+      "Nurse practitioner",
+      "Women's health clinic",
+      "Physician assistant",
+      "Weight loss service"
+    ],
+    "type_ids": [
+      "medical_center",
+      "internist",
+      "nurse_practitioner",
+      "obstetrics_gynecology_clinic",
+      "physician_assistant",
+      "weight_loss_service"
+    ],
+    "book_online": "https://www.zocdoc.com/practice/nao-medical-108960?LocIdent=264688&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_b2ASfS1Wc0iAKgO-VGShqx-lo_b2dCd40st0KIAEQL8wNmYR-entity&rwg_token=AE37R_gneELS1QznyEPbcMSk8JBPO0Vly8P0rsyXYbDHsbU9nsa_D5ck03uSMk5vbPxlxuDmR1haSMsH_wkCVz9AqmPkNcAWyA%3D%3D",
+    "extensions": [
+      {
+        "from_the_business": [
+          "Identifies as Asian-owned",
+          "Identifies as women-owned"
+        ]
+      },
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "259 1st Ave suite b, New York, NY 10003",
+    "country": "United States",
+    "website": "https://naomedical.com/primary-care/locations/stuytown.html",
+    "phone": "(917) 310-3371",
+    "open_state": "Open \u00b7 Closes 7 PM",
+    "plus_code": "P2J9+V4 New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20137 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20137 PM"
+      },
+      {
+        "wednesday": "9 AM\u20137 PM"
+      }
+    ],
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHojKxY8L6CDGb5rvrbVsWjqjKHl7ACzNoJwwTofTSiDLRdIk8rgZj_1d34nQHbyr0GM-WAu7PwioazQK6tQJxB3trlV6n5s9vTgGuzDiMHdsfd4fszmPd_c-1QkZxmuQRZKUfa=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Gwpma3icHcRLDoIwFADAE1UgKH4SFygJKGqookQ2Rloo31b7iiAX9AzexsRZzPeTK_WAhabVuTliQrA6bSGVRHCVcjUiotHYAxABBJodHHBle6L0--tsZ60dN5nIl0wuEJXP0vfqqb0eDmLbdaHIwlPh7I50U80ki8ubQc0xx17ylrq7R5HdToOuEPcB-5bC235lKllfLD6B-Stkbjs4xd6jkNFxBkMT0BtBBq7ivmnxMfbP2X3ZGbquo_w_QfwH0YhGTw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFhlEphvBHAVjd9s3Fgx1v_d0qQWf3GvV1qyAGaDjncUnVejz6og8Aa-FJP-jPMkjGLPDIWiTcpywwqWUFmFD9HlxF6hC4WDr25Gkk3G7PLlJMN38m0xI4_8wPb0iRGmnDogMos=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/RliTGHicHcRRkoIgAADQE5EYbVkz-0GxUE02tFP62bjoQoigYWpdsDN0m2Z6H-_1VG1b-0UQGIVG0jlpipsvrsLZtrDtSLgqkLUHwgMfYL4_lJgq81OrbrnGic7nHlE5hN05h80h_UesS8LmjllGtBUnmxT6MXUywhmgWw40j0vNdpxs0stR1Pe-b9ITrSiZr81Ap2o1Scl1_MXKErEZ35ltvEdRBYfN5Bz1_A9efllliZOx8999CCEE6rMA9g1rGERc"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xQAjwpEjVY5h22wjOJbtNg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=324.54892&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/uPZJLnicHc0xDsIgFADQ27AJFdukNSHGwcVB42Li1FBE-A0tP_KFeh1v5W1MfBd4348nwrQVItHTWspgC8JiQ1qh5i5GF6xGSNzESeS1IP-ahllD2KGeI9zVctmPBQ_j9dZ4Kct4Pg50cswMvQlgZ1KTxtSnzEkbgmC5w8SKkrJmXsmuZW9d1EbWvKnbTjIEMl5V7P88YlbrqvoBCv86bA"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Minimal wait time and staff was considerate of my needs.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKB-JBr0EwPu3QUbPLn2TlOY9WU2gdKBHZ6ihOnGNnu3CYv_g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"They really helped each step and gave clear explanations.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWEO3Z34iOgRekaC5Vx04mgNZzooxcScqTd07EFOZEwHs4M0Kc=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Deepak Kheskwani",
+          "rating": 5,
+          "contributor_id": "108545074327052228188",
+          "user_review_count": 5,
+          "user_photo_count": 19,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKUnWDTnnI_c0_HsAzHlM3qvugH5LPofF0lfUfojgD7LN2k_w=s120-c-rp-mo-br100",
+          "description": "I chose Nao Medical for immigration physicals, my experience was excellent. They operate with transparency, be it cost, requirements, availability everything. They are very responsive and patient if you have questions. They made the process a breeze. Thank you team and keep it up!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21OT016WTFNVXhWUTFsV1pqaDRORkZWYmxsUGNrRRAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOmNOMzY1MUxVQ1lWZjh4NFFVbllPckE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-23T17:45:37+00:00"
+        },
+        {
+          "username": "Robin Schucker",
+          "rating": 5,
+          "contributor_id": "102598505567429706557",
+          "user_review_count": 18,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLx8pKEgupsMXHXnKCeoSfjKDQpt0Kr74MhhdzLI8P9gkY4tw=s120-c-rp-mo-ba12-br100",
+          "description": "I went there for my green card civil surgeon visit. Overall very impressed!\n\nI'm German so efficiency runs in my veins, everything was very organized and on time. My appointment was for 12:03 and I was received at 12:03 on the dot. All the paperwork was prepared for the doctor in advance and so the visit was a breeze. Pricing was also pretty good, I can only recommend!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT210WGJXMUJkM2huT1VKQ1dFTkpPSFY0YjBoemJGRRAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOmtXbW1Bd3hnOUJCWENJOHV4b0hzbFE%7C%7C?hl=en",
+          "date": "6 months ago",
+          "date_iso8601": "2025-12-05T17:26:27+00:00"
+        },
+        {
+          "username": "NATALIA ROBLES OTEIZA",
+          "rating": 1,
+          "contributor_id": "103379505331463098558",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVQjDfu2ggXNFpPdZefGu_B5HGjo6gyS5aUrfAZe2gyIwHB8kE=s120-c-rp-mo-br100",
+          "description": "DO NOT COME HERE IT IS A SCAM! Months after my visit which I paid in full I am still dealing with the billing department inventing extra charges. When I call them and show them my receipts they assure me over the phone they understand it is a mistake and they will remove the charges but they never do. This has been an unending nightmare and I wish I never step foot here. Do not subject yourself to this!! Go anywhere else, I hate that they are taking advantage of people like this.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tnemNIUTNXRE0yUkVZd1JESm9Ra2RFVldsa2NrRRAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOkgzcHQ3WDM2REYwRDJoQkdEVWlkckE%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-12T16:36:49+00:00"
+        },
+        {
+          "username": "Nicole",
+          "rating": 5,
+          "contributor_id": "117983149534709061787",
+          "user_review_count": 2,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLhZmtw-SWq6kzFIXdZiIcJaYnDKQRApxVWZsgqxA0zzAO9QA=s120-c-rp-mo-br100",
+          "description": "My experience is great! 100% recommended. I went to get my blood test on Tuesday, I got my results Thursday and an appointment on Friday. Everything was smooth, fast and the staff was always super helpful and friendly.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xrNWRsTTNSWEpZYm5CQkxVUk5USEZyWlRaclkyYxAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOlk5dlM3RXJYbnBBLURNTHFrZTZrY2c%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-23T18:25:46+00:00"
+        },
+        {
+          "username": "Alexei Naumann",
+          "rating": 2,
+          "contributor_id": "101667764897072002793",
+          "user_review_count": 3,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKdn6urhk684hGW4KFGfo-PjKc5_hhCoOsWkra3NTXdEdhlVA=s120-c-rp-mo-br100",
+          "description": "They tried to charge me $100 to review my blood test results from a yearly physical over the phone when the actual blood test and physical exam were fully covered by insurance",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tkaGVFOUZRelJhWkhoZlNXSXhZbko1VWtwRFpHYxAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOkdheE9FQzRaZHhfSWIxYnJ5UkpDZGc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T13:30:38+00:00"
+        },
+        {
+          "username": "Saskia feldman",
+          "rating": 5,
+          "contributor_id": "109727580347395818330",
+          "user_review_count": 11,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI_mPyRU56Bl2pOlxssgJE-J2sLGLibtIFasD7ZSUM032bBnA=s120-c-rp-mo-br100",
+          "description": "Chi and the rest of the team were amazing! They got me in and out for immigration appointment! Highly recommend!!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT201Uk9XRmpRMDl1ZDBzelNUQTBhMDVIUms5elNFRRAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOm5ROWFjQ09ud0szSTA0a05HRk9zSEE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-03T16:43:35+00:00"
+        },
+        {
+          "username": "Judy Kim",
+          "rating": 5,
+          "contributor_id": "100008690381619741250",
+          "user_review_count": 2,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIRybDrKZs0ugsAVeHSu9dN8HGx8lbOjgHchcbPRbvyBx3SFg=s120-c-rp-mo-br100",
+          "description": "Came for a civil surgeon medical exam and staff were super helpful getting everything scheduled and making sure I had all the documents.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWRk9FMXdYMUl6Tkc1MGVUZFFXblZXYWtadmVuYxAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOjVFOE1wX1IzNG50eTdQWnVWakZvenc%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2026-01-23T17:27:10+00:00"
+        },
+        {
+          "username": "EL\u0130F DO\u011eA AKG\u00d6Z",
+          "rating": 5,
+          "contributor_id": "114978686080227823224",
+          "user_review_count": 4,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWEO3Z34iOgRekaC5Vx04mgNZzooxcScqTd07EFOZEwHs4M0Kc=s120-c-rp-mo-br100",
+          "description": "The process was super easy and clear. They really helped each step and gave clear explanations.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2taaU5XUkdTRk5VTVZaUVVEZFplbFZEVWxCNE5HYxAB!2m1!1s0x0:0x53e66329ee7a667f!3m1!1s2@1:CAIQACodChtycF9oOkZiNWRGSFNUMVZQUDdZelVDUlB4NGc%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-03-27T18:01:22+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Barno Ashurmetova",
+            "data_id": "0x0:0x647543ba20220ee9",
+            "data_cid": "7238766442750021353",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x647543ba20220ee9&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x647543ba20220ee9&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7421225,
+              "longitude": -73.9739642
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x647543ba20220ee9%218m2%213d40.7421225%214d-73.9739642&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=j5hgH4YfmO2cG5SEDeTRNQfbZoX5tf3L0H_mH2a0cuIhb3EZoxdoI24H8V96wzwoGTq6hjLuSAj-x54DBm54zFbFIWMflzZd-VCxKhKbWes7S61byCOSyBkzA4QdLXQI7-uTuUDnLm-e13IT6zEPrzecYRg5YvIJ",
+            "type": [
+              "Physician assistant"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Dr. Nnenna Nwogu",
+            "data_id": "0x0:0xa7f7f9bc25d067d1",
+            "data_cid": "12103417110065080273",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa7f7f9bc25d067d1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xa7f7f9bc25d067d1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7129914,
+              "longitude": -73.98770329999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xa7f7f9bc25d067d1%218m2%213d40.7129914%214d-73.98770329999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=EWerHVlXYg51-4iWXJt42ERNei7OCDJuKQjw52RahVcbxHiMMywhwIZBtwrDiGmO4GsyF1j5WexVESwQ5uDzOM0ZOrmQCrk03GXSh-3HQfsNZDiaJ_noXw5iVA3YLkjDwOUESif0n8gWhuIryk1uE_ZmOYhuv5Qo",
+            "type": [
+              "Internist",
+              "Practitioner service location"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Nao Sasaki, M.D.",
+            "data_id": "0x0:0xad27b907cd0f8e8e",
+            "data_cid": "12477144735809506958",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xad27b907cd0f8e8e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xad27b907cd0f8e8e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.764499699999995,
+              "longitude": -73.95409289999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xad27b907cd0f8e8e%218m2%213d40.764499699999995%214d-73.95409289999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF2W2LDlTk8HoOYzIjG0k2bBlqTTTxjGCxXHUOWxU8hrGq1EJWcQJs1bn6XorshShAEqQ4LTQHvYWxBxVguKM1y02dZuyKdbH9dnao0xZ3bkRoCm7rD5VUcup8a3XTxmSZNkodMzQ=w156-h156-n-k-no",
+            "type": [
+              "Doctor",
+              "Internist"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Sanon Jocelyne MD",
+            "data_id": "0x0:0x56947e40df2fc4e1",
+            "data_cid": "6238750200902436065",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x56947e40df2fc4e1&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x56947e40df2fc4e1&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.736765,
+              "longitude": -73.9919024
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x56947e40df2fc4e1%218m2%213d40.736765%214d-73.9919024&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=N385x3-lFmyLbV5xLQYcOz3M6CGfW5KU0p0p89jLkwoC3lvPN_hH2VN5OhBdWuafL5-lNFhigbLE4eiNKiyld18cl4OZlP5MJcnLFm2zlJ-v77FwrYAbOf4X8vAsq5WESxTLXvlfS0arpltNuoUMruGAb5_XvI64",
+            "type": [
+              "Doctor"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjYKNCIwTmFvIE1lZGljYWwgLSBQcmltYXJ5IENhcmUgU3R1eXRvd24gTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjYKNCIwTmFvIE1lZGljYWwgLSBQcmltYXJ5IENhcmUgU3R1eXRvd24gTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

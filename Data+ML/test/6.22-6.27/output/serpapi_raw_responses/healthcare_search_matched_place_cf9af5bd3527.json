@@ -1,0 +1,373 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e393a9206fa0c84b13c",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/kw1aN-S3GNkfNzqeHM81bg/6a3d3e393a9206fa0c84b13c.json",
+    "created_at": "2026-06-25 14:42:01 UTC",
+    "processed_at": "2026-06-25 14:42:01 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c2f7cbea2c0519:0xedad26eb6d66af99!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/kw1aN-S3GNkfNzqeHM81bg/6a3d3e393a9206fa0c84b13c.html",
+    "prettify_html_file": "https://serpapi.com/searches/kw1aN-S3GNkfNzqeHM81bg/6a3d3e393a9206fa0c84b13c.prettify",
+    "total_time_taken": 0.47
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJGQUs6sv3wokRma9mbesmre0",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Columbus Medical Arts",
+    "place_id": "ChIJGQUs6sv3wokRma9mbesmre0",
+    "data_id": "0x89c2f7cbea2c0519:0xedad26eb6d66af99",
+    "data_cid": "17126387750554480537",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2f7cbea2c0519%3A0xedad26eb6d66af99&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2f7cbea2c0519%3A0xedad26eb6d66af99&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.798406899999996,
+      "longitude": -73.9638074
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJGQUs6sv3wokRma9mbesmre0",
+    "provider_id": "/g/11jrgv5mr6",
+    "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGAP1cI8RADb9PrcVtGQJdkeqwV6IAzUL7PKPlM-kNsGUKc9cNqsIpr0oB3lq5xihPYzlxGjVtjJvfP4J5L8dirtnrqqDnibh8qhjc_WLTp4_y1lnNInI08Fukd0THctovajrfo=w1000-h1000-c-n",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/ZVtjXHicHcRJDoIwFADQE1VKnNDERY0RC0iqUYwrox-kQG3pIA4X9AzexsS3eN8Pd661U88TvN8rlSpFcbeFASVdIV0P1M0rW4vAIusRlm4aEhLmAw22ZHGZMAOZCzdR3hT6kY0oee-TMYuZWKMmteE-hgmk2tLWYDXvCz18Vpwd3-IZ1pmro-7KBtEwCfLKOGm0XsjqwgPNazgdkl07OL18IVMqKQ6W9ybHuxU41Z1rc1Wzh48xRvw_IPkDk9pGTQ",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 190
+      },
+      {
+        "stars": 2,
+        "amount": 36
+      },
+      {
+        "stars": 3,
+        "amount": 38
+      },
+      {
+        "stars": 4,
+        "amount": 70
+      },
+      {
+        "stars": 5,
+        "amount": 553
+      }
+    ],
+    "rating": 3.9,
+    "reviews": 887,
+    "type": [
+      "Medical clinic"
+    ],
+    "type_ids": [
+      "medical_clinic"
+    ],
+    "book_online": "https://www.zocdoc.com/practice/14-street-medical-p-c-50385?LocIdent=133120&utm_source=reservewithgoogle&utm_medium=seosynd&utm_campaign=hai&entity_id=pt_IVPPVeW4LEyRw1Su1N5CPh-lo_COWYrOMy7Umbby0ziJKhER-entity&rwg_token=AE37R_innr2QSvbBPmVFPXeMprphmhCjR7bla0_xTpgsc2f-u3ATBimLmE6CXA1j1YBGInXMlS3u-FwWEsh8doEhbisq_mx_Fg%3D%3D",
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible restroom"
+        ]
+      },
+      {
+        "amenities": [
+          "Restroom"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards"
+        ]
+      },
+      {
+        "parking": [
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "912 Columbus Ave, New York, NY 10025",
+    "country": "United States",
+    "booking_link": "https://www.14streetmedical.com/doctors",
+    "website": "http://www.columbusmedicalarts.com/",
+    "phone": "(212) 481-3333",
+    "open_state": "Open \u00b7 Closes 9 PM",
+    "plus_code": "Q2XP+9F New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20139 PM"
+      },
+      {
+        "friday": "9 AM\u20136 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "9 AM\u20134 PM"
+      },
+      {
+        "monday": "9 AM\u20139 PM"
+      },
+      {
+        "tuesday": "9 AM\u20139 PM"
+      },
+      {
+        "wednesday": "9 AM\u20139 PM"
+      }
+    ],
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c2f7cbea2c0519%3A0xedad26eb6d66af99&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGAP1cI8RADb9PrcVtGQJdkeqwV6IAzUL7PKPlM-kNsGUKc9cNqsIpr0oB3lq5xihPYzlxGjVtjJvfP4J5L8dirtnrqqDnibh8qhjc_WLTp4_y1lnNInI08Fukd0THctovajrfo=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/ZVtjXHicHcRJDoIwFADQE1VKnNDERY0RC0iqUYwrox-kQG3pIA4X9AzexsS3eN8Pd661U88TvN8rlSpFcbeFASVdIV0P1M0rW4vAIusRlm4aEhLmAw22ZHGZMAOZCzdR3hT6kY0oee-TMYuZWKMmteE-hgmk2tLWYDXvCz18Vpwd3-IZ1pmro-7KBtEwCfLKOGm0XsjqwgPNazgdkl07OL18IVMqKQ6W9ybHuxU41Z1rc1Wzh48xRvw_IPkDk9pGTQ"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGU6Wm3SvknrP-47DkkI4L6iwZrPhVT8650ztiOx8vBRyIp4DvTHNVwzNQvoDrMN5AAFYJMNC_arWoM0RIBo8kEmBhKpLqK4SFgU9kGRAvrsqgRyHOzZLs_ZRUTdEsSVfxYK1NZ=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/BGfBk3icHcTbboIwAADQL6rUgIgmeyjDCwMqlouRF7Mga02FQtsV5Qf9Bv9myc7Deb-Y1r1aW9ad2TMqBL03v6qRteh00-lZLVqL9grUCigLpfjI0a5wT62dGd7JFDjLgPPQid3bWMmUlbnnLuCkb4eHZ3zyDHsnMPkel-OEj0YEMsELhLbnrwR_Xr7lSSSQhL7w-Kb1WdTHQ-RkW1qs-I4gI9VAyXN_mKpYXSpS5NeNysqfxzma4-pjnEMIAfu_Bt0fOX9Eqw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=tNKlRBsBv8S4bpla1KGELg&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=278.5019&pitch=-87.5441&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/Y_siLXicHc1RCsIgGADg2_g2ncMxCyQYRA-LHuoAw5mp4OZP_rm6UVfqNkWP39P3eXtEyFvGMt6txRLsCuFpY65AU5eSi1ZDyNSkmRXO0D_madEh7kAvKVwVnoZ47nNf5EVMEDUfDvujI2YaTQx2QTVryGMuFLXBEC11kMmqmkYQr5qNJC_9UydpW_MNgYDGq0p2tBWCk_92S0Xxuv4CQNI7Nw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"I have enjoyed my experience with the physical therapist at this office.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWV-F0H7kbWsFFLdoygA_9JIBiV9qY4r7kUmwqCegqB4ZoAU5g=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"The office ckerks do not give information of people in charge of the facility.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLgiyYW_XnhOjEjr86aTXLDC7mdJnAPCFHFevapMN4xcN57gQ=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"14 street Medical PC has a variety of doctors and a great staff members.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjUBgnhJLMehGbSty9lxq-xIbCa9d2T8sWuwIl1l6Oaub5pB86be=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Emily H",
+          "rating": 1,
+          "contributor_id": "118272116187094861172",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIwf_d7Ol5KIiYFmMp2HOSM0538HBKTgC16lcZeMf8kSgpXnw=s120-c-rp-mo-br100",
+          "description": "This is an abhorrent situation. I walked in and was immediately concerned. I had read incredibly positive reviews about the provider I was there to see. The facility itself needs a full renovation: the floors are terrible, the chairs are old, some ripped and out of a banquet hall from 20 plus years ago and the entire staffing from an operations standpoint is a mess. They were training a new staff member, which is fine, but two people never thought to let me know before I waited for 2 hours that the provider I was there to see was not there?!?! They then proceeded to have one wait in two different areas in the hallway two feet from a bathroom. The first medical assistant was unable to articulate their symptom checklist and quite upset that one was not provided to me to complete. Had she handed it to me, I would have saved us both the trouble. She was then concerned that I could not email my labs and reports to her due to a system compatibility issue. She brings in the senior administrator for the office, as per his name tag, who had spent my 30 plus minute initial wait chatting with another patient who is clearly a regular and then aggressively asks me why I can't send them. Then, my blood pressure is 115/44 and it is not deemed it necessary to retake it, even after I ask and express concern. The Medical Assistant tells me to go downstairs where I wait another 90 minutes for my appointment to not see the provider as he wasn't there. My appointment was with a doctor, this is an NP (Roa) who while under the guise of being friendly, had a nonchalant air about how none of these things are his problem or concern when I expressed concern about the office and my blood pressure. This is after her insists he called my name but I didn't hear him- he said half of my name once, in a low volume - in a long hallway and then went to the next patient. Since he wasn't the provider I was there to see, I didn't think it was him. Why he didn't look to see where I was considering I had been checked and vitals were taken is beyond me. Clearly, he gets paid by patients seen. The Medical Assistant who drew my blood wasn't wearing two gloves which I didn't realize until after the fact. There were also different scented candles burning unattended throughout the clinic adding to the sense this is an unsafe and neglected situation. Mind blowing. My BP was taken a couple more times so I could ensure I wasn't at risk for a stroke (keep in mind by BP is stable and 100/70. An utter befuddling and negative experience that makes you wonder who management is and how they are functioning. Stay away- all the first time patients plan to and openly said so in the hallway as we sat for 2 hours. Columbus Medical Arts: shame on you.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SblZFVlNTQzEwYlhSaFZIWlZXRFZpTlVOaE5uYxAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOmRnVEVSSC10bXRhVHZVWDViNUNhNnc%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-11T02:41:37+00:00"
+        },
+        {
+          "username": "Rasheeda Loggins",
+          "rating": 1,
+          "contributor_id": "116285461838517173890",
+          "user_review_count": 6,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjX0jREk0uQ-z0drogHobRzS6YFYd1aGy6MHuRNOe_bKSkI2n6zD9w=s120-c-rp-mo-br100",
+          "description": "There are some very kind and empathetic Doctors working here, but the inner workings of this establishment is truly sad. I came into this office to see if I have a diagnosis for fibromyalgia. I understand that multiple test have to be taken to rule out if it could possibly be another medical issue. However, the first Doctor I had an appointment with in August and was discussing my symptoms with, and I thought would be the main medical professional I would be communicating with moving forward in this process of gaining a diagnosis or not. I have never spoken with again, or had a followup. Since the ending of August I have had literally 22 appointments seen multiple Doctors and still no answer to what I first came in this clinic for. As other reviewers have mentioned this place will run your insurance up! So please make sure you know what is the reason for certain test being ordered. As well, certain medical assistant's within this company need to be educated on how to communicate with clients in a respectful and professional level. Being yelled at and having the phone hung up on me this past weekend, did it for me. After I read other reviews stating this establishment's incompetency and how they treat their clients. That is all I needed to know! Take your chances here if you want to.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CTVNUSldVVlptUTFWV2JWOUxTSFUwVWtvemIyYxAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOnBMSTJWUVZmQ1VWbV9LSHU0Ukozb2c%7C%7C?hl=en",
+          "date": "Edited 4 months ago",
+          "date_iso8601": "2026-02-15T01:42:20+00:00"
+        },
+        {
+          "username": "Mal",
+          "rating": 1,
+          "contributor_id": "108826464955987662982",
+          "user_review_count": 31,
+          "user_photo_count": 4,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVvUtyDNhqKW_dlCWnb4kx7OSjYmpYs3DLP8LsKkuLvGotOYIw=s120-c-rp-mo-ba12-br100",
+          "description": "AVOID THIS PLACE! They told me I would not be charged for the initial visit and then they sent me the bill and refused to cancel it. I waited an hour during the initial visit but only saw the provider for a total of not even 15 mins (im being generous) and I got nothing out of it but theyre billing for 45+ mins, all they did was take my blood pressure and weight and then scheduled me for more tests which I chose not to follow up on because I saw the other bad reviews and the office felt dirty.\n\nI spoke to the \"billing\" Dept. and the lady was very rude from the start before she even got to hearing the situation. She just kept saying she couldnt do anything even though I was completely misinformed, told me to go in person to complain but that they wouldnt be able to remove the charges anyway and then she hung up on me.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205M2IybHpRa3g1TFVKaVgyTkZRMW81ZDFkd2NIYxAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOm93b2lzQkx5LUJiX2NFQ1o5d1dwcHc%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-05-20T21:50:01+00:00"
+        },
+        {
+          "username": "Mariel Serraty",
+          "rating": 1,
+          "contributor_id": "110953360007667708927",
+          "user_review_count": 22,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKModZMIc1fWs2U16cdhmt26ivaB0FrWY7OtbQhOA9M-MHjvdE=s120-c-rp-mo-ba12-br100",
+          "description": "I really wanted to like this clinic and Dr. Oweis is amazing. But it\u2019s so hard to make an appointment just to go in, I\u2019ve been trying to set up an appointment for months and when you call they direct you to their online portal and no one follows up. And if you email them no one follows up either. After 2 years of being a patient here, as much as I love the doctor I saw, I will need to move on because they are so irresponsible.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xka1p6QTROMlZ4YldGak1UTk9OVzFLVjNsUE9HYxAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOldkZzA4N2VxbWFjMTNONW1KV3lPOGc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-21T02:31:30+00:00"
+        },
+        {
+          "username": "Oliver Morrison",
+          "rating": 5,
+          "contributor_id": "111868943235747320370",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJDoovhpUGM5z3xLAtFF1dB24kOwFqyZHPzBHcIA13gElry0b4=s120-c-rp-mo-br100",
+          "description": "This review is for physical therapy.  Great, knowledgeable professionals who seem to truly care.  Make sure to ask questions and take an active role in your treatment!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25aV1VuSmxibWMzYW5oVGRtcEdiRVZoZEZOM1RWRRAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOnZWUnJlbmc3anhTdmpGbEVhdFN3TVE%7C%7C?hl=en",
+          "date": "a week ago",
+          "date_iso8601": "2026-06-12T16:09:28+00:00"
+        },
+        {
+          "username": "Mila Rose",
+          "rating": 1,
+          "contributor_id": "101227363100753930617",
+          "user_review_count": 54,
+          "user_photo_count": 91,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIYOwEGGzKRZR5_kWYIjlVDmumi82aRUZAWbwVfb4a2S86sxWpE=s120-c-rp-mo-ba12-br100",
+          "description": "I had a concerning experience with a receptionist named Kara at the Medical Arts Center in Columbus. She claimed I missed an appointment and had a strike, but I provided proof that I attended the appointment. Kara then changed her story, stating it was for an appointment last year and that I must have received a voicemail or other notification. However, there was no record of this in the patient portal. I'm wondering what qualifications are required to work as a receptionist in a doctor's office, as it seems there may be a lack of effective communication and record-keeping.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xSdk1WOWpSVUp6TmtOV1pFOXBielJhUTBaRFpYYxAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOlRvMV9jRUJzNkNWZE9pbzRaQ0ZDZXc%7C%7C?hl=en",
+          "date": "9 months ago",
+          "date_iso8601": "2025-09-23T19:53:20+00:00"
+        },
+        {
+          "username": "Doris I Rodriguez",
+          "rating": 1,
+          "contributor_id": "106369107263093752561",
+          "user_review_count": 8,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKkJi8zgYmN8s12j9tsJF6tZDHgVriAPhQGd10-nnt9TFpQZqr6=s120-c-rp-mo-br100",
+          "description": "Irresponsible staff do not communicate with patients.  My experience was very stressful.  I was not informed that a special kit had not arrived to the office and I arrived to pick the kit up and was told that they had none.  But they sure did charge the insurance for the so called visit which should not be considered a visit in the 1st place.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT214T1JrUm5SVzB0WkZWRVVXSlhibmxWYmtKcUxVRRAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOmxORkRnRW0tZFVEUWJXbnlVbkJqLUE%7C%7C?hl=en",
+          "date": "2 months ago",
+          "date_iso8601": "2026-04-05T21:49:33+00:00"
+        },
+        {
+          "username": "Nir Netzer",
+          "rating": 5,
+          "contributor_id": "118386454136957914747",
+          "user_review_count": 56,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjXBK1o1sH6hiHvLiATfGYFitevOL_fp7rYHwkzAVtr0rjvwcBhg=s120-c-rp-mo-ba12-br100",
+          "description": "The reception staff was very caring and attentive. The medical professionals are also great. Accessible and professional. Janae was really caring and attentive, and the other gals at reception were just as great . They accept Medicaid",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKTFpqVnJWVzlTWWxkT2NsTjFhMkZEZDJObU5YYxAB!2m1!1s0x0:0xedad26eb6d66af99!3m1!1s2@1:CAIQACodChtycF9oOlJLZjVrVW9SYldOclN1a2FDd2NmNXc%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-16T21:49:27+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Westside Internal Medicine",
+            "data_id": "0x0:0x64b12b017187917b",
+            "data_cid": "7255627759870251387",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x64b12b017187917b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x64b12b017187917b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7893706,
+              "longitude": -73.9703328
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x64b12b017187917b%218m2%213d40.7893706%214d-73.9703328&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=jmiMpsbg0Jajs5958lnRyLuv4zG23YO16xSlvJxKNVBq8ZCWzHQ9KYuNulQFdHHkrIaESPRAzySIZ1HrgKzBFwANfftuI5wO7RVWmFikr04WPZ3hcQ2tQbiq7fWtDMmFMpzgs-q8VaY_V1fakk4aRwJDNxIyS95l",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Columbus Medical Group - Dr. Miguel Avila-Rondon - MD",
+            "data_id": "0x0:0x16e99e04cf5dc571",
+            "data_cid": "1651024481904084337",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16e99e04cf5dc571&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x16e99e04cf5dc571&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.8007541,
+              "longitude": -73.9619817
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x16e99e04cf5dc571%218m2%213d40.8007541%214d-73.9619817&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 2.8,
+            "reviews": 16,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFh4BcywrdHjR5UQXpaF2R4WSKm0JSNIILjkFB4oM33PaFLrb-atlHAo28oKVSVlgHXYOhxkAm-I6Nk9BBb-Q8mku6vQK3gZHKTmkGMJS208kyOdaBQduRh069TCRQFRF95nE5NOA=w156-h156-n-k-no",
+            "type": [
+              "Internist",
+              "Doctor"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "W14 Medical Arts",
+            "data_id": "0x0:0xfbc9be70c8848b3d",
+            "data_cid": "18143241965448497981",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfbc9be70c8848b3d&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xfbc9be70c8848b3d&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7375183,
+              "longitude": -73.99758140000002
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xfbc9be70c8848b3d%218m2%213d40.7375183%214d-73.99758140000002&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 1051,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAF1FMqgus4fhiq_G7M74Sj1V9uPdrpZcA1g9b9dBJqrtav7-wASDfWFOShC5di4njnpBAuUUqjOH-4juN2QxSlOcXqNojribtn1V8tKeZjdmLLedfQC8fpXBnh-qmGH-6tTyxg6=w156-h156-n-k-no",
+            "type": [
+              "Medical clinic"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "Manhattan West Medical",
+            "data_id": "0x0:0x88b6e59482a3c6d6",
+            "data_cid": "9851313660929230550",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x88b6e59482a3c6d6&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x88b6e59482a3c6d6&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7774436,
+              "longitude": -73.98676259999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x88b6e59482a3c6d6%218m2%213d40.7774436%214d-73.98676259999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=Lyrv1p8etxkoHXsPFujEdzq8MDafXj7suIkMzerND6_xwV8fywlARdRP1i2n68CxNlS5PwikCJrB_npsKuG6BQ2T2Zo_J8GdsaHpO1-C7cBdW5XsLriRNON65DyD06AHhH2SOuhko7hD6vXM6jtIxo3KAiSii0MW",
+            "type": [
+              "Medical clinic",
+              "Internist"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "Sleep Apnea Surgery",
+            "data_id": "0x0:0x5b67e71458b11e31",
+            "data_cid": "6586487054626004529",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5b67e71458b11e31&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x5b67e71458b11e31&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7893854,
+              "longitude": -73.97039749999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x5b67e71458b11e31%218m2%213d40.7893854%214d-73.97039749999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=iVwu88p9CGI-TdmZB6faFyImatK0ZB6DrfzDm5CaZirQY03O0N69b5KiAKheTDK4PppmjeogDjE9m86Ev8ANET5Cs5giMuckPpn1Qc09oiYJ1OfR34Hr9P1dxFb48RF_SnM-7YxgxsRrUX1YA7My3ugalVfvpyA4",
+            "type": [
+              "Medical clinic"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OigKJiIiQ29sdW1idXMgTWVkaWNhbCBBcnRzIE5ldyBZb3JrLCBOWSgC&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COigKJiIiQ29sdW1idXMgTWVkaWNhbCBBcnRzIE5ldyBZb3JrLCBOWSgC&q=local+guide+program"
+  }
+}

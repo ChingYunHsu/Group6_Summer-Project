@@ -1,0 +1,346 @@
+{
+  "search_metadata": {
+    "id": "6a3d3e9cf73e4db67ca5a918",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/jAXNzTevVDvzctHaAB0hjg/6a3d3e9cf73e4db67ca5a918.json",
+    "created_at": "2026-06-25 14:43:40 UTC",
+    "processed_at": "2026-06-25 14:43:40 UTC",
+    "google_maps_url": "https://www.google.com/maps/place///data=!4m6!3m5!1s0x89c259024f289515:0xc976bab9e988ee56!8m2!3d0!4d0!16s?hl=en",
+    "raw_html_file": "https://serpapi.com/searches/jAXNzTevVDvzctHaAB0hjg/6a3d3e9cf73e4db67ca5a918.html",
+    "prettify_html_file": "https://serpapi.com/searches/jAXNzTevVDvzctHaAB0hjg/6a3d3e9cf73e4db67ca5a918.prettify",
+    "total_time_taken": 1.48
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "place",
+    "place_id": "ChIJFZUoTwJZwokRVu6I6bm6dsk",
+    "google_domain": "google.com",
+    "hl": "en"
+  },
+  "place_results": {
+    "title": "Duane Reade Pharmacy",
+    "place_id": "ChIJFZUoTwJZwokRVu6I6bm6dsk",
+    "data_id": "0x89c259024f289515:0xc976bab9e988ee56",
+    "data_cid": "14516995756525153878",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c259024f289515%3A0xc976bab9e988ee56&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c259024f289515%3A0xc976bab9e988ee56&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7541443,
+      "longitude": -73.9736599
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJFZUoTwJZwokRVu6I6bm6dsk",
+    "provider_id": "/g/11ggb8d4zl",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LGzLNseQS86MIdYOimOavw&cb_client=search.gws-prod.gps&w=86&h=86&yaw=165.29356&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/TeKFKnicHc1LDsIgFEDR3TATWk1JNSEOG5NqYxw5MpQ-4SW0kIKgrsZtuRs_kzs89_0yMfqwYSzEGSAmhOzxDjYsvKTaOW1BegxUuZGlkkVzG_tJot16OTkcRNs820OA46nm-91w7nDsZMpE9RdlEaYoAshZGarzV5zdQLUPJIuaE_PLQ2ZR8oou16uKE49RGVGQ_-XqkiiL4gOE-Tm8",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 4
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 0
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 4
+      }
+    ],
+    "rating": 3.1,
+    "reviews": 9,
+    "price": "$$",
+    "type": [
+      "Pharmacy"
+    ],
+    "type_ids": [
+      "pharmacy"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Delivery",
+          "In-store pickup",
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot"
+        ]
+      },
+      {
+        "offerings": [
+          "Naloxone"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly"
+        ]
+      },
+      {
+        "planning": [
+          "Quick visit"
+        ]
+      },
+      {
+        "payments": [
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Free parking lot",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "service_options": {
+      "in_store_pickup": true,
+      "delivery": true
+    },
+    "address": "485 Lexington Ave, New York, NY 10017",
+    "country": "United States",
+    "located_in": "Duane Reade",
+    "website": "https://www.walgreens.com/locator/walgreens-485+lexington+ave-new+york-ny-10017/id=14112",
+    "phone": "(212) 682-5338",
+    "open_state": "Open \u00b7 Closes 1:30 PM \u00b7 Reopens 2 PM",
+    "plus_code": "Q23G+MG New York",
+    "hours": [
+      {
+        "thursday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "friday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "saturday": "Closed"
+      },
+      {
+        "sunday": "Closed"
+      },
+      {
+        "monday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "tuesday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      },
+      {
+        "wednesday": "9 AM\u20131:30 PM, 2\u20137 PM"
+      }
+    ],
+    "hours_last_updated": "Confirmed by this business 12 weeks ago",
+    "serpapi_posts_link": "https://serpapi.com/search.json?data_id=0x89c259024f289515%3A0xc976bab9e988ee56&engine=google_maps_posts",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LGzLNseQS86MIdYOimOavw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=165.29356&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/NxWuGXicHc1RCsIgGADg2_iWbtbGFkiPEaxG9NTTcM7mDzol_7Q6TrfqNkHfBb7vxyCGuGUs4l1rTKBzgKe2cRUknb2frZYBIlXesVQyNA83LhLsLsjFwyS6_bs7RX2-NPXxMF17cL1MmahxUBb0gsLJEIeYKEqFYDWdQyRZcL4hRvC2IS-ZRVlXlLfrqiYBUBlRkP9z80mURfED_hk6Uw"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=LGzLNseQS86MIdYOimOavw&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=165.29356&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/NxWuGXicHc1RCsIgGADg2_iWbtbGFkiPEaxG9NTTcM7mDzol_7Q6TrfqNkHfBb7vxyCGuGUs4l1rTKBzgKe2cRUknb2frZYBIlXesVQyNA83LhLsLsjFwyS6_bs7RX2-NPXxMF17cL1MmahxUBb0gsLJEIeYKEqFYDWdQyRZcL4hRvC2IS-ZRVlXlLfrqiYBUBlRkP9z80mURfED_hk6Uw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"Pharmacy staff were very helpful & accommodated my specific needs.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJC9JHV4eABpG0LJ2t-BCi6s2EKOvSADwgqekZ5abmXPhKahg=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Mckay Montz",
+          "rating": 1,
+          "contributor_id": "117858490158570714318",
+          "user_review_count": 90,
+          "user_photo_count": 50,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJnjpUd3W3alumUUWqEK6uDsMuAN8StqQ0ssUORXuiSpuzZMw=s120-c-rp-mo-ba12-br100",
+          "description": "horrible young boys working the cashier and security, i asked for help several times and they never broke conversation between themselves, never spoke a word to me, i had to break there conversation twice because the cashier never hit total on the POS, so i could pay for my items, i was sitting there trying to figure out why my card wasnt being accepted, it was because they wouldn\u2019t pay attention. after he pushed my 5 items to my side of the counter, again never looking at me out speaking to me, only to the security guard, i had to ask for a bag, again ignored me, then i had to ask for the receipt.\n\nCVS 1 block away, better store, self check out option as well.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN0elA2VlF3EAE!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgICtzP6VQw%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-01-29T14:26:53+00:00"
+        },
+        {
+          "username": "James Vautin",
+          "rating": 1,
+          "contributor_id": "101199019501861364658",
+          "user_review_count": 65,
+          "user_photo_count": 7,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWcPpZv-LV7MiSArJlZ4HtmMKDdwdZL-6aeZ_xDVt9ueUF4nqBc=s120-c-rp-mo-ba12-br100",
+          "description": "The inventory is all locked up and it's difficult to find help to actually get things out. This is not the case with CVS around the corner, so I'll just go there.\n\nI find it hard to believe that inventory loss at this location (in Manhattan!) is enough of a problem that it's completely worth destroying the customer's experience.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNzOUlIZWhRRRAB!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgICs9IHehQE%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2020-01-23T22:48:51+00:00"
+        },
+        {
+          "username": "Amir Abed Rabo",
+          "rating": 5,
+          "contributor_id": "106084152091472864768",
+          "user_review_count": 47,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVw1VkSmP2Z80VzBwK0GL_gf75kS2J8WqYBH13j_kiwdgbSg50=s120-c-rp-mo-ba12-br100",
+          "description": "Amazing staff - the Greek lady behind the counter was managing multiple fires on her own while keeping a smile on her face - she was extremely efficient, sharp and hospitable...all at 5 pm EOD!",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURUOE1yZFd3EAE!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgIDT8MrdWw%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-05-21T18:25:37+00:00"
+        },
+        {
+          "username": "Diane H",
+          "rating": 5,
+          "contributor_id": "109978996485310638444",
+          "user_review_count": 33,
+          "user_photo_count": 22,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocJC9JHV4eABpG0LJ2t-BCi6s2EKOvSADwgqekZ5abmXPhKahg=s120-c-rp-mo-ba12-br100",
+          "description": "Pharmacy staff were very helpful & accommodated my specific needs.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNodDdMVGJBEAE!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgICht7LTbA%7C%7C?hl=en",
+          "date": "3 years ago",
+          "date_iso8601": "2023-02-24T16:19:45+00:00"
+        },
+        {
+          "username": "Gary C",
+          "rating": 1,
+          "contributor_id": "117928792936184237775",
+          "user_review_count": 571,
+          "user_photo_count": 1332,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIrvmLxK2FX9TVltrZTPatFlqmWqjKgYQ49ebfoVMG4gv9IIjm3=s120-c-rp-mo-ba12-br100",
+          "description": "Bad staff. No help at all",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURaOHZhR1dREAE!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgIDZ8vaGWQ%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2023-09-28T06:23:07+00:00"
+        },
+        {
+          "username": "Jordan",
+          "rating": 1,
+          "contributor_id": "107782871934332078378",
+          "user_review_count": 13,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIk_d9CE2j_hoNNhpqxPHeXT3-8xx7D1ilvsLcmfQG7O1t2oA=s120-c-rp-mo-br100",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSURYMVl2ZHZRRRAB!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgIDX1YvdvQE%7C%7C?hl=en",
+          "date": "a year ago",
+          "date_iso8601": "2024-10-29T21:27:42+00:00"
+        },
+        {
+          "username": "Nick Martini",
+          "rating": 4,
+          "contributor_id": "103663095459596394150",
+          "user_review_count": 18,
+          "user_photo_count": 5,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVeoFUrjXC64RK40QkUWlyZIj-slaIhIRUegQ7hA1O474FinfuG=s120-c-rp-mo-ba12-br100",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChRDSUhNMG9nS0VJQ0FnSUR6Nk8wZxAB!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgIDz6O0g%7C%7C?hl=en",
+          "date": "2 years ago",
+          "date_iso8601": "2024-06-07T07:50:08+00:00"
+        },
+        {
+          "username": "Grace Pan",
+          "rating": 5,
+          "contributor_id": "100065809416857893565",
+          "user_review_count": 0,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWoT4Vt-z8RMH-sFVI6oOf_uqddfKkmxJrOgByRTgQ-VJ8ocqk=s120-c-rp-mo-br100",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURVclAzSlpnEAE!2m1!1s0x0:0xc976bab9e988ee56!3m1!1s2@1:CIHM0ogKEICAgIDUrP3JZg%7C%7C?hl=en",
+          "date": "6 years ago",
+          "date_iso8601": "2019-08-16T15:18:09+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Duane Reade",
+            "data_id": "0x0:0x970d248eb8db1434",
+            "data_cid": "10884396069829678132",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x970d248eb8db1434&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7625776,
+              "longitude": -73.98357039999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x970d248eb8db1434%218m2%213d40.7625776%214d-73.98357039999999&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHbY1FKA3Qs6609T4TMFALENTMdcr3KJqNIVNoMyP5vTyi8ymsel2D0CpHigvwGDUwrrGQvVFFn3dhiZzQ6KGV2GNRK1cJo8NGkox_4Xy8zezQ74tomDyOOzlsfmFDH8aYTVxVm=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "DDB Rx",
+            "data_id": "0x0:0x6281deb94ee29cf3",
+            "data_cid": "7098199375186402547",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6281deb94ee29cf3&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x6281deb94ee29cf3&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.754154299999996,
+              "longitude": -73.9737682
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x6281deb94ee29cf3%218m2%213d40.754154299999996%214d-73.9737682&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=l58YxGnlVRsoYifX-sD1hG5u-rQQqWwRvLTa7xJpnFeZAC9i3Y4sZBkc1qbzjseDXNwrsHoui_3kaqSC3KdVjPfOkHCEeRl-tTzpYNj_UDItlxfk8a0Uzdr-8LhF63KOfssXfcQYIUldpmLoJIShiJR89EgfjtYX",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "540 Drug",
+            "data_id": "0x0:0x77d74b56860d003b",
+            "data_cid": "8635453645494485051",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x77d74b56860d003b&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x77d74b56860d003b&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7519846,
+              "longitude": -73.9697795
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x77d74b56860d003b%218m2%213d40.7519846%214d-73.9697795&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 1,
+            "thumbnail": "https://www.google.com/maps/vt/data=xhKIK26PYdx00ImB1y4Rd2yk4zUTy9ZrjwY1kfyYRve_wQeQcAQoGdRv0H8xHu9UDr4jpQMfmZ55boUGRBpCBQFxSSH0lVMbobWwbomR4z7A_k4txwC06ea5fmMA0k-ru_-xYEinimdyaffn-T1svbcTq4kXssGE",
+            "type": [
+              "Pharmacy"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "CVS Pharmacy",
+            "data_id": "0x0:0x50943928e6eb0d07",
+            "data_cid": "5806328667423051015",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x50943928e6eb0d07&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x50943928e6eb0d07&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7585414,
+              "longitude": -73.9710455
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x50943928e6eb0d07%218m2%213d40.7585414%214d-73.9710455&engine=google_maps&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 59,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFRbQLGoNyU782Sy0i8fEQkaNVulJAXB39jyr7Qm7MUpeQVWUSkd_gY5ciD0FyIYMNwlCRq2QhcIGuu74TV57yYiae0zOm0YHDcAVkgNnRbu3LTnLKwKniP-_u2VYIORYq9RBY5UuW2YnDU=w156-h156-n-k-no",
+            "type": [
+              "Pharmacy"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COicKJSIhRHVhbmUgUmVhZGUgUGhhcm1hY3kgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

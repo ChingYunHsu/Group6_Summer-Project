@@ -4,6 +4,9 @@ from flask import Blueprint, g, jsonify, request
 
 import db
 import medical_crypto
+from flask import Blueprint, g, jsonify, request
+
+import db
 from auth import require_api_key, require_bearer_auth, web_readonly_blocked
 from mock_data import (
     DELETE_ACCOUNT_RESPONSE,
@@ -67,6 +70,23 @@ NOTIFICATION_PREFERENCES_DEFAULTS = {
     "preferred_venue_types": [],
     "preferred_boroughs": [],
 }
+
+
+def _reject_explicit_user_id():
+    """Strict isolation: identity comes only from the Bearer token's sub
+    claim. Callers must never be able to address another user's profile by
+    passing user_id explicitly."""
+    if "user_id" in request.args:
+        return (
+            jsonify(
+                {
+                    "error": "Forbidden. user_id may not be supplied explicitly; "
+                    "identity is resolved from the access token.",
+                }
+            ),
+            400,
+        )
+    return None
 
 
 def _reject_explicit_user_id():

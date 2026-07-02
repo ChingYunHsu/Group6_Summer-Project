@@ -7,7 +7,7 @@ Implements the Venue ML Coverage SOP (2026-06-23):
   - Place API validation for final label candidates
   - Raw response caching to disk
   - Label status tracking per venue
-  - ML candidate list generation
+  - ML candidate list generationv   
 
 Key constraint (SOP):
   Search query 用于批量发现 candidates；Place query 只用于最终 label 验证。
@@ -33,12 +33,15 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-import requests
 from sklearn.neighbors import BallTree
+
+from geo_utils import EARTH_RADIUS_M, haversine_distances_m
+from serpapi_client import serpapi_request as _serpapi_request
 
 # ── Constants ──────────────────────────────────────────────────
 
-EARTH_RADIUS_M = 6_371_008.8
+# Re-export for backward compatibility
+__all__ = ["EARTH_RADIUS_M"]
 
 # Manhattan district center coordinates (for SerpApi location targeting)
 DISTRICT_CENTERS = {
@@ -83,12 +86,6 @@ W_RATING_QUALITY      = 0.5
 W_BIKE_PROXIMITY      = 0.3
 W_GEO_COVERAGE        = 0.2
 W_DUPLICATE_PENALTY   = -0.5
-
-# SerpApi defaults
-SERPAPI_BASE_URL    = "https://serpapi.com/search.json"
-SERPAPI_TIMEOUT     = (3, 10)  # (connect, read)
-SERPAPI_MAX_RETRIES = 3
-SERPAPI_RETRY_DELAYS = [2, 4, 8]
 
 # Category importance weights (higher = more valuable for ML)
 CATEGORY_IMPORTANCE = {
@@ -400,62 +397,6 @@ def audit_citi_bike_proximity(
 # ── SerpApi integration ────────────────────────────────────────
 
 
-def _serpapi_request(
-    params: dict,
-    api_key: str,
-    output_dir: Path,
-    cache_prefix: str = "search",
-) -> dict | None:
-    """Make a SerpApi request with retry and caching.
-
-    Caches raw response to disk. Returns parsed JSON or None on failure.
-    """
-    params["api_key"] = api_key
-    params["engine"] = "google_maps"
-
-    # Generate cache key from params (excluding api_key)
-    cache_params = {k: v for k, v in params.items() if k != "api_key"}
-    cache_key = hashlib.md5(json.dumps(cache_params, sort_keys=True).encode()).hexdigest()[:12]
-    cache_file = output_dir / "serpapi_raw_responses" / f"{cache_prefix}_{cache_key}.json"
-
-    # Return cached response if exists
-    if cache_file.exists():
-        with open(cache_file) as f:
-            return json.load(f)
-
-    # Make request with retries
-    for attempt in range(SERPAPI_MAX_RETRIES):
-        try:
-            resp = requests.get(
-                SERPAPI_BASE_URL,
-                params=params,
-                timeout=SERPAPI_TIMEOUT,
-            )
-            if resp.status_code == 429:
-                # Rate limited — wait and retry
-                delay = SERPAPI_RETRY_DELAYS[min(attempt, len(SERPAPI_RETRY_DELAYS) - 1)]
-                print(f"  [429] Rate limited, waiting {delay}s...")
-                time.sleep(delay)
-                continue
-            resp.raise_for_status()
-            data = resp.json()
-
-            # Cache to disk
-            cache_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(cache_file, "w") as f:
-                json.dump(data, f, indent=2)
-
-            return data
-
-        except requests.RequestException as e:
-            delay = SERPAPI_RETRY_DELAYS[min(attempt, len(SERPAPI_RETRY_DELAYS) - 1)]
-            print(f"  [Error] {e}, retrying in {delay}s...")
-            time.sleep(delay)
-
-    print(f"  [Failed] All {SERPAPI_MAX_RETRIES} attempts failed for params: {cache_params}")
-    return None
-
-
 def batch_search_discovery(
     venues: pd.DataFrame,
     api_key: str,
@@ -566,18 +507,7 @@ def _find_matching_venues(
     if len(venues) == 0:
         return pd.DataFrame()
 
-    # Haversine distance calculation
-    lat1 = np.radians(venues["latitude"].values)
-    lng1 = np.radians(venues["longitude"].values)
-    lat2 = np.radians(lat)
-    lng2 = np.radians(lng)
-
-    dlat = lat2 - lat1
-    dlng = lng2 - lng1
-
-    a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlng / 2) ** 2
-    distances_m = EARTH_RADIUS_M * 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
-
+    distances_m = haversine_distances_m(venues, lat, lng)
     mask = distances_m <= max_distance_m
     result = venues[mask].copy()
     result = result.assign(_distance_m=distances_m[mask])

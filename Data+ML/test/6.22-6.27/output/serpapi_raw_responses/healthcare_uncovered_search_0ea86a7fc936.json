@@ -1,0 +1,377 @@
+{
+  "search_metadata": {
+    "id": "6a3d2711b9dbc4d9c9fb8fd3",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/XAODbaPegl_qErPQCuUcIg/6a3d2711b9dbc4d9c9fb8fd3.json",
+    "created_at": "2026-06-25 13:03:13 UTC",
+    "processed_at": "2026-06-25 13:03:13 UTC",
+    "google_maps_url": "https://www.google.com/maps/search/NYU+Langone+Rivergate+Transplant+Clinic/@40.743725,-73.973213,18z/data=!3m1!4b1!4m2!2m1!6e5?hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/XAODbaPegl_qErPQCuUcIg/6a3d2711b9dbc4d9c9fb8fd3.html",
+    "prettify_html_file": "https://serpapi.com/searches/XAODbaPegl_qErPQCuUcIg/6a3d2711b9dbc4d9c9fb8fd3.prettify",
+    "total_time_taken": 0.74
+  },
+  "search_parameters": {
+    "engine": "google_maps",
+    "type": "search",
+    "q": "NYU Langone Rivergate Transplant Clinic",
+    "ll": "@40.743725,-73.973213,18z",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us"
+  },
+  "search_information": {
+    "local_results_state": "Showing results for type: \"place\" instead of type: \"search\"",
+    "query_displayed": "NYU Langone Rivergate Transplant Clinic"
+  },
+  "place_results": {
+    "title": "NYU Langone Transplant Institute",
+    "place_id": "ChIJ47nfhw9ZwokR1S9J1LqQ9po",
+    "data_id": "0x89c2590f87dfb9e3:0x9af690bad4492fd5",
+    "data_cid": "11166271458211606485",
+    "reviews_link": "https://serpapi.com/search.json?data_id=0x89c2590f87dfb9e3%3A0x9af690bad4492fd5&engine=google_maps_reviews&hl=en",
+    "photos_link": "https://serpapi.com/search.json?data_id=0x89c2590f87dfb9e3%3A0x9af690bad4492fd5&engine=google_maps_photos&hl=en",
+    "gps_coordinates": {
+      "latitude": 40.7446349,
+      "longitude": -73.9747871
+    },
+    "place_id_search": "https://serpapi.com/search.json?engine=google_maps&google_domain=google.com&hl=en&place_id=ChIJ47nfhw9ZwokR1S9J1LqQ9po",
+    "provider_id": "/g/1tdm4n60",
+    "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=T9pjiBEtbaiFEDbTPeNdNA&cb_client=search.gws-prod.gps&w=86&h=86&yaw=29.289955&pitch=0&thumbfov=100",
+    "serpapi_thumbnail": "https://serpapi.com/images/url/pY4ic3icHc1NDsIgEEDh27ATWpOaYkKMxrpsXHRvgI4whpZJwVZv47W8jT-bt_ze--VzprQVIuUJIM8IC-EDQlqR5i5GF0ATJm7jIOZSZH8fzKgx7EiPEXvVSbrhoclG46k5mu4Mbd_umTUXGxDGrBLoyXrulq84xZ47SmxR9Yb5X556UWvJ17WUVcUIs_WqYP_LNc6qLIoPeYA5lA",
+    "rating_summary": [
+      {
+        "stars": 1,
+        "amount": 6
+      },
+      {
+        "stars": 2,
+        "amount": 0
+      },
+      {
+        "stars": 3,
+        "amount": 2
+      },
+      {
+        "stars": 4,
+        "amount": 1
+      },
+      {
+        "stars": 5,
+        "amount": 13
+      }
+    ],
+    "rating": 3.7,
+    "reviews": 22,
+    "type": [
+      "Surgical center"
+    ],
+    "type_ids": [
+      "surgical_center"
+    ],
+    "extensions": [
+      {
+        "service_options": [
+          "Onsite services"
+        ]
+      },
+      {
+        "accessibility": [
+          "Wheelchair accessible entrance",
+          "Wheelchair accessible parking lot",
+          "Wheelchair accessible restroom",
+          "Wheelchair accessible seating"
+        ]
+      },
+      {
+        "amenities": [
+          "Gender-neutral restroom",
+          "Restroom"
+        ]
+      },
+      {
+        "crowd": [
+          "LGBTQ+ friendly",
+          "Transgender safespace"
+        ]
+      },
+      {
+        "planning": [
+          "Appointment required",
+          "Appointments recommended"
+        ]
+      },
+      {
+        "payments": [
+          "Checks",
+          "Credit cards",
+          "Debit cards",
+          "NFC mobile payments"
+        ]
+      },
+      {
+        "parking": [
+          "Paid parking garage",
+          "Paid parking lot",
+          "Paid street parking"
+        ]
+      }
+    ],
+    "unsupported_extensions": [
+      {
+        "accessibility": [
+          "Assistive hearing loop"
+        ]
+      }
+    ],
+    "service_options": {
+      "onsite_services": true
+    },
+    "address": "317 E 34th St, New York, NY 10016",
+    "country": "United States",
+    "located_in": "NYU Langone Health",
+    "booking_link": "http://nyulangone.app/",
+    "website": "http://nyulangone.org/locations/nyu-langone-transplant-institute",
+    "phone": "(212) 263-8134",
+    "plus_code": "P2VG+V3 New York",
+    "images": [
+      {
+        "title": "All",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=T9pjiBEtbaiFEDbTPeNdNA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=29.289955&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/g7H5J3icHc0xDsIgFADQ27AJLbFJMSFGYx0bh-4NpVi-oeVHvlSv4628jcbxTe_z9kSYdkIkujtHGdyK8HQhbdDwKcYpOIOQuI2zyKUg_5iHxUDYo1kijLpTeINjQ4OBc3Mauotrx_bA7NDbAG4hPRtMfcqcjCUIjk-Y2Kql3DKvparZy_ykuKyVqiqGQNbrgv2fa8y6LIov8jg6Kw"
+      },
+      {
+        "title": "By owner",
+        "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFNV6VtqPJZqGDimG2i3gup-F7pUom74vV1zsPpPrzsdvCc2Bzx8KtY3jQRPutC44-vPF99hlzss4hYhgQpgWKbC9z32qzioPeJvYjDe3ejKr1SUDevxBdIkbRx2FVxabi8nw=w1000-h1000-c-n",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/kHPJg3icHcTdCoIwGADQJ1r-TCqDLlIxSohZZNhdrrFp6qbfXLL36yF6m6Bzcb4fobWCjeO0Ai-4lLxlE7CRyl6zXi-o7ByuAFFA4OzIKX_t0lOxLPRAjvdhn9Td3q8xnxRKV-oqu1VgCs8CUWS08DQx9SM7rzNd4iY_k0nHQYAMScNQtBYgEKXgueK3rIpDi_3B1pKwoymbhGHWZKN3uSbMzNHz8KrOs58W86Oq1_17-_Zc10XiP0X9DyQdRV0"
+      },
+      {
+        "title": "Street View & 360\u00b0",
+        "thumbnail": "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=T9pjiBEtbaiFEDbTPeNdNA&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=29.289955&pitch=0&thumbfov=100",
+        "serpapi_thumbnail": "https://serpapi.com/images/url/g7H5J3icHc0xDsIgFADQ27AJLbFJMSFGYx0bh-4NpVi-oeVHvlSv4628jcbxTe_z9kSYdkIkujtHGdyK8HQhbdDwKcYpOIOQuI2zyKUg_5iHxUDYo1kijLpTeINjQ4OBc3Mauotrx_bA7NDbAG4hPRtMfcqcjCUIjk-Y2Kql3DKvparZy_ykuKyVqiqGQNbrgv2fa8y6LIov8jg6Kw"
+      }
+    ],
+    "user_reviews": {
+      "summary": [
+        {
+          "snippet": "\"My second experience went well in that I received a transplant.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocI0p9QMXHeI6_OU9PXVg0oBlmjHUnevkAWFGvYqD1JyZK4wdw=s40-k-cc-rp-mo"
+        },
+        {
+          "snippet": "\"I was in such pain and so sick from the meds that I tried to give up.\"",
+          "thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIJLIpffs2c4JeKxVSMUIStUl14QJYzHd150eNkRkJhXxn0IoDT=s40-k-cc-rp-mo"
+        }
+      ],
+      "most_relevant": [
+        {
+          "username": "Tai Kai",
+          "rating": 5,
+          "contributor_id": "113378317683710907654",
+          "user_review_count": 223,
+          "user_photo_count": 49,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocKpkP7i-qOqT5GIkA46LZzdEMSQ1ROvvQHLj4IyGyuYERAJkTB_=s120-c-rp-mo-ba12-br100",
+          "description": "Choosing NYU Langone for my living kidney donor transplant was the best decision I\u2019ve ever made. The level of care here is simply unmatched. The kidney transplant journey is long and often exhausting, but the team at NYU made me feel supported every single step of the way.\nWhy I recommend them:\n\u2022 The Surgical Team: The surgeons are true innovators. I felt incredibly confident knowing I was at a facility that leads the nation in successful kidney transplants and complex cases.\n\u2022 The Living Donor Program: Their coordination for living donors is seamless. They prioritize the health and comfort of the donor just as much as the recipient, which was deeply important to my family.\n\u2022 Proactive Monitoring: Post-transplant care is where they really shine. The nephrology team is incredibly \"on it\"\u2014monitoring labs closely and adjusting medications quickly to ensure the new kidney thrives.\n\u2022 Patient Portal & Access: Their communication through NYU Langone Health MyChart made it so easy to stay on top of my medications and get fast answers to my questions during recovery.\nIf you are dealing with ESRD or looking for a transplant evaluation, look no further. This team gave me my life back, and I am eternally grateful for their skill and their kindness.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2poUGJHeHZRbUZCYzJWTVJFeFJRMWhQVFhod05HYxAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOjhPbGxvQmFBc2VMRExRQ1hPTXhwNGc%7C%7C?hl=en",
+          "date": "4 months ago",
+          "date_iso8601": "2026-01-31T20:11:43+00:00"
+        },
+        {
+          "username": "Frances Savinon",
+          "rating": 5,
+          "contributor_id": "101979136817083262370",
+          "user_review_count": 7,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocIn2HW8sg78Pzhenay9YW9g9HDfzBybtbQNRPlY4EDcjzF1cg=s120-c-rp-mo-br100",
+          "description": "The NYU transplant team far exceeded my expectations. With so many transplant centers in New York, choosing NYU was one of the best decisions we could have made. Although the transplant evaluation process can feel overwhelming, with extensive testing and procedures required to be listed, the team does an outstanding job coordinating care every step of the way.\nMy husband was successfully listed and received his kidney transplant at NYU, and the care he has received has been exceptional. As a living kidney donor, I can confidently say their donor team is absolutely outstanding. A special thank you to my angels, Michael and Joe, for always calming my nerves and guiding me through this journey. You will not regret placing your trust in the NYU transplant team.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pWYVJYbFhiMk5JUlhjelIwbFJTbTQ1ZW1wSlRGRRAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOjVaRXlXb2NIRXczR0lRSm45empJTFE%7C%7C?hl=en",
+          "date": "5 months ago",
+          "date_iso8601": "2025-12-27T15:10:32+00:00"
+        },
+        {
+          "username": "Anna Okunkova",
+          "rating": 1,
+          "contributor_id": "107888577417581802101",
+          "user_review_count": 13,
+          "user_photo_count": 3,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjWiYotFmlY-R7wbMqTL7VG-pPv3VKic78GfpAu9GnhPv6i0XYM=s120-c-rp-mo-ba12-br100",
+          "description": "I initially considered NYU Langone Transplant Center one of the best, but my experience was extremely disappointing. During the pre-evaluation process, they found some reason to deny my case and did not allow me to request a review or appeal the decision.\n\nThey also did not consider it necessary to communicate the results of the tests or provide proper follow-up. A confirmatory or repeat test was not done, and overall communication felt very limited and uncoordinated.\n\nMy attempts to reach the team were largely ignored, and the nurse only started responding after I involved the patient complaint department.\n\nThe evaluation process itself was also very difficult. It lasted around six hours, during which approximately six different doctors came in and repeatedly asked the same questions many times, which was exhausting and confusing.\n\nAt one of the tests, I also felt that a doctor began to put pressure on me, which made the experience even more stressful.\n\nIn general, communication and coordination were poor, and there was very little transparency or patient support throughout the process. In a way, it may be better that this happened before a transplant, because I would not feel comfortable continuing with a clinic that communicates in this way. I hope the center improves its patient communication, transparency, and overall approach to care",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21SR2FIVlFjRmxIYUVOWVJuQlFNa0oxUkRCb1lsRRAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOmRGaHVQcFlHaENYRnBQMkJ1RDBoYlE%7C%7C?hl=en",
+          "date": "a month ago",
+          "date_iso8601": "2026-04-25T15:09:01+00:00"
+        },
+        {
+          "username": "Liam Lakota",
+          "rating": 5,
+          "contributor_id": "113457005100876662618",
+          "user_review_count": 7,
+          "user_photo_count": 2,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocLC1KoH0TvClShTYpC43bSZx64gwgd7q4r4VTRCIDTEEokCjw=s120-c-rp-mo-br100",
+          "description": "My grandmother had a deceased-donor kidney transplant at NYU Transplant Institute a little over two year ago. During the pre-transplantation and pre-transplantation process, the team of doctors, nurses, care coordinators were phenomenal. They made us feel supported throughtout the journey and we wouldn't be where we are today without them.\nThe wait for the transplant was about 3 years-ish, but we transferred there from another kidney transplant center in another health system in the city where we had been waiting for many years; so perhaps this played a key role. As long as you are on top of your appointments and accountable for your health/lifestyle, you will beat the condition- this wonderful place will just help you and supports you along the way. Thank you for everything.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21kMVZFWnZTWEYzUW5jMVpUTkRTMkZXYTFNdFFYYxAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOmd1VEZvSXF3Qnc1ZTNDS2FWa1MtQXc%7C%7C?hl=en",
+          "date": "3 months ago",
+          "date_iso8601": "2026-03-11T15:48:42+00:00"
+        },
+        {
+          "username": "CWM",
+          "rating": 5,
+          "contributor_id": "105549530182941409097",
+          "user_review_count": 22,
+          "user_photo_count": 8,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjV2lat3Op7IBh-Xpr-Kf31cO8ql9iiCmgOTzu_-8qlNRM_xH_jq=s120-c-rp-mo-ba12-br100",
+          "description": "Dr. Jake Natalini, Dr. Stephanie Chang, Dr. Luis Angel and my ENTIRE lung transplant team literally saved my life. The MDs, RNs, PAs and NPs in the lung transplant department valued my quality of life pre-transplant and were my cheerleaders post-transplant. So easy to talk with, so patient-centric, so brilliant and compassionate. I've experienced another transplant center before switching to NYU, so I do have a measuring stick. Once I met Dr. Natalini at NYU and he asked \"how is your quality of life?\". (NOBODY HAD ASKED ME THAT BEFORE! )the switch was a no-brainer. I cannot say enough great things about the men and women at NYU Langone. And I don't want to forget the Transplant ICU nurses on the 13th Floor. They are fantastic at what they do day in and day out. Just shy of 1 year post double lung transplant (!!) and I am still on their radar and thankfully doing great. This is your life we're talking about here - just go to NYU Langone; I did the research for you.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25jd1ZIaGpPVzFOUjBRM2FHZFVlRE52WVRSVFJVRRAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOncwVHhjOW1NR0Q3aGdUeDNvYTRTRUE%7C%7C?hl=en",
+          "date": "8 months ago",
+          "date_iso8601": "2025-10-03T00:53:14+00:00"
+        },
+        {
+          "username": "Debbie Moore",
+          "rating": 1,
+          "contributor_id": "110991425956123776755",
+          "user_review_count": 23,
+          "user_photo_count": 12,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVQbFXBDpuk4IRdOaRNrpfcT0UUbAaGHcJ_JTosLPP3YBrJEkTlcQ=s120-c-rp-mo-ba12-br100",
+          "description": "I am almost 1 year post op kidney transplant, everyone is supposed to be assigned a case manager and social worker. None established, And the supervisor Catherine has never returned my call to rectify the gross incompetence.\nMay 2026 I\u2019ve had 2 biopsies of my kidney and both doctors will not sit or speak with you about the results. Why?",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOWFFrRmpNbVZQYTNsdlpUTktTM1poTkVOWlEzYxAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOkNXQkFjMmVPa3lvZTNKS3ZhNENZQ3c%7C%7C?hl=en",
+          "date": "Edited a month ago",
+          "date_iso8601": "2026-05-08T08:07:14+00:00"
+        },
+        {
+          "username": "Syed Haider",
+          "rating": 1,
+          "contributor_id": "108782931800858902142",
+          "user_review_count": 15,
+          "user_photo_count": 1,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a/ACg8ocL9W7KwWfLg0yoTlZk3jMqZ1larIFjxmbwLPKzOtIedfxzdeQ=s120-c-rp-mo-ba12-br100",
+          "description": "I visited NYU Kimmel Pavilion recently to see a family member, and I was deeply disappointed by the treatment my family and I received. The reception staff, particularly Kristine, were both disrespectful and discriminatory. It was clear that their behavior was racially biased, which made our visit incredibly uncomfortable and distressing.\n\nManagement needs to address this issue immediately. It is unacceptable for any facility, especially one associated with a prestigious institution like NYU, to tolerate such ignorance and disrespect. I urge the management to take serious steps to hire and train staff who uphold values of respect and inclusivity.\n\nThis experience has left a negative impression, and I hope that changes will be made to ensure that others do not face the same mistreatment.",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURid19yQ1NBEAE!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CIHM0ogKEICAgIDbw_rCSA%7C%7C?hl=en",
+          "images": [
+            {
+              "thumbnail": "https://lh3.googleusercontent.com/grass-cs/ANxoTn3yjmi_SSjOlw4h9m2HqhpJ7TG0cyoaPkmjaY89VwAM9tqAGoBgvh52iXt8DP8qs9yXpK6JlZGEuzvxY3vkT_PIm9EmkvsWr0M6MoHjVF_l_b17UHYlQtThMsFqNgjOh7WWIAkoaw=k-no"
+            }
+          ],
+          "date": "a year ago",
+          "date_iso8601": "2024-08-08T19:42:34+00:00"
+        },
+        {
+          "username": "Anil Goyal",
+          "rating": 5,
+          "contributor_id": "100262859855013935933",
+          "user_review_count": 10,
+          "user_photo_count": 0,
+          "user_thumbnail": "https://lh3.googleusercontent.com/a-/ALV-UjVmyGh6eCoQXizOT5hhYU_PS0qVEIEdH4z6PSiXxF1R3zliA-jw=s120-c-rp-mo-br100",
+          "description": "My liver transplant done by Dr Torress and after care by the nurses was amazing. It was done on Feb 26th this year and I have been doing remarkably well under their follow-up team lead by Dr Asif",
+          "link": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21GNlpYY3hVR2hHVURCUlJVZHlOVWQyTW5reWVHYxAB!2m1!1s0x0:0x9af690bad4492fd5!3m1!1s2@1:CAIQACodChtycF9oOmF6ZXcxUGhGUDBRRUdyNUd2MnkyeGc%7C%7C?hl=en",
+          "date": "7 months ago",
+          "date_iso8601": "2025-11-09T22:24:29+00:00"
+        }
+      ]
+    },
+    "people_also_search_for": [
+      {
+        "search_term": "People also search for",
+        "local_results": [
+          {
+            "position": 1,
+            "title": "Kidney & Pancreatic Transplantation Program at Columbia",
+            "data_id": "0x0:0x54fa5553c86f258e",
+            "data_cid": "6123300461696984462",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x54fa5553c86f258e&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x54fa5553c86f258e&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.842003999999996,
+              "longitude": -73.9425061
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x54fa5553c86f258e%218m2%213d40.842003999999996%214d-73.9425061&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 4.2,
+            "reviews": 5,
+            "thumbnail": "https://www.google.com/maps/vt/data=tqD4JHLAGGIXsupdeCbke4e6UZEntlq_imfvNelmdyBO8rqZWaHENcMbeUpghjLbcxLvZkjuLQlJ9DGw-xgbEvPNGlpl9mKaa0GLPhuLLyfQU0wqDA1Nn_I6clFHgVu8WqIURzUGzKjqd7RgiDwV2YJAQ6VBzuut",
+            "type": [
+              "Surgical center",
+              "Doctor",
+              "Medical office",
+              "Surgeon",
+              "University hospital"
+            ]
+          },
+          {
+            "position": 2,
+            "title": "Transplant Living Center",
+            "data_id": "0x0:0x2deed24edd7f92fc",
+            "data_cid": "3309814012329300732",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2deed24edd7f92fc&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x2deed24edd7f92fc&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.784169,
+              "longitude": -73.9479526
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x2deed24edd7f92fc%218m2%213d40.784169%214d-73.9479526&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 5,
+            "reviews": 9,
+            "thumbnail": "https://www.google.com/maps/vt/data=LpME_8m_XJdJzFBcrBZ5DQc36sbrtcCTgSF89T0f_deb6zIwbvdsAHDj9yEDD6QVYdJjGK4OqvREgNHyYj100HY-Zo2dPqTZOboEjTPKlDqj7riW38_Fr42-GSD0vBm0UVEJn4cxR02haLXPOjb7SuBCkfzKoqn-",
+            "type": [
+              "Non-profit organization"
+            ]
+          },
+          {
+            "position": 3,
+            "title": "Weill Cornell Medicine - Kidney Transplantation Medicine",
+            "data_id": "0x0:0x665518c14509cdaf",
+            "data_cid": "7373827183255080367",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x665518c14509cdaf&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x665518c14509cdaf&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7646404,
+              "longitude": -73.9540279
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x665518c14509cdaf%218m2%213d40.7646404%214d-73.9540279&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 3.7,
+            "reviews": 3,
+            "thumbnail": "https://www.google.com/maps/vt/data=1g7sRWrW7DniO24_xr_GOpV2vl8nmyYz8yH0Lh8DnYVQ7QNrNno2eGB7QbYPpf3w16wJUEeGlaqTuM2NITmUdS8xyuPhtd8dYabWeQ90M6wXNhBu4ODkhNEqW_Be9W0-VAvXzOoTzCvedhws8rELw_yopHKDb6lu",
+            "type": [
+              "Medical Center"
+            ]
+          },
+          {
+            "position": 4,
+            "title": "National Kidney Foundation",
+            "data_id": "0x0:0x38d6227ea0d7c0f4",
+            "data_cid": "4095498838399762676",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0x38d6227ea0d7c0f4&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0x38d6227ea0d7c0f4&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7466441,
+              "longitude": -73.98297
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0x38d6227ea0d7c0f4%218m2%213d40.7466441%214d-73.98297&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 4.3,
+            "reviews": 12,
+            "thumbnail": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHhf1_uvFj2gNLq6edqSwJF8QP7_MzRJdtDny7rTajFrDdierrAWoY8JHnlXmcasYtT_TAGTG9L0uphfbkxcmjsivqQNa7G4AVq8LX5300qyCEKXKXso4TGBaEBDdF8vZLPYUJuOA=w156-h156-n-k-no",
+            "type": [
+              "Non-profit organization"
+            ]
+          },
+          {
+            "position": 5,
+            "title": "NYU Langone Cochlear Implant Center - Manhattan",
+            "data_id": "0x0:0xe3c05f16a58bee41",
+            "data_cid": "16411221593009417793",
+            "reviews_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe3c05f16a58bee41&engine=google_maps_reviews&hl=en",
+            "photos_link": "https://serpapi.com/search.json?data_id=0x0%3A0xe3c05f16a58bee41&engine=google_maps_photos&hl=en",
+            "gps_coordinates": {
+              "latitude": 40.7493378,
+              "longitude": -73.97407369999999
+            },
+            "place_id_search": "https://serpapi.com/search.json?data=%214m5%213m4%211s0x0%3A0xe3c05f16a58bee41%218m2%213d40.7493378%214d-73.97407369999999&engine=google_maps&gl=us&google_domain=google.com&hl=en&type=place",
+            "rating": 0,
+            "reviews": 0,
+            "thumbnail": "https://www.google.com/maps/vt/data=yNXKD9_1v-Jv9TYWFmZjN9OAvKFKu6VKX85E1AGYZfXCu1Q3Pjb_K5yPiwjjNjy3k18VUUQjreVLs3DtIDrKniEqj3PBV7krgl8rEy_b3HthVlNxoSvQ476ysvA2JEDA7DfRRuw4JMvaVfObbvCqxckWCMvY1ysP",
+            "type": [
+              "Medical Center"
+            ]
+          }
+        ]
+      }
+    ],
+    "web_results_link": "https://www.google.com/search?q=local+guide+program&ibp=gwp;0,26,OjMKMSItTllVIExhbmdvbmUgVHJhbnNwbGFudCBJbnN0aXR1dGUgTmV3IFlvcmssIE5ZKAI&pcl=lp",
+    "serpapi_web_results_link": "https://serpapi.com/search.json?device=desktop&engine=google&google_domain=google.com&ibp=gwp%3B0%2C26%2COjMKMSItTllVIExhbmdvbmUgVHJhbnNwbGFudCBJbnN0aXR1dGUgTmV3IFlvcmssIE5ZKAI&q=local+guide+program"
+  }
+}

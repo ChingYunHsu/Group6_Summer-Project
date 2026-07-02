@@ -161,3 +161,37 @@ superpowers/
 
 # Personal notes (not for GitHub)
 docs/memory/
+
+# macOS system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files that should not be tracked
+*.csv
+*.json
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
