@@ -13,15 +13,12 @@ db_transaction() touches the network.
 
 import sys
 from contextlib import contextmanager
-from typing import TYPE_CHECKING
 
 import pymysql
 import pymysql.cursors
+from dbutils.pooled_db import PooledDB
 
 from settings import get_settings
-
-if TYPE_CHECKING:
-    from dbutils.pooled_db import PooledDB
 
 _settings = get_settings()
 _pool = None

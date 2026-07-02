@@ -1,12 +1,12 @@
-"""Unit tests for the Tier 2 medical profile endpoints, with the
+"""Unit tests for the Tier 2 encrypted medical profile endpoints, with the
 MySQL layer faked out so this runs without a live database."""
 
-import json
 from contextlib import contextmanager
 
 import pytest
 
-import api.medical as medical_module
+import api.user as user_module
+import medical_crypto
 from auth import issue_access_token
 
 URL = "/api/v1/user/medical-profile"
@@ -20,45 +20,13 @@ class _FakeCursor:
     def execute(self, query, params=()):
         query = " ".join(query.split())
 
-        if query.startswith("SELECT date_of_birth, gender, address, blood_type, severe_allergies"):
+        if query.startswith("SELECT encrypted_payload FROM medical_profiles"):
             self._result = self._table.get(params[0])
-        elif query.startswith("SELECT user_id FROM user_medical_profiles"):
-            self._result = {"user_id": params[0]} if params[0] in self._table else None
-        elif query.startswith("INSERT INTO user_medical_profiles"):
-            (
-                user_id,
-                date_of_birth,
-                gender,
-                address,
-                blood_type,
-                severe_allergies,
-                conditions,
-                medications,
-                emergency_contacts,
-            ) = params
-            self._table[user_id] = {
-                "date_of_birth": date_of_birth,
-                "gender": gender,
-                "address": address,
-                "blood_type": blood_type,
-                "severe_allergies": severe_allergies,
-                "conditions": conditions,
-                "medications": medications,
-                "emergency_contacts": emergency_contacts,
-            }
+        elif query.startswith("INSERT INTO medical_profiles"):
+            user_id, encrypted_payload, _ = params
+            self._table[user_id] = {"encrypted_payload": encrypted_payload}
             self._result = None
-        elif query.startswith("UPDATE user_medical_profiles SET"):
-            values = list(params)
-            user_id = values.pop()
-            row = self._table[user_id]
-            set_clause = query.removeprefix("UPDATE user_medical_profiles SET ").removesuffix(
-                " WHERE user_id = %s"
-            )
-            fields = [part.split(" = ")[0] for part in set_clause.split(", ")]
-            for field, value in zip(fields, values):
-                row[field] = value
-            self._result = None
-        elif query.startswith("DELETE FROM user_medical_profiles"):
+        elif query.startswith("DELETE FROM medical_profiles"):
             self._table.pop(params[0], None)
             self._result = None
         else:
@@ -80,8 +48,8 @@ def fake_profiles_table(monkeypatch):
     def fake_db_transaction():
         yield _FakeCursor(table)
 
-    monkeypatch.setattr(medical_module.db, "db_cursor", fake_db_cursor)
-    monkeypatch.setattr(medical_module.db, "db_transaction", fake_db_transaction)
+    monkeypatch.setattr(user_module.db, "db_cursor", fake_db_cursor)
+    monkeypatch.setattr(user_module.db, "db_transaction", fake_db_transaction)
     return table
 
 
@@ -96,46 +64,32 @@ def test_get_medical_profile_defaults_when_none_stored(client, app, fake_profile
     resp = client.get(URL, headers={"Authorization": f"Bearer {token}"})
 
     assert resp.status_code == 200
-    assert resp.get_json() == {
-        "date_of_birth": None,
-        "gender": None,
-        "address": None,
-        "blood_type": None,
-        "severe_allergies": [],
-        "conditions": [],
-        "medications": [],
-        "emergency_contacts": [],
-    }
+    assert resp.get_json() == {"blood_type": None, "conditions": [], "allergies": []}
 
 
 def test_upsert_then_get_round_trips(client, app, fake_profiles_table):
     token = _token_for(app, "u_alice")
     headers = {"Authorization": f"Bearer {token}"}
 
-    put_resp = client.put(
-        URL,
-        json={"blood_type": "O+", "severe_allergies": ["Penicillin"]},
-        headers=headers,
-    )
+    put_resp = client.put(URL, json={"blood_type": "O+", "allergies": ["Penicillin"]}, headers=headers)
     assert put_resp.status_code == 200
     assert put_resp.get_json()["blood_type"] == "O+"
 
     get_resp = client.get(URL, headers=headers)
-    assert get_resp.get_json()["severe_allergies"] == ["Penicillin"]
+    assert get_resp.get_json() == {"blood_type": "O+", "conditions": [], "allergies": ["Penicillin"]}
 
 
-def test_profile_uses_split_json_columns_at_rest(client, app, fake_profiles_table):
+def test_payload_is_actually_encrypted_at_rest(client, app, fake_profiles_table):
     token = _token_for(app, "u_alice")
     client.put(
-        URL,
-        json={"blood_type": "O+", "conditions": ["Asthma"], "medications": ["Albuterol"]},
+        URL, json={"blood_type": "O+", "conditions": ["Asthma"]},
         headers={"Authorization": f"Bearer {token}"},
     )
 
-    stored = fake_profiles_table["u_alice"]
-    assert "encrypted_payload" not in stored
-    assert json.loads(stored["conditions"]) == ["Asthma"]
-    assert json.loads(stored["medications"]) == ["Albuterol"]
+    stored = fake_profiles_table["u_alice"]["encrypted_payload"]
+    assert b"Asthma" not in stored
+    assert b"O+" not in stored
+    assert medical_crypto.decrypt_profile(stored)["conditions"] == ["Asthma"]
 
 
 def test_user_isolation_between_tokens(client, app, fake_profiles_table):
@@ -183,9 +137,9 @@ def test_upsert_rejects_unknown_fields(client, app, fake_profiles_table):
     token = _token_for(app, "u_alice")
 
     resp = client.put(
-        URL, json={"blood_type": "O+", "ssn": "123-45-6789", "allergies": ["old"]},
+        URL, json={"blood_type": "O+", "ssn": "123-45-6789"},
         headers={"Authorization": f"Bearer {token}"},
     )
 
     assert resp.status_code == 400
-    assert resp.get_json()["invalid_fields"] == ["allergies", "ssn"]
+    assert resp.get_json()["invalid_fields"] == ["ssn"]

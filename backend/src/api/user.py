@@ -1,5 +1,9 @@
 from copy import deepcopy
+import json
+from flask import Blueprint, g, jsonify, request
 
+import db
+import medical_crypto
 from flask import Blueprint, g, jsonify, request
 
 import db
@@ -15,7 +19,6 @@ from mock_data import (
     MEDICAL_PASSPORT_RESPONSE,
     NOTIFICATION_PREFERENCES,
     SOS_RESPONSE,
-    USER_PROFILE,
     USER_SETTINGS,
 )
 
@@ -53,6 +56,38 @@ MEDICAL_ID_EDITABLE_FIELDS = {"blood_type", "conditions", "allergies"}
 
 EMERGENCY_CONTACT_EDITABLE_FIELDS = {"name", "relationship", "phone"}
 
+MEDICAL_PROFILE_EDITABLE_FIELDS = {"blood_type", "conditions", "allergies"}
+
+MEDICAL_PROFILE_DEFAULTS = {"blood_type": None, "conditions": [], "allergies": []}
+
+NOTIFICATION_PREFERENCES_DEFAULTS = {
+    "busyness_alerts_enabled": True,
+    "push_notifications_enabled": True,
+    "quiet_hours_enabled": False,
+    "quiet_hours_start": None,
+    "quiet_hours_end": None,
+    "alert_threshold_percent": 80,
+    "preferred_venue_types": [],
+    "preferred_boroughs": [],
+}
+
+
+def _reject_explicit_user_id():
+    """Strict isolation: identity comes only from the Bearer token's sub
+    claim. Callers must never be able to address another user's profile by
+    passing user_id explicitly."""
+    if "user_id" in request.args:
+        return (
+            jsonify(
+                {
+                    "error": "Forbidden. user_id may not be supplied explicitly; "
+                    "identity is resolved from the access token.",
+                }
+            ),
+            400,
+        )
+    return None
+
 
 def _reject_explicit_user_id():
     """Strict isolation: identity comes only from the Bearer token's sub
@@ -88,7 +123,15 @@ def _next_contact_id() -> str:
 @bp.get("/api/v1/user/profile")
 @require_bearer_auth
 def get_user_profile():
-    return jsonify(deepcopy(USER_PROFILE))
+
+    with db.db_cursor() as cursor:
+        cursor.execute("SELECT display_name, phone, nationality, spoken_languages FROM users WHERE user_id = %s", (g.user_id,))
+        row = cursor.fetchone()
+
+    return jsonify(row)
+
+
+    
 
 
 @bp.get("/api/v1/user/medical-id")
@@ -122,6 +165,86 @@ def update_medical_id():
     return jsonify(deepcopy(MEDICAL_ID))
 
 
+@bp.get("/api/v1/user/medical-profile")
+@require_bearer_auth
+def get_medical_profile():
+    rejected = _reject_explicit_user_id()
+    if rejected:
+        return rejected
+
+    with db.db_cursor() as cursor:
+        cursor.execute(
+            "SELECT encrypted_payload FROM medical_profiles WHERE user_id = %s",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
+
+    if not row:
+        return jsonify(deepcopy(MEDICAL_PROFILE_DEFAULTS))
+
+    return jsonify(medical_crypto.decrypt_profile(row["encrypted_payload"]))
+
+
+@bp.put("/api/v1/user/medical-profile")
+@require_bearer_auth
+def upsert_medical_profile():
+    rejected = _reject_explicit_user_id()
+    if rejected:
+        return rejected
+
+    payload = request.get_json(silent=True) or {}
+    invalid_fields = [field for field in payload if field not in MEDICAL_PROFILE_EDITABLE_FIELDS]
+    if invalid_fields:
+        return (
+            jsonify(
+                {
+                    "error": "Validation failed.",
+                    "missing_fields": [],
+                    "invalid_fields": invalid_fields,
+                }
+            ),
+            400,
+        )
+
+    with db.db_transaction() as cursor:
+        cursor.execute(
+            "SELECT encrypted_payload FROM medical_profiles WHERE user_id = %s FOR UPDATE",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
+        profile = (
+            medical_crypto.decrypt_profile(row["encrypted_payload"])
+            if row
+            else deepcopy(MEDICAL_PROFILE_DEFAULTS)
+        )
+
+        for field in MEDICAL_PROFILE_EDITABLE_FIELDS:
+            if field in payload:
+                profile[field] = payload[field]
+
+        encrypted_payload = medical_crypto.encrypt_profile(profile)
+        cursor.execute(
+            "INSERT INTO medical_profiles (user_id, encrypted_payload) VALUES (%s, %s) "
+            "ON DUPLICATE KEY UPDATE encrypted_payload = %s",
+            (g.user_id, encrypted_payload, encrypted_payload),
+        )
+
+    return jsonify(profile)
+
+
+@bp.delete("/api/v1/user/medical-profile")
+@require_bearer_auth
+def delete_medical_profile():
+    rejected = _reject_explicit_user_id()
+    if rejected:
+        return rejected
+
+    with db.db_transaction() as cursor:
+        cursor.execute("DELETE FROM medical_profiles WHERE user_id = %s", (g.user_id,))
+
+    return "", 204
+
+
 @bp.get("/api/v1/user/emergency-contacts")
 @require_bearer_auth
 def get_emergency_contacts():
@@ -129,7 +252,7 @@ def get_emergency_contacts():
 
 
 @bp.put("/api/v1/user/profile")
-@require_api_key
+@require_bearer_auth
 def update_user_profile():
     payload = request.get_json(silent=True) or {}
 
@@ -145,12 +268,23 @@ def update_user_profile():
             ),
             400,
         )
+    
+    fields_to_update = [field for field in PROFILE_EDITABLE_FIELDS if field in payload]
 
-    for field in PROFILE_EDITABLE_FIELDS:
-        if field in payload:
-            USER_PROFILE[field] = payload[field]
+    with db.db_transaction() as cursor:
+        if fields_to_update:
+            set_clause = ", ".join(f"{field} = %s" for field in fields_to_update)
+            values = [payload[field] for field in fields_to_update] + [g.user_id]
+            cursor.execute(f"UPDATE users SET {set_clause} WHERE user_id = %s", values)
 
-    return jsonify(deepcopy(USER_PROFILE))
+        cursor.execute(
+            "SELECT display_name, phone, nationality, spoken_languages FROM users WHERE user_id = %s",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
+
+    return jsonify(row)
+
 
 
 @bp.post("/api/v1/user/emergency-contacts")
@@ -289,34 +423,51 @@ def delete_favourite(venue_id: str):
 
 
 @bp.get("/api/v1/user/notification-preferences")
-@require_api_key
+@require_bearer_auth
 def get_notification_preferences():
-    return jsonify(deepcopy(NOTIFICATION_PREFERENCES))
+
+    with db.db_cursor() as cursor:
+        cursor.execute(
+            "SELECT notification_preferences FROM users WHERE user_id = %s",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            return jsonify(deepcopy(NOTIFICATION_PREFERENCES_DEFAULTS))
+
+    return jsonify(json.loads(row["notification_preferences"]))
 
 
 @bp.put("/api/v1/user/notification-preferences")
-@require_api_key
+@require_bearer_auth
 def update_notification_preferences():
     payload = request.get_json(silent=True) or {}
 
     invalid_fields = [field for field in payload if field not in NOTIFICATION_PREFERENCES_EDITABLE_FIELDS]
     if invalid_fields:
-        return (
-            jsonify(
-                {
-                    "error": "Validation failed.",
-                    "missing_fields": [],
-                    "invalid_fields": invalid_fields,
-                }
-            ),
-            400,
+        return jsonify({
+            "error": "Validation failed.",
+            "missing_fields": [],
+            "invalid_fields": invalid_fields,
+        }), 400
+
+    with db.db_transaction() as cursor:
+        cursor.execute(
+            "SELECT notification_preferences FROM users WHERE user_id = %s FOR UPDATE",
+            (g.user_id,),
+        )
+        row = cursor.fetchone()
+        preferences = json.loads(row["notification_preferences"]) if row else {}
+        preferences.update({k: v for k, v in payload.items() if k in NOTIFICATION_PREFERENCES_EDITABLE_FIELDS})
+
+        cursor.execute(
+            "UPDATE users SET notification_preferences = %s WHERE user_id = %s",
+            (json.dumps(preferences), g.user_id),
         )
 
-    for field in NOTIFICATION_PREFERENCES_EDITABLE_FIELDS:
-        if field in payload:
-            NOTIFICATION_PREFERENCES[field] = payload[field]
+    return jsonify(preferences)
 
-    return jsonify(deepcopy(NOTIFICATION_PREFERENCES))
 
 
 @bp.post("/api/v1/user/sos")
