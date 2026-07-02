@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./styles/tokens.css";
 import "./purged-styles.css";
@@ -51,12 +51,35 @@ function App() {
             ClearPath
           </Link>
 
-          <nav className="main-nav">
-            <Link to="/map">Live Help Map</Link>
-            <Link to="/insights">Insights Dashboard</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/guide">User Guide</Link>
-          </nav>
+         <nav className="main-nav">
+          <NavLink
+            to="/map"
+          className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+        >
+          Live Help Map
+        </NavLink>
+
+        <NavLink
+         to="/insights"
+          className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+       >
+          Insights Dashboard
+       </NavLink>
+
+       <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+       >
+          About Us
+        </NavLink>
+
+       <NavLink
+          to="/guide"
+         className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+        >
+         User Guide
+        </NavLink>
+      </nav>
 
           <div className="header-controls" ref={dropdownRef}>
             <div className="dropdown-wrapper">

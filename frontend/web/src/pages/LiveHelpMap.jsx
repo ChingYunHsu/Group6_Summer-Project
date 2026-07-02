@@ -47,6 +47,7 @@ function LiveHelpMap() {
   const [routeStart, setRouteStart] = useState("");
   const [routeDestination, setRouteDestination] = useState("");
   const [routeDepartureTime, setRouteDepartureTime] = useState("");
+  const [recentlySavedVenueId, setRecentlySavedVenueId] = useState(null);
 
   const [selectedVenueId, setSelectedVenueId] = useState(VENUES[0]?.venue_id);
   const openVenueDrawer = useCallback((venue) => {
@@ -104,7 +105,6 @@ function LiveHelpMap() {
       markerEl.innerHTML = `<span>${getIcon(venue.venue_type)}</span>`;
       markerEl.style.pointerEvents = 'auto';
       markerEl.style.zIndex = "10";
-      markerEl.style.position = "relative";
 
        markerEl.addEventListener("mousedown", (e) => {
         e.stopPropagation();
@@ -112,12 +112,13 @@ function LiveHelpMap() {
         openVenueDrawer(venue);
       });
 
-      const marker = new maplibregl.Marker({ element: markerEl })
+      const marker = new maplibregl.Marker({
+       element: markerEl,
+        anchor: "center",
+      })
         .setLngLat([venue.longitude, venue.latitude])
         .addTo(mapRef.current);
-
-      markersRef.current.push(marker);
-    });
+         });
   }, [futureMode, openVenueDrawer]);
 
 
@@ -157,23 +158,46 @@ function LiveHelpMap() {
     );
   }
 
-function handleOpenLiveDirections() {
-  setShowRoutePlanner(true);
-  setShowLeftDrawer(false);
+  function handleSaveLocation() {
+    const savedIds = JSON.parse(
+     localStorage.getItem("clearPathSavedVenueIds") || "[]"
+    );
 
-  setRouteStart("Current Location");
-  setRouteDestination(selectedVenue.name);
-  setRouteDepartureTime("Leave Now");
+    if (!savedIds.includes(selectedVenue.venue_id)) {
+      const updatedSavedIds = [...savedIds, selectedVenue.venue_id];
 
-  if (!locationTrackingEnabled()) {
-    setShowLocationAlert(true);
+      localStorage.setItem(
+        "clearPathSavedVenueIds",
+       JSON.stringify(updatedSavedIds)
+     );
+
+      window.dispatchEvent(new Event("clearpath:saved-locations-updated"));
+    }
+
+    setRecentlySavedVenueId(selectedVenue.venue_id);
+
+    setTimeout(() => {
+      setRecentlySavedVenueId(null);
+    }, 1500);
   }
-}
 
-function closeRoutePlanner() {
-  setShowRoutePlanner(false);
-  setShowLeftDrawer(true);
-}
+  function handleOpenLiveDirections() {
+    setShowRoutePlanner(true);
+    setShowLeftDrawer(false);
+
+   setRouteStart("Current Location");
+   setRouteDestination(selectedVenue.name);
+   setRouteDepartureTime("Leave Now");
+
+   if (!locationTrackingEnabled()) {
+      setShowLocationAlert(true);
+   }
+  }
+
+  function closeRoutePlanner() {
+   setShowRoutePlanner(false);
+   setShowLeftDrawer(true);
+  }
 
   
 
@@ -379,9 +403,13 @@ function closeRoutePlanner() {
           ◈ Open Live Directions
         </button>
 
-        <button className="secondary-map-btn" type="button">
-          ▱ Save Location
-        </button>
+       <button
+        className="secondary-map-btn"
+       type="button"
+        onClick={handleSaveLocation}
+      >
+        {recentlySavedVenueId === selectedVenue.venue_id ? "✅ Saved" : "▱ Save Location"}
+      </button>
       </aside>
       )}
       <div className="map-legend">

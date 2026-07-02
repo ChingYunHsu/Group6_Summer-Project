@@ -324,3 +324,69 @@ button {
 
 /* Route Planning Dashboard — replaces the search header when
    "Open Live Directions" is clicked */
+
+  .print-hide {
+  display: initial;
+}
+
+.medical-error {
+  color: #b91c1c;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  nav,
+  header:not(.medical-alert-header),
+  footer,
+  .navbar,
+  .top-nav,
+  .app-header,
+  .site-header,
+  .sidebar,
+  .page-shell,
+  .layout-shell,
+  .app-layout,
+  .profile-title-row,
+  .medical-preview-header,
+  .print-medical-button,
+  .a4-note,
+  .print-hide {
+    display: none !important;
+  }
+
+  .medical-card-page {
+    display: block !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .medical-a4-canvas {
+    display: block !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+}
