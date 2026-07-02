@@ -17,7 +17,6 @@ BUSY_LEVEL_LABELS = ("quiet", "moderate", "busy")
 
 
 def derive_busy_level(score: object) -> object:
-<<<<<<< HEAD
     """将 busyness_score (0-100) 转为三档，与 ClearPath 前端一致：
     - 🟢 Green (Quiet):  < 30% capacity load
     - 🟡 Yellow (Moderate): 30%–70% capacity load
@@ -29,14 +28,6 @@ def derive_busy_level(score: object) -> object:
     if value < 30:
         return "quiet"
     if value <= 70:
-=======
-    if pd.isna(score):
-        return pd.NA
-    value = float(score)
-    if value <= 33:
-        return "quiet"
-    if value <= 66:
->>>>>>> main
         return "moderate"
     return "busy"
 
@@ -72,12 +63,9 @@ def build_model_feature_blocks() -> dict[str, list[str]]:
             "citibike_nearest_distance_m",
             "mta_nearest_distance_m",
             "traffic_nearest_distance_m",
-<<<<<<< HEAD
             "citibike_distance_bin",
             "mta_distance_bin",
             "traffic_distance_bin",
-=======
->>>>>>> main
             "citibike_covered_200m",
             "mta_covered_200m",
             "traffic_covered_500m",
@@ -96,12 +84,9 @@ def build_model_feature_blocks() -> dict[str, list[str]]:
             "citibike_nearest_distance_m",
             "mta_nearest_distance_m",
             "traffic_nearest_distance_m",
-<<<<<<< HEAD
             "citibike_distance_bin",
             "mta_distance_bin",
             "traffic_distance_bin",
-=======
->>>>>>> main
             "citibike_covered_200m",
             "mta_covered_200m",
             "traffic_covered_500m",
@@ -191,15 +176,61 @@ def select_representative_row(frame: pd.DataFrame) -> pd.Series:
     return candidate.sort_values(sort_columns, ascending=[False] * len(sort_columns)).iloc[0]
 
 
+def score_curve_sample(
+    model_pipeline: Pipeline,
+    sample: pd.Series,
+    training_columns: list[str],
+    feature_columns: list[str],
+    hours: int = 12,
+    start_hour: int = 8,
+) -> tuple[int, float]:
+    predictions: list[float] = []
+    levels: list[str] = []
+    for hour in range(start_hour, start_hour + hours):
+        item = sample.to_dict()
+        item["hour"] = hour % 24
+        item["is_weekend"] = bool(item.get("day_of_week") in {"saturday", "sunday"})
+        x = pd.DataFrame([item], columns=training_columns)
+        prediction = float(np.clip(model_pipeline.predict(model_feature_matrix(x, feature_columns))[0], 0, 100))
+        predictions.append(prediction)
+        levels.append(derive_busy_level(prediction))
+    return len(set(levels)), max(predictions) - min(predictions)
+
+
+def select_curve_row(
+    frame: pd.DataFrame,
+    model_pipeline: Pipeline,
+    feature_columns: list[str],
+    hours: int = 12,
+    start_hour: int = 8,
+) -> pd.Series:
+    candidates = (
+        frame.dropna(subset=["venue_id"])
+        .drop_duplicates(subset=["prediction_group_id", "venue_id", "day_of_week"])
+        .copy()
+    )
+    if candidates.empty:
+        return select_representative_row(frame)
+    candidates["_level_count"], candidates["_score_range"] = zip(
+        *candidates.apply(
+            lambda row: score_curve_sample(model_pipeline, row, frame.columns.tolist(), feature_columns, hours, start_hour),
+            axis=1,
+        )
+    )
+    return candidates.sort_values(["_level_count", "_score_range"], ascending=[False, False]).iloc[0]
+
+
 def build_prediction_curve(
     model_pipeline: Pipeline,
     training: pd.DataFrame,
     feature_columns: list[str],
     model_name: str,
+    sample: pd.Series | None = None,
     hours: int = 12,
     start_hour: int = 8,
 ) -> pd.DataFrame:
-    sample = select_representative_row(training[training["split"].eq("test")])
+    if sample is None:
+        sample = select_representative_row(training[training["split"].eq("test")])
     rows: list[dict[str, Any]] = []
     for hour in range(start_hour, start_hour + hours):
         item = sample.to_dict()
@@ -235,10 +266,11 @@ def evaluate_model_family(
 
     model_rows: list[dict[str, Any]] = []
     prediction_rows: list[pd.DataFrame] = []
-    curve_rows: list[pd.DataFrame] = []
+    fitted_pipelines: dict[str, Pipeline] = {}
     for model_name, (estimator, scale_numeric) in build_model_specs().items():
         pipeline = build_regression_pipeline(estimator, numeric_columns, categorical_columns, scale_numeric=scale_numeric)
         pipeline.fit(train_matrix, train["busyness_score"])
+        fitted_pipelines[model_name] = pipeline
         for split_name, split_frame, split_matrix in [
             ("train", train, train_matrix),
             ("val", val, val_matrix),
@@ -279,7 +311,12 @@ def evaluate_model_family(
                 )
                 pred_frame["abs_error"] = np.round(np.abs(split_frame["busyness_score"].to_numpy(dtype=float) - clipped), 2)
                 prediction_rows.append(pred_frame)
-        curve_rows.append(build_prediction_curve(pipeline, training, available_features, model_name))
+    selector = fitted_pipelines.get("GradientBoostingRegressor", next(iter(fitted_pipelines.values())))
+    curve_sample = select_curve_row(test, selector, available_features)
+    curve_rows = [
+        build_prediction_curve(pipeline, training, available_features, model_name, sample=curve_sample)
+        for model_name, pipeline in fitted_pipelines.items()
+    ]
     return pd.DataFrame(model_rows), pd.concat(prediction_rows, ignore_index=True), pd.concat(curve_rows, ignore_index=True)
 
 
@@ -315,7 +352,6 @@ def build_ablation_summary(training: pd.DataFrame) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows)
-<<<<<<< HEAD
 
 
 def imputed_feature_profile(frame: pd.DataFrame, feature_columns: list[str]) -> pd.DataFrame:
@@ -409,5 +445,3 @@ def build_low_coverage_drop_one_ablation(training: pd.DataFrame) -> pd.DataFrame
             }
         )
     return pd.DataFrame(rows)
-=======
->>>>>>> main
