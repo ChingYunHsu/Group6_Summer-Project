@@ -14,6 +14,8 @@ rather than locking every request out because a side-channel store is down.
 import logging
 import time
 
+import redis
+
 from settings import get_settings
 
 logger = logging.getLogger(__name__)
@@ -24,18 +26,9 @@ _client = None
 _KEY_PREFIX = "auth:blacklist:"
 
 
-class _RedisUnavailable(Exception):
-    pass
-
-
 def _get_client():
     global _client
     if _client is None:
-        try:
-            import redis
-        except ModuleNotFoundError as exc:
-            raise _RedisUnavailable from exc
-
         _client = redis.Redis.from_url(
             _settings.redis_url,
             decode_responses=True,
@@ -58,7 +51,7 @@ def blacklist_token(token: str, exp: int) -> None:
     key = _KEY_PREFIX + _signature_of(token)
     try:
         _get_client().set(key, "1", ex=ttl_seconds)
-    except Exception:
+    except redis.RedisError:
         logger.warning("Could not reach Redis to blacklist token; logout may not propagate.")
 
 
@@ -67,6 +60,6 @@ def is_blacklisted(token: str) -> bool:
     key = _KEY_PREFIX + _signature_of(token)
     try:
         return bool(_get_client().exists(key))
-    except Exception:
+    except redis.RedisError:
         logger.warning("Could not reach Redis to check token blacklist; failing open.")
         return False

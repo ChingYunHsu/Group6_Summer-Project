@@ -3,6 +3,8 @@ client, so this runs without a live Redis (unlike a real integration test)."""
 
 import time
 
+import redis
+
 import token_blacklist
 
 
@@ -27,10 +29,10 @@ class _FakeRedis:
 
 class _BrokenRedis:
     def set(self, *args, **kwargs):
-        raise ConnectionError("connection refused")
+        raise redis.RedisError("connection refused")
 
     def exists(self, *args, **kwargs):
-        raise ConnectionError("connection refused")
+        raise redis.RedisError("connection refused")
 
 
 def test_blacklist_then_is_blacklisted_returns_true(monkeypatch):
