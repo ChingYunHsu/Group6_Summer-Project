@@ -8,7 +8,6 @@ services:
       MYSQL_DATABASE: clearpath
       MYSQL_USER: clearpath_app
       MYSQL_PASSWORD: clearpath_app
-
     ports:
       - "3306:3306"
     volumes:
@@ -51,3 +50,4 @@ services:
 volumes:
   clearpath_mysql_data:
   clearpath_redis_data:
+  # clearpath_mysql_keyring removed — keyring_file.so not available in mysql:8.4
