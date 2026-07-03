@@ -25,8 +25,10 @@ export default defineConfig([
     },
   },
 
+  // update
+
   {
-    files: ['src/tests/**/*.{js,jsx}', 'src/setupTests.js'],
+    files: ['src/tests/**/*.{js,jsx}', 'src/setupTests.js','src/__mocks__/**/*.js'],
     languageOptions: {
       globals: {
         ...globals.browser,
