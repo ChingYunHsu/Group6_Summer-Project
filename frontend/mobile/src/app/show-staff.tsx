@@ -380,7 +380,7 @@ export default function ShowStaffScreen() {
 
           <InfoRow
             label={t("profile.allergies")}
-            value={mockMedicalId.severe_allergies.join(
+            value={mockMedicalId.allergies.join(
               ", "
             )}
           />
