@@ -20,6 +20,10 @@ import { loadProfile } from "../services/profileService";
 
 export default function ProfileScreen() {
 
+const [loading, setLoading] = useState(true);
+const [syncStatus, setSyncStatus] = useState<
+  "loading" | "synced" | "offline"
+>("loading");
 
 const { t } = useTranslation();
   
@@ -39,18 +43,19 @@ const { t } = useTranslation();
   useEffect(() => {
   async function getProfile() {
     try {
-      const savedProfile =
-        await loadProfile();
+  const savedProfile = await loadProfile();
 
-      if (savedProfile) {
-        setProfile(savedProfile);
-      }
-    } catch (error) {
-      console.error(
-        "Failed to load profile",
-        error
-      );
-    }
+  if (savedProfile) {
+    setProfile(savedProfile);
+  }
+
+  setSyncStatus("synced");
+} catch (error) {
+  console.error(error);
+  setSyncStatus("offline");
+} finally {
+  setLoading(false);
+}
   }
 
   getProfile();
@@ -214,7 +219,7 @@ useEffect(() => {
 
           <InfoRow
             label={t("profile.bloodType")}
-            value={medicalId.blood_type}
+            value={medicalId.blood_type ?? ""}
           />
 
           <InfoRow

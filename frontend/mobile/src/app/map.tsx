@@ -1,51 +1,43 @@
+import * as Location from "expo-location";
+import { router } from "expo-router";
 import {
   useEffect,
   useMemo,
   useState,
 } from "react";
-
 import {
   ActivityIndicator,
   StatusBar,
   StyleSheet,
   View,
 } from "react-native";
-
-import { SafeAreaView } from "react-native-safe-area-context";
-
 import MapView from "react-native-maps";
-
-import { router } from "expo-router";
-
+import { SafeAreaView } from "react-native-safe-area-context";
+import CategoryChips, {
+  Category,
+} from "../components/CategoryChips";
+import FilterModal from "../components/FilterModal";
+import FloatingActionButtons from "../components/FloatingActionButtons";
+import LocationRequiredModal from "../components/LocationRequiredModal";
+import MapSearchBar from "../components/MapSearchBar";
+import ReportMarker from "../components/ReportMarker";
+import ReportModal from "../components/ReportModal";
+import RouteDetailModal from "../components/RouteDetailModal";
+import RouteOptionsModal from "../components/RouteOptionsModal";
+import VenueBottomSheet from "../components/VenueBottomSheet";
+import VenueMarker from "../components/VenueMarker";
 import { Colours } from "../constants/colours";
-
 import {
   getReports,
   getVenues,
 } from "../services/api";
-
 import {
   Report,
-  Venue,
+  RouteDetail,
+  RouteOption,
+  Venue
 } from "../types/venue";
 
-import CategoryChips, {
-  Category,
-} from "../components/CategoryChips";
-
-import FilterModal from "../components/FilterModal";
-
-import FloatingActionButtons from "../components/FloatingActionButtons";
-
-import MapSearchBar from "../components/MapSearchBar";
-
-import ReportMarker from "../components/ReportMarker";
-
-import ReportModal from "../components/ReportModal";
-
-import VenueBottomSheet from "../components/VenueBottomSheet";
-
-import VenueMarker from "../components/VenueMarker";
 
 const INITIAL_REGION = {
   latitude: 40.758,
@@ -115,6 +107,72 @@ const [liveStatus, setLiveStatus] =
     "quiet" | "moderate" | "busy"
   >("moderate");
 
+const [routeOptionsVisible, setRouteOptionsVisible] =
+  useState(false);
+
+const [routeDetailVisible, setRouteDetailVisible] =
+  useState(false);
+
+const [locationModalVisible, setLocationModalVisible] =
+  useState(false);
+
+const [selectedMode, setSelectedMode] =
+  useState("walk");
+
+const [routeOptions, setRouteOptions] =
+  useState<RouteOption[]>([]);
+
+const [routeDetail, setRouteDetail] =
+  useState<RouteDetail | null>(null);
+
+  const MOCK_ROUTES = [
+
+  {
+    mode: "walk",
+    duration_minutes: 14,
+    accessibility_mode: "step_free",
+    status: "available",
+    summary: "Fastest Route",
+  },
+
+  {
+    mode: "transit",
+    duration_minutes: 11,
+    accessibility_mode: "standard",
+    status: "moderate",
+    summary: "Bus + Walk",
+  },
+
+  {
+    mode: "drive",
+    duration_minutes: 7,
+    accessibility_mode: "standard",
+    status: "available",
+    summary: "Shortest Time",
+  },
+
+];
+
+const MOCK_DETAIL: RouteDetail = {
+
+  duration: 14,
+
+  steps: [
+
+    "Exit via the main entrance",
+
+    "Turn left onto Main Street",
+
+    "Continue for 250 metres",
+
+    "Cross at the pedestrian crossing",
+
+    "Destination is on your right",
+
+  ],
+
+};
+
   async function loadData() {
     try {
       setLoading(true);
@@ -141,6 +199,37 @@ const [liveStatus, setLiveStatus] =
       setLoading(false);
     }
   }
+
+async function handleDirections() {
+
+  const enabled =
+    await Location.hasServicesEnabledAsync();
+
+  if (!enabled) {
+
+    setLocationModalVisible(true);
+
+    return;
+  }
+
+  setVenueVisible(false);
+
+  setRouteOptions(MOCK_ROUTES);
+
+  setSelectedMode("walk");
+
+  setRouteOptionsVisible(true);
+}
+function handleRouteSelected(route: RouteOption) {
+
+  setRouteOptionsVisible(false);
+
+  setRouteDetail(MOCK_DETAIL);
+
+  setRouteDetailVisible(true);
+
+}
+
 
   useEffect(() => {
     loadData();
@@ -237,7 +326,10 @@ const [liveStatus, setLiveStatus] =
         autoCurrentTime
     }
 
-    onPress={() => setSelectedVenueId(venue.venue_id)}
+    onPress={() => {
+      setSelectedVenueId(venue.venue_id);
+      setVenueVisible(true);
+      }}
 />
         ))}
 
@@ -416,17 +508,61 @@ const [liveStatus, setLiveStatus] =
       {/* ---------------------- Venue Sheet ---------------------- */}
 
       <VenueBottomSheet
-        visible={venueVisible}
-        venue={selectedVenue}
-        autoCurrentTime={autoCurrentTime}
-        onClose={() =>
-          setVenueVisible(false)
-        }
-      />
+    visible={venueVisible}
+    venue={selectedVenue}
+    autoCurrentTime={autoCurrentTime}
+    onClose={() =>
+        setVenueVisible(false)
+    }
+    onDirectionsPress={handleDirections}
+/>
 
-    </SafeAreaView>
-  );
+{/* ---------------------- Route Options Modal ---------------------- */}
 
+<RouteOptionsModal
+    visible={routeOptionsVisible}
+    routes={routeOptions}
+    originLabel="Current Location"
+    departureTime="Now"
+    selectedMode={selectedMode}
+    onSelectMode={setSelectedMode}
+    onSelectRoute={handleRouteSelected}
+    onClose={() =>
+        setRouteOptionsVisible(false)
+    }
+/>
+
+{/* ---------------------- Route Details Modal ---------------------- */}
+
+<RouteDetailModal
+    visible={routeDetailVisible}
+    destinationName={
+        selectedVenue?.name ?? ""
+    }
+    durationMinutes={
+        routeDetail?.duration ?? 0
+    }
+    steps={
+        routeDetail?.steps ?? []
+    }
+    onStartNavigation={() => {
+        console.log("Navigation Started");
+        setRouteDetailVisible(false);
+    }}
+    onClose={() =>
+        setRouteDetailVisible(false)
+    }
+/>
+
+<LocationRequiredModal
+    visible={locationModalVisible}
+    onClose={() =>
+        setLocationModalVisible(false)
+    }
+/>
+
+</SafeAreaView>
+);
 }
 
 const styles = StyleSheet.create({

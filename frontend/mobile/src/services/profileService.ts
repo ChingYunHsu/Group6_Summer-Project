@@ -1,21 +1,47 @@
-import * as SecureStore from "expo-secure-store";
+import { mockProfile } from "../data/mockProfile";
+import { request } from "./api";
 
-const PROFILE_KEY = "medical_profile";
+export type UserProfile = typeof mockProfile;
 
-export async function saveProfile(
-  profile: unknown
-) {
-  await SecureStore.setItemAsync(
-    PROFILE_KEY,
-    JSON.stringify(profile)
-  );
-}
+type ProfileResponse = {
+  user_id: string;
+  full_name: string;
+  email: string;
+  phone: string;
+  nationality: string;
+  spoken_languages: string[];
+};
 
-export async function loadProfile() {
-  const data =
-    await SecureStore.getItemAsync(
-      PROFILE_KEY
+export async function loadProfile(): Promise<UserProfile> {
+  const profile =
+    await request<ProfileResponse>(
+      "/user/profile"
     );
 
-  return data ? JSON.parse(data) : null;
+  return {
+    ...mockProfile,
+    ...profile,
+  };
+}
+
+export async function saveProfile(
+  profile: {
+    phone?: string;
+    nationality?: string;
+    spoken_languages?: string[];
+  }
+): Promise<UserProfile> {
+  const updatedProfile =
+    await request<ProfileResponse>(
+      "/user/profile",
+      {
+        method: "PUT",
+        body: JSON.stringify(profile),
+      }
+    );
+
+  return {
+    ...mockProfile,
+    ...updatedProfile,
+  };
 }

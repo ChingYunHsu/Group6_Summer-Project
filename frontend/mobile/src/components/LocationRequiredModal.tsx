@@ -1,10 +1,10 @@
 import {
-    Linking,
-    Modal,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Linking,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 type Props = {
@@ -43,7 +43,8 @@ export default function LocationRequiredModal({
           </Text>
 
           <Text style={styles.body}>
-            To submit issue reports, please enable your
+            To submit issue reports, or generate a route
+            from your device's location, please enable your
             device's location services.
           </Text>
 

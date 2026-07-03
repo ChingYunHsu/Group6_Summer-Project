@@ -47,27 +47,24 @@ export default function EditProfileScreen() {
     mockProfile.spoken_languages.join(", ")
   );
 
-  const handleSave = async () => {
-  const profile = {
-    user_id: mockProfile.user_id,
-    full_name: fullName,
-    email,
-    phone,
-    date_of_birth: dob,
-    gender,
-    nationality,
-    address,
-    spoken_languages:
-      spokenLanguages
+const handleSave = async () => {
+  try {
+    await saveProfile({
+      phone,
+      nationality,
+      spoken_languages: spokenLanguages
         .split(",")
-        .map((lang) => lang.trim()),
-    avatar_initials:
-      mockProfile.avatar_initials,
-  };
+        .map((lang) => lang.trim())
+        .filter(Boolean),
+    });
 
-  await saveProfile(profile);
-
-  router.back();
+    router.back();
+  } catch (error) {
+    console.error(
+      "Failed to save profile",
+      error
+    );
+  }
 };
 
   return (
@@ -126,13 +123,13 @@ export default function EditProfileScreen() {
           <InputField
             label={t("editProfile.fullName")}
             value={fullName}
-            onChangeText={setFullName}
+            editable={false}
           />
 
           <InputField
             label={t("editProfile.dateOfBirth")}
             value={dob}
-            onChangeText={setDob}
+            editable={false}
           />
 
           <InputField
@@ -156,7 +153,7 @@ export default function EditProfileScreen() {
           <InputField
             label={t("editProfile.email")}
             value={email}
-            onChangeText={setEmail}
+            editable={false}
             keyboardType="email-address"
           />
 
@@ -182,14 +179,16 @@ export default function EditProfileScreen() {
 function InputField({
   label,
   value,
-  onChangeText,
+  onChangeText = () => {},
   multiline = false,
   keyboardType = "default",
+  editable = true,
 }: {
   label: string;
   value: string;
-  onChangeText: (text: string) => void;
+  onChangeText?: (text: string) => void;
   multiline?: boolean;
+  editable?: boolean;
   keyboardType?:
     | "default"
     | "email-address"
@@ -210,6 +209,7 @@ function InputField({
         value={value}
         onChangeText={onChangeText}
         multiline={multiline}
+        editable={editable}
         keyboardType={keyboardType}
       />
     </View>

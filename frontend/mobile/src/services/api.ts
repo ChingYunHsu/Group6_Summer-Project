@@ -8,6 +8,8 @@ import {
   VenueResponse,
 } from "../types/venue";
 
+import { getAccessToken } from "./authService";
+
 /* -------------------------------------------------------------------------- */
 /*                                  CONFIG                                    */
 /* -------------------------------------------------------------------------- */
@@ -33,10 +35,13 @@ const API_KEY = "development";
 /*                               HTTP HELPER                                  */
 /* -------------------------------------------------------------------------- */
 
-async function request<T>(
+export async function request<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
+  const token =
+    await getAccessToken();
+
   const response = await fetch(
     `${API_BASE}${endpoint}`,
     {
@@ -44,21 +49,32 @@ async function request<T>(
 
       headers: {
         "Content-Type": "application/json",
-        "X-API-Key": API_KEY,
+
+        ...(token
+          ? {
+              Authorization: `Bearer ${token}`,
+            }
+          : {}),
+
         ...(options.headers ?? {}),
       },
     }
   );
 
-  if (!response.ok) {
-    const text = await response.text();
+ if (!response.ok) {
+  const text = await response.text();
 
-    throw new Error(
-      `API ${response.status}: ${text}`
-    );
-  }
+  throw new Error(
+    `API ${response.status}: ${text}`
+  );
+}
 
-  return response.json();
+// Handle DELETE endpoints that return 204 No Content
+if (response.status === 204) {
+  return undefined as T;
+}
+
+return response.json();
 }
 
 /* -------------------------------------------------------------------------- */

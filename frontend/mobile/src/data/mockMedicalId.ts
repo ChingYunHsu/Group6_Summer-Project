@@ -1,14 +1,12 @@
-export const mockMedicalId = {
-  date_of_birth: "1998-04-12",
-  gender: "Female",
-  address: "245 W 46th St, New York, NY 10036",
+import type { MedicalProfile } from "../services/medicalIdService";
+
+export const mockMedicalId: MedicalProfile = {
+  date_of_birth: null,
+  gender: null,
+  address: null,
   blood_type: "O+",
-  allergies: [
-    "Penicillin",
-    "Peanuts",
-  ],
-  medical_conditions: ["Asthma"],
-  emergency_contacts: [
-    { name: "Marcus Rivera", phone: "+1 (917) 555-0199", relationship: "Spouse" },
-  ],
+  allergies: ["Peanuts, Penicillin"],
+  conditions: ["Asthma, Diabetes"],
+  medications: ["Salbutamol Inhaler"],
+  emergency_contacts: [],
 };

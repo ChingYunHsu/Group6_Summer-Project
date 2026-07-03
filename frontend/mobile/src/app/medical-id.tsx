@@ -15,11 +15,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 import { mockMedicalId } from "../data/mockMedicalId";
-import { mockProfile } from "../data/mockProfile";
+import type { MedicalProfile } from "../services/medicalIdService";
 import {
   loadMedicalId,
   saveMedicalId,
 } from "../services/medicalIdService";
+import { loadProfile } from "../services/profileService";
 
 export default function MedicalIdScreen() {
   const { t } = useTranslation();
@@ -41,7 +42,10 @@ const [newAllergy,
   useState("");
 
 const [medicalId, setMedicalId] =
-useState(mockMedicalId);
+  useState<MedicalProfile>(mockMedicalId);
+
+const [fullName, setFullName] =
+  useState("");
 
 const [bloodType, setBloodType] =
   useState(
@@ -53,38 +57,53 @@ const [conditions, setConditions] =
     medicalId.conditions
   );
 
+const [saving, setSaving] =
+  useState(false);  
   
 const [allergies, setAllergies] =
   useState(
     medicalId.allergies ?? []
   );
 
+ const [displayName,
+  setDisplayName] =
+  useState(""); 
 
-  const handleSave = async () => {
+const handleSave = async () => {
   try {
+    setSaving(true);
+
     const updatedMedicalId = {
-      ...medicalId,
+      date_of_birth:
+        medicalId.date_of_birth,
+      gender:
+        medicalId.gender,
+      address:
+        medicalId.address,
       blood_type: bloodType,
-      conditions,
       allergies,
+      conditions,
+      medications:
+        medicalId.medications,
+      emergency_contacts:
+        medicalId.emergency_contacts,
     };
 
-    console.log(
-      "SAVING MEDICAL ID:",
-      updatedMedicalId
-    );
+    const savedProfile =
+      await saveMedicalId(
+        updatedMedicalId
+      );
 
-    await saveMedicalId(updatedMedicalId);
-
-    setMedicalId(updatedMedicalId);
+    setMedicalId(savedProfile);
 
     router.back();
-
   } catch (error) {
     console.error(
       "Failed to save medical ID",
       error
     );
+  } finally {
+    setSaving(false);
   }
 };
 
@@ -106,6 +125,13 @@ const [allergies, setAllergies] =
     setConditions(savedMedicalId.conditions);
     setAllergies(savedMedicalId.allergies ?? []);
 }
+
+  const profile =
+  await loadProfile();
+
+setFullName(
+  profile.full_name
+);
     } catch (error) {
       console.error(
         "Failed to load medical ID",
@@ -115,6 +141,8 @@ const [allergies, setAllergies] =
   }
 
   getMedicalId();
+
+  
 }, []);
 
   const removeCondition = (
@@ -218,10 +246,13 @@ const addAllergy = () => {
 </Text>
 
           <TouchableOpacity
+  disabled={saving}
   onPress={handleSave}
 >
   <Text style={styles.saveText}>
-    {t("common.save")}
+    {saving
+  ? t("common.loading")
+  : t("common.save")}
   </Text>
 </TouchableOpacity>
         </View>
@@ -238,7 +269,7 @@ const addAllergy = () => {
           </View>
 
           <Text style={styles.name}>
-            {mockProfile.full_name}
+            {displayName}
           </Text>
 
           <Text style={styles.subtitle}>

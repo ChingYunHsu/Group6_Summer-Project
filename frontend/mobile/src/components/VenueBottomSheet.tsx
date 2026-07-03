@@ -19,6 +19,7 @@ interface Props {
   venue: Venue | null;
   autoCurrentTime: boolean;
   onClose: () => void;
+  onDirectionsPress: () => void;
 }
 
 export default function VenueBottomSheet({
@@ -26,6 +27,7 @@ export default function VenueBottomSheet({
   venue,
   autoCurrentTime,
   onClose,
+  onDirectionsPress,
 }: Props) {
   if (!venue) return null;
 
@@ -191,6 +193,7 @@ export default function VenueBottomSheet({
 
           <TouchableOpacity
             style={styles.directionButton}
+            onPress={onDirectionsPress}
           >
             <Ionicons
               name="navigate"

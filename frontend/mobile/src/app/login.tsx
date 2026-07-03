@@ -15,6 +15,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
+import { login, register } from "../services/authService";
 
 export default function LoginScreen() {
   const { t } = useTranslation();
@@ -25,6 +26,18 @@ export default function LoginScreen() {
   const [showPassword, setShowPassword] =
     useState(false);
 
+  const [email, setEmail] =
+  useState("");
+
+const [password, setPassword] =
+  useState("");
+
+const [fullName, setFullName] =
+  useState("");
+
+const [loading, setLoading] =
+  useState(false);
+
   const [
     showRegistrationModal,
     setShowRegistrationModal,
@@ -33,12 +46,49 @@ export default function LoginScreen() {
   const [agreed, setAgreed] =
     useState(false);
 
-  const handleSignIn = () => {
-    router.push("/map");
-  };
+  const handleSignIn = async () => {
+  try {
+    setLoading(true);
 
-  const handleCreateAccount = () => {
-    setShowRegistrationModal(true);
+    await login(
+      email,
+      password
+    );
+
+    router.replace("/map");
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+  const handleCreateAccount =
+  async () => {
+    try {
+      setLoading(true);
+
+      const response =
+        await register(
+          fullName,
+          email,
+          password
+        );
+
+      if (
+        response.finish_profile_prompt
+      ) {
+        setShowRegistrationModal(
+          true
+        );
+      } else {
+        router.replace("/map");
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleFinishProfile = () => {
@@ -82,6 +132,8 @@ export default function LoginScreen() {
 </Text>
 
                 <TextInput
+                  value={email}
+                  onChangeText={setEmail}
                   placeholder={t("login.emailPlaceholder")}
                   placeholderTextColor={
                     Colours.muted
@@ -101,6 +153,8 @@ export default function LoginScreen() {
                   }
                 >
                   <TextInput
+                    value={password}
+                    onChangeText={setPassword}
                     placeholder={t("login.passwordPlaceholder")}
                     placeholderTextColor={
                       Colours.muted
@@ -133,17 +187,16 @@ export default function LoginScreen() {
                 </View>
 
                 <TouchableOpacity
-                  style={
-                    styles.primaryButton
-                  }
-                  onPress={
-                    handleSignIn
-                  }
-                >
-                  <Text style={styles.primaryButtonText}>
-  {t("login.signIn")}
-</Text>
-                </TouchableOpacity>
+  style={styles.primaryButton}
+  disabled={loading}
+  onPress={handleSignIn}
+>
+  <Text style={styles.primaryButtonText}>
+    {loading
+      ? t("common.loading")
+      : t("login.signIn")}
+  </Text>
+</TouchableOpacity>
 
                 <TouchableOpacity
                   testID="switch-to-register"
@@ -184,6 +237,8 @@ export default function LoginScreen() {
 </Text>
 
                 <TextInput
+                  value={fullName}
+                  onChangeText={setFullName}
                   placeholder={t("login.fullNamePlaceholder")}
                   placeholderTextColor={
                     Colours.muted
@@ -196,6 +251,8 @@ export default function LoginScreen() {
 </Text>
 
                 <TextInput
+                  value={email}
+                  onChangeText={setEmail}
                   placeholder={t("login.emailPlaceholder")}
                   placeholderTextColor={
                     Colours.muted
@@ -215,6 +272,8 @@ export default function LoginScreen() {
                   }
                 >
                   <TextInput
+                    value={password}
+                    onChangeText={setPassword}
                     placeholder={t("login.passwordRequirements")}
                     placeholderTextColor={
                       Colours.muted
@@ -271,21 +330,21 @@ export default function LoginScreen() {
                 </View>
 
                 <TouchableOpacity
-                  testID="create-account-button"
-                  style={[
-                    styles.primaryButton,
-                    !agreed &&
-                      styles.disabledButton,
-                  ]}
-                  disabled={!agreed}
-                  onPress={
-                    handleCreateAccount
-                  }
-                >
-                  <Text style={styles.primaryButtonText}>
-  {t("login.createAccount")}
-</Text>
-                </TouchableOpacity>
+  testID="create-account-button"
+  style={[
+    styles.primaryButton,
+    (!agreed || loading) &&
+      styles.disabledButton,
+  ]}
+  disabled={!agreed || loading}
+  onPress={handleCreateAccount}
+>
+  <Text style={styles.primaryButtonText}>
+    {loading
+      ? t("common.loading")
+      : t("login.createAccount")}
+  </Text>
+</TouchableOpacity>
 
                 <TouchableOpacity
                   testID="switch-to-signin"
