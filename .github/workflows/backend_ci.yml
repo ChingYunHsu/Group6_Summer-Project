@@ -60,11 +60,6 @@ jobs:
         poetry install --no-interaction --no-root
       working-directory: ./backend 
 
-    - name: Ensure Pytest and Lint tools are ready
-      run: |
-        poetry run pip install pytest pytest-cov flake8
-      working-directory: ./backend
-
     - name: Run Backend Linting Check
       run: |
         poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
@@ -72,7 +67,7 @@ jobs:
 
     - name: Run Pytest with Coverage
       run: |
-        poetry run pytest tests/ -m "not integration" --cov=. --cov-fail-under=60
+        poetry run pytest tests/ -m "not integration" --cov=src --cov-fail-under=60
       working-directory: ./backend
       env:
         PYTHONPATH: .
