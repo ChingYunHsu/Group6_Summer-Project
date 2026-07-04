@@ -30,6 +30,11 @@ markers = [
 
 [tool.poetry.group.dev.dependencies]
 pytest-timeout = "^2.2.0"
+pytest-cov = "^5.0.0"
+flake8 = "^7.1.0"
+
+[tool.coverage.run]
+source = ["src"]
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]
