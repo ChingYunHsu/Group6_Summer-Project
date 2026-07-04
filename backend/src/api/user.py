@@ -1,9 +1,13 @@
 from copy import deepcopy
 import json
+import uuid
+from datetime import datetime, timezone
+
 from flask import Blueprint, g, jsonify, request
 
 import db
 import medical_crypto
+from sos_buffer import push_sos_event
 from flask import Blueprint, g, jsonify, request
 
 import db
@@ -50,7 +54,7 @@ NOTIFICATION_PREFERENCES_EDITABLE_FIELDS = {
     "preferred_boroughs",
 }
 
-SOS_FIELDS = {"latitude", "longitude", "share_live_location", "note"}
+SOS_FIELDS = {"latitude", "longitude", "tracking_metrics", "share_live_location", "note"}
 
 MEDICAL_ID_EDITABLE_FIELDS = {"blood_type", "conditions", "allergies"}
 
@@ -488,7 +492,23 @@ def trigger_sos():
             400,
         )
 
-    return jsonify(deepcopy(SOS_RESPONSE))
+    incident_id = f"sos_{uuid.uuid4().hex[:8]}"
+    # High-priority/low-latency: land the raw event straight in the
+    # in-memory buffer (no DB round trip on the request path); the SSE
+    # stream drains it to push to connected map clients.
+    push_sos_event(
+        {
+            "incident_id": incident_id,
+            "latitude": payload.get("latitude"),
+            "longitude": payload.get("longitude"),
+            "tracking_metrics": payload.get("tracking_metrics"),
+            "received_at": datetime.now(timezone.utc).isoformat(),
+        }
+    )
+
+    response = deepcopy(SOS_RESPONSE)
+    response["incident_id"] = incident_id
+    return jsonify(response)
 
 
 @bp.delete("/api/v1/user/account")
