@@ -26,9 +26,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import json
+import json as _json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Make the sibling live_capacity_telemetry importable when run directly.
@@ -63,8 +64,8 @@ def load_payloads(path: str) -> list[dict]:
             if not line:
                 continue
             try:
-                payloads.append(json.loads(line))
-            except json.JSONDecodeError as exc:
+                payloads.append(_json.loads(line))
+            except _json.JSONDecodeError as exc:
                 print(f"WARN: line {lineno} not JSON: {exc}", file=sys.stderr)
     return payloads
 
@@ -86,7 +87,7 @@ def write_mock_payloads(path: str) -> list[dict]:
     ]
     with open(path, "w") as fh:
         for s in samples:
-            fh.write(json.dumps(s) + "\n")
+            fh.write(_json.dumps(s) + "\n")
     return samples
 
 
@@ -135,7 +136,7 @@ def main(argv: list[str] | None = None) -> int:
             normalized.append(ev)
         except lct.TelemetryValidationError as exc:
             rejected += 1
-            print(f"REJECT: {exc} — payload={json.dumps(p)[:120]}", file=sys.stderr)
+            print(f"REJECT: {exc} — payload={_json.dumps(p)[:120]}", file=sys.stderr)
 
     print(f"-- telemetry: {len(payloads)} received, {len(normalized)} normalized, {rejected} rejected")
     print(f"-- freshness window: ttl_seconds={args.ttl_seconds} (model_version={lct.MODEL_VERSION})")
@@ -151,16 +152,42 @@ def main(argv: list[str] | None = None) -> int:
     # --execute path
     conn = _connect()
     ingested = unmatched = 0
+    audit = {
+        "run_at": datetime.now(timezone.utc).isoformat(),
+        "model_version": lct.MODEL_VERSION,
+        "received": len(payloads),
+        "rejected": rejected,
+        "ingested": 0,
+        "unmatched": 0,
+        "unmatched_ids": [],
+        "success": False,
+        "error": None,
+    }
     try:
         with conn.cursor() as cur:
             result = lct.process_batch(cur, payloads)
+            cur.execute(
+                "INSERT INTO telemetry_audit_log "
+                "(run_at, model_version, received, rejected, ingested, unmatched, "
+                "unmatched_ids, success) "
+                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                (audit["run_at"], audit["model_version"], audit["received"],
+                 audit["rejected"], result.ingested, len(result.unmatched),
+                 _json.dumps(result.unmatched), True),
+            )
         conn.commit()
         ingested, unmatched = result.ingested, len(result.unmatched)
-    except Exception:
+        audit["ingested"] = ingested
+        audit["unmatched"] = unmatched
+        audit["unmatched_ids"] = result.unmatched
+        audit["success"] = True
+    except Exception as exc:
         conn.rollback()
+        audit["error"] = str(exc)[:500]
         raise
     finally:
         conn.close()
+        print(_json.dumps(audit, default=str))
 
     print(f"-- execute: {ingested} upserted, {unmatched} unmatched, {rejected} rejected.")
     if unmatched:
