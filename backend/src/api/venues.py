@@ -1,7 +1,7 @@
 import json as _json
 import os
 from copy import deepcopy
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 import pymysql
 from flask import Blueprint, jsonify, request
@@ -146,9 +146,72 @@ def get_venue_busyness(venue_id: str):
 def get_venue_busyness_forecast(venue_id: str):
     """Return 12-hour busyness forecast for a venue.
 
-    Reads forecast_1h JSON from busyness_scores table; falls back to mock.
+    Primary source: the `busyness_forecasts` table (12h row series written by
+    the ML pipeline). Migration fallback: the legacy `busyness_scores.forecast_1h`
+    JSON blob. Final fallback: mock data.
+
+    `data_mode` / `forecast_source` make the data lineage observable so the
+    frontend (and SOP D3.5 aggregation) can tell live-ML data from mock:
+      - data_mode="forecast",  forecast_source="busyness_forecasts"
+      - data_mode="predicted", forecast_source="busyness_scores.forecast_1h"
+      - data_mode="mock",      forecast_source="mock_data"
     """
-    # --- Try DB first ---
+    now = datetime.now(timezone.utc)
+
+    # --- Primary: busyness_forecasts (12h row series) ---
+    try:
+        conn = _get_db_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "SELECT forecast_for, predicted_score, predicted_level, "
+                    "estimated_wait_minutes, model_version, generated_at "
+                    "FROM busyness_forecasts "
+                    "WHERE venue_id = %s AND forecast_for >= NOW() "
+                    "ORDER BY forecast_for ASC LIMIT 12",
+                    (venue_id,),
+                )
+                rows = cur.fetchall()
+        finally:
+            conn.close()
+
+        if rows:
+            forecast_list = []
+            for (forecast_for, score, level, wait_minutes, _mv, _gen) in rows:
+                # forecast_for is naive (MySQL DATETIME); treat as UTC for the
+                # offset calculation so the value is timezone-stable.
+                ff = forecast_for
+                if ff.tzinfo is None:
+                    ff = ff.replace(tzinfo=timezone.utc)
+                offset_hours = max(0, round((ff - now).total_seconds() / 3600))
+                forecast_list.append({
+                    "offset_hours": offset_hours,
+                    "percent": int(score),
+                    "level": level,
+                    "forecast_for": ff.isoformat(),
+                    "estimated_wait_minutes": int(wait_minutes) if wait_minutes is not None else None,
+                })
+
+            best = min(forecast_list, key=lambda x: x["percent"])
+            return jsonify({
+                "venue_id": venue_id,
+                "forecast": forecast_list,
+                "best_time_to_go_today": {
+                    "offset_hours": best["offset_hours"],
+                    "percent": best["percent"],
+                    "label": (
+                        "Now"
+                        if best["offset_hours"] == 0
+                        else f"In {best['offset_hours']} hours"
+                    ),
+                },
+                "data_mode": "forecast",
+                "forecast_source": "busyness_forecasts",
+            })
+    except Exception:
+        pass  # fall through to legacy forecast_1h, then mock
+
+    # --- Migration fallback: busyness_scores.forecast_1h JSON ---
     try:
         conn = _get_db_conn()
         try:
@@ -167,7 +230,6 @@ def get_venue_busyness_forecast(venue_id: str):
                         if isinstance(forecast_raw, str)
                         else forecast_raw
                     )
-                    # Find best time to go (lowest percent)
                     best = min(forecast_list, key=lambda x: x.get("percent", 100))
                     return jsonify({
                         "venue_id": venue_id,
@@ -181,15 +243,20 @@ def get_venue_busyness_forecast(venue_id: str):
                                 else f"In {best['offset_hours']} hours"
                             ),
                         },
+                        "data_mode": "predicted",
+                        "forecast_source": "busyness_scores.forecast_1h",
                     })
         finally:
             conn.close()
     except Exception:
-        pass  # Fallback to mock
+        pass  # fall through to mock
 
-    # --- Fallback to mock data ---
+    # --- Final fallback: mock data ---
     forecast = VENUE_FORECASTS.get(venue_id)
     if not forecast:
         return jsonify({"error": "Venue not found."}), 404
 
-    return jsonify(deepcopy(forecast))
+    response = deepcopy(forecast)
+    response["data_mode"] = "mock"
+    response["forecast_source"] = "mock_data"
+    return jsonify(response)
