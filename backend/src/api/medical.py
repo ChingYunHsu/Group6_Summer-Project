@@ -11,7 +11,7 @@ bp = Blueprint("medical", __name__)
 
 SCALAR_FIELDS = {"date_of_birth", "gender", "address", "blood_type"}
 JSON_FIELDS = {
-    "severe_allergies",
+    "allergies",
     "conditions",
     "medications",
     "emergency_contacts",
@@ -23,7 +23,7 @@ DEFAULT_PROFILE = {
     "gender": None,
     "address": None,
     "blood_type": None,
-    "severe_allergies": [],
+    "allergies": [],
     "conditions": [],
     "medications": [],
     "emergency_contacts": [],
@@ -34,7 +34,7 @@ SELECT_COLUMNS = (
     "gender",
     "address",
     "blood_type",
-    "severe_allergies",
+    "allergies",
     "conditions",
     "medications",
     "emergency_contacts",
@@ -93,7 +93,7 @@ def get_medical_profile():
 
     with db.db_cursor() as cursor:
         cursor.execute(
-            "SELECT date_of_birth, gender, address, blood_type, severe_allergies, "
+            "SELECT date_of_birth, gender, address, blood_type, allergies, "
             "conditions, medications, emergency_contacts "
             "FROM medical_profiles WHERE user_id = %s",
             (g.user_id,),
@@ -148,14 +148,14 @@ def upsert_medical_profile():
             values = [_db_value(field, profile[field]) for field in SELECT_COLUMNS]
             cursor.execute(
                 "INSERT INTO medical_profiles "
-                "(user_id, date_of_birth, gender, address, blood_type, severe_allergies, "
+                "(user_id, date_of_birth, gender, address, blood_type, allergies, "
                 "conditions, medications, emergency_contacts) "
                 "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
                 (g.user_id, *values),
             )
 
         cursor.execute(
-            "SELECT date_of_birth, gender, address, blood_type, severe_allergies, "
+            "SELECT date_of_birth, gender, address, blood_type, allergies, "
             "conditions, medications, emergency_contacts "
             "FROM medical_profiles WHERE user_id = %s",
             (g.user_id,),

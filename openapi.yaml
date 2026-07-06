@@ -1924,6 +1924,37 @@ components:
               type: integer
             label:
               type: string
+        # SOP 3 — data lineage. data_mode: forecast (busyness_forecasts table),
+        # predicted (legacy busyness_scores.forecast_1h JSON), mock (mock_data).
+        # forecast_source names the concrete source for observability.
+        data_mode:
+          type: string
+          enum: [forecast, predicted, mock]
+        forecast_source:
+          type: string
+        # SOP 4 — v2 model metadata. Present when data_mode=forecast (busyness_forecasts
+        # path). model_version tags the ML run (e.g. forecast-v2). feature_snapshot_at
+        # is the generated_at timestamp of the forecast rows. external_feature_status
+        # surfaces which external sources (weather/holiday/GBFS/MTA) were available.
+        model_version:
+          type: string
+          example: forecast-v2
+        feature_snapshot_at:
+          type: string
+          format: date-time
+          nullable: true
+        external_feature_status:
+          type: object
+          properties:
+            status:
+              type: string
+              enum: [ok, no_active_cache, unavailable]
+            checked_at:
+              type: string
+              format: date-time
+            sources:
+              type: object
+              additionalProperties: true
 
     OpeningHoursStructured:
       type: object
@@ -1970,6 +2001,15 @@ components:
         level:
           type: string
           enum: [quiet, moderate, busy]
+        # SOP 3 — present when forecast_source is busyness_forecasts (the
+        # primary DB-backed path). Omitted by the legacy forecast_1h / mock
+        # fallbacks, so clients must treat these as optional.
+        forecast_for:
+          type: string
+          format: date-time
+        estimated_wait_minutes:
+          type: integer
+          nullable: true
 
     ReportSubmission:
       type: object
