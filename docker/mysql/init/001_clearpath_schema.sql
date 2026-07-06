@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS busyness_scores (
 -- -----------------------------------------------------------
 CREATE TABLE IF NOT EXISTS external_context_cache (
   cache_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  context_type ENUM('google_route', 'distance_matrix', 'weather_current', 'weather_forecast', 'urban_heat_static') NOT NULL,
+  context_type ENUM('google_route', 'distance_matrix', 'weather_current', 'weather_forecast', 'urban_heat_static', 'public_holidays', 'gbfs_station_status', 'mta_realtime') NOT NULL,
   venue_id VARCHAR(36),
   request_key VARCHAR(255) NOT NULL,
   payload_json JSON NOT NULL,
@@ -356,6 +356,11 @@ CREATE TABLE IF NOT EXISTS notification_preferences (
 -- -----------------------------------------------------------
 
 -- busyness_forecasts — Future 12h predictions (ML pipeline writes)
+-- DB-3 write contract:
+--   * unique key (venue_id, forecast_for, model_version) → idempotent upsert
+--   * predicted_score bounded 0-100 (matches busyness_scores.score CHECK)
+--   * predicted_level enum mirrors API level enum (quiet/moderate/busy/no_data)
+--   * forecast_for = absolute future DATETIME (one row per future hour)
 CREATE TABLE IF NOT EXISTS busyness_forecasts (
   forecast_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   venue_id VARCHAR(36) NOT NULL,
@@ -367,7 +372,8 @@ CREATE TABLE IF NOT EXISTS busyness_forecasts (
   generated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE KEY uq_forecast (venue_id, forecast_for, model_version),
   INDEX idx_forecast_venue_time (venue_id, forecast_for),
-  CONSTRAINT fk_forecast_venue FOREIGN KEY (venue_id) REFERENCES venues(venue_id) ON DELETE CASCADE
+  CONSTRAINT fk_forecast_venue FOREIGN KEY (venue_id) REFERENCES venues(venue_id) ON DELETE CASCADE,
+  CHECK (predicted_score <= 100)
 );
 
 -- -----------------------------------------------------------

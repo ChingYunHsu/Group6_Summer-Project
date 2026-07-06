@@ -122,7 +122,7 @@ export default function SOSScreen() {
 
         <InfoRow
           label="Allergies"
-          value={mockMedicalId.severe_allergies.join(
+          value={mockMedicalId.allergies.join(
             ", "
           )}
         />

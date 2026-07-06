@@ -325,34 +325,46 @@ def build_coverage_summary(labels: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataF
 def build_feature_registry() -> pd.DataFrame:
     return pd.DataFrame(
         [
-            {"feature": "review_count", "group": "SerpAPI label", "priority": "P0", "status": "available_or_nullable"},
-            {"feature": "district", "group": "DB direct", "priority": "P0", "status": "implemented_db_venues"},
-            {"feature": "rating", "group": "DB direct", "priority": "P0", "status": "implemented_db_venues_backfilled_from_serpapi"},
-            {"feature": "healthcare_subtype", "group": "DB direct", "priority": "P0", "status": "implemented_db_healthcare_profiles"},
-            {"feature": "opening_hours", "group": "DB direct", "priority": "P1", "status": "implemented_db_venues"},
-            {"feature": "facility_type", "group": "DB direct", "priority": "P1", "status": "implemented_db_healthcare_profiles"},
-            {"feature": "traffic_score", "group": "SerpAPI", "priority": "P0", "status": "target_proxy_from_popular_times"},
-            {"feature": "nearest_subway_distance_m", "group": "Spatial", "priority": "P1", "status": "implemented_local_mta_csv"},
-            {"feature": "nearest_citibike_distance_m", "group": "Spatial", "priority": "P1", "status": "implemented_local_gbfs_snapshot"},
-            {"feature": "poi_density_300m", "group": "Spatial", "priority": "P1", "status": "implemented_db_pedestrian_ramps"},
-            {"feature": "capacity", "group": "NYS/CMS", "priority": "P2", "status": "implemented_nys_capacity_snapshot"},
-            {"feature": "hospital_level", "group": "NYS/CMS", "priority": "P2", "status": "implemented_nys_facility_match"},
-            {"feature": "is_business_hours", "group": "Derived", "priority": "P0", "status": "implemented_from_serpapi_hours"},
-            {"feature": "mapped_venue_count", "group": "SerpAPI", "priority": "P2", "status": "implemented_from_place_mapping"},
-            {"feature": "citibike_nearest_distance_m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
-            {"feature": "mta_nearest_distance_m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
-            {"feature": "traffic_nearest_distance_m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
-            {"feature": "citibike_covered_200m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
-            {"feature": "mta_covered_200m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
-            {"feature": "traffic_covered_500m", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_coverage_detail_csv"},
-            {"feature": "urban_activity_spatial_score", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_composite_v1"},
-            {"feature": "citibike_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_binned_v1"},
-            {"feature": "mta_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_binned_v1"},
-            {"feature": "traffic_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "status": "implemented_binned_v1"},
-            {"feature": "mta_hourly_ridership", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
-            {"feature": "citibike_station_activity", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
-            {"feature": "nyc_traffic_hourly_volume", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
-            {"feature": "urban_activity_proxy_score", "group": "UrbanActivity_Hourly", "priority": "P2", "status": "v2_not_implemented"},
+            {"feature": "day_of_week", "group": "Temporal", "priority": "P0", "release_stage": "V1", "status": "implemented_popular_times"},
+            {"feature": "hour", "group": "Temporal", "priority": "P0", "release_stage": "V1", "status": "implemented_popular_times"},
+            {"feature": "is_weekend", "group": "Temporal", "priority": "P0", "release_stage": "V1", "status": "implemented_derived_from_day"},
+            {"feature": "review_count", "group": "SerpAPI label", "priority": "P0", "release_stage": "V1", "status": "available_or_nullable"},
+            {"feature": "district", "group": "DB direct", "priority": "P0", "release_stage": "V1", "status": "implemented_db_venues"},
+            {"feature": "rating", "group": "DB direct", "priority": "P0", "release_stage": "V1", "status": "implemented_db_venues_backfilled_from_serpapi"},
+            {"feature": "healthcare_subtype", "group": "DB direct", "priority": "P0", "release_stage": "V1", "status": "implemented_db_healthcare_profiles"},
+            {"feature": "opening_hours", "group": "DB direct", "priority": "P1", "release_stage": "V1", "status": "implemented_db_venues"},
+            {"feature": "facility_type", "group": "DB direct", "priority": "P1", "release_stage": "V1", "status": "implemented_db_healthcare_profiles"},
+            {"feature": "traffic_score", "group": "SerpAPI", "priority": "P0", "release_stage": "V1", "status": "target_proxy_from_popular_times"},
+            {"feature": "nearest_subway_distance_m", "group": "Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_local_mta_csv"},
+            {"feature": "nearest_citibike_distance_m", "group": "Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_local_gbfs_snapshot"},
+            {"feature": "poi_density_300m", "group": "Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_db_pedestrian_ramps"},
+            {"feature": "capacity", "group": "NYS/CMS", "priority": "P2", "release_stage": "V1", "status": "implemented_nys_capacity_snapshot"},
+            {"feature": "hospital_level", "group": "NYS/CMS", "priority": "P2", "release_stage": "V1", "status": "implemented_nys_facility_match"},
+            {"feature": "is_business_hours", "group": "Derived", "priority": "P0", "release_stage": "V1", "status": "implemented_from_serpapi_hours"},
+            {"feature": "mapped_venue_count", "group": "SerpAPI", "priority": "P2", "release_stage": "V1", "status": "implemented_from_place_mapping"},
+            {"feature": "citibike_nearest_distance_m", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_coverage_detail_csv"},
+            {"feature": "mta_nearest_distance_m", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_coverage_detail_csv"},
+            {"feature": "traffic_nearest_distance_m", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_coverage_detail_csv"},
+            {"feature": "citibike_covered_200m", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_coverage_detail_csv"},
+            {"feature": "mta_covered_200m", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_coverage_detail_csv"},
+            {"feature": "traffic_covered_500m", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_coverage_detail_csv"},
+            {"feature": "urban_activity_spatial_score", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_composite_v1"},
+            {"feature": "citibike_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_binned_v1"},
+            {"feature": "mta_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_binned_v1"},
+            {"feature": "traffic_distance_bin", "group": "UrbanActivity_Spatial", "priority": "P1", "release_stage": "V1", "status": "implemented_binned_v1"},
+            {"feature": "month", "group": "Temporal", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "is_holiday_or_event", "group": "Temporal", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "mta_hourly_ridership", "group": "UrbanActivity_Hourly", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "citibike_station_activity", "group": "UrbanActivity_Hourly", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "nyc_traffic_hourly_volume", "group": "UrbanActivity_Hourly", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "urban_activity_proxy_score", "group": "UrbanActivity_Hourly", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "weather_condition", "group": "Weather", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "precipitation_mm", "group": "Weather", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "temperature_c", "group": "Weather", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "heat_alert", "group": "Weather", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "transit_disruption_count", "group": "TransitRealtime", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "recent_user_report_count", "group": "CrowdReports", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
+            {"feature": "live_capacity_or_wait_time", "group": "LiveCapacity", "priority": "P2", "release_stage": "V2", "status": "v2_not_implemented"},
         ]
     )
 
@@ -1064,15 +1076,30 @@ STATIC_FEATURE_COLS = [
 ]
 
 TRAINING_ROW_FEATURE_COLS = [
+    "day_of_week",
+    "hour",
+    "is_weekend",
     "traffic_score",
     "is_business_hours",
+    "month",
+    "is_holiday_or_event",
     "mta_hourly_ridership",
     "citibike_station_activity",
     "nyc_traffic_hourly_volume",
     "urban_activity_proxy_score",
+    "weather_condition",
+    "precipitation_mm",
+    "temperature_c",
+    "heat_alert",
+    "transit_disruption_count",
+    "recent_user_report_count",
+    "live_capacity_or_wait_time",
 ]
 
 FEATURE_COVERAGE_SPECS = {
+    "day_of_week": ("training_row", "day_of_week"),
+    "hour": ("training_row", "hour"),
+    "is_weekend": ("training_row", "is_weekend"),
     "review_count": ("venue_static", "review_count"),
     "district": ("venue_static", "district"),
     "rating": ("venue_static", "rating"),
@@ -1097,10 +1124,19 @@ FEATURE_COVERAGE_SPECS = {
     "citibike_distance_bin": ("venue_static", "citibike_distance_bin"),
     "mta_distance_bin": ("venue_static", "mta_distance_bin"),
     "traffic_distance_bin": ("venue_static", "traffic_distance_bin"),
+    "month": ("training_row", "month"),
+    "is_holiday_or_event": ("training_row", "is_holiday_or_event"),
     "mta_hourly_ridership": ("training_row", "mta_hourly_ridership"),
     "citibike_station_activity": ("training_row", "citibike_station_activity"),
     "nyc_traffic_hourly_volume": ("training_row", "nyc_traffic_hourly_volume"),
     "urban_activity_proxy_score": ("training_row", "urban_activity_proxy_score"),
+    "weather_condition": ("training_row", "weather_condition"),
+    "precipitation_mm": ("training_row", "precipitation_mm"),
+    "temperature_c": ("training_row", "temperature_c"),
+    "heat_alert": ("training_row", "heat_alert"),
+    "transit_disruption_count": ("training_row", "transit_disruption_count"),
+    "recent_user_report_count": ("training_row", "recent_user_report_count"),
+    "live_capacity_or_wait_time": ("training_row", "live_capacity_or_wait_time"),
 }
 
 
@@ -1186,12 +1222,23 @@ def build_registered_feature_coverage(
     training: pd.DataFrame,
     venue_features: pd.DataFrame,
 ) -> pd.DataFrame:
-    """Coverage for the 25 registered model/input features only."""
+    """Coverage for the registered model/input features only."""
     frames = {"training_row": training, "venue_static": venue_features}
     rows = []
+    registry_meta = registry.set_index("feature")[["group", "priority", "release_stage", "status"]]
     for feature in registry["feature"]:
         scope, source_col = FEATURE_COVERAGE_SPECS.get(feature, ("training_row", feature))
-        rows.append(summarize_single_feature(frames[scope], feature, source_col, scope))
+        row = summarize_single_feature(frames[scope], feature, source_col, scope)
+        meta = registry_meta.loc[feature].to_dict()
+        row.update(
+            {
+                "group": meta["group"],
+                "priority": meta["priority"],
+                "release_stage": meta["release_stage"],
+                "implementation_status": meta["status"],
+            }
+        )
+        rows.append(row)
     return pd.DataFrame(rows)
 
 

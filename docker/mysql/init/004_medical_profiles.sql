@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS medical_profiles (
   gender VARCHAR(20),
   address TEXT,
   blood_type VARCHAR(10),
-  severe_allergies JSON,
+  allergies JSON,
   conditions JSON,
   medications JSON,
   emergency_contacts JSON,
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS medical_profiles (
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   CONSTRAINT fk_medical_profiles_user
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-  CONSTRAINT chk_medical_profiles_severe_allergies_array
-    CHECK (severe_allergies IS NULL OR JSON_TYPE(severe_allergies) = 'ARRAY'),
+  CONSTRAINT chk_medical_profiles_allergies_array
+    CHECK (allergies IS NULL OR JSON_TYPE(allergies) = 'ARRAY'),
   CONSTRAINT chk_medical_profiles_conditions_array
     CHECK (conditions IS NULL OR JSON_TYPE(conditions) = 'ARRAY'),
   CONSTRAINT chk_medical_profiles_medications_array
