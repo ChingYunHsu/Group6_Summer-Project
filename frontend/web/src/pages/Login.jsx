@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 function Login({ setUserLocation }) {
   const navigate = useNavigate();
 
@@ -38,7 +40,7 @@ function Login({ setUserLocation }) {
     openLocationModal();
   }
 
-  function handleRegisterSubmit(e) {
+  async function handleRegisterSubmit(e) {
     e.preventDefault();
 
     if (!registerForm.fullName || !registerForm.email || !registerForm.password) {
@@ -46,11 +48,57 @@ function Login({ setUserLocation }) {
       return;
     }
 
-    setShowProfileIntercept(true);
+    if (registerForm.password.length < 8) {
+      alert("Password must be at least 8 characters.");
+      return;
+    }
+
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/v1/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          full_name: registerForm.fullName,
+          email: registerForm.email,
+          password: registerForm.password,
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        alert(err.error || `Registration failed (${res.status}).`);
+        return;
+      }
+
+      const data = await res.json();
+      localStorage.setItem("access_token", data.access_token);
+
+      setShowProfileIntercept(true);
+    } catch (err) {
+      console.error("Register request failed:", err);
+      alert("Could not reach the server. Is the backend running?");
+    }
   }
 
-  function handleGuestContinue() {
-    openLocationModal();
+  async function handleGuestContinue() {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/v1/auth/guest`, {
+        method: "POST",
+      });
+
+      if (!res.ok) {
+        alert("Could not start a guest session.");
+        return;
+      }
+
+      const data = await res.json();
+      localStorage.setItem("access_token", data.access_token);
+
+      openLocationModal();
+    } catch (err) {
+      console.error("Guest session request failed:", err);
+      alert("Could not reach the server. Is the backend running?");
+    }
   }
 
   function handleFinishProfile() {

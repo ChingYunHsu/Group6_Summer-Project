@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./MedicalCard.css";
-import { getMedicalProfile } from "../services/ProfileApi";
+import { getMedicalProfile } from "../services/MedicalProfileApi";
 
 function MedicalCard() {
   const [profile, setProfile] = useState(null);
