@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS busyness_scores (
 -- -----------------------------------------------------------
 CREATE TABLE IF NOT EXISTS external_context_cache (
   cache_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  context_type ENUM('google_route', 'distance_matrix', 'weather_current', 'weather_forecast', 'urban_heat_static') NOT NULL,
+  context_type ENUM('google_route', 'distance_matrix', 'weather_current', 'weather_forecast', 'urban_heat_static', 'public_holidays', 'gbfs_station_status', 'mta_realtime') NOT NULL,
   venue_id VARCHAR(36),
   request_key VARCHAR(255) NOT NULL,
   payload_json JSON NOT NULL,

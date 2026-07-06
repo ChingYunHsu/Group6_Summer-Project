@@ -1932,6 +1932,29 @@ components:
           enum: [forecast, predicted, mock]
         forecast_source:
           type: string
+        # SOP 4 — v2 model metadata. Present when data_mode=forecast (busyness_forecasts
+        # path). model_version tags the ML run (e.g. forecast-v2). feature_snapshot_at
+        # is the generated_at timestamp of the forecast rows. external_feature_status
+        # surfaces which external sources (weather/holiday/GBFS/MTA) were available.
+        model_version:
+          type: string
+          example: forecast-v2
+        feature_snapshot_at:
+          type: string
+          format: date-time
+          nullable: true
+        external_feature_status:
+          type: object
+          properties:
+            status:
+              type: string
+              enum: [ok, no_active_cache, unavailable]
+            checked_at:
+              type: string
+              format: date-time
+            sources:
+              type: object
+              additionalProperties: true
 
     OpeningHoursStructured:
       type: object
