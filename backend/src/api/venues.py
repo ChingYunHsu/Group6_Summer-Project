@@ -351,7 +351,6 @@ def get_venue_busyness_forecast(venue_id: str):
             forecast_list = []
             model_version = None
             generated_at = None
-            base_time = None  # first forecast_for in the batch (reference for offsets)
             for (forecast_for, score, level, wait_minutes, mv, gen) in rows:
                 if model_version is None:
                     model_version = mv
@@ -361,11 +360,11 @@ def get_venue_busyness_forecast(venue_id: str):
                 ff = forecast_for
                 if ff.tzinfo is None:
                     ff = ff.replace(tzinfo=timezone.utc)
-                if base_time is None:
-                    base_time = ff
-                # offset_hours relative to the first forecast point in this batch,
-                # so every forecast always returns 12 distinct offsets (0..11).
-                offset_hours = max(0, round((ff - base_time).total_seconds() / 3600))
+                # offset_hours is hours-from-now (wall clock at request time),
+                # not hours-from-the-first-row — so it matches how far ahead
+                # the client actually has to wait, e.g. row 9 of 12 is "in 9
+                # hours" even if row 1 wasn't exactly "now".
+                offset_hours = max(0, round((ff - now).total_seconds() / 3600))
                 forecast_list.append({
                     "offset_hours": offset_hours,
                     "percent": int(score),
@@ -375,9 +374,6 @@ def get_venue_busyness_forecast(venue_id: str):
                 })
 
             best = min(forecast_list, key=lambda x: x["percent"])
-            best_ff_iso = best["forecast_for"]
-            best_ff = datetime.fromisoformat(best_ff_iso)
-            best_hours_from_now = max(0, round((best_ff - now).total_seconds() / 3600))
             response = {
                 "venue_id": venue_id,
                 "forecast": forecast_list,
@@ -386,8 +382,8 @@ def get_venue_busyness_forecast(venue_id: str):
                     "percent": best["percent"],
                     "label": (
                         "Now"
-                        if best_hours_from_now == 0
-                        else f"In {best_hours_from_now} hours"
+                        if best["offset_hours"] == 0
+                        else f"In {best['offset_hours']} hours"
                     ),
                 },
                 "data_mode": "forecast",
