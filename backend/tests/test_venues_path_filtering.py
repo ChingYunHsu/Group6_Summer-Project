@@ -1,7 +1,23 @@
 """Explicit coverage of the venues list endpoint's query-param filtering
-mechanics (languages / accessible / open_now) against the mock dataset."""
+mechanics (languages / accessible / open_now) against the mock dataset.
 
+list_venues() tries the real venues table first and only falls back to
+mock data on any DB error, so these tests force that fallback by making
+db_cursor raise — otherwise they'd be flaky against an environment that
+happens to have a real (possibly empty) `venues` table reachable."""
+
+import pytest
+
+import api.venues as venues_module
 from mock_data import VENUES
+
+
+@pytest.fixture(autouse=True)
+def force_mock_fallback(monkeypatch):
+    def _raise():
+        raise RuntimeError("no DB in this test")
+
+    monkeypatch.setattr(venues_module, "db_cursor", _raise)
 
 
 def test_language_filter_matches_only_supported_languages(client):
