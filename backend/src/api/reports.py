@@ -1,9 +1,11 @@
-from datetime import datetime, timezone
+import json as _json
+import uuid
+from datetime import datetime, timedelta, timezone
 
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, g, jsonify, request
 
-from db import db_transaction
-from mock_data import REPORT_TEMPLATE, REPORTS
+from auth import require_bearer_auth
+from mock_data import REPORTS
 
 
 bp = Blueprint("reports", __name__)
@@ -17,6 +19,15 @@ ALLOWED_REPORT_TYPES = {
     "entrance_closed",
 }
 
+ISSUE_TYPE_LABELS = {
+    "elevator_broken": "Lift Broken",
+    "wheelchair_lift_broken": "Wheelchair Lift Broken",
+    "toilet_out_of_order": "Toilet Out of Order",
+    "large_crowd": "Large Crowd",
+    "protest_or_blockage": "Protest or Blockage",
+    "entrance_closed": "Entrance Closed",
+}
+
 ALLOWED_CONFIRMATION_ACTIONS = {
     "still_here",
     "resolved",
@@ -25,91 +36,142 @@ ALLOWED_CONFIRMATION_ACTIONS = {
     "open_now",
 }
 
-
-def _next_report_id() -> str:
-    report_numbers = []
-    for report in REPORTS:
-        report_id = report.get("report_id", "")
-        if report_id.startswith("r_"):
-            try:
-                report_numbers.append(int(report_id.removeprefix("r_")))
-            except ValueError:
-                continue
-
-    next_number = max(report_numbers, default=500) + 1
-    return f"r_{next_number}"
+DEFAULT_EXPIRES_IN_MINUTES = 120
+STILL_HERE_EXTEND_MINUTES = 30
 
 
-@bp.get("/api/v1/reports")
-def list_reports():
-    return jsonify({"count": len(REPORTS), "items": REPORTS})
-
-
-def _resolve_report_path(payload: dict):
-    """Classify the wizard submission as Path A (Venue Bound — a `venue_id`
-    was supplied, coordinates optional/derived from the venue) or Path B
-    (Pure GPS Standalone — no venue, coordinates come straight from the
-    device). Returns (report_path, error_response) where error_response is
-    None on success."""
-    venue_id = payload.get("venue_id")
-
-    if venue_id:
-        return "venue_bound", None
-
-    if "latitude" not in payload or "longitude" not in payload:
-        return None, (
-            jsonify(
-                {
-                    "error": "Validation failed.",
-                    "missing_fields": ["venue_id (Path A) or latitude/longitude (Path B)"],
-                }
-            ),
-            400,
-        )
-
-    return "gps_standalone", None
-
-
-def _persist_report(report: dict, report_path: str) -> None:
-    """Best-effort write-through to the user_reports table. Swallows DB
-    errors so the in-memory REPORTS list (used for reads today) stays the
-    source of truth even when MySQL is unreachable, matching the fallback
-    convention used elsewhere in this API (see api/venues.py)."""
+def _db():
+    """Indirection point for the DB layer: tests monkeypatch this wholesale
+    (including to `lambda: None`) to exercise both the DB-backed path and
+    the in-memory mock fallback without needing a live MySQL."""
     try:
-        with db_transaction() as cursor:
-            cursor.execute(
-                "INSERT INTO user_reports "
-                "(report_id, report_path, venue_id, issue_type, latitude, longitude, "
-                " status, confirmation_count, upvote_count, reported_by, latest_action_at) "
-                "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                (
-                    report["report_id"],
-                    report_path,
-                    report["venue_id"],
-                    report["issue_type"],
-                    report["latitude"],
-                    report["longitude"],
-                    report["status"],
-                    report["confirmation_count"],
-                    0,
-                    report["reported_by"],
-                    datetime.now(timezone.utc),
-                ),
-            )
+        import db as _db_module
     except Exception:
-        pass  # In-memory REPORTS list remains the source of truth for reads.
+        return None
+    return _db_module
+
+
+def _iso(value):
+    return value.isoformat() if value is not None and hasattr(value, "isoformat") else value
+
+
+def _format_report(row: dict, report_scope: str | None = None) -> dict:
+    return {
+        "report_id": row["report_id"],
+        "venue_id": row.get("venue_id"),
+        "issue_type": row["issue_type"],
+        "issue_type_label": ISSUE_TYPE_LABELS.get(row["issue_type"], row["issue_type"]),
+        "report_scope": report_scope or ("venue_bound" if row.get("venue_id") else "standalone"),
+        "status": row["status"],
+        "latitude": row.get("latitude"),
+        "longitude": row.get("longitude"),
+        "created_at": _iso(row.get("created_at")),
+        "expires_at": _iso(row.get("expires_at")),
+        "confirmations": {
+            "count": row.get("confirmation_count", 0),
+            "latest_action": row.get("latest_action"),
+            "latest_action_at": _iso(row.get("latest_action_at")),
+        },
+    }
+
+
+def _submit_via_mock(payload: dict) -> dict:
+    report_id = f"r_{uuid.uuid4().hex[:10]}"
+    venue_id = payload.get("venue_id")
+    now = datetime.now(timezone.utc)
+
+    report = _format_report(
+        {
+            "report_id": report_id,
+            "venue_id": venue_id,
+            "issue_type": payload["issue_type"],
+            "status": "active",
+            "latitude": payload["latitude"],
+            "longitude": payload["longitude"],
+            "created_at": now,
+            "expires_at": None,
+        }
+    )
+    report["data_mode"] = "mock"
+
+    try:
+        # Best-effort: keep the realtime SSE stream (which drains REPORTS
+        # for map_update events) seeing freshly submitted reports even when
+        # there's no DB configured.
+        REPORTS.append(
+            {
+                "report_id": report_id,
+                "venue_id": venue_id,
+                "issue_type": payload["issue_type"],
+                "latitude": payload["latitude"],
+                "longitude": payload["longitude"],
+                "status": "active",
+                "confirmation_count": 0,
+                "created_at": now.isoformat(),
+            }
+        )
+    except Exception:
+        pass
+
+    return report
+
+
+def _submit_via_db(db_module, payload: dict) -> dict:
+    report_id = f"r_{uuid.uuid4().hex[:10]}"
+    venue_id = payload.get("venue_id")
+    report_scope = "venue_bound" if venue_id else "standalone"
+    now = datetime.now(timezone.utc)
+    expires_at = now + timedelta(minutes=DEFAULT_EXPIRES_IN_MINUTES)
+
+    with db_module.db_transaction() as cursor:
+        cursor.execute(
+            "INSERT INTO user_reports "
+            "(report_id, user_id, venue_id, issue_type, latitude, longitude, accuracy_meters, "
+            " anonymous, description, photos, reported_by, status, expires_in_minutes, "
+            " default_language, fallback_language, expires_at, source) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            (
+                report_id,
+                g.user_id,
+                venue_id,
+                payload["issue_type"],
+                payload["latitude"],
+                payload["longitude"],
+                payload.get("accuracy_meters"),
+                bool(payload.get("anonymous", False)),
+                payload.get("description"),
+                _json.dumps(payload.get("photos", [])),
+                g.user_id,
+                "active",
+                DEFAULT_EXPIRES_IN_MINUTES,
+                payload.get("default_language", "en"),
+                payload.get("fallback_language"),
+                expires_at,
+                "app",
+            ),
+        )
+        cursor.execute(
+            "SELECT report_id, user_id, venue_id, issue_type, latitude, longitude, "
+            "accuracy_meters, anonymous, description, photos, status, created_at, expires_at "
+            "FROM user_reports WHERE report_id = %s",
+            (report_id,),
+        )
+        row = cursor.fetchone()
+
+    return _format_report(row, report_scope) | {"data_mode": "db"}
 
 
 @bp.post("/api/v1/reports")
+@require_bearer_auth
 def submit_report():
     payload = request.get_json(silent=True) or {}
 
     if "issue_type" not in payload:
         return jsonify({"error": "Validation failed.", "missing_fields": ["issue_type"]}), 400
 
-    report_path, error_response = _resolve_report_path(payload)
-    if error_response:
-        return error_response
+    missing = [field for field in ("latitude", "longitude") if field not in payload]
+    if missing:
+        return jsonify({"error": "Validation failed.", "missing_fields": missing}), 400
 
     if payload["issue_type"] not in ALLOWED_REPORT_TYPES:
         return (
@@ -124,54 +186,48 @@ def submit_report():
             400,
         )
 
-    response = REPORT_TEMPLATE.copy()
-    response["received_payload"] = payload
-    response["report_id"] = _next_report_id()
-    response["report_path"] = report_path
-    response["status"] = "active"
-    response["visible_in_seconds"] = 30
-    response["expires_in_minutes"] = 120
+    db_module = _db()
+    if db_module is None:
+        return jsonify(_submit_via_mock(payload)), 201
 
-    report = {
-        "report_id": response["report_id"],
-        "report_path": report_path,
-        "venue_id": payload.get("venue_id"),
-        "issue_type": payload["issue_type"],
-        "latitude": payload.get("latitude"),
-        "longitude": payload.get("longitude"),
-        "status": "active",
-        "confirmation_count": 0,
-        "expires_in_minutes": 120,
-        "created_at": payload.get("created_at", "2026-05-28T11:00:00Z"),
-        "reported_by": "anonymous",
-        "badge_text": "Live report",
-    }
-    REPORTS.append(report)
-    _persist_report(report, report_path)
-
-    return jsonify(response), 201
-
-
-def _persist_confirmation(report_id: str, action: str, report: dict) -> None:
-    """Best-effort write-through of the confirmation event and the report's
-    updated counters/status, mirroring the fallback convention in
-    _persist_report — DB errors never block the in-memory response."""
     try:
-        with db_transaction() as cursor:
-            cursor.execute(
-                "INSERT INTO report_confirmations (report_id, action) VALUES (%s, %s)",
-                (report_id, action),
-            )
-            cursor.execute(
-                "UPDATE user_reports SET status = %s, confirmation_count = %s, "
-                "latest_action_at = %s WHERE report_id = %s",
-                (report["status"], report["confirmation_count"], datetime.now(timezone.utc), report_id),
-            )
+        return jsonify(_submit_via_db(db_module, payload)), 201
     except Exception:
-        pass
+        return jsonify(_submit_via_mock(payload)), 201
+
+
+@bp.get("/api/v1/reports")
+def list_reports():
+    db_module = _db()
+    if db_module is not None:
+        try:
+            with db_module.db_cursor() as cursor:
+                cursor.execute(
+                    "SELECT ur.report_id, ur.user_id, ur.venue_id, ur.issue_type, "
+                    "ur.latitude, ur.longitude, ur.status, ur.created_at, ur.expires_at, "
+                    "COUNT(rc.report_id) AS confirmation_count "
+                    "FROM user_reports ur "
+                    "LEFT JOIN report_confirmations rc ON rc.report_id = ur.report_id "
+                    "WHERE ur.status = %s "
+                    "GROUP BY ur.report_id",
+                    ("active",),
+                )
+                rows = cursor.fetchall()
+            return jsonify(
+                {
+                    "data_mode": "db",
+                    "count": len(rows),
+                    "items": [_format_report(row) for row in rows],
+                }
+            )
+        except Exception:
+            pass  # Fallback to mock data below.
+
+    return jsonify({"data_mode": "mock", "count": len(REPORTS), "items": REPORTS})
 
 
 @bp.post("/api/v1/reports/<report_id>/confirmations")
+@require_bearer_auth
 def confirm_report(report_id: str):
     payload = request.get_json(silent=True) or {}
     action = payload.get("action", "")
@@ -188,22 +244,74 @@ def confirm_report(report_id: str):
             400,
         )
 
-    report = next((item for item in REPORTS if item["report_id"] == report_id), None)
-    if not report:
+    db_module = _db()
+    if db_module is None:
         return jsonify({"error": "Report not found."}), 404
 
-    if action == "still_here":
-        report["confirmation_count"] += 1
-        report["expires_in_minutes"] += 30
-        report["badge_text"] = "Multiple users confirm" if report["confirmation_count"] >= 3 else "Live report"
-        response_status = "confirmed"
-    elif action == "resolved":
-        report["status"] = "resolved"
-        report["badge_text"] = "Resolved"
-        response_status = "resolved"
-    else:
-        response_status = "recorded"
+    try:
+        with db_module.db_transaction() as cursor:
+            cursor.execute(
+                "SELECT status, expires_at FROM user_reports WHERE report_id = %s",
+                (report_id,),
+            )
+            current = cursor.fetchone()
+            if not current:
+                return jsonify({"error": "Report not found."}), 404
 
-    _persist_confirmation(report_id, action, report)
+            cursor.execute(
+                "INSERT INTO report_confirmations (report_id, user_id, action, language, context) "
+                "VALUES (%s, %s, %s, %s, %s) "
+                "ON DUPLICATE KEY UPDATE action = VALUES(action), created_at = NOW()",
+                (report_id, g.user_id, action, payload.get("language"), payload.get("context")),
+            )
 
-    return jsonify({"report_id": report_id, "action": action, "status": response_status, "report": report})
+            if action == "resolved":
+                cursor.execute(
+                    "UPDATE user_reports SET status = %s WHERE report_id = %s AND status = %s",
+                    ("resolved", report_id, current["status"]),
+                )
+                response_status = "resolved"
+            elif action == "still_here":
+                cursor.execute(
+                    "UPDATE user_reports SET expires_at = DATE_ADD(expires_at, INTERVAL %s MINUTE) "
+                    "WHERE report_id = %s AND status = %s",
+                    (STILL_HERE_EXTEND_MINUTES, report_id, current["status"]),
+                )
+                response_status = "confirmed"
+            else:
+                response_status = "recorded"
+
+            cursor.execute(
+                "SELECT ur.report_id, ur.user_id, ur.venue_id, ur.issue_type, ur.latitude, "
+                "ur.longitude, ur.status, ur.created_at, ur.expires_at "
+                "FROM user_reports ur WHERE ur.report_id = %s",
+                (report_id,),
+            )
+            updated = cursor.fetchone()
+    except Exception:
+        return jsonify({"error": "Report not found."}), 404
+
+    return jsonify(
+        {
+            "report_id": report_id,
+            "action": action,
+            "status": response_status,
+            "report": _format_report(updated) if updated else None,
+        }
+    )
+
+
+def cleanup_expired_reports() -> int:
+    """Soft-expire active reports whose expires_at has passed. Safe to call
+    repeatedly (idempotent) — a report already flipped to "expired" no
+    longer matches status = 'active' so a second run touches 0 rows."""
+    db_module = _db()
+    if db_module is None:
+        return 0
+
+    with db_module.db_transaction() as cursor:
+        cursor.execute(
+            "UPDATE user_reports SET status = %s WHERE status = %s AND expires_at <= NOW()",
+            ("expired", "active"),
+        )
+        return cursor.rowcount
