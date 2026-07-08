@@ -11,6 +11,7 @@ from flask import Blueprint, jsonify, request
 from auth import require_api_key
 from db import db_cursor
 from mock_data import VENUE_BUSYNESS, VENUE_FORECASTS, VENUES
+from response_cache import get_cached, set_cached
 
 
 bp = Blueprint("venues", __name__)
@@ -309,10 +310,15 @@ def get_venue_busyness(venue_id: str):
     return jsonify(response)
 
 
-@bp.get("/api/v1/venues/<venue_id>/busyness/forecast")
-@require_api_key
-def get_venue_busyness_forecast(venue_id: str):
-    """Return 12-hour busyness forecast for a venue.
+FORECAST_CACHE_TTL_SECONDS = 300  # 5 minutes
+
+
+def _forecast_cache_key(venue_id: str) -> str:
+    return f"forecast:v1:{venue_id}"
+
+
+def _compute_venue_busyness_forecast(venue_id: str):
+    """Return 12-hour busyness forecast for a venue, or None if unknown.
 
     Primary source: the `busyness_forecasts` table (12h row series written by
     the ML pipeline). Migration fallback: the legacy `busyness_scores.forecast_1h`
@@ -402,7 +408,7 @@ def get_venue_busyness_forecast(venue_id: str):
                 response["external_feature_status"] = _get_external_feature_status()
             except Exception:
                 response["external_feature_status"] = {"status": "unavailable"}
-            return jsonify(response)
+            return response
     except Exception:
         pass  # fall through to legacy forecast_1h, then mock
 
@@ -426,7 +432,7 @@ def get_venue_busyness_forecast(venue_id: str):
                         else forecast_raw
                     )
                     best = min(forecast_list, key=lambda x: x.get("percent", 100))
-                    return jsonify({
+                    return {
                         "venue_id": venue_id,
                         "forecast": forecast_list,
                         "best_time_to_go_today": {
@@ -440,7 +446,7 @@ def get_venue_busyness_forecast(venue_id: str):
                         },
                         "data_mode": "predicted",
                         "forecast_source": "busyness_scores.forecast_1h",
-                    })
+                    }
         finally:
             conn.close()
     except Exception:
@@ -449,9 +455,30 @@ def get_venue_busyness_forecast(venue_id: str):
     # --- Final fallback: mock data ---
     forecast = VENUE_FORECASTS.get(venue_id)
     if not forecast:
-        return jsonify({"error": "Venue not found."}), 404
+        return None
 
     response = deepcopy(forecast)
     response["data_mode"] = "mock"
     response["forecast_source"] = "mock_data"
-    return jsonify(response)
+    return response
+
+
+@bp.get("/api/v1/venues/<venue_id>/busyness/forecast")
+@require_api_key
+def get_venue_busyness_forecast(venue_id: str):
+    """Serve the 12-hour busyness forecast, backed by a 5-minute server-side
+    cache so repeated requests for the same venue don't re-hit MySQL/the ML
+    forecast tables on every call. Cache expiry is transparent to clients —
+    same response shape either way, just served faster on a hit; no new
+    fields, no client-visible cache-control contract to manage."""
+    cache_key = _forecast_cache_key(venue_id)
+    cached = get_cached(cache_key)
+    if cached is not None:
+        return jsonify(cached)
+
+    payload = _compute_venue_busyness_forecast(venue_id)
+    if payload is None:
+        return jsonify({"error": "Venue not found."}), 404
+
+    set_cached(cache_key, payload, FORECAST_CACHE_TTL_SECONDS)
+    return jsonify(payload)
