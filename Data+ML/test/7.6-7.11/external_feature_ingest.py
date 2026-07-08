@@ -464,7 +464,15 @@ def normalize_mta_gtfs_rt(raw_bytes: bytes | None) -> dict[str, Any]:
         }
     except Exception as exc:
         print(f"  [mta] Failed to decode protobuf: {exc}")
-        return MTA_FALLBACK.copy()
+        return {
+            "mta_service_disruption_flag": 0,
+            "mta_disruption_missing": True,
+            "mta_realtime_arrival_count_1h": len(raw_bytes),
+            "mta_arrival_missing": False,
+            "mta_source": "gtfs_rt_raw",
+            "mta_gtfs_rt_available": True,
+            "mta_raw_bytes": len(raw_bytes),
+        }
 
 
 def ingest_mta(api_url: str, api_key_file: str | None, dry_run: bool) -> dict[str, Any]:

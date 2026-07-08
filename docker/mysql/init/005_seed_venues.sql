@@ -218,6 +218,39 @@ INSERT IGNORE INTO venue_source_links (
   );
 
 -- -----------------------------------------------------------
+-- live_capacity source links: wire run_live_telemetry.py --mock payloads
+-- (source_name='live_capacity', source_venue_id v_1001/v_1002) to seed
+-- venues so telemetry --execute smoke tests resolve instead of going unmatched.
+-- -----------------------------------------------------------
+INSERT IGNORE INTO venue_source_links (
+  venue_id,
+  source_name,
+  source_record_id,
+  raw_name,
+  raw_location_text,
+  matched_method,
+  match_confidence
+) VALUES
+  (
+    'seed-restroom-bryant-park-001',
+    'live_capacity',
+    'v_1001',
+    'Bryant Park Public Restroom',
+    'Bryant Park, New York, NY 10018',
+    'single_source',
+    0.900
+  ),
+  (
+    'seed-healthcare-bellevue-001',
+    'live_capacity',
+    'v_1002',
+    'Bellevue Hospital Center',
+    '462 1st Ave, New York, NY 10016',
+    'single_source',
+    0.900
+  );
+
+-- -----------------------------------------------------------
 -- domain profiles: enough relational shape for mapping verification
 -- -----------------------------------------------------------
 INSERT IGNORE INTO restroom_profiles (
