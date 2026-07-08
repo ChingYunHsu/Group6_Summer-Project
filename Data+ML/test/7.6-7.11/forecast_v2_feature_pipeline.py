@@ -192,6 +192,31 @@ def build_district_hourly_traffic(scores: pd.DataFrame, venues: pd.DataFrame) ->
     )
 
 
+def build_district_density_lookup(scores: pd.DataFrame, venues: pd.DataFrame) -> dict[tuple[str, pd.Timestamp], int]:
+    """Precompute district_live_density for each (district, ref_time).
+
+    For a sample at ref_time, district_live_density counts venues in the same
+    district with scores in [ref_time - 1h, ref_time). With hourly score rows,
+    that is the previous score hour shifted forward by one hour.
+    """
+    if scores.empty or venues.empty:
+        return {}
+    merged = scores.merge(venues[["venue_id", "district"]], on="venue_id", how="left")
+    merged = merged.dropna(subset=["district", "forecast_start_time"])
+    if merged.empty:
+        return {}
+    merged["density_ref_time"] = pd.to_datetime(merged["forecast_start_time"]) + pd.Timedelta(hours=1)
+    grouped = (
+        merged.groupby(["district", "density_ref_time"])["venue_id"]
+        .nunique()
+        .reset_index(name="live_count")
+    )
+    return {
+        (str(r["district"]), pd.Timestamp(r["density_ref_time"])): int(r["live_count"])
+        for _, r in grouped.iterrows()
+    }
+
+
 # ── Synthetic data generators (for testing without DB) ────────────────────────
 
 
@@ -507,6 +532,7 @@ def compute_dynamic_features(
     scores_cache: pd.DataFrame,
     reports_cache: pd.DataFrame,
     venues_meta: pd.DataFrame,
+    district_density_lookup: dict[tuple[str, pd.Timestamp], int] | None = None,
 ) -> dict[str, Any]:
     """Compute all dynamic features for a (venue_id, ref_time) sample.
 
@@ -594,13 +620,16 @@ def compute_dynamic_features(
     venue_row = venues_meta[venues_meta["venue_id"] == venue_id]
     district = venue_row.iloc[0]["district"] if not venue_row.empty else None
     if district is not None:
-        district_scores = scores_cache[
-            (scores_cache["forecast_start_time"] >= _ref - timedelta(hours=1))
-            & (scores_cache["forecast_start_time"] < _ref)
-        ]
-        district_venues = venues_meta[venues_meta["district"] == district]
-        district_venue_ids = set(district_venues["venue_id"])
-        live_count = district_scores[district_scores["venue_id"].isin(district_venue_ids)]["venue_id"].nunique()
+        if district_density_lookup is not None:
+            live_count = district_density_lookup.get((str(district), pd.Timestamp(_ref)), 0)
+        else:
+            district_scores = scores_cache[
+                (scores_cache["forecast_start_time"] >= _ref - timedelta(hours=1))
+                & (scores_cache["forecast_start_time"] < _ref)
+            ]
+            district_venues = venues_meta[venues_meta["district"] == district]
+            district_venue_ids = set(district_venues["venue_id"])
+            live_count = district_scores[district_scores["venue_id"].isin(district_venue_ids)]["venue_id"].nunique()
         feats["district_live_density"] = live_count
         feats["district_live_density_missing"] = 0
     else:
@@ -978,6 +1007,8 @@ def parse_args() -> argparse.Namespace:
                    help="Output directory for feature CSV")
     p.add_argument("--n-synth-venues", type=int, default=30)
     p.add_argument("--synth-hours-back", type=int, default=168)
+    p.add_argument("--max-score-rows", type=int, default=200000,
+                   help="Maximum busyness_scores rows to read in --live-db mode")
     return p.parse_args()
 
 
@@ -988,7 +1019,7 @@ def main() -> int:
     if args.live_db:
         print("Loading data from DB...")
         venues = load_venues(max_venues=args.n_synth_venues)
-        scores = load_busyness_scores(max_rows=10000)
+        scores = load_busyness_scores(max_rows=args.max_score_rows)
         try:
             reports = load_user_reports()
         except Exception:
