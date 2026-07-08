@@ -1,0 +1,37 @@
+======================================================================
+forecast-v1 legacy quality-gate audit (retrospective)
+======================================================================
+
+leakage/overfitting gate (R2>=0.99 or MAE<=0.1 => block): PASS
+  [ok]    Ridge/val: R2=-0.058 MAE=25.394
+  [ok]    Ridge/test: R2=0.085 MAE=25.31
+  [ok]    RandomForestRegressor/val: R2=0.412 MAE=16.962
+  [ok]    RandomForestRegressor/test: R2=0.299 MAE=20.043
+  [ok]    GradientBoostingRegressor/val: R2=0.418 MAE=17.532
+  [ok]    GradientBoostingRegressor/test: R2=0.431 MAE=18.365
+
+label distribution gate: PASS
+  train label dist (via busy_level): {'quiet': 8375, 'moderate': 10485, 'busy': 3785}
+
+target leakage gate: PASS
+  target columns present in training CSV: ['busyness_score'] (expected)
+  forbidden columns present: none
+
+train/val split duplicate gate (no key in multiple splits): BLOCKED
+  total rows: 22645, train: 15851, val: 3397, test: 3397
+  unique (venue_id, day_hour) keys: 20582
+  keys crossing split boundary: 1
+
+curve hour coverage gate: PASS
+  venues: 1, curve rows: 36
+  rows per venue: min=36, max=36
+
+sentinel ratio gate: SKIP (V1 has no humidity/temperature/wind features)
+
+rolling window leakage gate: SKIP (V1 has no latest_busyness_age_minutes)
+
+external feature gate: SKIP (V1 has no weather_source/gbfs_source/mta_source)
+
+======================================================================
+OVERALL VERDICT: BLOCKED — V1 has critical quality issues.
+======================================================================

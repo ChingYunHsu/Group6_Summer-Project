@@ -23,7 +23,7 @@ import pandas as pd
 import db_utils
 from forecast_v2_features import (
     DYNAMIC_FEATURES, TIME_FEATURES, SPATIAL_FEATURES, TRAFFIC_FEATURES,
-    WEATHER_FEATURES, HOLIDAY_FEATURES, GBFS_FEATURES, MTA_FEATURES,
+    WEATHER_FEATURES, GBFS_FEATURES, MTA_FEATURES,
     ALL_FEATURES as ALL_FEATURE_COLS,
 )
 from score_utils import (
@@ -190,6 +190,30 @@ def build_district_hourly_traffic(scores: pd.DataFrame, venues: pd.DataFrame) ->
         .mean().reset_index()
         .rename(columns={"score": "district_traffic_score"})
     )
+
+
+def build_district_traffic_lookup(scores: pd.DataFrame, venues: pd.DataFrame) -> dict[tuple[str, pd.Timestamp], float]:
+    """Precompute leakage-safe district traffic for each (district, ref_time).
+
+    A sample at ref_time may only use scores strictly before ref_time. With
+    hourly rows, a score at T is available to a prediction at T+1h.
+    """
+    if scores.empty or venues.empty:
+        return {}
+    merged = scores.merge(venues[["venue_id", "district"]], on="venue_id", how="left")
+    merged = merged.dropna(subset=["district", "forecast_start_time", "score"])
+    if merged.empty:
+        return {}
+    merged["traffic_ref_time"] = pd.to_datetime(merged["forecast_start_time"]) + pd.Timedelta(hours=1)
+    grouped = (
+        merged.groupby(["district", "traffic_ref_time"])["score"]
+        .mean()
+        .reset_index(name="district_traffic_score")
+    )
+    return {
+        (str(r["district"]), pd.Timestamp(r["traffic_ref_time"])): float(r["district_traffic_score"])
+        for _, r in grouped.iterrows()
+    }
 
 
 def build_district_density_lookup(scores: pd.DataFrame, venues: pd.DataFrame) -> dict[tuple[str, pd.Timestamp], int]:
@@ -526,6 +550,16 @@ def _build_lookback_cache(scores: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def _group_by_venue(frame: pd.DataFrame, sort_col: str) -> dict[str, pd.DataFrame]:
+    """Pre-group time-series rows by venue to avoid repeated full-frame scans."""
+    if frame.empty or "venue_id" not in frame.columns:
+        return {}
+    grouped: dict[str, pd.DataFrame] = {}
+    for venue_id, group in frame.groupby("venue_id", sort=False):
+        grouped[str(venue_id)] = group.sort_values(sort_col).copy()
+    return grouped
+
+
 def compute_dynamic_features(
     venue_id: str,
     ref_time: pd.Timestamp,
@@ -533,6 +567,8 @@ def compute_dynamic_features(
     reports_cache: pd.DataFrame,
     venues_meta: pd.DataFrame,
     district_density_lookup: dict[tuple[str, pd.Timestamp], int] | None = None,
+    scores_by_venue: dict[str, pd.DataFrame] | None = None,
+    reports_by_venue: dict[str, pd.DataFrame] | None = None,
 ) -> dict[str, Any]:
     """Compute all dynamic features for a (venue_id, ref_time) sample.
 
@@ -551,11 +587,16 @@ def compute_dynamic_features(
             _ref = _ref.tz_localize('UTC')
 
     # --- Scores for this venue before ref_time ---
-    v_scores = scores_cache[
-        (scores_cache["venue_id"] == venue_id)
-        & (scores_cache["forecast_start_time"] < _ref)
-    ]
-    v_scores = v_scores.sort_values("forecast_start_time")
+    if scores_by_venue is not None:
+        venue_scores = scores_by_venue.get(venue_id, scores_cache.iloc[0:0])
+        v_scores = venue_scores[venue_scores["forecast_start_time"] < _ref] if not venue_scores.empty else venue_scores
+    else:
+        v_scores = scores_cache[
+            (scores_cache["venue_id"] == venue_id)
+            & (scores_cache["forecast_start_time"] < _ref)
+        ]
+    if not v_scores.empty:
+        v_scores = v_scores.sort_values("forecast_start_time")
 
     # latest_busyness_score + age
     if not v_scores.empty:
@@ -591,10 +632,14 @@ def compute_dynamic_features(
         feats["rolling_max_3h_missing"] = 1
 
     # --- Reports for this venue before ref_time ---
-    v_reports = reports_cache[
-        (reports_cache["venue_id"] == venue_id)
-        & (reports_cache["created_at"] < _ref)
-    ] if not reports_cache.empty else pd.DataFrame()
+    if reports_by_venue is not None:
+        venue_reports = reports_by_venue.get(venue_id, reports_cache.iloc[0:0])
+        v_reports = venue_reports[venue_reports["created_at"] < _ref] if not venue_reports.empty else venue_reports
+    else:
+        v_reports = reports_cache[
+            (reports_cache["venue_id"] == venue_id)
+            & (reports_cache["created_at"] < _ref)
+        ] if not reports_cache.empty else pd.DataFrame()
 
     for window_h in [1, 3]:
         cutoff = _ref - timedelta(hours=window_h)
@@ -757,12 +802,15 @@ def build_training_samples(
         reports = pd.DataFrame()
 
     scores_cache = _build_lookback_cache(scores)
+    scores_by_venue = _group_by_venue(scores_cache, "forecast_start_time")
+    reports_by_venue = _group_by_venue(reports, "created_at")
+    district_density_lookup = build_district_density_lookup(scores_cache, venues)
+    district_traffic_lookup = build_district_traffic_lookup(scores_cache, venues)
     venues_indexed = venues.set_index("venue_id")
     venue_hours = build_venue_hours_lookup(venues)
 
     # Pre-compute supplementary features
     spatial_feats = build_venue_spatial_features(venues, load_mta_stations(), load_citibike_stations()) if _has_data_sources() else _synth_spatial_features(venues)
-    district_traffic = build_district_hourly_traffic(scores, venues)
     ext_feats = _collect_external_features(synth=not use_real_external)
 
     all_rows: list[dict[str, Any]] = []
@@ -784,12 +832,19 @@ def build_training_samples(
                 ref_time = pd.Timestamp(ref_time)
             target_hour = ref_time.hour
 
-            dynamic = compute_dynamic_features(vid, ref_time, scores_cache, reports, venues_indexed.reset_index())
+            dynamic = compute_dynamic_features(
+                vid,
+                ref_time,
+                scores_cache,
+                reports,
+                venues_indexed.reset_index(),
+                district_density_lookup=district_density_lookup,
+                scores_by_venue=scores_by_venue,
+                reports_by_venue=reports_by_venue,
+            )
             time_feats = compute_time_features(ref_time, offset_hours=0, hours_info=h_info)
 
-            # District traffic score
-            dt_row = district_traffic[(district_traffic["district"] == v_district) & (district_traffic["hour"] == target_hour)]
-            traffic_score = float(dt_row.iloc[0]["district_traffic_score"]) if len(dt_row) else -1.0
+            traffic_score = district_traffic_lookup.get((str(v_district), pd.Timestamp(ref_time)), -1.0)
 
             sample = {
                 "venue_id": vid,
@@ -827,11 +882,14 @@ def build_prediction_samples(
         forecast_base_time = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
 
     scores_cache = _build_lookback_cache(scores)
+    scores_by_venue = _group_by_venue(scores_cache, "forecast_start_time")
+    reports_by_venue = _group_by_venue(reports, "created_at")
+    district_density_lookup = build_district_density_lookup(scores_cache, venues)
+    district_traffic_lookup = build_district_traffic_lookup(scores_cache, venues)
     venues_indexed = venues.set_index("venue_id")
     venue_hours = build_venue_hours_lookup(venues)
 
     spatial_feats = build_venue_spatial_features(venues, load_mta_stations(), load_citibike_stations()) if _has_data_sources() else _synth_spatial_features(venues)
-    district_traffic = build_district_hourly_traffic(scores, venues)
     ext_feats = _collect_external_features(synth=not use_real_external)
 
     all_rows: list[dict[str, Any]] = []
@@ -843,12 +901,19 @@ def build_prediction_samples(
         v_district = v.get("district")
 
         for offset in range(12):
-            dynamic = compute_dynamic_features(vid, ref_time, scores_cache, reports, venues_indexed.reset_index())
+            dynamic = compute_dynamic_features(
+                vid,
+                ref_time,
+                scores_cache,
+                reports,
+                venues_indexed.reset_index(),
+                district_density_lookup=district_density_lookup,
+                scores_by_venue=scores_by_venue,
+                reports_by_venue=reports_by_venue,
+            )
             time_feats = compute_time_features(ref_time, offset_hours=offset, hours_info=h_info)
 
-            target_hour = (ref_time + timedelta(hours=offset)).hour
-            dt_row = district_traffic[(district_traffic["district"] == v_district) & (district_traffic["hour"] == target_hour)]
-            traffic_score = float(dt_row.iloc[0]["district_traffic_score"]) if len(dt_row) else -1.0
+            traffic_score = district_traffic_lookup.get((str(v_district), pd.Timestamp(ref_time)), -1.0)
 
             sample = {
                 "venue_id": vid,
@@ -912,7 +977,7 @@ _EXTRACT_MAP = {
     # (source_key, payload_key) → flat feature keys
     "weather": {
         "temperature_c": ("temperature_c", -999), "temperature_missing": ("temperature_missing", True),
-        "humidity_pct": ("humidity_pct", -1), "humidity_missing": ("humidity_missing", True),
+        "humidity_pct": ("relative_humidity_pct", -1), "humidity_missing": ("humidity_missing", True),
         "wind_speed_kmh": ("wind_speed_kmh", -1), "wind_missing": ("wind_missing", True),
         "precipitation_mm": ("precipitation_mm", 0.0), "precipitation_missing": ("precipitation_missing", True),
         "weather_condition": ("weather_condition", "unknown"), "heat_alert": ("heat_alert", 0),
@@ -1024,6 +1089,11 @@ def main() -> int:
             reports = load_user_reports()
         except Exception:
             reports = pd.DataFrame()
+        if not venues.empty:
+            selected_venues = set(venues["venue_id"])
+            scores = scores[scores["venue_id"].isin(selected_venues)].copy()
+            if not reports.empty and "venue_id" in reports.columns:
+                reports = reports[reports["venue_id"].isin(selected_venues)].copy()
     else:
         print(f"Generating synthetic data: {args.n_synth_venues} venues, {args.synth_hours_back}h history")
         venues, scores, reports = build_synthetic_data(

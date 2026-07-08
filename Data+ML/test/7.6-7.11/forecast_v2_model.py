@@ -35,7 +35,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from forecast_v2_features import (
     DYNAMIC_FEATURES, TIME_FEATURES, SPATIAL_FEATURES, TRAFFIC_FEATURES,
-    WEATHER_FEATURES, HOLIDAY_FEATURES, GBFS_FEATURES, MTA_FEATURES,
+    WEATHER_FEATURES, GBFS_FEATURES, MTA_FEATURES,
     CATEGORICAL_FEATURES, ALL_FEATURES,
 )
 from score_utils import (

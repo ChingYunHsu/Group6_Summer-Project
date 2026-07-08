@@ -393,6 +393,18 @@ CREATE TABLE IF NOT EXISTS venue_embeddings (
 
 -- -----------------------------------------------------------
 -- Phase 5: Additional indexes for RAG + search
+-- (Conditional CREATE INDEX for idempotent re-runs on existing volumes)
 -- -----------------------------------------------------------
-CREATE INDEX idx_venues_district ON venues(district);
-CREATE INDEX idx_venues_type_district ON venues(venue_type, district);
+SET @sql = (SELECT IF(COUNT(*)=0,
+    'CREATE INDEX idx_venues_district ON venues(district)',
+    'SELECT "idx_venues_district already exists" AS msg')
+  FROM information_schema.statistics
+  WHERE table_schema='clearpath' AND table_name='venues' AND index_name='idx_venues_district');
+PREPARE stmt FROM @sql; EXECUTE stmt; DEALLOCATE PREPARE stmt;
+
+SET @sql = (SELECT IF(COUNT(*)=0,
+    'CREATE INDEX idx_venues_type_district ON venues(venue_type, district)',
+    'SELECT "idx_venues_type_district already exists" AS msg')
+  FROM information_schema.statistics
+  WHERE table_schema='clearpath' AND table_name='venues' AND index_name='idx_venues_type_district');
+PREPARE stmt FROM @sql; EXECUTE stmt; DEALLOCATE PREPARE stmt;
