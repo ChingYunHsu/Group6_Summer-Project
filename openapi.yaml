@@ -2359,16 +2359,13 @@ components:
 
     DeleteAccountResponse:
       type: object
-      required: [status, message, purge_deadline]
+      required: [status, message]
       properties:
         status:
           type: string
-          example: scheduled
+          example: deleted
         message:
           type: string
-        purge_deadline:
-          type: string
-          format: date-time
 
     # FIX 2 & FIX 3 — Medical Data / Server-Side Storage Risk
     # pdf_url removed. No clinical PDF is stored server-side (D10 mandate).

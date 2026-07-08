@@ -609,9 +609,8 @@ SOS_RESPONSE = {
 }
 
 DELETE_ACCOUNT_RESPONSE = {
-    "status": "scheduled",
-    "message": "Your account deletion has been scheduled and synced data will be purged within 24 hours.",
-    "purge_deadline": "2026-06-09T23:59:59Z",
+    "status": "deleted",
+    "message": "Your account and all associated data have been permanently deleted.",
 }
 
 # Medical ID — Option B (2026-06): synced server-side instead of on-device
