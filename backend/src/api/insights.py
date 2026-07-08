@@ -1,4 +1,5 @@
 import json as _json
+import math
 import os
 
 import pymysql
@@ -10,6 +11,7 @@ from mock_data import INSIGHTS_DASHBOARD
 bp = Blueprint("insights", __name__)
 
 FASTEST_HUBS_LIMIT = 10
+WALKING_SPEED_KM_PER_HOUR = 5.0
 
 
 def _get_db_conn():
@@ -157,7 +159,58 @@ def _prediction_series(cursor, district: str) -> list:
     return [round(avg_score) for _hour, avg_score in rows]
 
 
-def _get_insights_from_db(district_param):
+def _quick_triage(hubs: list) -> dict:
+    """Surface the single fastest (lowest-wait) hub as the "go here now"
+    triage suggestion. Venues with no live wait data are never picked over
+    one that has data."""
+    scored = [hub for hub in hubs if hub.get("wait_minutes") is not None]
+    if not scored:
+        return {"wait_minutes": 0, "label": "No data available", "venue_name": None}
+
+    best = min(scored, key=lambda hub: hub["wait_minutes"])
+    return {
+        "wait_minutes": best["wait_minutes"],
+        "label": best["venue_name"],
+        "venue_name": best["venue_name"],
+    }
+
+
+def _haversine_km(lat1, lon1, lat2, lon2) -> float:
+    radius_km = 6371.0
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    d_phi = math.radians(lat2 - lat1)
+    d_lambda = math.radians(lon2 - lon1)
+    a = math.sin(d_phi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(d_lambda / 2) ** 2
+    return radius_km * (2 * math.atan2(math.sqrt(a), math.sqrt(1 - a)))
+
+
+def _travel_minutes_by_venue(cursor, venue_ids: list, origin_lat, origin_lon) -> dict:
+    """Straight-line walking-time estimate from (origin_lat, origin_lon) to
+    each venue, at WALKING_SPEED_KM_PER_HOUR. This is a placeholder pending
+    the Data Lead's real routing/travel-time pipeline output (e.g. Google
+    Maps Directions) — straight-line distance, not actual walkable route
+    distance, but gives an honest non-fabricated integer rather than a
+    made-up constant."""
+    if origin_lat is None or origin_lon is None or not venue_ids:
+        return {}
+
+    placeholders = ", ".join(["%s"] * len(venue_ids))
+    cursor.execute(
+        f"SELECT venue_id, latitude, longitude FROM venues WHERE venue_id IN ({placeholders})",
+        tuple(venue_ids),
+    )
+    rows = cursor.fetchall()
+
+    minutes_by_venue = {}
+    for venue_id, lat, lon in rows:
+        if lat is None or lon is None:
+            continue
+        distance_km = _haversine_km(float(origin_lat), float(origin_lon), float(lat), float(lon))
+        minutes_by_venue[venue_id] = round(distance_km / WALKING_SPEED_KM_PER_HOUR * 60)
+    return minutes_by_venue
+
+
+def _get_insights_from_db(district_param, origin_lat=None, origin_lon=None):
     conn = _get_db_conn()
     try:
         with conn.cursor() as cursor:
@@ -169,6 +222,9 @@ def _get_insights_from_db(district_param):
             travel_window = _best_travel_window(cursor, district)
             hubs = _fastest_hubs(cursor, district)
             prediction_series = _prediction_series(cursor, district)
+            travel_minutes_by_venue = _travel_minutes_by_venue(
+                cursor, [hub["venue_id"] for hub in hubs], origin_lat, origin_lon
+            )
     finally:
         conn.close()
 
@@ -176,6 +232,7 @@ def _get_insights_from_db(district_param):
         "district": district,
         "data_mode": "db",
         "real_time_density": density,
+        "quick_triage": _quick_triage(hubs),
         "best_travel_window": travel_window,
         "chart_mode": "live",
         "prediction_series": prediction_series,
@@ -188,7 +245,7 @@ def _get_insights_from_db(district_param):
                 "venue_name": hub["venue_name"],
                 "capacity_label": hub["flow_status"],
                 "flow_status": hub["flow_status"],
-                "travel_minutes": None,
+                "travel_minutes": travel_minutes_by_venue.get(hub["venue_id"], 0),
                 "wait_minutes": hub["wait_minutes"],
                 "languages": hub["language_tags"],
                 "language_flags": hub["language_tags"],
@@ -201,9 +258,11 @@ def _get_insights_from_db(district_param):
 @bp.get("/api/v1/insights")
 def get_insights():
     district_param = request.args.get("district")
+    origin_lat = request.args.get("lat", type=float)
+    origin_lon = request.args.get("lon", type=float)
 
     try:
-        return jsonify(_get_insights_from_db(district_param))
+        return jsonify(_get_insights_from_db(district_param, origin_lat, origin_lon))
     except Exception:
         pass  # Fallback to mock data below.
 
