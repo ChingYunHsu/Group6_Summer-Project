@@ -2509,6 +2509,9 @@ components:
           type: string
         language:
           type: string
+        detected_language:
+          type: string
+          description: ISO 639-1 code of the language detected in the user's message.
         citations:
           type: array
           items:
