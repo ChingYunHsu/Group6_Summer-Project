@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
   Modal,
@@ -98,15 +98,25 @@ export default function FilterModal({
 
   const [time] = useState("Now");
 
-  useEffect(() => {
-    setLocalOpenNow(openNow ?? false);
+  // Re-sync the draft (local*) state from props whenever the modal
+  // transitions to visible — e.g. if the user reopens Filters after
+  // applying different values elsewhere, or the parent resets filters.
+  // Done as a render-time state adjustment (React's recommended pattern
+  // for "reset state when a prop changes") rather than a useEffect, so it
+  // doesn't fire an extra render/commit and isn't flagged by
+  // react-hooks/set-state-in-effect.
+  const [prevVisible, setPrevVisible] = useState(visible);
 
-    setLocalAccessible(accessible ?? false);
+  if (visible !== prevVisible) {
+    setPrevVisible(visible);
 
-    setLocalLanguage(language);
-
-    setAutoCurrentTime(autoCurrentTimeProp);
-  }, [visible, openNow, accessible, language, autoCurrentTimeProp]);
+    if (visible) {
+      setLocalOpenNow(openNow ?? false);
+      setLocalAccessible(accessible ?? false);
+      setLocalLanguage(language);
+      setAutoCurrentTime(autoCurrentTimeProp);
+    }
+  }
 
   return (
     <Modal visible={visible} transparent animationType="slide">

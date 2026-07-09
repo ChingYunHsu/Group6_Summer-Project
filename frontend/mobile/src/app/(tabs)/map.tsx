@@ -100,9 +100,10 @@ export default function MapScreen() {
 
   const [autoCurrentTime, setAutoCurrentTime] = useState(true);
 
-  const [liveStatus, setLiveStatus] = useState<"quiet" | "moderate" | "busy">(
-    "moderate",
-  );
+  // Retained for FilterModal's onApply payload — no longer read directly
+  // in this file's render path, but still part of the filter state we
+  // pass down/receive back.
+  const [, setLiveStatus] = useState<"quiet" | "moderate" | "busy">("moderate");
 
   const [routeOptionsVisible, setRouteOptionsVisible] = useState(false);
 
@@ -166,10 +167,14 @@ export default function MapScreen() {
     })();
   }, []);
 
-  async function loadData() {
-    try {
-      setLoading(true);
+  // Fetches venues + reports whenever the active filters change. Wrapped
+  // in useCallback so it can safely be listed as an effect dependency
+  // below (resolves the exhaustive-deps warning) without recreating a new
+  // function identity on every render.
+  const loadData = useCallback(async () => {
+    setLoading(true);
 
+    try {
       const [venueData, reportData] = await Promise.all([
         getVenues({
           open_now: openNow,
@@ -186,7 +191,7 @@ export default function MapScreen() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [openNow, accessible, language]);
 
   async function refreshReports() {
     try {
@@ -263,9 +268,12 @@ export default function MapScreen() {
     [isAuthenticated],
   );
 
+  // Fetch-on-filter-change. setLoading(true) inside loadData is the fetch
+  // start signal, not state derived synchronously from props, so this is
+  // the standard "synchronize with an external system" effect use case.
   useEffect(() => {
     loadData();
-  }, [openNow, accessible, language]);
+  }, [loadData]);
 
   const filteredVenues = useMemo(() => {
     return venues.filter((venue) => {

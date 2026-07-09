@@ -211,26 +211,29 @@ export default function ShowStaffScreen() {
     return `[stub translation, source=${sourceLanguage}] ${text}`;
   };
 
-  // Debounced so we don't fire a request on every keystroke — waits for a
-  // pause in typing before translating.
-  useEffect(() => {
-    const trimmed = translationInput.trim();
+  // The trimmed value is what actually drives the debounce/translate
+  // effect below. Computing it here (render time) rather than inside the
+  // effect means the "nothing to translate" case can be handled by simply
+  // not touching state in the effect at all — the empty-input display
+  // state is derived below instead of being set imperatively.
+  const trimmedInput = translationInput.trim();
 
-    if (!trimmed) {
-      setTranslatedText("");
-      setTranslationFailed(false);
-      setIsTranslating(false);
-      return;
-    }
+  // Debounced so we don't fire a request on every keystroke — waits for a
+  // pause in typing before translating. Only runs (and only ever calls
+  // setState) when there's actually something to translate; the "cleared
+  // input" case is handled by the derived `displayed*` values below rather
+  // than by resetting state here.
+  useEffect(() => {
+    if (!trimmedInput) return;
 
     setIsTranslating(true);
     setTranslationFailed(false);
 
     const handle = setTimeout(async () => {
       try {
-        const result = await translateText(trimmed, currentLanguage.code);
+        const result = await translateText(trimmedInput, currentLanguage.code);
         setTranslatedText(result);
-      } catch (error) {
+      } catch {
         setTranslationFailed(true);
       } finally {
         setIsTranslating(false);
@@ -238,7 +241,13 @@ export default function ShowStaffScreen() {
     }, 500);
 
     return () => clearTimeout(handle);
-  }, [translationInput, currentLanguage.code]);
+  }, [trimmedInput, currentLanguage.code]);
+
+  // When the input is empty there's nothing to show/translate, regardless
+  // of whatever the last non-empty translation attempt left in state.
+  const displayedTranslating = trimmedInput ? isTranslating : false;
+  const displayedFailed = trimmedInput ? translationFailed : false;
+  const displayedTranslation = trimmedInput ? translatedText : "";
 
   const categories: { key: Scenario; icon: keyof typeof Ionicons.glyphMap }[] =
     [
@@ -442,15 +451,15 @@ export default function ShowStaffScreen() {
         />
 
         <View style={styles.translationResult}>
-          {isTranslating ? (
+          {displayedTranslating ? (
             <ActivityIndicator color={Colours.primary} />
-          ) : translationFailed ? (
+          ) : displayedFailed ? (
             <Text style={styles.translationErrorText}>
               {t("showStaff.translationError")}
             </Text>
           ) : (
             <Text style={styles.translationResultText}>
-              {translatedText || t("showStaff.translationResult")}
+              {displayedTranslation || t("showStaff.translationResult")}
             </Text>
           )}
         </View>

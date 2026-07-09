@@ -11,7 +11,7 @@ import VerificationCard from "./VerificationCard";
 interface Props {
   visible: boolean;
   venue: Venue | null;
-  // The active report (if any) tied to this venue's active_warning flag —
+  // The active report (if any) tied to this venues active_warning flag —
   // passed down from map.tsx, which owns the full reports list. Without
   // this, VerificationCard has no real data to show.
   activeReport?: Report | null;
