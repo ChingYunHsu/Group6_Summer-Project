@@ -240,7 +240,7 @@ erDiagram
         datetime generated_at
     }
 
-    user_medical_profiles {
+    medical_profiles {
         string user_id
         date date_of_birth
         string gender
@@ -264,7 +264,7 @@ erDiagram
     report_categories ||--o{ user_reports : "issue_type"
     user_reports ||--o{ report_confirmations : "report_id"
     users ||--o{ report_confirmations : "user_id"
-    users ||--o| user_medical_profiles : "user_id"
+    users ||--o| medical_profiles : "user_id"
     venues ||--o{ busyness_scores : "venue_id"
     venues ||--o{ external_context_cache : "venue_id"
     venues ||--o{ venue_accessibility : "venue_id"

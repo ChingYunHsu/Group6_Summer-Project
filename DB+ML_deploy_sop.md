@@ -1,6 +1,6 @@
 # ClearPath DB + ML Deployment SOP
 
-Last updated: 2026-06-30
+Last updated: 2026-07-08
 Scope: Deploy the project's MySQL database, Flask API service, and pre-generated ML busyness results to the server.
 
 ## 0. Core Principles
@@ -135,6 +135,8 @@ docker/mysql/init/002_add_busyness_unique_constraint.sql
 docker/mysql/init/003_add_user_profile_fields.sql
 docker/mysql/init/004_medical_profiles.sql
 docker/mysql/init/005_seed_venues.sql
+docker/mysql/init/006_seed_report_categories.sql       ← added 2026-07-04
+docker/mysql/init/007_telemetry_audit_log.sql           ← added 2026-07-05
 ```
 
 These SQL files are mounted to:
@@ -145,16 +147,30 @@ These SQL files are mounted to:
 
 For a brand-new server, running `docker compose up -d mysql` requires no manual SQL execution.
 
-If the MySQL volume already exists, the init SQL scripts will not automatically re-run. Only manually execute them when schema patches are confirmed to be needed:
+**If the MySQL volume already exists (O2/O14):** MySQL's docker-entrypoint-initdb.d only runs on a FRESH data volume. If the volume pre-dates 006/007, those scripts are silently skipped — leaving `report_categories` empty (backend report submit will fail FK) and `telemetry_audit_log` missing. Use the repeatable migration re-apply script instead:
 
 ```bash
-docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/002_add_busyness_unique_constraint.sql
-docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/003_add_user_profile_fields.sql
-docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/004_medical_profiles.sql
-docker exec -i clearpath-mysql mysql -uroot -pclearpath_root clearpath < docker/mysql/init/005_seed_venues.sql
+# Dry-run first to see which files will be applied:
+docker/mysql/apply_migrations.sh --dry-run
+
+# Re-apply all init SQL (idempotent: CREATE TABLE IF NOT EXISTS, INSERT IGNORE, ON DUPLICATE KEY UPDATE):
+docker/mysql/apply_migrations.sh
 ```
 
-Do not casually re-run `001_clearpath_schema.sql` on a production database. It contains the main schema, and although most statements use `CREATE TABLE IF NOT EXISTS`, you should back up first.
+The script also runs pre-deployment smoke checks:
+
+- `report_categories` row count >= 9 (O14 gauge)
+- `telemetry_audit_log`, `venue_source_links`, `busyness_scores`, `busyness_forecasts` table existence (O2 gauge)
+- Exit code != 0 on failure — hook into CI or manual pre-flight.
+
+Manual fallback (single-file apply):
+
+```bash
+docker exec -i clearpath-mysql mysql -u clearpath_app -pclearpath_app clearpath < docker/mysql/init/006_seed_report_categories.sql
+docker exec -i clearpath-mysql mysql -u clearpath_app -pclearpath_app clearpath < docker/mysql/init/007_telemetry_audit_log.sql
+```
+
+**Important:** Do NOT build a backend that silently swallows DB insert failures (O14). If a report submit INSERT fails because `report_categories` is empty, the API must return a 5xx error — never silently fall back to mock success.
 
 ## 5. Verify Database Connection
 
@@ -494,6 +510,9 @@ docker compose up -d mysql redis phpmyadmin
 docker compose ps
 docker exec clearpath-mysql mysqladmin ping -h localhost -uclearpath_app -pclearpath_app
 
+# 3a. Pre-flight: re-apply init SQL + smoke-check report_categories / telemetry_audit_log (O2/O14)
+docker/mysql/apply_migrations.sh
+
 # 4. Install backend dependencies
 cd backend
 poetry install
@@ -545,6 +564,16 @@ clearpath_mysql_data:
 Do not add a `clearpath_mysql_keyring` volume for this deployment path. A keyring volume alone does not enable MySQL keyring support and can cause confusion if the corresponding MySQL startup options are not supported by the image.
 
 ## 13. Operations to Avoid During Deployment
+
+### 13.1 Backend must NOT silently swallow DB insert failures (O14)
+
+If `report_categories` or `venue_source_links` is empty (old MySQL volume that skipped 006/007), any DB-backed write endpoint (report submit, telemetry execute, forecast writer) must return an explicit error response — never silently succeed with a mock fallback. The deployment pre-flight (`apply_migrations.sh`) catches the common cause; the backend must catch the rest.
+
+- Reports: INSERT failing FK → return 500 with `data_mode=error`, not mock `OK`.
+- Telemetry: resolved == 0 → log unmatched + audit row `success=false`, do not return 200 with 0 ingested unless `--dry-run`.
+- Forecast writer: `--execute` must crash on empty DB (exit != 0), not print stats while nothing is written.
+
+### 13.2 Forbidden generative workflows
 
 Do not execute these generative workflows during server deployment:
 
