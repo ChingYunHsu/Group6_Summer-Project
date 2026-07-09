@@ -30,13 +30,20 @@ class _FakeCursor:
                 f"Tier 1 profile handler must never touch medical_profiles, got: {query!r}"
             )
 
-        if query.startswith("SELECT display_name, phone, nationality, spoken_languages FROM users"):
+        if query.startswith("SELECT user_id, email, display_name, phone, nationality, spoken_languages FROM users"):
             self._result = self._users.get(params[0])
         elif query.startswith("UPDATE users SET"):
             user_id = params[-1]
             row = self._users.setdefault(
                 user_id,
-                {"display_name": "Test User", "phone": None, "nationality": None, "spoken_languages": None},
+                {
+                    "user_id": user_id,
+                    "email": "test@example.com",
+                    "display_name": "Test User",
+                    "phone": None,
+                    "nationality": None,
+                    "spoken_languages": None,
+                },
             )
             # values are positional in the same order as the SET clause fields
             field_names = [c.split(" = ")[0] for c in query.split("SET ", 1)[1].split(" WHERE")[0].split(", ")]
@@ -54,6 +61,8 @@ class _FakeCursor:
 def fake_users_table(monkeypatch):
     users = {
         "u_alice": {
+            "user_id": "u_alice",
+            "email": "alice@example.com",
             "display_name": "Alice",
             "phone": "+1-555-0100",
             "nationality": "Irish",
@@ -86,6 +95,9 @@ def test_get_profile_returns_tier1_fields_only(client, app, fake_users_table):
 
     assert resp.status_code == 200
     data = resp.get_json()
+    assert data["user_id"] == "u_alice"
+    assert data["email"] == "alice@example.com"
+    assert data["full_name"] == "Alice"
     assert data["phone"] == "+1-555-0100"
     assert data["nationality"] == "Irish"
     assert "blood_type" not in data
@@ -140,7 +152,16 @@ def test_profile_requires_bearer_token(client):
 
 def test_profile_update_never_touches_medical_profiles_table(client, app, monkeypatch):
     """Direct proof for the task requirement: Tier 2 stays untouched by Tier 1 writes."""
-    users = {"u_alice": {"display_name": "Alice", "phone": None, "nationality": None, "spoken_languages": None}}
+    users = {
+        "u_alice": {
+            "user_id": "u_alice",
+            "email": "alice@example.com",
+            "display_name": "Alice",
+            "phone": None,
+            "nationality": None,
+            "spoken_languages": None,
+        }
+    }
     medical_profiles_queried = {"called": False}
 
     class _AssertingCursor(_FakeCursor):

@@ -124,15 +124,33 @@ def _next_contact_id() -> str:
     return f"ec_{next_number:03d}"
 
 
+def _format_profile(row: dict) -> dict:
+    return {
+        "user_id": row["user_id"],
+        "email": row["email"],
+        # DB column is display_name; the client contract calls it full_name.
+        "full_name": row["display_name"],
+        "phone": row["phone"],
+        "nationality": row["nationality"],
+        "spoken_languages": row["spoken_languages"],
+    }
+
+
 @bp.get("/api/v1/user/profile")
 @require_bearer_auth
 def get_user_profile():
-
     with db.db_cursor() as cursor:
-        cursor.execute("SELECT display_name, phone, nationality, spoken_languages FROM users WHERE user_id = %s", (g.user_id,))
+        cursor.execute(
+            "SELECT user_id, email, display_name, phone, nationality, spoken_languages "
+            "FROM users WHERE user_id = %s",
+            (g.user_id,),
+        )
         row = cursor.fetchone()
 
-    return jsonify(row)
+    if not row:
+        return jsonify({"error": "User not found."}), 404
+
+    return jsonify(_format_profile(row))
 
 
     
@@ -282,12 +300,13 @@ def update_user_profile():
             cursor.execute(f"UPDATE users SET {set_clause} WHERE user_id = %s", values)
 
         cursor.execute(
-            "SELECT display_name, phone, nationality, spoken_languages FROM users WHERE user_id = %s",
+            "SELECT user_id, email, display_name, phone, nationality, spoken_languages "
+            "FROM users WHERE user_id = %s",
             (g.user_id,),
         )
         row = cursor.fetchone()
 
-    return jsonify(row)
+    return jsonify(_format_profile(row))
 
 
 
