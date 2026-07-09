@@ -1,0 +1,55 @@
+======================================================================
+forecast-v2 quality-gate audit (O5)
+======================================================================
+
+leakage/overfitting gate (R2>=0.99 or MAE<=0.1 => block): PASS
+  [ok]    Ridge/val: R2=0.712 MAE=5.986
+  [ok]    Ridge/test: R2=0.459 MAE=11.182
+  [ok]    RandomForestRegressor/val: R2=0.5 MAE=8.365
+  [ok]    RandomForestRegressor/test: R2=0.442 MAE=10.833
+  [ok]    GradientBoostingRegressor/val: R2=0.804 MAE=4.864
+  [ok]    GradientBoostingRegressor/test: R2=0.724 MAE=7.637
+
+sentinel ratio gate (> 50% sentinel values => block): PASS
+  [ok] humidity_pct=-1: 0/114722 rows (0.0%) threshold=50%
+  [ok] temperature_c=-999: 0/114722 rows (0.0%) threshold=50%
+  [ok] wind_speed_kmh=-1: 0/114722 rows (0.0%) threshold=50%
+
+label distribution gate: PASS
+  train label dist: {'quiet': 39688, 'moderate': 23563, 'busy': 51471}
+  prediction curve levels: {'moderate': 360}
+
+target leakage gate: PASS
+  target columns present in training CSV: ['label_level', 'label_score'] (expected, model must exclude)
+  forbidden feature leakage columns found: none
+
+12h curve gate (12 points/venue): PASS
+  venues with != 12 points: 0 / 30
+
+rolling window leakage gate (latest feature timestamp < forecast_for): PASS
+  [ok]    no rows with latest_busyness_age_minutes < 0
+  min latest_busyness_age_minutes = 60.0 min (must be >= 0)
+
+train/val split duplicate gate (no key in multiple splits): PASS
+  total rows: 114722, train: 80305, val: 17208, test: 17209
+  unique (venue_id, forecast_for) keys: 114722
+  keys with >1 row: 0
+  keys crossing split boundary: 0
+
+external feature gate: PASS
+  weather_source: top='open_meteo' (100.00%) expected='open_meteo' -> ok
+  gbfs_source: top='lyft_gbfs_2.3' (100.00%) expected='lyft_gbfs_2.3' -> ok
+  mta_source: top='gtfs_rt' (100.00%) expected='gtfs_rt' -> ok
+
+coverage gate (counts recorded, no implicit defaults): PASS
+  training_venue_count = 4782
+  training_row_count = 114722  (23.99 rows/venue)
+  prediction_venue_count = 30
+  forecast_row_count = 360
+  rows_per_venue (curve) = 12.00
+  prediction vs training venue coverage = 0.63%
+  [WARN] prediction covers < 50% of training venues — mark partial rollout
+
+======================================================================
+OVERALL VERDICT: PARTIAL ROLLOUT — ship with known limitations noted.
+======================================================================

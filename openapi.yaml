@@ -2359,16 +2359,13 @@ components:
 
     DeleteAccountResponse:
       type: object
-      required: [status, message, purge_deadline]
+      required: [status, message]
       properties:
         status:
           type: string
-          example: scheduled
+          example: deleted
         message:
           type: string
-        purge_deadline:
-          type: string
-          format: date-time
 
     # FIX 2 & FIX 3 — Medical Data / Server-Side Storage Risk
     # pdf_url removed. No clinical PDF is stored server-side (D10 mandate).
@@ -2509,6 +2506,9 @@ components:
           type: string
         language:
           type: string
+        detected_language:
+          type: string
+          description: ISO 639-1 code of the language detected in the user's message.
         citations:
           type: array
           items:

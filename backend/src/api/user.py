@@ -512,8 +512,18 @@ def trigger_sos():
 
 
 @bp.delete("/api/v1/user/account")
-@require_api_key
+@require_bearer_auth
 def delete_account():
+    """Permanently delete the caller's account. A single DELETE on `users`
+    inside one transaction — FK ON DELETE CASCADE constraints (medical_profiles,
+    user_favorite_venues, notification_preferences, etc.) remove every other
+    user-owned row automatically. No mock fallback here: unlike read
+    endpoints, silently returning a fake success on a DB failure would claim
+    data was deleted when it wasn't, so any failure propagates as a 500
+    instead — db.db_transaction() rolls back and re-raises on exception."""
+    with db.db_transaction() as cursor:
+        cursor.execute("DELETE FROM users WHERE user_id = %s", (g.user_id,))
+
     return jsonify(deepcopy(DELETE_ACCOUNT_RESPONSE))
 
 

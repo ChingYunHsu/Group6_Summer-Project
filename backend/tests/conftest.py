@@ -29,3 +29,25 @@ def clear_sessions():
     yield
     SESSIONS.clear()
     AUTH_USERS[:] = original_users
+
+
+@pytest.fixture(autouse=True)
+def clear_response_cache():
+    """Flush cached responses (e.g. the forecast cache) so a real local
+    Redis instance never lets one test's cached result leak into another
+    test reusing the same cache key (venue_id, etc). Best-effort: if Redis
+    isn't reachable, response_cache already fails open and there's nothing
+    to clear."""
+    import response_cache
+
+    def _flush():
+        try:
+            client = response_cache._get_client()
+            for key in client.scan_iter("forecast:v1:*"):
+                client.delete(key)
+        except Exception:
+            pass
+
+    _flush()
+    yield
+    _flush()
