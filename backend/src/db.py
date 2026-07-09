@@ -16,7 +16,6 @@ from contextlib import contextmanager
 
 import pymysql
 import pymysql.cursors
-from dbutils.pooled_db import PooledDB
 
 from settings import get_settings
 

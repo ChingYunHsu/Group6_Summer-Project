@@ -1,12 +1,14 @@
 import json
 import os
+import time
 from datetime import datetime, timedelta
 
 import pymysql
-from flask import Blueprint, Response
+from flask import Blueprint, Response, request, stream_with_context
 
 from auth import require_api_key
-from mock_data import REALTIME_MAP_UPDATES_EXAMPLE
+from mock_data import REALTIME_MAP_UPDATES_EXAMPLE, REPORTS
+from sos_buffer import drain_sos_events
 
 
 bp = Blueprint("realtime", __name__)
@@ -67,3 +69,47 @@ def subscribe_map_updates():
 
     body = "".join(events or REALTIME_MAP_UPDATES_EXAMPLE)
     return Response(body, mimetype="text/event-stream")
+
+
+def _format_sse(event: str, data: dict) -> str:
+    return f"event: {event}\ndata: {json.dumps(data)}\n\n"
+
+
+def generate_live_stream(poll_interval_seconds: float = 1.0, max_iterations=None):
+    """Long-lived SSE generator: on each tick, pushes any buffered SOS
+    telemetry and any newly submitted crowdsourced reports, plus a
+    heartbeat comment so proxies/clients know the connection is alive.
+
+    `max_iterations` lets tests drive a bounded number of ticks instead of
+    looping forever; production callers leave it as None.
+    """
+    last_report_count = 0
+    iterations = 0
+
+    while max_iterations is None or iterations < max_iterations:
+        for sos_event in drain_sos_events():
+            yield _format_sse("sos_telemetry", sos_event)
+
+        if len(REPORTS) > last_report_count:
+            for report in REPORTS[last_report_count:]:
+                yield _format_sse("map_update", report)
+            last_report_count = len(REPORTS)
+
+        yield ": heartbeat\n\n"
+
+        iterations += 1
+        if max_iterations is None:
+            time.sleep(poll_interval_seconds)
+
+
+@bp.get("/api/v1/realtime/stream")
+@require_api_key
+def stream_live_updates():
+    """Persistent SSE channel pushing crowdsourced map updates and SOS
+    telemetry to connected map clients as they happen."""
+    poll_interval = float(request.args.get("poll_interval_seconds", 1.0))
+    return Response(
+        stream_with_context(generate_live_stream(poll_interval_seconds=poll_interval)),
+        mimetype="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )

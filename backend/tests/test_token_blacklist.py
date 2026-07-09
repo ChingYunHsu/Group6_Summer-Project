@@ -1,9 +1,15 @@
 """Unit tests for the Redis blacklist module with a fake in-memory Redis
-client, so this runs without a live Redis (unlike a real integration test)."""
+client, so this runs without a live Redis (unlike a real integration test).
+
+Requires the ``redis`` python package (for ``redis.RedisError``) but no
+running Redis server. Skipped wholesale when the package is absent so that
+collecting the backend test suite never crashes in a minimal env."""
 
 import time
 
-import redis
+import pytest
+
+redis = pytest.importorskip("redis")
 
 import token_blacklist
 

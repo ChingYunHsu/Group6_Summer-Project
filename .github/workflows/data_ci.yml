@@ -45,8 +45,17 @@ jobs:
     - name: Run Venue Coverage Offline Tests
       run: |
         docker run --rm clearpath-data-image pytest \
-          test/6.15-5.20/tests/test_venue_coverage.py \
-          test/6.15-5.20/tests/test_busyness_ingestion.py \
+          test/6.15-6.20/tests/test_venue_coverage.py \
+          test/6.15-6.20/tests/test_busyness_ingestion.py \
+          -v --tb=short -m "not integration"
+      working-directory: ./Data+ML
+
+    - name: Run ML Pure-Function Tests (SOP 8)
+      run: |
+        docker run --rm clearpath-data-image pytest \
+          test/6.28-7.3/tests/test_ml_modeling.py \
+          test/6.28-7.3/tests/test_group_split.py \
+          test/6.28-7.3/tests/test_write_forecasts_to_db.py \
           -v --tb=short -m "not integration"
       working-directory: ./Data+ML
 
@@ -67,6 +76,6 @@ jobs:
     - name: Run Integration Tests (Live APIs)
       run: |
         docker run --rm clearpath-data-image pytest \
-          test/6.15-5.20/tests/test_venue_coverage.py \
+          test/6.15-6.20/tests/test_venue_coverage.py \
           -m integration -v --tb=short
       working-directory: ./Data+ML
