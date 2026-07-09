@@ -1,9 +1,4 @@
-import {
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface VerificationCardProps {
   title?: string;
@@ -22,38 +17,24 @@ export default function VerificationCard({
 }: VerificationCardProps) {
   return (
     <View style={styles.card}>
+      <Text style={styles.title}>{title}</Text>
 
-    <Text style={styles.title}>
-        Is this still an issue?
-    </Text>
+      <Text style={styles.reported}>Reported {reportedAt}</Text>
 
-    <Text style={styles.confirmations}>
-        (3 users confirmed)
-    </Text>
+      <Text style={styles.confirmations}>
+        ({confirmations} user{confirmations === 1 ? "" : "s"} confirmed)
+      </Text>
 
-    <View style={styles.buttonRow}>
-
-        <TouchableOpacity
-            style={styles.confirmButton}
-            onPress={onConfirm}
-        >
-            <Text style={styles.confirmText}>
-                Confirm
-            </Text>
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.confirmButton} onPress={onConfirm}>
+          <Text style={styles.confirmText}>Confirm</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-            style={styles.resolveButton}
-            onPress={onResolve}
-        >
-            <Text style={styles.resolveText}>
-                Resolve
-            </Text>
+        <TouchableOpacity style={styles.resolveButton} onPress={onResolve}>
+          <Text style={styles.resolveText}>Resolve</Text>
         </TouchableOpacity>
-
+      </View>
     </View>
-
-</View>
   );
 }
 
@@ -92,35 +73,35 @@ const styles = StyleSheet.create({
   },
 
   buttonRow: {
-  flexDirection: "row",
-  marginTop: 16,
-},
+    flexDirection: "row",
+    marginTop: 16,
+  },
 
-confirmButton: {
-  flex: 1,
-  backgroundColor: "#DC2626",
-  paddingVertical: 12,
-  borderRadius: 10,
-  alignItems: "center",
-  marginRight: 6,
-},
+  confirmButton: {
+    flex: 1,
+    backgroundColor: "#DC2626",
+    paddingVertical: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginRight: 6,
+  },
 
-resolveButton: {
-  flex: 1,
-  backgroundColor: "#DBEAFE",
-  paddingVertical: 12,
-  borderRadius: 10,
-  alignItems: "center",
-  marginLeft: 6,
-},
+  resolveButton: {
+    flex: 1,
+    backgroundColor: "#DBEAFE",
+    paddingVertical: 12,
+    borderRadius: 10,
+    alignItems: "center",
+    marginLeft: 6,
+  },
 
-confirmText: {
-  color: "#FFFFFF",
-  fontWeight: "700",
-},
+  confirmText: {
+    color: "#FFFFFF",
+    fontWeight: "700",
+  },
 
-resolveText: {
-  color: "#1D4ED8",
-  fontWeight: "700",
-},
+  resolveText: {
+    color: "#1D4ED8",
+    fontWeight: "700",
+  },
 });

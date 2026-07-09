@@ -1,40 +1,52 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
+  Alert,
+  Linking,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import { Colours } from "../constants/colours";
-
 import { mockMedicalId } from "../data/mockMedicalId";
 import { mockProfile } from "../data/mockProfile";
 
 export default function SOSScreen() {
-  const [seconds, setSeconds] = useState(0);
+  const [countdown, setCountdown] = useState(5);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setSeconds((prev) => prev + 1);
+    if (countdown === 0) {
+      handleCallEmergency();
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setCountdown((prev) => prev - 1);
     }, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [countdown]);
 
-  const formatTime = (value: number) => {
-    const mins = Math.floor(value / 60)
-      .toString()
-      .padStart(2, "0");
+  const handleCallEmergency = async () => {
+    const phoneNumber = "911";
+    const url = `tel:${phoneNumber}`;
+    // Replace with region-specific emergency number if the app expands outside the US
 
-    const secs = (value % 60)
-      .toString()
-      .padStart(2, "0");
+    const supported = await Linking.canOpenURL(url);
 
-    return `${mins}:${secs}`;
+    if (!supported) {
+      Alert.alert(t("sos.callErrorTitle"), t("sos.callErrorMessage"));
+      return;
+    }
+
+    await Linking.openURL(url);
   };
 
   const handleCancel = () => {
@@ -43,143 +55,96 @@ export default function SOSScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header */}
-
-      <TouchableOpacity
-        style={styles.closeButton}
-        onPress={handleCancel}
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
       >
-        <Ionicons
-          name="close"
-          size={28}
-          color="#FFFFFF"
-        />
-      </TouchableOpacity>
+        {/* Close */}
 
-      {/* SOS Status */}
+        <TouchableOpacity style={styles.closeButton} onPress={handleCancel}>
+          <Ionicons name="close" size={28} color="#FFFFFF" />
+        </TouchableOpacity>
 
-      <View style={styles.hero}>
-        <Ionicons
-          name="warning"
-          size={64}
-          color="#FFFFFF"
-        />
+        {/* Hero */}
 
-        <Text style={styles.sosTitle}>
-          SOS ACTIVE
-        </Text>
+        <View style={styles.hero}>
+          <Ionicons name="warning" size={64} color="#FFFFFF" />
 
-        <Text style={styles.timer}>
-          {formatTime(seconds)}
-        </Text>
+          <Text style={styles.sosTitle}>{t("sos.title")}</Text>
 
-        <Text style={styles.subtitle}>
-          Emergency assistance has been
-          requested.
-        </Text>
-      </View>
+          <Text style={styles.timer}>
+            {t("sos.countdown", { seconds: countdown })}
+          </Text>
 
-      {/* Location */}
+          <Text style={styles.subtitle}>{t("sos.subtitle")}</Text>
+        </View>
 
-      <View style={styles.card}>
-        <Text style={styles.cardTitle}>
-          Current Location
-        </Text>
+        {/* Location TODO: WIRE TO LIVE LOCATION */}
 
-        <Text style={styles.cardText}>
-          245 W 46th St, New York, NY 10036
-        </Text>
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>{t("sos.locationTitle")}</Text>
 
-        <Text style={styles.cardSubtext}>
-          GPS coordinates will be provided
-          to emergency responders.
-        </Text>
-      </View>
+          <Text style={styles.cardText}>245 W 46th St, New York, NY 10036</Text>
 
-      {/* Medical ID */}
+          <Text style={styles.cardSubtext}>{t("sos.locationDescription")}</Text>
+        </View>
 
-      <View style={styles.card}>
-        <Text style={styles.cardTitle}>
-          Medical ID Summary
-        </Text>
+        {/* Medical ID */}
 
-        <InfoRow
-          label="Name"
-          value={mockProfile.full_name}
-        />
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>{t("sos.medicalIdTitle")}</Text>
 
-        <InfoRow
-          label="Blood Type"
-          value={mockMedicalId.blood_type}
-        />
+          <InfoRow label={t("sos.name")} value={mockProfile.full_name} />
 
-        <InfoRow
-          label="Conditions"
-          value={mockMedicalId.conditions.join(
-            ", "
-          )}
-        />
+          <InfoRow
+            label={t("sos.bloodType")}
+            value={mockMedicalId.blood_type}
+          />
 
-        <InfoRow
-          label="Allergies"
-          value={mockMedicalId.allergies.join(
-            ", "
-          )}
-        />
+          <InfoRow
+            label={t("sos.conditions")}
+            value={mockMedicalId.conditions?.join(", ") ?? t("sos.none")}
+          />
 
-        <InfoRow
-          label="Phone"
-          value={mockProfile.phone}
-        />
-      </View>
+          <InfoRow
+            label={t("sos.allergies")}
+            value={mockMedicalId.allergies?.join(", ") ?? t("sos.none")}
+          />
 
-      {/* Emergency Notice */}
+          <InfoRow label={t("sos.phone")} value={mockProfile.phone} />
+        </View>
 
-      <View style={styles.notice}>
-        <Ionicons
-          name="shield-checkmark"
-          size={20}
-          color="#FFFFFF"
-        />
+        {/* Emergency Notice */}
 
-        <Text style={styles.noticeText}>
-          Emergency profile information is
-          ready to share with responders.
-        </Text>
-      </View>
+        <View style={styles.notice}>
+          <Ionicons name="information-circle" size={20} color="#FFFFFF" />
 
-      {/* Cancel */}
+          <Text style={styles.noticeText}>{t("sos.notice")}</Text>
+        </View>
 
-      <TouchableOpacity
-        style={styles.cancelButton}
-        onPress={handleCancel}
-      >
-        <Text style={styles.cancelText}>
-          HOLD 3S TO CANCEL
-        </Text>
-      </TouchableOpacity>
+        {/* Cancel */}
+
+        <TouchableOpacity style={styles.cancelButton} onPress={handleCancel}>
+          <Text style={styles.cancelText}>{t("sos.cancel")}</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 type InfoRowProps = {
   label: string;
-  value: string;
+  value: string | null;
 };
 
-function InfoRow({
-  label,
-  value,
-}: InfoRowProps) {
+function InfoRow({ label, value }: InfoRowProps) {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.infoRow}>
-      <Text style={styles.infoLabel}>
-        {label}
-      </Text>
+      <Text style={styles.infoLabel}>{label}</Text>
 
-      <Text style={styles.infoValue}>
-        {value}
-      </Text>
+      <Text style={styles.infoValue}>{value ?? t("sos.notProvided")}</Text>
     </View>
   );
 }
@@ -188,13 +153,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#C62828",
-    padding: 20,
   },
 
   closeButton: {
     position: "absolute",
     top: 12,
     left: 12,
+    zIndex: 10,
   },
 
   hero: {
@@ -208,6 +173,7 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     color: "#FFFFFF",
     marginTop: 12,
+    textAlign: "center",
   },
 
   timer: {
@@ -222,6 +188,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 12,
     opacity: 0.9,
+    fontSize: 16,
+    lineHeight: 22,
   },
 
   card: {
@@ -245,6 +213,7 @@ const styles = StyleSheet.create({
   cardSubtext: {
     color: Colours.muted,
     fontSize: 12,
+    lineHeight: 18,
   },
 
   infoRow: {
@@ -259,6 +228,7 @@ const styles = StyleSheet.create({
 
   infoValue: {
     color: Colours.text,
+    fontSize: 15,
   },
 
   notice: {
@@ -272,6 +242,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     marginLeft: 10,
     flex: 1,
+    lineHeight: 20,
   },
 
   cancelButton: {
@@ -280,12 +251,17 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "auto",
+    marginTop: 24,
+    marginBottom: 12,
   },
 
   cancelText: {
     color: "#C62828",
     fontWeight: "800",
     fontSize: 16,
+  },
+  scrollContent: {
+    padding: 20,
+    paddingBottom: 32,
   },
 });

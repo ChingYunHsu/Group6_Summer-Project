@@ -2,10 +2,21 @@
 /*                              VENUE TYPES                                   */
 /* -------------------------------------------------------------------------- */
 
+// Matches the full venue_type ENUM in 001_clearpath_schema.sql. Only
+// clinic/pharmacy/emergencyasset/hospital/restroom have any seeded data
+// today (005_seed_venues.sql) and only those have CategoryChips filters —
+// healthcare/dentist/laboratory are included here so the type is
+// accurate and nothing breaks if a venue of one of those types ever
+// appears, even without a dedicated filter chip for them yet.
 export type VenueCategory =
   | "clinic"
   | "pharmacy"
-  | "emergencyasset";
+  | "emergencyasset"
+  | "hospital"
+  | "restroom"
+  | "healthcare"
+  | "dentist"
+  | "laboratory";
 
 export interface VenueBusyness {
   busyness_score: number;
@@ -42,17 +53,14 @@ export interface VenueWarning {
 }
 
 export interface VenueForecast {
-
   offset_hours: number;
 
   percent: number;
 
   level: string;
-
 }
 
 export interface Venue {
-
   venue_id: string;
 
   name: string;
@@ -75,11 +83,18 @@ export interface Venue {
 
   language_tags: string[];
 
-  accessibility: VenueAccessibility;
+  // NOTE: the following four nested objects (accessibility, language,
+  // warnings, busyness) are only ever populated by the mock VENUES list in
+  // mock_data.py. _row_to_venue() in venues.py does not construct them for
+  // DB-backed venues — always optional-chain when reading these on a real
+  // venue (see VenueBottomSheet.tsx).
+  accessibility?: VenueAccessibility;
 
-  language: VenueLanguage;
+  language?: VenueLanguage;
 
-  warnings: VenueWarning;
+  warnings?: VenueWarning;
+
+  busyness?: VenueBusyness;
 
   accessible_status: string;
 
@@ -93,8 +108,6 @@ export interface Venue {
 
   open_now: boolean;
 
-  busyness: VenueBusyness;
-
   busyness_level: string;
 
   busyness_percent: number;
@@ -105,7 +118,8 @@ export interface Venue {
 
   live_status_badge: string;
 
-  busyness_forecast_12h: VenueForecast[];
+  // Also mock-only — see note above.
+  busyness_forecast_12h?: VenueForecast[];
 
   forecast_mode: string;
 
@@ -116,15 +130,12 @@ export interface Venue {
   data_confidence: number;
 
   created_at: string;
-
 }
 
 export interface VenueResponse {
-
   count: number;
 
   items: Venue[];
-
 }
 
 /* -------------------------------------------------------------------------- */
@@ -132,59 +143,97 @@ export interface VenueResponse {
 /* -------------------------------------------------------------------------- */
 
 export interface ReportConfirmation {
-
   count: number;
 
   latest_action: string;
 
   latest_action_at: string;
-
 }
 
+// Matches _format_report() in backend/src/api/reports.py — the shape every
+// DB-backed report actually returns. The mock-data fallback in list_reports()
+// currently returns a richer shape (venue_name, description, badge_text,
+// etc. — see mock_data.py's REPORTS list) that isn't guaranteed once the
+// backend routes the mock fallback through _format_report() too, so those
+// extra fields are kept here as optional/best-effort rather than required.
 export interface Report {
-
   report_id: string;
 
   venue_id?: string;
 
-  venue_name?: string;
-
-  venue_category?: string;
-
   issue_type: string;
+
+  // Human-readable label from ISSUE_TYPE_LABELS on the backend — prefer
+  // this over issue_type for anything user-facing.
+  issue_type_label: string;
+
+  report_scope: "venue_bound" | "standalone";
+
+  status: string;
 
   latitude: number;
 
   longitude: number;
 
-  accuracy_m: number;
-
-  anonymous: boolean;
-
-  description: string;
-
-  photos: string[];
-
-  status: string;
-
   created_at: string;
 
-  expires_at: string;
-
-  expires_in_minutes: number;
+  expires_at: string | null;
 
   confirmations: ReportConfirmation;
 
-  badge_text: string;
+  // --- Mock-only fields below; not present on DB-backed reports today ---
 
+  venue_name?: string;
+
+  venue_category?: string;
+
+  accuracy_meters?: number;
+
+  anonymous?: boolean;
+
+  description?: string;
+
+  photos?: string[];
+
+  expires_in_minutes?: number;
+
+  badge_text?: string;
+
+  live_report_count?: number;
 }
 
 export interface ReportResponse {
-
   count: number;
 
   items: Report[];
+}
 
+/* -------------------------------------------------------------------------- */
+/*                               FAVOURITES                                   */
+/* -------------------------------------------------------------------------- */
+
+// Matches FAVOURITES/FAVOURITE_CREATE_TEMPLATE in mock_data.py. NOTE: the
+// backend's get_favourites/add_favourite/delete_favourite are not
+// per-user (no g.user_id filtering, plain in-memory list, no DB) and
+// add_favourite has a bug where favourite_id/saved_at are always the
+// same hardcoded values from FAVOURITE_CREATE_TEMPLATE regardless of what
+// was actually added. This type/client code is correct for the intended
+// contract; the backend needs real per-user + DB-backed work before this
+// behaves correctly for more than one user.
+export interface Favourite {
+  favourite_id: string;
+
+  venue_id: string;
+
+  saved_at: string;
+
+  display_status: string;
+}
+
+export interface FavouritesResponse {
+  count: number;
+
+  items: Favourite[];
 }
 
 /* -------------------------------------------------------------------------- */
@@ -192,7 +241,6 @@ export interface ReportResponse {
 /* -------------------------------------------------------------------------- */
 
 export interface RouteOption {
-
   mode: string;
 
   duration_minutes: number;
@@ -202,11 +250,9 @@ export interface RouteOption {
   status: string;
 
   summary: string;
-
 }
 
 export interface RouteOptionsResponse {
-
   origin_label: string;
 
   destination_venue_id: string;
@@ -216,12 +262,19 @@ export interface RouteOptionsResponse {
   summary_by_mode: Record<string, any>;
 
   options: RouteOption[];
-
 }
 
+// Matches ROUTE_DETAIL in mock_data.py — note there is no `duration` field
+// on the real response. If you need a duration alongside these steps, pull
+// it from the RouteOption the user selected in RouteOptionsModal instead.
 export interface RouteDetail {
-  duration: number;
+  destination_venue_id?: string;
+
+  polyline_preview?: { latitude: number; longitude: number }[];
+
   steps: string[];
+
+  start_navigation_label?: string;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -229,27 +282,21 @@ export interface RouteDetail {
 /* -------------------------------------------------------------------------- */
 
 export interface BusynessResponse {
-
   venue_id: string;
 
   busyness: VenueBusyness;
-
 }
 
 export interface ForecastResponse {
-
   venue_id: string;
 
   forecast: VenueForecast[];
 
   best_time_to_go_today: {
-
     offset_hours: number;
 
     percent: number;
 
     label: string;
-
   };
-
 }

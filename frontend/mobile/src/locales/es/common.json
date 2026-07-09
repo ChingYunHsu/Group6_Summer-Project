@@ -12,7 +12,9 @@
     "choose": "Elige tu idioma",
     "search": "Buscar otros idiomas...",
     "selected": "Idioma seleccionado",
-    "footer": "Al continuar, revisarás nuestros"
+    "footer": "Al continuar, revisarás nuestros",
+    "comingSoon": "Próximamente",
+    "comingSoonMessage": "Este idioma estará disponible en una futura versión."
   },
   "legal": {
     "title": "Legal y Privacidad",
@@ -88,7 +90,10 @@
     "finishProfileTitle": "¿Deseas completar la configuración de tu Perfil e Identificación Médica?",
     "finishProfileDescription": "Esto ayuda a los Servicios de Emergencia de NYC a asistirte mejor.",
     "finishProfile": "Completar Perfil e Identificación",
-    "skipForNow": "Omitir por ahora"
+    "skipForNow": "Omitir por ahora",
+    "loginRequiredTitle": "Se requiere iniciar sesión",
+    "loginRequiredBody": "Para ayudar a mantener la información de ClearPath precisa y evitar el spam, debes iniciar sesión para enviar o verificar informes de la comunidad.",
+    "logInSignUp": "Iniciar sesión / Registrarse"
   },
 
   "profile": {
@@ -127,7 +132,18 @@
     "pain": "Dolor",
     "translationPlaceholder": "Escriba en el idioma del visitante...",
     "translationResult": "La traducción aparecerá aquí después de la integración del backend.",
-    "medicalSummary": "Resumen de Identificación Médica"
+    "medicalSummary": "Resumen de Identificación Médica",
+    "categories": {
+      "general": "General",
+      "emergency": "Emergencia",
+      "allergies": "Alergias",
+      "respiratory": "Respiratorio",
+      "pain": "Dolor",
+      "injury": "Lesión",
+      "cardiac": "Cardíaco",
+      "hospital": "Hospital",
+      "pharmacy": "Farmacia"
+    }
   },
 
   "location": {
@@ -146,12 +162,116 @@
     "unableToRetrieveMessage": "Asegúrate de que el GPS esté habilitado en tu dispositivo.",
     "enabledMessage": "Los servicios de ubicación se han habilitado correctamente.",
     "error": "Error de ubicación",
-    "errorMessage": "Se produjo un error al acceder a los servicios de ubicación."
+    "errorMessage": "Se produjo un error al acceder a los servicios de ubicación.",
+    "servicesRequiredTitle": "Se requieren servicios de ubicación",
+    "servicesRequiredBody": "Para enviar informes de incidencias o generar una ruta desde la ubicación de tu dispositivo, activa los servicios de ubicación.",
+    "systemSettings": "Ir a Ajustes del sistema",
+    "settingsError": "No se pudieron abrir los ajustes del sistema."
   },
   "medicalId": {
     "title": "Editar identificación médica",
     "emergencyProfile": "Perfil de emergencia",
     "criticalInfo": "Información crítica",
     "medicalConditions": "Condiciones médicas"
+  },
+
+  "welcome": {
+    "slogan": "Inteligencia de accesibilidad en tu idioma",
+
+    "healthcareNavigation": "Navegación sanitaria",
+    "healthcareNavigationDescription": "Encuentra fácilmente departamentos hospitalarios, clínicas y servicios.",
+
+    "medicalId": "Identificación médica",
+    "medicalIdDescription": "Guarda información médica importante para emergencias.",
+
+    "aiAssistant": "Asistente de IA",
+    "aiAssistantDescription": "Obtén orientación y asistencia sanitaria rápida siempre que la necesites.",
+
+    "showStaff": "Mostrar al personal",
+    "showStaffDescription": "Utiliza frases comunes y traducción en tiempo real para comunicarte con el personal y los residentes locales.",
+
+    "emergencySos": "SOS de emergencia",
+    "emergencySosDescription": "Accede rápidamente a la asistencia de emergencia cuando cada segundo cuenta."
+  },
+  "tabs": {
+    "map": "Mapa",
+    "hospitalMap": "Mapa del hospital",
+    "assistant": "Asistente",
+    "clearPathAssistant": "Asistente ClearPath",
+    "showStaff": "Mostrar al personal",
+    "profile": "Perfil",
+    "myProfile": "Mi perfil",
+    "more": "Más"
+  },
+  "map": {
+    "searchPlaceholder": "Buscar clínicas o farmacias..."
+  },
+  "reportModal": {
+    "title": "Informar de un problema",
+    "subtitle": "Ayuda a mantener ClearPath actualizado informando de un problema temporal de accesibilidad.",
+
+    "whereIsIssue": "¿Dónde está el problema?",
+    "selectVenue": "Seleccionar lugar",
+    "issueType": "Tipo de problema",
+
+    "nearbyVenue": "Lugar o punto de referencia cercano",
+    "currentLocation": "Colocar un marcador en la ubicación actual",
+
+    "nearby": "Cerca",
+
+    "additionalInformation": "Información adicional (opcional)",
+
+    "timestampNotice": "(Los informes siempre se envían con la hora actual.)",
+
+    "submit": "Enviar informe",
+
+    "loginRequired": "Inicio de sesión requerido",
+    "loginRequiredMessage": "Para mantener la precisión de los datos de ClearPath, debes iniciar sesión antes de enviar un informe.",
+
+    "locationRequired": "Se requiere la ubicación",
+    "locationRequiredMessage": "Activa los servicios de ubicación antes de enviar un informe.",
+
+    "issueTypes": {
+      "largeCrowd": "Demasiada gente",
+      "entranceClosed": "Entrada bloqueada",
+      "elevatorBroken": "Ascensor averiado",
+      "wheelchairLiftBroken": "Plataforma para sillas de ruedas averiada",
+      "toiletOutOfOrder": "Baño fuera de servicio",
+      "protestOrBlockage": "Protesta / Bloqueo"
+    }
+  },
+
+  "more": {
+    "languageSelection": "Selección de idioma",
+    "settings": "Configuración",
+    "legal": "Información legal",
+    "welcome": "Bienvenida",
+    "sos": "SOS"
+  },
+  "sos": {
+    "title": "Preparando llamada de emergencia",
+    "countdown": "Llamando en {{seconds}} s",
+    "subtitle": "La llamada de emergencia comenzará a menos que se cancele.",
+
+    "locationTitle": "Ubicación actual",
+    "locationDescription": "Tu ubicación está disponible para compartir durante la llamada de emergencia.",
+
+    "medicalIdTitle": "Resumen del historial médico",
+
+    "name": "Nombre",
+    "bloodType": "Grupo sanguíneo",
+    "conditions": "Enfermedades",
+    "allergies": "Alergias",
+    "phone": "Teléfono",
+
+    "notice": "Mantén esta pantalla abierta mientras hablas con el operador de emergencias.",
+
+    "cancel": "Cancelar llamada de emergencia",
+
+    "notProvided": "No disponible",
+    "none": "Ninguna",
+
+    "callErrorTitle": "No se puede realizar la llamada",
+    "callErrorMessage": "Este dispositivo no puede realizar llamadas telefónicas."
   }
 }

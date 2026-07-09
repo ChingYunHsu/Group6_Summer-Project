@@ -1,22 +1,17 @@
 import { useRouter } from "expo-router";
-import {
-    Modal,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+import { useTranslation } from "react-i18next";
 
 type Props = {
   visible: boolean;
   onClose: () => void;
 };
 
-export default function LoginRequiredModal({
-  visible,
-  onClose,
-}: Props) {
+export default function LoginRequiredModal({ visible, onClose }: Props) {
   const router = useRouter();
+
+  const { t } = useTranslation();
 
   const handleLogin = () => {
     onClose();
@@ -36,35 +31,17 @@ export default function LoginRequiredModal({
     >
       <View style={styles.backdrop}>
         <View style={styles.card}>
+          <Text style={styles.title}>{t("login.loginRequiredTitle")}</Text>
 
-          <Text style={styles.title}>
-            Login Required
-          </Text>
+          <Text style={styles.body}>{t("login.loginRequiredBody")}</Text>
 
-          <Text style={styles.body}>
-            To help keep ClearPath data accurate and prevent spam,
-            you must be logged in to submit or verify community
-            reports.
-          </Text>
-
-          <TouchableOpacity
-            style={styles.primaryButton}
-            onPress={handleLogin}
-          >
-            <Text style={styles.primaryText}>
-              Log In / Sign Up
-            </Text>
+          <TouchableOpacity style={styles.primaryButton} onPress={handleLogin}>
+            <Text style={styles.primaryText}>{t("login.logInSignUp")}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.secondaryButton}
-            onPress={onClose}
-          >
-            <Text style={styles.secondaryText}>
-              Cancel
-            </Text>
+          <TouchableOpacity style={styles.secondaryButton} onPress={onClose}>
+            <Text style={styles.secondaryText}>{t("common.cancel")}</Text>
           </TouchableOpacity>
-
         </View>
       </View>
     </Modal>

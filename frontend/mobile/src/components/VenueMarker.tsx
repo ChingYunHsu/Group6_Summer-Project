@@ -44,26 +44,36 @@ function getMarkerIcon(type: string) {
     case "emergencyasset":
       return "heart";
 
+    case "hospital":
+      return "business";
+
+    case "restroom":
+      return "male-female";
+
+    // No seeded venues of these three types exist yet — see the
+    // VenueCategory comment in types/venue.ts — but these are still
+    // valid values per the real venue_type ENUM, so they get real icons
+    // rather than silently falling through to the generic default.
+    case "healthcare":
+      return "medical";
+
+    case "dentist":
+      return "medical";
+
+    case "laboratory":
+      return "flask";
+
     default:
       return "location";
   }
 }
 
-export default function VenueMarker({
-  venue,
-  showLiveStatus,
-  onPress,
-}: Props) {
-  const background =
-  showLiveStatus
-    ? getMarkerColour(
-        venue.busyness?.busyness_color
-      )
+export default function VenueMarker({ venue, showLiveStatus, onPress }: Props) {
+  const background = showLiveStatus
+    ? getMarkerColour(venue.busyness?.busyness_color)
     : COLOURS.blue;
 
-  const icon = getMarkerIcon(
-    venue.venue_type
-  );
+  const icon = getMarkerIcon(venue.venue_type);
 
   return (
     <Marker
@@ -82,20 +92,20 @@ export default function VenueMarker({
             },
           ]}
         >
-          <Ionicons
-            name={icon as any}
-            size={18}
-            color="#FFFFFF"
-          />
+          <Ionicons name={icon as any} size={18} color="#FFFFFF" />
         </View>
 
-        {venue.active_warning && (
+        {/* Boolean(...) here matters: DB-backed venues can send
+            active_warning as a raw MySQL 0/1, not true/false (see
+            _row_to_venue() in venues.py — it's missing from that
+            function's bool-cast list). `0 && <View />` evaluates to `0`
+            in JS, and React Native tries to render that bare 0 as a text
+            node, which is exactly the "Text strings must be rendered
+            within a <Text> component" crash. Coercing explicitly avoids
+            depending on the backend fixing this to not crash. */}
+        {Boolean(venue.active_warning) && (
           <View style={styles.warningBadge}>
-            <Ionicons
-              name="warning"
-              size={10}
-              color="#000000"
-            />
+            <Ionicons name="warning" size={10} color="#000000" />
           </View>
         )}
       </View>

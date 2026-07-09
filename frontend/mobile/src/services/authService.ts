@@ -1,7 +1,14 @@
-import * as SecureStore from "expo-secure-store";
 import { request } from "./api";
+import {
+  clearAccessToken,
+  getAccessToken,
+  saveAccessToken,
+} from "./tokenStorage";
 
-const ACCESS_TOKEN_KEY = "access_token";
+// Re-exported so every existing `import { getAccessToken } from "./authService"`
+// elsewhere in the app (map.tsx, show-staff.tsx, etc.) keeps working
+// unchanged — token storage itself now lives solely in tokenStorage.ts.
+export { getAccessToken };
 
 type LoginResponse = {
   access_token: string;
@@ -13,24 +20,17 @@ type LoginResponse = {
 
 export async function login(
   email: string,
-  password: string
+  password: string,
 ): Promise<LoginResponse> {
-  const response =
-    await request<LoginResponse>(
-      "/auth/login",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      }
-    );
+  const response = await request<LoginResponse>("/auth/login", {
+    method: "POST",
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+  });
 
-  await SecureStore.setItemAsync(
-    ACCESS_TOKEN_KEY,
-    response.access_token
-  );
+  await saveAccessToken(response.access_token);
 
   return response;
 }
@@ -38,59 +38,37 @@ export async function login(
 export async function register(
   full_name: string,
   email: string,
-  password: string
+  password: string,
 ): Promise<LoginResponse> {
-  const response =
-    await request<LoginResponse>(
-      "/auth/register",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          full_name,
-          email,
-          password,
-        }),
-      }
-    );
+  const response = await request<LoginResponse>("/auth/register", {
+    method: "POST",
+    body: JSON.stringify({
+      full_name,
+      email,
+      password,
+    }),
+  });
 
-  await SecureStore.setItemAsync(
-    ACCESS_TOKEN_KEY,
-    response.access_token
-  );
+  await saveAccessToken(response.access_token);
 
   return response;
 }
 
-export async function getAccessToken() {
-  return SecureStore.getItemAsync(
-    ACCESS_TOKEN_KEY
-  );
-}
-
 export async function logout() {
-  const token =
-    await getAccessToken();
+  const token = await getAccessToken();
 
   if (token) {
     try {
-      await request(
-        "/auth/logout",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      await request("/auth/logout", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
     } catch (error) {
-      console.warn(
-        "Logout request failed",
-        error
-      );
+      console.warn("Logout request failed", error);
     }
   }
 
-  await SecureStore.deleteItemAsync(
-    ACCESS_TOKEN_KEY
-  );
+  await clearAccessToken();
 }

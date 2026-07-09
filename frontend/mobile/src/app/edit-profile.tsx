@@ -1,8 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  Alert,
   ScrollView,
   StyleSheet,
   Text,
@@ -14,58 +15,121 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 import { mockProfile } from "../data/mockProfile";
-import { saveProfile } from "../services/profileService";
+import { loadMedicalId, saveMedicalId } from "../services/medicalIdService";
+import { loadProfile, saveProfile } from "../services/profileService";
+
+// No real endpoint returns anything like avatar_initials — it was always
+// mockProfile.avatar_initials regardless of which real user was logged
+// in. Derived from the live full_name instead, so it actually reflects
+// whoever's account this is.
+function getInitials(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
 
 export default function EditProfileScreen() {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
-  const [fullName, setFullName] =
-    useState(mockProfile.full_name);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
 
-  const [dob, setDob] =
-    useState(mockProfile.date_of_birth);
-
-  const [gender, setGender] =
-    useState(mockProfile.gender);
-
-  const [nationality, setNationality] =
-    useState("American");
-
-  const [phone, setPhone] =
-    useState(mockProfile.phone);
-
-  const [email, setEmail] =
-    useState(mockProfile.email);
-
-  const [address, setAddress] =
-    useState(
-      "1234 Sycamore Lane, Apt 4B, San Francisco, CA 94105"
-    );
-
-  const [spokenLanguages, setSpokenLanguages] =
-  useState(
-    mockProfile.spoken_languages.join(", ")
+  const [fullName, setFullName] = useState(mockProfile.full_name);
+  const [dob, setDob] = useState(mockProfile.date_of_birth);
+  const [gender, setGender] = useState(mockProfile.gender);
+  const [nationality, setNationality] = useState(mockProfile.nationality);
+  const [phone, setPhone] = useState(mockProfile.phone);
+  const [email, setEmail] = useState(mockProfile.email);
+  const [address, setAddress] = useState("");
+  const [spokenLanguages, setSpokenLanguages] = useState(
+    mockProfile.spoken_languages.join(", "),
   );
 
-const handleSave = async () => {
-  try {
-    await saveProfile({
-      phone,
-      nationality,
-      spoken_languages: spokenLanguages
-        .split(",")
-        .map((lang) => lang.trim())
-        .filter(Boolean),
-    });
+  // Profile (phone/nationality/spoken_languages — the `users` table) and
+  // medical (gender/address/etc. — `medical_profiles`) are two separate
+  // backend resources, per user.py's get_user_profile / medicalIdService's
+  // get_medical_profile. Loaded in parallel; either can fail independently
+  // without blocking the other from populating.
+  useEffect(() => {
+    (async () => {
+      try {
+        const [profile, medical] = await Promise.all([
+          loadProfile().catch((error) => {
+            console.error("Failed to load profile", error);
+            return null;
+          }),
+          loadMedicalId().catch((error) => {
+            console.error("Failed to load medical profile", error);
+            return null;
+          }),
+        ]);
+
+        if (profile) {
+          setFullName(profile.full_name);
+          setPhone(profile.phone);
+          setNationality(profile.nationality);
+          setSpokenLanguages((profile.spoken_languages ?? []).join(", "));
+        }
+
+        if (medical) {
+          if (medical.gender) setGender(medical.gender);
+          if (medical.address) setAddress(medical.address);
+          if (medical.date_of_birth) setDob(medical.date_of_birth);
+        }
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
+  const handleSave = async () => {
+    setSaving(true);
+
+    const results = await Promise.allSettled([
+      saveProfile({
+        phone,
+        nationality,
+        spoken_languages: spokenLanguages
+          .split(",")
+          .map((lang) => lang.trim())
+          .filter(Boolean),
+      }),
+      // NOTE: as of this writing, PUT /user/medical-profile in user.py is
+      // shadowed by a second implementation that only accepts
+      // {blood_type, conditions, allergies} — gender/address will 400
+      // ("invalid_fields") until the team resolves which implementation
+      // (user.py vs api/medical.py) is meant to stay. This call is correct
+      // for the intended backend behaviour; it just won't succeed until
+      // that's fixed server-side.
+      saveMedicalId({ gender, address }),
+    ]);
+
+    setSaving(false);
+
+    const failed = results.some((result) => result.status === "rejected");
+
+    if (failed) {
+      results.forEach((result) => {
+        if (result.status === "rejected") {
+          console.error("Failed to save profile field", result.reason);
+        }
+      });
+
+      Alert.alert(
+        t("editProfile.saveErrorTitle", {
+          defaultValue: "Couldn't save everything",
+        }),
+        t("editProfile.saveErrorMessage", {
+          defaultValue: "Some of your changes didn't save. Please try again.",
+        }),
+      );
+
+      return;
+    }
 
     router.back();
-  } catch (error) {
-    console.error(
-      "Failed to save profile",
-      error
-    );
-  }
-};
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -74,51 +138,44 @@ const handleSave = async () => {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <TouchableOpacity
-            onPress={() => router.back()}
-          >
-            <Ionicons
-              name="chevron-back"
-              size={24}
-              color={Colours.text}
-            />
+          <TouchableOpacity onPress={() => router.back()}>
+            <Ionicons name="chevron-back" size={24} color={Colours.text} />
           </TouchableOpacity>
 
           <View style={{ flex: 1 }}>
-            <Text style={styles.headerTitle}>
-  {t("editProfile.title")}
-</Text>
+            <Text style={styles.headerTitle}>{t("editProfile.title")}</Text>
           </View>
 
-          <TouchableOpacity
-            onPress={handleSave}
-          >
-            <Text style={styles.saveText}>
-  {t("common.save")}
-</Text>
+          <TouchableOpacity onPress={handleSave} disabled={loading || saving}>
+            <Text
+              style={[
+                styles.saveText,
+                (loading || saving) && styles.saveTextDisabled,
+              ]}
+            >
+              {saving
+                ? t("common.saving", { defaultValue: "Saving…" })
+                : t("common.save")}
+            </Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.avatarSection}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarInitials}>
-             {mockProfile.avatar_initials}
-            </Text>
-        </View>
+            <Text style={styles.avatarInitials}>{getInitials(fullName)}</Text>
+          </View>
 
-          <Text style={styles.avatarName}>
-            {fullName}
-          </Text>
+          <Text style={styles.avatarName}>{fullName}</Text>
 
           <Text style={styles.avatarSubtext}>
-  {t("editProfile.personalProfile")}
-</Text>
+            {t("editProfile.personalProfile")}
+          </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>
-  {t("editProfile.personalInformation")}
-</Text>
+            {t("editProfile.personalInformation")}
+          </Text>
 
           <InputField
             label={t("editProfile.fullName")}
@@ -151,7 +208,7 @@ const handleSave = async () => {
           />
 
           <InputField
-            label={t("editProfile.email")}
+            label={t("editProfile.emailAddress")}
             value={email}
             editable={false}
             keyboardType="email-address"
@@ -169,9 +226,8 @@ const handleSave = async () => {
             value={spokenLanguages}
             onChangeText={setSpokenLanguages}
           />
-      </View>
-
-    </ScrollView>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -189,23 +245,14 @@ function InputField({
   onChangeText?: (text: string) => void;
   multiline?: boolean;
   editable?: boolean;
-  keyboardType?:
-    | "default"
-    | "email-address"
-    | "phone-pad";
+  keyboardType?: "default" | "email-address" | "phone-pad";
 }) {
   return (
     <View style={styles.field}>
-      <Text style={styles.label}>
-        {label}
-      </Text>
+      <Text style={styles.label}>{label}</Text>
 
       <TextInput
-        style={[
-          styles.input,
-          multiline &&
-            styles.multilineInput,
-        ]}
+        style={[styles.input, multiline && styles.multilineInput]}
         value={value}
         onChangeText={onChangeText}
         multiline={multiline}
@@ -245,6 +292,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
+  saveTextDisabled: {
+    opacity: 0.4,
+  },
+
   avatarSection: {
     alignItems: "center",
     marginBottom: 32,
@@ -254,8 +305,7 @@ const styles = StyleSheet.create({
     width: 96,
     height: 96,
     borderRadius: 48,
-    backgroundColor:
-      Colours.surfaceLight,
+    backgroundColor: Colours.surfaceLight,
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 12,
@@ -272,8 +322,7 @@ const styles = StyleSheet.create({
   },
 
   section: {
-    backgroundColor:
-      Colours.surface,
+    backgroundColor: Colours.surface,
     borderRadius: 20,
     padding: 20,
     borderWidth: 1,
@@ -304,13 +353,13 @@ const styles = StyleSheet.create({
     borderColor: Colours.border,
     borderRadius: 14,
     paddingHorizontal: 16,
-    backgroundColor:
-      Colours.surface,
+    backgroundColor: Colours.surface,
     color: Colours.text,
     fontSize: 16,
   },
 
   multilineInput: {
+    height: undefined,
     minHeight: 100,
     paddingTop: 14,
     textAlignVertical: "top",
@@ -320,5 +369,5 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "700",
     color: Colours.primary,
-  }
+  },
 });

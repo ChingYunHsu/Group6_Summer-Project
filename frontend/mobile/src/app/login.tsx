@@ -3,6 +3,7 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  Alert,
   Modal,
   ScrollView,
   StyleSheet,
@@ -20,72 +21,79 @@ import { login, register } from "../services/authService";
 export default function LoginScreen() {
   const { t } = useTranslation();
 
-  const [isRegisterMode, setIsRegisterMode] =
-    useState(false);
+  const [isRegisterMode, setIsRegisterMode] = useState(false);
 
-  const [showPassword, setShowPassword] =
-    useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [email, setEmail] =
-  useState("");
+  const [email, setEmail] = useState("");
 
-const [password, setPassword] =
-  useState("");
+  const [password, setPassword] = useState("");
 
-const [fullName, setFullName] =
-  useState("");
+  const [fullName, setFullName] = useState("");
 
-const [loading, setLoading] =
-  useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const [
-    showRegistrationModal,
-    setShowRegistrationModal,
-  ] = useState(false);
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
-  const [agreed, setAgreed] =
-    useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   const handleSignIn = async () => {
-  try {
-    setLoading(true);
-
-    await login(
-      email,
-      password
-    );
-
-    router.replace("/map");
-  } catch (error) {
-    console.error(error);
-  } finally {
-    setLoading(false);
-  }
-};
-
-  const handleCreateAccount =
-  async () => {
     try {
       setLoading(true);
 
-      const response =
-        await register(
-          fullName,
-          email,
-          password
-        );
+      await login(email, password);
 
-      if (
-        response.finish_profile_prompt
-      ) {
-        setShowRegistrationModal(
-          true
-        );
+      router.replace("/map");
+    } catch (error: any) {
+      console.error(error);
+
+      Alert.alert(
+        t("login.signInErrorTitle", { defaultValue: "Couldn't sign in" }),
+        error?.message ??
+          t("login.signInErrorMessage", {
+            defaultValue: "Please check your details and try again.",
+          }),
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCreateAccount = async () => {
+    try {
+      setLoading(true);
+
+      const response = await register(fullName, email, password);
+
+      if (response.finish_profile_prompt) {
+        setShowRegistrationModal(true);
       } else {
         router.replace("/map");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+
+      // The backend returns which fields failed (e.g. "password" for a
+      // too-short password) — surfacing that is more actionable than the
+      // generic "Validation failed." alone.
+      const problemFields = [
+        ...(error?.body?.missing_fields ?? []),
+        ...(error?.body?.invalid_fields ?? []),
+      ];
+
+      const message = problemFields.length
+        ? `${error.message} (${problemFields.join(", ")})`
+        : (error?.message ??
+          t("login.registerErrorMessage", {
+            defaultValue: "Please check your details and try again.",
+          }));
+
+      Alert.alert(
+        t("login.registerErrorTitle", {
+          defaultValue: "Couldn't create account",
+        }),
+        message,
+      );
     } finally {
       setLoading(false);
     }
@@ -108,78 +116,53 @@ const [loading, setLoading] =
   return (
     <>
       <SafeAreaView style={styles.container}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => router.back()}
+        >
+          <Ionicons name="chevron-back" size={24} color={Colours.text} />
+        </TouchableOpacity>
+
         <ScrollView
-          contentContainerStyle={
-            styles.content
-          }
-          showsVerticalScrollIndicator={
-            false
-          }
+          contentContainerStyle={styles.content}
+          showsVerticalScrollIndicator={false}
         >
           <View style={styles.card}>
             {!isRegisterMode ? (
               <>
-                <Text style={styles.title}>
-  {t("login.welcomeBack")}
-</Text>
+                <Text style={styles.title}>{t("login.welcomeBack")}</Text>
 
-                <Text style={styles.subtitle}>
-  {t("login.signInSubtitle")}
-</Text>
+                <Text style={styles.subtitle}>{t("login.signInSubtitle")}</Text>
 
-                <Text style={styles.label}>
-  {t("profile.email")}
-</Text>
+                <Text style={styles.label}>{t("profile.email")}</Text>
 
                 <TextInput
                   value={email}
                   onChangeText={setEmail}
                   placeholder={t("login.emailPlaceholder")}
-                  placeholderTextColor={
-                    Colours.muted
-                  }
+                  placeholderTextColor={Colours.muted}
                   style={styles.input}
                   keyboardType="email-address"
                   autoCapitalize="none"
                 />
 
-                <Text style={styles.label}>
-  {t("login.password")}
-</Text>
+                <Text style={styles.label}>{t("login.password")}</Text>
 
-                <View
-                  style={
-                    styles.passwordWrapper
-                  }
-                >
+                <View style={styles.passwordWrapper}>
                   <TextInput
                     value={password}
                     onChangeText={setPassword}
                     placeholder={t("login.passwordPlaceholder")}
-                    placeholderTextColor={
-                      Colours.muted
-                    }
-                    secureTextEntry={
-                      !showPassword
-                    }
-                    style={
-                      styles.passwordInput
-                    }
+                    placeholderTextColor={Colours.muted}
+                    secureTextEntry={!showPassword}
+                    style={styles.passwordInput}
                   />
 
                   <TouchableOpacity
-                    onPress={() =>
-                      setShowPassword(
-                        !showPassword
-                      )
-                    }
+                    onPress={() => setShowPassword(!showPassword)}
                   >
                     <Ionicons
-                      name={
-                        showPassword
-                          ? "eye-off-outline"
-                          : "eye-outline"
-                      }
+                      name={showPassword ? "eye-off-outline" : "eye-outline"}
                       size={22}
                       color={Colours.muted}
                     />
@@ -187,239 +170,164 @@ const [loading, setLoading] =
                 </View>
 
                 <TouchableOpacity
-  style={styles.primaryButton}
-  disabled={loading}
-  onPress={handleSignIn}
->
-  <Text style={styles.primaryButtonText}>
-    {loading
-      ? t("common.loading")
-      : t("login.signIn")}
-  </Text>
-</TouchableOpacity>
+                  style={styles.primaryButton}
+                  disabled={loading}
+                  onPress={handleSignIn}
+                >
+                  <Text style={styles.primaryButtonText}>
+                    {loading ? t("common.loading") : t("login.signIn")}
+                  </Text>
+                </TouchableOpacity>
 
                 <TouchableOpacity
                   testID="switch-to-register"
-                  onPress={() =>
-                    setIsRegisterMode(
-                      true
-                    )
-                  }
+                  onPress={() => setIsRegisterMode(true)}
                 >
-                  <Text
-                    style={
-                      styles.switchText
-                    }
-                  >
-                    New here?{" "}
-                    <Text
-                      style={
-                        styles.linkText
-                      }
-                    >
-                      Create an account
+                  <Text style={styles.switchText}>
+                    {t("login.newHere", { defaultValue: "New here?" })}{" "}
+                    <Text style={styles.linkText}>
+                      {t("login.createAccountLink", {
+                        defaultValue: "Create an account",
+                      })}
                     </Text>
                   </Text>
                 </TouchableOpacity>
               </>
             ) : (
               <>
-                <Text style={styles.title}>
-  {t("login.getStarted")}
-</Text>
+                <Text style={styles.title}>{t("login.getStarted")}</Text>
 
                 <Text style={styles.subtitle}>
-  {t("login.registerSubtitle")}
-</Text>
+                  {t("login.registerSubtitle")}
+                </Text>
 
-                <Text style={styles.label}>
-  {t("profile.fullName")}
-</Text>
+                <Text style={styles.label}>{t("profile.fullName")}</Text>
 
                 <TextInput
                   value={fullName}
                   onChangeText={setFullName}
                   placeholder={t("login.fullNamePlaceholder")}
-                  placeholderTextColor={
-                    Colours.muted
-                  }
+                  placeholderTextColor={Colours.muted}
                   style={styles.input}
                 />
 
-                <Text style={styles.label}>
-  {t("profile.email")}
-</Text>
+                <Text style={styles.label}>{t("profile.email")}</Text>
 
                 <TextInput
                   value={email}
                   onChangeText={setEmail}
                   placeholder={t("login.emailPlaceholder")}
-                  placeholderTextColor={
-                    Colours.muted
-                  }
+                  placeholderTextColor={Colours.muted}
                   style={styles.input}
                   keyboardType="email-address"
                   autoCapitalize="none"
                 />
 
-                <Text style={styles.label}>
-  {t("login.createPassword")}
-</Text>
+                <Text style={styles.label}>{t("login.createPassword")}</Text>
 
-                <View
-                  style={
-                    styles.passwordWrapper
-                  }
-                >
+                <View style={styles.passwordWrapper}>
                   <TextInput
                     value={password}
                     onChangeText={setPassword}
                     placeholder={t("login.passwordRequirements")}
-                    placeholderTextColor={
-                      Colours.muted
-                    }
-                    secureTextEntry={
-                      !showPassword
-                    }
-                    style={
-                      styles.passwordInput
-                    }
+                    placeholderTextColor={Colours.muted}
+                    secureTextEntry={!showPassword}
+                    style={styles.passwordInput}
                   />
 
                   <TouchableOpacity
-                    onPress={() =>
-                      setShowPassword(
-                        !showPassword
-                      )
-                    }
+                    onPress={() => setShowPassword(!showPassword)}
                   >
                     <Ionicons
-                      name={
-                        showPassword
-                          ? "eye-off-outline"
-                          : "eye-outline"
-                      }
+                      name={showPassword ? "eye-off-outline" : "eye-outline"}
                       size={22}
                       color={Colours.muted}
                     />
                   </TouchableOpacity>
                 </View>
 
-                <View
-                  style={
-                    styles.checkboxRow
-                  }
-                >
+                <View style={styles.checkboxRow}>
                   <Switch
                     testID="terms-switch"
                     value={agreed}
-                    onValueChange={
-                      setAgreed
-                    }
+                    onValueChange={setAgreed}
                     trackColor={{
-                      false:
-                        Colours.border,
-                      true:
-                        Colours.primary,
+                      false: Colours.border,
+                      true: Colours.primary,
                     }}
                   />
 
                   <Text style={styles.checkboxText}>
-  {t("login.agreeTerms")}
-</Text>
+                    {t("login.agreeTerms")}
+                  </Text>
                 </View>
 
                 <TouchableOpacity
-  testID="create-account-button"
-  style={[
-    styles.primaryButton,
-    (!agreed || loading) &&
-      styles.disabledButton,
-  ]}
-  disabled={!agreed || loading}
-  onPress={handleCreateAccount}
->
-  <Text style={styles.primaryButtonText}>
-    {loading
-      ? t("common.loading")
-      : t("login.createAccount")}
-  </Text>
-</TouchableOpacity>
+                  testID="create-account-button"
+                  style={[
+                    styles.primaryButton,
+                    (!agreed || loading) && styles.disabledButton,
+                  ]}
+                  disabled={!agreed || loading}
+                  onPress={handleCreateAccount}
+                >
+                  <Text style={styles.primaryButtonText}>
+                    {loading ? t("common.loading") : t("login.createAccount")}
+                  </Text>
+                </TouchableOpacity>
 
                 <TouchableOpacity
                   testID="switch-to-signin"
-                  onPress={() =>
-                    setIsRegisterMode(
-                      false
-                    )
-                  }
+                  onPress={() => setIsRegisterMode(false)}
                 >
                   <Text style={styles.switchText}>
-  {t("login.alreadyHaveAccount")}{" "}
-  <Text style={styles.linkText}>
-    {t("login.signIn")}
-  </Text>
-</Text>
+                    {t("login.alreadyHaveAccount")}{" "}
+                    <Text style={styles.linkText}>{t("login.signIn")}</Text>
+                  </Text>
                 </TouchableOpacity>
               </>
             )}
           </View>
 
           <View style={styles.footer}>
-            <Ionicons
-              name="lock-closed"
-              size={14}
-              color={Colours.muted}
-            />
+            <Ionicons name="lock-closed" size={14} color={Colours.muted} />
 
-           <Text style={styles.footerText}>
-  {t("login.encryption")}
-</Text>
+            <Text style={styles.footerText}>{t("login.encryption")}</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
 
-      <Modal
-        visible={showRegistrationModal}
-        transparent
-        animationType="fade"
-      >
+      <Modal visible={showRegistrationModal} transparent animationType="fade">
         <View style={styles.modalOverlay}>
           <View style={styles.modalCard}>
             <View style={styles.sheetHandle} />
 
-           <Text style={styles.modalTitle}>
-  {t("login.finishProfileTitle")}
-</Text>
+            <Text style={styles.modalTitle}>
+              {t("login.finishProfileTitle")}
+            </Text>
 
             <Text style={styles.modalDescription}>
-  {t("login.finishProfileDescription")}
-</Text>
+              {t("login.finishProfileDescription")}
+            </Text>
 
             <TouchableOpacity
               testID="finish-profile-button"
-              style={
-                styles.modalPrimaryButton
-              }
-              onPress={
-                handleFinishProfile
-              }
+              style={styles.modalPrimaryButton}
+              onPress={handleFinishProfile}
             >
               <Text style={styles.primaryButtonText}>
-  {t("login.finishProfile")}
-</Text>
+                {t("login.finishProfile")}
+              </Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               testID="skip-for-now-button"
-              style={
-                styles.modalSecondaryButton
-              }
+              style={styles.modalSecondaryButton}
               onPress={handleSkipForNow}
             >
               <Text style={styles.secondaryButtonText}>
-  {t("login.skipForNow")}
-</Text>
+                {t("login.skipForNow")}
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -432,6 +340,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colours.background,
+  },
+
+  backButton: {
+    position: "absolute",
+    top: 16,
+    left: 16,
+    zIndex: 10,
+    padding: 8,
   },
 
   content: {
@@ -564,8 +480,7 @@ const styles = StyleSheet.create({
 
   modalOverlay: {
     flex: 1,
-    backgroundColor:
-      "rgba(0,0,0,0.3)",
+    backgroundColor: "rgba(0,0,0,0.3)",
     justifyContent: "flex-end",
   },
 
@@ -582,7 +497,7 @@ const styles = StyleSheet.create({
     ...Typography.h3,
     color: Colours.text,
     textAlign: "center",
-     alignSelf: "center",
+    alignSelf: "center",
     marginBottom: 12,
     maxWidth: 320,
   },
@@ -595,31 +510,31 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
 
-modalPrimaryButton: {
-  width: "100%",
-  backgroundColor: Colours.primary,
-  borderRadius: 999,
-  paddingVertical: 18,
-  marginBottom: 12,
-  alignSelf: "center",
-},
+  modalPrimaryButton: {
+    width: "100%",
+    backgroundColor: Colours.primary,
+    borderRadius: 999,
+    paddingVertical: 18,
+    marginBottom: 12,
+    alignSelf: "center",
+  },
 
-modalSecondaryButton: {
-  width: "100%",
-  borderWidth: 1,
-  borderColor: Colours.border,
-  borderRadius: 999,
-  paddingVertical: 18,
-  backgroundColor: Colours.surface,
-  alignSelf: "center",
-},
+  modalSecondaryButton: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: Colours.border,
+    borderRadius: 999,
+    paddingVertical: 18,
+    backgroundColor: Colours.surface,
+    alignSelf: "center",
+  },
 
-sheetHandle: {
-  width: 40,
-  height: 5,
-  borderRadius: 999,
-  backgroundColor: Colours.border,
-  alignSelf: "center",
-  marginBottom: 20,
-},
+  sheetHandle: {
+    width: 40,
+    height: 5,
+    borderRadius: 999,
+    backgroundColor: Colours.border,
+    alignSelf: "center",
+    marginBottom: 20,
+  },
 });

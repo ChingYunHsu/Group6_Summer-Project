@@ -7,11 +7,13 @@ import ReportCallout from "./ReportCallout";
 
 interface Props {
   report: Report;
+  onConfirm?: (reportId: string) => void;
+  onResolve?: (reportId: string) => void;
 }
 
-function formatReportedTime(createdAt: string) {
+export function formatReportedTime(createdAt: string) {
   const minutes = Math.floor(
-    (Date.now() - new Date(createdAt).getTime()) / 60000
+    (Date.now() - new Date(createdAt).getTime()) / 60000,
   );
 
   if (minutes < 60) {
@@ -22,9 +24,7 @@ function formatReportedTime(createdAt: string) {
   return `${hours} hr${hours === 1 ? "" : "s"} ago`;
 }
 
-export default function ReportMarker({
-  report,
-}: Props) {
+export default function ReportMarker({ report, onConfirm, onResolve }: Props) {
   if (report.status !== "active") {
     return null;
   }
@@ -36,20 +36,15 @@ export default function ReportMarker({
         longitude: report.longitude,
       }}
     >
-      <Ionicons
-        name="warning"
-        size={36}
-        color="#FACC15"
-        style={styles.icon}
-      />
+      <Ionicons name="warning" size={36} color="#FACC15" style={styles.icon} />
 
       <Callout tooltip>
         <ReportCallout
-          issue={report.issue_type}
+          issue={report.issue_type_label ?? report.issue_type}
           reportedAt={formatReportedTime(report.created_at)}
           confirmations={report.confirmations.count}
-          onConfirm={() => console.log("Confirm report")}
-          onResolve={() => console.log("Resolve report")}
+          onConfirm={() => onConfirm?.(report.report_id)}
+          onResolve={() => onResolve?.(report.report_id)}
         />
       </Callout>
     </Marker>
