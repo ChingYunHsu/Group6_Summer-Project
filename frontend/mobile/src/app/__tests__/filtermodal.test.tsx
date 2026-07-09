@@ -54,8 +54,9 @@ describe("FilterModal", () => {
     const toggle = screen.getByTestId("auto-current-time-switch");
 
     fireEvent(toggle, "valueChange", true);
+    screen.debug();
 
-    expect(screen.getByText("Live Status")).toBeTruthy();
+    await screen.findByText("Live Status");
 
     expect(screen.queryByTestId("date-selector")).toBeNull();
 
@@ -72,6 +73,8 @@ describe("FilterModal", () => {
     const toggle = screen.getByTestId("auto-current-time-switch");
 
     fireEvent(toggle, "valueChange", false);
+
+    await screen.findByTestId("date-selector");
 
     expect(screen.queryByText("Live Status")).toBeNull();
 
@@ -132,6 +135,8 @@ describe("FilterModal", () => {
     const toggle = screen.getByTestId("auto-current-time-switch");
 
     fireEvent(toggle, "valueChange", false);
+
+    await screen.findByTestId("date-selector");
 
     fireEvent.press(screen.getByTestId("apply-filters-button"));
 

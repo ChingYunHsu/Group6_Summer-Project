@@ -122,9 +122,10 @@ export default function FilterModal({
             <Switch
               testID="auto-current-time-switch"
               value={autoCurrentTime}
-              onValueChange={setAutoCurrentTime}
-              trackColor={{ false: "#D1D5DB", true: Colours.primary }}
-              thumbColor="#FFFFFF"
+              onValueChange={(value) => {
+                console.log("Switch changed:", value);
+                setAutoCurrentTime(value);
+              }}
             />
           </View>
 
