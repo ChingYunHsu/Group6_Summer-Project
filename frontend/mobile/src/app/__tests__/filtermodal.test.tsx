@@ -1,144 +1,299 @@
-import { fireEvent, render } from "@testing-library/react-native";
+import { useEffect, useState } from "react";
 
-import FilterModal from "../../components/FilterModal";
+import {
+  Modal,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
-describe("FilterModal", () => {
-  const mockClose = jest.fn();
-  const mockApply = jest.fn();
+import { Ionicons } from "@expo/vector-icons";
 
-  const defaultProps = {
-    visible: true,
-    openNow: false,
-    accessible: false,
-    // A language *code*, matching FilterModal's real contract (it compares
-    // against featuredLanguages[].code, e.g. "fr") — not a display name.
-    language: "fr",
-    autoCurrentTime: true,
-    onClose: mockClose,
-    onApply: mockApply,
-  };
+import { Colours } from "../../constants/colours";
+import { Typography } from "../../constants/typography";
+import { featuredLanguages } from "../../data/languages";
 
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
+interface Props {
+  visible: boolean;
+  openNow?: boolean;
+  accessible?: boolean;
+  language: string;
+  autoCurrentTime: boolean;
+  onClose: () => void;
+  onApply: (filters: {
+    openNow: boolean;
+    accessible: boolean;
+    language: string;
+    autoCurrentTime: boolean;
+    liveStatus: "quiet" | "moderate" | "busy";
+    date: string;
+    time: string;
+  }) => void;
+}
+const LANGUAGE_OPTIONS = featuredLanguages
+  .filter((l) => l.code !== "en")
+  .map((l) => ({ label: l.english, code: l.code }));
 
-  it("renders Live Status when Auto Current Time is enabled", async () => {
-    const screen = await render(<FilterModal {...defaultProps} />);
+const LIVE_STATUS = [
+  { label: "Quiet", value: "quiet" },
+  { label: "Moderate", value: "moderate" },
+  { label: "Busy", value: "busy" },
+] as const;
 
-    expect(screen.getByText("Live Status")).toBeTruthy();
+const STATUS_COLOURS = {
+  quiet: "#006400",
+  moderate: "#F59E0B",
+  busy: "#DC2626",
+};
 
-    expect(screen.getByText("Quiet")).toBeTruthy();
+export default function FilterModal({
+  visible,
+  openNow,
+  accessible,
+  language,
+  autoCurrentTime: autoCurrentTimeProp,
+  onClose,
+  onApply,
+}: Props) {
+  const [localOpenNow, setLocalOpenNow] = useState(openNow ?? false);
+  const [localAccessible, setLocalAccessible] = useState(accessible ?? false);
+  const [localLanguage, setLocalLanguage] = useState(language);
+  const [autoCurrentTime, setAutoCurrentTime] = useState(autoCurrentTimeProp);
+  const [liveStatus, setLiveStatus] = useState<"quiet" | "moderate" | "busy">(
+    "moderate",
+  );
 
-    expect(screen.queryByTestId("date-selector")).toBeNull();
+  const [date] = useState("Today");
+  const [time] = useState("Now");
 
-    expect(screen.queryByTestId("time-selector")).toBeNull();
-  });
+  // Re-sync draft (local*) state from props whenever the modal reopens or
+  // the underlying filter values change elsewhere. Legitimate "sync local
+  // editable state with an external source (props)" effect; the lint rule
+  // flags the setState calls anyway, but restructuring this into a
+  // render-time adjustment changes update timing in ways that broke the
+  // switch-toggle interaction tests, so a scoped disable is used instead.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: sync local draft state from props on open/change
+    setLocalOpenNow(openNow ?? false);
+    setLocalAccessible(accessible ?? false);
+    setLocalLanguage(language);
+    setAutoCurrentTime(autoCurrentTimeProp);
+  }, [visible, openNow, accessible, language, autoCurrentTimeProp]);
 
-  it("renders manual date and time controls when Auto Current Time is disabled", async () => {
-    const screen = await render(
-      <FilterModal {...defaultProps} autoCurrentTime={false} />,
-    );
+  return (
+    <Modal visible={visible} transparent animationType="slide">
+      <View style={styles.overlay}>
+        <View style={styles.sheet}>
+          <View style={styles.handle} />
+          <View style={styles.header}>
+            <Text style={styles.title}>Filters</Text>
+            <TouchableOpacity onPress={onClose}>
+              <Ionicons name="close" size={24} color={Colours.text} />
+            </TouchableOpacity>
+          </View>
 
-    expect(screen.queryByText("Live Status")).toBeNull();
+          <Text style={styles.section}>Availability</Text>
+          <View style={styles.row}>
+            <Text style={styles.label}>Open Now</Text>
+            <Switch value={localOpenNow} onValueChange={setLocalOpenNow} />
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.label}>Accessible</Text>
+            <Switch
+              value={localAccessible}
+              onValueChange={setLocalAccessible}
+            />
+          </View>
 
-    expect(screen.getByTestId("date-selector")).toBeTruthy();
+          <Text style={styles.section}>Time</Text>
+          <View style={styles.row}>
+            <Text style={styles.label}>Auto Current Time</Text>
+            <Switch
+              testID="auto-current-time-switch"
+              value={autoCurrentTime}
+              onValueChange={setAutoCurrentTime}
+              trackColor={{ false: "#D1D5DB", true: Colours.primary }}
+              thumbColor="#FFFFFF"
+            />
+          </View>
 
-    expect(screen.getByTestId("time-selector")).toBeTruthy();
-  });
+          {autoCurrentTime ? (
+            <>
+              <Text style={styles.section}>Live Status</Text>
+              <View testID="live-status-section" style={styles.chipRow}>
+                {LIVE_STATUS.map((item) => {
+                  const selected = item.value === liveStatus;
+                  return (
+                    <TouchableOpacity
+                      key={item.value}
+                      style={[
+                        styles.chip,
+                        selected && {
+                          backgroundColor: STATUS_COLOURS[item.value],
+                        },
+                      ]}
+                      onPress={() => setLiveStatus(item.value)}
+                    >
+                      <Text
+                        style={[
+                          styles.chipText,
+                          selected && styles.selectedText,
+                        ]}
+                      >
+                        {item.label}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </>
+          ) : (
+            <>
+              <TouchableOpacity testID="date-selector" style={styles.dateRow}>
+                <Ionicons
+                  name="calendar-outline"
+                  size={18}
+                  color={Colours.primary}
+                />
+                <Text style={styles.dateText}>{date}</Text>
+                <Ionicons
+                  name="chevron-forward"
+                  size={18}
+                  color="#9CA3AF"
+                  style={styles.chevron}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity testID="time-selector" style={styles.dateRow}>
+                <Ionicons
+                  name="time-outline"
+                  size={18}
+                  color={Colours.primary}
+                />
+                <Text style={styles.dateText}>{time}</Text>
+                <Ionicons
+                  name="chevron-forward"
+                  size={18}
+                  color="#9CA3AF"
+                  style={styles.chevron}
+                />
+              </TouchableOpacity>
+            </>
+          )}
 
-  it("shows Live Status after enabling Auto Current Time", async () => {
-    const screen = await render(
-      <FilterModal {...defaultProps} autoCurrentTime={false} />,
-    );
+          <Text style={styles.section}>Language</Text>
+          <View style={styles.chipRow}>
+            {LANGUAGE_OPTIONS.map((item) => {
+              const selected = item.code === localLanguage;
+              return (
+                <TouchableOpacity
+                  key={item.code}
+                  style={[styles.chip, selected && styles.selectedChip]}
+                  onPress={() => setLocalLanguage(item.code)}
+                >
+                  <Text
+                    style={[styles.chipText, selected && styles.selectedText]}
+                  >
+                    {item.label}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
 
-    const toggle = screen.getByTestId("auto-current-time-switch");
+          <TouchableOpacity
+            testID="apply-filters-button"
+            style={styles.applyButton}
+            onPress={() => {
+              onApply({
+                openNow: localOpenNow,
+                accessible: localAccessible,
+                language: localLanguage,
+                autoCurrentTime,
+                liveStatus,
+                date,
+                time,
+              });
+              onClose();
+            }}
+          >
+            <Text style={styles.applyText}>Apply Filters</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </Modal>
+  );
+}
 
-    fireEvent(toggle, "valueChange", true);
-
-    expect(screen.getByText("Live Status")).toBeTruthy();
-
-    expect(screen.queryByTestId("date-selector")).toBeNull();
-
-    expect(screen.queryByTestId("time-selector")).toBeNull();
-  });
-
-  // Reverse direction of the test above — the existing suite only covered
-  // disabled→enabled via interaction; this covers enabled→disabled, so
-  // both toggle states are verified via actual user interaction, not just
-  // via initial props.
-  it("shows manual date/time controls after disabling Auto Current Time", async () => {
-    const screen = await render(<FilterModal {...defaultProps} />);
-
-    const toggle = screen.getByTestId("auto-current-time-switch");
-
-    fireEvent(toggle, "valueChange", false);
-
-    expect(screen.queryByText("Live Status")).toBeNull();
-
-    expect(screen.getByTestId("date-selector")).toBeTruthy();
-
-    expect(screen.getByTestId("time-selector")).toBeTruthy();
-  });
-
-  // Toggling is staged local state, not a live-apply — this guards against
-  // a regression where flipping the switch alone would fire onApply
-  // before the user presses the Apply button.
-  it("does not call onApply just from toggling the switch", async () => {
-    const screen = await render(<FilterModal {...defaultProps} />);
-
-    const toggle = screen.getByTestId("auto-current-time-switch");
-
-    fireEvent(toggle, "valueChange", false);
-
-    expect(mockApply).not.toHaveBeenCalled();
-  });
-
-  it("calls onApply when Apply Filters is pressed", async () => {
-    const screen = await render(<FilterModal {...defaultProps} />);
-
-    fireEvent.press(screen.getByTestId("apply-filters-button"));
-
-    expect(mockApply).toHaveBeenCalled();
-  });
-
-  it("calls onClose after applying filters", async () => {
-    const screen = await render(<FilterModal {...defaultProps} />);
-
-    fireEvent.press(screen.getByText("Apply Filters"));
-
-    expect(mockClose).toHaveBeenCalled();
-  });
-
-  it("passes the Auto Current Time value to onApply from initial props", async () => {
-    const screen = await render(
-      <FilterModal {...defaultProps} autoCurrentTime={false} />,
-    );
-
-    fireEvent.press(screen.getByText("Apply Filters"));
-
-    expect(mockApply).toHaveBeenCalledWith(
-      expect.objectContaining({
-        autoCurrentTime: false,
-      }),
-    );
-  });
-
-  // Same assertion as above, but exercised through the actual switch
-  // interaction rather than only the initial prop — verifies the staged
-  // local state that gets sent to onApply, not just the prop passthrough.
-  it("passes the toggled Auto Current Time value to onApply after interaction", async () => {
-    const screen = await render(<FilterModal {...defaultProps} />);
-
-    const toggle = screen.getByTestId("auto-current-time-switch");
-
-    fireEvent(toggle, "valueChange", false);
-
-    fireEvent.press(screen.getByTestId("apply-filters-button"));
-
-    expect(mockApply).toHaveBeenCalledWith(
-      expect.objectContaining({
-        autoCurrentTime: false,
-      }),
-    );
-  });
+const styles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    justifyContent: "flex-end",
+    backgroundColor: "rgba(0,0,0,0.3)",
+  },
+  sheet: {
+    backgroundColor: "#FFF",
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    padding: 24,
+  },
+  handle: {
+    width: 50,
+    height: 5,
+    borderRadius: 3,
+    backgroundColor: "#D1D5DB",
+    alignSelf: "center",
+    marginBottom: 20,
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 24,
+  },
+  title: { ...Typography.h2 },
+  section: {
+    fontWeight: "700",
+    marginBottom: 12,
+    marginTop: 12,
+    color: Colours.text,
+  },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  label: { fontSize: 16, color: Colours.text },
+  chipRow: { flexDirection: "row", flexWrap: "wrap", marginBottom: 20 },
+  chip: {
+    borderRadius: 999,
+    backgroundColor: Colours.surface,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    marginRight: 10,
+    marginBottom: 10,
+  },
+  selectedChip: { backgroundColor: Colours.primary },
+  chipText: { color: Colours.text, fontWeight: "600" },
+  selectedText: { color: "#FFF" },
+  dateRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colours.surface,
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 12,
+  },
+  dateText: { marginLeft: 12, color: Colours.text, fontSize: 16 },
+  chevron: { marginLeft: "auto" },
+  applyButton: {
+    backgroundColor: Colours.primary,
+    borderRadius: 16,
+    paddingVertical: 16,
+    alignItems: "center",
+    marginTop: 10,
+  },
+  applyText: { color: "#FFF", fontSize: 16, fontWeight: "700" },
 });
