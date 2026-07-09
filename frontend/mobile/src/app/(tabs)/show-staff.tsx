@@ -226,6 +226,7 @@ export default function ShowStaffScreen() {
   useEffect(() => {
     if (!trimmedInput) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: marks the debounced translation as starting
     setIsTranslating(true);
     setTranslationFailed(false);
 

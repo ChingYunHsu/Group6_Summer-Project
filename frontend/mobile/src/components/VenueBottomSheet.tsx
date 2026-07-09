@@ -139,7 +139,7 @@ export default function VenueBottomSheet({
                   </>
                 ) : (
                   <Text style={styles.prediction}>
-                    Live forecast isn't available for this venue yet.
+                    Live forecast isn&apos;t available for this venue yet.
                   </Text>
                 )
               ) : (

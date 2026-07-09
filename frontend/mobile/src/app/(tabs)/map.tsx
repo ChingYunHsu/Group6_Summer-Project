@@ -268,10 +268,15 @@ export default function MapScreen() {
     [isAuthenticated],
   );
 
-  // Fetch-on-filter-change. setLoading(true) inside loadData is the fetch
-  // start signal, not state derived synchronously from props, so this is
-  // the standard "synchronize with an external system" effect use case.
+  // Fetch-on-filter-change. This is the standard "synchronize with an
+  // external system" effect use case (re-fetch venues/reports whenever the
+  // active filters change) — exactly what useEffect is for. The lint rule
+  // flags it anyway because loadData sets loading state before its first
+  // await; that's the correct/expected shape for a fetch-triggered loading
+  // indicator, not an anti-pattern, so it's disabled here rather than
+  // restructured.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional fetch-on-dependency-change
     loadData();
   }, [loadData]);
 
