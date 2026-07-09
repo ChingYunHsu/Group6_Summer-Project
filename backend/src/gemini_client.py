@@ -14,8 +14,15 @@ import requests
 from flask import current_app
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
-EMBEDDING_MODEL = "models/text-embedding-004"
-GENERATION_MODEL = "models/gemini-1.5-flash"
+# text-embedding-004 and gemini-1.5-flash have both been retired (404 on
+# the real API despite existing API key allowances). gemini-embedding-001
+# is the only stable (non-preview) embedding model that still supports
+# embedContent; gemini-2.5-flash is a stable, non-preview generateContent
+# model at roughly the same tier/speed as the old 1.5-flash. Pinned to a
+# dated version rather than gemini-flash-latest so behavior doesn't
+# silently shift under a codebase multiple people rely on.
+EMBEDDING_MODEL = "models/gemini-embedding-001"
+GENERATION_MODEL = "models/gemini-2.5-flash"
 REQUEST_TIMEOUT_SECONDS = 8
 
 
