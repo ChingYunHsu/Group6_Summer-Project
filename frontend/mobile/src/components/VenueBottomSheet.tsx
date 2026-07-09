@@ -22,7 +22,7 @@ interface Props {
   onResolveReport?: (reportId: string) => void;
   // Favourite status is deliberately not read off venue.is_favourite —
   // that field is mock-only (see the Venue type comment) and DB-backed
-  // venues don't reliably carry it. map.tsx owns the real favourites list
+  // venues dont reliably carry it. map.tsx owns the real favourites list
   // separately and passes the resolved status down.
   isFavourite?: boolean;
   onToggleFavourite?: () => void;

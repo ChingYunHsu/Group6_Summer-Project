@@ -154,8 +154,9 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const userMessageId = `${Date.now()}-user`;
-    const typingId = `${Date.now()}-typing`;
+    const id = crypto.randomUUID();
+    const userMessageId = `${id}-user`;
+    const typingId = `${id}-typing`;
 
     setMessages((prev) => [
       ...prev,

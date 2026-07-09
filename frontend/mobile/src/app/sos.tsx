@@ -21,19 +21,6 @@ export default function SOSScreen() {
 
   const { t } = useTranslation();
 
-  useEffect(() => {
-    if (countdown === 0) {
-      handleCallEmergency();
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setCountdown((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [countdown]);
-
   const handleCallEmergency = async () => {
     const phoneNumber = "911";
     const url = `tel:${phoneNumber}`;
@@ -48,6 +35,19 @@ export default function SOSScreen() {
 
     await Linking.openURL(url);
   };
+
+  useEffect(() => {
+    if (countdown === 0) {
+      handleCallEmergency();
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setCountdown((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [countdown]);
 
   const handleCancel = () => {
     router.back();
