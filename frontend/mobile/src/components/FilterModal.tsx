@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Modal,
@@ -98,25 +98,23 @@ export default function FilterModal({
 
   const [time] = useState("Now");
 
-  // Re-sync the draft (local*) state from props whenever the modal
-  // transitions to visible — e.g. if the user reopens Filters after
-  // applying different values elsewhere, or the parent resets filters.
-  // Done as a render-time state adjustment (React's recommended pattern
-  // for "reset state when a prop changes") rather than a useEffect, so it
-  // doesn't fire an extra render/commit and isn't flagged by
-  // react-hooks/set-state-in-effect.
-  const [prevVisible, setPrevVisible] = useState(visible);
+  // Re-sync draft (local*) state from props whenever the modal reopens or
+  // the underlying filter values change elsewhere. This is a legitimate
+  // "synchronize local editable state with an external source (props)"
+  // effect; the lint rule flags the setState calls anyway, but
+  // restructuring this into a render-time adjustment changes update
+  // timing in ways that broke the switch-toggle interaction tests, so a
+  // scoped disable is used here instead.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: sync local draft state from props on open/change
+    setLocalOpenNow(openNow ?? false);
 
-  if (visible !== prevVisible) {
-    setPrevVisible(visible);
+    setLocalAccessible(accessible ?? false);
 
-    if (visible) {
-      setLocalOpenNow(openNow ?? false);
-      setLocalAccessible(accessible ?? false);
-      setLocalLanguage(language);
-      setAutoCurrentTime(autoCurrentTimeProp);
-    }
-  }
+    setLocalLanguage(language);
+
+    setAutoCurrentTime(autoCurrentTimeProp);
+  }, [visible, openNow, accessible, language, autoCurrentTimeProp]);
 
   return (
     <Modal visible={visible} transparent animationType="slide">

@@ -100,9 +100,8 @@ export default function MapScreen() {
 
   const [autoCurrentTime, setAutoCurrentTime] = useState(true);
 
-  // Retained for FilterModal's onApply payload — no longer read directly
-  // in this file's render path, but still part of the filter state we
-  // pass down/receive back.
+  // Retained for FilterModal's onApply payload — not read directly in this
+  // file's render path, but still part of the filter state passed down.
   const [, setLiveStatus] = useState<"quiet" | "moderate" | "busy">("moderate");
 
   const [routeOptionsVisible, setRouteOptionsVisible] = useState(false);

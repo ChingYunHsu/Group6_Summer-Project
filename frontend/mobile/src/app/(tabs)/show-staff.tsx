@@ -212,17 +212,16 @@ export default function ShowStaffScreen() {
   };
 
   // The trimmed value is what actually drives the debounce/translate
-  // effect below. Computing it here (render time) rather than inside the
-  // effect means the "nothing to translate" case can be handled by simply
-  // not touching state in the effect at all — the empty-input display
-  // state is derived below instead of being set imperatively.
+  // effect below. Computing it here (render time) means the "nothing to
+  // translate" case can be handled by the derived `displayed*` values
+  // below, rather than by resetting state imperatively in the effect.
   const trimmedInput = translationInput.trim();
 
   // Debounced so we don't fire a request on every keystroke — waits for a
-  // pause in typing before translating. Only runs (and only ever calls
-  // setState) when there's actually something to translate; the "cleared
-  // input" case is handled by the derived `displayed*` values below rather
-  // than by resetting state here.
+  // pause in typing before translating. This is a legitimate "synchronize
+  // with an external/async process" effect; the lint rule flags the
+  // setIsTranslating(true) call anyway since it's synchronous at the top
+  // of the effect, so it's disabled here rather than restructured further.
   useEffect(() => {
     if (!trimmedInput) return;
 
