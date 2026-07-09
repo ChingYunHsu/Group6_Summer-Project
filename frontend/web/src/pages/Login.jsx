@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import loginPeopleImage from "../assets/login-people.jpg";
 import "./Login.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000";
+
 
 function Login({ setUserLocation }) {
   const navigate = useNavigate();
@@ -41,7 +44,7 @@ function Login({ setUserLocation }) {
   }
 
   async function handleRegisterSubmit(e) {
-    e.preventDefault();
+   e.preventDefault();
 
     if (!registerForm.fullName || !registerForm.email || !registerForm.password) {
       alert("Please complete all registration fields.");
@@ -54,7 +57,7 @@ function Login({ setUserLocation }) {
     }
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/v1/auth/register`, {
+      const res = await fetch("/api/v1/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -71,7 +74,11 @@ function Login({ setUserLocation }) {
       }
 
       const data = await res.json();
+
       localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("refresh_token", data.refresh_token);
+      localStorage.setItem("user_id", data.user_id);
+      localStorage.setItem("token_type", data.token_type);
 
       setShowProfileIntercept(true);
     } catch (err) {
@@ -82,7 +89,7 @@ function Login({ setUserLocation }) {
 
   async function handleGuestContinue() {
     try {
-      const res = await fetch(`${API_BASE_URL}/api/v1/auth/guest`, {
+      const res = await fetch("/api/v1/auth/guest", {
         method: "POST",
       });
 
@@ -92,9 +99,13 @@ function Login({ setUserLocation }) {
       }
 
       const data = await res.json();
-      localStorage.setItem("access_token", data.access_token);
 
-      openLocationModal();
+      localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("refresh_token", data.refresh_token);
+      localStorage.setItem("user_id", data.user_id);
+      localStorage.setItem("token_type", data.token_type);
+
+     openLocationModal();
     } catch (err) {
       console.error("Guest session request failed:", err);
       alert("Could not reach the server. Is the backend running?");
@@ -157,7 +168,9 @@ function Login({ setUserLocation }) {
 
   return (
     <main className="login-page">
-      <section className="login-brand-panel">
+      <section 
+        className="login-brand-panel"
+        style={{ backgroundImage: `url(${loginPeopleImage})` }}>
         <div className="brand-content">
           <h1>ClearPath</h1>
           <div className="brand-line"></div>

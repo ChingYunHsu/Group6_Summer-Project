@@ -1,5 +1,3 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
-
 function getAccessToken() {
   return localStorage.getItem("access_token");
 }
@@ -15,11 +13,10 @@ export async function getMedicalProfile() {
     ? accessToken
     : `Bearer ${accessToken}`;
 
-  const response = await fetch(`${API_BASE_URL}/api/v1/user/medical-profile`, {
+  const response = await fetch("/api/v1/user/medical-profile", {
     method: "GET",
     headers: {
       Authorization: authHeader,
-      "Content-Type": "application/json",
     },
   });
 

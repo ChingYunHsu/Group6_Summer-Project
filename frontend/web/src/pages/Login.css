@@ -21,15 +21,31 @@ input {
 }
 
 .login-brand-panel {
-  background: linear-gradient(135deg, #003bc2, #0047d8);
+  position: relative;
   color: white;
   display: flex;
   align-items: center;
   padding: 80px;
+  overflow: hidden;
+
+  background-image: url("../assets/login-people.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-brand-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 71, 216, 0.78);
+  z-index: 1;
 }
 
 .brand-content {
   max-width: 520px;
+  position: relative;
+  z-index: 2;
 }
 
 .brand-content h1 {

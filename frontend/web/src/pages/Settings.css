@@ -106,6 +106,7 @@ select {
 
 .password-box,
 .export-box,
+.logout-box,
 .location-box {
   margin-top: 18px;
   border: 1px solid #cbd5e1;
@@ -116,6 +117,7 @@ select {
 
 .password-box,
 .export-box,
+.logout-box
 .preference-row,
 .privacy-top-row {
   display: flex;
@@ -125,6 +127,7 @@ select {
 
 .password-box strong,
 .export-box strong,
+.logout-box strong,
 .preference-row strong,
 .location-box strong,
 .legal-box strong {
@@ -134,6 +137,7 @@ select {
 
 .password-box p,
 .export-box p,
+.logout-box p,
 .preference-row p,
 .location-box p {
   margin: 4px 0 0;
@@ -142,6 +146,7 @@ select {
 }
 
 .password-icon,
+.logout-icon,
 .export-icon {
   width: 34px;
   height: 34px;
@@ -152,6 +157,7 @@ select {
 }
 
 .password-box button,
+.logout-box button,
 .export-box button {
   margin-left: auto;
   background: #0047d8;
@@ -317,6 +323,7 @@ select {
   }
 
   .password-box,
+  .logout-box,
   .export-box,
   .preference-row {
     align-items: flex-start;
@@ -324,6 +331,7 @@ select {
   }
 
   .password-box button,
+  .logout-box button,
   .export-box button {
     width: 100%;
     margin-left: 0;
@@ -356,6 +364,22 @@ select {
 
 .toggle.active::after {
   left: 17px;
+}
+
+.logout-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logout-box > div {
+  flex: 1;
+}
+
+.logout-box button {
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 /* Route Planning Dashboard — replaces the search header when
