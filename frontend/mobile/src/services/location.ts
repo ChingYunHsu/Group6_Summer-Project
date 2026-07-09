@@ -7,15 +7,11 @@ export type UserLocation = {
 
 export async function requestLocationPermission(): Promise<boolean> {
   try {
-    const { status } =
-      await Location.requestForegroundPermissionsAsync();
+    const { status } = await Location.requestForegroundPermissionsAsync();
 
     return status === "granted";
   } catch (error) {
-    console.error(
-      "Location permission error:",
-      error
-    );
+    console.error("Location permission error:", error);
 
     return false;
   }
@@ -23,21 +19,16 @@ export async function requestLocationPermission(): Promise<boolean> {
 
 export async function getCurrentLocation(): Promise<UserLocation | null> {
   try {
-    const location =
-      await Location.getCurrentPositionAsync({
-        accuracy:
-          Location.Accuracy.Balanced,
-      });
+    const location = await Location.getCurrentPositionAsync({
+      accuracy: Location.Accuracy.Balanced,
+    });
 
     return {
       latitude: location.coords.latitude,
       longitude: location.coords.longitude,
     };
   } catch (error) {
-    console.error(
-      "Location retrieval error:",
-      error
-    );
+    console.error("Location retrieval error:", error);
 
     return null;
   }
@@ -51,29 +42,22 @@ export function calculateDistance(
   userLat: number,
   userLng: number,
   venueLat: number,
-  venueLng: number
+  venueLng: number,
 ): number {
   const R = 6371;
 
-  const dLat =
-    ((venueLat - userLat) * Math.PI) / 180;
+  const dLat = ((venueLat - userLat) * Math.PI) / 180;
 
-  const dLng =
-    ((venueLng - userLng) * Math.PI) / 180;
+  const dLng = ((venueLng - userLng) * Math.PI) / 180;
 
   const a =
-    Math.sin(dLat / 2) *
-      Math.sin(dLat / 2) +
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos((userLat * Math.PI) / 180) *
       Math.cos((venueLat * Math.PI) / 180) *
       Math.sin(dLng / 2) *
       Math.sin(dLng / 2);
 
-  const c =
-    2 * Math.atan2(
-      Math.sqrt(a),
-      Math.sqrt(1 - a)
-    );
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
   return Number((R * c).toFixed(1));
 }

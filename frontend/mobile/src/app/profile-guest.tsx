@@ -1,11 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { useTranslation } from "react-i18next";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -20,9 +15,11 @@ export default function ProfileGuestScreen() {
       {/* Header */}
 
       <View style={styles.header}>
-        <Text style={styles.logo}>
-          ClearPath
-        </Text>
+        <TouchableOpacity onPress={() => router.back()}>
+          <Ionicons name="chevron-back" size={24} color={Colours.text} />
+        </TouchableOpacity>
+
+        <Text style={styles.logo}>ClearPath</Text>
 
         <Ionicons
           name="person-circle-outline"
@@ -35,38 +32,24 @@ export default function ProfileGuestScreen() {
 
       <View style={styles.content}>
         <View style={styles.iconCircle}>
-          <Ionicons
-            name="lock-closed"
-            size={48}
-            color={Colours.primary}
-          />
+          <Ionicons name="lock-closed" size={48} color={Colours.primary} />
 
           <View style={styles.userBadge}>
-            <Ionicons
-              name="person"
-              size={14}
-              color="#FFFFFF"
-            />
+            <Ionicons name="person" size={14} color="#FFFFFF" />
           </View>
         </View>
 
-        <Text style={styles.title}>
-  {t("profileGuest.title")}
-</Text>
+        <Text style={styles.title}>{t("profileGuest.title")}</Text>
 
-        <Text style={styles.description}>
-  {t("profileGuest.description")}
-</Text>
+        <Text style={styles.description}>{t("profileGuest.description")}</Text>
 
         <TouchableOpacity
           style={styles.loginButton}
-          onPress={() =>
-            router.push("/login")
-          }
+          onPress={() => router.push("/login")}
         >
           <Text style={styles.loginText}>
-  {t("profileGuest.loginRegister")}
-</Text>
+            {t("profileGuest.loginRegister")}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -82,8 +65,7 @@ const styles = StyleSheet.create({
 
   header: {
     flexDirection: "row",
-    justifyContent:
-      "space-between",
+    justifyContent: "space-between",
     alignItems: "center",
     marginTop: 10,
   },
@@ -105,8 +87,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor:
-      Colours.surfaceLight,
+    backgroundColor: Colours.surfaceLight,
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 30,
@@ -119,8 +100,7 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor:
-      Colours.primary,
+    backgroundColor: Colours.primary,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -141,8 +121,7 @@ const styles = StyleSheet.create({
 
   loginButton: {
     width: "100%",
-    backgroundColor:
-      Colours.primary,
+    backgroundColor: Colours.primary,
     borderRadius: 999,
     paddingVertical: 18,
     justifyContent: "center",

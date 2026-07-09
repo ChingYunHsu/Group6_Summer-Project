@@ -6,14 +6,17 @@
     "delete": "Delete",
     "save": "Save",
     "edit": "Edit",
-    "add": "Add"
+    "add": "Add",
+    "loading": "Loading..."
   },
 
   "language": {
     "choose": "Choose your language",
     "search": "Search other languages...",
     "selected": "Selected Language",
-    "footer": "By continuing, you will review our"
+    "footer": "By continuing, you will review our",
+    "comingSoon": "Coming Soon",
+    "comingSoonMessage": "This language will be available in a future version."
   },
 
   "legal": {
@@ -28,15 +31,12 @@
     "privacy": "Privacy Policy",
     "privacyDescription": "Details how we protect and manage your data.",
     "agreePrivacy": "I agree to the Privacy Policy",
-
     "securityNotice": "All sensitive health data is secured with 256-bit HIPAA compliant encryption.",
-
     "acceptContinue": "Accept & Continue",
-
     "termsPreview": "1. Acceptance of Terms\n\nBy accessing this application, you agree to be bound by these Terms of Service.\n\n2. User Responsibilities\n\nYou are responsible for maintaining the confidentiality of your account information.\n\n3. Service Availability\n\nWe strive for 99.9% uptime but do not guarantee uninterrupted access.\n\n4. Modifications\n\nWe reserve the right to modify these terms at any time with prior notice.\n\n5. Account Security\n\nUsers must take reasonable steps to protect login credentials and account access.\n\n6. Limitation of Liability\n\nWe are not liable for losses resulting from misuse of the platform or interruptions outside our control.",
 
     "privacyPreview": "1. Data Collection\n\nWe collect minimal data necessary to provide our services, including location data for nearby clinic mapping.\n\n2. Data Usage\n\nYour data is used strictly for improving service delivery and personalization.\n\n3. Third-Party Sharing\n\nWe never sell your personal data. Data is only shared with authorized medical partners when you request an appointment.\n\n4. Your Rights\n\nYou have the right to access, modify, or delete your data at any time.\n\n5. Data Retention\n\nWe retain only the information required to provide services and comply with legal obligations.\n\n6. Security Measures\n\nAll sensitive medical information is encrypted and protected using industry standard security practices."
-},
+  },
 
   "settings": {
     "title": "Settings",
@@ -53,7 +53,6 @@
     "deleteAccountMessage": "This action cannot be undone."
   },
 
-  
   "authGateway": {
     "title": "Secure Your Medical ID",
     "subtitle": "Log in to save your chronic conditions, allergies, and emergency contacts. Your data syncs securely and remains encrypted.",
@@ -101,18 +100,18 @@
     "finishProfileTitle": "Finish setting up your Medical Profile and ID?",
     "finishProfileDescription": "This helps NYC Emergency Services to assist you better.",
     "finishProfile": "Finish Profile & ID",
-    "skipForNow": "Skip For Now"
+    "skipForNow": "Skip For Now",
+    "loginRequiredTitle": "Login Required",
+    "loginRequiredBody": "To help keep ClearPath data accurate and prevent spam, you must be logged in to submit or verify community reports.",
+    "logInSignUp": "Log In / Sign Up"
   },
 
   "profile": {
     "title": "Profile & Medical ID",
-
     "scanQr": "Scan Web QR Code",
     "scanQrMessage": "Camera integration will be connected later.",
-
     "synced": "Medical information synced",
     "lastUpdated": "Last updated 5 minutes ago",
-
     "userId": "User ID",
     "fullName": "Full Name",
     "email": "Email",
@@ -121,13 +120,11 @@
     "gender": "Gender",
     "nationality": "Nationality",
     "address": "Address",
-
     "medicalId": "Medical ID",
     "bloodType": "Blood Type",
     "languages": "Languages",
     "conditions": "Conditions",
     "allergies": "Allergies",
-
     "savedClinics": "Saved Clinics",
     "savedFacility": "Saved Facility"
   },
@@ -146,7 +143,18 @@
     "pain": "Pain",
     "translationPlaceholder": "Type in the visitor's language...",
     "translationResult": "Translation will appear here after backend integration.",
-    "medicalSummary": "Medical ID Summary"
+    "medicalSummary": "Medical ID Summary",
+    "categories": {
+      "general": "General",
+      "emergency": "Emergency",
+      "allergies": "Allergies",
+      "respiratory": "Respiratory",
+      "pain": "Pain",
+      "injury": "Injury",
+      "cardiac": "Cardiac",
+      "hospital": "Hospital",
+      "pharmacy": "Pharmacy"
+    }
   },
 
   "location": {
@@ -165,7 +173,11 @@
     "unableToRetrieveMessage": "Please ensure GPS is enabled on your device.",
     "enabledMessage": "Location services have been successfully enabled.",
     "error": "Location Error",
-    "errorMessage": "Something went wrong while accessing location services."
+    "errorMessage": "Something went wrong while accessing location services.",
+    "servicesRequiredTitle": "Location Services Required",
+    "servicesRequiredBody": "To submit issue reports or generate a route from your device's location, please enable your device's location services.",
+    "systemSettings": "Go to System Settings",
+    "settingsError": "Unable to open system settings."
   },
 
   "medicalId": {
@@ -177,7 +189,89 @@
     "addAllergy": "Add Allergy",
     "conditionPlaceholder": "Enter condition",
     "allergyPlaceholder": "Enter allergy"
+  },
+  "welcome": {
+    "slogan": "Accessibility Intelligence in your language",
+    "healthcareNavigation": "Healthcare Navigation",
+    "healthcareNavigationDescription": "Easily find hospital departments, clinics and services.",
+    "medicalId": "Medical ID",
+    "medicalIdDescription": "Store important medical information for emergencies.",
+    "aiAssistant": "AI Assistant",
+    "aiAssistantDescription": "Get quick healthcare guidance and support whenever you need it.",
+    "showStaff": "Show Staff",
+    "showStaffDescription": "Use common phrases and live translation to communicate with locals and staff.",
+    "emergencySos": "Emergency SOS",
+    "emergencySosDescription": "Quickly access emergency support when every second counts."
+  },
+  "tabs": {
+    "map": "Map",
+    "hospitalMap": "Hospital Map",
+    "assistant": "Assistant",
+    "clearPathAssistant": "ClearPath Assistant",
+    "showStaff": "Show Staff",
+    "profile": "Profile",
+    "myProfile": "My Profile",
+    "more": "More"
+  },
+  "map": {
+    "searchPlaceholder": "Search clinics or pharmacies..."
+  },
+  "reportModal": {
+    "title": "Report an Issue",
+    "subtitle": "Help keep ClearPath accurate by reporting a temporary accessibility issue.",
+    "whereIsIssue": "Where is the issue?",
+    "selectVenue": "Select Venue",
+    "issueType": "Issue Type",
+    "nearbyVenue": "Nearby Landmark or Venue",
+    "currentLocation": "Drop Pin at Current Location",
+    "nearby": "Nearby",
+    "additionalInformation": "Additional information (optional)",
+    "timestampNotice": "(Reports are always submitted using your current time.)",
+    "submit": "Submit Report",
+    "loginRequired": "Login Required",
+    "loginRequiredMessage": "To help keep ClearPath data accurate, you must be logged in before submitting reports.",
+    "locationRequired": "Location Services Required",
+    "locationRequiredMessage": "Please enable Location Services before submitting a report.",
+    "issueTypes": {
+      "largeCrowd": "Too Crowded",
+      "entranceClosed": "Entrance Blocked",
+      "elevatorBroken": "Elevator Broken",
+      "wheelchairLiftBroken": "Wheelchair Lift Broken",
+      "toiletOutOfOrder": "Toilet Out of Order",
+      "protestOrBlockage": "Protest / Blockage"
+    }
+  },
+  "more": {
+    "languageSelection": "Language Selection",
+    "settings": "Settings",
+    "legal": "Legal",
+    "welcome": "Welcome",
+    "sos": "SOS"
+  },
+  "sos": {
+    "title": "Preparing Emergency Call",
+    "countdown": "Calling in {{seconds}}s",
+    "subtitle": "Your emergency call will begin unless cancelled.",
+
+    "locationTitle": "Current Location",
+    "locationDescription": "Your location is available to share during the emergency call.",
+
+    "medicalIdTitle": "Medical ID Summary",
+
+    "name": "Name",
+    "bloodType": "Blood Type",
+    "conditions": "Conditions",
+    "allergies": "Allergies",
+    "phone": "Phone",
+
+    "notice": "Keep this screen available while speaking with the emergency operator.",
+
+    "cancel": "Cancel Emergency Call",
+
+    "notProvided": "Not provided",
+    "none": "None",
+
+    "callErrorTitle": "Unable to place call",
+    "callErrorMessage": "This device cannot make phone calls."
   }
 }
-
-

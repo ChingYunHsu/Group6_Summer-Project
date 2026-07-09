@@ -5,13 +5,16 @@
     "cancel": "取消",
     "delete": "删除",
     "save": "保存",
-    "edit": "编辑"
+    "edit": "编辑",
+    "loading": "加载中..."
   },
   "language": {
     "choose": "选择您的语言",
     "search": "搜索其他语言...",
     "selected": "已选择语言",
-    "footer": "继续即表示您将查看我们的"
+    "footer": "继续即表示您将查看我们的",
+    "comingSoon": "即将推出",
+    "comingSoonMessage": "此语言将在未来的版本中提供。"
   },
   "legal": {
     "title": "法律与隐私",
@@ -87,7 +90,10 @@
     "finishProfileTitle": "完成您的医疗档案和医疗身份信息设置？",
     "finishProfileDescription": "这将帮助纽约市紧急服务部门更好地为您提供帮助。",
     "finishProfile": "完成档案与身份信息",
-    "skipForNow": "暂时跳过"
+    "skipForNow": "暂时跳过",
+    "loginRequiredTitle": "需要登录",
+    "loginRequiredBody": "为了帮助保持 ClearPath 数据准确并防止垃圾信息，您必须登录后才能提交或验证社区报告。",
+    "logInSignUp": "登录 / 注册"
   },
 
   "profile": {
@@ -127,7 +133,18 @@
     "pain": "疼痛",
     "translationPlaceholder": "输入访客所使用的语言...",
     "translationResult": "完成后端集成后，翻译结果将显示在此处。",
-    "medicalSummary": "医疗身份信息摘要"
+    "medicalSummary": "医疗身份信息摘要",
+    "categories": {
+      "general": "一般",
+      "emergency": "紧急情况",
+      "allergies": "过敏",
+      "respiratory": "呼吸系统",
+      "pain": "疼痛",
+      "injury": "受伤",
+      "cardiac": "心脏",
+      "hospital": "医院",
+      "pharmacy": "药房"
+    }
   },
 
   "location": {
@@ -146,7 +163,11 @@
     "unableToRetrieveMessage": "请确保您的设备已启用 GPS。",
     "enabledMessage": "位置服务已成功启用。",
     "error": "位置错误",
-    "errorMessage": "访问位置服务时发生错误。"
+    "errorMessage": "访问位置服务时发生错误。",
+    "servicesRequiredTitle": "需要启用定位服务",
+    "servicesRequiredBody": "要提交问题报告或根据设备当前位置生成路线，请启用设备的定位服务。",
+    "systemSettings": "前往系统设置",
+    "settingsError": "无法打开系统设置。"
   },
 
   "medicalId": {
@@ -154,5 +175,104 @@
     "emergencyProfile": "紧急医疗档案",
     "criticalInfo": "重要信息",
     "medicalConditions": "疾病状况"
+  },
+  "welcome": {
+    "slogan": "用您的语言提供无障碍智能服务",
+
+    "healthcareNavigation": "医疗导航",
+    "healthcareNavigationDescription": "轻松查找医院科室、诊所和医疗服务。",
+
+    "medicalId": "医疗身份信息",
+    "medicalIdDescription": "保存重要医疗信息，以备紧急情况使用。",
+
+    "aiAssistant": "AI 助手",
+    "aiAssistantDescription": "随时获得快速的医疗指导和支持。",
+
+    "showStaff": "向工作人员出示",
+    "showStaffDescription": "使用常用短语和实时翻译，与当地居民和医护人员顺畅沟通。",
+
+    "emergencySos": "紧急求助",
+    "emergencySosDescription": "在分秒必争的紧急情况下，快速获取救援支持。"
+  },
+  "tabs": {
+    "map": "地图",
+    "hospitalMap": "医院地图",
+    "assistant": "助手",
+    "clearPathAssistant": "ClearPath 助手",
+    "showStaff": "向工作人员出示",
+    "profile": "个人资料",
+    "myProfile": "我的资料",
+    "more": "更多"
+  },
+  "map": {
+    "searchPlaceholder": "搜索诊所或药房..."
+  },
+
+  "reportModal": {
+    "title": "报告问题",
+    "subtitle": "通过报告临时无障碍问题，帮助保持 ClearPath 信息准确。",
+
+    "whereIsIssue": "问题发生在哪里？",
+    "selectVenue": "选择地点",
+    "issueType": "问题类型",
+
+    "nearbyVenue": "附近地标或地点",
+    "currentLocation": "在当前位置放置图钉",
+
+    "nearby": "附近",
+
+    "additionalInformation": "补充信息（可选）",
+
+    "timestampNotice": "（报告将始终使用当前时间提交。）",
+
+    "submit": "提交报告",
+
+    "loginRequired": "需要登录",
+    "loginRequiredMessage": "为了确保 ClearPath 数据的准确性，提交报告前请先登录。",
+
+    "locationRequired": "需要开启定位服务",
+    "locationRequiredMessage": "提交报告前，请启用定位服务。",
+
+    "issueTypes": {
+      "largeCrowd": "人群拥挤",
+      "entranceClosed": "入口受阻",
+      "elevatorBroken": "电梯故障",
+      "wheelchairLiftBroken": "轮椅升降机故障",
+      "toiletOutOfOrder": "卫生间暂停使用",
+      "protestOrBlockage": "抗议 / 道路阻塞"
+    }
+  },
+  "more": {
+    "languageSelection": "语言选择",
+    "settings": "设置",
+    "legal": "法律信息",
+    "welcome": "欢迎",
+    "sos": "SOS"
+  },
+  "sos": {
+    "title": "正在准备紧急呼叫",
+    "countdown": "{{seconds}} 秒后拨打",
+    "subtitle": "除非取消，否则将自动拨打紧急电话。",
+
+    "locationTitle": "当前位置",
+    "locationDescription": "您的位置可在紧急呼叫期间共享。",
+
+    "medicalIdTitle": "医疗信息摘要",
+
+    "name": "姓名",
+    "bloodType": "血型",
+    "conditions": "疾病",
+    "allergies": "过敏史",
+    "phone": "电话",
+
+    "notice": "与紧急服务人员通话时，请保持此页面开启。",
+
+    "cancel": "取消紧急呼叫",
+
+    "notProvided": "未提供",
+    "none": "无",
+
+    "callErrorTitle": "无法拨打电话",
+    "callErrorMessage": "此设备无法拨打电话。"
   }
 }
