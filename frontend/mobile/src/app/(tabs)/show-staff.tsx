@@ -27,19 +27,14 @@ import {
   Scenario,
   SupportedLanguage,
 } from "../../data/phraseTemplates";
+import { translateText } from "../../services/api";
 import { getAccessToken } from "../../services/authService";
 import { loadMedicalId } from "../../services/medicalIdService";
 import { loadProfile } from "../../services/profileService";
 
 // The medical summary card below fetches real data from
 // GET /api/v1/user/medical-profile (and /user/profile for name/phone) —
-// no more mock imports. One open backend issue worth knowing: as of this
-// writing, GET /user/medical-profile is still shadowed by a stricter
-// implementation in user.py that queries a column
-// (`encrypted_payload`) the real table doesn't have, and 500s with no
-// fallback. Until that's fixed server-side, the fetch below will fail and
-// the whole summary section is omitted rather than shown empty or broken
-// — see the render logic near the bottom of this file.
+// no more mock imports.
 
 type StaffSummary = {
   fullName?: string;
@@ -184,31 +179,20 @@ export default function ShowStaffScreen() {
   const [isTranslating, setIsTranslating] = useState(false);
   const [translationFailed, setTranslationFailed] = useState(false);
 
-  // TODO: replace with your real backend call once one exists — as of this
-  // writing there is no /translate (or equivalent) route in any backend
-  // blueprint, so this can't be wired to anything real yet. This isn't a
-  // client-side gap; it needs a new backend endpoint first. Example shape
-  // once it exists:
-  //   const res = await fetch(`${API_BASE_URL}/api/v1/translate`, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-  //     body: JSON.stringify({ text, sourceLanguage, targetLanguage: "en" }),
-  //   });
-  //   if (!res.ok) throw new Error("Translation request failed");
-  //   const data = await res.json();
-  //   return data.translatedText;
   // Translate free text server-side, not on-device — arbitrary visitor
   // input isn't covered by the canned phraseTemplates, and running this
   // through a third-party provider directly from the client would mean
-  // shipping an API key in the app bundle. This stub just echoes the input
-  // after a short delay so the loading/error UI is testable before the
-  // backend route exists.
-  const translateText = async (
+  // shipping an API key in the app bundle. Wired to POST /api/v1/translate
+  // (Gemini-backed, backend/src/api/translate.py) — on failure this
+  // throws rather than falling back to anything, since the callers below
+  // treat a thrown error as "show the failure state", and a fabricated
+  // medical translation would be worse than an obvious failure.
+  const translateStaffText = async (
     text: string,
     sourceLanguage: string,
   ): Promise<string> => {
-    await new Promise((resolve) => setTimeout(resolve, 400));
-    return `[stub translation, source=${sourceLanguage}] ${text}`;
+    const result = await translateText(text, sourceLanguage, "en");
+    return result.translatedText;
   };
 
   // The trimmed value is what actually drives the debounce/translate
@@ -231,7 +215,7 @@ export default function ShowStaffScreen() {
 
     const handle = setTimeout(async () => {
       try {
-        const result = await translateText(trimmedInput, currentLanguage.code);
+        const result = await translateStaffText(trimmedInput, currentLanguage.code);
         setTranslatedText(result);
       } catch {
         setTranslationFailed(true);
