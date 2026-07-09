@@ -3,6 +3,7 @@ import json
 import uuid
 from datetime import datetime, timezone
 
+import pymysql
 from flask import Blueprint, g, jsonify, request
 
 import db
@@ -12,8 +13,6 @@ from mock_data import (
     DELETE_ACCOUNT_RESPONSE,
     EMERGENCY_CONTACT_CREATE_TEMPLATE,
     EMERGENCY_CONTACTS,
-    FAVOURITE_CREATE_TEMPLATE,
-    FAVOURITES,
     LANGUAGE_OPTIONS,
     MEDICAL_ID,
     MEDICAL_PASSPORT_RESPONSE,
@@ -21,6 +20,12 @@ from mock_data import (
     SOS_RESPONSE,
     USER_SETTINGS,
 )
+
+_BUSYNESS_LEVEL_TO_DISPLAY_STATUS = {
+    "quiet": "OPTIMAL FLOW",
+    "moderate": "MODERATE",
+    "busy": "DIVERTING",
+}
 
 
 bp = Blueprint("user", __name__)
@@ -264,14 +269,40 @@ def get_language_options():
     return jsonify({"count": len(LANGUAGE_OPTIONS), "items": deepcopy(LANGUAGE_OPTIONS)})
 
 
+def _favourite_id(venue_id: str) -> str:
+    return f"fav_{venue_id}"
+
+
+def _format_favourite(row: dict) -> dict:
+    return {
+        "favourite_id": _favourite_id(row["venue_id"]),
+        "venue_id": row["venue_id"],
+        "saved_at": row["created_at"].isoformat() if row.get("created_at") else None,
+        "display_status": _BUSYNESS_LEVEL_TO_DISPLAY_STATUS.get(row.get("level"), "NO DATA"),
+    }
+
+
 @bp.get("/api/v1/user/favourites")
-@require_api_key
+@require_bearer_auth
 def get_favourites():
-    return jsonify({"count": len(FAVOURITES), "items": deepcopy(FAVOURITES)})
+    with db.db_cursor() as cursor:
+        cursor.execute(
+            "SELECT ufv.venue_id, ufv.created_at, "
+            "(SELECT bs.level FROM busyness_scores bs WHERE bs.venue_id = ufv.venue_id "
+            " ORDER BY bs.created_at DESC LIMIT 1) AS level "
+            "FROM user_favorite_venues ufv "
+            "WHERE ufv.user_id = %s "
+            "ORDER BY ufv.created_at DESC",
+            (g.user_id,),
+        )
+        rows = cursor.fetchall()
+
+    items = [_format_favourite(row) for row in rows]
+    return jsonify({"count": len(items), "items": items})
 
 
 @bp.post("/api/v1/user/favourites")
-@require_api_key
+@require_bearer_auth
 def add_favourite():
     blocked = web_readonly_blocked()
     if blocked:
@@ -282,25 +313,48 @@ def add_favourite():
     if "venue_id" not in payload:
         return jsonify({"error": "Validation failed.", "missing_fields": ["venue_id"]}), 400
 
-    favourite = deepcopy(FAVOURITE_CREATE_TEMPLATE)
-    favourite["venue_id"] = payload["venue_id"]
-    FAVOURITES.append(favourite)
+    venue_id = payload["venue_id"]
 
-    return jsonify(favourite), 201
+    try:
+        with db.db_transaction() as cursor:
+            # Idempotent: favouriting an already-favourited venue succeeds
+            # rather than raising on the (user_id, venue_id) primary key.
+            cursor.execute(
+                "INSERT INTO user_favorite_venues (user_id, venue_id) VALUES (%s, %s) "
+                "ON DUPLICATE KEY UPDATE venue_id = venue_id",
+                (g.user_id, venue_id),
+            )
+            cursor.execute(
+                "SELECT ufv.venue_id, ufv.created_at, "
+                "(SELECT bs.level FROM busyness_scores bs WHERE bs.venue_id = ufv.venue_id "
+                " ORDER BY bs.created_at DESC LIMIT 1) AS level "
+                "FROM user_favorite_venues ufv WHERE ufv.user_id = %s AND ufv.venue_id = %s",
+                (g.user_id, venue_id),
+            )
+            row = cursor.fetchone()
+    except pymysql.err.IntegrityError:
+        return jsonify({"error": "Validation failed.", "invalid_fields": ["venue_id"]}), 400
+
+    return jsonify(_format_favourite(row)), 201
 
 
 @bp.delete("/api/v1/user/favourites/<venue_id>")
-@require_api_key
+@require_bearer_auth
 def delete_favourite(venue_id: str):
     blocked = web_readonly_blocked()
     if blocked:
         return blocked
 
-    favourite = next((item for item in FAVOURITES if item["venue_id"] == venue_id), None)
-    if not favourite:
+    with db.db_transaction() as cursor:
+        cursor.execute(
+            "DELETE FROM user_favorite_venues WHERE user_id = %s AND venue_id = %s",
+            (g.user_id, venue_id),
+        )
+        deleted = cursor.rowcount
+
+    if not deleted:
         return jsonify({"error": "Favourite not found."}), 404
 
-    FAVOURITES.remove(favourite)
     return "", 204
 
 

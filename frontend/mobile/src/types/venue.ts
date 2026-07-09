@@ -212,14 +212,8 @@ export interface ReportResponse {
 /*                               FAVOURITES                                   */
 /* -------------------------------------------------------------------------- */
 
-// Matches FAVOURITES/FAVOURITE_CREATE_TEMPLATE in mock_data.py. NOTE: the
-// backend's get_favourites/add_favourite/delete_favourite are not
-// per-user (no g.user_id filtering, plain in-memory list, no DB) and
-// add_favourite has a bug where favourite_id/saved_at are always the
-// same hardcoded values from FAVOURITE_CREATE_TEMPLATE regardless of what
-// was actually added. This type/client code is correct for the intended
-// contract; the backend needs real per-user + DB-backed work before this
-// behaves correctly for more than one user.
+// Backed by user_favorite_venues (per-user, DB-backed) — get/add/delete
+// are all scoped to the authenticated user's token.
 export interface Favourite {
   favourite_id: string;
 
