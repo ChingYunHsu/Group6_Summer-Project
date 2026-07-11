@@ -62,8 +62,10 @@ fixed by that owner; Data-owned changes are limited to `docker/mysql/**`, seeds,
   {hospital, clinic, pharmacy, urgent_care, mental_health, shelter}` — matches **0.06%** of live venues
   and rejects `restroom/healthcare/emergencyasset` (99.9% of data) as "Unknown venue type".
   **RECORD — Backend must replace VALID_VENUE_TYPES with the canonical set.**
-- Data-owned follow-up (Stage 1): venue seed `005` lacks a `healthcare`-type row though it is the 2nd-largest
-  live type; consider adding for representative filter coverage.
+- Data-owned verification (Stage 1): `005_seed_venues.sql` already contains
+  `seed-healthcare-bellevue-001` with `venue_type='healthcare'` and a matching
+  `venue_source_links` record. The earlier missing-seed observation was stale;
+  regression coverage now locks this representative type in place.
 
 ### C4 — Insights / reports fallback markers (PARTIALLY DECIDED)
 - **Observed markers today:**
@@ -98,10 +100,13 @@ fixed by that owner; Data-owned changes are limited to `docker/mysql/**`, seeds,
 | `venues` seed | 5 rows — restroom, emergencyasset, clinic, pharmacy, hospital (no `healthcare` row) |
 
 ### Schema drift (old vs new)
-- Live has **23** tables; fresh init produces **21**. The 2 tables present in live but **not created by any
-  `docker/mysql/init/` script**: `healthcare_prediction_groups`, `healthcare_prediction_group_members`.
-  → Reproducibility gap: a clean deploy will not have them. Stage 1 must locate their DDL source
-  (ML pipeline / out-of-band migration) and either add to `init/` or document as pipeline-created.
+- Live has **23** tables; fresh init formerly produced **21**. The missing tables were
+  `healthcare_prediction_groups` and `healthcare_prediction_group_members`.
+  → Schema reproducibility is resolved in Data migration `008_healthcare_prediction_groups.sql`:
+  both tables now have idempotent DDL, venue foreign keys and membership uniqueness. Existing
+  volumes receive the migration through `apply_migrations.sh`. The current ML builder still emits
+  CSV artifacts, so a DB load step must be added or explicitly scheduled before these tables are
+  treated as populated production data.
 
 ---
 
