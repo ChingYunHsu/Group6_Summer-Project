@@ -64,7 +64,7 @@ INSERT IGNORE INTO venues (
   ),
   (
     'seed-healthcare-bellevue-001',
-    'hospital',
+    'healthcare',
     'Bellevue Hospital Center',
     40.7391830,
     -73.9766990,
