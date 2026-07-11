@@ -47,6 +47,31 @@ services:
       mysql:
         condition: service_healthy
 
+  telemetry:
+    # Deliberately opt-in: `docker compose up` never starts live ingestion.
+    profiles: ["telemetry"]
+    build:
+      context: ./Data+ML/test/6.15-6.20
+      dockerfile: Dockerfile.telemetry
+    restart: on-failure:5
+    environment:
+      CLEARPATH_DB_HOST: mysql
+      CLEARPATH_DB_PORT: "3306"
+      CLEARPATH_DB_USER: clearpath_app
+      CLEARPATH_DB_PASSWORD: clearpath_app
+      CLEARPATH_DB_NAME: clearpath
+      TELEMETRY_ENABLED: ${TELEMETRY_ENABLED:-false}
+      TELEMETRY_SOURCE_URL: ${TELEMETRY_SOURCE_URL:-}
+      TELEMETRY_SOURCE_BEARER_TOKEN: ${TELEMETRY_SOURCE_BEARER_TOKEN:-}
+      TELEMETRY_SOURCE_NAME: ${TELEMETRY_SOURCE_NAME:-live_capacity}
+      TELEMETRY_POLL_INTERVAL_SECONDS: ${TELEMETRY_POLL_INTERVAL_SECONDS:-300}
+      TELEMETRY_REQUEST_TIMEOUT_SECONDS: ${TELEMETRY_REQUEST_TIMEOUT_SECONDS:-10}
+      TELEMETRY_MAX_RETRIES: ${TELEMETRY_MAX_RETRIES:-3}
+      TELEMETRY_RETRY_BACKOFF_SECONDS: ${TELEMETRY_RETRY_BACKOFF_SECONDS:-5}
+    depends_on:
+      mysql:
+        condition: service_healthy
+
 volumes:
   clearpath_mysql_data:
   clearpath_redis_data:
