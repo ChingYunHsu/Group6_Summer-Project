@@ -199,12 +199,39 @@ export async function confirmReport(
 /*                                  ROUTES                                    */
 /* -------------------------------------------------------------------------- */
 
-export async function getRouteOptions(): Promise<RouteOptionsResponse> {
-  return request<RouteOptionsResponse>("/routes/options");
+// destinationVenueId/origin are optional for backward compatibility, but
+// omitting them makes the backend fall back to static mock data — pass
+// them to get real Google-Maps-backed directions.
+export async function getRouteOptions(
+  destinationVenueId?: string,
+  origin?: { latitude: number; longitude: number },
+): Promise<RouteOptionsResponse> {
+  const params = new URLSearchParams();
+  if (destinationVenueId) params.set("destination_venue_id", destinationVenueId);
+  if (origin) {
+    params.set("origin_lat", String(origin.latitude));
+    params.set("origin_lon", String(origin.longitude));
+  }
+  const query = params.toString().length ? `?${params.toString()}` : "";
+
+  return request<RouteOptionsResponse>(`/routes/options${query}`);
 }
 
-export async function getRouteDetail(): Promise<RouteDetail> {
-  return request<RouteDetail>("/routes/detail");
+export async function getRouteDetail(
+  destinationVenueId?: string,
+  origin?: { latitude: number; longitude: number },
+  mode?: string,
+): Promise<RouteDetail> {
+  const params = new URLSearchParams();
+  if (destinationVenueId) params.set("destination_venue_id", destinationVenueId);
+  if (origin) {
+    params.set("origin_lat", String(origin.latitude));
+    params.set("origin_lon", String(origin.longitude));
+  }
+  if (mode) params.set("mode", mode);
+  const query = params.toString().length ? `?${params.toString()}` : "";
+
+  return request<RouteDetail>(`/routes/detail${query}`);
 }
 
 /* -------------------------------------------------------------------------- */

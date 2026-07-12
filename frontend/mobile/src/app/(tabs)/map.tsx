@@ -213,7 +213,10 @@ export default function MapScreen() {
     setVenueVisible(false);
 
     try {
-      const response = await getRouteOptions();
+      const response = await getRouteOptions(
+        selectedVenue?.venue_id,
+        currentLocation,
+      );
       setRouteOptions(response.options);
     } catch (error) {
       console.error(error);
@@ -231,7 +234,11 @@ export default function MapScreen() {
     setSelectedRouteDuration(route.duration_minutes);
 
     try {
-      const detail = await getRouteDetail();
+      const detail = await getRouteDetail(
+        selectedVenue?.venue_id,
+        currentLocation,
+        route.mode,
+      );
       setRouteDetail(detail);
     } catch (error) {
       console.error(error);
