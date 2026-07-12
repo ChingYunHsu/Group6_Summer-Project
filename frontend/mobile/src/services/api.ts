@@ -228,6 +228,28 @@ export async function sendChatbotMessage(payload: {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                TRANSLATE                                   */
+/* -------------------------------------------------------------------------- */
+
+export interface TranslateResponse {
+  translatedText: string;
+  sourceLanguage: string;
+  targetLanguage: string;
+}
+
+export async function translateText(
+  text: string,
+  sourceLanguage: string,
+  targetLanguage: string = "en",
+): Promise<TranslateResponse> {
+  return request<TranslateResponse>("/translate", {
+    method: "POST",
+
+    body: JSON.stringify({ text, sourceLanguage, targetLanguage }),
+  });
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                   USER                                     */
 /* -------------------------------------------------------------------------- */
 
