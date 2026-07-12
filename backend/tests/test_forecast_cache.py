@@ -43,8 +43,16 @@ class _CountingConn:
 
 
 def test_forecast_endpoint_serves_second_request_from_cache(client, monkeypatch):
+    """Uses an in-memory fake cache rather than relying on a real Redis
+    being reachable — CI has no Redis, so response_cache would otherwise
+    fail open on every call (always a miss), making this test flaky
+    depending on environment rather than actually proving caching works."""
     _CountingCursor.calls = 0
     monkeypatch.setattr(venues_module, "_get_db_conn", lambda: _CountingConn())
+
+    fake_store = {}
+    monkeypatch.setattr(venues_module, "get_cached", lambda key: fake_store.get(key))
+    monkeypatch.setattr(venues_module, "set_cached", lambda key, value, ttl_seconds: fake_store.__setitem__(key, value))
 
     first = client.get("/api/v1/venues/v_cache_test/busyness/forecast", headers={"X-API-Key": "test"})
     second = client.get("/api/v1/venues/v_cache_test/busyness/forecast", headers={"X-API-Key": "test"})
