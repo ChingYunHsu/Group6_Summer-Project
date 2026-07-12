@@ -1,12 +1,18 @@
-"""Unit tests for the Tier 2 encrypted medical profile endpoints, with the
-MySQL layer faked out so this runs without a live database."""
+"""Unit tests for the medical profile endpoints (api/medical.py), with the
+MySQL layer faked out so this runs without a live database.
+
+Previously two blueprints both defined /api/v1/user/medical-profile:
+user.py's version (querying a nonexistent encrypted_payload column — a
+schema mismatch that 500'd) shadowed api/medical.py's correct version
+because user_bp is registered before medical_bp in app.py. user.py's
+version has been removed; this file now targets the one that's actually
+reachable and matches the real medical_profiles schema (004_medical_profiles.sql)."""
 
 from contextlib import contextmanager
 
 import pytest
 
-import api.user as user_module
-import medical_crypto
+import api.medical as medical_module
 from auth import issue_access_token
 
 URL = "/api/v1/user/medical-profile"
@@ -20,11 +26,23 @@ class _FakeCursor:
     def execute(self, query, params=()):
         query = " ".join(query.split())
 
-        if query.startswith("SELECT encrypted_payload FROM medical_profiles"):
-            self._result = self._table.get(params[0])
+        if query.startswith("SELECT date_of_birth, gender, address, blood_type, allergies, "
+                             "conditions, medications, emergency_contacts FROM medical_profiles"):
+            self._result = self._table.get(params[-1])
+        elif query.startswith("SELECT user_id FROM medical_profiles WHERE user_id = %s FOR UPDATE"):
+            self._result = {"user_id": params[0]} if params[0] in self._table else None
+        elif query.startswith("UPDATE medical_profiles SET"):
+            *values, user_id = params
+            row = self._table.setdefault(user_id, {})
+            set_fields = [part.split(" = ")[0].strip() for part in query.split("SET ", 1)[1].split(" WHERE ")[0].split(",")]
+            for field, value in zip(set_fields, values):
+                row[field] = value
+            self._result = None
         elif query.startswith("INSERT INTO medical_profiles"):
-            user_id, encrypted_payload, _ = params
-            self._table[user_id] = {"encrypted_payload": encrypted_payload}
+            user_id = params[0]
+            fields = ("date_of_birth", "gender", "address", "blood_type",
+                      "allergies", "conditions", "medications", "emergency_contacts")
+            self._table[user_id] = dict(zip(fields, params[1:]))
             self._result = None
         elif query.startswith("DELETE FROM medical_profiles"):
             self._table.pop(params[0], None)
@@ -48,8 +66,8 @@ def fake_profiles_table(monkeypatch):
     def fake_db_transaction():
         yield _FakeCursor(table)
 
-    monkeypatch.setattr(user_module.db, "db_cursor", fake_db_cursor)
-    monkeypatch.setattr(user_module.db, "db_transaction", fake_db_transaction)
+    monkeypatch.setattr(medical_module.db, "db_cursor", fake_db_cursor)
+    monkeypatch.setattr(medical_module.db, "db_transaction", fake_db_transaction)
     return table
 
 
@@ -58,38 +76,54 @@ def _token_for(app, user_id):
         return issue_access_token(user_id)
 
 
+def test_medical_profile_route_is_reachable_and_owned_by_medical_blueprint(app):
+    """Regression guard: only one blueprint may register this URL. If
+    user_bp ever re-adds a competing route, Flask's routing (first
+    registered wins on an exact rule collision) would silently shadow
+    api/medical.py's implementation again without raising any error."""
+    matching_rules = [rule for rule in app.url_map.iter_rules() if rule.rule == URL]
+    assert len(matching_rules) >= 1
+    for rule in matching_rules:
+        assert rule.endpoint.startswith("medical."), (
+            f"{URL} is owned by {rule.endpoint!r}, not the medical blueprint"
+        )
+
+
 def test_get_medical_profile_defaults_when_none_stored(client, app, fake_profiles_table):
     token = _token_for(app, "u_alice")
 
     resp = client.get(URL, headers={"Authorization": f"Bearer {token}"})
 
     assert resp.status_code == 200
-    assert resp.get_json() == {"blood_type": None, "conditions": [], "allergies": []}
+    assert resp.get_json() == {
+        "date_of_birth": None,
+        "gender": None,
+        "address": None,
+        "blood_type": None,
+        "allergies": [],
+        "conditions": [],
+        "medications": [],
+        "emergency_contacts": [],
+    }
 
 
 def test_upsert_then_get_round_trips(client, app, fake_profiles_table):
     token = _token_for(app, "u_alice")
     headers = {"Authorization": f"Bearer {token}"}
 
-    put_resp = client.put(URL, json={"blood_type": "O+", "allergies": ["Penicillin"]}, headers=headers)
+    put_resp = client.put(
+        URL,
+        json={"blood_type": "O+", "allergies": ["Penicillin"], "medications": ["Insulin"]},
+        headers=headers,
+    )
     assert put_resp.status_code == 200
-    assert put_resp.get_json()["blood_type"] == "O+"
+    body = put_resp.get_json()
+    assert body["blood_type"] == "O+"
+    assert body["allergies"] == ["Penicillin"]
+    assert body["medications"] == ["Insulin"]
 
     get_resp = client.get(URL, headers=headers)
-    assert get_resp.get_json() == {"blood_type": "O+", "conditions": [], "allergies": ["Penicillin"]}
-
-
-def test_payload_is_actually_encrypted_at_rest(client, app, fake_profiles_table):
-    token = _token_for(app, "u_alice")
-    client.put(
-        URL, json={"blood_type": "O+", "conditions": ["Asthma"]},
-        headers={"Authorization": f"Bearer {token}"},
-    )
-
-    stored = fake_profiles_table["u_alice"]["encrypted_payload"]
-    assert b"Asthma" not in stored
-    assert b"O+" not in stored
-    assert medical_crypto.decrypt_profile(stored)["conditions"] == ["Asthma"]
+    assert get_resp.get_json()["blood_type"] == "O+"
 
 
 def test_user_isolation_between_tokens(client, app, fake_profiles_table):

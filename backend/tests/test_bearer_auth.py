@@ -57,6 +57,9 @@ def test_bearer_routes_accept_valid_token(client, app):
 
 
 def test_api_key_routes_unaffected_by_bearer_auth(client):
-    resp = client.get("/api/v1/user/favourites")
+    # /user/favourites used to be an @require_api_key route but is now
+    # per-user (@require_bearer_auth) — use /user/languages instead, which
+    # is still API-key-only.
+    resp = client.get("/api/v1/user/languages")
 
     assert resp.status_code == 200

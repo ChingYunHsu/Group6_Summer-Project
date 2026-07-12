@@ -248,14 +248,7 @@ export async function deleteAccount(): Promise<{
 /*                                FAVOURITES                                  */
 /* -------------------------------------------------------------------------- */
 
-// NOTE: as of this writing these three endpoints aren't actually per-user
-// on the backend (see the comment on the Favourite type in types/venue.ts)
-// — this client code is correct for the intended contract, but until the
-// backend catches up, "favourites" behaves as one shared global list, and
-// add_favourite always returns the same hardcoded favourite_id/saved_at
-// regardless of what was added.
-
-/* export async function getFavourites(): Promise<FavouritesResponse> {
+export async function getFavourites(): Promise<FavouritesResponse> {
   return request<FavouritesResponse>("/user/favourites");
 }
 
@@ -271,4 +264,4 @@ export async function removeFavourite(venueId: string): Promise<void> {
   return request<void>(`/user/favourites/${venueId}`, {
     method: "DELETE",
   });
-} */
+}
