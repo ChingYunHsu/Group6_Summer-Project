@@ -82,6 +82,39 @@ jest.mock("../../components/ReportModal", () => () => null);
 jest.mock("../../components/RouteDetailModal", () => () => null);
 jest.mock("../../components/RouteOptionsModal", () => () => null);
 jest.mock("../../components/VenueBottomSheet", () => () => null);
+jest.mock("../../components/ReportMarker", () => {
+  const { Pressable, Text } = require("react-native");
+
+  return function MockReportMarker({ report, onPress }: any) {
+    return (
+      <Pressable
+        testID={`report-marker-${report.report_id}`}
+        onPress={() => onPress(report)}
+      >
+        <Text>Report Marker</Text>
+      </Pressable>
+    );
+  };
+});
+jest.mock("../../components/ReportBottomSheet", () => {
+  const { View, Button } = require("react-native");
+
+  return function MockReportBottomSheet({
+    visible,
+    report,
+    onConfirm,
+    onResolve,
+  }: any) {
+    if (!visible || !report) return null;
+
+    return (
+      <View>
+        <Button title="Confirm" onPress={() => onConfirm(report.report_id)} />
+        <Button title="Resolve" onPress={() => onResolve(report.report_id)} />
+      </View>
+    );
+  };
+});
 
 // LoginRequiredModal's visibility is the thing under test, so it's mocked
 // as a controlled stub that reflects the `visible` prop directly (renders
@@ -145,6 +178,8 @@ describe("MapScreen — Guest Mode report verification gating", () => {
 
     const screen = await render(<MapScreen />);
 
+    fireEvent.press(await screen.findByTestId("report-marker-r_9001"));
+
     const confirmButton = await screen.findByText("Confirm");
 
     expect(screen.queryByTestId("login-required-modal")).toBeNull();
@@ -161,6 +196,8 @@ describe("MapScreen — Guest Mode report verification gating", () => {
 
     const screen = await render(<MapScreen />);
 
+    fireEvent.press(await screen.findByTestId("report-marker-r_9001"));
+
     const resolveButton = await screen.findByText("Resolve");
 
     fireEvent.press(resolveButton);
@@ -174,6 +211,8 @@ describe("MapScreen — Guest Mode report verification gating", () => {
     mockedGetAccessToken.mockResolvedValue("fake-access-token");
 
     const screen = await render(<MapScreen />);
+
+    fireEvent.press(await screen.findByTestId("report-marker-r_9001"));
 
     const confirmButton = await screen.findByText("Confirm");
 
@@ -190,6 +229,8 @@ describe("MapScreen — Guest Mode report verification gating", () => {
     mockedGetAccessToken.mockResolvedValue("fake-access-token");
 
     const screen = await render(<MapScreen />);
+
+    fireEvent.press(await screen.findByTestId("report-marker-r_9001"));
 
     const resolveButton = await screen.findByText("Resolve");
 
