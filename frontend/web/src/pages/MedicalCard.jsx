@@ -134,6 +134,7 @@ function MedicalCard() {
 
             <div>
               <h4>MEDICAL CONDITIONS / CONDICIONES MÉDICAS</h4>
+<<<<<<< HEAD
 
               {(profile.medical_conditions ?? []).length > 0 ? (
                 profile.medical_conditions.map((condition) => (
@@ -150,6 +151,16 @@ function MedicalCard() {
               ) : (
                 <p>No medical conditions listed.</p>
               )}
+=======
+              {profile.medical_conditions.map((condition) => (
+                <div className="medical-alert-item blue-item" key={condition.name}>
+                  <div className="medical-alert-item-content">
+                  <strong>{condition.name}</strong>
+                  <p>{condition.detail}</p>
+                </div>
+                </div>
+              ))}
+>>>>>>> origin/main
             </div>
           </div>
 

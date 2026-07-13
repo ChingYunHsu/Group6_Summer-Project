@@ -1,17 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Alert,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-
-import { useTranslation } from "react-i18next";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 import {

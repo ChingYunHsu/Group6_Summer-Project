@@ -5,13 +5,16 @@
     "cancel": "Abbrechen",
     "delete": "Löschen",
     "save": "Speichern",
-    "edit": "Bearbeiten"
+    "edit": "Bearbeiten",
+    "loading": "Wird geladen..."
   },
   "language": {
     "choose": "Wählen Sie Ihre Sprache",
     "search": "Andere Sprachen suchen...",
     "selected": "Ausgewählte Sprache",
-    "footer": "Wenn Sie fortfahren, überprüfen Sie unsere"
+    "footer": "Wenn Sie fortfahren, überprüfen Sie unsere",
+    "comingSoon": "Demnächst verfügbar",
+    "comingSoonMessage": "Diese Sprache wird in einer zukünftigen Version verfügbar sein."
   },
   "legal": {
     "title": "Rechtliches & Datenschutz",
@@ -87,7 +90,10 @@
     "finishProfileTitle": "Möchten Sie Ihr Medizinisches Profil und Ihre ID fertig einrichten?",
     "finishProfileDescription": "Dies hilft den Notfalldiensten in NYC, Ihnen besser zu helfen.",
     "finishProfile": "Profil & ID fertigstellen",
-    "skipForNow": "Vorerst überspringen"
+    "skipForNow": "Vorerst überspringen",
+    "loginRequiredTitle": "Anmeldung erforderlich",
+    "loginRequiredBody": "Um die Genauigkeit der ClearPath-Daten zu gewährleisten und Spam zu verhindern, müssen Sie angemeldet sein, um Community-Meldungen einzureichen oder zu bestätigen.",
+    "logInSignUp": "Anmelden / Registrieren"
   },
 
   "profile": {
@@ -126,7 +132,18 @@
     "pain": "Schmerzen",
     "translationPlaceholder": "Geben Sie etwas in der Sprache des Besuchers ein...",
     "translationResult": "Die Übersetzung wird nach der Backend-Integration hier angezeigt.",
-    "medicalSummary": "Zusammenfassung der Medizinischen ID"
+    "medicalSummary": "Zusammenfassung der Medizinischen ID",
+    "categories": {
+      "general": "Allgemein",
+      "emergency": "Notfall",
+      "allergies": "Allergien",
+      "respiratory": "Atmung",
+      "pain": "Schmerzen",
+      "injury": "Verletzung",
+      "cardiac": "Herz",
+      "hospital": "Krankenhaus",
+      "pharmacy": "Apotheke"
+    }
   },
   "location": {
     "title": "Helfen Sie uns, Sie zu finden",
@@ -144,12 +161,102 @@
     "unableToRetrieveMessage": "Bitte stellen Sie sicher, dass GPS auf Ihrem Gerät aktiviert ist.",
     "enabledMessage": "Die Standortdienste wurden erfolgreich aktiviert.",
     "error": "Standortfehler",
-    "errorMessage": "Beim Zugriff auf die Standortdienste ist ein Fehler aufgetreten."
+    "errorMessage": "Beim Zugriff auf die Standortdienste ist ein Fehler aufgetreten.",
+    "servicesRequiredTitle": "Standortdienste erforderlich",
+    "servicesRequiredBody": "Um Meldungen einzureichen oder eine Route von Ihrem aktuellen Standort zu berechnen, aktivieren Sie bitte die Standortdienste Ihres Geräts.",
+    "systemSettings": "Zu den Systemeinstellungen",
+    "settingsError": "Die Systemeinstellungen konnten nicht geöffnet werden."
   },
   "medicalId": {
     "title": "Medizinische ID bearbeiten",
     "emergencyProfile": "Notfallprofil",
     "criticalInfo": "Wichtige Informationen",
     "medicalConditions": "Medizinische Erkrankungen"
-  } 
+  },
+  "welcome": {
+    "slogan": "Barrierefreie Intelligenz in Ihrer Sprache",
+    "healthcareNavigation": "Navigation im Gesundheitswesen",
+    "healthcareNavigationDescription": "Finden Sie ganz einfach Krankenhausabteilungen, Kliniken und Dienstleistungen.",
+    "medicalId": "Medizinischer Ausweis",
+    "medicalIdDescription": "Speichern Sie wichtige medizinische Informationen für Notfälle.",
+    "aiAssistant": "KI-Assistent",
+    "aiAssistantDescription": "Erhalten Sie jederzeit schnelle medizinische Unterstützung und Orientierung.",
+    "showStaff": "Dem Personal zeigen",
+    "showStaffDescription": "Nutzen Sie häufige Redewendungen und Live-Übersetzung, um mit Einheimischen und dem Personal zu kommunizieren.",
+    "emergencySos": "Notfall-SOS",
+    "emergencySosDescription": "Greifen Sie schnell auf Notfallhilfe zu, wenn jede Sekunde zählt."
+  },
+  "tabs": {
+    "map": "Karte",
+    "hospitalMap": "Krankenhauskarte",
+    "assistant": "Assistent",
+    "clearPathAssistant": "ClearPath-Assistent",
+    "showStaff": "Dem Personal zeigen",
+    "profile": "Profil",
+    "myProfile": "Mein Profil",
+    "more": "Mehr"
+  },
+  "map": {
+    "searchPlaceholder": "Nach Kliniken oder Apotheken suchen..."
+  },
+  "reportModal": {
+    "title": "Problem melden",
+    "subtitle": "Helfen Sie dabei, ClearPath aktuell zu halten, indem Sie ein vorübergehendes Barrierefreiheitsproblem melden.",
+    "whereIsIssue": "Wo befindet sich das Problem?",
+    "selectVenue": "Ort auswählen",
+    "issueType": "Problemtyp",
+    "nearbyVenue": "Nahegelegener Ort oder Standort",
+    "currentLocation": "Standort an aktueller Position setzen",
+    "nearby": "In der Nähe",
+    "additionalInformation": "Zusätzliche Informationen (optional)",
+    "timestampNotice": "(Meldungen werden immer mit der aktuellen Uhrzeit übermittelt.)",
+    "submit": "Meldung senden",
+    "loginRequired": "Anmeldung erforderlich",
+    "loginRequiredMessage": "Um die Genauigkeit der ClearPath-Daten zu gewährleisten, müssen Sie angemeldet sein, bevor Sie eine Meldung senden.",
+
+    "locationRequired": "Standortdienste erforderlich",
+    "locationRequiredMessage": "Bitte aktivieren Sie die Standortdienste, bevor Sie eine Meldung senden.",
+
+    "issueTypes": {
+      "largeCrowd": "Zu überfüllt",
+      "entranceClosed": "Eingang blockiert",
+      "elevatorBroken": "Aufzug defekt",
+      "wheelchairLiftBroken": "Rollstuhllift defekt",
+      "toiletOutOfOrder": "Toilette außer Betrieb",
+      "protestOrBlockage": "Protest / Blockade"
+    }
+  },
+  "more": {
+    "languageSelection": "Sprachauswahl",
+    "settings": "Einstellungen",
+    "legal": "Rechtliches",
+    "welcome": "Willkommen",
+    "sos": "SOS"
+  },
+  "sos": {
+    "title": "Notruf wird vorbereitet",
+    "countdown": "Anruf in {{seconds}} Sek.",
+    "subtitle": "Der Notruf wird gestartet, sofern er nicht abgebrochen wird.",
+
+    "locationTitle": "Aktueller Standort",
+    "locationDescription": "Ihr Standort kann während des Notrufs geteilt werden.",
+
+    "medicalIdTitle": "Zusammenfassung der medizinischen Daten",
+
+    "name": "Name",
+    "bloodType": "Blutgruppe",
+    "conditions": "Erkrankungen",
+    "allergies": "Allergien",
+    "phone": "Telefon",
+
+    "notice": "Lassen Sie diesen Bildschirm während des Gesprächs mit dem Notruf geöffnet.",
+
+    "cancel": "Notruf abbrechen",
+
+    "notProvided": "Nicht angegeben",
+    "none": "Keine",
+
+    "callErrorTitle": "Anruf nicht möglich",
+    "callErrorMessage": "Dieses Gerät kann keine Telefonanrufe tätigen."
+  }
 }

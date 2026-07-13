@@ -1,206 +1,42 @@
 import { useRouter } from "expo-router";
-import { useMemo, useState } from "react";
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
-
-import {
-  allLanguages,
-  featuredLanguages,
-} from "../data/languages";
-
 import { useTranslation } from "react-i18next";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
-import i18n from "../i18n";
 
-console.log("Colours import:", Colours);
-
-export default function LanguageScreen() {
+export default function Index() {
   const router = useRouter();
   const { t } = useTranslation();
 
-  const [search, setSearch] = useState("");
-
-  const [selectedLanguage, setSelectedLanguage] =
-    useState<{
-      native: string;
-      english: string;
-      flag?: string;
-    }>(featuredLanguages[0]);
-
-  const filteredLanguages = useMemo(() => {
-    if (!search.trim()) return [];
-
-    return allLanguages.filter(
-      (language) =>
-        language.native
-          .toLowerCase()
-          .includes(search.toLowerCase()) ||
-        language.english
-          .toLowerCase()
-          .includes(search.toLowerCase())
-    );
-  }, [search]);
-
-  const isFeaturedLanguage =
-    featuredLanguages.some(
-      (lang) =>
-        lang.english ===
-        selectedLanguage?.english
-    );
-
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        {t("language.choose")}
-      </Text>
+      <View style={styles.content}>
+        <Image
+          source={require("../../assets/images/clearpath-logo.png")}
+          style={styles.logo}
+        />
 
-      <TextInput
-        placeholder={t("language.search")}
-        value={search}
-        onChangeText={setSearch}
-        style={styles.searchInput}
-        placeholderTextColor={Colours.muted}
-      />
+        <Text style={styles.title}>ClearPath</Text>
 
-      {selectedLanguage &&
-        !isFeaturedLanguage && (
-          <View
-            style={
-              styles.selectedContainer
-            }
-          >
-            <Text
-              style={styles.selectedLabel}
-            >
-              {t("language.selected")}
-            </Text>
+        <Text style={styles.slogan}>
+          Accessibility Intelligence in your language
+        </Text>
 
-            <Text
-              style={styles.selectedValue}
-            >
-              {selectedLanguage.native}
-            </Text>
-
-            <Text style={styles.english}>
-              {selectedLanguage.english}
-            </Text>
-          </View>
-        )}
-
-      {search.length > 0 && (
-        <View style={styles.searchResults}>
-          {filteredLanguages.map(
-            (language) => (
-              <TouchableOpacity
-                key={language.english}
-                style={styles.resultRow}
-                onPress={() => {
-                  setSelectedLanguage(
-                    language
-                  );
-                  setSearch("");
-                }}
-              >
-                <Text
-                  style={styles.resultText}
-                >
-                  {language.native} (
-                  {language.english})
-                </Text>
-              </TouchableOpacity>
-            )
-          )}
-        </View>
-      )}
-
-      <FlatList
-        data={featuredLanguages}
-        numColumns={2}
-        keyExtractor={(item) =>
-          item.english
-        }
-        renderItem={({ item }) => {
-          const selected =
-            selectedLanguage?.english ===
-            item.english;
-
-          return (
-            <TouchableOpacity
-              style={[
-                styles.card,
-                selected &&
-                  styles.selectedCard,
-              ]}
-              onPress={() => {
-  setSelectedLanguage(item);
-
-  i18n.changeLanguage(item.code);
-
-  console.log(
-    "Switching to:",
-    item.code
-  );
-}}
-            >
-              {selected && (
-                <View
-                  style={styles.checkmark}
-                >
-                  <Text
-                    style={
-                      styles.checkmarkText
-                    }
-                  >
-                    ✓
-                  </Text>
-                </View>
-              )}
-
-              <Text style={styles.flag}>
-                {item.flag}
-              </Text>
-
-              <Text style={styles.native}>
-                {item.native}
-              </Text>
-
-              <Text style={styles.english}>
-                {item.english}
-              </Text>
-            </TouchableOpacity>
-          );
-        }}
-      />
+        <Text style={styles.description}>
+          Helping patients to easily find healthcare services and accessible
+          facilities.
+        </Text>
+      </View>
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() =>
-          router.push("/legal")
-        }
+        onPress={() => router.push("/language")}
       >
         <Text style={styles.buttonText}>
-          {t("common.continue")}
+          {t("common.getStarted", { defaultValue: "Get Started" })}
         </Text>
       </TouchableOpacity>
-
-      <Text style={styles.footer}>
-  {t("language.footer")}{" "}
-  <Text style={styles.linkText}>
-    {t("legal.terms")}
-  </Text>{" "}
-  {t("common.and")}{" "}
-  <Text style={styles.linkText}>
-    {t("legal.privacy")}
-  </Text>
-  .
-</Text>
     </View>
   );
 }
@@ -208,143 +44,56 @@ export default function LanguageScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    backgroundColor: Colours.surface,
+    justifyContent: "space-between",
+    paddingHorizontal: 24,
     paddingTop: 80,
-    backgroundColor: Colours.surface,
+    paddingBottom: 50,
   },
 
-  title: {
-    ...Typography.h2,
-    color: Colours.text,
-    textAlign: "center",
-    marginBottom: 24,
-  },
-
-  searchInput: {
-    borderWidth: 1,
-    borderColor: Colours.border,
-    borderRadius: 12,
-    padding: 14,
-    marginBottom: 12,
-    backgroundColor: Colours.surface,
-    color: Colours.text,
-  },
-
-  searchResults: {
-    borderWidth: 1,
-    borderColor: Colours.border,
-    borderRadius: 12,
-    marginBottom: 16,
-    maxHeight: 250,
-    backgroundColor: Colours.surface,
-  },
-
-  resultRow: {
-    padding: 14,
-    borderBottomWidth: 1,
-    borderBottomColor: Colours.border,
-  },
-
-  resultText: {
-    ...Typography.body,
-    color: Colours.text,
-  },
-
-  card: {
-    flex: 1,
-    margin: 8,
-    borderWidth: 1,
-    borderColor: Colours.border,
-    borderRadius: 12,
-    padding: 20,
-    position: "relative",
-    backgroundColor: Colours.surface,
-  },
-
-  selectedCard: {
-    borderColor: Colours.primary,
-    borderWidth: 2,
-  },
-
-  checkmark: {
-    position: "absolute",
-    top: 10,
-    right: 10,
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: Colours.primary,
-    justifyContent: "center",
+  content: {
     alignItems: "center",
   },
 
-  checkmarkText: {
-    color: Colours.surface,
-    fontWeight: "700",
+  logo: {
+    width: 200,
+    height: 200,
+    resizeMode: "contain",
+    marginBottom: 32,
   },
 
-  flag: {
-    fontSize: 28,
-    marginBottom: 12,
-  },
-
-  native: {
-    ...Typography.h3,
+  title: {
+    ...Typography.h1,
     color: Colours.text,
+    textAlign: "center",
+    marginBottom: 16,
   },
 
-  english: {
-    ...Typography.bodySmall,
+  slogan: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: Colours.primary,
+    textAlign: "center",
+    marginBottom: 20,
+  },
+
+  description: {
+    ...Typography.body,
     color: Colours.muted,
-    marginTop: 4,
+    textAlign: "center",
+    lineHeight: 26,
+    paddingHorizontal: 10,
   },
 
   button: {
     backgroundColor: Colours.primary,
-    padding: 18,
     borderRadius: 30,
-    marginTop: 20,
+    paddingVertical: 18,
+    alignItems: "center",
   },
 
   buttonText: {
     ...Typography.button,
     color: Colours.surface,
-    textAlign: "center",
-  },
-
-  footer: {
-    ...Typography.caption,
-    textAlign: "center",
-    color: Colours.muted,
-    marginTop: 16,
-    marginBottom: 30,
-    lineHeight: 18,
-  },
-
-  linkText: {
-    color: Colours.primary,
-    fontWeight: "700",
-  },
-
-  selectedContainer: {
-    backgroundColor: Colours.surfaceLight,
-    borderWidth: 1,
-    borderColor: Colours.borderLight,
-    borderRadius: 12,
-    padding: 12,
-    marginBottom: 16,
-  },
-
-  selectedLabel: {
-    ...Typography.caption,
-    color: Colours.primary,
-    fontWeight: "600",
-  },
-
-  selectedValue: {
-    ...Typography.body,
-    color: Colours.text,
-    fontWeight: "700",
-    marginTop: 4,
   },
 });

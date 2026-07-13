@@ -4,28 +4,40 @@ from datetime import datetime, timedelta, timezone
 
 from flask import Blueprint, g, jsonify, request
 
-from auth import require_bearer_auth
+from auth import require_bearer_auth, web_readonly_blocked
 from mock_data import REPORTS
 
 
 bp = Blueprint("reports", __name__)
 
+# Matches the 9 category_id values seeded in 006_seed_report_categories.sql
+# exactly (that file names itself the source of truth for this id<->label
+# mapping — keep both in sync). Previously only had the original 6; the
+# other 3 (long_waiting_time, ramp_blocked, closed_early) were seeded and
+# even used by a couple of mock_data.py's REPORTS entries, but weren't
+# accepted on submission and had no display label.
 ALLOWED_REPORT_TYPES = {
     "elevator_broken",
     "wheelchair_lift_broken",
     "toilet_out_of_order",
     "large_crowd",
+    "long_waiting_time",
     "protest_or_blockage",
     "entrance_closed",
+    "ramp_blocked",
+    "closed_early",
 }
 
 ISSUE_TYPE_LABELS = {
     "elevator_broken": "Lift Broken",
     "wheelchair_lift_broken": "Wheelchair Lift Broken",
-    "toilet_out_of_order": "Toilet Out of Order",
-    "large_crowd": "Large Crowd",
-    "protest_or_blockage": "Protest or Blockage",
-    "entrance_closed": "Entrance Closed",
+    "toilet_out_of_order": "Toilet out of service",
+    "large_crowd": "Too Crowded",
+    "long_waiting_time": "Long Waiting Time",
+    "protest_or_blockage": "Protest / Blockage",
+    "entrance_closed": "Entrance Blocked",
+    "ramp_blocked": "Ramp Blocked",
+    "closed_early": "Closed Early",
 }
 
 ALLOWED_CONFIRMATION_ACTIONS = {
@@ -164,6 +176,10 @@ def _submit_via_db(db_module, payload: dict) -> dict:
 @bp.post("/api/v1/reports")
 @require_bearer_auth
 def submit_report():
+    blocked = web_readonly_blocked()
+    if blocked:
+        return blocked
+
     payload = request.get_json(silent=True) or {}
 
     if "issue_type" not in payload:
@@ -223,12 +239,36 @@ def list_reports():
         except Exception:
             pass  # Fallback to mock data below.
 
-    return jsonify({"data_mode": "mock", "count": len(REPORTS), "items": REPORTS})
+    # Route the mock fallback through the same _format_report() shape as the
+    # DB path, rather than returning REPORTS' raw (richer) mock shape — the
+    # contract must not change depending on whether MySQL happens to be up.
+    items = [_flatten_mock_report_confirmations(report) for report in REPORTS]
+    return jsonify(
+        {
+            "data_mode": "mock",
+            "count": len(items),
+            "items": [_format_report(item) for item in items],
+        }
+    )
+
+
+def _flatten_mock_report_confirmations(report: dict) -> dict:
+    confirmations = report.get("confirmations") or {}
+    return {
+        **report,
+        "confirmation_count": confirmations.get("count", report.get("confirmation_count", 0)),
+        "latest_action": confirmations.get("latest_action"),
+        "latest_action_at": confirmations.get("latest_action_at"),
+    }
 
 
 @bp.post("/api/v1/reports/<report_id>/confirmations")
 @require_bearer_auth
 def confirm_report(report_id: str):
+    blocked = web_readonly_blocked()
+    if blocked:
+        return blocked
+
     payload = request.get_json(silent=True) or {}
     action = payload.get("action", "")
 

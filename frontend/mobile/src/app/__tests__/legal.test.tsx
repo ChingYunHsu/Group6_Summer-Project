@@ -7,6 +7,10 @@ jest.mock("expo-router", () => ({
   useRouter: () => ({
     push: mockPush,
   }),
+  // legal.tsx also calls useLocalSearchParams to read an optional `origin`
+  // param — none of these tests exercise that branch, so an empty object
+  // is enough to satisfy the hook's presence.
+  useLocalSearchParams: () => ({}),
 }));
 
 jest.mock("react-i18next", () => ({

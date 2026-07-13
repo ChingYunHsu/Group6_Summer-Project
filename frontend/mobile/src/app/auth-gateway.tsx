@@ -1,12 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useTranslation } from "react-i18next";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
@@ -25,6 +20,10 @@ export default function AuthGatewayScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="chevron-back" size={24} color={Colours.text} />
+      </TouchableOpacity>
+
       <View style={styles.content}>
         {/* Icon */}
 
@@ -40,15 +39,11 @@ export default function AuthGatewayScreen() {
 
         {/* Heading */}
 
-        <Text style={styles.title}>
-  {t("authGateway.title")}
-</Text>
+        <Text style={styles.title}>{t("authGateway.title")}</Text>
 
         {/* Description */}
 
-        <Text style={styles.subtitle}>
-  {t("authGateway.subtitle")}
-</Text>
+        <Text style={styles.subtitle}>{t("authGateway.subtitle")}</Text>
 
         {/* Buttons */}
 
@@ -57,8 +52,8 @@ export default function AuthGatewayScreen() {
           onPress={handleLoginRegister}
         >
           <Text style={styles.primaryButtonText}>
-  {t("authGateway.loginRegister")}
-</Text>
+            {t("authGateway.loginRegister")}
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -66,8 +61,8 @@ export default function AuthGatewayScreen() {
           onPress={handleContinueAsGuest}
         >
           <Text style={styles.secondaryButtonText}>
-  {t("authGateway.continueGuest")}
-</Text>
+            {t("authGateway.continueGuest")}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -78,6 +73,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colours.background,
+  },
+
+  backButton: {
+    position: "absolute",
+    top: 16,
+    left: 16,
+    zIndex: 10,
+    padding: 8,
   },
 
   content: {

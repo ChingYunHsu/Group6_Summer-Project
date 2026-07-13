@@ -121,7 +121,7 @@ fi
 # Smoke check (O2): telemetry_audit_log + venue_source_links must exist.
 echo "Smoke check: required tables exist;"
 missing=0
-for t in telemetry_audit_log venue_source_links busyness_scores busyness_forecasts; do
+for t in telemetry_audit_log venue_source_links busyness_scores busyness_forecasts healthcare_prediction_groups healthcare_prediction_group_members; do
     exists=$(docker exec "$CONTAINER" \
         sh -c "mysql -u\"$USER\" -p\"$PASS\" \"$DB\" -N -B -e \"SELECT COUNT(*) FROM information_schema.tables WHERE table_schema='$DB' AND table_name='$t';\"" 2>/dev/null || echo "0")
     if [[ "$exists" -ne 1 ]]; then

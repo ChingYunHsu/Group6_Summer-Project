@@ -554,16 +554,6 @@ REPORT_CONFIRMATION_TEMPLATE = {
     "report": REPORTS[0],
 }
 
-# Mock credential store backing POST /api/v1/auth/login. Plaintext password
-# is fine here only because this whole file is mock/seed data, not a real DB.
-AUTH_USERS = [
-    {
-        "user_id": "u_1001",
-        "email": "amelia.rivera@example.com",
-        "password": "Password123",
-    },
-]
-
 USER_PROFILE = {
     "user_id": "u_1001",
     "account_state": "logged_in",
@@ -609,9 +599,8 @@ SOS_RESPONSE = {
 }
 
 DELETE_ACCOUNT_RESPONSE = {
-    "status": "scheduled",
-    "message": "Your account deletion has been scheduled and synced data will be purged within 24 hours.",
-    "purge_deadline": "2026-06-09T23:59:59Z",
+    "status": "deleted",
+    "message": "Your account and all associated data have been permanently deleted.",
 }
 
 # Medical ID — Option B (2026-06): synced server-side instead of on-device

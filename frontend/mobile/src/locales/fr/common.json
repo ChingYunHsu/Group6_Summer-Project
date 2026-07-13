@@ -4,14 +4,17 @@
     "and": "et",
     "cancel": "Annuler",
     "delete": "Supprimer",
-    "save": "Engregistrer",
-    "edit": "Modifier"
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "loading": "Chargement..."
   },
   "language": {
     "choose": "Choisissez votre langue",
     "search": "Rechercher d'autres langues...",
     "selected": "Langue sélectionnée",
-    "footer": "En continuant, vous consulterez nos"
+    "footer": "En continuant, vous consulterez nos",
+    "comingSoon": "Bientôt disponible",
+    "comingSoonMessage": "Cette langue sera disponible dans une prochaine version."
   },
   "legal": {
     "title": "Mentions légales et confidentialité",
@@ -87,7 +90,10 @@
     "finishProfileTitle": "Souhaitez-vous terminer la configuration de votre Profil et Identifiant Médical ?",
     "finishProfileDescription": "Cela aide les services d'urgence de NYC à mieux vous assister.",
     "finishProfile": "Terminer le Profil et l'Identifiant",
-    "skipForNow": "Passer pour le moment"
+    "skipForNow": "Passer pour le moment",
+    "loginRequiredTitle": "Connexion requise",
+    "loginRequiredBody": "Afin de garantir l'exactitude des données de ClearPath et d'éviter les abus, vous devez être connecté pour envoyer ou vérifier les signalements de la communauté.",
+    "logInSignUp": "Se connecter / S'inscrire"
   },
 
   "profile": {
@@ -127,7 +133,18 @@
     "pain": "Douleur",
     "translationPlaceholder": "Saisissez du texte dans la langue du visiteur...",
     "translationResult": "La traduction apparaîtra ici après l'intégration du backend.",
-    "medicalSummary": "Résumé de l'Identifiant Médical"
+    "medicalSummary": "Résumé de l'Identifiant Médical",
+    "categories": {
+      "general": "Général",
+      "emergency": "Urgence",
+      "allergies": "Allergies",
+      "respiratory": "Respiratoire",
+      "pain": "Douleur",
+      "injury": "Blessure",
+      "cardiac": "Cardiaque",
+      "hospital": "Hôpital",
+      "pharmacy": "Pharmacie"
+    }
   },
 
   "location": {
@@ -146,7 +163,11 @@
     "unableToRetrieveMessage": "Veuillez vous assurer que le GPS est activé sur votre appareil.",
     "enabledMessage": "Les services de localisation ont été activés avec succès.",
     "error": "Erreur de localisation",
-    "errorMessage": "Une erreur est survenue lors de l'accès aux services de localisation."
+    "errorMessage": "Une erreur est survenue lors de l'accès aux services de localisation.",
+    "servicesRequiredTitle": "Services de localisation requis",
+    "servicesRequiredBody": "Pour envoyer des signalements ou générer un itinéraire à partir de la position de votre appareil, veuillez activer les services de localisation.",
+    "systemSettings": "Ouvrir les paramètres système",
+    "settingsError": "Impossible d'ouvrir les paramètres système."
   },
 
   "medicalId": {
@@ -154,5 +175,90 @@
     "emergencyProfile": "Profil d'urgence",
     "criticalInfo": "Informations critiques",
     "medicalConditions": "Pathologies médicales"
+  },
+
+  "welcome": {
+    "slogan": "L'intelligence de l'accessibilité dans votre langue",
+    "healthcareNavigation": "Navigation des soins de santé",
+    "healthcareNavigationDescription": "Trouvez facilement les services, cliniques et départements hospitaliers.",
+    "medicalId": "Identité médicale",
+    "medicalIdDescription": "Conservez vos informations médicales importantes en cas d'urgence.",
+    "aiAssistant": "Assistant IA",
+    "aiAssistantDescription": "Obtenez rapidement des conseils et une assistance en matière de santé à tout moment.",
+    "showStaff": "Montrer au personnel",
+    "showStaffDescription": "Utilisez des phrases courantes et la traduction en direct pour communiquer avec les habitants et le personnel.",
+    "emergencySos": "SOS d'urgence",
+    "emergencySosDescription": "Accédez rapidement à l'assistance d'urgence lorsque chaque seconde compte."
+  },
+  "tabs": {
+    "map": "Carte",
+    "hospitalMap": "Carte de l'hôpital",
+    "assistant": "Assistant",
+    "clearPathAssistant": "Assistant ClearPath",
+    "showStaff": "Montrer au personnel",
+    "profile": "Profil",
+    "myProfile": "Mon profil",
+    "more": "Plus"
+  },
+  "map": {
+    "searchPlaceholder": "Rechercher des cliniques ou des pharmacies..."
+  },
+  "reportModal": {
+    "title": "Signaler un problème",
+    "subtitle": "Aidez à maintenir ClearPath à jour en signalant un problème d'accessibilité temporaire.",
+    "whereIsIssue": "Où se trouve le problème ?",
+    "selectVenue": "Sélectionner un lieu",
+    "issueType": "Type de problème",
+    "nearbyVenue": "Lieu ou point de repère à proximité",
+    "currentLocation": "Déposer une épingle à l'emplacement actuel",
+    "nearby": "À proximité",
+    "additionalInformation": "Informations supplémentaires (facultatif)",
+    "timestampNotice": "(Les signalements sont toujours envoyés avec l'heure actuelle.)",
+    "submit": "Envoyer le signalement",
+    "loginRequired": "Connexion requise",
+    "loginRequiredMessage": "Pour garantir l'exactitude des données ClearPath, vous devez être connecté avant d'envoyer un signalement.",
+    "locationRequired": "Services de localisation requis",
+    "locationRequiredMessage": "Veuillez activer les services de localisation avant d'envoyer un signalement.",
+    "issueTypes": {
+      "largeCrowd": "Trop de monde",
+      "entranceClosed": "Entrée bloquée",
+      "elevatorBroken": "Ascenseur en panne",
+      "wheelchairLiftBroken": "Plateforme PMR en panne",
+      "toiletOutOfOrder": "Toilettes hors service",
+      "protestOrBlockage": "Manifestation / Blocage"
+    }
+  },
+  "more": {
+    "languageSelection": "Sélection de la langue",
+    "settings": "Paramètres",
+    "legal": "Mentions légales",
+    "welcome": "Bienvenue",
+    "sos": "SOS"
+  },
+  "sos": {
+    "title": "Préparation de l'appel d'urgence",
+    "countdown": "Appel dans {{seconds}} s",
+    "subtitle": "L'appel d'urgence sera lancé sauf annulation.",
+
+    "locationTitle": "Position actuelle",
+    "locationDescription": "Votre position peut être partagée pendant l'appel d'urgence.",
+
+    "medicalIdTitle": "Résumé des informations médicales",
+
+    "name": "Nom",
+    "bloodType": "Groupe sanguin",
+    "conditions": "Pathologies",
+    "allergies": "Allergies",
+    "phone": "Téléphone",
+
+    "notice": "Gardez cet écran ouvert pendant votre conversation avec les services d'urgence.",
+
+    "cancel": "Annuler l'appel d'urgence",
+
+    "notProvided": "Non renseigné",
+    "none": "Aucune",
+
+    "callErrorTitle": "Impossible de passer l'appel",
+    "callErrorMessage": "Cet appareil ne peut pas passer d'appels téléphoniques."
   }
 }

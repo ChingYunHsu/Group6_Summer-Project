@@ -1,5 +1,5 @@
 import Checkbox from "expo-checkbox";
-import { useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -16,16 +16,21 @@ import { Typography } from "../constants/typography";
 export default function LegalScreen() {
   const router = useRouter();
 
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
-  const [acceptedTerms, setAcceptedTerms] =
-    useState(false);
+  // Onboarding (welcome.tsx) opens this screen with no params — default
+  // behavior unchanged, Accept & Continue pushes forward to /location.
+  // Opened mid-session (the More tab's "Legal" row) passes origin="app",
+  // so Accept & Continue returns to wherever the user actually came from
+  // instead of restarting the rest of onboarding underneath them.
+  const { origin } = useLocalSearchParams<{ origin?: string }>();
+  const isInAppEntry = origin === "app";
 
-  const [acceptedPrivacy, setAcceptedPrivacy] =
-    useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
-  const canContinue =
-    acceptedTerms && acceptedPrivacy;
+  const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
+
+  const canContinue = acceptedTerms && acceptedPrivacy;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -34,39 +39,29 @@ export default function LegalScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={true}
       >
-        <Text style={styles.title}>
-  {t("legal.title")}
-</Text>
+        <Text style={styles.title}>{t("legal.title")}</Text>
 
-<Text style={styles.heading}>
-  {t("legal.reviewHeading")}
-</Text>
+        <Text style={styles.heading}>{t("legal.reviewHeading")}</Text>
 
-<Text style={styles.subtitle}>
-  {t("legal.reviewSubtitle")}
-</Text>
+        <Text style={styles.subtitle}>{t("legal.reviewSubtitle")}</Text>
 
         {/* TERMS */}
-<View style={styles.card}>
-        <Text style={styles.cardTitle}>
-  📄 {t("legal.terms")}
-</Text>
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>📄 {t("legal.terms")}</Text>
 
-<Text style={styles.cardDescription}>
-  {t("legal.termsDescription")}
-</Text>
+          <Text style={styles.cardDescription}>
+            {t("legal.termsDescription")}
+          </Text>
 
           <View style={styles.previewBox}>
-  <ScrollView
-    nestedScrollEnabled
-    showsVerticalScrollIndicator
-    style={styles.previewScroll}
-  >
-    <Text style={styles.previewText}>
-  {t("legal.termsPreview")}
-</Text>
-  </ScrollView>
-</View>
+            <ScrollView
+              nestedScrollEnabled
+              showsVerticalScrollIndicator
+              style={styles.previewScroll}
+            >
+              <Text style={styles.previewText}>{t("legal.termsPreview")}</Text>
+            </ScrollView>
+          </View>
         </View>
 
         <View style={styles.checkboxRow}>
@@ -74,46 +69,38 @@ export default function LegalScreen() {
             testID="terms-checkbox"
             value={acceptedTerms}
             onValueChange={setAcceptedTerms}
-            color={
-              acceptedTerms
-                ? Colours.primary
-                : undefined
-            }
+            color={acceptedTerms ? Colours.primary : undefined}
           />
 
-          <Text style={styles.checkboxText}>
-  {t("legal.agreeTerms")}
-</Text>
+          <Text style={styles.checkboxText}>{t("legal.agreeTerms")}</Text>
         </View>
 
         {/* PRIVACY */}
 
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>
-  🛡 {t("legal.privacy")}
-</Text>
+          <Text style={styles.cardTitle}>🛡 {t("legal.privacy")}</Text>
 
-<Text style={styles.cardDescription}>
-  {t("legal.privacyDescription")}
-</Text>
+          <Text style={styles.cardDescription}>
+            {t("legal.privacyDescription")}
+          </Text>
 
           <View style={styles.securityBox}>
             <Text style={styles.securityText}>
-  🔒 {t("legal.securityNotice")}
-</Text>
+              🔒 {t("legal.securityNotice")}
+            </Text>
           </View>
 
           <View style={styles.previewBox}>
-  <ScrollView
-    nestedScrollEnabled
-    showsVerticalScrollIndicator
-    style={styles.previewScroll}
-  >
-    <Text style={styles.previewText}>
-  {t("legal.privacyPreview")}
-</Text>
-  </ScrollView>
-</View>
+            <ScrollView
+              nestedScrollEnabled
+              showsVerticalScrollIndicator
+              style={styles.previewScroll}
+            >
+              <Text style={styles.previewText}>
+                {t("legal.privacyPreview")}
+              </Text>
+            </ScrollView>
+          </View>
         </View>
 
         <View style={styles.checkboxRow}>
@@ -121,39 +108,32 @@ export default function LegalScreen() {
             testID="privacy-checkbox"
             value={acceptedPrivacy}
             onValueChange={setAcceptedPrivacy}
-            color={
-              acceptedPrivacy
-                ? Colours.primary
-                : undefined
-            }
+            color={acceptedPrivacy ? Colours.primary : undefined}
           />
 
-          <Text style={styles.checkboxText}>
-  {t("legal.agreePrivacy")}
-</Text>
+          <Text style={styles.checkboxText}>{t("legal.agreePrivacy")}</Text>
         </View>
 
         <TouchableOpacity
           testID="continue-button"
           disabled={!canContinue}
-          style={[
-            styles.button,
-            !canContinue &&
-              styles.disabledButton,
-          ]}
-          onPress={() =>
-            router.push("/location")
-          }
+          style={[styles.button, !canContinue && styles.disabledButton]}
+          onPress={() => {
+            if (isInAppEntry) {
+              router.back();
+            } else {
+              router.push("/location");
+            }
+          }}
         >
           <Text
-  style={[
-    styles.buttonText,
-    !canContinue &&
-      styles.disabledButtonText,
-  ]}
->
-  {t("legal.acceptContinue")}
-</Text>
+            style={[
+              styles.buttonText,
+              !canContinue && styles.disabledButtonText,
+            ]}
+          >
+            {t("legal.acceptContinue")}
+          </Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

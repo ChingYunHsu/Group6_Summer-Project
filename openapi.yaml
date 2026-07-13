@@ -1,19 +1,69 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.5.2
+  version: 1.6.0
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
 
+    ## FROZEN — Sprint 4 API Freeze (v1.6.0)
+    This spec has been audited end-to-end against the actual implemented
+    backend behavior (every path, security scheme, request/response schema,
+    and query parameter) and corrected to match reality. No breaking
+    contract changes are expected after this freeze; only
+    production-blocking defects and critical bug fixes may still land
+    before Sprint 5 deployment. Highlights of the freeze pass:
+    - Documented three previously-undocumented endpoints: `POST /auth/guest`,
+      `POST /translate` (new — Gemini-backed mobile Live Translate feature),
+      `GET /realtime/stream` (persistent SSE, distinct from the existing
+      batch `/realtime/map-updates`).
+    - Removed a reintroduced duplicate `/auth/login` path definition (and
+      its orphaned `LoginRequest`/`LoginResponse`/`AuthTokenResponse`/
+      `RegisterRequest`/`PasswordResetRequest`/`PasswordResetResponse`
+      schemas) — the real path is the one using `AuthLoginRequest`/
+      `AuthLoginResponse`.
+    - Corrected security schemes on 6 endpoints to match their actual
+      `@require_bearer_auth`/`@require_api_key` decorator (`PUT
+      /user/settings`, `POST /user/sos`, `GET /user/medical-passport`,
+      `POST /chatbot` → ApiKeyAuth as implemented; `GET /user/favourites`
+      → BearerAuth as implemented).
+    - `/user/medical-profile` was documented as reusing the 3-field
+      `MedicalId` schema with Tier-2 Fernet encryption — neither is true.
+      The real implementation (`api/medical.py`, plain columns on
+      `medical_profiles`) returns 8 fields; now documented as the new
+      `MedicalProfile`/`MedicalProfileUpdate` schemas. (The encrypted-blob
+      implementation this spec previously described was a separate,
+      broken, shadowing route in `user.py` that has been removed.)
+    - Added `report_scope`/`data_mode` to `Report`/`ReportResponse`/
+      `ReportListResponse`, `data_mode`/`rank` to `InsightsDashboard`,
+      `bilingual_service_badges` to `Venue`, `expires_at` to
+      `VenueBusyness`, `tracking_metrics` to `SosRequest` — all fields the
+      backend already returns/accepts but weren't documented.
+    - Documented the real query parameters actually read by
+      `GET /venues` (`languages`, not the never-implemented
+      `primary_lang`/`secondary_lang` dual-field design — F-02's dual
+      dropdown remains real product debt, not a docs error, flagged
+      inline), `GET/POST /routes/options` and `/routes/detail`
+      (`destination_venue_id`, `origin_lat`, `origin_lon`, `mode`), and
+      `GET /insights` (`lat`/`lon`; removed the never-implemented
+      `timeframe` param).
+    - Implemented the PRD Web Read-Only constraint
+      (`x-web-readonly`/`X-Client-Origin: web` → 403) on
+      `POST /reports` and `POST /reports/{id}/confirmations` — this was
+      documented since Fix 4 but never actually enforced in
+      `api/reports.py` (favourites had the equivalent check; reports
+      didn't). Code fixed to match the existing, correct documentation.
+    - `GET /health` version bumped from a stale hardcoded `1.4.0` to match
+      this spec's `1.6.0`.
+
     ## Changelog — v1.5.2
-    - **Fix 13 (Tier 2 Encrypted Medical Profile):** Added
+    - **Fix 13 (Medical Profile):** Added
       `GET`/`PUT`/`DELETE /api/v1/user/medical-profile`, backed by a real
-      MySQL `medical_profiles` table with an application-level (Tier 2)
-      Fernet-encrypted payload column, layered on top of Tier 1 MySQL
-      tablespace encryption. Identity is resolved strictly from the Bearer
-      token's `sub` claim; an explicit `user_id` query parameter is rejected
-      with 400 on every method to prevent one user addressing another's
-      record.
+      MySQL `medical_profiles` table (plain columns — see the Sprint 4
+      freeze note above for the correction to this entry's original
+      encrypted-payload description). Identity is resolved strictly from
+      the Bearer token's `sub` claim; an explicit `user_id` query
+      parameter is rejected with 400 on every method to prevent one user
+      addressing another's record.
 
     ## Changelog — v1.5.1
     - **Fix 12 (Logout / Token Revocation):** Added `POST /api/v1/auth/logout`
@@ -103,11 +153,12 @@ info:
       only the 3 fields editable on the profile page (`phone`, `nationality`,
       `spoken_languages`); `user_id`, `email`, and `full_name` remain
       registration-locked (read-only). `UserSettingsUpdate` mirrors the
-      user-togglable fields of `UserSettings`. Also removed the dead
-      `GET /user/medical-id` and `GET /user/emergency-contacts` routes from
-      `src/api/user.py` per the D10 decision (medical data stays device-local;
-      these were never part of the OpenAPI contract and referenced non-existent
-      mock data).
+      user-togglable fields of `UserSettings`.
+    - **Freeze correction (Sprint 4):** this changelog previously claimed
+      `GET /user/medical-id` and `GET /user/emergency-contacts` were removed
+      per a D10 decision — they were not; both remain implemented
+      (`src/api/user.py`) and documented below. Correcting the record rather
+      than silently dropping it, since the original claim was simply wrong.
 
 servers:
   - url: http://localhost:5000
@@ -233,6 +284,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/ValidationErrorResponse'
 
+  /api/v1/auth/guest:
+    post:
+      tags: [Auth]
+      summary: Issue a temporary guest session (no registration required)
+      description: >
+        Issues a signed access/refresh token pair for an anonymous guest_<n>
+        identity, same shape as /auth/login, so guest sessions work against
+        every BearerAuth endpoint without requiring account creation.
+      operationId: createGuestSession
+      responses:
+        '201':
+          description: Guest session created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthLoginResponse'
+
   # FIX 12 — Logout / Token Revocation
   # Bearer access tokens are stateless JWTs, so logout cannot delete them
   # server-side. Instead the presented token's signature is recorded in a
@@ -309,34 +377,23 @@ paths:
       security:
         - ApiKeyAuth: []
       parameters:
-        # FIX 8 — F-02 Language Filter: dual-field architecture
-        # PRD F-02 explicitly requires two separate fields matching the dual-dropdown
-        # UI (Primary Language + Secondary Language Optional). The previous single
-        # `languages` comma-string param did not match the frontend state model or
-        # the PRD tech stack note (/venues?primary_lang=FR&secondary_lang=ZH).
-        - name: primary_lang
+        # FIX 8 — F-02 Language Filter: dual-field architecture NOT YET
+        # IMPLEMENTED. The PRD calls for two separate primary_lang/
+        # secondary_lang fields matching a dual-dropdown UI, but
+        # _parse_venue_query_matrix() in api/venues.py still only reads a
+        # single comma-separated `languages` param (matches ANY of the
+        # given codes, not a primary+secondary AND). Documented as
+        # actually implemented for the freeze; F-02's dual-field UI
+        # remains real product debt to pick up in a future sprint.
+        - name: languages
           in: query
           required: false
           description: >
-            Primary language filter — ISO 639-1 code (e.g. FR, ZH, ES). Filters map
-            pins to venues whose verified supported languages include this value.
-            Corresponds to the "Primary Language" dropdown in the Advanced Filters panel.
-            Pre-populated from the user's saved profile language preference but remains
-            inactive until explicitly applied.
+            Comma-separated ISO 639-1 codes (e.g. FR,ES). Returns venues whose
+            language_tags include ANY of the given codes.
           schema:
             type: string
-            example: FR
-        - name: secondary_lang
-          in: query
-          required: false
-          description: >
-            Optional secondary language filter — ISO 639-1 code (e.g. ZH, ES).
-            Corresponds to the "Secondary Language (Optional)" dropdown in the Advanced
-            Filters panel. When provided, venues must support BOTH primary_lang AND
-            secondary_lang to appear in results.
-          schema:
-            type: string
-            example: ZH
+            example: FR,ES
         - name: accessible
           in: query
           required: false
@@ -664,12 +721,21 @@ paths:
           description: Optional district key such as uptown, midtown_east, midtown_west, downtown.
           schema:
             type: string
-        - name: timeframe
+        - name: lat
           in: query
           required: false
+          description: >
+            Caller's latitude. Combined with `lon`, enables real
+            (Haversine straight-line) travel_minutes on fastest_hubs
+            entries; omitted entirely (0) without both.
           schema:
-            type: string
-            enum: [live, today, week]
+            type: number
+        - name: lon
+          in: query
+          required: false
+          description: Caller's longitude — see `lat`.
+          schema:
+            type: number
       responses:
         '200':
           description: Analytics payload for Insights Dashboard cards and charts.
@@ -684,7 +750,7 @@ paths:
       summary: Ask the multilingual assistant a question
       operationId: askChatbot
       security:
-        - BearerAuth: []
+        - ApiKeyAuth: []
       requestBody:
         required: true
         content:
@@ -711,27 +777,32 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-  # FIX 6 — Token Issuance: BearerAuth-gated endpoints (Fix 1) had no way to
-  # actually obtain a token. This issues the signed JWT that clients pass as
-  # `Authorization: Bearer <access_token>` to every BearerAuth endpoint below.
-  /api/v1/auth/login:
+  /api/v1/translate:
     post:
-      tags: [Auth]
-      summary: Exchange email/password for a bearer access token
-      operationId: login
+      tags: [Chatbot]
+      summary: Server-side text translation (mobile Live Translate feature)
+      description: >
+        Gemini-backed literal translation for arbitrary visitor input not
+        covered by canned phrase templates. On any translation failure this
+        returns 503 rather than a fabricated/echoed translation — this is
+        patient/staff emergency communication, where a wrong translation is
+        worse than an obvious failure.
+      operationId: translateText
+      security:
+        - BearerAuth: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoginRequest'
+              $ref: '#/components/schemas/TranslateRequest'
       responses:
         '200':
-          description: Authenticated. Use access_token as a Bearer token.
+          description: Translation succeeded.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoginResponse'
+                $ref: '#/components/schemas/TranslateResponse'
         '400':
           description: Validation failed.
           content:
@@ -739,7 +810,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/ValidationErrorResponse'
         '401':
-          description: Invalid email or password.
+          description: Authentication required.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: Translation temporarily unavailable (Gemini failure or malformed response).
           content:
             application/json:
               schema:
@@ -832,9 +909,16 @@ paths:
     put:
       tags: [User]
       summary: Update user settings
+      description: >
+        NOTE (frozen as-implemented): unlike GET (BearerAuth) and unlike
+        every other /user/* mutation, this endpoint currently only checks
+        ApiKeyAuth and writes a single shared mock USER_SETTINGS object —
+        it is not yet per-user/DB-backed. Documented to match actual
+        behavior rather than the originally intended contract; tighten to
+        BearerAuth once this is wired to real per-user storage.
       operationId: updateUserSettings
       security:
-        - BearerAuth: []
+        - ApiKeyAuth: []
       requestBody:
         required: true
         content:
@@ -888,7 +972,7 @@ paths:
       summary: List saved favourites
       operationId: listFavourites
       security:
-        - ApiKeyAuth: []
+        - BearerAuth: []
       responses:
         '200':
           description: Saved venues.
@@ -1037,7 +1121,7 @@ paths:
       summary: Trigger SOS panic flow
       operationId: triggerSos
       security:
-        - BearerAuth: []
+        - ApiKeyAuth: []
       requestBody:
         required: false
         content:
@@ -1102,7 +1186,7 @@ paths:
         Storage Risk).
       operationId: getMedicalPassport
       security:
-        - BearerAuth: []
+        - ApiKeyAuth: []
       parameters:
         - name: language
           in: query
@@ -1193,20 +1277,23 @@ paths:
   /api/v1/user/medical-profile:
     get:
       tags: [User]
-      summary: Get the current user's Tier 2 encrypted medical profile
+      summary: Get the current user's medical profile
       description: >
-        Identity is resolved from the Bearer token only. Returns 400 if a
-        user_id query parameter is present.
+        Backed by the medical_profiles table (api/medical.py) — plain
+        columns, not the encrypted-blob design an earlier implementation
+        used (that implementation was removed; it queried a nonexistent
+        encrypted_payload column and 500'd). Identity is resolved from the
+        Bearer token only. Returns 400 if a user_id query parameter is present.
       operationId: getMedicalProfile
       security:
         - BearerAuth: []
       responses:
         '200':
-          description: Medical profile (decrypted server-side for the caller only).
+          description: Medical profile, or all-default/empty fields if none stored yet.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MedicalId'
+                $ref: '#/components/schemas/MedicalProfile'
         '400':
           description: Forbidden — explicit user_id query parameter rejected.
           content:
@@ -1230,14 +1317,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MedicalIdUpdate'
+              $ref: '#/components/schemas/MedicalProfileUpdate'
       responses:
         '200':
           description: Medical profile created or updated.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MedicalId'
+                $ref: '#/components/schemas/MedicalProfile'
         '400':
           description: Validation failed, or explicit user_id query parameter rejected.
           content:
@@ -1399,15 +1486,35 @@ paths:
   /api/v1/routes/options:
     get:
       tags: [Routes]
-      summary: Get route options for the current destination
+      summary: Get route options for a destination venue
+      description: >
+        Dynamic (Google Maps Directions API) when destination_venue_id AND
+        both origin_lat/origin_lon are given and the venue/API call
+        resolve; otherwise falls back to static mock data — same
+        DB-then-mock resilience pattern used elsewhere in this API.
       operationId: getRouteOptions
       security:
         - ApiKeyAuth: []
       parameters:
+        - name: destination_venue_id
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: origin_lat
+          in: query
+          required: false
+          schema:
+            type: number
+        - name: origin_lon
+          in: query
+          required: false
+          schema:
+            type: number
         - name: accessibility_mode
           in: query
           required: false
-          description: Optional routing accessibility preference.
+          description: Accepted but not currently read by the backend (reserved for future use).
           schema:
             type: string
             enum: [standard, step_free]
@@ -1428,10 +1535,39 @@ paths:
   /api/v1/routes/detail:
     get:
       tags: [Routes]
-      summary: Get route detail preview
+      summary: Get route detail preview (polyline + turn-by-turn steps)
+      description: >
+        Dynamic (Google Maps Directions API, decoded polyline + HTML-stripped
+        step instructions) when destination_venue_id AND both origin_lat/
+        origin_lon are given and resolve; otherwise falls back to static
+        mock data.
       operationId: getRouteDetail
       security:
         - ApiKeyAuth: []
+      parameters:
+        - name: destination_venue_id
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: origin_lat
+          in: query
+          required: false
+          schema:
+            type: number
+        - name: origin_lon
+          in: query
+          required: false
+          schema:
+            type: number
+        - name: mode
+          in: query
+          required: false
+          description: Defaults to "transit".
+          schema:
+            type: string
+            enum: [walk, transit, drive]
+            default: transit
       responses:
         '200':
           description: Route detail preview.
@@ -1461,6 +1597,41 @@ paths:
               schema:
                 type: string
                 example: "event: venue_update\ndata: {\"venue_id\":\"v_1002\",\"busyness_percent\":61}\n\n"
+        '401':
+          description: Invalid or missing API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/realtime/stream:
+    get:
+      tags: [Realtime]
+      summary: Persistent SSE channel for SOS telemetry and crowdsourced map updates
+      description: >
+        Long-lived generator (unlike /realtime/map-updates, which returns one
+        static batch): pushes buffered SOS events and newly submitted reports
+        as they happen, plus a periodic heartbeat comment to keep the
+        connection alive.
+      operationId: streamLiveUpdates
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: poll_interval_seconds
+          in: query
+          required: false
+          schema:
+            type: number
+            default: 1.0
+          description: Seconds between polling ticks for new events.
+      responses:
+        '200':
+          description: Server-Sent Events stream (sos_telemetry / map_update events, heartbeat comments).
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                example: "event: sos_telemetry\ndata: {\"incident_id\":\"sos_abc123\"}\n\n"
         '401':
           description: Invalid or missing API key.
           content:
@@ -1572,69 +1743,6 @@ components:
           type: string
           example: If this email is registered, a reset link has been sent.
 
-    # FIX 7 — Auth schemas (F-13)
-    RegisterRequest:
-      type: object
-      required: [full_name, email, password]
-      additionalProperties: false
-      properties:
-        full_name:
-          type: string
-        email:
-          type: string
-          format: email
-        password:
-          type: string
-          format: password
-          minLength: 8
-
-    LoginRequest:
-      type: object
-      required: [email, password]
-      additionalProperties: false
-      properties:
-        email:
-          type: string
-          format: email
-        password:
-          type: string
-          format: password
-
-    AuthTokenResponse:
-      type: object
-      required: [access_token, token_type, user_id]
-      properties:
-        access_token:
-          type: string
-          description: Signed JWT (Flask-JWT-Extended). Use as Bearer token.
-        token_type:
-          type: string
-          example: bearer
-        user_id:
-          type: string
-        show_profile_setup_prompt:
-          type: boolean
-          description: >
-            True on first registration — frontend must display the Medical Profile
-            setup intercept bottom sheet per F-13.
-
-    PasswordResetRequest:
-      type: object
-      required: [email]
-      additionalProperties: false
-      properties:
-        email:
-          type: string
-          format: email
-
-    PasswordResetResponse:
-      type: object
-      required: [message]
-      properties:
-        message:
-          type: string
-          example: If that email is registered, a reset link has been sent.
-
     HealthResponse:
       type: object
       required: [status, service, version]
@@ -1644,33 +1752,6 @@ components:
         service:
           type: string
         version:
-          type: string
-
-    LoginRequest:
-      type: object
-      required: [email, password]
-      properties:
-        email:
-          type: string
-          format: email
-        password:
-          type: string
-
-    LoginResponse:
-      type: object
-      required: [access_token, token_type, expires_in, user_id]
-      properties:
-        access_token:
-          type: string
-          description: "Signed JWT (HS256). Pass as `Authorization: Bearer <access_token>`."
-        token_type:
-          type: string
-          example: bearer
-        expires_in:
-          type: integer
-          description: Token lifetime in seconds.
-          example: 3600
-        user_id:
           type: string
 
     IntegrationsStatusResponse:
@@ -1787,6 +1868,19 @@ components:
           type: array
           items:
             type: string
+        bilingual_service_badges:
+          type: array
+          description: >
+            Structured badges extracted from supported_services entries like
+            "French Help Available" or "Bilingual Staff (Spanish)" — DB-backed
+            venues only (_extract_bilingual_badges() in api/venues.py).
+          items:
+            type: object
+            properties:
+              label:
+                type: string
+              language:
+                type: string
         live_status_badge:
           type: string
         busyness_forecast_12h:
@@ -1895,6 +1989,10 @@ components:
         updated_at:
           type: string
           format: date-time
+        expires_at:
+          type: string
+          format: date-time
+          description: DB-backed live path only (get_venue_busyness() in api/venues.py).
 
     VenueBusynessResponse:
       type: object
@@ -2123,11 +2221,14 @@ components:
 
     ReportListResponse:
       type: object
-      required: [count, items]
+      required: [count, items, data_mode]
       properties:
         count:
           type: integer
           minimum: 0
+        data_mode:
+          type: string
+          enum: [db, mock]
         items:
           type: array
           items:
@@ -2157,7 +2258,7 @@ components:
           readOnly: true
           description: >
             FIX 5 — Mockup display label corresponding to `issue_type`.
-            Standalone label mapping (all 8 categories):
+            Standalone label mapping (all 9 categories):
               elevator_broken         → "Lift Broken"
               wheelchair_lift_broken  → "Wheelchair Lift Broken"
               toilet_out_of_order     → "Toilet out of service"
@@ -2223,6 +2324,14 @@ components:
           minimum: 0
         badge_text:
           type: string
+        report_scope:
+          type: string
+          enum: [venue_bound, standalone]
+          description: Path A (venue_bound, a venue_id was supplied) vs Path B (standalone, GPS-only).
+        data_mode:
+          type: string
+          enum: [db, mock]
+          description: Whether this report came from user_reports or the in-memory mock fallback.
 
     ReportConfirmations:
       type: object
@@ -2244,22 +2353,19 @@ components:
         fallback_language:
           type: string
 
+    # POST /api/v1/reports returns the same shape as a Report list item
+    # (via _format_report() in api/reports.py) plus data_mode — not the
+    # older {status, message, received_payload, visible_in_seconds} mock
+    # shape this schema previously described.
     ReportResponse:
-      type: object
-      required: [status, report_id, message]
-      properties:
-        status:
-          type: string
-        report_id:
-          type: string
-        message:
-          type: string
-        received_payload:
-          $ref: '#/components/schemas/ReportSubmission'
-        visible_in_seconds:
-          type: integer
-        expires_in_minutes:
-          type: integer
+      allOf:
+        - $ref: '#/components/schemas/Report'
+        - type: object
+          required: [data_mode]
+          properties:
+            data_mode:
+              type: string
+              enum: [db, mock]
 
     ReportConfirmationResponse:
       type: object
@@ -2343,6 +2449,12 @@ components:
           type: boolean
         note:
           type: string
+        tracking_metrics:
+          type: object
+          description: >
+            Arbitrary telemetry (speed, heading, etc.) buffered instantly
+            via sos_buffer.py for the SSE stream to drain — not validated
+            beyond being accepted as an object.
 
     SosResponse:
       type: object
@@ -2359,16 +2471,13 @@ components:
 
     DeleteAccountResponse:
       type: object
-      required: [status, message, purge_deadline]
+      required: [status, message]
       properties:
         status:
           type: string
-          example: scheduled
+          example: deleted
         message:
           type: string
-        purge_deadline:
-          type: string
-          format: date-time
 
     # FIX 2 & FIX 3 — Medical Data / Server-Side Storage Risk
     # pdf_url removed. No clinical PDF is stored server-side (D10 mandate).
@@ -2431,6 +2540,70 @@ components:
           type: array
           items:
             type: string
+
+    # Actual shape returned/accepted by GET/PUT /api/v1/user/medical-profile
+    # (api/medical.py, backed by the medical_profiles table —
+    # 004_medical_profiles.sql). Distinct from MedicalId, which is the
+    # 3-field shape for the separate /api/v1/user/medical-id mock endpoint.
+    MedicalProfile:
+      type: object
+      properties:
+        date_of_birth:
+          type: string
+          format: date
+        gender:
+          type: string
+        address:
+          type: string
+        blood_type:
+          type: string
+          example: O+
+        allergies:
+          type: array
+          items:
+            type: string
+        conditions:
+          type: array
+          items:
+            type: string
+        medications:
+          type: array
+          items:
+            type: string
+        emergency_contacts:
+          type: array
+          items:
+            type: object
+
+    MedicalProfileUpdate:
+      type: object
+      additionalProperties: false
+      properties:
+        date_of_birth:
+          type: string
+          format: date
+        gender:
+          type: string
+        address:
+          type: string
+        blood_type:
+          type: string
+        allergies:
+          type: array
+          items:
+            type: string
+        conditions:
+          type: array
+          items:
+            type: string
+        medications:
+          type: array
+          items:
+            type: string
+        emergency_contacts:
+          type: array
+          items:
+            type: object
 
     EmergencyContact:
       type: object
@@ -2509,6 +2682,9 @@ components:
           type: string
         language:
           type: string
+        detected_language:
+          type: string
+          description: ISO 639-1 code of the language detected in the user's message.
         citations:
           type: array
           items:
@@ -2521,6 +2697,30 @@ components:
           type: boolean
         response_time_ms:
           type: integer
+
+    TranslateRequest:
+      type: object
+      required: [text]
+      properties:
+        text:
+          type: string
+        sourceLanguage:
+          type: string
+          description: ISO 639-1 code, or "auto" if unknown. Defaults to "auto".
+        targetLanguage:
+          type: string
+          description: ISO 639-1 code. Defaults to "en".
+
+    TranslateResponse:
+      type: object
+      required: [translatedText, sourceLanguage, targetLanguage]
+      properties:
+        translatedText:
+          type: string
+        sourceLanguage:
+          type: string
+        targetLanguage:
+          type: string
 
     ErrorResponse:
       type: object
@@ -2555,10 +2755,13 @@ components:
     InsightsDashboard:
       type: object
       required:
-        [district, real_time_density, quick_triage, best_travel_window, prediction_series, fastest_hubs]
+        [district, data_mode, real_time_density, quick_triage, best_travel_window, prediction_series, fastest_hubs]
       properties:
         district:
           type: string
+        data_mode:
+          type: string
+          enum: [db, mock]
         real_time_density:
           type: object
           required: [percent, trend]
@@ -2616,6 +2819,9 @@ components:
             type: object
             required: [venue_id, clinic_name, capacity_label, travel_minutes]
             properties:
+              rank:
+                type: integer
+                minimum: 1
               venue_id:
                 type: string
               clinic_name:
@@ -2643,12 +2849,17 @@ components:
 
     UserProfile:
       type: object
-      required: [user_id, account_state, full_name]
+      required: [user_id, full_name]
       properties:
         user_id:
           type: string
         account_state:
           type: string
+          description: >
+            Not currently returned by GET/PUT /user/profile (get_user_profile()
+            only selects user_id, email, display_name, phone, nationality,
+            spoken_languages) — kept optional/documented for a future client
+            that may set it locally, not guaranteed from the API.
         full_name:
           type: string
         email:
