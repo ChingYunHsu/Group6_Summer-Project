@@ -2,10 +2,12 @@ import { fireEvent, render, waitFor } from "@testing-library/react-native";
 import LoginScreen from "../login";
 
 const mockPush = jest.fn();
+const mockReplace = jest.fn();
 
 jest.mock("expo-router", () => ({
   router: {
     push: (...args: any[]) => mockPush(...args),
+    replace: (...args: any[]) => mockReplace(...args),
   },
 }));
 
@@ -124,6 +126,6 @@ describe("LoginScreen", () => {
 
     fireEvent.press(skipButton);
 
-    expect(mockPush).toHaveBeenCalledWith("/map");
+    expect(mockReplace).toHaveBeenCalledWith("/map");
   });
 });

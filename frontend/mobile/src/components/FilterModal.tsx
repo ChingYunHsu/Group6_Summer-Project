@@ -40,9 +40,21 @@ const LANGUAGE_OPTIONS = featuredLanguages
 // value stays the stable internal value used in state/onApply — the
 // display label is now looked up via translationKey at render time.
 const LIVE_STATUS = [
-  { translationKey: "map.filters.quiet", value: "quiet" },
-  { translationKey: "map.filters.moderate", value: "moderate" },
-  { translationKey: "map.filters.busy", value: "busy" },
+  {
+    translationKey: "map.filters.quiet",
+    defaultValue: "Quiet",
+    value: "quiet",
+  },
+  {
+    translationKey: "map.filters.moderate",
+    defaultValue: "Moderate",
+    value: "moderate",
+  },
+  {
+    translationKey: "map.filters.busy",
+    defaultValue: "Busy",
+    value: "busy",
+  },
 ] as const;
 
 const STATUS_COLOURS = {
@@ -173,7 +185,9 @@ export default function FilterModal({
                           selected && styles.selectedText,
                         ]}
                       >
-                        {t(item.translationKey)}
+                        {t(item.translationKey, {
+                          defaultValue: item.defaultValue,
+                        })}
                       </Text>
                     </TouchableOpacity>
                   );

@@ -1,7 +1,12 @@
 import { fireEvent, render, waitFor } from "@testing-library/react-native";
 
 import MapScreen from "../(tabs)/map";
-import { confirmReport, getReports, getVenues } from "../../services/api";
+import {
+  confirmReport,
+  getFavourites,
+  getReports,
+  getVenues,
+} from "../../services/api";
 import { getAccessToken } from "../../services/authService";
 
 /* -------------------------------------------------------------------------- */
@@ -61,6 +66,7 @@ jest.mock("../../services/authService", () => ({
 jest.mock("../../services/api", () => ({
   getVenues: jest.fn(),
   getReports: jest.fn(),
+  getFavourites: jest.fn(),
   confirmReport: jest.fn(),
   submitReport: jest.fn(),
   getRouteOptions: jest.fn(),
@@ -117,6 +123,7 @@ const mockActiveReport = {
 const mockedGetAccessToken = getAccessToken as jest.Mock;
 const mockedGetVenues = getVenues as jest.Mock;
 const mockedGetReports = getReports as jest.Mock;
+const mockedGetFavourites = getFavourites as jest.Mock;
 const mockedConfirmReport = confirmReport as jest.Mock;
 
 /* -------------------------------------------------------------------------- */
@@ -127,6 +134,9 @@ describe("MapScreen — Guest Mode report verification gating", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockedGetVenues.mockResolvedValue([]);
+    mockedGetFavourites.mockResolvedValue({
+      items: [],
+    });
     mockedGetReports.mockResolvedValue([mockActiveReport]);
   });
 
