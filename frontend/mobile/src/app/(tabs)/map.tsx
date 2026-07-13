@@ -176,6 +176,7 @@ export default function MapScreen() {
   // previous user.
   useEffect(() => {
     if (!isAuthenticated) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: clears stale favourites immediately when auth is lost, same justified pattern as loadData's effect below
       setFavouriteVenueIds(new Set());
       return;
     }

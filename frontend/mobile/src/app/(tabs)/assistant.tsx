@@ -48,6 +48,10 @@ function parseCitation(raw: string): Citation {
   };
 }
 
+function generateMessageId(suffix: string): string {
+  return `${Date.now()}-${suffix}`;
+}
+
 function ClinicRecommendationCard({ venue }: { venue: Venue }) {
   const { t } = useTranslation();
 
@@ -180,8 +184,8 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const userMessageId = `${Date.now()}-user`;
-    const typingId = `${Date.now()}-typing`;
+    const userMessageId = generateMessageId("user");
+    const typingId = generateMessageId("typing");
 
     setMessages((prev) => [
       ...prev,

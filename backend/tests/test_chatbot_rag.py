@@ -61,9 +61,17 @@ def test_ask_chatbot_missing_message_rejected(client):
 
 def test_ask_chatbot_rag_happy_path(client, monkeypatch):
     rows = [
-        ("v_close_match", json.dumps([1.0, 0.0]), "Central Park Urgent Care, open 24/7, wheelchair accessible."),
-        ("v_far_match", json.dumps([0.0, 1.0]), "Uptown Pharmacy, closed on Sundays."),
-    ]
+    {
+        "venue_id": "v_close_match",
+        "embedding": json.dumps([1.0, 0.0]),
+        "text_snapshot": "Central Park Urgent Care, open 24/7, wheelchair accessible.",
+    },
+    {
+        "venue_id": "v_far_match",
+        "embedding": json.dumps([0.0, 1.0]),
+        "text_snapshot": "Uptown Pharmacy, closed on Sundays.",
+    },
+]
 
     @contextmanager
     def fake_db_cursor():

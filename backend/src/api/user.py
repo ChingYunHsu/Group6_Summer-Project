@@ -89,12 +89,14 @@ def _next_contact_id() -> str:
 
 def _format_profile(row: dict) -> dict:
     raw_languages = row["spoken_languages"]
-    spoken_languages = json.loads(raw_languages) if raw_languages else []
+    if isinstance(raw_languages, str):
+        spoken_languages = json.loads(raw_languages)
+    else:
+        spoken_languages = raw_languages or []
 
     return {
         "user_id": row["user_id"],
         "email": row["email"],
-        # DB column is display_name; the client contract calls it full_name.
         "full_name": row["display_name"],
         "phone": row["phone"],
         "nationality": row["nationality"],
