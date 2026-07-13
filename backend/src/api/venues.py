@@ -134,7 +134,21 @@ def _level_to_color(level: str) -> str:
     }.get(level, '#2563EB')
 
 
-VALID_VENUE_TYPES = {"hospital", "clinic", "pharmacy", "urgent_care", "mental_health", "shelter"}
+# Matches the venue_type ENUM in 001_clearpath_schema.sql exactly. Only
+# clinic/pharmacy/emergencyasset/hospital/restroom have seeded data today
+# (005_seed_venues.sql) but healthcare/dentist/laboratory are valid enum
+# values too, so filtering by them should never 400 — it should just
+# legitimately return zero results until those are seeded.
+VALID_VENUE_TYPES = {
+    "restroom",
+    "healthcare",
+    "emergencyasset",
+    "clinic",
+    "pharmacy",
+    "hospital",
+    "dentist",
+    "laboratory",
+}
 
 
 def _parse_venue_query_matrix(args):

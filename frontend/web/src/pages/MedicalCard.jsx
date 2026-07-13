@@ -60,7 +60,7 @@ function MedicalCard() {
 
             <div>
               <h4>MEDICAL CONDITIONS / CONDICIONES MÉDICAS</h4>
-              {profile.conditions.map((condition) => (
+              {profile.medical_conditions.map((condition) => (
                 <div className="medical-alert-item blue-item" key={condition.name}>
                   <div className="medical-alert-item-content">
                   <strong>{condition.name}</strong>
