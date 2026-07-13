@@ -140,8 +140,8 @@ def _submit_via_db(db_module, payload: dict) -> dict:
             "INSERT INTO user_reports "
             "(report_id, user_id, venue_id, issue_type, latitude, longitude, accuracy_meters, "
             " anonymous, description, photos, reported_by, status, expires_in_minutes, "
-            " default_language, fallback_language, expires_at, source) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            " default_language, fallback_language, expires_at) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
             (
                 report_id,
                 g.user_id,
@@ -159,7 +159,7 @@ def _submit_via_db(db_module, payload: dict) -> dict:
                 payload.get("default_language", "en"),
                 payload.get("fallback_language"),
                 expires_at,
-                "app",
+            
             ),
         )
         cursor.execute(
@@ -291,7 +291,7 @@ def confirm_report(report_id: str):
                 return jsonify({"error": "Report not found."}), 404
 
             cursor.execute(
-                "INSERT INTO report_confirmations (report_id, user_id, action, language, context) "
+                "INSERT INTO report_confirmations (report_id, user_id, action, language, client_context) "
                 "VALUES (%s, %s, %s, %s, %s) "
                 "ON DUPLICATE KEY UPDATE action = VALUES(action), created_at = NOW()",
                 (report_id, g.user_id, action, payload.get("language"), payload.get("context")),

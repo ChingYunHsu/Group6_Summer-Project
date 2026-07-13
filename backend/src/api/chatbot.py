@@ -47,13 +47,14 @@ def _cosine_similarity(a: list, b: list) -> float:
 
 
 def _retrieve_relevant_venues(cursor, query_embedding: list, top_k: int = TOP_K_VENUES) -> list:
-    """Semantic retrieval against venue_embeddings ONLY. Returns
-    [(score, venue_id, text_snapshot), ...] sorted by similarity descending."""
     cursor.execute("SELECT venue_id, embedding, text_snapshot FROM venue_embeddings")
     rows = cursor.fetchall()
 
     scored = []
-    for venue_id, embedding_raw, text_snapshot in rows:
+    for row in rows:
+        venue_id = row["venue_id"]
+        embedding_raw = row["embedding"]
+        text_snapshot = row["text_snapshot"]
         embedding = _json.loads(embedding_raw) if isinstance(embedding_raw, str) else embedding_raw
         scored.append((_cosine_similarity(query_embedding, embedding), venue_id, text_snapshot))
 

@@ -212,8 +212,11 @@ export interface ReportResponse {
 /*                               FAVOURITES                                   */
 /* -------------------------------------------------------------------------- */
 
-// Backed by user_favorite_venues (per-user, DB-backed) — get/add/delete
-// are all scoped to the authenticated user's token.
+// Matches _format_favourite() in backend/src/api/user.py. As of the fix
+// confirmed in this project, get_favourites/add_favourite/delete_favourite
+// are properly per-user (require_bearer_auth + g.user_id scoping against
+// a real user_favorite_venues table), and favourite_id is deterministic
+// (f"fav_{venue_id}") rather than a shared hardcoded value.
 export interface Favourite {
   favourite_id: string;
 

@@ -22,12 +22,26 @@ import {
 } from "../services/medicalIdService";
 import { loadProfile } from "../services/profileService";
 
+const BLOOD_TYPES = [
+  "A+",
+  "A-",
+  "B+",
+  "B-",
+  "AB+",
+  "AB-",
+  "O+",
+  "O-",
+  "Unknown",
+];
+
 export default function MedicalIdScreen() {
   const { t } = useTranslation();
 
   const [conditionModalVisible, setConditionModalVisible] = useState(false);
 
   const [allergyModalVisible, setAllergyModalVisible] = useState(false);
+
+  const [bloodTypeModalVisible, setBloodTypeModalVisible] = useState(false);
 
   const [newCondition, setNewCondition] = useState("");
 
@@ -188,11 +202,19 @@ export default function MedicalIdScreen() {
           <View style={styles.card}>
             <Text style={styles.label}>{t("profile.bloodType")}</Text>
 
-            <View style={styles.dropdown}>
-              <Text>{bloodType}</Text>
+            <TouchableOpacity
+              style={styles.dropdown}
+              onPress={() => setBloodTypeModalVisible(true)}
+            >
+              <Text>
+                {bloodType ||
+                  t("medicalId.selectBloodType", {
+                    defaultValue: "Select blood type",
+                  })}
+              </Text>
 
               <Ionicons name="chevron-down" size={18} color={Colours.muted} />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -298,6 +320,42 @@ export default function MedicalIdScreen() {
                 <Text>{t("common.add")}</Text>
               </TouchableOpacity>
             </View>
+          </View>
+        </View>
+      </Modal>
+      <Modal visible={bloodTypeModalVisible} transparent animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>{t("profile.bloodType")}</Text>
+
+            {BLOOD_TYPES.map((option) => (
+              <TouchableOpacity
+                key={option}
+                style={styles.bloodTypeOption}
+                onPress={() => {
+                  setBloodType(option === "Unknown" ? "" : option);
+                  setBloodTypeModalVisible(false);
+                }}
+              >
+                <Text style={styles.bloodTypeOptionText}>{option}</Text>
+
+                {bloodType === option ||
+                (option === "Unknown" && !bloodType) ? (
+                  <Ionicons
+                    name="checkmark"
+                    size={20}
+                    color={Colours.primary}
+                  />
+                ) : null}
+              </TouchableOpacity>
+            ))}
+
+            <TouchableOpacity
+              style={styles.modalActions}
+              onPress={() => setBloodTypeModalVisible(false)}
+            >
+              <Text>{t("common.cancel")}</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
@@ -454,5 +512,19 @@ const styles = StyleSheet.create({
   modalActions: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+
+  bloodTypeOption: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 14,
+    borderBottomWidth: 1,
+    borderBottomColor: Colours.border,
+  },
+
+  bloodTypeOptionText: {
+    fontSize: 16,
+    color: Colours.text,
   },
 });

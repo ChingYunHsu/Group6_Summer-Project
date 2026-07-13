@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ActivityIndicator,
@@ -14,6 +14,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
 import { mockProfile } from "../../data/mockProfile";
+import { getFavourites, getVenue, removeFavourite } from "../../services/api";
 import { getAccessToken } from "../../services/authService";
 import {
   DEFAULT_MEDICAL_PROFILE,
@@ -21,6 +22,27 @@ import {
   MedicalProfile,
 } from "../../services/medicalIdService";
 import { loadProfile } from "../../services/profileService";
+import { Favourite, Venue } from "../../types/venue";
+
+// No real endpoint returns anything like avatar_initials — it was always
+// mockProfile.avatar_initials regardless of which real user was logged
+// in (this is the same fix already applied in edit-profile.tsx; this
+// screen just never got it). Derived from the live full_name instead.
+function getInitials(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+// Real user_id values are full UUIDs (e.g.
+// "f9c8c0f4-11cc-44e5-a825-376ecae82d7b") — display-only truncation,
+// doesn't affect what's actually sent anywhere. Falls back to the raw
+// value for anything shorter (e.g. a mock ID) rather than mangling it.
+function formatUserId(userId: string): string {
+  if (userId.length <= 12) return userId;
+  return `${userId.slice(0, 8)}…`;
+}
 
 export default function ProfileScreen() {
   const [loading, setLoading] = useState(true);
@@ -50,59 +72,194 @@ export default function ProfileScreen() {
     DEFAULT_MEDICAL_PROFILE,
   );
 
-  // Guests get redirected to the dedicated locked-wall screen instead of
-  // silently loading this one and having every fetch 401. replace(), not
-  // push() — the guest wall isn't something "back" should return through
-  // into a screen that's just going to 401 again immediately.
-  useEffect(() => {
-    (async () => {
-      const token = await getAccessToken();
+  const [favourites, setFavourites] = useState<
+    { favourite: Favourite; venue: Venue | null }[]
+  >([]);
 
-      if (!token) {
-        router.replace("/profile-guest");
-      }
-    })();
-  }, []);
+  const [favouritesLoading, setFavouritesLoading] = useState(true);
 
-  useEffect(() => {
-    async function getProfile() {
-      try {
-        const savedProfile = await loadProfile();
+  // Drives everything else on this screen now — the previous version had
+  // the guest-redirect as a separate, uncoordinated effect that didn't
+  // block anything, so profile/medical/favourites all raced ahead and
+  // started fetching (and rendering mockProfile/DEFAULT_MEDICAL_PROFILE
+  // as their initial state) during the brief window before the redirect
+  // actually completed. A guest could see a flash of mock data plus
+  // failed 401s before being bounced to profile-guest.tsx. Now nothing
+  // else runs, and nothing renders, until this has definitively resolved
+  // one way or the other.
+  const [authStatus, setAuthStatus] = useState<
+    "checking" | "guest" | "authenticated"
+  >("checking");
 
-        if (savedProfile) {
-          setProfile(savedProfile);
+  // useFocusEffect, not plain useEffect — re-checks on every return to
+  // this tab, not just first mount, so logging out on another tab and
+  // returning here correctly re-triggers the redirect rather than
+  // leaving stale authenticated content on screen.
+  useFocusEffect(
+    useCallback(() => {
+      let isActive = true;
+
+      (async () => {
+        const token = await getAccessToken();
+
+        if (!isActive) return;
+
+        if (!token) {
+          setAuthStatus("guest");
+          router.replace("/profile-guest");
+        } else {
+          setAuthStatus("authenticated");
         }
+      })();
 
-        setProfileSyncOk(true);
-      } catch (error) {
-        console.error(error);
-        setProfileSyncOk(false);
-      } finally {
-        setLoading(false);
-      }
-    }
+      return () => {
+        isActive = false;
+      };
+    }, []),
+  );
 
-    getProfile();
-  }, []);
+  // useFocusEffect, not plain useEffect — this screen previously only
+  // fetched once on initial mount ([] dependency array), so saving
+  // changes on Edit Profile or Edit Medical ID and navigating back here
+  // via router.back() never triggered a refetch; Expo Router keeps this
+  // screen mounted the whole time, so the old effect simply never ran
+  // again. useFocusEffect re-runs every time this tab is actually
+  // navigated to/back to, which is what "refresh on return" needs.
+  //
+  // Imported from "expo-router" specifically, not "@react-navigation/
+  // native" — this project is on Expo SDK 56, where importing
+  // useFocusEffect from @react-navigation/native was already confirmed
+  // to cause build issues once before (see the same fix applied to
+  // settings.tsx earlier in this project).
+  useFocusEffect(
+    useCallback(() => {
+      if (authStatus !== "authenticated") return;
 
-  useEffect(() => {
-    async function getMedicalId() {
-      try {
-        const savedMedicalId = await loadMedicalId();
+      async function getProfile() {
+        try {
+          const savedProfile = await loadProfile();
 
-        if (savedMedicalId) {
-          setMedicalId(savedMedicalId);
+          if (savedProfile) {
+            setProfile(savedProfile);
+          }
+
+          setProfileSyncOk(true);
+        } catch (error) {
+          console.error(error);
+          setProfileSyncOk(false);
+        } finally {
+          setLoading(false);
         }
-
-        setMedicalSyncOk(true);
-      } catch (error) {
-        console.error("Failed to load medical ID", error);
-        setMedicalSyncOk(false);
       }
-    }
 
-    getMedicalId();
-  }, []);
+      getProfile();
+    }, [authStatus]),
+  );
+
+  useFocusEffect(
+    useCallback(() => {
+      if (authStatus !== "authenticated") return;
+
+      async function getMedicalId() {
+        try {
+          const savedMedicalId = await loadMedicalId();
+
+          if (savedMedicalId) {
+            setMedicalId(savedMedicalId);
+          }
+
+          setMedicalSyncOk(true);
+        } catch (error) {
+          console.error("Failed to load medical ID", error);
+          setMedicalSyncOk(false);
+        }
+      }
+
+      getMedicalId();
+    }, [authStatus]),
+  );
+
+  // Replaces the two hardcoded "St. Mary's International" / "CityMD"
+  // entries that never corresponded to any real venue. getFavourites()
+  // only returns {venue_id, ...} — each one needs a separate getVenue()
+  // call to resolve into something actually displayable (name, address).
+  // Runs on focus, same as the two effects above, so favouriting/
+  // unfavouriting a venue on the Map tab is reflected here on return.
+  useFocusEffect(
+    useCallback(() => {
+      if (authStatus !== "authenticated") return;
+
+      let isActive = true;
+
+      async function getSavedClinics() {
+        try {
+          const response = await getFavourites();
+
+          const resolved = await Promise.all(
+            response.items.map(async (favourite) => {
+              try {
+                const venue = await getVenue(favourite.venue_id);
+                return { favourite, venue };
+              } catch (error) {
+                console.error(
+                  `Failed to resolve favourite venue ${favourite.venue_id}`,
+                  error,
+                );
+                return { favourite, venue: null };
+              }
+            }),
+          );
+
+          if (isActive) setFavourites(resolved);
+        } catch (error) {
+          console.error("Failed to load favourites", error);
+        } finally {
+          if (isActive) setFavouritesLoading(false);
+        }
+      }
+
+      getSavedClinics();
+
+      return () => {
+        isActive = false;
+      };
+    }, [authStatus]),
+  );
+
+  // Optimistic, same pattern as the heart toggle in map.tsx — removes the
+  // card immediately rather than waiting on the network, rolling back
+  // only if the request actually fails.
+  const handleRemoveFavourite = async (venueId: string) => {
+    const previous = favourites;
+
+    setFavourites((current) =>
+      current.filter((item) => item.favourite.venue_id !== venueId),
+    );
+
+    try {
+      await removeFavourite(venueId);
+    } catch (error) {
+      console.error("Failed to remove favourite", error);
+      setFavourites(previous);
+    }
+  };
+
+  // "checking" and "guest" both render the same neutral loading state —
+  // "guest" specifically because the redirect above is already in
+  // flight; showing a spinner for the split second until it completes
+  // reads as normal loading, not as a flash of broken/wrong content.
+  // mockProfile/DEFAULT_MEDICAL_PROFILE (this screen's initial state)
+  // never reach the screen for a guest at all now, since the real
+  // content return below is simply never reached.
+  if (authStatus !== "authenticated") {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.loader}>
+          <ActivityIndicator size="large" color={Colours.primary} />
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -118,7 +275,9 @@ export default function ProfileScreen() {
 
         <View style={styles.profileHeader}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarInitials}>{profile.avatar_initials}</Text>
+            <Text style={styles.avatarInitials}>
+              {getInitials(profile.full_name)}
+            </Text>
           </View>
 
           <Text style={styles.profileName}>{profile.full_name}</Text>
@@ -171,13 +330,17 @@ export default function ProfileScreen() {
             </TouchableOpacity>
           </View>
 
-          {/* user_id and email: no endpoint currently returns either for
-              the logged-in user (get_user_profile's SELECT doesn't
-              include them) — these two rows are unavoidably still mock
-              until that's added server-side. Everything else below is
-              live. */}
+          {/* user_id/email are real now — get_user_profile()'s backend
+              response was updated to include both (see profileService.ts).
+              No code change needed here; this was already reading
+              profile.user_id/profile.email, they're just genuinely
+              populated now instead of permanently falling back to
+              mockProfile's static placeholders. */}
 
-          <InfoRow label={t("profile.userId")} value={profile.user_id} />
+          <InfoRow
+            label={t("profile.userId")}
+            value={profile.user_id ? formatUserId(profile.user_id) : ""}
+          />
 
           <InfoRow label={t("profile.fullName")} value={profile.full_name} />
 
@@ -239,32 +402,43 @@ export default function ProfileScreen() {
           />
         </View>
 
-        {/* Saved Clinics — still static placeholder content (St. Mary's /
-            CityMD are literal strings, not from /user/favourites or
-            matching any real seeded venue). Left as-is on purpose:
-            favourites hasn't been incorporated client-side yet. */}
+        {/* Saved Clinics — now sourced from GET /user/favourites, each
+            venue_id resolved to a real venue via getVenue(). */}
 
         <Text style={styles.savedTitle}>{t("profile.savedClinics")}</Text>
 
-        <View style={styles.clinicCard}>
-          <Ionicons name="medical" size={24} color={Colours.primary} />
+        {favouritesLoading ? (
+          <ActivityIndicator size="small" color={Colours.primary} />
+        ) : favourites.length === 0 ? (
+          <Text style={styles.emptyText}>
+            {t("profile.noSavedClinics", {
+              defaultValue: "No saved clinics yet.",
+            })}
+          </Text>
+        ) : (
+          favourites.map(({ favourite, venue }) => (
+            <View key={favourite.favourite_id} style={styles.clinicCard}>
+              <Ionicons name="medical" size={24} color={Colours.primary} />
 
-          <View style={styles.clinicInfo}>
-            <Text style={styles.clinicName}>St. Mary&apos;s International</Text>
+              <View style={styles.clinicInfo}>
+                <Text style={styles.clinicName}>
+                  {venue?.name ?? favourite.venue_id}
+                </Text>
 
-            <Text style={styles.clinicSub}>{t("profile.savedFacility")}</Text>
-          </View>
-        </View>
+                <Text style={styles.clinicSub}>
+                  {venue?.address ?? t("profile.savedFacility")}
+                </Text>
+              </View>
 
-        <View style={styles.clinicCard}>
-          <Ionicons name="medical" size={24} color={Colours.primary} />
-
-          <View style={styles.clinicInfo}>
-            <Text style={styles.clinicName}>CityMD Urgent Care</Text>
-
-            <Text style={styles.clinicSub}>{t("profile.savedFacility")}</Text>
-          </View>
-        </View>
+              <TouchableOpacity
+                onPress={() => handleRemoveFavourite(favourite.venue_id)}
+                hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+              >
+                <Ionicons name="heart" size={22} color="#DC2626" />
+              </TouchableOpacity>
+            </View>
+          ))
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -294,6 +468,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colours.background,
+  },
+
+  loader: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   content: {
@@ -427,7 +607,9 @@ const styles = StyleSheet.create({
   },
 
   clinicInfo: {
+    flex: 1,
     marginLeft: 12,
+    marginRight: 8,
   },
 
   clinicName: {

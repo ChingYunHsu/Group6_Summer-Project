@@ -1,14 +1,12 @@
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
-import { Callout, Marker } from "react-native-maps";
+import { Marker } from "react-native-maps";
 
 import { Report } from "../types/venue";
-import ReportCallout from "./ReportCallout";
 
 interface Props {
   report: Report;
-  onConfirm?: (reportId: string) => void;
-  onResolve?: (reportId: string) => void;
+  onPress: (report: Report) => void;
 }
 
 export function formatReportedTime(createdAt: string) {
@@ -24,7 +22,7 @@ export function formatReportedTime(createdAt: string) {
   return `${hours} hr${hours === 1 ? "" : "s"} ago`;
 }
 
-export default function ReportMarker({ report, onConfirm, onResolve }: Props) {
+export default function ReportMarker({ report, onPress }: Props) {
   if (report.status !== "active") {
     return null;
   }
@@ -32,21 +30,23 @@ export default function ReportMarker({ report, onConfirm, onResolve }: Props) {
   return (
     <Marker
       coordinate={{
-        latitude: report.latitude,
-        longitude: report.longitude,
+        // Same fix as VenueMarker.tsx — user_reports.latitude/longitude
+        // are also MySQL DECIMAL columns, same string-serialization issue.
+        latitude: Number(report.latitude),
+        longitude: Number(report.longitude),
       }}
+      onPress={() => onPress(report)}
     >
       <Ionicons name="warning" size={36} color="#FACC15" style={styles.icon} />
 
-      <Callout tooltip>
-        <ReportCallout
-          issue={report.issue_type_label ?? report.issue_type}
-          reportedAt={formatReportedTime(report.created_at)}
-          confirmations={report.confirmations.count}
-          onConfirm={() => onConfirm?.(report.report_id)}
-          onResolve={() => onResolve?.(report.report_id)}
-        />
-      </Callout>
+      {/* No Callout/CalloutSubview here anymore — react-native-maps'
+          Callout renders as a flattened native snapshot on iOS with touch
+          regions overlaid in a separate pass, and the two can fall out of
+          sync (confirmed: broken/collapsed rendering for the Confirm/
+          Resolve buttons even after several styling attempts). Tapping
+          the marker now opens a real Modal-based bottom sheet instead —
+          see ReportBottomSheet.tsx, which reuses the same reliable
+          Modal pattern VenueBottomSheet already uses successfully. */}
     </Marker>
   );
 }

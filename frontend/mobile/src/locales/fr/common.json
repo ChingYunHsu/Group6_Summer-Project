@@ -6,7 +6,10 @@
     "delete": "Supprimer",
     "save": "Enregistrer",
     "edit": "Modifier",
-    "loading": "Chargement..."
+    "add": "Ajouter",
+    "loading": "Chargement...",
+    "done": "Terminé",
+    "saving": "Enregistrement..."
   },
   "language": {
     "choose": "Choisissez votre langue",
@@ -43,7 +46,11 @@
     "dangerZone": "Zone de danger",
     "deleteWarning": "La suppression de votre compte est définitive. Tous les dossiers médicaux et données de profil seront supprimés.",
     "deleteAccount": "Supprimer mon compte",
-    "deleteAccountMessage": "Cette action est irréversible."
+    "deleteAccountMessage": "Cette action est irréversible.",
+    "locationDisableTitle": "Désactiver l'accès à la localisation",
+    "locationDisableMessage": "Les autorisations de localisation ne peuvent être modifiées que depuis les paramètres de votre appareil.",
+    "deleteErrorTitle": "Impossible de supprimer le compte",
+    "deleteErrorMessage": "Veuillez réessayer."
   },
 
   "authGateway": {
@@ -63,7 +70,11 @@
     "phoneNumber": "Numéro de téléphone",
     "emailAddress": "Adresse e-mail",
     "address": "Adresse",
-    "spokenLanguages": "Langues parlées"
+    "spokenLanguages": "Langues parlées",
+    "saveErrorTitle": "Tout n'a pas pu être enregistré",
+    "saveErrorMessage": "Certaines de vos modifications n'ont pas été enregistrées. Veuillez réessayer.",
+    "addLanguage": "Ajouter une langue",
+    "languagePlaceholder": "Saisissez une langue"
   },
   "profileGuest": {
     "title": "Sécurisez votre Identifiant Médical",
@@ -93,7 +104,11 @@
     "skipForNow": "Passer pour le moment",
     "loginRequiredTitle": "Connexion requise",
     "loginRequiredBody": "Afin de garantir l'exactitude des données de ClearPath et d'éviter les abus, vous devez être connecté pour envoyer ou vérifier les signalements de la communauté.",
-    "logInSignUp": "Se connecter / S'inscrire"
+    "logInSignUp": "Se connecter / S'inscrire",
+    "signInErrorTitle": "Connexion impossible",
+    "signInErrorMessage": "Veuillez vérifier vos informations et réessayer.",
+    "registerErrorTitle": "Impossible de créer le compte",
+    "registerErrorMessage": "Veuillez vérifier vos informations et réessayer."
   },
 
   "profile": {
@@ -116,7 +131,10 @@
     "conditions": "Pathologies",
     "allergies": "Allergies",
     "savedClinics": "Cliniques enregistrées",
-    "savedFacility": "Établissement enregistré"
+    "savedFacility": "Établissement enregistré",
+    "syncOffline": "Hors ligne - affichage des données enregistrées",
+    "syncLoading": "Synchronisation...",
+    "noSavedClinics": "Aucun établissement enregistré pour le moment."
   },
 
   "showStaff": {
@@ -130,9 +148,11 @@
     "liveTranslate": "Traduction en direct",
     "allergies": "Allergies",
     "respiratory": "Respiratoire",
+    "translationError": "Échec de la traduction. Veuillez réessayer.",
+    "translationLoginRequired": "Connectez-vous pour utiliser la traduction en direct. Appuyez pour vous connecter.",
     "pain": "Douleur",
     "translationPlaceholder": "Saisissez du texte dans la langue du visiteur...",
-    "translationResult": "La traduction apparaîtra ici après l'intégration du backend.",
+    "translationResult": "La traduction apparaîtra ici...",
     "medicalSummary": "Résumé de l'Identifiant Médical",
     "categories": {
       "general": "Général",
@@ -174,7 +194,12 @@
     "title": "Modifier l'Identifiant Médical",
     "emergencyProfile": "Profil d'urgence",
     "criticalInfo": "Informations critiques",
-    "medicalConditions": "Pathologies médicales"
+    "medicalConditions": "Pathologies médicales",
+    "addCondition": "Ajouter une pathologie",
+    "addAllergy": "Ajouter une allergie",
+    "conditionPlaceholder": "Saisissez une pathologie",
+    "allergyPlaceholder": "Saisissez une allergie",
+    "selectBloodType": "Sélectionner le groupe sanguin"
   },
 
   "welcome": {
@@ -192,7 +217,7 @@
   },
   "tabs": {
     "map": "Carte",
-    "hospitalMap": "Carte de l'hôpital",
+    "hospitalMap": "Carte ClearPath",
     "assistant": "Assistant",
     "clearPathAssistant": "Assistant ClearPath",
     "showStaff": "Montrer au personnel",
@@ -201,7 +226,29 @@
     "more": "Plus"
   },
   "map": {
-    "searchPlaceholder": "Rechercher des cliniques ou des pharmacies..."
+    "searchPlaceholder": "Rechercher...",
+    "categories": {
+      "clinic": "Clinique",
+      "pharmacy": "Pharmacie",
+      "aed": "Défibrillateur (DAE)",
+      "hospital": "Hôpital",
+      "restroom": "Toilettes"
+    },
+
+    "filters": {
+      "title": "Filtres",
+      "availability": "Disponibilité",
+      "openNow": "Ouvert maintenant",
+      "accessible": "Accessible",
+      "time": "Heure",
+      "autoCurrentTime": "Heure actuelle automatique",
+      "liveStatus": "Statut en direct",
+      "language": "Langue",
+      "apply": "Appliquer les filtres",
+      "quiet": "Calme",
+      "moderate": "Modéré",
+      "busy": "Fréquenté"
+    }
   },
   "reportModal": {
     "title": "Signaler un problème",
@@ -233,7 +280,8 @@
     "settings": "Paramètres",
     "legal": "Mentions légales",
     "welcome": "Bienvenue",
-    "sos": "SOS"
+    "sos": "SOS",
+    "loginRegister": "Connexion / Inscription"
   },
   "sos": {
     "title": "Préparation de l'appel d'urgence",
@@ -260,5 +308,17 @@
 
     "callErrorTitle": "Impossible de passer l'appel",
     "callErrorMessage": "Cet appareil ne peut pas passer d'appels téléphoniques."
+  },
+
+  "assistant": {
+    "greeting1": "Bonjour ! Je suis votre Assistant ClearPath. Comment puis-je vous aider aujourd'hui ?",
+    "greeting2": "Je peux vous aider à trouver des cliniques, expliquer les services et répondre à vos questions sur la navigation des soins de santé.",
+    "respondingIn": "Réponse en {{language}}",
+    "errorMessage": "Désolé, je n'ai pas pu obtenir de réponse. Veuillez réessayer.",
+    "voiceUnavailableTitle": "La saisie vocale n'est pas encore disponible",
+    "voiceUnavailableMessage": "Pour l'instant, saisissez votre question ; la saisie vocale nécessite une bibliothèque de reconnaissance vocale que ce projet ne possède pas encore.",
+    "askQuestion": "Posez une question...",
+    "openNow": "Ouvert maintenant",
+    "currentlyClosed": "Actuellement fermé"
   }
 }

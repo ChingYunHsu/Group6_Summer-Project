@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
 
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
@@ -36,10 +37,12 @@ const LANGUAGE_OPTIONS = featuredLanguages
   .filter((l) => l.code !== "en")
   .map((l) => ({ label: l.english, code: l.code }));
 
+// value stays the stable internal value used in state/onApply — the
+// display label is now looked up via translationKey at render time.
 const LIVE_STATUS = [
-  { label: "Quiet", value: "quiet" },
-  { label: "Moderate", value: "moderate" },
-  { label: "Busy", value: "busy" },
+  { translationKey: "map.filters.quiet", value: "quiet" },
+  { translationKey: "map.filters.moderate", value: "moderate" },
+  { translationKey: "map.filters.busy", value: "busy" },
 ] as const;
 
 const STATUS_COLOURS = {
@@ -57,6 +60,8 @@ export default function FilterModal({
   onClose,
   onApply,
 }: Props) {
+  const { t } = useTranslation();
+
   const [localOpenNow, setLocalOpenNow] = useState(openNow ?? false);
   const [localAccessible, setLocalAccessible] = useState(accessible ?? false);
   const [localLanguage, setLocalLanguage] = useState(language);
@@ -97,28 +102,42 @@ export default function FilterModal({
         <View style={styles.sheet}>
           <View style={styles.handle} />
           <View style={styles.header}>
-            <Text style={styles.title}>Filters</Text>
+            <Text style={styles.title}>
+              {t("map.filters.title", { defaultValue: "Filters" })}
+            </Text>
             <TouchableOpacity onPress={onClose}>
               <Ionicons name="close" size={24} color={Colours.text} />
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.section}>Availability</Text>
+          <Text style={styles.section}>
+            {t("map.filters.availability", { defaultValue: "Availability" })}
+          </Text>
           <View style={styles.row}>
-            <Text style={styles.label}>Open Now</Text>
+            <Text style={styles.label}>
+              {t("map.filters.openNow", { defaultValue: "Open Now" })}
+            </Text>
             <Switch value={localOpenNow} onValueChange={setLocalOpenNow} />
           </View>
           <View style={styles.row}>
-            <Text style={styles.label}>Accessible</Text>
+            <Text style={styles.label}>
+              {t("map.filters.accessible", { defaultValue: "Accessible" })}
+            </Text>
             <Switch
               value={localAccessible}
               onValueChange={setLocalAccessible}
             />
           </View>
 
-          <Text style={styles.section}>Time</Text>
+          <Text style={styles.section}>
+            {t("map.filters.time", { defaultValue: "Time" })}
+          </Text>
           <View style={styles.row}>
-            <Text style={styles.label}>Auto Current Time</Text>
+            <Text style={styles.label}>
+              {t("map.filters.autoCurrentTime", {
+                defaultValue: "Auto Current Time",
+              })}
+            </Text>
             <Switch
               testID="auto-current-time-switch"
               value={autoCurrentTime}
@@ -131,7 +150,9 @@ export default function FilterModal({
 
           {autoCurrentTime ? (
             <>
-              <Text style={styles.section}>Live Status</Text>
+              <Text style={styles.section}>
+                {t("map.filters.liveStatus", { defaultValue: "Live Status" })}
+              </Text>
               <View testID="live-status-section" style={styles.chipRow}>
                 {LIVE_STATUS.map((item) => {
                   const selected = item.value === liveStatus;
@@ -152,7 +173,7 @@ export default function FilterModal({
                           selected && styles.selectedText,
                         ]}
                       >
-                        {item.label}
+                        {t(item.translationKey)}
                       </Text>
                     </TouchableOpacity>
                   );
@@ -192,7 +213,9 @@ export default function FilterModal({
             </>
           )}
 
-          <Text style={styles.section}>Language</Text>
+          <Text style={styles.section}>
+            {t("map.filters.language", { defaultValue: "Language" })}
+          </Text>
           <View style={styles.chipRow}>
             {LANGUAGE_OPTIONS.map((item) => {
               const selected = item.code === localLanguage;
@@ -228,7 +251,9 @@ export default function FilterModal({
               onClose();
             }}
           >
-            <Text style={styles.applyText}>Apply Filters</Text>
+            <Text style={styles.applyText}>
+              {t("map.filters.apply", { defaultValue: "Apply Filters" })}
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

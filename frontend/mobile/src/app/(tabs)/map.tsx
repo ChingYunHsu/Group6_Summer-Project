@@ -1,7 +1,17 @@
+import { Ionicons } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { router } from "expo-router";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ActivityIndicator, StatusBar, StyleSheet, View } from "react-native";
+import {
+  ActivityIndicator,
+  Linking,
+  Platform,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import MapView, { Polyline } from "react-native-maps";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CategoryChips, { Category } from "../../components/CategoryChips";
@@ -10,6 +20,7 @@ import FloatingActionButtons from "../../components/FloatingActionButtons";
 import LocationRequiredModal from "../../components/LocationRequiredModal";
 import LoginRequiredModal from "../../components/LoginRequiredModal";
 import MapSearchBar from "../../components/MapSearchBar";
+import ReportBottomSheet from "../../components/ReportBottomSheet";
 import ReportMarker from "../../components/ReportMarker";
 import ReportModal from "../../components/ReportModal";
 import RouteDetailModal from "../../components/RouteDetailModal";
@@ -19,11 +30,14 @@ import VenueMarker from "../../components/VenueMarker";
 import { Colours } from "../../constants/colours";
 import { getAccessToken } from "../../services/authService";
 import {
+  addFavourite,
   confirmReport,
+  getFavourites,
   getReports,
   getRouteDetail,
   getRouteOptions,
   getVenues,
+  removeFavourite,
   submitReport,
 } from "../../services/api";
 import {
@@ -81,6 +95,15 @@ export default function MapScreen() {
 
   const [venueVisible, setVenueVisible] = useState(false);
 
+  const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
+
+  const selectedReport = useMemo(
+    () => reports.find((r) => r.report_id === selectedReportId) ?? null,
+    [reports, selectedReportId],
+  );
+
+  const [reportSheetVisible, setReportSheetVisible] = useState(false);
+
   const [filterVisible, setFilterVisible] = useState(false);
 
   const [reportVisible, setReportVisible] = useState(false);
@@ -123,6 +146,15 @@ export default function MapScreen() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Set of venue_id, not full Favourite objects — all this screen needs
+  // is fast "is this venue favourited" lookups for the heart icon in
+  // VenueBottomSheet; the richer fields (favourite_id, saved_at,
+  // display_status) only matter where favourites are actually listed
+  // (profile.tsx), not here.
+  const [favouriteVenueIds, setFavouriteVenueIds] = useState<Set<string>>(
+    new Set(),
+  );
+
   const [locationEnabled, setLocationEnabled] = useState(false);
 
   const [currentLocation, setCurrentLocation] = useState(DEFAULT_LOCATION);
@@ -137,6 +169,26 @@ export default function MapScreen() {
       setIsAuthenticated(!!token);
     })();
   }, []);
+
+  // Favourites require a real login (require_bearer_auth server-side) —
+  // guests never have any to fetch, and clearing the set when auth is
+  // lost (e.g. logout mid-session) avoids showing stale hearts for a
+  // previous user.
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setFavouriteVenueIds(new Set());
+      return;
+    }
+
+    (async () => {
+      try {
+        const response = await getFavourites();
+        setFavouriteVenueIds(new Set(response.items.map((f) => f.venue_id)));
+      } catch (error) {
+        console.error("Failed to load favourites", error);
+      }
+    })();
+  }, [isAuthenticated]);
 
   useEffect(() => {
     (async () => {
@@ -210,12 +262,33 @@ export default function MapScreen() {
       return;
     }
 
+    // Confirmed happening: the mount-time location effect can fail
+    // silently (permission granted after mount, a simulator location set
+    // after the app already loaded, etc.), leaving currentLocation stuck
+    // on DEFAULT_LOCATION with nothing to ever retry it — the backend was
+    // seen receiving that exact fallback coordinate as the routing
+    // origin, not a real position, even though the native map's own blue
+    // dot (a separate code path via showsUserLocation) was correct.
+    // Re-fetching fresh here, and using the result directly rather than
+    // stale `currentLocation` state, avoids relying on that one-shot
+    // fetch ever having succeeded.
+    const freshPosition = await getCurrentLocation();
+
+    if (!freshPosition) {
+      setLocationModalVisible(true);
+
+      return;
+    }
+
+    setCurrentLocation(freshPosition);
+    setLocationEnabled(true);
+
     setVenueVisible(false);
 
     try {
       const response = await getRouteOptions(
         selectedVenue?.venue_id,
-        currentLocation,
+        freshPosition,
       );
       setRouteOptions(response.options);
     } catch (error) {
@@ -233,12 +306,24 @@ export default function MapScreen() {
 
     setSelectedRouteDuration(route.duration_minutes);
 
+    // Was previously only set by browsing mode tabs (onSelectMode), not by
+    // actually picking a route — meaning handleStartNavigation could read
+    // a stale mode that didn't match the route the user actually chose,
+    // sending the wrong dirflg to Apple Maps.
+    setSelectedMode(route.mode);
+
     try {
       const detail = await getRouteDetail(
         selectedVenue?.venue_id,
         currentLocation,
         route.mode,
       );
+      console.log(
+        "POLYLINE POINTS:",
+        detail.polyline_preview?.length,
+        detail.polyline_preview,
+      );
+      setRouteDetail(detail);
       setRouteDetail(detail);
     } catch (error) {
       console.error(error);
@@ -246,6 +331,56 @@ export default function MapScreen() {
     }
 
     setRouteDetailVisible(true);
+  }
+
+  // "Start Navigation" hands off to the device's own maps app rather than
+  // building in-app turn-by-turn (live GPS tracking, rerouting, voice
+  // guidance) — a much bigger feature than this button implies. Apple
+  // Maps on iOS since it's always installed with no extra dependency;
+  // Google's cross-platform web URL as a universal fallback (opens the
+  // Google Maps app if installed, otherwise a browser) if the primary
+  // deep link can't be opened for any reason.
+  async function handleStartNavigation() {
+    if (!selectedVenue) {
+      setRouteDetailVisible(false);
+      return;
+    }
+
+    const destLat = Number(selectedVenue.latitude);
+    const destLng = Number(selectedVenue.longitude);
+    const originLat = currentLocation.latitude;
+    const originLng = currentLocation.longitude;
+
+    // Apple Maps dirflg: d=driving, w=walking, r=transit.
+    const appleDirflg =
+      selectedMode === "walk" ? "w" : selectedMode === "drive" ? "d" : "r";
+
+    // Google's universal web URL travelmode param.
+    const googleTravelMode =
+      selectedMode === "walk"
+        ? "walking"
+        : selectedMode === "drive"
+          ? "driving"
+          : "transit";
+
+    const appleMapsUrl = `http://maps.apple.com/?saddr=${originLat},${originLng}&daddr=${destLat},${destLng}&dirflg=${appleDirflg}`;
+    const googleMapsWebUrl = `https://www.google.com/maps/dir/?api=1&origin=${originLat},${originLng}&destination=${destLat},${destLng}&travelmode=${googleTravelMode}`;
+
+    const primaryUrl = Platform.OS === "ios" ? appleMapsUrl : googleMapsWebUrl;
+
+    try {
+      const supported = await Linking.canOpenURL(primaryUrl);
+      await Linking.openURL(supported ? primaryUrl : googleMapsWebUrl);
+    } catch (error) {
+      console.error("Failed to open navigation app", error);
+      try {
+        await Linking.openURL(googleMapsWebUrl);
+      } catch (fallbackError) {
+        console.error("Failed to open fallback maps URL", fallbackError);
+      }
+    }
+
+    setRouteDetailVisible(false);
   }
 
   // Shared by the map marker callout and the venue bottom sheet's
@@ -273,6 +408,52 @@ export default function MapScreen() {
     },
     [isAuthenticated],
   );
+
+  // Optimistic — flips the heart immediately rather than waiting on the
+  // network, then rolls back only if the request actually fails. Same
+  // login-gate pattern as report confirmation, since both require
+  // require_bearer_auth server-side.
+  const handleToggleFavourite = useCallback(async () => {
+    if (!isAuthenticated) {
+      setLoginModalVisible(true);
+      return;
+    }
+
+    if (!selectedVenue) return;
+
+    const venueId = selectedVenue.venue_id;
+    const wasFavourite = favouriteVenueIds.has(venueId);
+
+    setFavouriteVenueIds((current) => {
+      const next = new Set(current);
+      if (wasFavourite) {
+        next.delete(venueId);
+      } else {
+        next.add(venueId);
+      }
+      return next;
+    });
+
+    try {
+      if (wasFavourite) {
+        await removeFavourite(venueId);
+      } else {
+        await addFavourite(venueId);
+      }
+    } catch (error) {
+      console.error("Failed to toggle favourite", error);
+
+      setFavouriteVenueIds((current) => {
+        const next = new Set(current);
+        if (wasFavourite) {
+          next.add(venueId);
+        } else {
+          next.delete(venueId);
+        }
+        return next;
+      });
+    }
+  }, [isAuthenticated, selectedVenue, favouriteVenueIds]);
 
   // Fetch-on-filter-change. This is the standard "synchronize with an
   // external system" effect use case (re-fetch venues/reports whenever the
@@ -353,23 +534,17 @@ export default function MapScreen() {
           <ReportMarker
             key={report.report_id}
             report={report}
-            onConfirm={(reportId) =>
-              handleReportConfirmation(reportId, "still_here")
-            }
-            onResolve={(reportId) =>
-              handleReportConfirmation(reportId, "resolved")
-            }
+            onPress={(pressedReport) => {
+              setSelectedReportId(pressedReport.report_id);
+              setReportSheetVisible(true);
+            }}
           />
         ))}
 
         {/* Route line — draws once a route has been selected via
             RouteOptionsModal/RouteDetailModal, and stays visible even
             after RouteDetailModal is closed (so the route stays on the
-            map while navigating), until a different route is selected.
-            NOTE: /routes/detail is still fully static server-side — this
-            will draw *a* line correctly, but it's always the same fixed
-            three-point path regardless of which venue was actually
-            selected, until the backend stops hardcoding the response. */}
+            map while navigating), until a different route is selected. */}
 
         {routeDetail?.polyline_preview &&
           routeDetail.polyline_preview.length > 0 && (
@@ -399,6 +574,22 @@ export default function MapScreen() {
         onSOSPress={() => router.push("/sos")}
         onReportPress={() => setReportVisible(true)}
       />
+
+      {/* Only rendered while a route polyline is actually on screen — the
+          line otherwise has no way to be dismissed once set, short of
+          picking a different route to overwrite it. */}
+
+      {routeDetail?.polyline_preview &&
+        routeDetail.polyline_preview.length > 0 && (
+          <TouchableOpacity
+            style={styles.clearRouteButton}
+            onPress={() => setRouteDetail(null)}
+          >
+            <Ionicons name="close-circle" size={18} color={Colours.text} />
+
+            <Text style={styles.clearRouteText}>Clear Route</Text>
+          </TouchableOpacity>
+        )}
 
       {/* ---------------------- Filters ---------------------- */}
 
@@ -494,6 +685,10 @@ export default function MapScreen() {
         venue={selectedVenue}
         activeReport={activeReportForSelectedVenue}
         autoCurrentTime={autoCurrentTime}
+        isFavourite={
+          selectedVenue ? favouriteVenueIds.has(selectedVenue.venue_id) : false
+        }
+        onToggleFavourite={handleToggleFavourite}
         onClose={() => setVenueVisible(false)}
         onDirectionsPress={handleDirections}
         onConfirmReport={(reportId) =>
@@ -502,6 +697,18 @@ export default function MapScreen() {
         onResolveReport={(reportId) =>
           handleReportConfirmation(reportId, "resolved")
         }
+      />
+
+      {/* ---------------------- Report Sheet ---------------------- */}
+
+      <ReportBottomSheet
+        visible={reportSheetVisible}
+        report={selectedReport}
+        onClose={() => setReportSheetVisible(false)}
+        onConfirm={(reportId) =>
+          handleReportConfirmation(reportId, "still_here")
+        }
+        onResolve={(reportId) => handleReportConfirmation(reportId, "resolved")}
       />
 
       {/* ---------------------- Route Options Modal ---------------------- */}
@@ -524,10 +731,7 @@ export default function MapScreen() {
         destinationName={selectedVenue?.name ?? ""}
         durationMinutes={selectedRouteDuration}
         steps={routeDetail?.steps ?? []}
-        onStartNavigation={() => {
-          console.log("Navigation Started");
-          setRouteDetailVisible(false);
-        }}
+        onStartNavigation={handleStartNavigation}
         onClose={() => setRouteDetailVisible(false)}
       />
 
@@ -569,5 +773,47 @@ const styles = StyleSheet.create({
     left: 20,
 
     right: 20,
+  },
+
+  clearRouteButton: {
+    position: "absolute",
+
+    left: 20,
+
+    bottom: 36,
+
+    flexDirection: "row",
+
+    alignItems: "center",
+
+    backgroundColor: "#FFFFFF",
+
+    borderRadius: 999,
+
+    paddingVertical: 10,
+
+    paddingHorizontal: 16,
+
+    shadowColor: "#000",
+
+    shadowOpacity: 0.15,
+
+    shadowRadius: 6,
+
+    shadowOffset: {
+      width: 0,
+
+      height: 2,
+    },
+
+    elevation: 5,
+  },
+
+  clearRouteText: {
+    marginLeft: 6,
+
+    fontWeight: "600",
+
+    color: Colours.text,
   },
 });
