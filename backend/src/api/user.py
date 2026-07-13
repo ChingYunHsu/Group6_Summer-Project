@@ -3,21 +3,16 @@ import json
 import uuid
 from datetime import datetime, timezone
 
+import pymysql
 from flask import Blueprint, g, jsonify, request
 
 import db
-import medical_crypto
 from sos_buffer import push_sos_event
-from flask import Blueprint, g, jsonify, request
-
-import db
 from auth import require_api_key, require_bearer_auth, web_readonly_blocked
 from mock_data import (
     DELETE_ACCOUNT_RESPONSE,
     EMERGENCY_CONTACT_CREATE_TEMPLATE,
     EMERGENCY_CONTACTS,
-    FAVOURITE_CREATE_TEMPLATE,
-    FAVOURITES,
     LANGUAGE_OPTIONS,
     MEDICAL_ID,
     MEDICAL_PASSPORT_RESPONSE,
@@ -25,6 +20,12 @@ from mock_data import (
     SOS_RESPONSE,
     USER_SETTINGS,
 )
+
+_BUSYNESS_LEVEL_TO_DISPLAY_STATUS = {
+    "quiet": "OPTIMAL FLOW",
+    "moderate": "MODERATE",
+    "busy": "DIVERTING",
+}
 
 
 bp = Blueprint("user", __name__)
@@ -60,10 +61,6 @@ MEDICAL_ID_EDITABLE_FIELDS = {"blood_type", "conditions", "allergies"}
 
 EMERGENCY_CONTACT_EDITABLE_FIELDS = {"name", "relationship", "phone"}
 
-MEDICAL_PROFILE_EDITABLE_FIELDS = {"blood_type", "conditions", "allergies"}
-
-MEDICAL_PROFILE_DEFAULTS = {"blood_type": None, "conditions": [], "allergies": []}
-
 NOTIFICATION_PREFERENCES_DEFAULTS = {
     "busyness_alerts_enabled": True,
     "push_notifications_enabled": True,
@@ -74,40 +71,6 @@ NOTIFICATION_PREFERENCES_DEFAULTS = {
     "preferred_venue_types": [],
     "preferred_boroughs": [],
 }
-
-
-def _reject_explicit_user_id():
-    """Strict isolation: identity comes only from the Bearer token's sub
-    claim. Callers must never be able to address another user's profile by
-    passing user_id explicitly."""
-    if "user_id" in request.args:
-        return (
-            jsonify(
-                {
-                    "error": "Forbidden. user_id may not be supplied explicitly; "
-                    "identity is resolved from the access token.",
-                }
-            ),
-            400,
-        )
-    return None
-
-
-def _reject_explicit_user_id():
-    """Strict isolation: identity comes only from the Bearer token's sub
-    claim. Callers must never be able to address another user's profile by
-    passing user_id explicitly."""
-    if "user_id" in request.args:
-        return (
-            jsonify(
-                {
-                    "error": "Forbidden. user_id may not be supplied explicitly; "
-                    "identity is resolved from the access token.",
-                }
-            ),
-            400,
-        )
-    return None
 
 
 def _next_contact_id() -> str:
@@ -124,15 +87,33 @@ def _next_contact_id() -> str:
     return f"ec_{next_number:03d}"
 
 
+def _format_profile(row: dict) -> dict:
+    return {
+        "user_id": row["user_id"],
+        "email": row["email"],
+        # DB column is display_name; the client contract calls it full_name.
+        "full_name": row["display_name"],
+        "phone": row["phone"],
+        "nationality": row["nationality"],
+        "spoken_languages": row["spoken_languages"],
+    }
+
+
 @bp.get("/api/v1/user/profile")
 @require_bearer_auth
 def get_user_profile():
-
     with db.db_cursor() as cursor:
-        cursor.execute("SELECT display_name, phone, nationality, spoken_languages FROM users WHERE user_id = %s", (g.user_id,))
+        cursor.execute(
+            "SELECT user_id, email, display_name, phone, nationality, spoken_languages "
+            "FROM users WHERE user_id = %s",
+            (g.user_id,),
+        )
         row = cursor.fetchone()
 
-    return jsonify(row)
+    if not row:
+        return jsonify({"error": "User not found."}), 404
+
+    return jsonify(_format_profile(row))
 
 
     
@@ -169,86 +150,6 @@ def update_medical_id():
     return jsonify(deepcopy(MEDICAL_ID))
 
 
-@bp.get("/api/v1/user/medical-profile")
-@require_bearer_auth
-def get_medical_profile():
-    rejected = _reject_explicit_user_id()
-    if rejected:
-        return rejected
-
-    with db.db_cursor() as cursor:
-        cursor.execute(
-            "SELECT encrypted_payload FROM medical_profiles WHERE user_id = %s",
-            (g.user_id,),
-        )
-        row = cursor.fetchone()
-
-    if not row:
-        return jsonify(deepcopy(MEDICAL_PROFILE_DEFAULTS))
-
-    return jsonify(medical_crypto.decrypt_profile(row["encrypted_payload"]))
-
-
-@bp.put("/api/v1/user/medical-profile")
-@require_bearer_auth
-def upsert_medical_profile():
-    rejected = _reject_explicit_user_id()
-    if rejected:
-        return rejected
-
-    payload = request.get_json(silent=True) or {}
-    invalid_fields = [field for field in payload if field not in MEDICAL_PROFILE_EDITABLE_FIELDS]
-    if invalid_fields:
-        return (
-            jsonify(
-                {
-                    "error": "Validation failed.",
-                    "missing_fields": [],
-                    "invalid_fields": invalid_fields,
-                }
-            ),
-            400,
-        )
-
-    with db.db_transaction() as cursor:
-        cursor.execute(
-            "SELECT encrypted_payload FROM medical_profiles WHERE user_id = %s FOR UPDATE",
-            (g.user_id,),
-        )
-        row = cursor.fetchone()
-        profile = (
-            medical_crypto.decrypt_profile(row["encrypted_payload"])
-            if row
-            else deepcopy(MEDICAL_PROFILE_DEFAULTS)
-        )
-
-        for field in MEDICAL_PROFILE_EDITABLE_FIELDS:
-            if field in payload:
-                profile[field] = payload[field]
-
-        encrypted_payload = medical_crypto.encrypt_profile(profile)
-        cursor.execute(
-            "INSERT INTO medical_profiles (user_id, encrypted_payload) VALUES (%s, %s) "
-            "ON DUPLICATE KEY UPDATE encrypted_payload = %s",
-            (g.user_id, encrypted_payload, encrypted_payload),
-        )
-
-    return jsonify(profile)
-
-
-@bp.delete("/api/v1/user/medical-profile")
-@require_bearer_auth
-def delete_medical_profile():
-    rejected = _reject_explicit_user_id()
-    if rejected:
-        return rejected
-
-    with db.db_transaction() as cursor:
-        cursor.execute("DELETE FROM medical_profiles WHERE user_id = %s", (g.user_id,))
-
-    return "", 204
-
-
 @bp.get("/api/v1/user/emergency-contacts")
 @require_bearer_auth
 def get_emergency_contacts():
@@ -282,12 +183,13 @@ def update_user_profile():
             cursor.execute(f"UPDATE users SET {set_clause} WHERE user_id = %s", values)
 
         cursor.execute(
-            "SELECT display_name, phone, nationality, spoken_languages FROM users WHERE user_id = %s",
+            "SELECT user_id, email, display_name, phone, nationality, spoken_languages "
+            "FROM users WHERE user_id = %s",
             (g.user_id,),
         )
         row = cursor.fetchone()
 
-    return jsonify(row)
+    return jsonify(_format_profile(row))
 
 
 
@@ -386,14 +288,40 @@ def get_language_options():
     return jsonify({"count": len(LANGUAGE_OPTIONS), "items": deepcopy(LANGUAGE_OPTIONS)})
 
 
+def _favourite_id(venue_id: str) -> str:
+    return f"fav_{venue_id}"
+
+
+def _format_favourite(row: dict) -> dict:
+    return {
+        "favourite_id": _favourite_id(row["venue_id"]),
+        "venue_id": row["venue_id"],
+        "saved_at": row["created_at"].isoformat() if row.get("created_at") else None,
+        "display_status": _BUSYNESS_LEVEL_TO_DISPLAY_STATUS.get(row.get("level"), "NO DATA"),
+    }
+
+
 @bp.get("/api/v1/user/favourites")
-@require_api_key
+@require_bearer_auth
 def get_favourites():
-    return jsonify({"count": len(FAVOURITES), "items": deepcopy(FAVOURITES)})
+    with db.db_cursor() as cursor:
+        cursor.execute(
+            "SELECT ufv.venue_id, ufv.created_at, "
+            "(SELECT bs.level FROM busyness_scores bs WHERE bs.venue_id = ufv.venue_id "
+            " ORDER BY bs.created_at DESC LIMIT 1) AS level "
+            "FROM user_favorite_venues ufv "
+            "WHERE ufv.user_id = %s "
+            "ORDER BY ufv.created_at DESC",
+            (g.user_id,),
+        )
+        rows = cursor.fetchall()
+
+    items = [_format_favourite(row) for row in rows]
+    return jsonify({"count": len(items), "items": items})
 
 
 @bp.post("/api/v1/user/favourites")
-@require_api_key
+@require_bearer_auth
 def add_favourite():
     blocked = web_readonly_blocked()
     if blocked:
@@ -404,25 +332,48 @@ def add_favourite():
     if "venue_id" not in payload:
         return jsonify({"error": "Validation failed.", "missing_fields": ["venue_id"]}), 400
 
-    favourite = deepcopy(FAVOURITE_CREATE_TEMPLATE)
-    favourite["venue_id"] = payload["venue_id"]
-    FAVOURITES.append(favourite)
+    venue_id = payload["venue_id"]
 
-    return jsonify(favourite), 201
+    try:
+        with db.db_transaction() as cursor:
+            # Idempotent: favouriting an already-favourited venue succeeds
+            # rather than raising on the (user_id, venue_id) primary key.
+            cursor.execute(
+                "INSERT INTO user_favorite_venues (user_id, venue_id) VALUES (%s, %s) "
+                "ON DUPLICATE KEY UPDATE venue_id = venue_id",
+                (g.user_id, venue_id),
+            )
+            cursor.execute(
+                "SELECT ufv.venue_id, ufv.created_at, "
+                "(SELECT bs.level FROM busyness_scores bs WHERE bs.venue_id = ufv.venue_id "
+                " ORDER BY bs.created_at DESC LIMIT 1) AS level "
+                "FROM user_favorite_venues ufv WHERE ufv.user_id = %s AND ufv.venue_id = %s",
+                (g.user_id, venue_id),
+            )
+            row = cursor.fetchone()
+    except pymysql.err.IntegrityError:
+        return jsonify({"error": "Validation failed.", "invalid_fields": ["venue_id"]}), 400
+
+    return jsonify(_format_favourite(row)), 201
 
 
 @bp.delete("/api/v1/user/favourites/<venue_id>")
-@require_api_key
+@require_bearer_auth
 def delete_favourite(venue_id: str):
     blocked = web_readonly_blocked()
     if blocked:
         return blocked
 
-    favourite = next((item for item in FAVOURITES if item["venue_id"] == venue_id), None)
-    if not favourite:
+    with db.db_transaction() as cursor:
+        cursor.execute(
+            "DELETE FROM user_favorite_venues WHERE user_id = %s AND venue_id = %s",
+            (g.user_id, venue_id),
+        )
+        deleted = cursor.rowcount
+
+    if not deleted:
         return jsonify({"error": "Favourite not found."}), 404
 
-    FAVOURITES.remove(favourite)
     return "", 204
 
 

@@ -554,16 +554,6 @@ REPORT_CONFIRMATION_TEMPLATE = {
     "report": REPORTS[0],
 }
 
-# Mock credential store backing POST /api/v1/auth/login. Plaintext password
-# is fine here only because this whole file is mock/seed data, not a real DB.
-AUTH_USERS = [
-    {
-        "user_id": "u_1001",
-        "email": "amelia.rivera@example.com",
-        "password": "Password123",
-    },
-]
-
 USER_PROFILE = {
     "user_id": "u_1001",
     "account_state": "logged_in",
