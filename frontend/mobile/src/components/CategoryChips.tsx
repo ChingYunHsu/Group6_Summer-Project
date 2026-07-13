@@ -1,38 +1,50 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
 
 import { Colours } from "../constants/colours";
 
 export type Category = "Clinic" | "Pharmacy" | "AED" | "Hospital" | "Restroom";
 
+// label stays the stable internal value (matched against in map.tsx's
+// filter switch) — translationKey drives what's actually displayed.
+// Previously label was used directly as display text too, so this chip
+// row never responded to language changes at all.
 const categories: {
   label: Category;
+
+  translationKey: string;
 
   icon: "medical" | "medkit" | "heart" | "business" | "male-female";
 }[] = [
   {
     label: "Clinic",
+    translationKey: "map.categories.clinic",
     icon: "medical",
   },
 
   {
     label: "Pharmacy",
+    translationKey: "map.categories.pharmacy",
     icon: "medkit",
   },
 
   {
     label: "AED",
+    translationKey: "map.categories.aed",
     icon: "heart",
   },
 
   {
     label: "Hospital",
+    translationKey: "map.categories.hospital",
     icon: "business",
   },
 
   {
     label: "Restroom",
+    translationKey: "map.categories.restroom",
     icon: "male-female",
   },
 ];
@@ -44,6 +56,8 @@ interface Props {
 }
 
 export default function CategoryChips({ selected, onSelect }: Props) {
+  const { t } = useTranslation();
+
   return (
     <ScrollView
       horizontal
@@ -66,7 +80,7 @@ export default function CategoryChips({ selected, onSelect }: Props) {
             />
 
             <Text style={[styles.text, active && styles.activeText]}>
-              {category.label}
+              {t(category.translationKey, { defaultValue: category.label })}
             </Text>
           </TouchableOpacity>
         );

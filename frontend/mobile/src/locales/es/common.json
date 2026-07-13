@@ -6,7 +6,10 @@
     "delete": "Eliminar",
     "save": "Guardar",
     "edit": "Editar",
-    "loading": "Cargando..."
+    "add": "Añadir",
+    "loading": "Cargando...",
+    "done": "Hecho",
+    "saving": "Guardando..."
   },
   "language": {
     "choose": "Elige tu idioma",
@@ -43,7 +46,11 @@
     "dangerZone": "Zona de peligro",
     "deleteWarning": "Eliminar tu cuenta es permanente. Todos los registros médicos y datos del perfil serán eliminados.",
     "deleteAccount": "Eliminar mi cuenta",
-    "deleteAccountMessage": "Esta acción no se puede deshacer."
+    "deleteAccountMessage": "Esta acción no se puede deshacer.",
+    "locationDisableTitle": "Desactivar el acceso a la ubicación",
+    "locationDisableMessage": "Los permisos de ubicación solo se pueden cambiar desde los ajustes de tu dispositivo.",
+    "deleteErrorTitle": "No se pudo eliminar la cuenta",
+    "deleteErrorMessage": "Inténtalo de nuevo."
   },
 
   "authGateway": {
@@ -63,7 +70,11 @@
     "phoneNumber": "Número de teléfono",
     "emailAddress": "Correo electrónico",
     "address": "Dirección",
-    "spokenLanguages": "Idiomas hablados"
+    "spokenLanguages": "Idiomas hablados",
+    "saveErrorTitle": "No se pudo guardar todo",
+    "saveErrorMessage": "Algunos de tus cambios no se guardaron. Inténtalo de nuevo.",
+    "addLanguage": "Añadir idioma",
+    "languagePlaceholder": "Introduce un idioma"
   },
   "profileGuest": {
     "title": "Protege tu Identificación Médica",
@@ -93,7 +104,11 @@
     "skipForNow": "Omitir por ahora",
     "loginRequiredTitle": "Se requiere iniciar sesión",
     "loginRequiredBody": "Para ayudar a mantener la información de ClearPath precisa y evitar el spam, debes iniciar sesión para enviar o verificar informes de la comunidad.",
-    "logInSignUp": "Iniciar sesión / Registrarse"
+    "logInSignUp": "Iniciar sesión / Registrarse",
+    "signInErrorTitle": "No se pudo iniciar sesión",
+    "signInErrorMessage": "Comprueba tus datos e inténtalo de nuevo.",
+    "registerErrorTitle": "No se pudo crear la cuenta",
+    "registerErrorMessage": "Comprueba tus datos e inténtalo de nuevo."
   },
 
   "profile": {
@@ -116,7 +131,10 @@
     "conditions": "Condiciones médicas",
     "allergies": "Alergias",
     "savedClinics": "Clínicas guardadas",
-    "savedFacility": "Centro guardado"
+    "savedFacility": "Centro guardado",
+    "syncOffline": "Sin conexión: mostrando datos guardados",
+    "syncLoading": "Sincronizando...",
+    "noSavedClinics": "Aún no hay centros guardados."
   },
   "showStaff": {
     "title": "Mostrar al personal",
@@ -129,9 +147,11 @@
     "liveTranslate": "Traducción en vivo",
     "allergies": "Alergias",
     "respiratory": "Respiratorio",
+    "translationError": "Error en la traducción. Inténtalo de nuevo.",
+    "translationLoginRequired": "Inicia sesión para usar la traducción en vivo. Toca para iniciar sesión.",
     "pain": "Dolor",
     "translationPlaceholder": "Escriba en el idioma del visitante...",
-    "translationResult": "La traducción aparecerá aquí después de la integración del backend.",
+    "translationResult": "La traducción aparecerá aquí...",
     "medicalSummary": "Resumen de Identificación Médica",
     "categories": {
       "general": "General",
@@ -172,7 +192,12 @@
     "title": "Editar identificación médica",
     "emergencyProfile": "Perfil de emergencia",
     "criticalInfo": "Información crítica",
-    "medicalConditions": "Condiciones médicas"
+    "medicalConditions": "Condiciones médicas",
+    "addCondition": "Añadir condición",
+    "addAllergy": "Añadir alergia",
+    "conditionPlaceholder": "Introduce una condición",
+    "allergyPlaceholder": "Introduce una alergia",
+    "selectBloodType": "Selecciona el grupo sanguíneo"
   },
 
   "welcome": {
@@ -195,7 +220,7 @@
   },
   "tabs": {
     "map": "Mapa",
-    "hospitalMap": "Mapa del hospital",
+    "hospitalMap": "Mapa ClearPath",
     "assistant": "Asistente",
     "clearPathAssistant": "Asistente ClearPath",
     "showStaff": "Mostrar al personal",
@@ -204,7 +229,29 @@
     "more": "Más"
   },
   "map": {
-    "searchPlaceholder": "Buscar clínicas o farmacias..."
+    "searchPlaceholder": "Buscar...",
+    "categories": {
+      "clinic": "Clínica",
+      "pharmacy": "Farmacia",
+      "aed": "DEA (Desfibrilador)",
+      "hospital": "Hospital",
+      "restroom": "Aseo"
+    },
+
+    "filters": {
+      "title": "Filtros",
+      "availability": "Disponibilidad",
+      "openNow": "Abierto ahora",
+      "accessible": "Accesible",
+      "time": "Hora",
+      "autoCurrentTime": "Hora actual automática",
+      "liveStatus": "Estado en vivo",
+      "language": "Idioma",
+      "apply": "Aplicar filtros",
+      "quiet": "Tranquilo",
+      "moderate": "Moderado",
+      "busy": "Concurrido"
+    }
   },
   "reportModal": {
     "title": "Informar de un problema",
@@ -246,7 +293,8 @@
     "settings": "Configuración",
     "legal": "Información legal",
     "welcome": "Bienvenida",
-    "sos": "SOS"
+    "sos": "SOS",
+    "loginRegister": "Iniciar sesión / Registrarse"
   },
   "sos": {
     "title": "Preparando llamada de emergencia",
@@ -273,5 +321,17 @@
 
     "callErrorTitle": "No se puede realizar la llamada",
     "callErrorMessage": "Este dispositivo no puede realizar llamadas telefónicas."
+  },
+
+  "assistant": {
+    "greeting1": "¡Hola! Soy tu Asistente ClearPath. ¿En qué puedo ayudarte hoy?",
+    "greeting2": "Puedo ayudarte a encontrar clínicas, explicar servicios y responder preguntas sobre navegación sanitaria.",
+    "respondingIn": "Respondiendo en {{language}}",
+    "errorMessage": "Lo sentimos, no se pudo obtener una respuesta. Inténtalo de nuevo.",
+    "voiceUnavailableTitle": "La entrada de voz aún no está disponible",
+    "voiceUnavailableMessage": "Por ahora, escribe tu pregunta; la entrada de voz necesita una biblioteca de voz a texto que este proyecto todavía no tiene.",
+    "askQuestion": "Haz una pregunta...",
+    "openNow": "Abierto ahora",
+    "currentlyClosed": "Actualmente cerrado"
   }
 }

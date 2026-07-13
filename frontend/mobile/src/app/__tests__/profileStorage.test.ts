@@ -14,7 +14,9 @@ describe("profileService", () => {
 
   it("saves profile data via the API", async () => {
     const responseBody = {
-      display_name: "Amelia Rivera",
+      full_name: "Amelia Rivera",
+      user_id: "user-1",
+      email: "amelia@example.com",
       phone: "+1 (917) 555-0118",
       nationality: "US",
       spoken_languages: ["en"],
@@ -45,7 +47,9 @@ describe("profileService", () => {
 
   it("loads profile data via the API", async () => {
     const responseBody = {
-      display_name: "Amelia Rivera",
+      full_name: "Amelia Rivera",
+      user_id: "user-1",
+      email: "amelia@example.com",
       phone: "+1 (917) 555-0118",
       nationality: "US",
       spoken_languages: ["en"],
@@ -68,7 +72,9 @@ describe("profileService", () => {
   // leave them null, since edit-profile.tsx calls .join() on languages.
   it("falls back to empty values for a freshly registered profile", async () => {
     mockedRequest.mockResolvedValue({
-      display_name: "New User",
+      user_id: "user-1",
+      email: "new@example.com",
+      full_name: "New User",
       phone: null,
       nationality: null,
       spoken_languages: null,

@@ -102,15 +102,18 @@ export default function LoginScreen() {
   const handleFinishProfile = () => {
     setShowRegistrationModal(false);
 
-    // Future route
-    router.push("/profile");
+    // replace() first, not push() — otherwise login.tsx stays underneath
+    // in history, so backing out of medical-id.tsx would land on a stale
+    // login form despite already being authenticated. replace() clears
+    // it, then push() adds medical-id on top of the now-correct /map.
+    router.replace("/map");
+    router.push("/medical-id");
   };
 
   const handleSkipForNow = () => {
     setShowRegistrationModal(false);
 
-    // Future route
-    router.push("/map");
+    router.replace("/map");
   };
 
   return (

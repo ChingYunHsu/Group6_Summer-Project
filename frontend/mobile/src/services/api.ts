@@ -1,5 +1,10 @@
+import { router } from "expo-router";
+import { Alert } from "react-native";
+
 import {
   BusynessResponse,
+  Favourite,
+  FavouritesResponse,
   ForecastResponse,
   Report,
   ReportResponse,
@@ -9,8 +14,9 @@ import {
   VenueResponse,
 } from "../types/venue";
 import { ChatbotResponse } from "../types/chatbot";
+import { TranslateResponse } from "../types/translate";
 
-import { getAccessToken } from "./tokenStorage";
+import { clearAccessToken, getAccessToken } from "./tokenStorage";
 
 /* -------------------------------------------------------------------------- */
 /*                                  CONFIG                                    */
@@ -38,6 +44,11 @@ const API_BASE = "http://127.0.0.1:5000/api/v1";
 // Set EXPO_PUBLIC_API_KEY in your .env once the team assigns a real dev
 // key; "development" is just a harmless placeholder until then.
 const API_KEY = process.env.EXPO_PUBLIC_API_KEY ?? "development";
+
+// Guards against showing the session-expired alert more than once when
+// several requests 401 in the same moment (e.g. profile.tsx fetches
+// profile + medical + favourites together on every focus).
+let isHandlingSessionExpiry = false;
 
 /* -------------------------------------------------------------------------- */
 /*                               HTTP HELPER                                  */
@@ -77,9 +88,41 @@ export async function request<T>(
       // Not JSON — leave parsedBody null, fall back to raw text below.
     }
 
-    const error = new Error(
-      parsedBody?.error ?? `API ${response.status}: ${text}`,
-    ) as Error & { status?: number; body?: any };
+    const message = parsedBody?.error ?? `API ${response.status}: ${text}`;
+
+    // Matches the exact "Token expired" message specifically — not the
+    // generic "Bearer token required" a guest with no token at all would
+    // get, which shouldn't trigger a redirect (they were never logged in
+    // to begin with, that's expected). isSessionExpired guards against
+    // firing this more than once if several requests 401 in the same
+    // moment (e.g. profile + medical + favourites all fetching on the
+    // same screen focus, as currently happens on profile.tsx) — without
+    // it, the user could see the alert and get redirected multiple times
+    // in a row for what's really one single event.
+    if (
+      response.status === 401 &&
+      message === "Unauthorized. Token expired." &&
+      !isHandlingSessionExpiry
+    ) {
+      isHandlingSessionExpiry = true;
+
+      await clearAccessToken();
+
+      Alert.alert("Session expired", "Please log in again to continue.", [
+        {
+          text: "OK",
+          onPress: () => {
+            router.replace("/auth-gateway");
+            isHandlingSessionExpiry = false;
+          },
+        },
+      ]);
+    }
+
+    const error = new Error(message) as Error & {
+      status?: number;
+      body?: any;
+    };
 
     error.status = response.status;
     error.body = parsedBody;
@@ -199,39 +242,46 @@ export async function confirmReport(
 /*                                  ROUTES                                    */
 /* -------------------------------------------------------------------------- */
 
-// destinationVenueId/origin are optional for backward compatibility, but
-// omitting them makes the backend fall back to static mock data — pass
-// them to get real Google-Maps-backed directions.
+// Both previously took zero parameters and hit these endpoints with no
+// query string at all — meaning they could only ever reach the backend's
+// mock fallback (get_route_options/get_route_detail in routes.py return
+// the real Google Maps result only when destination_venue_id + origin
+// are present; otherwise they fall through to the static mock). map.tsx
+// already calls these with the real arguments; these signatures just
+// never caught up to that.
+
 export async function getRouteOptions(
-  destinationVenueId?: string,
-  origin?: { latitude: number; longitude: number },
+  destinationVenueId: string | undefined,
+  origin: { latitude: number; longitude: number },
 ): Promise<RouteOptionsResponse> {
   const params = new URLSearchParams();
-  if (destinationVenueId) params.set("destination_venue_id", destinationVenueId);
-  if (origin) {
-    params.set("origin_lat", String(origin.latitude));
-    params.set("origin_lon", String(origin.longitude));
-  }
-  const query = params.toString().length ? `?${params.toString()}` : "";
 
-  return request<RouteOptionsResponse>(`/routes/options${query}`);
+  if (destinationVenueId) {
+    params.set("destination_venue_id", destinationVenueId);
+  }
+
+  params.set("origin_lat", String(origin.latitude));
+  params.set("origin_lon", String(origin.longitude));
+
+  return request<RouteOptionsResponse>(`/routes/options?${params.toString()}`);
 }
 
 export async function getRouteDetail(
-  destinationVenueId?: string,
-  origin?: { latitude: number; longitude: number },
-  mode?: string,
+  destinationVenueId: string | undefined,
+  origin: { latitude: number; longitude: number },
+  mode: string,
 ): Promise<RouteDetail> {
   const params = new URLSearchParams();
-  if (destinationVenueId) params.set("destination_venue_id", destinationVenueId);
-  if (origin) {
-    params.set("origin_lat", String(origin.latitude));
-    params.set("origin_lon", String(origin.longitude));
-  }
-  if (mode) params.set("mode", mode);
-  const query = params.toString().length ? `?${params.toString()}` : "";
 
-  return request<RouteDetail>(`/routes/detail${query}`);
+  if (destinationVenueId) {
+    params.set("destination_venue_id", destinationVenueId);
+  }
+
+  params.set("origin_lat", String(origin.latitude));
+  params.set("origin_lon", String(origin.longitude));
+  params.set("mode", mode);
+
+  return request<RouteDetail>(`/routes/detail?${params.toString()}`);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -251,28 +301,6 @@ export async function sendChatbotMessage(payload: {
     method: "POST",
 
     body: JSON.stringify(payload),
-  });
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                TRANSLATE                                   */
-/* -------------------------------------------------------------------------- */
-
-export interface TranslateResponse {
-  translatedText: string;
-  sourceLanguage: string;
-  targetLanguage: string;
-}
-
-export async function translateText(
-  text: string,
-  sourceLanguage: string,
-  targetLanguage: string = "en",
-): Promise<TranslateResponse> {
-  return request<TranslateResponse>("/translate", {
-    method: "POST",
-
-    body: JSON.stringify({ text, sourceLanguage, targetLanguage }),
   });
 }
 
@@ -297,6 +325,9 @@ export async function deleteAccount(): Promise<{
 /*                                FAVOURITES                                  */
 /* -------------------------------------------------------------------------- */
 
+// Confirmed per-user and DB-backed server-side — see the comment on the
+// Favourite type in types/venue.ts.
+
 export async function getFavourites(): Promise<FavouritesResponse> {
   return request<FavouritesResponse>("/user/favourites");
 }
@@ -312,5 +343,30 @@ export async function addFavourite(venueId: string): Promise<Favourite> {
 export async function removeFavourite(venueId: string): Promise<void> {
   return request<void>(`/user/favourites/${venueId}`, {
     method: "DELETE",
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                TRANSLATE                                   */
+/* -------------------------------------------------------------------------- */
+
+// require_bearer_auth server-side (confirmed via test_translate_requires_
+// bearer_token) — a guest with no token gets a real 401 here, same as any
+// other auth-gated endpoint. show-staff.tsx distinguishes that specific
+// case from a genuine translation failure (Gemini down, etc.) so it can
+// show "log in to use this" rather than a generic error message.
+export async function translateText(
+  text: string,
+  sourceLanguage: string,
+  targetLanguage: string,
+): Promise<TranslateResponse> {
+  return request<TranslateResponse>("/translate", {
+    method: "POST",
+
+    body: JSON.stringify({
+      text,
+      sourceLanguage,
+      targetLanguage,
+    }),
   });
 }
