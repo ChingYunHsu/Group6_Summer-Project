@@ -102,8 +102,7 @@ export default function LoginScreen() {
   const handleFinishProfile = () => {
     setShowRegistrationModal(false);
 
-    // Future route
-    router.push("/profile");
+    router.push("/medical-id");
   };
 
   const handleSkipForNow = () => {

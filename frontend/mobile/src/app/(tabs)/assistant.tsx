@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
+import * as Crypto from "expo-crypto";
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
@@ -154,7 +155,7 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const id = crypto.randomUUID();
+    const id = Crypto.randomUUID();
     const userMessageId = `${id}-user`;
     const typingId = `${id}-typing`;
 

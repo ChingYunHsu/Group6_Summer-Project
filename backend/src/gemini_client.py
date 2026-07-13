@@ -14,8 +14,8 @@ import requests
 from flask import current_app
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
-EMBEDDING_MODEL = "models/text-embedding-004"
-GENERATION_MODEL = "models/gemini-1.5-flash"
+EMBEDDING_MODEL = "models/gemini-embedding-001"
+GENERATION_MODEL = "models/gemini-2.5-flash"
 REQUEST_TIMEOUT_SECONDS = 8
 
 

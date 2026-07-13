@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ActivityIndicator,
-  Alert,
   ScrollView,
   StyleSheet,
   Text,
@@ -15,6 +14,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
 import { mockProfile } from "../../data/mockProfile";
+import { getAccessToken } from "../../services/authService";
 import {
   DEFAULT_MEDICAL_PROFILE,
   loadMedicalId,
@@ -50,9 +50,19 @@ export default function ProfileScreen() {
     DEFAULT_MEDICAL_PROFILE,
   );
 
-  const handleScanQR = () => {
-    Alert.alert(t("profile.scanQr"), t("profile.scanQrMessage"));
-  };
+  // Guests get redirected to the dedicated locked-wall screen instead of
+  // silently loading this one and having every fetch 401. replace(), not
+  // push() — the guest wall isn't something "back" should return through
+  // into a screen that's just going to 401 again immediately.
+  useEffect(() => {
+    (async () => {
+      const token = await getAccessToken();
+
+      if (!token) {
+        router.replace("/profile-guest");
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     async function getProfile() {
@@ -326,22 +336,6 @@ const styles = StyleSheet.create({
 
   profileEmail: {
     color: Colours.muted,
-  },
-
-  qrBanner: {
-    backgroundColor: Colours.primary,
-    borderRadius: 16,
-    paddingVertical: 16,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-
-  qrBannerText: {
-    color: "#FFFFFF",
-    fontWeight: "700",
-    marginLeft: 8,
   },
 
   syncCard: {
