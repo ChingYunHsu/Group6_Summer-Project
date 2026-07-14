@@ -6,7 +6,10 @@
     "delete": "删除",
     "save": "保存",
     "edit": "编辑",
-    "loading": "加载中..."
+    "add": "添加",
+    "loading": "加载中...",
+    "done": "完成",
+    "saving": "正在保存..."
   },
   "language": {
     "choose": "选择您的语言",
@@ -43,7 +46,11 @@
     "dangerZone": "危险区域",
     "deleteWarning": "删除您的账户是永久性的。所有医疗记录和个人资料数据都将被移除。",
     "deleteAccount": "删除我的账户",
-    "deleteAccountMessage": "此操作无法撤销。"
+    "deleteAccountMessage": "此操作无法撤销。",
+    "locationDisableTitle": "关闭位置访问权限",
+    "locationDisableMessage": "位置权限只能在设备的设置中更改。",
+    "deleteErrorTitle": "无法删除账户",
+    "deleteErrorMessage": "请重试。"
   },
 
   "authGateway": {
@@ -63,7 +70,11 @@
     "phoneNumber": "电话号码",
     "emailAddress": "电子邮箱",
     "address": "地址",
-    "spokenLanguages": "使用语言"
+    "spokenLanguages": "使用语言",
+    "saveErrorTitle": "部分内容未能保存",
+    "saveErrorMessage": "您的部分更改未能保存，请重试。",
+    "addLanguage": "添加语言",
+    "languagePlaceholder": "输入语言"
   },
   "profileGuest": {
     "title": "保护您的医疗身份信息",
@@ -93,7 +104,11 @@
     "skipForNow": "暂时跳过",
     "loginRequiredTitle": "需要登录",
     "loginRequiredBody": "为了帮助保持 ClearPath 数据准确并防止垃圾信息，您必须登录后才能提交或验证社区报告。",
-    "logInSignUp": "登录 / 注册"
+    "logInSignUp": "登录 / 注册",
+    "signInErrorTitle": "登录失败",
+    "signInErrorMessage": "请检查您的信息后重试。",
+    "registerErrorTitle": "无法创建账户",
+    "registerErrorMessage": "请检查您的信息后重试。"
   },
 
   "profile": {
@@ -116,7 +131,10 @@
     "conditions": "疾病状况",
     "allergies": "过敏信息",
     "savedClinics": "已保存诊所",
-    "savedFacility": "已保存医疗机构"
+    "savedFacility": "已保存医疗机构",
+    "syncOffline": "离线 - 正在显示已保存的数据",
+    "syncLoading": "正在同步...",
+    "noSavedClinics": "暂无已保存的医疗机构。"
   },
 
   "showStaff": {
@@ -130,9 +148,11 @@
     "liveTranslate": "实时翻译",
     "allergies": "过敏",
     "respiratory": "呼吸系统",
+    "translationError": "翻译失败，请重试。",
+    "translationLoginRequired": "登录后即可使用实时翻译。点击以登录。",
     "pain": "疼痛",
     "translationPlaceholder": "输入访客所使用的语言...",
-    "translationResult": "完成后端集成后，翻译结果将显示在此处。",
+    "translationResult": "翻译结果将显示在此处...",
     "medicalSummary": "医疗身份信息摘要",
     "categories": {
       "general": "一般",
@@ -174,7 +194,12 @@
     "title": "编辑医疗身份信息",
     "emergencyProfile": "紧急医疗档案",
     "criticalInfo": "重要信息",
-    "medicalConditions": "疾病状况"
+    "medicalConditions": "疾病状况",
+    "addCondition": "添加疾病状况",
+    "addAllergy": "添加过敏信息",
+    "conditionPlaceholder": "输入疾病状况",
+    "allergyPlaceholder": "输入过敏信息",
+    "selectBloodType": "选择血型"
   },
   "welcome": {
     "slogan": "用您的语言提供无障碍智能服务",
@@ -196,7 +221,7 @@
   },
   "tabs": {
     "map": "地图",
-    "hospitalMap": "医院地图",
+    "hospitalMap": "ClearPath 地图",
     "assistant": "助手",
     "clearPathAssistant": "ClearPath 助手",
     "showStaff": "向工作人员出示",
@@ -205,7 +230,29 @@
     "more": "更多"
   },
   "map": {
-    "searchPlaceholder": "搜索诊所或药房..."
+    "searchPlaceholder": "搜索...",
+    "categories": {
+      "clinic": "诊所",
+      "pharmacy": "药房",
+      "aed": "自动体外除颤器（AED）",
+      "hospital": "医院",
+      "restroom": "洗手间"
+    },
+
+    "filters": {
+      "title": "筛选",
+      "availability": "可用性",
+      "openNow": "现在营业",
+      "accessible": "无障碍设施",
+      "time": "时间",
+      "autoCurrentTime": "自动使用当前时间",
+      "liveStatus": "实时状态",
+      "language": "语言",
+      "apply": "应用筛选",
+      "quiet": "安静",
+      "moderate": "适中",
+      "busy": "繁忙"
+    }
   },
 
   "reportModal": {
@@ -247,7 +294,8 @@
     "settings": "设置",
     "legal": "法律信息",
     "welcome": "欢迎",
-    "sos": "SOS"
+    "sos": "SOS",
+    "loginRegister": "登录 / 注册"
   },
   "sos": {
     "title": "正在准备紧急呼叫",
@@ -274,5 +322,17 @@
 
     "callErrorTitle": "无法拨打电话",
     "callErrorMessage": "此设备无法拨打电话。"
+  },
+
+  "assistant": {
+    "greeting1": "您好！我是您的 ClearPath 助手。今天能为您提供什么帮助？",
+    "greeting2": "我可以帮您查找诊所、说明各项服务，并解答有关医疗导航的问题。",
+    "respondingIn": "正在以{{language}}回复",
+    "errorMessage": "抱歉，未能获取回复，请重试。",
+    "voiceUnavailableTitle": "语音输入功能尚未推出",
+    "voiceUnavailableMessage": "请暂时以文字输入您的问题——语音输入需要语音转文字功能库，该项目目前尚未集成此功能。",
+    "askQuestion": "请输入问题...",
+    "openNow": "现在营业",
+    "currentlyClosed": "目前已打烊"
   }
 }

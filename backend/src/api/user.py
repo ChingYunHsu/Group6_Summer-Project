@@ -88,14 +88,19 @@ def _next_contact_id() -> str:
 
 
 def _format_profile(row: dict) -> dict:
+    raw_languages = row["spoken_languages"]
+    if isinstance(raw_languages, str):
+        spoken_languages = json.loads(raw_languages)
+    else:
+        spoken_languages = raw_languages or []
+
     return {
         "user_id": row["user_id"],
         "email": row["email"],
-        # DB column is display_name; the client contract calls it full_name.
         "full_name": row["display_name"],
         "phone": row["phone"],
         "nationality": row["nationality"],
-        "spoken_languages": row["spoken_languages"],
+        "spoken_languages": spoken_languages,
     }
 
 
@@ -179,7 +184,7 @@ def update_user_profile():
     with db.db_transaction() as cursor:
         if fields_to_update:
             set_clause = ", ".join(f"{field} = %s" for field in fields_to_update)
-            values = [payload[field] for field in fields_to_update] + [g.user_id]
+            values = [json.dumps(payload[field]) if field == "spoken_languages" else payload[field] for field in fields_to_update] + [g.user_id]
             cursor.execute(f"UPDATE users SET {set_clause} WHERE user_id = %s", values)
 
         cursor.execute(

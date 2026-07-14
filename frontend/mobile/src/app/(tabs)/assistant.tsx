@@ -1,7 +1,8 @@
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { router, useFocusEffect } from "expo-router";
+import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   ActivityIndicator,
   Alert,
@@ -21,19 +22,6 @@ import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
 import { getVenue, sendChatbotMessage } from "../../services/api";
 import { Venue } from "../../types/venue";
-
-//
-// NOT real yet, because there's nothing on the backend to connect to:
-//   - Streaming: /chatbot returns one complete JSON response, not SSE or
-//     chunked. A typing indicator stands in for a token-by-token stream.
-//   - The AI itself: ask_chatbot() on the backend is presently a static
-//     mock — same canned message regardless of what's asked. This UI will
-//     work correctly against a real model once the backend calls one; it
-//     just can't demonstrate "grounded" answers until then.
-//   - Voice input: expo-speech (used elsewhere in this app) is
-//     text-to-speech, not speech-to-text — there's no transcription
-//     library in this project at all yet. The mic button below shows an
-//     honest "not available yet" message rather than doing nothing.
 
 type Citation = { type: string; id: string };
 
@@ -60,7 +48,13 @@ function parseCitation(raw: string): Citation {
   };
 }
 
+function generateMessageId(suffix: string): string {
+  return `${Date.now()}-${suffix}`;
+}
+
 function ClinicRecommendationCard({ venue }: { venue: Venue }) {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.clinicCard}>
       <Ionicons name="medical" size={18} color={Colours.primary} />
@@ -69,7 +63,11 @@ function ClinicRecommendationCard({ venue }: { venue: Venue }) {
         <Text style={styles.clinicCardTitle}>{venue.name}</Text>
 
         <Text style={styles.clinicCardSubtitle}>
-          {venue.open_now ? "Open now" : "Currently closed"}
+          {venue.open_now
+            ? t("assistant.openNow", { defaultValue: "Open now" })
+            : t("assistant.currentlyClosed", {
+                defaultValue: "Currently closed",
+              })}
           {venue.busyness?.busyness_status
             ? ` · ${venue.busyness.busyness_status}`
             : ""}
@@ -90,12 +88,31 @@ function CitationChip({ citation }: { citation: Citation }) {
 }
 
 export default function AssistantScreen() {
+  const { t } = useTranslation();
+
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
   const [currentLanguage, setCurrentLanguage] = useState(
     featuredLanguages.find((l) => l.code === "en") ?? featuredLanguages[0],
   );
+
+  // What the chatbot actually responded in, per its own detected_language —
+  // separate from currentLanguage (the user's stored app-wide preference,
+  // used only to seed the initial request). Previously the header always
+  // showed the stored preference regardless of what the reply was really
+  // in, which is misleading — especially since a mock/fallback response
+  // is always English regardless of what was requested. null until the
+  // first real reply comes back, at which point it's the honest source of
+  // truth for this header.
+  const [lastResponseLanguageCode, setLastResponseLanguageCode] = useState<
+    string | null
+  >(null);
+
+  const respondingLanguageLabel = lastResponseLanguageCode
+    ? (featuredLanguages.find((l) => l.code === lastResponseLanguageCode)
+        ?.english ?? lastResponseLanguageCode)
+    : currentLanguage.english;
 
   // Resolved venue lookups for "venue:" citations, keyed by venue_id.
   // undefined = not yet requested, null = fetch failed, Venue = resolved.
@@ -107,22 +124,35 @@ export default function AssistantScreen() {
     {
       id: "1",
       role: "assistant",
-      text: "Hello! I'm your ClearPath Assistant. How can I help you today?",
+      text: t("assistant.greeting1", {
+        defaultValue:
+          "Hello! I'm your ClearPath Assistant. How can I help you today?",
+      }),
     },
     {
       id: "2",
       role: "assistant",
-      text: "I can help find clinics, explain services, and answer healthcare navigation questions.",
+      text: t("assistant.greeting2", {
+        defaultValue:
+          "I can help find clinics, explain services, and answer healthcare navigation questions.",
+      }),
     },
   ]);
 
-  useEffect(() => {
-    (async () => {
-      const code = await AsyncStorage.getItem("language");
-      const match = featuredLanguages.find((l) => l.code === code);
-      if (match) setCurrentLanguage(match);
-    })();
-  }, []);
+  // Same fix as show-staff.tsx: mount-only useEffect meant this never
+  // reflected a language change made after first visiting this tab. Only
+  // affects the pre-first-message fallback shown by respondingLanguageLabel
+  // (once a real reply comes back, that's driven by the response's own
+  // detected_language instead) — but that fallback should still be fresh.
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        const code = await AsyncStorage.getItem("language");
+        const match = featuredLanguages.find((l) => l.code === code);
+        if (match) setCurrentLanguage(match);
+      })();
+    }, []),
+  );
 
   // Best-effort venue resolution for any citation of type "venue" that
   // isn't already in the cache. Runs whenever new messages arrive.
@@ -154,9 +184,8 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const id = crypto.randomUUID();
-    const userMessageId = `${id}-user`;
-    const typingId = `${id}-typing`;
+    const userMessageId = generateMessageId("user");
+    const typingId = generateMessageId("typing");
 
     setMessages((prev) => [
       ...prev,
@@ -172,6 +201,10 @@ export default function AssistantScreen() {
         message: text,
         language: currentLanguage.code,
       });
+
+      setLastResponseLanguageCode(
+        response.detected_language ?? response.language ?? null,
+      );
 
       setMessages((prev) =>
         prev.map((m) =>
@@ -195,7 +228,10 @@ export default function AssistantScreen() {
             ? {
                 id: typingId,
                 role: "assistant",
-                text: "Sorry, I couldn't get a response. Please try again.",
+                text: t("assistant.errorMessage", {
+                  defaultValue:
+                    "Sorry, I couldn't get a response. Please try again.",
+                }),
                 isError: true,
               }
             : m,
@@ -208,8 +244,13 @@ export default function AssistantScreen() {
 
   const handleMicPress = () => {
     Alert.alert(
-      "Voice input isn't available yet",
-      "Type your question for now — voice input needs a speech-to-text library this project doesn't have yet.",
+      t("assistant.voiceUnavailableTitle", {
+        defaultValue: "Voice input isn't available yet",
+      }),
+      t("assistant.voiceUnavailableMessage", {
+        defaultValue:
+          "Type your question for now — voice input needs a speech-to-text library this project doesn't have yet.",
+      }),
     );
   };
 
@@ -288,10 +329,13 @@ export default function AssistantScreen() {
 
         <View style={styles.header}>
           <View>
-            <Text style={styles.title}>Assistant</Text>
+            <Text style={styles.title}>{t("tabs.assistant")}</Text>
 
             <Text style={styles.subtitle}>
-              Responding in {currentLanguage.english}
+              {t("assistant.respondingIn", {
+                defaultValue: "Responding in {{language}}",
+                language: respondingLanguageLabel,
+              })}
             </Text>
           </View>
 
@@ -324,7 +368,9 @@ export default function AssistantScreen() {
 
           <TextInput
             style={styles.input}
-            placeholder="Ask a question..."
+            placeholder={t("assistant.askQuestion", {
+              defaultValue: "Ask a question...",
+            })}
             placeholderTextColor={Colours.muted}
             value={message}
             onChangeText={setMessage}

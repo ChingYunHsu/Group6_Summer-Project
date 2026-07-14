@@ -21,62 +21,49 @@ import {
 export default function LocationScreen() {
   const { t } = useTranslation();
 
-    const [locationEnabled, setLocationEnabled] =
-        useState(false);
+  const [locationEnabled, setLocationEnabled] = useState(false);
 
-    const [isLoading, setIsLoading] =
-        useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLocationAccess = async () => {
-  try {
-    setIsLoading(true);
+    try {
+      setIsLoading(true);
 
-    const granted =
-      await requestLocationPermission();
+      const granted = await requestLocationPermission();
 
-    if (!granted) {
-      Alert.alert(
-  t("location.permissionRequired"),
-  t("location.permissionRequiredMessage")
-);
+      if (!granted) {
+        Alert.alert(
+          t("location.permissionRequired"),
+          t("location.permissionRequiredMessage"),
+        );
 
-      return;
+        return;
+      }
+
+      const location = await getCurrentLocation();
+
+      if (!location) {
+        Alert.alert(
+          t("location.unableToRetrieve"),
+          t("location.unableToRetrieveMessage"),
+        );
+
+        return;
+      }
+
+      console.log("User coordinates:", location);
+
+      setLocationEnabled(true);
+
+      Alert.alert(t("location.enabled"), t("location.enabledMessage"));
+    } catch (error) {
+      console.error(error);
+
+      Alert.alert(t("location.error"), t("location.errorMessage"));
+    } finally {
+      setIsLoading(false);
     }
-
-    const location =
-      await getCurrentLocation();
-
-    if (!location) {
-      Alert.alert(
-  t("location.unableToRetrieve"),
-  t("location.unableToRetrieveMessage")
-);
-
-      return;
-    }
-
-    console.log(
-      "User coordinates:",
-      location
-    );
-
-    setLocationEnabled(true);
-
-   Alert.alert(
-  t("location.enabled"),
-  t("location.enabledMessage")
-);
-  } catch (error) {
-    console.error(error);
-
-    Alert.alert(
-  t("location.error"),
-  t("location.errorMessage")
-);
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -94,111 +81,89 @@ export default function LocationScreen() {
 
         <View style={styles.illustrationWrapper}>
           <View style={styles.illustrationCircle}>
-            <Ionicons
-              name="location"
-              size={90}
-              color={Colours.primary}
-            />
+            <Ionicons name="location" size={90} color={Colours.primary} />
           </View>
         </View>
 
         {/* Header */}
 
-       <Text style={styles.title}>
-  {t("location.title")}
-</Text>
+        <Text style={styles.title}>{t("location.title")}</Text>
 
-        <Text style={styles.subtitle}>
-  {t("location.subtitle")}
-</Text>
+        <Text style={styles.subtitle}>{t("location.subtitle")}</Text>
 
         {/* Location Card */}
 
         <TouchableOpacity
           style={[
             styles.locationCard,
-            locationEnabled &&
-              styles.locationCardActive,
+            locationEnabled && styles.locationCardActive,
           ]}
           onPress={handleLocationAccess}
         >
           <View style={styles.iconCircle}>
-  <Ionicons
-    name={
-      locationEnabled
-        ? "checkmark-circle"
-        : "location"
-    }
-    size={24}
-    color={
-      locationEnabled
-        ? Colours.success
-        : Colours.primary
-    }
-  />
-</View>
+            <Ionicons
+              name={locationEnabled ? "checkmark-circle" : "location"}
+              size={24}
+              color={locationEnabled ? Colours.success : Colours.primary}
+            />
+          </View>
 
           <View style={styles.locationText}>
             <Text style={styles.locationTitle}>
-  {locationEnabled
-  ? t("location.enabled")
-  : t("location.enableAccess")}
-</Text>
+              {locationEnabled
+                ? t("location.enabled")
+                : t("location.enableAccess")}
+            </Text>
 
             <Text style={styles.locationSubtitle}>
-            {locationEnabled
-  ? t("location.permissionGranted")
-  : t("location.recommended")}
+              {locationEnabled
+                ? t("location.permissionGranted")
+                : t("location.recommended")}
             </Text>
           </View>
 
-          <Text style={styles.chevron}>
-            ›
-          </Text>
+          <Text style={styles.chevron}>›</Text>
         </TouchableOpacity>
 
         {/* Privacy Box */}
 
         <View style={styles.privacyBox}>
-          <Text style={styles.lockIcon}>
-            🔒
-          </Text>
+          <Text style={styles.lockIcon}>🔒</Text>
 
-          <Text style={styles.privacyText}>
-  {t("location.privacy")}
-</Text>
+          <Text style={styles.privacyText}>{t("location.privacy")}</Text>
         </View>
 
         {/* GPS Tip */}
 
-       <Text style={styles.tipText}>
-  {t("location.gpsTip")}
-</Text>
+        <Text style={styles.tipText}>{t("location.gpsTip")}</Text>
 
-        {/* Continue */}
+        {/* Continue — previously identical to Skip below (both just
+            pushed to auth-gateway regardless of locationEnabled), so
+            tapping Continue never actually required confirming location
+            at all despite implying otherwise. Now disabled/greyed until
+            location is actually granted; "I'll do this later" remains
+            the one honest, always-available way to skip. */}
 
         <TouchableOpacity
-          style={styles.primaryButton}
-          onPress={() =>
-            router.push("/auth-gateway")
-          }
+          style={[
+            styles.primaryButton,
+            !locationEnabled && styles.primaryButtonDisabled,
+          ]}
+          disabled={!locationEnabled}
+          onPress={() => router.push("/auth-gateway")}
         >
-          <Text style={styles.primaryButtonText}>
-  {t("common.continue")} →
-</Text>
+          <Text style={styles.primaryButtonText}>{t("common.continue")} →</Text>
         </TouchableOpacity>
 
         {/* Skip */}
 
         <TouchableOpacity
           style={styles.secondaryButton}
-          onPress={() =>
-            router.push("/auth-gateway")
-          }
+          onPress={() => router.push("/auth-gateway")}
         >
           <Text style={styles.secondaryButtonText}>
-  {t("location.doLater")}
-</Text>
+            {t("location.doLater")}
+          </Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -355,6 +320,10 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     paddingVertical: 18,
     marginBottom: 14,
+  },
+
+  primaryButtonDisabled: {
+    opacity: 0.4,
   },
 
   primaryButtonText: {

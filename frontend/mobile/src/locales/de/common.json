@@ -6,8 +6,12 @@
     "delete": "Löschen",
     "save": "Speichern",
     "edit": "Bearbeiten",
-    "loading": "Wird geladen..."
+    "add": "Hinzufügen",
+    "loading": "Wird geladen...",
+    "done": "Fertig",
+    "saving": "Wird gespeichert..."
   },
+
   "language": {
     "choose": "Wählen Sie Ihre Sprache",
     "search": "Andere Sprachen suchen...",
@@ -16,13 +20,16 @@
     "comingSoon": "Demnächst verfügbar",
     "comingSoonMessage": "Diese Sprache wird in einer zukünftigen Version verfügbar sein."
   },
+
   "legal": {
     "title": "Rechtliches & Datenschutz",
     "reviewHeading": "Vereinbarungen prüfen",
     "reviewSubtitle": "Bitte prüfen Sie unsere aktualisierten Bedingungen und Datenschutzrichtlinien, um fortzufahren.",
+
     "terms": "Nutzungsbedingungen",
     "termsDescription": "Regelt die Nutzung unserer Plattform und Dienste.",
     "agreeTerms": "Ich stimme den Nutzungsbedingungen zu",
+
     "privacy": "Datenschutzrichtlinie",
     "privacyDescription": "Beschreibt, wie wir Ihre Daten schützen und verwalten.",
     "agreePrivacy": "Ich stimme der Datenschutzrichtlinie zu",
@@ -31,6 +38,7 @@
     "termsPreview": "1. Annahme der Bedingungen\n\nDurch den Zugriff auf diese Anwendung erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.\n\n2. Verantwortlichkeiten der Nutzer\n\nSie sind für die Vertraulichkeit Ihrer Kontoinformationen verantwortlich.\n\n3. Verfügbarkeit des Dienstes\n\nWir streben eine Verfügbarkeit von 99,9 % an, garantieren jedoch keinen unterbrechungsfreien Zugriff.\n\n4. Änderungen\n\nWir behalten uns das Recht vor, diese Bedingungen jederzeit mit vorheriger Ankündigung zu ändern.\n\n5. Kontosicherheit\n\nNutzer müssen angemessene Maßnahmen ergreifen, um Anmeldedaten und Kontozugänge zu schützen.\n\n6. Haftungsbeschränkung\n\nWir haften nicht für Verluste, die durch Missbrauch der Plattform oder Unterbrechungen außerhalb unserer Kontrolle entstehen.",
     "privacyPreview": "1. Datenerhebung\n\nWir erfassen nur die minimal erforderlichen Daten zur Bereitstellung unserer Dienste, einschließlich Standortdaten zur Anzeige nahegelegener Kliniken.\n\n2. Datennutzung\n\nIhre Daten werden ausschließlich zur Verbesserung der Dienstleistung und Personalisierung verwendet.\n\n3. Weitergabe an Dritte\n\nWir verkaufen Ihre personenbezogenen Daten niemals. Daten werden nur mit autorisierten medizinischen Partnern geteilt, wenn Sie einen Termin anfordern.\n\n4. Ihre Rechte\n\nSie haben jederzeit das Recht, auf Ihre Daten zuzugreifen, sie zu ändern oder zu löschen.\n\n5. Datenspeicherung\n\nWir speichern nur die Informationen, die zur Bereitstellung unserer Dienste und zur Erfüllung gesetzlicher Verpflichtungen erforderlich sind.\n\n6. Sicherheitsmaßnahmen\n\nAlle sensiblen medizinischen Informationen werden verschlüsselt und gemäß branchenüblichen Sicherheitsstandards geschützt."
   },
+
   "settings": {
     "title": "Einstellungen",
     "permissions": "Berechtigungen",
@@ -43,7 +51,11 @@
     "dangerZone": "Gefahrenbereich",
     "deleteWarning": "Das Löschen Ihres Kontos ist dauerhaft. Alle medizinischen Unterlagen und Profildaten werden entfernt.",
     "deleteAccount": "Mein Konto löschen",
-    "deleteAccountMessage": "Diese Aktion kann nicht rückgängig gemacht werden."
+    "deleteAccountMessage": "Diese Aktion kann nicht rückgängig gemacht werden.",
+    "locationDisableTitle": "Standortzugriff deaktivieren",
+    "locationDisableMessage": "Standortberechtigungen können nur in den Geräteeinstellungen geändert werden.",
+    "deleteErrorTitle": "Konto konnte nicht gelöscht werden",
+    "deleteErrorMessage": "Bitte versuchen Sie es erneut."
   },
 
   "authGateway": {
@@ -52,6 +64,7 @@
     "loginRegister": "Anmelden / Registrieren",
     "continueGuest": "Als Gast fortfahren"
   },
+
   "editProfile": {
     "title": "Profil bearbeiten",
     "personalProfile": "Persönliches Profil",
@@ -63,13 +76,19 @@
     "phoneNumber": "Telefonnummer",
     "emailAddress": "E-Mail-Adresse",
     "address": "Adresse",
-    "spokenLanguages": "Gesprochene Sprachen"
+    "spokenLanguages": "Gesprochene Sprachen",
+    "saveErrorTitle": "Nicht alles konnte gespeichert werden",
+    "saveErrorMessage": "Einige Ihrer Änderungen wurden nicht gespeichert. Bitte versuchen Sie es erneut.",
+    "addLanguage": "Sprache hinzufügen",
+    "languagePlaceholder": "Sprache eingeben"
   },
+
   "profileGuest": {
     "title": "Sichern Sie Ihre Medizinische ID",
     "description": "Melden Sie sich an, um Ihre chronischen Erkrankungen, Allergien und Notfallinformationen zu speichern. Ihre Daten werden sicher synchronisiert und bleiben verschlüsselt.",
     "loginRegister": "Anmelden / Registrieren"
   },
+
   "login": {
     "welcomeBack": "Willkommen zurück",
     "signInSubtitle": "Greifen Sie auf Ihre internationalen Gesundheitsakten zu.",
@@ -93,7 +112,11 @@
     "skipForNow": "Vorerst überspringen",
     "loginRequiredTitle": "Anmeldung erforderlich",
     "loginRequiredBody": "Um die Genauigkeit der ClearPath-Daten zu gewährleisten und Spam zu verhindern, müssen Sie angemeldet sein, um Community-Meldungen einzureichen oder zu bestätigen.",
-    "logInSignUp": "Anmelden / Registrieren"
+    "logInSignUp": "Anmelden / Registrieren",
+    "signInErrorTitle": "Anmeldung fehlgeschlagen",
+    "signInErrorMessage": "Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut.",
+    "registerErrorTitle": "Konto konnte nicht erstellt werden",
+    "registerErrorMessage": "Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut."
   },
 
   "profile": {
@@ -115,9 +138,13 @@
     "languages": "Sprachen",
     "conditions": "Erkrankungen",
     "allergies": "Allergien",
-    "savedClinics": "Gespeicherte Kliniken",
-    "savedFacility": "Gespeicherte Einrichtung"
+    "savedClinics": "Gespeicherte Einrichtungen",
+    "savedFacility": "Gespeicherte Einrichtung",
+    "syncOffline": "Offline - gespeicherte Daten werden angezeigt",
+    "syncLoading": "Wird synchronisiert...",
+    "noSavedClinics": "Noch keine gespeicherten Einrichtungen."
   },
+
   "showStaff": {
     "title": "Personal anzeigen",
     "languageBadge": "Spanisch / Español",
@@ -129,9 +156,11 @@
     "liveTranslate": "Live-Übersetzung",
     "allergies": "Allergien",
     "respiratory": "Atemwege",
+    "translationError": "Übersetzung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "translationLoginRequired": "Melden Sie sich an, um Live-Übersetzung zu nutzen. Tippen Sie zum Anmelden.",
     "pain": "Schmerzen",
     "translationPlaceholder": "Geben Sie etwas in der Sprache des Besuchers ein...",
-    "translationResult": "Die Übersetzung wird nach der Backend-Integration hier angezeigt.",
+    "translationResult": "Die Übersetzung wird hier angezeigt...",
     "medicalSummary": "Zusammenfassung der Medizinischen ID",
     "categories": {
       "general": "Allgemein",
@@ -145,6 +174,7 @@
       "pharmacy": "Apotheke"
     }
   },
+
   "location": {
     "title": "Helfen Sie uns, Sie zu finden",
     "subtitle": "Wir verwenden Ihren Standort, um die nächstgelegenen Kliniken und Krankenhäuser mit den kürzesten Wartezeiten anzuzeigen.",
@@ -167,12 +197,19 @@
     "systemSettings": "Zu den Systemeinstellungen",
     "settingsError": "Die Systemeinstellungen konnten nicht geöffnet werden."
   },
+
   "medicalId": {
     "title": "Medizinische ID bearbeiten",
     "emergencyProfile": "Notfallprofil",
     "criticalInfo": "Wichtige Informationen",
-    "medicalConditions": "Medizinische Erkrankungen"
+    "medicalConditions": "Medizinische Erkrankungen",
+    "addCondition": "Erkrankung hinzufügen",
+    "addAllergy": "Allergie hinzufügen",
+    "conditionPlaceholder": "Erkrankung eingeben",
+    "allergyPlaceholder": "Allergie eingeben",
+    "selectBloodType": "Blutgruppe auswählen"
   },
+
   "welcome": {
     "slogan": "Barrierefreie Intelligenz in Ihrer Sprache",
     "healthcareNavigation": "Navigation im Gesundheitswesen",
@@ -186,9 +223,10 @@
     "emergencySos": "Notfall-SOS",
     "emergencySosDescription": "Greifen Sie schnell auf Notfallhilfe zu, wenn jede Sekunde zählt."
   },
+
   "tabs": {
     "map": "Karte",
-    "hospitalMap": "Krankenhauskarte",
+    "hospitalMap": "ClearPath-Karte",
     "assistant": "Assistent",
     "clearPathAssistant": "ClearPath-Assistent",
     "showStaff": "Dem Personal zeigen",
@@ -196,9 +234,33 @@
     "myProfile": "Mein Profil",
     "more": "Mehr"
   },
+
   "map": {
-    "searchPlaceholder": "Nach Kliniken oder Apotheken suchen..."
+    "searchPlaceholder": "Suchen...",
+    "categories": {
+      "clinic": "Klinik",
+      "pharmacy": "Apotheke",
+      "aed": "Defibrillator (AED)",
+      "hospital": "Krankenhaus",
+      "restroom": "Toilette"
+    },
+
+    "filters": {
+      "title": "Filter",
+      "availability": "Verfügbarkeit",
+      "openNow": "Jetzt geöffnet",
+      "accessible": "Barrierefrei",
+      "time": "Uhrzeit",
+      "autoCurrentTime": "Automatisch aktuelle Uhrzeit",
+      "liveStatus": "Live-Status",
+      "language": "Sprache",
+      "apply": "Filter anwenden",
+      "quiet": "Ruhig",
+      "moderate": "Mäßig",
+      "busy": "Belebt"
+    }
   },
+
   "reportModal": {
     "title": "Problem melden",
     "subtitle": "Helfen Sie dabei, ClearPath aktuell zu halten, indem Sie ein vorübergehendes Barrierefreiheitsproblem melden.",
@@ -213,10 +275,8 @@
     "submit": "Meldung senden",
     "loginRequired": "Anmeldung erforderlich",
     "loginRequiredMessage": "Um die Genauigkeit der ClearPath-Daten zu gewährleisten, müssen Sie angemeldet sein, bevor Sie eine Meldung senden.",
-
     "locationRequired": "Standortdienste erforderlich",
     "locationRequiredMessage": "Bitte aktivieren Sie die Standortdienste, bevor Sie eine Meldung senden.",
-
     "issueTypes": {
       "largeCrowd": "Zu überfüllt",
       "entranceClosed": "Eingang blockiert",
@@ -226,37 +286,45 @@
       "protestOrBlockage": "Protest / Blockade"
     }
   },
+
   "more": {
     "languageSelection": "Sprachauswahl",
     "settings": "Einstellungen",
     "legal": "Rechtliches",
     "welcome": "Willkommen",
-    "sos": "SOS"
+    "sos": "SOS",
+    "loginRegister": "Anmelden / Registrieren"
   },
+
   "sos": {
     "title": "Notruf wird vorbereitet",
     "countdown": "Anruf in {{seconds}} Sek.",
     "subtitle": "Der Notruf wird gestartet, sofern er nicht abgebrochen wird.",
-
     "locationTitle": "Aktueller Standort",
     "locationDescription": "Ihr Standort kann während des Notrufs geteilt werden.",
-
     "medicalIdTitle": "Zusammenfassung der medizinischen Daten",
-
     "name": "Name",
     "bloodType": "Blutgruppe",
     "conditions": "Erkrankungen",
     "allergies": "Allergien",
     "phone": "Telefon",
-
     "notice": "Lassen Sie diesen Bildschirm während des Gesprächs mit dem Notruf geöffnet.",
-
     "cancel": "Notruf abbrechen",
-
     "notProvided": "Nicht angegeben",
     "none": "Keine",
-
     "callErrorTitle": "Anruf nicht möglich",
     "callErrorMessage": "Dieses Gerät kann keine Telefonanrufe tätigen."
+  },
+
+  "assistant": {
+    "greeting1": "Hallo! Ich bin Ihr ClearPath-Assistent. Wie kann ich Ihnen heute helfen?",
+    "greeting2": "Ich kann Ihnen helfen, Kliniken zu finden, Dienstleistungen zu erklären und Fragen zur Gesundheitsnavigation zu beantworten.",
+    "respondingIn": "Antwort auf {{language}}",
+    "errorMessage": "Entschuldigung, ich konnte keine Antwort erhalten. Bitte versuchen Sie es erneut.",
+    "voiceUnavailableTitle": "Spracheingabe ist noch nicht verfügbar",
+    "voiceUnavailableMessage": "Bitte geben Sie Ihre Frage vorerst ein — für die Spracheingabe wird eine Sprache-zu-Text-Bibliothek benötigt, die in diesem Projekt noch nicht vorhanden ist.",
+    "askQuestion": "Stellen Sie eine Frage...",
+    "openNow": "Jetzt geöffnet",
+    "currentlyClosed": "Derzeit geschlossen"
   }
 }

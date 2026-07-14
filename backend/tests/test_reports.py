@@ -50,7 +50,7 @@ class _FakeCursor:
         elif q.startswith("INSERT INTO user_reports"):
             (report_id, user_id, venue_id, issue_type, lat, lng, accuracy,
              anonymous, description, photos, reported_by, status,
-             expires_in_minutes, default_lang, fallback_lang, _exp, src) = params
+             expires_in_minutes, default_lang, fallback_lang, _exp) = params
             self._reports[report_id] = {
                 "report_id": report_id, "user_id": user_id, "venue_id": venue_id,
                 "issue_type": issue_type, "latitude": lat, "longitude": lng,

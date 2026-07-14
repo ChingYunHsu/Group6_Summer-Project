@@ -7,7 +7,9 @@
     "save": "Save",
     "edit": "Edit",
     "add": "Add",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "done": "Done",
+    "saving": "Saving..."
   },
 
   "language": {
@@ -50,7 +52,11 @@
     "dangerZone": "Danger Zone",
     "deleteWarning": "Deleting your account is permanent. All medical records and profile data will be removed.",
     "deleteAccount": "Delete my account",
-    "deleteAccountMessage": "This action cannot be undone."
+    "deleteAccountMessage": "This action cannot be undone.",
+    "locationDisableTitle": "Turn off location access",
+    "locationDisableMessage": "Location permissions can only be changed from your device Settings.",
+    "deleteErrorTitle": "Couldn't delete account",
+    "deleteErrorMessage": "Please try again."
   },
 
   "authGateway": {
@@ -71,7 +77,11 @@
     "phoneNumber": "Phone Number",
     "emailAddress": "Email Address",
     "address": "Address",
-    "spokenLanguages": "Spoken Languages"
+    "spokenLanguages": "Spoken Languages",
+    "saveErrorTitle": "Couldn't save everything",
+    "saveErrorMessage": "Some of your changes didn't save. Please try again.",
+    "addLanguage": "Add Language",
+    "languagePlaceholder": "Enter language"
   },
 
   "profileGuest": {
@@ -103,7 +113,11 @@
     "skipForNow": "Skip For Now",
     "loginRequiredTitle": "Login Required",
     "loginRequiredBody": "To help keep ClearPath data accurate and prevent spam, you must be logged in to submit or verify community reports.",
-    "logInSignUp": "Log In / Sign Up"
+    "logInSignUp": "Log In / Sign Up",
+    "signInErrorTitle": "Couldn't sign in",
+    "signInErrorMessage": "Please check your details and try again.",
+    "registerErrorTitle": "Couldn't create account",
+    "registerErrorMessage": "Please check your details and try again."
   },
 
   "profile": {
@@ -125,8 +139,11 @@
     "languages": "Languages",
     "conditions": "Conditions",
     "allergies": "Allergies",
-    "savedClinics": "Saved Clinics",
-    "savedFacility": "Saved Facility"
+    "savedClinics": "Saved Facilities",
+    "savedFacility": "Saved Facility",
+    "syncOffline": "Offline - showing saved data",
+    "syncLoading": "Syncing...",
+    "noSavedClinics": "No saved facilities yet."
   },
 
   "showStaff": {
@@ -140,9 +157,11 @@
     "liveTranslate": "Live Translate",
     "allergies": "Allergies",
     "respiratory": "Respiratory",
+    "translationError": "Translation failed. Please try again.",
+    "translationLoginRequired": "Log in to use Live Translate. Tap to log in.",
     "pain": "Pain",
     "translationPlaceholder": "Type in the visitor's language...",
-    "translationResult": "Translation will appear here after backend integration.",
+    "translationResult": "Translation will appear here...",
     "medicalSummary": "Medical ID Summary",
     "categories": {
       "general": "General",
@@ -188,7 +207,8 @@
     "addCondition": "Add Condition",
     "addAllergy": "Add Allergy",
     "conditionPlaceholder": "Enter condition",
-    "allergyPlaceholder": "Enter allergy"
+    "allergyPlaceholder": "Enter allergy",
+    "selectBloodType": "Select blood type"
   },
   "welcome": {
     "slogan": "Accessibility Intelligence in your language",
@@ -205,7 +225,7 @@
   },
   "tabs": {
     "map": "Map",
-    "hospitalMap": "Hospital Map",
+    "hospitalMap": "ClearPath Map",
     "assistant": "Assistant",
     "clearPathAssistant": "ClearPath Assistant",
     "showStaff": "Show Staff",
@@ -214,7 +234,29 @@
     "more": "More"
   },
   "map": {
-    "searchPlaceholder": "Search clinics or pharmacies..."
+    "searchPlaceholder": "Search...",
+    "categories": {
+      "clinic": "Clinic",
+      "pharmacy": "Pharmacy",
+      "aed": "AED",
+      "hospital": "Hospital",
+      "restroom": "Restroom"
+    },
+
+    "filters": {
+      "title": "Filters",
+      "availability": "Availability",
+      "openNow": "Open Now",
+      "accessible": "Accessible",
+      "time": "Time",
+      "autoCurrentTime": "Auto Current Time",
+      "liveStatus": "Live Status",
+      "language": "Language",
+      "apply": "Apply Filters",
+      "quiet": "Quiet",
+      "moderate": "Moderate",
+      "busy": "Busy"
+    }
   },
   "reportModal": {
     "title": "Report an Issue",
@@ -246,32 +288,37 @@
     "settings": "Settings",
     "legal": "Legal",
     "welcome": "Welcome",
-    "sos": "SOS"
+    "sos": "SOS",
+    "loginRegister": "Log In / Register"
   },
   "sos": {
     "title": "Preparing Emergency Call",
     "countdown": "Calling in {{seconds}}s",
     "subtitle": "Your emergency call will begin unless cancelled.",
-
     "locationTitle": "Current Location",
     "locationDescription": "Your location is available to share during the emergency call.",
-
     "medicalIdTitle": "Medical ID Summary",
-
     "name": "Name",
     "bloodType": "Blood Type",
     "conditions": "Conditions",
     "allergies": "Allergies",
     "phone": "Phone",
-
     "notice": "Keep this screen available while speaking with the emergency operator.",
-
     "cancel": "Cancel Emergency Call",
-
     "notProvided": "Not provided",
     "none": "None",
-
     "callErrorTitle": "Unable to place call",
     "callErrorMessage": "This device cannot make phone calls."
+  },
+  "assistant": {
+    "greeting1": "Hello! I'm your ClearPath Assistant. How can I help you today?",
+    "greeting2": "I can help find clinics, explain services, and answer healthcare navigation questions.",
+    "respondingIn": "Responding in {{language}}",
+    "errorMessage": "Sorry, I couldn't get a response. Please try again.",
+    "voiceUnavailableTitle": "Voice input isn't available yet",
+    "voiceUnavailableMessage": "Type your question for now — voice input needs a speech-to-text library this project doesn't have yet.",
+    "askQuestion": "Ask a question...",
+    "openNow": "Open now",
+    "currentlyClosed": "Currently closed"
   }
 }

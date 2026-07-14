@@ -15,7 +15,11 @@ export default function ProfileGuestScreen() {
       {/* Header */}
 
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => router.back()}>
+        {/* Not router.back() — this screen is reached via router.replace()
+            from (tabs)/profile.tsx's guest redirect, so there's no
+            reliable "previous screen" in history to return to. Map is
+            the sensible default a browsing guest actually wants. */}
+        <TouchableOpacity onPress={() => router.replace("/map")}>
           <Ionicons name="chevron-back" size={24} color={Colours.text} />
         </TouchableOpacity>
 

@@ -2,9 +2,9 @@ import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Brightness from "expo-brightness";
 import * as Clipboard from "expo-clipboard";
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
 import * as Speech from "expo-speech";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   ActivityIndicator,
@@ -52,18 +52,27 @@ export default function ShowStaffScreen() {
   const [summaryLoading, setSummaryLoading] = useState(true);
   const [staffSummary, setStaffSummary] = useState<StaffSummary | null>(null);
 
-  useEffect(() => {
-    const loadLanguage = async () => {
-      const code = await AsyncStorage.getItem("language");
+  // useFocusEffect, not plain useEffect — currentLanguage here represents
+  // the app user's own chosen language ("I am the visitor, and I speak
+  // whatever I've set my app to"), so it should track changes made
+  // anywhere else in the app. A mount-only effect meant this tab, once
+  // visited, would never see a language change made after that — Expo
+  // Router keeps tab screens mounted rather than remounting them, so
+  // "load once on mount" really meant "load once, ever, per app session."
+  // Same fix already applied to profile.tsx/settings.tsx earlier.
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        const code = await AsyncStorage.getItem("language");
 
-      const language =
-        featuredLanguages.find((l) => l.code === code) ?? featuredLanguages[0];
+        const language =
+          featuredLanguages.find((l) => l.code === code) ??
+          featuredLanguages[0];
 
-      setCurrentLanguage(language);
-    };
-
-    loadLanguage();
-  }, []);
+        setCurrentLanguage(language);
+      })();
+    }, []),
+  );
 
   // Full name/phone live on the profile resource, blood type/conditions/
   // allergies live on the medical resource — two separate backend calls,
@@ -179,6 +188,16 @@ export default function ShowStaffScreen() {
   const [isTranslating, setIsTranslating] = useState(false);
   const [translationFailed, setTranslationFailed] = useState(false);
 
+  // Distinct from translationFailed — /translate requires a real login
+  // server-side (require_bearer_auth, confirmed via
+  // test_translate_requires_bearer_token in the backend test suite), and
+  // a guest hitting that should see "log in to use this" rather than a
+  // generic failure message that gives no indication of what would
+  // actually fix it. This screen is exactly the one an unregistered
+  // traveler might reach for first, so this distinction matters here
+  // more than most other auth-gated features.
+  const [translationNeedsLogin, setTranslationNeedsLogin] = useState(false);
+
   // Translate free text server-side, not on-device — arbitrary visitor
   // input isn't covered by the canned phraseTemplates, and running this
   // through a third-party provider directly from the client would mean
@@ -212,13 +231,21 @@ export default function ShowStaffScreen() {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: marks the debounced translation as starting
     setIsTranslating(true);
     setTranslationFailed(false);
+    setTranslationNeedsLogin(false);
 
     const handle = setTimeout(async () => {
       try {
-        const result = await translateStaffText(trimmedInput, currentLanguage.code);
+        const result = await translateStaffText(
+          trimmedInput,
+          currentLanguage.code,
+        );
         setTranslatedText(result);
-      } catch {
-        setTranslationFailed(true);
+      } catch (error: any) {
+        if (error?.status === 401) {
+          setTranslationNeedsLogin(true);
+        } else {
+          setTranslationFailed(true);
+        }
       } finally {
         setIsTranslating(false);
       }
@@ -231,6 +258,7 @@ export default function ShowStaffScreen() {
   // of whatever the last non-empty translation attempt left in state.
   const displayedTranslating = trimmedInput ? isTranslating : false;
   const displayedFailed = trimmedInput ? translationFailed : false;
+  const displayedNeedsLogin = trimmedInput ? translationNeedsLogin : false;
   const displayedTranslation = trimmedInput ? translatedText : "";
 
   const categories: { key: Scenario; icon: keyof typeof Ionicons.glyphMap }[] =
@@ -437,9 +465,19 @@ export default function ShowStaffScreen() {
         <View style={styles.translationResult}>
           {displayedTranslating ? (
             <ActivityIndicator color={Colours.primary} />
+          ) : displayedNeedsLogin ? (
+            <TouchableOpacity onPress={() => router.push("/login")}>
+              <Text style={styles.translationErrorText}>
+                {t("showStaff.translationLoginRequired", {
+                  defaultValue: "Log in to use Live Translate. Tap to log in.",
+                })}
+              </Text>
+            </TouchableOpacity>
           ) : displayedFailed ? (
             <Text style={styles.translationErrorText}>
-              {t("showStaff.translationError")}
+              {t("showStaff.translationError", {
+                defaultValue: "Translation failed. Please try again.",
+              })}
             </Text>
           ) : (
             <Text style={styles.translationResultText}>

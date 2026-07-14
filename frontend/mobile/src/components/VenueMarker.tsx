@@ -78,8 +78,14 @@ export default function VenueMarker({ venue, showLiveStatus, onPress }: Props) {
   return (
     <Marker
       coordinate={{
-        latitude: venue.latitude,
-        longitude: venue.longitude,
+        // Number(...) matters: the backend sends these as strings (MySQL
+        // DECIMAL columns serialize as Decimal -> string via jsonify(),
+        // not float), and react-native-maps silently fails to position a
+        // marker given string coordinates — no crash, no error, it just
+        // never appears. This was the actual reason venues rendered zero
+        // markers even after every other bug in this path was fixed.
+        latitude: Number(venue.latitude),
+        longitude: Number(venue.longitude),
       }}
       onPress={() => onPress(venue)}
     >

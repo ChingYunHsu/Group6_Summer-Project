@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import * as Location from "expo-location";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -13,13 +14,110 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
-import { mockMedicalId } from "../data/mockMedicalId";
-import { mockProfile } from "../data/mockProfile";
+import { getAccessToken } from "../services/authService";
+import {
+  getCurrentLocation,
+  requestLocationPermission,
+} from "../services/location";
+import { loadMedicalId, MedicalProfile } from "../services/medicalIdService";
+import { loadProfile, UserProfile } from "../services/profileService";
 
 export default function SOSScreen() {
   const [countdown, setCountdown] = useState(5);
 
   const { t } = useTranslation();
+
+  // null = not logged in / fetch failed / never resolved — InfoRow shows
+  // "Not provided" in that case. Distinct from an empty conditions/
+  // allergies array, which shows "None" instead — "we confirmed there
+  // are none" and "we don't know" are clinically different things to
+  // show a first responder, not interchangeable blanks.
+  const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [medicalId, setMedicalId] = useState<MedicalProfile | null>(null);
+
+  const [locationText, setLocationText] = useState<string | null>(null);
+
+  // Fetches profile + medical data for the summary card below. Fully
+  // independent of the countdown/auto-dial logic further down — this
+  // must never be able to delay or block the actual emergency call, so
+  // nothing here is awaited by handleCallEmergency or the countdown
+  // effect.
+  useEffect(() => {
+    (async () => {
+      try {
+        const token = await getAccessToken();
+
+        if (!token) {
+          return;
+        }
+
+        const [profileResult, medicalResult] = await Promise.all([
+          loadProfile().catch((error) => {
+            console.error("Failed to load profile for SOS", error);
+            return null;
+          }),
+          loadMedicalId().catch((error) => {
+            console.error("Failed to load medical ID for SOS", error);
+            return null;
+          }),
+        ]);
+
+        setProfile(profileResult);
+        setMedicalId(medicalResult);
+      } catch (error) {
+        console.error("Failed to load SOS medical summary", error);
+      }
+    })();
+  }, []);
+
+  // Real device location, reverse-geocoded into a readable address —
+  // replaces the previous hardcoded "245 W 46th St..." placeholder.
+  // Same independence guarantee as above: never gates the emergency call
+  // itself, only what's displayed for the person's own reference.
+  useEffect(() => {
+    (async () => {
+      try {
+        const servicesEnabled = await Location.hasServicesEnabledAsync();
+
+        if (!servicesEnabled) {
+          return;
+        }
+
+        const granted = await requestLocationPermission();
+
+        if (!granted) {
+          return;
+        }
+
+        const position = await getCurrentLocation();
+
+        if (!position) {
+          return;
+        }
+
+        const results = await Location.reverseGeocodeAsync({
+          latitude: position.latitude,
+          longitude: position.longitude,
+        });
+
+        const address = results[0];
+
+        if (!address) {
+          return;
+        }
+
+        const parts = [
+          [address.streetNumber, address.street].filter(Boolean).join(" "),
+          address.city,
+          [address.region, address.postalCode].filter(Boolean).join(" "),
+        ].filter(Boolean);
+
+        setLocationText(parts.join(", "));
+      } catch (error) {
+        console.error("Failed to resolve SOS location", error);
+      }
+    })();
+  }, []);
 
   const handleCallEmergency = async () => {
     const phoneNumber = "911";
@@ -79,12 +177,17 @@ export default function SOSScreen() {
           <Text style={styles.subtitle}>{t("sos.subtitle")}</Text>
         </View>
 
-        {/* Location TODO: WIRE TO LIVE LOCATION */}
+        {/* Location */}
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>{t("sos.locationTitle")}</Text>
 
-          <Text style={styles.cardText}>245 W 46th St, New York, NY 10036</Text>
+          <Text style={styles.cardText}>
+            {locationText ??
+              t("sos.locationUnavailable", {
+                defaultValue: "Unable to determine your current location.",
+              })}
+          </Text>
 
           <Text style={styles.cardSubtext}>{t("sos.locationDescription")}</Text>
         </View>
@@ -94,24 +197,36 @@ export default function SOSScreen() {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>{t("sos.medicalIdTitle")}</Text>
 
-          <InfoRow label={t("sos.name")} value={mockProfile.full_name} />
+          <InfoRow label={t("sos.name")} value={profile?.full_name ?? null} />
 
           <InfoRow
             label={t("sos.bloodType")}
-            value={mockMedicalId.blood_type}
+            value={medicalId?.blood_type ?? null}
           />
 
           <InfoRow
             label={t("sos.conditions")}
-            value={mockMedicalId.conditions?.join(", ") ?? t("sos.none")}
+            value={
+              medicalId === null
+                ? null
+                : medicalId.conditions?.length
+                  ? medicalId.conditions.join(", ")
+                  : t("sos.none")
+            }
           />
 
           <InfoRow
             label={t("sos.allergies")}
-            value={mockMedicalId.allergies?.join(", ") ?? t("sos.none")}
+            value={
+              medicalId === null
+                ? null
+                : medicalId.allergies?.length
+                  ? medicalId.allergies.join(", ")
+                  : t("sos.none")
+            }
           />
 
-          <InfoRow label={t("sos.phone")} value={mockProfile.phone} />
+          <InfoRow label={t("sos.phone")} value={profile?.phone ?? null} />
         </View>
 
         {/* Emergency Notice */}

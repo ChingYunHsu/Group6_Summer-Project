@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Alert,
+  Modal,
   ScrollView,
   StyleSheet,
   Text,
@@ -42,9 +43,12 @@ export default function EditProfileScreen() {
   const [phone, setPhone] = useState(mockProfile.phone);
   const [email, setEmail] = useState(mockProfile.email);
   const [address, setAddress] = useState("");
-  const [spokenLanguages, setSpokenLanguages] = useState(
-    mockProfile.spoken_languages.join(", "),
+  const [spokenLanguages, setSpokenLanguages] = useState<string[]>(
+    mockProfile.spoken_languages,
   );
+
+  const [languageModalVisible, setLanguageModalVisible] = useState(false);
+  const [newLanguage, setNewLanguage] = useState("");
 
   // Profile (phone/nationality/spoken_languages — the `users` table) and
   // medical (gender/address/etc. — `medical_profiles`) are two separate
@@ -67,9 +71,10 @@ export default function EditProfileScreen() {
 
         if (profile) {
           setFullName(profile.full_name);
+          setEmail(profile.email);
           setPhone(profile.phone);
           setNationality(profile.nationality);
-          setSpokenLanguages((profile.spoken_languages ?? []).join(", "));
+          setSpokenLanguages(profile.spoken_languages ?? []);
         }
 
         if (medical) {
@@ -90,10 +95,7 @@ export default function EditProfileScreen() {
       saveProfile({
         phone,
         nationality,
-        spoken_languages: spokenLanguages
-          .split(",")
-          .map((lang) => lang.trim())
-          .filter(Boolean),
+        spoken_languages: spokenLanguages,
       }),
       // NOTE: as of this writing, PUT /user/medical-profile in user.py is
       // shadowed by a second implementation that only accepts
@@ -102,7 +104,7 @@ export default function EditProfileScreen() {
       // (user.py vs api/medical.py) is meant to stay. This call is correct
       // for the intended backend behaviour; it just won't succeed until
       // that's fixed server-side.
-      saveMedicalId({ gender, address }),
+      saveMedicalId({ date_of_birth: dob, gender, address }),
     ]);
 
     setSaving(false);
@@ -129,6 +131,29 @@ export default function EditProfileScreen() {
     }
 
     router.back();
+  };
+
+  const removeLanguage = (language: string) => {
+    setSpokenLanguages(spokenLanguages.filter((item) => item !== language));
+  };
+
+  const addLanguage = () => {
+    const value = newLanguage.trim();
+
+    if (!value) {
+      return;
+    }
+
+    if (
+      spokenLanguages.some((item) => item.toLowerCase() === value.toLowerCase())
+    ) {
+      return;
+    }
+
+    setSpokenLanguages([...spokenLanguages, value]);
+
+    setNewLanguage("");
+    setLanguageModalVisible(false);
   };
 
   return (
@@ -186,7 +211,8 @@ export default function EditProfileScreen() {
           <InputField
             label={t("editProfile.dateOfBirth")}
             value={dob}
-            editable={false}
+            onChangeText={setDob}
+            placeholder="YYYY-MM-DD"
           />
 
           <InputField
@@ -221,13 +247,63 @@ export default function EditProfileScreen() {
             multiline
           />
 
-          <InputField
-            label={t("editProfile.spokenLanguages")}
-            value={spokenLanguages}
-            onChangeText={setSpokenLanguages}
-          />
+          <View style={styles.tagSectionHeader}>
+            <Text style={styles.label}>{t("editProfile.spokenLanguages")}</Text>
+
+            <TouchableOpacity onPress={() => setLanguageModalVisible(true)}>
+              <Ionicons name="add-circle" size={24} color={Colours.primary} />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.tagRow}>
+            {spokenLanguages.map((language) => (
+              <View key={language} style={styles.tag}>
+                <Text style={styles.tagText}>{language}</Text>
+
+                <TouchableOpacity onPress={() => removeLanguage(language)}>
+                  <Ionicons name="close" size={16} color={Colours.muted} />
+                </TouchableOpacity>
+              </View>
+            ))}
+          </View>
         </View>
       </ScrollView>
+
+      <Modal visible={languageModalVisible} transparent animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>
+              {t("editProfile.addLanguage", {
+                defaultValue: "Add Language",
+              })}
+            </Text>
+
+            <TextInput
+              style={styles.modalInput}
+              value={newLanguage}
+              onChangeText={setNewLanguage}
+              placeholder={t("editProfile.languagePlaceholder", {
+                defaultValue: "Enter language",
+              })}
+            />
+
+            <View style={styles.modalActions}>
+              <TouchableOpacity
+                onPress={() => {
+                  setNewLanguage("");
+                  setLanguageModalVisible(false);
+                }}
+              >
+                <Text>{t("common.cancel")}</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={addLanguage}>
+                <Text>{t("common.add")}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -239,6 +315,7 @@ function InputField({
   multiline = false,
   keyboardType = "default",
   editable = true,
+  placeholder,
 }: {
   label: string;
   value: string;
@@ -246,6 +323,7 @@ function InputField({
   multiline?: boolean;
   editable?: boolean;
   keyboardType?: "default" | "email-address" | "phone-pad";
+  placeholder?: string;
 }) {
   return (
     <View style={styles.field}>
@@ -258,6 +336,8 @@ function InputField({
         multiline={multiline}
         editable={editable}
         keyboardType={keyboardType}
+        placeholder={placeholder}
+        placeholderTextColor={Colours.muted}
       />
     </View>
   );
@@ -369,5 +449,67 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "700",
     color: Colours.primary,
+  },
+
+  tagSectionHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+
+  tagRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginBottom: 18,
+  },
+
+  tag: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colours.surfaceLight,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+
+  tagText: {
+    marginRight: 6,
+    color: Colours.text,
+  },
+
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+
+  modalCard: {
+    width: "85%",
+    backgroundColor: Colours.surface,
+    borderRadius: 16,
+    padding: 20,
+  },
+
+  modalTitle: {
+    ...Typography.body,
+    fontWeight: "700",
+    marginBottom: 16,
+  },
+
+  modalInput: {
+    borderWidth: 1,
+    borderColor: Colours.border,
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 16,
+  },
+
+  modalActions: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
