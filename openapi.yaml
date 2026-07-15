@@ -2761,7 +2761,7 @@ components:
           type: string
         data_mode:
           type: string
-          enum: [db, mock]
+          enum: [db, mock, no_data]
         real_time_density:
           type: object
           required: [percent, trend]
