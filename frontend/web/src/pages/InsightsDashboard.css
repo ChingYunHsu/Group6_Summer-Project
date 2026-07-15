@@ -445,3 +445,78 @@
     max-width: none;
   }
 }
+
+
+.insights-data-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--text, #6b6375);
+}
+
+.insights-api-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8e4ff;
+  border-radius: 0.75rem;
+  background: #f5f8ff;
+}
+
+.insights-api-message p {
+  margin: 0;
+}
+
+.insights-api-message button {
+  flex: 0 0 auto;
+}
+
+.insights-empty-state,
+.insights-chart-empty,
+.fastest-hubs-empty {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.insights-chart-empty p,
+.fastest-hubs-empty p {
+  margin: 0.5rem 0 0;
+  color: var(--text, #6b6375);
+}
+
+.travel-source-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.76rem;
+  color: var(--text, #6b6375);
+}
+
+.hub-route-button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px 45px;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hub-route-button:focus-visible {
+  outline: 2px solid #0052e0;
+  outline-offset: 4px;
+}
+
+.chart-toggle button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}

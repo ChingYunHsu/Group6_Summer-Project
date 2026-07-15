@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import loginPeopleImage from "../assets/login-people.jpg";
 import "./Login.css";
-
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000";
-
+import { login, register, guestLogin } from "../services/authService";
 
 function Login({ setUserLocation }) {
   const navigate = useNavigate();
@@ -15,6 +12,7 @@ function Login({ setUserLocation }) {
   const [locationError, setLocationError] = useState("");
   const [isRequestingLocation, setIsRequestingLocation] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   const [loginForm, setLoginForm] = useState({
     email: "",
@@ -32,7 +30,7 @@ function Login({ setUserLocation }) {
     setShowLocationModal(true);
   }
 
-  function handleLoginSubmit(e) {
+  async function handleLoginSubmit(e) {
     e.preventDefault();
 
     if (!loginForm.email || !loginForm.password) {
@@ -40,11 +38,32 @@ function Login({ setUserLocation }) {
       return;
     }
 
-    openLocationModal();
+    try {
+      setIsAuthenticating(true);
+
+      await login(loginForm.email, loginForm.password);
+
+      openLocationModal();
+    } catch (error) {
+      console.error("Login request failed:", error);
+
+      const problemFields = [
+        ...(error?.body?.missing_fields ?? []),
+        ...(error?.body?.invalid_fields ?? []),
+      ];
+
+      const message = problemFields.length
+        ? `${error.message} (${problemFields.join(", ")})`
+        : error.message || "Please check your details and try again.";
+
+      alert(message);
+    } finally {
+      setIsAuthenticating(false);
+    }
   }
 
   async function handleRegisterSubmit(e) {
-   e.preventDefault();
+    e.preventDefault();
 
     if (!registerForm.fullName || !registerForm.email || !registerForm.password) {
       alert("Please complete all registration fields.");
@@ -57,58 +76,49 @@ function Login({ setUserLocation }) {
     }
 
     try {
-      const res = await fetch("/api/v1/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          full_name: registerForm.fullName,
-          email: registerForm.email,
-          password: registerForm.password,
-        }),
-      });
+      setIsAuthenticating(true);
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        alert(err.error || `Registration failed (${res.status}).`);
-        return;
+      const data = await register(
+        registerForm.fullName,
+        registerForm.email,
+        registerForm.password
+      );
+
+      if (data.finish_profile_prompt) {
+        setShowProfileIntercept(true);
+      } else {
+        openLocationModal();
       }
+    } catch (error) {
+      console.error("Register request failed:", error);
 
-      const data = await res.json();
+      const problemFields = [
+        ...(error?.body?.missing_fields ?? []),
+        ...(error?.body?.invalid_fields ?? []),
+      ];
 
-      localStorage.setItem("access_token", data.access_token);
-      localStorage.setItem("refresh_token", data.refresh_token);
-      localStorage.setItem("user_id", data.user_id);
-      localStorage.setItem("token_type", data.token_type);
+      const message = problemFields.length
+        ? `${error.message} (${problemFields.join(", ")})`
+        : error.message || "Please check your details and try again.";
 
-      setShowProfileIntercept(true);
-    } catch (err) {
-      console.error("Register request failed:", err);
-      alert("Could not reach the server. Is the backend running?");
+      alert(message);
+    } finally {
+      setIsAuthenticating(false);
     }
   }
 
   async function handleGuestContinue() {
     try {
-      const res = await fetch("/api/v1/auth/guest", {
-        method: "POST",
-      });
+      setIsAuthenticating(true);
 
-      if (!res.ok) {
-        alert("Could not start a guest session.");
-        return;
-      }
+      await guestLogin();
 
-      const data = await res.json();
-
-      localStorage.setItem("access_token", data.access_token);
-      localStorage.setItem("refresh_token", data.refresh_token);
-      localStorage.setItem("user_id", data.user_id);
-      localStorage.setItem("token_type", data.token_type);
-
-     openLocationModal();
-    } catch (err) {
-      console.error("Guest session request failed:", err);
-      alert("Could not reach the server. Is the backend running?");
+      openLocationModal();
+    } catch (error) {
+      console.error("Guest session request failed:", error);
+      alert(error.message || "Could not start a guest session.");
+    } finally {
+      setIsAuthenticating(false);
     }
   }
 
@@ -168,9 +178,10 @@ function Login({ setUserLocation }) {
 
   return (
     <main className="login-page">
-      <section 
+      <section
         className="login-brand-panel"
-        style={{ backgroundImage: `url(${loginPeopleImage})` }}>
+        style={{ backgroundImage: `url(${loginPeopleImage})` }}
+      >
         <div className="brand-content">
           <h1>ClearPath</h1>
           <div className="brand-line"></div>
@@ -190,6 +201,7 @@ function Login({ setUserLocation }) {
               type="button"
               className={isRegister ? "" : "active"}
               onClick={() => setIsRegister(false)}
+              disabled={isAuthenticating}
             >
               Login
             </button>
@@ -198,6 +210,7 @@ function Login({ setUserLocation }) {
               type="button"
               className={isRegister ? "active" : ""}
               onClick={() => setIsRegister(true)}
+              disabled={isAuthenticating}
             >
               Register
             </button>
@@ -210,6 +223,7 @@ function Login({ setUserLocation }) {
                 id="login-email"
                 type="email"
                 placeholder="name@company.com"
+                autoComplete="email"
                 value={loginForm.email}
                 onChange={(e) =>
                   setLoginForm({ ...loginForm, email: e.target.value })
@@ -225,14 +239,19 @@ function Login({ setUserLocation }) {
                 id="login-password"
                 type="password"
                 placeholder="password"
+                autoComplete="current-password"
                 value={loginForm.password}
                 onChange={(e) =>
                   setLoginForm({ ...loginForm, password: e.target.value })
                 }
               />
 
-              <button className="primary-auth-button" type="submit">
-                Sign In to My Account →
+              <button
+                className="primary-auth-button"
+                type="submit"
+                disabled={isAuthenticating}
+              >
+                {isAuthenticating ? "Signing in..." : "Sign In to My Account →"}
               </button>
             </form>
           ) : (
@@ -248,6 +267,7 @@ function Login({ setUserLocation }) {
                 id="register-name"
                 type="text"
                 placeholder="Enter your full name"
+                autoComplete="name"
                 value={registerForm.fullName}
                 onChange={(e) =>
                   setRegisterForm({
@@ -262,6 +282,7 @@ function Login({ setUserLocation }) {
                 id="register-email"
                 type="email"
                 placeholder="name@company.com"
+                autoComplete="email"
                 value={registerForm.email}
                 onChange={(e) =>
                   setRegisterForm({
@@ -276,6 +297,7 @@ function Login({ setUserLocation }) {
                 id="register-password"
                 type="password"
                 placeholder="Create a secure password"
+                autoComplete="new-password"
                 value={registerForm.password}
                 onChange={(e) =>
                   setRegisterForm({
@@ -289,8 +311,12 @@ function Login({ setUserLocation }) {
                 Clinical records remain local-first until authorised sharing.
               </p>
 
-              <button className="primary-auth-button" type="submit">
-                Create Account →
+              <button
+                className="primary-auth-button"
+                type="submit"
+                disabled={isAuthenticating}
+              >
+                {isAuthenticating ? "Creating account..." : "Create Account →"}
               </button>
             </form>
           )}
@@ -305,8 +331,9 @@ function Login({ setUserLocation }) {
             className="guest-button"
             type="button"
             onClick={handleGuestContinue}
+            disabled={isAuthenticating}
           >
-            Continue as Guest
+            {isAuthenticating ? "Starting session..." : "Continue as Guest"}
           </button>
 
           <p className="terms">

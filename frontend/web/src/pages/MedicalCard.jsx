@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./MedicalCard.css";
+
 import { getMedicalProfile } from "../services/MedicalProfileApi";
+import { getUserProfile } from "../services/UserProfileApi";
 
 function MedicalCard() {
   const [profile, setProfile] = useState(null);
@@ -8,10 +10,75 @@ function MedicalCard() {
   const [isPreparingPrint, setIsPreparingPrint] = useState(false);
   const [error, setError] = useState("");
 
+  function normaliseProfile(userProfile, medicalProfile) {
+    const allergies = Array.isArray(medicalProfile.allergies)
+      ? medicalProfile.allergies
+      : [];
+
+    const medicalConditions = Array.isArray(medicalProfile.medical_conditions)
+      ? medicalProfile.medical_conditions
+      : Array.isArray(medicalProfile.conditions)
+        ? medicalProfile.conditions
+        : [];
+
+    const emergencyContacts = Array.isArray(medicalProfile.emergency_contacts)
+      ? medicalProfile.emergency_contacts
+      : [];
+
+    const spokenLanguages = Array.isArray(userProfile.spoken_languages)
+      ? userProfile.spoken_languages
+      : [];
+
+    return {
+      ...medicalProfile,
+      ...userProfile,
+
+      full_name:
+        userProfile.full_name ||
+        userProfile.display_name ||
+        medicalProfile.full_name ||
+        "",
+
+      display_name:
+        userProfile.display_name ||
+        userProfile.full_name ||
+        medicalProfile.display_name ||
+        "",
+
+      email: userProfile.email || "",
+      phone: userProfile.phone || "",
+      nationality: userProfile.nationality || "",
+      spoken_languages: spokenLanguages,
+
+      date_of_birth: medicalProfile.date_of_birth || "",
+      gender: medicalProfile.gender || "",
+      blood_type: medicalProfile.blood_type || "",
+      address: medicalProfile.address || "",
+
+      allergies,
+      medical_conditions: medicalConditions,
+      conditions: medicalConditions,
+      emergency_contacts: emergencyContacts,
+      medications: Array.isArray(medicalProfile.medications)
+        ? medicalProfile.medications
+        : [],
+    };
+  }
+
   async function loadProfile() {
-    const serverProfile = await getMedicalProfile();
-    setProfile(serverProfile);
-    return serverProfile;
+    const [userProfile, medicalProfile] = await Promise.all([
+      getUserProfile(),
+      getMedicalProfile(),
+    ]);
+
+    console.log("MEDICAL CARD USER PROFILE:", userProfile);
+    console.log("MEDICAL CARD MEDICAL PROFILE:", medicalProfile);
+
+    const combinedProfile = normaliseProfile(userProfile, medicalProfile);
+
+    setProfile(combinedProfile);
+
+    return combinedProfile;
   }
 
   useEffect(() => {
@@ -19,9 +86,10 @@ function MedicalCard() {
       try {
         setIsLoading(true);
         setError("");
+
         await loadProfile();
       } catch (error) {
-        console.error("Failed to load medical profile:", error);
+        console.error("Failed to load medical card profile:", error);
         setError(error.message || "Could not load medical profile.");
       } finally {
         setIsLoading(false);
@@ -71,9 +139,21 @@ function MedicalCard() {
     );
   }
 
+  const allergies = Array.isArray(profile.allergies)
+    ? profile.allergies
+    : [];
+
+  const medicalConditions = Array.isArray(profile.medical_conditions)
+    ? profile.medical_conditions
+    : [];
+
+  const emergencyContacts = Array.isArray(profile.emergency_contacts)
+    ? profile.emergency_contacts
+    : [];
+
   const primaryContact =
-    (profile.emergency_contacts ?? []).find((contact) => contact.primary) ||
-    (profile.emergency_contacts ?? [])[0] ||
+    emergencyContacts.find((contact) => contact.primary) ||
+    emergencyContacts[0] ||
     null;
 
   return (
@@ -94,6 +174,7 @@ function MedicalCard() {
             <h2>MEDICAL ALERT</h2>
             <span>ALERTA MÉDICA</span>
           </div>
+
           <div className="medical-cross-icon">✚</div>
         </header>
 
@@ -101,7 +182,11 @@ function MedicalCard() {
           <div className="medical-top-grid">
             <div>
               <span className="medical-label">NAME / NOMBRE</span>
-              <h3>{profile.full_name || profile.display_name || "Not provided"}</h3>
+              <h3>
+                {profile.full_name ||
+                  profile.display_name ||
+                  "Not provided"}
+              </h3>
             </div>
 
             <div className="blood-preview">
@@ -115,11 +200,11 @@ function MedicalCard() {
             <div>
               <h4>ALLERGIES / ALERGIAS</h4>
 
-              {(profile.allergies ?? []).length > 0 ? (
-                profile.allergies.map((allergy) => (
+              {allergies.length > 0 ? (
+                allergies.map((allergy, index) => (
                   <div
                     className="medical-alert-item red-item"
-                    key={allergy.name || allergy}
+                    key={allergy.name || allergy || index}
                   >
                     <div className="medical-alert-item-content">
                       <strong>{allergy.name || allergy}</strong>
@@ -134,13 +219,12 @@ function MedicalCard() {
 
             <div>
               <h4>MEDICAL CONDITIONS / CONDICIONES MÉDICAS</h4>
-<<<<<<< HEAD
 
-              {(profile.medical_conditions ?? []).length > 0 ? (
-                profile.medical_conditions.map((condition) => (
+              {medicalConditions.length > 0 ? (
+                medicalConditions.map((condition, index) => (
                   <div
                     className="medical-alert-item blue-item"
-                    key={condition.name || condition}
+                    key={condition.name || condition || index}
                   >
                     <div className="medical-alert-item-content">
                       <strong>{condition.name || condition}</strong>
@@ -151,29 +235,23 @@ function MedicalCard() {
               ) : (
                 <p>No medical conditions listed.</p>
               )}
-=======
-              {profile.medical_conditions.map((condition) => (
-                <div className="medical-alert-item blue-item" key={condition.name}>
-                  <div className="medical-alert-item-content">
-                  <strong>{condition.name}</strong>
-                  <p>{condition.detail}</p>
-                </div>
-                </div>
-              ))}
->>>>>>> origin/main
             </div>
           </div>
 
           <div className="medical-bottom-grid">
             <div>
               <h4>PERSONAL INFO / INFORMACIÓN PERSONAL</h4>
+
               <p>
                 <strong>DOB / Nac:</strong>{" "}
                 {profile.date_of_birth || "Not provided"}
               </p>
+
               <p>
-                <strong>Nat:</strong> {profile.nationality || "Not provided"}
+                <strong>Nat:</strong>{" "}
+                {profile.nationality || "Not provided"}
               </p>
+
               <p>
                 <strong>Gen:</strong> {profile.gender || "Not provided"}
               </p>
@@ -186,14 +264,24 @@ function MedicalCard() {
               <h4>ADDRESS / DIRECCIÓN</h4>
               <p>{profile.address || "Not provided"}</p>
 
-              {primaryContact && (
+              {primaryContact ? (
                 <div className="emergency-contact-card">
                   <h4>EMERGENCY / EMERGENCIA</h4>
-                  <strong>{primaryContact.name}</strong>
-                  <p>{primaryContact.relationship}</p>
-                  <a href={`tel:${primaryContact.phone}`}>
-                    {primaryContact.phone}
-                  </a>
+                  <strong>{primaryContact.name || "Not provided"}</strong>
+                  <p>{primaryContact.relationship || "Not provided"}</p>
+
+                  {primaryContact.phone ? (
+                    <a href={`tel:${primaryContact.phone}`}>
+                      {primaryContact.phone}
+                    </a>
+                  ) : (
+                    <p>Phone not provided</p>
+                  )}
+                </div>
+              ) : (
+                <div className="emergency-contact-card">
+                  <h4>EMERGENCY / EMERGENCIA</h4>
+                  <p>No emergency contact listed.</p>
                 </div>
               )}
             </div>

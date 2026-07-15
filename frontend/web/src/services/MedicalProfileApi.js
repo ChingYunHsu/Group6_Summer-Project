@@ -1,32 +1,21 @@
-function getAccessToken() {
-  return localStorage.getItem("access_token");
-}
+import { apiRequest } from "./apiClient";
 
 export async function getMedicalProfile() {
-  const accessToken = getAccessToken();
+  const data = await apiRequest("/user/medical-profile");
 
-  if (!accessToken) {
-    throw new Error("Missing access token");
-  }
+  return {
+    ...data,
+    allergies: data.allergies || [],
+    medical_conditions: data.medical_conditions || data.conditions || [],
+    conditions: data.conditions || data.medical_conditions || [],
+    medications: data.medications || [],
+    emergency_contacts: data.emergency_contacts || [],
+  };
+}
 
-  const authHeader = accessToken.startsWith("Bearer ")
-    ? accessToken
-    : `Bearer ${accessToken}`;
-
-  const response = await fetch("/api/v1/user/medical-profile", {
-    method: "GET",
-    headers: {
-      Authorization: authHeader,
-    },
+export function updateMedicalProfile(profileData) {
+  return apiRequest("/user/medical-profile", {
+    method: "PUT",
+    body: JSON.stringify(profileData),
   });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-
-    throw new Error(
-      `Medical profile request failed: ${response.status} ${response.statusText}. ${errorText}`
-    );
-  }
-
-  return response.json();
 }
