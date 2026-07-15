@@ -2,10 +2,9 @@
 route handlers in api/user.py and api/medical.py together against a single
 shared in-memory fake relational store that actually enforces the same FK
 behavior as 001_clearpath_schema.sql / 004_medical_profiles.sql —
-ON DELETE CASCADE for medical_profiles and user_favorite_venues, but no
-cascade for user_reports.user_id (RESTRICT, per fk_user_report_user) — so
-these tests can genuinely prove cascade deletion, orphan-row absence, and
-the known non-cascaded-reports gap, not just mock the DB away.
+ON DELETE CASCADE for all account-owned rows, including user_reports and
+report_confirmations. These tests prove cascade deletion and orphan-row
+absence rather than mocking the database contract away.
 
 No live MySQL is used or required; `db` module is monkeypatched globally
 so every blueprint (user.py, medical.py) that does `import db` and calls
@@ -31,28 +30,27 @@ class _FakeStore:
         self.medical_profiles = {}  # user_id -> row dict
         self.favourites = {}  # (user_id, venue_id) -> {"created_at": ...}
         self.user_reports = {}  # report_id -> {"user_id": ...}
+        self.report_confirmations = {}  # confirmation_id -> {"report_id", "user_id"}
 
     def user_exists(self, user_id: str) -> bool:
         return user_id in self.users
 
-    def has_outstanding_reports(self, user_id: str) -> bool:
-        return any(r["user_id"] == user_id for r in self.user_reports.values())
-
     def delete_user_cascading(self, user_id: str) -> int:
         """Mirrors a real `DELETE FROM users WHERE user_id = %s`: MySQL
-        checks ALL foreign keys referencing this row before touching
-        anything. If any non-cascaded FK (user_reports.user_id) still
-        references it, the whole statement fails and NOTHING is deleted
-        — cascaded children only actually disappear if the DELETE itself
-        succeeds."""
+        cascades authored reports (and their confirmations) plus confirmations
+        made by this user on another user's report."""
         if user_id not in self.users:
             return 0
 
-        if self.has_outstanding_reports(user_id):
-            raise pymysql.err.IntegrityError(
-                1451, f"Cannot delete or update a parent row: a foreign key constraint fails "
-                f"(fk_user_report_user, user_id={user_id})"
-            )
+        authored_report_ids = {
+            report_id for report_id, report in self.user_reports.items()
+            if report["user_id"] == user_id
+        }
+        for confirmation_id, confirmation in list(self.report_confirmations.items()):
+            if confirmation["user_id"] == user_id or confirmation["report_id"] in authored_report_ids:
+                del self.report_confirmations[confirmation_id]
+        for report_id in authored_report_ids:
+            del self.user_reports[report_id]
 
         del self.users[user_id]
         self.medical_profiles.pop(user_id, None)
@@ -199,23 +197,37 @@ def test_delete_account_cascades_medical_profile_and_favourites(client, app, fak
     assert not any(key[0] == "u_alice" for key in fake_store.favourites)
 
 
-def test_delete_account_blocked_by_outstanding_reports_leaves_everything_intact(client, app, fake_store):
-    """Known schema gap (user_reports.user_id has no ON DELETE CASCADE):
-    a user with an existing report can't be deleted at all. This proves
-    the failure is atomic — MySQL checks FKs before deleting anything, so
-    the user row and their other data are all left exactly as they were,
-    never partially deleted."""
+def test_delete_account_cascades_authored_report_and_its_confirmations(client, app, fake_store):
     headers = _headers(app, "u_alice")
     fake_store.users["u_alice"] = {"notification_preferences": "{}"}
+    fake_store.users["u_bob"] = {"notification_preferences": "{}"}
     client.put("/api/v1/user/medical-profile", json={"blood_type": "O+"}, headers=headers)
     fake_store.user_reports["r_1"] = {"user_id": "u_alice"}
+    fake_store.report_confirmations[1] = {"report_id": "r_1", "user_id": "u_bob"}
 
-    with pytest.raises(pymysql.err.IntegrityError):
-        client.delete("/api/v1/user/account", headers=headers)
+    response = client.delete("/api/v1/user/account", headers=headers)
 
-    # Nothing was touched — atomicity preserved on failure.
-    assert "u_alice" in fake_store.users
-    assert "u_alice" in fake_store.medical_profiles
+    assert response.status_code == 200
+    assert "u_alice" not in fake_store.users
+    assert "u_alice" not in fake_store.medical_profiles
+    assert "r_1" not in fake_store.user_reports
+    assert not fake_store.report_confirmations
+
+
+def test_delete_account_cascades_only_own_confirmation(client, app, fake_store):
+    alice_headers = _headers(app, "u_alice")
+    fake_store.users["u_alice"] = {"notification_preferences": "{}"}
+    fake_store.users["u_bob"] = {"notification_preferences": "{}"}
+    fake_store.user_reports["r_1"] = {"user_id": "u_bob"}
+    fake_store.report_confirmations[1] = {"report_id": "r_1", "user_id": "u_alice"}
+    fake_store.report_confirmations[2] = {"report_id": "r_1", "user_id": "u_bob"}
+
+    response = client.delete("/api/v1/user/account", headers=alice_headers)
+
+    assert response.status_code == 200
+    assert "r_1" in fake_store.user_reports
+    assert 1 not in fake_store.report_confirmations
+    assert 2 in fake_store.report_confirmations
 
 
 # ---------------------------------------------------------------------------
