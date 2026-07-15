@@ -12,13 +12,9 @@ async function authRequest(endpoint, payload) {
   if (!response.ok) {
     const text = await response.text();
 
-    let parsedBody = null;
-
-    try {
-      parsedBody = JSON.parse(text);
-    } catch {
-      parsedBody = null;
-    }
+   const parsedBody = await response
+      .json()
+      .catch(() => null);
 
     const error = new Error(
       parsedBody?.error || `Auth request failed: ${response.status}. ${text}`

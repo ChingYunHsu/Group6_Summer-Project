@@ -264,14 +264,10 @@ function EditProfile() {
       setError("");
 
       const userProfilePayload = {
-        phone: form.phone || "",
-        nationality: form.nationality || "",
-        spoken_languages: form.spoken_languages_text
-          .split(",")
-          .map((language) => language.trim())
-          .filter(Boolean),
-        };
-
+        phone: form.phone.trim(),
+        nationality: form.nationality.trim(),
+        spoken_languages: getSpokenLanguagesArray(),
+      };
       const medicalProfilePayload = {
         date_of_birth: form.date_of_birth || null,
         gender: form.gender || null,

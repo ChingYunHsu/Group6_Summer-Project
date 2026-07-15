@@ -91,119 +91,143 @@ function Favourites() {
   const navigate = useNavigate();
 
   const [savedVenues, setSavedVenues] = useState([]);
-  const [activeFilter, setActiveFilter] = useState("ALL");
+  const [activeFilter, setActiveFilter] =
+    useState("ALL");
   const [isLoading, setIsLoading] = useState(true);
-  const [removingVenueId, setRemovingVenueId] = useState(null);
+  const [removingVenueId, setRemovingVenueId] =
+    useState(null);
   const [error, setError] = useState("");
 
-  const loadFavourites = useCallback(async ({ silent = false } = {}) => {
-    try {
-      if (!silent) {
-        setIsLoading(true);
-      }
+  const loadFavourites = useCallback(
+    async ({ silent = false } = {}) => {
+      try {
+        /*
+         * Do not synchronously call a state setter here.
+         * This function is called directly by useEffect.
+         */
+        const favouriteRecords =
+          await listFavourites();
 
-      setError("");
+        const venueResults = await Promise.allSettled(
+          favouriteRecords.map(async (favourite) => {
+            const venueId =
+              getFavouriteVenueId(favourite);
 
-      const favouriteRecords = await listFavourites();
+            if (!venueId) {
+              throw new Error(
+                "A favourite record did not include venue_id."
+              );
+            }
 
-      const venueResults = await Promise.allSettled(
-        favouriteRecords.map(async (favourite) => {
-          const venueId = getFavouriteVenueId(favourite);
+            const embeddedVenue =
+              favourite.venue &&
+              typeof favourite.venue === "object"
+                ? favourite.venue
+                : favourite;
 
-          if (!venueId) {
-            throw new Error(
-              "A favourite record did not include venue_id."
-            );
-          }
-
-          const embeddedVenue =
-            favourite.venue &&
-            typeof favourite.venue === "object"
-              ? favourite.venue
-              : favourite;
-
-          const [detailsResult, busynessResult] =
-            await Promise.allSettled([
+            const [
+              detailsResult,
+              busynessResult,
+            ] = await Promise.allSettled([
               getVenueById(venueId),
               getVenueBusyness(venueId),
             ]);
 
-          const details =
-            detailsResult.status === "fulfilled"
-              ? detailsResult.value
-              : {};
+            const details =
+              detailsResult.status === "fulfilled"
+                ? detailsResult.value
+                : {};
 
-          const busyness =
-            busynessResult.status === "fulfilled"
-              ? busynessResult.value
-              : {};
+            const busyness =
+              busynessResult.status === "fulfilled"
+                ? busynessResult.value
+                : {};
 
-          if (detailsResult.status === "rejected") {
-            console.error(
-              `Failed to load details for venue ${venueId}:`,
-              detailsResult.reason
-            );
-          }
+            if (
+              detailsResult.status === "rejected"
+            ) {
+              console.error(
+                `Failed to load details for venue ${venueId}:`,
+                detailsResult.reason
+              );
+            }
 
-          if (busynessResult.status === "rejected") {
-            console.error(
-              `Failed to load busyness for venue ${venueId}:`,
-              busynessResult.reason
-            );
-          }
+            if (
+              busynessResult.status === "rejected"
+            ) {
+              console.error(
+                `Failed to load busyness for venue ${venueId}:`,
+                busynessResult.reason
+              );
+            }
 
-          return {
-            ...normaliseVenue(embeddedVenue),
-            ...normaliseVenue(details),
-            ...normaliseBusyness(busyness),
-            venue_id: venueId,
-          };
-        })
-      );
-
-      const loadedVenues = venueResults
-        .filter((result) => result.status === "fulfilled")
-        .map((result) => result.value)
-        .filter((venue) => venue?.venue_id);
-
-      const failedCount =
-        venueResults.length - loadedVenues.length;
-
-      if (failedCount > 0) {
-        setError(
-          `${failedCount} saved location${
-            failedCount === 1 ? "" : "s"
-          } could not be loaded.`
+            return {
+              ...normaliseVenue(embeddedVenue),
+              ...normaliseVenue(details),
+              ...normaliseBusyness(busyness),
+              venue_id: venueId,
+            };
+          })
         );
-      }
 
-      setSavedVenues(loadedVenues);
-    } catch (loadError) {
-      console.error("Failed to load favourites:", loadError);
-      setError(
-        loadError.message ||
-          "Could not load saved locations."
-      );
-      setSavedVenues([]);
-    } finally {
-      if (!silent) {
-        setIsLoading(false);
+        const loadedVenues = venueResults
+          .filter(
+            (result) =>
+              result.status === "fulfilled"
+          )
+          .map((result) => result.value)
+          .filter((venue) => venue?.venue_id);
+
+        const failedCount =
+          venueResults.length - loadedVenues.length;
+
+        if (failedCount > 0) {
+          setError(
+            `${failedCount} saved location${
+              failedCount === 1 ? "" : "s"
+            } could not be loaded.`
+          );
+        } else {
+          setError("");
+        }
+
+        setSavedVenues(loadedVenues);
+      } catch (loadError) {
+        console.error(
+          "Failed to load favourites:",
+          loadError
+        );
+
+        setError(
+          loadError.message ||
+            "Could not load saved locations."
+        );
+
+        setSavedVenues([]);
+      } finally {
+        if (!silent) {
+          setIsLoading(false);
+        }
       }
-    }
-  }, []);
+    },
+    []
+  );
 
   useEffect(() => {
-    loadFavourites();
+    const initialLoadTimeout = window.setTimeout(() => {
+      void loadFavourites();
+    }, 0);
 
     const telemetryRefresh = window.setInterval(() => {
-      loadFavourites({ silent: true });
+      void loadFavourites({ silent: true });
     }, 30000);
 
     return () => {
+      window.clearTimeout(initialLoadTimeout);
       window.clearInterval(telemetryRefresh);
     };
   }, [loadFavourites]);
-
+  
   const filteredVenues = useMemo(() => {
     if (activeFilter === "ALL") {
       return savedVenues;
@@ -214,6 +238,12 @@ function Favourites() {
         getOperationalStatus(venue) === activeFilter
     );
   }, [savedVenues, activeFilter]);
+
+  function handleRetry() {
+    setIsLoading(true);
+    setError("");
+    void loadFavourites();
+  }
 
   async function removeSavedVenue(venueId) {
     try {
@@ -232,6 +262,7 @@ function Favourites() {
         "Failed to remove favourite:",
         removeError
       );
+
       setError(
         removeError.message ||
           "Could not remove the saved location."
@@ -255,6 +286,7 @@ function Favourites() {
       <section className="saved-locations-header">
         <div>
           <h1>Saved Locations</h1>
+
           <p>
             Manage and monitor your primary healthcare
             response sites. View real-time capacity and
@@ -286,9 +318,10 @@ function Favourites() {
           role="alert"
         >
           <p>{error}</p>
+
           <button
             type="button"
-            onClick={() => loadFavourites()}
+            onClick={handleRetry}
           >
             Try Again
           </button>
@@ -306,6 +339,7 @@ function Favourites() {
           >
             All
           </button>
+
           <button
             type="button"
             className={
@@ -319,6 +353,7 @@ function Favourites() {
           >
             High Capacity
           </button>
+
           <button
             type="button"
             className={
@@ -332,6 +367,7 @@ function Favourites() {
           >
             Moderate
           </button>
+
           <button
             type="button"
             className={
@@ -345,6 +381,7 @@ function Favourites() {
           >
             Optimal Flow
           </button>
+
           <button
             type="button"
             className={
@@ -358,6 +395,7 @@ function Favourites() {
           >
             Diverting
           </button>
+
           <button
             type="button"
             className={
@@ -377,6 +415,7 @@ function Favourites() {
       {isLoading ? (
         <section className="saved-empty-state">
           <h2>Loading saved locations...</h2>
+
           <p>
             Retrieving your favourites and current venue
             information.
@@ -385,6 +424,7 @@ function Favourites() {
       ) : savedVenues.length === 0 ? (
         <section className="saved-empty-state">
           <h2>No saved locations yet</h2>
+
           <p>
             Saved healthcare facilities will appear here
             when they have been added to your account.
@@ -393,6 +433,7 @@ function Favourites() {
       ) : filteredVenues.length === 0 ? (
         <section className="saved-empty-state">
           <h2>No locations match this filter</h2>
+
           <p>
             Try changing the filter to view your saved
             facilities.
@@ -403,8 +444,10 @@ function Favourites() {
           {filteredVenues.map((venue) => {
             const status =
               getOperationalStatus(venue);
+
             const statusClass =
               getStatusClass(status);
+
             const isRemoving =
               removingVenueId === venue.venue_id;
 
@@ -429,7 +472,9 @@ function Favourites() {
                       )
                     }
                     disabled={isRemoving}
-                    aria-label={`Remove ${venue.name}`}
+                    aria-label={`Remove ${
+                      venue.name || "venue"
+                    }`}
                   >
                     {isRemoving ? "…" : "♥"}
                   </button>

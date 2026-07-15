@@ -563,14 +563,6 @@ function InsightsDashboard() {
   const loadDashboard = useCallback(
     async ({ silent = false } = {}) => {
       try {
-        if (silent) {
-          setIsRefreshing(true);
-        } else {
-          setIsLoading(true);
-        }
-
-        setError("");
-
         const response = await getInsightsDashboard({
           district: selectedDistrict.apiValue,
           ...getSavedLocation(),
@@ -582,13 +574,14 @@ function InsightsDashboard() {
         );
 
         setDashboardData(normalisedData);
+        setError("");
 
         setChartMode((currentMode) => {
           if (
             currentMode === "history" &&
             normalisedData.historySeries7d.length === 0
           ) {
-            return "prediction";
+           return "prediction";
           }
 
           if (
@@ -619,25 +612,31 @@ function InsightsDashboard() {
           });
         }
       } finally {
-        setIsLoading(false);
-        setIsRefreshing(false);
+        if (silent) {
+          setIsRefreshing(false);
+        } else {
+          setIsLoading(false);
+        }
       }
     },
     [selectedDistrict]
   );
 
-  useEffect(() => {
-    loadDashboard();
+ useEffect(() => {
+  const initialLoadTimeout = window.setTimeout(() => {
+    void loadDashboard();
+  }, 0);
 
-    const refreshInterval = window.setInterval(
-      () => loadDashboard({ silent: true }),
-      30000
-    );
+  const refreshInterval = window.setInterval(() => {
+    setIsRefreshing(true);
+    void loadDashboard({ silent: true });
+  }, 30000);
 
-    return () => {
-      window.clearInterval(refreshInterval);
-    };
-  }, [loadDashboard]);
+  return () => {
+    window.clearTimeout(initialLoadTimeout);
+    window.clearInterval(refreshInterval);
+  };
+}, [loadDashboard]);
 
   const chartValues =
     chartMode === "prediction"
@@ -678,7 +677,19 @@ function InsightsDashboard() {
       : "Unavailable";
 
   function handleDistrictChange(districtId) {
+    if (districtId === selectedDistrictId) {
+      return;
+    }
+
+    setIsLoading(true);
+    setError("");
     setSelectedDistrictId(districtId);
+  }
+
+  function handleRetry() {
+    setIsLoading(true);
+    setError("");
+    void loadDashboard();
   }
 
   function handlePlanRoute() {
@@ -761,7 +772,7 @@ function InsightsDashboard() {
 
             <button
               type="button"
-              onClick={() => loadDashboard()}
+              onClick={handleRetry}
             >
               Try Again
             </button>
