@@ -98,15 +98,6 @@ function MedicalCard() {
         getMedicalProfile(),
       ]);
 
-    console.log(
-      "MEDICAL CARD USER PROFILE:",
-      userProfile
-    );
-    console.log(
-      "MEDICAL CARD MEDICAL PROFILE:",
-      medicalProfile
-    );
-
     const combinedProfile = normaliseProfile(
       userProfile,
       medicalProfile
@@ -118,31 +109,28 @@ function MedicalCard() {
   }, []);
 
   useEffect(() => {
-    const initialLoadTimeout = window.setTimeout(
-      () => {
-        async function initialisePage() {
-          try {
-            setError("");
-            await loadProfile();
-          } catch (loadError) {
-            console.error(
-              "Failed to load medical card profile:",
-              loadError
-            );
+    const initialLoadTimeout = window.setTimeout(() => {
+      async function initialisePage() {
+        try {
+          await loadProfile();
+          setError("");
+        } catch (loadError) {
+          console.error(
+            "Failed to load medical card profile:",
+            loadError
+          );
 
-            setError(
-              loadError.message ||
-                "Could not load medical profile."
-            );
-          } finally {
-            setIsLoading(false);
-          }
+          setError(
+            loadError.message ||
+              "Could not load medical profile."
+          );
+        } finally {
+          setIsLoading(false);
         }
+      }
 
-        void initialisePage();
-      },
-      0
-    );
+      void initialisePage();
+    }, 0);
 
     return () => {
       window.clearTimeout(initialLoadTimeout);

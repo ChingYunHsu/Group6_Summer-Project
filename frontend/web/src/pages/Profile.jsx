@@ -120,7 +120,8 @@ function Profile() {
             ✎ Edit
           </button>
 
-          <button type="button" onClick={() => navigate("/medical-card")}>
+          <button type="button" onClick={() => navigate("/medical-card", { 
+            state: { medicalCardPayload: profile,}})}>
             ⎙ Print Medical Card
           </button>
         </div>
