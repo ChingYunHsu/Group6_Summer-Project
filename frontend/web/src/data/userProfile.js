@@ -6,6 +6,8 @@ export const USER_PROFILE = {
   gender: "Female",
   address: "245 W 46th St, New York, NY 10036",
   blood_type: "O+",
+  nationality: "Spanish",
+  donor_status: "Emergency ID",
   allergies: [
     { name: "Penicillin", detail: "Severe reaction (Anaphylaxis)" },
     { name: "Latex", detail: "Mild skin irritation" },
@@ -28,6 +30,7 @@ export const USER_PROFILE = {
       primary: false,
     },
   ],
+  spoken_languages: ["English", "French", "Spanish"],
 };
 
 export const LANGUAGE_OPTIONS = [

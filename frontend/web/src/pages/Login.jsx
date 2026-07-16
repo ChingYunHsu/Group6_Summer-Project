@@ -1,16 +1,135 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import loginPeopleImage from "../assets/login-people.jpg";
+import "./Login.css";
+import { login, register, guestLogin } from "../services/authService";
 
-function Login() {
+function Login({ setUserLocation }) {
   const navigate = useNavigate();
 
   const [showLocationModal, setShowLocationModal] = useState(false);
+  const [showProfileIntercept, setShowProfileIntercept] = useState(false);
   const [locationError, setLocationError] = useState("");
   const [isRequestingLocation, setIsRequestingLocation] = useState(false);
+  const [isRegister, setIsRegister] = useState(false);
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
+
+  const [loginForm, setLoginForm] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [registerForm, setRegisterForm] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
 
   function openLocationModal() {
     setLocationError("");
     setShowLocationModal(true);
+  }
+
+  async function handleLoginSubmit(e) {
+    e.preventDefault();
+
+    if (!loginForm.email || !loginForm.password) {
+      alert("Please enter your email and password.");
+      return;
+    }
+
+    try {
+      setIsAuthenticating(true);
+
+      await login(loginForm.email, loginForm.password);
+
+      openLocationModal();
+    } catch (error) {
+      console.error("Login request failed:", error);
+
+      const problemFields = [
+        ...(error?.body?.missing_fields ?? []),
+        ...(error?.body?.invalid_fields ?? []),
+      ];
+
+      const message = problemFields.length
+        ? `${error.message} (${problemFields.join(", ")})`
+        : error.message || "Please check your details and try again.";
+
+      alert(message);
+    } finally {
+      setIsAuthenticating(false);
+    }
+  }
+
+  async function handleRegisterSubmit(e) {
+    e.preventDefault();
+
+    if (!registerForm.fullName || !registerForm.email || !registerForm.password) {
+      alert("Please complete all registration fields.");
+      return;
+    }
+
+    if (registerForm.password.length < 8) {
+      alert("Password must be at least 8 characters.");
+      return;
+    }
+
+    try {
+      setIsAuthenticating(true);
+
+      const data = await register(
+        registerForm.fullName,
+        registerForm.email,
+        registerForm.password
+      );
+
+      if (data.finish_profile_prompt) {
+        setShowProfileIntercept(true);
+      } else {
+        openLocationModal();
+      }
+    } catch (error) {
+      console.error("Register request failed:", error);
+
+      const problemFields = [
+        ...(error?.body?.missing_fields ?? []),
+        ...(error?.body?.invalid_fields ?? []),
+      ];
+
+      const message = problemFields.length
+        ? `${error.message} (${problemFields.join(", ")})`
+        : error.message || "Please check your details and try again.";
+
+      alert(message);
+    } finally {
+      setIsAuthenticating(false);
+    }
+  }
+
+  async function handleGuestContinue() {
+    try {
+      setIsAuthenticating(true);
+
+      await guestLogin();
+
+      openLocationModal();
+    } catch (error) {
+      console.error("Guest session request failed:", error);
+      alert(error.message || "Could not start a guest session.");
+    } finally {
+      setIsAuthenticating(false);
+    }
+  }
+
+  function handleFinishProfile() {
+    setShowProfileIntercept(false);
+    navigate("/profile/edit");
+  }
+
+  function handleSkipProfile() {
+    setShowProfileIntercept(false);
+    openLocationModal();
   }
 
   function handleAllowAccess() {
@@ -30,7 +149,14 @@ function Login() {
           longitude: position.coords.longitude,
         };
 
-        localStorage.setItem("clearPathUserLocation", JSON.stringify(userLocation));
+        if (setUserLocation) {
+          setUserLocation(userLocation);
+        }
+
+        localStorage.setItem(
+          "clearPathUserLocation",
+          JSON.stringify(userLocation)
+        );
 
         setIsRequestingLocation(false);
         setShowLocationModal(false);
@@ -45,14 +171,17 @@ function Login() {
     );
   }
 
-  function handleCancel() {
+  function handleNotNow() {
     setShowLocationModal(false);
     navigate("/map");
   }
 
   return (
     <main className="login-page">
-      <section className="login-brand-panel">
+      <section
+        className="login-brand-panel"
+        style={{ backgroundImage: `url(${loginPeopleImage})` }}
+      >
         <div className="brand-content">
           <h1>ClearPath</h1>
           <div className="brand-line"></div>
@@ -68,29 +197,129 @@ function Login() {
       <section className="login-form-panel">
         <div className="auth-card">
           <div className="auth-tabs">
-            <button className="active" type="button">
+            <button
+              type="button"
+              className={isRegister ? "" : "active"}
+              onClick={() => setIsRegister(false)}
+              disabled={isAuthenticating}
+            >
               Login
             </button>
-            <button type="button">Register</button>
+
+            <button
+              type="button"
+              className={isRegister ? "active" : ""}
+              onClick={() => setIsRegister(true)}
+              disabled={isAuthenticating}
+            >
+              Register
+            </button>
           </div>
 
-          <label htmlFor="email">Email Address</label>
-          <input id="email" type="email" placeholder="name@company.com" />
+          {!isRegister ? (
+            <form onSubmit={handleLoginSubmit}>
+              <label htmlFor="login-email">Email Address</label>
+              <input
+                id="login-email"
+                type="email"
+                placeholder="name@company.com"
+                autoComplete="email"
+                value={loginForm.email}
+                onChange={(e) =>
+                  setLoginForm({ ...loginForm, email: e.target.value })
+                }
+              />
 
-          <div className="password-row">
-            <label htmlFor="password">Password</label>
-            <a href="#">Forgot Password?</a>
-          </div>
+              <div className="password-row">
+                <label htmlFor="login-password">Password</label>
+                <a href="#">Forgot Password?</a>
+              </div>
 
-          <input id="password" type="password" placeholder="password" />
+              <input
+                id="login-password"
+                type="password"
+                placeholder="password"
+                autoComplete="current-password"
+                value={loginForm.password}
+                onChange={(e) =>
+                  setLoginForm({ ...loginForm, password: e.target.value })
+                }
+              />
 
-          <button
-            className="primary-auth-button"
-            type="button"
-            onClick={openLocationModal}
-          >
-            Sign In to My Account →
-          </button>
+              <button
+                className="primary-auth-button"
+                type="submit"
+                disabled={isAuthenticating}
+              >
+                {isAuthenticating ? "Signing in..." : "Sign In to My Account →"}
+              </button>
+            </form>
+          ) : (
+            <form onSubmit={handleRegisterSubmit}>
+              <p className="register-title">Get started</p>
+
+              <p className="hipaa-label">
+                HIPAA-ready protected identity asset setup
+              </p>
+
+              <label htmlFor="register-name">Full Name</label>
+              <input
+                id="register-name"
+                type="text"
+                placeholder="Enter your full name"
+                autoComplete="name"
+                value={registerForm.fullName}
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    fullName: e.target.value,
+                  })
+                }
+              />
+
+              <label htmlFor="register-email">Email Address</label>
+              <input
+                id="register-email"
+                type="email"
+                placeholder="name@company.com"
+                autoComplete="email"
+                value={registerForm.email}
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    email: e.target.value,
+                  })
+                }
+              />
+
+              <label htmlFor="register-password">Password</label>
+              <input
+                id="register-password"
+                type="password"
+                placeholder="Create a secure password"
+                autoComplete="new-password"
+                value={registerForm.password}
+                onChange={(e) =>
+                  setRegisterForm({
+                    ...registerForm,
+                    password: e.target.value,
+                  })
+                }
+              />
+
+              <p className="hipaa-label">
+                Clinical records remain local-first until authorised sharing.
+              </p>
+
+              <button
+                className="primary-auth-button"
+                type="submit"
+                disabled={isAuthenticating}
+              >
+                {isAuthenticating ? "Creating account..." : "Create Account →"}
+              </button>
+            </form>
+          )}
 
           <div className="divider">
             <span></span>
@@ -101,9 +330,10 @@ function Login() {
           <button
             className="guest-button"
             type="button"
-            onClick={openLocationModal}
+            onClick={handleGuestContinue}
+            disabled={isAuthenticating}
           >
-            Continue as Guest
+            {isAuthenticating ? "Starting session..." : "Continue as Guest"}
           </button>
 
           <p className="terms">
@@ -112,38 +342,63 @@ function Login() {
         </div>
       </section>
 
+      {showProfileIntercept && (
+        <div className="intercept-overlay">
+          <div className="intercept-sheet">
+            <h2>
+              Would you like to finish setting up your Medical Profile and ID
+              now?
+            </h2>
+            <p>
+              Complete your emergency medical document now, or skip this step and
+              return to it later.
+            </p>
+
+            <div className="intercept-actions">
+              <button type="button" onClick={handleSkipProfile}>
+                Skip for Now
+              </button>
+
+              <button type="button" onClick={handleFinishProfile}>
+                Finish Profile & ID
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {showLocationModal && (
         <div className="location-overlay">
           <div className="location-modal">
             <div className="location-icon">⌖</div>
 
-            <h2>Location Access Required</h2>
+            <h2>Enable Location</h2>
 
             <p>
-              Location services are required to calculate routes from your
-              current position.
+              ClearPath uses your current location to initialise the map matrix
+              viewport and calculate safer healthcare routes.
             </p>
 
-            {locationError && (
-              <p className="location-error">{locationError}</p>
-            )}
+            {locationError && <p className="location-error">{locationError}</p>}
 
-            <button
-              className="allow-location-button"
-              type="button"
-              onClick={handleAllowAccess}
-              disabled={isRequestingLocation}
-            >
-              {isRequestingLocation ? "Requesting..." : "Allow Access"}
-            </button>
+            <div className="location-actions">
+              <button
+                className="cancel-location-button"
+                type="button"
+                onClick={handleNotNow}
+              >
+                Not Now
+              </button>
 
-            <button
-              className="cancel-location-button"
-              type="button"
-              onClick={handleCancel}
-            >
-              Cancel
-            </button>
+              <button
+                className="allow-location-button"
+                type="button"
+                onClick={handleAllowAccess}
+                disabled={isRequestingLocation}
+              >
+                {isRequestingLocation ? "Requesting..." : "Allow Access"}
+              </button>
+            </div>
           </div>
         </div>
       )}

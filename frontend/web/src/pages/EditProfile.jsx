@@ -1,17 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import "./EditProfile.css";
 import { useNavigate } from "react-router-dom";
+
 import {
-  USER_PROFILE,
-  EMERGENCY_CONTACTS,
-} from "../data/userProfile";
+  getMedicalProfile,
+  updateMedicalProfile,
+} from "../services/MedicalProfileApi";
+
+import {
+  getUserProfile,
+  updateUserProfile,
+} from "../services/UserProfileApi";
 
 function EditProfile() {
   const navigate = useNavigate();
 
-  const [allergies, setAllergies] = useState(USER_PROFILE.allergies);
-  const [conditions, setConditions] = useState(USER_PROFILE.medical_conditions);
+  const [form, setForm] = useState({
+    full_name: "",
+    date_of_birth: "",
+    gender: "",
+    blood_type: "",
+    phone: "",
+    email: "",
+    nationality: "",
+    spoken_languages_text: "",
+    address: "",
+  });
 
-  const [contacts, setContacts] = useState(EMERGENCY_CONTACTS);
+  const [allergies, setAllergies] = useState([]);
+  const [conditions, setConditions] = useState([]);
+  const [contacts, setContacts] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState("");
 
   const [showConditionModal, setShowConditionModal] = useState(false);
   const [conditionName, setConditionName] = useState("");
@@ -29,6 +51,84 @@ function EditProfile() {
   const [contactPhone, setContactPhone] = useState("");
   const [editingContactIndex, setEditingContactIndex] = useState(null);
 
+  useEffect(() => {
+    async function loadProfile() {
+      try {
+        setIsLoading(true);
+        setError("");
+
+        const [userProfile, medicalProfile] = await Promise.all([
+          getUserProfile(),
+          getMedicalProfile(),
+        ]);
+
+        console.log("USER PROFILE RESPONSE:", userProfile);
+        console.log("MEDICAL PROFILE RESPONSE:", medicalProfile);
+
+        const spokenLanguages = Array.isArray(userProfile.spoken_languages)
+          ? userProfile.spoken_languages
+          : [];
+
+        setForm({
+          full_name:
+            userProfile.full_name ||
+            userProfile.display_name ||
+            medicalProfile.full_name ||
+            "",
+          date_of_birth: medicalProfile.date_of_birth || "",
+          gender: medicalProfile.gender || "",
+          blood_type: medicalProfile.blood_type || "",
+          phone: userProfile.phone || "",
+          email: userProfile.email || "",
+          nationality: userProfile.nationality || "",
+          spoken_languages_text: spokenLanguages.join(", "),
+          address: medicalProfile.address || "",
+        });
+
+        setAllergies(
+          Array.isArray(medicalProfile.allergies)
+            ? medicalProfile.allergies
+            : []
+        );
+
+        setConditions(
+          Array.isArray(medicalProfile.medical_conditions)
+            ? medicalProfile.medical_conditions
+            : Array.isArray(medicalProfile.conditions)
+              ? medicalProfile.conditions
+              : []
+        );
+
+        setContacts(
+          Array.isArray(medicalProfile.emergency_contacts)
+            ? medicalProfile.emergency_contacts
+            : []
+        );
+      } catch (error) {
+        console.error("Failed to load profile for editing:", error);
+        setError(error.message || "Could not load profile.");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadProfile();
+  }, []);
+
+  function updateFormField(fieldName, value) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      [fieldName]: value,
+    }));
+  }
+
+  function getSpokenLanguagesArray() {
+    return form.spoken_languages_text
+      .split(",")
+      .map((language) => language.trim())
+      .filter(Boolean);
+  }
+
   function openConditionModal() {
     setConditionName("");
     setConditionDetail("");
@@ -37,8 +137,8 @@ function EditProfile() {
   }
 
   function editCondition(index) {
-    setConditionName(conditions[index].name);
-    setConditionDetail(conditions[index].detail);
+    setConditionName(conditions[index].name || "");
+    setConditionDetail(conditions[index].detail || "");
     setEditingConditionIndex(index);
     setShowConditionModal(true);
   }
@@ -52,8 +152,8 @@ function EditProfile() {
     if (!conditionName.trim()) return;
 
     const conditionData = {
-      name: conditionName,
-      detail: conditionDetail || "No details provided",
+      name: conditionName.trim(),
+      detail: conditionDetail.trim() || "No details provided",
     };
 
     if (editingConditionIndex !== null) {
@@ -79,8 +179,8 @@ function EditProfile() {
   }
 
   function editAllergy(index) {
-    setAllergyName(allergies[index].name);
-    setAllergyDetail(allergies[index].detail);
+    setAllergyName(allergies[index].name || "");
+    setAllergyDetail(allergies[index].detail || "");
     setEditingAllergyIndex(index);
     setShowAllergyModal(true);
   }
@@ -94,8 +194,8 @@ function EditProfile() {
     if (!allergyName.trim()) return;
 
     const allergyData = {
-      name: allergyName,
-      detail: allergyDetail || "No details provided",
+      name: allergyName.trim(),
+      detail: allergyDetail.trim() || "No details provided",
     };
 
     if (editingAllergyIndex !== null) {
@@ -122,9 +222,9 @@ function EditProfile() {
   }
 
   function editContact(index) {
-    setContactName(contacts[index].name);
-    setContactRelationship(contacts[index].relationship);
-    setContactPhone(contacts[index].phone);
+    setContactName(contacts[index].name || "");
+    setContactRelationship(contacts[index].relationship || "");
+    setContactPhone(contacts[index].phone || "");
     setEditingContactIndex(index);
     setShowContactModal(true);
   }
@@ -138,9 +238,9 @@ function EditProfile() {
     if (!contactName.trim()) return;
 
     const contactData = {
-      name: contactName,
-      relationship: contactRelationship || "Emergency Contact",
-      phone: contactPhone || "No phone provided",
+      name: contactName.trim(),
+      relationship: contactRelationship.trim() || "Emergency Contact",
+      phone: contactPhone.trim() || "No phone provided",
     };
 
     if (editingContactIndex !== null) {
@@ -158,12 +258,72 @@ function EditProfile() {
     setContacts(contacts.filter((_, itemIndex) => itemIndex !== index));
   }
 
+  async function handleSaveProfile() {
+    try {
+      setIsSaving(true);
+      setError("");
+
+      const userProfilePayload = {
+        phone: form.phone.trim(),
+        nationality: form.nationality.trim(),
+        spoken_languages: getSpokenLanguagesArray(),
+      };
+      const medicalProfilePayload = {
+        date_of_birth: form.date_of_birth || null,
+        gender: form.gender || null,
+        blood_type: form.blood_type || null,
+        address: form.address || null,
+        allergies,
+        conditions,
+        medications: [],
+        emergency_contacts: contacts,
+      };
+
+      console.log("Saving user profile:", userProfilePayload);
+      console.log("Saving medical profile:", medicalProfilePayload);
+
+      await Promise.all([
+        updateUserProfile(userProfilePayload),
+        updateMedicalProfile(medicalProfilePayload),
+      ]);
+
+      navigate("/profile");
+    } catch (error) {
+      console.error("Failed to save profile:", error);
+
+      const problemFields = [
+        ...(error?.body?.missing_fields ?? []),
+        ...(error?.body?.invalid_fields ?? []),
+      ];
+
+      const message = problemFields.length
+        ? `${error.message} (${problemFields.join(", ")})`
+        : error.message || "Could not save profile.";
+
+      setError(message);
+    } finally {
+      setIsSaving(false);
+    }
+  }
+
+  if (isLoading) {
+    return (
+      <main className="edit-profile-page">
+        <p>Loading profile...</p>
+      </main>
+    );
+  }
+
   return (
     <main className="edit-profile-page">
       <h1>Edit Personal & Medical Profile</h1>
+
       <p className="edit-subtitle">
-        Update your core identity, vital signs, and clinical history for accurate care routing.
+        Update your core identity, vital signs, and clinical history for accurate
+        care routing.
       </p>
+
+      {error && <p className="profile-error">{error}</p>}
 
       <section className="edit-section">
         <h2>▣ Core Identity</h2>
@@ -173,37 +333,68 @@ function EditProfile() {
 
           <label>
             Full Name
-            <input defaultValue={USER_PROFILE.full_name} />
+            <input value={form.full_name} readOnly />
           </label>
 
           <label>
             Date of Birth
-            <input type="date" defaultValue={USER_PROFILE.date_of_birth} />
+            <input
+              type="date"
+              value={form.date_of_birth}
+              onChange={(event) =>
+                updateFormField("date_of_birth", event.target.value)
+              }
+            />
           </label>
 
           <label>
             Gender
-            <select defaultValue={USER_PROFILE.gender}>
-              <option>Female</option>
-              <option>Male</option>
-              <option>Other</option>
+            <select
+              value={form.gender}
+              onChange={(event) =>
+                updateFormField("gender", event.target.value)
+              }
+            >
+              <option value="">Select gender</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
             </select>
           </label>
 
+          <label>
+            Nationality
+            <input
+              value={form.nationality}
+              onChange={(event) =>
+                updateFormField("nationality", event.target.value)
+              }
+              placeholder="e.g. Irish"
+            />
+          </label>
         </div>
       </section>
 
       <section className="edit-section">
         <h2>♡ Vital Signs</h2>
+
         <label>
           Blood Type
-          <select defaultValue={USER_PROFILE.blood_type}>
-            <option>O Positive (O+)</option>
-            <option>O Negative (O-)</option>
-            <option>A Positive (A+)</option>
-            <option>A Negative (A-)</option>
-            <option>B Positive (B+)</option>
-            <option>AB Positive (AB+)</option>
+          <select
+            value={form.blood_type}
+            onChange={(event) =>
+              updateFormField("blood_type", event.target.value)
+            }
+          >
+            <option value="">Select blood type</option>
+            <option value="O+">O Positive (O+)</option>
+            <option value="O-">O Negative (O-)</option>
+            <option value="A+">A Positive (A+)</option>
+            <option value="A-">A Negative (A-)</option>
+            <option value="B+">B Positive (B+)</option>
+            <option value="B-">B Negative (B-)</option>
+            <option value="AB+">AB Positive (AB+)</option>
+            <option value="AB-">AB Negative (AB-)</option>
           </select>
         </label>
       </section>
@@ -215,57 +406,73 @@ function EditProfile() {
           <div>
             <div className="section-line-title">
               <h3>Allergies</h3>
+
               <button type="button" onClick={openAllergyModal}>
                 + Add Allergy
               </button>
             </div>
 
-            {allergies.map((allergy, index) => (
-              <div className="editable-item" key={`${allergy.name}-${index}`}>
-                <div>
-                  <strong>{allergy.name}</strong>
-                  <p>{allergy.detail}</p>
-                </div>
+            {allergies.length > 0 ? (
+              allergies.map((allergy, index) => (
+                <div className="editable-item" key={`${allergy.name}-${index}`}>
+                  <div>
+                    <strong>{allergy.name}</strong>
+                    <p>{allergy.detail}</p>
+                  </div>
 
-                <div className="item-actions">
-                  <button type="button" onClick={() => editAllergy(index)}>
-                    ✏️
-                  </button>
+                  <div className="item-actions">
+                    <button type="button" onClick={() => editAllergy(index)}>
+                      ✏️
+                    </button>
 
-                  <button type="button" onClick={() => deleteAllergy(index)}>
-                    🗑️
-                  </button>
+                    <button type="button" onClick={() => deleteAllergy(index)}>
+                      🗑️
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>No allergies added.</p>
+            )}
           </div>
 
           <div>
             <div className="section-line-title">
               <h3>Medical Conditions</h3>
+
               <button type="button" onClick={openConditionModal}>
                 + Add Condition
               </button>
             </div>
 
-            {conditions.map((condition, index) => (
-              <div className="editable-item" key={`${condition.name}-${index}`}>
-                <div>
-                  <strong>{condition.name}</strong>
-                  <p>{condition.detail}</p>
-                </div>
+            {conditions.length > 0 ? (
+              conditions.map((condition, index) => (
+                <div
+                  className="editable-item"
+                  key={`${condition.name}-${index}`}
+                >
+                  <div>
+                    <strong>{condition.name}</strong>
+                    <p>{condition.detail}</p>
+                  </div>
 
-                <div className="item-actions">
-                  <button type="button" onClick={() => editCondition(index)}>
-                    ✏️
-                  </button>
+                  <div className="item-actions">
+                    <button type="button" onClick={() => editCondition(index)}>
+                      ✏️
+                    </button>
 
-                  <button type="button" onClick={() => deleteCondition(index)}>
-                    🗑️
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => deleteCondition(index)}
+                    >
+                      🗑️
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p>No medical conditions added.</p>
+            )}
           </div>
         </div>
       </section>
@@ -276,55 +483,86 @@ function EditProfile() {
         <div className="contact-form-grid">
           <label>
             Phone Number
-            <input defaultValue={USER_PROFILE.phone} />
+            <input
+              value={form.phone}
+              onChange={(event) =>
+                updateFormField("phone", event.target.value)
+              }
+            />
           </label>
 
           <label>
             Email Address
-            <input defaultValue={USER_PROFILE.email} />
+            <input type="email" value={form.email} readOnly />
           </label>
         </div>
 
         <label>
+          Spoken Languages
+          <input
+            value={form.spoken_languages_text}
+            onChange={(event) =>
+              updateFormField("spoken_languages_text", event.target.value)
+            }
+            placeholder="e.g. English, Chinese, Spanish"
+          />
+        </label>
+
+        <label>
           Primary Address
-          <textarea defaultValue={USER_PROFILE.address} />
+          <textarea
+            value={form.address}
+            onChange={(event) =>
+              updateFormField("address", event.target.value)
+            }
+          />
         </label>
 
         <div className="section-line-title emergency-title-row">
           <h3>Emergency Contacts</h3>
+
           <button type="button" onClick={openContactModal}>
             + Add Contact
           </button>
         </div>
 
         <div className="contact-row-list">
-          {contacts.map((contact, index) => (
-            <div className="editable-item" key={`${contact.name}-${index}`}>
-              <div>
-                <strong>{contact.name}</strong>
-                <p>{contact.relationship}</p>
-                <p>{contact.phone}</p>
-              </div>
+          {contacts.length > 0 ? (
+            contacts.map((contact, index) => (
+              <div className="editable-item" key={`${contact.name}-${index}`}>
+                <div>
+                  <strong>{contact.name}</strong>
+                  <p>{contact.relationship}</p>
+                  <p>{contact.phone}</p>
+                </div>
 
-              <div className="item-actions">
-                <button type="button" onClick={() => editContact(index)}>
-                  ✏️
-                </button>
+                <div className="item-actions">
+                  <button type="button" onClick={() => editContact(index)}>
+                    ✏️
+                  </button>
 
-                <button type="button" onClick={() => deleteContact(index)}>
-                  🗑️
-                </button>
+                  <button type="button" onClick={() => deleteContact(index)}>
+                    🗑️
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No emergency contacts added.</p>
+          )}
         </div>
 
         <div className="edit-footer">
           <button type="button" onClick={() => navigate("/profile")}>
             Discard Changes
           </button>
-          <button type="button" onClick={() => navigate("/profile")}>
-            Save Profile
+
+          <button
+            type="button"
+            onClick={handleSaveProfile}
+            disabled={isSaving}
+          >
+            {isSaving ? "Saving..." : "Save Profile"}
           </button>
         </div>
       </section>
@@ -429,7 +667,9 @@ function EditProfile() {
               Relationship
               <input
                 value={contactRelationship}
-                onChange={(event) => setContactRelationship(event.target.value)}
+                onChange={(event) =>
+                  setContactRelationship(event.target.value)
+                }
                 placeholder="e.g. Spouse"
               />
             </label>

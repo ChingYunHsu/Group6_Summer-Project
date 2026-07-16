@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.edit-profile-page {
+  min-height: calc(100vh - 64px);
+  background: #f6f8fc;
+
+  
+   width: min(1600px, 96vw);
+   margin: 10px auto;
+
+   padding: 32px 48px;
+}
+
+.edit-profile-page {
+  min-height: calc(100vh - 64px);
+  background: #f6f8fc;
+  padding: 32px;
+  color: #06152b;
+}
+
+.edit-profile-page h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  color: #06152b;
+}
+
+.edit-subtitle {
+  margin: 0 0 28px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.edit-section {
+  background: #ffffff;
+  border: 1px solid #cfd8e3;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.edit-section h2 {
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d8dee9;
+  color: #0047d8;
+  font-size: 15px;
+}
+
+.core-grid {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 14px;
+  align-items: end;
+}
+
+.edit-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  background: #eef2f7;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  border: 1px solid #cfd8e3;
+}
+
+.edit-section label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.edit-section input,
+.edit-section select,
+.edit-section textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #06152b;
+  min-height: 36px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.edit-section textarea {
+  min-height: 64px;
+  resize: vertical;
+}
+
+.two-column-edit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.section-line-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.section-line-title h3 {
+  margin: 0;
+  font-size: 13px;
+  color: #06152b;
+}
+
+.section-line-title button {
+  border: none;
+  background: transparent;
+  color: #0047d8;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.editable-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.editable-item strong {
+  color: #991b1b;
+}
+
+.editable-item p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #475569;
+}
+
+.editable-item button {
+  border: none;
+  background: transparent;
+  color: #334155;
+  cursor: pointer;
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.edit-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.edit-footer button {
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.edit-footer button:first-child {
+  background: white;
+  color: #0047d8;
+  border: 1px solid #0047d8;
+}
+
+.edit-footer button:last-child {
+  background: #0047d8;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .core-grid,
+  .two-column-edit,
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.edit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+}
+
+.edit-modal {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+}
+
+.edit-modal h2 {
+  margin: 0 0 18px;
+  color: #06152b;
+  font-size: 22px;
+}
+
+.edit-modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.edit-modal input,
+.edit-modal textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #06152b;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.edit-modal input {
+  height: 42px;
+}
+
+.edit-modal textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.edit-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.edit-modal-actions button {
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.edit-modal-actions button:first-child {
+  background: white;
+  border: 1px solid #cbd5e1;
+  color: #06152b;
+}
+
+.edit-modal-actions button:last-child {
+  background: #0047d8;
+  border: none;
+  color: white;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.item-actions button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.item-actions button:hover {
+  opacity: 1;
+}
+
+.emergency-title-row {
+  margin-top: 18px;
+}
+
+.contact-row-list {
+  margin-top: 12px;
+}
+
+
+/* revised 6-1 */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+}
+
+/* Route Planning Dashboard — replaces the search header when
+   "Open Live Directions" is clicked */

@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+button {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+
+/* revised 6-1 */
+
+.medical-card-page {
+  min-height: calc(100vh - 64px);
+  background: #f7f8fc;
+  padding: 28px 24px 36px;
+  color: #111827;
+  font-family: Arial, sans-serif;
+}
+
+
+.medical-card-page * {
+  font-family: Arial, sans-serif;
+}
+
+.medical-preview-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.medical-preview-header h1 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  color: #06152b;
+}
+
+.medical-preview-header p {
+  margin: 0 auto;
+  max-width: 420px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.medical-a4-canvas {
+  width: 430px;
+  background: #ffffff;
+  margin: 0 auto 26px;
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.18);
+}
+
+.medical-alert-header {
+  height: 78px;
+  background: #c91d1d;
+  color: #ffffff;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.medical-alert-header h2 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.medical-alert-header span {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.medical-cross-icon {
+  width: 34px;
+  height: 34px;
+  background: #ffffff;
+  color: #c91d1d;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.medical-card-body {
+  padding: 34px 38px 30px;
+}
+
+.medical-label,
+.medical-card-body h4 {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.medical-top-grid,
+.medical-section-grid,
+.medical-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.medical-bottom-grid {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+
+.medical-bottom-grid h4 {
+  margin: 0 0 10px;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.medical-bottom-grid p {
+  margin: 3px 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #111827;
+  font-weight: 400;
+  text-align: left;
+}
+
+.medical-top-grid h3 {
+  margin: 10px 0 0;
+  font-size: 25px;
+  line-height: 0.95;
+  color: #1f2937;
+}
+
+.blood-preview strong {
+  display: block;
+  margin-top: 9px;
+  color: #c91d1d;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.blood-preview small {
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.medical-card-body h4 {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.medical-alert-item {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  column-gap: 12px;
+  align-items: start;
+  margin-bottom: 14px;
+  padding-left: 0;
+  text-align: left;
+}
+.medical-alert-item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 5px;
+  justify-self: start;
+}
+
+.medical-alert-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.red-item::before {
+  background: #dc2626;
+}
+
+.blue-item::before {
+  background: #0047d8;
+}
+
+.medical-alert-item strong {
+  font-size: 11px;
+  color: #111827;
+  line-height: 1.2;
+}
+
+
+.medical-alert-item p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #334155;
+}
+
+.emergency-contact-card {
+  margin-top: 20px;
+  background: #eef4ff;
+  border: 1px solid #bfdbfe;
+  padding: 14px;
+  border-radius: 3px;
+}
+
+.emergency-contact-card h4 {
+  color: #0047d8;
+}
+
+.emergency-contact-card strong {
+  font-size: 13px;
+}
+
+.emergency-contact-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0047d8;
+  font-weight: 900;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.print-medical-button {
+  display: block;
+  width: 300px;
+  height: 48px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 8px;
+  background: #0047d8;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 71, 216, 0.25);
+}
+
+.a4-note {
+  text-align: center;
+  margin-top: 12px;
+  color: #475569;
+  font-size: 11px;
+}
+
+@media print {
+
+  
+  .medical-preview-header,
+  .print-medical-button,
+  .a4-note {
+    display: none !important;
+  }
+
+  .medical-card-page {
+    padding: 0;
+    background: white;
+  }
+
+.medical-a4-canvas {
+  width: min(794px, 100%);
+  min-height: 1123px;
+  aspect-ratio: 210 / 297;
+
+  background: white;
+  margin: 0 auto 28px;
+
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+
+  display: flex;
+  flex-direction: column;
+}
+}
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    
+    .medical-preview-header,
+    .print-medical-button,
+    .a4-note {
+        display: none !important;
+    }
+
+    .medical-card-page {
+        padding: 0;
+        background: white;
+    }
+
+    .medical-a4-canvas {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .medical-bottom-grid p strong {
+  font-size: 11px;
+  font-weight: 700;
+  color: #111827;
+}
+
+}
+
+/* Route Planning Dashboard — replaces the search header when
+   "Open Live Directions" is clicked */
+
+  .print-hide {
+  display: initial;
+}
+
+.medical-error {
+  color: #b91c1c;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body,
+  #root {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  nav,
+  header:not(.medical-alert-header),
+  footer,
+  .navbar,
+  .top-nav,
+  .app-header,
+  .site-header,
+  .sidebar,
+  .page-shell,
+  .layout-shell,
+  .app-layout,
+  .profile-title-row,
+  .medical-preview-header,
+  .print-medical-button,
+  .a4-note,
+  .print-hide {
+    display: none !important;
+  }
+
+  .medical-card-page {
+    display: block !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  .medical-a4-canvas {
+    display: block !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+  }
+}
