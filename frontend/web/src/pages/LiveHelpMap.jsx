@@ -17,16 +17,15 @@ import {
 } from "../services/LiveHelpMapApi";
 
 const LANGUAGE_CODES = {
-  "English (English)": "EN",
-  "Français (French)": "FR",
-  "Español (Spanish)": "ES",
-  "中文 (Chinese)": "ZH",
-  "العربية (Arabic)": "AR",
+  "English (English)": "en",
+  "Français (French)": "fr",
+  "Español (Spanish)": "es",
+  "中文 (Chinese)": "zh",
+  "العربية (Arabic)": "ar",
 };
 
 
 function getMarkerColor(venue, futureMode) {
-  // Future/predicted mode must always use blue.
   if (futureMode) return "#0057e7";
 
   const providedColor = String(
@@ -178,14 +177,40 @@ function getIssueMessage(issueType) {
 }
 
 function normaliseVenue(rawVenue) {
+  const languages = normaliseList(
+    rawVenue.language_tags ??
+      rawVenue.languages
+  ).map(normaliseLanguage);
+
   return {
     ...rawVenue,
-    venue_id: rawVenue.venue_id ?? rawVenue.id,
-    latitude: Number(rawVenue.latitude ?? rawVenue.lat),
-    longitude: Number(rawVenue.longitude ?? rawVenue.lng),
-    language_tags: rawVenue.language_tags ?? rawVenue.languages ?? [],
-    supported_services:
-      rawVenue.supported_services ?? rawVenue.services ?? [],
+
+    venue_id:
+      rawVenue.venue_id ??
+      rawVenue.id,
+
+    latitude: Number(
+      rawVenue.latitude ??
+        rawVenue.lat
+    ),
+
+    longitude: Number(
+      rawVenue.longitude ??
+        rawVenue.lng
+    ),
+
+    venue_type: String(
+      rawVenue.venue_type ??
+        rawVenue.type ??
+        ""
+    ).toLowerCase(),
+
+    language_tags: languages,
+
+    supported_services: normaliseList(
+      rawVenue.supported_services ??
+        rawVenue.services
+    ),
   };
 }
 
@@ -273,7 +298,78 @@ function buildQueryTime(selectedDate, selectedTime) {
   return `${selectedDate}T${selectedTime}:00`;
 }
 
+const LANGUAGE_ALIASES = {
+  en: "en",
+  english: "en",
 
+  fr: "fr",
+  french: "fr",
+  français: "fr",
+
+  es: "es",
+  spanish: "es",
+  español: "es",
+
+  zh: "zh",
+  chinese: "zh",
+  中文: "zh",
+
+  ar: "ar",
+  arabic: "ar",
+  العربية: "ar",
+};
+
+function normaliseList(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value);
+
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+    } catch {
+      return value
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
+    }
+  }
+
+  return [];
+}
+
+function normaliseLanguage(value) {
+  const cleanedValue = String(value)
+    .trim()
+    .toLowerCase();
+
+  return LANGUAGE_ALIASES[cleanedValue] ?? cleanedValue;
+}
+
+function venueIsAccessible(venue) {
+  const value =
+    venue.accessible ??
+    venue.wheelchair_accessible ??
+    venue.accessible_status ??
+    "";
+
+  if (typeof value === "boolean") {
+    return value;
+  }
+
+  const cleanedValue = String(value).toLowerCase();
+
+  return (
+    cleanedValue === "true" ||
+    cleanedValue === "yes" ||
+    cleanedValue.includes("full") ||
+    cleanedValue.includes("accessible")
+  );
+}
 
 function LiveHelpMap() {
   const mapContainerRef = useRef(null);
@@ -299,7 +395,7 @@ function LiveHelpMap() {
 
   const [searchText, setSearchText] = useState("");
   const [primaryLanguage, setPrimaryLanguage] =
-    useState("English (English)");
+    useState("");
   const [secondaryLanguage, setSecondaryLanguage] = useState("None");
   const [accessibleOnly, setAccessibleOnly] = useState(false);
   const [selectedBusynessLevels, setSelectedBusynessLevels] = useState([]);
@@ -335,7 +431,7 @@ function LiveHelpMap() {
       setIsLoading(true);
       setMapError("");
 
-      const backendVenues = await listVenues(appliedFilters);
+      const backendVenues = await listVenues();
       const normalisedVenues = backendVenues
         .map(normaliseVenue)
         .filter(
@@ -367,7 +463,7 @@ function LiveHelpMap() {
     } finally {
       setIsLoading(false);
     }
-  }, [appliedFilters]);
+  }, []);
 
   const refreshReports = useCallback(async () => {
     try {
@@ -598,32 +694,104 @@ useEffect(() => {
   );
 
   const visibleVenues = useMemo(() => {
-    const cleanedSearch = searchText.trim().toLowerCase();
+    const cleanedSearch = searchText
+      .trim()
+      .toLowerCase();
+
+    const requestedLanguages =
+      appliedFilters.languages.map(
+        normaliseLanguage
+      );
 
     return venuesWithBusyness.filter((venue) => {
       const matchesSearch =
         !cleanedSearch ||
-        [venue.name, venue.address, venue.borough]
+        [
+          venue.name,
+          venue.address,
+          venue.borough,
+        ]
           .filter(Boolean)
           .some((value) =>
-            String(value).toLowerCase().includes(cleanedSearch)
+            String(value)
+              .toLowerCase()
+              .includes(cleanedSearch)
           );
 
-      const matchesBusyness =
-        futureMode ||
-        selectedBusynessLevels.length === 0 ||
-        selectedBusynessLevels.includes(
-          String(venue.busyness_level ?? "").toLowerCase()
+      const venueLanguages =
+        normaliseList(
+          venue.language_tags
+        ).map(normaliseLanguage);
+
+      const matchesLanguages =
+        requestedLanguages.length === 0 ||
+        requestedLanguages.every(
+          (language) =>
+            venueLanguages.includes(language)
         );
 
-      return matchesSearch && matchesBusyness;
-    });
-  }, [
-    futureMode,
-    searchText,
-    selectedBusynessLevels,
-    venuesWithBusyness,
-  ]);
+      const matchesAccessibility =
+        !appliedFilters.accessible ||
+        venueIsAccessible(venue);
+
+      const selectedType =
+        appliedFilters.venueType;
+
+      const venueType = String(
+        venue.venue_type ?? ""
+      ).toLowerCase();
+
+      const typeAliases = {
+        clinic: ["clinic", "healthcare"],
+        pharmacy: ["pharmacy"],
+        emergencyasset: [
+          "emergencyasset",
+          "aed",
+        ],
+      
+      restroom: [
+        "restroom",
+        "toilet",
+      ],
+    };
+
+    const matchesVenueType =
+      !selectedType ||
+      (
+        typeAliases[selectedType] ?? [
+          selectedType,
+        ]
+      ).includes(venueType);
+
+    const busynessLevel = String(
+      venue.busyness_level ?? ""
+    ).toLowerCase();
+
+    const matchesBusyness =
+      futureMode ||
+      selectedBusynessLevels.length === 0 ||
+      selectedBusynessLevels.some(
+        (selectedLevel) =>
+          busynessLevel.includes(
+            selectedLevel
+          )
+      );
+
+    return (
+      matchesSearch &&
+      matchesLanguages &&
+      matchesAccessibility &&
+      matchesVenueType &&
+      matchesBusyness
+    );
+  });
+}, [
+  appliedFilters,
+  futureMode,
+  searchText,
+  selectedBusynessLevels,
+  venuesWithBusyness,
+]);
 
   const openVenueDrawer = useCallback((venue) => {
     setSelectedVenueId(venue.venue_id);
@@ -830,24 +998,24 @@ useEffect(() => {
   }
 
   function applyFilters() {
-    const languages = [
-      LANGUAGE_CODES[primaryLanguage],
-      secondaryLanguage === "None"
-        ? null
-        : LANGUAGE_CODES[secondaryLanguage],
-    ].filter(Boolean);
+  const languages = [
+    LANGUAGE_CODES[primaryLanguage],
+    secondaryLanguage === "None"
+      ? null
+      : LANGUAGE_CODES[secondaryLanguage],
+  ].filter(Boolean);
 
-    setAppliedFilters((current) => ({
-      ...current,
-      languages,
-      accessible: accessibleOnly,
-    }));
+  setAppliedFilters((current) => ({
+    ...current,
+    languages,
+    accessible: accessibleOnly,
+  }));
 
-    setShowFilters(false);
-  }
+  setShowFilters(false);
+}
 
   function clearFilters() {
-    setPrimaryLanguage("English (English)");
+    setPrimaryLanguage("");
     setSecondaryLanguage("None");
     setAccessibleOnly(false);
     setSelectedBusynessLevels([]);
@@ -1340,9 +1508,10 @@ useEffect(() => {
                     )
                   }
                 >
+                  <option value=""> Any language</option>
                   {Object.keys(LANGUAGE_CODES).map(
                     (language) => (
-                      <option key={language}>
+                      <option key={language} value={language}>
                         {language}
                       </option>
                     )
