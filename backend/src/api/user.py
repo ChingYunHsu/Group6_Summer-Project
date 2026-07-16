@@ -8,7 +8,7 @@ from flask import Blueprint, g, jsonify, request
 
 import db
 from sos_buffer import push_sos_event
-from auth import require_api_key, require_bearer_auth, web_readonly_blocked
+from auth import require_api_key, require_bearer_auth
 from mock_data import (
     DELETE_ACCOUNT_RESPONSE,
     EMERGENCY_CONTACT_CREATE_TEMPLATE,
@@ -328,10 +328,6 @@ def get_favourites():
 @bp.post("/api/v1/user/favourites")
 @require_bearer_auth
 def add_favourite():
-    blocked = web_readonly_blocked()
-    if blocked:
-        return blocked
-
     payload = request.get_json(silent=True) or {}
 
     if "venue_id" not in payload:
@@ -365,10 +361,6 @@ def add_favourite():
 @bp.delete("/api/v1/user/favourites/<venue_id>")
 @require_bearer_auth
 def delete_favourite(venue_id: str):
-    blocked = web_readonly_blocked()
-    if blocked:
-        return blocked
-
     with db.db_transaction() as cursor:
         cursor.execute(
             "DELETE FROM user_favorite_venues WHERE user_id = %s AND venue_id = %s",

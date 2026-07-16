@@ -80,6 +80,30 @@ def test_favourites_requires_bearer_token(client):
     assert resp.status_code == 401
 
 
+def test_add_favourite_allowed_from_web_client(client, app, fake_favourites_table):
+    """Save Location on the web dashboard must be able to persist —
+    favourites are no longer gated by X-Client-Origin: web."""
+    token = _token_for(app, "u_alice")
+    resp = client.post(
+        "/api/v1/user/favourites",
+        json={"venue_id": "v_9999"},
+        headers={"Authorization": f"Bearer {token}", "X-Client-Origin": "web"},
+    )
+    assert resp.status_code == 201
+
+
+def test_delete_favourite_allowed_from_web_client(client, app, fake_favourites_table):
+    token = _token_for(app, "u_alice")
+    headers = {"Authorization": f"Bearer {token}"}
+    client.post("/api/v1/user/favourites", json={"venue_id": "v_1"}, headers=headers)
+
+    resp = client.delete(
+        "/api/v1/user/favourites/v_1",
+        headers={"Authorization": f"Bearer {token}", "X-Client-Origin": "web"},
+    )
+    assert resp.status_code == 204
+
+
 def test_add_favourite_returns_the_actual_venue_added(client, app, fake_favourites_table):
     token = _token_for(app, "u_alice")
     resp = client.post(
