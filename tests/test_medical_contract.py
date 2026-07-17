@@ -47,7 +47,7 @@ def test_medical_profile_names_match_between_ddl_api_and_erd():
         assert column in api
         assert column in erd
 
-    for column in ("severe_allergies", "medical_conditions"):
+    for column in ("allergies", "medical_conditions"):
         assert re.search(rf"\b{column}\b", ddl) is None
         assert re.search(rf"\b{column}\b", erd) is None
 

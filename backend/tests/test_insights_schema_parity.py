@@ -97,3 +97,42 @@ def test_get_insights_db_path_includes_quick_triage_and_travel_minutes(client, m
     assert data["quick_triage"]["venue_name"] == "Test Venue"
     assert data["fastest_hubs"][0]["travel_minutes"] is not None
     assert isinstance(data["fastest_hubs"][0]["travel_minutes"], int)
+
+
+def test_get_insights_db_path_reports_no_data_when_telemetry_empty(client, monkeypatch):
+    """A district with venues but no busyness_scores/forecasts rows is a
+    legitimate empty result, not an error — it must be reported as
+    data_mode="no_data", not "db" (which implies live telemetry)."""
+
+    class _FakeCursor:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_):
+            return False
+
+        def execute(self, query, params=()):
+            self.last_query = " ".join(query.split())
+
+        def fetchone(self):
+            return ("MN05",)
+
+        def fetchall(self):
+            if "FROM venues WHERE venue_id IN" in self.last_query:
+                return []
+            return []
+
+    class _FakeConn:
+        def cursor(self):
+            return _FakeCursor()
+
+        def close(self):
+            pass
+
+    monkeypatch.setattr(insights_module, "_get_db_conn", lambda: _FakeConn())
+
+    resp = client.get("/api/v1/insights?district=MN05", headers={"X-API-Key": "test"})
+    assert resp.status_code == 200
+    data = resp.get_json()
+
+    assert data["data_mode"] == "no_data"

@@ -228,9 +228,15 @@ def _get_insights_from_db(district_param, origin_lat=None, origin_lon=None):
     finally:
         conn.close()
 
+    has_data = (
+        density["trend"] != "no data"
+        or bool(prediction_series)
+        or any(hub["busyness_score"] is not None for hub in hubs)
+    )
+
     return {
         "district": district,
-        "data_mode": "db",
+        "data_mode": "db" if has_data else "no_data",
         "real_time_density": density,
         "quick_triage": _quick_triage(hubs),
         "best_travel_window": travel_window,
