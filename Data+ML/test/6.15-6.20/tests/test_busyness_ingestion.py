@@ -512,6 +512,44 @@ class TestInsertBusynessScores:
         assert isinstance(forecast, list)
         assert len(forecast) == 12
 
+    def test_effective_at_is_independent_of_source_data_year(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 1
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({"venue_id": ["v_1001"], "hour": [8], "score": [50], "busyness_level": ["moderate"]})
+        effective_at = datetime(2026, 7, 18, 15, 42)
+        insert_busyness_scores(mock_conn, source, data_year=2025, effective_at=effective_at)
+        _, rows = mock_cursor.executemany.call_args.args
+        assert rows[0][4] == datetime(2026, 7, 18, 8)
+        assert rows[0][5] == datetime(2026, 7, 18, 20)
+        assert rows[0][7] == "nyc_traffic_2025_manhattan"
+
+    def test_full_profile_anchors_all_hours_to_effective_day(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 24
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({
+            "venue_id": ["v_1001"] * 24, "hour": list(range(24)),
+            "score": [50] * 24, "busyness_level": ["moderate"] * 24,
+        })
+        insert_busyness_scores(mock_conn, source, effective_at=datetime(2026, 7, 18, 15))
+        _, rows = mock_cursor.executemany.call_args.args
+        assert len(rows) == 24
+        assert {row[4].date() for row in rows} == {datetime(2026, 7, 18).date()}
+        assert {row[4].hour for row in rows} == set(range(24))
+
+    def test_uses_upsert(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 1
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({"venue_id": ["v_1001"], "hour": [8], "score": [50], "busyness_level": ["moderate"]})
+        insert_busyness_scores(mock_conn, source, effective_at=datetime(2026, 7, 18))
+        sql, _ = mock_cursor.executemany.call_args.args
+        assert "ON DUPLICATE KEY UPDATE" in sql
+
     def test_features_snapshot_default(self):
         """Default features_snapshot should contain year and 'manhattan'."""
         from busyness_ingestion import insert_busyness_scores

@@ -25,7 +25,10 @@ try:
     from dqr_utils import get_conn, gps_to_district
 except ImportError:
     import sys
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    # The shared DB helpers live in the earlier DB-stage directory.  Keep this
+    # historical ingestion script directly runnable rather than depending on a
+    # notebook's working directory or a copied helper module.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / '6.8-6.12_DB' / 'dqr'))
     from dqr_utils import get_conn, gps_to_district
 
 import requests
@@ -202,7 +205,7 @@ def aggregate_by_segment(traffic_df):
 
 # ── Step 3: Venue 匹配 (haversine 50m) ──────────────────────
 
-def map_segments_to_venues(conn, segment_hourly_df):
+def map_segments_to_venues(conn, segment_hourly_df, hours=None):
     """将 traffic segment 按 district 聚合，分配给同 district 所有 venue。
 
     NYC Traffic API 只有 28 个 segment，无法覆盖 4,714 venues 的 1%。
@@ -236,6 +239,9 @@ def map_segments_to_venues(conn, segment_hourly_df):
 
     print(f'District aggregation: {len(district_hourly)} district-hour rows, '
           f'{district_hourly["district"].nunique()} districts')
+
+    if hours is not None:
+        district_hourly = district_hourly[district_hourly['hour'].isin(hours)].copy()
 
     # 3. 读取所有 venues，为每个 venue × hour 生成一行
     venues_df = pd.read_sql(
@@ -297,14 +303,20 @@ def build_forecast_1h(scores_df, target_hour):
 def insert_busyness_scores(conn, venue_scores_df,
                            model_version='nyc_traffic_baseline_v1',
                            features_snapshot=None,
-                           data_year=2025):
+                           data_year=2025,
+                           effective_at=None,
+                           active_hour_only=False):
     """批量写入 busyness_scores 表，每个 venue 写 24 行 (每小时一行)。
 
     使用 executemany 批量插入，显著提升性能。
-    INSERT IGNORE + 唯一约束实现幂等写入。
+    唯一约束上的 upsert 让同一运行日的重跑安全地刷新当前窗口。
 
     Args:
-        data_year: 源数据年份，用于构建 features_snapshot 和 forecast 时间戳。
+        data_year: 源数据年份，只用于 features_snapshot 的来源血缘。
+        effective_at: 当前预测窗口的生效时间。默认是本地运行时间；故意
+            不使用 data_year，以免历史交通来源把 current-status 窗口锚定到过去。
+        active_hour_only: 仅写入当前小时的 context 行。当前状态 API 只查询
+            这一行；12 小时 V2 曲线由 busyness_forecasts 单独提供。
 
     Returns:
         int: 插入行数
@@ -316,70 +328,94 @@ def insert_busyness_scores(conn, venue_scores_df,
     if features_snapshot is None:
         features_snapshot = f'nyc_traffic_{data_year}_manhattan'
 
-    # 构建所有参数
-    rows = []
-    now = datetime(data_year, 1, 1)
-    for venue_id, group in venue_scores_df.groupby('venue_id'):
-        for hour in range(24):
-            hour_row = group[group['hour'] == hour]
-            if hour_row.empty:
-                continue
-
-            score = int(hour_row.iloc[0]['score'])
-            level = hour_row.iloc[0]['busyness_level']
-
-            # forecast_1h: 从该小时开始的 12 小时滚动窗口
-            forecast = []
-            for offset in range(12):
-                h = (hour + offset) % 24
-                h_row = group[group['hour'] == h]
-                if not h_row.empty:
-                    forecast.append({
-                        'offset_hours': offset,
-                        'percent': int(h_row.iloc[0]['score']),
-                        'level': h_row.iloc[0]['busyness_level'],
-                    })
-                else:
-                    forecast.append({
-                        'offset_hours': offset,
-                        'percent': 0,
-                        'level': 'no_data',
-                    })
-
-            base_date = now.replace(hour=hour, minute=0, second=0, microsecond=0)
-            rows.append((
-                venue_id, score, level,
-                json.dumps(forecast),
-                base_date, base_date + timedelta(hours=12),
-                model_version, features_snapshot,
-            ))
-
-    # 批量插入 (幂等: UNIQUE KEY uq_busyness_venue_time)
+    # Stream bounded batches: a full Manhattan run is ~115k venue-hour rows,
+    # each with a 12-point JSON array.  Keeping all of them in one Python list
+    # risks terminating the process before any current-context row is written.
+    batch_size = 1_000
+    inserted = 0
+    effective_at = effective_at or datetime.now()
+    if effective_at.tzinfo is not None:
+        # MySQL DATETIME 和后端 datetime.now() 都是本地 naive 语义。
+        effective_at = effective_at.replace(tzinfo=None)
+    # 幂等刷新: UNIQUE KEY (venue_id, forecast_start_time, model_version)
+    # 确保重复抓取可更新同一天的 context，而不是静默保留过期值。
     sql = """
-        INSERT IGNORE INTO busyness_scores
+        INSERT INTO busyness_scores
             (venue_id, score, level, estimated_wait_minutes,
              forecast_1h, forecast_start_time, forecast_end_time,
              model_version, features_snapshot_id)
         VALUES (%s, %s, %s, NULL, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            score = VALUES(score),
+            level = VALUES(level),
+            forecast_1h = VALUES(forecast_1h),
+            forecast_end_time = VALUES(forecast_end_time),
+            features_snapshot_id = VALUES(features_snapshot_id)
     """
     cursor = conn.cursor()
     try:
-        cursor.executemany(sql, rows)
+        batch = []
+        for venue_id, group in venue_scores_df.groupby('venue_id'):
+            by_hour = group.set_index('hour')[['score', 'busyness_level']].to_dict('index')
+            target_hours = [effective_at.hour] if active_hour_only else by_hour.keys()
+            for hour in target_hours:
+                values = by_hour.get(int(hour))
+                if values is None:
+                    continue
+                score, level = int(values['score']), values['busyness_level']
+                forecast = []
+                for offset in range(12):
+                    next_values = by_hour.get((int(hour) + offset) % 24)
+                    forecast.append({
+                        'offset_hours': offset,
+                        'percent': int(next_values['score']) if next_values else 0,
+                        'level': next_values['busyness_level'] if next_values else 'no_data',
+                    })
+                base_date = effective_at.replace(hour=int(hour), minute=0, second=0, microsecond=0)
+                batch.append((
+                    venue_id, score, level, json.dumps(forecast), base_date,
+                    base_date + timedelta(hours=12), model_version, features_snapshot,
+                ))
+                if len(batch) >= batch_size:
+                    cursor.executemany(sql, batch)
+                    inserted += cursor.rowcount
+                    batch.clear()
+        if batch:
+            cursor.executemany(sql, batch)
+            inserted += cursor.rowcount
         conn.commit()
-        inserted = cursor.rowcount
     except Exception as e:
         conn.rollback()
         print(f'ERROR: Insert failed: {e}')
         raise
     finally:
         cursor.close()
-    print(f'Inserted {inserted} busyness_scores rows (batch)')
+    print(f'Upserted {inserted} busyness_scores rows (batch)')
     return inserted
+
+
+def prune_expired_context_scores(conn, effective_at=None,
+                                 model_version='nyc_traffic_context_v1'):
+    """Remove only stale current-traffic context; retain historical baseline rows."""
+    effective_at = effective_at or datetime.now()
+    if effective_at.tzinfo is not None:
+        effective_at = effective_at.replace(tzinfo=None)
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "DELETE FROM busyness_scores WHERE model_version=%s AND forecast_end_time <= %s",
+            (model_version, effective_at),
+        )
+        conn.commit()
+        return cursor.rowcount
+    finally:
+        cursor.close()
 
 
 # ── 主入口 ───────────────────────────────────────────────────
 
-def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=False):
+def run_pipeline(year=2025, model_version='nyc_traffic_context_v1', dry_run=False,
+                 effective_at=None):
     """完整管线: 采集 → 聚合 → venue 匹配 → 写入。"""
     print('=== Busyness Ingestion Pipeline (venue-level) ===')
     print(f'Year: {year}, Model: {model_version}, Dry-run: {dry_run}')
@@ -402,7 +438,11 @@ def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=Fal
     print('\n[3/4] Matching segments to venues (district aggregation)...')
     conn = get_conn()
     try:
-        venue_scores = map_segments_to_venues(conn, segment_hourly)
+        effective_at = effective_at or datetime.now()
+        active_hour_only = model_version == 'nyc_traffic_context_v1'
+        venue_scores = map_segments_to_venues(
+            conn, segment_hourly, hours=[effective_at.hour] if active_hour_only else None
+        )
         if venue_scores.empty:
             print('ERROR: No venue mapping. Aborting.')
             return
@@ -420,9 +460,12 @@ def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=Fal
             print(venue_scores.head(12).to_string())
         else:
             print('\n[4/4] Writing to busyness_scores...')
+            # Never prune nyc_traffic_baseline_v1: it is the retained V2 training feature.
+            pruned = prune_expired_context_scores(conn, effective_at)
             inserted = insert_busyness_scores(
-                conn, venue_scores, model_version, data_year=year)
-            print(f'Done: {inserted} rows inserted')
+                conn, venue_scores, model_version, data_year=year, effective_at=effective_at,
+                active_hour_only=active_hour_only)
+            print(f'Done: {inserted} rows upserted; {pruned} expired context rows pruned')
     finally:
         conn.close()
 
@@ -432,9 +475,12 @@ def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=Fal
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Busyness data ingestion pipeline')
     parser.add_argument('--year', type=int, default=2025, help='Data year')
-    parser.add_argument('--model-version', default='nyc_traffic_baseline_v1',
-                        help='Model version tag')
+    parser.add_argument('--model-version', default='nyc_traffic_context_v1',
+                        help='Model version tag (current context default; baseline is preserved separately)')
+    parser.add_argument('--effective-at', type=datetime.fromisoformat,
+                        help='Optional local ISO timestamp for a reproducible current-status window')
     parser.add_argument('--dry-run', action='store_true',
                         help='Generate data without DB insert')
     args = parser.parse_args()
-    run_pipeline(year=args.year, model_version=args.model_version, dry_run=args.dry_run)
+    run_pipeline(year=args.year, model_version=args.model_version, dry_run=args.dry_run,
+                 effective_at=args.effective_at)
