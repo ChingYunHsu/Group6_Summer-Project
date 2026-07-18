@@ -83,6 +83,10 @@ function CitationChip({ citation }: { citation: Citation }) {
   );
 }
 
+function generateMessageId(suffix: string): string {
+  return `${Date.now()}-${suffix}`;
+}
+
 export default function AssistantScreen() {
   const { t } = useTranslation();
 
@@ -127,6 +131,7 @@ export default function AssistantScreen() {
     },
   ]);
 
+  //
   // Resets lastResponseLanguageCode here when the loaded language
   // genuinely differs from what was already active — otherwise, once a
   // real chatbot reply has come back once, its detected_language sticks
@@ -221,8 +226,8 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const userMessageId = `${Date.now()}-user`;
-    const typingId = `${Date.now()}-typing`;
+    const userMessageId = generateMessageId("user");
+    const typingId = generateMessageId("typing");
 
     setMessages((prev) => [
       ...prev,

@@ -97,57 +97,79 @@ export default function VenueBottomSheet({
                   onResolve={() => onResolveReport?.(activeReport.report_id)}
                 />
               )}
+            </>
+          )}
 
+          {/* Bug fix: this used to be nested inside the active_warning
+              block above, meaning Services and the forecast chart only
+              ever showed for venues currently flagged with a warning —
+              every other venue showed neither at all. Both are now
+              unconditional, matching the mockup's intent. */}
+
+          {(venue.supported_services ?? []).length > 0 && (
+            <>
               <Text style={styles.sectionTitle}>Services</Text>
 
-              <View style={styles.badgeRow}>
-                {(venue.supported_services ?? []).map((service) => (
-                  <View key={service} style={styles.badge}>
-                    <Text style={styles.badgeText}>{service}</Text>
+              {/* 2x2 card grid, replacing the previous pill-badge row —
+                  matches the mockup's visual style. Sourced from the
+                  same real venue.supported_services data as before, not
+                  hardcoded — a venue only shows what it actually has,
+                  rather than claiming fixed features (like "Elevator
+                  Working") that may not be true for every location. */}
+              <View style={styles.amenityGrid}>
+                {venue.supported_services!.map((service) => (
+                  <View key={service} style={styles.amenityCard}>
+                    <View style={styles.amenityCardInner}>
+                      <Ionicons
+                        name="checkmark-circle-outline"
+                        size={22}
+                        color={Colours.primary}
+                        style={styles.amenityIcon}
+                      />
+
+                      <Text style={styles.amenityLabel}>{service}</Text>
+                    </View>
                   </View>
                 ))}
               </View>
-
-              {autoCurrentTime ? (
-                hasForecast ? (
-                  <>
-                    <Text style={styles.sectionTitle}>
-                      12-Hour Wait Time Forecast
-                    </Text>
-
-                    <View style={styles.chartRow}>
-                      {venue.busyness_forecast_12h!.map((hour) => (
-                        <View
-                          key={hour.offset_hours}
-                          style={styles.chartColumn}
-                        >
-                          <View
-                            style={[
-                              styles.chartBar,
-                              {
-                                height: Math.max(12, hour.percent),
-                              },
-                            ]}
-                          />
-
-                          <Text style={styles.chartLabel}>
-                            +{hour.offset_hours}
-                          </Text>
-                        </View>
-                      ))}
-                    </View>
-                  </>
-                ) : (
-                  <Text style={styles.prediction}>
-                    Live forecast isn&apos;t available for this venue yet.
-                  </Text>
-                )
-              ) : (
-                <Text style={styles.prediction}>
-                  Expected wait: {venue.avg_wait_minutes ?? "Unknown"} minutes
-                </Text>
-              )}
             </>
+          )}
+
+          {autoCurrentTime ? (
+            hasForecast ? (
+              <>
+                <Text style={styles.sectionTitle}>
+                  12-Hour Wait Time Forecast
+                </Text>
+
+                <View style={styles.chartRow}>
+                  {venue.busyness_forecast_12h!.map((hour) => (
+                    <View key={hour.offset_hours} style={styles.chartColumn}>
+                      <View
+                        style={[
+                          styles.chartBar,
+                          {
+                            height: Math.max(12, hour.percent),
+                          },
+                        ]}
+                      />
+
+                      <Text style={styles.chartLabel}>
+                        +{hour.offset_hours}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              </>
+            ) : (
+              <Text style={styles.prediction}>
+                Live forecast isn&apos;t available for this venue yet.
+              </Text>
+            )
+          ) : (
+            <Text style={styles.prediction}>
+              Expected wait: {venue.avg_wait_minutes ?? "Unknown"} minutes
+            </Text>
           )}
           <View style={styles.row}>
             <Ionicons name="time-outline" size={18} color={Colours.primary} />
@@ -310,24 +332,35 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 
-  badgeRow: {
+  amenityGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginBottom: 20,
+    marginHorizontal: -6,
+    marginBottom: 12,
   },
 
-  badge: {
-    backgroundColor: "#E0F2FE",
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 999,
-    marginRight: 8,
-    marginBottom: 8,
+  amenityCard: {
+    width: "50%",
+    paddingHorizontal: 6,
+    marginBottom: 12,
   },
 
-  badgeText: {
-    color: "#0369A1",
+  amenityCardInner: {
+    backgroundColor: Colours.surface,
+    borderWidth: 1,
+    borderColor: Colours.border,
+    borderRadius: 12,
+    padding: 14,
+  },
+
+  amenityIcon: {
+    marginBottom: 10,
+  },
+
+  amenityLabel: {
+    fontSize: 13,
     fontWeight: "600",
+    color: Colours.text,
   },
 
   chartRow: {
