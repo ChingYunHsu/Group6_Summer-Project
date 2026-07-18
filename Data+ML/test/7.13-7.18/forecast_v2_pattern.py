@@ -16,9 +16,12 @@ import db_utils
 from score_utils import score_to_level
 
 BASELINE_FEATURES = ["day_of_week", "hour_of_day", "is_weekend", "venue_type", "district", "rating"]
-ENRICHED_FEATURES = BASELINE_FEATURES + [
+VENUE_SPECIFIC_FEATURES = BASELINE_FEATURES + [
     "venue_id", "latitude", "longitude", "weather_risk", "source_confidence",
     "accessible_status", "active_warning", "open_now", "rating_missing",
+]
+ENRICHED_FEATURES = VENUE_SPECIFIC_FEATURES + [
+    "nyc_traffic_baseline_score", "nyc_traffic_baseline_missing",
 ]
 CATEGORICAL_FEATURES = {"venue_id", "venue_type", "district", "weather_risk", "accessible_status"}
 DYNAMIC_COLUMNS = (
@@ -28,6 +31,7 @@ DYNAMIC_COLUMNS = (
     "recent_report_count_1h", "recent_report_count_3h", "crowding_report_count_3h",
 )
 MODEL_VERSION = "forecast-v2-known-venue-serpapi-context"
+PUBLISHED_MODEL_VERSION = "forecast-v2"
 SPLIT_TYPE = "known_venue_temporal_snapshot"
 
 
@@ -38,6 +42,32 @@ def venues(ids: list[str]) -> pd.DataFrame:
         "source_confidence, accessible_status, active_warning, open_now "
         "FROM venues WHERE venue_id IN (" + marks + ")", tuple(ids)
     )
+
+
+def traffic_baseline(ids: list[str]) -> pd.DataFrame:
+    """Return the 2025 SODA venue-hour traffic profile used by V2.
+
+    These rows are intentionally read from the retained historical baseline,
+    not the short-lived current-context model.  The baseline date is irrelevant:
+    only the source-derived hour-of-day traffic profile is joined to each label.
+    """
+    marks = ",".join(["%s"] * len(ids))
+    return db_utils.read_sql(
+        "SELECT venue_id, HOUR(forecast_start_time) AS hour_of_day, "
+        "MAX(score) AS nyc_traffic_baseline_score "
+        "FROM busyness_scores "
+        "WHERE model_version='nyc_traffic_baseline_v1' AND venue_id IN (" + marks + ") "
+        "GROUP BY venue_id, HOUR(forecast_start_time)",
+        tuple(ids),
+    )
+
+
+def add_traffic_baseline(frame: pd.DataFrame, traffic: pd.DataFrame) -> pd.DataFrame:
+    """Attach the same venue-hour traffic profile to labels and future curve rows."""
+    frame = frame.merge(traffic, on=["venue_id", "hour_of_day"], how="left", validate="many_to_one")
+    frame["nyc_traffic_baseline_missing"] = frame.nyc_traffic_baseline_score.isna().astype(int)
+    frame["nyc_traffic_baseline_score"] = frame.nyc_traffic_baseline_score.fillna(0)
+    return frame
 
 
 def group_split(df: pd.DataFrame):
@@ -170,31 +200,79 @@ def add_dynamic_context(curve: pd.DataFrame, now: pd.Timestamp) -> pd.DataFrame:
     return curve
 
 
+def publish_forecasts(curve: pd.DataFrame) -> int:
+    """Upsert one generated V2 batch using the backend's stable model-version contract."""
+    batch_generated_at = datetime.now(timezone.utc).replace(tzinfo=None, microsecond=0)
+    rows = []
+    for row in curve.itertuples(index=False):
+        forecast_for = pd.Timestamp(row.forecast_for).to_pydatetime()
+        if forecast_for.tzinfo is not None:
+            forecast_for = forecast_for.replace(tzinfo=None)
+        rows.append((
+            row.venue_id, forecast_for, int(round(row.predicted_score)), row.predicted_level,
+            None, PUBLISHED_MODEL_VERSION, batch_generated_at,
+        ))
+    sql = """
+        INSERT INTO busyness_forecasts
+            (venue_id, forecast_for, predicted_score, predicted_level,
+             estimated_wait_minutes, model_version, generated_at)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            predicted_score=VALUES(predicted_score),
+            predicted_level=VALUES(predicted_level),
+            estimated_wait_minutes=VALUES(estimated_wait_minutes),
+            generated_at=VALUES(generated_at)
+    """
+    conn = db_utils.get_conn()
+    try:
+        with conn.cursor() as cursor:
+            cursor.executemany(sql, rows)
+        conn.commit()
+        return len(rows)
+    except Exception:
+        conn.rollback()
+        raise
+    finally:
+        conn.close()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--labels", type=Path, required=True)
     parser.add_argument("--legacy-labels", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--hours", type=int, default=12)
+    parser.add_argument("--publish", action="store_true",
+                        help="Upsert the generated 12-hour curve to busyness_forecasts as forecast-v2")
     args = parser.parse_args()
     current_labels = pd.read_csv(args.labels, dtype={"venue_id": str, "place_id": str})
     legacy_labels = load_legacy_labels(args.legacy_labels)
     ids = sorted(set(current_labels.venue_id) | set(legacy_labels.venue_id))
     static = venues(ids)
+    traffic = traffic_baseline(ids)
     def enrich(labels: pd.DataFrame) -> pd.DataFrame:
         frame = labels.merge(static, on="venue_id", how="inner", validate="many_to_one")
         frame["is_weekend"] = (frame.day_of_week >= 5).astype(int)
         frame["rating_missing"] = frame.rating.isna().astype(int)
-        return frame
+        return add_traffic_baseline(frame, traffic)
     train, test = temporal_snapshot_split(enrich(legacy_labels), enrich(current_labels))
     baseline_model, baseline_columns, baseline_rows = train_variant("baseline_time", BASELINE_FEATURES, train, test)
-    enriched_model, enriched_columns, enriched_rows = train_variant("venue_specific_enriched", ENRICHED_FEATURES, train, test)
-    baseline_test_mae = next(row["mae"] for row in baseline_rows if row["split"] == "test")
-    for row in baseline_rows + enriched_rows:
-        row["mae_improvement_vs_baseline"] = round(baseline_test_mae - row["mae"], 3) if row["split"] == "test" else None
-    results = pd.DataFrame(baseline_rows + enriched_rows)
+    static_model, static_columns, static_rows = train_variant(
+        "venue_specific_enriched_baseline", VENUE_SPECIFIC_FEATURES, train, test
+    )
+    enriched_model, enriched_columns, enriched_rows = train_variant(
+        "venue_specific_enriched_with_traffic", ENRICHED_FEATURES, train, test
+    )
+    static_test_mae = next(row["mae"] for row in static_rows if row["split"] == "test")
+    for row in baseline_rows + static_rows + enriched_rows:
+        row["mae_improvement_vs_baseline"] = (
+            round(static_test_mae - row["mae"], 3) if row["split"] == "test" else None
+        )
+    results = pd.DataFrame(baseline_rows + static_rows + enriched_rows)
     now = pd.Timestamp(datetime.now(timezone.utc)).floor("h")
-    base = enrich(current_labels).drop_duplicates("venue_id")[["venue_id", "place_id", *[field for field in ENRICHED_FEATURES if field != "venue_id"]]]
+    base = enrich(current_labels).drop_duplicates("venue_id")[[
+        "venue_id", "place_id", *[field for field in VENUE_SPECIFIC_FEATURES if field != "venue_id"]
+    ]]
     future = []
     for offset in range(args.hours):
         target = now + timedelta(hours=offset)
@@ -202,18 +280,25 @@ def main() -> None:
         item["forecast_for"], item["offset_hours"] = target, offset
         item["day_of_week"], item["hour_of_day"], item["is_weekend"] = target.weekday(), target.hour, int(target.weekday() >= 5)
         future.append(item)
-    curve = add_dynamic_context(pd.concat(future, ignore_index=True), now)
+    curve = add_traffic_baseline(pd.concat(future, ignore_index=True), traffic)
+    curve = add_dynamic_context(curve, now)
     curve["baseline_score"] = np.clip(enriched_model.predict(feature_matrix(curve, ENRICHED_FEATURES, enriched_columns)), 0, 100).round(2)
     curve["predicted_score"] = np.clip(curve.baseline_score + curve.dynamic_delta, 0, 100).round(2)
     curve["predicted_level"], curve["model_version"] = curve.predicted_score.map(score_to_level), MODEL_VERSION
     args.output_dir.mkdir(parents=True, exist_ok=True)
     results.to_csv(args.output_dir / "forecast_v2_pattern_model_metrics.csv", index=False)
     curve.to_csv(args.output_dir / "prediction_curve_v2_pattern.csv", index=False)
+    published_rows = publish_forecasts(curve) if args.publish else 0
     (args.output_dir / "forecast_v2_pattern_manifest.json").write_text(json.dumps({
         "model_version": MODEL_VERSION, "target_type": "google_popular_times_proxy", "training_rows": len(train),
         "test_rows": len(test), "venues": test.venue_id.nunique(), "places": test.place_id.nunique(), "split": SPLIT_TYPE,
         "validation_status": "not available: no third temporally complete SerpAPI cohort",
-        "baseline_features": BASELINE_FEATURES, "enriched_features": ENRICHED_FEATURES,
+        "baseline_features": BASELINE_FEATURES, "venue_specific_features": VENUE_SPECIFIC_FEATURES,
+        "enriched_features": ENRICHED_FEATURES,
+        "traffic_feature": {"source": "busyness_scores.nyc_traffic_baseline_v1", "join": "venue_id + hour_of_day",
+                            "coverage_pct": round(100 * (1 - train.nyc_traffic_baseline_missing.mean()), 2)},
+        "published_model_version": PUBLISHED_MODEL_VERSION if args.publish else None,
+        "published_rows": published_rows,
         "excluded_low_coverage_features": ["borough", "opening_hours", "primary_language", "venue_accessibility", "venue_language"],
         "dynamic_context_columns": DYNAMIC_COLUMNS, "dynamic_delta": "auditable serving rule; not supervised until real telemetry is sufficient",
         "cold_start_reference": "../v2_pattern_serpapi_20260716/forecast_v2_pattern_model_metrics.csv",
