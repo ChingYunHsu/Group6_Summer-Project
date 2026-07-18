@@ -48,10 +48,6 @@ function parseCitation(raw: string): Citation {
   };
 }
 
-function generateMessageId(suffix: string): string {
-  return `${Date.now()}-${suffix}`;
-}
-
 function ClinicRecommendationCard({ venue }: { venue: Venue }) {
   const { t } = useTranslation();
 
@@ -111,8 +107,8 @@ export default function AssistantScreen() {
 
   const respondingLanguageLabel = lastResponseLanguageCode
     ? (featuredLanguages.find((l) => l.code === lastResponseLanguageCode)
-        ?.english ?? lastResponseLanguageCode)
-    : currentLanguage.english;
+        ?.native ?? lastResponseLanguageCode)
+    : currentLanguage.native;
 
   // Resolved venue lookups for "venue:" citations, keyed by venue_id.
   // undefined = not yet requested, null = fetch failed, Venue = resolved.
@@ -184,8 +180,8 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const userMessageId = generateMessageId("user");
-    const typingId = generateMessageId("typing");
+    const userMessageId = `${Date.now()}-user`;
+    const typingId = `${Date.now()}-typing`;
 
     setMessages((prev) => [
       ...prev,
@@ -378,6 +374,9 @@ export default function AssistantScreen() {
           />
 
           <TouchableOpacity
+            testID="send-button"
+            accessibilityRole="button"
+            accessibilityLabel="Send message"
             style={[styles.sendButton, sending && styles.sendButtonDisabled]}
             onPress={() => handleSend()}
             disabled={sending}
