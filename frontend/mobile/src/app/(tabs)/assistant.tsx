@@ -22,6 +22,7 @@ import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
 import { getVenue, sendChatbotMessage } from "../../services/api";
 import { Venue } from "../../types/venue";
+import { useRef } from "react";
 
 type Citation = { type: string; id: string };
 
@@ -85,7 +86,7 @@ function CitationChip({ citation }: { citation: Citation }) {
 
 export default function AssistantScreen() {
   const { t } = useTranslation();
-
+  const nextMessageId = useRef(0);
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
@@ -163,7 +164,7 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const id = Date.now();
+    const id = nextMessageId.current++;
 
     const userMessageId = `${id}-user`;
     const typingId = `${id}-typing`;
