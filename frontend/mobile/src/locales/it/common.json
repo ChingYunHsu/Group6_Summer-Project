@@ -74,7 +74,12 @@
     "saveErrorTitle": "Non è stato possibile salvare tutto",
     "saveErrorMessage": "Alcune modifiche non sono state salvate. Riprova.",
     "addLanguage": "Aggiungi lingua",
-    "languagePlaceholder": "Inserisci una lingua"
+    "languagePlaceholder": "Inserisci una lingua",
+    "genderMale": "Maschio",
+    "genderFemale": "Femmina",
+    "genderNonBinary": "Non binario",
+    "genderPreferNotToSay": "Preferisco non rispondere",
+    "selectGender": "Seleziona genere"
   },
   "profileGuest": {
     "title": "Proteggi il tuo ID Medico",
@@ -328,5 +333,18 @@
     "askQuestion": "Fai una domanda...",
     "openNow": "Aperto ora",
     "currentlyClosed": "Attualmente chiuso"
+  },
+  "verification": {
+    "defaultTitle": "È ancora un problema?",
+    "reportedAt": "Segnalato {{time}}",
+    "confirmationSingular": "(confermato da {{count}} utente)",
+    "confirmationPlural": "(confermato da {{count}} utenti)",
+    "confirm": "Conferma",
+    "resolve": "Risolvi"
+  },
+  "api": {
+    "sessionExpiredTitle": "Sessione scaduta",
+    "sessionExpiredMessage": "Effettua nuovamente l'accesso per continuare.",
+    "sessionExpiredConfirm": "OK"
   }
 }

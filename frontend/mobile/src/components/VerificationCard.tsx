@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface VerificationCardProps {
@@ -9,29 +10,55 @@ interface VerificationCardProps {
 }
 
 export default function VerificationCard({
-  title = "Is this still an issue?",
+  title,
   reportedAt,
   confirmations,
   onConfirm,
   onResolve,
 }: VerificationCardProps) {
+  const { t } = useTranslation();
+
+  const resolvedTitle =
+    title ??
+    t("verification.defaultTitle", {
+      defaultValue: "Is this still an issue?",
+    });
+
+  const confirmationsText =
+    confirmations === 1
+      ? t("verification.confirmationSingular", {
+          count: confirmations,
+          defaultValue: "({{count}} user confirmed)",
+        })
+      : t("verification.confirmationPlural", {
+          count: confirmations,
+          defaultValue: "({{count}} users confirmed)",
+        });
+
   return (
     <View style={styles.card}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>{resolvedTitle}</Text>
 
-      <Text style={styles.reported}>Reported {reportedAt}</Text>
-
-      <Text style={styles.confirmations}>
-        ({confirmations} user{confirmations === 1 ? "" : "s"} confirmed)
+      <Text style={styles.reported}>
+        {t("verification.reportedAt", {
+          time: reportedAt,
+          defaultValue: "Reported {{time}}",
+        })}
       </Text>
+
+      <Text style={styles.confirmations}>{confirmationsText}</Text>
 
       <View style={styles.buttonRow}>
         <TouchableOpacity style={styles.confirmButton} onPress={onConfirm}>
-          <Text style={styles.confirmText}>Confirm</Text>
+          <Text style={styles.confirmText}>
+            {t("verification.confirm", { defaultValue: "Confirm" })}
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.resolveButton} onPress={onResolve}>
-          <Text style={styles.resolveText}>Resolve</Text>
+          <Text style={styles.resolveText}>
+            {t("verification.resolve", { defaultValue: "Resolve" })}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

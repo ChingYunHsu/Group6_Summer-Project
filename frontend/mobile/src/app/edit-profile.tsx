@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Alert,
@@ -15,6 +15,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
+import { allLanguages } from "../data/languages";
 import { mockProfile } from "../data/mockProfile";
 import { loadMedicalId, saveMedicalId } from "../services/medicalIdService";
 import { loadProfile, saveProfile } from "../services/profileService";
@@ -48,13 +49,46 @@ export default function EditProfileScreen() {
   );
 
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
-  const [newLanguage, setNewLanguage] = useState("");
+  const [languageSearch, setLanguageSearch] = useState("");
 
-  // Profile (phone/nationality/spoken_languages — the `users` table) and
-  // medical (gender/address/etc. — `medical_profiles`) are two separate
-  // backend resources, per user.py's get_user_profile / medicalIdService's
-  // get_medical_profile. Loaded in parallel; either can fail independently
-  // without blocking the other from populating.
+  const [genderModalVisible, setGenderModalVisible] = useState(false);
+
+  const genderOptions = [
+    {
+      value: "Male",
+      label: t("editProfile.genderMale", { defaultValue: "Male" }),
+    },
+    {
+      value: "Female",
+      label: t("editProfile.genderFemale", { defaultValue: "Female" }),
+    },
+    {
+      value: "Non-binary",
+      label: t("editProfile.genderNonBinary", { defaultValue: "Non-binary" }),
+    },
+    {
+      value: "Prefer not to say",
+      label: t("editProfile.genderPreferNotToSay", {
+        defaultValue: "Prefer not to say",
+      }),
+    },
+  ];
+
+  const filteredLanguageOptions = useMemo(() => {
+    if (!languageSearch.trim()) return [];
+
+    return allLanguages.filter(
+      (language) =>
+        !spokenLanguages.some(
+          (item) => item.toLowerCase() === language.english.toLowerCase(),
+        ) &&
+        (language.native.toLowerCase().includes(languageSearch.toLowerCase()) ||
+          language.english
+            .toLowerCase()
+            .includes(languageSearch.toLowerCase())),
+    );
+  }, [languageSearch, spokenLanguages]);
+
   useEffect(() => {
     (async () => {
       try {
@@ -97,13 +131,6 @@ export default function EditProfileScreen() {
         nationality,
         spoken_languages: spokenLanguages,
       }),
-      // NOTE: as of this writing, PUT /user/medical-profile in user.py is
-      // shadowed by a second implementation that only accepts
-      // {blood_type, conditions, allergies} — gender/address will 400
-      // ("invalid_fields") until the team resolves which implementation
-      // (user.py vs api/medical.py) is meant to stay. This call is correct
-      // for the intended backend behaviour; it just won't succeed until
-      // that's fixed server-side.
       saveMedicalId({ date_of_birth: dob, gender, address }),
     ]);
 
@@ -137,23 +164,15 @@ export default function EditProfileScreen() {
     setSpokenLanguages(spokenLanguages.filter((item) => item !== language));
   };
 
-  const addLanguage = () => {
-    const value = newLanguage.trim();
-
-    if (!value) {
-      return;
-    }
-
-    if (
-      spokenLanguages.some((item) => item.toLowerCase() === value.toLowerCase())
-    ) {
-      return;
-    }
-
-    setSpokenLanguages([...spokenLanguages, value]);
-
-    setNewLanguage("");
+  const addLanguage = (language: { native: string; english: string }) => {
+    setSpokenLanguages([...spokenLanguages, language.english]);
+    setLanguageSearch("");
     setLanguageModalVisible(false);
+  };
+
+  const selectGender = (value: string) => {
+    setGender(value);
+    setGenderModalVisible(false);
   };
 
   return (
@@ -215,11 +234,25 @@ export default function EditProfileScreen() {
             placeholder="YYYY-MM-DD"
           />
 
-          <InputField
-            label={t("editProfile.gender")}
-            value={gender}
-            onChangeText={setGender}
-          />
+          <View style={styles.field}>
+            <Text style={styles.label}>{t("editProfile.gender")}</Text>
+
+            <TouchableOpacity
+              style={[styles.input, styles.pickerTrigger]}
+              onPress={() => setGenderModalVisible(true)}
+            >
+              <Text
+                style={
+                  gender ? styles.pickerValueText : styles.pickerPlaceholderText
+                }
+              >
+                {gender ||
+                  t("editProfile.selectGender", {
+                    defaultValue: "Select gender",
+                  })}
+              </Text>
+            </TouchableOpacity>
+          </View>
 
           <InputField
             label={t("editProfile.nationality")}
@@ -280,25 +313,83 @@ export default function EditProfileScreen() {
 
             <TextInput
               style={styles.modalInput}
-              value={newLanguage}
-              onChangeText={setNewLanguage}
+              value={languageSearch}
+              onChangeText={setLanguageSearch}
               placeholder={t("editProfile.languagePlaceholder", {
-                defaultValue: "Enter language",
+                defaultValue: "Search languages...",
               })}
+              placeholderTextColor={Colours.muted}
+              autoFocus
             />
+
+            {languageSearch.length > 0 && (
+              <ScrollView style={styles.pickerResultsList}>
+                {filteredLanguageOptions.map((language) => (
+                  <TouchableOpacity
+                    key={language.english}
+                    style={styles.pickerResultRow}
+                    onPress={() => addLanguage(language)}
+                  >
+                    <Text style={styles.pickerResultText}>
+                      {language.native} ({language.english})
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+
+                {filteredLanguageOptions.length === 0 && (
+                  <Text style={styles.pickerEmptyText}>
+                    {t("editProfile.noLanguageMatches", {
+                      defaultValue: "No matches found.",
+                    })}
+                  </Text>
+                )}
+              </ScrollView>
+            )}
 
             <View style={styles.modalActions}>
               <TouchableOpacity
                 onPress={() => {
-                  setNewLanguage("");
+                  setLanguageSearch("");
                   setLanguageModalVisible(false);
                 }}
               >
                 <Text>{t("common.cancel")}</Text>
               </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
-              <TouchableOpacity onPress={addLanguage}>
-                <Text>{t("common.add")}</Text>
+      <Modal visible={genderModalVisible} transparent animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalCard}>
+            <Text style={styles.modalTitle}>
+              {t("editProfile.selectGender", {
+                defaultValue: "Select gender",
+              })}
+            </Text>
+
+            {genderOptions.map((option) => (
+              <TouchableOpacity
+                key={option.value}
+                style={styles.pickerResultRow}
+                onPress={() => selectGender(option.value)}
+              >
+                <Text style={styles.pickerResultText}>{option.label}</Text>
+
+                {gender === option.value && (
+                  <Ionicons
+                    name="checkmark"
+                    size={20}
+                    color={Colours.primary}
+                  />
+                )}
+              </TouchableOpacity>
+            ))}
+
+            <View style={styles.modalActions}>
+              <TouchableOpacity onPress={() => setGenderModalVisible(false)}>
+                <Text>{t("common.cancel")}</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -511,5 +602,44 @@ const styles = StyleSheet.create({
   modalActions: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+
+  pickerTrigger: {
+    justifyContent: "center",
+  },
+
+  pickerValueText: {
+    color: Colours.text,
+    fontSize: 16,
+  },
+
+  pickerPlaceholderText: {
+    color: Colours.muted,
+    fontSize: 16,
+  },
+
+  pickerResultsList: {
+    maxHeight: 250,
+    marginBottom: 12,
+  },
+
+  pickerResultRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 14,
+    borderBottomWidth: 1,
+    borderBottomColor: Colours.border,
+  },
+
+  pickerResultText: {
+    ...Typography.body,
+    color: Colours.text,
+  },
+
+  pickerEmptyText: {
+    color: Colours.muted,
+    textAlign: "center",
+    paddingVertical: 20,
   },
 });

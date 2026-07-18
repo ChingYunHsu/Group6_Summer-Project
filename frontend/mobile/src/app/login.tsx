@@ -189,7 +189,7 @@ export default function LoginScreen() {
                   <Text style={styles.switchText}>
                     {t("login.newHere", { defaultValue: "New here?" })}{" "}
                     <Text style={styles.linkText}>
-                      {t("login.createAccountLink", {
+                      {t("login.createAccount", {
                         defaultValue: "Create an account",
                       })}
                     </Text>

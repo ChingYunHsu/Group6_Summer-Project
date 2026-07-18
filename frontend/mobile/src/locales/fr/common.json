@@ -74,7 +74,12 @@
     "saveErrorTitle": "Tout n'a pas pu être enregistré",
     "saveErrorMessage": "Certaines de vos modifications n'ont pas été enregistrées. Veuillez réessayer.",
     "addLanguage": "Ajouter une langue",
-    "languagePlaceholder": "Saisissez une langue"
+    "languagePlaceholder": "Saisissez une langue",
+    "genderMale": "Homme",
+    "genderFemale": "Femme",
+    "genderNonBinary": "Non binaire",
+    "genderPreferNotToSay": "Je préfère ne pas répondre",
+    "selectGender": "Sélectionner le genre"
   },
   "profileGuest": {
     "title": "Sécurisez votre Identifiant Médical",
@@ -320,5 +325,18 @@
     "askQuestion": "Posez une question...",
     "openNow": "Ouvert maintenant",
     "currentlyClosed": "Actuellement fermé"
+  },
+  "verification": {
+    "defaultTitle": "Est-ce toujours un problème ?",
+    "reportedAt": "Signalé {{time}}",
+    "confirmationSingular": "(confirmé par {{count}} utilisateur)",
+    "confirmationPlural": "(confirmé par {{count}} utilisateurs)",
+    "confirm": "Confirmer",
+    "resolve": "Résoudre"
+  },
+  "api": {
+    "sessionExpiredTitle": "Session expirée",
+    "sessionExpiredMessage": "Veuillez vous reconnecter pour continuer.",
+    "sessionExpiredConfirm": "OK"
   }
 }

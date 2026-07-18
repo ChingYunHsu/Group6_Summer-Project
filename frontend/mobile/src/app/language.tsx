@@ -20,23 +20,18 @@ import i18n from "../i18n";
 export default function LanguageScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-
-  // Onboarding (index.tsx) opens this screen with no params at all —
-  // default behavior, Continue pushes forward to /welcome, unchanged.
-  // Anything opened mid-session (Settings' "Change Language" row, the
-  // More tab's language item) should pass origin="app" so Continue
-  // returns to wherever the user actually came from instead of shoving
-  // them back through the entire onboarding chain.
   const { origin } = useLocalSearchParams<{ origin?: string }>();
   const isInAppEntry = origin === "app";
-
   const [search, setSearch] = useState("");
-
   const [selectedLanguage, setSelectedLanguage] = useState<{
     native: string;
     english: string;
     flag?: string;
-  }>(featuredLanguages[0]);
+  }>(
+    () =>
+      featuredLanguages.find((lang) => lang.code === i18n.language) ??
+      featuredLanguages[0],
+  );
 
   const filteredLanguages = useMemo(() => {
     if (!search.trim()) return [];
@@ -52,14 +47,6 @@ export default function LanguageScreen() {
     (lang) => lang.english === selectedLanguage?.english,
   );
 
-  // Single selection path for any *supported* language, whether it was
-  // tapped as a featured card or found via search. Only featuredLanguages
-  // entries carry a `code` — that's what i18n.changeLanguage() and
-  // AsyncStorage need, not the display name. Previously the search branch
-  // called i18n.changeLanguage(language.english) (e.g. "French" instead of
-  // "fr") and never persisted to AsyncStorage at all, so a search-selected
-  // language wouldn't actually apply correctly and wouldn't survive an app
-  // restart.
   async function selectFeaturedLanguage(
     item: (typeof featuredLanguages)[number],
   ) {
@@ -109,6 +96,7 @@ export default function LanguageScreen() {
                       t("language.comingSoon"),
                       t("language.comingSoonMessage"),
                     );
+                    setSearch("");
                     return;
                   }
 
@@ -170,9 +158,6 @@ export default function LanguageScreen() {
         </Text>
       </TouchableOpacity>
 
-      {/* Re-showing "by continuing you agree to..." every time someone
-          just switches language from Settings mid-session doesn't make
-          sense — they already agreed once, during onboarding. */}
       {!isInAppEntry && (
         <Text style={styles.footer}>
           {t("language.footer")}{" "}
