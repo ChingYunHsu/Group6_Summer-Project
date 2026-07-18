@@ -85,6 +85,12 @@ export default function VenueBottomSheet({
   // status bug above) doesn't prevent the other from showing real data.
   useEffect(() => {
     if (!visible || !venue) {
+      // Intentional synchronous reset — clears stale busyness/forecast
+      // data the moment the sheet closes or switches to a different
+      // venue, so a brief flash of the PREVIOUS venue's data can never
+      // show while the new fetch is still in flight. Same justified
+      // pattern already applied to this identical rule in map.tsx.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setBusynessStatus(null);
       setForecast(null);
       return;

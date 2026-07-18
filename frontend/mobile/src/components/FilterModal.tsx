@@ -123,7 +123,6 @@ export default function FilterModal({
 
     if (!justOpened) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: resync local draft state only when the modal is reopened
     setLocalOpenNow(openNow ?? false);
     setLocalAccessible(accessible ?? false);
     setLocalLanguage(language);
