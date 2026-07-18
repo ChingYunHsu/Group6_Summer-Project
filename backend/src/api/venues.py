@@ -278,6 +278,7 @@ def get_venue_busyness(venue_id: str):
                     "SELECT score, level, estimated_wait_minutes, created_at, forecast_end_time "
                     "FROM busyness_scores "
                     "WHERE venue_id = %s "
+                    "  AND model_version = 'nyc_traffic_context_v1' "
                     "  AND forecast_start_time <= %s "
                     "  AND forecast_end_time > %s "
                     "ORDER BY forecast_start_time DESC LIMIT 1",
@@ -356,6 +357,7 @@ def _compute_venue_busyness_forecast(venue_id: str):
                     "estimated_wait_minutes, model_version, generated_at "
                     "FROM busyness_forecasts "
                     "WHERE venue_id = %s "
+                    "  AND model_version = 'forecast-v2' "
                     "  AND generated_at = ("
                     "    SELECT MAX(generated_at) FROM busyness_forecasts "
                     "    WHERE venue_id = %s AND model_version = 'forecast-v2'"

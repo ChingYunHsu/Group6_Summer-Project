@@ -3,6 +3,40 @@ from ..db import etl_execute, log_etl_error
 from ..validation import gen_vid, gps_to_district, is_manhattan, source_hash
 
 
+VENUE_SUBTYPES = {"hospital", "clinic", "pharmacy", "dentist", "laboratory"}
+
+
+def classify_nys_venue_type(row):
+    """Map official NYS facility metadata to the venue enum.
+
+    The original facility type remains in ``healthcare_profiles``; this
+    classification only controls the user-facing ``venues.venue_type``.
+    """
+    text = " ".join(
+        (row.get(field) or "").strip().lower()
+        for field in (
+            "Facility Type",
+            "Short Description",
+            "Description",
+            "Facility Name",
+        )
+    )
+    for keyword, venue_type in (
+        ("pharmacy", "pharmacy"),
+        ("pharm", "pharmacy"),
+        ("dent", "dentist"),
+        ("laborator", "laboratory"),
+        ("diagnostic lab", "laboratory"),
+        ("hospital", "hospital"),
+        ("clinic", "clinic"),
+        ("ambulatory", "clinic"),
+        ("primary care", "clinic"),
+    ):
+        if keyword in text:
+            return venue_type
+    return "healthcare"
+
+
 def etl_healthcare(conn, nys_data, osm_data):
     imported = skipped = errors = 0
     for row in nys_data:
@@ -31,13 +65,13 @@ def etl_healthcare(conn, nys_data, osm_data):
                 ),
             )
         ) or None
-        description = (row.get("Description") or "").strip().lower()
-        healthcare_type = "hospital" if "hospital" in description else "clinic"
+        healthcare_type = classify_nys_venue_type(row)
         statements = [
             (
-                'INSERT INTO venues (venue_id, venue_type, name, latitude, longitude, borough, district, address, phone, website, source_confidence) VALUES (%s, "healthcare", %s, %s, %s, %s, %s, %s, %s, %s, 0.900) ON DUPLICATE KEY UPDATE name = VALUES(name)',
+                'INSERT INTO venues (venue_id, venue_type, name, latitude, longitude, borough, district, address, phone, website, source_confidence) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0.900) ON DUPLICATE KEY UPDATE venue_type = VALUES(venue_type), name = VALUES(name)',
                 (
                     venue_id,
+                    healthcare_type,
                     name,
                     lat,
                     lng,
@@ -87,7 +121,7 @@ def etl_healthcare(conn, nys_data, osm_data):
         healthcare_type = OSM_CATEGORY_MAP.get(
             (props.get("healthcare") or "").strip().lower()
         ) or OSM_CATEGORY_MAP.get((props.get("amenity") or "").strip().lower())
-        if healthcare_type not in {"hospital", "clinic", "pharmacy", "dentist"}:
+        if healthcare_type not in VENUE_SUBTYPES:
             skipped += 1
             continue
         house_number = props.get("addr:housenumber", "")
@@ -99,9 +133,10 @@ def etl_healthcare(conn, nys_data, osm_data):
         )
         statements = [
             (
-                'INSERT INTO venues (venue_id, venue_type, name, latitude, longitude, borough, district, address, phone, website, opening_hours, source_confidence) VALUES (%s, "healthcare", %s, %s, %s, %s, %s, %s, %s, %s, %s, 0.500) ON DUPLICATE KEY UPDATE name = VALUES(name)',
+                'INSERT INTO venues (venue_id, venue_type, name, latitude, longitude, borough, district, address, phone, website, opening_hours, source_confidence) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0.500) ON DUPLICATE KEY UPDATE venue_type = VALUES(venue_type), name = VALUES(name)',
                 (
                     venue_id,
+                    healthcare_type,
                     name or None,
                     lat,
                     lng,
