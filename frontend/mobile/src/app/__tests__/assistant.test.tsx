@@ -43,6 +43,7 @@ jest.mock("expo-router", () => ({
 // project that a key-only dictionary can't resolve. Falls back to
 // returning the raw key only if a call matches neither.
 jest.mock("react-i18next", () => ({
+  initReactI18next: { type: "3rdParty", init: jest.fn() },
   useTranslation: () => ({
     t: (key: string, options?: any) => {
       const knownTranslations: Record<string, string> = {
