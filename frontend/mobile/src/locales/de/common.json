@@ -80,7 +80,12 @@
     "saveErrorTitle": "Nicht alles konnte gespeichert werden",
     "saveErrorMessage": "Einige Ihrer Änderungen wurden nicht gespeichert. Bitte versuchen Sie es erneut.",
     "addLanguage": "Sprache hinzufügen",
-    "languagePlaceholder": "Sprache eingeben"
+    "languagePlaceholder": "Sprache eingeben",
+    "genderMale": "Männlich",
+    "genderFemale": "Weiblich",
+    "genderNonBinary": "Nichtbinär",
+    "genderPreferNotToSay": "Keine Angabe",
+    "selectGender": "Geschlecht auswählen"
   },
 
   "profileGuest": {
@@ -326,5 +331,18 @@
     "askQuestion": "Stellen Sie eine Frage...",
     "openNow": "Jetzt geöffnet",
     "currentlyClosed": "Derzeit geschlossen"
+  },
+  "verification": {
+    "defaultTitle": "Ist das immer noch ein Problem?",
+    "reportedAt": "Gemeldet: {{time}}",
+    "confirmationSingular": "(bestätigt von {{count}} Nutzer)",
+    "confirmationPlural": "(bestätigt von {{count}} Nutzern)",
+    "confirm": "Bestätigen",
+    "resolve": "Beheben"
+  },
+  "api": {
+    "sessionExpiredTitle": "Sitzung abgelaufen",
+    "sessionExpiredMessage": "Bitte melde dich erneut an, um fortzufahren.",
+    "sessionExpiredConfirm": "OK"
   }
 }

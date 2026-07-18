@@ -81,7 +81,13 @@
     "saveErrorTitle": "Couldn't save everything",
     "saveErrorMessage": "Some of your changes didn't save. Please try again.",
     "addLanguage": "Add Language",
-    "languagePlaceholder": "Enter language"
+    "languagePlaceholder": "Enter language",
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "genderNonBinary": "Non-binary",
+    "genderPreferNotToSay": "Prefer not to say",
+    "selectGender": "Select gender",
+    "noLanguageMatches": "No matches found."
   },
 
   "profileGuest": {
@@ -320,5 +326,18 @@
     "askQuestion": "Ask a question...",
     "openNow": "Open now",
     "currentlyClosed": "Currently closed"
+  },
+  "verification": {
+    "defaultTitle": "Is this still an issue?",
+    "reportedAt": "Reported {{time}}",
+    "confirmationSingular": "({{count}} user confirmed)",
+    "confirmationPlural": "({{count}} users confirmed)",
+    "confirm": "Confirm",
+    "resolve": "Resolve"
+  },
+  "api": {
+    "sessionExpiredTitle": "Session expired",
+    "sessionExpiredMessage": "Please log in again to continue.",
+    "sessionExpiredConfirm": "OK"
   }
 }

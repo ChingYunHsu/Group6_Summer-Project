@@ -74,7 +74,12 @@
     "saveErrorTitle": "部分内容未能保存",
     "saveErrorMessage": "您的部分更改未能保存，请重试。",
     "addLanguage": "添加语言",
-    "languagePlaceholder": "输入语言"
+    "languagePlaceholder": "输入语言",
+    "genderMale": "男",
+    "genderFemale": "女",
+    "genderNonBinary": "非二元性别",
+    "genderPreferNotToSay": "不愿透露",
+    "selectGender": "选择性别"
   },
   "profileGuest": {
     "title": "保护您的医疗身份信息",
@@ -334,5 +339,19 @@
     "askQuestion": "请输入问题...",
     "openNow": "现在营业",
     "currentlyClosed": "目前已打烊"
+  },
+
+  "verification": {
+    "defaultTitle": "这仍然是个问题吗？",
+    "reportedAt": "报告于 {{time}}",
+    "confirmationSingular": "({{count}} 位用户已确认)",
+    "confirmationPlural": "({{count}} 位用户已确认)",
+    "confirm": "确认",
+    "resolve": "解决"
+  },
+  "api": {
+    "sessionExpiredTitle": "会话已过期",
+    "sessionExpiredMessage": "请重新登录以继续。",
+    "sessionExpiredConfirm": "确定"
   }
 }

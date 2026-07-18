@@ -1,6 +1,14 @@
 import { router } from "expo-router";
 import { Alert, Platform } from "react-native";
 
+// Plain i18next instance import, not react-i18next's useTranslation() hook —
+// request() below is an ordinary function in a plain module, not a React
+// component or another hook, so useTranslation() can't be called here at
+// all (hooks only work inside component/hook call trees). i18next's own
+// instance exposes t() as a plain function specifically for exactly this
+// situation.
+import i18n from "../i18n";
+
 import {
   BusynessResponse,
   Favourite,
@@ -35,13 +43,16 @@ import { clearAccessToken, getAccessToken } from "./tokenStorage";
 // http://192.168.x.x:5000/api/v1
 
 // Android has its own special alias for
-// "the host machine": 10.0.2.2. This was already documented in
-// the comment above but never actually wired up
-
+// "the host machine" instead: 10.0.2.2.
 const API_HOST = Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1";
 
 const API_BASE = `http://${API_HOST}:5000/api/v1`;
 
+// Some backend routes (venues, routes, realtime, and a handful of /user/*
+// endpoints) check X-API-Key instead of/alongside the Bearer token — see
+// require_api_key in backend/src/auth.py. Locally this is a no-op unless
+// the backend's own API_KEY env var is set, but staging/prod will enforce
+// it, so this needs to be sent unconditionally either way.
 // Set EXPO_PUBLIC_API_KEY in your .env once the team assigns a real dev
 // key; "development" is just a harmless placeholder until then.
 const API_KEY = process.env.EXPO_PUBLIC_API_KEY ?? "development";
@@ -91,15 +102,6 @@ export async function request<T>(
 
     const message = parsedBody?.error ?? `API ${response.status}: ${text}`;
 
-    // Matches the exact "Token expired" message specifically — not the
-    // generic "Bearer token required" a guest with no token at all would
-    // get, which shouldn't trigger a redirect (they were never logged in
-    // to begin with, that's expected). isSessionExpired guards against
-    // firing this more than once if several requests 401 in the same
-    // moment (e.g. profile + medical + favourites all fetching on the
-    // same screen focus, as currently happens on profile.tsx) — without
-    // it, the user could see the alert and get redirected multiple times
-    // in a row for what's really one single event.
     if (
       response.status === 401 &&
       message === "Unauthorized. Token expired." &&
@@ -109,15 +111,21 @@ export async function request<T>(
 
       await clearAccessToken();
 
-      Alert.alert("Session expired", "Please log in again to continue.", [
-        {
-          text: "OK",
-          onPress: () => {
-            router.replace("/auth-gateway");
-            isHandlingSessionExpiry = false;
+      Alert.alert(
+        i18n.t("api.sessionExpiredTitle", { defaultValue: "Session expired" }),
+        i18n.t("api.sessionExpiredMessage", {
+          defaultValue: "Please log in again to continue.",
+        }),
+        [
+          {
+            text: i18n.t("api.sessionExpiredConfirm", { defaultValue: "OK" }),
+            onPress: () => {
+              router.replace("/auth-gateway");
+              isHandlingSessionExpiry = false;
+            },
           },
-        },
-      ]);
+        ],
+      );
     }
 
     const error = new Error(message) as Error & {
@@ -296,6 +304,9 @@ export async function sendChatbotMessage(payload: {
 /*                                   USER                                     */
 /* -------------------------------------------------------------------------- */
 
+// Note: delete_account() in user.py is decorated with require_api_key, not
+// require_bearer_auth like most other /user/* routes — but request() sends
+// both headers on every call regardless, so this works either way.
 export async function deleteAccount(): Promise<{
   status: string;
   message: string;
