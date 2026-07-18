@@ -20,6 +20,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
+import i18n from "../../i18n";
 import { getVenue, sendChatbotMessage } from "../../services/api";
 import { Venue } from "../../types/venue";
 
@@ -83,6 +84,13 @@ function CitationChip({ citation }: { citation: Citation }) {
   );
 }
 
+// Defined outside the component so React Compiler's purity analysis
+// doesn't apply — it flags impure calls (like Date.now()) inside
+// component-scoped closures even when only ever invoked from an event
+// handler, a confirmed compiler false positive (facebook/react#34046),
+// not an actual purity issue here. This exact fix was applied earlier
+// and appears to have been lost during a later full-file edit — CI
+// caught it again, which is exactly what it's for.
 function generateMessageId(suffix: string): string {
   return `${Date.now()}-${suffix}`;
 }
@@ -97,6 +105,14 @@ export default function AssistantScreen() {
     featuredLanguages.find((l) => l.code === "en") ?? featuredLanguages[0],
   );
 
+  // What the chatbot actually responded in, per its own detected_language —
+  // separate from currentLanguage (the user's stored app-wide preference,
+  // used only to seed the initial request). Previously the header always
+  // showed the stored preference regardless of what the reply was really
+  // in, which is misleading — especially since a mock/fallback response
+  // is always English regardless of what was requested. null until the
+  // first real reply comes back, at which point it's the honest source of
+  // truth for this header.
   const [lastResponseLanguageCode, setLastResponseLanguageCode] = useState<
     string | null
   >(null);
@@ -131,8 +147,10 @@ export default function AssistantScreen() {
     },
   ]);
 
+  // Same fix as show-staff.tsx: mount-only useEffect meant this never
+  // reflected a language change made after first visiting this tab.
   //
-  // Resets lastResponseLanguageCode here when the loaded language
+  // Also resets lastResponseLanguageCode here when the loaded language
   // genuinely differs from what was already active — otherwise, once a
   // real chatbot reply has come back once, its detected_language sticks
   // around forever in respondingLanguageLabel, even after switching the
@@ -168,7 +186,7 @@ export default function AssistantScreen() {
                   if (message.id === "1") {
                     return {
                       ...message,
-                      text: t("assistant.greeting1", {
+                      text: i18n.t("assistant.greeting1", {
                         defaultValue:
                           "Hello! I'm your ClearPath Assistant. How can I help you today?",
                       }),
@@ -178,7 +196,7 @@ export default function AssistantScreen() {
                   if (message.id === "2") {
                     return {
                       ...message,
-                      text: t("assistant.greeting2", {
+                      text: i18n.t("assistant.greeting2", {
                         defaultValue:
                           "I can help find clinics, explain services, and answer healthcare navigation questions.",
                       }),
@@ -193,7 +211,15 @@ export default function AssistantScreen() {
           });
         }
       })();
-    }, [t]),
+      // No dependency on `t` anymore — this effect uses i18n.t()
+      // directly now instead of the hook's t, specifically to avoid a
+      // stale-closure risk: this useFocusEffect only re-invokes on
+      // genuine focus events, not on every render, so a captured `t`
+      // reference could theoretically still reflect the previous
+      // language if the effect's closure was created slightly before
+      // t itself updated. i18n.t() reads whatever's actually active at
+      // the moment it's called, sidestepping that entirely.
+    }, []),
   );
 
   // Best-effort venue resolution for any citation of type "venue" that
