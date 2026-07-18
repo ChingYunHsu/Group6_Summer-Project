@@ -22,7 +22,6 @@ import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
 import { getVenue, sendChatbotMessage } from "../../services/api";
 import { Venue } from "../../types/venue";
-import { useRef } from "react";
 
 type Citation = { type: string; id: string };
 
@@ -86,7 +85,7 @@ function CitationChip({ citation }: { citation: Citation }) {
 
 export default function AssistantScreen() {
   const { t } = useTranslation();
-  const nextMessageId = useRef(0);
+
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
@@ -103,6 +102,8 @@ export default function AssistantScreen() {
         ?.native ?? lastResponseLanguageCode)
     : currentLanguage.native;
 
+  // Resolved venue lookups for "venue:" citations, keyed by venue_id.
+  // undefined = not yet requested, null = fetch failed, Venue = resolved.
   const [venueCache, setVenueCache] = useState<Record<string, Venue | null>>(
     {},
   );
@@ -126,16 +127,72 @@ export default function AssistantScreen() {
     },
   ]);
 
+  // Resets lastResponseLanguageCode here when the loaded language
+  // genuinely differs from what was already active — otherwise, once a
+  // real chatbot reply has come back once, its detected_language sticks
+  // around forever in respondingLanguageLabel, even after switching the
+  // app's language preference afterward with no new message sent yet.
+  // Confirmed live: started in English, got a real English reply,
+  // switched to French — header kept showing "Responding in English"
+  // since nothing had told it a preference change should override that
+  // stale prior response.
+  //
+  // Also refreshes the two greeting messages (id "1"/"2") here — a
+  // long-known, documented gap: they're baked into messages' useState
+  // initializer, computed once at first mount using whatever language
+  // was active then. Switching languages later doesn't remount this
+  // screen, so they were never given a reason to retranslate on their
+  // own. Confirmed live: header correctly showed "Respondiendo en
+  // Español" after switching, but the greeting bubbles were still in
+  // French from the mount before that. Updated by id specifically, not
+  // by resetting the whole array, so an in-progress real conversation
+  // isn't wiped out — only the two static greeting bubbles refresh.
   useFocusEffect(
     useCallback(() => {
       (async () => {
         const code = await AsyncStorage.getItem("language");
         const match = featuredLanguages.find((l) => l.code === code);
-        if (match) setCurrentLanguage(match);
+
+        if (match) {
+          setCurrentLanguage((previous) => {
+            if (previous.code !== match.code) {
+              setLastResponseLanguageCode(null);
+
+              setMessages((currentMessages) =>
+                currentMessages.map((message) => {
+                  if (message.id === "1") {
+                    return {
+                      ...message,
+                      text: t("assistant.greeting1", {
+                        defaultValue:
+                          "Hello! I'm your ClearPath Assistant. How can I help you today?",
+                      }),
+                    };
+                  }
+
+                  if (message.id === "2") {
+                    return {
+                      ...message,
+                      text: t("assistant.greeting2", {
+                        defaultValue:
+                          "I can help find clinics, explain services, and answer healthcare navigation questions.",
+                      }),
+                    };
+                  }
+
+                  return message;
+                }),
+              );
+            }
+            return match;
+          });
+        }
       })();
-    }, []),
+    }, [t]),
   );
 
+  // Best-effort venue resolution for any citation of type "venue" that
+  // isn't already in the cache. Runs whenever new messages arrive.
   useEffect(() => {
     const venueIds = Array.from(
       new Set(
@@ -164,10 +221,8 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const id = nextMessageId.current++;
-
-    const userMessageId = `${id}-user`;
-    const typingId = `${id}-typing`;
+    const userMessageId = `${Date.now()}-user`;
+    const typingId = `${Date.now()}-typing`;
 
     setMessages((prev) => [
       ...prev,
