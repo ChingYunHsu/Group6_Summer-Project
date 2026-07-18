@@ -22,6 +22,7 @@ import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
 import { getVenue, sendChatbotMessage } from "../../services/api";
 import { Venue } from "../../types/venue";
+import { useRef } from "react";
 
 type Citation = { type: string; id: string };
 
@@ -46,10 +47,6 @@ function parseCitation(raw: string): Citation {
     type: raw.slice(0, separatorIndex),
     id: raw.slice(separatorIndex + 1),
   };
-}
-
-function generateMessageId(suffix: string): string {
-  return `${Date.now()}-${suffix}`;
 }
 
 function ClinicRecommendationCard({ venue }: { venue: Venue }) {
@@ -89,7 +86,7 @@ function CitationChip({ citation }: { citation: Citation }) {
 
 export default function AssistantScreen() {
   const { t } = useTranslation();
-
+  const nextMessageId = useRef(0);
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
@@ -97,25 +94,15 @@ export default function AssistantScreen() {
     featuredLanguages.find((l) => l.code === "en") ?? featuredLanguages[0],
   );
 
-  // What the chatbot actually responded in, per its own detected_language —
-  // separate from currentLanguage (the user's stored app-wide preference,
-  // used only to seed the initial request). Previously the header always
-  // showed the stored preference regardless of what the reply was really
-  // in, which is misleading — especially since a mock/fallback response
-  // is always English regardless of what was requested. null until the
-  // first real reply comes back, at which point it's the honest source of
-  // truth for this header.
   const [lastResponseLanguageCode, setLastResponseLanguageCode] = useState<
     string | null
   >(null);
 
   const respondingLanguageLabel = lastResponseLanguageCode
     ? (featuredLanguages.find((l) => l.code === lastResponseLanguageCode)
-        ?.english ?? lastResponseLanguageCode)
-    : currentLanguage.english;
+        ?.native ?? lastResponseLanguageCode)
+    : currentLanguage.native;
 
-  // Resolved venue lookups for "venue:" citations, keyed by venue_id.
-  // undefined = not yet requested, null = fetch failed, Venue = resolved.
   const [venueCache, setVenueCache] = useState<Record<string, Venue | null>>(
     {},
   );
@@ -139,11 +126,6 @@ export default function AssistantScreen() {
     },
   ]);
 
-  // Same fix as show-staff.tsx: mount-only useEffect meant this never
-  // reflected a language change made after first visiting this tab. Only
-  // affects the pre-first-message fallback shown by respondingLanguageLabel
-  // (once a real reply comes back, that's driven by the response's own
-  // detected_language instead) — but that fallback should still be fresh.
   useFocusEffect(
     useCallback(() => {
       (async () => {
@@ -154,8 +136,6 @@ export default function AssistantScreen() {
     }, []),
   );
 
-  // Best-effort venue resolution for any citation of type "venue" that
-  // isn't already in the cache. Runs whenever new messages arrive.
   useEffect(() => {
     const venueIds = Array.from(
       new Set(
@@ -184,8 +164,10 @@ export default function AssistantScreen() {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
 
-    const userMessageId = generateMessageId("user");
-    const typingId = generateMessageId("typing");
+    const id = nextMessageId.current++;
+
+    const userMessageId = `${id}-user`;
+    const typingId = `${id}-typing`;
 
     setMessages((prev) => [
       ...prev,
@@ -378,6 +360,9 @@ export default function AssistantScreen() {
           />
 
           <TouchableOpacity
+            testID="send-button"
+            accessibilityRole="button"
+            accessibilityLabel="Send message"
             style={[styles.sendButton, sending && styles.sendButtonDisabled]}
             onPress={() => handleSend()}
             disabled={sending}

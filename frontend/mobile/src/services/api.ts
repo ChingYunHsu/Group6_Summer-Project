@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Alert } from "react-native";
+import { Alert, Platform } from "react-native";
 
 import {
   BusynessResponse,
@@ -34,13 +34,14 @@ import { clearAccessToken, getAccessToken } from "./tokenStorage";
 // Physical Device
 // http://192.168.x.x:5000/api/v1
 
-const API_BASE = "http://127.0.0.1:5000/api/v1";
+// Android has its own special alias for
+// "the host machine": 10.0.2.2. This was already documented in
+// the comment above but never actually wired up
 
-// Some backend routes (venues, routes, realtime, and a handful of /user/*
-// endpoints) check X-API-Key instead of/alongside the Bearer token — see
-// require_api_key in backend/src/auth.py. Locally this is a no-op unless
-// the backend's own API_KEY env var is set, but staging/prod will enforce
-// it, so this needs to be sent unconditionally either way.
+const API_HOST = Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1";
+
+const API_BASE = `http://${API_HOST}:5000/api/v1`;
+
 // Set EXPO_PUBLIC_API_KEY in your .env once the team assigns a real dev
 // key; "development" is just a harmless placeholder until then.
 const API_KEY = process.env.EXPO_PUBLIC_API_KEY ?? "development";
@@ -242,14 +243,6 @@ export async function confirmReport(
 /*                                  ROUTES                                    */
 /* -------------------------------------------------------------------------- */
 
-// Both previously took zero parameters and hit these endpoints with no
-// query string at all — meaning they could only ever reach the backend's
-// mock fallback (get_route_options/get_route_detail in routes.py return
-// the real Google Maps result only when destination_venue_id + origin
-// are present; otherwise they fall through to the static mock). map.tsx
-// already calls these with the real arguments; these signatures just
-// never caught up to that.
-
 export async function getRouteOptions(
   destinationVenueId: string | undefined,
   origin: { latitude: number; longitude: number },
@@ -288,11 +281,6 @@ export async function getRouteDetail(
 /*                                 CHATBOT                                    */
 /* -------------------------------------------------------------------------- */
 
-// NOTE: as of this writing, ask_chatbot() on the backend is a static mock —
-// it returns the same CHATBOT_RESPONSE regardless of `message` content, and
-// does not call Gemini despite GEMINI_API_KEY existing in settings.py. This
-// function is correctly wired to the real endpoint; the responses just
-// aren't real yet.
 export async function sendChatbotMessage(payload: {
   message: string;
   language?: string;
@@ -308,9 +296,6 @@ export async function sendChatbotMessage(payload: {
 /*                                   USER                                     */
 /* -------------------------------------------------------------------------- */
 
-// Note: delete_account() in user.py is decorated with require_api_key, not
-// require_bearer_auth like most other /user/* routes — but request() sends
-// both headers on every call regardless, so this works either way.
 export async function deleteAccount(): Promise<{
   status: string;
   message: string;
@@ -324,9 +309,6 @@ export async function deleteAccount(): Promise<{
 /* -------------------------------------------------------------------------- */
 /*                                FAVOURITES                                  */
 /* -------------------------------------------------------------------------- */
-
-// Confirmed per-user and DB-backed server-side — see the comment on the
-// Favourite type in types/venue.ts.
 
 export async function getFavourites(): Promise<FavouritesResponse> {
   return request<FavouritesResponse>("/user/favourites");

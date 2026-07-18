@@ -198,6 +198,13 @@ export default function ShowStaffScreen() {
   // more than most other auth-gated features.
   const [translationNeedsLogin, setTranslationNeedsLogin] = useState(false);
 
+  // Distinct from both translationFailed and translationNeedsLogin —
+  // confirmed live (real 429 from Gemini, not a guess) that rapid typing
+  // here can trip Gemini's requests-per-minute quota, since every
+  // debounced pause fires a real API call. "Please wait" is a much more
+  // actionable message than a generic failure for this specific case.
+  const [translationRateLimited, setTranslationRateLimited] = useState(false);
+
   // Translate free text server-side, not on-device — arbitrary visitor
   // input isn't covered by the canned phraseTemplates, and running this
   // through a third-party provider directly from the client would mean
@@ -221,10 +228,15 @@ export default function ShowStaffScreen() {
   const trimmedInput = translationInput.trim();
 
   // Debounced so we don't fire a request on every keystroke — waits for a
-  // pause in typing before translating. This is a legitimate "synchronize
-  // with an external/async process" effect; the lint rule flags the
-  // setIsTranslating(true) call anyway since it's synchronous at the top
-  // of the effect, so it's disabled here rather than restructured further.
+  // pause in typing before translating. Bumped from 500ms to 1200ms after
+  // confirming live that rapid typing was tripping Gemini's real
+  // requests-per-minute quota (429), not a code bug — fewer, less
+  // frequent real calls reduces how often that happens, though the
+  // 429-specific message below still covers it if it does. This is a
+  // legitimate "synchronize with an external/async process" effect; the
+  // lint rule flags the setIsTranslating(true) call anyway since it's
+  // synchronous at the top of the effect, so it's disabled here rather
+  // than restructured further.
   useEffect(() => {
     if (!trimmedInput) return;
 
@@ -232,6 +244,7 @@ export default function ShowStaffScreen() {
     setIsTranslating(true);
     setTranslationFailed(false);
     setTranslationNeedsLogin(false);
+    setTranslationRateLimited(false);
 
     const handle = setTimeout(async () => {
       try {
@@ -243,13 +256,15 @@ export default function ShowStaffScreen() {
       } catch (error: any) {
         if (error?.status === 401) {
           setTranslationNeedsLogin(true);
+        } else if (error?.status === 429) {
+          setTranslationRateLimited(true);
         } else {
           setTranslationFailed(true);
         }
       } finally {
         setIsTranslating(false);
       }
-    }, 500);
+    }, 1200);
 
     return () => clearTimeout(handle);
   }, [trimmedInput, currentLanguage.code]);
@@ -259,6 +274,7 @@ export default function ShowStaffScreen() {
   const displayedTranslating = trimmedInput ? isTranslating : false;
   const displayedFailed = trimmedInput ? translationFailed : false;
   const displayedNeedsLogin = trimmedInput ? translationNeedsLogin : false;
+  const displayedRateLimited = trimmedInput ? translationRateLimited : false;
   const displayedTranslation = trimmedInput ? translatedText : "";
 
   const categories: { key: Scenario; icon: keyof typeof Ionicons.glyphMap }[] =
@@ -473,6 +489,13 @@ export default function ShowStaffScreen() {
                 })}
               </Text>
             </TouchableOpacity>
+          ) : displayedRateLimited ? (
+            <Text style={styles.translationErrorText}>
+              {t("showStaff.translationRateLimited", {
+                defaultValue:
+                  "Too many translations at once — please wait a moment and try again.",
+              })}
+            </Text>
           ) : displayedFailed ? (
             <Text style={styles.translationErrorText}>
               {t("showStaff.translationError", {
