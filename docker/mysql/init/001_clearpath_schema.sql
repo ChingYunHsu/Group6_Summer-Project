@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS user_reports (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   expires_at TIMESTAMP NOT NULL,
   source_confidence DECIMAL(4, 3) NOT NULL DEFAULT 0.500,
-  CONSTRAINT fk_user_report_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+  CONSTRAINT fk_user_report_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
   CONSTRAINT fk_user_report_venue FOREIGN KEY (venue_id) REFERENCES venues (venue_id) ON DELETE SET NULL,
   CONSTRAINT fk_report_category FOREIGN KEY (issue_type) REFERENCES report_categories(category_id),
   CHECK (source_confidence >= 0 AND source_confidence <= 1),
@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS report_confirmations (
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   client_context JSON,
   CONSTRAINT fk_report_confirmation_report FOREIGN KEY (report_id) REFERENCES user_reports (report_id) ON DELETE CASCADE,
-  CONSTRAINT fk_confirmation_user FOREIGN KEY (user_id) REFERENCES users(user_id),
+  CONSTRAINT fk_confirmation_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
   UNIQUE KEY uq_report_user (report_id, user_id),
   INDEX idx_report_confirmations_report (report_id),
   INDEX idx_report_confirmations_action (action)

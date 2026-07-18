@@ -24,7 +24,7 @@ class _FakeCursor:
 
 class _RaisingCursor:
     def execute(self, query, params=()):
-        raise RuntimeError("simulated FK violation (user_reports not cascaded)")
+        raise RuntimeError("simulated database failure")
 
 
 @pytest.fixture

@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 from flask import Blueprint, g, jsonify, request
 
-from auth import require_bearer_auth
+from auth import require_bearer_auth, web_readonly_blocked
 from mock_data import REPORTS
 
 
@@ -176,6 +176,10 @@ def _submit_via_db(db_module, payload: dict) -> dict:
 @bp.post("/api/v1/reports")
 @require_bearer_auth
 def submit_report():
+    blocked = web_readonly_blocked()
+    if blocked:
+        return blocked
+
     payload = request.get_json(silent=True) or {}
 
     if "issue_type" not in payload:
@@ -261,6 +265,10 @@ def _flatten_mock_report_confirmations(report: dict) -> dict:
 @bp.post("/api/v1/reports/<report_id>/confirmations")
 @require_bearer_auth
 def confirm_report(report_id: str):
+    blocked = web_readonly_blocked()
+    if blocked:
+        return blocked
+
     payload = request.get_json(silent=True) or {}
     action = payload.get("action", "")
 

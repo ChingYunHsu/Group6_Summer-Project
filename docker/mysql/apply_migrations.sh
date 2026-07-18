@@ -134,4 +134,20 @@ done
 [[ "$missing" -eq 0 ]] || { echo "FAIL: $missing required tables missing (O2)." >&2; exit 4; }
 
 echo
+echo "Smoke check: account-deletion foreign keys cascade;"
+fk_failures=0
+for pair in "user_reports fk_user_report_user" "report_confirmations fk_confirmation_user"; do
+    read -r table constraint <<< "$pair"
+    delete_rule=$(docker exec "$CONTAINER" \
+        sh -c "mysql -u\"$USER\" -p\"$PASS\" \"$DB\" -N -B -e \"SELECT DELETE_RULE FROM information_schema.REFERENTIAL_CONSTRAINTS WHERE CONSTRAINT_SCHEMA='$DB' AND TABLE_NAME='$table' AND CONSTRAINT_NAME='$constraint';\"" 2>/dev/null || true)
+    if [[ "$delete_rule" != "CASCADE" ]]; then
+        echo "  FAIL: $table.$constraint DELETE_RULE='${delete_rule:-missing}' (expected CASCADE)"
+        fk_failures=$((fk_failures + 1))
+    else
+        echo "  ok: $table.$constraint ON DELETE CASCADE"
+    fi
+done
+[[ "$fk_failures" -eq 0 ]] || { echo "FAIL: $fk_failures account-deletion foreign keys are not CASCADE." >&2; exit 5; }
+
+echo
 echo "All migrations applied and smoke checks passed."

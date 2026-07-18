@@ -6,10 +6,12 @@ on:
 
     paths:
       - 'Data+ML/**'
+      - 'docker/mysql/**'
   pull_request:
     branches: [ main ]
     paths:
       - 'Data+ML/**'
+      - 'docker/mysql/**'
   workflow_dispatch:
     inputs:
       run_integration:
@@ -47,6 +49,7 @@ jobs:
         docker run --rm clearpath-data-image pytest \
           test/6.15-6.20/tests/test_venue_coverage.py \
           test/6.15-6.20/tests/test_busyness_ingestion.py \
+          test/6.15-6.20/tests/test_data_contract_migrations.py \
           -v --tb=short -m "not integration"
       working-directory: ./Data+ML
 
@@ -56,6 +59,14 @@ jobs:
           test/6.28-7.3/tests/test_ml_modeling.py \
           test/6.28-7.3/tests/test_group_split.py \
           test/6.28-7.3/tests/test_write_forecasts_to_db.py \
+          -v --tb=short -m "not integration"
+      working-directory: ./Data+ML
+
+    - name: Run Forecast V2 Offline Tests
+      run: |
+        docker run --rm clearpath-data-image pytest \
+          test/7.13-7.18/tests/test_forecast_v2.py \
+          test/7.13-7.18/test_external_feature_ingest.py \
           -v --tb=short -m "not integration"
       working-directory: ./Data+ML
 
@@ -78,4 +89,10 @@ jobs:
         docker run --rm clearpath-data-image pytest \
           test/6.15-6.20/tests/test_venue_coverage.py \
           -m integration -v --tb=short
+      working-directory: ./Data+ML
+
+    - name: Run Forecast V2 Real-Data Validation
+      run: |
+        docker run --rm clearpath-data-image python \
+          test/7.13-7.18/validate_v2_real_data.py --evidence-root test/7.13-7.18/evidence
       working-directory: ./Data+ML

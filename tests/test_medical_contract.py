@@ -28,7 +28,7 @@ def test_medical_profile_names_match_between_ddl_api_and_erd():
     erd = ERD_PATH.read_text()
 
     canonical_columns = (
-        "severe_allergies",
+        "allergies",
         "conditions",
         "medications",
         "emergency_contacts",

@@ -1,34 +1,51 @@
-export const REPORTS = [
-    {
-        "report_id": "r_501",
-        "venue_id": "v_1002",
-        "issue_type": "wheelchair_lift_broken",
-        "latitude": 40.706086,
-        "longitude": -73.996864,
-        "status": "active",
-        "confirmation_count": 2,
-        "expires_in_minutes": 95,
-        "created_at": "2026-05-28T10:00:00Z",
-        "reported_by": "anonymous",
-        "badge_text": "Multiple users confirm",
-    },
-    {
-        "report_id": "r_502",
-        "venue_id": "v_1003",
-        "issue_type": "large_crowd",
-        "latitude": 40.749825,
-        "longitude": -73.797634,
-        "status": "active",
-        "confirmation_count": 0,
-        "expires_in_minutes": 120,
-        "created_at": "2026-05-28T10:30:00Z",
-        "reported_by": "anonymous",
-        "badge_text": "Live report",
-    },
-]
+// Mock live report feed. Read-only — the web viewport only ever displays
+// these, it never lets a user submit, confirm, or resolve a report.
+// "landmark_bound" reports are tied to a specific venue_id and render as the
+// red-tinted banner inside the Left Detail Drawer.
+// "standalone" reports are not tied to an existing venue and render as the
+// gray pill floating card on the map.
 
-export const REPORT_TEMPLATE = {
-    "status": "accepted",
-    "report_id": "r_new",
-    "message": "Report queued for validation.",
-};
+export const REPORTS = [
+  {
+    report_id: "r_2001",
+    type: "landmark_bound",
+    venue_id: "v_1002",
+    icon: "/",
+    message: "Elevator Broken",
+    confirmations: 8,
+    reported_at: "2026-06-08T08:42:00Z",
+    source: "mobile_app",
+  },
+  {
+    report_id: "r_2002",
+    type: "standalone",
+    venue_id: null,
+    latitude: 40.758,
+    longitude: -73.9855,
+    icon: "!",
+    message: "Ramp Blocked",
+    confirmations: 12,
+    reported_at: "2026-06-08T08:55:00Z",
+    source: "mobile_app",
+  },
+  {
+    report_id: "r_2003",
+    type: "landmark_bound",
+    venue_id: "v_1003",
+    icon: "!",
+    message: "Large crowd near entrance",
+    confirmations: 5,
+    reported_at: "2026-06-08T09:01:00Z",
+    source: "mobile_app",
+  },
+];
+
+export function getLandmarkAlertForVenue(venueId) {
+  return REPORTS.find(
+    (r) => r.type === "landmark_bound" && r.venue_id === venueId
+  );
+}
+
+export function getStandaloneAlerts() {
+  return REPORTS.filter((r) => r.type === "standalone");
+}
