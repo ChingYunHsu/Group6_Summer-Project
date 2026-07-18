@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import {
   Modal,
+  ScrollView,
   StyleSheet,
   Switch,
   Text,
@@ -28,9 +29,13 @@ interface Props {
     accessible: boolean;
     language: string;
     autoCurrentTime: boolean;
-    liveStatus: "quiet" | "moderate" | "busy";
+    liveStatus: "quiet" | "moderate" | "busy" | undefined;
     date: string;
     time: string;
+    // Hours ahead of now (0-11) — matches offset_hours in the real
+    // 12-hour forecast data VenueBottomSheet already fetches. 0 = Now,
+    // using live current-status data; 1-11 = a specific predicted hour.
+    timeOffset: number;
   }) => void;
 }
 const LANGUAGE_OPTIONS = featuredLanguages
@@ -63,6 +68,12 @@ const STATUS_COLOURS = {
   busy: "#DC2626",
 };
 
+// Matches the 12 entries (offset_hours 0-11) already present in every
+// forecast fetch VenueBottomSheet makes — 0 is "Now" (live status), 1-11
+// are predicted hours ahead. No separate API call needed for any of
+// this; the data already exists by the time this picker is used.
+const TIME_OFFSET_OPTIONS = Array.from({ length: 12 }, (_, i) => i);
+
 export default function FilterModal({
   visible,
   openNow,
@@ -78,12 +89,23 @@ export default function FilterModal({
   const [localAccessible, setLocalAccessible] = useState(accessible ?? false);
   const [localLanguage, setLocalLanguage] = useState(language);
   const [autoCurrentTime, setAutoCurrentTime] = useState(autoCurrentTimeProp);
-  const [liveStatus, setLiveStatus] = useState<"quiet" | "moderate" | "busy">(
-    "moderate",
-  );
+  // Starts unselected (undefined), not defaulted to "moderate" — Live
+  // Status is meant to be an optional filter, not a required choice.
+  const [liveStatus, setLiveStatus] = useState<
+    "quiet" | "moderate" | "busy" | undefined
+  >(undefined);
 
+  // "Today" stays permanently fixed — there's no multi-day forecast data
+  // anywhere to pick from, only a rolling 12-hour window from now. Kept
+  // as a plain string for the (currently unused, but still typed)
+  // onApply payload field.
   const [date] = useState("Today");
-  const [time] = useState("Now");
+
+  // The real, working picker — 0 = Now (live status), 1-11 = hours
+  // ahead, matching offset_hours in the forecast data already fetched
+  // by VenueBottomSheet.
+  const [timeOffset, setTimeOffset] = useState(0);
+  const [timeModalVisible, setTimeModalVisible] = useState(false);
 
   // Re-sync draft (local*) state from props, but ONLY on a genuine reopen
   // (visible transitioning false -> true) — not on initial mount, since
@@ -101,7 +123,6 @@ export default function FilterModal({
 
     if (!justOpened) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: resync local draft state only when the modal is reopened
     setLocalOpenNow(openNow ?? false);
     setLocalAccessible(accessible ?? false);
     setLocalLanguage(language);
@@ -177,7 +198,9 @@ export default function FilterModal({
                           backgroundColor: STATUS_COLOURS[item.value],
                         },
                       ]}
-                      onPress={() => setLiveStatus(item.value)}
+                      onPress={() =>
+                        setLiveStatus(selected ? undefined : item.value)
+                      }
                     >
                       <Text
                         style={[
@@ -196,27 +219,40 @@ export default function FilterModal({
             </>
           ) : (
             <>
-              <TouchableOpacity testID="date-selector" style={styles.dateRow}>
+              {/* Deliberately a plain View, not TouchableOpacity — no
+                  chevron either. There's no multi-day forecast data to
+                  pick from, only a rolling 12-hour window from now, so
+                  this should visually read as fixed, not as a control
+                  that just happens to not respond. */}
+              <View testID="date-selector" style={styles.dateRow}>
                 <Ionicons
                   name="calendar-outline"
                   size={18}
                   color={Colours.primary}
                 />
-                <Text style={styles.dateText}>{date}</Text>
-                <Ionicons
-                  name="chevron-forward"
-                  size={18}
-                  color="#9CA3AF"
-                  style={styles.chevron}
-                />
-              </TouchableOpacity>
-              <TouchableOpacity testID="time-selector" style={styles.dateRow}>
+                <Text style={styles.dateText}>
+                  {t("map.filters.dateToday", { defaultValue: "Today" })}
+                </Text>
+              </View>
+
+              <TouchableOpacity
+                testID="time-selector"
+                style={styles.dateRow}
+                onPress={() => setTimeModalVisible(true)}
+              >
                 <Ionicons
                   name="time-outline"
                   size={18}
                   color={Colours.primary}
                 />
-                <Text style={styles.dateText}>{time}</Text>
+                <Text style={styles.dateText}>
+                  {timeOffset === 0
+                    ? t("map.filters.timeNow", { defaultValue: "Now" })
+                    : t("map.filters.timeOffset", {
+                        defaultValue: "+{{hours}}h",
+                        hours: timeOffset,
+                      })}
+                </Text>
                 <Ionicons
                   name="chevron-forward"
                   size={18}
@@ -237,7 +273,7 @@ export default function FilterModal({
                 <TouchableOpacity
                   key={item.code}
                   style={[styles.chip, selected && styles.selectedChip]}
-                  onPress={() => setLocalLanguage(item.code)}
+                  onPress={() => setLocalLanguage(selected ? "" : item.code)}
                 >
                   <Text
                     style={[styles.chipText, selected && styles.selectedText]}
@@ -260,7 +296,8 @@ export default function FilterModal({
                 autoCurrentTime,
                 liveStatus,
                 date,
-                time,
+                time: timeOffset === 0 ? "Now" : `+${timeOffset}h`,
+                timeOffset,
               });
               onClose();
             }}
@@ -270,6 +307,63 @@ export default function FilterModal({
             </Text>
           </TouchableOpacity>
         </View>
+
+        {/* Conditional overlay, not a second <Modal> — iOS genuinely
+            cannot present two native Modal components at the same
+            time; the second one silently fails to appear with no JS-
+            visible error at all (confirmed: a real, well-documented
+            React Native/iOS limitation, not a bug in this specific
+            code). Rendering this inside the SAME Modal that's already
+            open sidesteps the limitation entirely. */}
+        {timeModalVisible && (
+          <View style={styles.pickerOverlay}>
+            <View style={styles.pickerCard}>
+              <Text style={styles.pickerTitle}>
+                {t("map.filters.selectTime", { defaultValue: "Select Time" })}
+              </Text>
+
+              <ScrollView style={styles.pickerList}>
+                {TIME_OFFSET_OPTIONS.map((offset) => {
+                  const selected = offset === timeOffset;
+
+                  return (
+                    <TouchableOpacity
+                      key={offset}
+                      style={styles.pickerRow}
+                      onPress={() => {
+                        setTimeOffset(offset);
+                        setTimeModalVisible(false);
+                      }}
+                    >
+                      <Text style={styles.pickerRowText}>
+                        {offset === 0
+                          ? t("map.filters.timeNow", { defaultValue: "Now" })
+                          : t("map.filters.timeOffset", {
+                              defaultValue: "+{{hours}}h",
+                              hours: offset,
+                            })}
+                      </Text>
+
+                      {selected && (
+                        <Ionicons
+                          name="checkmark"
+                          size={20}
+                          color={Colours.primary}
+                        />
+                      )}
+                    </TouchableOpacity>
+                  );
+                })}
+              </ScrollView>
+
+              <TouchableOpacity onPress={() => setTimeModalVisible(false)}>
+                <Text style={styles.pickerCancel}>
+                  {t("common.cancel", { defaultValue: "Cancel" })}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
       </View>
     </Modal>
   );
@@ -345,4 +439,37 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   applyText: { color: "#FFF", fontSize: 16, fontWeight: "700" },
+
+  pickerOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "flex-end",
+    backgroundColor: "rgba(0,0,0,0.3)",
+  },
+  pickerCard: {
+    backgroundColor: "#FFF",
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    padding: 24,
+  },
+  pickerTitle: { ...Typography.h2, marginBottom: 16 },
+  pickerList: { maxHeight: 320, marginBottom: 12 },
+  pickerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 14,
+    borderBottomWidth: 1,
+    borderBottomColor: "#E5E7EB",
+  },
+  pickerRowText: { fontSize: 16, color: Colours.text },
+  pickerCancel: {
+    textAlign: "center",
+    color: Colours.muted,
+    fontSize: 16,
+    paddingVertical: 8,
+  },
 });

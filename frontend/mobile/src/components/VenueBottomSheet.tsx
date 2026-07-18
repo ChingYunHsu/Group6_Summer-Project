@@ -1,10 +1,24 @@
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
+import {
+  ActivityIndicator,
+  Modal,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
-import { Report, Venue } from "../types/venue";
+import { getVenueBusyness, getVenueForecast } from "../services/api";
+import {
+  BusynessResponse,
+  ForecastResponse,
+  Report,
+  Venue,
+} from "../types/venue";
 import { formatReportedTime } from "./ReportMarker";
 import VerificationCard from "./VerificationCard";
 
@@ -16,6 +30,11 @@ interface Props {
   // this, VerificationCard has no real data to show.
   activeReport?: Report | null;
   autoCurrentTime: boolean;
+  // Hours ahead of now (0-11), from FilterModal's real time picker.
+  // 0 = Now (live current-status data); 1-11 = look up that hour's
+  // entry in the forecast data already being fetched below, rather
+  // than making a separate request for it.
+  timeOffset?: number;
   onClose: () => void;
   onDirectionsPress: () => void;
   onConfirmReport?: (reportId: string) => void;
@@ -33,6 +52,7 @@ export default function VenueBottomSheet({
   venue,
   activeReport,
   autoCurrentTime,
+  timeOffset = 0,
   onClose,
   onDirectionsPress,
   onConfirmReport,
@@ -40,10 +60,108 @@ export default function VenueBottomSheet({
   isFavourite = false,
   onToggleFavourite,
 }: Props) {
+  // null = not yet fetched, fetch failed, or genuinely unavailable for
+  // this venue — all three cases fall back to the same "Unknown"/"not
+  // available" UI already built below, same pattern as everywhere else
+  // in this app. Confirmed directly against venues.py: the current-
+  // status endpoint (getVenueBusyness) can permanently return nothing
+  // for real, successfully-loaded data due to a known backend bug (its
+  // query requires "now" to fall inside a time window, and tonight's
+  // data load anchored every window to Jan 2025) — so a graceful,
+  // silent fallback here is doing real, expected work, not just
+  // defensive padding.
+  const [busynessStatus, setBusynessStatus] = useState<BusynessResponse | null>(
+    null,
+  );
+
+  const [forecast, setForecast] = useState<ForecastResponse | null>(null);
+
+  const [busynessLoading, setBusynessLoading] = useState(false);
+
+  // Fetches only when the sheet actually opens for a real venue — not
+  // for every marker on the map, which would mean firing hundreds of
+  // requests just to render pins. Both calls run in parallel, and each
+  // is caught independently so one failing (e.g. the known current-
+  // status bug above) doesn't prevent the other from showing real data.
+  useEffect(() => {
+    if (!visible || !venue) {
+      // Intentional synchronous reset — clears stale busyness/forecast
+      // data the moment the sheet closes or switches to a different
+      // venue, so a brief flash of the PREVIOUS venue's data can never
+      // show while the new fetch is still in flight. Same justified
+      // pattern already applied to this identical rule in map.tsx.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setBusynessStatus(null);
+      setForecast(null);
+      return;
+    }
+
+    let isActive = true;
+    setBusynessLoading(true);
+
+    Promise.all([
+      getVenueBusyness(venue.venue_id).catch((error) => {
+        console.error("Failed to load venue busyness", error);
+        return null;
+      }),
+      getVenueForecast(venue.venue_id).catch((error) => {
+        console.error("Failed to load venue forecast", error);
+        return null;
+      }),
+    ]).then(([busynessResult, forecastResult]) => {
+      if (!isActive) return;
+      setBusynessStatus(busynessResult);
+      setForecast(forecastResult);
+      setBusynessLoading(false);
+    });
+
+    return () => {
+      isActive = false;
+    };
+  }, [visible, venue]);
+
   if (!venue) return null;
 
-  const hasForecast =
-    !!venue.busyness_forecast_12h && venue.busyness_forecast_12h.length > 0;
+  const hasForecast = !!forecast?.forecast && forecast.forecast.length > 0;
+
+  // No color/color field on forecast entries (unlike the live
+  // current-status response, which gets a real one straight from the
+  // backend) — this mirrors _level_to_color in venues.py exactly, so
+  // predicted-hour colours match what "Now" would show if the backend
+  // itself computed them.
+  const FORECAST_LEVEL_COLOURS: Record<string, string> = {
+    quiet: "green",
+    moderate: "yellow",
+    busy: "red",
+    no_data: "#2563EB",
+  };
+
+  const selectedForecastEntry =
+    timeOffset > 0
+      ? forecast?.forecast.find((hour) => hour.offset_hours === timeOffset)
+      : null;
+
+  const displayLevel =
+    selectedForecastEntry?.level ?? busynessStatus?.busyness?.busyness_status;
+
+  const displayColour = selectedForecastEntry
+    ? (FORECAST_LEVEL_COLOURS[selectedForecastEntry.level] ??
+      FORECAST_LEVEL_COLOURS.no_data)
+    : busynessStatus?.busyness?.busyness_color;
+
+  const displayLabel = displayLevel
+    ? displayLevel.charAt(0).toUpperCase() + displayLevel.slice(1)
+    : null;
+
+  // Wait-minutes are only ever known for live ("Now") status —
+  // VenueForecast (the type behind forecast entries) has no wait-
+  // minutes field at all, only percent/level. Showing a real number for
+  // "Now" but omitting it entirely for a predicted hour keeps this
+  // honest about what's actually known vs predicted, rather than
+  // fabricating a figure that was never really calculated.
+  const displayWaitMinutes = selectedForecastEntry
+    ? undefined
+    : busynessStatus?.busyness?.estimated_wait_minutes;
 
   return (
     <Modal visible={visible} transparent animationType="slide">
@@ -75,6 +193,36 @@ export default function VenueBottomSheet({
               <Ionicons name="close" size={26} color={Colours.text} />
             </TouchableOpacity>
           </View>
+
+          {/* Real status pill — matches the original Stitch mockup's
+              "Quiet - 5 min wait" badge. Only renders once real data
+              actually exists; no fabricated "no_data" pill shown while
+              loading or if the current-status fetch comes back empty
+              (a real, known possibility — see the effect above). When
+              a future hour is selected via the time picker, this shows
+              that hour's predicted level instead of live status. */}
+          {displayLabel && displayColour && (
+            <View style={styles.statusRow}>
+              <View
+                style={[styles.statusBadge, { backgroundColor: displayColour }]}
+              >
+                <View style={styles.statusDot} />
+
+                <Text style={styles.statusText}>
+                  {displayLabel}
+                  {displayWaitMinutes != null
+                    ? ` · ${displayWaitMinutes} min wait`
+                    : ""}
+                </Text>
+              </View>
+
+              {selectedForecastEntry && (
+                <Text style={styles.forecastNote}>
+                  Predicted for +{timeOffset}h — not live data
+                </Text>
+              )}
+            </View>
+          )}
           {/* Boolean(...) here matters — see the comment in
               VenueMarker.tsx: DB-backed venues can send active_warning
               as a raw 0/1 rather than true/false, and `0 && <>...</>`
@@ -136,14 +284,18 @@ export default function VenueBottomSheet({
           )}
 
           {autoCurrentTime ? (
-            hasForecast ? (
+            busynessLoading ? (
+              <View style={styles.forecastLoading}>
+                <ActivityIndicator size="small" color={Colours.primary} />
+              </View>
+            ) : hasForecast ? (
               <>
                 <Text style={styles.sectionTitle}>
                   12-Hour Wait Time Forecast
                 </Text>
 
                 <View style={styles.chartRow}>
-                  {venue.busyness_forecast_12h!.map((hour) => (
+                  {forecast!.forecast.map((hour) => (
                     <View key={hour.offset_hours} style={styles.chartColumn}>
                       <View
                         style={[
@@ -168,16 +320,11 @@ export default function VenueBottomSheet({
             )
           ) : (
             <Text style={styles.prediction}>
-              Expected wait: {venue.avg_wait_minutes ?? "Unknown"} minutes
+              Expected wait:{" "}
+              {busynessStatus?.busyness?.estimated_wait_minutes ?? "Unknown"}{" "}
+              minutes
             </Text>
           )}
-          <View style={styles.row}>
-            <Ionicons name="time-outline" size={18} color={Colours.primary} />
-
-            <Text style={styles.rowText}>
-              {venue.busyness?.estimated_wait_minutes ?? "Unknown"} min wait
-            </Text>
-          </View>
 
           <View style={styles.row}>
             <Ionicons
@@ -323,6 +470,45 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     marginLeft: 10,
     flex: 1,
+  },
+
+  statusRow: {
+    marginBottom: 16,
+  },
+
+  statusBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    alignSelf: "flex-start",
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+  },
+
+  statusDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: "#FFFFFF",
+    marginRight: 8,
+  },
+
+  statusText: {
+    color: "#FFFFFF",
+    fontWeight: "700",
+    fontSize: 13,
+  },
+
+  forecastNote: {
+    marginTop: 6,
+    fontSize: 12,
+    color: Colours.muted,
+    fontStyle: "italic",
+  },
+
+  forecastLoading: {
+    paddingVertical: 24,
+    alignItems: "center",
   },
 
   sectionTitle: {

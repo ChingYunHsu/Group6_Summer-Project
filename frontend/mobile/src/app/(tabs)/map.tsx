@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { router } from "expo-router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ActivityIndicator,
   Linking,
@@ -125,7 +125,14 @@ export default function MapScreen() {
 
   // Retained for FilterModal's onApply payload — not read directly in this
   // file's render path, but still part of the filter state passed down.
-  const [, setLiveStatus] = useState<"quiet" | "moderate" | "busy">("moderate");
+  const [, setLiveStatus] = useState<"quiet" | "moderate" | "busy" | undefined>(
+    undefined,
+  );
+
+  // Unlike liveStatus, this one IS actually read — forwarded straight
+  // through to VenueBottomSheet, which looks up the matching entry in
+  // its own already-fetched 12-hour forecast data. 0 = Now.
+  const [timeOffset, setTimeOffset] = useState(0);
 
   const [routeOptionsVisible, setRouteOptionsVisible] = useState(false);
 
@@ -502,6 +509,34 @@ export default function MapScreen() {
     });
   }, [venues, search, category]);
 
+  // Region tracking + a ref to the MapView itself — both needed for the
+  // zoom in/out buttons below, which work by nudging the current
+  // region's lat/lng "delta" (how much area is visible) and animating
+  // to it, rather than using any platform-specific zoom API directly.
+  const mapRef = useRef<MapView>(null);
+
+  const [region, setRegion] = useState(INITIAL_REGION);
+
+  const handleZoomIn = () => {
+    const nextRegion = {
+      ...region,
+      latitudeDelta: region.latitudeDelta / 2,
+      longitudeDelta: region.longitudeDelta / 2,
+    };
+
+    mapRef.current?.animateToRegion(nextRegion, 300);
+  };
+
+  const handleZoomOut = () => {
+    const nextRegion = {
+      ...region,
+      latitudeDelta: region.latitudeDelta * 2,
+      longitudeDelta: region.longitudeDelta * 2,
+    };
+
+    mapRef.current?.animateToRegion(nextRegion, 300);
+  };
+
   if (loading) {
     return (
       <SafeAreaView style={styles.loader}>
@@ -515,8 +550,10 @@ export default function MapScreen() {
       <StatusBar barStyle="dark-content" />
 
       <MapView
+        ref={mapRef}
         style={StyleSheet.absoluteFill}
         initialRegion={INITIAL_REGION}
+        onRegionChangeComplete={setRegion}
         showsUserLocation
       >
         {filteredVenues.map((venue) => (
@@ -569,6 +606,20 @@ export default function MapScreen() {
         <CategoryChips selected={category} onSelect={setCategory} />
       </View>
 
+      {/* ---------------------- Zoom Controls ---------------------- */}
+
+      <View style={styles.zoomControls}>
+        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomIn}>
+          <Ionicons name="add" size={24} color={Colours.text} />
+        </TouchableOpacity>
+
+        <View style={styles.zoomDivider} />
+
+        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomOut}>
+          <Ionicons name="remove" size={24} color={Colours.text} />
+        </TouchableOpacity>
+      </View>
+
       {/* ---------------------- Floating Buttons ---------------------- */}
 
       <FloatingActionButtons
@@ -611,6 +662,8 @@ export default function MapScreen() {
           setAutoCurrentTime(filters.autoCurrentTime);
 
           setLiveStatus(filters.liveStatus);
+
+          setTimeOffset(filters.timeOffset);
         }}
       />
 
@@ -686,6 +739,7 @@ export default function MapScreen() {
         venue={selectedVenue}
         activeReport={activeReportForSelectedVenue}
         autoCurrentTime={autoCurrentTime}
+        timeOffset={timeOffset}
         isFavourite={
           selectedVenue ? favouriteVenueIds.has(selectedVenue.venue_id) : false
         }
@@ -816,5 +870,34 @@ const styles = StyleSheet.create({
     fontWeight: "600",
 
     color: Colours.text,
+  },
+
+  // Positioned on the right side, vertically roughly mid-screen — clear
+  // of the topOverlay (search + category chips) above and
+  // FloatingActionButtons (SOS + Report, bottom-right) below.
+  zoomControls: {
+    position: "absolute",
+    right: 20,
+    top: 220,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 5,
+  },
+
+  zoomButton: {
+    width: 44,
+    height: 44,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  zoomDivider: {
+    height: 1,
+    backgroundColor: Colours.border,
+    marginHorizontal: 8,
   },
 });
