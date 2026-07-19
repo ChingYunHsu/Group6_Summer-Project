@@ -512,6 +512,27 @@ class TestInsertBusynessScores:
         assert isinstance(forecast, list)
         assert len(forecast) == 12
 
+    def test_active_hour_insert_keeps_the_full_12_hour_profile(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 1
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({
+            'venue_id': ['v_1001'] * 24,
+            'district': ['downtown'] * 24,
+            'hour': list(range(24)),
+            'score': list(range(24)),
+            'busyness_level': ['quiet'] * 24,
+        })
+        insert_busyness_scores(
+            mock_conn, source, effective_at=datetime(2026, 7, 19, 8), active_hour_only=True,
+        )
+        _, rows = mock_cursor.executemany.call_args.args
+        assert len(rows) == 1
+        forecast = json.loads(rows[0][3])
+        assert [point['percent'] for point in forecast] == list(range(8, 20))
+        assert {point['level'] for point in forecast} == {'quiet'}
+
     def test_effective_at_is_independent_of_source_data_year(self):
         from busyness_ingestion import insert_busyness_scores
         mock_conn, mock_cursor = MagicMock(), MagicMock()

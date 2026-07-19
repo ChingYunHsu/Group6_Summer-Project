@@ -252,20 +252,15 @@ def map_segments_to_venues(conn, segment_hourly_df, hours=None):
         print('Warning: no venues with district found')
         return pd.DataFrame()
 
-    rows = []
-    for _, venue in venues_df.iterrows():
-        v_district = venue['district']
-        d_data = district_hourly[district_hourly['district'] == v_district]
-        for _, row in d_data.iterrows():
-            rows.append({
-                'venue_id': venue['venue_id'],
-                'district': v_district,
-                'hour': int(row['hour']),
-                'score': int(row['avg_score']),
-                'busyness_level': row['busyness_level'],
-            })
-
-    result = pd.DataFrame(rows)
+    # Vectorised district join rather than nested venue×hour iteration. It
+    # intentionally retains every hourly profile point for forecast_1h.
+    result = venues_df.merge(
+        district_hourly[['district', 'hour', 'avg_score', 'busyness_level']],
+        on='district', how='inner', validate='many_to_many',
+    ).rename(columns={'avg_score': 'score'})
+    result['hour'] = result['hour'].astype(int)
+    result['score'] = result['score'].astype(int)
+    result = result[['venue_id', 'district', 'hour', 'score', 'busyness_level']]
     print(f'Venue mapping: {len(result)} venue-hour rows, '
           f'{venues_df["venue_id"].nunique()} venues across '
           f'{district_hourly["district"].nunique()} districts')
@@ -440,9 +435,9 @@ def run_pipeline(year=2025, model_version='nyc_traffic_context_v1', dry_run=Fals
     try:
         effective_at = effective_at or datetime.now()
         active_hour_only = model_version == 'nyc_traffic_context_v1'
-        venue_scores = map_segments_to_venues(
-            conn, segment_hourly, hours=[effective_at.hour] if active_hour_only else None
-        )
+        # Keep the complete 24-hour profile for forecast_1h.  The write stage
+        # alone limits current-context rows to the active hour.
+        venue_scores = map_segments_to_venues(conn, segment_hourly, hours=None)
         if venue_scores.empty:
             print('ERROR: No venue mapping. Aborting.')
             return
