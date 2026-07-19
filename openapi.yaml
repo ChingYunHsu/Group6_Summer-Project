@@ -2639,6 +2639,11 @@ components:
           type: string
         language:
           type: string
+          description: >
+            The client's selected app-UI language (e.g. from signup/settings).
+            Drives suggested_prompts localization; independent of the
+            message's own detected_language, which the assistant infers
+            per-message regardless of this value.
         voice_input:
           type: boolean
         context:
