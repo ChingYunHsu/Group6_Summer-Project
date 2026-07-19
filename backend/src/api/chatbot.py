@@ -15,11 +15,42 @@ bp = Blueprint("chatbot", __name__)
 
 TOP_K_VENUES = 3
 
-SUGGESTED_PROMPTS = [
-    "Find an urgent care near me",
-    "Which clinics are open now?",
-    "I have no insurance",
-]
+SUGGESTED_PROMPTS_BY_LANGUAGE = {
+    "en": [
+        "Find an urgent care near me",
+        "Which clinics are open now?",
+        "I have no insurance",
+    ],
+    "de": [
+        "Finde eine Notfallklinik in meiner Nähe",
+        "Welche Kliniken haben jetzt geöffnet?",
+        "Ich habe keine Versicherung",
+    ],
+    "fr": [
+        "Trouver un centre de soins d'urgence près de moi",
+        "Quelles cliniques sont ouvertes maintenant ?",
+        "Je n'ai pas d'assurance",
+    ],
+    "it": [
+        "Trova un pronto soccorso vicino a me",
+        "Quali cliniche sono aperte ora?",
+        "Non ho un'assicurazione",
+    ],
+    "es": [
+        "Encontrar atención de urgencia cerca de mí",
+        "¿Qué clínicas están abiertas ahora?",
+        "No tengo seguro médico",
+    ],
+    "zh": [
+        "查找附近的紧急护理中心",
+        "现在哪些诊所营业？",
+        "我没有保险",
+    ],
+}
+
+
+def _suggested_prompts(language: str) -> list:
+    return SUGGESTED_PROMPTS_BY_LANGUAGE.get(language, SUGGESTED_PROMPTS_BY_LANGUAGE["en"])
 
 # The chatbot must NEVER have a path to medical_profiles / user_medical_profiles
 # (encrypted health data). It only ever queries venue_embeddings below —
@@ -90,7 +121,7 @@ def _ask_gemini_rag(message: str) -> dict:
         "language": detected_language,
         "detected_language": detected_language,
         "citations": citations,
-        "suggested_prompts": SUGGESTED_PROMPTS,
+        "suggested_prompts": _suggested_prompts(detected_language),
         "fallback_used": False,
         "response_time_ms": round((time.monotonic() - start) * 1000),
     }
@@ -113,6 +144,7 @@ def ask_chatbot():
     response.setdefault("detected_language", response.get("language", "en"))
     if "language" in payload:
         response["language"] = payload["language"]
+    response["suggested_prompts"] = _suggested_prompts(response["language"])
     response["fallback_used"] = True
 
     return jsonify(response)
