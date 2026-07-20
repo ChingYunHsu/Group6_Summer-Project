@@ -10,8 +10,6 @@ describe("FilterModal", () => {
     visible: true,
     openNow: false,
     accessible: false,
-    // A language *code*, matching FilterModal's real contract (it compares
-    // against featuredLanguages[].code, e.g. "fr") — not a display name.
     language: "fr",
     autoCurrentTime: true,
     onClose: mockClose,
@@ -22,31 +20,31 @@ describe("FilterModal", () => {
     jest.clearAllMocks();
   });
 
-  it("renders Live Status when Auto Current Time is enabled", async () => {
+  it("renders Live Status and the date/time controls together, regardless of Auto Current Time", async () => {
     const screen = await render(<FilterModal {...defaultProps} />);
 
     expect(screen.getByText("Live Status")).toBeTruthy();
 
     expect(screen.getByText("Quiet")).toBeTruthy();
 
-    expect(screen.queryByTestId("date-selector")).toBeNull();
+    expect(screen.getByTestId("date-selector")).toBeTruthy();
 
-    expect(screen.queryByTestId("time-selector")).toBeNull();
+    expect(screen.getByTestId("time-selector")).toBeTruthy();
   });
 
-  it("renders manual date and time controls when Auto Current Time is disabled", async () => {
+  it("still renders Live Status and the date/time controls together when Auto Current Time is disabled", async () => {
     const screen = await render(
       <FilterModal {...defaultProps} autoCurrentTime={false} />,
     );
 
-    expect(screen.queryByText("Live Status")).toBeNull();
+    expect(screen.getByText("Live Status")).toBeTruthy();
 
     expect(screen.getByTestId("date-selector")).toBeTruthy();
 
     expect(screen.getByTestId("time-selector")).toBeTruthy();
   });
 
-  it("shows Live Status after enabling Auto Current Time", async () => {
+  it("keeps both sections visible after toggling Auto Current Time on via interaction", async () => {
     const screen = await render(
       <FilterModal {...defaultProps} autoCurrentTime={false} />,
     );
@@ -54,20 +52,15 @@ describe("FilterModal", () => {
     const toggle = screen.getByTestId("auto-current-time-switch");
 
     fireEvent(toggle, "valueChange", true);
-    screen.debug();
 
     await screen.findByText("Live Status");
 
-    expect(screen.queryByTestId("date-selector")).toBeNull();
+    expect(screen.getByTestId("date-selector")).toBeTruthy();
 
-    expect(screen.queryByTestId("time-selector")).toBeNull();
+    expect(screen.getByTestId("time-selector")).toBeTruthy();
   });
 
-  // Reverse direction of the test above — the existing suite only covered
-  // disabled→enabled via interaction; this covers enabled→disabled, so
-  // both toggle states are verified via actual user interaction, not just
-  // via initial props.
-  it("shows manual date/time controls after disabling Auto Current Time", async () => {
+  it("keeps both sections visible after toggling Auto Current Time off via interaction", async () => {
     const screen = await render(<FilterModal {...defaultProps} />);
 
     const toggle = screen.getByTestId("auto-current-time-switch");
@@ -76,16 +69,13 @@ describe("FilterModal", () => {
 
     await screen.findByTestId("date-selector");
 
-    expect(screen.queryByText("Live Status")).toBeNull();
+    expect(screen.getByText("Live Status")).toBeTruthy();
 
     expect(screen.getByTestId("date-selector")).toBeTruthy();
 
     expect(screen.getByTestId("time-selector")).toBeTruthy();
   });
 
-  // Toggling is staged local state, not a live-apply — this guards against
-  // a regression where flipping the switch alone would fire onApply
-  // before the user presses the Apply button.
   it("does not call onApply just from toggling the switch", async () => {
     const screen = await render(<FilterModal {...defaultProps} />);
 
@@ -126,9 +116,6 @@ describe("FilterModal", () => {
     );
   });
 
-  // Same assertion as above, but exercised through the actual switch
-  // interaction rather than only the initial prop — verifies the staged
-  // local state that gets sent to onApply, not just the prop passthrough.
   it("passes the toggled Auto Current Time value to onApply after interaction", async () => {
     const screen = await render(<FilterModal {...defaultProps} />);
 
