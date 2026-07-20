@@ -8,7 +8,7 @@
 用法:
   cd Data+ML/test/6.8-6.12_DB
   python -m dqr.busyness_ingestion --year 2025 --dry-run
-  python -m dqr.busyness_ingestion --year 2025 --model-version nyc_traffic_baseline_v1
+  python -m dqr.busyness_ingestion --year 2025
 """
 
 import json
@@ -298,20 +298,15 @@ def build_forecast_1h(scores_df, target_hour):
 def insert_busyness_scores(conn, venue_scores_df,
                            model_version='nyc_traffic_baseline_v1',
                            features_snapshot=None,
-                           data_year=2025,
-                           effective_at=None,
-                           active_hour_only=False):
+                           data_year=2025):
     """批量写入 busyness_scores 表，每个 venue 写 24 行 (每小时一行)。
 
     使用 executemany 批量插入，显著提升性能。
-    唯一约束上的 upsert 让同一运行日的重跑安全地刷新当前窗口。
+    唯一约束上的 upsert 让同一来源年份的重跑安全刷新小时模式。
 
     Args:
-        data_year: 源数据年份，只用于 features_snapshot 的来源血缘。
-        effective_at: 当前预测窗口的生效时间。默认是本地运行时间；故意
-            不使用 data_year，以免历史交通来源把 current-status 窗口锚定到过去。
-        active_hour_only: 仅写入当前小时的 context 行。当前状态 API 只查询
-            这一行；12 小时 V2 曲线由 busyness_forecasts 单独提供。
+        data_year: 源数据年份，也是静态小时模式的索引日期。调用方只能按
+            ``HOUR(forecast_start_time)`` 使用它，不能将其当作实时窗口。
 
     Returns:
         int: 插入行数
@@ -328,12 +323,7 @@ def insert_busyness_scores(conn, venue_scores_df,
     # risks terminating the process before any current-context row is written.
     batch_size = 1_000
     inserted = 0
-    effective_at = effective_at or datetime.now()
-    if effective_at.tzinfo is not None:
-        # MySQL DATETIME 和后端 datetime.now() 都是本地 naive 语义。
-        effective_at = effective_at.replace(tzinfo=None)
-    # 幂等刷新: UNIQUE KEY (venue_id, forecast_start_time, model_version)
-    # 确保重复抓取可更新同一天的 context，而不是静默保留过期值。
+    pattern_date = datetime(data_year, 1, 1)
     sql = """
         INSERT INTO busyness_scores
             (venue_id, score, level, estimated_wait_minutes,
@@ -352,8 +342,7 @@ def insert_busyness_scores(conn, venue_scores_df,
         batch = []
         for venue_id, group in venue_scores_df.groupby('venue_id'):
             by_hour = group.set_index('hour')[['score', 'busyness_level']].to_dict('index')
-            target_hours = [effective_at.hour] if active_hour_only else by_hour.keys()
-            for hour in target_hours:
+            for hour in by_hour:
                 values = by_hour.get(int(hour))
                 if values is None:
                     continue
@@ -366,10 +355,10 @@ def insert_busyness_scores(conn, venue_scores_df,
                         'percent': int(next_values['score']) if next_values else 0,
                         'level': next_values['busyness_level'] if next_values else 'no_data',
                     })
-                base_date = effective_at.replace(hour=int(hour), minute=0, second=0, microsecond=0)
+                base_date = pattern_date.replace(hour=int(hour))
                 batch.append((
                     venue_id, score, level, json.dumps(forecast), base_date,
-                    base_date + timedelta(hours=12), model_version, features_snapshot,
+                    base_date + timedelta(hours=1), model_version, features_snapshot,
                 ))
                 if len(batch) >= batch_size:
                     cursor.executemany(sql, batch)
@@ -389,17 +378,13 @@ def insert_busyness_scores(conn, venue_scores_df,
     return inserted
 
 
-def prune_expired_context_scores(conn, effective_at=None,
-                                 model_version='nyc_traffic_context_v1'):
-    """Remove only stale current-traffic context; retain historical baseline rows."""
-    effective_at = effective_at or datetime.now()
-    if effective_at.tzinfo is not None:
-        effective_at = effective_at.replace(tzinfo=None)
+def retire_legacy_context_scores(conn):
+    """Delete obsolete SODA rows that were incorrectly labelled as live context."""
     cursor = conn.cursor()
     try:
         cursor.execute(
-            "DELETE FROM busyness_scores WHERE model_version=%s AND forecast_end_time <= %s",
-            (model_version, effective_at),
+            "DELETE FROM busyness_scores WHERE model_version=%s",
+            ("nyc_traffic_context_v1",),
         )
         conn.commit()
         return cursor.rowcount
@@ -409,9 +394,9 @@ def prune_expired_context_scores(conn, effective_at=None,
 
 # ── 主入口 ───────────────────────────────────────────────────
 
-def run_pipeline(year=2025, model_version='nyc_traffic_context_v1', dry_run=False,
-                 effective_at=None):
+def run_pipeline(year=2025, dry_run=False):
     """完整管线: 采集 → 聚合 → venue 匹配 → 写入。"""
+    model_version = 'nyc_traffic_baseline_v1'
     print('=== Busyness Ingestion Pipeline (venue-level) ===')
     print(f'Year: {year}, Model: {model_version}, Dry-run: {dry_run}')
 
@@ -433,10 +418,11 @@ def run_pipeline(year=2025, model_version='nyc_traffic_context_v1', dry_run=Fals
     print('\n[3/4] Matching segments to venues (district aggregation)...')
     conn = get_conn()
     try:
-        effective_at = effective_at or datetime.now()
-        active_hour_only = model_version == 'nyc_traffic_context_v1'
-        # Keep the complete 24-hour profile for forecast_1h.  The write stage
-        # alone limits current-context rows to the active hour.
+        # The old context version is semantically invalid for fixed SODA data.
+        # Retire it before doing any new static-pattern work.
+        retired = 0 if dry_run else retire_legacy_context_scores(conn)
+        # SODA is a fixed historical hour-of-day pattern, so all 24 profile
+        # points are retained.  Real-time telemetry is ingested separately.
         venue_scores = map_segments_to_venues(conn, segment_hourly, hours=None)
         if venue_scores.empty:
             print('ERROR: No venue mapping. Aborting.')
@@ -455,12 +441,9 @@ def run_pipeline(year=2025, model_version='nyc_traffic_context_v1', dry_run=Fals
             print(venue_scores.head(12).to_string())
         else:
             print('\n[4/4] Writing to busyness_scores...')
-            # Never prune nyc_traffic_baseline_v1: it is the retained V2 training feature.
-            pruned = prune_expired_context_scores(conn, effective_at)
             inserted = insert_busyness_scores(
-                conn, venue_scores, model_version, data_year=year, effective_at=effective_at,
-                active_hour_only=active_hour_only)
-            print(f'Done: {inserted} rows upserted; {pruned} expired context rows pruned')
+                conn, venue_scores, model_version, data_year=year)
+            print(f'Done: {inserted} baseline rows upserted; {retired} legacy context rows retired')
     finally:
         conn.close()
 
@@ -470,12 +453,7 @@ def run_pipeline(year=2025, model_version='nyc_traffic_context_v1', dry_run=Fals
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Busyness data ingestion pipeline')
     parser.add_argument('--year', type=int, default=2025, help='Data year')
-    parser.add_argument('--model-version', default='nyc_traffic_context_v1',
-                        help='Model version tag (current context default; baseline is preserved separately)')
-    parser.add_argument('--effective-at', type=datetime.fromisoformat,
-                        help='Optional local ISO timestamp for a reproducible current-status window')
     parser.add_argument('--dry-run', action='store_true',
                         help='Generate data without DB insert')
     args = parser.parse_args()
-    run_pipeline(year=args.year, model_version=args.model_version, dry_run=args.dry_run,
-                 effective_at=args.effective_at)
+    run_pipeline(year=args.year, dry_run=args.dry_run)
