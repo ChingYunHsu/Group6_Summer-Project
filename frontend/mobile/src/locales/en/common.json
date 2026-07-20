@@ -261,7 +261,10 @@
       "apply": "Apply Filters",
       "quiet": "Quiet",
       "moderate": "Moderate",
-      "busy": "Busy"
+      "busy": "Busy",
+      "wheelchairAccess": "Wheelchair Access",
+      "fullAccess": "Full Access",
+      "partialOrFullAccess": "Partial or Full Access"
     }
   },
   "reportModal": {
@@ -351,6 +354,9 @@
     "forecastUnavailable": "Live forecast isn't available for this venue yet.",
     "expectedWait": "Expected wait: {{minutes}} minutes",
     "unknown": "Unknown",
-    "directions": "Directions"
+    "directions": "Directions",
+    "fullWheelchairAccess": "Full wheelchair access",
+    "partialWheelchairAccess": "Partial wheelchair access",
+    "accessibilityUnknown": "Wheelchair access unknown"
   }
 }

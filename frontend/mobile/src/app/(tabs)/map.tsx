@@ -128,13 +128,21 @@ export default function MapScreen() {
   const [loginModalVisible, setLoginModalVisible] = useState(false);
 
   // Undefined = "no preference sent to the API" — NOT the same as `false`.
-  // getVenues() only sets the `accessible`/`open_now` query params when the
-  // filter value isn't undefined, so leaving these undefined until the user
-  // actually applies a filter means the first load isn't silently
-  // restricted to "only non-accessible, currently-closed venues."
+  // getVenues() only sets the `open_now` query param when the filter value
+  // isn't undefined, so leaving this undefined until the user actually
+  // applies a filter means the first load isn't silently restricted to
+  // "only currently-closed venues."
   const [openNow, setOpenNow] = useState<boolean | undefined>(undefined);
 
-  const [accessible, setAccessible] = useState<boolean | undefined>(undefined);
+  // Replaces the old plain boolean — accessible_status is a real,
+  // meaningful enum (full_access/partial/none/unknown), not a yes/no
+  // fact, so a simple true/false query param couldn't represent it
+  // honestly. Filtered client-side below, same as liveStatus, rather
+  // than as a getVenues() query param — the backend's exact support for
+  // filtering by these specific enum values hasn't been verified.
+  const [wheelchairAccess, setWheelchairAccess] = useState<
+    "full_access" | "partial_or_full" | undefined
+  >(undefined);
 
   const [language, setLanguage] = useState("");
 
@@ -267,7 +275,6 @@ export default function MapScreen() {
       const [venueData, reportData] = await Promise.all([
         getVenues({
           open_now: openNow,
-          accessible,
           languages: language ? [language] : [],
         }),
         getReports(),
@@ -284,7 +291,7 @@ export default function MapScreen() {
     } finally {
       setLoading(false);
     }
-  }, [openNow, accessible, language]);
+  }, [openNow, language]);
 
   async function refreshReports() {
     try {
@@ -505,11 +512,27 @@ export default function MapScreen() {
       const matchesLiveStatus =
         !liveStatus || venue.busyness?.busyness_status === liveStatus;
 
+      // "full_access" only matches venues confirmed fully accessible.
+      // "partial_or_full" is the broader option, matching either real
+      // positive status. Venues with 'none'/'unknown'/missing data are
+      // excluded either way once a filter is actually selected — there's
+      // no way to honestly show them as matching an accessibility
+      // requirement we don't have confirmed data for.
+      const matchesWheelchairAccess =
+        !wheelchairAccess ||
+        (wheelchairAccess === "full_access"
+          ? venue.accessible_status === "full_access"
+          : venue.accessible_status === "full_access" ||
+            venue.accessible_status === "partial");
+
       return (
-        matchesSearch && matchesCategory(venue, category) && matchesLiveStatus
+        matchesSearch &&
+        matchesCategory(venue, category) &&
+        matchesLiveStatus &&
+        matchesWheelchairAccess
       );
     });
-  }, [venues, search, category, liveStatus]);
+  }, [venues, search, category, liveStatus, wheelchairAccess]);
 
   // Fetches busyness for whichever venues currently match the selected
   // category (i.e. whatever's actually rendered as markers), merging the
@@ -705,14 +728,14 @@ export default function MapScreen() {
       <FilterModal
         visible={filterVisible}
         openNow={openNow}
-        accessible={accessible}
+        wheelchairAccess={wheelchairAccess}
         language={language}
         autoCurrentTime={autoCurrentTime}
         onClose={() => setFilterVisible(false)}
         onApply={(filters) => {
           setOpenNow(filters.openNow);
 
-          setAccessible(filters.accessible);
+          setWheelchairAccess(filters.wheelchairAccess);
 
           setLanguage(filters.language);
 

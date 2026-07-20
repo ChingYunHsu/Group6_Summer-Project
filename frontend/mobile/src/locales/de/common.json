@@ -262,7 +262,10 @@
       "apply": "Filter anwenden",
       "quiet": "Ruhig",
       "moderate": "Mäßig",
-      "busy": "Belebt"
+      "busy": "Belebt",
+      "wheelchairAccess": "Rollstuhlzugang",
+      "fullAccess": "Vollständiger Zugang",
+      "partialOrFullAccess": "Teilweiser oder vollständiger Zugang"
     }
   },
 
@@ -356,6 +359,9 @@
     "forecastUnavailable": "Für diesen Ort ist noch keine Live-Prognose verfügbar.",
     "expectedWait": "Erwartete Wartezeit: {{minutes}} Minuten",
     "unknown": "Unbekannt",
-    "directions": "Route"
+    "directions": "Route",
+    "fullWheelchairAccess": "Voller Rollstuhlzugang",
+    "partialWheelchairAccess": "Teilweiser Rollstuhlzugang",
+    "accessibilityUnknown": "Rollstuhlzugang unbekannt"
   }
 }
