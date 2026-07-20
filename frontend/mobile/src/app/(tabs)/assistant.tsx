@@ -174,6 +174,12 @@ export default function AssistantScreen() {
     useCallback(() => {
       (async () => {
         const code = await AsyncStorage.getItem("language");
+        console.log(
+          "ASSISTANT FOCUS: stored code =",
+          code,
+          "| currentLanguage.code =",
+          currentLanguage.code,
+        );
         const match = featuredLanguages.find((l) => l.code === code);
 
         if (match) {
