@@ -20,13 +20,21 @@ import { featuredLanguages } from "../data/languages";
 interface Props {
   visible: boolean;
   openNow?: boolean;
-  accessible?: boolean;
+  // Replaces the old plain boolean "accessible" toggle — confirmed
+  // tonight that accessible_status is a real, meaningful enum
+  // ('full_access'/'partial'/'none'/'unknown'), not a yes/no fact, so a
+  // simple on/off switch couldn't honestly represent it. "none" is
+  // deliberately not offered as a filter choice at all — a user
+  // wouldn't want to specifically filter for "confirmed not
+  // accessible", and given the backfill for un-checked venues was
+  // skipped, "none" right now mostly just means "never checked" anyway.
+  wheelchairAccess?: "full_access" | "partial_or_full";
   language: string;
   autoCurrentTime: boolean;
   onClose: () => void;
   onApply: (filters: {
     openNow: boolean | undefined;
-    accessible: boolean | undefined;
+    wheelchairAccess: "full_access" | "partial_or_full" | undefined;
     language: string;
     autoCurrentTime: boolean;
     liveStatus: "quiet" | "moderate" | "busy" | undefined;
@@ -65,12 +73,29 @@ const STATUS_COLOURS = {
   busy: "#DC2626",
 };
 
+// Reuses the same chip-row pattern as LIVE_STATUS above, rather than
+// introducing a new control type — matches "whatever's easiest" while
+// staying visually consistent with something already proven in this
+// same file.
+const WHEELCHAIR_OPTIONS = [
+  {
+    translationKey: "map.filters.fullAccess",
+    defaultValue: "Full Access",
+    value: "full_access",
+  },
+  {
+    translationKey: "map.filters.partialOrFullAccess",
+    defaultValue: "Partial or Full Access",
+    value: "partial_or_full",
+  },
+] as const;
+
 const TIME_OFFSET_OPTIONS = Array.from({ length: 12 }, (_, i) => i);
 
 export default function FilterModal({
   visible,
   openNow,
-  accessible,
+  wheelchairAccess: wheelchairAccessProp,
   language,
   autoCurrentTime: autoCurrentTimeProp,
   onClose,
@@ -79,7 +104,13 @@ export default function FilterModal({
   const { t } = useTranslation();
 
   const [localOpenNow, setLocalOpenNow] = useState(openNow ?? false);
-  const [localAccessible, setLocalAccessible] = useState(accessible ?? false);
+
+  // Starts unselected, matching Live Status's own pattern — no default
+  // filter applied until the user actually picks one.
+  const [wheelchairAccess, setWheelchairAccess] = useState<
+    "full_access" | "partial_or_full" | undefined
+  >(wheelchairAccessProp);
+
   const [localLanguage, setLocalLanguage] = useState(language);
   const [autoCurrentTime, setAutoCurrentTime] = useState(autoCurrentTimeProp);
   // Starts unselected (undefined), not defaulted to "moderate" — Live
@@ -117,10 +148,10 @@ export default function FilterModal({
     if (!justOpened) return;
 
     setLocalOpenNow(openNow ?? false);
-    setLocalAccessible(accessible ?? false);
+    setWheelchairAccess(wheelchairAccessProp);
     setLocalLanguage(language);
     setAutoCurrentTime(autoCurrentTimeProp);
-  }, [visible, openNow, accessible, language, autoCurrentTimeProp]);
+  }, [visible, openNow, wheelchairAccessProp, language, autoCurrentTimeProp]);
 
   return (
     <Modal visible={visible} transparent animationType="slide">
@@ -145,15 +176,35 @@ export default function FilterModal({
             </Text>
             <Switch value={localOpenNow} onValueChange={setLocalOpenNow} />
           </View>
-          <View style={styles.row}>
-            <Text style={styles.label}>
-              {t("map.filters.accessible", { defaultValue: "Accessible" })}
-            </Text>
-            <Switch
-              value={localAccessible}
-              onValueChange={setLocalAccessible}
-            />
+
+          <Text style={styles.label}>
+            {t("map.filters.wheelchairAccess", {
+              defaultValue: "Wheelchair Access",
+            })}
+          </Text>
+          <View testID="wheelchair-access-section" style={styles.chipRow}>
+            {WHEELCHAIR_OPTIONS.map((item) => {
+              const selected = item.value === wheelchairAccess;
+              return (
+                <TouchableOpacity
+                  key={item.value}
+                  style={[styles.chip, selected && styles.selectedChip]}
+                  onPress={() =>
+                    setWheelchairAccess(selected ? undefined : item.value)
+                  }
+                >
+                  <Text
+                    style={[styles.chipText, selected && styles.selectedText]}
+                  >
+                    {t(item.translationKey, {
+                      defaultValue: item.defaultValue,
+                    })}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
+
           <Text style={styles.section}>
             {t("map.filters.time", { defaultValue: "Time" })}
           </Text>
@@ -244,40 +295,43 @@ export default function FilterModal({
           <Text style={styles.section}>
             {t("map.filters.language", { defaultValue: "Language" })}
           </Text>
-          <View style={styles.chipRow}>
-            {LANGUAGE_OPTIONS.map((item) => {
-              const selected = item.code === localLanguage;
-              return (
-                <TouchableOpacity
-                  key={item.code}
-                  style={[styles.chip, selected && styles.selectedChip]}
-                  onPress={() => setLocalLanguage(selected ? "" : item.code)}
-                >
-                  <Text
-                    style={[styles.chipText, selected && styles.selectedText]}
-                  >
-                    {item.label}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
+          {/* Grayed out and unclickable — confirmed tonight that 100%
+              of venues have NULL language data (zero exceptions across
+              hospitals, pharmacies, clinics), so this filter would
+              always return an empty result regardless of what's
+              picked. Left visible rather than removed entirely, so it
+              doesn't look like the feature was never built — just
+              genuinely not usable against real data right now. */}
+          <View
+            style={styles.chipRow}
+            pointerEvents="none"
+            testID="language-section-disabled"
+          >
+            {LANGUAGE_OPTIONS.map((item) => (
+              <View key={item.code} style={[styles.chip, styles.disabledChip]}>
+                <Text style={[styles.chipText, styles.disabledChipText]}>
+                  {item.label}
+                </Text>
+              </View>
+            ))}
           </View>
           <TouchableOpacity
             testID="apply-filters-button"
             style={styles.applyButton}
             onPress={() => {
               onApply({
-                // localOpenNow/localAccessible are always real booleans
-                // internally (Switch needs that), but the API treats
-                // false as an EXPLICIT filter ("only show closed venues")
-                // not "no preference" — sending false unconditionally
-                // meant the very first time this modal was applied at
-                // all, even untouched switches silently turned into a
-                // real, restrictive filter instead of staying off.
-                // || undefined converts a false switch back into "no
-                // preference", only sending true when actually toggled on.
+                // localOpenNow is always a real boolean internally
+                // (Switch needs that), but the API treats false as an
+                // EXPLICIT filter ("only show closed venues") not "no
+                // preference" — sending false unconditionally meant the
+                // very first time this modal was applied at all, even
+                // an untouched switch silently turned into a real,
+                // restrictive filter instead of staying off. ||
+                // undefined converts a false switch back into "no
+                // preference", only sending true when actually toggled
+                // on.
                 openNow: localOpenNow || undefined,
-                accessible: localAccessible || undefined,
+                wheelchairAccess,
                 language: localLanguage,
                 autoCurrentTime,
                 liveStatus,
@@ -405,6 +459,8 @@ const styles = StyleSheet.create({
   selectedChip: { backgroundColor: Colours.primary },
   chipText: { color: Colours.text, fontWeight: "600" },
   selectedText: { color: "#FFF" },
+  disabledChip: { backgroundColor: "#F3F4F6" },
+  disabledChipText: { color: "#B4B9C2" },
   dateRow: {
     flexDirection: "row",
     alignItems: "center",

@@ -288,6 +288,49 @@ export default function VenueBottomSheet({
             </>
           )}
 
+          {/* 'none' and 'unknown' are deliberately treated identically
+              here — the backfill that would distinguish "confirmed not
+              accessible" from "never checked" for existing venues was
+              skipped, so the database itself can't reliably tell them
+              apart right now. Showing both as a neutral gray "Unknown"
+              avoids falsely claiming a venue isn't accessible when the
+              real answer might just be "nobody's checked yet". Matches
+              Alex's guidance: null/unpopulated accessibility data
+              should read as "Unknown", not as a negative claim. */}
+          <View style={styles.row}>
+            <Ionicons
+              name="accessibility-outline"
+              size={18}
+              color={
+                venue.accessible_status === "full_access" ||
+                venue.accessible_status === "partial"
+                  ? Colours.primary
+                  : Colours.muted
+              }
+            />
+
+            <Text
+              style={[
+                styles.rowText,
+                venue.accessible_status !== "full_access" &&
+                  venue.accessible_status !== "partial" &&
+                  styles.unknownText,
+              ]}
+            >
+              {venue.accessible_status === "full_access"
+                ? t("venueSheet.fullWheelchairAccess", {
+                    defaultValue: "Full wheelchair access",
+                  })
+                : venue.accessible_status === "partial"
+                  ? t("venueSheet.partialWheelchairAccess", {
+                      defaultValue: "Partial wheelchair access",
+                    })
+                  : t("venueSheet.accessibilityUnknown", {
+                      defaultValue: "Wheelchair access unknown",
+                    })}
+            </Text>
+          </View>
+
           {/* Bug fix: this used to be nested inside the active_warning
               block above, meaning Services and the forecast chart only
               ever showed for venues currently flagged with a warning —
@@ -475,6 +518,11 @@ const styles = StyleSheet.create({
     color: Colours.text,
 
     flex: 1,
+  },
+
+  unknownText: {
+    color: Colours.muted,
+    fontStyle: "italic",
   },
 
   directionButton: {

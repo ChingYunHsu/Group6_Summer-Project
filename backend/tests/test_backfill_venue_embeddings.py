@@ -36,6 +36,8 @@ class _FakeCursor:
             self._result = [v for v in self._venues if v["venue_id"] == params[0]]
         elif query.startswith("SELECT * FROM venues"):
             self._result = list(self._venues)
+        elif query.startswith("SELECT venue_id FROM venue_embeddings"):
+            self._result = [{"venue_id": vid} for vid in self._embeddings_table]
         elif query.startswith("INSERT INTO venue_embeddings"):
             venue_id, embedding, text_snapshot, model_version = params
             self._embeddings_table[venue_id] = {
@@ -118,3 +120,28 @@ def test_backfill_single_venue_id(monkeypatch):
 
     assert count == 1
     assert list(embeddings_table.keys()) == ["v_1001"]
+
+
+def test_backfill_skips_already_embedded_venues(monkeypatch):
+    embeddings_table = {
+        "v_1001": {"embedding": "[0.9]", "text_snapshot": "old", "model_version": "old-model"}
+    }
+    other_venue = {**VENUE, "venue_id": "v_9999"}
+
+    @contextmanager
+    def fake_db_cursor():
+        yield _FakeCursor([VENUE, other_venue], embeddings_table)
+
+    @contextmanager
+    def fake_db_transaction():
+        yield _FakeCursor([VENUE, other_venue], embeddings_table)
+
+    monkeypatch.setattr(backfill_module.db, "db_cursor", fake_db_cursor)
+    monkeypatch.setattr(backfill_module.db, "db_transaction", fake_db_transaction)
+    monkeypatch.setattr(backfill_module.gemini_client, "embed_text", lambda text: [0.1])
+
+    count = backfill_module.backfill()
+
+    assert count == 1
+    assert embeddings_table["v_1001"]["model_version"] == "old-model"  # untouched
+    assert "v_9999" in embeddings_table

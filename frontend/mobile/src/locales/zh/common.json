@@ -256,7 +256,10 @@
       "apply": "应用筛选",
       "quiet": "安静",
       "moderate": "适中",
-      "busy": "繁忙"
+      "busy": "繁忙",
+      "wheelchairAccess": "轮椅通道",
+      "fullAccess": "完全无障碍",
+      "partialOrFullAccess": "部分或完全无障碍"
     }
   },
 
@@ -365,6 +368,9 @@
     "forecastUnavailable": "该地点暂无实时预测数据。",
     "expectedWait": "预计等待：{{minutes}} 分钟",
     "unknown": "未知",
-    "directions": "路线"
+    "directions": "路线",
+    "fullWheelchairAccess": "完全轮椅无障碍",
+    "partialWheelchairAccess": "部分轮椅无障碍",
+    "accessibilityUnknown": "轮椅通道情况未知"
   }
 }

@@ -252,7 +252,10 @@
       "apply": "Appliquer les filtres",
       "quiet": "Calme",
       "moderate": "Modéré",
-      "busy": "Fréquenté"
+      "busy": "Fréquenté",
+      "wheelchairAccess": "Accès en fauteuil roulant",
+      "fullAccess": "Accès complet",
+      "partialOrFullAccess": "Accès partiel ou complet"
     }
   },
   "reportModal": {
@@ -350,6 +353,9 @@
     "forecastUnavailable": "La prévision en direct n'est pas encore disponible pour ce lieu.",
     "expectedWait": "Attente estimée : {{minutes}} minutes",
     "unknown": "Inconnu",
-    "directions": "Itinéraire"
+    "directions": "Itinéraire",
+    "fullWheelchairAccess": "Accès complet en fauteuil roulant",
+    "partialWheelchairAccess": "Accès partiel en fauteuil roulant",
+    "accessibilityUnknown": "Accessibilité en fauteuil roulant inconnue"
   }
 }
