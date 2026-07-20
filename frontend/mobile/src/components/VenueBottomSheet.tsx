@@ -291,7 +291,7 @@ export default function VenueBottomSheet({
             ) : hasForecast ? (
               <>
                 <Text style={styles.sectionTitle}>
-                  12-Hour Wait Time Forecast
+                  12-Hour Busyness Forecast
                 </Text>
 
                 <View style={styles.chartRow}>
