@@ -273,8 +273,10 @@ def get_venue(venue_id: str):
 def get_venue_busyness(venue_id: str):
     """Return current busyness for a venue.
 
-    Reads from busyness_scores table; falls back to mock data if DB
-    is unavailable or has no matching record.
+    Fresh, externally collected telemetry is authoritative and is queried by
+    its absolute validity window.  The retained 2025 SODA profile is only a
+    non-live fallback: it matches the current hour of day and never becomes
+    stale merely because its source year is in the past.
     """
     # --- Try DB first ---
     try:
@@ -286,11 +288,11 @@ def get_venue_busyness(venue_id: str):
                     "SELECT score, level, estimated_wait_minutes, created_at, forecast_end_time "
                     "FROM busyness_scores "
                     "WHERE venue_id = %s "
-                    "  AND model_version = 'nyc_traffic_context_v1' "
+                    "  AND model_version = %s "
                     "  AND forecast_start_time <= %s "
                     "  AND forecast_end_time > %s "
                     "ORDER BY forecast_start_time DESC LIMIT 1",
-                    (venue_id, now, now),
+                    (venue_id, "live-telemetry-v1", now, now),
                 )
                 row = cur.fetchone()
                 if row:
@@ -303,6 +305,7 @@ def get_venue_busyness(venue_id: str):
                             "busyness_color": _level_to_color(level),
                             "is_future_time_query": False,
                             "data_mode": "live",
+                            "busyness_source": "live_telemetry",
                             "estimated_wait_minutes": wait_min,
                             "updated_at": (
                                 created_at.isoformat() + "Z" if created_at else None
@@ -310,6 +313,37 @@ def get_venue_busyness(venue_id: str):
                             "expires_at": (
                                 expires_at.isoformat() + "Z" if expires_at else None
                             ),
+                        },
+                    })
+
+                # Historical SODA rows encode a venue-hour pattern.  Do not
+                # apply their 2025 date window to a 2026 request.
+                cur.execute(
+                    "SELECT score, level, estimated_wait_minutes, created_at "
+                    "FROM busyness_scores "
+                    "WHERE venue_id = %s "
+                    "  AND model_version = 'nyc_traffic_baseline_v1' "
+                    "  AND HOUR(forecast_start_time) = HOUR(%s) "
+                    "ORDER BY created_at DESC LIMIT 1",
+                    (venue_id, now),
+                )
+                row = cur.fetchone()
+                if row:
+                    score, level, wait_min, created_at = row
+                    return jsonify({
+                        "venue_id": venue_id,
+                        "busyness": {
+                            "busyness_score": score,
+                            "busyness_status": level,
+                            "busyness_color": _level_to_color(level),
+                            "is_future_time_query": False,
+                            "data_mode": "baseline",
+                            "busyness_source": "traffic_baseline_pattern",
+                            "estimated_wait_minutes": wait_min,
+                            "updated_at": (
+                                created_at.isoformat() + "Z" if created_at else None
+                            ),
+                            "expires_at": None,
                         },
                     })
         finally:

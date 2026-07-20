@@ -31,13 +31,29 @@ class FakeCursor:
 
     def execute(self, query, params=()):
         query = " ".join(query.split())
-        now = params[-1]
-        if "WHERE venue_id = %s" in query:
+        if "HOUR(forecast_start_time)" in query:
+            venue_id, now = params
+            candidates = [
+                row for row in self.rows
+                if row["venue_id"] == venue_id
+                and row["model_version"] == "nyc_traffic_baseline_v1"
+                and row["forecast_start_time"].hour == now.hour
+            ]
+            candidates.sort(key=lambda row: row["created_at"], reverse=True)
+            row = candidates[0] if candidates else None
+            self._result = (
+                (row["score"], row["level"], row["estimated_wait_minutes"], row["created_at"])
+                if row else None
+            )
+        elif "WHERE venue_id = %s" in query:
+            venue_id, model_version, *times = params
+            now = times[-1]
             venue_id = params[0]
             candidates = [
                 row
                 for row in self.rows
                 if row["venue_id"] == venue_id
+                and row["model_version"] == model_version
                 and row["forecast_start_time"] <= now
                 and row["forecast_end_time"] > now
             ]
@@ -184,6 +200,27 @@ def test_venue_busyness_ignores_expired_live_rows(client, monkeypatch):
     assert resp.status_code == 404
 
 
+def test_venue_busyness_uses_non_expiring_soda_hourly_pattern(client, monkeypatch):
+    now = datetime.now()
+    rows = [{
+        "venue_id": "v_pattern", "score": 48, "level": "moderate",
+        "estimated_wait_minutes": 8,
+        "forecast_start_time": now.replace(year=2025),
+        "forecast_end_time": now.replace(year=2025) + timedelta(hours=1),
+        "created_at": now.replace(year=2025),
+        "model_version": "nyc_traffic_baseline_v1",
+    }]
+    monkeypatch.setattr(venues_module, "_get_db_conn", lambda: FakeConnection(rows))
+
+    resp = client.get("/api/v1/venues/v_pattern/busyness", headers={"X-API-Key": "dev-api-key"})
+
+    assert resp.status_code == 200
+    data = resp.get_json()["busyness"]
+    assert data["data_mode"] == "baseline"
+    assert data["busyness_source"] == "traffic_baseline_pattern"
+    assert data["expires_at"] is None
+
+
 def test_realtime_map_updates_streams_recent_db_rows(client, monkeypatch):
     now = datetime.now()
     rows = [
@@ -301,4 +338,3 @@ def test_forecast_tie_break_on_lowest_score_is_stable(client, monkeypatch):
     data = resp.get_json()
     assert data["best_time_to_go_today"]["percent"] == 25
     assert data["best_time_to_go_today"]["label"].startswith("In ")
-

@@ -135,7 +135,8 @@ def train_variant(name: str, features: list[str], train: pd.DataFrame, test: pd.
 def cached_context() -> dict:
     rows = db_utils.read_sql(
         "SELECT context_type, payload_json FROM external_context_cache "
-        "WHERE context_type IN ('weather_forecast','gbfs_station_status','mta_realtime') ORDER BY created_at DESC"
+        "WHERE context_type IN ('weather_forecast','gbfs_station_status','mta_realtime') "
+        "AND expires_at >= UTC_TIMESTAMP() ORDER BY created_at DESC"
     )
     result = {}
     for row in rows.itertuples(index=False):
