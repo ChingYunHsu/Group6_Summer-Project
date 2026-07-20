@@ -21,6 +21,15 @@ def classify_nys_venue_type(row):
             "Facility Name",
         )
     )
+    # Hospital-sponsored school health programmes are clinical access points,
+    # not acute-care hospitals.  Keep their source type in healthcare_profiles
+    # but exclude them from the emergency-facing Hospital filter.
+    if any(marker in text for marker in (
+        "hosp-sb", "hospital-sponsored school health",
+        "hospital sponsored school health", "school-based health",
+        "school based health",
+    )):
+        return "healthcare"
     for keyword, venue_type in (
         ("pharmacy", "pharmacy"),
         ("pharm", "pharmacy"),
@@ -83,7 +92,7 @@ def etl_healthcare(conn, nys_data, osm_data):
                 ),
             ),
             (
-                "INSERT INTO healthcare_profiles (venue_id, facility_external_id, facility_type, healthcare_category, operator_name, ownership_type, official_source_priority) VALUES (%s, %s, %s, %s, %s, %s, 1) ON DUPLICATE KEY UPDATE operator_name = VALUES(operator_name)",
+                "INSERT INTO healthcare_profiles (venue_id, facility_external_id, facility_type, healthcare_category, operator_name, ownership_type, official_source_priority) VALUES (%s, %s, %s, %s, %s, %s, 1) ON DUPLICATE KEY UPDATE facility_type = VALUES(facility_type), healthcare_category = VALUES(healthcare_category), operator_name = VALUES(operator_name), ownership_type = VALUES(ownership_type)",
                 (
                     venue_id,
                     facility_id,

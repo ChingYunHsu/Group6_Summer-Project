@@ -65,3 +65,13 @@ def test_healthcare_etl_writes_recognised_nys_and_osm_subtypes():
     assert result == {"imported": 2, "skipped": 0, "errors": 0}
     assert calls[0][0][0][1][1] == "pharmacy"
     assert calls[1][0][0][1][1] == "dentist"
+
+
+def test_hospital_sponsored_school_health_is_not_classified_as_hospital():
+    row = {
+        "Facility Type": "HOSP-SB",
+        "Short Description": "Hospital-sponsored school health programme",
+        "Facility Name": "School Health Centre",
+    }
+    assert healthcare.classify_nys_venue_type(row) == "healthcare"
+    assert healthcare.classify_nys_venue_type({"Short Description": "Acute care hospital"}) == "hospital"
