@@ -36,6 +36,7 @@ import {
   getReports,
   getRouteDetail,
   getRouteOptions,
+  getVenueBusyness,
   getVenues,
   removeFavourite,
   submitReport,
@@ -52,15 +53,31 @@ const INITIAL_REGION = {
   latitudeDelta: 0.08,
   longitudeDelta: 0.08,
 };
-
-// Fallback only — used until a real device location comes back, or if the
-// user denies permission. Centre of Manhattan, matches INITIAL_REGION.
-// (Previously this was hardcoded to a Dublin coordinate — presumably a dev
-// leftover, not intentional for a Manhattan-focused app.)
 const DEFAULT_LOCATION = {
   latitude: INITIAL_REGION.latitude,
   longitude: INITIAL_REGION.longitude,
 };
+
+// Shared by filteredVenues and the busyness-fetching effect below — both
+// need the same "which venues match the selected category" logic, and
+// duplicating this switch in two places risked them silently drifting
+// apart over time.
+function matchesCategory(venue: Venue, category: Category): boolean {
+  switch (category) {
+    case "Clinic":
+      return venue.venue_type === "clinic";
+    case "Pharmacy":
+      return venue.venue_type === "pharmacy";
+    case "AED":
+      return venue.venue_type === "emergencyasset";
+    case "Hospital":
+      return venue.venue_type === "hospital";
+    case "Restroom":
+      return venue.venue_type === "restroom";
+    default:
+      return false;
+  }
+}
 
 export default function MapScreen() {
   const [venues, setVenues] = useState<Venue[]>([]);
@@ -123,11 +140,13 @@ export default function MapScreen() {
 
   const [autoCurrentTime, setAutoCurrentTime] = useState(true);
 
-  // Retained for FilterModal's onApply payload — not read directly in this
-  // file's render path, but still part of the filter state passed down.
-  const [, setLiveStatus] = useState<"quiet" | "moderate" | "busy" | undefined>(
-    undefined,
-  );
+  // Now actually read below in filteredVenues, filtering by
+  // venue.busyness?.busyness_status — previously the value was
+  // discarded entirely ([, setLiveStatus]), so selecting a Live Status
+  // chip updated state that nothing ever checked.
+  const [liveStatus, setLiveStatus] = useState<
+    "quiet" | "moderate" | "busy" | undefined
+  >(undefined);
 
   // Unlike liveStatus, this one IS actually read — forwarded straight
   // through to VenueBottomSheet, which looks up the matching entry in
@@ -159,6 +178,17 @@ export default function MapScreen() {
   // display_status) only matter where favourites are actually listed
   // (profile.tsx), not here.
   const [favouriteVenueIds, setFavouriteVenueIds] = useState<Set<string>>(
+    new Set(),
+  );
+
+  // Tracks which venue_ids busyness has already been fetched FOR,
+  // regardless of whether that fetch actually succeeded — deliberately
+  // separate from checking venue.busyness itself, since a failed fetch
+  // also leaves that undefined. Without this separate guard, a venue
+  // whose busyness request genuinely fails (e.g. the known current-
+  // status date-window bug) would be retried forever, since it would
+  // keep looking like "never fetched" on every re-render.
+  const [busynessFetchedIds, setBusynessFetchedIds] = useState<Set<string>>(
     new Set(),
   );
 
@@ -245,6 +275,10 @@ export default function MapScreen() {
 
       setVenues(venueData);
       setReports(reportData);
+      // A fresh venue list means fresh objects with no busyness attached
+      // yet, even for venue_ids seen before — reset the guard so the
+      // effect below knows to fetch for all of them again.
+      setBusynessFetchedIds(new Set());
     } catch (error) {
       console.error(error);
     } finally {
@@ -270,16 +304,6 @@ export default function MapScreen() {
       return;
     }
 
-    // Confirmed happening: the mount-time location effect can fail
-    // silently (permission granted after mount, a simulator location set
-    // after the app already loaded, etc.), leaving currentLocation stuck
-    // on DEFAULT_LOCATION with nothing to ever retry it — the backend was
-    // seen receiving that exact fallback coordinate as the routing
-    // origin, not a real position, even though the native map's own blue
-    // dot (a separate code path via showsUserLocation) was correct.
-    // Re-fetching fresh here, and using the result directly rather than
-    // stale `currentLocation` state, avoids relying on that one-shot
-    // fetch ever having succeeded.
     const freshPosition = await getCurrentLocation();
 
     if (!freshPosition) {
@@ -313,11 +337,6 @@ export default function MapScreen() {
     setRouteOptionsVisible(false);
 
     setSelectedRouteDuration(route.duration_minutes);
-
-    // Was previously only set by browsing mode tabs (onSelectMode), not by
-    // actually picking a route — meaning handleStartNavigation could read
-    // a stale mode that didn't match the route the user actually chose,
-    // sending the wrong dirflg to Apple Maps.
     setSelectedMode(route.mode);
 
     try {
@@ -326,12 +345,6 @@ export default function MapScreen() {
         currentLocation,
         route.mode,
       );
-      console.log(
-        "POLYLINE POINTS:",
-        detail.polyline_preview?.length,
-        detail.polyline_preview,
-      );
-      setRouteDetail(detail);
       setRouteDetail(detail);
     } catch (error) {
       console.error(error);
@@ -481,33 +494,78 @@ export default function MapScreen() {
         .toLowerCase()
         .includes(search.toLowerCase());
 
-      let matchesCategory = false;
+      // undefined liveStatus (no chip selected) means "don't filter by
+      // this at all" — matches everything. Once a chip IS selected,
+      // venues whose busyness hasn't been fetched yet are deliberately
+      // excluded rather than shown anyway, since we genuinely don't
+      // know their status yet. Since venues state updates progressively
+      // as the busyness-fetch effect below resolves each request, this
+      // list fills in as real data arrives rather than staying
+      // permanently incomplete.
+      const matchesLiveStatus =
+        !liveStatus || venue.busyness?.busyness_status === liveStatus;
 
-      switch (category) {
-        case "Clinic":
-          matchesCategory = venue.venue_type === "clinic";
-          break;
-
-        case "Pharmacy":
-          matchesCategory = venue.venue_type === "pharmacy";
-          break;
-
-        case "AED":
-          matchesCategory = venue.venue_type === "emergencyasset";
-          break;
-
-        case "Hospital":
-          matchesCategory = venue.venue_type === "hospital";
-          break;
-
-        case "Restroom":
-          matchesCategory = venue.venue_type === "restroom";
-          break;
-      }
-
-      return matchesSearch && matchesCategory;
+      return (
+        matchesSearch && matchesCategory(venue, category) && matchesLiveStatus
+      );
     });
-  }, [venues, search, category]);
+  }, [venues, search, category, liveStatus]);
+
+  // Fetches busyness for whichever venues currently match the selected
+  // category (i.e. whatever's actually rendered as markers), merging the
+  // result into venues state so VenueMarker's existing colour-mapping
+  // logic — which already correctly reads venue.busyness?.busyness_color
+  // — actually has real data to read. That logic was already built and
+  // correct; it was just never being fed anything, since the main
+  // /venues list endpoint never embeds busyness data at all (confirmed
+  // directly against venues.py).
+  //
+  // Deliberately scoped to the current category, not the full venues
+  // array — getVenues() has no venue_type filter at all, so venues state
+  // holds every type at once (~4,800), and fetching busyness for all of
+  // that on every load would be genuinely excessive. Scoping to category
+  // keeps this to whatever's actually visible, typically a few hundred
+  // at most.
+  useEffect(() => {
+    const venuesNeedingBusyness = venues.filter(
+      (v) =>
+        matchesCategory(v, category) && !busynessFetchedIds.has(v.venue_id),
+    );
+
+    if (venuesNeedingBusyness.length === 0) return;
+
+    let isActive = true;
+
+    Promise.all(
+      venuesNeedingBusyness.map((venue) =>
+        getVenueBusyness(venue.venue_id)
+          .then((result) => ({
+            venueId: venue.venue_id,
+            busyness: result?.busyness,
+          }))
+          .catch(() => ({ venueId: venue.venue_id, busyness: undefined })),
+      ),
+    ).then((results) => {
+      if (!isActive) return;
+
+      setVenues((current) =>
+        current.map((v) => {
+          const match = results.find((r) => r.venueId === v.venue_id);
+          return match?.busyness ? { ...v, busyness: match.busyness } : v;
+        }),
+      );
+
+      setBusynessFetchedIds((current) => {
+        const next = new Set(current);
+        results.forEach((r) => next.add(r.venueId));
+        return next;
+      });
+    });
+
+    return () => {
+      isActive = false;
+    };
+  }, [venues, category, busynessFetchedIds]);
 
   // Region tracking + a ref to the MapView itself — both needed for the
   // zoom in/out buttons below, which work by nudging the current
@@ -533,7 +591,6 @@ export default function MapScreen() {
       latitudeDelta: region.latitudeDelta * 2,
       longitudeDelta: region.longitudeDelta * 2,
     };
-
     mapRef.current?.animateToRegion(nextRegion, 300);
   };
 
@@ -687,28 +744,25 @@ export default function MapScreen() {
               longitude: report.longitude,
               description: report.description || undefined,
             });
+
+            setVenues((current) =>
+              current.map((venue) => {
+                if (venue.venue_id !== report.venueId) {
+                  return venue;
+                }
+
+                return {
+                  ...venue,
+
+                  active_warning: true,
+
+                  live_report_count: (venue.live_report_count ?? 0) + 1,
+                };
+              }),
+            );
           } catch (error) {
             console.error(error);
           }
-
-          // Optimistic local flag so the marker reflects the warning
-          // immediately; the refreshReports() call below replaces this
-          // with server truth once it lands.
-          setVenues((current) =>
-            current.map((venue) => {
-              if (venue.venue_id !== report.venueId) {
-                return venue;
-              }
-
-              return {
-                ...venue,
-
-                active_warning: true,
-
-                live_report_count: (venue.live_report_count ?? 0) + 1,
-              };
-            }),
-          );
 
           await refreshReports();
 

@@ -344,5 +344,18 @@
     "sessionExpiredTitle": "Sitzung abgelaufen",
     "sessionExpiredMessage": "Bitte melde dich erneut an, um fortzufahren.",
     "sessionExpiredConfirm": "OK"
+  },
+  "venueSheet": {
+    "addressUnavailable": "Adresse nicht verfügbar",
+    "noData": "Keine Daten",
+    "minWaitSuffix": " · {{minutes}} Min. Wartezeit",
+    "predictedForHour": "Vorhersage für +{{hours}}h — keine Live-Daten",
+    "accessibilityIssue": "Kürzlich gemeldetes Barrierefreiheitsproblem",
+    "services": "Services",
+    "busynessForecast": "12-Stunden-Auslastungsprognose",
+    "forecastUnavailable": "Für diesen Ort ist noch keine Live-Prognose verfügbar.",
+    "expectedWait": "Erwartete Wartezeit: {{minutes}} Minuten",
+    "unknown": "Unbekannt",
+    "directions": "Route"
   }
 }

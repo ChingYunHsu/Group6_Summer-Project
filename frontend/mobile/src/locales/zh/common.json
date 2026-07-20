@@ -353,5 +353,18 @@
     "sessionExpiredTitle": "会话已过期",
     "sessionExpiredMessage": "请重新登录以继续。",
     "sessionExpiredConfirm": "确定"
+  },
+  "venueSheet": {
+    "addressUnavailable": "地址不可用",
+    "noData": "暂无数据",
+    "minWaitSuffix": " · 等待 {{minutes}} 分钟",
+    "predictedForHour": "+{{hours}}小时预测 — 非实时数据",
+    "accessibilityIssue": "最近报告的无障碍问题",
+    "services": "服务",
+    "busynessForecast": "12小时人流量预测",
+    "forecastUnavailable": "该地点暂无实时预测数据。",
+    "expectedWait": "预计等待：{{minutes}} 分钟",
+    "unknown": "未知",
+    "directions": "路线"
   }
 }

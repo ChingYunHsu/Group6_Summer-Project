@@ -1,7 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, View } from "react-native";
 import { Marker } from "react-native-maps";
-
 import { Venue } from "../types/venue";
 
 interface Props {

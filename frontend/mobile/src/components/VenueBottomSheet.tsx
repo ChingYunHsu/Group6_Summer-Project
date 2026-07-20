@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
 
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
@@ -29,6 +30,13 @@ interface Props {
   // passed down from map.tsx, which owns the full reports list. Without
   // this, VerificationCard has no real data to show.
   activeReport?: Report | null;
+  // No longer read inside this component — the forecast/badge display
+  // used to be gated behind this, which meant picking a specific hour
+  // via FilterModal's time picker could never show anything (this being
+  // false hid the whole section regardless of timeOffset). Still part
+  // of the type since map.tsx still passes it; kept here rather than
+  // removed from the type entirely to avoid churning map.tsx's call site
+  // for something that may still have a real purpose elsewhere.
   autoCurrentTime: boolean;
   // Hours ahead of now (0-11), from FilterModal's real time picker.
   // 0 = Now (live current-status data); 1-11 = look up that hour's
@@ -51,7 +59,6 @@ export default function VenueBottomSheet({
   visible,
   venue,
   activeReport,
-  autoCurrentTime,
   timeOffset = 0,
   onClose,
   onDirectionsPress,
@@ -60,16 +67,26 @@ export default function VenueBottomSheet({
   isFavourite = false,
   onToggleFavourite,
 }: Props) {
-  // null = not yet fetched, fetch failed, or genuinely unavailable for
-  // this venue — all three cases fall back to the same "Unknown"/"not
-  // available" UI already built below, same pattern as everywhere else
-  // in this app. Confirmed directly against venues.py: the current-
-  // status endpoint (getVenueBusyness) can permanently return nothing
-  // for real, successfully-loaded data due to a known backend bug (its
-  // query requires "now" to fall inside a time window, and tonight's
-  // data load anchored every window to Jan 2025) — so a graceful,
-  // silent fallback here is doing real, expected work, not just
-  // defensive padding.
+  const { t } = useTranslation();
+
+  // Some restroom source data (confirmed — systematic for the
+  // nyc_restrooms source specifically, 349/349 affected, 0/127 for
+  // parks_toilets) never got a real street address, and the raw WKT
+  // geometry string ended up in the address column instead — e.g.
+  // "POINT(-73.9687 40.74809)". Showing that directly to a user looks
+  // broken regardless of what eventually fixes it upstream, so this
+  // guards against it defensively on the display side. Root cause
+  // still needs fixing in the actual ETL loader; this is a display-
+  // only safety net, not a substitute for that.
+  const formatAddress = (address: string | null | undefined): string => {
+    if (!address || /^POINT\s*\(/i.test(address)) {
+      return t("venueSheet.addressUnavailable", {
+        defaultValue: "Address unavailable",
+      });
+    }
+    return address;
+  };
+
   const [busynessStatus, setBusynessStatus] = useState<BusynessResponse | null>(
     null,
   );
@@ -149,8 +166,23 @@ export default function VenueBottomSheet({
       FORECAST_LEVEL_COLOURS.no_data)
     : busynessStatus?.busyness?.busyness_color;
 
+  // Status labels ("Quiet"/"Moderate"/"Busy") come from the backend as
+  // lowercase level strings — translated via a lookup rather than just
+  // capitalizing the raw value, since "quiet"/"moderate"/"busy" need
+  // real translations, not just a capital letter, in other languages.
+  const STATUS_LABEL_KEYS: Record<string, { key: string; label: string }> = {
+    quiet: { key: "map.filters.quiet", label: "Quiet" },
+    moderate: { key: "map.filters.moderate", label: "Moderate" },
+    busy: { key: "map.filters.busy", label: "Busy" },
+    no_data: { key: "venueSheet.noData", label: "No data" },
+  };
+
   const displayLabel = displayLevel
-    ? displayLevel.charAt(0).toUpperCase() + displayLevel.slice(1)
+    ? t(STATUS_LABEL_KEYS[displayLevel]?.key ?? "venueSheet.noData", {
+        defaultValue:
+          STATUS_LABEL_KEYS[displayLevel]?.label ??
+          displayLevel.charAt(0).toUpperCase() + displayLevel.slice(1),
+      })
     : null;
 
   // Wait-minutes are only ever known for live ("Now") status —
@@ -173,7 +205,7 @@ export default function VenueBottomSheet({
             <View style={{ flex: 1 }}>
               <Text style={styles.title}>{venue.name}</Text>
 
-              <Text style={styles.address}>{venue.address}</Text>
+              <Text style={styles.address}>{formatAddress(venue.address)}</Text>
             </View>
 
             {onToggleFavourite && (
@@ -211,14 +243,20 @@ export default function VenueBottomSheet({
                 <Text style={styles.statusText}>
                   {displayLabel}
                   {displayWaitMinutes != null
-                    ? ` · ${displayWaitMinutes} min wait`
+                    ? t("venueSheet.minWaitSuffix", {
+                        defaultValue: " · {{minutes}} min wait",
+                        minutes: displayWaitMinutes,
+                      })
                     : ""}
                 </Text>
               </View>
 
               {selectedForecastEntry && (
                 <Text style={styles.forecastNote}>
-                  Predicted for +{timeOffset}h — not live data
+                  {t("venueSheet.predictedForHour", {
+                    defaultValue: "Predicted for +{{hours}}h — not live data",
+                    hours: timeOffset,
+                  })}
                 </Text>
               )}
             </View>
@@ -233,7 +271,9 @@ export default function VenueBottomSheet({
                 <Ionicons name="warning" size={18} color="#FFFFFF" />
 
                 <Text style={styles.alertText}>
-                  Accessibility issue recently reported
+                  {t("venueSheet.accessibilityIssue", {
+                    defaultValue: "Accessibility issue recently reported",
+                  })}
                 </Text>
               </View>
 
@@ -256,7 +296,9 @@ export default function VenueBottomSheet({
 
           {(venue.supported_services ?? []).length > 0 && (
             <>
-              <Text style={styles.sectionTitle}>Services</Text>
+              <Text style={styles.sectionTitle}>
+                {t("venueSheet.services", { defaultValue: "Services" })}
+              </Text>
 
               {/* 2x2 card grid, replacing the previous pill-badge row —
                   matches the mockup's visual style. Sourced from the
@@ -283,46 +325,53 @@ export default function VenueBottomSheet({
             </>
           )}
 
-          {autoCurrentTime ? (
-            busynessLoading ? (
-              <View style={styles.forecastLoading}>
-                <ActivityIndicator size="small" color={Colours.primary} />
-              </View>
-            ) : hasForecast ? (
-              <>
-                <Text style={styles.sectionTitle}>
-                  12-Hour Busyness Forecast
-                </Text>
-
-                <View style={styles.chartRow}>
-                  {forecast!.forecast.map((hour) => (
-                    <View key={hour.offset_hours} style={styles.chartColumn}>
-                      <View
-                        style={[
-                          styles.chartBar,
-                          {
-                            height: Math.max(12, hour.percent),
-                          },
-                        ]}
-                      />
-
-                      <Text style={styles.chartLabel}>
-                        +{hour.offset_hours}
-                      </Text>
-                    </View>
-                  ))}
-                </View>
-              </>
-            ) : (
-              <Text style={styles.prediction}>
-                Live forecast isn&apos;t available for this venue yet.
+          {/* No longer gated behind autoCurrentTime — that toggle is a
+              separate, unrelated concept (originally meant for something
+              else entirely) that had nothing to do with whether real
+              forecast data exists. Gating this section behind it meant
+              picking a specific hour via FilterModal's time picker could
+              never actually show anything, since autoCurrentTime being
+              false hid this whole section regardless of what timeOffset
+              was. Now this shows purely based on whether real data
+              exists — loading, has real data, or genuinely doesn't yet —
+              and the chart always shows the full 12-hour spread
+              regardless of which specific hour is selected; the status
+              badge above is what reflects the selected hour specifically. */}
+          {busynessLoading ? (
+            <View style={styles.forecastLoading}>
+              <ActivityIndicator size="small" color={Colours.primary} />
+            </View>
+          ) : hasForecast ? (
+            <>
+              <Text style={styles.sectionTitle}>
+                {t("venueSheet.busynessForecast", {
+                  defaultValue: "12-Hour Busyness Forecast",
+                })}
               </Text>
-            )
+
+              <View style={styles.chartRow}>
+                {forecast!.forecast.map((hour) => (
+                  <View key={hour.offset_hours} style={styles.chartColumn}>
+                    <View
+                      style={[
+                        styles.chartBar,
+                        {
+                          height: Math.max(12, hour.percent),
+                        },
+                      ]}
+                    />
+
+                    <Text style={styles.chartLabel}>+{hour.offset_hours}</Text>
+                  </View>
+                ))}
+              </View>
+            </>
           ) : (
             <Text style={styles.prediction}>
-              Expected wait:{" "}
-              {busynessStatus?.busyness?.estimated_wait_minutes ?? "Unknown"}{" "}
-              minutes
+              {t("venueSheet.forecastUnavailable", {
+                defaultValue:
+                  "Live forecast isn't available for this venue yet.",
+              })}
             </Text>
           )}
 
@@ -333,7 +382,7 @@ export default function VenueBottomSheet({
               color={Colours.primary}
             />
 
-            <Text style={styles.rowText}>{venue.address}</Text>
+            <Text style={styles.rowText}>{formatAddress(venue.address)}</Text>
           </View>
 
           <View style={styles.row}>
@@ -348,7 +397,9 @@ export default function VenueBottomSheet({
           >
             <Ionicons name="navigate" size={18} color="#FFFFFF" />
 
-            <Text style={styles.directionText}>Directions</Text>
+            <Text style={styles.directionText}>
+              {t("venueSheet.directions", { defaultValue: "Directions" })}
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

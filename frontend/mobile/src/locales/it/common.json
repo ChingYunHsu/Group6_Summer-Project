@@ -346,5 +346,18 @@
     "sessionExpiredTitle": "Sessione scaduta",
     "sessionExpiredMessage": "Effettua nuovamente l'accesso per continuare.",
     "sessionExpiredConfirm": "OK"
+  },
+  "venueSheet": {
+    "addressUnavailable": "Indirizzo non disponibile",
+    "noData": "Nessun dato",
+    "minWaitSuffix": " · {{minutes}} min di attesa",
+    "predictedForHour": "Previsione per +{{hours}}h — non in tempo reale",
+    "accessibilityIssue": "Problema di accessibilità segnalato di recente",
+    "services": "Servizi",
+    "busynessForecast": "Previsione di affluenza a 12 ore",
+    "forecastUnavailable": "La previsione in tempo reale non è ancora disponibile per questo luogo.",
+    "expectedWait": "Attesa prevista: {{minutes}} minuti",
+    "unknown": "Sconosciuto",
+    "directions": "Indicazioni"
   }
 }
