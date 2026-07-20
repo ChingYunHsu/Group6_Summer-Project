@@ -11,6 +11,7 @@ class SourceBundle:
     restrooms: list
     parks: list
     osm_features: list
+    accessibility_features: list
     nys: list
     aed: list
     ramps: list
@@ -35,6 +36,8 @@ def load_sources(data_root=DATA_ROOT):
     # load geojson by path, extract features list, return empty list if no features
     with open(data_root / "POI_healtcare.geojson", encoding="utf-8") as handle:
         osm_features = json.load(handle).get("features", [])
+    with open(data_root / "POI_accessibility.geojson", encoding="utf-8") as handle:
+        accessibility_features = json.load(handle).get("features", [])
 
     nys = _load_csv(data_root / "Health_Facility_General_Information_20260526.csv")
     aed = _load_csv(
@@ -42,7 +45,9 @@ def load_sources(data_root=DATA_ROOT):
         / "New_York_City_Automated_External_Defibrillator_(AED)_Inventory_20260526.csv"
     )
     ramps = _load_csv(data_root / "Pedestrian_Ramp_Locations_20260526.csv")
-    return SourceBundle(restrooms, parks, osm_features, nys, aed, ramps)
+    return SourceBundle(
+        restrooms, parks, osm_features, accessibility_features, nys, aed, ramps
+    )
 
 # helper function to count records in each source, return dict of bundle counts by source name
 def source_counts(bundle):
@@ -50,6 +55,7 @@ def source_counts(bundle):
         "NYC Public Restrooms": len(bundle.restrooms),
         "Parks Toilets": len(bundle.parks),
         "OSM Healthcare": len(bundle.osm_features),
+        "OSM Accessibility": len(bundle.accessibility_features),
         "NYS Health Facility": len(bundle.nys),
         "AED Inventory": len(bundle.aed),
         "Pedestrian Ramps": len(bundle.ramps),

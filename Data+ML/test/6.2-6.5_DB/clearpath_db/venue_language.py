@@ -148,14 +148,27 @@ def etl_venue_language(conn, lass_data):
             continue
 
         # 步骤 6：插入 venue_language 表
-        statement = (
-            "INSERT INTO venue_language "
-            "(venue_id, language_tag, language_support_level, chatbot_enabled) "
-            "VALUES (%s, %s, %s, FALSE) "
-            "ON DUPLICATE KEY UPDATE language_tag = VALUES(language_tag), "
-            "language_support_level = VALUES(language_support_level)",
-            (venue_id, json.dumps(languages) if languages else None, level),
-        )
+        language_json = json.dumps(languages) if languages else None
+        statement = [
+            (
+                "INSERT INTO venue_language "
+                "(venue_id, language_tag, language_support_level, chatbot_enabled) "
+                "VALUES (%s, %s, %s, FALSE) "
+                "ON DUPLICATE KEY UPDATE language_tag = VALUES(language_tag), "
+                "language_support_level = VALUES(language_support_level)",
+                (venue_id, language_json, level),
+            ),
+            (
+                "UPDATE venues SET language_tags=%s, primary_language=%s, secondary_language=%s "
+                "WHERE venue_id=%s",
+                (
+                    json.dumps([language.upper() for language in languages]) if languages else None,
+                    languages[0].upper() if languages else None,
+                    languages[1].upper() if len(languages) > 1 else None,
+                    venue_id,
+                ),
+            ),
+        ]
         if etl_execute(
             conn, statement, source="venue_language", record_id=venue_id
         ):
