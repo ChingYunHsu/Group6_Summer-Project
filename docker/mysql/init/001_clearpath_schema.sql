@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS venues (
   primary_language VARCHAR(10),
   secondary_language VARCHAR(10),
   -- Gap-fix: accessibility
-  accessible_status ENUM('full_access', 'partial', 'step_free_route_only', 'none') DEFAULT 'none',
+  accessible_status ENUM('full_access', 'partial', 'step_free_route_only', 'none', 'unknown') DEFAULT 'unknown',
   accessibility_features JSON,
   -- Gap-fix: warnings
   active_warning BOOLEAN DEFAULT FALSE,

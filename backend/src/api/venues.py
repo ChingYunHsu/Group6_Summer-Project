@@ -46,7 +46,7 @@ def _row_to_venue(row: dict) -> dict:
         raw = venue.get(json_field)
         if isinstance(raw, str):
             venue[json_field] = _json.loads(raw)
-    venue["language_tags"] = venue.get("language_tags") or []
+    venue["language_tags"] = [str(language).upper() for language in (venue.get("language_tags") or [])]
     venue["supported_services"] = venue.get("supported_services") or []
     venue["bilingual_service_badges"] = _extract_bilingual_badges(venue["supported_services"])
     venue["open_now"] = bool(venue.get("open_now"))
@@ -170,9 +170,14 @@ def _list_venues_from_db(query):
     where_clauses = []
     params = []
 
-    if query["accessible"] in {"true", "false"}:
-        where_clauses.append("accessible_status " + ("= %s" if query["accessible"] == "true" else "!= %s"))
+    if query["accessible"] == "true":
+        where_clauses.append("accessible_status = %s")
         params.append("full_access")
+    elif query["accessible"] == "false":
+        # Unknown is not evidence of inaccessibility and must not be returned
+        # as a negative accessibility result.
+        where_clauses.append("accessible_status IN (%s, %s, %s)")
+        params.extend(["none", "partial", "step_free_route_only"])
 
     if query["open_now"] in {"true", "false"}:
         where_clauses.append("open_now = %s")
@@ -230,7 +235,10 @@ def list_venues():
         if query["accessible"] == "true":
             filtered_items = [venue for venue in filtered_items if venue["accessible_status"] == "full_access"]
         else:
-            filtered_items = [venue for venue in filtered_items if venue["accessible_status"] != "full_access"]
+            filtered_items = [
+                venue for venue in filtered_items
+                if venue["accessible_status"] in {"none", "partial", "step_free_route_only"}
+            ]
 
     if query["open_now"] in {"true", "false"}:
         expected_open = query["open_now"] == "true"
