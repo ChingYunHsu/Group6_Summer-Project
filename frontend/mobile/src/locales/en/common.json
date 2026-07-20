@@ -339,5 +339,18 @@
     "sessionExpiredTitle": "Session expired",
     "sessionExpiredMessage": "Please log in again to continue.",
     "sessionExpiredConfirm": "OK"
+  },
+  "venueSheet": {
+    "addressUnavailable": "Address unavailable",
+    "noData": "No data",
+    "minWaitSuffix": " · {{minutes}} min wait",
+    "predictedForHour": "Predicted for +{{hours}}h — not live data",
+    "accessibilityIssue": "Accessibility issue recently reported",
+    "services": "Services",
+    "busynessForecast": "12-Hour Busyness Forecast",
+    "forecastUnavailable": "Live forecast isn't available for this venue yet.",
+    "expectedWait": "Expected wait: {{minutes}} minutes",
+    "unknown": "Unknown",
+    "directions": "Directions"
   }
 }

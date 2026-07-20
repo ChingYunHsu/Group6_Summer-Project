@@ -25,16 +25,13 @@ interface Props {
   autoCurrentTime: boolean;
   onClose: () => void;
   onApply: (filters: {
-    openNow: boolean;
-    accessible: boolean;
+    openNow: boolean | undefined;
+    accessible: boolean | undefined;
     language: string;
     autoCurrentTime: boolean;
     liveStatus: "quiet" | "moderate" | "busy" | undefined;
     date: string;
     time: string;
-    // Hours ahead of now (0-11) — matches offset_hours in the real
-    // 12-hour forecast data VenueBottomSheet already fetches. 0 = Now,
-    // using live current-status data; 1-11 = a specific predicted hour.
     timeOffset: number;
   }) => void;
 }
@@ -68,10 +65,6 @@ const STATUS_COLOURS = {
   busy: "#DC2626",
 };
 
-// Matches the 12 entries (offset_hours 0-11) already present in every
-// forecast fetch VenueBottomSheet makes — 0 is "Now" (live status), 1-11
-// are predicted hours ahead. No separate API call needed for any of
-// this; the data already exists by the time this picker is used.
 const TIME_OFFSET_OPTIONS = Array.from({ length: 12 }, (_, i) => i);
 
 export default function FilterModal({
@@ -161,7 +154,6 @@ export default function FilterModal({
               onValueChange={setLocalAccessible}
             />
           </View>
-
           <Text style={styles.section}>
             {t("map.filters.time", { defaultValue: "Time" })}
           </Text>
@@ -175,93 +167,79 @@ export default function FilterModal({
               testID="auto-current-time-switch"
               value={autoCurrentTime}
               onValueChange={(value) => {
-                console.log("Switch changed:", value);
                 setAutoCurrentTime(value);
               }}
             />
           </View>
 
-          {autoCurrentTime ? (
-            <>
-              <Text style={styles.section}>
-                {t("map.filters.liveStatus", { defaultValue: "Live Status" })}
-              </Text>
-              <View testID="live-status-section" style={styles.chipRow}>
-                {LIVE_STATUS.map((item) => {
-                  const selected = item.value === liveStatus;
-                  return (
-                    <TouchableOpacity
-                      key={item.value}
-                      style={[
-                        styles.chip,
-                        selected && {
-                          backgroundColor: STATUS_COLOURS[item.value],
-                        },
-                      ]}
-                      onPress={() =>
-                        setLiveStatus(selected ? undefined : item.value)
-                      }
-                    >
-                      <Text
-                        style={[
-                          styles.chipText,
-                          selected && styles.selectedText,
-                        ]}
-                      >
-                        {t(item.translationKey, {
-                          defaultValue: item.defaultValue,
-                        })}
-                      </Text>
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
-            </>
-          ) : (
-            <>
-              {/* Deliberately a plain View, not TouchableOpacity — no
-                  chevron either. There's no multi-day forecast data to
-                  pick from, only a rolling 12-hour window from now, so
-                  this should visually read as fixed, not as a control
-                  that just happens to not respond. */}
-              <View testID="date-selector" style={styles.dateRow}>
-                <Ionicons
-                  name="calendar-outline"
-                  size={18}
-                  color={Colours.primary}
-                />
-                <Text style={styles.dateText}>
-                  {t("map.filters.dateToday", { defaultValue: "Today" })}
-                </Text>
-              </View>
+          <Text style={styles.section}>
+            {t("map.filters.liveStatus", { defaultValue: "Live Status" })}
+          </Text>
+          <View testID="live-status-section" style={styles.chipRow}>
+            {LIVE_STATUS.map((item) => {
+              const selected = item.value === liveStatus;
+              return (
+                <TouchableOpacity
+                  key={item.value}
+                  style={[
+                    styles.chip,
+                    selected && {
+                      backgroundColor: STATUS_COLOURS[item.value],
+                    },
+                  ]}
+                  onPress={() =>
+                    setLiveStatus(selected ? undefined : item.value)
+                  }
+                >
+                  <Text
+                    style={[styles.chipText, selected && styles.selectedText]}
+                  >
+                    {t(item.translationKey, {
+                      defaultValue: item.defaultValue,
+                    })}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
 
-              <TouchableOpacity
-                testID="time-selector"
-                style={styles.dateRow}
-                onPress={() => setTimeModalVisible(true)}
-              >
-                <Ionicons
-                  name="time-outline"
-                  size={18}
-                  color={Colours.primary}
-                />
-                <Text style={styles.dateText}>
-                  {timeOffset === 0
-                    ? t("map.filters.timeNow", { defaultValue: "Now" })
-                    : t("map.filters.timeOffset", {
-                        defaultValue: "+{{hours}}h",
-                        hours: timeOffset,
-                      })}
-                </Text>
-                <Ionicons
-                  name="chevron-forward"
-                  size={18}
-                  color="#9CA3AF"
-                  style={styles.chevron}
-                />
-              </TouchableOpacity>
-            </>
-          )}
+          {/* Deliberately a plain View, not TouchableOpacity — no
+              chevron either. There's no multi-day forecast data to
+              pick from, only a rolling 12-hour window from now, so
+              this should visually read as fixed, not as a control
+              that just happens to not respond. */}
+          <View testID="date-selector" style={styles.dateRow}>
+            <Ionicons
+              name="calendar-outline"
+              size={18}
+              color={Colours.primary}
+            />
+            <Text style={styles.dateText}>
+              {t("map.filters.dateToday", { defaultValue: "Today" })}
+            </Text>
+          </View>
+
+          <TouchableOpacity
+            testID="time-selector"
+            style={styles.dateRow}
+            onPress={() => setTimeModalVisible(true)}
+          >
+            <Ionicons name="time-outline" size={18} color={Colours.primary} />
+            <Text style={styles.dateText}>
+              {timeOffset === 0
+                ? t("map.filters.timeNow", { defaultValue: "Now" })
+                : t("map.filters.timeOffset", {
+                    defaultValue: "+{{hours}}h",
+                    hours: timeOffset,
+                  })}
+            </Text>
+            <Ionicons
+              name="chevron-forward"
+              size={18}
+              color="#9CA3AF"
+              style={styles.chevron}
+            />
+          </TouchableOpacity>
 
           <Text style={styles.section}>
             {t("map.filters.language", { defaultValue: "Language" })}
@@ -284,14 +262,22 @@ export default function FilterModal({
               );
             })}
           </View>
-
           <TouchableOpacity
             testID="apply-filters-button"
             style={styles.applyButton}
             onPress={() => {
               onApply({
-                openNow: localOpenNow,
-                accessible: localAccessible,
+                // localOpenNow/localAccessible are always real booleans
+                // internally (Switch needs that), but the API treats
+                // false as an EXPLICIT filter ("only show closed venues")
+                // not "no preference" — sending false unconditionally
+                // meant the very first time this modal was applied at
+                // all, even untouched switches silently turned into a
+                // real, restrictive filter instead of staying off.
+                // || undefined converts a false switch back into "no
+                // preference", only sending true when actually toggled on.
+                openNow: localOpenNow || undefined,
+                accessible: localAccessible || undefined,
                 language: localLanguage,
                 autoCurrentTime,
                 liveStatus,
@@ -321,7 +307,6 @@ export default function FilterModal({
               <Text style={styles.pickerTitle}>
                 {t("map.filters.selectTime", { defaultValue: "Select Time" })}
               </Text>
-
               <ScrollView style={styles.pickerList}>
                 {TIME_OFFSET_OPTIONS.map((offset) => {
                   const selected = offset === timeOffset;
@@ -368,7 +353,6 @@ export default function FilterModal({
     </Modal>
   );
 }
-
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
