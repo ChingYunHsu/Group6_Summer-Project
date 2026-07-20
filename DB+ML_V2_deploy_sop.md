@@ -15,16 +15,15 @@ cd backend
 python src/app.py
 ```
 
-In a second terminal, refresh the current traffic context and publish V2's
-12-hour curve. `--year 2025` identifies the NYC SODA source data only; current
-windows use the actual pipeline run time.
+In a second terminal, refresh the retained NYC SODA hour-of-day baseline and
+publish V2's 12-hour curve. `--year 2025` identifies the source-data year; it
+is not a current-status window.
 
 ```bash
 cd /path/to/Group6_Summer-Project
 
 .venv-1/bin/python Data+ML/test/6.15-6.20/src/busyness_ingestion.py \
-  --year 2025 \
-  --model-version nyc_traffic_context_v1
+  --year 2025
 
 cd Data+ML/test/7.13-7.18
 ../../../.venv-1/bin/python forecast_v2_pattern.py \
@@ -34,8 +33,9 @@ cd Data+ML/test/7.13-7.18
   --publish
 ```
 
-The traffic script preserves `nyc_traffic_baseline_v1` for V2 training,
-refreshes only `nyc_traffic_context_v1`, and removes only expired context rows.
+The traffic script writes the retained `nyc_traffic_baseline_v1` hour-of-day
+pattern for V2 and removes obsolete `nyc_traffic_context_v1` rows.  Real-time
+telemetry uses `live-telemetry-v1` and its own absolute expiry window.
 The V2 script upserts its output as `model_version='forecast-v2'` in
 `busyness_forecasts`.
 
@@ -66,7 +66,7 @@ the active filters before changing the model or database.
 ## Busyness checks
 
 Use a known V2 venue from the just-written curve (the second CSV line contains
-one) and confirm both current traffic context and the 12-hour V2 forecast.
+one) and confirm both the current busyness source and the 12-hour V2 forecast.
 
 ```bash
 cd /path/to/Group6_Summer-Project/Data+ML/test/7.13-7.18
@@ -74,7 +74,7 @@ VENUE_ID=$(sed -n '2p' output/v2_pattern_traffic_latest/prediction_curve_v2_patt
 
 curl -fsS -H "X-API-Key: $API_KEY" \
   "$CLEARPATH_API_URL/api/v1/venues/$VENUE_ID/busyness" \
-  | python3 -c 'import json,sys; p=json.load(sys.stdin); assert p["busyness"]["data_mode"] == "live"; print("PASS: current traffic context")'
+  | python3 -c 'import json,sys; p=json.load(sys.stdin); assert p["busyness"]["data_mode"] in {"live", "baseline"}; print("PASS: current busyness source")'
 
 curl -fsS -H "X-API-Key: $API_KEY" \
   "$CLEARPATH_API_URL/api/v1/venues/$VENUE_ID/busyness/forecast" \
