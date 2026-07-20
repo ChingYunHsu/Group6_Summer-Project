@@ -120,6 +120,10 @@ function getReportIcon(issueType) {
   return "ⓘ";
 }
 
+function isAccessibilityReport(issueType) {
+  return ["elevator_broken", "wheelchair_lift_broken", "ramp_blocked"].includes(issueType);
+}
+
 const MOCK_USER_LOCATION = {
   lat: 40.758,
   lng: -73.9855,
@@ -719,6 +723,9 @@ useEffect(() => {
   );
 
   const landmarkAlert = selectedVenueReports[0] ?? null;
+  const selectedAccessibilityReports = selectedVenueReports.filter((report) =>
+    isAccessibilityReport(report.issue_type)
+  );
   const standaloneAlerts = liveReports.filter(
     (report) => !report.venue_id
   );
@@ -1128,13 +1135,13 @@ useEffect(() => {
             </div>
           )}
 
-          {selectedVenueReports.length > 0 && (
+          {selectedAccessibilityReports.length > 0 && (
             <div className="alert-box">
               <strong>
                 ⓘ Active Accessibility Warning
               </strong>
               <p>
-                {selectedVenueReports.length} live reports
+                {selectedAccessibilityReports.length} accessibility reports
                 confirmed
               </p>
             </div>

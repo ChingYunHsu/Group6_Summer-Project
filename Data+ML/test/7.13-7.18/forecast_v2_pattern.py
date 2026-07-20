@@ -30,6 +30,8 @@ DYNAMIC_COLUMNS = (
     "mta_service_disruption_flag", "mta_realtime_arrival_count_1h",
     "recent_report_count_1h", "recent_report_count_3h", "crowding_report_count_3h",
 )
+CROWD_REPORT_WEIGHTS = {"large_crowd": 6.0, "long_waiting_time": 4.0}
+CROWD_REPORT_DELTA_CAP = 15.0
 MODEL_VERSION = "forecast-v2-known-venue-serpapi-context"
 PUBLISHED_MODEL_VERSION = "forecast-v2"
 SPLIT_TYPE = "known_venue_temporal_snapshot"
@@ -166,12 +168,44 @@ def report_context(venue_ids: list[str], now: pd.Timestamp) -> pd.DataFrame:
     query = (
         "SELECT venue_id, SUM(created_at >= %s) AS recent_report_count_1h, "
         "SUM(created_at >= %s) AS recent_report_count_3h, "
-        "SUM(created_at >= %s AND issue_type IN ('crowded','queue','wait_time')) AS crowding_report_count_3h "
+        "SUM(created_at >= %s AND issue_type IN ('large_crowd','long_waiting_time')) AS crowding_report_count_1h, "
+        "SUM(created_at >= %s AND issue_type IN ('large_crowd','long_waiting_time')) AS crowding_report_count_3h "
         "FROM user_reports WHERE status='active' AND venue_id IN (" + marks + ") GROUP BY venue_id"
     )
     return db_utils.read_sql(query, ((now - pd.Timedelta(hours=1)).to_pydatetime(),
                                      (now - pd.Timedelta(hours=3)).to_pydatetime(),
+                                     (now - pd.Timedelta(hours=1)).to_pydatetime(),
                                      (now - pd.Timedelta(hours=3)).to_pydatetime(), *venue_ids))
+
+
+def crowd_report_delta(curve: pd.DataFrame) -> pd.Series:
+    """Return a short-lived, capped adjustment from active crowd reports.
+
+    This is deliberately a serving rule, not a learned feature.  Each report
+    applies only between ``created_at`` and ``expires_at`` and its fixed
+    category weight decays linearly to zero at expiry.
+    """
+    venue_ids = curve.venue_id.unique().tolist()
+    if not venue_ids:
+        return pd.Series(dtype=float)
+    marks = ",".join(["%s"] * len(venue_ids))
+    reports = db_utils.read_sql(
+        "SELECT venue_id, issue_type, created_at, expires_at FROM user_reports "
+        "WHERE status='active' AND issue_type IN ('large_crowd','long_waiting_time') "
+        "AND venue_id IN (" + marks + ")",
+        tuple(venue_ids),
+    )
+    delta = pd.Series(0.0, index=curve.index)
+    for report in reports.itertuples(index=False):
+        weight = CROWD_REPORT_WEIGHTS.get(report.issue_type, 0.0)
+        created_at, expires_at = (pd.Timestamp(report.created_at), pd.Timestamp(report.expires_at))
+        created_at = created_at.tz_localize("UTC") if created_at.tzinfo is None else created_at.tz_convert("UTC")
+        expires_at = expires_at.tz_localize("UTC") if expires_at.tzinfo is None else expires_at.tz_convert("UTC")
+        lifetime = max((expires_at - created_at).total_seconds(), 1.0)
+        matching = (curve.venue_id == report.venue_id) & (curve.forecast_for >= created_at) & (curve.forecast_for < expires_at)
+        remaining = (expires_at - curve.loc[matching, "forecast_for"]).dt.total_seconds().clip(lower=0)
+        delta.loc[matching] += weight * (remaining / lifetime)
+    return delta.clip(upper=CROWD_REPORT_DELTA_CAP).round(2)
 
 
 def add_dynamic_context(curve: pd.DataFrame, now: pd.Timestamp) -> pd.DataFrame:
@@ -186,14 +220,15 @@ def add_dynamic_context(curve: pd.DataFrame, now: pd.Timestamp) -> pd.DataFrame:
         curve[column] = (gbfs if column in gbfs else mta).get(column, 0) or 0
     reports = report_context(curve.venue_id.unique().tolist(), now)
     curve = curve.merge(reports, on="venue_id", how="left", suffixes=("", "_db"))
-    for column in DYNAMIC_COLUMNS[-3:]:
+    for column in (*DYNAMIC_COLUMNS[-3:], "crowding_report_count_1h"):
         curve[column] = pd.to_numeric(curve.pop(f"{column}_db"), errors="coerce").fillna(0) if f"{column}_db" in curve else 0
     curve["weather_context_available"] = int("weather_forecast" in context)
     curve["gbfs_context_available"] = int("gbfs_station_status" in context)
     curve["mta_context_available"] = int(mta.get("mta_arrival_missing") is False)
     curve["dynamic_context_available"] = int(bool(context))
+    curve["crowding_report_delta"] = crowd_report_delta(curve)
     curve["dynamic_delta"] = np.clip(
-        4 * curve.recent_report_count_1h + 2 * curve.crowding_report_count_3h
+        curve.crowding_report_delta
         + 6 * curve.mta_service_disruption_flag + np.minimum(curve.precipitation_mm, 8) * .5
         + curve.heat_alert * 2 + np.clip((curve.citibike_station_activity - 2000) / 1000, -2, 2) * 1.5,
         -15, 20,
