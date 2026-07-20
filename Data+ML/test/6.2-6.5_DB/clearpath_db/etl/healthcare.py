@@ -4,6 +4,14 @@ from ..validation import gen_vid, gps_to_district, is_manhattan, source_hash
 
 
 VENUE_SUBTYPES = {"hospital", "clinic", "pharmacy", "dentist", "laboratory"}
+WHEELCHAIR_STATUS = {
+    "yes": "full_access",
+    "limited": "partial",
+    "designated": "partial",
+    "assisted": "partial",
+    "separate": "partial",
+    "no": "none",
+}
 
 
 def classify_nys_venue_type(row):
@@ -46,7 +54,89 @@ def classify_nys_venue_type(row):
     return "healthcare"
 
 
-def etl_healthcare(conn, nys_data, osm_data):
+def _accessibility_values(feature):
+    """Return trusted OSM accessibility values, or ``None`` when unlabelled."""
+    props = feature.get("properties", {})
+    wheelchair = (props.get("wheelchair") or "").strip().lower()
+    toilet = (props.get("toilets:wheelchair") or "").strip().lower()
+    status = WHEELCHAIR_STATUS.get(wheelchair)
+    accessible_toilet = toilet in {"yes", "designated"}
+    if status is None and not accessible_toilet:
+        return None
+    return status, status == "full_access", accessible_toilet
+
+
+def _is_osm_healthcare(props):
+    venue_type = OSM_CATEGORY_MAP.get((props.get("healthcare") or "").strip().lower())
+    venue_type = venue_type or OSM_CATEGORY_MAP.get(
+        (props.get("amenity") or "").strip().lower()
+    )
+    return venue_type in VENUE_SUBTYPES
+
+
+def _etl_osm_accessibility(conn, accessibility_data):
+    """Attach OSM wheelchair tags only to existing OSM healthcare venues.
+
+    The OSM object id is the join key.  We deliberately do not spatially infer
+    accessibility for NYS facilities, and retain OSM provenance in both the
+    source-link table and the venue JSON metadata.
+    """
+    processed = errors = 0
+    for feature in accessibility_data or []:
+        props = feature.get("properties", {})
+        if not _is_osm_healthcare(props):
+            continue
+        source_id = (props.get("@id") or "").strip()
+        values = _accessibility_values(feature)
+        if not source_id or values is None:
+            continue
+        status, wheelchair_friendly, accessible_toilet = values
+        statements = [
+            (
+                "INSERT INTO venue_accessibility "
+                "(venue_id, wheelchair_friendly, accessible_toilet) "
+                "SELECT links.venue_id, %s, %s "
+                "FROM venue_source_links AS links "
+                "JOIN healthcare_profiles AS profiles ON profiles.venue_id = links.venue_id "
+                "WHERE links.source_name = 'osm' AND links.source_record_id = %s "
+                "ON DUPLICATE KEY UPDATE wheelchair_friendly = VALUES(wheelchair_friendly), "
+                "accessible_toilet = VALUES(accessible_toilet)",
+                (wheelchair_friendly, accessible_toilet, source_id),
+            ),
+            (
+                "INSERT INTO venue_source_links "
+                "(venue_id, source_name, source_record_id, raw_name, matched_method, match_confidence) "
+                "SELECT links.venue_id, 'osm_accessibility', %s, %s, 'exact_source_id', 0.500 "
+                "FROM venue_source_links AS links "
+                "JOIN healthcare_profiles AS profiles ON profiles.venue_id = links.venue_id "
+                "WHERE links.source_name = 'osm' AND links.source_record_id = %s "
+                "ON DUPLICATE KEY UPDATE raw_name = VALUES(raw_name), "
+                "match_confidence = VALUES(match_confidence)",
+                (source_id, (props.get("name") or "").strip() or None, source_id),
+            ),
+        ]
+        if status is not None:
+            statements.append(
+                (
+                    "UPDATE venues AS venue "
+                    "JOIN venue_source_links AS links ON links.venue_id = venue.venue_id "
+                    "JOIN healthcare_profiles AS profiles ON profiles.venue_id = venue.venue_id "
+                    "SET venue.accessible_status = %s, "
+                    "venue.accessibility_features = JSON_SET("
+                    "COALESCE(venue.accessibility_features, JSON_OBJECT()), "
+                    "'$.wheelchair', %s, '$.toilets_wheelchair', %s, '$.source', 'OSM') "
+                    "WHERE links.source_name = 'osm' AND links.source_record_id = %s",
+                    (status, status, accessible_toilet, source_id),
+                )
+            )
+        if etl_execute(conn, statements, source="osm_accessibility", record_id=source_id):
+            processed += 1
+        else:
+            errors += 1
+    return processed, errors
+
+
+def etl_healthcare(conn, nys_data, osm_data, accessibility_data=None):
     imported = skipped = errors = 0
     for row in nys_data:
         name = (row.get("Facility Name") or "").strip()
@@ -77,7 +167,7 @@ def etl_healthcare(conn, nys_data, osm_data):
         healthcare_type = classify_nys_venue_type(row)
         statements = [
             (
-                'INSERT INTO venues (venue_id, venue_type, name, latitude, longitude, borough, district, address, phone, website, source_confidence) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0.900) ON DUPLICATE KEY UPDATE venue_type = VALUES(venue_type), name = VALUES(name)',
+                'INSERT INTO venues (venue_id, venue_type, name, latitude, longitude, borough, district, address, phone, website, source_confidence, accessible_status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 0.900, "unknown") ON DUPLICATE KEY UPDATE venue_type = VALUES(venue_type), name = VALUES(name)',
                 (
                     venue_id,
                     healthcare_type,
@@ -179,4 +269,12 @@ def etl_healthcare(conn, nys_data, osm_data):
         else:
             skipped += 1
             errors += 1
-    return {"imported": imported, "skipped": skipped, "errors": errors}
+    accessibility_processed, accessibility_errors = _etl_osm_accessibility(
+        conn, accessibility_data
+    )
+    return {
+        "imported": imported,
+        "skipped": skipped,
+        "errors": errors + accessibility_errors,
+        "accessibility_processed": accessibility_processed,
+    }

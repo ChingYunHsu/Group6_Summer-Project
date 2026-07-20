@@ -41,6 +41,22 @@ ROWS = [
         "accessible_toilet": 0,
         "created_at": None,
     },
+    {
+        "venue_id": "venue_unknown",
+        "name": "Venue with unverified accessibility",
+        "venue_type": "clinic",
+        "accessible_status": "unknown",
+        "open_now": 1,
+        "language_tags": '["es"]',
+        "accessibility_features": "[]",
+        "supported_services": "[]",
+        "opening_hours_structured": None,
+        "chatbot_enabled": 0,
+        "wheelchair_friendly": 0,
+        "step_free_route": 0,
+        "accessible_toilet": 0,
+        "created_at": None,
+    },
 ]
 
 
@@ -62,6 +78,9 @@ class _FakeCursor:
         if "accessible_status = %s" in query:
             value = next(param_iter)
             rows = [r for r in rows if r["accessible_status"] == value]
+        elif "accessible_status IN (%s, %s, %s)" in query:
+            values = {next(param_iter), next(param_iter), next(param_iter)}
+            rows = [r for r in rows if r["accessible_status"] in values]
         elif "accessible_status != %s" in query:
             value = next(param_iter)
             rows = [r for r in rows if r["accessible_status"] != value]
@@ -104,6 +123,19 @@ def test_list_venues_filters_by_accessible_and_open_now(client, fake_venues_db):
     assert resp.status_code == 200
     body = resp.get_json()
     assert [item["venue_id"] for item in body["items"]] == ["venue_a"]
+
+
+def test_list_venues_does_not_treat_unknown_as_not_accessible(client, fake_venues_db):
+    resp = client.get("/api/v1/venues?accessible=false", headers={"X-API-Key": "test"})
+    assert resp.status_code == 200
+    assert "venue_unknown" not in {item["venue_id"] for item in resp.get_json()["items"]}
+
+
+def test_list_venues_normalises_lass_language_codes(client, fake_venues_db):
+    resp = client.get("/api/v1/venues?languages=ES", headers={"X-API-Key": "test"})
+    assert resp.status_code == 200
+    assert [item["venue_id"] for item in resp.get_json()["items"]] == ["venue_unknown"]
+    assert resp.get_json()["items"][0]["language_tags"] == ["ES"]
 
 
 def test_list_venues_rejects_unknown_venue_type(client, fake_venues_db):
