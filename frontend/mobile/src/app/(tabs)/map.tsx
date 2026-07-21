@@ -13,6 +13,7 @@ import {
   View,
 } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
+import { useTranslation } from "react-i18next";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CategoryChips, { Category } from "../../components/CategoryChips";
 import FilterModal from "../../components/FilterModal";
@@ -79,7 +80,42 @@ function matchesCategory(venue: Venue, category: Category): boolean {
   }
 }
 
+// Mirrors the exact colours VenueMarker paints markers with (the
+// COLOURS map in VenueMarker.tsx) — deliberately NOT FilterModal's
+// STATUS_COLOURS chip palette. Those two already drift slightly (e.g.
+// quiet is #006400 in the filter chips vs #16A34A on the actual
+// markers), and this legend has to match what's literally on the map,
+// not the filter UI.
+const LEGEND_ITEMS = [
+  {
+    translationKey: "map.filters.quiet",
+    defaultValue: "Quiet",
+    colour: "#16A34A",
+  },
+  {
+    translationKey: "map.filters.moderate",
+    defaultValue: "Moderate",
+    colour: "#FACC15",
+  },
+  {
+    translationKey: "map.filters.busy",
+    defaultValue: "Busy",
+    colour: "#DC2626",
+  },
+  // Matches VenueMarker's getMarkerColour() fallback (COLOURS.blue) — hit
+  // whenever busyness_color isn't green/yellow/red, i.e. no busyness data
+  // fetched yet for that venue. Not in FilterModal's LIVE_STATUS/
+  // STATUS_COLOURS since it isn't a filterable status, just "unknown".
+  {
+    translationKey: "map.filters.unknown",
+    defaultValue: "Unknown",
+    colour: "#2563EB",
+  },
+] as const;
+
 export default function MapScreen() {
+  const { t } = useTranslation();
+
   const [venues, setVenues] = useState<Venue[]>([]);
 
   const [reports, setReports] = useState<Report[]>([]);
@@ -700,6 +736,35 @@ export default function MapScreen() {
         </TouchableOpacity>
       </View>
 
+      {/* ---------------------- Busyness Legend ---------------------- */}
+
+      {/* Only meaningful when autoCurrentTime is on — VenueMarker only
+          paints the green/yellow/red busyness colour when its
+          showLiveStatus prop is true (wired to autoCurrentTime below);
+          otherwise every marker renders blue regardless of category, so
+          a legend explaining busyness colours would be misleading. */}
+
+      {autoCurrentTime && (
+        <View style={styles.legendContainer}>
+          {LEGEND_ITEMS.map((item, index) => (
+            <View
+              key={item.translationKey}
+              style={[
+                styles.legendRow,
+                index === LEGEND_ITEMS.length - 1 && styles.legendLastRow,
+              ]}
+            >
+              <View
+                style={[styles.legendDot, { backgroundColor: item.colour }]}
+              />
+              <Text style={styles.legendLabel}>
+                {t(item.translationKey, { defaultValue: item.defaultValue })}
+              </Text>
+            </View>
+          ))}
+        </View>
+      )}
+
       {/* ---------------------- Floating Buttons ---------------------- */}
 
       <FloatingActionButtons
@@ -976,5 +1041,46 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: Colours.border,
     marginHorizontal: 8,
+  },
+
+  // Bottom-left, above the Clear Route button's footprint (which sits at
+  // bottom:36 with ~40px height + padding) so the two never overlap even
+  // when a route is active at the same time.
+  legendContainer: {
+    position: "absolute",
+    left: 20,
+    bottom: 96,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 5,
+  },
+
+  legendRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 6,
+  },
+
+  legendLastRow: {
+    marginBottom: 0,
+  },
+
+  legendDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginRight: 8,
+  },
+
+  legendLabel: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: Colours.text,
   },
 });

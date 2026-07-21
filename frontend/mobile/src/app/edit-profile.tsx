@@ -190,7 +190,11 @@ export default function EditProfileScreen() {
             <Text style={styles.headerTitle}>{t("editProfile.title")}</Text>
           </View>
 
-          <TouchableOpacity onPress={handleSave} disabled={loading || saving}>
+          <TouchableOpacity
+            testID="edit-profile-save-button"
+            onPress={handleSave}
+            disabled={loading || saving}
+          >
             <Text
               style={[
                 styles.saveText,
@@ -222,12 +226,14 @@ export default function EditProfileScreen() {
           </Text>
 
           <InputField
+            testID="edit-profile-fullname-input"
             label={t("editProfile.fullName")}
             value={fullName}
             editable={false}
           />
 
           <InputField
+            testID="edit-profile-dob-input"
             label={t("editProfile.dateOfBirth")}
             value={dob}
             onChangeText={setDob}
@@ -238,6 +244,7 @@ export default function EditProfileScreen() {
             <Text style={styles.label}>{t("editProfile.gender")}</Text>
 
             <TouchableOpacity
+              testID="edit-profile-gender-trigger"
               style={[styles.input, styles.pickerTrigger]}
               onPress={() => setGenderModalVisible(true)}
             >
@@ -255,18 +262,21 @@ export default function EditProfileScreen() {
           </View>
 
           <InputField
+            testID="edit-profile-nationality-input"
             label={t("editProfile.nationality")}
             value={nationality}
             onChangeText={setNationality}
           />
 
           <InputField
+            testID="edit-profile-phone-input"
             label={t("editProfile.phoneNumber")}
             value={phone}
             onChangeText={setPhone}
           />
 
           <InputField
+            testID="edit-profile-email-input"
             label={t("editProfile.emailAddress")}
             value={email}
             editable={false}
@@ -274,6 +284,7 @@ export default function EditProfileScreen() {
           />
 
           <InputField
+            testID="edit-profile-address-input"
             label={t("editProfile.address")}
             value={address}
             onChangeText={setAddress}
@@ -283,7 +294,10 @@ export default function EditProfileScreen() {
           <View style={styles.tagSectionHeader}>
             <Text style={styles.label}>{t("editProfile.spokenLanguages")}</Text>
 
-            <TouchableOpacity onPress={() => setLanguageModalVisible(true)}>
+            <TouchableOpacity
+              testID="edit-profile-add-language-button"
+              onPress={() => setLanguageModalVisible(true)}
+            >
               <Ionicons name="add-circle" size={24} color={Colours.primary} />
             </TouchableOpacity>
           </View>
@@ -293,7 +307,10 @@ export default function EditProfileScreen() {
               <View key={language} style={styles.tag}>
                 <Text style={styles.tagText}>{language}</Text>
 
-                <TouchableOpacity onPress={() => removeLanguage(language)}>
+                <TouchableOpacity
+                  testID={`edit-profile-remove-language-${language}`}
+                  onPress={() => removeLanguage(language)}
+                >
                   <Ionicons name="close" size={16} color={Colours.muted} />
                 </TouchableOpacity>
               </View>
@@ -312,6 +329,7 @@ export default function EditProfileScreen() {
             </Text>
 
             <TextInput
+              testID="edit-profile-language-search-input"
               style={styles.modalInput}
               value={languageSearch}
               onChangeText={setLanguageSearch}
@@ -327,6 +345,7 @@ export default function EditProfileScreen() {
                 {filteredLanguageOptions.map((language) => (
                   <TouchableOpacity
                     key={language.english}
+                    testID={`edit-profile-language-option-${language.english}`}
                     style={styles.pickerResultRow}
                     onPress={() => addLanguage(language)}
                   >
@@ -348,6 +367,7 @@ export default function EditProfileScreen() {
 
             <View style={styles.modalActions}>
               <TouchableOpacity
+                testID="edit-profile-language-cancel-button"
                 onPress={() => {
                   setLanguageSearch("");
                   setLanguageModalVisible(false);
@@ -372,6 +392,7 @@ export default function EditProfileScreen() {
             {genderOptions.map((option) => (
               <TouchableOpacity
                 key={option.value}
+                testID={`edit-profile-gender-option-${option.value}`}
                 style={styles.pickerResultRow}
                 onPress={() => selectGender(option.value)}
               >
@@ -388,7 +409,10 @@ export default function EditProfileScreen() {
             ))}
 
             <View style={styles.modalActions}>
-              <TouchableOpacity onPress={() => setGenderModalVisible(false)}>
+              <TouchableOpacity
+                testID="edit-profile-gender-cancel-button"
+                onPress={() => setGenderModalVisible(false)}
+              >
                 <Text>{t("common.cancel")}</Text>
               </TouchableOpacity>
             </View>
@@ -407,6 +431,7 @@ function InputField({
   keyboardType = "default",
   editable = true,
   placeholder,
+  testID,
 }: {
   label: string;
   value: string;
@@ -415,12 +440,14 @@ function InputField({
   editable?: boolean;
   keyboardType?: "default" | "email-address" | "phone-pad";
   placeholder?: string;
+  testID?: string;
 }) {
   return (
     <View style={styles.field}>
       <Text style={styles.label}>{label}</Text>
 
       <TextInput
+        testID={testID}
         style={[styles.input, multiline && styles.multilineInput]}
         value={value}
         onChangeText={onChangeText}
