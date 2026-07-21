@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-
 import { Ionicons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
 import {
@@ -271,7 +270,7 @@ export default function ReportModal({
           <View style={styles.header}>
             <Text style={styles.title}>{t("reportModal.title")} </Text>
 
-            <TouchableOpacity onPress={handleClose}>
+            <TouchableOpacity onPress={handleClose} testID="report-modal-close">
               <Ionicons name="close" size={26} color={Colours.text} />
             </TouchableOpacity>
           </View>
@@ -289,6 +288,7 @@ export default function ReportModal({
 
             <View style={styles.modeContainer}>
               <TouchableOpacity
+                testID="report-mode-venue"
                 style={[
                   styles.modeCard,
                   mode === "venue" && styles.selectedCard,
@@ -312,6 +312,7 @@ export default function ReportModal({
               </TouchableOpacity>
 
               <TouchableOpacity
+                testID="report-mode-incident"
                 style={[
                   styles.modeCard,
                   mode === "incident" && styles.selectedCard,
@@ -351,6 +352,7 @@ export default function ReportModal({
                   return (
                     <TouchableOpacity
                       key={venue.venue_id}
+                      testID={`report-venue-row-${venue.venue_id}`}
                       style={[
                         styles.venueRow,
                         selected && styles.selectedVenue,
@@ -395,6 +397,7 @@ export default function ReportModal({
                     return (
                       <TouchableOpacity
                         key={item.value}
+                        testID={`report-issue-${item.value}`}
                         style={[styles.card, selected && styles.selectedCard]}
                         onPress={() => setIssueType(item.value)}
                       >
@@ -418,6 +421,7 @@ export default function ReportModal({
                 </View>
 
                 <TextInput
+                  testID="report-description-input"
                   style={styles.input}
                   placeholder={t("reportModal.additionalInformation")}
                   placeholderTextColor={Colours.muted}
@@ -431,6 +435,7 @@ export default function ReportModal({
                 </Text>
 
                 <TouchableOpacity
+                  testID="report-submit-button"
                   style={[
                     styles.submitButton,
                     (!issueType || (mode === "venue" && !selectedVenue)) &&
