@@ -8,6 +8,7 @@ import {
 import "./LiveHelpMap.css";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+
 import {
   getVenueBusyness,
   getVenueBusynessForecast,
@@ -15,6 +16,12 @@ import {
   listReports,
   listVenues,
 } from "../services/LiveHelpMapApi";
+
+import {
+  addFavourite,
+  deleteFavourite,
+  listFavourites,
+} from "../services/FavouritesApi";
 
 const LANGUAGE_CODES = {
   "English (English)": "en",
@@ -24,6 +31,16 @@ const LANGUAGE_CODES = {
   "العربية (Arabic)": "ar",
 };
 
+
+function getFavouriteVenueId(favourite) {
+  return (
+    favourite?.venue_id ??
+    favourite?.venueId ??
+    favourite?.venue?.venue_id ??
+    favourite?.venue?.id ??
+    null
+  );
+}
 
 function getMarkerColor(venue, futureMode) {
   if (futureMode) return "#0057e7";
@@ -60,13 +77,14 @@ function getMarkerColor(venue, futureMode) {
     return providedColor;
   }
 
-  const percent = Number(venue.busyness_percent);
+  const rawPercent = venue.busyness_percent;
 
-  if (Number.isFinite(percent)) {
-    if (percent < 30) return "#22c55e";
-    if (percent <= 70) return "#eab308";
-    return "#ef4444";
-  }
+  const percent =
+    rawPercent === null ||
+    rawPercent === undefined ||
+    rawPercent === ""
+      ? Number.NaN
+      : Number(rawPercent);
 
   const level = String(
     venue.busyness_level ?? venue.busyness_status ?? ""
@@ -94,12 +112,18 @@ function getMarkerColor(venue, futureMode) {
   return "#0057e7";
 }
 
-function getIcon(type) {
+function getIcon(venue) {
+  const type = String(
+    venue?.venue_type ?? venue?.type ?? ""
+  ).toLowerCase();
+
+  if (venueIsPharmacy(venue)) return "⚕";
+  if (venueIsHospital(venue)) return "🏥";
   if (type === "clinic" || type === "healthcare") return "✚";
-  if (type === "pharmacy") return "⚕";
-  if (type === "aed" || type === "emergencyasset") return "AED";
-  if (type === "toilet" || type === "restroom") return "♿";
-  if (type === "hospital") return "H";
+  if (type === "aed" || type === "emergencyasset") return "❤️";
+  if (type === "toilet" || type === "restroom") return "🚽";
+  if (type === "hospital") return "🏥";
+
   return "●";
 }
 
@@ -214,21 +238,37 @@ function normaliseVenue(rawVenue) {
   };
 }
 
-function normaliseBusyness(rawBusyness) {
+function normaliseBusyness(payload) {
+  const rawBusyness = payload?.busyness ?? payload ?? {};
+
   return {
     ...rawBusyness,
+
     busyness_percent:
       rawBusyness.busyness_percent ??
       rawBusyness.percent ??
       rawBusyness.load_percent ??
       null,
+
     busyness_level:
       rawBusyness.busyness_level ??
+      rawBusyness.busyness_status ??
       rawBusyness.level ??
       rawBusyness.status ??
       "No Live Info",
+
+    busyness_status:
+      rawBusyness.busyness_status ??
+      rawBusyness.status ??
+      rawBusyness.busyness_level ??
+      rawBusyness.level ??
+      "unknown",
+
     busyness_color:
-      rawBusyness.busyness_color ?? rawBusyness.color ?? null,
+      rawBusyness.busyness_color ??
+      rawBusyness.color ??
+      null,
+
     avg_wait_minutes:
       rawBusyness.avg_wait_minutes ??
       rawBusyness.estimated_wait_minutes ??
@@ -350,6 +390,56 @@ function normaliseLanguage(value) {
   return LANGUAGE_ALIASES[cleanedValue] ?? cleanedValue;
 }
 
+const PHARMACY_TERMS = [
+  "pharmacy",
+  "chemist",
+  "drugstore",
+  "drug store",
+];
+
+function venueIsPharmacy(venue) {
+  // This checks all available venue fields, including subtype,
+  // category and amenity fields that may not be displayed.
+  const searchableVenue = JSON.stringify(venue ?? {}).toLowerCase();
+
+  return PHARMACY_TERMS.some((term) =>
+    searchableVenue.includes(term)
+  );
+}
+
+function venueMatchesCategory(venue, selectedType) {
+  if (!selectedType) return true;
+
+  const venueType = String(
+    venue.venue_type ?? venue.type ?? ""
+  ).toLowerCase();
+
+  if (selectedType === "pharmacy") {
+    return venueIsPharmacy(venue);
+  }
+
+  if (selectedType === "hospital") {
+    return venueIsHospital(venue);
+  }
+
+  if (selectedType === "clinic") {
+    return (
+      ["clinic", "healthcare"].includes(venueType) &&
+      !venueIsPharmacy(venue)
+    );
+  }
+
+  if (selectedType === "emergencyasset") {
+    return ["emergencyasset", "aed"].includes(venueType);
+  }
+
+  if (selectedType === "restroom") {
+    return ["restroom", "toilet"].includes(venueType);
+  }
+
+  return venueType === selectedType;
+}
+
 function venueIsAccessible(venue) {
   const value =
     venue.accessible ??
@@ -371,6 +461,41 @@ function venueIsAccessible(venue) {
   );
 }
 
+const HOSPITAL_TERMS = [
+  "hospital",
+  "medical center",
+  "medical centre",
+  "infirmary",
+  "emergency room",
+];
+
+function venueIsHospital(venue) {
+  const venueType = String(
+    venue?.venue_type ?? venue?.type ?? ""
+  ).toLowerCase();
+
+  // Prevent hospital-named AED records from appearing as hospitals.
+  if (!["healthcare", "hospital"].includes(venueType)) {
+    return false;
+  }
+
+  const searchableText = [
+    venue?.name,
+    venue?.category,
+    venue?.subtype,
+    venue?.amenity,
+    venue?.healthcare,
+    venue?.description,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  return HOSPITAL_TERMS.some((term) =>
+    searchableText.includes(term)
+  );
+}
+
 function LiveHelpMap() {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -382,6 +507,9 @@ function LiveHelpMap() {
   const [busynessByVenueId, setBusynessByVenueId] = useState({});
   const [forecastByVenueId, setForecastByVenueId] = useState({});
   const [liveReports, setLiveReports] = useState([]);
+  const [busynessFetchedIds, setBusynessFetchedIds] = useState(
+    () => new Set()
+  );
 
   const [isLoading, setIsLoading] = useState(true);
   const [mapError, setMapError] = useState("");
@@ -402,15 +530,19 @@ function LiveHelpMap() {
   const [appliedFilters, setAppliedFilters] = useState({
     languages: [],
     accessible: false,
-    venueType: "",
+    venueType: "clinic",
   });
 
   const [showRoutePlanner, setShowRoutePlanner] = useState(false);
   const [routeStart, setRouteStart] = useState("");
   const [routeDestination, setRouteDestination] = useState("");
   const [routeDepartureTime, setRouteDepartureTime] = useState("");
-  const [recentlySavedVenueId, setRecentlySavedVenueId] = useState(null);
   const [selectedVenueId, setSelectedVenueId] = useState(null);
+
+  const [favouriteVenueIds, setFavouriteVenueIds] = useState([]);
+  const [favouriteError, setFavouriteError] = useState("");
+  const [updatingFavouriteId, setUpdatingFavouriteId] =
+    useState(null);
 
   const futureMode = !autoCurrentTime;
   const queryTime = futureMode
@@ -475,7 +607,7 @@ function LiveHelpMap() {
     }
   }, []);
 
-  const refreshBusyness = useCallback(async () => {
+   const refreshBusyness = useCallback(async () => {
     if (venues.length === 0) {
       setBusynessByVenueId({});
       return;
@@ -514,7 +646,7 @@ function LiveHelpMap() {
           throw error;
         }
       })
-    );
+    ); 
 
     const nextBusyness = {};
 
@@ -538,18 +670,130 @@ function LiveHelpMap() {
   }, [loadVenues]);
 
   useEffect(() => {
-    refreshReports();
+    let cancelled = false;
 
-    const interval = window.setInterval(refreshReports, 30000);
-    return () => window.clearInterval(interval);
-  }, [refreshReports]);
+    async function loadSavedFavourites() {
+      try {
+        const favourites = await listFavourites();
+
+        if (cancelled) return;
+
+        const venueIds = favourites
+          .map(getFavouriteVenueId)
+          .filter(Boolean);
+
+        setFavouriteVenueIds([...new Set(venueIds)]);
+        setFavouriteError("");
+      } catch (error) {
+        if (cancelled) return;
+
+        console.error("Failed to load favourites:", error);
+
+        setFavouriteError(
+          error.message ||
+            "Could not load your saved locations."
+        );
+      }
+    }
+
+    void loadSavedFavourites();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+///  useEffect(() => {
+///    refreshReports();
+///
+///    const interval = window.setInterval(refreshReports, 30000);
+///    return () => window.clearInterval(interval);
+///  }, [refreshReports]);
+
+ /// useEffect(() => {
+  ///  refreshBusyness();
+
+  ///  const interval = window.setInterval(refreshBusyness, 30000);
+  ///  return () => window.clearInterval(interval);
+  ///}, [refreshBusyness]);
 
   useEffect(() => {
-    refreshBusyness();
+  const selectedType = appliedFilters.venueType;
 
-    const interval = window.setInterval(refreshBusyness, 30000);
-    return () => window.clearInterval(interval);
-  }, [refreshBusyness]);
+  if (!selectedType) return;
+
+  const venuesNeedingBusyness = venues.filter(
+    (venue) =>
+      venueMatchesCategory(venue, selectedType) &&
+      !busynessFetchedIds.has(venue.venue_id)
+  );
+
+  if (venuesNeedingBusyness.length === 0) return;
+
+  let cancelled = false;
+
+  async function loadBusynessForCategory() {
+    const results = await Promise.all(
+      venuesNeedingBusyness.map(async (venue) => {
+        try {
+          const payload = await getVenueBusyness(
+            venue.venue_id,
+            queryTime
+          );
+
+          return {
+            venueId: venue.venue_id,
+            busyness: normaliseBusyness(
+              payload?.busyness ?? payload
+            ),
+          };
+        } catch (error) {
+          return {
+            venueId: venue.venue_id,
+            busyness: null,
+          };
+        }
+      })
+    );
+
+    if (cancelled) return;
+
+    setBusynessByVenueId((current) => {
+      const next = { ...current };
+
+      results.forEach(({ venueId, busyness }) => {
+        if (busyness) {
+          next[venueId] = busyness;
+        }
+      });
+
+      return next;
+    });
+    
+    // Record successful and failed requests so 404 venues
+    // are not requested repeatedly.
+    setBusynessFetchedIds((current) => {
+      const next = new Set(current);
+
+      results.forEach(({ venueId }) => {
+        next.add(venueId);
+      });
+
+      return next;
+    });
+  }
+
+  void loadBusynessForCategory();
+
+  return () => {
+    cancelled = true;
+  };
+}, [
+  appliedFilters.venueType,
+  busynessFetchedIds,
+  queryTime,
+  venues,
+]);
 
   useEffect(() => {
     if (!selectedVenueId) return;
@@ -734,34 +978,16 @@ useEffect(() => {
         !appliedFilters.accessible ||
         venueIsAccessible(venue);
 
-      const selectedType =
-        appliedFilters.venueType;
-
       const venueType = String(
         venue.venue_type ?? ""
       ).toLowerCase();
 
-      const typeAliases = {
-        clinic: ["clinic", "healthcare"],
-        pharmacy: ["pharmacy"],
-        emergencyasset: [
-          "emergencyasset",
-          "aed",
-        ],
-      
-      restroom: [
-        "restroom",
-        "toilet",
-      ],
-    };
+      const selectedType = appliedFilters.venueType;
 
-    const matchesVenueType =
-      !selectedType ||
-      (
-        typeAliases[selectedType] ?? [
-          selectedType,
-        ]
-      ).includes(venueType);
+      const matchesVenueType = venueMatchesCategory(
+        venue,
+        selectedType
+      );
 
     const busynessLevel = String(
       venue.busyness_level ?? ""
@@ -815,7 +1041,7 @@ useEffect(() => {
         futureMode
       );
       markerEl.innerHTML = `<span>${getIcon(
-        venue.venue_type
+        venue
       )}</span>`;
       markerEl.style.pointerEvents = "auto";
       markerEl.style.zIndex = "10";
@@ -948,34 +1174,56 @@ useEffect(() => {
   );
 }
 
-  function handleSaveLocation() {
+  async function handleSaveLocation() {
     if (!selectedVenue) return;
 
-    const savedIds = JSON.parse(
-      localStorage.getItem("clearPathSavedVenueIds") || "[]"
-    );
+    const venueId =
+      selectedVenue.venue_id ?? selectedVenue.id;
 
-    if (!savedIds.includes(selectedVenue.venue_id)) {
-      const updatedSavedIds = [
-        ...savedIds,
-        selectedVenue.venue_id,
-      ];
-
-      localStorage.setItem(
-        "clearPathSavedVenueIds",
-        JSON.stringify(updatedSavedIds)
+    if (!venueId) {
+      setFavouriteError(
+        "This venue does not have a valid venue ID."
       );
+      return;
+    }
+
+    const isAlreadyFavourite =
+      favouriteVenueIds.includes(venueId);
+
+    try {
+      setUpdatingFavouriteId(venueId);
+      setFavouriteError("");
+
+      if (isAlreadyFavourite) {
+        await deleteFavourite(venueId);
+
+        setFavouriteVenueIds((currentIds) =>
+          currentIds.filter((id) => id !== venueId)
+        );
+      } else {
+        await addFavourite(venueId);
+
+        setFavouriteVenueIds((currentIds) => [
+          ...new Set([...currentIds, venueId]),
+        ]);
+      }
 
       window.dispatchEvent(
         new Event("clearpath:saved-locations-updated")
       );
+    } catch (error) {
+      console.error(
+        "Failed to update favourite:",
+        error
+      );
+
+      setFavouriteError(
+        error.message ||
+          "Could not update this saved location."
+      );
+    } finally {
+      setUpdatingFavouriteId(null);
     }
-
-    setRecentlySavedVenueId(selectedVenue.venue_id);
-
-    window.setTimeout(() => {
-      setRecentlySavedVenueId(null);
-    }, 1500);
   }
 
   function handleOpenLiveDirections() {
@@ -1095,6 +1343,20 @@ useEffect(() => {
             <button
               type="button"
               className={
+                appliedFilters.venueType === "hospital"
+                  ? "active"
+                  : ""
+              }
+              aria-pressed={
+                appliedFilters.venueType === "hospital"
+              }
+              onClick={() => selectCategory("hospital")}
+            >
+              🏥 Hospitals
+            </button>
+            <button
+              type="button"
+              className={
                 appliedFilters.venueType === "pharmacy"
                   ? "active"
                   : ""
@@ -1114,7 +1376,7 @@ useEffect(() => {
                 selectCategory("emergencyasset")
               }
             >
-              AED
+              ❤️ AED
             </button>
             <button
               type="button"
@@ -1125,7 +1387,7 @@ useEffect(() => {
               }
               onClick={() => selectCategory("restroom")}
             >
-              ♿ Toilets
+              🚽 Toilets
             </button>
           </section>
         </>
@@ -1403,15 +1665,30 @@ useEffect(() => {
             ◈ Open Live Directions
           </button>
 
+          {favouriteError && (
+            <p className="favourite-error" role="alert">
+              {favouriteError}
+            </p>
+          )}
+
           <button
             className="secondary-map-btn"
             type="button"
             onClick={handleSaveLocation}
+            disabled={
+              updatingFavouriteId === selectedVenue.venue_id
+            }
+            aria-pressed={favouriteVenueIds.includes(
+              selectedVenue.venue_id
+            )}
           >
-            {recentlySavedVenueId ===
-            selectedVenue.venue_id
-              ? "✅ Saved"
-              : "▱ Save Location"}
+            {updatingFavouriteId === selectedVenue.venue_id
+              ? "Saving..."
+              : favouriteVenueIds.includes(
+                    selectedVenue.venue_id
+                  )
+                ? "♥ Saved Location"
+                : "♡ Save Location"}
           </button>
         </aside>
       )}

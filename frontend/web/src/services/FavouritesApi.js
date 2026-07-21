@@ -2,20 +2,24 @@ const DEFAULT_API_KEY = "development";
 
 function buildHeaders(extraHeaders = {}) {
   const headers = new Headers(extraHeaders);
+
   const accessToken = localStorage.getItem("access_token");
-  const apiKey = import.meta.env.VITE_API_KEY || DEFAULT_API_KEY;
+
+  const apiKey =
+    import.meta.env.VITE_API_KEY || DEFAULT_API_KEY;
 
   headers.set("Accept", "application/json");
   headers.set("X-Client-Origin", "web");
 
-  // The favourites contract declares BearerAuth. The API key is also sent
-  // because the 401 description currently mentions a missing API key.
   if (apiKey) {
     headers.set("X-API-Key", apiKey);
   }
 
   if (accessToken) {
-    headers.set("Authorization", `Bearer ${accessToken}`);
+    headers.set(
+      "Authorization",
+      `Bearer ${accessToken}`
+    );
   }
 
   return headers;
@@ -31,19 +35,37 @@ async function favouritesRequest(path, options = {}) {
     return null;
   }
 
-  const payload = await response.json().catch(() => null);
+  const payload = await response
+    .json()
+    .catch(() => null);
 
   if (!response.ok) {
-    let fallbackMessage = `Request failed with status ${response.status}`;
+    let fallbackMessage =
+      `Request failed with status ${response.status}`;
+
+    if (response.status === 400) {
+      fallbackMessage =
+        "The favourite request contained invalid information.";
+    }
 
     if (response.status === 401) {
       fallbackMessage =
-        "You must be signed in before viewing saved locations.";
+        "You must be signed in before managing saved locations.";
     }
 
     if (response.status === 403) {
       fallbackMessage =
         "This favourites action is not available from the web client.";
+    }
+
+    if (response.status === 404) {
+      fallbackMessage =
+        "The selected venue or favourite could not be found.";
+    }
+
+    if (response.status === 409) {
+      fallbackMessage =
+        "This location has already been added to your favourites.";
     }
 
     const message =
@@ -89,13 +111,38 @@ export async function listFavourites() {
   return unwrapFavouriteList(payload);
 }
 
+export async function addFavourite(venueId) {
+  if (!venueId) {
+    throw new Error(
+      "A venue ID is required to add a favourite."
+    );
+  }
+
+  return favouritesRequest(
+    "/api/v1/user/favourites",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        venue_id: venueId,
+      }),
+    }
+  );
+}
+
 export async function deleteFavourite(venueId) {
   if (!venueId) {
-    throw new Error("A venue ID is required to remove a favourite.");
+    throw new Error(
+      "A venue ID is required to remove a favourite."
+    );
   }
 
   await favouritesRequest(
-    `/api/v1/user/favourites/${encodeURIComponent(venueId)}`,
+    `/api/v1/user/favourites/${encodeURIComponent(
+      venueId
+    )}`,
     {
       method: "DELETE",
     }
