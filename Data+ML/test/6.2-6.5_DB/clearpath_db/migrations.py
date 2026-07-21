@@ -31,7 +31,7 @@ MIGRATIONS = [
             ("venues", "language_tags", "ALTER TABLE venues ADD COLUMN language_tags JSON AFTER borough"),
             ("venues", "primary_language", "ALTER TABLE venues ADD COLUMN primary_language VARCHAR(10) AFTER language_tags"),
             ("venues", "secondary_language", "ALTER TABLE venues ADD COLUMN secondary_language VARCHAR(10) AFTER primary_language"),
-            ("venues", "accessible_status", "ALTER TABLE venues ADD COLUMN accessible_status ENUM('full_access','partial','step_free_route_only','none') DEFAULT 'none' AFTER secondary_language"),
+            ("venues", "accessible_status", "ALTER TABLE venues ADD COLUMN accessible_status ENUM('full_access','partial','step_free_route_only','none','unknown') DEFAULT 'unknown' AFTER secondary_language"),
             ("venues", "accessibility_features", "ALTER TABLE venues ADD COLUMN accessibility_features JSON AFTER accessible_status"),
             ("venues", "active_warning", "ALTER TABLE venues ADD COLUMN active_warning BOOLEAN DEFAULT FALSE AFTER accessibility_features"),
             ("venues", "open_now", "ALTER TABLE venues ADD COLUMN open_now BOOLEAN DEFAULT TRUE AFTER active_warning"),

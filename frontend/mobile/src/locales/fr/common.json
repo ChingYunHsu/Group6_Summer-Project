@@ -42,7 +42,7 @@
     "changeLanguage": "Changer de langue",
     "currentLanguage": "Français",
     "logout": "Déconnexion",
-    "logoutMessage": "La fonctionnalité de déconnexion sera connectée ultérieurement à l'authentification.",
+    "logoutMessage": "Déconnexion en cours...",
     "dangerZone": "Zone de danger",
     "deleteWarning": "La suppression de votre compte est définitive. Tous les dossiers médicaux et données de profil seront supprimés.",
     "deleteAccount": "Supprimer mon compte",
@@ -74,7 +74,12 @@
     "saveErrorTitle": "Tout n'a pas pu être enregistré",
     "saveErrorMessage": "Certaines de vos modifications n'ont pas été enregistrées. Veuillez réessayer.",
     "addLanguage": "Ajouter une langue",
-    "languagePlaceholder": "Saisissez une langue"
+    "languagePlaceholder": "Saisissez une langue",
+    "genderMale": "Homme",
+    "genderFemale": "Femme",
+    "genderNonBinary": "Non binaire",
+    "genderPreferNotToSay": "Je préfère ne pas répondre",
+    "selectGender": "Sélectionner le genre"
   },
   "profileGuest": {
     "title": "Sécurisez votre Identifiant Médical",
@@ -247,7 +252,11 @@
       "apply": "Appliquer les filtres",
       "quiet": "Calme",
       "moderate": "Modéré",
-      "busy": "Fréquenté"
+      "busy": "Fréquenté",
+      "unknown": "Inconnu",
+      "wheelchairAccess": "Accès en fauteuil roulant",
+      "fullAccess": "Accès complet",
+      "partialOrFullAccess": "Accès partiel ou complet"
     }
   },
   "reportModal": {
@@ -320,5 +329,34 @@
     "askQuestion": "Posez une question...",
     "openNow": "Ouvert maintenant",
     "currentlyClosed": "Actuellement fermé"
+  },
+  "verification": {
+    "defaultTitle": "Est-ce toujours un problème ?",
+    "reportedAt": "Signalé {{time}}",
+    "confirmationSingular": "(confirmé par {{count}} utilisateur)",
+    "confirmationPlural": "(confirmé par {{count}} utilisateurs)",
+    "confirm": "Confirmer",
+    "resolve": "Résoudre"
+  },
+  "api": {
+    "sessionExpiredTitle": "Session expirée",
+    "sessionExpiredMessage": "Veuillez vous reconnecter pour continuer.",
+    "sessionExpiredConfirm": "OK"
+  },
+  "venueSheet": {
+    "addressUnavailable": "Adresse non disponible",
+    "noData": "Aucune donnée",
+    "minWaitSuffix": " · {{minutes}} min d'attente",
+    "predictedForHour": "Prévision pour +{{hours}}h — pas en direct",
+    "accessibilityIssue": "Problème d'accessibilité signalé récemment",
+    "services": "Services",
+    "busynessForecast": "Prévision d'affluence sur 12 heures",
+    "forecastUnavailable": "La prévision en direct n'est pas encore disponible pour ce lieu.",
+    "expectedWait": "Attente estimée : {{minutes}} minutes",
+    "unknown": "Inconnu",
+    "directions": "Itinéraire",
+    "fullWheelchairAccess": "Accès complet en fauteuil roulant",
+    "partialWheelchairAccess": "Accès partiel en fauteuil roulant",
+    "accessibilityUnknown": "Accessibilité en fauteuil roulant inconnue"
   }
 }

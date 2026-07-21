@@ -48,6 +48,15 @@ ALLOWED_CONFIRMATION_ACTIONS = {
     "open_now",
 }
 
+# These reports change whether an otherwise known-accessible venue can be
+# used *right now*.  They are warnings, not evidence that the static OSM/NYS
+# accessibility fact should be overwritten permanently.
+ACCESSIBILITY_IMPACT_TYPES = {
+    "elevator_broken",
+    "wheelchair_lift_broken",
+    "ramp_blocked",
+}
+
 DEFAULT_EXPIRES_IN_MINUTES = 120
 STILL_HERE_EXTEND_MINUTES = 30
 
@@ -85,6 +94,33 @@ def _format_report(row: dict, report_scope: str | None = None) -> dict:
             "latest_action_at": _iso(row.get("latest_action_at")),
         },
     }
+
+
+def _sync_accessibility_warning(cursor, venue_id: str | None) -> None:
+    """Derive a venue's transient accessibility warning from active reports."""
+    if not venue_id:
+        return
+    placeholders = ", ".join(["%s"] * len(ACCESSIBILITY_IMPACT_TYPES))
+    cursor.execute(
+        "SELECT issue_type FROM user_reports WHERE venue_id = %s AND status = 'active' "
+        f"AND issue_type IN ({placeholders}) ORDER BY created_at DESC LIMIT 1",
+        (venue_id, *sorted(ACCESSIBILITY_IMPACT_TYPES)),
+    )
+    row = cursor.fetchone()
+    issue_type = (
+        row.get("issue_type") if isinstance(row, dict) else (row[0] if row else None)
+    )
+    active = bool(issue_type)
+    detail = ISSUE_TYPE_LABELS.get(issue_type) if issue_type else None
+    cursor.execute(
+        "UPDATE venues SET active_warning = %s WHERE venue_id = %s",
+        (active, venue_id),
+    )
+    cursor.execute(
+        "INSERT INTO venue_warnings (venue_id, active_warning, warning_detail) VALUES (%s, %s, %s) "
+        "ON DUPLICATE KEY UPDATE active_warning = VALUES(active_warning), warning_detail = VALUES(warning_detail)",
+        (venue_id, active, detail),
+    )
 
 
 def _submit_via_mock(payload: dict) -> dict:
@@ -162,6 +198,8 @@ def _submit_via_db(db_module, payload: dict) -> dict:
             
             ),
         )
+        if payload["issue_type"] in ACCESSIBILITY_IMPACT_TYPES:
+            _sync_accessibility_warning(cursor, venue_id)
         cursor.execute(
             "SELECT report_id, user_id, venue_id, issue_type, latitude, longitude, "
             "accuracy_meters, anonymous, description, photos, status, created_at, expires_at "
@@ -291,7 +329,7 @@ def confirm_report(report_id: str):
     try:
         with db_module.db_transaction() as cursor:
             cursor.execute(
-                "SELECT status, expires_at FROM user_reports WHERE report_id = %s",
+                "SELECT venue_id, issue_type, status, expires_at FROM user_reports WHERE report_id = %s",
                 (report_id,),
             )
             current = cursor.fetchone()
@@ -320,6 +358,9 @@ def confirm_report(report_id: str):
                 response_status = "confirmed"
             else:
                 response_status = "recorded"
+
+            if current["issue_type"] in ACCESSIBILITY_IMPACT_TYPES:
+                _sync_accessibility_warning(cursor, current["venue_id"])
 
             cursor.execute(
                 "SELECT ur.report_id, ur.user_id, ur.venue_id, ur.issue_type, ur.latitude, "

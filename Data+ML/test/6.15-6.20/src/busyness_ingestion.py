@@ -8,7 +8,7 @@
 用法:
   cd Data+ML/test/6.8-6.12_DB
   python -m dqr.busyness_ingestion --year 2025 --dry-run
-  python -m dqr.busyness_ingestion --year 2025 --model-version nyc_traffic_baseline_v1
+  python -m dqr.busyness_ingestion --year 2025
 """
 
 import json
@@ -25,7 +25,10 @@ try:
     from dqr_utils import get_conn, gps_to_district
 except ImportError:
     import sys
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    # The shared DB helpers live in the earlier DB-stage directory.  Keep this
+    # historical ingestion script directly runnable rather than depending on a
+    # notebook's working directory or a copied helper module.
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / '6.8-6.12_DB' / 'dqr'))
     from dqr_utils import get_conn, gps_to_district
 
 import requests
@@ -202,7 +205,7 @@ def aggregate_by_segment(traffic_df):
 
 # ── Step 3: Venue 匹配 (haversine 50m) ──────────────────────
 
-def map_segments_to_venues(conn, segment_hourly_df):
+def map_segments_to_venues(conn, segment_hourly_df, hours=None):
     """将 traffic segment 按 district 聚合，分配给同 district 所有 venue。
 
     NYC Traffic API 只有 28 个 segment，无法覆盖 4,714 venues 的 1%。
@@ -237,6 +240,9 @@ def map_segments_to_venues(conn, segment_hourly_df):
     print(f'District aggregation: {len(district_hourly)} district-hour rows, '
           f'{district_hourly["district"].nunique()} districts')
 
+    if hours is not None:
+        district_hourly = district_hourly[district_hourly['hour'].isin(hours)].copy()
+
     # 3. 读取所有 venues，为每个 venue × hour 生成一行
     venues_df = pd.read_sql(
         'SELECT venue_id, district FROM venues WHERE district IS NOT NULL',
@@ -246,20 +252,15 @@ def map_segments_to_venues(conn, segment_hourly_df):
         print('Warning: no venues with district found')
         return pd.DataFrame()
 
-    rows = []
-    for _, venue in venues_df.iterrows():
-        v_district = venue['district']
-        d_data = district_hourly[district_hourly['district'] == v_district]
-        for _, row in d_data.iterrows():
-            rows.append({
-                'venue_id': venue['venue_id'],
-                'district': v_district,
-                'hour': int(row['hour']),
-                'score': int(row['avg_score']),
-                'busyness_level': row['busyness_level'],
-            })
-
-    result = pd.DataFrame(rows)
+    # Vectorised district join rather than nested venue×hour iteration. It
+    # intentionally retains every hourly profile point for forecast_1h.
+    result = venues_df.merge(
+        district_hourly[['district', 'hour', 'avg_score', 'busyness_level']],
+        on='district', how='inner', validate='many_to_many',
+    ).rename(columns={'avg_score': 'score'})
+    result['hour'] = result['hour'].astype(int)
+    result['score'] = result['score'].astype(int)
+    result = result[['venue_id', 'district', 'hour', 'score', 'busyness_level']]
     print(f'Venue mapping: {len(result)} venue-hour rows, '
           f'{venues_df["venue_id"].nunique()} venues across '
           f'{district_hourly["district"].nunique()} districts')
@@ -301,10 +302,11 @@ def insert_busyness_scores(conn, venue_scores_df,
     """批量写入 busyness_scores 表，每个 venue 写 24 行 (每小时一行)。
 
     使用 executemany 批量插入，显著提升性能。
-    INSERT IGNORE + 唯一约束实现幂等写入。
+    唯一约束上的 upsert 让同一来源年份的重跑安全刷新小时模式。
 
     Args:
-        data_year: 源数据年份，用于构建 features_snapshot 和 forecast 时间戳。
+        data_year: 源数据年份，也是静态小时模式的索引日期。调用方只能按
+            ``HOUR(forecast_start_time)`` 使用它，不能将其当作实时窗口。
 
     Returns:
         int: 插入行数
@@ -316,71 +318,85 @@ def insert_busyness_scores(conn, venue_scores_df,
     if features_snapshot is None:
         features_snapshot = f'nyc_traffic_{data_year}_manhattan'
 
-    # 构建所有参数
-    rows = []
-    now = datetime(data_year, 1, 1)
-    for venue_id, group in venue_scores_df.groupby('venue_id'):
-        for hour in range(24):
-            hour_row = group[group['hour'] == hour]
-            if hour_row.empty:
-                continue
-
-            score = int(hour_row.iloc[0]['score'])
-            level = hour_row.iloc[0]['busyness_level']
-
-            # forecast_1h: 从该小时开始的 12 小时滚动窗口
-            forecast = []
-            for offset in range(12):
-                h = (hour + offset) % 24
-                h_row = group[group['hour'] == h]
-                if not h_row.empty:
-                    forecast.append({
-                        'offset_hours': offset,
-                        'percent': int(h_row.iloc[0]['score']),
-                        'level': h_row.iloc[0]['busyness_level'],
-                    })
-                else:
-                    forecast.append({
-                        'offset_hours': offset,
-                        'percent': 0,
-                        'level': 'no_data',
-                    })
-
-            base_date = now.replace(hour=hour, minute=0, second=0, microsecond=0)
-            rows.append((
-                venue_id, score, level,
-                json.dumps(forecast),
-                base_date, base_date + timedelta(hours=12),
-                model_version, features_snapshot,
-            ))
-
-    # 批量插入 (幂等: UNIQUE KEY uq_busyness_venue_time)
+    # Stream bounded batches: a full Manhattan run is ~115k venue-hour rows,
+    # each with a 12-point JSON array.  Keeping all of them in one Python list
+    # risks terminating the process before any current-context row is written.
+    batch_size = 1_000
+    inserted = 0
+    pattern_date = datetime(data_year, 1, 1)
     sql = """
-        INSERT IGNORE INTO busyness_scores
+        INSERT INTO busyness_scores
             (venue_id, score, level, estimated_wait_minutes,
              forecast_1h, forecast_start_time, forecast_end_time,
              model_version, features_snapshot_id)
         VALUES (%s, %s, %s, NULL, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            score = VALUES(score),
+            level = VALUES(level),
+            forecast_1h = VALUES(forecast_1h),
+            forecast_end_time = VALUES(forecast_end_time),
+            features_snapshot_id = VALUES(features_snapshot_id)
     """
     cursor = conn.cursor()
     try:
-        cursor.executemany(sql, rows)
+        batch = []
+        for venue_id, group in venue_scores_df.groupby('venue_id'):
+            by_hour = group.set_index('hour')[['score', 'busyness_level']].to_dict('index')
+            for hour in by_hour:
+                values = by_hour.get(int(hour))
+                if values is None:
+                    continue
+                score, level = int(values['score']), values['busyness_level']
+                forecast = []
+                for offset in range(12):
+                    next_values = by_hour.get((int(hour) + offset) % 24)
+                    forecast.append({
+                        'offset_hours': offset,
+                        'percent': int(next_values['score']) if next_values else 0,
+                        'level': next_values['busyness_level'] if next_values else 'no_data',
+                    })
+                base_date = pattern_date.replace(hour=int(hour))
+                batch.append((
+                    venue_id, score, level, json.dumps(forecast), base_date,
+                    base_date + timedelta(hours=1), model_version, features_snapshot,
+                ))
+                if len(batch) >= batch_size:
+                    cursor.executemany(sql, batch)
+                    inserted += cursor.rowcount
+                    batch.clear()
+        if batch:
+            cursor.executemany(sql, batch)
+            inserted += cursor.rowcount
         conn.commit()
-        inserted = cursor.rowcount
     except Exception as e:
         conn.rollback()
         print(f'ERROR: Insert failed: {e}')
         raise
     finally:
         cursor.close()
-    print(f'Inserted {inserted} busyness_scores rows (batch)')
+    print(f'Upserted {inserted} busyness_scores rows (batch)')
     return inserted
+
+
+def retire_legacy_context_scores(conn):
+    """Delete obsolete SODA rows that were incorrectly labelled as live context."""
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "DELETE FROM busyness_scores WHERE model_version=%s",
+            ("nyc_traffic_context_v1",),
+        )
+        conn.commit()
+        return cursor.rowcount
+    finally:
+        cursor.close()
 
 
 # ── 主入口 ───────────────────────────────────────────────────
 
-def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=False):
+def run_pipeline(year=2025, dry_run=False):
     """完整管线: 采集 → 聚合 → venue 匹配 → 写入。"""
+    model_version = 'nyc_traffic_baseline_v1'
     print('=== Busyness Ingestion Pipeline (venue-level) ===')
     print(f'Year: {year}, Model: {model_version}, Dry-run: {dry_run}')
 
@@ -402,7 +418,12 @@ def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=Fal
     print('\n[3/4] Matching segments to venues (district aggregation)...')
     conn = get_conn()
     try:
-        venue_scores = map_segments_to_venues(conn, segment_hourly)
+        # The old context version is semantically invalid for fixed SODA data.
+        # Retire it before doing any new static-pattern work.
+        retired = 0 if dry_run else retire_legacy_context_scores(conn)
+        # SODA is a fixed historical hour-of-day pattern, so all 24 profile
+        # points are retained.  Real-time telemetry is ingested separately.
+        venue_scores = map_segments_to_venues(conn, segment_hourly, hours=None)
         if venue_scores.empty:
             print('ERROR: No venue mapping. Aborting.')
             return
@@ -422,7 +443,7 @@ def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=Fal
             print('\n[4/4] Writing to busyness_scores...')
             inserted = insert_busyness_scores(
                 conn, venue_scores, model_version, data_year=year)
-            print(f'Done: {inserted} rows inserted')
+            print(f'Done: {inserted} baseline rows upserted; {retired} legacy context rows retired')
     finally:
         conn.close()
 
@@ -432,9 +453,7 @@ def run_pipeline(year=2025, model_version='nyc_traffic_baseline_v1', dry_run=Fal
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Busyness data ingestion pipeline')
     parser.add_argument('--year', type=int, default=2025, help='Data year')
-    parser.add_argument('--model-version', default='nyc_traffic_baseline_v1',
-                        help='Model version tag')
     parser.add_argument('--dry-run', action='store_true',
                         help='Generate data without DB insert')
     args = parser.parse_args()
-    run_pipeline(year=args.year, model_version=args.model_version, dry_run=args.dry_run)
+    run_pipeline(year=args.year, dry_run=args.dry_run)

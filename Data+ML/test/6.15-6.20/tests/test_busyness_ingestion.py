@@ -512,6 +512,62 @@ class TestInsertBusynessScores:
         assert isinstance(forecast, list)
         assert len(forecast) == 12
 
+    def test_baseline_insert_keeps_the_full_12_hour_profile(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 1
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({
+            'venue_id': ['v_1001'] * 24,
+            'district': ['downtown'] * 24,
+            'hour': list(range(24)),
+            'score': list(range(24)),
+            'busyness_level': ['quiet'] * 24,
+        })
+        insert_busyness_scores(mock_conn, source, data_year=2025)
+        _, rows = mock_cursor.executemany.call_args.args
+        assert len(rows) == 24
+        forecast = json.loads(rows[0][3])
+        assert [point['percent'] for point in forecast] == list(range(12))
+        assert {point['level'] for point in forecast} == {'quiet'}
+
+    def test_source_year_anchors_the_static_hour_pattern(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 1
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({"venue_id": ["v_1001"], "hour": [8], "score": [50], "busyness_level": ["moderate"]})
+        insert_busyness_scores(mock_conn, source, data_year=2025)
+        _, rows = mock_cursor.executemany.call_args.args
+        assert rows[0][4] == datetime(2025, 1, 1, 8)
+        assert rows[0][5] == datetime(2025, 1, 1, 9)
+        assert rows[0][7] == "nyc_traffic_2025_manhattan"
+
+    def test_full_profile_uses_source_year_pattern_date(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 24
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({
+            "venue_id": ["v_1001"] * 24, "hour": list(range(24)),
+            "score": [50] * 24, "busyness_level": ["moderate"] * 24,
+        })
+        insert_busyness_scores(mock_conn, source, data_year=2025)
+        _, rows = mock_cursor.executemany.call_args.args
+        assert len(rows) == 24
+        assert {row[4].date() for row in rows} == {datetime(2025, 1, 1).date()}
+        assert {row[4].hour for row in rows} == set(range(24))
+
+    def test_uses_upsert(self):
+        from busyness_ingestion import insert_busyness_scores
+        mock_conn, mock_cursor = MagicMock(), MagicMock()
+        mock_cursor.rowcount = 1
+        mock_conn.cursor.return_value = mock_cursor
+        source = pd.DataFrame({"venue_id": ["v_1001"], "hour": [8], "score": [50], "busyness_level": ["moderate"]})
+        insert_busyness_scores(mock_conn, source)
+        sql, _ = mock_cursor.executemany.call_args.args
+        assert "ON DUPLICATE KEY UPDATE" in sql
+
     def test_features_snapshot_default(self):
         """Default features_snapshot should contain year and 'manhattan'."""
         from busyness_ingestion import insert_busyness_scores
@@ -707,11 +763,11 @@ class TestRunPipeline:
              patch('busyness_ingestion.get_conn', return_value=mock_conn), \
              patch('busyness_ingestion.map_segments_to_venues', return_value=venue_scores), \
              patch('busyness_ingestion.insert_busyness_scores', return_value=1) as mock_insert:
-            run_pipeline(year=2025, dry_run=False, model_version='test_v1')
+            run_pipeline(year=2025, dry_run=False)
             mock_insert.assert_called_once()
             # model_version is passed as 3rd positional arg
             call_args = mock_insert.call_args
-            assert call_args[0][2] == 'test_v1'
+            assert call_args[0][2] == 'nyc_traffic_baseline_v1'
 
     def test_aborts_on_empty_venue_mapping(self):
         """Pipeline should abort and close conn when no venue mapping found."""
@@ -729,8 +785,8 @@ class TestRunPipeline:
             run_pipeline(year=2025, dry_run=True)
             mock_conn.close.assert_called()
 
-    def test_pipeline_passes_model_version(self):
-        """model_version should be forwarded to insert_busyness_scores."""
+    def test_pipeline_only_writes_static_baseline(self):
+        """The legacy context model can no longer be selected or generated."""
         from busyness_ingestion import run_pipeline
         traffic_df = pd.DataFrame({
             'segmentid': ['s1'], 'street': ['Broadway'], 'hour': [8],
@@ -747,8 +803,7 @@ class TestRunPipeline:
              patch('busyness_ingestion.get_conn', return_value=mock_conn), \
              patch('busyness_ingestion.map_segments_to_venues', return_value=venue_scores), \
              patch('busyness_ingestion.insert_busyness_scores', return_value=1) as mock_insert:
-            run_pipeline(year=2025, dry_run=False, model_version='my_custom_model')
+            run_pipeline(year=2025, dry_run=False)
             mock_insert.assert_called_once()
-            # model_version is passed as 3rd positional arg
             call_args = mock_insert.call_args
-            assert call_args[0][2] == 'my_custom_model'
+            assert call_args[0][2] == 'nyc_traffic_baseline_v1'

@@ -175,7 +175,11 @@ export default function MedicalIdScreen() {
 
           <Text style={styles.headerTitle}>{t("medicalId.title")}</Text>
 
-          <TouchableOpacity disabled={saving} onPress={handleSave}>
+          <TouchableOpacity
+            testID="medical-id-save-button"
+            disabled={saving}
+            onPress={handleSave}
+          >
             <Text style={styles.saveText}>
               {saving ? t("common.loading") : t("common.save")}
             </Text>
@@ -189,7 +193,9 @@ export default function MedicalIdScreen() {
             <Ionicons name="person" size={40} color={Colours.primary} />
           </View>
 
-          <Text style={styles.name}>{fullName}</Text>
+          <Text testID="medical-id-name-text" style={styles.name}>
+            {fullName}
+          </Text>
 
           <Text style={styles.subtitle}>{t("medicalId.emergencyProfile")}</Text>
         </View>
@@ -203,6 +209,7 @@ export default function MedicalIdScreen() {
             <Text style={styles.label}>{t("profile.bloodType")}</Text>
 
             <TouchableOpacity
+              testID="medical-id-blood-type-trigger"
               style={styles.dropdown}
               onPress={() => setBloodTypeModalVisible(true)}
             >
@@ -226,7 +233,10 @@ export default function MedicalIdScreen() {
               {t("medicalId.medicalConditions")}
             </Text>
 
-            <TouchableOpacity onPress={() => setConditionModalVisible(true)}>
+            <TouchableOpacity
+              testID="medical-id-add-condition-button"
+              onPress={() => setConditionModalVisible(true)}
+            >
               <Ionicons name="add-circle" size={24} color={Colours.primary} />
             </TouchableOpacity>
           </View>
@@ -237,6 +247,7 @@ export default function MedicalIdScreen() {
                 key={condition}
                 label={condition}
                 onRemove={() => removeCondition(condition)}
+                testID={`medical-id-remove-condition-${condition}`}
               />
             ))}
           </View>
@@ -248,7 +259,10 @@ export default function MedicalIdScreen() {
           <View style={styles.row}>
             <Text style={styles.sectionTitle}>{t("profile.allergies")}</Text>
 
-            <TouchableOpacity onPress={() => setAllergyModalVisible(true)}>
+            <TouchableOpacity
+              testID="medical-id-add-allergy-button"
+              onPress={() => setAllergyModalVisible(true)}
+            >
               <Ionicons name="add-circle" size={24} color={Colours.danger} />
             </TouchableOpacity>
           </View>
@@ -259,6 +273,7 @@ export default function MedicalIdScreen() {
                 key={allergy}
                 label={allergy}
                 onRemove={() => removeAllergy(allergy)}
+                testID={`medical-id-remove-allergy-${allergy}`}
               />
             ))}
           </View>
@@ -270,6 +285,7 @@ export default function MedicalIdScreen() {
             <Text style={styles.modalTitle}>{t("medicalId.addCondition")}</Text>
 
             <TextInput
+              testID="medical-id-condition-input"
               style={styles.input}
               value={newCondition}
               onChangeText={setNewCondition}
@@ -278,6 +294,7 @@ export default function MedicalIdScreen() {
 
             <View style={styles.modalActions}>
               <TouchableOpacity
+                testID="medical-id-condition-cancel-button"
                 onPress={() => {
                   setNewCondition("");
                   setConditionModalVisible(false);
@@ -286,7 +303,10 @@ export default function MedicalIdScreen() {
                 <Text>{t("common.cancel")}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={addCondition}>
+              <TouchableOpacity
+                testID="medical-id-condition-add-button"
+                onPress={addCondition}
+              >
                 <Text>{t("common.add")}</Text>
               </TouchableOpacity>
             </View>
@@ -300,6 +320,7 @@ export default function MedicalIdScreen() {
             <Text style={styles.modalTitle}>{t("medicalId.addAllergy")}</Text>
 
             <TextInput
+              testID="medical-id-allergy-input"
               style={styles.input}
               value={newAllergy}
               onChangeText={setNewAllergy}
@@ -308,6 +329,7 @@ export default function MedicalIdScreen() {
 
             <View style={styles.modalActions}>
               <TouchableOpacity
+                testID="medical-id-allergy-cancel-button"
                 onPress={() => {
                   setNewAllergy("");
                   setAllergyModalVisible(false);
@@ -316,7 +338,10 @@ export default function MedicalIdScreen() {
                 <Text>{t("common.cancel")}</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={addAllergy}>
+              <TouchableOpacity
+                testID="medical-id-allergy-add-button"
+                onPress={addAllergy}
+              >
                 <Text>{t("common.add")}</Text>
               </TouchableOpacity>
             </View>
@@ -331,6 +356,7 @@ export default function MedicalIdScreen() {
             {BLOOD_TYPES.map((option) => (
               <TouchableOpacity
                 key={option}
+                testID={`medical-id-blood-type-option-${option}`}
                 style={styles.bloodTypeOption}
                 onPress={() => {
                   setBloodType(option === "Unknown" ? "" : option);
@@ -351,6 +377,7 @@ export default function MedicalIdScreen() {
             ))}
 
             <TouchableOpacity
+              testID="medical-id-blood-type-cancel-button"
               style={styles.modalActions}
               onPress={() => setBloodTypeModalVisible(false)}
             >
@@ -363,12 +390,20 @@ export default function MedicalIdScreen() {
   );
 }
 
-function Tag({ label, onRemove }: { label: string; onRemove: () => void }) {
+function Tag({
+  label,
+  onRemove,
+  testID,
+}: {
+  label: string;
+  onRemove: () => void;
+  testID?: string;
+}) {
   return (
     <View style={styles.tag}>
       <Text style={styles.tagText}>{label}</Text>
 
-      <TouchableOpacity onPress={onRemove}>
+      <TouchableOpacity testID={testID} onPress={onRemove}>
         <Ionicons name="close" size={16} color={Colours.muted} />
       </TouchableOpacity>
     </View>

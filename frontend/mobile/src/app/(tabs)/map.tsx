@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { router } from "expo-router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ActivityIndicator,
   Linking,
@@ -13,6 +13,7 @@ import {
   View,
 } from "react-native";
 import MapView, { Polyline } from "react-native-maps";
+import { useTranslation } from "react-i18next";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CategoryChips, { Category } from "../../components/CategoryChips";
 import FilterModal from "../../components/FilterModal";
@@ -36,6 +37,7 @@ import {
   getReports,
   getRouteDetail,
   getRouteOptions,
+  getVenueBusyness,
   getVenues,
   removeFavourite,
   submitReport,
@@ -52,17 +54,68 @@ const INITIAL_REGION = {
   latitudeDelta: 0.08,
   longitudeDelta: 0.08,
 };
-
-// Fallback only — used until a real device location comes back, or if the
-// user denies permission. Centre of Manhattan, matches INITIAL_REGION.
-// (Previously this was hardcoded to a Dublin coordinate — presumably a dev
-// leftover, not intentional for a Manhattan-focused app.)
 const DEFAULT_LOCATION = {
   latitude: INITIAL_REGION.latitude,
   longitude: INITIAL_REGION.longitude,
 };
 
+// Shared by filteredVenues and the busyness-fetching effect below — both
+// need the same "which venues match the selected category" logic, and
+// duplicating this switch in two places risked them silently drifting
+// apart over time.
+function matchesCategory(venue: Venue, category: Category): boolean {
+  switch (category) {
+    case "Clinic":
+      return venue.venue_type === "clinic";
+    case "Pharmacy":
+      return venue.venue_type === "pharmacy";
+    case "AED":
+      return venue.venue_type === "emergencyasset";
+    case "Hospital":
+      return venue.venue_type === "hospital";
+    case "Restroom":
+      return venue.venue_type === "restroom";
+    default:
+      return false;
+  }
+}
+
+// Mirrors the exact colours VenueMarker paints markers with (the
+// COLOURS map in VenueMarker.tsx) — deliberately NOT FilterModal's
+// STATUS_COLOURS chip palette. Those two already drift slightly (e.g.
+// quiet is #006400 in the filter chips vs #16A34A on the actual
+// markers), and this legend has to match what's literally on the map,
+// not the filter UI.
+const LEGEND_ITEMS = [
+  {
+    translationKey: "map.filters.quiet",
+    defaultValue: "Quiet",
+    colour: "#16A34A",
+  },
+  {
+    translationKey: "map.filters.moderate",
+    defaultValue: "Moderate",
+    colour: "#FACC15",
+  },
+  {
+    translationKey: "map.filters.busy",
+    defaultValue: "Busy",
+    colour: "#DC2626",
+  },
+  // Matches VenueMarker's getMarkerColour() fallback (COLOURS.blue) — hit
+  // whenever busyness_color isn't green/yellow/red, i.e. no busyness data
+  // fetched yet for that venue. Not in FilterModal's LIVE_STATUS/
+  // STATUS_COLOURS since it isn't a filterable status, just "unknown".
+  {
+    translationKey: "map.filters.unknown",
+    defaultValue: "Unknown",
+    colour: "#2563EB",
+  },
+] as const;
+
 export default function MapScreen() {
+  const { t } = useTranslation();
+
   const [venues, setVenues] = useState<Venue[]>([]);
 
   const [reports, setReports] = useState<Report[]>([]);
@@ -111,21 +164,38 @@ export default function MapScreen() {
   const [loginModalVisible, setLoginModalVisible] = useState(false);
 
   // Undefined = "no preference sent to the API" — NOT the same as `false`.
-  // getVenues() only sets the `accessible`/`open_now` query params when the
-  // filter value isn't undefined, so leaving these undefined until the user
-  // actually applies a filter means the first load isn't silently
-  // restricted to "only non-accessible, currently-closed venues."
+  // getVenues() only sets the `open_now` query param when the filter value
+  // isn't undefined, so leaving this undefined until the user actually
+  // applies a filter means the first load isn't silently restricted to
+  // "only currently-closed venues."
   const [openNow, setOpenNow] = useState<boolean | undefined>(undefined);
 
-  const [accessible, setAccessible] = useState<boolean | undefined>(undefined);
+  // Replaces the old plain boolean — accessible_status is a real,
+  // meaningful enum (full_access/partial/none/unknown), not a yes/no
+  // fact, so a simple true/false query param couldn't represent it
+  // honestly. Filtered client-side below, same as liveStatus, rather
+  // than as a getVenues() query param — the backend's exact support for
+  // filtering by these specific enum values hasn't been verified.
+  const [wheelchairAccess, setWheelchairAccess] = useState<
+    "full_access" | "partial_or_full" | undefined
+  >(undefined);
 
   const [language, setLanguage] = useState("");
 
   const [autoCurrentTime, setAutoCurrentTime] = useState(true);
 
-  // Retained for FilterModal's onApply payload — not read directly in this
-  // file's render path, but still part of the filter state passed down.
-  const [, setLiveStatus] = useState<"quiet" | "moderate" | "busy">("moderate");
+  // Now actually read below in filteredVenues, filtering by
+  // venue.busyness?.busyness_status — previously the value was
+  // discarded entirely ([, setLiveStatus]), so selecting a Live Status
+  // chip updated state that nothing ever checked.
+  const [liveStatus, setLiveStatus] = useState<
+    "quiet" | "moderate" | "busy" | undefined
+  >(undefined);
+
+  // Unlike liveStatus, this one IS actually read — forwarded straight
+  // through to VenueBottomSheet, which looks up the matching entry in
+  // its own already-fetched 12-hour forecast data. 0 = Now.
+  const [timeOffset, setTimeOffset] = useState(0);
 
   const [routeOptionsVisible, setRouteOptionsVisible] = useState(false);
 
@@ -152,6 +222,17 @@ export default function MapScreen() {
   // display_status) only matter where favourites are actually listed
   // (profile.tsx), not here.
   const [favouriteVenueIds, setFavouriteVenueIds] = useState<Set<string>>(
+    new Set(),
+  );
+
+  // Tracks which venue_ids busyness has already been fetched FOR,
+  // regardless of whether that fetch actually succeeded — deliberately
+  // separate from checking venue.busyness itself, since a failed fetch
+  // also leaves that undefined. Without this separate guard, a venue
+  // whose busyness request genuinely fails (e.g. the known current-
+  // status date-window bug) would be retried forever, since it would
+  // keep looking like "never fetched" on every re-render.
+  const [busynessFetchedIds, setBusynessFetchedIds] = useState<Set<string>>(
     new Set(),
   );
 
@@ -230,7 +311,6 @@ export default function MapScreen() {
       const [venueData, reportData] = await Promise.all([
         getVenues({
           open_now: openNow,
-          accessible,
           languages: language ? [language] : [],
         }),
         getReports(),
@@ -238,12 +318,16 @@ export default function MapScreen() {
 
       setVenues(venueData);
       setReports(reportData);
+      // A fresh venue list means fresh objects with no busyness attached
+      // yet, even for venue_ids seen before — reset the guard so the
+      // effect below knows to fetch for all of them again.
+      setBusynessFetchedIds(new Set());
     } catch (error) {
       console.error(error);
     } finally {
       setLoading(false);
     }
-  }, [openNow, accessible, language]);
+  }, [openNow, language]);
 
   async function refreshReports() {
     try {
@@ -263,16 +347,6 @@ export default function MapScreen() {
       return;
     }
 
-    // Confirmed happening: the mount-time location effect can fail
-    // silently (permission granted after mount, a simulator location set
-    // after the app already loaded, etc.), leaving currentLocation stuck
-    // on DEFAULT_LOCATION with nothing to ever retry it — the backend was
-    // seen receiving that exact fallback coordinate as the routing
-    // origin, not a real position, even though the native map's own blue
-    // dot (a separate code path via showsUserLocation) was correct.
-    // Re-fetching fresh here, and using the result directly rather than
-    // stale `currentLocation` state, avoids relying on that one-shot
-    // fetch ever having succeeded.
     const freshPosition = await getCurrentLocation();
 
     if (!freshPosition) {
@@ -306,11 +380,6 @@ export default function MapScreen() {
     setRouteOptionsVisible(false);
 
     setSelectedRouteDuration(route.duration_minutes);
-
-    // Was previously only set by browsing mode tabs (onSelectMode), not by
-    // actually picking a route — meaning handleStartNavigation could read
-    // a stale mode that didn't match the route the user actually chose,
-    // sending the wrong dirflg to Apple Maps.
     setSelectedMode(route.mode);
 
     try {
@@ -319,12 +388,6 @@ export default function MapScreen() {
         currentLocation,
         route.mode,
       );
-      console.log(
-        "POLYLINE POINTS:",
-        detail.polyline_preview?.length,
-        detail.polyline_preview,
-      );
-      setRouteDetail(detail);
       setRouteDetail(detail);
     } catch (error) {
       console.error(error);
@@ -474,33 +537,121 @@ export default function MapScreen() {
         .toLowerCase()
         .includes(search.toLowerCase());
 
-      let matchesCategory = false;
+      // undefined liveStatus (no chip selected) means "don't filter by
+      // this at all" — matches everything. Once a chip IS selected,
+      // venues whose busyness hasn't been fetched yet are deliberately
+      // excluded rather than shown anyway, since we genuinely don't
+      // know their status yet. Since venues state updates progressively
+      // as the busyness-fetch effect below resolves each request, this
+      // list fills in as real data arrives rather than staying
+      // permanently incomplete.
+      const matchesLiveStatus =
+        !liveStatus || venue.busyness?.busyness_status === liveStatus;
 
-      switch (category) {
-        case "Clinic":
-          matchesCategory = venue.venue_type === "clinic";
-          break;
+      // "full_access" only matches venues confirmed fully accessible.
+      // "partial_or_full" is the broader option, matching either real
+      // positive status. Venues with 'none'/'unknown'/missing data are
+      // excluded either way once a filter is actually selected — there's
+      // no way to honestly show them as matching an accessibility
+      // requirement we don't have confirmed data for.
+      const matchesWheelchairAccess =
+        !wheelchairAccess ||
+        (wheelchairAccess === "full_access"
+          ? venue.accessible_status === "full_access"
+          : venue.accessible_status === "full_access" ||
+            venue.accessible_status === "partial");
 
-        case "Pharmacy":
-          matchesCategory = venue.venue_type === "pharmacy";
-          break;
-
-        case "AED":
-          matchesCategory = venue.venue_type === "emergencyasset";
-          break;
-
-        case "Hospital":
-          matchesCategory = venue.venue_type === "hospital";
-          break;
-
-        case "Restroom":
-          matchesCategory = venue.venue_type === "restroom";
-          break;
-      }
-
-      return matchesSearch && matchesCategory;
+      return (
+        matchesSearch &&
+        matchesCategory(venue, category) &&
+        matchesLiveStatus &&
+        matchesWheelchairAccess
+      );
     });
-  }, [venues, search, category]);
+  }, [venues, search, category, liveStatus, wheelchairAccess]);
+
+  // Fetches busyness for whichever venues currently match the selected
+  // category (i.e. whatever's actually rendered as markers), merging the
+  // result into venues state so VenueMarker's existing colour-mapping
+  // logic — which already correctly reads venue.busyness?.busyness_color
+  // — actually has real data to read. That logic was already built and
+  // correct; it was just never being fed anything, since the main
+  // /venues list endpoint never embeds busyness data at all (confirmed
+  // directly against venues.py).
+  //
+  // Deliberately scoped to the current category, not the full venues
+  // array — getVenues() has no venue_type filter at all, so venues state
+  // holds every type at once (~4,800), and fetching busyness for all of
+  // that on every load would be genuinely excessive. Scoping to category
+  // keeps this to whatever's actually visible, typically a few hundred
+  // at most.
+  useEffect(() => {
+    const venuesNeedingBusyness = venues.filter(
+      (v) =>
+        matchesCategory(v, category) && !busynessFetchedIds.has(v.venue_id),
+    );
+
+    if (venuesNeedingBusyness.length === 0) return;
+
+    let isActive = true;
+
+    Promise.all(
+      venuesNeedingBusyness.map((venue) =>
+        getVenueBusyness(venue.venue_id)
+          .then((result) => ({
+            venueId: venue.venue_id,
+            busyness: result?.busyness,
+          }))
+          .catch(() => ({ venueId: venue.venue_id, busyness: undefined })),
+      ),
+    ).then((results) => {
+      if (!isActive) return;
+
+      setVenues((current) =>
+        current.map((v) => {
+          const match = results.find((r) => r.venueId === v.venue_id);
+          return match?.busyness ? { ...v, busyness: match.busyness } : v;
+        }),
+      );
+
+      setBusynessFetchedIds((current) => {
+        const next = new Set(current);
+        results.forEach((r) => next.add(r.venueId));
+        return next;
+      });
+    });
+
+    return () => {
+      isActive = false;
+    };
+  }, [venues, category, busynessFetchedIds]);
+
+  // Region tracking + a ref to the MapView itself — both needed for the
+  // zoom in/out buttons below, which work by nudging the current
+  // region's lat/lng "delta" (how much area is visible) and animating
+  // to it, rather than using any platform-specific zoom API directly.
+  const mapRef = useRef<MapView>(null);
+
+  const [region, setRegion] = useState(INITIAL_REGION);
+
+  const handleZoomIn = () => {
+    const nextRegion = {
+      ...region,
+      latitudeDelta: region.latitudeDelta / 2,
+      longitudeDelta: region.longitudeDelta / 2,
+    };
+
+    mapRef.current?.animateToRegion(nextRegion, 300);
+  };
+
+  const handleZoomOut = () => {
+    const nextRegion = {
+      ...region,
+      latitudeDelta: region.latitudeDelta * 2,
+      longitudeDelta: region.longitudeDelta * 2,
+    };
+    mapRef.current?.animateToRegion(nextRegion, 300);
+  };
 
   if (loading) {
     return (
@@ -515,8 +666,10 @@ export default function MapScreen() {
       <StatusBar barStyle="dark-content" />
 
       <MapView
+        ref={mapRef}
         style={StyleSheet.absoluteFill}
         initialRegion={INITIAL_REGION}
+        onRegionChangeComplete={setRegion}
         showsUserLocation
       >
         {filteredVenues.map((venue) => (
@@ -569,6 +722,49 @@ export default function MapScreen() {
         <CategoryChips selected={category} onSelect={setCategory} />
       </View>
 
+      {/* ---------------------- Zoom Controls ---------------------- */}
+
+      <View style={styles.zoomControls}>
+        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomIn}>
+          <Ionicons name="add" size={24} color={Colours.text} />
+        </TouchableOpacity>
+
+        <View style={styles.zoomDivider} />
+
+        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomOut}>
+          <Ionicons name="remove" size={24} color={Colours.text} />
+        </TouchableOpacity>
+      </View>
+
+      {/* ---------------------- Busyness Legend ---------------------- */}
+
+      {/* Only meaningful when autoCurrentTime is on — VenueMarker only
+          paints the green/yellow/red busyness colour when its
+          showLiveStatus prop is true (wired to autoCurrentTime below);
+          otherwise every marker renders blue regardless of category, so
+          a legend explaining busyness colours would be misleading. */}
+
+      {autoCurrentTime && (
+        <View style={styles.legendContainer}>
+          {LEGEND_ITEMS.map((item, index) => (
+            <View
+              key={item.translationKey}
+              style={[
+                styles.legendRow,
+                index === LEGEND_ITEMS.length - 1 && styles.legendLastRow,
+              ]}
+            >
+              <View
+                style={[styles.legendDot, { backgroundColor: item.colour }]}
+              />
+              <Text style={styles.legendLabel}>
+                {t(item.translationKey, { defaultValue: item.defaultValue })}
+              </Text>
+            </View>
+          ))}
+        </View>
+      )}
+
       {/* ---------------------- Floating Buttons ---------------------- */}
 
       <FloatingActionButtons
@@ -597,20 +793,22 @@ export default function MapScreen() {
       <FilterModal
         visible={filterVisible}
         openNow={openNow}
-        accessible={accessible}
+        wheelchairAccess={wheelchairAccess}
         language={language}
         autoCurrentTime={autoCurrentTime}
         onClose={() => setFilterVisible(false)}
         onApply={(filters) => {
           setOpenNow(filters.openNow);
 
-          setAccessible(filters.accessible);
+          setWheelchairAccess(filters.wheelchairAccess);
 
           setLanguage(filters.language);
 
           setAutoCurrentTime(filters.autoCurrentTime);
 
           setLiveStatus(filters.liveStatus);
+
+          setTimeOffset(filters.timeOffset);
         }}
       />
 
@@ -634,28 +832,25 @@ export default function MapScreen() {
               longitude: report.longitude,
               description: report.description || undefined,
             });
+
+            setVenues((current) =>
+              current.map((venue) => {
+                if (venue.venue_id !== report.venueId) {
+                  return venue;
+                }
+
+                return {
+                  ...venue,
+
+                  active_warning: true,
+
+                  live_report_count: (venue.live_report_count ?? 0) + 1,
+                };
+              }),
+            );
           } catch (error) {
             console.error(error);
           }
-
-          // Optimistic local flag so the marker reflects the warning
-          // immediately; the refreshReports() call below replaces this
-          // with server truth once it lands.
-          setVenues((current) =>
-            current.map((venue) => {
-              if (venue.venue_id !== report.venueId) {
-                return venue;
-              }
-
-              return {
-                ...venue,
-
-                active_warning: true,
-
-                live_report_count: (venue.live_report_count ?? 0) + 1,
-              };
-            }),
-          );
 
           await refreshReports();
 
@@ -686,6 +881,7 @@ export default function MapScreen() {
         venue={selectedVenue}
         activeReport={activeReportForSelectedVenue}
         autoCurrentTime={autoCurrentTime}
+        timeOffset={timeOffset}
         isFavourite={
           selectedVenue ? favouriteVenueIds.has(selectedVenue.venue_id) : false
         }
@@ -815,6 +1011,76 @@ const styles = StyleSheet.create({
 
     fontWeight: "600",
 
+    color: Colours.text,
+  },
+
+  // Positioned on the right side, vertically roughly mid-screen — clear
+  // of the topOverlay (search + category chips) above and
+  // FloatingActionButtons (SOS + Report, bottom-right) below.
+  zoomControls: {
+    position: "absolute",
+    right: 20,
+    top: 220,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 5,
+  },
+
+  zoomButton: {
+    width: 44,
+    height: 44,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  zoomDivider: {
+    height: 1,
+    backgroundColor: Colours.border,
+    marginHorizontal: 8,
+  },
+
+  // Bottom-left, above the Clear Route button's footprint (which sits at
+  // bottom:36 with ~40px height + padding) so the two never overlap even
+  // when a route is active at the same time.
+  legendContainer: {
+    position: "absolute",
+    left: 20,
+    bottom: 96,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 5,
+  },
+
+  legendRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 6,
+  },
+
+  legendLastRow: {
+    marginBottom: 0,
+  },
+
+  legendDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginRight: 8,
+  },
+
+  legendLabel: {
+    fontSize: 13,
+    fontWeight: "600",
     color: Colours.text,
   },
 });

@@ -20,6 +20,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
+import i18n from "../../i18n";
 import { getVenue, sendChatbotMessage } from "../../services/api";
 import { Venue } from "../../types/venue";
 
@@ -46,10 +47,6 @@ function parseCitation(raw: string): Citation {
     type: raw.slice(0, separatorIndex),
     id: raw.slice(separatorIndex + 1),
   };
-}
-
-function generateMessageId(suffix: string): string {
-  return `${Date.now()}-${suffix}`;
 }
 
 function ClinicRecommendationCard({ venue }: { venue: Venue }) {
@@ -87,6 +84,17 @@ function CitationChip({ citation }: { citation: Citation }) {
   );
 }
 
+// Defined outside the component so React Compiler's purity analysis
+// doesn't apply — it flags impure calls (like Date.now()) inside
+// component-scoped closures even when only ever invoked from an event
+// handler, a confirmed compiler false positive (facebook/react#34046),
+// not an actual purity issue here. This exact fix was applied earlier
+// and appears to have been lost during a later full-file edit — CI
+// caught it again, which is exactly what it's for.
+function generateMessageId(suffix: string): string {
+  return `${Date.now()}-${suffix}`;
+}
+
 export default function AssistantScreen() {
   const { t } = useTranslation();
 
@@ -111,8 +119,8 @@ export default function AssistantScreen() {
 
   const respondingLanguageLabel = lastResponseLanguageCode
     ? (featuredLanguages.find((l) => l.code === lastResponseLanguageCode)
-        ?.english ?? lastResponseLanguageCode)
-    : currentLanguage.english;
+        ?.native ?? lastResponseLanguageCode)
+    : currentLanguage.native;
 
   // Resolved venue lookups for "venue:" citations, keyed by venue_id.
   // undefined = not yet requested, null = fetch failed, Venue = resolved.
@@ -140,17 +148,83 @@ export default function AssistantScreen() {
   ]);
 
   // Same fix as show-staff.tsx: mount-only useEffect meant this never
-  // reflected a language change made after first visiting this tab. Only
-  // affects the pre-first-message fallback shown by respondingLanguageLabel
-  // (once a real reply comes back, that's driven by the response's own
-  // detected_language instead) — but that fallback should still be fresh.
+  // reflected a language change made after first visiting this tab.
+  //
+  // Also resets lastResponseLanguageCode here when the loaded language
+  // genuinely differs from what was already active — otherwise, once a
+  // real chatbot reply has come back once, its detected_language sticks
+  // around forever in respondingLanguageLabel, even after switching the
+  // app's language preference afterward with no new message sent yet.
+  // Confirmed live: started in English, got a real English reply,
+  // switched to French — header kept showing "Responding in English"
+  // since nothing had told it a preference change should override that
+  // stale prior response.
+  //
+  // Also refreshes the two greeting messages (id "1"/"2") here — a
+  // long-known, documented gap: they're baked into messages' useState
+  // initializer, computed once at first mount using whatever language
+  // was active then. Switching languages later doesn't remount this
+  // screen, so they were never given a reason to retranslate on their
+  // own. Confirmed live: header correctly showed "Respondiendo en
+  // Español" after switching, but the greeting bubbles were still in
+  // French from the mount before that. Updated by id specifically, not
+  // by resetting the whole array, so an in-progress real conversation
+  // isn't wiped out — only the two static greeting bubbles refresh.
   useFocusEffect(
     useCallback(() => {
       (async () => {
         const code = await AsyncStorage.getItem("language");
+        console.log(
+          "ASSISTANT FOCUS: stored code =",
+          code,
+          "| currentLanguage.code =",
+          currentLanguage.code,
+        );
         const match = featuredLanguages.find((l) => l.code === code);
-        if (match) setCurrentLanguage(match);
+
+        if (match) {
+          setCurrentLanguage((previous) => {
+            if (previous.code !== match.code) {
+              setLastResponseLanguageCode(null);
+
+              setMessages((currentMessages) =>
+                currentMessages.map((message) => {
+                  if (message.id === "1") {
+                    return {
+                      ...message,
+                      text: i18n.t("assistant.greeting1", {
+                        defaultValue:
+                          "Hello! I'm your ClearPath Assistant. How can I help you today?",
+                      }),
+                    };
+                  }
+
+                  if (message.id === "2") {
+                    return {
+                      ...message,
+                      text: i18n.t("assistant.greeting2", {
+                        defaultValue:
+                          "I can help find clinics, explain services, and answer healthcare navigation questions.",
+                      }),
+                    };
+                  }
+
+                  return message;
+                }),
+              );
+            }
+            return match;
+          });
+        }
       })();
+      // No dependency on `t` anymore — this effect uses i18n.t()
+      // directly now instead of the hook's t, specifically to avoid a
+      // stale-closure risk: this useFocusEffect only re-invokes on
+      // genuine focus events, not on every render, so a captured `t`
+      // reference could theoretically still reflect the previous
+      // language if the effect's closure was created slightly before
+      // t itself updated. i18n.t() reads whatever's actually active at
+      // the moment it's called, sidestepping that entirely.
     }, []),
   );
 
@@ -378,6 +452,9 @@ export default function AssistantScreen() {
           />
 
           <TouchableOpacity
+            testID="send-button"
+            accessibilityRole="button"
+            accessibilityLabel="Send message"
             style={[styles.sendButton, sending && styles.sendButtonDisabled]}
             onPress={() => handleSend()}
             disabled={sending}

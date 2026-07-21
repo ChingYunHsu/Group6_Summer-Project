@@ -42,7 +42,7 @@
     "changeLanguage": "更改语言",
     "currentLanguage": "简体中文",
     "logout": "退出登录",
-    "logoutMessage": "退出登录功能将在后续与身份验证系统集成。",
+    "logoutMessage": "正在退出登录...",
     "dangerZone": "危险区域",
     "deleteWarning": "删除您的账户是永久性的。所有医疗记录和个人资料数据都将被移除。",
     "deleteAccount": "删除我的账户",
@@ -74,7 +74,12 @@
     "saveErrorTitle": "部分内容未能保存",
     "saveErrorMessage": "您的部分更改未能保存，请重试。",
     "addLanguage": "添加语言",
-    "languagePlaceholder": "输入语言"
+    "languagePlaceholder": "输入语言",
+    "genderMale": "男",
+    "genderFemale": "女",
+    "genderNonBinary": "非二元性别",
+    "genderPreferNotToSay": "不愿透露",
+    "selectGender": "选择性别"
   },
   "profileGuest": {
     "title": "保护您的医疗身份信息",
@@ -251,7 +256,11 @@
       "apply": "应用筛选",
       "quiet": "安静",
       "moderate": "适中",
-      "busy": "繁忙"
+      "busy": "繁忙",
+      "unknown": "未知",
+      "wheelchairAccess": "轮椅通道",
+      "fullAccess": "完全无障碍",
+      "partialOrFullAccess": "部分或完全无障碍"
     }
   },
 
@@ -334,5 +343,35 @@
     "askQuestion": "请输入问题...",
     "openNow": "现在营业",
     "currentlyClosed": "目前已打烊"
+  },
+
+  "verification": {
+    "defaultTitle": "这仍然是个问题吗？",
+    "reportedAt": "报告于 {{time}}",
+    "confirmationSingular": "({{count}} 位用户已确认)",
+    "confirmationPlural": "({{count}} 位用户已确认)",
+    "confirm": "确认",
+    "resolve": "解决"
+  },
+  "api": {
+    "sessionExpiredTitle": "会话已过期",
+    "sessionExpiredMessage": "请重新登录以继续。",
+    "sessionExpiredConfirm": "确定"
+  },
+  "venueSheet": {
+    "addressUnavailable": "地址不可用",
+    "noData": "暂无数据",
+    "minWaitSuffix": " · 等待 {{minutes}} 分钟",
+    "predictedForHour": "+{{hours}}小时预测 — 非实时数据",
+    "accessibilityIssue": "最近报告的无障碍问题",
+    "services": "服务",
+    "busynessForecast": "12小时人流量预测",
+    "forecastUnavailable": "该地点暂无实时预测数据。",
+    "expectedWait": "预计等待：{{minutes}} 分钟",
+    "unknown": "未知",
+    "directions": "路线",
+    "fullWheelchairAccess": "完全轮椅无障碍",
+    "partialWheelchairAccess": "部分轮椅无障碍",
+    "accessibilityUnknown": "轮椅通道情况未知"
   }
 }

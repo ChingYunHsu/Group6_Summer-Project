@@ -1,5 +1,13 @@
 import { router } from "expo-router";
-import { Alert } from "react-native";
+import { Alert, Platform } from "react-native";
+
+// Plain i18next instance import, not react-i18next's useTranslation() hook —
+// request() below is an ordinary function in a plain module, not a React
+// component or another hook, so useTranslation() can't be called here at
+// all (hooks only work inside component/hook call trees). i18next's own
+// instance exposes t() as a plain function specifically for exactly this
+// situation.
+import i18n from "../i18n";
 
 import {
   BusynessResponse,
@@ -34,7 +42,11 @@ import { clearAccessToken, getAccessToken } from "./tokenStorage";
 // Physical Device
 // http://192.168.x.x:5000/api/v1
 
-const API_BASE = "http://127.0.0.1:5000/api/v1";
+// Android has its own special alias for
+// "the host machine" instead: 10.0.2.2.
+const API_HOST = Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1";
+
+const API_BASE = `http://${API_HOST}:5000/api/v1`;
 
 // Some backend routes (venues, routes, realtime, and a handful of /user/*
 // endpoints) check X-API-Key instead of/alongside the Bearer token — see
@@ -90,15 +102,6 @@ export async function request<T>(
 
     const message = parsedBody?.error ?? `API ${response.status}: ${text}`;
 
-    // Matches the exact "Token expired" message specifically — not the
-    // generic "Bearer token required" a guest with no token at all would
-    // get, which shouldn't trigger a redirect (they were never logged in
-    // to begin with, that's expected). isSessionExpired guards against
-    // firing this more than once if several requests 401 in the same
-    // moment (e.g. profile + medical + favourites all fetching on the
-    // same screen focus, as currently happens on profile.tsx) — without
-    // it, the user could see the alert and get redirected multiple times
-    // in a row for what's really one single event.
     if (
       response.status === 401 &&
       message === "Unauthorized. Token expired." &&
@@ -108,15 +111,21 @@ export async function request<T>(
 
       await clearAccessToken();
 
-      Alert.alert("Session expired", "Please log in again to continue.", [
-        {
-          text: "OK",
-          onPress: () => {
-            router.replace("/auth-gateway");
-            isHandlingSessionExpiry = false;
+      Alert.alert(
+        i18n.t("api.sessionExpiredTitle", { defaultValue: "Session expired" }),
+        i18n.t("api.sessionExpiredMessage", {
+          defaultValue: "Please log in again to continue.",
+        }),
+        [
+          {
+            text: i18n.t("api.sessionExpiredConfirm", { defaultValue: "OK" }),
+            onPress: () => {
+              router.replace("/auth-gateway");
+              isHandlingSessionExpiry = false;
+            },
           },
-        },
-      ]);
+        ],
+      );
     }
 
     const error = new Error(message) as Error & {
@@ -242,14 +251,6 @@ export async function confirmReport(
 /*                                  ROUTES                                    */
 /* -------------------------------------------------------------------------- */
 
-// Both previously took zero parameters and hit these endpoints with no
-// query string at all — meaning they could only ever reach the backend's
-// mock fallback (get_route_options/get_route_detail in routes.py return
-// the real Google Maps result only when destination_venue_id + origin
-// are present; otherwise they fall through to the static mock). map.tsx
-// already calls these with the real arguments; these signatures just
-// never caught up to that.
-
 export async function getRouteOptions(
   destinationVenueId: string | undefined,
   origin: { latitude: number; longitude: number },
@@ -288,11 +289,6 @@ export async function getRouteDetail(
 /*                                 CHATBOT                                    */
 /* -------------------------------------------------------------------------- */
 
-// NOTE: as of this writing, ask_chatbot() on the backend is a static mock —
-// it returns the same CHATBOT_RESPONSE regardless of `message` content, and
-// does not call Gemini despite GEMINI_API_KEY existing in settings.py. This
-// function is correctly wired to the real endpoint; the responses just
-// aren't real yet.
 export async function sendChatbotMessage(payload: {
   message: string;
   language?: string;
@@ -324,9 +320,6 @@ export async function deleteAccount(): Promise<{
 /* -------------------------------------------------------------------------- */
 /*                                FAVOURITES                                  */
 /* -------------------------------------------------------------------------- */
-
-// Confirmed per-user and DB-backed server-side — see the comment on the
-// Favourite type in types/venue.ts.
 
 export async function getFavourites(): Promise<FavouritesResponse> {
   return request<FavouritesResponse>("/user/favourites");

@@ -7,6 +7,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]
 SEED_SQL = REPO_ROOT / "docker/mysql/init/005_seed_venues.sql"
 GROUPS_SQL = REPO_ROOT / "docker/mysql/init/008_healthcare_prediction_groups.sql"
 ACCOUNT_DELETION_SQL = REPO_ROOT / "docker/mysql/init/009_account_deletion_report_cascades.sql"
+VENUE_LABEL_COLUMNS_SQL = REPO_ROOT / "docker/mysql/init/012_add_venues_prediction_label_columns.sql"
 SCHEMA_SQL = REPO_ROOT / "docker/mysql/init/001_clearpath_schema.sql"
 MIGRATIONS = REPO_ROOT / "docker/mysql/apply_migrations.sh"
 TELEMETRY_CONTRACT = REPO_ROOT / "docs/telemetry-feed-contract.md"
@@ -52,6 +53,21 @@ def test_existing_volume_has_idempotent_account_deletion_fk_migration():
     assert "fk_user_report_user" in runner
     assert "fk_confirmation_user" in runner
     assert "DELETE_RULE" in runner
+
+
+def test_venue_prediction_label_migration_is_mysql_compatible_and_idempotent():
+    source = VENUE_LABEL_COLUMNS_SQL.read_text()
+    expected_columns = (
+        "serpapi_place_id", "prediction_group_id", "prediction_shared",
+        "serpapi_label_status", "has_popular_times", "ml_eligible",
+        "serpapi_checked_at",
+    )
+    assert "ALTER TABLE venues ADD COLUMN IF NOT EXISTS" not in source
+    assert source.count("information_schema.COLUMNS") == len(expected_columns)
+    assert source.count("\nPREPARE add_venues_column") == len(expected_columns)
+    assert [source.index(column) for column in expected_columns] == sorted(
+        source.index(column) for column in expected_columns
+    )
 
 
 def test_provider_mapping_contract_covers_runner_required_fields():

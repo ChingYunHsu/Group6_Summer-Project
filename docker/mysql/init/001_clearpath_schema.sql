@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS venues (
   primary_language VARCHAR(10),
   secondary_language VARCHAR(10),
   -- Gap-fix: accessibility
-  accessible_status ENUM('full_access', 'partial', 'step_free_route_only', 'none') DEFAULT 'none',
+  accessible_status ENUM('full_access', 'partial', 'step_free_route_only', 'none', 'unknown') DEFAULT 'unknown',
   accessibility_features JSON,
   -- Gap-fix: warnings
   active_warning BOOLEAN DEFAULT FALSE,
@@ -45,6 +45,15 @@ CREATE TABLE IF NOT EXISTS venues (
   district VARCHAR(32),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  -- SerpAPI / V2 prediction-label lineage.  These fields deliberately follow
+  -- updated_at to preserve the 2026-07-18 venues_export.sql column order.
+  serpapi_place_id VARCHAR(36) NULL,
+  prediction_group_id VARCHAR(64) NULL,
+  prediction_shared BOOLEAN NOT NULL DEFAULT FALSE,
+  serpapi_label_status VARCHAR(32) NULL,
+  has_popular_times BOOLEAN NOT NULL DEFAULT FALSE,
+  ml_eligible BOOLEAN NOT NULL DEFAULT FALSE,
+  serpapi_checked_at VARCHAR(32) NULL,
   CHECK (source_confidence >= 0 AND source_confidence <= 1),
   INDEX idx_venues_type (venue_type),
   INDEX idx_venues_location (latitude, longitude),

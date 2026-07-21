@@ -42,7 +42,7 @@
     "changeLanguage": "Cambiar idioma",
     "currentLanguage": "Español",
     "logout": "Cerrar sesión",
-    "logoutMessage": "La función de cierre de sesión se conectará más adelante con la autenticación.",
+    "logoutMessage": "Cerrando sesión...",
     "dangerZone": "Zona de peligro",
     "deleteWarning": "Eliminar tu cuenta es permanente. Todos los registros médicos y datos del perfil serán eliminados.",
     "deleteAccount": "Eliminar mi cuenta",
@@ -74,7 +74,12 @@
     "saveErrorTitle": "No se pudo guardar todo",
     "saveErrorMessage": "Algunos de tus cambios no se guardaron. Inténtalo de nuevo.",
     "addLanguage": "Añadir idioma",
-    "languagePlaceholder": "Introduce un idioma"
+    "languagePlaceholder": "Introduce un idioma",
+    "genderMale": "Masculino",
+    "genderFemale": "Femenino",
+    "genderNonBinary": "No binario",
+    "genderPreferNotToSay": "Prefiero no decirlo",
+    "selectGender": "Seleccionar género"
   },
   "profileGuest": {
     "title": "Protege tu Identificación Médica",
@@ -250,7 +255,11 @@
       "apply": "Aplicar filtros",
       "quiet": "Tranquilo",
       "moderate": "Moderado",
-      "busy": "Concurrido"
+      "busy": "Concurrido",
+      "unknown": "Desconocido",
+      "wheelchairAccess": "Acceso en silla de ruedas",
+      "fullAccess": "Acceso completo",
+      "partialOrFullAccess": "Acceso parcial o completo"
     }
   },
   "reportModal": {
@@ -333,5 +342,34 @@
     "askQuestion": "Haz una pregunta...",
     "openNow": "Abierto ahora",
     "currentlyClosed": "Actualmente cerrado"
+  },
+  "verification": {
+    "defaultTitle": "¿Sigue siendo un problema?",
+    "reportedAt": "Reportado {{time}}",
+    "confirmationSingular": "(confirmado por {{count}} usuario)",
+    "confirmationPlural": "(confirmado por {{count}} usuarios)",
+    "confirm": "Confirmar",
+    "resolve": "Resolver"
+  },
+  "api": {
+    "sessionExpiredTitle": "Sesión caducada",
+    "sessionExpiredMessage": "Por favor, inicia sesión de nuevo para continuar.",
+    "sessionExpiredConfirm": "OK"
+  },
+  "venueSheet": {
+    "addressUnavailable": "Dirección no disponible",
+    "noData": "Sin datos",
+    "minWaitSuffix": " · {{minutes}} min de espera",
+    "predictedForHour": "Predicción para +{{hours}}h — no en vivo",
+    "accessibilityIssue": "Problema de accesibilidad reportado recientemente",
+    "services": "Servicios",
+    "busynessForecast": "Pronóstico de afluencia de 12 horas",
+    "forecastUnavailable": "La predicción en vivo aún no está disponible para este lugar.",
+    "expectedWait": "Espera estimada: {{minutes}} minutos",
+    "unknown": "Desconocido",
+    "directions": "Cómo llegar",
+    "fullWheelchairAccess": "Acceso completo en silla de ruedas",
+    "partialWheelchairAccess": "Acceso parcial en silla de ruedas",
+    "accessibilityUnknown": "Acceso en silla de ruedas desconocido"
   }
 }

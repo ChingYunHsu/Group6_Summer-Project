@@ -987,27 +987,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-    # FIX 4 — Web Read-Only Gating
     post:
       tags: [User]
       summary: Add a venue to favourites
-      description: >
-        **Mobile-only write endpoint.**
-        Returns `403 Forbidden` when `X-Client-Origin: web` is detected.
-      x-web-readonly: true
       operationId: addFavourite
       security:
         - BearerAuth: []
-      parameters:
-        - name: X-Client-Origin
-          in: header
-          required: false
-          description: >
-            Client platform identifier. Must be `mobile` for write access.
-            Requests with value `web` are rejected with 403 Forbidden.
-          schema:
-            type: string
-            enum: [mobile, web]
       requestBody:
         required: true
         content:
@@ -1023,12 +1008,6 @@ paths:
                 $ref: '#/components/schemas/Favourite'
         '401':
           description: Authentication required.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '403':
-          description: Forbidden. Write operations are not permitted from the Web client.
           content:
             application/json:
               schema:
@@ -2660,6 +2639,11 @@ components:
           type: string
         language:
           type: string
+          description: >
+            The client's selected app-UI language (e.g. from signup/settings).
+            Drives suggested_prompts localization; independent of the
+            message's own detected_language, which the assistant infers
+            per-message regardless of this value.
         voice_input:
           type: boolean
         context:

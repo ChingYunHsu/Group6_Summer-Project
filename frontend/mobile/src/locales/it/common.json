@@ -42,7 +42,7 @@
     "changeLanguage": "Cambia lingua",
     "currentLanguage": "Italiano",
     "logout": "Disconnetti",
-    "logoutMessage": "La funzionalità di disconnessione sarà collegata all'autenticazione in seguito.",
+    "logoutMessage": "Disconnessione in corso...",
     "dangerZone": "Zona di pericolo",
     "deleteWarning": "L'eliminazione del tuo account è permanente. Tutte le cartelle cliniche e i dati del profilo verranno rimossi.",
     "deleteAccount": "Elimina il mio account",
@@ -74,7 +74,12 @@
     "saveErrorTitle": "Non è stato possibile salvare tutto",
     "saveErrorMessage": "Alcune modifiche non sono state salvate. Riprova.",
     "addLanguage": "Aggiungi lingua",
-    "languagePlaceholder": "Inserisci una lingua"
+    "languagePlaceholder": "Inserisci una lingua",
+    "genderMale": "Maschio",
+    "genderFemale": "Femmina",
+    "genderNonBinary": "Non binario",
+    "genderPreferNotToSay": "Preferisco non rispondere",
+    "selectGender": "Seleziona genere"
   },
   "profileGuest": {
     "title": "Proteggi il tuo ID Medico",
@@ -252,7 +257,11 @@
       "apply": "Applica filtri",
       "quiet": "Tranquillo",
       "moderate": "Moderato",
-      "busy": "Affollato"
+      "busy": "Affollato",
+      "unknown": "Sconosciuto",
+      "wheelchairAccess": "Accesso in sedia a rotelle",
+      "fullAccess": "Accesso completo",
+      "partialOrFullAccess": "Accesso parziale o completo"
     }
   },
 
@@ -328,5 +337,34 @@
     "askQuestion": "Fai una domanda...",
     "openNow": "Aperto ora",
     "currentlyClosed": "Attualmente chiuso"
+  },
+  "verification": {
+    "defaultTitle": "È ancora un problema?",
+    "reportedAt": "Segnalato {{time}}",
+    "confirmationSingular": "(confermato da {{count}} utente)",
+    "confirmationPlural": "(confermato da {{count}} utenti)",
+    "confirm": "Conferma",
+    "resolve": "Risolvi"
+  },
+  "api": {
+    "sessionExpiredTitle": "Sessione scaduta",
+    "sessionExpiredMessage": "Effettua nuovamente l'accesso per continuare.",
+    "sessionExpiredConfirm": "OK"
+  },
+  "venueSheet": {
+    "addressUnavailable": "Indirizzo non disponibile",
+    "noData": "Nessun dato",
+    "minWaitSuffix": " · {{minutes}} min di attesa",
+    "predictedForHour": "Previsione per +{{hours}}h — non in tempo reale",
+    "accessibilityIssue": "Problema di accessibilità segnalato di recente",
+    "services": "Servizi",
+    "busynessForecast": "Previsione di affluenza a 12 ore",
+    "forecastUnavailable": "La previsione in tempo reale non è ancora disponibile per questo luogo.",
+    "expectedWait": "Attesa prevista: {{minutes}} minuti",
+    "unknown": "Sconosciuto",
+    "directions": "Indicazioni",
+    "fullWheelchairAccess": "Accesso completo in sedia a rotelle",
+    "partialWheelchairAccess": "Accesso parziale in sedia a rotelle",
+    "accessibilityUnknown": "Accesso in sedia a rotelle sconosciuto"
   }
 }

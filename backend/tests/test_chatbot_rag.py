@@ -101,6 +101,81 @@ def test_ask_chatbot_rag_happy_path(client, monkeypatch):
     assert isinstance(body["response_time_ms"], int)
 
 
+def test_ask_chatbot_suggested_prompts_match_detected_language(client, monkeypatch):
+    """The suggested follow-up prompts must be localized to whatever
+    language Gemini detected the user wrote in, not hardcoded English."""
+
+    @contextmanager
+    def fake_db_cursor():
+        yield _FakeCursor([])
+
+    monkeypatch.setattr(chatbot_module, "db_cursor", fake_db_cursor)
+    monkeypatch.setattr(chatbot_module.gemini_client, "embed_text", lambda text: [1.0, 0.0])
+    monkeypatch.setattr(
+        chatbot_module.gemini_client,
+        "generate_structured_reply",
+        lambda prompt: {
+            "message": "Le Central Park Urgent Care est ouvert 24/7.",
+            "detected_language": "fr",
+        },
+    )
+
+    resp = client.post("/api/v1/chatbot", json={"message": "Y a-t-il une clinique 24/7 pres d'ici ?"})
+
+    assert resp.status_code == 200
+    body = resp.get_json()
+    assert body["detected_language"] == "fr"
+    assert body["suggested_prompts"] == chatbot_module.SUGGESTED_PROMPTS_BY_LANGUAGE["fr"]
+
+
+def test_ask_chatbot_suggested_prompts_follow_ui_language_not_message_language(client, monkeypatch):
+    """The client's selected app-UI language (sent as `language` in the
+    request) drives suggested_prompts, even when the user types a message
+    in a different language than their UI is set to."""
+
+    @contextmanager
+    def fake_db_cursor():
+        yield _FakeCursor([])
+
+    monkeypatch.setattr(chatbot_module, "db_cursor", fake_db_cursor)
+    monkeypatch.setattr(chatbot_module.gemini_client, "embed_text", lambda text: [1.0, 0.0])
+    monkeypatch.setattr(
+        chatbot_module.gemini_client,
+        "generate_structured_reply",
+        lambda prompt: {
+            "message": "Le Central Park Urgent Care est ouvert 24/7.",
+            "detected_language": "fr",
+        },
+    )
+
+    resp = client.post(
+        "/api/v1/chatbot",
+        json={"message": "Y a-t-il une clinique 24/7 pres d'ici ?", "language": "es"},
+    )
+
+    body = resp.get_json()
+    assert body["detected_language"] == "fr"
+    assert body["suggested_prompts"] == chatbot_module.SUGGESTED_PROMPTS_BY_LANGUAGE["es"]
+
+
+def test_ask_chatbot_suggested_prompts_fall_back_to_english_for_unknown_language(client, monkeypatch):
+    @contextmanager
+    def fake_db_cursor():
+        yield _FakeCursor([])
+
+    monkeypatch.setattr(chatbot_module, "db_cursor", fake_db_cursor)
+    monkeypatch.setattr(chatbot_module.gemini_client, "embed_text", lambda text: [1.0, 0.0])
+    monkeypatch.setattr(
+        chatbot_module.gemini_client,
+        "generate_structured_reply",
+        lambda prompt: {"message": "...", "detected_language": "xx"},
+    )
+
+    resp = client.post("/api/v1/chatbot", json={"message": "hello"})
+
+    assert resp.get_json()["suggested_prompts"] == chatbot_module.SUGGESTED_PROMPTS_BY_LANGUAGE["en"]
+
+
 def test_ask_chatbot_grounded_prompt_only_uses_retrieved_context(monkeypatch):
     retrieved = [(0.9, "v_1", "Venue One is open 9-5."), (0.5, "v_2", "Venue Two has a wheelchair ramp.")]
     prompt = chatbot_module._build_grounded_prompt("When is Venue One open?", retrieved)

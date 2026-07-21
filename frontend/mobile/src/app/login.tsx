@@ -140,6 +140,7 @@ export default function LoginScreen() {
                 <Text style={styles.label}>{t("profile.email")}</Text>
 
                 <TextInput
+                  testID="login-email-input"
                   value={email}
                   onChangeText={setEmail}
                   placeholder={t("login.emailPlaceholder")}
@@ -153,6 +154,7 @@ export default function LoginScreen() {
 
                 <View style={styles.passwordWrapper}>
                   <TextInput
+                    testID="login-password-input"
                     value={password}
                     onChangeText={setPassword}
                     placeholder={t("login.passwordPlaceholder")}
@@ -207,6 +209,7 @@ export default function LoginScreen() {
                 <Text style={styles.label}>{t("profile.fullName")}</Text>
 
                 <TextInput
+                  testID="login-fullname-input"
                   value={fullName}
                   onChangeText={setFullName}
                   placeholder={t("login.fullNamePlaceholder")}
@@ -217,6 +220,7 @@ export default function LoginScreen() {
                 <Text style={styles.label}>{t("profile.email")}</Text>
 
                 <TextInput
+                  testID="login-email-input"
                   value={email}
                   onChangeText={setEmail}
                   placeholder={t("login.emailPlaceholder")}
@@ -230,6 +234,7 @@ export default function LoginScreen() {
 
                 <View style={styles.passwordWrapper}>
                   <TextInput
+                    testID="login-password-input"
                     value={password}
                     onChangeText={setPassword}
                     placeholder={t("login.passwordRequirements")}
