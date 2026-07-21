@@ -85,6 +85,12 @@ function getMarkerColor(venue, futureMode) {
     rawPercent === ""
       ? Number.NaN
       : Number(rawPercent);
+    
+  if (Number.isFinite(percent)) {
+  if (percent < 30) return "#22c55e";
+  if (percent <= 70) return "#eab308";
+  return "#ef4444";
+  }
 
   const level = String(
     venue.busyness_level ?? venue.busyness_status ?? ""
@@ -611,7 +617,7 @@ function LiveHelpMap() {
     }
   }, []);
 
-   const refreshBusyness = useCallback(async () => {
+  /*const refreshBusyness = useCallback(async () => {
     if (venues.length === 0) {
       setBusynessByVenueId({});
       return;
@@ -667,7 +673,7 @@ function LiveHelpMap() {
     }
 
     setBusynessByVenueId(nextBusyness);
-  }, [futureMode, queryTime, venues]);
+  }, [futureMode, queryTime, venues]);*/
 
   useEffect(() => {
     loadVenues();
@@ -707,12 +713,12 @@ function LiveHelpMap() {
     };
   }, []);
 
-///  useEffect(() => {
-///    refreshReports();
-///
-///    const interval = window.setInterval(refreshReports, 30000);
-///    return () => window.clearInterval(interval);
-///  }, [refreshReports]);
+  useEffect(() => {
+    refreshReports();
+
+    const interval = window.setInterval(refreshReports, 30000);
+    return () => window.clearInterval(interval);
+  }, [refreshReports]);
 
  /// useEffect(() => {
   ///  refreshBusyness();
@@ -751,7 +757,7 @@ function LiveHelpMap() {
               payload?.busyness ?? payload
             ),
           };
-        } catch (error) {
+        } catch {
           return {
             venueId: venue.venue_id,
             busyness: null,
@@ -981,10 +987,6 @@ useEffect(() => {
       const matchesAccessibility =
         !appliedFilters.accessible ||
         venueIsAccessible(venue);
-
-      const venueType = String(
-        venue.venue_type ?? ""
-      ).toLowerCase();
 
       const selectedType = appliedFilters.venueType;
 
