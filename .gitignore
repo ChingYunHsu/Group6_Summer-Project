@@ -196,3 +196,8 @@ env/
 *.gif
 *.svg
 Data+ML/data_source/
+
+# Reproducible V2 training artifacts. These are intentionally versioned even
+# though other CSV source/output files remain ignored.
+!Data+ML/test/7.13-7.18/output/serpapi_v2_labels_20260716/serpapi_popular_times_weak_labels.csv
+!Data+ML/test/7.13-7.18/output/serpapi_repeat_audit/legacy_cached_baseline.csv
