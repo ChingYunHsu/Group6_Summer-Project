@@ -47,7 +47,7 @@ jobs:
           -v "$GITHUB_WORKSPACE:/workspace" \
           -w /workspace/Data+ML \
           clearpath-data-image sh -c \
-          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib && pytest test_data_skeleton.py'
+          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib pyproj && pytest test_data_skeleton.py'
       working-directory: ./Data+ML
 
     - name: Run Venue Coverage Offline Tests
@@ -56,7 +56,7 @@ jobs:
           -v "$GITHUB_WORKSPACE:/workspace" \
           -w /workspace/Data+ML \
           clearpath-data-image sh -c \
-          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib && pytest test/6.15-6.20/tests/test_venue_coverage.py test/6.15-6.20/tests/test_busyness_ingestion.py test/6.15-6.20/tests/test_data_contract_migrations.py -v --tb=short -m "not integration"'
+          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib pyproj && pytest test/6.15-6.20/tests/test_venue_coverage.py test/6.15-6.20/tests/test_busyness_ingestion.py test/6.15-6.20/tests/test_data_contract_migrations.py -v --tb=short -m "not integration"'
       working-directory: ./Data+ML
 
     - name: Run ML Pure-Function Tests (SOP 8)
@@ -65,7 +65,7 @@ jobs:
           -v "$GITHUB_WORKSPACE:/workspace" \
           -w /workspace/Data+ML \
           clearpath-data-image sh -c \
-          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib && pytest test/6.28-7.3/tests/test_ml_modeling.py test/6.28-7.3/tests/test_group_split.py test/6.28-7.3/tests/test_write_forecasts_to_db.py -v --tb=short -m "not integration"'
+          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib pyproj && pytest test/6.28-7.3/tests/test_ml_modeling.py test/6.28-7.3/tests/test_group_split.py test/6.28-7.3/tests/test_write_forecasts_to_db.py -v --tb=short -m "not integration"'
       working-directory: ./Data+ML
 
     - name: Run Forecast V2 Offline Tests
@@ -74,7 +74,7 @@ jobs:
           -v "$GITHUB_WORKSPACE:/workspace" \
           -w /workspace/Data+ML \
           clearpath-data-image sh -c \
-          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib && pytest test/7.13-7.18/tests/test_forecast_v2_pattern.py test/7.13-7.18/test_external_feature_ingest.py -v --tb=short -m "not integration"'
+          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib pyproj && pytest test/7.13-7.18/tests/test_forecast_v2_pattern.py test/7.13-7.18/test_external_feature_ingest.py -v --tb=short -m "not integration"'
       working-directory: ./Data+ML
 
   integration-test:
@@ -97,7 +97,7 @@ jobs:
           -v "$GITHUB_WORKSPACE:/workspace" \
           -w /workspace/Data+ML \
           clearpath-data-image sh -c \
-          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib && pytest test/6.15-6.20/tests/test_venue_coverage.py -m integration -v --tb=short'
+          'pip install --no-cache-dir pytest numpy pandas requests scikit-learn matplotlib pyproj && pytest test/6.15-6.20/tests/test_venue_coverage.py -m integration -v --tb=short'
       working-directory: ./Data+ML
 
     - name: Run Forecast V2 Real-Data Validation
