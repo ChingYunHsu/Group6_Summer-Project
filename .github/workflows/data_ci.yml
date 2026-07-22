@@ -31,8 +31,8 @@ jobs:
 
     - name: Build Data Team Docker Image
       run: |
-        docker build -t clearpath-data-image .
-      working-directory: ./Data+ML
+        docker build -t clearpath-data-image -f Dockerfile.telemetry .
+      working-directory: ./Data+ML/test/6.15-6.20
 
     - name: Run Data Linting Check Inside Docker
       run: |
@@ -81,8 +81,8 @@ jobs:
 
     - name: Build Data Team Docker Image
       run: |
-        docker build -t clearpath-data-image .
-      working-directory: ./Data+ML
+        docker build -t clearpath-data-image -f Dockerfile.telemetry .
+      working-directory: ./Data+ML/test/6.15-6.20
 
     - name: Run Integration Tests (Live APIs)
       run: |
