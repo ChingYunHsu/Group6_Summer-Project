@@ -1,10 +1,4 @@
-
-import {
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -20,34 +14,28 @@ export default function FloatingActionButtons({
   return (
     <View style={styles.container}>
       <TouchableOpacity
+        testID="floating-report-button"
         style={styles.reportButton}
         activeOpacity={0.85}
         onPress={onReportPress}
       >
-        <Ionicons
-          name="warning"
-          size={24}
-          color="#111827"
-        />
+        <Ionicons name="warning" size={24} color="#111827" />
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="floating-sos-button"
         style={styles.sosButton}
         activeOpacity={0.9}
         onPress={onSOSPress}
       >
-        <Text style={styles.sosText}>
-          SOS
-        </Text>
+        <Text style={styles.sosText}>SOS</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-
   container: {
-
     position: "absolute",
 
     right: 20,
@@ -55,11 +43,9 @@ const styles = StyleSheet.create({
     bottom: 36,
 
     alignItems: "center",
-
   },
 
   reportButton: {
-
     width: 58,
 
     height: 58,
@@ -81,19 +67,15 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
 
     shadowOffset: {
-
       width: 0,
 
       height: 2,
-
     },
 
     elevation: 5,
-
   },
 
   sosButton: {
-
     width: 76,
 
     height: 76,
@@ -113,19 +95,15 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
 
     shadowOffset: {
-
       width: 0,
 
       height: 3,
-
     },
 
     elevation: 8,
-
   },
 
   sosText: {
-
     color: "#FFFFFF",
 
     fontWeight: "800",
@@ -133,7 +111,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
 
     letterSpacing: 0.5,
-
   },
-
 });

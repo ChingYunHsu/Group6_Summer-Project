@@ -49,13 +49,21 @@ export default function VerificationCard({
       <Text style={styles.confirmations}>{confirmationsText}</Text>
 
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.confirmButton} onPress={onConfirm}>
+        <TouchableOpacity
+          testID="verification-confirm-button"
+          style={styles.confirmButton}
+          onPress={onConfirm}
+        >
           <Text style={styles.confirmText}>
             {t("verification.confirm", { defaultValue: "Confirm" })}
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.resolveButton} onPress={onResolve}>
+        <TouchableOpacity
+          testID="verification-resolve-button"
+          style={styles.resolveButton}
+          onPress={onResolve}
+        >
           <Text style={styles.resolveText}>
             {t("verification.resolve", { defaultValue: "Resolve" })}
           </Text>

@@ -8,7 +8,8 @@
     "scheme": "clearpathmobilepractice",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/images/icon.png"
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "com.clearpath.mobile"
     },
     "android": {
       "adaptiveIcon": {

@@ -310,27 +310,22 @@
     "title": "正在准备紧急呼叫",
     "countdown": "{{seconds}} 秒后拨打",
     "subtitle": "除非取消，否则将自动拨打紧急电话。",
-
     "locationTitle": "当前位置",
     "locationDescription": "您的位置可在紧急呼叫期间共享。",
-
     "medicalIdTitle": "医疗信息摘要",
-
     "name": "姓名",
     "bloodType": "血型",
     "conditions": "疾病",
     "allergies": "过敏史",
     "phone": "电话",
-
     "notice": "与紧急服务人员通话时，请保持此页面开启。",
-
     "cancel": "取消紧急呼叫",
-
     "notProvided": "未提供",
     "none": "无",
-
     "callErrorTitle": "无法拨打电话",
-    "callErrorMessage": "此设备无法拨打电话。"
+    "callErrorMessage": "此设备无法拨打电话。",
+    "demoModeTitle": "演示模式",
+    "demoModeMessage": "在生产环境中将拨打 {{phoneNumber}}。"
   },
 
   "assistant": {

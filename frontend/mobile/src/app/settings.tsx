@@ -296,6 +296,7 @@ export default function SettingsScreen() {
         </View>
 
         <TouchableOpacity
+          testID="settings-delete-account-button"
           style={[styles.deleteButton, deleting && styles.deleteButtonDisabled]}
           onPress={handleDeleteAccount}
           disabled={deleting}
