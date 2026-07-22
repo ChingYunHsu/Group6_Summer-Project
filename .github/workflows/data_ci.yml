@@ -7,11 +7,13 @@ on:
     paths:
       - 'Data+ML/**'
       - 'docker/mysql/**'
+      - '.github/workflows/data_ci.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'Data+ML/**'
       - 'docker/mysql/**'
+      - '.github/workflows/data_ci.yml'
   workflow_dispatch:
     inputs:
       run_integration:
