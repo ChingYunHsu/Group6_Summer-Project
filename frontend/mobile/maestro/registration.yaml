@@ -1,0 +1,32 @@
+# maestro/registration.yaml
+appId: com.clearpath.mobile
+---
+- launchApp
+- openLink: "clearpathmobilepractice://login"
+- tapOn:
+    id: "switch-to-register"
+- tapOn:
+    id: "login-fullname-input"
+- inputText: "Test User"
+- tapOn:
+    id: "login-email-input"
+- inputText: "maestro-test-2@yourdomain.com" # must be unique per run — see note below
+- tapOn:
+    id: "login-password-input"
+- inputText: "TestPass123!"
+- tapOn:
+    id: "terms-switch"
+- tapOn:
+    id: "terms-switch"
+- assertVisible:
+    id: "create-account-button"
+    enabled: true
+- tapOn:
+    id: "create-account-button"
+# Two possible outcomes depending on finish_profile_prompt from the backend:
+- assertVisible:
+    id: "finish-profile-button"
+    optional: true
+- tapOn:
+    id: "skip-for-now-button"
+    optional: true

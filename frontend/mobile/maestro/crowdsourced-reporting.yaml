@@ -1,0 +1,46 @@
+appId: com.clearpath.mobile
+---
+- launchApp
+- setLocation:
+    latitude: 40.7580
+    longitude: -73.9855
+- openLink: "clearpathmobilepractice://login"
+- tapOn:
+    id: "login-email-input"
+- inputText: "maestro-test-1@yourdomain.com"
+- tapOn:
+    id: "login-password-input"
+- inputText: "TestPass123!"
+- tapOn: "Sign In"
+- tapOn: "Sign In"
+- tapOn:
+    text: "Not Now"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 45000
+- tapOn:
+    id: "floating-report-button"
+- extendedWaitUntil:
+    visible:
+      id: "report-mode-incident"
+    timeout: 10000
+- tapOn:
+    id: "report-mode-incident"
+- extendedWaitUntil:
+    visible:
+      id: "report-issue-protest_or_blockage"
+    timeout: 10000
+- tapOn:
+    id: "report-issue-protest_or_blockage"
+- scrollUntilVisible:
+    element:
+      id: "report-submit-button"
+    direction: DOWN
+- tapOn:
+    id: "report-submit-button"
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 15000

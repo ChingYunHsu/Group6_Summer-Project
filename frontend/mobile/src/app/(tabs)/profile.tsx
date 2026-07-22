@@ -325,7 +325,10 @@ export default function ProfileScreen() {
               {t("editProfile.personalInformation")}
             </Text>
 
-            <TouchableOpacity onPress={() => router.push("/edit-profile")}>
+            <TouchableOpacity
+              testID="profile-edit-personal-info-button"
+              onPress={() => router.push("/edit-profile")}
+            >
               <Text style={styles.editText}>{t("common.edit")}</Text>
             </TouchableOpacity>
           </View>
@@ -381,7 +384,10 @@ export default function ProfileScreen() {
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>{t("profile.medicalId")}</Text>
 
-            <TouchableOpacity onPress={() => router.push("/medical-id")}>
+            <TouchableOpacity
+              testID="profile-edit-medical-id-button"
+              onPress={() => router.push("/medical-id")}
+            >
               <Text style={styles.editText}>{t("common.edit")}</Text>
             </TouchableOpacity>
           </View>

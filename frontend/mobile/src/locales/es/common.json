@@ -309,27 +309,22 @@
     "title": "Preparando llamada de emergencia",
     "countdown": "Llamando en {{seconds}} s",
     "subtitle": "La llamada de emergencia comenzará a menos que se cancele.",
-
     "locationTitle": "Ubicación actual",
     "locationDescription": "Tu ubicación está disponible para compartir durante la llamada de emergencia.",
-
     "medicalIdTitle": "Resumen del historial médico",
-
     "name": "Nombre",
     "bloodType": "Grupo sanguíneo",
     "conditions": "Enfermedades",
     "allergies": "Alergias",
     "phone": "Teléfono",
-
     "notice": "Mantén esta pantalla abierta mientras hablas con el operador de emergencias.",
-
     "cancel": "Cancelar llamada de emergencia",
-
     "notProvided": "No disponible",
     "none": "Ninguna",
-
     "callErrorTitle": "No se puede realizar la llamada",
-    "callErrorMessage": "Este dispositivo no puede realizar llamadas telefónicas."
+    "callErrorMessage": "Este dispositivo no puede realizar llamadas telefónicas.",
+    "demoModeTitle": "Modo demo",
+    "demoModeMessage": "Llamaría al {{phoneNumber}} en producción."
   },
 
   "assistant": {

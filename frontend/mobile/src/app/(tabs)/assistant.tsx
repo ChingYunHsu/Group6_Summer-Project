@@ -88,9 +88,7 @@ function CitationChip({ citation }: { citation: Citation }) {
 // doesn't apply — it flags impure calls (like Date.now()) inside
 // component-scoped closures even when only ever invoked from an event
 // handler, a confirmed compiler false positive (facebook/react#34046),
-// not an actual purity issue here. This exact fix was applied earlier
-// and appears to have been lost during a later full-file edit — CI
-// caught it again, which is exactly what it's for.
+// not an actual purity issue here.
 function generateMessageId(suffix: string): string {
   return `${Date.now()}-${suffix}`;
 }
@@ -107,12 +105,9 @@ export default function AssistantScreen() {
 
   // What the chatbot actually responded in, per its own detected_language —
   // separate from currentLanguage (the user's stored app-wide preference,
-  // used only to seed the initial request). Previously the header always
-  // showed the stored preference regardless of what the reply was really
-  // in, which is misleading — especially since a mock/fallback response
-  // is always English regardless of what was requested. null until the
-  // first real reply comes back, at which point it's the honest source of
-  // truth for this header.
+  // used only to seed the initial request). null until the first real
+  // reply comes back, at which point it's the honest source of truth for
+  // this header.
   const [lastResponseLanguageCode, setLastResponseLanguageCode] = useState<
     string | null
   >(null);
@@ -147,84 +142,84 @@ export default function AssistantScreen() {
     },
   ]);
 
-  // Same fix as show-staff.tsx: mount-only useEffect meant this never
-  // reflected a language change made after first visiting this tab.
+  // ---------------------------------------------------------------------
+  // TEMPORARY — one-time reset for this device/simulator's AsyncStorage,
+  // which had a stale "language": "fr" left over from earlier manual
+  // testing (confirmed unrelated to backend/Flask state — AsyncStorage is
+  // local to the device/app-sandbox and nothing server-side touches it).
+  // Run once, confirm the header shows English, then DELETE this effect.
+  // ---------------------------------------------------------------------
+  useEffect(() => {
+    AsyncStorage.setItem("language", "en");
+  }, []);
+
+  // Always resolves currentLanguage to something explicit (the stored
+  // preference if it matches a known language, otherwise English) rather
+  // than silently leaving stale in-memory state untouched when the stored
+  // value is missing or unrecognized — that silent fall-through was the
+  // actual root cause of a language change never being picked up.
   //
-  // Also resets lastResponseLanguageCode here when the loaded language
+  // Also resets lastResponseLanguageCode whenever the resolved language
   // genuinely differs from what was already active — otherwise, once a
   // real chatbot reply has come back once, its detected_language sticks
   // around forever in respondingLanguageLabel, even after switching the
   // app's language preference afterward with no new message sent yet.
-  // Confirmed live: started in English, got a real English reply,
-  // switched to French — header kept showing "Responding in English"
-  // since nothing had told it a preference change should override that
-  // stale prior response.
   //
-  // Also refreshes the two greeting messages (id "1"/"2") here — a
-  // long-known, documented gap: they're baked into messages' useState
-  // initializer, computed once at first mount using whatever language
-  // was active then. Switching languages later doesn't remount this
-  // screen, so they were never given a reason to retranslate on their
-  // own. Confirmed live: header correctly showed "Respondiendo en
-  // Español" after switching, but the greeting bubbles were still in
-  // French from the mount before that. Updated by id specifically, not
+  // Also refreshes the two greeting messages (id "1"/"2") here — they're
+  // baked into messages' useState initializer, computed once at first
+  // mount using whatever language was active then. Switching languages
+  // later doesn't remount this screen, so they never had a reason to
+  // retranslate on their own otherwise. Updated by id specifically, not
   // by resetting the whole array, so an in-progress real conversation
   // isn't wiped out — only the two static greeting bubbles refresh.
   useFocusEffect(
     useCallback(() => {
       (async () => {
         const code = await AsyncStorage.getItem("language");
-        console.log(
-          "ASSISTANT FOCUS: stored code =",
-          code,
-          "| currentLanguage.code =",
-          currentLanguage.code,
-        );
         const match = featuredLanguages.find((l) => l.code === code);
 
-        if (match) {
-          setCurrentLanguage((previous) => {
-            if (previous.code !== match.code) {
-              setLastResponseLanguageCode(null);
+        const resolved =
+          match ??
+          featuredLanguages.find((l) => l.code === "en") ??
+          featuredLanguages[0];
 
-              setMessages((currentMessages) =>
-                currentMessages.map((message) => {
-                  if (message.id === "1") {
-                    return {
-                      ...message,
-                      text: i18n.t("assistant.greeting1", {
-                        defaultValue:
-                          "Hello! I'm your ClearPath Assistant. How can I help you today?",
-                      }),
-                    };
-                  }
+        setCurrentLanguage((previous) => {
+          if (previous.code !== resolved.code) {
+            setLastResponseLanguageCode(null);
 
-                  if (message.id === "2") {
-                    return {
-                      ...message,
-                      text: i18n.t("assistant.greeting2", {
-                        defaultValue:
-                          "I can help find clinics, explain services, and answer healthcare navigation questions.",
-                      }),
-                    };
-                  }
+            setMessages((currentMessages) =>
+              currentMessages.map((message) => {
+                if (message.id === "1") {
+                  return {
+                    ...message,
+                    text: i18n.t("assistant.greeting1", {
+                      defaultValue:
+                        "Hello! I'm your ClearPath Assistant. How can I help you today?",
+                    }),
+                  };
+                }
 
-                  return message;
-                }),
-              );
-            }
-            return match;
-          });
-        }
+                if (message.id === "2") {
+                  return {
+                    ...message,
+                    text: i18n.t("assistant.greeting2", {
+                      defaultValue:
+                        "I can help find clinics, explain services, and answer healthcare navigation questions.",
+                    }),
+                  };
+                }
+
+                return message;
+              }),
+            );
+          }
+          return resolved;
+        });
       })();
-      // No dependency on `t` anymore — this effect uses i18n.t()
-      // directly now instead of the hook's t, specifically to avoid a
-      // stale-closure risk: this useFocusEffect only re-invokes on
-      // genuine focus events, not on every render, so a captured `t`
-      // reference could theoretically still reflect the previous
-      // language if the effect's closure was created slightly before
-      // t itself updated. i18n.t() reads whatever's actually active at
-      // the moment it's called, sidestepping that entirely.
+      // No dependency on `t` — this effect uses i18n.t() directly to read
+      // whatever's actually active at call time, sidestepping any stale-
+      // closure risk from useFocusEffect only re-invoking on real focus
+      // events rather than every render.
     }, []),
   );
 
@@ -441,6 +436,7 @@ export default function AssistantScreen() {
           </TouchableOpacity>
 
           <TextInput
+            testID="assistant-message-input"
             style={styles.input}
             placeholder={t("assistant.askQuestion", {
               defaultValue: "Ask a question...",

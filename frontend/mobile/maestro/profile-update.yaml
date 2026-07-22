@@ -1,0 +1,64 @@
+appId: com.clearpath.mobile
+---
+- launchApp
+- setLocation:
+    latitude: 40.7580
+    longitude: -73.9855
+- openLink: "clearpathmobilepractice://login"
+- tapOn:
+    id: "login-email-input"
+- inputText: "maestro-test-1@yourdomain.com"
+- tapOn:
+    id: "login-password-input"
+- inputText: "TestPass123!"
+- tapOn: "Sign In"
+- tapOn: "Sign In"
+- tapOn:
+    text: "Not Now"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 45000
+- openLink: "clearpathmobilepractice://edit-profile"
+- tapOn:
+    id: "edit-profile-phone-input"
+- eraseText
+- inputText: "+1 212 555 0100"
+- scrollUntilVisible:
+    element:
+      text: "Personal Information"
+    direction: UP
+- tapOn: "Personal Information"
+- scrollUntilVisible:
+    element:
+      id: "edit-profile-nationality-input"
+    direction: DOWN
+- tapOn:
+    id: "edit-profile-nationality-input"
+- eraseText
+- inputText: "Canadian"
+- scrollUntilVisible:
+    element:
+      text: "Personal Information"
+    direction: UP
+- tapOn: "Personal Information"
+- scrollUntilVisible:
+    element:
+      id: "edit-profile-address-input"
+    direction: DOWN
+- tapOn:
+    id: "edit-profile-address-input"
+- eraseText
+- inputText: "123 Test Ave, New York, NY"
+- scrollUntilVisible:
+    element:
+      text: "Personal Information"
+    direction: UP
+- tapOn: "Personal Information"
+- tapOn:
+    id: "edit-profile-save-button"
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 45000

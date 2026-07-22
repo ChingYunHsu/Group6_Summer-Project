@@ -304,9 +304,6 @@ export async function sendChatbotMessage(payload: {
 /*                                   USER                                     */
 /* -------------------------------------------------------------------------- */
 
-// Note: delete_account() in user.py is decorated with require_api_key, not
-// require_bearer_auth like most other /user/* routes — but request() sends
-// both headers on every call regardless, so this works either way.
 export async function deleteAccount(): Promise<{
   status: string;
   message: string;

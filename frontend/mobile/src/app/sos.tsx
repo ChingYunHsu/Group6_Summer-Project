@@ -27,11 +27,10 @@ export default function SOSScreen() {
 
   const { t } = useTranslation();
 
-  // null = not logged in / fetch failed / never resolved — InfoRow shows
-  // "Not provided" in that case. Distinct from an empty conditions/
-  // allergies array, which shows "None" instead — "we confirmed there
-  // are none" and "we don't know" are clinically different things to
-  // show a first responder, not interchangeable blanks.
+  // DEMO MODE — set to true before shipping/submitting the real build.
+  // Prevents SOSScreen from placing an actual emergency call during
+  // presentations/testing while leaving the full flow intact to demo.
+  const ENABLE_REAL_EMERGENCY_CALL = false;
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [medicalId, setMedicalId] = useState<MedicalProfile | null>(null);
 
@@ -131,6 +130,19 @@ export default function SOSScreen() {
       return;
     }
 
+    if (!ENABLE_REAL_EMERGENCY_CALL) {
+      console.log(
+        "DEMO MODE: would dial",
+        phoneNumber,
+        "— real call suppressed",
+      );
+      Alert.alert(
+        t("sos.demoModeTitle"),
+        t("sos.demoModeMessage", { phoneNumber }),
+      );
+      return;
+    }
+
     await Linking.openURL(url);
   };
 
@@ -159,7 +171,11 @@ export default function SOSScreen() {
       >
         {/* Close */}
 
-        <TouchableOpacity style={styles.closeButton} onPress={handleCancel}>
+        <TouchableOpacity
+          testID="sos-close-button"
+          style={styles.closeButton}
+          onPress={handleCancel}
+        >
           <Ionicons name="close" size={28} color="#FFFFFF" />
         </TouchableOpacity>
 
@@ -239,7 +255,11 @@ export default function SOSScreen() {
 
         {/* Cancel */}
 
-        <TouchableOpacity style={styles.cancelButton} onPress={handleCancel}>
+        <TouchableOpacity
+          testID="sos-cancel-button"
+          style={styles.cancelButton}
+          onPress={handleCancel}
+        >
           <Text style={styles.cancelText}>{t("sos.cancel")}</Text>
         </TouchableOpacity>
       </ScrollView>
