@@ -5,11 +5,12 @@ on:
     branches: [ main ]
     paths:
       - 'backend/**'
+      - '.github/workflows/backend_ci.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'backend/**'
-      - '.github/workflows/**'
+      - '.github/workflows/backend_ci.yml'
 
 jobs:
   run-tests:
@@ -40,9 +41,8 @@ jobs:
         poetry config virtualenvs.in-project true
       working-directory: ./backend
 
-    - name: Force update lockfile on CI
-      run: |
-        poetry lock
+    - name: Validate Poetry files
+      run: poetry check --lock
       working-directory: ./backend
  
 
@@ -57,12 +57,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        poetry install --no-interaction --no-root
+        poetry install --no-interaction --no-root --sync
       working-directory: ./backend 
 
     - name: Run Backend Linting Check
       run: |
-        poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        poetry run flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
       working-directory: ./backend
 
     - name: Run Pytest with Coverage
