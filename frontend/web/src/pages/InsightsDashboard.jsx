@@ -91,13 +91,33 @@ function normaliseSeries(series) {
     .filter((value) => value !== null);
 }
 
+function normaliseOptionalNumber(value, { allowZero = true } = {}) {
+  if (value === null || value === undefined || value === "") {
+    return null;
+  }
+
+  const number = Number(value);
+
+  if (!Number.isFinite(number)) {
+    return null;
+  }
+
+  if (!allowZero && number <= 0) {
+    return null;
+  }
+
+  return number;
+}
+
 function normaliseHub(rawHub, index) {
-  const travelMinutes = Number(
-    rawHub.travel_minutes ?? rawHub.travelMinutes ?? 0
+  const travelMinutes = normaliseOptionalNumber(
+    rawHub.travel_minutes ?? rawHub.travelMinutes,
+    { allowZero: false }
   );
 
-  const waitMinutes = Number(
-    rawHub.wait_minutes ?? rawHub.waitMinutes ?? 0
+  const waitMinutes = normaliseOptionalNumber(
+    rawHub.wait_minutes ?? rawHub.waitMinutes,
+    { allowZero: false }
   );
 
   const capacityLabel =
@@ -127,17 +147,14 @@ function normaliseHub(rawHub, index) {
       .toLowerCase()
       .replaceAll(" ", "-"),
 
-    travelMinutes: Number.isFinite(travelMinutes)
-      ? travelMinutes
-      : 0,
+    travelMinutes,
 
-    waitMinutes: Number.isFinite(waitMinutes)
-      ? waitMinutes
-      : 0,
+    waitMinutes,
 
     compositeCost:
-      (Number.isFinite(travelMinutes) ? travelMinutes : 0) +
-      (Number.isFinite(waitMinutes) ? waitMinutes : 0),
+      travelMinutes === null && waitMinutes === null
+        ? Number.POSITIVE_INFINITY
+        : (travelMinutes ?? 0) + (waitMinutes ?? 0),
 
     languageFlags:
       rawHub.language_flags ??
@@ -189,55 +206,73 @@ function normaliseDashboard(rawDashboard, selectedDistrict) {
     ? rawHubs.map(normaliseHub)
     : [];
 
-  const densityTrend = String(
+  const densityTrendText = String(
     density.trend ?? ""
   ).toLowerCase();
 
-  const densityLabel = String(
+  const densityLabelText = String(
     density.trend_label ??
       density.summary ??
       density.label ??
       ""
   ).toLowerCase();
 
-  const triageLabel = String(
+  const triageLabelText = String(
     triage.label ?? ""
   ).toLowerCase();
 
-  const backendSaysNoData =
-    densityTrend.includes("no data") ||
-    densityLabel.includes("no data") ||
-    triageLabel.includes("no data");
+  const densitySaysNoData =
+    densityTrendText.includes("no data") ||
+    densityLabelText.includes("no data");
 
-  const noData =
-    Boolean(
-      rawDashboard.no_data ??
-        rawDashboard.noData ??
-        rawDashboard.status === "no_data"
-    ) ||
-    backendSaysNoData ||
-    (
-      predictionSeries.length === 0 &&
-      historySeries7d.length === 0 &&
-      fastestHubs.length === 0
-    );
+  const triageSaysNoData =
+    triageLabelText.includes("no data");
 
-  const densityPercent = backendSaysNoData
+  const densityPercent = densitySaysNoData
     ? null
     : clampPercent(density.percent);
 
-  const waitMinutes = triageLabel.includes("no data")
+  const waitMinutes = triageSaysNoData
     ? null
-    : (
-        triage.wait_minutes ??
-        triage.waitMinutes ??
-        null
+    : normaliseOptionalNumber(
+        triage.wait_minutes ?? triage.waitMinutes,
+        { allowZero: false }
       );
 
+  const hasDensityData = densityPercent !== null;
+  const hasTriageData = waitMinutes !== null;
+  const hasTravelWindow = Boolean(
+    travelWindow.start_time ??
+      travelWindow.startTime ??
+      travelWindow.start
+  ) && Boolean(
+    travelWindow.end_time ??
+      travelWindow.endTime ??
+      travelWindow.end
+  );
+  const hasChartData =
+    predictionSeries.length > 0 ||
+    historySeries7d.length > 0;
+  const hasHubData = fastestHubs.length > 0;
+
+  const backendExplicitlySaysNoData = Boolean(
+    rawDashboard.no_data ??
+      rawDashboard.noData ??
+      rawDashboard.status === "no_data"
+  );
+
+  const noData =
+    backendExplicitlySaysNoData ||
+    !(
+      hasDensityData ||
+      hasTriageData ||
+      hasTravelWindow ||
+      hasChartData ||
+      hasHubData
+    );
+
   return {
-    district:
-      rawDashboard.district ??
-      selectedDistrict.label,
+    district: selectedDistrict.label,
 
     dataMode:
       rawDashboard.data_mode ??
@@ -256,7 +291,6 @@ function normaliseDashboard(rawDashboard, selectedDistrict) {
 
       summary:
         density.summary ??
-        density.trend_label ??
         density.label ??
         "Current facility utilisation",
     },
@@ -346,6 +380,13 @@ function getSavedLocation() {
   }
 
   return {};
+}
+
+function formatTimeOnly(isoString) {
+  if (!isoString) return "";
+  const date = new Date(isoString);
+  if (Number.isNaN(date.getTime())) return isoString;
+  return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 
 function MiniLineChart({ values, mode }) {
@@ -568,6 +609,24 @@ function InsightsDashboard() {
           ...getSavedLocation(),
         });
 
+        console.table(
+          response.fastest_hubs.map((hub) => ({
+            name: hub.venue_name,
+            travel_minutes: hub.travel_minutes,
+            wait_minutes: hub.wait_minutes,
+            latitude: hub.latitude,
+            longitude: hub.longitude,
+          }))
+        );
+
+        console.log(
+          "SAVED LOCATION:",
+          JSON.parse(localStorage.getItem("clearPathUserLocation"))
+        );
+        console.log("RAW INSIGHTS DASHBOARD:", response);
+        console.log("RAW FASTEST HUBS:", response?.fastest_hubs);
+        console.log("SAVED LOCATION:", getSavedLocation());
+
         const normalisedData = normaliseDashboard(
           response,
           selectedDistrict
@@ -581,7 +640,7 @@ function InsightsDashboard() {
             currentMode === "history" &&
             normalisedData.historySeries7d.length === 0
           ) {
-           return "prediction";
+            return "prediction";
           }
 
           if (
@@ -594,6 +653,8 @@ function InsightsDashboard() {
 
           return currentMode;
         });
+
+        
       } catch (loadError) {
         console.error(
           "Failed to load insights dashboard:",
@@ -622,21 +683,21 @@ function InsightsDashboard() {
     [selectedDistrict]
   );
 
- useEffect(() => {
-  const initialLoadTimeout = window.setTimeout(() => {
-    void loadDashboard();
-  }, 0);
+  useEffect(() => {
+    const initialLoadTimeout = window.setTimeout(() => {
+      void loadDashboard();
+    }, 0);
 
-  const refreshInterval = window.setInterval(() => {
-    setIsRefreshing(true);
-    void loadDashboard({ silent: true });
-  }, 30000);
+    const refreshInterval = window.setInterval(() => {
+      setIsRefreshing(true);
+      void loadDashboard({ silent: true });
+    }, 30000);
 
-  return () => {
-    window.clearTimeout(initialLoadTimeout);
-    window.clearInterval(refreshInterval);
-  };
-}, [loadDashboard]);
+    return () => {
+      window.clearTimeout(initialLoadTimeout);
+      window.clearInterval(refreshInterval);
+    };
+  }, [loadDashboard]);
 
   const chartValues =
     chartMode === "prediction"
@@ -673,7 +734,7 @@ function InsightsDashboard() {
   const travelWindowValue =
     dashboardData.bestTravelWindow.startTime &&
     dashboardData.bestTravelWindow.endTime
-      ? `${dashboardData.bestTravelWindow.startTime} - ${dashboardData.bestTravelWindow.endTime}`
+      ? `${formatTimeOnly(dashboardData.bestTravelWindow.startTime)} - ${formatTimeOnly(dashboardData.bestTravelWindow.endTime)}`
       : "Unavailable";
 
   function handleDistrictChange(districtId) {
@@ -1002,7 +1063,9 @@ function InsightsDashboard() {
                             </div>
 
                             <strong className="hub-time">
-                              {hub.travelMinutes}m
+                              {hub.travelMinutes === null
+                                ? "—"
+                                : `${hub.travelMinutes}m`}
                             </strong>
                           </button>
                         </li>

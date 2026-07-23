@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import loginPeopleImage from "../assets/hero.png";
+import loginPeopleImage from "../assets/login-people.jpg";
 import "./Login.css";
 import { login, register, guestLogin } from "../services/authService";
 

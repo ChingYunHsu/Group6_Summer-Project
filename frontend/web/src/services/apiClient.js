@@ -24,11 +24,14 @@ export async function apiRequest(endpoint, options = {}) {
   if (!response.ok) {
     const text = await response.text();
 
-    const parsedBody = await response
-      .json()
-      .catch(() => null);
-    
-      if (response.status === 401) {
+    let parsedBody = null;
+    try {
+      parsedBody = text ? JSON.parse(text) : null;
+    } catch {
+      parsedBody = null;
+    }
+
+    if (response.status === 401) {
       clearAuthData();
     }
 

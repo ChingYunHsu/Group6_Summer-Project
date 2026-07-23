@@ -2,7 +2,8 @@ const DEFAULT_API_KEY = "development";
 
 function getHeaders(extraHeaders = {}) {
   const headers = new Headers(extraHeaders);
-  const apiKey = import.meta.env.VITE_API_KEY || DEFAULT_API_KEY;
+  const apiKey =
+    import.meta.env.VITE_API_KEY || DEFAULT_API_KEY;
   const accessToken = localStorage.getItem("access_token");
 
   headers.set("Accept", "application/json");
@@ -22,29 +23,34 @@ async function apiRequest(path, options = {}) {
     headers: getHeaders(options.headers),
   });
 
-  const payload = await response.json().catch(() => null);
+  const contentType = response.headers.get("content-type") || "";
+  const payload = contentType.includes("application/json")
+    ? await response.json().catch(() => null)
+    : await response.text().catch(() => "");
 
   if (!response.ok) {
     const message =
       payload?.message ||
       payload?.error ||
       payload?.detail ||
+      (typeof payload === "string" && payload.trim()) ||
       `Request failed with status ${response.status}`;
 
     const requestError = new Error(message);
     requestError.status = response.status;
     requestError.payload = payload;
-
     throw requestError;
   }
 
   return payload;
 }
 
-function unwrapArray(payload, possibleKeys) {
-  if (Array.isArray(payload)) return payload;
+function getCollection(payload, keys) {
+  if (Array.isArray(payload)) {
+    return payload;
+  }
 
-  for (const key of possibleKeys) {
+  for (const key of keys) {
     if (Array.isArray(payload?.[key])) {
       return payload[key];
     }
@@ -53,102 +59,182 @@ function unwrapArray(payload, possibleKeys) {
   return [];
 }
 
-function unwrapObject(payload, possibleKeys) {
-  if (!payload || typeof payload !== "object") return {};
+export async function listVenues(params = {}) {
+  const query = new URLSearchParams();
 
-  for (const key of possibleKeys) {
-    if (
-      payload[key] &&
-      typeof payload[key] === "object" &&
-      !Array.isArray(payload[key])
-    ) {
-      return payload[key];
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === undefined || value === null || value === "") {
+      return;
     }
-  }
 
-  return payload;
-}
+    if (Array.isArray(value)) {
+      value.forEach((item) => query.append(key, String(item)));
+      return;
+    }
 
-export async function listVenues({
-  languages,
-  accessible,
-  openNow,
-  venueType,
-} = {}) {
-  const params = new URLSearchParams();
+    query.set(key, String(value));
+  });
 
-  if (languages?.length) {
-    params.set("languages", languages.join(","));
-  }
+  const suffix = query.toString()
+    ? `?${query.toString()}`
+    : "";
 
-  if (accessible) {
-    params.set("accessible", "true");
-  }
-
-  if (openNow) {
-    params.set("open_now", "true");
-  }
-
-  if (venueType) {
-    params.set("venue_type", venueType);
-  }
-
-  const query = params.toString();
   const payload = await apiRequest(
-    `/api/v1/venues${query ? `?${query}` : ""}`
+    `/api/v1/venues${suffix}`
   );
 
-  return unwrapArray(payload, ["venues", "items", "results", "data"]);
+  return getCollection(payload, [
+    "items",
+    "venues",
+    "data",
+    "results",
+  ]);
 }
 
 export async function getVenueById(venueId) {
+  if (!venueId) {
+    throw new Error("A venue ID is required.");
+  }
+
   const payload = await apiRequest(
     `/api/v1/venues/${encodeURIComponent(venueId)}`
   );
 
-  return unwrapObject(payload, ["venue", "data"]);
+  return payload?.venue ?? payload?.data ?? payload;
 }
 
-export async function getVenueBusyness(venueId, queryTime = "") {
-  const params = new URLSearchParams();
-
-  if (queryTime) {
-    params.set("query_time", queryTime);
+export async function getVenueBusyness(
+  venueId,
+  queryTime = ""
+) {
+  if (!venueId) {
+    throw new Error("A venue ID is required.");
   }
 
-  const query = params.toString();
-  const payload = await apiRequest(
-    `/api/v1/venues/${encodeURIComponent(venueId)}/busyness${
-      query ? `?${query}` : ""
-    }`
-  );
+  const query = new URLSearchParams();
 
-  return unwrapObject(payload, ["busyness", "snapshot", "data"]);
+  if (queryTime) {
+    query.set("at", queryTime);
+  }
+
+  const suffix = query.toString()
+    ? `?${query.toString()}`
+    : "";
+
+  return apiRequest(
+    `/api/v1/venues/${encodeURIComponent(
+      venueId
+    )}/busyness${suffix}`
+  );
 }
 
 export async function getVenueBusynessForecast(venueId) {
-  const payload = await apiRequest(
-    `/api/v1/venues/${encodeURIComponent(venueId)}/busyness/forecast`
-  );
+  if (!venueId) {
+    throw new Error("A venue ID is required.");
+  }
 
-  return unwrapObject(payload, ["forecast", "data"]);
+  return apiRequest(
+    `/api/v1/venues/${encodeURIComponent(
+      venueId
+    )}/busyness/forecast`
+  );
 }
 
-export async function listReports({
-  venueId,
-  issueType,
-  status = "active",
-} = {}) {
-  const params = new URLSearchParams();
+export async function listReports(params = {}) {
+  const query = new URLSearchParams();
 
-  if (venueId) params.set("venue_id", venueId);
-  if (issueType) params.set("issue_type", issueType);
-  if (status) params.set("status", status);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === undefined || value === null || value === "") {
+      return;
+    }
 
-  const query = params.toString();
+    query.set(key, String(value));
+  });
+
+  const suffix = query.toString()
+    ? `?${query.toString()}`
+    : "";
+
   const payload = await apiRequest(
-    `/api/v1/reports${query ? `?${query}` : ""}`
+    `/api/v1/reports${suffix}`
   );
 
-  return unwrapArray(payload, ["reports", "items", "results", "data"]);
+  return getCollection(payload, [
+    "items",
+    "reports",
+    "data",
+    "results",
+  ]);
+}
+
+export function getRouteOptions(
+  destinationVenueId,
+  origin
+) {
+  if (!destinationVenueId) {
+    return Promise.reject(
+      new Error("A destination venue ID is required.")
+    );
+  }
+
+  if (
+    !Number.isFinite(Number(origin?.lat)) ||
+    !Number.isFinite(Number(origin?.lng))
+  ) {
+    return Promise.reject(
+      new Error("Valid origin coordinates are required.")
+    );
+  }
+
+  const query = new URLSearchParams({
+    destination_venue_id: destinationVenueId,
+    origin_lat: String(origin.lat),
+    origin_lon: String(origin.lng),
+  });
+
+  return apiRequest(
+    `/api/v1/routes/options?${query.toString()}`
+  );
+}
+
+export function getRouteDetail(
+  destinationVenueId,
+  origin,
+  mode = "walk"
+) {
+  if (!destinationVenueId) {
+    return Promise.reject(
+      new Error("A destination venue ID is required.")
+    );
+  }
+
+  if (
+    !Number.isFinite(Number(origin?.lat)) ||
+    !Number.isFinite(Number(origin?.lng))
+  ) {
+    return Promise.reject(
+      new Error("Valid origin coordinates are required.")
+    );
+  }
+
+  const supportedModes = new Set([
+    "walk",
+    "transit",
+    "drive",
+  ]);
+
+  const selectedMode = supportedModes.has(mode)
+    ? mode
+    : "walk";
+
+  const query = new URLSearchParams({
+    destination_venue_id: destinationVenueId,
+    origin_lat: String(origin.lat),
+    origin_lon: String(origin.lng),
+    mode: selectedMode,
+  });
+
+  return apiRequest(
+    `/api/v1/routes/detail?${query.toString()}`
+  );
 }

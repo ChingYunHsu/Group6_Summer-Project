@@ -326,6 +326,14 @@
   font-size: 11px;
   font-weight: 900;
 }
+.leaderboard-table-head,
+.hub-route-button {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
 
 .fastest-hubs-list {
   display: grid;
@@ -336,7 +344,7 @@
 }
 
 .fastest-hubs-list li {
-  display: grid;
+  display: block;
   grid-template-columns: 1.4fr 0.8fr auto;
   gap: 12px;
   align-items: center;
@@ -499,16 +507,12 @@
 }
 
 .hub-route-button {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 90px 45px;
-  align-items: center;
   width: 100%;
-  border: 0;
-  padding: 0;
+  padding: 8px 4px;
+  border: none;
   background: transparent;
-  color: inherit;
-  text-align: left;
   cursor: pointer;
+  text-align: left;
 }
 
 .hub-route-button:focus-visible {
