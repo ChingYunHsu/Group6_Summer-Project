@@ -268,9 +268,18 @@ def get_insights():
     origin_lon = request.args.get("lon", type=float)
 
     try:
-        return jsonify(_get_insights_from_db(district_param, origin_lat, origin_lon))
-    except Exception:
-        pass  # Fallback to mock data below.
+        db_response = _get_insights_from_db(
+            district_param,
+            origin_lat,
+            origin_lon
+        )
+
+        return jsonify(db_response)
+
+    except Exception as error:
+        print(f"Insights database error: {error}")
+
+# Continue into the mock fallback below.
 
     district = district_param or INSIGHTS_DASHBOARD.get("district", "all")
     dashboard = INSIGHTS_DASHBOARD.copy()

@@ -12,8 +12,6 @@ import ChatbotWidget from "../components/ChatbotWidget";
 
 
 import {
-  getRouteDetail,
-  getRouteOptions,
   getVenueBusyness,
   getVenueBusynessForecast,
   getVenueById,
@@ -91,9 +89,9 @@ function getMarkerColor(venue, futureMode) {
       : Number(rawPercent);
     
   if (Number.isFinite(percent)) {
-    if (percent < 30) return "#22c55e";
-    if (percent <= 70) return "#eab308";
-    return "#ef4444";
+  if (percent < 30) return "#22c55e";
+  if (percent <= 70) return "#eab308";
+  return "#ef4444";
   }
 
   const level = String(
@@ -161,6 +159,42 @@ const MOCK_USER_LOCATION = {
   lat: 40.758,
   lng: -73.9855,
 };
+
+function getStoredUserLocation() {
+  try {
+    const storedLocation = JSON.parse(
+      localStorage.getItem("clearPathUserLocation") || "null"
+    );
+
+    const lat = Number(
+      storedLocation?.lat ?? storedLocation?.latitude
+    );
+
+    const lng = Number(
+      storedLocation?.lng ??
+        storedLocation?.lon ??
+        storedLocation?.longitude
+    );
+
+    if (
+      Number.isFinite(lat) &&
+      Number.isFinite(lng)
+    ) {
+      return {
+        lat,
+        lng,
+        isMock: false,
+      };
+    }
+  } catch (error) {
+    console.error(
+      "Could not read stored user location:",
+      error
+    );
+  }
+
+  return null;
+}
 
 function getIssueMessage(issueType) {
   const messages = {
@@ -338,88 +372,14 @@ function normaliseReport(rawReport) {
   };
 }
 
-const TRAVEL_MODE_UI = {
-  walk: {
-    label: "Walking",
-    routeLabel: "Walking Route",
-    icon: "🚶",
-  },
-  transit: {
-    label: "Transit",
-    routeLabel: "Transit Route",
-    icon: "🚇",
-  },
-  drive: {
-    label: "Driving",
-    routeLabel: "Driving Route",
-    icon: "🚗",
-  },
-};
-
-function normaliseRouteOptions(payload) {
-  const providedOptions = Array.isArray(payload?.options)
-    ? payload.options
-    : [];
-
-  if (providedOptions.length > 0) {
-    return providedOptions
-      .map((option) => ({
-        ...option,
-        mode: String(option?.mode ?? "").toLowerCase(),
-        duration_minutes: Number(option?.duration_minutes),
-      }))
-      .filter((option) => option.mode in TRAVEL_MODE_UI);
-  }
-
-  const summaryByMode = payload?.summary_by_mode;
-
-  if (!summaryByMode || typeof summaryByMode !== "object") {
-    return [];
-  }
-
-  return Object.entries(summaryByMode)
-    .map(([mode, summary]) => ({
-      ...(summary ?? {}),
-      mode: String(mode).toLowerCase(),
-      duration_minutes: Number(summary?.duration_minutes),
-      summary: `${TRAVEL_MODE_UI[mode]?.label ?? mode} route`,
-    }))
-    .filter((option) => option.mode in TRAVEL_MODE_UI);
+function getTransitMinutes(venue) {
+  const distance = Number(venue?.distance_km ?? 0);
+  return Math.ceil(distance * 6);
 }
 
-function normaliseRouteCoordinate(point) {
-  if (Array.isArray(point)) {
-    const latitude = Number(point[0]);
-    const longitude = Number(point[1]);
-    return [longitude, latitude];
-  }
-
-  const latitude = Number(point?.lat ?? point?.latitude);
-  const longitude = Number(
-    point?.lng ?? point?.lon ?? point?.longitude
-  );
-
-  return [longitude, latitude];
-}
-
-function formatRouteStatus(value) {
-  if (!value) return "Status unavailable";
-
-  return String(value)
-    .replaceAll("_", " ")
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
-
-function removeRouteLayer(map) {
-  if (!map) return;
-
-  if (map.getLayer("active-route-line")) {
-    map.removeLayer("active-route-line");
-  }
-
-  if (map.getSource("active-route")) {
-    map.removeSource("active-route");
-  }
+function getWalkingMinutes(venue) {
+  const distance = Number(venue?.distance_km ?? 0);
+  return Math.ceil(distance * 14);
 }
 
 function buildQueryTime(selectedDate, selectedTime) {
@@ -609,6 +569,7 @@ function LiveHelpMap() {
   const [mapError, setMapError] = useState("");
 
   const [showFilters, setShowFilters] = useState(false);
+  const [showLocationAlert, setShowLocationAlert] = useState(false);
   const [showLeftDrawer, setShowLeftDrawer] = useState(false);
   const [autoCurrentTime, setAutoCurrentTime] = useState(true);
   const [selectedTime, setSelectedTime] = useState("");
@@ -630,11 +591,6 @@ function LiveHelpMap() {
   const [routeStart, setRouteStart] = useState("");
   const [routeDestination, setRouteDestination] = useState("");
   const [routeDepartureTime, setRouteDepartureTime] = useState("");
-  const [selectedTravelMode, setSelectedTravelMode] = useState("walk");
-  const [routeOptions, setRouteOptions] = useState([]);
-  const [routeDetail, setRouteDetail] = useState(null);
-  const [routeLoading, setRouteLoading] = useState(false);
-  const [routeError, setRouteError] = useState("");
   const [selectedVenueId, setSelectedVenueId] = useState(null);
 
   const [favouriteVenueIds, setFavouriteVenueIds] = useState([]);
@@ -647,10 +603,14 @@ function LiveHelpMap() {
     ? buildQueryTime(selectedDate, selectedTime)
     : "";
 
-  const [userLocation] = useState({
-    ...MOCK_USER_LOCATION,
-    isMock: true,
-  });
+  const [userLocation, setUserLocation] = useState(() => {
+  return (
+    getStoredUserLocation() ?? {
+      ...MOCK_USER_LOCATION,
+      isMock: true,
+    }
+  );
+});
 
   const loadVenues = useCallback(async () => {
     try {
@@ -1040,97 +1000,6 @@ useEffect(() => {
   };
 }, [userLocation]);
 
-  useEffect(() => {
-    const map = mapRef.current;
-    const polyline = routeDetail?.polyline_preview;
-
-    if (!map) return;
-
-    if (!showRoutePlanner || !Array.isArray(polyline)) {
-      removeRouteLayer(map);
-      return;
-    }
-
-    const coordinates = polyline
-      .map(normaliseRouteCoordinate)
-      .filter(
-        ([longitude, latitude]) =>
-          Number.isFinite(longitude) &&
-          Number.isFinite(latitude)
-      );
-
-    if (coordinates.length < 2) {
-      removeRouteLayer(map);
-      return;
-    }
-
-    const routeGeoJson = {
-      type: "Feature",
-      properties: {
-        mode: selectedTravelMode,
-      },
-      geometry: {
-        type: "LineString",
-        coordinates,
-      },
-    };
-
-    function drawRoute() {
-      const existingSource = map.getSource("active-route");
-
-      if (existingSource) {
-        existingSource.setData(routeGeoJson);
-      } else {
-        map.addSource("active-route", {
-          type: "geojson",
-          data: routeGeoJson,
-        });
-      }
-
-      if (!map.getLayer("active-route-line")) {
-        map.addLayer({
-          id: "active-route-line",
-          type: "line",
-          source: "active-route",
-          layout: {
-            "line-cap": "round",
-            "line-join": "round",
-          },
-          paint: {
-            "line-color": "#0057e7",
-            "line-width": 6,
-            "line-opacity": 0.85,
-          },
-        });
-      }
-
-      const bounds = coordinates.reduce(
-        (currentBounds, coordinate) =>
-          currentBounds.extend(coordinate),
-        new maplibregl.LngLatBounds(
-          coordinates[0],
-          coordinates[0]
-        )
-      );
-
-      map.fitBounds(bounds, {
-        padding: 100,
-        maxZoom: 16,
-        duration: 700,
-      });
-    }
-
-    if (map.isStyleLoaded()) {
-      drawRoute();
-    } else {
-      map.once("load", drawRoute);
-    }
-
-    return () => {
-      map.off("load", drawRoute);
-    };
-  }, [routeDetail, selectedTravelMode, showRoutePlanner]);
-
   const venuesWithBusyness = useMemo(
     () =>
       venues.map((venue) => ({
@@ -1321,84 +1190,6 @@ useEffect(() => {
     venues,
   ]);
 
-  const selectedRouteOption = useMemo(
-    () =>
-      routeOptions.find(
-        (option) => option.mode === selectedTravelMode
-      ) ?? null,
-    [routeOptions, selectedTravelMode]
-  );
-
-  async function loadRoute(venue, mode, refreshOptions = false) {
-    if (!venue?.venue_id) return;
-
-    try {
-      setRouteLoading(true);
-      setRouteError("");
-
-      if (refreshOptions) {
-        setRouteOptions([]);
-      }
-
-      setRouteDetail(null);
-
-      if (refreshOptions) {
-        const [optionsPayload, detailPayload] =
-          await Promise.all([
-            getRouteOptions(venue.venue_id, userLocation),
-            getRouteDetail(
-              venue.venue_id,
-              userLocation,
-              mode
-            ),
-          ]);
-
-        setRouteOptions(normaliseRouteOptions(optionsPayload));
-        setRouteDetail(detailPayload);
-        return;
-      }
-
-      const detailPayload = await getRouteDetail(
-        venue.venue_id,
-        userLocation,
-        mode
-      );
-
-      setRouteDetail(detailPayload);
-    } catch (error) {
-      console.error(`Failed to load ${mode} route:`, error);
-
-      setRouteError(
-        error.message || "Could not calculate this route."
-      );
-    } finally {
-      setRouteLoading(false);
-    }
-  }
-
-  async function handleTravelModeChange(mode) {
-    if (
-      !selectedVenue ||
-      mode === selectedTravelMode ||
-      routeLoading
-    ) {
-      return;
-    }
-
-    setSelectedTravelMode(mode);
-    await loadRoute(selectedVenue, mode, false);
-  }
-
-  async function handleRouteSearch() {
-    if (!selectedVenue || routeLoading) return;
-
-    await loadRoute(
-      selectedVenue,
-      selectedTravelMode,
-      true
-    );
-  }
-
   const selectedVenueReports = useMemo(
     () =>
       liveReports.filter(
@@ -1417,9 +1208,62 @@ useEffect(() => {
     (report) => !report.venue_id
   );
 
+  function locationTrackingEnabled() {
+    return Boolean(
+      userLocation &&
+      !userLocation.isMock
+    );
+  }
+
   function handleAdvancedFiltersClick() {
+    if (!locationTrackingEnabled()) {
+      setShowLocationAlert(true);
+      return;
+    }
+
     setShowFilters(true);
   }
+
+  function handleAllowAccess() {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const realLocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+        isMock: false,
+      };
+
+      localStorage.setItem(
+        "clearPathUserLocation",
+        JSON.stringify({
+          lat: realLocation.lat,
+          lng: realLocation.lng,
+        })
+      );
+
+      setUserLocation(realLocation);
+
+      setShowLocationAlert(false);
+
+      if (!showRoutePlanner) {
+        setShowFilters(true);
+      }
+    },
+    (error) => {
+      console.warn(
+        "Location unavailable. Keeping mock Manhattan position.",
+        error
+      );
+
+      setUserLocation({
+        ...MOCK_USER_LOCATION,
+        isMock: true,
+      });
+
+      setShowLocationAlert(false);
+    }
+  );
+}
 
   async function handleSaveLocation() {
     if (!selectedVenue) return;
@@ -1473,25 +1317,21 @@ useEffect(() => {
     }
   }
 
-  async function handleOpenLiveDirections() {
+  function handleOpenLiveDirections() {
     if (!selectedVenue) return;
 
-    setSelectedTravelMode("walk");
     setShowRoutePlanner(true);
     setShowLeftDrawer(false);
-    setRouteStart("Mock Manhattan Location");
-    setRouteDestination(selectedVenue.name ?? "Selected Venue");
+    setRouteStart("Current Location");
+    setRouteDestination(selectedVenue.name);
     setRouteDepartureTime("Leave Now");
 
-    await loadRoute(selectedVenue, "walk", true);
+    if (!locationTrackingEnabled()) {
+      setShowLocationAlert(true);
+    }
   }
 
   function closeRoutePlanner() {
-    removeRouteLayer(mapRef.current);
-    setRouteDetail(null);
-    setRouteOptions([]);
-    setRouteError("");
-    setSelectedTravelMode("walk");
     setShowRoutePlanner(false);
     setShowLeftDrawer(true);
   }
@@ -1651,8 +1491,10 @@ useEffect(() => {
                 <input
                   type="text"
                   value={routeStart}
-                  readOnly
-                  placeholder="Mock Manhattan Location"
+                  onChange={(event) =>
+                    setRouteStart(event.target.value)
+                  }
+                  placeholder="Current Location"
                 />
               </label>
 
@@ -1661,7 +1503,9 @@ useEffect(() => {
                 <input
                   type="text"
                   value={routeDestination}
-                  readOnly
+                  onChange={(event) =>
+                    setRouteDestination(event.target.value)
+                  }
                   placeholder={selectedVenue.name}
                 />
               </label>
@@ -1671,7 +1515,9 @@ useEffect(() => {
                 <input
                   type="text"
                   value={routeDepartureTime}
-                  readOnly
+                  onChange={(event) =>
+                    setRouteDepartureTime(event.target.value)
+                  }
                   placeholder="Leave Now"
                 />
               </label>
@@ -1679,12 +1525,8 @@ useEffect(() => {
               <button
                 type="button"
                 className="route-search-btn"
-                onClick={handleRouteSearch}
-                disabled={routeLoading}
               >
-                {routeLoading
-                  ? "Searching..."
-                  : "⇅ Search Route"}
+                ⇅ Search Route
               </button>
             </div>
 
@@ -1700,97 +1542,58 @@ useEffect(() => {
               </div>
 
               <div className="transport-tabs">
-                {Object.entries(TRAVEL_MODE_UI).map(
-                  ([mode, modeUi]) => (
-                    <button
-                      key={mode}
-                      type="button"
-                      className={
-                        selectedTravelMode === mode
-                          ? "active"
-                          : ""
-                      }
-                      aria-pressed={
-                        selectedTravelMode === mode
-                      }
-                      disabled={routeLoading}
-                      onClick={() =>
-                        handleTravelModeChange(mode)
-                      }
-                    >
-                      {modeUi.label}
-                    </button>
-                  )
-                )}
+                <button type="button">Walking</button>
+                <button type="button" className="active">
+                  Transit
+                </button>
+                <button type="button">Driving</button>
               </div>
 
               <div className="route-option active">
                 <div className="route-option-top">
                   <div>
-                    <strong>
-                      {TRAVEL_MODE_UI[selectedTravelMode].icon}{" "}
-                      {
-                        TRAVEL_MODE_UI[selectedTravelMode]
-                          .routeLabel
-                      }
-                    </strong>
+                    <strong>🚇 Transit Route</strong>
                     <p>
-                      {selectedRouteOption?.summary ??
-                        `${TRAVEL_MODE_UI[selectedTravelMode].label} route`}
-                      {" • "}
-                      {formatRouteStatus(
-                        selectedRouteOption?.status
-                      )}
+                      To {selectedVenue.name} •{" "}
+                      {selectedVenue.distance_km ?? "—"} km
                     </p>
                   </div>
-
                   <strong>
-                    {routeLoading
-                      ? "Loading..."
-                      : Number.isFinite(
-                            selectedRouteOption
-                              ?.duration_minutes
-                          )
-                        ? `${selectedRouteOption.duration_minutes} mins`
-                        : "— mins"}
+                    {getTransitMinutes(selectedVenue)} mins
                   </strong>
                 </div>
 
-                {routeError && (
-                  <p className="route-error" role="alert">
-                    {routeError}
+                <div className="route-steps">
+                  <p>
+                    ↟ Start from{" "}
+                    {routeStart || "Current Location"}
                   </p>
-                )}
+                  <p>
+                    ● Travel toward{" "}
+                    {selectedVenue.borough || "the venue"}
+                  </p>
+                  <p>
+                    ● Continue to{" "}
+                    {selectedVenue.address || "the destination"}
+                  </p>
+                  <p>↟ Arrive at {selectedVenue.name}</p>
+                </div>
+              </div>
 
-                {!routeLoading &&
-                  !routeError &&
-                  routeDetail?.steps?.length > 0 && (
-                    <div className="route-steps">
-                      <p>
-                        ↑ Start from {routeStart}
-                      </p>
-
-                      {routeDetail.steps.map(
-                        (step, index) => (
-                          <p key={`${index}-${step}`}>
-                            {index + 1}. {step}
-                          </p>
-                        )
-                      )}
-
-                      <p>
-                        ↑ Arrive at {selectedVenue.name}
-                      </p>
-                    </div>
-                  )}
-
-                {!routeLoading &&
-                  !routeError &&
-                  !routeDetail?.steps?.length && (
-                    <p className="route-error">
-                      Route instructions are unavailable.
+              <div className="route-option">
+                <div className="route-option-top">
+                  <div>
+                    <strong>🚶 Walking Route</strong>
+                    <p>
+                      {selectedVenue.distance_km ?? "—"} km •{" "}
+                      {selectedVenue.accessible_status ||
+                        "Accessibility unknown"}
                     </p>
-                  )}
+                  </div>
+                  <strong>
+                    {getWalkingMinutes(selectedVenue)} mins
+                  </strong>
+                </div>
               </div>
             </aside>
           </section>
@@ -2185,6 +1988,34 @@ useEffect(() => {
         </div>
       )}
 
+      {showLocationAlert && (
+        <div className="filter-overlay">
+          <section className="location-alert-modal">
+            <h2>Location Access Required</h2>
+            <p>
+              To use accessibility tracking filters and live
+              directions, please allow location access.
+            </p>
+
+            <div className="location-alert-actions">
+              <button
+                type="button"
+                onClick={() =>
+                  setShowLocationAlert(false)
+                }
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleAllowAccess}
+              >
+                Allow Access
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
       <ChatbotWidget />
     </main>
   );
