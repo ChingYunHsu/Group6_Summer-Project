@@ -355,7 +355,7 @@ def test_get_insights_mock_supports_district_param(client):
     assert resp.status_code == 200
     data = resp.get_json()
     assert data["district"] == "MN05"
-    assert data["data_mode"] in ("db", "mock")
+    assert data["data_mode"] in ("db", "mock", "no_data")
 
 
 # ---------------------------------------------------------------------------

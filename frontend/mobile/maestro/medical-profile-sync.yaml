@@ -1,0 +1,95 @@
+appId: com.clearpath.mobile
+---
+- launchApp
+- setLocation:
+    latitude: 40.7580
+    longitude: -73.9855
+- openLink: "clearpathmobilepractice://login"
+- tapOn:
+    id: "login-email-input"
+- inputText: "maestro-test-1@yourdomain.com"
+- tapOn:
+    id: "login-password-input"
+- inputText: "TestPass123!"
+- tapOn: "Sign In"
+- tapOn: "Sign In"
+- tapOn:
+    text: "Not Now"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 45000
+- tapOn:
+    id: "tab-profile"
+- extendedWaitUntil:
+    visible: "Profile & Medical ID"
+    timeout: 15000
+- scrollUntilVisible:
+    element:
+      id: "profile-edit-medical-id-button"
+    direction: DOWN
+- tapOn:
+    id: "profile-edit-medical-id-button"
+- extendedWaitUntil:
+    visible:
+      id: "medical-id-save-button"
+    timeout: 15000
+- tapOn:
+    id: "medical-id-blood-type-trigger"
+- tapOn:
+    id: "medical-id-blood-type-option-O\\+"
+- tapOn:
+    id: "medical-id-remove-condition-Asthma"
+    optional: true
+- tapOn:
+    id: "medical-id-remove-allergy-Asthma"
+    optional: true
+- tapOn:
+    id: "medical-id-remove-allergy-Penicillin"
+    optional: true
+- tapOn:
+    id: "medical-id-add-condition-button"
+- extendedWaitUntil:
+    visible:
+      id: "medical-id-condition-input"
+    timeout: 10000
+- tapOn:
+    id: "medical-id-condition-input"
+- inputText: "Asthma"
+- tapOn:
+    id: "medical-id-condition-add-button"
+- extendedWaitUntil:
+    visible: "Asthma"
+    timeout: 5000
+- extendedWaitUntil:
+    notVisible:
+      id: "medical-id-condition-input"
+    timeout: 5000
+- tapOn:
+    id: "medical-id-add-allergy-button"
+- waitForAnimationToEnd
+- tapOn:
+    point: "50%, 50%"
+- inputText: "Penicillin"
+- tapOn:
+    point: "84%, 55%"
+- scrollUntilVisible:
+    element:
+      id: "medical-id-save-button"
+    direction: UP
+- tapOn:
+    id: "medical-id-save-button"
+- scrollUntilVisible:
+    element:
+      text: "Profile & Medical ID"
+    direction: UP
+- extendedWaitUntil:
+    visible: "Profile & Medical ID"
+    timeout: 20000
+- scrollUntilVisible:
+    element:
+      text: "O+"
+    direction: DOWN
+- assertVisible: "Asthma"
+- assertVisible: "Penicillin"

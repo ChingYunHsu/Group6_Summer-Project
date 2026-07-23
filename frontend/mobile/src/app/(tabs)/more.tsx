@@ -35,6 +35,7 @@ export default function MoreScreen() {
   return (
     <View style={styles.container}>
       <TouchableOpacity
+        testID="more-login-register-row"
         style={styles.item}
         onPress={() => router.push(isGuest ? "/login" : "/settings")}
       >
@@ -44,6 +45,7 @@ export default function MoreScreen() {
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="more-language-row"
         style={styles.item}
         onPress={() =>
           router.push({ pathname: "/language", params: { origin: "app" } })
@@ -53,6 +55,7 @@ export default function MoreScreen() {
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="more-settings-row"
         style={styles.item}
         onPress={() => router.push("/settings")}
       >
@@ -60,6 +63,7 @@ export default function MoreScreen() {
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="more-legal-row"
         style={styles.item}
         onPress={() =>
           router.push({ pathname: "/legal", params: { origin: "app" } })
@@ -69,6 +73,7 @@ export default function MoreScreen() {
       </TouchableOpacity>
 
       <TouchableOpacity
+        testID="more-welcome-row"
         style={styles.item}
         onPress={() =>
           router.push({ pathname: "/welcome", params: { origin: "app" } })
@@ -77,7 +82,11 @@ export default function MoreScreen() {
         <Text style={styles.text}>👋 {t("more.welcome")}</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.item} onPress={() => router.push("/sos")}>
+      <TouchableOpacity
+        testID="more-sos-row"
+        style={styles.item}
+        onPress={() => router.push("/sos")}
+      >
         <Text style={styles.text}>🚨 {t("more.sos")}</Text>
       </TouchableOpacity>
     </View>

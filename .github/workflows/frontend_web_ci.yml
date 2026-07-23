@@ -23,10 +23,11 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
+        cache: npm
+        cache-dependency-path: frontend/web/package-lock.json
 
-  
     - name: Install Web Dependencies
-      run: npm install
+      run: npm ci
       working-directory: ./frontend/web
 
     - name: Run Web Linting Check
@@ -35,4 +36,8 @@ jobs:
 
     - name: Run Web Tests (Skeleton Pipeline)
       run: npm run test
+      working-directory: ./frontend/web
+
+    - name: Build Web Production Bundle
+      run: npm run build
       working-directory: ./frontend/web

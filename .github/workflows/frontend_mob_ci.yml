@@ -36,3 +36,7 @@ jobs:
     - name: Run Mobile Tests (Pipeline Validation)
       run: npm run test
       working-directory: ./frontend/mobile
+
+    - name: Type Check
+      run: npx tsc --noEmit
+      working-directory: ./frontend/mobile

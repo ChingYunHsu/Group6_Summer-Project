@@ -1,0 +1,49 @@
+appId: com.clearpath.mobile
+---
+- launchApp
+- setLocation:
+    latitude: 40.7580
+    longitude: -73.9855
+- openLink: "clearpathmobilepractice://login"
+- tapOn:
+    id: "switch-to-register"
+- tapOn:
+    id: "login-fullname-input"
+- inputText: "Delete Me"
+- tapOn:
+    id: "login-email-input"
+- inputText: "maestro-delete5-${{RANDOM}}@yourdomain.com"
+- tapOn:
+    id: "login-password-input"
+- inputText: "TestPass123!"
+- tapOn:
+    id: "terms-switch"
+- tapOn:
+    id: "terms-switch"
+- tapOn:
+    id: "create-account-button"
+- tapOn:
+    id: "skip-for-now-button"
+    optional: true
+- tapOn:
+    text: "Not Now"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 45000
+- tapOn:
+    id: "tab-more"
+- tapOn:
+    id: "more-settings-row"
+- extendedWaitUntil:
+    visible:
+      id: "settings-delete-account-button"
+    timeout: 15000
+- tapOn:
+    id: "settings-delete-account-button"
+- tapOn: "Delete my account"
+- tapOn: "Delete"
+- extendedWaitUntil:
+    visible: "Get Started"
+    timeout: 15000

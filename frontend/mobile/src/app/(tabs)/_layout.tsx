@@ -39,6 +39,7 @@ export default function TabLayout() {
         options={{
           title: t("tabs.map"),
           headerTitle: t("tabs.hospitalMap"),
+          tabBarButtonTestID: "tab-map",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="map-outline" color={color} size={size} />
           ),
@@ -50,6 +51,7 @@ export default function TabLayout() {
         options={{
           title: t("tabs.assistant"),
           headerTitle: t("tabs.clearPathAssistant"),
+          tabBarButtonTestID: "tab-assistant",
           tabBarIcon: ({ color, size }) => (
             <Ionicons
               name="chatbubble-ellipses-outline"
@@ -65,6 +67,7 @@ export default function TabLayout() {
         options={{
           title: t("tabs.showStaff"),
           headerShown: false,
+          tabBarButtonTestID: "tab-show-staff",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="people-outline" color={color} size={size} />
           ),
@@ -76,6 +79,7 @@ export default function TabLayout() {
         options={{
           title: t("tabs.profile"),
           headerTitle: t("tabs.myProfile"),
+          tabBarButtonTestID: "tab-profile",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-circle-outline" color={color} size={size} />
           ),
@@ -87,6 +91,7 @@ export default function TabLayout() {
         options={{
           title: t("tabs.more"),
           headerTitle: t("tabs.more"),
+          tabBarButtonTestID: "tab-more",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="menu-outline" color={color} size={size} />
           ),

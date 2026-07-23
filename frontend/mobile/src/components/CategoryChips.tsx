@@ -70,6 +70,7 @@ export default function CategoryChips({ selected, onSelect }: Props) {
         return (
           <TouchableOpacity
             key={category.label}
+            testID={`category-chip-${category.label}`}
             style={[styles.chip, active && styles.activeChip]}
             onPress={() => onSelect(category.label)}
           >

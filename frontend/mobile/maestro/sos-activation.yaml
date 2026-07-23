@@ -1,0 +1,35 @@
+appId: com.clearpath.mobile
+---
+- launchApp
+- setLocation:
+    latitude: 40.7580
+    longitude: -73.9855
+- openLink: "clearpathmobilepractice://login"
+- tapOn:
+    id: "login-email-input"
+- inputText: "maestro-test-1@yourdomain.com"
+- tapOn:
+    id: "login-password-input"
+- inputText: "TestPass123!"
+- tapOn: "Sign In"
+- tapOn: "Sign In"
+- tapOn:
+    text: "Not Now"
+    optional: true
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 45000
+- openLink: "clearpathmobilepractice://sos"
+- assertVisible: "Preparing Emergency Call"
+- assertVisible: "O+"
+- scrollUntilVisible:
+    element:
+      id: "sos-cancel-button"
+    direction: DOWN
+- tapOn:
+    id: "sos-cancel-button"
+- extendedWaitUntil:
+    visible:
+      id: "category-chip-Clinic"
+    timeout: 15000

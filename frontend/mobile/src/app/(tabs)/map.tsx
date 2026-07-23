@@ -240,6 +240,17 @@ export default function MapScreen() {
 
   const [currentLocation, setCurrentLocation] = useState(DEFAULT_LOCATION);
 
+  // Region tracking + a ref to the MapView itself — both needed for the
+  // zoom in/out buttons below, which work by nudging the current
+  // region's lat/lng "delta" (how much area is visible) and animating
+  // to it, rather than using any platform-specific zoom API directly.
+  // Declared here (before any handler that references it, e.g.
+  // handleSelectSearchSuggestion below) rather than further down, since
+  // several handlers now need it in scope.
+  const mapRef = useRef<MapView>(null);
+
+  const [region, setRegion] = useState(INITIAL_REGION);
+
   // ---------------------------------------------------------------------
   // Auth + device location — previously hardcoded TEMP VALUES.
   // ---------------------------------------------------------------------
@@ -519,6 +530,28 @@ export default function MapScreen() {
     }
   }, [isAuthenticated, selectedVenue, favouriteVenueIds]);
 
+  // Selecting a search suggestion: clears the search text (so the
+  // dropdown closes), opens that venue's own detail sheet — same as
+  // tapping its marker directly would — and recenters/zooms the map on
+  // it via the same mapRef used by the zoom controls, just targeting the
+  // venue's own coordinates instead of nudging the current region's
+  // delta.
+  const handleSelectSearchSuggestion = useCallback((venue: Venue) => {
+    setSearch("");
+    setSelectedVenueId(venue.venue_id);
+    setVenueVisible(true);
+
+    mapRef.current?.animateToRegion(
+      {
+        latitude: Number(venue.latitude),
+        longitude: Number(venue.longitude),
+        latitudeDelta: 0.01,
+        longitudeDelta: 0.01,
+      },
+      400,
+    );
+  }, []);
+
   // Fetch-on-filter-change. This is the standard "synchronize with an
   // external system" effect use case (re-fetch venues/reports whenever the
   // active filters change) — exactly what useEffect is for. The lint rule
@@ -569,6 +602,26 @@ export default function MapScreen() {
       );
     });
   }, [venues, search, category, liveStatus, wheelchairAccess]);
+
+  // Dropdown suggestions shown under the search bar, distinct from
+  // filteredVenues (which drives the actual map markers) — capped and
+  // scoped to the current category, since showing all ~4,800 matches as
+  // the user types would be both slow and not useful. Live status /
+  // wheelchair filters are deliberately NOT applied here: the dropdown
+  // is "find this specific place by name," not "find places matching my
+  // current filter set" — a venue you're searching for shouldn't hide
+  // from the dropdown just because it's currently busy.
+  const searchSuggestions = useMemo(() => {
+    if (!search.trim()) return [];
+
+    return venues
+      .filter(
+        (venue) =>
+          matchesCategory(venue, category) &&
+          venue.name.toLowerCase().includes(search.toLowerCase()),
+      )
+      .slice(0, 6);
+  }, [venues, search, category]);
 
   // Fetches busyness for whichever venues currently match the selected
   // category (i.e. whatever's actually rendered as markers), merging the
@@ -625,14 +678,6 @@ export default function MapScreen() {
       isActive = false;
     };
   }, [venues, category, busynessFetchedIds]);
-
-  // Region tracking + a ref to the MapView itself — both needed for the
-  // zoom in/out buttons below, which work by nudging the current
-  // region's lat/lng "delta" (how much area is visible) and animating
-  // to it, rather than using any platform-specific zoom API directly.
-  const mapRef = useRef<MapView>(null);
-
-  const [region, setRegion] = useState(INITIAL_REGION);
 
   const handleZoomIn = () => {
     const nextRegion = {
@@ -717,6 +762,8 @@ export default function MapScreen() {
           value={search}
           onChangeText={setSearch}
           onFilterPress={() => setFilterVisible(true)}
+          suggestions={searchSuggestions}
+          onSelectSuggestion={handleSelectSearchSuggestion}
         />
 
         <CategoryChips selected={category} onSelect={setCategory} />
