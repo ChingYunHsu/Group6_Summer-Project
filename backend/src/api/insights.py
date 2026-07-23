@@ -274,8 +274,7 @@ def get_insights():
             origin_lon
         )
 
-        if db_response.get("data_mode") != "no_data":
-            return jsonify(db_response)
+        return jsonify(db_response)
 
     except Exception as error:
         print(f"Insights database error: {error}")
