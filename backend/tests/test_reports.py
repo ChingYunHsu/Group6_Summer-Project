@@ -72,10 +72,20 @@ class _FakeCursor:
             self._result = [self._row_with_aggregate(r)
                             for r in self._reports.values() if r["status"] == params[0]]
 
-        elif q.startswith("SELECT status, expires_at FROM user_reports WHERE report_id = %s"):
+        elif (
+            q.startswith(
+                "SELECT venue_id, issue_type, status, expires_at "
+                "FROM user_reports WHERE report_id = %s"
+            )
+        ):
             r = self._reports.get(params[0])
-            self._result = {"status": r["status"], "expires_at": r["expires_at"]} if r else None
-
+            self._result = {
+                "venue_id": r["venue_id"],
+                "issue_type": r["issue_type"],
+                "status": r["status"],
+                "expires_at": r["expires_at"],
+            } if r else None
+        
         elif q.startswith("INSERT INTO report_confirmations"):
             (report_id, user_id, action, language, _ctx) = params
             existing = next(
@@ -209,6 +219,12 @@ def fake_db(monkeypatch):
         "categories": {"elevator_broken", "large_crowd", "toilet_out_of_order"},
     }
 
+    monkeypatch.setattr(
+        reports_module,
+        "_sync_accessibility_warning",
+        lambda cursor, venue_id: None,
+    )
+    
     class _DbStub:
         db_cursor = lambda self: _fake_cursor(store)
         db_transaction = lambda self: _fake_transaction(store)
