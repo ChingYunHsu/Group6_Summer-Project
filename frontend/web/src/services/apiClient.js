@@ -24,7 +24,7 @@ export async function apiRequest(endpoint, options = {}) {
   if (!response.ok) {
     const text = await response.text();
 
-    let parsedBody = null;
+    let parsedBody;
     try {
       parsedBody = text ? JSON.parse(text) : null;
     } catch {
