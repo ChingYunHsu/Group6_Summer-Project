@@ -32,10 +32,6 @@ import { getAccessToken } from "../../services/authService";
 import { loadMedicalId } from "../../services/medicalIdService";
 import { loadProfile } from "../../services/profileService";
 
-// The medical summary card below fetches real data from
-// GET /api/v1/user/medical-profile (and /user/profile for name/phone) —
-// no more mock imports.
-
 type StaffSummary = {
   fullName?: string;
   phone?: string;
@@ -47,6 +43,8 @@ type StaffSummary = {
 export default function ShowStaffScreen() {
   const { t } = useTranslation();
 
+  // The visitor's own chosen app language — drives which native-language
+  // reference text is shown alongside the English phrases below.
   const [currentLanguage, setCurrentLanguage] = useState(featuredLanguages[0]);
 
   const [summaryLoading, setSummaryLoading] = useState(true);
@@ -55,11 +53,7 @@ export default function ShowStaffScreen() {
   // useFocusEffect, not plain useEffect — currentLanguage here represents
   // the app user's own chosen language ("I am the visitor, and I speak
   // whatever I've set my app to"), so it should track changes made
-  // anywhere else in the app. A mount-only effect meant this tab, once
-  // visited, would never see a language change made after that — Expo
-  // Router keeps tab screens mounted rather than remounting them, so
-  // "load once on mount" really meant "load once, ever, per app session."
-  // Same fix already applied to profile.tsx/settings.tsx earlier.
+  // anywhere else in the app.
   useFocusEffect(
     useCallback(() => {
       (async () => {
@@ -74,11 +68,8 @@ export default function ShowStaffScreen() {
     }, []),
   );
 
-  // Full name/phone live on the profile resource, blood type/conditions/
-  // allergies live on the medical resource — two separate backend calls,
-  // same pattern as edit-profile.tsx. If there's no token at all, there's
-  // no personal data to show, so we skip both calls entirely rather than
-  // firing requests that would just 401.
+  // Loads profile + medical data once on mount for the medical summary
+  // card at the bottom — logged-out users just see nothing there.
   useEffect(() => {
     (async () => {
       try {
@@ -127,19 +118,18 @@ export default function ShowStaffScreen() {
 
   // This screen is read by Manhattan-based staff, who read English — so the
   // *phrase content* shown large is always English, regardless of the
-  // visitor's language. `selectedLanguage` is only used to pull the
-  // visitor's own native-language text for the smaller reference captions
-  // (so the visitor can confirm the phrase says what they mean) and for
-  // text-to-speech.
+  // visitor's language.
   const selectedLanguage = currentLanguage.english as SupportedLanguage;
   const isTranslated = selectedLanguage !== "English";
 
+  // Maxes out screen brightness while this screen is open (so staff can
+  // read it easily), and restores the original brightness on unmount or
+  // whenever the app backgrounds.
   useEffect(() => {
     // On iOS, a brightness override set via setBrightnessAsync persists
     // until the device is locked — it does NOT automatically revert just
-    // because the user backgrounds the app (e.g. to take a call). So we
-    // can't rely on unmount alone to satisfy "restore on exit"; we also
-    // watch AppState and restore/re-max as the app backgrounds/foregrounds
+    // because the user backgrounds the app.
+    // Watch AppState and restore/re-max as the app backgrounds/foregrounds
     // while this screen is still on top.
     let previousBrightness: number | null = null;
     let isMounted = true;
@@ -183,24 +173,16 @@ export default function ShowStaffScreen() {
 
   const [selectedScenario, setSelectedScenario] = useState<Scenario>("general");
 
+  // Live Translate input/output + the four distinct states a failed
+  // request can end up in (generic failure, not-logged-in, rate-limited).
   const [translationInput, setTranslationInput] = useState("");
   const [translatedText, setTranslatedText] = useState("");
   const [isTranslating, setIsTranslating] = useState(false);
   const [translationFailed, setTranslationFailed] = useState(false);
 
-  // Distinct from translationFailed — /translate requires a real login
-  // server-side (require_bearer_auth, confirmed via
-  // test_translate_requires_bearer_token in the backend test suite), and
-  // a guest hitting that should see "log in to use this" rather than a
-  // generic failure message that gives no indication of what would
-  // actually fix it. This screen is exactly the one an unregistered
-  // traveler might reach for first, so this distinction matters here
-  // more than most other auth-gated features.
   const [translationNeedsLogin, setTranslationNeedsLogin] = useState(false);
 
-  // Distinct from both translationFailed and translationNeedsLogin —
-  // confirmed live (real 429 from Gemini, not a guess) that rapid typing
-  // here can trip Gemini's requests-per-minute quota, since every
+  // Rapid typing here can trip Gemini's requests-per-minute quota, since every
   // debounced pause fires a real API call. "Please wait" is a much more
   // actionable message than a generic failure for this specific case.
   const [translationRateLimited, setTranslationRateLimited] = useState(false);
@@ -221,22 +203,11 @@ export default function ShowStaffScreen() {
     return result.translatedText;
   };
 
-  // The trimmed value is what actually drives the debounce/translate
-  // effect below. Computing it here (render time) means the "nothing to
-  // translate" case can be handled by the derived `displayed*` values
-  // below, rather than by resetting state imperatively in the effect.
   const trimmedInput = translationInput.trim();
 
-  // Debounced so we don't fire a request on every keystroke — waits for a
-  // pause in typing before translating. Bumped from 500ms to 1200ms after
-  // confirming live that rapid typing was tripping Gemini's real
-  // requests-per-minute quota (429), not a code bug — fewer, less
-  // frequent real calls reduces how often that happens, though the
-  // 429-specific message below still covers it if it does. This is a
-  // legitimate "synchronize with an external/async process" effect; the
-  // lint rule flags the setIsTranslating(true) call anyway since it's
-  // synchronous at the top of the effect, so it's disabled here rather
-  // than restructured further.
+  // Debounced (1.2s) live-translate effect — fires a real API call after
+  // the user stops typing, and resets all the error/loading flags at the
+  // start of each new attempt.
   useEffect(() => {
     if (!trimmedInput) return;
 
@@ -269,8 +240,6 @@ export default function ShowStaffScreen() {
     return () => clearTimeout(handle);
   }, [trimmedInput, currentLanguage.code]);
 
-  // When the input is empty there's nothing to show/translate, regardless
-  // of whatever the last non-empty translation attempt left in state.
   const displayedTranslating = trimmedInput ? isTranslating : false;
   const displayedFailed = trimmedInput ? translationFailed : false;
   const displayedNeedsLogin = trimmedInput ? translationNeedsLogin : false;
@@ -290,6 +259,9 @@ export default function ShowStaffScreen() {
       { key: "pharmacy", icon: "medkit-outline" },
     ];
 
+  // Speaks the given English phrase aloud using the target language's
+  // voice/accent, mapped from the app's language codes to expo-speech's
+  // BCP-47 locale tags.
   const speakPhrase = (text: string, language: SupportedLanguage) => {
     const languageMap: Record<SupportedLanguage, string> = {
       English: "en-US",
@@ -307,10 +279,12 @@ export default function ShowStaffScreen() {
     });
   };
 
+  // Copies a phrase to the clipboard.
   const copyPhrase = async (text: string) => {
     await Clipboard.setStringAsync(text);
   };
 
+  // Closes this screen and returns to wherever it was opened from.
   const handleCancel = () => {
     router.back();
   };
@@ -319,8 +293,7 @@ export default function ShowStaffScreen() {
 
   // The General category's first phrase is always the hero phrase above
   // — showing it a second time in the card list right underneath looked
-  // redundant. Only relevant for "general"; other categories don't
-  // contain this phrase at all, so nothing to filter there.
+  // redundant.
   const visiblePhrases =
     selectedScenario === "general"
       ? phraseTemplates.general.filter((phrase) => phrase !== heroPhrase)
@@ -334,7 +307,11 @@ export default function ShowStaffScreen() {
       >
         {/* Header */}
 
-        <TouchableOpacity style={styles.closeButton} onPress={handleCancel}>
+        <TouchableOpacity
+          accessibilityLabel="Close"
+          style={styles.closeButton}
+          onPress={handleCancel}
+        >
           <Ionicons name="close" size={28} color={Colours.text} />
         </TouchableOpacity>
 
@@ -350,13 +327,6 @@ export default function ShowStaffScreen() {
             </Text>
           </View>
 
-          {/* This caption is context FOR STAFF ("this patient speaks X"),
-              not navigation for the visitor — unlike the section headers
-              below (Common Phrases, Live Translate, etc.), which stay in
-              the visitor's language since the visitor uses those to
-              operate the app. Forced to English via the i18next `lng`
-              override so it still comes from the shared translation
-              files rather than being hardcoded here. */}
           <Text style={styles.heroTitle}>
             {t("showStaff.visitorSpeaks", { lng: "en" })}
           </Text>
@@ -364,12 +334,13 @@ export default function ShowStaffScreen() {
           <Text style={styles.languageText}>{currentLanguage.english}</Text>
 
           {/* Primary content: always English, for staff to read. The
-              speaker icon lives right next to it now, since this is the
+              speaker icon lives right next to it, since this is the
               text it actually plays. */}
           <View style={styles.staffPhraseRow}>
             <Text style={styles.staffPhraseText}>{heroPhrase.english}</Text>
 
             <TouchableOpacity
+              accessibilityLabel="Play phrase audio"
               onPress={() => speakPhrase(heroPhrase.english, "English")}
             >
               <Ionicons name="volume-high" size={26} color={Colours.primary} />
@@ -444,7 +415,10 @@ export default function ShowStaffScreen() {
             )}
 
             <View style={styles.actions}>
-              <TouchableOpacity onPress={() => copyPhrase(phrase.english)}>
+              <TouchableOpacity
+                accessibilityLabel="Copy phrase"
+                onPress={() => copyPhrase(phrase.english)}
+              >
                 <Ionicons
                   name="copy-outline"
                   size={22}
@@ -453,6 +427,7 @@ export default function ShowStaffScreen() {
               </TouchableOpacity>
 
               <TouchableOpacity
+                accessibilityLabel="Play phrase audio"
                 onPress={() => speakPhrase(phrase.english, "English")}
               >
                 <Ionicons
@@ -509,11 +484,6 @@ export default function ShowStaffScreen() {
           )}
         </View>
 
-        {/* Medical ID — omitted entirely (not shown empty/broken) if the
-            person isn't logged in or the fetch failed. See the note about
-            the medical-profile shadow-routing bug at the top of this
-            file. */}
-
         {summaryLoading ? (
           <>
             <Text style={styles.sectionTitle}>
@@ -566,9 +536,9 @@ export default function ShowStaffScreen() {
 
 type InfoRowProps = { label: string; value?: string | null };
 
+// Per spec: missing or null fields are omitted entirely, never shown
+// with a placeholder like "Not provided".
 function InfoRow({ label, value }: InfoRowProps) {
-  // Per spec: missing or null fields are omitted entirely, never shown
-  // with a placeholder like "Not provided".
   if (!value) return null;
 
   return (
@@ -618,11 +588,6 @@ const styles = StyleSheet.create({
     gap: 12,
   },
 
-  // Primary, staff-facing communication content. Mockup spec requires a minimum
-  // of 32px here — hard-coded rather than relying on Typography.h3 in case
-  // that token is ever tuned below 32px elsewhere in the app. Consider
-  // hoisting this into constants/typography.ts as e.g. `Typography.staffDisplay`
-  // if other accessibility screens (medical-id, sos) need the same treatment.
   staffPhraseText: {
     flexShrink: 1,
     fontSize: 32,
@@ -631,9 +596,6 @@ const styles = StyleSheet.create({
     color: Colours.text,
   },
 
-  // Secondary reference text (visitor's own language) — intentionally
-  // smaller since it's a confirmation aid, not the primary communicated
-  // content read by staff.
   nativeReferenceText: {
     fontSize: 18,
     lineHeight: 24,
@@ -731,9 +693,6 @@ const styles = StyleSheet.create({
     color: Colours.muted,
   },
 
-  // Hard-coded since `Colours` doesn't currently define an error/danger
-  // token — worth adding one (e.g. Colours.danger) if error states appear
-  // elsewhere in the app too.
   translationErrorText: {
     fontSize: 20,
     color: "#D32F2F",
@@ -753,7 +712,6 @@ const styles = StyleSheet.create({
 
   infoLabel: { ...Typography.caption, color: Colours.muted, marginBottom: 4 },
 
-  // Visit summary content — spec requires 32px minimum.
   infoValue: {
     fontSize: 32,
     lineHeight: 40,

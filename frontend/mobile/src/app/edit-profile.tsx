@@ -20,10 +20,7 @@ import { mockProfile } from "../data/mockProfile";
 import { loadMedicalId, saveMedicalId } from "../services/medicalIdService";
 import { loadProfile, saveProfile } from "../services/profileService";
 
-// No real endpoint returns anything like avatar_initials — it was always
-// mockProfile.avatar_initials regardless of which real user was logged
-// in. Derived from the live full_name instead, so it actually reflects
-// whoever's account this is.
+// Derived from the live full_name
 function getInitials(fullName: string): string {
   const parts = fullName.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return "";
@@ -37,6 +34,10 @@ export default function EditProfileScreen() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
+  // Form fields, seeded from mockProfile until the real fetch below
+  // resolves. Some fields (date of birth, gender, address) actually
+  // live on the medical profile, not the user profile — split out
+  // below once loadMedicalId() resolves.
   const [fullName, setFullName] = useState(mockProfile.full_name);
   const [dob, setDob] = useState(mockProfile.date_of_birth);
   const [gender, setGender] = useState(mockProfile.gender);
@@ -74,6 +75,8 @@ export default function EditProfileScreen() {
     },
   ];
 
+  // Language search results for the "add language" modal — only
+  // languages not already added, matched against native or English name.
   const filteredLanguageOptions = useMemo(() => {
     if (!languageSearch.trim()) return [];
 
@@ -89,6 +92,8 @@ export default function EditProfileScreen() {
     );
   }, [languageSearch, spokenLanguages]);
 
+  // Loads the real profile + medical data on mount and overwrites the
+  // mock-seeded form fields with the real values.
   useEffect(() => {
     (async () => {
       try {
@@ -122,6 +127,9 @@ export default function EditProfileScreen() {
     })();
   }, []);
 
+  // Saves both the profile and medical fields in parallel, and reports
+  // failure per-field if either request rejects rather than assuming
+  // all-or-nothing.
   const handleSave = async () => {
     setSaving(true);
 
@@ -182,7 +190,10 @@ export default function EditProfileScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.back()}>
+          <TouchableOpacity
+            accessibilityLabel="Go back"
+            onPress={() => router.back()}
+          >
             <Ionicons name="chevron-back" size={24} color={Colours.text} />
           </TouchableOpacity>
 
@@ -295,6 +306,7 @@ export default function EditProfileScreen() {
             <Text style={styles.label}>{t("editProfile.spokenLanguages")}</Text>
 
             <TouchableOpacity
+              accessibilityLabel="Add language"
               testID="edit-profile-add-language-button"
               onPress={() => setLanguageModalVisible(true)}
             >
@@ -308,6 +320,7 @@ export default function EditProfileScreen() {
                 <Text style={styles.tagText}>{language}</Text>
 
                 <TouchableOpacity
+                  accessibilityLabel={`Remove ${language}`}
                   testID={`edit-profile-remove-language-${language}`}
                   onPress={() => removeLanguage(language)}
                 >
@@ -423,6 +436,8 @@ export default function EditProfileScreen() {
   );
 }
 
+// Reusable labeled text input used throughout the personal-info section
+// above.
 function InputField({
   label,
   value,

@@ -5,6 +5,8 @@ export type UserLocation = {
   longitude: number;
 };
 
+// Requests foreground location permission, returns whether it was
+// granted.
 export async function requestLocationPermission(): Promise<boolean> {
   try {
     const { status } = await Location.requestForegroundPermissionsAsync();
@@ -17,6 +19,12 @@ export async function requestLocationPermission(): Promise<boolean> {
   }
 }
 
+// Gets the device's current position. Uses Balanced accuracy rather
+// than High/Highest — on Android emulators specifically, requesting
+// high-accuracy GPS can fail entirely (ERR_CURRENT_LOCATION_IS_UNAVAILABLE)
+// since emulators don't simulate a real satellite fix, while a mock
+// coordinate set via the emulator's location controls is still honoured
+// at Balanced accuracy.
 export async function getCurrentLocation(): Promise<UserLocation | null> {
   try {
     const location = await Location.getCurrentPositionAsync({

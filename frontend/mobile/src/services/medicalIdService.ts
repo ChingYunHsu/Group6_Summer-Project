@@ -11,14 +11,9 @@ export type MedicalProfile = {
   emergency_contacts: string[];
 };
 
-// mockMedicalId (data/mockMedicalId.ts) is shaped like the old MedicalId
-// interface — blood_type/allergies/conditions/medications/emergency_notes/
-// medical_pass_title — which no longer matches MedicalProfile at all
-// (missing date_of_birth/gender/address/emergency_contacts). Using it to
-// seed state that later receives a real MedicalProfile causes a type
-// error. This is the correctly-shaped alternative, matching api/medical.py's
-// own MEDICAL_PROFILE_DEFAULTS/DEFAULT_PROFILE — everything null/empty
-// until a real fetch resolves.
+// Safe default/empty state — used as initial state before the real
+// fetch resolves, and as a fallback shape for screens that need
+// something non-null to render against.
 export const DEFAULT_MEDICAL_PROFILE: MedicalProfile = {
   date_of_birth: null,
   gender: null,
@@ -30,10 +25,12 @@ export const DEFAULT_MEDICAL_PROFILE: MedicalProfile = {
   emergency_contacts: [],
 };
 
+// Fetches the current user's medical profile.
 export async function loadMedicalId(): Promise<MedicalProfile> {
   return request<MedicalProfile>("/user/medical-profile");
 }
 
+// Saves (partial) changes to the medical profile.
 export async function saveMedicalId(
   medicalId: Partial<MedicalProfile>,
 ): Promise<MedicalProfile> {
@@ -43,6 +40,7 @@ export async function saveMedicalId(
   });
 }
 
+// Deletes the medical profile entirely.
 export async function deleteMedicalId() {
   return request<void>("/user/medical-profile", {
     method: "DELETE",

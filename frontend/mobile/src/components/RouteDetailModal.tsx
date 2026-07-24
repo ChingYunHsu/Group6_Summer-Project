@@ -1,10 +1,10 @@
 import {
-    Modal,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Modal,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
@@ -23,6 +23,9 @@ interface Props {
   onClose: () => void;
 }
 
+// Second step of the directions flow — shown after a route/mode is
+// picked in RouteOptionsModal. Lists turn-by-turn steps and hands off
+// to the device's own maps app on "Start Navigation".
 export default function RouteDetailModal({
   visible,
   destinationName,
@@ -32,113 +35,62 @@ export default function RouteDetailModal({
   onClose,
 }: Props) {
   return (
-    <Modal
-      visible={visible}
-      transparent
-      animationType="slide"
-    >
+    <Modal visible={visible} transparent animationType="slide">
       <View style={styles.overlay}>
-
         <View style={styles.sheet}>
-
           <View style={styles.handle} />
 
           <View style={styles.header}>
-
             <View style={{ flex: 1 }}>
+              <Text style={styles.title}>Route Details</Text>
 
-              <Text style={styles.title}>
-                Route Details
-              </Text>
-
-              <Text style={styles.subtitle}>
-                {destinationName}
-              </Text>
-
+              <Text style={styles.subtitle}>{destinationName}</Text>
             </View>
 
             <TouchableOpacity
+              accessibilityLabel="Close route details"
               onPress={onClose}
             >
-              <Ionicons
-                name="close"
-                size={24}
-                color={Colours.text}
-              />
+              <Ionicons name="close" size={24} color={Colours.text} />
             </TouchableOpacity>
-
           </View>
 
           <View style={styles.summaryCard}>
-
-            <Ionicons
-              name="navigate"
-              size={22}
-              color={Colours.primary}
-            />
+            <Ionicons name="navigate" size={22} color={Colours.primary} />
 
             <View style={{ marginLeft: 12 }}>
+              <Text style={styles.summaryTitle}>Estimated Journey</Text>
 
-              <Text style={styles.summaryTitle}>
-                Estimated Journey
-              </Text>
-
-              <Text style={styles.summaryValue}>
-                {durationMinutes} minutes
-              </Text>
-
+              <Text style={styles.summaryValue}>{durationMinutes} minutes</Text>
             </View>
-
           </View>
 
-          <Text style={styles.sectionTitle}>
-            Navigation Steps
-          </Text>
+          <Text style={styles.sectionTitle}>Navigation Steps</Text>
 
           <ScrollView
             style={styles.stepsContainer}
             showsVerticalScrollIndicator={false}
           >
-
             {steps.map((step, index) => (
-
-              <RouteStep
-                key={index}
-                stepNumber={index + 1}
-                title={step}
-              />
-
+              <RouteStep key={index} stepNumber={index + 1} title={step} />
             ))}
-
           </ScrollView>
 
           <TouchableOpacity
             style={styles.startButton}
             onPress={onStartNavigation}
           >
+            <Ionicons name="navigate" size={20} color="#FFFFFF" />
 
-            <Ionicons
-              name="navigate"
-              size={20}
-              color="#FFFFFF"
-            />
-
-            <Text style={styles.startButtonText}>
-              Start Navigation
-            </Text>
-
+            <Text style={styles.startButtonText}>Start Navigation</Text>
           </TouchableOpacity>
-
         </View>
-
       </View>
-
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-
   overlay: {
     flex: 1,
     justifyContent: "flex-end",
@@ -225,5 +177,4 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginLeft: 10,
   },
-
 });

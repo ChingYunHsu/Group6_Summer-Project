@@ -13,15 +13,11 @@ import { useTranslation } from "react-i18next";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
+// Feature-overview screen shown right after language selection during
+// onboarding, or from More > Welcome within the app (origin="app").
 export default function WelcomeScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-
-  // Onboarding (legal.tsx, arriving from language.tsx) opens this screen
-  // with no params — default behavior unchanged, Continue pushes forward
-  // to /legal. Opened mid-session (the More tab's "Welcome" row) passes
-  // origin="app", so Continue returns to wherever the user actually came
-  // from instead of restarting the rest of onboarding underneath them.
   const { origin } = useLocalSearchParams<{ origin?: string }>();
   const isInAppEntry = origin === "app";
 

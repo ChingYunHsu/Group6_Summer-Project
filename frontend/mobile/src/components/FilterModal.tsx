@@ -20,14 +20,6 @@ import { featuredLanguages } from "../data/languages";
 interface Props {
   visible: boolean;
   openNow?: boolean;
-  // Replaces the old plain boolean "accessible" toggle — confirmed
-  // tonight that accessible_status is a real, meaningful enum
-  // ('full_access'/'partial'/'none'/'unknown'), not a yes/no fact, so a
-  // simple on/off switch couldn't honestly represent it. "none" is
-  // deliberately not offered as a filter choice at all — a user
-  // wouldn't want to specifically filter for "confirmed not
-  // accessible", and given the backfill for un-checked venues was
-  // skipped, "none" right now mostly just means "never checked" anyway.
   wheelchairAccess?: "full_access" | "partial_or_full";
   language: string;
   autoCurrentTime: boolean;
@@ -73,10 +65,7 @@ const STATUS_COLOURS = {
   busy: "#DC2626",
 };
 
-// Reuses the same chip-row pattern as LIVE_STATUS above, rather than
-// introducing a new control type — matches "whatever's easiest" while
-// staying visually consistent with something already proven in this
-// same file.
+// Reuses the same chip-row pattern as LIVE_STATUS abov
 const WHEELCHAIR_OPTIONS = [
   {
     translationKey: "map.filters.fullAccess",
@@ -92,6 +81,11 @@ const WHEELCHAIR_OPTIONS = [
 
 const TIME_OFFSET_OPTIONS = Array.from({ length: 12 }, (_, i) => i);
 
+// Filter sheet for the map screen — Open Now, wheelchair access, a
+// live-status chip row, and a time-offset picker (feeding the 12-hour
+// forecast lookups elsewhere). All draft state here is local until
+// "Apply Filters" is pressed, which is the only point map.tsx's real
+// filter state actually changes.
 export default function FilterModal({
   visible,
   openNow,
@@ -162,7 +156,10 @@ export default function FilterModal({
             <Text style={styles.title}>
               {t("map.filters.title", { defaultValue: "Filters" })}
             </Text>
-            <TouchableOpacity onPress={onClose}>
+            <TouchableOpacity
+              accessibilityLabel="Close filters"
+              onPress={onClose}
+            >
               <Ionicons name="close" size={24} color={Colours.text} />
             </TouchableOpacity>
           </View>
@@ -254,11 +251,6 @@ export default function FilterModal({
             })}
           </View>
 
-          {/* Deliberately a plain View, not TouchableOpacity — no
-              chevron either. There's no multi-day forecast data to
-              pick from, only a rolling 12-hour window from now, so
-              this should visually read as fixed, not as a control
-              that just happens to not respond. */}
           <View testID="date-selector" style={styles.dateRow}>
             <Ionicons
               name="calendar-outline"
@@ -295,13 +287,8 @@ export default function FilterModal({
           <Text style={styles.section}>
             {t("map.filters.language", { defaultValue: "Language" })}
           </Text>
-          {/* Grayed out and unclickable — confirmed tonight that 100%
-              of venues have NULL language data (zero exceptions across
-              hospitals, pharmacies, clinics), so this filter would
-              always return an empty result regardless of what's
-              picked. Left visible rather than removed entirely, so it
-              doesn't look like the feature was never built — just
-              genuinely not usable against real data right now. */}
+          {/* Grayed out and unclickable — future versions will hopefully
+          have more usable language data */}
           <View
             style={styles.chipRow}
             pointerEvents="none"
@@ -320,16 +307,6 @@ export default function FilterModal({
             style={styles.applyButton}
             onPress={() => {
               onApply({
-                // localOpenNow is always a real boolean internally
-                // (Switch needs that), but the API treats false as an
-                // EXPLICIT filter ("only show closed venues") not "no
-                // preference" — sending false unconditionally meant the
-                // very first time this modal was applied at all, even
-                // an untouched switch silently turned into a real,
-                // restrictive filter instead of staying off. ||
-                // undefined converts a false switch back into "no
-                // preference", only sending true when actually toggled
-                // on.
                 openNow: localOpenNow || undefined,
                 wheelchairAccess,
                 language: localLanguage,
@@ -351,9 +328,8 @@ export default function FilterModal({
         {/* Conditional overlay, not a second <Modal> — iOS genuinely
             cannot present two native Modal components at the same
             time; the second one silently fails to appear with no JS-
-            visible error at all (confirmed: a real, well-documented
-            React Native/iOS limitation, not a bug in this specific
-            code). Rendering this inside the SAME Modal that's already
+            visible error at all (React Native/iOS limitation). 
+            Rendering this inside the SAME Modal that's already
             open sidesteps the limitation entirely. */}
         {timeModalVisible && (
           <View style={styles.pickerOverlay}>

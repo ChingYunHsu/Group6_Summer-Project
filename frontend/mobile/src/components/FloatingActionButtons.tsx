@@ -7,6 +7,9 @@ interface Props {
   onReportPress: () => void;
 }
 
+// The two floating buttons pinned to the bottom-right of the map screen
+// — a smaller yellow "report an issue" button above the larger red SOS
+// button.
 export default function FloatingActionButtons({
   onSOSPress,
   onReportPress,
@@ -14,6 +17,7 @@ export default function FloatingActionButtons({
   return (
     <View style={styles.container}>
       <TouchableOpacity
+        accessibilityLabel="Report an issue"
         testID="floating-report-button"
         style={styles.reportButton}
         activeOpacity={0.85}

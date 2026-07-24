@@ -5,6 +5,8 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
+// App entry / splash screen — logo, tagline, and a single button into
+// the onboarding flow (language selection first).
 export default function Index() {
   const router = useRouter();
   const { t } = useTranslation();

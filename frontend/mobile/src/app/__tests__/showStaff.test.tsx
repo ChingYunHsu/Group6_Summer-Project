@@ -177,16 +177,6 @@ describe("ShowStaffScreen — graceful handling of network failures and incomple
 
     fireEvent.changeText(input, "Me duele el pecho");
 
-    // No fake timers here at all, deliberately — after four separate
-    // attempts to make jest.useFakeTimers()/advanceTimersByTimeAsync/
-    // runAllTimersAsync play nicely with RNTL's own polling (each
-    // confirmed, via direct isolated-vs-full-suite testing, to leak
-    // something into whichever test ran next despite passing on its own
-    // merits), the simplest fix turned out to be avoiding the
-    // interaction entirely. Real 1200ms debounce, real wall-clock wait —
-    // findByText's default 1000ms window is shorter than that on its
-    // own, so it's extended explicitly rather than relying on the
-    // default.
     expect(
       await screen.findByText("My chest hurts", {}, { timeout: 3000 }),
     ).toBeTruthy();

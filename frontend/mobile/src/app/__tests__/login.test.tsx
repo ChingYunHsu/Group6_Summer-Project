@@ -29,8 +29,7 @@ jest.mock("react-i18next", () => ({
 // requests. Without this mock, "create account" and "sign in" trigger an
 // actual fetch, which fails in the Jest environment and leaves
 // finish_profile_prompt undefined — so the registration-complete Modal
-// (and its Skip For Now button) never renders, which is what was failing
-// before this mock was added.
+// (and its Skip For Now button) never renders.
 jest.mock("../../services/authService", () => ({
   login: jest.fn(),
   register: jest.fn().mockResolvedValue({ finish_profile_prompt: true }),

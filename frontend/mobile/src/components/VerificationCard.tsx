@@ -9,6 +9,10 @@ interface VerificationCardProps {
   onResolve: () => void;
 }
 
+// Small "is this still an issue?" card with Confirm/Resolve buttons —
+// shared by the venue sheet's active-warning strip, the report bottom
+// sheet, and the map's report marker callout, all pointing at the same
+// underlying confirm/resolve handlers in map.tsx.
 export default function VerificationCard({
   title,
   reportedAt,

@@ -24,10 +24,7 @@ import {
 import { loadProfile } from "../../services/profileService";
 import { Favourite, Venue } from "../../types/venue";
 
-// No real endpoint returns anything like avatar_initials — it was always
-// mockProfile.avatar_initials regardless of which real user was logged
-// in (this is the same fix already applied in edit-profile.tsx; this
-// screen just never got it). Derived from the live full_name instead.
+// Derived from the live full_name.
 function getInitials(fullName: string): string {
   const parts = fullName.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return "";
@@ -35,10 +32,7 @@ function getInitials(fullName: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-// Real user_id values are full UUIDs (e.g.
-// "f9c8c0f4-11cc-44e5-a825-376ecae82d7b") — display-only truncation,
-// doesn't affect what's actually sent anywhere. Falls back to the raw
-// value for anything shorter (e.g. a mock ID) rather than mangling it.
+// Real user_id values are full UUIDs.
 function formatUserId(userId: string): string {
   if (userId.length <= 12) return userId;
   return `${userId.slice(0, 8)}…`;
@@ -49,12 +43,12 @@ export default function ProfileScreen() {
 
   // Tracked separately per resource (profile vs. medical), since they're
   // two independent fetches — "synced" only if both succeeded, "offline"
-  // if either failed. Previously a single syncStatus only ever reflected
-  // the profile fetch; a failed medical fetch had no visible signal at
-  // all.
+  // if either failed.
   const [profileSyncOk, setProfileSyncOk] = useState<boolean | null>(null);
   const [medicalSyncOk, setMedicalSyncOk] = useState<boolean | null>(null);
 
+  // Combines the two independent sync flags above into one status shown
+  // in the sync card.
   const syncStatus: "loading" | "synced" | "offline" =
     profileSyncOk === null || medicalSyncOk === null
       ? "loading"
@@ -64,37 +58,28 @@ export default function ProfileScreen() {
 
   const { t } = useTranslation();
 
+  // Profile and medical ID state, seeded with mock/default data until the
+  // real fetches below resolve.
   const [profile, setProfile] = useState(mockProfile);
 
-  // mockMedicalId is no longer a valid seed here — see the comment on
-  // DEFAULT_MEDICAL_PROFILE in medicalIdService.ts for why.
   const [medicalId, setMedicalId] = useState<MedicalProfile>(
     DEFAULT_MEDICAL_PROFILE,
   );
 
+  // Saved clinics list — each favourite paired with its resolved Venue
+  // (or null if that lookup failed).
   const [favourites, setFavourites] = useState<
     { favourite: Favourite; venue: Venue | null }[]
   >([]);
 
   const [favouritesLoading, setFavouritesLoading] = useState(true);
 
-  // Drives everything else on this screen now — the previous version had
-  // the guest-redirect as a separate, uncoordinated effect that didn't
-  // block anything, so profile/medical/favourites all raced ahead and
-  // started fetching (and rendering mockProfile/DEFAULT_MEDICAL_PROFILE
-  // as their initial state) during the brief window before the redirect
-  // actually completed. A guest could see a flash of mock data plus
-  // failed 401s before being bounced to profile-guest.tsx. Now nothing
-  // else runs, and nothing renders, until this has definitively resolved
-  // one way or the other.
   const [authStatus, setAuthStatus] = useState<
     "checking" | "guest" | "authenticated"
   >("checking");
 
-  // useFocusEffect, not plain useEffect — re-checks on every return to
-  // this tab, not just first mount, so logging out on another tab and
-  // returning here correctly re-triggers the redirect rather than
-  // leaving stale authenticated content on screen.
+  // Runs on every focus: checks auth status, and redirects guests to the
+  // guest-profile screen rather than showing this one half-populated.
   useFocusEffect(
     useCallback(() => {
       let isActive = true;
@@ -118,19 +103,8 @@ export default function ProfileScreen() {
     }, []),
   );
 
-  // useFocusEffect, not plain useEffect — this screen previously only
-  // fetched once on initial mount ([] dependency array), so saving
-  // changes on Edit Profile or Edit Medical ID and navigating back here
-  // via router.back() never triggered a refetch; Expo Router keeps this
-  // screen mounted the whole time, so the old effect simply never ran
-  // again. useFocusEffect re-runs every time this tab is actually
-  // navigated to/back to, which is what "refresh on return" needs.
-  //
-  // Imported from "expo-router" specifically, not "@react-navigation/
-  // native" — this project is on Expo SDK 56, where importing
-  // useFocusEffect from @react-navigation/native was already confirmed
-  // to cause build issues once before (see the same fix applied to
-  // settings.tsx earlier in this project).
+  // Loads the real profile once authenticated, and marks whether that
+  // fetch succeeded for the sync-status card.
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -156,6 +130,7 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
+  // Same pattern as above, for the medical ID fetch.
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -179,12 +154,8 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
-  // Replaces the two hardcoded "St. Mary's International" / "CityMD"
-  // entries that never corresponded to any real venue. getFavourites()
-  // only returns {venue_id, ...} — each one needs a separate getVenue()
-  // call to resolve into something actually displayable (name, address).
-  // Runs on focus, same as the two effects above, so favouriting/
-  // unfavouriting a venue on the Map tab is reflected here on return.
+  // Loads saved favourites and resolves each venue_id to a real Venue
+  // object for display (name, address).
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -244,13 +215,6 @@ export default function ProfileScreen() {
     }
   };
 
-  // "checking" and "guest" both render the same neutral loading state —
-  // "guest" specifically because the redirect above is already in
-  // flight; showing a spinner for the split second until it completes
-  // reads as normal loading, not as a flash of broken/wrong content.
-  // mockProfile/DEFAULT_MEDICAL_PROFILE (this screen's initial state)
-  // never reach the screen for a guest at all now, since the real
-  // content return below is simply never reached.
   if (authStatus !== "authenticated") {
     return (
       <SafeAreaView style={styles.container}>
@@ -285,9 +249,7 @@ export default function ProfileScreen() {
           <Text style={styles.profileEmail}>{profile.email}</Text>
         </View>
 
-        {/* Sync Status — now actually reflects syncStatus instead of
-            always showing a hardcoded "Synced" regardless of what
-            happened. */}
+        {/* Sync Status */}
 
         <View style={styles.syncCard}>
           {syncStatus === "loading" ? (
@@ -333,13 +295,6 @@ export default function ProfileScreen() {
             </TouchableOpacity>
           </View>
 
-          {/* user_id/email are real now — get_user_profile()'s backend
-              response was updated to include both (see profileService.ts).
-              No code change needed here; this was already reading
-              profile.user_id/profile.email, they're just genuinely
-              populated now instead of permanently falling back to
-              mockProfile's static placeholders. */}
-
           <InfoRow
             label={t("profile.userId")}
             value={profile.user_id ? formatUserId(profile.user_id) : ""}
@@ -350,10 +305,6 @@ export default function ProfileScreen() {
           <InfoRow label={t("profile.email")} value={profile.email} />
 
           <InfoRow label={t("profile.phone")} value={profile.phone} />
-
-          {/* date_of_birth/gender/address live on the medical-profile
-              resource, not /user/profile — sourced from medicalId, not
-              profile, to actually be live. */}
 
           <InfoRow
             label={t("profile.dateOfBirth")}
@@ -408,7 +359,7 @@ export default function ProfileScreen() {
           />
         </View>
 
-        {/* Saved Clinics — now sourced from GET /user/favourites, each
+        {/* Saved Clinics — sourced from GET /user/favourites, each
             venue_id resolved to a real venue via getVenue(). */}
 
         <Text style={styles.savedTitle}>{t("profile.savedClinics")}</Text>
@@ -437,6 +388,7 @@ export default function ProfileScreen() {
               </View>
 
               <TouchableOpacity
+                accessibilityLabel="Remove from saved clinics"
                 onPress={() => handleRemoveFavourite(favourite.venue_id)}
                 hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
               >
@@ -455,10 +407,10 @@ type InfoRowProps = {
   value?: string | null;
 };
 
+// Missing/empty fields are omitted entirely rather than shown as a
+// label with nothing underneath — same rule used on sos.tsx and
+// show-staff.tsx.
 function InfoRow({ label, value }: InfoRowProps) {
-  // Missing/empty fields are omitted entirely rather than shown as a
-  // label with nothing underneath — same rule used on sos.tsx and
-  // show-staff.tsx.
   if (!value) return null;
 
   return (

@@ -37,29 +37,26 @@ const BLOOD_TYPES = [
 export default function MedicalIdScreen() {
   const { t } = useTranslation();
 
+  // Which of the three "add" modals (condition/allergy/blood type) is
+  // currently open.
   const [conditionModalVisible, setConditionModalVisible] = useState(false);
 
   const [allergyModalVisible, setAllergyModalVisible] = useState(false);
 
   const [bloodTypeModalVisible, setBloodTypeModalVisible] = useState(false);
 
+  // Text currently typed into the condition/allergy "add" input, before
+  // it's committed to the real list below.
   const [newCondition, setNewCondition] = useState("");
 
   const [newAllergy, setNewAllergy] = useState("");
 
-  // mockMedicalId is no longer a valid seed here — see the comment on
-  // DEFAULT_MEDICAL_PROFILE in medicalIdService.ts for why (it's shaped
-  // like the old MedicalId interface, missing date_of_birth/gender/
-  // address/emergency_contacts that MedicalProfile requires).
+  // Full medical profile as loaded from the backend, plus the editable
+  // fields split out into their own state below.
   const [medicalId, setMedicalId] = useState<MedicalProfile>(
     DEFAULT_MEDICAL_PROFILE,
   );
 
-  // Previously there were two separate state variables here — fullName
-  // (correctly populated from the fetch, but never rendered) and
-  // displayName (rendered in the JSX, but setDisplayName was never called
-  // anywhere) — so the name shown on this screen was permanently blank
-  // regardless of who was logged in. Consolidated to one.
   const [fullName, setFullName] = useState("");
 
   const [bloodType, setBloodType] = useState(medicalId.blood_type);
@@ -70,6 +67,10 @@ export default function MedicalIdScreen() {
 
   const [allergies, setAllergies] = useState(medicalId.allergies ?? []);
 
+  // Saves the current form state back to the backend, then returns to
+  // the previous screen. Preserves whatever wasn't editable on this
+  // screen (medications, emergency_contacts) from the last loaded value
+  // rather than dropping it.
   const handleSave = async () => {
     try {
       setSaving(true);
@@ -97,6 +98,8 @@ export default function MedicalIdScreen() {
     }
   };
 
+  // Loads the real medical profile and the user's name (for the header)
+  // once on mount.
   useEffect(() => {
     async function getMedicalId() {
       try {
@@ -129,6 +132,9 @@ export default function MedicalIdScreen() {
     setAllergies(allergies.filter((item) => item !== allergy));
   };
 
+  // Adds the typed condition to the list, unless it's empty or already
+  // present (case-insensitive) — silently no-ops on a duplicate rather
+  // than showing an error, matching addAllergy below.
   const addCondition = () => {
     const value = newCondition.trim();
 
@@ -146,6 +152,7 @@ export default function MedicalIdScreen() {
     setConditionModalVisible(false);
   };
 
+  // Same as addCondition, for the allergy list.
   const addAllergy = () => {
     const value = newAllergy.trim();
 
@@ -169,7 +176,10 @@ export default function MedicalIdScreen() {
         {/* Header */}
 
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.back()}>
+          <TouchableOpacity
+            accessibilityLabel="Go back"
+            onPress={() => router.back()}
+          >
             <Ionicons name="chevron-back" size={24} color={Colours.text} />
           </TouchableOpacity>
 
@@ -234,6 +244,7 @@ export default function MedicalIdScreen() {
             </Text>
 
             <TouchableOpacity
+              accessibilityLabel="Add condition"
               testID="medical-id-add-condition-button"
               onPress={() => setConditionModalVisible(true)}
             >
@@ -260,6 +271,7 @@ export default function MedicalIdScreen() {
             <Text style={styles.sectionTitle}>{t("profile.allergies")}</Text>
 
             <TouchableOpacity
+              accessibilityLabel="Add allergy"
               testID="medical-id-add-allergy-button"
               onPress={() => setAllergyModalVisible(true)}
             >
@@ -390,6 +402,7 @@ export default function MedicalIdScreen() {
   );
 }
 
+// Small removable pill used for both conditions and allergies.
 function Tag({
   label,
   onRemove,
@@ -403,7 +416,11 @@ function Tag({
     <View style={styles.tag}>
       <Text style={styles.tagText}>{label}</Text>
 
-      <TouchableOpacity testID={testID} onPress={onRemove}>
+      <TouchableOpacity
+        accessibilityLabel={`Remove ${label}`}
+        testID={testID}
+        onPress={onRemove}
+      >
         <Ionicons name="close" size={16} color={Colours.muted} />
       </TouchableOpacity>
     </View>

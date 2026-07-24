@@ -15,6 +15,9 @@ interface Props {
   onResolve: (reportId: string) => void;
 }
 
+// Shown when a report marker on the map is tapped — read-only detail
+// view of that report plus the shared VerificationCard
+// confirm/resolve controls.
 export default function ReportBottomSheet({
   visible,
   report,
@@ -37,7 +40,7 @@ export default function ReportBottomSheet({
               </Text>
             </View>
 
-            <TouchableOpacity onPress={onClose}>
+            <TouchableOpacity accessibilityLabel="Close" onPress={onClose}>
               <Ionicons name="close" size={26} color={Colours.text} />
             </TouchableOpacity>
           </View>

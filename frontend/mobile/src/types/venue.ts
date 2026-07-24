@@ -2,12 +2,6 @@
 /*                              VENUE TYPES                                   */
 /* -------------------------------------------------------------------------- */
 
-// Matches the full venue_type ENUM in 001_clearpath_schema.sql. Only
-// clinic/pharmacy/emergencyasset/hospital/restroom have any seeded data
-// today (005_seed_venues.sql) and only those have CategoryChips filters —
-// healthcare/dentist/laboratory are included here so the type is
-// accurate and nothing breaks if a venue of one of those types ever
-// appears, even without a dedicated filter chip for them yet.
 export type VenueCategory =
   | "clinic"
   | "pharmacy"
@@ -24,6 +18,9 @@ export interface VenueBusyness {
   busyness_color: string;
   estimated_wait_minutes: number;
   updated_at?: string;
+  data_mode?: "forecast" | "unavailable";
+  forecast_source?: string;
+  unavailable_reason?: string;
 }
 
 export interface VenueAccessibility {
@@ -83,11 +80,6 @@ export interface Venue {
 
   language_tags: string[];
 
-  // NOTE: the following four nested objects (accessibility, language,
-  // warnings, busyness) are only ever populated by the mock VENUES list in
-  // mock_data.py. _row_to_venue() in venues.py does not construct them for
-  // DB-backed venues — always optional-chain when reading these on a real
-  // venue (see VenueBottomSheet.tsx).
   accessibility?: VenueAccessibility;
 
   language?: VenueLanguage;
@@ -150,12 +142,6 @@ export interface ReportConfirmation {
   latest_action_at: string;
 }
 
-// Matches _format_report() in backend/src/api/reports.py — the shape every
-// DB-backed report actually returns. The mock-data fallback in list_reports()
-// currently returns a richer shape (venue_name, description, badge_text,
-// etc. — see mock_data.py's REPORTS list) that isn't guaranteed once the
-// backend routes the mock fallback through _format_report() too, so those
-// extra fields are kept here as optional/best-effort rather than required.
 export interface Report {
   report_id: string;
 
@@ -163,8 +149,6 @@ export interface Report {
 
   issue_type: string;
 
-  // Human-readable label from ISSUE_TYPE_LABELS on the backend — prefer
-  // this over issue_type for anything user-facing.
   issue_type_label: string;
 
   report_scope: "venue_bound" | "standalone";
@@ -180,8 +164,6 @@ export interface Report {
   expires_at: string | null;
 
   confirmations: ReportConfirmation;
-
-  // --- Mock-only fields below; not present on DB-backed reports today ---
 
   venue_name?: string;
 
@@ -212,11 +194,6 @@ export interface ReportResponse {
 /*                               FAVOURITES                                   */
 /* -------------------------------------------------------------------------- */
 
-// Matches _format_favourite() in backend/src/api/user.py. As of the fix
-// confirmed in this project, get_favourites/add_favourite/delete_favourite
-// are properly per-user (require_bearer_auth + g.user_id scoping against
-// a real user_favorite_venues table), and favourite_id is deterministic
-// (f"fav_{venue_id}") rather than a shared hardcoded value.
 export interface Favourite {
   favourite_id: string;
 
@@ -261,9 +238,6 @@ export interface RouteOptionsResponse {
   options: RouteOption[];
 }
 
-// Matches ROUTE_DETAIL in mock_data.py — note there is no `duration` field
-// on the real response. If you need a duration alongside these steps, pull
-// it from the RouteOption the user selected in RouteOptionsModal instead.
 export interface RouteDetail {
   destination_venue_id?: string;
 
@@ -287,13 +261,17 @@ export interface BusynessResponse {
 export interface ForecastResponse {
   venue_id: string;
 
+  data_mode: "forecast" | "unavailable";
+  forecast_source: string;
+  unavailable_reason?: string;
+
   forecast: VenueForecast[];
 
-  best_time_to_go_today: {
+  // Absent on an unavailable response — there's no "best time" when
+  // there's no real data to rank.
+  best_time_to_go_today?: {
     offset_hours: number;
-
     percent: number;
-
     label: string;
   };
 }

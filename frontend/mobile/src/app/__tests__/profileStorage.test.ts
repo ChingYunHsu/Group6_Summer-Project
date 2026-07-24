@@ -40,7 +40,7 @@ describe("profileService", () => {
     });
 
     // profileService maps the backend's `display_name` onto `full_name`
-    // for the rest of the app — see mergeProfileResponse.
+    // for the rest of the app.
     expect(result.full_name).toBe("Amelia Rivera");
     expect(result.phone).toBe("+1 (917) 555-0118");
   });

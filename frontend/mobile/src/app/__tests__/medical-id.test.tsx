@@ -14,11 +14,6 @@ import type { MedicalProfile } from "../../services/medicalIdService";
 /*                                   MOCKS                                    */
 /* -------------------------------------------------------------------------- */
 //
-// medical-id.tsx had zero testIDs before tonight — every selector below
-// depends on the minimal set just added to the source file (Save button,
-// blood type trigger + options, condition/allergy add/input/add-button/
-// remove-tag controls, name text). No behavioural changes.
-//
 // DEFAULT_MEDICAL_PROFILE is imported for real (requireActual) since
 // medical-id.tsx uses it directly as initial state, not through a mocked
 // function — only loadMedicalId/saveMedicalId need to be jest.fn()s.
@@ -229,8 +224,6 @@ describe("MedicalIdScreen", () => {
   // Confirmed directly in medical-id.tsx's handleSave — unlike
   // edit-profile.tsx, a failed save here shows no Alert at all, only
   // console.error, and the finally block still resets saving to false.
-  // Testing the actual written behaviour rather than assuming an alert
-  // exists.
   it("does not navigate back on a failed save, and resets the Save button out of its loading state", async () => {
     mockedSaveMedicalId.mockRejectedValue(new Error("network error"));
 

@@ -18,7 +18,13 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBNedA99KPCVyusMKGM3t9DiC_m41k3Ghw"
+        }
+      },
+      "package": "com.clearpath.mobile"
     },
     "web": {
       "output": "static",

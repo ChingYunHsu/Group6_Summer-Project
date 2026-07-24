@@ -18,6 +18,9 @@ import {
   requestLocationPermission,
 } from "../services/location";
 
+// Onboarding step that requests location permission up front — Continue
+// stays disabled until location is actually enabled, though the user can
+// always skip via "Do this later" below.
 export default function LocationScreen() {
   const { t } = useTranslation();
 
@@ -25,6 +28,9 @@ export default function LocationScreen() {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  // Requests permission, then grabs one position fix just to confirm
+  // location genuinely works before marking it enabled — permission
+  // being granted doesn't guarantee a fix will actually resolve.
   const handleLocationAccess = async () => {
     try {
       setIsLoading(true);
@@ -136,13 +142,6 @@ export default function LocationScreen() {
         {/* GPS Tip */}
 
         <Text style={styles.tipText}>{t("location.gpsTip")}</Text>
-
-        {/* Continue — previously identical to Skip below (both just
-            pushed to auth-gateway regardless of locationEnabled), so
-            tapping Continue never actually required confirming location
-            at all despite implying otherwise. Now disabled/greyed until
-            location is actually granted; "I'll do this later" remains
-            the one honest, always-available way to skip. */}
 
         <TouchableOpacity
           style={[

@@ -18,6 +18,8 @@ import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 import { login, register } from "../services/authService";
 
+// Combined login/register screen — toggles between the two modes with
+// isRegisterMode rather than being two separate routes.
 export default function LoginScreen() {
   const { t } = useTranslation();
 
@@ -33,10 +35,13 @@ export default function LoginScreen() {
 
   const [loading, setLoading] = useState(false);
 
+  // Post-registration "finish your medical profile now, or skip" modal.
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
 
   const [agreed, setAgreed] = useState(false);
 
+  // Signs in with the entered credentials and lands on the map on
+  // success.
   const handleSignIn = async () => {
     try {
       setLoading(true);
@@ -59,6 +64,9 @@ export default function LoginScreen() {
     }
   };
 
+  // Registers a new account. On success, either shows the
+  // finish-your-profile modal (if the backend asks for it) or goes
+  // straight to the map.
   const handleCreateAccount = async () => {
     try {
       setLoading(true);
@@ -99,6 +107,8 @@ export default function LoginScreen() {
     }
   };
 
+  // "Finish profile" choice from the post-registration modal — sends
+  // the user on to fill out their medical ID.
   const handleFinishProfile = () => {
     setShowRegistrationModal(false);
 
@@ -110,6 +120,7 @@ export default function LoginScreen() {
     router.push("/medical-id");
   };
 
+  // "Skip for now" choice from the same modal — goes straight to the map.
   const handleSkipForNow = () => {
     setShowRegistrationModal(false);
 
@@ -120,6 +131,7 @@ export default function LoginScreen() {
     <>
       <SafeAreaView style={styles.container}>
         <TouchableOpacity
+          accessibilityLabel="Go back"
           style={styles.backButton}
           onPress={() => router.back()}
         >
@@ -164,6 +176,9 @@ export default function LoginScreen() {
                   />
 
                   <TouchableOpacity
+                    accessibilityLabel={
+                      showPassword ? "Hide password" : "Show password"
+                    }
                     onPress={() => setShowPassword(!showPassword)}
                   >
                     <Ionicons
@@ -191,8 +206,8 @@ export default function LoginScreen() {
                   <Text style={styles.switchText}>
                     {t("login.newHere", { defaultValue: "New here?" })}{" "}
                     <Text style={styles.linkText}>
-                      {t("login.createAccountLink", {
-                        defaultValue: "Create an account",
+                      {t("login.createAccount", {
+                        defaultValue: "Create account",
                       })}
                     </Text>
                   </Text>
@@ -244,6 +259,9 @@ export default function LoginScreen() {
                   />
 
                   <TouchableOpacity
+                    accessibilityLabel={
+                      showPassword ? "Hide password" : "Show password"
+                    }
                     onPress={() => setShowPassword(!showPassword)}
                   >
                     <Ionicons

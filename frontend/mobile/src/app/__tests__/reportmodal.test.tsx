@@ -6,13 +6,6 @@ import ReportModal from "../../components/ReportModal";
 /* -------------------------------------------------------------------------- */
 /*                                   MOCKS                                    */
 /* -------------------------------------------------------------------------- */
-//
-// This component has no t() defaultValue fallbacks anywhere (unlike most
-// other files tonight), so without a real i18next instance configured,
-// t(key) would just return the raw key string. Rather than guess at
-// readable text that might not actually render, every query in this file
-// goes through the testIDs added directly to ReportModal.tsx for exactly
-// this reason.
 
 jest.mock("react-i18next", () => ({
   useTranslation: () => ({ t: (key: string) => key }),
@@ -58,14 +51,6 @@ const baseProps = {
 /* -------------------------------------------------------------------------- */
 /*                                   TESTS                                    */
 /* -------------------------------------------------------------------------- */
-//
-// NOTE (RNTL v14): render, fireEvent, and act are all async now — they
-// return Promises that must be awaited, or the state update they trigger
-// won't have flushed before the next line runs. Every fireEvent call below
-// is awaited for that reason. pressAlertButton() invokes an Alert button's
-// onPress directly (bypassing fireEvent entirely, since Alert buttons
-// aren't real rendered elements), so that call is wrapped in act() instead
-// to flush the state updates it causes.
 
 describe("ReportModal", () => {
   beforeEach(() => {
@@ -192,10 +177,6 @@ describe("ReportModal", () => {
 
     await fireEvent.press(screen.getByTestId("report-mode-venue"));
 
-    // Confirmed in ReportModal.tsx: in venue mode, visibleIssues is derived
-    // from the selected venue's venue_type, so the issue-type grid renders
-    // nothing at all until a venue is picked — there is no issue button to
-    // press yet. Deliberately not pressing report-venue-row-v_1.
     expect(screen.queryByTestId("report-issue-elevator_broken")).toBeNull();
 
     await fireEvent.press(screen.getByTestId("report-submit-button"));
@@ -212,10 +193,6 @@ describe("ReportModal", () => {
     await fireEvent.press(screen.getByTestId("report-submit-button"));
 
     expect(baseProps.onClose).toHaveBeenCalled();
-
-    // Mode is reset to null — Step 2/3 (venue list, issue grid) should no
-    // longer be rendered, confirming resetState() actually ran rather
-    // than just onClose() being called with stale internal state.
     expect(screen.queryByTestId("report-venue-row-v_1")).toBeNull();
     expect(screen.queryByTestId("report-issue-elevator_broken")).toBeNull();
   });

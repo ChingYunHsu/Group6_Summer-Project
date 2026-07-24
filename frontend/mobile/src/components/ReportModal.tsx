@@ -59,6 +59,9 @@ interface Props {
 
 type ReportMode = "venue" | "incident" | null;
 
+// Six issue types intentionally offered here, out of nine defined on
+// the backend (long_waiting_time, ramp_blocked, closed_early omitted —
+// a deliberate team scope decision, not a gap).
 const ISSUE_TYPES = [
   {
     label: "reportModal.issueTypes.largeCrowd",
@@ -92,6 +95,8 @@ const ISSUE_TYPES = [
   },
 ] as const;
 
+// Which issue types are relevant per venue type — narrows the grid
+// shown in step 3 once a specific venue is selected.
 const ISSUE_FILTERS = {
   clinic: [
     "large_crowd",
@@ -118,6 +123,9 @@ const ISSUE_FILTERS = {
   building: ["entrance_closed", "elevator_broken", "wheelchair_lift_broken"],
 };
 
+// Report an accessibility/venue issue — either tied to a specific
+// nearby venue, or as a standalone incident at the user's current
+// location. Three-step flow: where, (optionally which venue), what.
 export default function ReportModal({
   visible,
   onClose,
@@ -149,6 +157,9 @@ export default function ReportModal({
     (v) => v.venue_id === selectedVenue,
   );
 
+  // Issue-type grid narrows to the selected venue's type once in venue
+  // mode; shows the full list for incident mode (no specific venue to
+  // narrow by).
   const visibleIssues = useMemo(() => {
     if (mode !== "venue") {
       return ISSUE_TYPES;
@@ -178,6 +189,9 @@ export default function ReportModal({
     onClose();
   };
 
+  // Validates auth/location/required fields in order, then submits
+  // either the venue-bound or standalone-incident payload depending on
+  // mode.
   const handleSubmit = () => {
     if (!isAuthenticated) {
       Alert.alert(
@@ -270,7 +284,11 @@ export default function ReportModal({
           <View style={styles.header}>
             <Text style={styles.title}>{t("reportModal.title")} </Text>
 
-            <TouchableOpacity onPress={handleClose} testID="report-modal-close">
+            <TouchableOpacity
+              onPress={handleClose}
+              testID="report-modal-close"
+              accessibilityLabel="Close report form"
+            >
               <Ionicons name="close" size={26} color={Colours.text} />
             </TouchableOpacity>
           </View>
@@ -278,10 +296,6 @@ export default function ReportModal({
           <Text style={styles.subtitle}>{t("reportModal.subtitle")}</Text>
 
           <ScrollView showsVerticalScrollIndicator={false}>
-            {/* ------------------------- */}
-            {/* STEP 1 */}
-            {/* ------------------------- */}
-
             <Text style={styles.sectionTitle}>
               {t("reportModal.whereIsIssue")}
             </Text>
@@ -336,10 +350,6 @@ export default function ReportModal({
               </TouchableOpacity>
             </View>
 
-            {/* ------------------------- */}
-            {/* STEP 2 */}
-            {/* ------------------------- */}
-
             {mode === "venue" && (
               <>
                 <Text style={styles.sectionTitle}>
@@ -379,10 +389,6 @@ export default function ReportModal({
                 })}
               </>
             )}
-
-            {/* ------------------------- */}
-            {/* STEP 3 */}
-            {/* ------------------------- */}
 
             {mode !== null && (
               <>

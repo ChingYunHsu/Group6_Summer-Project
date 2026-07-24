@@ -12,9 +12,14 @@ type Props = {
   onClose: () => void;
 };
 
+// Shown whenever a feature that needs real GPS (directions, reporting
+// with location) is used but device location services are off — offers
+// to jump to the system Settings app, or just cancel.
 export default function LocationRequiredModal({ visible, onClose }: Props) {
   const { t } = useTranslation();
 
+  // Closes this modal, then opens the OS Settings app — location
+  // services can't be toggled from within the app itself.
   const handleSettings = async () => {
     onClose();
 

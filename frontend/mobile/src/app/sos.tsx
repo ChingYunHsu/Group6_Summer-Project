@@ -31,6 +31,9 @@ export default function SOSScreen() {
   // Prevents SOSScreen from placing an actual emergency call during
   // presentations/testing while leaving the full flow intact to demo.
   const ENABLE_REAL_EMERGENCY_CALL = false;
+
+  // null = not logged in / fetch failed / never resolved. Populated by
+  // the effect below, shown in the Medical ID summary card.
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [medicalId, setMedicalId] = useState<MedicalProfile | null>(null);
 
@@ -71,8 +74,6 @@ export default function SOSScreen() {
 
   // Real device location, reverse-geocoded into a readable address —
   // replaces the previous hardcoded "245 W 46th St..." placeholder.
-  // Same independence guarantee as above: never gates the emergency call
-  // itself, only what's displayed for the person's own reference.
   useEffect(() => {
     (async () => {
       try {
@@ -118,6 +119,9 @@ export default function SOSScreen() {
     })();
   }, []);
 
+  // Dials emergency services when the countdown reaches 0 — unless demo
+  // mode is on, in which case it just logs + alerts what it would have
+  // dialed instead of actually placing the call.
   const handleCallEmergency = async () => {
     const phoneNumber = "911";
     const url = `tel:${phoneNumber}`;
@@ -146,6 +150,7 @@ export default function SOSScreen() {
     await Linking.openURL(url);
   };
 
+  // Countdown timer — ticks down every second, triggers the call at 0.
   useEffect(() => {
     if (countdown === 0) {
       handleCallEmergency();
@@ -159,6 +164,7 @@ export default function SOSScreen() {
     return () => clearTimeout(timer);
   }, [countdown]);
 
+  // Both Close and Cancel just back out of this screen without calling.
   const handleCancel = () => {
     router.back();
   };
@@ -172,6 +178,7 @@ export default function SOSScreen() {
         {/* Close */}
 
         <TouchableOpacity
+          accessibilityLabel="Close"
           testID="sos-close-button"
           style={styles.closeButton}
           onPress={handleCancel}
@@ -272,6 +279,7 @@ type InfoRowProps = {
   value: string | null;
 };
 
+// Shows "Not provided" rather than an empty value.
 function InfoRow({ label, value }: InfoRowProps) {
   const { t } = useTranslation();
 

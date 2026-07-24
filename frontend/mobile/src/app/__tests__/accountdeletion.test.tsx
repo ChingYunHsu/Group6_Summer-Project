@@ -9,14 +9,6 @@ import { clearAccessToken } from "../../services/tokenStorage";
 /* -------------------------------------------------------------------------- */
 /*                                   MOCKS                                    */
 /* -------------------------------------------------------------------------- */
-//
-// This file is deliberately narrow, matching the same philosophy as
-// map.test.tsx and reportModal.test.tsx — it only exercises
-// handleDeleteAccount. Location permission checking and language label
-// loading (this screen's own useFocusEffect) are mocked with simple,
-// safe defaults just so the component renders without crashing, not
-// tested in any depth here — that would be a separate settings.test.tsx
-// concern, not "account deletion".
 
 jest.mock("react-i18next", () => ({
   useTranslation: () => ({ t: (key: string) => key }),

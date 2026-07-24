@@ -45,6 +45,7 @@ import {
 import {
   getCurrentLocation,
   requestLocationPermission,
+  calculateDistance,
 } from "../../services/location";
 import { Report, RouteDetail, RouteOption, Venue } from "../../types/venue";
 
@@ -60,9 +61,7 @@ const DEFAULT_LOCATION = {
 };
 
 // Shared by filteredVenues and the busyness-fetching effect below — both
-// need the same "which venues match the selected category" logic, and
-// duplicating this switch in two places risked them silently drifting
-// apart over time.
+// need the same "which venues match the selected category" logic.
 function matchesCategory(venue: Venue, category: Category): boolean {
   switch (category) {
     case "Clinic":
@@ -81,11 +80,7 @@ function matchesCategory(venue: Venue, category: Category): boolean {
 }
 
 // Mirrors the exact colours VenueMarker paints markers with (the
-// COLOURS map in VenueMarker.tsx) — deliberately NOT FilterModal's
-// STATUS_COLOURS chip palette. Those two already drift slightly (e.g.
-// quiet is #006400 in the filter chips vs #16A34A on the actual
-// markers), and this legend has to match what's literally on the map,
-// not the filter UI.
+// COLOURS map in VenueMarker.tsx)
 const LEGEND_ITEMS = [
   {
     translationKey: "map.filters.quiet",
@@ -104,8 +99,7 @@ const LEGEND_ITEMS = [
   },
   // Matches VenueMarker's getMarkerColour() fallback (COLOURS.blue) — hit
   // whenever busyness_color isn't green/yellow/red, i.e. no busyness data
-  // fetched yet for that venue. Not in FilterModal's LIVE_STATUS/
-  // STATUS_COLOURS since it isn't a filterable status, just "unknown".
+  // fetched yet for that venue.
   {
     translationKey: "map.filters.unknown",
     defaultValue: "Unknown",
@@ -116,16 +110,22 @@ const LEGEND_ITEMS = [
 export default function MapScreen() {
   const { t } = useTranslation();
 
+  // Full venue + report lists as loaded from the API, before any local
+  // search/category/filter narrowing is applied.
   const [venues, setVenues] = useState<Venue[]>([]);
 
   const [reports, setReports] = useState<Report[]>([]);
 
   const [loading, setLoading] = useState(true);
 
+  // Search text and selected category chip — both drive filteredVenues
+  // below.
   const [search, setSearch] = useState("");
 
   const [category, setCategory] = useState<Category>("Clinic");
 
+  // Which venue's marker was tapped (or picked from search), and the
+  // bottom sheet visibility that goes with it.
   const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null);
 
   const selectedVenue = useMemo(
@@ -133,9 +133,8 @@ export default function MapScreen() {
     [venues, selectedVenueId],
   );
 
-  // The active report (if any) driving the selected venue's active_warning
-  // flag, so VenueBottomSheet can show real "reported X ago / N
-  // confirmations" data instead of a hardcoded placeholder.
+  // The single active (unresolved) report tied to the selected venue, if
+  // any, used to populate VerificationCard in the venue sheet.
   const activeReportForSelectedVenue = useMemo(() => {
     if (!selectedVenueId) return null;
 
@@ -148,6 +147,8 @@ export default function MapScreen() {
 
   const [venueVisible, setVenueVisible] = useState(false);
 
+  // Same pattern as the venue sheet above, but for a tapped report
+  // marker.
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
 
   const selectedReport = useMemo(
@@ -157,25 +158,16 @@ export default function MapScreen() {
 
   const [reportSheetVisible, setReportSheetVisible] = useState(false);
 
+  // Visibility flags for the various modals/sheets this screen owns.
   const [filterVisible, setFilterVisible] = useState(false);
 
   const [reportVisible, setReportVisible] = useState(false);
 
   const [loginModalVisible, setLoginModalVisible] = useState(false);
 
-  // Undefined = "no preference sent to the API" — NOT the same as `false`.
-  // getVenues() only sets the `open_now` query param when the filter value
-  // isn't undefined, so leaving this undefined until the user actually
-  // applies a filter means the first load isn't silently restricted to
-  // "only currently-closed venues."
+  // Active filter values, all set via FilterModal's onApply.
   const [openNow, setOpenNow] = useState<boolean | undefined>(undefined);
 
-  // Replaces the old plain boolean — accessible_status is a real,
-  // meaningful enum (full_access/partial/none/unknown), not a yes/no
-  // fact, so a simple true/false query param couldn't represent it
-  // honestly. Filtered client-side below, same as liveStatus, rather
-  // than as a getVenues() query param — the backend's exact support for
-  // filtering by these specific enum values hasn't been verified.
   const [wheelchairAccess, setWheelchairAccess] = useState<
     "full_access" | "partial_or_full" | undefined
   >(undefined);
@@ -184,19 +176,14 @@ export default function MapScreen() {
 
   const [autoCurrentTime, setAutoCurrentTime] = useState(true);
 
-  // Now actually read below in filteredVenues, filtering by
-  // venue.busyness?.busyness_status — previously the value was
-  // discarded entirely ([, setLiveStatus]), so selecting a Live Status
-  // chip updated state that nothing ever checked.
   const [liveStatus, setLiveStatus] = useState<
     "quiet" | "moderate" | "busy" | undefined
   >(undefined);
 
-  // Unlike liveStatus, this one IS actually read — forwarded straight
-  // through to VenueBottomSheet, which looks up the matching entry in
-  // its own already-fetched 12-hour forecast data. 0 = Now.
   const [timeOffset, setTimeOffset] = useState(0);
 
+  // Directions/route flow state — options list, the chosen route's
+  // detail, and the two modals that display them in sequence.
   const [routeOptionsVisible, setRouteOptionsVisible] = useState(false);
 
   const [routeDetailVisible, setRouteDetailVisible] = useState(false);
@@ -209,9 +196,6 @@ export default function MapScreen() {
 
   const [routeDetail, setRouteDetail] = useState<RouteDetail | null>(null);
 
-  // The real /routes/detail response has no duration field (see
-  // types/venue.ts) — the duration shown in RouteDetailModal comes from
-  // whichever RouteOption the user picked in RouteOptionsModal instead.
   const [selectedRouteDuration, setSelectedRouteDuration] = useState(0);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -228,10 +212,7 @@ export default function MapScreen() {
   // Tracks which venue_ids busyness has already been fetched FOR,
   // regardless of whether that fetch actually succeeded — deliberately
   // separate from checking venue.busyness itself, since a failed fetch
-  // also leaves that undefined. Without this separate guard, a venue
-  // whose busyness request genuinely fails (e.g. the known current-
-  // status date-window bug) would be retried forever, since it would
-  // keep looking like "never fetched" on every re-render.
+  // also leaves that undefined.
   const [busynessFetchedIds, setBusynessFetchedIds] = useState<Set<string>>(
     new Set(),
   );
@@ -244,17 +225,16 @@ export default function MapScreen() {
   // zoom in/out buttons below, which work by nudging the current
   // region's lat/lng "delta" (how much area is visible) and animating
   // to it, rather than using any platform-specific zoom API directly.
-  // Declared here (before any handler that references it, e.g.
-  // handleSelectSearchSuggestion below) rather than further down, since
-  // several handlers now need it in scope.
   const mapRef = useRef<MapView>(null);
 
   const [region, setRegion] = useState(INITIAL_REGION);
 
   // ---------------------------------------------------------------------
-  // Auth + device location — previously hardcoded TEMP VALUES.
+  // Auth + device location
   // ---------------------------------------------------------------------
 
+  // Checks once on mount whether a token exists, to know whether to
+  // treat the user as logged in or a guest.
   useEffect(() => {
     (async () => {
       const token = await getAccessToken();
@@ -262,10 +242,7 @@ export default function MapScreen() {
     })();
   }, []);
 
-  // Favourites require a real login (require_bearer_auth server-side) —
-  // guests never have any to fetch, and clearing the set when auth is
-  // lost (e.g. logout mid-session) avoids showing stale hearts for a
-  // previous user.
+  // Favourites require a real login.
   useEffect(() => {
     if (!isAuthenticated) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: clears stale favourites immediately when auth is lost, same justified pattern as loadData's effect below
@@ -283,6 +260,9 @@ export default function MapScreen() {
     })();
   }, [isAuthenticated]);
 
+  // Requests location permission and grabs an initial fix on mount, so
+  // the map/report flows have a real starting position rather than the
+  // hardcoded DEFAULT_LOCATION.
   useEffect(() => {
     (async () => {
       const servicesEnabled = await Location.hasServicesEnabledAsync();
@@ -340,6 +320,9 @@ export default function MapScreen() {
     }
   }, [openNow, language]);
 
+  // Re-fetches just the reports list, used after any action that changes
+  // report state (submitting, confirming, resolving) without needing a
+  // full venues reload too.
   async function refreshReports() {
     try {
       const reportData = await getReports();
@@ -349,6 +332,9 @@ export default function MapScreen() {
     }
   }
 
+  // Kicks off the directions flow for the selected venue: confirms
+  // location is available, fetches route options for walk/transit/drive,
+  // and opens RouteOptionsModal.
   async function handleDirections() {
     const enabled = await Location.hasServicesEnabledAsync();
 
@@ -387,6 +373,9 @@ export default function MapScreen() {
     setRouteOptionsVisible(true);
   }
 
+  // Called when the user picks a mode/route from RouteOptionsModal —
+  // fetches the turn-by-turn detail for that mode and opens
+  // RouteDetailModal.
   async function handleRouteSelected(route: RouteOption) {
     setRouteOptionsVisible(false);
 
@@ -410,11 +399,10 @@ export default function MapScreen() {
 
   // "Start Navigation" hands off to the device's own maps app rather than
   // building in-app turn-by-turn (live GPS tracking, rerouting, voice
-  // guidance) — a much bigger feature than this button implies. Apple
+  // guidance) — more realistic for language as it will be native. Apple
   // Maps on iOS since it's always installed with no extra dependency;
   // Google's cross-platform web URL as a universal fallback (opens the
-  // Google Maps app if installed, otherwise a browser) if the primary
-  // deep link can't be opened for any reason.
+  // Google Maps app if installed, otherwise a browser).
   async function handleStartNavigation() {
     if (!selectedVenue) {
       setRouteDetailVisible(false);
@@ -461,8 +449,8 @@ export default function MapScreen() {
   // Shared by the map marker callout and the venue bottom sheet's
   // VerificationCard — both confirm/resolve against the same report.
   // Like report submission, confirm/resolve requires a real login
-  // server-side (require_bearer_auth on POST /reports/{id}/confirmations)
-  // — a guest browsing the map can view reports but not act on them, same
+  // server-side (require_bearer_auth on POST /reports/{id}/confirmations).
+  // A guest browsing the map can view reports but not act on them, same
   // as they can't submit one.
   const handleReportConfirmation = useCallback(
     async (reportId: string, action: "still_here" | "resolved") => {
@@ -484,7 +472,7 @@ export default function MapScreen() {
     [isAuthenticated],
   );
 
-  // Optimistic — flips the heart immediately rather than waiting on the
+  // Flips the heart immediately rather than waiting on the
   // network, then rolls back only if the request actually fails. Same
   // login-gate pattern as report confirmation, since both require
   // require_bearer_auth server-side.
@@ -533,9 +521,7 @@ export default function MapScreen() {
   // Selecting a search suggestion: clears the search text (so the
   // dropdown closes), opens that venue's own detail sheet — same as
   // tapping its marker directly would — and recenters/zooms the map on
-  // it via the same mapRef used by the zoom controls, just targeting the
-  // venue's own coordinates instead of nudging the current region's
-  // delta.
+  // it via the same mapRef used by the zoom controls.
   const handleSelectSearchSuggestion = useCallback((venue: Venue) => {
     setSearch("");
     setSelectedVenueId(venue.venue_id);
@@ -554,16 +540,15 @@ export default function MapScreen() {
 
   // Fetch-on-filter-change. This is the standard "synchronize with an
   // external system" effect use case (re-fetch venues/reports whenever the
-  // active filters change) — exactly what useEffect is for. The lint rule
-  // flags it anyway because loadData sets loading state before its first
-  // await; that's the correct/expected shape for a fetch-triggered loading
-  // indicator, not an anti-pattern, so it's disabled here rather than
-  // restructured.
+  // active filters change).
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional fetch-on-dependency-change
     loadData();
   }, [loadData]);
 
+  // Applies the search text, category chip, live-status, and wheelchair
+  // filters together — this is what actually drives which markers render
+  // on the map.
   const filteredVenues = useMemo(() => {
     return venues.filter((venue) => {
       const matchesSearch = venue.name
@@ -573,20 +558,14 @@ export default function MapScreen() {
       // undefined liveStatus (no chip selected) means "don't filter by
       // this at all" — matches everything. Once a chip IS selected,
       // venues whose busyness hasn't been fetched yet are deliberately
-      // excluded rather than shown anyway, since we genuinely don't
-      // know their status yet. Since venues state updates progressively
-      // as the busyness-fetch effect below resolves each request, this
-      // list fills in as real data arrives rather than staying
+      // excluded rather than shown anyway.
       // permanently incomplete.
       const matchesLiveStatus =
         !liveStatus || venue.busyness?.busyness_status === liveStatus;
 
       // "full_access" only matches venues confirmed fully accessible.
       // "partial_or_full" is the broader option, matching either real
-      // positive status. Venues with 'none'/'unknown'/missing data are
-      // excluded either way once a filter is actually selected — there's
-      // no way to honestly show them as matching an accessibility
-      // requirement we don't have confirmed data for.
+      // positive status.
       const matchesWheelchairAccess =
         !wheelchairAccess ||
         (wheelchairAccess === "full_access"
@@ -604,13 +583,7 @@ export default function MapScreen() {
   }, [venues, search, category, liveStatus, wheelchairAccess]);
 
   // Dropdown suggestions shown under the search bar, distinct from
-  // filteredVenues (which drives the actual map markers) — capped and
-  // scoped to the current category, since showing all ~4,800 matches as
-  // the user types would be both slow and not useful. Live status /
-  // wheelchair filters are deliberately NOT applied here: the dropdown
-  // is "find this specific place by name," not "find places matching my
-  // current filter set" — a venue you're searching for shouldn't hide
-  // from the dropdown just because it's currently busy.
+  // filteredVenues (which drives the actual map markers).
   const searchSuggestions = useMemo(() => {
     if (!search.trim()) return [];
 
@@ -623,21 +596,30 @@ export default function MapScreen() {
       .slice(0, 6);
   }, [venues, search, category]);
 
+  // Report venue picker should show nearby options, not every venue in
+  // the dataset. Sorted by actual distance from the user's location via the
+  // calculateDistance() Haversine helper, capped at 5.
+  const nearestVenuesForReport = useMemo(() => {
+    const withDistance = venues.map((venue) => ({
+      venue,
+      distance: calculateDistance(
+        currentLocation.latitude,
+        currentLocation.longitude,
+        Number(venue.latitude),
+        Number(venue.longitude),
+      ),
+    }));
+
+    withDistance.sort((a, b) => a.distance - b.distance);
+
+    return withDistance.slice(0, 5).map((item) => item.venue);
+  }, [venues, currentLocation]);
+
   // Fetches busyness for whichever venues currently match the selected
   // category (i.e. whatever's actually rendered as markers), merging the
   // result into venues state so VenueMarker's existing colour-mapping
   // logic — which already correctly reads venue.busyness?.busyness_color
-  // — actually has real data to read. That logic was already built and
-  // correct; it was just never being fed anything, since the main
-  // /venues list endpoint never embeds busyness data at all (confirmed
-  // directly against venues.py).
-  //
-  // Deliberately scoped to the current category, not the full venues
-  // array — getVenues() has no venue_type filter at all, so venues state
-  // holds every type at once (~4,800), and fetching busyness for all of
-  // that on every load would be genuinely excessive. Scoping to category
-  // keeps this to whatever's actually visible, typically a few hundred
-  // at most.
+  // — actually has real data to read.
   useEffect(() => {
     const venuesNeedingBusyness = venues.filter(
       (v) =>
@@ -679,6 +661,7 @@ export default function MapScreen() {
     };
   }, [venues, category, busynessFetchedIds]);
 
+  // Halves the visible region delta (zooms in) and animates to it.
   const handleZoomIn = () => {
     const nextRegion = {
       ...region,
@@ -689,6 +672,7 @@ export default function MapScreen() {
     mapRef.current?.animateToRegion(nextRegion, 300);
   };
 
+  // Doubles the visible region delta (zooms out) and animates to it.
   const handleZoomOut = () => {
     const nextRegion = {
       ...region,
@@ -772,24 +756,26 @@ export default function MapScreen() {
       {/* ---------------------- Zoom Controls ---------------------- */}
 
       <View style={styles.zoomControls}>
-        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomIn}>
+        <TouchableOpacity
+          accessibilityLabel="Zoom in"
+          style={styles.zoomButton}
+          onPress={handleZoomIn}
+        >
           <Ionicons name="add" size={24} color={Colours.text} />
         </TouchableOpacity>
 
         <View style={styles.zoomDivider} />
 
-        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomOut}>
+        <TouchableOpacity
+          accessibilityLabel="Zoom out"
+          style={styles.zoomButton}
+          onPress={handleZoomOut}
+        >
           <Ionicons name="remove" size={24} color={Colours.text} />
         </TouchableOpacity>
       </View>
 
       {/* ---------------------- Busyness Legend ---------------------- */}
-
-      {/* Only meaningful when autoCurrentTime is on — VenueMarker only
-          paints the green/yellow/red busyness colour when its
-          showLiveStatus prop is true (wired to autoCurrentTime below);
-          otherwise every marker renders blue regardless of category, so
-          a legend explaining busyness colours would be misleading. */}
 
       {autoCurrentTime && (
         <View style={styles.legendContainer}>
@@ -818,10 +804,6 @@ export default function MapScreen() {
         onSOSPress={() => router.push("/sos")}
         onReportPress={() => setReportVisible(true)}
       />
-
-      {/* Only rendered while a route polyline is actually on screen — the
-          line otherwise has no way to be dismissed once set, short of
-          picking a different route to overwrite it. */}
 
       {routeDetail?.polyline_preview &&
         routeDetail.polyline_preview.length > 0 && (
@@ -867,7 +849,7 @@ export default function MapScreen() {
         isAuthenticated={isAuthenticated}
         locationEnabled={locationEnabled}
         currentLocation={currentLocation}
-        nearbyVenues={venues}
+        nearbyVenues={nearestVenuesForReport}
         onRequireLogin={() => setLoginModalVisible(true)}
         onRequireLocation={() => setLocationModalVisible(true)}
         onSubmitVenue={async (report) => {
@@ -1061,9 +1043,6 @@ const styles = StyleSheet.create({
     color: Colours.text,
   },
 
-  // Positioned on the right side, vertically roughly mid-screen — clear
-  // of the topOverlay (search + category chips) above and
-  // FloatingActionButtons (SOS + Report, bottom-right) below.
   zoomControls: {
     position: "absolute",
     right: 20,
@@ -1090,9 +1069,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
 
-  // Bottom-left, above the Clear Route button's footprint (which sits at
-  // bottom:36 with ~40px height + padding) so the two never overlap even
-  // when a route is active at the same time.
   legendContainer: {
     position: "absolute",
     left: 20,
