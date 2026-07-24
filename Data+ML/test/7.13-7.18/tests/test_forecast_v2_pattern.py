@@ -1,10 +1,32 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from unittest.mock import MagicMock
 
 import pandas as pd
+import pytest
 
 import forecast_v2_pattern as pattern
-from forecast_v2_pattern import ENRICHED_FEATURES, feature_matrix, group_split, temporal_snapshot_split
+from forecast_v2_pattern import (
+    ELIGIBLE_VENUE_TYPES,
+    ENRICHED_FEATURES,
+    FORECAST_HORIZON_HOURS,
+    feature_matrix,
+    group_split,
+    temporal_snapshot_split,
+)
+
+NOW = pd.Timestamp("2026-07-24 12:00:00", tz="UTC")
+
+
+def _valid_curve(now: pd.Timestamp = NOW, venue_type: str = "clinic") -> pd.DataFrame:
+    """13-point hourly curve starting at now, single eligible venue."""
+    rows = []
+    for i in range(FORECAST_HORIZON_HOURS + 1):
+        rows.append({
+            "venue_id": "v1",
+            "venue_type": venue_type,
+            "forecast_for": now + pd.Timedelta(hours=i),
+        })
+    return pd.DataFrame(rows)
 
 
 def test_group_split_keeps_place_ids_disjoint():
@@ -64,3 +86,76 @@ def test_publish_upserts_backend_forecast_contract(monkeypatch):
     assert "ON DUPLICATE KEY UPDATE" in sql
     assert rows[0][5] == "forecast-v2"
     conn.commit.assert_called_once()
+
+
+def test_audit_curve_passes_valid_13_point_curve():
+    curve = _valid_curve(NOW)
+    audit = pattern.audit_curve(curve, NOW)
+    assert audit["type_counts"] == {"clinic": 1}
+    assert audit["future_rows"] == 13
+    assert NOW.strftime("%Y-%m-%d %H") in audit["min_forecast_for"]
+
+
+def test_audit_curve_fails_on_empty_curve():
+    with pytest.raises(ValueError, match="Curve is empty"):
+        pattern.audit_curve(pd.DataFrame(), NOW)
+
+
+def test_audit_curve_fails_on_stale_curve():
+    stale_now = NOW - pd.Timedelta(hours=24)
+    curve = _valid_curve(stale_now)
+    with pytest.raises(ValueError, match="Zero future rows"):
+        pattern.audit_curve(curve, NOW)
+
+
+def test_audit_curve_fails_on_ineligible_venue_type():
+    curve = _valid_curve(NOW, venue_type="restroom")
+    with pytest.raises(ValueError, match="Ineligible venue types.*restroom"):
+        pattern.audit_curve(curve, NOW)
+
+
+def test_audit_curve_fails_when_max_forecast_too_short():
+    # Only 10 points instead of 13
+    rows = []
+    for i in range(10):
+        rows.append({
+            "venue_id": "v1",
+            "venue_type": "hospital",
+            "forecast_for": NOW + pd.Timedelta(hours=i),
+        })
+    curve = pd.DataFrame(rows)
+    with pytest.raises(ValueError, match="does not reach required"):
+        pattern.audit_curve(curve, NOW)
+
+
+def test_audit_curve_fails_when_venue_missing_hour_buckets():
+    # Skip hour 5
+    rows = []
+    for i in range(FORECAST_HORIZON_HOURS + 1):
+        if i == 5:
+            continue
+        rows.append({
+            "venue_id": "v1",
+            "venue_type": "pharmacy",
+            "forecast_for": NOW + pd.Timedelta(hours=i),
+        })
+    curve = pd.DataFrame(rows)
+    with pytest.raises(ValueError, match="missing forecast slots"):
+        pattern.audit_curve(curve, NOW)
+
+
+def test_audit_curve_fails_when_one_venue_is_fully_stale():
+    """A batch with one fresh venue and one fully-stale venue must not pass."""
+    fresh_rows = [
+        {"venue_id": "fresh", "venue_type": "clinic",
+         "forecast_for": NOW + pd.Timedelta(hours=i)}
+        for i in range(FORECAST_HORIZON_HOURS + 1)
+    ]
+    stale_rows = [
+        {"venue_id": "stale", "venue_type": "clinic",
+         "forecast_for": NOW - pd.Timedelta(days=5) + pd.Timedelta(hours=i)}
+        for i in range(FORECAST_HORIZON_HOURS + 1)
+    ]
+    curve = pd.DataFrame(fresh_rows + stale_rows)
+    with pytest.raises(ValueError, match="missing forecast slots"):
+        pattern.audit_curve(curve, NOW)
