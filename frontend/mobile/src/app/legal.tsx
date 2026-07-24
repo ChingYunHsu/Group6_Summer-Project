@@ -13,16 +13,15 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
+// Terms + Privacy review screen — both boxes must be checked before
+// Continue is enabled. Reachable from onboarding (origin unset, goes to
+// /location) or from More > Legal within the app (origin="app", just
+// goes back).
 export default function LegalScreen() {
   const router = useRouter();
 
   const { t } = useTranslation();
 
-  // Onboarding (welcome.tsx) opens this screen with no params — default
-  // behavior unchanged, Accept & Continue pushes forward to /location.
-  // Opened mid-session (the More tab's "Legal" row) passes origin="app",
-  // so Accept & Continue returns to wherever the user actually came from
-  // instead of restarting the rest of onboarding underneath them.
   const { origin } = useLocalSearchParams<{ origin?: string }>();
   const isInAppEntry = origin === "app";
 

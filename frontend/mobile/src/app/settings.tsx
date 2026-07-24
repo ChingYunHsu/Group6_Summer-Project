@@ -27,6 +27,8 @@ import { clearAccessToken } from "../services/tokenStorage";
 export default function SettingsScreen() {
   const { t } = useTranslation();
 
+  // Live location-permission status and the display label for the
+  // currently selected language — both re-derived on every focus below.
   const [locationEnabled, setLocationEnabled] = useState(false);
 
   const [currentLanguageLabel, setCurrentLanguageLabel] = useState<
@@ -64,6 +66,9 @@ export default function SettingsScreen() {
     }, []),
   );
 
+  // Turning ON requests the real OS permission. Turning OFF can't
+  // actually revoke it (see comment below) — it just deep-links to the
+  // system Settings app instead.
   const handleLocationToggle = async (value: boolean) => {
     if (value) {
       const granted = await requestLocationPermission();
@@ -80,7 +85,7 @@ export default function SettingsScreen() {
     }
 
     // Neither iOS nor Android lets an app revoke its own location
-    // permission — only the OS Settings app can. Send the user there
+    // permission — only the OS Settings app can. Sends the user there
     // rather than silently flipping a switch that doesn't reflect reality.
     Alert.alert(
       t("settings.locationDisableTitle", {
@@ -100,6 +105,8 @@ export default function SettingsScreen() {
     );
   };
 
+  // Confirms, then logs out (blacklisting the token server-side) and
+  // returns to the root screen.
   const handleLogout = () => {
     Alert.alert(t("settings.logout"), t("settings.logoutMessage"), [
       { text: t("common.cancel"), style: "cancel" },
@@ -125,6 +132,9 @@ export default function SettingsScreen() {
     ]);
   };
 
+  // Confirms, then permanently deletes the account. On success, clears
+  // all local auth/app state and returns to the root screen — on
+  // failure, shows an error and leaves the account intact.
   const handleDeleteAccount = () => {
     Alert.alert(
       t("settings.deleteAccount"),
@@ -158,17 +168,8 @@ export default function SettingsScreen() {
               return;
             }
 
-            // DELETE /user/account already succeeded server-side at this
-            // point. Per spec, everything past here is local-only cleanup
-            // — no further backend logout/token-invalidation call.
             await clearAccessToken();
 
-            // Covers "clear locally cached medical profile data," "clear
-            // application state," and "clear temporary in-memory caches"
-            // in one pass. There's no dedicated medical-data cache key
-            // visible in the files I've seen — if one exists elsewhere
-            // (e.g. inside medical-id.tsx) and needs different handling,
-            // let me know the key and I'll target it specifically instead.
             await AsyncStorage.clear();
 
             setDeleting(false);
@@ -191,6 +192,7 @@ export default function SettingsScreen() {
         <View style={styles.header}>
           <View style={styles.headerLeft}>
             <TouchableOpacity
+              accessibilityLabel="Go back"
               onPress={() => router.back()}
               style={styles.backButton}
             >

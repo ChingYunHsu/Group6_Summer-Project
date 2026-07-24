@@ -7,6 +7,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
+// Shown instead of the real profile tab when the user isn't logged in
+// (profile.tsx redirects here). Just a locked-content prompt pointing
+// to login/register.
 export default function ProfileGuestScreen() {
   const { t } = useTranslation();
 
@@ -19,7 +22,10 @@ export default function ProfileGuestScreen() {
             from (tabs)/profile.tsx's guest redirect, so there's no
             reliable "previous screen" in history to return to. Map is
             the sensible default a browsing guest actually wants. */}
-        <TouchableOpacity onPress={() => router.replace("/map")}>
+        <TouchableOpacity
+          accessibilityLabel="Go back to map"
+          onPress={() => router.replace("/map")}
+        >
           <Ionicons name="chevron-back" size={24} color={Colours.text} />
         </TouchableOpacity>
 

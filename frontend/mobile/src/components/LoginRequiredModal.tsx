@@ -8,11 +8,16 @@ type Props = {
   onClose: () => void;
 };
 
+// Shown whenever a logged-out user tries to do something that requires
+// an account (favouriting, reporting, confirming a report) — offers to
+// send them to login/register, or just cancel.
 export default function LoginRequiredModal({ visible, onClose }: Props) {
   const router = useRouter();
 
   const { t } = useTranslation();
 
+  // Closes this modal first, then navigates after a short delay so the
+  // close animation isn't cut off by the screen transition.
   const handleLogin = () => {
     onClose();
 

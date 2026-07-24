@@ -1,9 +1,9 @@
 import {
-    KeyboardTypeOptions,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  KeyboardTypeOptions,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
 
 import { Colours } from "../constants/colours";
@@ -16,6 +16,8 @@ interface FormInputProps {
   keyboardType?: KeyboardTypeOptions;
 }
 
+// Simple reusable labeled text input, used across the various profile/
+// settings forms.
 export default function FormInput({
   label,
   value,
@@ -25,15 +27,10 @@ export default function FormInput({
 }: FormInputProps) {
   return (
     <View style={styles.field}>
-      <Text style={styles.label}>
-        {label}
-      </Text>
+      <Text style={styles.label}>{label}</Text>
 
       <TextInput
-        style={[
-          styles.input,
-          multiline && styles.multilineInput,
-        ]}
+        style={[styles.input, multiline && styles.multilineInput]}
         value={value}
         onChangeText={onChangeText}
         multiline={multiline}

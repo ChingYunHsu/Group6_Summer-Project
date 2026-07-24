@@ -6,26 +6,26 @@ import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
 import { getAccessToken } from "../../services/authService";
 
+// Simple menu screen linking out to account, language, settings, legal,
+// welcome, and SOS. Layout/behaviour is otherwise static — the only
+// dynamic bit is whether the top row says "Log In / Register" (guest)
+// or opens Settings directly (already logged in).
 export default function MoreScreen() {
   const router = useRouter();
   const { t } = useTranslation();
 
-  // Guests had no way to create an account anywhere except stumbling onto
-  // the Profile tab's locked wall — this gives a second, more discoverable
-  // path. Row stays visible either way rather than disappearing when
-  // logged in (a shifting menu can look broken) — label/destination just
-  // adapt: guest -> /login, logged in -> /settings (where logout lives).
+  // Whether the user currently has no auth token — determines what the
+  // top row does when tapped.
   const [isGuest, setIsGuest] = useState(false);
 
+  // Checks auth status once on mount so the top row's destination is
+  // correct on first render.
   useEffect(() => {
     (async () => {
       try {
         const token = await getAccessToken();
         setIsGuest(!token);
       } catch (error) {
-        // Erring toward showing the login option rather than hiding it —
-        // worse to hide a needed login path than to show one
-        // unnecessarily to someone who's actually logged in.
         console.error("Failed to check auth status for More screen", error);
         setIsGuest(true);
       }

@@ -17,12 +17,19 @@ import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 import i18n from "../i18n";
 
+// Language selection screen — reachable both from first-run onboarding
+// (origin unset, continues to /welcome) and from within the app via
+// More > Language Selection (origin="app", just goes back on Done).
 export default function LanguageScreen() {
   const router = useRouter();
   const { t } = useTranslation();
   const { origin } = useLocalSearchParams<{ origin?: string }>();
   const isInAppEntry = origin === "app";
   const [search, setSearch] = useState("");
+
+  // Currently selected language, defaulting to whatever i18next already
+  // has active (so re-opening this screen shows the real current choice,
+  // not always the first featured language).
   const [selectedLanguage, setSelectedLanguage] = useState<{
     native: string;
     english: string;
@@ -33,6 +40,8 @@ export default function LanguageScreen() {
       featuredLanguages[0],
   );
 
+  // Search results across the full language list, shown only once the
+  // user has typed something.
   const filteredLanguages = useMemo(() => {
     if (!search.trim()) return [];
 
@@ -47,6 +56,8 @@ export default function LanguageScreen() {
     (lang) => lang.english === selectedLanguage?.english,
   );
 
+  // Persists the choice (AsyncStorage) and switches i18next's active
+  // language immediately.
   async function selectFeaturedLanguage(
     item: (typeof featuredLanguages)[number],
   ) {
@@ -91,6 +102,9 @@ export default function LanguageScreen() {
                 key={language.english}
                 style={styles.resultRow}
                 onPress={() => {
+                  // Only the featured/supported languages can actually
+                  // be selected — anything else in the full list shows
+                  // a "coming soon" notice instead of silently no-oping.
                   if (!featuredMatch) {
                     Alert.alert(
                       t("language.comingSoon"),

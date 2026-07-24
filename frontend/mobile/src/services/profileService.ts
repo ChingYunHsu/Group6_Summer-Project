@@ -3,12 +3,6 @@ import { request } from "./api";
 
 export type UserProfile = typeof mockProfile;
 
-// Matches get_user_profile()'s actual SELECT in backend/src/api/user.py:
-//   SELECT user_id, email, display_name, phone, nationality, spoken_languages
-//   FROM users
-// user_id/email/full_name are now all returned directly (full_name is
-// display_name renamed at the API boundary) — no more client-side mapping
-// needed here.
 type ProfileResponse = {
   user_id: string;
   email: string;
@@ -18,15 +12,11 @@ type ProfileResponse = {
   spoken_languages: string[];
 };
 
+// Merges a real API response into the full UserProfile shape, falling
+// back to mockProfile's fields for anything the response leaves out —
+// keeps every screen able to rely on the full shape existing, rather
+// than having to optional-chain every field individually.
 function mergeProfileResponse(profile: ProfileResponse): UserProfile {
-  // A freshly registered account has never had phone/nationality/
-  // spoken_languages set — register_user() only inserts user_id, email,
-  // password_hash, display_name — so these legitimately come back null
-  // from the backend, not just as a hypothetical edge case. Falling back
-  // to mockProfile's stale placeholder text would be worse than an empty
-  // value, so these fall back to genuinely empty values instead, and
-  // spoken_languages specifically falls back to [] since callers (e.g.
-  // edit-profile.tsx) call .join() on it directly.
   return {
     ...mockProfile,
     user_id: profile.user_id ?? mockProfile.user_id,
@@ -38,12 +28,15 @@ function mergeProfileResponse(profile: ProfileResponse): UserProfile {
   };
 }
 
+// Fetches the current user's profile.
 export async function loadProfile(): Promise<UserProfile> {
   const profile = await request<ProfileResponse>("/user/profile");
 
   return mergeProfileResponse(profile);
 }
 
+// Saves (partial) changes to the profile — only phone/nationality/
+// spoken_languages are actually editable server-side.
 export async function saveProfile(profile: {
   phone?: string;
   nationality?: string;

@@ -27,13 +27,6 @@ jest.mock("expo-router", () => ({
       const cleanup = callback();
       return typeof cleanup === "function" ? cleanup : undefined;
     });
-    // No dependency array, deliberately — the real callback passed in is
-    // wrapped in useCallback(fn, [someState]) by the component itself,
-    // so it becomes a genuinely new function reference whenever that
-    // state changes. An empty array here meant this only ever ran once
-    // on mount and never noticed those later changes (e.g. authStatus
-    // going from checking to authenticated), which was silently causing
-    // loadProfile/loadMedicalId/etc. to never be called at all.
   },
 }));
 
@@ -236,9 +229,6 @@ describe("AssistantScreen — language switching", () => {
 
     const screen = await render(<AssistantScreen />);
 
-    // The exact bug found and fixed live: respondingLanguageLabel was
-    // pulling .english ("Spanish") instead of .native ("Español") in
-    // both of its branches.
     expect(await screen.findByText(/Español/)).toBeTruthy();
 
     await act(async () => {});

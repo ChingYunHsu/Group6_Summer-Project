@@ -19,16 +19,14 @@ interface Props {
 
   onFilterPress: () => void;
 
-  // Optional: when provided alongside a non-empty value, renders a
-  // dropdown of matching venues below the search bar — mirrors the
-  // search-results pattern already used in language.tsx. Both omitted
-  // (map.tsx not yet updated) keeps this exactly as before, so this is
-  // a non-breaking addition.
   suggestions?: Venue[];
 
   onSelectSuggestion?: (venue: Venue) => void;
 }
 
+// Search bar + filter icon, plus an optional autocomplete dropdown
+// (suggestions/onSelectSuggestion) driven by whatever map.tsx computes
+// as nearby name matches.
 export default function MapSearchBar({
   value,
 
@@ -61,15 +59,15 @@ export default function MapSearchBar({
           returnKeyType="search"
         />
 
-        <TouchableOpacity testID="map-filter-button" onPress={onFilterPress}>
+        <TouchableOpacity
+          accessibilityLabel="Open filters"
+          testID="map-filter-button"
+          onPress={onFilterPress}
+        >
           <Ionicons name="options" size={22} color={Colours.primary} />
         </TouchableOpacity>
       </View>
 
-      {/* keyboardShouldPersistTaps="handled" is required here — without
-          it, tapping a row first dismisses the keyboard/blurs the
-          TextInput rather than registering the row's onPress, a common
-          RN gotcha with search dropdowns specifically. */}
       {showDropdown && (
         <FlatList
           style={styles.dropdown}
@@ -150,8 +148,7 @@ const styles = StyleSheet.create({
 
   // Positioned as an overlay directly below the search bar (height 56 +
   // small gap), so it floats over the map rather than pushing the
-  // category chips (rendered right after this component in map.tsx)
-  // further down.
+  // category chips further down.
   dropdown: {
     position: "absolute",
     top: 62,

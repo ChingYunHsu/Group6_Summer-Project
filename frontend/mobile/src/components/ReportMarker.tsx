@@ -9,6 +9,8 @@ interface Props {
   onPress: (report: Report) => void;
 }
 
+// Formats a report's created_at timestamp as a relative "X min/hr ago"
+// string — shared by VerificationCard and ReportBottomSheet.
 export function formatReportedTime(createdAt: string) {
   const minutes = Math.floor(
     (Date.now() - new Date(createdAt).getTime()) / 60000,
@@ -22,6 +24,8 @@ export function formatReportedTime(createdAt: string) {
   return `${hours} hr${hours === 1 ? "" : "s"} ago`;
 }
 
+// Map marker for an active user report — only renders for reports whose
+// status is still "active" (resolved/expired reports don't show a pin).
 export default function ReportMarker({ report, onPress }: Props) {
   if (report.status !== "active") {
     return null;
@@ -29,6 +33,7 @@ export default function ReportMarker({ report, onPress }: Props) {
 
   return (
     <Marker
+      accessibilityLabel={`Report: ${report.issue_type_label ?? report.issue_type}`}
       coordinate={{
         latitude: Number(report.latitude),
         longitude: Number(report.longitude),

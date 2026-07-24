@@ -146,12 +146,6 @@ describe("ProfileScreen — protected page routing", () => {
     loadMedicalId.mockResolvedValue(REAL_MEDICAL_ID);
 
     const screen = await render(<ProfileScreen />);
-
-    // "David Irving" genuinely appears twice in a correct render — once
-    // in the header/avatar card, once again in the Full Name row — so
-    // findByText throws on it by design (multiple matches). Confirmed
-    // via a real rendered-tree dump: "22a244cc…" (the truncated User ID)
-    // appears exactly once, making it a more reliable check here.
     expect(await screen.findByText("22a244cc…")).toBeTruthy();
     expect(mockReplace).not.toHaveBeenCalledWith("/profile-guest");
   });

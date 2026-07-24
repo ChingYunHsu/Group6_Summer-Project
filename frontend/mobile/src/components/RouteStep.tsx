@@ -7,6 +7,7 @@ interface Props {
   title: string;
 }
 
+// One numbered row in RouteDetailModal's turn-by-turn step list.
 export default function RouteStep({ stepNumber, title }: Props) {
   return (
     <View style={styles.container}>
