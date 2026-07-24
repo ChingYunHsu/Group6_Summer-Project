@@ -1,9 +1,4 @@
-import {
-  render,
-  screen,
-  waitFor,
-  cleanup,
-} from "@testing-library/react-native";
+import { render, waitFor, cleanup } from "@testing-library/react-native";
 
 import VenueBottomSheet from "../../components/VenueBottomSheet";
 import { getVenueBusyness, getVenueForecast } from "../../services/api";
@@ -44,9 +39,6 @@ const mockGetVenueForecast = getVenueForecast as jest.MockedFunction<
   typeof getVenueForecast
 >;
 
-// Full, valid Venue fixture — every required field on the real interface
-// filled with a plausible value, so each test only needs to override the
-// one or two fields it actually cares about (venue_type, mainly).
 function buildVenue(overrides: Partial<Venue> = {}): Venue {
   return {
     venue_id: "v_test_1",
@@ -80,11 +72,6 @@ function buildVenue(overrides: Partial<Venue> = {}): Venue {
   };
 }
 
-// No live-status badge in any of these four cases — every scenario here
-// is specifically about the /busyness/forecast (chart) response. Kept
-// as "unavailable" across the board so the badge assertion stays
-// consistent and isn't a variable each test has to separately account
-// for.
 const unavailableBusyness = {
   venue_id: "v_test_1",
   busyness: {
@@ -106,10 +93,6 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
     cleanup();
   });
 
-  // ---------------------------------------------------------------------
-  // Case 1: AED and restroom fixtures render "• No Live Info"
-  // ---------------------------------------------------------------------
-
   it("renders '• No Live Info' for an AED (emergencyasset) venue", async () => {
     const aedForecast: ForecastResponse = {
       venue_id: "v_test_1",
@@ -120,7 +103,7 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
     };
     mockGetVenueForecast.mockResolvedValue(aedForecast);
 
-    render(
+    const { findByText, queryByText } = await render(
       <VenueBottomSheet
         visible
         venue={buildVenue({ venue_type: "emergencyasset" })}
@@ -130,11 +113,9 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
       />,
     );
 
-    await waitFor(() => {
-      expect(screen.getByText("• No Live Info")).toBeTruthy();
-    });
+    expect(await findByText("• No Live Info")).toBeTruthy();
 
-    expect(screen.queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
+    expect(queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
   });
 
   it("renders '• No Live Info' for a restroom venue", async () => {
@@ -147,7 +128,7 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
     };
     mockGetVenueForecast.mockResolvedValue(restroomForecast);
 
-    render(
+    const { findByText, queryByText } = await render(
       <VenueBottomSheet
         visible
         venue={buildVenue({ venue_type: "restroom" })}
@@ -157,16 +138,10 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
       />,
     );
 
-    await waitFor(() => {
-      expect(screen.getByText("• No Live Info")).toBeTruthy();
-    });
+    expect(await findByText("• No Live Info")).toBeTruthy();
 
-    expect(screen.queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
+    expect(queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
   });
-
-  // ---------------------------------------------------------------------
-  // Case 2: eligible type + real V2 data renders the 12-hour chart
-  // ---------------------------------------------------------------------
 
   it("renders the 12-hour forecast chart for a clinic with V2 data", async () => {
     const clinicForecast: ForecastResponse = {
@@ -186,7 +161,7 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
     };
     mockGetVenueForecast.mockResolvedValue(clinicForecast);
 
-    render(
+    const { findByText, queryByText } = await render(
       <VenueBottomSheet
         visible
         venue={buildVenue({ venue_type: "clinic" })}
@@ -196,16 +171,10 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
       />,
     );
 
-    await waitFor(() => {
-      expect(screen.getByText(/12-Hour Busyness Forecast/i)).toBeTruthy();
-    });
+    expect(await findByText(/12-Hour Busyness Forecast/i)).toBeTruthy();
 
-    expect(screen.queryByText("• No Live Info")).toBeNull();
+    expect(queryByText("• No Live Info")).toBeNull();
   });
-
-  // ---------------------------------------------------------------------
-  // Case 3: eligible type, but no V2 rows yet — unavailable, not a crash
-  // ---------------------------------------------------------------------
 
   it("renders '• No Live Info' for an eligible venue with an empty forecast", async () => {
     const emptyForecast: ForecastResponse = {
@@ -217,7 +186,7 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
     };
     mockGetVenueForecast.mockResolvedValue(emptyForecast);
 
-    render(
+    const { findByText, queryByText } = await render(
       <VenueBottomSheet
         visible
         venue={buildVenue({ venue_type: "hospital" })}
@@ -227,28 +196,20 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
       />,
     );
 
-    await waitFor(() => {
-      expect(screen.getByText("• No Live Info")).toBeTruthy();
-    });
+    expect(await findByText("• No Live Info")).toBeTruthy();
 
-    expect(screen.queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
+    expect(queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
   });
-
-  // ---------------------------------------------------------------------
-  // Case 4: a legacy/mock-shaped payload must never render as a forecast
-  // ---------------------------------------------------------------------
 
   it("never renders a chart for a legacy-shaped payload with no data_mode", async () => {
     const legacyShapedPayload = {
       venue_id: "v_test_1",
       forecast: [{ offset_hours: 0, percent: 30, level: "quiet" }],
-      // No data_mode field at all — mirrors today's pre-Sprint-5 backend
-      // response shape.
     } as unknown as ForecastResponse;
 
     mockGetVenueForecast.mockResolvedValue(legacyShapedPayload);
 
-    render(
+    const { findByText, queryByText } = await render(
       <VenueBottomSheet
         visible
         venue={buildVenue({ venue_type: "clinic" })}
@@ -258,10 +219,8 @@ describe("VenueBottomSheet — Sprint 5 V2 data_mode gating", () => {
       />,
     );
 
-    await waitFor(() => {
-      expect(screen.getByText("• No Live Info")).toBeTruthy();
-    });
+    expect(await findByText("• No Live Info")).toBeTruthy();
 
-    expect(screen.queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
+    expect(queryByText(/12-Hour Busyness Forecast/i)).toBeNull();
   });
 });
