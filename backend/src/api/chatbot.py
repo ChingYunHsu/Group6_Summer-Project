@@ -136,7 +136,7 @@ def _ask_gemini_rag(message: str, ui_language: str = None) -> dict:
 @require_api_key
 def ask_chatbot():
     payload = request.get_json(silent=True) or {}
-
+    
     if "message" not in payload:
         return jsonify({"error": "Validation failed.", "missing_fields": ["message"]}), 400
 
