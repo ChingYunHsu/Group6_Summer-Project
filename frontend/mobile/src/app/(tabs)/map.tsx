@@ -542,7 +542,7 @@ export default function MapScreen() {
   // external system" effect use case (re-fetch venues/reports whenever the
   // active filters change).
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect, intentional fetch-on-dependency-change
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional fetch-on-dependency-change
     loadData();
   }, [loadData]);
 

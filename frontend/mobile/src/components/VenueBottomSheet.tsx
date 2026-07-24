@@ -81,6 +81,7 @@ export default function VenueBottomSheet({
       // data the moment the sheet closes or switches to a different
       // venue, so a brief flash of the PREVIOUS venue's data can never
       // show while the new fetch is still in flight.
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: clears stale data synchronously before the new fetch starts, not a state-sync anti-pattern
       setBusynessStatus(null);
       setForecast(null);
       return;
