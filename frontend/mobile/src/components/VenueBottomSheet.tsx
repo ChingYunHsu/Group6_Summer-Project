@@ -74,6 +74,7 @@ export default function VenueBottomSheet({
     }
 
     let isActive = true;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- loading flag must be set synchronously when the fetch starts, before the async result arrives
     setBusynessLoading(true);
 
     Promise.all([
