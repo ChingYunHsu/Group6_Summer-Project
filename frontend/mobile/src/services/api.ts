@@ -44,7 +44,12 @@ import { clearAccessToken, getAccessToken } from "./tokenStorage";
 
 // Android has its own special alias for
 // "the host machine" instead: 10.0.2.2.
-const API_HOST = Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1";
+// EXPO_PUBLIC_API_HOST lets a real physical device (where 127.0.0.1 means
+// "the device itself", not the Mac) override the default. Simulator/
+// emulator behavior is unchanged when this isn't set.
+const API_HOST =
+  process.env.EXPO_PUBLIC_API_HOST ??
+  (Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1");
 
 const API_BASE = `http://${API_HOST}:5000/api/v1`;
 
@@ -53,8 +58,6 @@ const API_BASE = `http://${API_HOST}:5000/api/v1`;
 // require_api_key in backend/src/auth.py. Locally this is a no-op unless
 // the backend's own API_KEY env var is set, but staging/prod will enforce
 // it, so this needs to be sent unconditionally either way.
-// Set EXPO_PUBLIC_API_KEY in your .env once the team assigns a real dev
-// key; "development" is just a harmless placeholder until then.
 const API_KEY = process.env.EXPO_PUBLIC_API_KEY ?? "development";
 
 // Guards against showing the session-expired alert more than once when
@@ -66,6 +69,11 @@ let isHandlingSessionExpiry = false;
 /*                               HTTP HELPER                                  */
 /* -------------------------------------------------------------------------- */
 
+// Central fetch wrapper used by every function in this file — attaches
+// the API key + bearer token to every request, parses error bodies into
+// a real Error with .status/.body, and handles a 401 "token expired"
+// response by clearing the stored token and prompting the user to log
+// in again (only once at a time, guarded by isHandlingSessionExpiry).
 export async function request<T>(
   endpoint: string,
   options: RequestInit = {},
@@ -151,6 +159,9 @@ export async function request<T>(
 /*                                  VENUES                                    */
 /* -------------------------------------------------------------------------- */
 
+// Fetches the venue list, optionally filtered by language/accessibility/
+// open-now — returns just the items array, not the {count, items}
+// envelope.
 export async function getVenues(filters?: {
   languages?: string[];
   accessible?: boolean;
@@ -177,6 +188,7 @@ export async function getVenues(filters?: {
   return data.items;
 }
 
+// Fetches a single venue by id.
 export async function getVenue(venueId: string): Promise<Venue> {
   return request<Venue>(`/venues/${venueId}`);
 }
@@ -185,12 +197,14 @@ export async function getVenue(venueId: string): Promise<Venue> {
 /*                               BUSYNESS                                     */
 /* -------------------------------------------------------------------------- */
 
+// Current live/predicted busyness for one venue.
 export async function getVenueBusyness(
   venueId: string,
 ): Promise<BusynessResponse> {
   return request<BusynessResponse>(`/venues/${venueId}/busyness`);
 }
 
+// 12-hour busyness forecast for one venue.
 export async function getVenueForecast(
   venueId: string,
 ): Promise<ForecastResponse> {
@@ -201,12 +215,15 @@ export async function getVenueForecast(
 /*                                  REPORTS                                   */
 /* -------------------------------------------------------------------------- */
 
+// Fetches all currently active reports.
 export async function getReports(): Promise<Report[]> {
   const data = await request<ReportResponse>("/reports");
 
   return data.items;
 }
 
+// Submits a new report — venue-bound if venue_id is given, otherwise a
+// standalone incident report.
 export async function submitReport(payload: {
   venue_id?: string;
 
@@ -229,6 +246,7 @@ export async function submitReport(payload: {
   });
 }
 
+// Confirms or resolves an existing report.
 export async function confirmReport(
   reportId: string,
   action:
@@ -251,6 +269,7 @@ export async function confirmReport(
 /*                                  ROUTES                                    */
 /* -------------------------------------------------------------------------- */
 
+// Walk/transit/drive route summaries from origin to a venue.
 export async function getRouteOptions(
   destinationVenueId: string | undefined,
   origin: { latitude: number; longitude: number },
@@ -267,6 +286,7 @@ export async function getRouteOptions(
   return request<RouteOptionsResponse>(`/routes/options?${params.toString()}`);
 }
 
+// Turn-by-turn detail for a specific mode/route.
 export async function getRouteDetail(
   destinationVenueId: string | undefined,
   origin: { latitude: number; longitude: number },
@@ -289,6 +309,8 @@ export async function getRouteDetail(
 /*                                 CHATBOT                                    */
 /* -------------------------------------------------------------------------- */
 
+// Sends a message to the AI assistant and gets back a reply + citations
+// + suggested follow-up prompts.
 export async function sendChatbotMessage(payload: {
   message: string;
   language?: string;
@@ -304,6 +326,8 @@ export async function sendChatbotMessage(payload: {
 /*                                   USER                                     */
 /* -------------------------------------------------------------------------- */
 
+// Permanently deletes the current user's account (backend cascades the
+// deletion to all related data).
 export async function deleteAccount(): Promise<{
   status: string;
   message: string;
@@ -318,10 +342,12 @@ export async function deleteAccount(): Promise<{
 /*                                FAVOURITES                                  */
 /* -------------------------------------------------------------------------- */
 
+// Fetches the current user's saved venues.
 export async function getFavourites(): Promise<FavouritesResponse> {
   return request<FavouritesResponse>("/user/favourites");
 }
 
+// Saves a venue as a favourite.
 export async function addFavourite(venueId: string): Promise<Favourite> {
   return request<Favourite>("/user/favourites", {
     method: "POST",
@@ -330,6 +356,7 @@ export async function addFavourite(venueId: string): Promise<Favourite> {
   });
 }
 
+// Removes a venue from favourites.
 export async function removeFavourite(venueId: string): Promise<void> {
   return request<void>(`/user/favourites/${venueId}`, {
     method: "DELETE",

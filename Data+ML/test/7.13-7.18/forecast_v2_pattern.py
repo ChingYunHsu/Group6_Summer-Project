@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -35,14 +36,20 @@ CROWD_REPORT_DELTA_CAP = 15.0
 MODEL_VERSION = "forecast-v2-known-venue-serpapi-context"
 PUBLISHED_MODEL_VERSION = "forecast-v2"
 SPLIT_TYPE = "known_venue_temporal_snapshot"
+ELIGIBLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
+FORECAST_HORIZON_HOURS = 12  # approved contract — do not override via CLI
 
 
 def venues(ids: list[str]) -> pd.DataFrame:
+    """Return only eligible venue types — clinic, hospital, pharmacy."""
     marks = ",".join(["%s"] * len(ids))
+    type_marks = ",".join(["%s"] * len(ELIGIBLE_VENUE_TYPES))
     return db_utils.read_sql(
         "SELECT venue_id, venue_type, district, rating, latitude, longitude, weather_risk, "
         "source_confidence, accessible_status, active_warning, open_now "
-        "FROM venues WHERE venue_id IN (" + marks + ")", tuple(ids)
+        "FROM venues WHERE venue_id IN (" + marks + ") "
+        "AND venue_type IN (" + type_marks + ")",
+        tuple(ids) + tuple(sorted(ELIGIBLE_VENUE_TYPES)),
     )
 
 
@@ -236,6 +243,65 @@ def add_dynamic_context(curve: pd.DataFrame, now: pd.Timestamp) -> pd.DataFrame:
     return curve
 
 
+def audit_curve(curve: pd.DataFrame, now: pd.Timestamp) -> dict:
+    """Group predicted venues by type and check 12-hour window coverage.
+
+    Raises ValueError if:
+    - Ineligible types are present
+    - Curve is empty or has zero future rows
+    - Max forecast_for does not reach now + 12 hours (anchored freshness)
+    - Any eligible venue has fewer than 13 hourly forecast points (now through now+12)
+    - Any hour bucket is missing for an eligible venue
+    """
+    if curve.empty:
+        raise ValueError("Curve is empty — cannot publish zero forecasts")
+
+    type_counts = curve.groupby("venue_type")["venue_id"].nunique().to_dict()
+    ineligible = set(type_counts) - ELIGIBLE_VENUE_TYPES
+    if ineligible:
+        raise ValueError(f"Ineligible venue types in curve: {ineligible}")
+
+    future_mask = curve.forecast_for >= now
+    future_rows = int(future_mask.sum())
+    if future_rows == 0:
+        raise ValueError(
+            f"Zero future rows at {now} — all forecast_for timestamps are stale"
+        )
+
+    min_ts = curve.forecast_for.min()
+    max_ts = curve.forecast_for.max()
+    required_max = now + pd.Timedelta(hours=FORECAST_HORIZON_HOURS)
+    if max_ts < required_max:
+        raise ValueError(
+            f"Max forecast_for {max_ts} does not reach required {required_max} "
+            f"(now + {FORECAST_HORIZON_HOURS}h)"
+        )
+
+    # Verify every venue in the batch has exactly the expected 13 future slots.
+    # Iterate over ALL venue IDs from the full curve so that venues whose rows
+    # are entirely in the past (future_mask=False for all their rows) are caught.
+    future_curve = curve[future_mask]
+    future_by_venue = future_curve.groupby("venue_id")["forecast_for"].apply(set).to_dict()
+    expected_slots = {now + pd.Timedelta(hours=i) for i in range(FORECAST_HORIZON_HOURS + 1)}
+    for venue_id in curve["venue_id"].unique():
+        actual_slots = future_by_venue.get(venue_id, set())
+        missing = expected_slots - actual_slots
+        extra = actual_slots - expected_slots
+        if missing or extra:
+            raise ValueError(
+                f"Venue {venue_id} missing forecast slots — "
+                f"missing: {sorted(missing)}, unexpected: {sorted(extra)}"
+            )
+
+    return {
+        "type_counts": type_counts,
+        "min_forecast_for": str(min_ts),
+        "max_forecast_for": str(max_ts),
+        "future_rows": future_rows,
+    }
+
+
+
 def publish_forecasts(curve: pd.DataFrame) -> int:
     """Upsert one generated V2 batch using the backend's stable model-version contract."""
     batch_generated_at = datetime.now(timezone.utc).replace(tzinfo=None, microsecond=0)
@@ -277,7 +343,6 @@ def main() -> None:
     parser.add_argument("--labels", type=Path, required=True)
     parser.add_argument("--legacy-labels", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--hours", type=int, default=12)
     parser.add_argument("--publish", action="store_true",
                         help="Upsert the generated 12-hour curve to busyness_forecasts as forecast-v2")
     args = parser.parse_args()
@@ -310,7 +375,7 @@ def main() -> None:
         "venue_id", "place_id", *[field for field in VENUE_SPECIFIC_FEATURES if field != "venue_id"]
     ]]
     future = []
-    for offset in range(args.hours):
+    for offset in range(FORECAST_HORIZON_HOURS + 1):
         target = now + timedelta(hours=offset)
         item = base.copy()
         item["forecast_for"], item["offset_hours"] = target, offset
@@ -324,7 +389,32 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     results.to_csv(args.output_dir / "forecast_v2_pattern_model_metrics.csv", index=False)
     curve.to_csv(args.output_dir / "prediction_curve_v2_pattern.csv", index=False)
+
+    try:
+        audit = audit_curve(curve, now)
+    except ValueError as e:
+        print(f"\n=== Audit FAILED ===", file=sys.stderr)
+        print(f"  {e}", file=sys.stderr)
+        sys.exit(1)
+
+    print("\n=== Pre-publish audit ===")
+    for vtype, count in sorted(audit["type_counts"].items()):
+        print(f"  {vtype}: {count} venues")
+    print(f"  forecast_for range: {audit['min_forecast_for']} → {audit['max_forecast_for']}")
+    print(f"  future rows: {audit['future_rows']}")
+
     published_rows = publish_forecasts(curve) if args.publish else 0
+
+    print("\n=== Handoff summary ===")
+    print(f"  model_version    : {PUBLISHED_MODEL_VERSION}")
+    print(f"  generated_at     : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    print(f"  total_rows       : {len(curve)}")
+    for vtype, count in sorted(audit["type_counts"].items()):
+        print(f"  {vtype}_venues   : {count}")
+    print(f"  min_forecast_for : {audit['min_forecast_for']}")
+    print(f"  max_forecast_for : {audit['max_forecast_for']}")
+    print(f"  published        : {published_rows if args.publish else 'dry-run'}")
+
     (args.output_dir / "forecast_v2_pattern_manifest.json").write_text(json.dumps({
         "model_version": MODEL_VERSION, "target_type": "google_popular_times_proxy", "training_rows": len(train),
         "test_rows": len(test), "venues": test.venue_id.nunique(), "places": test.place_id.nunique(), "split": SPLIT_TYPE,

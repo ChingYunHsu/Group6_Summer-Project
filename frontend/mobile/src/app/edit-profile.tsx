@@ -20,10 +20,7 @@ import { mockProfile } from "../data/mockProfile";
 import { loadMedicalId, saveMedicalId } from "../services/medicalIdService";
 import { loadProfile, saveProfile } from "../services/profileService";
 
-// No real endpoint returns anything like avatar_initials — it was always
-// mockProfile.avatar_initials regardless of which real user was logged
-// in. Derived from the live full_name instead, so it actually reflects
-// whoever's account this is.
+// Derived from the live full_name
 function getInitials(fullName: string): string {
   const parts = fullName.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return "";
@@ -37,6 +34,10 @@ export default function EditProfileScreen() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
+  // Form fields, seeded from mockProfile until the real fetch below
+  // resolves. Some fields (date of birth, gender, address) actually
+  // live on the medical profile, not the user profile — split out
+  // below once loadMedicalId() resolves.
   const [fullName, setFullName] = useState(mockProfile.full_name);
   const [dob, setDob] = useState(mockProfile.date_of_birth);
   const [gender, setGender] = useState(mockProfile.gender);
@@ -74,6 +75,8 @@ export default function EditProfileScreen() {
     },
   ];
 
+  // Language search results for the "add language" modal — only
+  // languages not already added, matched against native or English name.
   const filteredLanguageOptions = useMemo(() => {
     if (!languageSearch.trim()) return [];
 
@@ -89,6 +92,8 @@ export default function EditProfileScreen() {
     );
   }, [languageSearch, spokenLanguages]);
 
+  // Loads the real profile + medical data on mount and overwrites the
+  // mock-seeded form fields with the real values.
   useEffect(() => {
     (async () => {
       try {
@@ -122,6 +127,9 @@ export default function EditProfileScreen() {
     })();
   }, []);
 
+  // Saves both the profile and medical fields in parallel, and reports
+  // failure per-field if either request rejects rather than assuming
+  // all-or-nothing.
   const handleSave = async () => {
     setSaving(true);
 
@@ -181,17 +189,32 @@ export default function EditProfileScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
+        {/* Header — same fix as medical-id.tsx: headerTitle takes the
+            flexible middle space (flex: 1) and truncates with an
+            ellipsis instead of sizing to its full translated text
+            content. Back and Save both get flexShrink: 0, so a longer
+            translated title (French/Spanish) can never push Save off
+            the visible screen width the way it previously could. */}
+
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.back()}>
+          <TouchableOpacity
+            style={styles.headerSideButton}
+            onPress={() => router.back()}
+          >
             <Ionicons name="chevron-back" size={24} color={Colours.text} />
           </TouchableOpacity>
 
-          <View style={{ flex: 1 }}>
-            <Text style={styles.headerTitle}>{t("editProfile.title")}</Text>
-          </View>
+          <Text
+            style={styles.headerTitle}
+            numberOfLines={1}
+            ellipsizeMode="tail"
+          >
+            {t("editProfile.title")}
+          </Text>
 
           <TouchableOpacity
             testID="edit-profile-save-button"
+            style={styles.headerSideButton}
             onPress={handleSave}
             disabled={loading || saving}
           >
@@ -200,6 +223,7 @@ export default function EditProfileScreen() {
                 styles.saveText,
                 (loading || saving) && styles.saveTextDisabled,
               ]}
+              numberOfLines={1}
             >
               {saving
                 ? t("common.saving", { defaultValue: "Saving…" })
@@ -234,10 +258,10 @@ export default function EditProfileScreen() {
 
           <InputField
             testID="edit-profile-dob-input"
-            label={t("editProfile.dateOfBirth")}
+            label={`${t("editProfile.dateOfBirth")} (${t("editProfile.dobFormatHint", { defaultValue: "YYYY-MM-DD" })})`}
             value={dob}
             onChangeText={setDob}
-            placeholder="YYYY-MM-DD"
+            placeholder="1990-01-15"
           />
 
           <View style={styles.field}>
@@ -423,6 +447,8 @@ export default function EditProfileScreen() {
   );
 }
 
+// Reusable labeled text input used throughout the personal-info section
+// above.
 function InputField({
   label,
   value,
@@ -480,8 +506,14 @@ const styles = StyleSheet.create({
 
   headerTitle: {
     ...Typography.h3,
+    flex: 1,
     color: Colours.text,
     textAlign: "center",
+    marginHorizontal: 8,
+  },
+
+  headerSideButton: {
+    flexShrink: 0,
   },
 
   saveText: {

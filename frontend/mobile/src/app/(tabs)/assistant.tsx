@@ -1,5 +1,4 @@
 import { Ionicons } from "@expo/vector-icons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router, useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -36,6 +35,8 @@ type Message = {
   suggestedPrompts?: string[];
 };
 
+// Splits a raw citation string like "venue:abc123" into its type and id.
+// Falls back to type "source" if there's no colon separator.
 function parseCitation(raw: string): Citation {
   const separatorIndex = raw.indexOf(":");
 
@@ -49,6 +50,9 @@ function parseCitation(raw: string): Citation {
   };
 }
 
+// Small card shown under a chat message when the assistant cites a real
+// venue — shows the venue name and its current open/closed + busyness
+// status.
 function ClinicRecommendationCard({ venue }: { venue: Venue }) {
   const { t } = useTranslation();
 
@@ -74,6 +78,8 @@ function ClinicRecommendationCard({ venue }: { venue: Venue }) {
   );
 }
 
+// Fallback chip shown for a citation that isn't a resolvable venue (or
+// hasn't resolved yet) — just displays the raw "type:id" pair.
 function CitationChip({ citation }: { citation: Citation }) {
   return (
     <View style={styles.citationChip}>
@@ -84,11 +90,12 @@ function CitationChip({ citation }: { citation: Citation }) {
   );
 }
 
-// Defined outside the component so React Compiler's purity analysis
-// doesn't apply — it flags impure calls (like Date.now()) inside
-// component-scoped closures even when only ever invoked from an event
-// handler, a confirmed compiler false positive (facebook/react#34046),
-// not an actual purity issue here.
+// Builds a unique-enough id for a new chat message (timestamp + a
+// short suffix so the user/typing pair added in the same tick don't
+// collide). Defined outside the component so React Compiler's purity
+// analysis doesn't apply — it flags impure calls (like Date.now())
+// inside component-scoped closures even when only ever invoked from an
+// event handler.
 function generateMessageId(suffix: string): string {
   return `${Date.now()}-${suffix}`;
 }
@@ -96,33 +103,40 @@ function generateMessageId(suffix: string): string {
 export default function AssistantScreen() {
   const { t } = useTranslation();
 
+  // Text currently typed in the input box, and whether a request is in
+  // flight (disables the send button + drives the typing indicator).
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
+  // The app's current language preference, defaulting to English until
+  // the focus effect below resolves the real value.
   const [currentLanguage, setCurrentLanguage] = useState(
     featuredLanguages.find((l) => l.code === "en") ?? featuredLanguages[0],
   );
 
-  // What the chatbot actually responded in, per its own detected_language —
-  // separate from currentLanguage (the user's stored app-wide preference,
-  // used only to seed the initial request). null until the first real
-  // reply comes back, at which point it's the honest source of truth for
-  // this header.
+  // What the chatbot actually responded in last time, per the API's own
+  // detected_language — separate from currentLanguage, since the two
+  // can briefly disagree right after switching languages.
   const [lastResponseLanguageCode, setLastResponseLanguageCode] = useState<
     string | null
   >(null);
 
+  // Label shown in the "Responding in ..." subtitle — prefers the real
+  // detected language from the last reply, falls back to the app's
+  // current language preference if no reply has come back yet.
   const respondingLanguageLabel = lastResponseLanguageCode
     ? (featuredLanguages.find((l) => l.code === lastResponseLanguageCode)
         ?.native ?? lastResponseLanguageCode)
     : currentLanguage.native;
 
-  // Resolved venue lookups for "venue:" citations, keyed by venue_id.
-  // undefined = not yet requested, null = fetch failed, Venue = resolved.
+  // Local cache of venues resolved from chat citations, keyed by
+  // venue_id, so the same venue isn't re-fetched every time messages
+  // re-render.
   const [venueCache, setVenueCache] = useState<Record<string, Venue | null>>(
     {},
   );
 
+  // Chat history, starting with two static greeting messages.
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
@@ -142,84 +156,66 @@ export default function AssistantScreen() {
     },
   ]);
 
-  // ---------------------------------------------------------------------
-  // TEMPORARY — one-time reset for this device/simulator's AsyncStorage,
-  // which had a stale "language": "fr" left over from earlier manual
-  // testing (confirmed unrelated to backend/Flask state — AsyncStorage is
-  // local to the device/app-sandbox and nothing server-side touches it).
-  // Run once, confirm the header shows English, then DELETE this effect.
-  // ---------------------------------------------------------------------
-  useEffect(() => {
-    AsyncStorage.setItem("language", "en");
-  }, []);
-
-  // Always resolves currentLanguage to something explicit (the stored
-  // preference if it matches a known language, otherwise English) rather
-  // than silently leaving stale in-memory state untouched when the stored
-  // value is missing or unrecognized — that silent fall-through was the
-  // actual root cause of a language change never being picked up.
+  // Runs every time this screen comes into focus. Reads i18n.language
+  // directly (synchronous, in-memory) rather than AsyncStorage.getItem
+  // ("language") — reading from AsyncStorage was subject to a real race
+  // condition: language.tsx's Done button navigates back with a plain
+  // synchronous router.back() right after firing off an async
+  // AsyncStorage.setItem() write, with nothing guaranteeing that write
+  // has actually flushed to disk before this screen re-focuses and reads
+  // it back. That race was invisible on the Simulator (fast, predictable
+  // local disk) but real and reproducible on a physical device. i18n's
+  // own in-memory i18n.language is updated synchronously by
+  // i18n.changeLanguage() at selection time, with no disk round-trip, so
+  // reading it here has no such race.
   //
-  // Also resets lastResponseLanguageCode whenever the resolved language
-  // genuinely differs from what was already active — otherwise, once a
-  // real chatbot reply has come back once, its detected_language sticks
-  // around forever in respondingLanguageLabel, even after switching the
-  // app's language preference afterward with no new message sent yet.
-  //
-  // Also refreshes the two greeting messages (id "1"/"2") here — they're
-  // baked into messages' useState initializer, computed once at first
-  // mount using whatever language was active then. Switching languages
-  // later doesn't remount this screen, so they never had a reason to
-  // retranslate on their own otherwise. Updated by id specifically, not
-  // by resetting the whole array, so an in-progress real conversation
-  // isn't wiped out — only the two static greeting bubbles refresh.
+  // If the resolved language changed since last time, resets the
+  // "responding in" label and re-translates the two greeting messages
+  // (id "1"/"2") — they're baked into messages' useState initializer,
+  // computed once at first mount using whatever language was active
+  // then, and switching languages later doesn't remount this screen.
   useFocusEffect(
     useCallback(() => {
-      (async () => {
-        const code = await AsyncStorage.getItem("language");
-        const match = featuredLanguages.find((l) => l.code === code);
+      const code = i18n.language;
+      const match = featuredLanguages.find((l) => l.code === code);
 
-        const resolved =
-          match ??
-          featuredLanguages.find((l) => l.code === "en") ??
-          featuredLanguages[0];
+      const resolved =
+        match ??
+        featuredLanguages.find((l) => l.code === "en") ??
+        featuredLanguages[0];
 
-        setCurrentLanguage((previous) => {
-          if (previous.code !== resolved.code) {
-            setLastResponseLanguageCode(null);
+      setCurrentLanguage((previous) => {
+        if (previous.code !== resolved.code) {
+          setLastResponseLanguageCode(null);
 
-            setMessages((currentMessages) =>
-              currentMessages.map((message) => {
-                if (message.id === "1") {
-                  return {
-                    ...message,
-                    text: i18n.t("assistant.greeting1", {
-                      defaultValue:
-                        "Hello! I'm your ClearPath Assistant. How can I help you today?",
-                    }),
-                  };
-                }
+          setMessages((currentMessages) =>
+            currentMessages.map((message) => {
+              if (message.id === "1") {
+                return {
+                  ...message,
+                  text: i18n.t("assistant.greeting1", {
+                    defaultValue:
+                      "Hello! I'm your ClearPath Assistant. How can I help you today?",
+                  }),
+                };
+              }
 
-                if (message.id === "2") {
-                  return {
-                    ...message,
-                    text: i18n.t("assistant.greeting2", {
-                      defaultValue:
-                        "I can help find clinics, explain services, and answer healthcare navigation questions.",
-                    }),
-                  };
-                }
+              if (message.id === "2") {
+                return {
+                  ...message,
+                  text: i18n.t("assistant.greeting2", {
+                    defaultValue:
+                      "I can help find clinics, explain services, and answer healthcare navigation questions.",
+                  }),
+                };
+              }
 
-                return message;
-              }),
-            );
-          }
-          return resolved;
-        });
-      })();
-      // No dependency on `t` — this effect uses i18n.t() directly to read
-      // whatever's actually active at call time, sidestepping any stale-
-      // closure risk from useFocusEffect only re-invoking on real focus
-      // events rather than every render.
+              return message;
+            }),
+          );
+        }
+        return resolved;
+      });
     }, []),
   );
 
@@ -249,6 +245,10 @@ export default function AssistantScreen() {
     });
   }, [messages, venueCache]);
 
+  // Sends a message to the chatbot (either typed by the user, or a
+  // suggested-prompt chip tap via overrideText). Adds the user message
+  // and a typing placeholder immediately, then swaps the placeholder for
+  // the real reply — or an error bubble — once the request settles.
   const handleSend = async (overrideText?: string) => {
     const text = (overrideText ?? message).trim();
     if (!text || sending) return;
@@ -311,6 +311,8 @@ export default function AssistantScreen() {
     }
   };
 
+  // Voice input isn't implemented yet — just tells the user to type
+  // instead.
   const handleMicPress = () => {
     Alert.alert(
       t("assistant.voiceUnavailableTitle", {
@@ -323,6 +325,9 @@ export default function AssistantScreen() {
     );
   };
 
+  // Renders a single chat bubble — text or typing spinner, plus any
+  // citation chips/venue cards and suggested-prompt chips attached to
+  // that message.
   const renderMessage = ({ item }: { item: Message }) => (
     <View
       style={[
@@ -388,12 +393,15 @@ export default function AssistantScreen() {
     </View>
   );
 
+  // KeyboardAvoidingView is the OUTERMOST wrapper here, with SafeAreaView
+  // nested inside it.
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
-      >
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 75 : 0}
+    >
+      <SafeAreaView style={styles.container}>
         {/* Header */}
 
         <View style={styles.header}>
@@ -421,6 +429,7 @@ export default function AssistantScreen() {
         {/* Chat */}
 
         <FlatList
+          style={styles.messageList}
           data={messages}
           renderItem={renderMessage}
           keyExtractor={(item) => item.id}
@@ -458,8 +467,8 @@ export default function AssistantScreen() {
             <Ionicons name="send" size={18} color="#FFFFFF" />
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -648,5 +657,9 @@ const styles = StyleSheet.create({
 
   sendButtonDisabled: {
     opacity: 0.5,
+  },
+
+  messageList: {
+    flex: 1,
   },
 });

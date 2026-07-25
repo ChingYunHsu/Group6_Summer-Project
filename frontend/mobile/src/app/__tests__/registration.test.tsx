@@ -7,19 +7,6 @@ import { login, register } from "../../services/authService";
 /* -------------------------------------------------------------------------- */
 /*                                   MOCKS                                    */
 /* -------------------------------------------------------------------------- */
-//
-// Companion to the existing login.test.tsx, not a replacement — that file
-// already covers mode-switching and the terms-switch/button-enabling UI
-// well. This file specifically covers what it didn't: handleSignIn
-// entirely, the "Finish Profile" modal button (only "Skip For Now" was
-// previously tested), the no-modal-needed registration path, and
-// registration's field-specific error handling.
-//
-// NOTE (RNTL v14): fireEvent is async now and must be awaited, or the
-// state update it triggers (including async handlers like handleSignIn /
-// handleCreateAccount, which await login()/register() before calling
-// setLoading) won't be flushed before the next line runs. Every
-// fireEvent call below is awaited for that reason.
 
 const mockPush = jest.fn();
 const mockReplace = jest.fn();
@@ -166,11 +153,6 @@ describe("LoginScreen — Registration submission", () => {
     expect(screen.queryByTestId("skip-for-now-button")).toBeNull();
   });
 
-  // The other real modal button, never previously tested — only "Skip
-  // For Now" was. handleFinishProfile does replace() THEN push(), in
-  // that specific order, for a real documented reason (avoiding a stale
-  // login form sitting underneath in navigation history) — confirmed
-  // directly against login.tsx's own comment on that function.
   it("Finish Profile navigates to /map then pushes /medical-id, in that order", async () => {
     mockedRegister.mockResolvedValue({ finish_profile_prompt: true });
 
@@ -212,11 +194,6 @@ describe("LoginScreen — Registration submission", () => {
     });
   });
 
-  // Real, non-trivial logic in login.tsx's own catch block — extracting
-  // missing_fields/invalid_fields from the error body and appending them
-  // to the message, so the user sees specifically which field failed
-  // rather than just a generic failure. Confirmed directly against the
-  // source; previously had zero coverage at all.
   it("appends missing/invalid field names to the error message when the backend provides them", async () => {
     const fieldError: any = new Error("Validation failed.");
     fieldError.body = {

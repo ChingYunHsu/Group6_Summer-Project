@@ -8,15 +8,6 @@ import { loadMedicalId, saveMedicalId } from "../../services/medicalIdService";
 /* -------------------------------------------------------------------------- */
 /*                                   MOCKS                                    */
 /* -------------------------------------------------------------------------- */
-//
-// edit-profile.tsx had zero testIDs before tonight — every selector below
-// depends on the minimal set just added to the source file (Save button,
-// dob/nationality/phone/address inputs, gender trigger + modal options,
-// language add/search/option/remove controls). No behavioural changes.
-//
-// t() is mocked to honour defaultValue like real i18next does, unlike
-// some other test files in this suite — editProfile.tsx leans heavily on
-// defaultValue fallbacks and there's no reason to throw that away here.
 
 const mockBack = jest.fn();
 

@@ -132,6 +132,7 @@
     "scanQrMessage": "Camera integration will be connected later.",
     "synced": "Medical information synced",
     "lastUpdated": "Last updated 5 minutes ago",
+    "lastUpdatedAt": "Updated {{time}}",
     "userId": "User ID",
     "fullName": "Full Name",
     "email": "Email",
@@ -356,10 +357,16 @@
     "busynessForecast": "12-Hour Busyness Forecast",
     "forecastUnavailable": "Live forecast isn't available for this venue yet.",
     "expectedWait": "Expected wait: {{minutes}} minutes",
+    "noLiveInfo": "• No Live Info",
     "unknown": "Unknown",
     "directions": "Directions",
     "fullWheelchairAccess": "Full wheelchair access",
     "partialWheelchairAccess": "Partial wheelchair access",
     "accessibilityUnknown": "Wheelchair access unknown"
+  },
+  "time": {
+    "minutesAgo": "{{count}} min ago",
+    "hoursAgo": "{{count}} hr ago",
+    "hoursAgo_plural": "{{count}} hrs ago"
   }
 }

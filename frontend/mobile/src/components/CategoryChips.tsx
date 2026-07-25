@@ -9,8 +9,6 @@ export type Category = "Clinic" | "Pharmacy" | "AED" | "Hospital" | "Restroom";
 
 // label stays the stable internal value (matched against in map.tsx's
 // filter switch) — translationKey drives what's actually displayed.
-// Previously label was used directly as display text too, so this chip
-// row never responded to language changes at all.
 const categories: {
   label: Category;
 
@@ -55,6 +53,8 @@ interface Props {
   onSelect: (category: Category) => void;
 }
 
+// Horizontal scrolling row of category filter chips shown at the top of
+// the map — Clinic/Pharmacy/AED/Hospital/Restroom.
 export default function CategoryChips({ selected, onSelect }: Props) {
   const { t } = useTranslation();
 

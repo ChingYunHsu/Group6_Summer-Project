@@ -130,6 +130,7 @@
     "scanQrMessage": "Die Kameraintegration wird später verbunden.",
     "synced": "Medizinische Informationen synchronisiert",
     "lastUpdated": "Zuletzt vor 5 Minuten aktualisiert",
+    "lastUpdatedAt": "Aktualisiert {{time}}",
     "userId": "Benutzer-ID",
     "fullName": "Vollständiger Name",
     "email": "E-Mail",
@@ -360,11 +361,17 @@
     "services": "Services",
     "busynessForecast": "12-Stunden-Auslastungsprognose",
     "forecastUnavailable": "Für diesen Ort ist noch keine Live-Prognose verfügbar.",
+    "noLiveInfo": "• Keine Live-Informationen",
     "expectedWait": "Erwartete Wartezeit: {{minutes}} Minuten",
     "unknown": "Unbekannt",
     "directions": "Route",
     "fullWheelchairAccess": "Voller Rollstuhlzugang",
     "partialWheelchairAccess": "Teilweiser Rollstuhlzugang",
     "accessibilityUnknown": "Rollstuhlzugang unbekannt"
+  },
+  "time": {
+    "minutesAgo": "vor {{count}} Min.",
+    "hoursAgo": "vor {{count}} Stunde",
+    "hoursAgo_plural": "vor {{count}} Stunden"
   }
 }

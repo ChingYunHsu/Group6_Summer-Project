@@ -16,6 +16,9 @@ const COLOURS = {
   blue: "#2563EB",
 };
 
+// Maps a busyness_color string from the backend to the real marker
+// colour — falls back to blue ("unknown") for anything unrecognized,
+// including no busyness data fetched yet.
 function getMarkerColour(colour?: string) {
   switch (colour) {
     case "green":
@@ -32,6 +35,7 @@ function getMarkerColour(colour?: string) {
   }
 }
 
+// Maps a venue_type to the icon shown inside its marker pin.
 function getMarkerIcon(type: string) {
   switch (type) {
     case "clinic":
@@ -67,6 +71,9 @@ function getMarkerIcon(type: string) {
   }
 }
 
+// Single map marker for a venue — colour reflects live busyness (only
+// when showLiveStatus is on), with a small warning badge overlaid if
+// the venue has an active accessibility report.
 export default function VenueMarker({ venue, showLiveStatus, onPress }: Props) {
   const background = showLiveStatus
     ? getMarkerColour(venue.busyness?.busyness_color)
@@ -76,13 +83,8 @@ export default function VenueMarker({ venue, showLiveStatus, onPress }: Props) {
 
   return (
     <Marker
+      accessibilityLabel={`${venue.name}, ${venue.venue_type}`}
       coordinate={{
-        // Number(...) matters: the backend sends these as strings (MySQL
-        // DECIMAL columns serialize as Decimal -> string via jsonify(),
-        // not float), and react-native-maps silently fails to position a
-        // marker given string coordinates — no crash, no error, it just
-        // never appears. This was the actual reason venues rendered zero
-        // markers even after every other bug in this path was fixed.
         latitude: Number(venue.latitude),
         longitude: Number(venue.longitude),
       }}
@@ -100,14 +102,6 @@ export default function VenueMarker({ venue, showLiveStatus, onPress }: Props) {
           <Ionicons name={icon as any} size={18} color="#FFFFFF" />
         </View>
 
-        {/* Boolean(...) here matters: DB-backed venues can send
-            active_warning as a raw MySQL 0/1, not true/false (see
-            _row_to_venue() in venues.py — it's missing from that
-            function's bool-cast list). `0 && <View />` evaluates to `0`
-            in JS, and React Native tries to render that bare 0 as a text
-            node, which is exactly the "Text strings must be rendered
-            within a <Text> component" crash. Coercing explicitly avoids
-            depending on the backend fixing this to not crash. */}
         {Boolean(venue.active_warning) && (
           <View style={styles.warningBadge}>
             <Ionicons name="warning" size={10} color="#000000" />

@@ -19,6 +19,18 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colours.primary,
         tabBarInactiveTintColor: Colours.muted,
 
+        // Hides the bottom tab bar whenever the software keyboard is
+        // open. Without this, KeyboardAvoidingView on screens like
+        // Assistant and Show Staff can't correctly calculate how much
+        // to push content up on iOS — the tab bar reserves its own
+        // space at the true bottom of the screen, and that extra gap
+        // between the tab screen's own bottom edge and the physical
+        // screen edge throws off KeyboardAvoidingView's padding math.
+        // This is Expo's own documented fix for exactly this
+        // combination (bottom tabs + KeyboardAvoidingView), not a
+        // cosmetic preference.
+        tabBarHideOnKeyboard: true,
+
         tabBarStyle: {
           height: 78,
           paddingTop: 8,

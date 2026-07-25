@@ -1,10 +1,4 @@
-import {
-    Modal,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-} from "react-native";
+import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -41,6 +35,9 @@ const TABS = [
   },
 ] as const;
 
+// First step of the directions flow — walk/transit/drive tabs, each
+// showing whatever route options came back for that mode. Selecting a
+// route hands off to RouteDetailModal.
 export default function RouteOptionsModal({
   visible,
   routes,
@@ -51,130 +48,79 @@ export default function RouteOptionsModal({
   onSelectRoute,
   onClose,
 }: Props) {
-
+  // Only show options matching the currently selected mode tab.
   const filteredRoutes = routes.filter(
-    route =>
-      route.mode.toLowerCase() ===
-      selectedMode.toLowerCase()
+    (route) => route.mode.toLowerCase() === selectedMode.toLowerCase(),
   );
 
   return (
-    <Modal
-      visible={visible}
-      transparent
-      animationType="slide"
-    >
+    <Modal visible={visible} transparent animationType="slide">
       <View style={styles.overlay}>
-
         <View style={styles.sheet}>
-
           <View style={styles.handle} />
 
           <View style={styles.header}>
-
             <View style={{ flex: 1 }}>
-
-              <Text style={styles.title}>
-                Route Options
-              </Text>
+              <Text style={styles.title}>Route Options</Text>
 
               <Text style={styles.subtitle}>
                 {originLabel} • {departureTime}
               </Text>
-
             </View>
 
-            <TouchableOpacity onPress={onClose}>
-              <Ionicons
-                name="close"
-                size={24}
-                color={Colours.text}
-              />
+            <TouchableOpacity
+              accessibilityLabel="Close route options"
+              onPress={onClose}
+            >
+              <Ionicons name="close" size={24} color={Colours.text} />
             </TouchableOpacity>
-
           </View>
 
           <View style={styles.tabRow}>
-
-            {TABS.map(tab => {
-
-              const selected =
-                selectedMode === tab.mode;
+            {TABS.map((tab) => {
+              const selected = selectedMode === tab.mode;
 
               return (
-
                 <TouchableOpacity
                   key={tab.mode}
-                  style={[
-                    styles.tab,
-                    selected &&
-                      styles.selectedTab,
-                  ]}
-                  onPress={() =>
-                    onSelectMode(tab.mode)
-                  }
+                  style={[styles.tab, selected && styles.selectedTab]}
+                  onPress={() => onSelectMode(tab.mode)}
                 >
-
                   <Ionicons
                     name={tab.icon}
                     size={18}
-                    color={
-                      selected
-                        ? "#FFFFFF"
-                        : Colours.primary
-                    }
+                    color={selected ? "#FFFFFF" : Colours.primary}
                   />
 
                   <Text
-                    style={[
-                      styles.tabText,
-                      selected &&
-                        styles.selectedTabText,
-                    ]}
+                    style={[styles.tabText, selected && styles.selectedTabText]}
                   >
                     {tab.label}
                   </Text>
-
                 </TouchableOpacity>
-
               );
-
             })}
-
           </View>
 
-          {filteredRoutes.map(route => (
-
+          {filteredRoutes.map((route) => (
             <TouchableOpacity
               key={`${route.mode}-${route.summary}`}
               style={styles.card}
-              onPress={() =>
-                onSelectRoute(route)
-              }
+              onPress={() => onSelectRoute(route)}
             >
-
               <View style={styles.cardHeader}>
-
                 <View style={{ flex: 1 }}>
+                  <Text style={styles.mode}>{route.mode.toUpperCase()}</Text>
 
-                  <Text style={styles.mode}>
-                    {route.mode.toUpperCase()}
-                  </Text>
-
-                  <Text style={styles.summary}>
-                    {route.summary}
-                  </Text>
-
+                  <Text style={styles.summary}>{route.summary}</Text>
                 </View>
 
                 <Text style={styles.duration}>
                   {route.duration_minutes} min
                 </Text>
-
               </View>
 
               <View style={styles.badgeRow}>
-
                 <View
                   style={[
                     styles.statusBadge,
@@ -197,23 +143,16 @@ export default function RouteOptionsModal({
                       : "Standard Route"}
                   </Text>
                 </View>
-
               </View>
-
             </TouchableOpacity>
-
           ))}
-
         </View>
-
       </View>
-
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
-
   overlay: {
     flex: 1,
     justifyContent: "flex-end",
@@ -356,5 +295,4 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 12,
   },
-
 });

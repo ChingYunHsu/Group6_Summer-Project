@@ -122,6 +122,7 @@
     "scanQrMessage": "La integración de la cámara se conectará más adelante.",
     "synced": "Información médica sincronizada",
     "lastUpdated": "Actualizado por última vez hace 5 minutos",
+    "lastUpdatedAt": "Actualizado {{time}}",
     "userId": "ID de usuario",
     "fullName": "Nombre completo",
     "email": "Correo electrónico",
@@ -360,11 +361,17 @@
     "services": "Servicios",
     "busynessForecast": "Pronóstico de afluencia de 12 horas",
     "forecastUnavailable": "La predicción en vivo aún no está disponible para este lugar.",
+    "noLiveInfo": "• Sin información en vivo",
     "expectedWait": "Espera estimada: {{minutes}} minutos",
     "unknown": "Desconocido",
     "directions": "Cómo llegar",
     "fullWheelchairAccess": "Acceso completo en silla de ruedas",
     "partialWheelchairAccess": "Acceso parcial en silla de ruedas",
     "accessibilityUnknown": "Acceso en silla de ruedas desconocido"
+  },
+  "time": {
+    "minutesAgo": "hace {{count}} min",
+    "hoursAgo": "hace {{count}} hora",
+    "hoursAgo_plural": "hace {{count}} horas"
   }
 }

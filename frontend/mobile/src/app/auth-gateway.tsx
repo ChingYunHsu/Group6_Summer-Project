@@ -6,6 +6,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
 
+// Post-onboarding fork: log in / register, or continue browsing as a
+// guest. Guests can still use the map; features that need an account
+// (favourites, reports, medical ID) prompt for login when actually used.
 export default function AuthGatewayScreen() {
   const { t } = useTranslation();
 
@@ -14,7 +17,6 @@ export default function AuthGatewayScreen() {
   };
 
   const handleContinueAsGuest = () => {
-    // Change to actual map route later
     router.push("/map");
   };
 

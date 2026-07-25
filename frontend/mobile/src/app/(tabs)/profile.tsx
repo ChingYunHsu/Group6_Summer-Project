@@ -11,9 +11,19 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { formatReportedTime } from "../../components/ReportMarker";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
+import {
+  allergies as allergyList,
+  getAllergyLabel,
+} from "../../data/allergies";
+import { allLanguages } from "../../data/languages";
 import { mockProfile } from "../../data/mockProfile";
+import {
+  getConditionLabel,
+  medicalConditions,
+} from "../../data/medicalConditions";
 import { getFavourites, getVenue, removeFavourite } from "../../services/api";
 import { getAccessToken } from "../../services/authService";
 import {
@@ -23,11 +33,27 @@ import {
 } from "../../services/medicalIdService";
 import { loadProfile } from "../../services/profileService";
 import { Favourite, Venue } from "../../types/venue";
+import i18n from "../../i18n";
 
-// No real endpoint returns anything like avatar_initials — it was always
-// mockProfile.avatar_initials regardless of which real user was logged
-// in (this is the same fix already applied in edit-profile.tsx; this
-// screen just never got it). Derived from the live full_name instead.
+type SupportedLangCode = "en" | "es" | "fr" | "it" | "de" | "zh";
+
+const SUPPORTED_LANG_CODES: SupportedLangCode[] = [
+  "en",
+  "es",
+  "fr",
+  "it",
+  "de",
+  "zh",
+];
+
+const GENDER_TRANSLATION_KEYS: Record<string, string> = {
+  Male: "editProfile.genderMale",
+  Female: "editProfile.genderFemale",
+  "Non-binary": "editProfile.genderNonBinary",
+  "Prefer not to say": "editProfile.genderPreferNotToSay",
+};
+
+// Derived from the live full_name.
 function getInitials(fullName: string): string {
   const parts = fullName.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return "";
@@ -35,10 +61,7 @@ function getInitials(fullName: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-// Real user_id values are full UUIDs (e.g.
-// "f9c8c0f4-11cc-44e5-a825-376ecae82d7b") — display-only truncation,
-// doesn't affect what's actually sent anywhere. Falls back to the raw
-// value for anything shorter (e.g. a mock ID) rather than mangling it.
+// Real user_id values are full UUIDs.
 function formatUserId(userId: string): string {
   if (userId.length <= 12) return userId;
   return `${userId.slice(0, 8)}…`;
@@ -47,13 +70,10 @@ function formatUserId(userId: string): string {
 export default function ProfileScreen() {
   const [loading, setLoading] = useState(true);
 
-  // Tracked separately per resource (profile vs. medical), since they're
-  // two independent fetches — "synced" only if both succeeded, "offline"
-  // if either failed. Previously a single syncStatus only ever reflected
-  // the profile fetch; a failed medical fetch had no visible signal at
-  // all.
   const [profileSyncOk, setProfileSyncOk] = useState<boolean | null>(null);
   const [medicalSyncOk, setMedicalSyncOk] = useState<boolean | null>(null);
+
+  const [lastSyncedAt, setLastSyncedAt] = useState<Date | null>(null);
 
   const syncStatus: "loading" | "synced" | "offline" =
     profileSyncOk === null || medicalSyncOk === null
@@ -64,10 +84,14 @@ export default function ProfileScreen() {
 
   const { t } = useTranslation();
 
+  const currentLangCode: SupportedLangCode = SUPPORTED_LANG_CODES.includes(
+    i18n.language as SupportedLangCode,
+  )
+    ? (i18n.language as SupportedLangCode)
+    : "en";
+
   const [profile, setProfile] = useState(mockProfile);
 
-  // mockMedicalId is no longer a valid seed here — see the comment on
-  // DEFAULT_MEDICAL_PROFILE in medicalIdService.ts for why.
   const [medicalId, setMedicalId] = useState<MedicalProfile>(
     DEFAULT_MEDICAL_PROFILE,
   );
@@ -78,23 +102,10 @@ export default function ProfileScreen() {
 
   const [favouritesLoading, setFavouritesLoading] = useState(true);
 
-  // Drives everything else on this screen now — the previous version had
-  // the guest-redirect as a separate, uncoordinated effect that didn't
-  // block anything, so profile/medical/favourites all raced ahead and
-  // started fetching (and rendering mockProfile/DEFAULT_MEDICAL_PROFILE
-  // as their initial state) during the brief window before the redirect
-  // actually completed. A guest could see a flash of mock data plus
-  // failed 401s before being bounced to profile-guest.tsx. Now nothing
-  // else runs, and nothing renders, until this has definitively resolved
-  // one way or the other.
   const [authStatus, setAuthStatus] = useState<
     "checking" | "guest" | "authenticated"
   >("checking");
 
-  // useFocusEffect, not plain useEffect — re-checks on every return to
-  // this tab, not just first mount, so logging out on another tab and
-  // returning here correctly re-triggers the redirect rather than
-  // leaving stale authenticated content on screen.
   useFocusEffect(
     useCallback(() => {
       let isActive = true;
@@ -118,19 +129,6 @@ export default function ProfileScreen() {
     }, []),
   );
 
-  // useFocusEffect, not plain useEffect — this screen previously only
-  // fetched once on initial mount ([] dependency array), so saving
-  // changes on Edit Profile or Edit Medical ID and navigating back here
-  // via router.back() never triggered a refetch; Expo Router keeps this
-  // screen mounted the whole time, so the old effect simply never ran
-  // again. useFocusEffect re-runs every time this tab is actually
-  // navigated to/back to, which is what "refresh on return" needs.
-  //
-  // Imported from "expo-router" specifically, not "@react-navigation/
-  // native" — this project is on Expo SDK 56, where importing
-  // useFocusEffect from @react-navigation/native was already confirmed
-  // to cause build issues once before (see the same fix applied to
-  // settings.tsx earlier in this project).
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -179,12 +177,14 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
-  // Replaces the two hardcoded "St. Mary's International" / "CityMD"
-  // entries that never corresponded to any real venue. getFavourites()
-  // only returns {venue_id, ...} — each one needs a separate getVenue()
-  // call to resolve into something actually displayable (name, address).
-  // Runs on focus, same as the two effects above, so favouriting/
-  // unfavouriting a venue on the Map tab is reflected here on return.
+  useFocusEffect(
+    useCallback(() => {
+      if (profileSyncOk && medicalSyncOk) {
+        setLastSyncedAt(new Date());
+      }
+    }, [profileSyncOk, medicalSyncOk]),
+  );
+
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -226,9 +226,6 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
-  // Optimistic, same pattern as the heart toggle in map.tsx — removes the
-  // card immediately rather than waiting on the network, rolling back
-  // only if the request actually fails.
   const handleRemoveFavourite = async (venueId: string) => {
     const previous = favourites;
 
@@ -244,13 +241,6 @@ export default function ProfileScreen() {
     }
   };
 
-  // "checking" and "guest" both render the same neutral loading state —
-  // "guest" specifically because the redirect above is already in
-  // flight; showing a spinner for the split second until it completes
-  // reads as normal loading, not as a flash of broken/wrong content.
-  // mockProfile/DEFAULT_MEDICAL_PROFILE (this screen's initial state)
-  // never reach the screen for a guest at all now, since the real
-  // content return below is simply never reached.
   if (authStatus !== "authenticated") {
     return (
       <SafeAreaView style={styles.container}>
@@ -261,17 +251,37 @@ export default function ProfileScreen() {
     );
   }
 
+  const translatedConditions = (medicalId.conditions ?? [])
+    .map((item) => getConditionLabel(item, currentLangCode))
+    .join(", ");
+
+  const translatedAllergies = (medicalId.allergies ?? [])
+    .map((item) => getAllergyLabel(item, currentLangCode))
+    .join(", ");
+
+  const translatedGender = medicalId.gender
+    ? t(GENDER_TRANSLATION_KEYS[medicalId.gender] ?? medicalId.gender, {
+        defaultValue: medicalId.gender,
+      })
+    : "";
+
+  // Shows each spoken language's own native name (e.g. "Español") rather
+  // than the raw stored English name ("Spanish").
+  const nativeSpokenLanguages = (profile.spoken_languages ?? [])
+    .map(
+      (language) =>
+        allLanguages.find((item) => item.english === language)?.native ??
+        language,
+    )
+    .join(", ");
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Header */}
-
         <Text style={styles.title}>{t("profile.title")}</Text>
-
-        {/* Profile Summary */}
 
         <View style={styles.profileHeader}>
           <View style={styles.avatar}>
@@ -284,10 +294,6 @@ export default function ProfileScreen() {
 
           <Text style={styles.profileEmail}>{profile.email}</Text>
         </View>
-
-        {/* Sync Status — now actually reflects syncStatus instead of
-            always showing a hardcoded "Synced" regardless of what
-            happened. */}
 
         <View style={styles.syncCard}>
           {syncStatus === "loading" ? (
@@ -313,32 +319,35 @@ export default function ProfileScreen() {
                   : t("profile.syncLoading", { defaultValue: "Syncing…" })}
             </Text>
 
-            <Text style={styles.syncText}>{t("profile.lastUpdated")}</Text>
+            <Text style={styles.syncText}>
+              {lastSyncedAt
+                ? t("profile.lastUpdatedAt", {
+                    defaultValue: "Updated {{time}}",
+                    time: formatReportedTime(lastSyncedAt.toISOString(), t),
+                  })
+                : t("profile.lastUpdated")}
+            </Text>
           </View>
         </View>
 
-        {/* Personal Information */}
-
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>
+            <Text
+              style={styles.sectionTitle}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
               {t("editProfile.personalInformation")}
             </Text>
 
             <TouchableOpacity
               testID="profile-edit-personal-info-button"
+              style={styles.editButton}
               onPress={() => router.push("/edit-profile")}
             >
               <Text style={styles.editText}>{t("common.edit")}</Text>
             </TouchableOpacity>
           </View>
-
-          {/* user_id/email are real now — get_user_profile()'s backend
-              response was updated to include both (see profileService.ts).
-              No code change needed here; this was already reading
-              profile.user_id/profile.email, they're just genuinely
-              populated now instead of permanently falling back to
-              mockProfile's static placeholders. */}
 
           <InfoRow
             label={t("profile.userId")}
@@ -351,16 +360,12 @@ export default function ProfileScreen() {
 
           <InfoRow label={t("profile.phone")} value={profile.phone} />
 
-          {/* date_of_birth/gender/address live on the medical-profile
-              resource, not /user/profile — sourced from medicalId, not
-              profile, to actually be live. */}
-
           <InfoRow
             label={t("profile.dateOfBirth")}
             value={medicalId.date_of_birth ?? ""}
           />
 
-          <InfoRow label={t("profile.gender")} value={medicalId.gender ?? ""} />
+          <InfoRow label={t("profile.gender")} value={translatedGender} />
 
           <InfoRow
             label={t("profile.nationality")}
@@ -369,7 +374,7 @@ export default function ProfileScreen() {
 
           <InfoRow
             label={t("profile.languages")}
-            value={(profile.spoken_languages ?? []).join(", ")}
+            value={nativeSpokenLanguages}
           />
 
           <InfoRow
@@ -378,14 +383,19 @@ export default function ProfileScreen() {
           />
         </View>
 
-        {/* Medical ID */}
-
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>{t("profile.medicalId")}</Text>
+            <Text
+              style={styles.sectionTitle}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
+              {t("profile.medicalId")}
+            </Text>
 
             <TouchableOpacity
               testID="profile-edit-medical-id-button"
+              style={styles.editButton}
               onPress={() => router.push("/medical-id")}
             >
               <Text style={styles.editText}>{t("common.edit")}</Text>
@@ -399,17 +409,11 @@ export default function ProfileScreen() {
 
           <InfoRow
             label={t("profile.conditions")}
-            value={(medicalId.conditions ?? []).join(", ")}
+            value={translatedConditions}
           />
 
-          <InfoRow
-            label={t("profile.allergies")}
-            value={(medicalId.allergies ?? []).join(", ")}
-          />
+          <InfoRow label={t("profile.allergies")} value={translatedAllergies} />
         </View>
-
-        {/* Saved Clinics — now sourced from GET /user/favourites, each
-            venue_id resolved to a real venue via getVenue(). */}
 
         <Text style={styles.savedTitle}>{t("profile.savedClinics")}</Text>
 
@@ -456,9 +460,6 @@ type InfoRowProps = {
 };
 
 function InfoRow({ label, value }: InfoRowProps) {
-  // Missing/empty fields are omitted entirely rather than shown as a
-  // label with nothing underneath — same rule used on sos.tsx and
-  // show-staff.tsx.
   if (!value) return null;
 
   return (
@@ -569,6 +570,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     ...Typography.body,
     fontWeight: "700",
+    flex: 1,
+    marginRight: 12,
+  },
+
+  editButton: {
+    flexShrink: 0,
   },
 
   editText: {
