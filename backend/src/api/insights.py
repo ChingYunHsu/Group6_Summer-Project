@@ -77,12 +77,21 @@ def _real_time_density(cursor, district: str) -> dict:
 
 def _best_travel_window(cursor, district: str) -> dict:
     """Pick the 2-hour forecast window with the lowest average busyness
-    across every venue in `district`, averaged hour-by-hour cross-venue."""
+    across every venue in `district`, averaged hour-by-hour cross-venue.
+    Restricted to each venue's latest forecast-v2 batch and to future
+    timestamps — otherwise superseded/stale forecast runs get averaged in
+    alongside the current one."""
     cursor.execute(
         "SELECT bf.forecast_for, AVG(bf.predicted_score) "
         "FROM busyness_forecasts bf "
         "JOIN venues v ON v.venue_id = bf.venue_id "
         "WHERE v.district = %s "
+        "  AND bf.model_version = 'forecast-v2' "
+        "  AND bf.generated_at = ( "
+        "    SELECT MAX(bf2.generated_at) FROM busyness_forecasts bf2 "
+        "    WHERE bf2.venue_id = bf.venue_id AND bf2.model_version = 'forecast-v2' "
+        "  ) "
+        "  AND bf.forecast_for >= UTC_TIMESTAMP() "
         "GROUP BY bf.forecast_for "
         "ORDER BY bf.forecast_for "
         "LIMIT 12",
@@ -144,12 +153,19 @@ def _fastest_hubs(cursor, district: str, limit: int = FASTEST_HUBS_LIMIT) -> lis
 
 def _prediction_series(cursor, district: str) -> list:
     """Hour-by-hour predicted busyness, averaged across every venue in
-    `district`, rounded to whole percent."""
+    `district`, rounded to whole percent. Restricted to each venue's latest
+    forecast-v2 batch and to future timestamps — see _best_travel_window."""
     cursor.execute(
         "SELECT bf.forecast_for, AVG(bf.predicted_score) "
         "FROM busyness_forecasts bf "
         "JOIN venues v ON v.venue_id = bf.venue_id "
         "WHERE v.district = %s "
+        "  AND bf.model_version = 'forecast-v2' "
+        "  AND bf.generated_at = ( "
+        "    SELECT MAX(bf2.generated_at) FROM busyness_forecasts bf2 "
+        "    WHERE bf2.venue_id = bf.venue_id AND bf2.model_version = 'forecast-v2' "
+        "  ) "
+        "  AND bf.forecast_for >= UTC_TIMESTAMP() "
         "GROUP BY bf.forecast_for "
         "ORDER BY bf.forecast_for "
         "LIMIT 12",

@@ -1,7 +1,6 @@
 import json as _json
 import os
 import re
-from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
@@ -10,7 +9,7 @@ from flask import Blueprint, jsonify, request
 
 from auth import require_api_key
 from db import db_cursor
-from mock_data import VENUE_BUSYNESS, VENUE_FORECASTS, VENUES
+from mock_data import VENUES
 from response_cache import get_cached, set_cached
 
 
@@ -150,6 +149,47 @@ VALID_VENUE_TYPES = {
     "laboratory",
 }
 
+# Sprint 5 SOP §1/§4: only these types may show V2 busyness predictions.
+# AEDs (emergencyasset) and restrooms always render the unavailable state,
+# even though historical V2 rows exist for them from before this rule.
+V2_PREDICTABLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
+
+
+def _get_venue_type(cursor, venue_id: str):
+    """None means the venue doesn't exist at all (→ 404); otherwise the raw
+    venue_type, which the caller checks against V2_PREDICTABLE_VENUE_TYPES."""
+    cursor.execute("SELECT venue_type FROM venues WHERE venue_id = %s", (venue_id,))
+    row = cursor.fetchone()
+    return row[0] if row else None
+
+
+def _unavailable_forecast(venue_id: str) -> dict:
+    return {
+        "venue_id": venue_id,
+        "data_mode": "unavailable",
+        "forecast_source": "busyness_forecasts",
+        "unavailable_reason": "no_v2_forecast",
+        "forecast": [],
+    }
+
+
+def _unavailable_busyness(venue_id: str) -> dict:
+    return {
+        "venue_id": venue_id,
+        "busyness": {
+            "busyness_score": None,
+            "busyness_status": "no_data",
+            "busyness_color": _level_to_color("no_data"),
+            "is_future_time_query": False,
+            "data_mode": "unavailable",
+            "forecast_source": "busyness_forecasts",
+            "unavailable_reason": "no_v2_forecast",
+            "estimated_wait_minutes": None,
+            "updated_at": None,
+            "expires_at": None,
+        },
+    }
+
 
 def _parse_venue_query_matrix(args):
     """Parse the URL matrix query params shared by the venues list endpoint."""
@@ -271,100 +311,69 @@ def get_venue(venue_id: str):
 @bp.get("/api/v1/venues/<venue_id>/busyness")
 @require_api_key
 def get_venue_busyness(venue_id: str):
-    """Return current busyness for a venue.
-
-    Fresh, externally collected telemetry is authoritative and is queried by
-    its absolute validity window.  The retained 2025 SODA profile is only a
-    non-live fallback: it matches the current hour of day and never becomes
-    stale merely because its source year is in the past.
-    """
-    # --- Try DB first ---
+    """Return current busyness for a venue, resolved from the nearest future
+    V2 forecast point (Sprint 5 SOP §4/§C.5). Only clinic/hospital/pharmacy
+    are V2-predictable; live-telemetry and legacy traffic-baseline data are
+    no longer part of this public contract, so an ineligible venue type, or
+    an eligible venue with no current V2 rows, returns the unavailable
+    payload rather than falling back to those older sources."""
     try:
         conn = _get_db_conn()
         try:
             with conn.cursor() as cur:
-                now = datetime.now()
-                cur.execute(
-                    "SELECT score, level, estimated_wait_minutes, created_at, forecast_end_time "
-                    "FROM busyness_scores "
-                    "WHERE venue_id = %s "
-                    "  AND model_version = %s "
-                    "  AND forecast_start_time <= %s "
-                    "  AND forecast_end_time > %s "
-                    "ORDER BY forecast_start_time DESC LIMIT 1",
-                    (venue_id, "live-telemetry-v1", now, now),
-                )
-                row = cur.fetchone()
-                if row:
-                    score, level, wait_min, created_at, expires_at = row
-                    return jsonify({
-                        "venue_id": venue_id,
-                        "busyness": {
-                            "busyness_score": score,
-                            "busyness_status": level,
-                            "busyness_color": _level_to_color(level),
-                            "is_future_time_query": False,
-                            "data_mode": "live",
-                            "busyness_source": "live_telemetry",
-                            "estimated_wait_minutes": wait_min,
-                            "updated_at": (
-                                created_at.isoformat() + "Z" if created_at else None
-                            ),
-                            "expires_at": (
-                                expires_at.isoformat() + "Z" if expires_at else None
-                            ),
-                        },
-                    })
+                venue_type = _get_venue_type(cur, venue_id)
+                if venue_type is None:
+                    return jsonify({"error": "Venue not found."}), 404
 
-                # Historical SODA rows encode a venue-hour pattern.  Do not
-                # apply their 2025 date window to a 2026 request.
+                if venue_type not in V2_PREDICTABLE_VENUE_TYPES:
+                    return jsonify(_unavailable_busyness(venue_id))
+
                 cur.execute(
-                    "SELECT score, level, estimated_wait_minutes, created_at "
-                    "FROM busyness_scores "
+                    "SELECT predicted_score, predicted_level, estimated_wait_minutes, "
+                    "forecast_for, generated_at "
+                    "FROM busyness_forecasts "
                     "WHERE venue_id = %s "
-                    "  AND model_version = 'nyc_traffic_baseline_v1' "
-                    "  AND HOUR(forecast_start_time) = HOUR(%s) "
-                    "ORDER BY created_at DESC LIMIT 1",
-                    (venue_id, now),
+                    "  AND model_version = 'forecast-v2' "
+                    "  AND forecast_for >= UTC_TIMESTAMP() "
+                    "  AND generated_at = ("
+                    "    SELECT MAX(generated_at) FROM busyness_forecasts "
+                    "    WHERE venue_id = %s AND model_version = 'forecast-v2'"
+                    "  ) "
+                    "ORDER BY forecast_for ASC LIMIT 1",
+                    (venue_id, venue_id),
                 )
                 row = cur.fetchone()
-                if row:
-                    score, level, wait_min, created_at = row
-                    return jsonify({
-                        "venue_id": venue_id,
-                        "busyness": {
-                            "busyness_score": score,
-                            "busyness_status": level,
-                            "busyness_color": _level_to_color(level),
-                            "is_future_time_query": False,
-                            "data_mode": "baseline",
-                            "busyness_source": "traffic_baseline_pattern",
-                            "estimated_wait_minutes": wait_min,
-                            "updated_at": (
-                                created_at.isoformat() + "Z" if created_at else None
-                            ),
-                            "expires_at": None,
-                        },
-                    })
         finally:
             conn.close()
     except Exception:
-        pass  # Fallback to mock
+        # A DB outage leaves V2 data unresolvable either way — the caller
+        # must not be told the venue is unavailable "because no live data
+        # exists" vs. "because the DB is down", but it also must never get
+        # a legacy/mock value presented as a real prediction.
+        return jsonify(_unavailable_busyness(venue_id))
 
-    # --- Fallback to mock data ---
-    entry = VENUE_BUSYNESS.get(venue_id)
-    if not entry:
-        return jsonify({"error": "Venue not found."}), 404
+    if not row:
+        return jsonify(_unavailable_busyness(venue_id))
 
-    response = deepcopy(entry)
-    query_time = request.args.get("query_time")
-
-    if query_time:
-        response["busyness"]["is_future_time_query"] = True
-        response["busyness"]["busyness_color"] = "#2563EB"
-        response["busyness"]["data_mode"] = "predicted"
-
-    return jsonify(response)
+    score, level, wait_min, forecast_for, generated_at = row
+    return jsonify({
+        "venue_id": venue_id,
+        "busyness": {
+            "busyness_score": score,
+            "busyness_status": level,
+            "busyness_color": _level_to_color(level),
+            "is_future_time_query": False,
+            "data_mode": "forecast",
+            "forecast_source": "busyness_forecasts",
+            "estimated_wait_minutes": wait_min,
+            "updated_at": (
+                generated_at.isoformat() + "Z" if generated_at else None
+            ),
+            "expires_at": (
+                forecast_for.isoformat() + "Z" if forecast_for else None
+            ),
+        },
+    })
 
 
 FORECAST_CACHE_TTL_SECONDS = 300  # 5 minutes
@@ -375,31 +384,34 @@ def _forecast_cache_key(venue_id: str) -> str:
 
 
 def _compute_venue_busyness_forecast(venue_id: str):
-    """Return 12-hour busyness forecast for a venue, or None if unknown.
+    """Return the 12-hour V2 busyness forecast for a venue.
 
-    Primary source: the `busyness_forecasts` table (12h row series written by
-    the ML pipeline). Migration fallback: the legacy `busyness_scores.forecast_1h`
-    JSON blob. Final fallback: mock data.
-
-    `data_mode` / `forecast_source` make the data lineage observable so the
-    frontend (and SOP D3.5 aggregation) can tell live-ML data from mock:
-      - data_mode="forecast",  forecast_source="busyness_forecasts"
-      - data_mode="predicted", forecast_source="busyness_scores.forecast_1h"
-      - data_mode="mock",      forecast_source="mock_data"
-    """
+    Returns None only when the venue itself doesn't exist (→ 404). Per
+    Sprint 5 SOP §4/§C: only clinic/hospital/pharmacy are V2-predictable,
+    and only forecast-v2 rows for future timestamps from each venue's latest
+    generation batch are ever surfaced — no traffic-baseline, legacy
+    forecast_1h, or mock fallback. Every other outcome (ineligible type, no
+    current V2 rows, DB unreachable) returns the unavailable payload."""
     now = datetime.now(timezone.utc)
 
-    # --- Primary: busyness_forecasts (12h row series) ---
     try:
         conn = _get_db_conn()
         try:
             with conn.cursor() as cur:
+                venue_type = _get_venue_type(cur, venue_id)
+                if venue_type is None:
+                    return None
+
+                if venue_type not in V2_PREDICTABLE_VENUE_TYPES:
+                    return _unavailable_forecast(venue_id)
+
                 cur.execute(
                     "SELECT forecast_for, predicted_score, predicted_level, "
                     "estimated_wait_minutes, model_version, generated_at "
                     "FROM busyness_forecasts "
                     "WHERE venue_id = %s "
                     "  AND model_version = 'forecast-v2' "
+                    "  AND forecast_for >= UTC_TIMESTAMP() "
                     "  AND generated_at = ("
                     "    SELECT MAX(generated_at) FROM busyness_forecasts "
                     "    WHERE venue_id = %s AND model_version = 'forecast-v2'"
@@ -410,114 +422,68 @@ def _compute_venue_busyness_forecast(venue_id: str):
                 rows = cur.fetchall()
         finally:
             conn.close()
-
-        if rows:
-            forecast_list = []
-            model_version = None
-            generated_at = None
-            for (forecast_for, score, level, wait_minutes, mv, gen) in rows:
-                if model_version is None:
-                    model_version = mv
-                if generated_at is None:
-                    generated_at = gen
-                # forecast_for is naive (MySQL DATETIME); treat as UTC.
-                ff = forecast_for
-                if ff.tzinfo is None:
-                    ff = ff.replace(tzinfo=timezone.utc)
-                # offset_hours is hours-from-now (wall clock at request time),
-                # not hours-from-the-first-row — so it matches how far ahead
-                # the client actually has to wait, e.g. row 9 of 12 is "in 9
-                # hours" even if row 1 wasn't exactly "now".
-                offset_hours = max(0, round((ff - now).total_seconds() / 3600))
-                forecast_list.append({
-                    "offset_hours": offset_hours,
-                    "percent": int(score),
-                    "level": level,
-                    "forecast_for": ff.isoformat(),
-                    "estimated_wait_minutes": int(wait_minutes) if wait_minutes is not None else None,
-                })
-
-            best = min(forecast_list, key=lambda x: x["percent"])
-            response = {
-                "venue_id": venue_id,
-                "forecast": forecast_list,
-                "best_time_to_go_today": {
-                    "offset_hours": best["offset_hours"],
-                    "percent": best["percent"],
-                    "label": (
-                        "Now"
-                        if best["offset_hours"] == 0
-                        else f"In {best['offset_hours']} hours"
-                    ),
-                },
-                "data_mode": "forecast",
-                "forecast_source": "busyness_forecasts",
-                "model_version": model_version,
-                "feature_snapshot_at": (
-                    generated_at.isoformat() + "Z"
-                    if generated_at and generated_at.tzinfo is None
-                    else generated_at.isoformat()
-                    if generated_at
-                    else None
-                ),
-            }
-            # --- Attach external_feature_status from context cache ---
-            try:
-                response["external_feature_status"] = _get_external_feature_status()
-            except Exception:
-                response["external_feature_status"] = {"status": "unavailable"}
-            return response
     except Exception:
-        pass  # fall through to legacy forecast_1h, then mock
+        # A DB outage leaves V2 data unresolvable — see get_venue_busyness's
+        # equivalent note; never surface a legacy/mock value instead.
+        return _unavailable_forecast(venue_id)
 
-    # --- Migration fallback: busyness_scores.forecast_1h JSON ---
+    if not rows:
+        return _unavailable_forecast(venue_id)
+
+    forecast_list = []
+    model_version = None
+    generated_at = None
+    for (forecast_for, score, level, wait_minutes, mv, gen) in rows:
+        if model_version is None:
+            model_version = mv
+        if generated_at is None:
+            generated_at = gen
+        # forecast_for is naive (MySQL DATETIME); treat as UTC.
+        ff = forecast_for
+        if ff.tzinfo is None:
+            ff = ff.replace(tzinfo=timezone.utc)
+        # offset_hours is hours-from-now (wall clock at request time),
+        # not hours-from-the-first-row — so it matches how far ahead
+        # the client actually has to wait, e.g. row 9 of 12 is "in 9
+        # hours" even if row 1 wasn't exactly "now".
+        offset_hours = max(0, round((ff - now).total_seconds() / 3600))
+        forecast_list.append({
+            "offset_hours": offset_hours,
+            "percent": int(score),
+            "level": level,
+            "forecast_for": ff.isoformat(),
+            "estimated_wait_minutes": int(wait_minutes) if wait_minutes is not None else None,
+        })
+
+    best = min(forecast_list, key=lambda x: x["percent"])
+    response = {
+        "venue_id": venue_id,
+        "forecast": forecast_list,
+        "best_time_to_go_today": {
+            "offset_hours": best["offset_hours"],
+            "percent": best["percent"],
+            "label": (
+                "Now"
+                if best["offset_hours"] == 0
+                else f"In {best['offset_hours']} hours"
+            ),
+        },
+        "data_mode": "forecast",
+        "forecast_source": "busyness_forecasts",
+        "model_version": model_version,
+        "feature_snapshot_at": (
+            generated_at.isoformat() + "Z"
+            if generated_at and generated_at.tzinfo is None
+            else generated_at.isoformat()
+            if generated_at
+            else None
+        ),
+    }
+    # --- Attach external_feature_status from context cache ---
     try:
-        conn = _get_db_conn()
-        try:
-            with conn.cursor() as cur:
-                cur.execute(
-                    "SELECT forecast_1h FROM busyness_scores "
-                    "WHERE venue_id = %s AND forecast_1h IS NOT NULL "
-                    "ORDER BY forecast_start_time DESC LIMIT 1",
-                    (venue_id,),
-                )
-                row = cur.fetchone()
-                if row:
-                    forecast_raw = row[0]
-                    forecast_list = (
-                        _json.loads(forecast_raw)
-                        if isinstance(forecast_raw, str)
-                        else forecast_raw
-                    )
-                    best = min(forecast_list, key=lambda x: x.get("percent", 100))
-                    return {
-                        "venue_id": venue_id,
-                        "forecast": forecast_list,
-                        "best_time_to_go_today": {
-                            "offset_hours": best["offset_hours"],
-                            "percent": best["percent"],
-                            "label": (
-                                "Now"
-                                if best["offset_hours"] == 0
-                                else f"In {best['offset_hours']} hours"
-                            ),
-                        },
-                        "data_mode": "predicted",
-                        "forecast_source": "busyness_scores.forecast_1h",
-                    }
-        finally:
-            conn.close()
+        response["external_feature_status"] = _get_external_feature_status()
     except Exception:
-        pass  # fall through to mock
-
-    # --- Final fallback: mock data ---
-    forecast = VENUE_FORECASTS.get(venue_id)
-    if not forecast:
-        return None
-
-    response = deepcopy(forecast)
-    response["data_mode"] = "mock"
-    response["forecast_source"] = "mock_data"
+        response["external_feature_status"] = {"status": "unavailable"}
     return response
 
 
