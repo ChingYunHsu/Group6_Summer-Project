@@ -1,60 +1,175 @@
-import { useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
-import loginPeopleImage from "../assets/login-people.jpg";
-import "./Login.css";
-import { login, register, guestLogin } from "../services/authService";
 
-function Login({ setUserLocation }) {
+import clearPathLogo from "../assets/clearpath-logo.png";
+import loginPeopleImage from "../assets/login-people.jpg";
+
+import "./Login.css";
+
+import {
+  guestLogin,
+  login,
+  register,
+} from "../services/authService";
+
+const AUTH_MODE_KEY = "auth_mode";
+const AUTHENTICATED_MODE = "authenticated";
+const GUEST_MODE = "guest";
+
+function Login({
+  setUserLocation,
+  setUser,
+  setAuthMode,
+}) {
   const navigate = useNavigate();
 
-  const [showLocationModal, setShowLocationModal] = useState(false);
-  const [showProfileIntercept, setShowProfileIntercept] = useState(false);
-  const [locationError, setLocationError] = useState("");
-  const [isRequestingLocation, setIsRequestingLocation] = useState(false);
-  const [isRegister, setIsRegister] = useState(false);
-  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [
+    showLocationModal,
+    setShowLocationModal,
+  ] = useState(false);
 
-  const [loginForm, setLoginForm] = useState({
-    email: "",
-    password: "",
-  });
+  const [
+    showProfileIntercept,
+    setShowProfileIntercept,
+  ] = useState(false);
 
-  const [registerForm, setRegisterForm] = useState({
+  const [
+    locationError,
+    setLocationError,
+  ] = useState("");
+
+  const [
+    isRequestingLocation,
+    setIsRequestingLocation,
+  ] = useState(false);
+
+  const [
+    isRegister,
+    setIsRegister,
+  ] = useState(false);
+
+  const [
+    isAuthenticating,
+    setIsAuthenticating,
+  ] = useState(false);
+
+  const [loginForm, setLoginForm] =
+    useState({
+      email: "",
+      password: "",
+    });
+
+  const [
+    registerForm,
+    setRegisterForm,
+  ] = useState({
     fullName: "",
     email: "",
     password: "",
   });
+
+  /*
+   * Registered users who reach "/" should return to the map.
+   * Guest users are allowed to return to login/register.
+   */
+  useEffect(() => {
+    const accessToken =
+      localStorage.getItem("access_token");
+
+    const storedAuthMode =
+      localStorage.getItem(AUTH_MODE_KEY);
+
+    const isAuthenticatedUser =
+      Boolean(accessToken) &&
+      storedAuthMode === AUTHENTICATED_MODE;
+
+    if (isAuthenticatedUser) {
+      navigate("/map", {
+        replace: true,
+      });
+    }
+  }, [navigate]);
 
   function openLocationModal() {
     setLocationError("");
     setShowLocationModal(true);
   }
 
-  async function handleLoginSubmit(e) {
-    e.preventDefault();
+  function setAuthenticatedSession(data) {
+    localStorage.setItem(
+      AUTH_MODE_KEY,
+      AUTHENTICATED_MODE
+    );
 
-    if (!loginForm.email || !loginForm.password) {
-      alert("Please enter your email and password.");
+    setAuthMode?.(AUTHENTICATED_MODE);
+
+    setUser?.(
+      data?.user ?? {
+        authMode: AUTHENTICATED_MODE,
+      }
+    );
+  }
+
+  function setGuestSession(data) {
+    localStorage.setItem(
+      AUTH_MODE_KEY,
+      GUEST_MODE
+    );
+
+    setAuthMode?.(GUEST_MODE);
+
+    setUser?.({
+      authMode: GUEST_MODE,
+      userId: data?.user_id ?? null,
+    });
+  }
+
+  async function handleLoginSubmit(event) {
+    event.preventDefault();
+
+    if (
+      !loginForm.email ||
+      !loginForm.password
+    ) {
+      alert(
+        "Please enter your email and password."
+      );
       return;
     }
 
     try {
       setIsAuthenticating(true);
 
-      await login(loginForm.email, loginForm.password);
+      const data = await login(
+        loginForm.email,
+        loginForm.password
+      );
 
+      setAuthenticatedSession(data);
       openLocationModal();
     } catch (error) {
-      console.error("Login request failed:", error);
+      console.error(
+        "Login request failed:",
+        error
+      );
 
       const problemFields = [
-        ...(error?.body?.missing_fields ?? []),
-        ...(error?.body?.invalid_fields ?? []),
+        ...(error?.body?.missing_fields ??
+          []),
+        ...(error?.body?.invalid_fields ??
+          []),
       ];
 
-      const message = problemFields.length
-        ? `${error.message} (${problemFields.join(", ")})`
-        : error.message || "Please check your details and try again.";
+      const message =
+        problemFields.length > 0
+          ? `${error.message} (${problemFields.join(
+              ", "
+            )})`
+          : error.message ||
+            "Please check your details and try again.";
 
       alert(message);
     } finally {
@@ -62,16 +177,28 @@ function Login({ setUserLocation }) {
     }
   }
 
-  async function handleRegisterSubmit(e) {
-    e.preventDefault();
+  async function handleRegisterSubmit(
+    event
+  ) {
+    event.preventDefault();
 
-    if (!registerForm.fullName || !registerForm.email || !registerForm.password) {
-      alert("Please complete all registration fields.");
+    if (
+      !registerForm.fullName ||
+      !registerForm.email ||
+      !registerForm.password
+    ) {
+      alert(
+        "Please complete all registration fields."
+      );
       return;
     }
 
-    if (registerForm.password.length < 8) {
-      alert("Password must be at least 8 characters.");
+    if (
+      registerForm.password.length < 8
+    ) {
+      alert(
+        "Password must be at least 8 characters."
+      );
       return;
     }
 
@@ -84,22 +211,33 @@ function Login({ setUserLocation }) {
         registerForm.password
       );
 
+      setAuthenticatedSession(data);
+
       if (data.finish_profile_prompt) {
         setShowProfileIntercept(true);
       } else {
         openLocationModal();
       }
     } catch (error) {
-      console.error("Register request failed:", error);
+      console.error(
+        "Register request failed:",
+        error
+      );
 
       const problemFields = [
-        ...(error?.body?.missing_fields ?? []),
-        ...(error?.body?.invalid_fields ?? []),
+        ...(error?.body?.missing_fields ??
+          []),
+        ...(error?.body?.invalid_fields ??
+          []),
       ];
 
-      const message = problemFields.length
-        ? `${error.message} (${problemFields.join(", ")})`
-        : error.message || "Please check your details and try again.";
+      const message =
+        problemFields.length > 0
+          ? `${error.message} (${problemFields.join(
+              ", "
+            )})`
+          : error.message ||
+            "Please check your details and try again.";
 
       alert(message);
     } finally {
@@ -111,12 +249,20 @@ function Login({ setUserLocation }) {
     try {
       setIsAuthenticating(true);
 
-      await guestLogin();
+      const data = await guestLogin();
 
+      setGuestSession(data);
       openLocationModal();
     } catch (error) {
-      console.error("Guest session request failed:", error);
-      alert(error.message || "Could not start a guest session.");
+      console.error(
+        "Guest session request failed:",
+        error
+      );
+
+      alert(
+        error.message ||
+          "Could not start a guest session."
+      );
     } finally {
       setIsAuthenticating(false);
     }
@@ -136,7 +282,9 @@ function Login({ setUserLocation }) {
     setLocationError("");
 
     if (!navigator.geolocation) {
-      setLocationError("Geolocation is not supported by this browser.");
+      setLocationError(
+        "Geolocation is not supported by this browser."
+      );
       return;
     }
 
@@ -145,13 +293,13 @@ function Login({ setUserLocation }) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const userLocation = {
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
+          latitude:
+            position.coords.latitude,
+          longitude:
+            position.coords.longitude,
         };
 
-        if (setUserLocation) {
-          setUserLocation(userLocation);
-        }
+        setUserLocation?.(userLocation);
 
         localStorage.setItem(
           "clearPathUserLocation",
@@ -160,10 +308,12 @@ function Login({ setUserLocation }) {
 
         setIsRequestingLocation(false);
         setShowLocationModal(false);
+
         navigate("/map");
       },
       () => {
         setIsRequestingLocation(false);
+
         setLocationError(
           "Location access was denied. You can continue, but route planning may be limited."
         );
@@ -180,16 +330,35 @@ function Login({ setUserLocation }) {
     <main className="login-page">
       <section
         className="login-brand-panel"
-        style={{ backgroundImage: `url(${loginPeopleImage})` }}
+        style={{
+          backgroundImage: `url(${loginPeopleImage})`,
+        }}
       >
         <div className="brand-content">
-          <h1>ClearPath</h1>
+          <div className="login-brand-title">
+            <img
+              src={clearPathLogo}
+              alt=""
+              aria-hidden="true"
+              className="login-brand-logo"
+            />
+
+            <h1>ClearPath</h1>
+          </div>
+
           <div className="brand-line"></div>
-          <h2>Your Safety, Our Priority.</h2>
+
+          <h2>
+            Your Safety, Our Priority.
+          </h2>
+
           <p>
-            Join our community-driven healthcare intelligence network. Access
-            real-time insights, manage your data securely, and navigate your
-            wellness journey with absolute clarity.
+            Join our community-driven
+            healthcare intelligence network.
+            Access real-time insights,
+            manage your data securely, and
+            navigate your wellness journey
+            with absolute clarity.
           </p>
         </div>
       </section>
@@ -199,8 +368,12 @@ function Login({ setUserLocation }) {
           <div className="auth-tabs">
             <button
               type="button"
-              className={isRegister ? "" : "active"}
-              onClick={() => setIsRegister(false)}
+              className={
+                isRegister ? "" : "active"
+              }
+              onClick={() =>
+                setIsRegister(false)
+              }
               disabled={isAuthenticating}
             >
               Login
@@ -208,8 +381,12 @@ function Login({ setUserLocation }) {
 
             <button
               type="button"
-              className={isRegister ? "active" : ""}
-              onClick={() => setIsRegister(true)}
+              className={
+                isRegister ? "active" : ""
+              }
+              onClick={() =>
+                setIsRegister(true)
+              }
               disabled={isAuthenticating}
             >
               Register
@@ -217,22 +394,36 @@ function Login({ setUserLocation }) {
           </div>
 
           {!isRegister ? (
-            <form onSubmit={handleLoginSubmit}>
-              <label htmlFor="login-email">Email Address</label>
+            <form
+              onSubmit={handleLoginSubmit}
+            >
+              <label htmlFor="login-email">
+                Email Address
+              </label>
+
               <input
                 id="login-email"
                 type="email"
                 placeholder="name@company.com"
                 autoComplete="email"
                 value={loginForm.email}
-                onChange={(e) =>
-                  setLoginForm({ ...loginForm, email: e.target.value })
+                onChange={(event) =>
+                  setLoginForm({
+                    ...loginForm,
+                    email:
+                      event.target.value,
+                  })
                 }
               />
 
               <div className="password-row">
-                <label htmlFor="login-password">Password</label>
-                <a href="#">Forgot Password?</a>
+                <label htmlFor="login-password">
+                  Password
+                </label>
+
+                <a href="#">
+                  Forgot Password?
+                </a>
               </div>
 
               <input
@@ -241,82 +432,119 @@ function Login({ setUserLocation }) {
                 placeholder="password"
                 autoComplete="current-password"
                 value={loginForm.password}
-                onChange={(e) =>
-                  setLoginForm({ ...loginForm, password: e.target.value })
+                onChange={(event) =>
+                  setLoginForm({
+                    ...loginForm,
+                    password:
+                      event.target.value,
+                  })
                 }
               />
 
               <button
                 className="primary-auth-button"
                 type="submit"
-                disabled={isAuthenticating}
+                disabled={
+                  isAuthenticating
+                }
               >
-                {isAuthenticating ? "Signing in..." : "Sign In to My Account →"}
+                {isAuthenticating
+                  ? "Signing in..."
+                  : "Sign In to My Account →"}
               </button>
             </form>
           ) : (
-            <form onSubmit={handleRegisterSubmit}>
-              <p className="register-title">Get started</p>
-
-              <p className="hipaa-label">
-                HIPAA-ready protected identity asset setup
+            <form
+              onSubmit={
+                handleRegisterSubmit
+              }
+            >
+              <p className="register-title">
+                Get started
               </p>
 
-              <label htmlFor="register-name">Full Name</label>
+              <p className="hipaa-label">
+                HIPAA-ready protected
+                identity asset setup
+              </p>
+
+              <label htmlFor="register-name">
+                Full Name
+              </label>
+
               <input
                 id="register-name"
                 type="text"
                 placeholder="Enter your full name"
                 autoComplete="name"
-                value={registerForm.fullName}
-                onChange={(e) =>
+                value={
+                  registerForm.fullName
+                }
+                onChange={(event) =>
                   setRegisterForm({
                     ...registerForm,
-                    fullName: e.target.value,
+                    fullName:
+                      event.target.value,
                   })
                 }
               />
 
-              <label htmlFor="register-email">Email Address</label>
+              <label htmlFor="register-email">
+                Email Address
+              </label>
+
               <input
                 id="register-email"
                 type="email"
                 placeholder="name@company.com"
                 autoComplete="email"
                 value={registerForm.email}
-                onChange={(e) =>
+                onChange={(event) =>
                   setRegisterForm({
                     ...registerForm,
-                    email: e.target.value,
+                    email:
+                      event.target.value,
                   })
                 }
               />
 
-              <label htmlFor="register-password">Password</label>
+              <label htmlFor="register-password">
+                Password
+              </label>
+
               <input
                 id="register-password"
                 type="password"
                 placeholder="Create a secure password"
                 autoComplete="new-password"
-                value={registerForm.password}
-                onChange={(e) =>
+                value={
+                  registerForm.password
+                }
+                onChange={(event) =>
                   setRegisterForm({
                     ...registerForm,
-                    password: e.target.value,
+                    password:
+                      event.target.value,
                   })
                 }
               />
 
               <p className="hipaa-label">
-                Clinical records remain local-first until authorised sharing.
+                Clinical records remain
+                local-first until authorised
+                sharing.
               </p>
 
               <button
                 className="primary-auth-button"
                 type="submit"
-                disabled={isAuthenticating}
+                disabled={
+                  isAuthenticating
+                }
               >
-                {isAuthenticating ? "Creating account..." : "Create Account →"}
+                {isAuthenticating
+                  ? "Creating account..."
+                  : "Create Account →"}
               </button>
             </form>
           )}
@@ -330,14 +558,20 @@ function Login({ setUserLocation }) {
           <button
             className="guest-button"
             type="button"
-            onClick={handleGuestContinue}
+            onClick={
+              handleGuestContinue
+            }
             disabled={isAuthenticating}
           >
-            {isAuthenticating ? "Starting session..." : "Continue as Guest"}
+            {isAuthenticating
+              ? "Starting session..."
+              : "Continue as Guest"}
           </button>
 
           <p className="terms">
-            By continuing, you agree to our Terms of Service and Privacy Policy.
+            By continuing, you agree to
+            our Terms of Service and
+            Privacy Policy.
           </p>
         </div>
       </section>
@@ -346,21 +580,35 @@ function Login({ setUserLocation }) {
         <div className="intercept-overlay">
           <div className="intercept-sheet">
             <h2>
-              Would you like to finish setting up your Medical Profile and ID
-              now?
+              Would you like to finish
+              setting up your Medical
+              Profile and ID now?
             </h2>
+
             <p>
-              Complete your emergency medical document now, or skip this step and
-              return to it later.
+              Complete your emergency
+              medical document now, or
+              skip this step and return
+              to it later.
             </p>
 
             <div className="intercept-actions">
-              <button type="button" onClick={handleSkipProfile}>
+              <button
+                type="button"
+                onClick={
+                  handleSkipProfile
+                }
+              >
                 Skip for Now
               </button>
 
-              <button type="button" onClick={handleFinishProfile}>
-                Finish Profile & ID
+              <button
+                type="button"
+                onClick={
+                  handleFinishProfile
+                }
+              >
+                Finish Profile &amp; ID
               </button>
             </div>
           </div>
@@ -370,22 +618,34 @@ function Login({ setUserLocation }) {
       {showLocationModal && (
         <div className="location-overlay">
           <div className="location-modal">
-            <div className="location-icon">⌖</div>
+            <div className="location-icon">
+              ⌖
+            </div>
 
             <h2>Enable Location</h2>
 
             <p>
-              ClearPath uses your current location to initialise the map matrix
-              viewport and calculate safer healthcare routes.
+              ClearPath uses your current
+              location to initialise the
+              map matrix viewport and
+              calculate safer healthcare
+              routes.
             </p>
 
-            {locationError && <p className="location-error">{locationError}</p>}
+            {locationError && (
+              <p className="location-error">
+                {locationError}
+              </p>
+            )}
 
             <div className="location-actions">
               <button
                 className="cancel-location-button"
                 type="button"
                 onClick={handleNotNow}
+                disabled={
+                  isRequestingLocation
+                }
               >
                 Not Now
               </button>
@@ -393,10 +653,16 @@ function Login({ setUserLocation }) {
               <button
                 className="allow-location-button"
                 type="button"
-                onClick={handleAllowAccess}
-                disabled={isRequestingLocation}
+                onClick={
+                  handleAllowAccess
+                }
+                disabled={
+                  isRequestingLocation
+                }
               >
-                {isRequestingLocation ? "Requesting..." : "Allow Access"}
+                {isRequestingLocation
+                  ? "Requesting..."
+                  : "Allow Access"}
               </button>
             </div>
           </div>

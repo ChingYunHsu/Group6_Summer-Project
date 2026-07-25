@@ -162,6 +162,50 @@ const MOCK_USER_LOCATION = {
   lng: -73.9855,
 };
 
+const MAX_AUTOCOMPLETE_RESULTS = 25;
+
+function getVenueAutocompleteResults(venues, query) {
+  const cleanedQuery = String(query ?? "")
+    .trim()
+    .toLowerCase();
+
+  return venues
+    .filter((venue) => {
+      if (!cleanedQuery) return true;
+
+      return [
+        venue.name,
+        venue.address,
+        venue.borough,
+        venue.venue_type,
+      ]
+        .filter(Boolean)
+        .some((value) =>
+          String(value).toLowerCase().includes(cleanedQuery)
+        );
+    })
+    .sort((firstVenue, secondVenue) => {
+      const firstName = String(firstVenue.name ?? "");
+      const secondName = String(secondVenue.name ?? "");
+
+      if (cleanedQuery) {
+        const firstStartsWith = firstName
+          .toLowerCase()
+          .startsWith(cleanedQuery);
+        const secondStartsWith = secondName
+          .toLowerCase()
+          .startsWith(cleanedQuery);
+
+        if (firstStartsWith !== secondStartsWith) {
+          return firstStartsWith ? -1 : 1;
+        }
+      }
+
+      return firstName.localeCompare(secondName);
+    })
+    .slice(0, MAX_AUTOCOMPLETE_RESULTS);
+}
+
 function getIssueMessage(issueType) {
   const messages = {
     elevator_broken: "Elevator reported broken",
@@ -630,12 +674,26 @@ function LiveHelpMap() {
   const [routeStart, setRouteStart] = useState("");
   const [routeDestination, setRouteDestination] = useState("");
   const [routeDepartureTime, setRouteDepartureTime] = useState("");
+  const [routeOriginSelection, setRouteOriginSelection] = useState({
+    type: "current",
+    venueId: null,
+  });
+  const [routeDestinationVenueId, setRouteDestinationVenueId] =
+    useState(null);
+  const [openRouteAutocomplete, setOpenRouteAutocomplete] =
+    useState(null);
+  const [routeOriginSuggestionQuery, setRouteOriginSuggestionQuery] =
+    useState("");
+  const [routeDestinationSuggestionQuery, setRouteDestinationSuggestionQuery] =
+    useState("");
   const [selectedTravelMode, setSelectedTravelMode] = useState("walk");
   const [routeOptions, setRouteOptions] = useState([]);
   const [routeDetail, setRouteDetail] = useState(null);
   const [routeLoading, setRouteLoading] = useState(false);
   const [routeError, setRouteError] = useState("");
   const [selectedVenueId, setSelectedVenueId] = useState(null);
+
+  const routeAutocompleteRef = useRef(null);
 
   const [favouriteVenueIds, setFavouriteVenueIds] = useState([]);
   const [favouriteError, setFavouriteError] = useState("");
@@ -651,6 +709,31 @@ function LiveHelpMap() {
     ...MOCK_USER_LOCATION,
     isMock: true,
   });
+
+  useEffect(() => {
+    if (!showRoutePlanner) return undefined;
+
+    function handleRouteAutocompleteOutsideClick(event) {
+      if (
+        routeAutocompleteRef.current &&
+        !routeAutocompleteRef.current.contains(event.target)
+      ) {
+        setOpenRouteAutocomplete(null);
+      }
+    }
+
+    document.addEventListener(
+      "mousedown",
+      handleRouteAutocompleteOutsideClick
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleRouteAutocompleteOutsideClick
+      );
+    };
+  }, [showRoutePlanner]);
 
   const loadVenues = useCallback(async () => {
     try {
@@ -1018,7 +1101,16 @@ useEffect(() => {
   }
 
   const markerElement = document.createElement("div");
-  markerElement.className = "user-location-marker";
+  markerElement.className = [
+    "user-location-marker",
+    showRoutePlanner ? "user-location-marker--route-active" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  // During an active journey, keep the current/mock-location marker above
+  // every venue marker and match the selected destination marker size.
+  markerElement.style.zIndex = showRoutePlanner ? "100" : "40";
 
   markerElement.title = userLocation.isMock
     ? "Mock Current Location"
@@ -1038,7 +1130,7 @@ useEffect(() => {
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
   };
-}, [userLocation]);
+}, [showRoutePlanner, userLocation]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1140,6 +1232,31 @@ useEffect(() => {
     [busynessByVenueId, venues]
   );
 
+  const highlightedVenueIds = useMemo(() => {
+    const ids = new Set();
+
+    if (selectedVenueId) {
+      ids.add(selectedVenueId);
+    }
+
+    if (routeDestinationVenueId) {
+      ids.add(routeDestinationVenueId);
+    }
+
+    if (
+      routeOriginSelection?.type === "venue" &&
+      routeOriginSelection.venueId
+    ) {
+      ids.add(routeOriginSelection.venueId);
+    }
+
+    return ids;
+  }, [
+    routeDestinationVenueId,
+    routeOriginSelection,
+    selectedVenueId,
+  ]);
+
   const visibleVenues = useMemo(() => {
     const cleanedSearch = searchText
       .trim()
@@ -1151,6 +1268,15 @@ useEffect(() => {
       );
 
     return venuesWithBusyness.filter((venue) => {
+      /*
+       * A route origin, route destination, or actively opened venue must stay
+       * visible even when the current category, language, accessibility,
+       * busyness, or text filters would normally hide it.
+       */
+      if (highlightedVenueIds.has(venue.venue_id)) {
+        return true;
+      }
+
       const matchesSearch =
         !cleanedSearch ||
         [
@@ -1213,6 +1339,7 @@ useEffect(() => {
 }, [
   appliedFilters,
   futureMode,
+  highlightedVenueIds,
   searchText,
   selectedBusynessLevels,
   venuesWithBusyness,
@@ -1253,8 +1380,18 @@ useEffect(() => {
 
     visibleVenues.forEach((venue) => {
       const markerEl = document.createElement("button");
+      const isHighlighted = highlightedVenueIds.has(venue.venue_id);
+
       markerEl.type = "button";
-      markerEl.className = "venue-pin";
+      markerEl.className = [
+        "venue-pin",
+        isHighlighted ? "venue-pin--selected" : "",
+        showRoutePlanner && !isHighlighted
+          ? "venue-pin--deemphasised"
+          : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
       markerEl.style.backgroundColor = getMarkerColor(
         venue,
         futureMode
@@ -1263,10 +1400,12 @@ useEffect(() => {
         venue
       )}</span>`;
       markerEl.style.pointerEvents = "auto";
-      markerEl.style.zIndex = "10";
+      markerEl.style.zIndex = isHighlighted ? "30" : "10";
       markerEl.setAttribute(
         "aria-label",
-        `Open ${venue.name || "venue"}`
+        `${isHighlighted ? "Selected: " : "Open "}${
+          venue.name || "venue"
+        }`
       );
 
       markerEl.addEventListener("mousedown", (event) => {
@@ -1283,7 +1422,73 @@ useEffect(() => {
 
       markersRef.current.push(marker);
     });
-  }, [futureMode, openVenueDrawer, visibleVenues]);
+  }, [
+    futureMode,
+    highlightedVenueIds,
+    showRoutePlanner,
+    openVenueDrawer,
+    visibleVenues,
+  ]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+
+    if (!map || highlightedVenueIds.size === 0) {
+      return;
+    }
+
+    const highlightedVenues = venues.filter(
+      (venue) =>
+        highlightedVenueIds.has(venue.venue_id) &&
+        Number.isFinite(venue.longitude) &&
+        Number.isFinite(venue.latitude)
+    );
+
+    if (highlightedVenues.length === 0) {
+      return;
+    }
+
+    if (highlightedVenues.length === 1) {
+      const [venue] = highlightedVenues;
+
+      map.easeTo({
+        center: [venue.longitude, venue.latitude],
+        zoom: Math.max(map.getZoom(), 14),
+        duration: 500,
+      });
+
+      return;
+    }
+
+    const bounds = highlightedVenues.reduce(
+      (currentBounds, venue) =>
+        currentBounds.extend([
+          venue.longitude,
+          venue.latitude,
+        ]),
+      new maplibregl.LngLatBounds(
+        [
+          highlightedVenues[0].longitude,
+          highlightedVenues[0].latitude,
+        ],
+        [
+          highlightedVenues[0].longitude,
+          highlightedVenues[0].latitude,
+        ]
+      )
+    );
+
+    map.fitBounds(bounds, {
+      padding: {
+        top: 120,
+        right: 80,
+        bottom: 100,
+        left: showRoutePlanner ? 360 : 80,
+      },
+      maxZoom: 15,
+      duration: 600,
+    });
+  }, [highlightedVenueIds, showRoutePlanner, venues]);
 
   const selectedVenue = useMemo(() => {
     if (!selectedVenueId) return null;
@@ -1321,6 +1526,69 @@ useEffect(() => {
     venues,
   ]);
 
+  const routeOriginVenue = useMemo(() => {
+    if (routeOriginSelection?.type !== "venue") return null;
+
+    return (
+      venues.find(
+        (venue) => venue.venue_id === routeOriginSelection.venueId
+      ) ?? null
+    );
+  }, [routeOriginSelection, venues]);
+
+  const activeRouteOrigin = useMemo(() => {
+    if (routeOriginSelection?.type === "current") {
+      return userLocation;
+    }
+
+    if (!routeOriginVenue) return null;
+
+    return {
+      lat: routeOriginVenue.latitude,
+      lng: routeOriginVenue.longitude,
+      isMock: false,
+      venue_id: routeOriginVenue.venue_id,
+    };
+  }, [routeOriginSelection, routeOriginVenue, userLocation]);
+
+  const routeDestinationVenue = useMemo(() => {
+    if (!routeDestinationVenueId) return null;
+
+    return (
+      venues.find(
+        (venue) => venue.venue_id === routeDestinationVenueId
+      ) ?? null
+    );
+  }, [routeDestinationVenueId, venues]);
+
+  const originVenueSuggestions = useMemo(
+    () =>
+      getVenueAutocompleteResults(
+        venues,
+        routeOriginSuggestionQuery
+      ),
+    [routeOriginSuggestionQuery, venues]
+  );
+
+  const destinationVenueSuggestions = useMemo(
+    () =>
+      getVenueAutocompleteResults(
+        venues,
+        routeDestinationSuggestionQuery
+      ),
+    [routeDestinationSuggestionQuery, venues]
+  );
+
+  const currentLocationMatchesOriginQuery = useMemo(() => {
+    const query = routeOriginSuggestionQuery.trim().toLowerCase();
+
+    return (
+      !query ||
+      "current location".includes(query) ||
+      "mock manhattan location".includes(query)
+    );
+  }, [routeOriginSuggestionQuery]);
+
   const selectedRouteOption = useMemo(
     () =>
       routeOptions.find(
@@ -1329,8 +1597,118 @@ useEffect(() => {
     [routeOptions, selectedTravelMode]
   );
 
-  async function loadRoute(venue, mode, refreshOptions = false) {
-    if (!venue?.venue_id) return;
+  const canSearchRoute =
+    Boolean(activeRouteOrigin) &&
+    Boolean(routeDestinationVenue) &&
+    !routeLoading;
+
+  function clearDisplayedRoute() {
+    removeRouteLayer(mapRef.current);
+    setRouteDetail(null);
+    setRouteOptions([]);
+    setRouteError("");
+  }
+
+  function handleRouteStartChange(event) {
+    const nextValue = event.target.value;
+
+    setRouteStart(nextValue);
+    setRouteOriginSuggestionQuery(nextValue);
+    setRouteOriginSelection(null);
+    setOpenRouteAutocomplete("origin");
+    clearDisplayedRoute();
+  }
+
+  function handleRouteDestinationChange(event) {
+    const nextValue = event.target.value;
+
+    setRouteDestination(nextValue);
+    setRouteDestinationSuggestionQuery(nextValue);
+    setRouteDestinationVenueId(null);
+    setSelectedVenueId(null);
+    setOpenRouteAutocomplete("destination");
+    clearDisplayedRoute();
+  }
+
+  function selectCurrentRouteOrigin() {
+    setRouteStart(
+      userLocation.isMock
+        ? "Mock Manhattan Location"
+        : "Current Location"
+    );
+    setRouteOriginSelection({
+      type: "current",
+      venueId: null,
+    });
+    setRouteOriginSuggestionQuery("");
+    setOpenRouteAutocomplete(null);
+    clearDisplayedRoute();
+  }
+
+  function selectRouteOriginVenue(venue) {
+    setRouteStart(venue.name ?? "Selected venue");
+    setRouteOriginSelection({
+      type: "venue",
+      venueId: venue.venue_id,
+    });
+    setRouteOriginSuggestionQuery("");
+    setOpenRouteAutocomplete(null);
+    clearDisplayedRoute();
+  }
+
+  function selectRouteDestinationVenue(venue) {
+    setRouteDestination(venue.name ?? "Selected venue");
+    setRouteDestinationVenueId(venue.venue_id);
+    setSelectedVenueId(venue.venue_id);
+    setRouteDestinationSuggestionQuery("");
+    setOpenRouteAutocomplete(null);
+    clearDisplayedRoute();
+  }
+
+  function handleOriginAutocompleteKeyDown(event) {
+    if (event.key === "Escape") {
+      setOpenRouteAutocomplete(null);
+      return;
+    }
+
+    if (event.key !== "Enter") return;
+
+    event.preventDefault();
+
+    if (currentLocationMatchesOriginQuery) {
+      selectCurrentRouteOrigin();
+      return;
+    }
+
+    if (originVenueSuggestions[0]) {
+      selectRouteOriginVenue(originVenueSuggestions[0]);
+    }
+  }
+
+  function handleDestinationAutocompleteKeyDown(event) {
+    if (event.key === "Escape") {
+      setOpenRouteAutocomplete(null);
+      return;
+    }
+
+    if (
+      event.key === "Enter" &&
+      destinationVenueSuggestions[0]
+    ) {
+      event.preventDefault();
+      selectRouteDestinationVenue(
+        destinationVenueSuggestions[0]
+      );
+    }
+  }
+
+  async function loadRoute(
+    venue,
+    mode,
+    refreshOptions = false,
+    origin = activeRouteOrigin
+  ) {
+    if (!venue?.venue_id || !origin) return;
 
     try {
       setRouteLoading(true);
@@ -1345,12 +1723,8 @@ useEffect(() => {
       if (refreshOptions) {
         const [optionsPayload, detailPayload] =
           await Promise.all([
-            getRouteOptions(venue.venue_id, userLocation),
-            getRouteDetail(
-              venue.venue_id,
-              userLocation,
-              mode
-            ),
+            getRouteOptions(venue.venue_id, origin),
+            getRouteDetail(venue.venue_id, origin, mode),
           ]);
 
         setRouteOptions(normaliseRouteOptions(optionsPayload));
@@ -1360,7 +1734,7 @@ useEffect(() => {
 
       const detailPayload = await getRouteDetail(
         venue.venue_id,
-        userLocation,
+        origin,
         mode
       );
 
@@ -1377,25 +1751,30 @@ useEffect(() => {
   }
 
   async function handleTravelModeChange(mode) {
-    if (
-      !selectedVenue ||
-      mode === selectedTravelMode ||
-      routeLoading
-    ) {
+    if (mode === selectedTravelMode || routeLoading) {
       return;
     }
 
     setSelectedTravelMode(mode);
-    await loadRoute(selectedVenue, mode, false);
+
+    if (routeDestinationVenue && activeRouteOrigin) {
+      await loadRoute(
+        routeDestinationVenue,
+        mode,
+        false,
+        activeRouteOrigin
+      );
+    }
   }
 
   async function handleRouteSearch() {
-    if (!selectedVenue || routeLoading) return;
+    if (!canSearchRoute) return;
 
     await loadRoute(
-      selectedVenue,
+      routeDestinationVenue,
       selectedTravelMode,
-      true
+      true,
+      activeRouteOrigin
     );
   }
 
@@ -1476,24 +1855,61 @@ useEffect(() => {
   async function handleOpenLiveDirections() {
     if (!selectedVenue) return;
 
+    const currentLocationLabel = userLocation.isMock
+      ? "Mock Manhattan Location"
+      : "Current Location";
+
     setSelectedTravelMode("walk");
     setShowRoutePlanner(true);
     setShowLeftDrawer(false);
-    setRouteStart("Mock Manhattan Location");
-    setRouteDestination(selectedVenue.name ?? "Selected Venue");
+    setRouteStart(currentLocationLabel);
+    setRouteOriginSelection({
+      type: "current",
+      venueId: null,
+    });
+    setRouteDestination(
+      selectedVenue.name ?? "Selected Venue"
+    );
+    setRouteDestinationVenueId(selectedVenue.venue_id);
     setRouteDepartureTime("Leave Now");
+    setRouteOriginSuggestionQuery("");
+    setRouteDestinationSuggestionQuery("");
+    setOpenRouteAutocomplete(null);
 
-    await loadRoute(selectedVenue, "walk", true);
+    await loadRoute(
+      selectedVenue,
+      "walk",
+      true,
+      userLocation
+    );
   }
 
   function closeRoutePlanner() {
     removeRouteLayer(mapRef.current);
+
+    // Closing the route planner terminates the active journey. Clear every
+    // route-specific selection so markers stop bypassing the active filters
+    // and all marker sizes return to their normal state.
     setRouteDetail(null);
     setRouteOptions([]);
     setRouteError("");
     setSelectedTravelMode("walk");
+    setOpenRouteAutocomplete(null);
+
+    setRouteStart("");
+    setRouteDestination("");
+    setRouteDepartureTime("");
+    setRouteOriginSuggestionQuery("");
+    setRouteDestinationSuggestionQuery("");
+    setRouteOriginSelection({
+      type: "current",
+      venueId: null,
+    });
+    setRouteDestinationVenueId(null);
+    setSelectedVenueId(null);
+
     setShowRoutePlanner(false);
-    setShowLeftDrawer(true);
+    setShowLeftDrawer(false);
   }
 
   function applyFilters() {
@@ -1643,96 +2059,264 @@ useEffect(() => {
           </section>
         </>
       ) : (
-        selectedVenue && (
-          <section className="route-planner-shell">
-            <div className="route-planner-bar">
-              <label>
-                <span>⌾</span>
+        <section className="route-planner-shell">
+          <div
+            className="route-planner-bar"
+            ref={routeAutocompleteRef}
+          >
+            <div className="route-field route-autocomplete-field">
+              <span aria-hidden="true">⌾</span>
+
+              <div className="route-autocomplete-input-wrap">
                 <input
                   type="text"
                   value={routeStart}
-                  readOnly
-                  placeholder="Mock Manhattan Location"
+                  placeholder="Choose current location or a venue"
+                  role="combobox"
+                  aria-label="Route origin"
+                  aria-autocomplete="list"
+                  aria-expanded={
+                    openRouteAutocomplete === "origin"
+                  }
+                  aria-controls="route-origin-suggestions"
+                  onFocus={(event) => {
+                    event.currentTarget.select();
+                    setRouteOriginSuggestionQuery("");
+                    setOpenRouteAutocomplete("origin");
+                  }}
+                  onChange={handleRouteStartChange}
+                  onKeyDown={handleOriginAutocompleteKeyDown}
                 />
-              </label>
 
-              <label>
-                <span>⌖</span>
+                {openRouteAutocomplete === "origin" && (
+                  <div
+                    id="route-origin-suggestions"
+                    className="route-autocomplete-menu"
+                    role="listbox"
+                    aria-label="Origin suggestions"
+                  >
+                    <div className="route-autocomplete-caption">
+                      Search current location or any loaded venue
+                    </div>
+
+                    {currentLocationMatchesOriginQuery && (
+                      <button
+                        type="button"
+                        className="route-autocomplete-option"
+                        role="option"
+                        aria-selected={
+                          routeOriginSelection?.type === "current"
+                        }
+                        onMouseDown={(event) =>
+                          event.preventDefault()
+                        }
+                        onClick={selectCurrentRouteOrigin}
+                      >
+                        <span className="route-autocomplete-icon">
+                          ◎
+                        </span>
+                        <span>
+                          <strong>
+                            {userLocation.isMock
+                              ? "Mock Manhattan Location"
+                              : "Current Location"}
+                          </strong>
+                          <small>Use your current route origin</small>
+                        </span>
+                      </button>
+                    )}
+
+                    {originVenueSuggestions.map((venue) => (
+                      <button
+                        key={`origin-${venue.venue_id}`}
+                        type="button"
+                        className="route-autocomplete-option"
+                        role="option"
+                        aria-selected={
+                          routeOriginSelection?.type === "venue" &&
+                          routeOriginSelection.venueId ===
+                            venue.venue_id
+                        }
+                        onMouseDown={(event) =>
+                          event.preventDefault()
+                        }
+                        onClick={() =>
+                          selectRouteOriginVenue(venue)
+                        }
+                      >
+                        <span className="route-autocomplete-icon">
+                          {getIcon(venue)}
+                        </span>
+                        <span>
+                          <strong>{venue.name}</strong>
+                          <small>
+                            {venue.address ||
+                              venue.borough ||
+                              "Address unavailable"}
+                          </small>
+                        </span>
+                      </button>
+                    ))}
+
+                    {!currentLocationMatchesOriginQuery &&
+                      originVenueSuggestions.length === 0 && (
+                        <p className="route-autocomplete-empty">
+                          No matching venues found.
+                        </p>
+                      )}
+
+                    <div className="route-autocomplete-footer">
+                      Showing up to {MAX_AUTOCOMPLETE_RESULTS} results
+                      from {venues.length} venues
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="route-field route-autocomplete-field">
+              <span aria-hidden="true">⌖</span>
+
+              <div className="route-autocomplete-input-wrap">
                 <input
                   type="text"
                   value={routeDestination}
-                  readOnly
-                  placeholder={selectedVenue.name}
+                  placeholder="Search all venues"
+                  role="combobox"
+                  aria-label="Route destination"
+                  aria-autocomplete="list"
+                  aria-expanded={
+                    openRouteAutocomplete === "destination"
+                  }
+                  aria-controls="route-destination-suggestions"
+                  onFocus={(event) => {
+                    event.currentTarget.select();
+                    setRouteDestinationSuggestionQuery("");
+                    setOpenRouteAutocomplete("destination");
+                  }}
+                  onChange={handleRouteDestinationChange}
+                  onKeyDown={
+                    handleDestinationAutocompleteKeyDown
+                  }
                 />
-              </label>
 
-              <label>
-                <span>◷</span>
-                <input
-                  type="text"
-                  value={routeDepartureTime}
-                  readOnly
-                  placeholder="Leave Now"
-                />
-              </label>
+                {openRouteAutocomplete === "destination" && (
+                  <div
+                    id="route-destination-suggestions"
+                    className="route-autocomplete-menu"
+                    role="listbox"
+                    aria-label="Destination suggestions"
+                  >
+                    <div className="route-autocomplete-caption">
+                      Search any loaded venue by name or address
+                    </div>
 
+                    {destinationVenueSuggestions.map((venue) => (
+                      <button
+                        key={`destination-${venue.venue_id}`}
+                        type="button"
+                        className="route-autocomplete-option"
+                        role="option"
+                        aria-selected={
+                          routeDestinationVenueId === venue.venue_id
+                        }
+                        onMouseDown={(event) =>
+                          event.preventDefault()
+                        }
+                        onClick={() =>
+                          selectRouteDestinationVenue(venue)
+                        }
+                      >
+                        <span className="route-autocomplete-icon">
+                          {getIcon(venue)}
+                        </span>
+                        <span>
+                          <strong>{venue.name}</strong>
+                          <small>
+                            {venue.address ||
+                              venue.borough ||
+                              "Address unavailable"}
+                          </small>
+                        </span>
+                      </button>
+                    ))}
+
+                    {destinationVenueSuggestions.length === 0 && (
+                      <p className="route-autocomplete-empty">
+                        No matching venues found.
+                      </p>
+                    )}
+
+                    <div className="route-autocomplete-footer">
+                      Showing up to {MAX_AUTOCOMPLETE_RESULTS} results
+                      from {venues.length} venues
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <label className="route-field">
+              <span aria-hidden="true">◷</span>
+              <input
+                type="text"
+                value={routeDepartureTime}
+                readOnly
+                placeholder="Leave Now"
+                aria-label="Departure time"
+              />
+            </label>
+
+            <button
+              type="button"
+              className="route-search-btn"
+              onClick={handleRouteSearch}
+              disabled={!canSearchRoute}
+            >
+              {routeLoading
+                ? "Searching..."
+                : "⇅ Search Route"}
+            </button>
+          </div>
+
+          <aside className="direction-options-card">
+            <div className="direction-options-header">
+              <h3>Direction Options</h3>
               <button
                 type="button"
-                className="route-search-btn"
-                onClick={handleRouteSearch}
-                disabled={routeLoading}
+                onClick={closeRoutePlanner}
+                aria-label="Close direction options"
               >
-                {routeLoading
-                  ? "Searching..."
-                  : "⇅ Search Route"}
+                ×
               </button>
             </div>
 
-            <aside className="direction-options-card">
-              <div className="direction-options-header">
-                <h3>Direction Options</h3>
-                <button
-                  type="button"
-                  onClick={closeRoutePlanner}
-                >
-                  ×
-                </button>
-              </div>
+            <div className="transport-tabs">
+              {Object.entries(TRAVEL_MODE_UI).map(
+                ([mode, modeUi]) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    className={
+                      selectedTravelMode === mode ? "active" : ""
+                    }
+                    aria-pressed={selectedTravelMode === mode}
+                    disabled={routeLoading}
+                    onClick={() => handleTravelModeChange(mode)}
+                  >
+                    {modeUi.label}
+                  </button>
+                )
+              )}
+            </div>
 
-              <div className="transport-tabs">
-                {Object.entries(TRAVEL_MODE_UI).map(
-                  ([mode, modeUi]) => (
-                    <button
-                      key={mode}
-                      type="button"
-                      className={
-                        selectedTravelMode === mode
-                          ? "active"
-                          : ""
-                      }
-                      aria-pressed={
-                        selectedTravelMode === mode
-                      }
-                      disabled={routeLoading}
-                      onClick={() =>
-                        handleTravelModeChange(mode)
-                      }
-                    >
-                      {modeUi.label}
-                    </button>
-                  )
-                )}
-              </div>
-
+            <div className="direction-options-scroll">
               <div className="route-option active">
                 <div className="route-option-top">
                   <div>
                     <strong>
                       {TRAVEL_MODE_UI[selectedTravelMode].icon}{" "}
-                      {
-                        TRAVEL_MODE_UI[selectedTravelMode]
-                          .routeLabel
-                      }
+                      {TRAVEL_MODE_UI[selectedTravelMode].routeLabel}
                     </strong>
                     <p>
                       {selectedRouteOption?.summary ??
@@ -1748,8 +2332,7 @@ useEffect(() => {
                     {routeLoading
                       ? "Loading..."
                       : Number.isFinite(
-                            selectedRouteOption
-                              ?.duration_minutes
+                            selectedRouteOption?.duration_minutes
                           )
                         ? `${selectedRouteOption.duration_minutes} mins`
                         : "— mins"}
@@ -1762,39 +2345,52 @@ useEffect(() => {
                   </p>
                 )}
 
+                {!activeRouteOrigin && (
+                  <p className="route-selection-message">
+                    Choose a valid origin from the suggestions.
+                  </p>
+                )}
+
+                {!routeDestinationVenue && (
+                  <p className="route-selection-message">
+                    Choose a valid destination from the suggestions.
+                  </p>
+                )}
+
                 {!routeLoading &&
                   !routeError &&
                   routeDetail?.steps?.length > 0 && (
                     <div className="route-steps">
-                      <p>
-                        ↑ Start from {routeStart}
-                      </p>
+                      <p>↑ Start from {routeStart}</p>
 
-                      {routeDetail.steps.map(
-                        (step, index) => (
-                          <p key={`${index}-${step}`}>
-                            {index + 1}. {step}
-                          </p>
-                        )
-                      )}
+                      {routeDetail.steps.map((step, index) => (
+                        <p key={`${index}-${step}`}>
+                          {index + 1}. {step}
+                        </p>
+                      ))}
 
                       <p>
-                        ↑ Arrive at {selectedVenue.name}
+                        ↑ Arrive at{" "}
+                        {routeDestinationVenue?.name ??
+                          routeDestination}
                       </p>
                     </div>
                   )}
 
                 {!routeLoading &&
                   !routeError &&
+                  activeRouteOrigin &&
+                  routeDestinationVenue &&
                   !routeDetail?.steps?.length && (
-                    <p className="route-error">
-                      Route instructions are unavailable.
+                    <p className="route-selection-message">
+                      Select Search Route to calculate directions.
                     </p>
                   )}
               </div>
-            </aside>
-          </section>
-        )
+            </div>
+          </aside>
+        </section>
+
       )}
 
       {standaloneAlerts.map((alert) => (

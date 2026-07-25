@@ -436,6 +436,34 @@ select {
   cursor: pointer;
   pointer-events: auto;
   position: relative;
+  transition:
+    width 160ms ease,
+    height 160ms ease,
+    font-size 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+
+/* Selected origin/destination/open venue: 50% larger than the 32px base. */
+.venue-pin--selected {
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+  border-width: 3px;
+  box-shadow:
+    0 0 0 4px rgba(0, 87, 231, 0.2),
+    0 10px 24px rgba(15, 23, 42, 0.36);
+}
+
+/* While a route is active, non-route venues become background context.
+   The class is removed when the route is terminated. */
+.venue-pin--deemphasised {
+  width: 16px;
+  height: 16px;
+  font-size: 6px;
+  border-width: 1px;
+  opacity: 0.3;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.16);
 }
 
 .prediction-tag {
@@ -743,9 +771,45 @@ select {
   border: 4px solid #ffffff;
   border-radius: 50%;
   background: #2563eb;
+  z-index: 40;
+  pointer-events: none;
   box-shadow:
     0 0 0 4px rgba(37, 99, 235, 0.2),
     0 2px 8px rgba(0, 0, 0, 0.3);
+  transition:
+    width 160ms ease,
+    height 160ms ease,
+    border-width 160ms ease,
+    box-shadow 160ms ease;
+}
+
+/* While routing, match the 48px selected origin/destination markers. */
+.user-location-marker--route-active {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+  z-index: 100;
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.24),
+    0 12px 28px rgba(15, 23, 42, 0.42);
+}
+
+.user-location-marker::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.32);
+}
+
+.user-location-marker--route-active::after {
+  width: 14px;
+  height: 14px;
 }
 
 
@@ -776,4 +840,244 @@ select {
   background-color: #0047bd;
   border-color: #0047bd;
   color: #ffffff;
+}
+
+.direction-options-card {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.direction-options-header,
+.transport-tabs {
+  flex-shrink: 0;
+}
+
+.direction-options-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding-right: 4px;
+}
+
+.direction-options-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.direction-options-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.direction-options-scroll::-webkit-scrollbar-thumb {
+  background: #b8c2d1;
+  border-radius: 999px;
+}
+
+.direction-options-scroll::-webkit-scrollbar-thumb:hover {
+  background: #8e9bad;
+}
+
+@media (max-height: 700px) {
+  .direction-options-card {
+    max-height: calc(100vh - 90px);
+  }
+}
+/* Route origin/destination autocomplete */
+.route-planner-bar {
+  overflow: visible;
+}
+
+.route-planner-bar .route-field {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+  font-size: 13px;
+  color: #374151;
+}
+
+.route-planner-bar > .route-field:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.route-autocomplete-input-wrap {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.route-planner-bar .route-field input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.route-planner-bar .route-field input:focus {
+  box-shadow: inset 0 -2px 0 #0057e7;
+}
+
+.route-autocomplete-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -42px;
+  width: min(390px, calc(100vw - 48px));
+  max-height: min(360px, calc(100vh - 150px));
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 200;
+  padding: 6px;
+  background: #ffffff;
+  border: 1px solid #d8dee9;
+  border-radius: 10px;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.22);
+  overscroll-behavior: contain;
+}
+
+.route-autocomplete-caption,
+.route-autocomplete-footer {
+  padding: 8px 10px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.route-autocomplete-caption {
+  border-bottom: 1px solid #edf0f5;
+  font-weight: 700;
+}
+
+.route-autocomplete-footer {
+  border-top: 1px solid #edf0f5;
+}
+
+.route-autocomplete-option {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #1f2937;
+  text-align: left;
+  cursor: pointer;
+}
+
+.route-autocomplete-option:hover,
+.route-autocomplete-option:focus-visible,
+.route-autocomplete-option[aria-selected="true"] {
+  background: #eff6ff;
+  outline: none;
+}
+
+.route-autocomplete-option > span:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.route-autocomplete-option strong,
+.route-autocomplete-option small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route-autocomplete-option strong {
+  font-size: 13px;
+}
+
+.route-autocomplete-option small {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.route-autocomplete-icon {
+  width: 22px;
+  flex: 0 0 22px;
+  text-align: center;
+}
+
+.route-autocomplete-empty {
+  margin: 0;
+  padding: 18px 12px;
+  color: #64748b;
+  font-size: 12px;
+  text-align: center;
+}
+
+.route-search-btn {
+  border-radius: 0 999px 999px 0;
+}
+
+.route-search-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.route-selection-message {
+  margin: 12px 0 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Content-sized direction panel with a capped, scrollable route body */
+.direction-options-card {
+  bottom: auto;
+  height: auto;
+  max-height: calc(100vh - 190px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.direction-options-header,
+.transport-tabs {
+  flex-shrink: 0;
+}
+
+.direction-options-scroll {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: calc(100vh - 330px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding-right: 4px;
+}
+
+@media (max-width: 900px) {
+  .route-planner-bar {
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr 1fr 130px;
+  }
+
+  .route-planner-bar .route-field:nth-of-type(3) {
+    display: none;
+  }
+
+  .route-autocomplete-menu {
+    width: min(360px, calc(100vw - 32px));
+  }
 }
