@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./EditProfile.css";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import {
   getMedicalProfile,
@@ -12,8 +13,120 @@ import {
   updateUserProfile,
 } from "../services/UserProfileApi";
 
+const SUPPORTED_LANGUAGES = [
+  { value: "English", label: "English" },
+  { value: "French", label: "French / Français" },
+  { value: "Spanish", label: "Spanish / Español" },
+  { value: "Chinese", label: "Chinese / 中文" },
+  { value: "Italian", label: "Italian / Italiano" },
+];
+
+const LANGUAGE_ALIASES = {
+  en: "English",
+  english: "English",
+  fr: "French",
+  french: "French",
+  français: "French",
+  francais: "French",
+  es: "Spanish",
+  spanish: "Spanish",
+  español: "Spanish",
+  espanol: "Spanish",
+  zh: "Chinese",
+  chinese: "Chinese",
+  mandarin: "Chinese",
+  中文: "Chinese",
+  it: "Italian",
+  italian: "Italian",
+  italiano: "Italian",
+};
+
+function normaliseSupportedLanguage(value) {
+  const cleanedValue = String(value ?? "")
+    .trim()
+    .toLowerCase();
+
+  return LANGUAGE_ALIASES[cleanedValue] ?? "";
+}
+
+const NATIONALITY_OPTIONS = [
+  "American",
+  "Australian",
+  "Austrian",
+  "Belgian",
+  "Brazilian",
+  "British",
+  "Bulgarian",
+  "Canadian",
+  "Chilean",
+  "Chinese",
+  "Colombian",
+  "Croatian",
+  "Cypriot",
+  "Czech",
+  "Danish",
+  "Dutch",
+  "Egyptian",
+  "Estonian",
+  "Finnish",
+  "French",
+  "German",
+  "Greek",
+  "Hungarian",
+  "Icelandic",
+  "Indian",
+  "Indonesian",
+  "Irish",
+  "Israeli",
+  "Italian",
+  "Japanese",
+  "Kenyan",
+  "Latvian",
+  "Lithuanian",
+  "Luxembourgish",
+  "Malaysian",
+  "Maltese",
+  "Mexican",
+  "Moroccan",
+  "New Zealander",
+  "Nigerian",
+  "Norwegian",
+  "Pakistani",
+  "Peruvian",
+  "Filipino",
+  "Polish",
+  "Portuguese",
+  "Romanian",
+  "Saudi Arabian",
+  "Singaporean",
+  "Slovak",
+  "Slovenian",
+  "South African",
+  "South Korean",
+  "Spanish",
+  "Swedish",
+  "Swiss",
+  "Thai",
+  "Turkish",
+  "Ukrainian",
+  "Emirati",
+  "Vietnamese",
+];
+
+const BLOOD_TYPE_OPTIONS = [
+  { value: "O+", key: "oPositive" },
+  { value: "O-", key: "oNegative" },
+  { value: "A+", key: "aPositive" },
+  { value: "A-", key: "aNegative" },
+  { value: "B+", key: "bPositive" },
+  { value: "B-", key: "bNegative" },
+  { value: "AB+", key: "abPositive" },
+  { value: "AB-", key: "abNegative" },
+];
+
 function EditProfile() {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   const [form, setForm] = useState({
     full_name: "",
@@ -23,7 +136,8 @@ function EditProfile() {
     phone: "",
     email: "",
     nationality: "",
-    spoken_languages_text: "",
+    primary_language: "",
+    secondary_language: "",
     address: "",
   });
 
@@ -67,6 +181,9 @@ function EditProfile() {
 
         const spokenLanguages = Array.isArray(userProfile.spoken_languages)
           ? userProfile.spoken_languages
+              .map(normaliseSupportedLanguage)
+              .filter(Boolean)
+              .slice(0, 2)
           : [];
 
         setForm({
@@ -81,7 +198,8 @@ function EditProfile() {
           phone: userProfile.phone || "",
           email: userProfile.email || "",
           nationality: userProfile.nationality || "",
-          spoken_languages_text: spokenLanguages.join(", "),
+          primary_language: spokenLanguages[0] || "",
+          secondary_language: spokenLanguages[1] || "",
           address: medicalProfile.address || "",
         });
 
@@ -106,14 +224,14 @@ function EditProfile() {
         );
       } catch (error) {
         console.error("Failed to load profile for editing:", error);
-        setError(error.message || "Could not load profile.");
+        setError(error.message || t("editProfile.couldNotLoadProfile"));
       } finally {
         setIsLoading(false);
       }
     }
 
     loadProfile();
-  }, []);
+  }, [t]);
 
   function updateFormField(fieldName, value) {
     setForm((currentForm) => ({
@@ -123,10 +241,31 @@ function EditProfile() {
   }
 
   function getSpokenLanguagesArray() {
-    return form.spoken_languages_text
-      .split(",")
+    return [form.primary_language, form.secondary_language]
       .map((language) => language.trim())
-      .filter(Boolean);
+      .filter(
+        (language, index, languages) =>
+          language && languages.indexOf(language) === index
+      );
+  }
+
+  function updatePrimaryLanguage(value) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      primary_language: value,
+      secondary_language:
+        currentForm.secondary_language === value
+          ? ""
+          : currentForm.secondary_language,
+    }));
+  }
+
+  function updateSecondaryLanguage(value) {
+    setForm((currentForm) => ({
+      ...currentForm,
+      secondary_language:
+        value === currentForm.primary_language ? "" : value,
+    }));
   }
 
   function openConditionModal() {
@@ -298,7 +437,7 @@ function EditProfile() {
 
       const message = problemFields.length
         ? `${error.message} (${problemFields.join(", ")})`
-        : error.message || "Could not save profile.";
+        : error.message || t("editProfile.couldNotSaveProfile");
 
       setError(message);
     } finally {
@@ -309,35 +448,34 @@ function EditProfile() {
   if (isLoading) {
     return (
       <main className="edit-profile-page">
-        <p>Loading profile...</p>
+        <p>{t("editProfile.loading")}</p>
       </main>
     );
   }
 
   return (
     <main className="edit-profile-page">
-      <h1>Edit Personal & Medical Profile</h1>
+      <h1>{t("editProfile.pageTitle")}</h1>
 
       <p className="edit-subtitle">
-        Update your core identity, vital signs, and clinical history for accurate
-        care routing.
+        {t("editProfile.subtitle")}
       </p>
 
       {error && <p className="profile-error">{error}</p>}
 
       <section className="edit-section">
-        <h2>▣ Core Identity</h2>
+        <h2>▣ {t("editProfile.coreIdentity")}</h2>
 
         <div className="core-grid">
           <div className="edit-avatar"></div>
 
           <label>
-            Full Name
+            {t("editProfile.fullName")}
             <input value={form.full_name} readOnly />
           </label>
 
           <label>
-            Date of Birth
+            {t("editProfile.dateOfBirth")}
             <input
               type="date"
               value={form.date_of_birth}
@@ -348,67 +486,80 @@ function EditProfile() {
           </label>
 
           <label>
-            Gender
+            {t("editProfile.gender")}
             <select
               value={form.gender}
               onChange={(event) =>
                 updateFormField("gender", event.target.value)
               }
             >
-              <option value="">Select gender</option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-              <option value="Other">Other</option>
+              <option value="">{t("editProfile.selectGender")}</option>
+              <option value="Female">{t("editProfile.genderFemale")}</option>
+              <option value="Male">{t("editProfile.genderMale")}</option>
+              <option value="Other">{t("editProfile.genderOther")}</option>
             </select>
           </label>
 
           <label>
-            Nationality
-            <input
+            {t("editProfile.nationality")}
+            <select
               value={form.nationality}
               onChange={(event) =>
                 updateFormField("nationality", event.target.value)
               }
-              placeholder="e.g. Irish"
-            />
+            >
+              <option value="">{t("editProfile.selectNationality")}</option>
+
+              {form.nationality &&
+                !NATIONALITY_OPTIONS.includes(form.nationality) && (
+                  <option value={form.nationality}>
+                    {form.nationality}
+                  </option>
+                )}
+
+              {NATIONALITY_OPTIONS.map((nationality) => (
+                <option key={nationality} value={nationality}>
+                  {t(`editProfile.nationalities.${nationality}`, {
+                    defaultValue: nationality,
+                  })}
+                </option>
+              ))}
+            </select>
           </label>
         </div>
       </section>
 
       <section className="edit-section">
-        <h2>♡ Vital Signs</h2>
+        <h2>♡ {t("editProfile.vitalSigns")}</h2>
 
         <label>
-          Blood Type
+          {t("editProfile.bloodType")}
           <select
             value={form.blood_type}
             onChange={(event) =>
               updateFormField("blood_type", event.target.value)
             }
           >
-            <option value="">Select blood type</option>
-            <option value="O+">O Positive (O+)</option>
-            <option value="O-">O Negative (O-)</option>
-            <option value="A+">A Positive (A+)</option>
-            <option value="A-">A Negative (A-)</option>
-            <option value="B+">B Positive (B+)</option>
-            <option value="B-">B Negative (B-)</option>
-            <option value="AB+">AB Positive (AB+)</option>
-            <option value="AB-">AB Negative (AB-)</option>
+            <option value="">{t("medicalId.selectBloodType")}</option>
+            {BLOOD_TYPE_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>
+                {t(`editProfile.bloodTypes.${option.key}`)}
+              </option>
+            ))}
           </select>
         </label>
       </section>
 
       <section className="edit-section">
-        <h2>▣ Clinical Profile</h2>
+        <h2>▣ {t("editProfile.clinicalProfile")}</h2>
 
         <div className="two-column-edit">
           <div>
             <div className="section-line-title">
-              <h3>Allergies</h3>
+              <h3>{t("editProfile.allergiesHeading")}</h3>
 
               <button type="button" onClick={openAllergyModal}>
-                + Add Allergy
+                + {t("medicalId.addAllergy")}
               </button>
             </div>
 
@@ -432,16 +583,16 @@ function EditProfile() {
                 </div>
               ))
             ) : (
-              <p>No allergies added.</p>
+              <p>{t("editProfile.noAllergiesAdded")}</p>
             )}
           </div>
 
           <div>
             <div className="section-line-title">
-              <h3>Medical Conditions</h3>
+              <h3>{t("medicalId.medicalConditions")}</h3>
 
               <button type="button" onClick={openConditionModal}>
-                + Add Condition
+                + {t("medicalId.addCondition")}
               </button>
             </div>
 
@@ -471,18 +622,18 @@ function EditProfile() {
                 </div>
               ))
             ) : (
-              <p>No medical conditions added.</p>
+              <p>{t("editProfile.noConditionsAdded")}</p>
             )}
           </div>
         </div>
       </section>
 
       <section className="edit-section">
-        <h2>▣ Contact Information</h2>
+        <h2>▣ {t("editProfile.contactInformation")}</h2>
 
         <div className="contact-form-grid">
           <label>
-            Phone Number
+            {t("editProfile.phoneNumber")}
             <input
               value={form.phone}
               onChange={(event) =>
@@ -492,24 +643,71 @@ function EditProfile() {
           </label>
 
           <label>
-            Email Address
+            {t("editProfile.emailAddress")}
             <input type="email" value={form.email} readOnly />
           </label>
         </div>
 
-        <label>
-          Spoken Languages
-          <input
-            value={form.spoken_languages_text}
-            onChange={(event) =>
-              updateFormField("spoken_languages_text", event.target.value)
-            }
-            placeholder="e.g. English, Chinese, Spanish"
-          />
-        </label>
+        <div className="contact-form-grid language-select-grid">
+          <label>
+            {t("editProfile.primaryLanguage")}
+            <select
+              value={form.primary_language}
+              onChange={(event) =>
+                updatePrimaryLanguage(event.target.value)
+              }
+            >
+              <option value="">{t("editProfile.selectPrimaryLanguage")}</option>
+
+
+              {SUPPORTED_LANGUAGES.map((language) => (
+                <option
+                  key={language.value}
+                  value={language.value}
+                  disabled={
+                    language.value === form.secondary_language
+                  }
+                >
+                  {t(`editProfile.languageOptions.${language.value}`, {
+                    defaultValue: language.label,
+                  })}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label>
+            {t("editProfile.secondaryLanguage")}
+            <select
+              value={form.secondary_language}
+              onChange={(event) =>
+                updateSecondaryLanguage(event.target.value)
+              }
+            >
+              <option value="">{t("editProfile.noSecondaryLanguage")}</option>
+
+
+              {SUPPORTED_LANGUAGES.map((language) => (
+                <option
+                  key={language.value}
+                  value={language.value}
+                  disabled={language.value === form.primary_language}
+                >
+                  {t(`editProfile.languageOptions.${language.value}`, {
+                    defaultValue: language.label,
+                  })}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        <p className="language-helper-text">
+          {t("editProfile.languageHelperText")}
+        </p>
 
         <label>
-          Primary Address
+          {t("editProfile.primaryAddress")}
           <textarea
             value={form.address}
             onChange={(event) =>
@@ -519,10 +717,10 @@ function EditProfile() {
         </label>
 
         <div className="section-line-title emergency-title-row">
-          <h3>Emergency Contacts</h3>
+          <h3>{t("editProfile.emergencyContactsHeading")}</h3>
 
           <button type="button" onClick={openContactModal}>
-            + Add Contact
+            + {t("editProfile.addContact")}
           </button>
         </div>
 
@@ -548,13 +746,13 @@ function EditProfile() {
               </div>
             ))
           ) : (
-            <p>No emergency contacts added.</p>
+            <p>{t("editProfile.noContactsAdded")}</p>
           )}
         </div>
 
         <div className="edit-footer">
           <button type="button" onClick={() => navigate("/profile")}>
-            Discard Changes
+            {t("editProfile.discardChanges")}
           </button>
 
           <button
@@ -562,7 +760,7 @@ function EditProfile() {
             onClick={handleSaveProfile}
             disabled={isSaving}
           >
-            {isSaving ? "Saving..." : "Save Profile"}
+            {isSaving ? t("common.saving") : t("editProfile.saveProfile")}
           </button>
         </div>
       </section>
@@ -572,35 +770,35 @@ function EditProfile() {
           <div className="edit-modal">
             <h2>
               {editingConditionIndex !== null
-                ? "Edit Medical Condition"
-                : "Add Medical Condition"}
+                ? t("editProfile.editConditionTitle")
+                : t("editProfile.addConditionTitle")}
             </h2>
 
             <label>
-              Illness / Condition
+              {t("editProfile.conditionNameLabel")}
               <input
                 value={conditionName}
                 onChange={(event) => setConditionName(event.target.value)}
-                placeholder="e.g. Asthma"
+                placeholder={t("editProfile.conditionNamePlaceholder")}
               />
             </label>
 
             <label>
-              Description
+              {t("editProfile.conditionDescriptionLabel")}
               <textarea
                 value={conditionDetail}
                 onChange={(event) => setConditionDetail(event.target.value)}
-                placeholder="Describe diagnosis, medication, severity, or notes"
+                placeholder={t("editProfile.conditionDescriptionPlaceholder")}
               />
             </label>
 
             <div className="edit-modal-actions">
               <button type="button" onClick={closeConditionModal}>
-                Cancel
+                {t("common.cancel")}
               </button>
 
               <button type="button" onClick={saveCondition}>
-                Save Condition
+                {t("editProfile.saveCondition")}
               </button>
             </div>
           </div>
@@ -611,34 +809,36 @@ function EditProfile() {
         <div className="edit-modal-overlay">
           <div className="edit-modal">
             <h2>
-              {editingAllergyIndex !== null ? "Edit Allergy" : "Add Allergy"}
+              {editingAllergyIndex !== null
+                ? t("editProfile.editAllergyTitle")
+                : t("editProfile.addAllergyTitle")}
             </h2>
 
             <label>
-              Allergy
+              {t("editProfile.allergyNameLabel")}
               <input
                 value={allergyName}
                 onChange={(event) => setAllergyName(event.target.value)}
-                placeholder="e.g. Penicillin"
+                placeholder={t("editProfile.allergyNamePlaceholder")}
               />
             </label>
 
             <label>
-              Reaction / Severity
+              {t("editProfile.allergyDetailLabel")}
               <textarea
                 value={allergyDetail}
                 onChange={(event) => setAllergyDetail(event.target.value)}
-                placeholder="Describe reaction, severity, or clinical notes"
+                placeholder={t("editProfile.allergyDetailPlaceholder")}
               />
             </label>
 
             <div className="edit-modal-actions">
               <button type="button" onClick={closeAllergyModal}>
-                Cancel
+                {t("common.cancel")}
               </button>
 
               <button type="button" onClick={saveAllergy}>
-                Save Allergy
+                {t("editProfile.saveAllergy")}
               </button>
             </div>
           </div>
@@ -650,46 +850,46 @@ function EditProfile() {
           <div className="edit-modal">
             <h2>
               {editingContactIndex !== null
-                ? "Edit Emergency Contact"
-                : "Add Emergency Contact"}
+                ? t("editProfile.editContactTitle")
+                : t("editProfile.addContactTitle")}
             </h2>
 
             <label>
-              Contact Name
+              {t("editProfile.contactNameLabel")}
               <input
                 value={contactName}
                 onChange={(event) => setContactName(event.target.value)}
-                placeholder="e.g. Marcus Rivera"
+                placeholder={t("editProfile.contactNamePlaceholder")}
               />
             </label>
 
             <label>
-              Relationship
+              {t("editProfile.contactRelationshipLabel")}
               <input
                 value={contactRelationship}
                 onChange={(event) =>
                   setContactRelationship(event.target.value)
                 }
-                placeholder="e.g. Spouse"
+                placeholder={t("editProfile.contactRelationshipPlaceholder")}
               />
             </label>
 
             <label>
-              Phone Number
+              {t("editProfile.phoneNumber")}
               <input
                 value={contactPhone}
                 onChange={(event) => setContactPhone(event.target.value)}
-                placeholder="+1 (917) 555-0199"
+                placeholder={t("editProfile.contactPhonePlaceholder")}
               />
             </label>
 
             <div className="edit-modal-actions">
               <button type="button" onClick={closeContactModal}>
-                Cancel
+                {t("common.cancel")}
               </button>
 
               <button type="button" onClick={saveContact}>
-                Save Contact
+                {t("editProfile.saveContact")}
               </button>
             </div>
           </div>

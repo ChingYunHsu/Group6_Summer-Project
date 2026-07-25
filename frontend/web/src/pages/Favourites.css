@@ -204,3 +204,20 @@
     grid-template-columns: 1fr;
   }
 }
+
+.language-select-grid {
+  margin-top: 16px;
+}
+
+.language-helper-text {
+  margin: 8px 0 18px;
+  color: #475569;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 720px) {
+  .language-select-grid {
+    grid-template-columns: 1fr;
+  }
+}

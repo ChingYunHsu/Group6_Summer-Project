@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getInsightsDashboard } from "../services/InsightsDashboardApi";
 import "./InsightsDashboard.css";
 
@@ -7,25 +8,29 @@ const DISTRICTS = [
   {
     id: "uptown",
     apiValue: "uptown",
-    label: "Uptown",
+    labelKey: "insights.districts.uptown",
+    fallbackLabel: "Uptown",
     query: "Uptown Manhattan",
   },
   {
     id: "midtown-east",
     apiValue: "midtown_east",
-    label: "Midtown East",
+    labelKey: "insights.districts.midtownEast",
+    fallbackLabel: "Midtown East",
     query: "Midtown East Manhattan",
   },
   {
     id: "midtown-west",
     apiValue: "midtown_west",
-    label: "Midtown West",
+    labelKey: "insights.districts.midtownWest",
+    fallbackLabel: "Midtown West",
     query: "Midtown West Manhattan",
   },
   {
     id: "downtown",
     apiValue: "downtown",
-    label: "Downtown",
+    labelKey: "insights.districts.downtown",
+    fallbackLabel: "Downtown",
     query: "Downtown Manhattan",
   },
 ];
@@ -139,7 +144,7 @@ function normaliseHub(rawHub, index) {
       rawHub.clinic_name ??
       rawHub.venue_name ??
       rawHub.name ??
-      "Unnamed facility",
+      null,
 
     capacityLabel,
 
@@ -164,11 +169,15 @@ function normaliseHub(rawHub, index) {
   };
 }
 
-function normaliseDashboard(rawDashboard, selectedDistrict) {
+function normaliseDashboard(rawDashboard, selectedDistrict, t) {
+  const districtLabel = t(selectedDistrict.labelKey, {
+    defaultValue: selectedDistrict.fallbackLabel,
+  });
+
   if (!rawDashboard || typeof rawDashboard !== "object") {
     return {
       ...EMPTY_DASHBOARD,
-      district: selectedDistrict.label,
+      district: districtLabel,
     };
   }
 
@@ -272,7 +281,7 @@ function normaliseDashboard(rawDashboard, selectedDistrict) {
     );
 
   return {
-    district: selectedDistrict.label,
+    district: districtLabel,
 
     dataMode:
       rawDashboard.data_mode ??
@@ -287,7 +296,7 @@ function normaliseDashboard(rawDashboard, selectedDistrict) {
       trend:
         density.trend ??
         density.trend_label ??
-        "No data",
+        t("insights.noDataFallback", { defaultValue: "No data" }),
 
       summary:
         density.summary ??
@@ -301,7 +310,7 @@ function normaliseDashboard(rawDashboard, selectedDistrict) {
       label:
         triage.label ??
         triage.venue_name ??
-        "No data available",
+        t("insights.noDataAvailable", { defaultValue: "No data available" }),
 
       note:
         triage.note ??
@@ -389,7 +398,7 @@ function formatTimeOnly(isoString) {
   return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 
-function MiniLineChart({ values, mode }) {
+function MiniLineChart({ values, mode, t }) {
   const width = 620;
   const height = 220;
   const padding = 26;
@@ -397,11 +406,10 @@ function MiniLineChart({ values, mode }) {
   if (!Array.isArray(values) || values.length === 0) {
     return (
       <div className="insights-chart-empty">
-        <strong>No chart data available</strong>
+        <strong>{t("insights.noChartDataTitle")}</strong>
 
         <p>
-          The backend did not return a series for this
-          district.
+          {t("insights.noChartDataBody")}
         </p>
       </div>
     );
@@ -458,8 +466,8 @@ function MiniLineChart({ values, mode }) {
         role="img"
         aria-label={
           mode === "prediction"
-            ? "12-hour predictive capacity curve"
-            : "7-day historical baseline trend"
+            ? t("insights.predictiveCurveAria")
+            : t("insights.historicalTrendAria")
         }
       >
         <defs>
@@ -575,6 +583,7 @@ function MetricCard({
 
 function InsightsDashboard() {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   const [selectedDistrictId, setSelectedDistrictId] =
     useState("midtown-east");
@@ -629,7 +638,8 @@ function InsightsDashboard() {
 
         const normalisedData = normaliseDashboard(
           response,
-          selectedDistrict
+          selectedDistrict,
+          t
         );
 
         setDashboardData(normalisedData);
@@ -654,7 +664,7 @@ function InsightsDashboard() {
           return currentMode;
         });
 
-        
+
       } catch (loadError) {
         console.error(
           "Failed to load insights dashboard:",
@@ -663,13 +673,15 @@ function InsightsDashboard() {
 
         setError(
           loadError.message ||
-            "Could not load dashboard insights."
+            t("insights.couldNotLoad")
         );
 
         if (!silent) {
           setDashboardData({
             ...EMPTY_DASHBOARD,
-            district: selectedDistrict.label,
+            district: t(selectedDistrict.labelKey, {
+              defaultValue: selectedDistrict.fallbackLabel,
+            }),
           });
         }
       } finally {
@@ -680,7 +692,7 @@ function InsightsDashboard() {
         }
       }
     },
-    [selectedDistrict]
+    [selectedDistrict, t]
   );
 
   useEffect(() => {
@@ -728,14 +740,16 @@ function InsightsDashboard() {
 
   const triageValue =
     dashboardData.quickTriage.waitMinutes === null
-      ? "Unavailable"
-      : `${dashboardData.quickTriage.waitMinutes} min wait`;
+      ? t("insights.waitUnavailable")
+      : t("insights.waitMinutesSuffix", {
+          minutes: dashboardData.quickTriage.waitMinutes,
+        });
 
   const travelWindowValue =
     dashboardData.bestTravelWindow.startTime &&
     dashboardData.bestTravelWindow.endTime
       ? `${formatTimeOnly(dashboardData.bestTravelWindow.startTime)} - ${formatTimeOnly(dashboardData.bestTravelWindow.endTime)}`
-      : "Unavailable";
+      : t("insights.travelUnavailable");
 
   function handleDistrictChange(districtId) {
     if (districtId === selectedDistrictId) {
@@ -779,7 +793,7 @@ function InsightsDashboard() {
   return (
     <main className="insights-page">
       <section className="district-scope-bar">
-        <span>DISTRICT VIEW:</span>
+        <span>{t("insights.districtView")}</span>
 
         <div className="district-filter-row">
           {DISTRICTS.map((district) => (
@@ -795,7 +809,9 @@ function InsightsDashboard() {
                 handleDistrictChange(district.id)
               }
             >
-              {district.label}
+              {t(district.labelKey, {
+                defaultValue: district.fallbackLabel,
+              })}
             </button>
           ))}
         </div>
@@ -804,21 +820,20 @@ function InsightsDashboard() {
       <section className="insights-dashboard-shell">
         <header className="insights-header">
           <div>
-            <h1>Manhattan Overview</h1>
+            <h1>{t("insights.pageTitle")}</h1>
 
             <p>
-              Real-time facility utilization and demand
-              routing.
+              {t("insights.pageSubtitle")}
             </p>
           </div>
 
           <div className="insights-data-status">
-            {isRefreshing && <span>Refreshing…</span>}
+            {isRefreshing && <span>{t("insights.refreshing")}</span>}
 
             {dashboardData.dataMode &&
               dashboardData.dataMode !== "unknown" && (
                 <span>
-                  Data source: {dashboardData.dataMode}
+                  {t("insights.dataSource", { mode: dashboardData.dataMode })}
                 </span>
               )}
           </div>
@@ -835,18 +850,17 @@ function InsightsDashboard() {
               type="button"
               onClick={handleRetry}
             >
-              Try Again
+              {t("insights.tryAgain")}
             </button>
           </section>
         )}
 
         {isLoading ? (
           <section className="insights-empty-state">
-            <h2>Loading district insights...</h2>
+            <h2>{t("insights.loadingTitle")}</h2>
 
             <p>
-              Retrieving live density, travel windows and
-              facility rankings.
+              {t("insights.loadingBody")}
             </p>
           </section>
         ) : (
@@ -854,9 +868,9 @@ function InsightsDashboard() {
             {dashboardData.noData && !error && (
               <section className="insights-api-message">
                 <p>
-                  No live analytics are currently available
-                  for {dashboardData.district}. Empty
-                  sections are shown below.
+                  {t("insights.noDataMessage", {
+                    district: dashboardData.district,
+                  })}
                 </p>
               </section>
             )}
@@ -864,7 +878,7 @@ function InsightsDashboard() {
             <section className="insights-metric-grid">
               <MetricCard
                 type="density"
-                eyebrow="REAL-TIME DENSITY"
+                eyebrow={t("insights.realTimeDensity")}
                 icon="⌘"
                 value={densityValue}
                 meta={dashboardData.realTimeDensity.trend}
@@ -875,7 +889,7 @@ function InsightsDashboard() {
 
               <MetricCard
                 type="triage"
-                eyebrow="QUICK TRIAGE DEMAND"
+                eyebrow={t("insights.quickTriageDemand")}
                 icon="✱"
                 value={triageValue}
                 title={dashboardData.quickTriage.note}
@@ -887,7 +901,7 @@ function InsightsDashboard() {
 
               <MetricCard
                 type="travel"
-                eyebrow="BEST TRAVEL WINDOW"
+                eyebrow={t("insights.bestTravelWindow")}
                 icon="◷"
                 value={travelWindowValue}
                 title={
@@ -913,19 +927,19 @@ function InsightsDashboard() {
                 <div className="prediction-header">
                   <div>
                     <h2>
-                      12-hour busyness prediction
+                      {t("insights.predictionHeading")}
                     </h2>
 
                     <p>
-                      Predicted facility density for the
-                      next 12 hours in{" "}
-                      {dashboardData.district}.
+                      {t("insights.predictionSubtitle", {
+                        district: dashboardData.district,
+                      })}
                     </p>
                   </div>
 
                   <div
                     className="chart-toggle"
-                    aria-label="Chart mode selector"
+                    aria-label={t("insights.chartModeSelectorLabel")}
                   >
                     <button
                       type="button"
@@ -942,7 +956,7 @@ function InsightsDashboard() {
                         setChartMode("prediction")
                       }
                     >
-                      12-Hour Predicted
+                      {t("insights.predicted12h")}
                     </button>
 
                     <button
@@ -960,7 +974,7 @@ function InsightsDashboard() {
                         setChartMode("history")
                       }
                     >
-                      7-Day History
+                      {t("insights.history7d")}
                     </button>
                   </div>
                 </div>
@@ -968,53 +982,53 @@ function InsightsDashboard() {
                 <MiniLineChart
                   values={chartValues}
                   mode={chartMode}
+                  t={t}
                 />
 
                 <div className="chart-legend">
                   <span />
 
                   {chartMode === "prediction"
-                    ? "PREDICTED DENSITY"
-                    : "HISTORICAL BASELINE"}
+                    ? t("insights.predictedDensity")
+                    : t("insights.historicalBaseline")}
                 </div>
               </section>
 
               <aside className="fastest-hubs-card">
                 <div className="leaderboard-heading">
                   <div>
-                    <span>Top 3</span>
+                    <span>{t("insights.top3")}</span>
 
-                    <h2>Fastest Hubs</h2>
+                    <h2>{t("insights.fastestHubs")}</h2>
                   </div>
 
                   <p>
-                    Ranked by combined wait time + transit
-                    from your location.
+                    {t("insights.fastestHubsSubtitle")}
                   </p>
                 </div>
 
                 {dashboardData.travelTimeSource && (
                   <p className="travel-source-note">
-                    Travel source:{" "}
-                    {dashboardData.travelTimeSource}
+                    {t("insights.travelSource", {
+                      source: dashboardData.travelTimeSource,
+                    })}
                   </p>
                 )}
 
                 <div className="leaderboard-table-head">
-                  <span>Clinic Hub</span>
-                  <span>Capacity</span>
-                  <span>Time</span>
+                  <span>{t("insights.clinicHub")}</span>
+                  <span>{t("insights.capacity")}</span>
+                  <span>{t("insights.time")}</span>
                 </div>
 
                 {sortedHubs.length === 0 ? (
                   <div className="fastest-hubs-empty">
                     <strong>
-                      No facility rankings available
+                      {t("insights.noRankingsTitle")}
                     </strong>
 
                     <p>
-                      Rankings will appear when the backend
-                      returns facility data.
+                      {t("insights.noRankingsBody")}
                     </p>
                   </div>
                 ) : (
@@ -1029,11 +1043,16 @@ function InsightsDashboard() {
                             onClick={() =>
                               handleHubDirections(hub)
                             }
-                            aria-label={`Get directions to ${hub.clinicName}`}
+                            aria-label={t("insights.getDirectionsAria", {
+                              name:
+                                hub.clinicName ||
+                                t("insights.unnamedFacility"),
+                            })}
                           >
                             <div className="hub-name-block">
                               <strong>
-                                {hub.clinicName}
+                                {hub.clinicName ||
+                                  t("insights.unnamedFacility")}
                               </strong>
 
                               <div className="language-flags">

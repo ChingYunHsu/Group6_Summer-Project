@@ -3,6 +3,7 @@ import {
   useState,
 } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import clearPathLogo from "../assets/clearpath-logo.png";
 import loginPeopleImage from "../assets/login-people.jpg";
@@ -25,6 +26,7 @@ function Login({
   setAuthMode,
 }) {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   const [
     showLocationModal,
@@ -134,9 +136,7 @@ function Login({
       !loginForm.email ||
       !loginForm.password
     ) {
-      alert(
-        "Please enter your email and password."
-      );
+      alert(t("login.emailPasswordRequired"));
       return;
     }
 
@@ -169,7 +169,7 @@ function Login({
               ", "
             )})`
           : error.message ||
-            "Please check your details and try again.";
+            t("login.signInErrorMessage");
 
       alert(message);
     } finally {
@@ -187,18 +187,14 @@ function Login({
       !registerForm.email ||
       !registerForm.password
     ) {
-      alert(
-        "Please complete all registration fields."
-      );
+      alert(t("login.registrationFieldsRequired"));
       return;
     }
 
     if (
       registerForm.password.length < 8
     ) {
-      alert(
-        "Password must be at least 8 characters."
-      );
+      alert(t("login.passwordTooShort"));
       return;
     }
 
@@ -237,7 +233,7 @@ function Login({
               ", "
             )})`
           : error.message ||
-            "Please check your details and try again.";
+            t("login.registerErrorMessage");
 
       alert(message);
     } finally {
@@ -261,7 +257,7 @@ function Login({
 
       alert(
         error.message ||
-          "Could not start a guest session."
+          t("login.couldNotStartGuestSession")
       );
     } finally {
       setIsAuthenticating(false);
@@ -282,9 +278,7 @@ function Login({
     setLocationError("");
 
     if (!navigator.geolocation) {
-      setLocationError(
-        "Geolocation is not supported by this browser."
-      );
+      setLocationError(t("login.geolocationUnsupported"));
       return;
     }
 
@@ -314,9 +308,7 @@ function Login({
       () => {
         setIsRequestingLocation(false);
 
-        setLocationError(
-          "Location access was denied. You can continue, but route planning may be limited."
-        );
+        setLocationError(t("login.locationDenied"));
       }
     );
   }
@@ -335,7 +327,7 @@ function Login({
         }}
       >
         <div className="brand-content">
-          <div className="login-brand-title">
+          <div>
             <img
               src={clearPathLogo}
               alt=""
@@ -343,23 +335,14 @@ function Login({
               className="login-brand-logo"
             />
 
-            <h1>ClearPath</h1>
+            <h1>{t("login.brandName")}</h1>
           </div>
 
           <div className="brand-line"></div>
 
-          <h2>
-            Your Safety, Our Priority.
-          </h2>
+          <h2>{t("login.brandTagline")}</h2>
 
-          <p>
-            Join our community-driven
-            healthcare intelligence network.
-            Access real-time insights,
-            manage your data securely, and
-            navigate your wellness journey
-            with absolute clarity.
-          </p>
+          <p>{t("login.brandDescription")}</p>
         </div>
       </section>
 
@@ -376,7 +359,7 @@ function Login({
               }
               disabled={isAuthenticating}
             >
-              Login
+              {t("login.loginTab")}
             </button>
 
             <button
@@ -389,7 +372,7 @@ function Login({
               }
               disabled={isAuthenticating}
             >
-              Register
+              {t("login.registerTab")}
             </button>
           </div>
 
@@ -398,13 +381,13 @@ function Login({
               onSubmit={handleLoginSubmit}
             >
               <label htmlFor="login-email">
-                Email Address
+                {t("login.emailAddress")}
               </label>
 
               <input
                 id="login-email"
                 type="email"
-                placeholder="name@company.com"
+                placeholder={t("login.emailPlaceholder")}
                 autoComplete="email"
                 value={loginForm.email}
                 onChange={(event) =>
@@ -418,18 +401,18 @@ function Login({
 
               <div className="password-row">
                 <label htmlFor="login-password">
-                  Password
+                  {t("login.password")}
                 </label>
 
                 <a href="#">
-                  Forgot Password?
+                  {t("login.forgotPassword")}
                 </a>
               </div>
 
               <input
                 id="login-password"
                 type="password"
-                placeholder="password"
+                placeholder={t("login.passwordPlaceholder")}
                 autoComplete="current-password"
                 value={loginForm.password}
                 onChange={(event) =>
@@ -449,8 +432,8 @@ function Login({
                 }
               >
                 {isAuthenticating
-                  ? "Signing in..."
-                  : "Sign In to My Account →"}
+                  ? t("login.signingIn")
+                  : t("login.signInCta")}
               </button>
             </form>
           ) : (
@@ -460,22 +443,21 @@ function Login({
               }
             >
               <p className="register-title">
-                Get started
+                {t("login.getStarted")}
               </p>
 
               <p className="hipaa-label">
-                HIPAA-ready protected
-                identity asset setup
+                {t("login.hipaaSetup")}
               </p>
 
               <label htmlFor="register-name">
-                Full Name
+                {t("login.fullName")}
               </label>
 
               <input
                 id="register-name"
                 type="text"
-                placeholder="Enter your full name"
+                placeholder={t("login.fullNamePlaceholder")}
                 autoComplete="name"
                 value={
                   registerForm.fullName
@@ -490,13 +472,13 @@ function Login({
               />
 
               <label htmlFor="register-email">
-                Email Address
+                {t("login.emailAddress")}
               </label>
 
               <input
                 id="register-email"
                 type="email"
-                placeholder="name@company.com"
+                placeholder={t("login.emailPlaceholder")}
                 autoComplete="email"
                 value={registerForm.email}
                 onChange={(event) =>
@@ -509,13 +491,13 @@ function Login({
               />
 
               <label htmlFor="register-password">
-                Password
+                {t("login.createPassword")}
               </label>
 
               <input
                 id="register-password"
                 type="password"
-                placeholder="Create a secure password"
+                placeholder={t("login.passwordRequirements")}
                 autoComplete="new-password"
                 value={
                   registerForm.password
@@ -530,9 +512,7 @@ function Login({
               />
 
               <p className="hipaa-label">
-                Clinical records remain
-                local-first until authorised
-                sharing.
+                {t("login.hipaaLocalFirst")}
               </p>
 
               <button
@@ -543,15 +523,15 @@ function Login({
                 }
               >
                 {isAuthenticating
-                  ? "Creating account..."
-                  : "Create Account →"}
+                  ? t("login.creatingAccount")
+                  : t("login.createAccountCta")}
               </button>
             </form>
           )}
 
           <div className="divider">
             <span></span>
-            <p>OR</p>
+            <p>{t("login.orDivider")}</p>
             <span></span>
           </div>
 
@@ -564,14 +544,12 @@ function Login({
             disabled={isAuthenticating}
           >
             {isAuthenticating
-              ? "Starting session..."
-              : "Continue as Guest"}
+              ? t("login.startingSession")
+              : t("authGateway.continueGuest")}
           </button>
 
           <p className="terms">
-            By continuing, you agree to
-            our Terms of Service and
-            Privacy Policy.
+            {t("login.termsAgreement")}
           </p>
         </div>
       </section>
@@ -580,16 +558,11 @@ function Login({
         <div className="intercept-overlay">
           <div className="intercept-sheet">
             <h2>
-              Would you like to finish
-              setting up your Medical
-              Profile and ID now?
+              {t("login.profileInterceptTitle")}
             </h2>
 
             <p>
-              Complete your emergency
-              medical document now, or
-              skip this step and return
-              to it later.
+              {t("login.profileInterceptBody")}
             </p>
 
             <div className="intercept-actions">
@@ -599,7 +572,7 @@ function Login({
                   handleSkipProfile
                 }
               >
-                Skip for Now
+                {t("login.skipForNow")}
               </button>
 
               <button
@@ -608,7 +581,7 @@ function Login({
                   handleFinishProfile
                 }
               >
-                Finish Profile &amp; ID
+                {t("login.finishProfile")}
               </button>
             </div>
           </div>
@@ -622,14 +595,10 @@ function Login({
               ⌖
             </div>
 
-            <h2>Enable Location</h2>
+            <h2>{t("login.enableLocationTitle")}</h2>
 
             <p>
-              ClearPath uses your current
-              location to initialise the
-              map matrix viewport and
-              calculate safer healthcare
-              routes.
+              {t("login.enableLocationBody")}
             </p>
 
             {locationError && (
@@ -647,7 +616,7 @@ function Login({
                   isRequestingLocation
                 }
               >
-                Not Now
+                {t("login.notNow")}
               </button>
 
               <button
@@ -661,8 +630,8 @@ function Login({
                 }
               >
                 {isRequestingLocation
-                  ? "Requesting..."
-                  : "Allow Access"}
+                  ? t("login.requestingLocation")
+                  : t("login.allowAccess")}
               </button>
             </div>
           </div>
