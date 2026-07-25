@@ -14,6 +14,8 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
+import { getAllergyLabel } from "../data/allergies";
+import { getConditionLabel } from "../data/medicalConditions";
 import { getAccessToken } from "../services/authService";
 import {
   getCurrentLocation,
@@ -32,18 +34,11 @@ export default function SOSScreen() {
   // presentations/testing while leaving the full flow intact to demo.
   const ENABLE_REAL_EMERGENCY_CALL = false;
 
-  // null = not logged in / fetch failed / never resolved. Populated by
-  // the effect below, shown in the Medical ID summary card.
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [medicalId, setMedicalId] = useState<MedicalProfile | null>(null);
 
   const [locationText, setLocationText] = useState<string | null>(null);
 
-  // Fetches profile + medical data for the summary card below. Fully
-  // independent of the countdown/auto-dial logic further down — this
-  // must never be able to delay or block the actual emergency call, so
-  // nothing here is awaited by handleCallEmergency or the countdown
-  // effect.
   useEffect(() => {
     (async () => {
       try {
@@ -72,8 +67,6 @@ export default function SOSScreen() {
     })();
   }, []);
 
-  // Real device location, reverse-geocoded into a readable address —
-  // replaces the previous hardcoded "245 W 46th St..." placeholder.
   useEffect(() => {
     (async () => {
       try {
@@ -119,13 +112,9 @@ export default function SOSScreen() {
     })();
   }, []);
 
-  // Dials emergency services when the countdown reaches 0 — unless demo
-  // mode is on, in which case it just logs + alerts what it would have
-  // dialed instead of actually placing the call.
   const handleCallEmergency = async () => {
     const phoneNumber = "911";
     const url = `tel:${phoneNumber}`;
-    // Replace with region-specific emergency number if the app expands outside the US
 
     const supported = await Linking.canOpenURL(url);
 
@@ -150,7 +139,6 @@ export default function SOSScreen() {
     await Linking.openURL(url);
   };
 
-  // Countdown timer — ticks down every second, triggers the call at 0.
   useEffect(() => {
     if (countdown === 0) {
       handleCallEmergency();
@@ -164,10 +152,25 @@ export default function SOSScreen() {
     return () => clearTimeout(timer);
   }, [countdown]);
 
-  // Both Close and Cancel just back out of this screen without calling.
   const handleCancel = () => {
     router.back();
   };
+
+  // Conditions/allergies values are always shown in English on this
+  // screen, regardless of the app's own language setting — matched by
+  // the medical card's labels below, all forced to lng: "en". The rest
+  // of this screen (countdown, cancel, notice) still follows the app's
+  // normal active language. Free-text entries not in the curated list
+  // pass through unchanged.
+  const conditionsText = medicalId?.conditions?.length
+    ? medicalId.conditions
+        .map((item) => getConditionLabel(item, "en"))
+        .join(", ")
+    : null;
+
+  const allergiesText = medicalId?.allergies?.length
+    ? medicalId.allergies.map((item) => getAllergyLabel(item, "en")).join(", ")
+    : null;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -175,18 +178,13 @@ export default function SOSScreen() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Close */}
-
         <TouchableOpacity
-          accessibilityLabel="Close"
           testID="sos-close-button"
           style={styles.closeButton}
           onPress={handleCancel}
         >
           <Ionicons name="close" size={28} color="#FFFFFF" />
         </TouchableOpacity>
-
-        {/* Hero */}
 
         <View style={styles.hero}>
           <Ionicons name="warning" size={64} color="#FFFFFF" />
@@ -199,8 +197,6 @@ export default function SOSScreen() {
 
           <Text style={styles.subtitle}>{t("sos.subtitle")}</Text>
         </View>
-
-        {/* Location */}
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>{t("sos.locationTitle")}</Text>
@@ -215,52 +211,54 @@ export default function SOSScreen() {
           <Text style={styles.cardSubtext}>{t("sos.locationDescription")}</Text>
         </View>
 
-        {/* Medical ID */}
-
+        {/* Medical ID card — every label below is forced to English
+            (lng: "en"), matching the already-English condition/allergy
+            values, since this card is the one most likely to be read
+            directly by an English-speaking responder. */}
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>{t("sos.medicalIdTitle")}</Text>
-
-          <InfoRow label={t("sos.name")} value={profile?.full_name ?? null} />
+          <Text style={styles.cardTitle}>
+            {t("sos.medicalIdTitle", { lng: "en" })}
+          </Text>
 
           <InfoRow
-            label={t("sos.bloodType")}
+            label={t("sos.name", { lng: "en" })}
+            value={profile?.full_name ?? null}
+          />
+
+          <InfoRow
+            label={t("sos.bloodType", { lng: "en" })}
             value={medicalId?.blood_type ?? null}
           />
 
           <InfoRow
-            label={t("sos.conditions")}
+            label={t("sos.conditions", { lng: "en" })}
             value={
               medicalId === null
                 ? null
-                : medicalId.conditions?.length
-                  ? medicalId.conditions.join(", ")
-                  : t("sos.none")
+                : (conditionsText ?? t("sos.none", { lng: "en" }))
             }
           />
 
           <InfoRow
-            label={t("sos.allergies")}
+            label={t("sos.allergies", { lng: "en" })}
             value={
               medicalId === null
                 ? null
-                : medicalId.allergies?.length
-                  ? medicalId.allergies.join(", ")
-                  : t("sos.none")
+                : (allergiesText ?? t("sos.none", { lng: "en" }))
             }
           />
 
-          <InfoRow label={t("sos.phone")} value={profile?.phone ?? null} />
+          <InfoRow
+            label={t("sos.phone", { lng: "en" })}
+            value={profile?.phone ?? null}
+          />
         </View>
-
-        {/* Emergency Notice */}
 
         <View style={styles.notice}>
           <Ionicons name="information-circle" size={20} color="#FFFFFF" />
 
           <Text style={styles.noticeText}>{t("sos.notice")}</Text>
         </View>
-
-        {/* Cancel */}
 
         <TouchableOpacity
           testID="sos-cancel-button"
@@ -279,7 +277,9 @@ type InfoRowProps = {
   value: string | null;
 };
 
-// Shows "Not provided" rather than an empty value.
+// Used only inside the medical ID card, so its own "Not provided"
+// fallback is forced to English too, for the same reason as the labels
+// around it.
 function InfoRow({ label, value }: InfoRowProps) {
   const { t } = useTranslation();
 
@@ -287,7 +287,9 @@ function InfoRow({ label, value }: InfoRowProps) {
     <View style={styles.infoRow}>
       <Text style={styles.infoLabel}>{label}</Text>
 
-      <Text style={styles.infoValue}>{value ?? t("sos.notProvided")}</Text>
+      <Text style={styles.infoValue}>
+        {value ?? t("sos.notProvided", { lng: "en" })}
+      </Text>
     </View>
   );
 }

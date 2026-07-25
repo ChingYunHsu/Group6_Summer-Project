@@ -35,9 +35,29 @@ interface Props {
     timeOffset: number;
   }) => void;
 }
+
+// Keeps flag alongside label/code so the language chips below can show
+// the flag emoji, not just plain text.
 const LANGUAGE_OPTIONS = featuredLanguages
   .filter((l) => l.code !== "en")
-  .map((l) => ({ label: l.english, code: l.code }));
+  .map((l) => ({ label: l.english, code: l.code, flag: l.flag }));
+
+// Each selected language chip uses a colour pulled from that language's
+// own flag, rather than the generic Colours.primary blue every other
+// filter chip uses — a language filter reads more clearly when its own
+// selected state visually ties back to the flag shown right next to it.
+// Not derived programmatically (there's no reliable way to extract a
+// "flag colour" from an emoji) — hand-picked to match each flag's
+// dominant colour. Falls back to Colours.primary for any language added
+// later that isn't in this map yet, so nothing breaks if the supported
+// set grows.
+const LANGUAGE_ACCENT_COLOURS: Record<string, string> = {
+  es: "#C60B1E", // Spanish flag red
+  fr: "#0055A4", // French flag blue
+  it: "#009246", // Italian flag green
+  de: "#000000", // German flag black
+  zh: "#DE2910", // Chinese flag red
+};
 
 // value stays the stable internal value used in state/onApply — the
 // display label is now looked up via translationKey at render time.
@@ -82,10 +102,10 @@ const WHEELCHAIR_OPTIONS = [
 const TIME_OFFSET_OPTIONS = Array.from({ length: 12 }, (_, i) => i);
 
 // Filter sheet for the map screen — Open Now, wheelchair access, a
-// live-status chip row, and a time-offset picker (feeding the 12-hour
-// forecast lookups elsewhere). All draft state here is local until
-// "Apply Filters" is pressed, which is the only point map.tsx's real
-// filter state actually changes.
+// live-status chip row, a language chip row, and a time-offset picker
+// (feeding the 12-hour forecast lookups elsewhere). All draft state
+// here is local until "Apply Filters" is pressed, which is the only
+// point map.tsx's real filter state actually changes.
 export default function FilterModal({
   visible,
   openNow,
@@ -164,165 +184,198 @@ export default function FilterModal({
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.section}>
-            {t("map.filters.availability", { defaultValue: "Availability" })}
-          </Text>
-          <View style={styles.row}>
-            <Text style={styles.label}>
-              {t("map.filters.openNow", { defaultValue: "Open Now" })}
-            </Text>
-            <Switch value={localOpenNow} onValueChange={setLocalOpenNow} />
-          </View>
-
-          <Text style={styles.label}>
-            {t("map.filters.wheelchairAccess", {
-              defaultValue: "Wheelchair Access",
-            })}
-          </Text>
-          <View testID="wheelchair-access-section" style={styles.chipRow}>
-            {WHEELCHAIR_OPTIONS.map((item) => {
-              const selected = item.value === wheelchairAccess;
-              return (
-                <TouchableOpacity
-                  key={item.value}
-                  style={[styles.chip, selected && styles.selectedChip]}
-                  onPress={() =>
-                    setWheelchairAccess(selected ? undefined : item.value)
-                  }
-                >
-                  <Text
-                    style={[styles.chipText, selected && styles.selectedText]}
-                  >
-                    {t(item.translationKey, {
-                      defaultValue: item.defaultValue,
-                    })}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
-
-          <Text style={styles.section}>
-            {t("map.filters.time", { defaultValue: "Time" })}
-          </Text>
-          <View style={styles.row}>
-            <Text style={styles.label}>
-              {t("map.filters.autoCurrentTime", {
-                defaultValue: "Auto Current Time",
+          {/* Everything below the fixed header scrolls as one unit —
+              added once the language row's real content (flags + text,
+              now that language filtering is reactivated) pushed total
+              content height past what fits on smaller screens. Matches
+              the same sheet-with-internal-ScrollView pattern already
+              used in ReportModal.tsx and RouteDetailModal.tsx. */}
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.scrollContent}
+          >
+            <Text style={styles.section}>
+              {t("map.filters.availability", {
+                defaultValue: "Availability",
               })}
             </Text>
-            <Switch
-              testID="auto-current-time-switch"
-              value={autoCurrentTime}
-              onValueChange={(value) => {
-                setAutoCurrentTime(value);
-              }}
-            />
-          </View>
+            <View style={styles.row}>
+              <Text style={styles.label}>
+                {t("map.filters.openNow", { defaultValue: "Open Now" })}
+              </Text>
+              <Switch value={localOpenNow} onValueChange={setLocalOpenNow} />
+            </View>
 
-          <Text style={styles.section}>
-            {t("map.filters.liveStatus", { defaultValue: "Live Status" })}
-          </Text>
-          <View testID="live-status-section" style={styles.chipRow}>
-            {LIVE_STATUS.map((item) => {
-              const selected = item.value === liveStatus;
-              return (
-                <TouchableOpacity
-                  key={item.value}
-                  style={[
-                    styles.chip,
-                    selected && {
-                      backgroundColor: STATUS_COLOURS[item.value],
-                    },
-                  ]}
-                  onPress={() =>
-                    setLiveStatus(selected ? undefined : item.value)
-                  }
-                >
-                  <Text
-                    style={[styles.chipText, selected && styles.selectedText]}
+            <Text style={styles.label}>
+              {t("map.filters.wheelchairAccess", {
+                defaultValue: "Wheelchair Access",
+              })}
+            </Text>
+            <View testID="wheelchair-access-section" style={styles.chipRow}>
+              {WHEELCHAIR_OPTIONS.map((item) => {
+                const selected = item.value === wheelchairAccess;
+                return (
+                  <TouchableOpacity
+                    key={item.value}
+                    style={[styles.chip, selected && styles.selectedChip]}
+                    onPress={() =>
+                      setWheelchairAccess(selected ? undefined : item.value)
+                    }
                   >
-                    {t(item.translationKey, {
-                      defaultValue: item.defaultValue,
+                    <Text
+                      style={[styles.chipText, selected && styles.selectedText]}
+                    >
+                      {t(item.translationKey, {
+                        defaultValue: item.defaultValue,
+                      })}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+
+            <Text style={styles.section}>
+              {t("map.filters.time", { defaultValue: "Time" })}
+            </Text>
+            <View style={styles.row}>
+              <Text style={styles.label}>
+                {t("map.filters.autoCurrentTime", {
+                  defaultValue: "Auto Current Time",
+                })}
+              </Text>
+              <Switch
+                testID="auto-current-time-switch"
+                value={autoCurrentTime}
+                onValueChange={(value) => {
+                  setAutoCurrentTime(value);
+                }}
+              />
+            </View>
+
+            <Text style={styles.section}>
+              {t("map.filters.liveStatus", { defaultValue: "Live Status" })}
+            </Text>
+            <View testID="live-status-section" style={styles.chipRow}>
+              {LIVE_STATUS.map((item) => {
+                const selected = item.value === liveStatus;
+                return (
+                  <TouchableOpacity
+                    key={item.value}
+                    style={[
+                      styles.chip,
+                      selected && {
+                        backgroundColor: STATUS_COLOURS[item.value],
+                      },
+                    ]}
+                    onPress={() =>
+                      setLiveStatus(selected ? undefined : item.value)
+                    }
+                  >
+                    <Text
+                      style={[styles.chipText, selected && styles.selectedText]}
+                    >
+                      {t(item.translationKey, {
+                        defaultValue: item.defaultValue,
+                      })}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
+
+            <View testID="date-selector" style={styles.dateRow}>
+              <Ionicons
+                name="calendar-outline"
+                size={18}
+                color={Colours.primary}
+              />
+              <Text style={styles.dateText}>
+                {t("map.filters.dateToday", { defaultValue: "Today" })}
+              </Text>
+            </View>
+
+            <TouchableOpacity
+              testID="time-selector"
+              style={styles.dateRow}
+              onPress={() => setTimeModalVisible(true)}
+            >
+              <Ionicons name="time-outline" size={18} color={Colours.primary} />
+              <Text style={styles.dateText}>
+                {timeOffset === 0
+                  ? t("map.filters.timeNow", { defaultValue: "Now" })
+                  : t("map.filters.timeOffset", {
+                      defaultValue: "+{{hours}}h",
+                      hours: timeOffset,
                     })}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
-          </View>
+              </Text>
+              <Ionicons
+                name="chevron-forward"
+                size={18}
+                color="#9CA3AF"
+                style={styles.chevron}
+              />
+            </TouchableOpacity>
 
-          <View testID="date-selector" style={styles.dateRow}>
-            <Ionicons
-              name="calendar-outline"
-              size={18}
-              color={Colours.primary}
-            />
-            <Text style={styles.dateText}>
-              {t("map.filters.dateToday", { defaultValue: "Today" })}
+            <Text style={styles.section}>
+              {t("map.filters.language", { defaultValue: "Language" })}
             </Text>
-          </View>
+            {/* Re-activated — was previously a static, pointerEvents="none"
+                disabled row while language data on the backend wasn't
+                usable. Real, selectable single-choice chip row: tapping
+                the already-selected chip clears the filter back to ""
+                rather than requiring a separate clear control, same as
+                Wheelchair Access and Live Status above. Selected colour
+                is pulled from LANGUAGE_ACCENT_COLOURS (each language's
+                own flag colour) instead of the generic blue every other
+                chip row uses. */}
+            <View testID="language-section" style={styles.chipRow}>
+              {LANGUAGE_OPTIONS.map((item) => {
+                const selected = item.code === localLanguage;
+                const accentColour =
+                  LANGUAGE_ACCENT_COLOURS[item.code] ?? Colours.primary;
 
-          <TouchableOpacity
-            testID="time-selector"
-            style={styles.dateRow}
-            onPress={() => setTimeModalVisible(true)}
-          >
-            <Ionicons name="time-outline" size={18} color={Colours.primary} />
-            <Text style={styles.dateText}>
-              {timeOffset === 0
-                ? t("map.filters.timeNow", { defaultValue: "Now" })
-                : t("map.filters.timeOffset", {
-                    defaultValue: "+{{hours}}h",
-                    hours: timeOffset,
-                  })}
-            </Text>
-            <Ionicons
-              name="chevron-forward"
-              size={18}
-              color="#9CA3AF"
-              style={styles.chevron}
-            />
-          </TouchableOpacity>
+                return (
+                  <TouchableOpacity
+                    key={item.code}
+                    testID={`language-chip-${item.code}`}
+                    style={[
+                      styles.chip,
+                      selected && { backgroundColor: accentColour },
+                    ]}
+                    onPress={() => setLocalLanguage(selected ? "" : item.code)}
+                  >
+                    <Text
+                      style={[styles.chipText, selected && styles.selectedText]}
+                    >
+                      {item.flag} {item.label}
+                    </Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
 
-          <Text style={styles.section}>
-            {t("map.filters.language", { defaultValue: "Language" })}
-          </Text>
-          {/* Grayed out and unclickable — future versions will hopefully
-          have more usable language data */}
-          <View
-            style={styles.chipRow}
-            pointerEvents="none"
-            testID="language-section-disabled"
-          >
-            {LANGUAGE_OPTIONS.map((item) => (
-              <View key={item.code} style={[styles.chip, styles.disabledChip]}>
-                <Text style={[styles.chipText, styles.disabledChipText]}>
-                  {item.label}
-                </Text>
-              </View>
-            ))}
-          </View>
-          <TouchableOpacity
-            testID="apply-filters-button"
-            style={styles.applyButton}
-            onPress={() => {
-              onApply({
-                openNow: localOpenNow || undefined,
-                wheelchairAccess,
-                language: localLanguage,
-                autoCurrentTime,
-                liveStatus,
-                date,
-                time: timeOffset === 0 ? "Now" : `+${timeOffset}h`,
-                timeOffset,
-              });
-              onClose();
-            }}
-          >
-            <Text style={styles.applyText}>
-              {t("map.filters.apply", { defaultValue: "Apply Filters" })}
-            </Text>
-          </TouchableOpacity>
+            <TouchableOpacity
+              testID="apply-filters-button"
+              style={styles.applyButton}
+              onPress={() => {
+                onApply({
+                  openNow: localOpenNow || undefined,
+                  wheelchairAccess,
+                  language: localLanguage,
+                  autoCurrentTime,
+                  liveStatus,
+                  date,
+                  time: timeOffset === 0 ? "Now" : `+${timeOffset}h`,
+                  timeOffset,
+                });
+                onClose();
+              }}
+            >
+              <Text style={styles.applyText}>
+                {t("map.filters.apply", { defaultValue: "Apply Filters" })}
+              </Text>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
 
         {/* Conditional overlay, not a second <Modal> — iOS genuinely
@@ -394,6 +447,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 28,
     borderTopRightRadius: 28,
     padding: 24,
+    // Caps how tall the sheet can grow before its internal ScrollView
+    // takes over — without this, the ScrollView has no bounded height
+    // to actually scroll within, since its parent would just grow to
+    // fit all content instead.
+    maxHeight: "88%",
+  },
+  scrollContent: {
+    paddingBottom: 8,
   },
   handle: {
     width: 50,

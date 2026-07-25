@@ -122,6 +122,7 @@
     "scanQrMessage": "相机集成功能将在后续接入。",
     "synced": "医疗信息已同步",
     "lastUpdated": "5分钟前更新",
+    "lastUpdatedAt": "已更新 {{time}}",
     "userId": "用户 ID",
     "fullName": "姓名",
     "email": "电子邮箱",
@@ -369,5 +370,10 @@
     "fullWheelchairAccess": "完全轮椅无障碍",
     "partialWheelchairAccess": "部分轮椅无障碍",
     "accessibilityUnknown": "轮椅通道情况未知"
+  },
+  "time": {
+    "minutesAgo": "{{count}} 分钟前",
+    "hoursAgo": "{{count}} 小时前",
+    "hoursAgo_plural": "{{count}} 小时前"
   }
 }

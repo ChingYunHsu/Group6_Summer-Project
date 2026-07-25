@@ -122,6 +122,7 @@
     "scanQrMessage": "L'integrazione della fotocamera verrà collegata successivamente.",
     "synced": "Informazioni mediche sincronizzate",
     "lastUpdated": "Ultimo aggiornamento 5 minuti fa",
+    "lastUpdatedAt": "Aggiornato {{time}}",
     "userId": "ID utente",
     "fullName": "Nome completo",
     "email": "E-mail",
@@ -362,5 +363,10 @@
     "fullWheelchairAccess": "Accesso completo in sedia a rotelle",
     "partialWheelchairAccess": "Accesso parziale in sedia a rotelle",
     "accessibilityUnknown": "Accesso in sedia a rotelle sconosciuto"
+  },
+  "time": {
+    "minutesAgo": "{{count}} min fa",
+    "hoursAgo": "{{count}} ora fa",
+    "hoursAgo_plural": "{{count}} ore fa"
   }
 }

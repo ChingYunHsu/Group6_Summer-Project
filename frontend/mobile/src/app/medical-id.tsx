@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Modal,
@@ -14,6 +14,17 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
+import {
+  AllergyKey,
+  allergies as allergyList,
+  getAllergyLabel,
+} from "../data/allergies";
+import {
+  MedicalConditionKey,
+  medicalConditions,
+  getConditionLabel,
+} from "../data/medicalConditions";
+import i18n from "../i18n";
 import type { MedicalProfile } from "../services/medicalIdService";
 import {
   DEFAULT_MEDICAL_PROFILE,
@@ -34,25 +45,36 @@ const BLOOD_TYPES = [
   "Unknown",
 ];
 
+type SupportedLangCode = "en" | "es" | "fr" | "it" | "de" | "zh";
+
+const SUPPORTED_LANG_CODES: SupportedLangCode[] = [
+  "en",
+  "es",
+  "fr",
+  "it",
+  "de",
+  "zh",
+];
+
 export default function MedicalIdScreen() {
   const { t } = useTranslation();
 
-  // Which of the three "add" modals (condition/allergy/blood type) is
-  // currently open.
+  const currentLangCode: SupportedLangCode = SUPPORTED_LANG_CODES.includes(
+    i18n.language as SupportedLangCode,
+  )
+    ? (i18n.language as SupportedLangCode)
+    : "en";
+
   const [conditionModalVisible, setConditionModalVisible] = useState(false);
 
   const [allergyModalVisible, setAllergyModalVisible] = useState(false);
 
   const [bloodTypeModalVisible, setBloodTypeModalVisible] = useState(false);
 
-  // Text currently typed into the condition/allergy "add" input, before
-  // it's committed to the real list below.
   const [newCondition, setNewCondition] = useState("");
 
   const [newAllergy, setNewAllergy] = useState("");
 
-  // Full medical profile as loaded from the backend, plus the editable
-  // fields split out into their own state below.
   const [medicalId, setMedicalId] = useState<MedicalProfile>(
     DEFAULT_MEDICAL_PROFILE,
   );
@@ -67,10 +89,51 @@ export default function MedicalIdScreen() {
 
   const [allergies, setAllergies] = useState(medicalId.allergies ?? []);
 
-  // Saves the current form state back to the backend, then returns to
-  // the previous screen. Preserves whatever wasn't editable on this
-  // screen (medications, emergency_contacts) from the last loaded value
-  // rather than dropping it.
+  // Suggestions from the curated lists, filtered by the current input
+  // text and matched against the current app language's labels. Stored
+  // items (conditions/allergies) that already match a suggestion — by
+  // key or by translated label — are excluded so the same term can't be
+  // added twice under two different representations.
+  const conditionSuggestions = useMemo(() => {
+    const query = newCondition.trim().toLowerCase();
+    if (!query) return [];
+
+    return (Object.keys(medicalConditions) as MedicalConditionKey[])
+      .filter((key) =>
+        medicalConditions[key][currentLangCode].toLowerCase().includes(query),
+      )
+      .filter(
+        (key) =>
+          !conditions.some(
+            (item) =>
+              item.toLowerCase() === key.toLowerCase() ||
+              item.toLowerCase() ===
+                medicalConditions[key][currentLangCode].toLowerCase(),
+          ),
+      )
+      .slice(0, 6);
+  }, [newCondition, conditions, currentLangCode]);
+
+  const allergySuggestions = useMemo(() => {
+    const query = newAllergy.trim().toLowerCase();
+    if (!query) return [];
+
+    return (Object.keys(allergyList) as AllergyKey[])
+      .filter((key) =>
+        allergyList[key][currentLangCode].toLowerCase().includes(query),
+      )
+      .filter(
+        (key) =>
+          !allergies.some(
+            (item) =>
+              item.toLowerCase() === key.toLowerCase() ||
+              item.toLowerCase() ===
+                allergyList[key][currentLangCode].toLowerCase(),
+          ),
+      )
+      .slice(0, 6);
+  }, [newAllergy, allergies, currentLangCode]);
+
   const handleSave = async () => {
     try {
       setSaving(true);
@@ -98,8 +161,6 @@ export default function MedicalIdScreen() {
     }
   };
 
-  // Loads the real medical profile and the user's name (for the header)
-  // once on mount.
   useEffect(() => {
     async function getMedicalId() {
       try {
@@ -132,9 +193,23 @@ export default function MedicalIdScreen() {
     setAllergies(allergies.filter((item) => item !== allergy));
   };
 
-  // Adds the typed condition to the list, unless it's empty or already
-  // present (case-insensitive) — silently no-ops on a duplicate rather
-  // than showing an error, matching addAllergy below.
+  // Stores the curated key (e.g. "asthma"), not the translated label —
+  // this is what lets the same entry render correctly in whatever
+  // language the app is later switched to.
+  const selectConditionSuggestion = (key: MedicalConditionKey) => {
+    setConditions([...conditions, key]);
+    setNewCondition("");
+    setConditionModalVisible(false);
+  };
+
+  const selectAllergySuggestion = (key: AllergyKey) => {
+    setAllergies([...allergies, key]);
+    setNewAllergy("");
+    setAllergyModalVisible(false);
+  };
+
+  // Fallback for anything not in the curated list — stores the raw
+  // typed text, same as before this list existed.
   const addCondition = () => {
     const value = newCondition.trim();
 
@@ -152,7 +227,6 @@ export default function MedicalIdScreen() {
     setConditionModalVisible(false);
   };
 
-  // Same as addCondition, for the allergy list.
   const addAllergy = () => {
     const value = newAllergy.trim();
 
@@ -173,30 +247,33 @@ export default function MedicalIdScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        {/* Header */}
-
         <View style={styles.header}>
           <TouchableOpacity
-            accessibilityLabel="Go back"
+            style={styles.headerSideButton}
             onPress={() => router.back()}
           >
             <Ionicons name="chevron-back" size={24} color={Colours.text} />
           </TouchableOpacity>
 
-          <Text style={styles.headerTitle}>{t("medicalId.title")}</Text>
+          <Text
+            style={styles.headerTitle}
+            numberOfLines={1}
+            ellipsizeMode="tail"
+          >
+            {t("medicalId.title")}
+          </Text>
 
           <TouchableOpacity
             testID="medical-id-save-button"
+            style={styles.headerSideButton}
             disabled={saving}
             onPress={handleSave}
           >
-            <Text style={styles.saveText}>
+            <Text style={styles.saveText} numberOfLines={1}>
               {saving ? t("common.loading") : t("common.save")}
             </Text>
           </TouchableOpacity>
         </View>
-
-        {/* Profile */}
 
         <View style={styles.profile}>
           <View style={styles.avatar}>
@@ -209,8 +286,6 @@ export default function MedicalIdScreen() {
 
           <Text style={styles.subtitle}>{t("medicalId.emergencyProfile")}</Text>
         </View>
-
-        {/* Blood Type */}
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{t("medicalId.criticalInfo")}</Text>
@@ -235,8 +310,6 @@ export default function MedicalIdScreen() {
           </View>
         </View>
 
-        {/* Conditions */}
-
         <View style={styles.section}>
           <View style={styles.row}>
             <Text style={styles.sectionTitle}>
@@ -244,7 +317,6 @@ export default function MedicalIdScreen() {
             </Text>
 
             <TouchableOpacity
-              accessibilityLabel="Add condition"
               testID="medical-id-add-condition-button"
               onPress={() => setConditionModalVisible(true)}
             >
@@ -256,7 +328,7 @@ export default function MedicalIdScreen() {
             {conditions.map((condition) => (
               <Tag
                 key={condition}
-                label={condition}
+                label={getConditionLabel(condition, currentLangCode)}
                 onRemove={() => removeCondition(condition)}
                 testID={`medical-id-remove-condition-${condition}`}
               />
@@ -264,14 +336,11 @@ export default function MedicalIdScreen() {
           </View>
         </View>
 
-        {/* Allergies */}
-
         <View style={styles.section}>
           <View style={styles.row}>
             <Text style={styles.sectionTitle}>{t("profile.allergies")}</Text>
 
             <TouchableOpacity
-              accessibilityLabel="Add allergy"
               testID="medical-id-add-allergy-button"
               onPress={() => setAllergyModalVisible(true)}
             >
@@ -283,7 +352,7 @@ export default function MedicalIdScreen() {
             {allergies.map((allergy) => (
               <Tag
                 key={allergy}
-                label={allergy}
+                label={getAllergyLabel(allergy, currentLangCode)}
                 onRemove={() => removeAllergy(allergy)}
                 testID={`medical-id-remove-allergy-${allergy}`}
               />
@@ -291,6 +360,7 @@ export default function MedicalIdScreen() {
           </View>
         </View>
       </ScrollView>
+
       <Modal visible={conditionModalVisible} transparent animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={styles.modalCard}>
@@ -303,6 +373,23 @@ export default function MedicalIdScreen() {
               onChangeText={setNewCondition}
               placeholder={t("medicalId.conditionPlaceholder")}
             />
+
+            {conditionSuggestions.length > 0 && (
+              <ScrollView style={styles.suggestionsList}>
+                {conditionSuggestions.map((key) => (
+                  <TouchableOpacity
+                    key={key}
+                    testID={`medical-id-condition-suggestion-${key}`}
+                    style={styles.suggestionRow}
+                    onPress={() => selectConditionSuggestion(key)}
+                  >
+                    <Text style={styles.suggestionText}>
+                      {medicalConditions[key][currentLangCode]}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            )}
 
             <View style={styles.modalActions}>
               <TouchableOpacity
@@ -338,6 +425,23 @@ export default function MedicalIdScreen() {
               onChangeText={setNewAllergy}
               placeholder={t("medicalId.allergyPlaceholder")}
             />
+
+            {allergySuggestions.length > 0 && (
+              <ScrollView style={styles.suggestionsList}>
+                {allergySuggestions.map((key) => (
+                  <TouchableOpacity
+                    key={key}
+                    testID={`medical-id-allergy-suggestion-${key}`}
+                    style={styles.suggestionRow}
+                    onPress={() => selectAllergySuggestion(key)}
+                  >
+                    <Text style={styles.suggestionText}>
+                      {allergyList[key][currentLangCode]}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            )}
 
             <View style={styles.modalActions}>
               <TouchableOpacity
@@ -402,7 +506,6 @@ export default function MedicalIdScreen() {
   );
 }
 
-// Small removable pill used for both conditions and allergies.
 function Tag({
   label,
   onRemove,
@@ -416,11 +519,7 @@ function Tag({
     <View style={styles.tag}>
       <Text style={styles.tagText}>{label}</Text>
 
-      <TouchableOpacity
-        accessibilityLabel={`Remove ${label}`}
-        testID={testID}
-        onPress={onRemove}
-      >
+      <TouchableOpacity testID={testID} onPress={onRemove}>
         <Ionicons name="close" size={16} color={Colours.muted} />
       </TouchableOpacity>
     </View>
@@ -440,13 +539,20 @@ const styles = StyleSheet.create({
 
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "space-between",
     marginBottom: 32,
   },
 
   headerTitle: {
     ...Typography.h3,
+    flex: 1,
+    textAlign: "center",
+    marginHorizontal: 8,
+  },
+
+  headerSideButton: {
+    flexShrink: 0,
   },
 
   saveText: {
@@ -559,6 +665,22 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 12,
     marginBottom: 16,
+  },
+
+  suggestionsList: {
+    maxHeight: 220,
+    marginBottom: 16,
+  },
+
+  suggestionRow: {
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: Colours.border,
+  },
+
+  suggestionText: {
+    fontSize: 15,
+    color: Colours.text,
   },
 
   modalActions: {

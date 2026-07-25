@@ -73,7 +73,7 @@ export const allLanguages = [
   { native: "Íslenska", english: "Icelandic" },
   { native: "Bahasa Indonesia", english: "Indonesian" },
   { native: "Italiano", english: "Italian" },
-  { native: "Gaeilge", english: "Irish"},
+  { native: "Gaeilge", english: "Irish" },
   { native: "日本語", english: "Japanese" },
   { native: "ಕನ್ನಡ", english: "Kannada" },
   { native: "Қазақша", english: "Kazakh" },
@@ -119,4 +119,6 @@ export const allLanguages = [
   { native: "Tiếng Việt", english: "Vietnamese" },
   { native: "Cymraeg", english: "Welsh" },
   { native: "isiZulu", english: "Zulu" },
+  { native: "Tagalog", english: "Tagalog" },
+  { native: "Kreyòl Ayisyen", english: "Haitian Creole" },
 ];

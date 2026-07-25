@@ -37,9 +37,6 @@ interface Props {
   onToggleFavourite?: () => void;
 }
 
-// Bottom sheet shown when a venue marker (or search result) is tapped —
-// live/predicted busyness status, accessibility info, services, and a
-// Directions button.
 export default function VenueBottomSheet({
   visible,
   venue,
@@ -54,7 +51,6 @@ export default function VenueBottomSheet({
 }: Props) {
   const { t } = useTranslation();
 
-  // Prevents restroom data being shown as just a point
   const formatAddress = (address: string | null | undefined): string => {
     if (!address || /^POINT\s*\(/i.test(address)) {
       return t("venueSheet.addressUnavailable", {
@@ -72,16 +68,8 @@ export default function VenueBottomSheet({
 
   const [busynessLoading, setBusynessLoading] = useState(false);
 
-  // Fetches only when the sheet actually opens for a real venue — not
-  // for every marker on the map, which would mean firing hundreds of
-  // requests just to render pins.
   useEffect(() => {
     if (!visible || !venue) {
-      // Intentional synchronous reset — clears stale busyness/forecast
-      // data the moment the sheet closes or switches to a different
-      // venue, so a brief flash of the PREVIOUS venue's data can never
-      // show while the new fetch is still in flight.
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: clears stale data synchronously before the new fetch starts, not a state-sync anti-pattern
       setBusynessStatus(null);
       setForecast(null);
       return;
@@ -113,39 +101,21 @@ export default function VenueBottomSheet({
 
   if (!venue) return null;
 
-  // Sprint 5 V2 scope: the ONLY signal that decides whether real data is
-  // shown is data_mode === "forecast" — never colour, never HTTP status,
-  // never "does the field exist". A response with data_mode: "unavailable"
-  // must never render a badge, wait time, or chart, even if it happens to
-  // carry legacy-shaped fields (colour/status) alongside it. Both the
-  // live-status badge and the 12-hour chart are gated the same way, from
-  // their own respective endpoint's data_mode, since /busyness and
-  // /busyness/forecast are independent calls that can differ.
   const hasLiveStatus = busynessStatus?.busyness?.data_mode === "forecast";
   const hasForecast =
     forecast?.data_mode === "forecast" && forecast.forecast.length > 0;
 
-  // No color/color field on forecast entries (unlike the live
-  // current-status response, which gets a real one straight from the
-  // backend) — this mirrors _level_to_color in venues.py exactly, so
-  // predicted-hour colours match what "Now" would show if the backend
-  // itself computed them.
   const FORECAST_LEVEL_COLOURS: Record<string, string> = {
     quiet: "green",
     moderate: "yellow",
     busy: "red",
   };
 
-  // Which forecast hour (if any) the FilterModal's time picker has
-  // selected — null means "show live status", not a predicted hour.
   const selectedForecastEntry =
     hasForecast && timeOffset > 0
       ? forecast?.forecast.find((hour) => hour.offset_hours === timeOffset)
       : null;
 
-  // displayLevel/displayColour are only ever derived from a data source
-  // that's already confirmed real (hasForecast / hasLiveStatus above) —
-  // there is deliberately no "no_data" fallback level.
   const displayLevel = selectedForecastEntry
     ? selectedForecastEntry.level
     : hasLiveStatus
@@ -158,10 +128,6 @@ export default function VenueBottomSheet({
       ? busynessStatus?.busyness?.busyness_color
       : undefined;
 
-  // Status labels ("Quiet"/"Moderate"/"Busy") come from the backend as
-  // lowercase level strings — translated via a lookup rather than just
-  // capitalizing the raw value, since "quiet"/"moderate"/"busy" need
-  // real translations, not just a capital letter, in other languages.
   const STATUS_LABEL_KEYS: Record<string, { key: string; label: string }> = {
     quiet: { key: "map.filters.quiet", label: "Quiet" },
     moderate: { key: "map.filters.moderate", label: "Moderate" },
@@ -176,12 +142,6 @@ export default function VenueBottomSheet({
       })
     : null;
 
-  // Wait-minutes are only ever known for live ("Now") status —
-  // VenueForecast (the type behind forecast entries) has no wait-
-  // minutes field at all, only percent/level. Showing a real number for
-  // "Now" but omitting it entirely for a predicted hour keeps this
-  // honest about what's actually known vs predicted, rather than
-  // fabricating a figure that was never really calculated.
   const displayWaitMinutes = selectedForecastEntry
     ? undefined
     : hasLiveStatus
@@ -203,9 +163,6 @@ export default function VenueBottomSheet({
 
             {onToggleFavourite && (
               <TouchableOpacity
-                accessibilityLabel={
-                  isFavourite ? "Remove from favourites" : "Add to favourites"
-                }
                 onPress={onToggleFavourite}
                 style={styles.favouriteButton}
               >
@@ -264,7 +221,7 @@ export default function VenueBottomSheet({
 
               {activeReport && (
                 <VerificationCard
-                  reportedAt={formatReportedTime(activeReport.created_at)}
+                  reportedAt={formatReportedTime(activeReport.created_at, t)}
                   confirmations={activeReport.confirmations.count}
                   onConfirm={() => onConfirmReport?.(activeReport.report_id)}
                   onResolve={() => onResolveReport?.(activeReport.report_id)}
@@ -273,10 +230,6 @@ export default function VenueBottomSheet({
             </>
           )}
 
-          {/* 'none' and 'unknown' are deliberately treated identically
-              here. Showing both as a neutral gray "Unknown"
-              avoids falsely claiming a venue isn't accessible when the
-              real answer might just be that nobody's checked yet */}
           <View style={styles.row}>
             <Ionicons
               name="accessibility-outline"
@@ -335,11 +288,6 @@ export default function VenueBottomSheet({
             </>
           )}
 
-          {/* Sprint 5 V2 scope: this is now the single, generic
-              "unavailable" indicator for the whole busyness section —
-              used identically whether the venue is an ineligible type
-              (AED/restroom), an eligible type with no current V2 rows,
-              or anything else that resolves to data_mode: "unavailable". */}
           {busynessLoading ? (
             <View style={styles.forecastLoading}>
               <ActivityIndicator size="small" color={Colours.primary} />

@@ -44,7 +44,12 @@ import { clearAccessToken, getAccessToken } from "./tokenStorage";
 
 // Android has its own special alias for
 // "the host machine" instead: 10.0.2.2.
-const API_HOST = Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1";
+// EXPO_PUBLIC_API_HOST lets a real physical device (where 127.0.0.1 means
+// "the device itself", not the Mac) override the default. Simulator/
+// emulator behavior is unchanged when this isn't set.
+const API_HOST =
+  process.env.EXPO_PUBLIC_API_HOST ??
+  (Platform.OS === "android" ? "10.0.2.2" : "127.0.0.1");
 
 const API_BASE = `http://${API_HOST}:5000/api/v1`;
 
