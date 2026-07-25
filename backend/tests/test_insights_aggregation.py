@@ -41,14 +41,30 @@ class _FakeCursor:
 
         elif "FROM busyness_forecasts bf" in q and "JOIN venues v" in q and "v.district = %s" in q:
             district = params[0]
+            now = datetime.now(timezone.utc)
             by_hour = {}
             for v in self._store.get("venues", []):
                 if v.get("district") != district:
                     continue
                 forecasts = self._store.get("busyness_forecasts", {}).get(v["venue_id"], [])
+
+                # model_version = 'forecast-v2' — default to v2 for fixtures
+                # that don't bother setting it (most existing tests).
+                forecasts = [f for f in forecasts if f.get("model_version", "forecast-v2") == "forecast-v2"]
+
+                # generated_at = MAX(generated_at) per venue — only the
+                # latest batch counts; older/superseded runs are excluded.
+                generated_ats = [f["generated_at"] for f in forecasts if f.get("generated_at") is not None]
+                if generated_ats:
+                    latest_generated_at = max(generated_ats)
+                    forecasts = [f for f in forecasts if f.get("generated_at") == latest_generated_at]
+
+                # forecast_for >= UTC_TIMESTAMP() — never surface a forecast
+                # for a time that's already passed.
+                forecasts = [f for f in forecasts if f["forecast_for"] >= now]
+
                 for f in forecasts:
-                    ff = f["forecast_for"]
-                    by_hour.setdefault(ff, []).append(f["predicted_score"])
+                    by_hour.setdefault(f["forecast_for"], []).append(f["predicted_score"])
             rows = [(hour, sum(scores) / len(scores)) for hour, scores in sorted(by_hour.items())]
             if "LIMIT 12" in q:
                 rows = rows[:12]
@@ -226,6 +242,69 @@ def test_travel_window_single_hour_fallback():
     cur = _FakeCursor(store)
     result = insights_module._best_travel_window(cur, "MN05")
     assert result["start_time"] == result["end_time"]
+
+
+def test_travel_window_ignores_stale_model_version():
+    """A superseded (non-v2) forecast row must never be selected, even if
+    it's the only row available for that hour."""
+    now = datetime.now(timezone.utc)
+    store = {
+        "venues": [{"venue_id": "v1", "name": "V1", "district": "MN05"}],
+        "busyness_scores": {},
+        "busyness_forecasts": {
+            "v1": [
+                {"forecast_for": now + timedelta(hours=1), "predicted_score": 5,
+                 "model_version": "forecast-v1", "generated_at": now},
+            ],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._best_travel_window(cur, "MN05")
+    assert result["start_time"] is None
+    assert result["cta_label"] == "Check back soon"
+
+
+def test_travel_window_ignores_superseded_batch():
+    """An older generated_at batch for the same venue/hour must be excluded
+    once a newer batch exists — otherwise stale and fresh scores get
+    averaged together."""
+    now = datetime.now(timezone.utc)
+    stale_batch = now - timedelta(days=1)
+    store = {
+        "venues": [{"venue_id": "v1", "name": "V1", "district": "MN05"}],
+        "busyness_scores": {},
+        "busyness_forecasts": {
+            "v1": [
+                {"forecast_for": now + timedelta(hours=1), "predicted_score": 90,
+                 "model_version": "forecast-v2", "generated_at": stale_batch},
+                {"forecast_for": now + timedelta(hours=1), "predicted_score": 10,
+                 "model_version": "forecast-v2", "generated_at": now},
+            ],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._prediction_series(cur, "MN05")
+    assert result == [10]
+
+
+def test_travel_window_ignores_past_forecast_times():
+    """A forecast_for timestamp that has already passed must never be
+    surfaced as an upcoming travel window."""
+    now = datetime.now(timezone.utc)
+    store = {
+        "venues": [{"venue_id": "v1", "name": "V1", "district": "MN05"}],
+        "busyness_scores": {},
+        "busyness_forecasts": {
+            "v1": [
+                {"forecast_for": now - timedelta(hours=2), "predicted_score": 15,
+                 "model_version": "forecast-v2", "generated_at": now},
+            ],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._best_travel_window(cur, "MN05")
+    assert result["start_time"] is None
+    assert result["cta_label"] == "Check back soon"
 
 
 # ---------------------------------------------------------------------------
@@ -417,3 +496,27 @@ def test_prediction_series_all_venues_same_forecast():
     cur = _FakeCursor(store)
     result = insights_module._prediction_series(cur, "MN05")
     assert result == [40]
+
+
+def test_prediction_series_excludes_past_and_stale_rows():
+    now = datetime.now(timezone.utc)
+    store = {
+        "venues": [{"venue_id": "v1", "name": "V1", "district": "MN05"}],
+        "busyness_scores": {},
+        "busyness_forecasts": {
+            "v1": [
+                # Already passed — must be excluded.
+                {"forecast_for": now - timedelta(hours=1), "predicted_score": 99,
+                 "model_version": "forecast-v2", "generated_at": now},
+                # Superseded model version — must be excluded.
+                {"forecast_for": now + timedelta(hours=1), "predicted_score": 99,
+                 "model_version": "nyc_traffic_context_v1", "generated_at": now},
+                # The only row that should survive.
+                {"forecast_for": now + timedelta(hours=2), "predicted_score": 33,
+                 "model_version": "forecast-v2", "generated_at": now},
+            ],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._prediction_series(cur, "MN05")
+    assert result == [33]

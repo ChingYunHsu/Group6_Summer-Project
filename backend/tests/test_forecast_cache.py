@@ -31,7 +31,10 @@ class _CountingCursor:
         ]
 
     def fetchone(self):
-        return None
+        # Sprint 5: the endpoint looks up venue_type before querying
+        # forecasts — must resolve to a V2-predictable type for this
+        # caching test to reach the forecast query at all.
+        return ("clinic",)
 
 
 class _CountingConn:
@@ -123,7 +126,7 @@ def test_forecast_cache_is_isolated_per_venue(client, monkeypatch):
             ]
 
         def fetchone(self):
-            return None
+            return ("clinic",)
 
     class _Conn:
         def __init__(self, score):
