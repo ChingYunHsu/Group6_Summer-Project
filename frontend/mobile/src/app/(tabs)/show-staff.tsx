@@ -20,10 +20,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
-import {
-  allergies as allergyList,
-  getAllergyLabel,
-} from "../../data/allergies";
+import { getAllergyLabel } from "../../data/allergies";
 import { featuredLanguages } from "../../data/languages";
 import { getConditionLabel } from "../../data/medicalConditions";
 
@@ -190,12 +187,12 @@ export default function ShowStaffScreen() {
   useEffect(() => {
     if (!trimmedInput) return;
 
-    setIsTranslating(true);
-    setTranslationFailed(false);
-    setTranslationNeedsLogin(false);
-    setTranslationRateLimited(false);
-
     const handle = setTimeout(async () => {
+      setIsTranslating(true);
+      setTranslationFailed(false);
+      setTranslationNeedsLogin(false);
+      setTranslationRateLimited(false);
+
       try {
         const result = await translateStaffText(
           trimmedInput,

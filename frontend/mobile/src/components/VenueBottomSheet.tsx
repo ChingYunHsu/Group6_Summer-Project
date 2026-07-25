@@ -70,8 +70,6 @@ export default function VenueBottomSheet({
 
   useEffect(() => {
     if (!visible || !venue) {
-      setBusynessStatus(null);
-      setForecast(null);
       return;
     }
 
@@ -96,6 +94,8 @@ export default function VenueBottomSheet({
 
     return () => {
       isActive = false;
+      setBusynessStatus(null);
+      setForecast(null);
     };
   }, [visible, venue]);
 
