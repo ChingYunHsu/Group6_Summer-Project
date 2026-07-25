@@ -27,6 +27,15 @@ _BUSYNESS_LEVEL_TO_DISPLAY_STATUS = {
     "busy": "DIVERTING",
 }
 
+# Settings' `selected_language` (system UI language) and Profile's
+# `spoken_languages` (medical/communication languages, e.g. for the bilingual
+# Medical Passport) are deliberately separate per-user DB columns on `users`
+# — preferred_language vs spoken_languages. These maps translate between the
+# language codes used across the API (LANGUAGE_OPTIONS/chatbot ui_language)
+# and the full English names stored in spoken_languages.
+_LANGUAGE_CODE_TO_NATIVE_NAME = {option["code"]: option["native_name"] for option in LANGUAGE_OPTIONS}
+_ENGLISH_NAME_TO_LANGUAGE_CODE = {option["english_name"].lower(): option["code"] for option in LANGUAGE_OPTIONS}
+
 
 bp = Blueprint("user", __name__)
 
@@ -87,12 +96,28 @@ def _next_contact_id() -> str:
     return f"ec_{next_number:03d}"
 
 
-def _format_profile(row: dict) -> dict:
-    raw_languages = row["spoken_languages"]
+def _parse_spoken_languages(raw_languages) -> list:
     if isinstance(raw_languages, str):
-        spoken_languages = json.loads(raw_languages)
-    else:
-        spoken_languages = raw_languages or []
+        return json.loads(raw_languages)
+    return raw_languages or []
+
+
+def _second_spoken_language_code(spoken_languages: list) -> str | None:
+    """First spoken language that isn't English, as an API language code.
+    English is always the Medical Passport's common/primary language, so it
+    never counts as the "second" one."""
+    for language in spoken_languages:
+        if not isinstance(language, str):
+            continue
+        normalised = language.strip()
+        if not normalised or normalised.lower() == "english":
+            continue
+        return _ENGLISH_NAME_TO_LANGUAGE_CODE.get(normalised.lower(), normalised)
+    return None
+
+
+def _format_profile(row: dict) -> dict:
+    spoken_languages = _parse_spoken_languages(row["spoken_languages"])
 
     return {
         "user_id": row["user_id"],
@@ -256,18 +281,38 @@ def delete_emergency_contact(contact_id: str):
     return "", 204
 
 
+def _language_settings_for_user(user_id: str) -> dict:
+    """selected_language is per-user and DB-backed (users.preferred_language)
+    — deliberately separate from Profile's spoken_languages, which drives
+    the Medical Passport instead. selected_language_native is always derived
+    from the code; it is never stored independently."""
+    with db.db_cursor() as cursor:
+        cursor.execute("SELECT preferred_language FROM users WHERE user_id = %s", (user_id,))
+        row = cursor.fetchone()
+
+    code = (row["preferred_language"] if row else None) or "en"
+    return {
+        "selected_language": code,
+        "selected_language_native": _LANGUAGE_CODE_TO_NATIVE_NAME.get(code, code),
+    }
+
+
 @bp.get("/api/v1/user/settings")
 @require_bearer_auth
 def get_user_settings():
-    return jsonify(deepcopy(USER_SETTINGS))
+    settings = deepcopy(USER_SETTINGS)
+    settings.update(_language_settings_for_user(g.user_id))
+    return jsonify(settings)
 
 
 @bp.put("/api/v1/user/settings")
-@require_api_key
+@require_bearer_auth
 def update_user_settings():
     payload = request.get_json(silent=True) or {}
 
     invalid_fields = [field for field in payload if field not in SETTINGS_EDITABLE_FIELDS]
+    if "selected_language" in payload and payload["selected_language"] not in _LANGUAGE_CODE_TO_NATIVE_NAME:
+        invalid_fields.append("selected_language")
     if invalid_fields:
         return (
             jsonify(
@@ -280,11 +325,22 @@ def update_user_settings():
             400,
         )
 
-    for field in SETTINGS_EDITABLE_FIELDS:
+    if "selected_language" in payload:
+        with db.db_transaction() as cursor:
+            cursor.execute(
+                "UPDATE users SET preferred_language = %s WHERE user_id = %s",
+                (payload["selected_language"], g.user_id),
+            )
+
+    # selected_language_native is derived, never stored — ignored here even
+    # if the client sends one alongside selected_language.
+    for field in SETTINGS_EDITABLE_FIELDS - {"selected_language", "selected_language_native"}:
         if field in payload:
             USER_SETTINGS[field] = payload[field]
 
-    return jsonify(deepcopy(USER_SETTINGS))
+    settings = deepcopy(USER_SETTINGS)
+    settings.update(_language_settings_for_user(g.user_id))
+    return jsonify(settings)
 
 
 @bp.get("/api/v1/user/languages")
@@ -476,12 +532,30 @@ def delete_account():
 
 
 @bp.get("/api/v1/user/medical-passport")
-@require_api_key
+@require_bearer_auth
 def get_medical_passport():
-    response = deepcopy(MEDICAL_PASSPORT_RESPONSE)
+    """English is always the passport's common emergency language; the
+    bilingual second language comes from the caller's own spoken_languages
+    profile field (never a fixed default) with an explicit fallback flag
+    when they haven't set one. ?language= remains available as an explicit
+    override for previewing a specific language."""
+    with db.db_cursor() as cursor:
+        cursor.execute("SELECT spoken_languages FROM users WHERE user_id = %s", (g.user_id,))
+        row = cursor.fetchone()
 
-    language = request.args.get("language")
-    if language:
-        response["language"] = language
+    spoken_languages = _parse_spoken_languages(row["spoken_languages"]) if row else []
+    second_language = _second_spoken_language_code(spoken_languages)
+
+    response = deepcopy(MEDICAL_PASSPORT_RESPONSE)
+    override = request.args.get("language")
+    if override:
+        response["language"] = override
+        response["fallback_used"] = False
+    elif second_language:
+        response["language"] = second_language
+        response["fallback_used"] = False
+    else:
+        response["language"] = "en"
+        response["fallback_used"] = True
 
     return jsonify(response)

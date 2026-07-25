@@ -633,6 +633,7 @@ MEDICAL_PASSPORT_RESPONSE = {
     "status": "generated",
     "render_token": "mock_render_token_u_1001",
     "language": "en",
+    "fallback_used": False,
     "generated_at": "2026-06-08T20:15:00Z",
 }
 

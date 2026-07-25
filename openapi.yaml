@@ -1,9 +1,31 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.6.0
+  version: 1.6.1
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
+
+    ## Post-Freeze Fix — v1.6.1
+    Two production-blocking defects fixed post-freeze (permitted per the
+    v1.6.0 freeze terms below):
+    - **`GET /user/medical-passport` now BearerAuth** (was ApiKeyAuth,
+      frozen-as-implemented in v1.6.0). It previously had no notion of who
+      was calling and always echoed a fixed default `language`. It now
+      resolves the caller's `spoken_languages` from their profile and
+      returns English + the first non-English spoken language as the
+      bilingual pair. Added `fallback_used: boolean` to
+      `MedicalPassportResponse`, true when the caller has no non-English
+      spoken language on file and the response is English-only.
+      `?language=` remains available as an explicit override.
+    - **`PUT /user/settings` now BearerAuth** (was ApiKeyAuth, also
+      frozen-as-implemented in v1.6.0 — see that entry's own note that it
+      was "documented to match actual behavior... tighten to BearerAuth
+      once wired to real per-user storage"). `selected_language` is now
+      read/written per-user via `users.preferred_language` instead of a
+      single in-memory object shared by every caller; `GET /user/settings`
+      picks it up the same way. `selected_language_native` is always
+      derived server-side from `selected_language` — a client-submitted
+      value is accepted for schema compatibility but ignored.
 
     ## FROZEN — Sprint 4 API Freeze (v1.6.0)
     This spec has been audited end-to-end against the actual implemented
@@ -906,19 +928,20 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 
     # FIX 11 — F-13 / B2.4 Account Personalization
+    # v1.6.1: tightened to BearerAuth now that selected_language is
+    # per-user/DB-backed (users.preferred_language) instead of a single
+    # shared mock object — see the Post-Freeze Fix note above.
     put:
       tags: [User]
       summary: Update user settings
       description: >
-        NOTE (frozen as-implemented): unlike GET (BearerAuth) and unlike
-        every other /user/* mutation, this endpoint currently only checks
-        ApiKeyAuth and writes a single shared mock USER_SETTINGS object —
-        it is not yet per-user/DB-backed. Documented to match actual
-        behavior rather than the originally intended contract; tighten to
-        BearerAuth once this is wired to real per-user storage.
+        selected_language is persisted per-user to users.preferred_language.
+        selected_language_native is always derived server-side from
+        selected_language; a client-submitted value is accepted (for schema
+        compatibility with GET's response shape) but ignored.
       operationId: updateUserSettings
       security:
-        - ApiKeyAuth: []
+        - BearerAuth: []
       requestBody:
         required: true
         content:
@@ -1163,13 +1186,22 @@ paths:
         No clinical payload is transmitted to or stored on the server. The
         `pdf_url` field from v1.4.0 has been removed (Fix 3 — Server-Side
         Storage Risk).
+
+        **v1.6.1:** `language` defaults to English + the caller's first
+        non-English `spoken_languages` entry (from their profile), not a
+        fixed value — see the Post-Freeze Fix note above. `fallback_used`
+        is true when the caller has no non-English spoken language on file.
       operationId: getMedicalPassport
       security:
-        - ApiKeyAuth: []
+        - BearerAuth: []
       parameters:
         - name: language
           in: query
           required: false
+          description: >
+            Explicit override for the passport's second language. When
+            omitted, it's derived from the caller's spoken_languages profile
+            field instead.
           schema:
             type: string
             example: en
@@ -2482,6 +2514,12 @@ components:
             clinical payload — only a user reference and expiry claim.
         language:
           type: string
+        fallback_used:
+          type: boolean
+          description: >
+            True when the caller has no non-English spoken language on
+            their profile, so `language` fell back to English-only rather
+            than being derived from spoken_languages.
         generated_at:
           type: string
           format: date-time
@@ -2916,8 +2954,12 @@ components:
       properties:
         selected_language:
           type: string
+          description: One of GET /user/languages' `code` values.
         selected_language_native:
           type: string
+          description: >
+            Accepted for symmetry with GET's response shape but ignored —
+            always derived server-side from selected_language.
         location_access_enabled:
           type: boolean
         notifications_enabled:
