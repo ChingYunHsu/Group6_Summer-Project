@@ -1915,20 +1915,18 @@ useEffect(() => {
               {(selectedVenue.busyness_forecast_12h ?? [])
                 .length > 0 ? (
                 <div className="mini-bars">
-                  {selectedVenue.busyness_forecast_12h.map(
-                    (point) => (
+                  {selectedVenue.busyness_forecast_12h.map((point) => {
+                    const pct = Math.min(Math.max(Number(point.percent) || 0, 0), 100);
+                    return (
                       <span
                         key={point.offset_hours}
                         style={{
-                          height: `${Math.max(
-                            Number(point.percent) || 0,
-                            8
-                          )}px`,
+                          height: `${Math.max(pct, 6)}%`, 
                         }}
                         title={`${point.percent}% ${point.level}`}
                       />
-                    )
-                  )}
+                    );
+                  })}
                 </div>
               ) : (
                 <p className="forecast-unavailable">

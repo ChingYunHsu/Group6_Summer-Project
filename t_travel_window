@@ -1,0 +1,23 @@
+[35mData+ML/test/7.13-7.18/src/analytics_kpi_formulas.py[m[36m:[m[32m336[m[36m:[m    [1;31mprediction_series[m = [round(s) for s in forecast_curve["predicted_score"].tolist()] if not forecast_curve.empty else []
+[35mData+ML/test/7.13-7.18/src/analytics_kpi_formulas.py[m[36m:[m[32m344[m[36m:[m        "[1;31mprediction_series[m": [1;31mprediction_series[m,
+[35mData+ML/test/7.13-7.18/src/district_aggregation.py[m[36m:[m[32m96[m[36m:[m        return {"[1;31mprediction_series[m": [0] * 12, "data_mode": "no_data"}
+[35mData+ML/test/7.13-7.18/src/district_aggregation.py[m[36m:[m[32m100[m[36m:[m        return {"[1;31mprediction_series[m": [0] * 12, "data_mode": "no_data"}
+[35mData+ML/test/7.13-7.18/src/district_aggregation.py[m[36m:[m[32m105[m[36m:[m    return {"[1;31mprediction_series[m": series, "data_mode": "live"}
+[35mData+ML/test/7.13-7.18/tests/test_analytics_kpi_formulas.py[m[36m:[m[32m194[m[36m:[m    assert "[1;31mprediction_series[m" in result
+[35mbackend/src/api/insights.py[m[36m:[m[32m145[m[36m:[mdef _[1;31mprediction_series[m(cursor, district: str) -> list:
+[35mbackend/src/api/insights.py[m[36m:[m[32m224[m[36m:[m            [1;31mprediction_series[m = _[1;31mprediction_series[m(cursor, district)
+[35mbackend/src/api/insights.py[m[36m:[m[32m233[m[36m:[m        or bool([1;31mprediction_series[m)
+[35mbackend/src/api/insights.py[m[36m:[m[32m244[m[36m:[m        "[1;31mprediction_series[m": [1;31mprediction_series[m,
+[35mbackend/src/api/insights.py[m[36m:[m[32m308[m[36m:[m        "[1;31mprediction_series[m": dashboard.get("[1;31mprediction_series[m", []),
+[35mbackend/src/mock_data.py[m[36m:[m[32m702[m[36m:[m    "[1;31mprediction_series[m": [42, 38, 35, 33, 40, 52, 61, 68, 73, 64, 51, 39],
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m4[m[36m:[m_[1;31mprediction_series[m, and the get_insights endpoint mock fallback.
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m316[m[36m:[m# D3.5: _[1;31mprediction_series[m
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m319[m[36m:[mdef test_[1;31mprediction_series[m_empty():
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m322[m[36m:[m    result = insights_module._[1;31mprediction_series[m(cur, "NONEXISTENT")
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m326[m[36m:[mdef test_[1;31mprediction_series[m_averages_cross_venue():
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m329[m[36m:[m    result = insights_module._[1;31mprediction_series[m(cur, "MN05")
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m404[m[36m:[mdef test_[1;31mprediction_series[m_all_venues_same_forecast():
+[35mbackend/tests/test_insights_aggregation.py[m[36m:[m[32m418[m[36m:[m    result = insights_module._[1;31mprediction_series[m(cur, "MN05")
+[35mfrontend/web/src/pages/InsightsDashboard.jsx[m[36m:[m[32m191[m[36m:[m    rawDashboard.[1;31mprediction_series[m ??
+[35mopenapi.yaml[m[36m:[m[32m2742[m[36m:[m        [district, data_mode, real_time_density, quick_triage, best_travel_window, [1;31mprediction_series[m, fastest_hubs]
+[35mopenapi.yaml[m[36m:[m[32m2788[m[36m:[m        [1;31mprediction_series[m:
