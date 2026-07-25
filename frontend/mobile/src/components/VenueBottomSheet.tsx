@@ -71,7 +71,9 @@ export default function VenueBottomSheet({
 
   useEffect(() => {
     if (!visible || !venue) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setBusynessStatus(null);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setForecast(null);
       return;
     }
