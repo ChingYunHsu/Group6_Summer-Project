@@ -11,9 +11,19 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { formatReportedTime } from "../../components/ReportMarker";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
+import {
+  allergies as allergyList,
+  getAllergyLabel,
+} from "../../data/allergies";
+import { allLanguages } from "../../data/languages";
 import { mockProfile } from "../../data/mockProfile";
+import {
+  getConditionLabel,
+  medicalConditions,
+} from "../../data/medicalConditions";
 import { getFavourites, getVenue, removeFavourite } from "../../services/api";
 import { getAccessToken } from "../../services/authService";
 import {
@@ -23,6 +33,25 @@ import {
 } from "../../services/medicalIdService";
 import { loadProfile } from "../../services/profileService";
 import { Favourite, Venue } from "../../types/venue";
+import i18n from "../../i18n";
+
+type SupportedLangCode = "en" | "es" | "fr" | "it" | "de" | "zh";
+
+const SUPPORTED_LANG_CODES: SupportedLangCode[] = [
+  "en",
+  "es",
+  "fr",
+  "it",
+  "de",
+  "zh",
+];
+
+const GENDER_TRANSLATION_KEYS: Record<string, string> = {
+  Male: "editProfile.genderMale",
+  Female: "editProfile.genderFemale",
+  "Non-binary": "editProfile.genderNonBinary",
+  "Prefer not to say": "editProfile.genderPreferNotToSay",
+};
 
 // Derived from the live full_name.
 function getInitials(fullName: string): string {
@@ -41,14 +70,11 @@ function formatUserId(userId: string): string {
 export default function ProfileScreen() {
   const [loading, setLoading] = useState(true);
 
-  // Tracked separately per resource (profile vs. medical), since they're
-  // two independent fetches — "synced" only if both succeeded, "offline"
-  // if either failed.
   const [profileSyncOk, setProfileSyncOk] = useState<boolean | null>(null);
   const [medicalSyncOk, setMedicalSyncOk] = useState<boolean | null>(null);
 
-  // Combines the two independent sync flags above into one status shown
-  // in the sync card.
+  const [lastSyncedAt, setLastSyncedAt] = useState<Date | null>(null);
+
   const syncStatus: "loading" | "synced" | "offline" =
     profileSyncOk === null || medicalSyncOk === null
       ? "loading"
@@ -58,16 +84,18 @@ export default function ProfileScreen() {
 
   const { t } = useTranslation();
 
-  // Profile and medical ID state, seeded with mock/default data until the
-  // real fetches below resolve.
+  const currentLangCode: SupportedLangCode = SUPPORTED_LANG_CODES.includes(
+    i18n.language as SupportedLangCode,
+  )
+    ? (i18n.language as SupportedLangCode)
+    : "en";
+
   const [profile, setProfile] = useState(mockProfile);
 
   const [medicalId, setMedicalId] = useState<MedicalProfile>(
     DEFAULT_MEDICAL_PROFILE,
   );
 
-  // Saved clinics list — each favourite paired with its resolved Venue
-  // (or null if that lookup failed).
   const [favourites, setFavourites] = useState<
     { favourite: Favourite; venue: Venue | null }[]
   >([]);
@@ -78,8 +106,6 @@ export default function ProfileScreen() {
     "checking" | "guest" | "authenticated"
   >("checking");
 
-  // Runs on every focus: checks auth status, and redirects guests to the
-  // guest-profile screen rather than showing this one half-populated.
   useFocusEffect(
     useCallback(() => {
       let isActive = true;
@@ -103,8 +129,6 @@ export default function ProfileScreen() {
     }, []),
   );
 
-  // Loads the real profile once authenticated, and marks whether that
-  // fetch succeeded for the sync-status card.
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -130,7 +154,6 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
-  // Same pattern as above, for the medical ID fetch.
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -154,8 +177,14 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
-  // Loads saved favourites and resolves each venue_id to a real Venue
-  // object for display (name, address).
+  useFocusEffect(
+    useCallback(() => {
+      if (profileSyncOk && medicalSyncOk) {
+        setLastSyncedAt(new Date());
+      }
+    }, [profileSyncOk, medicalSyncOk]),
+  );
+
   useFocusEffect(
     useCallback(() => {
       if (authStatus !== "authenticated") return;
@@ -197,9 +226,6 @@ export default function ProfileScreen() {
     }, [authStatus]),
   );
 
-  // Optimistic, same pattern as the heart toggle in map.tsx — removes the
-  // card immediately rather than waiting on the network, rolling back
-  // only if the request actually fails.
   const handleRemoveFavourite = async (venueId: string) => {
     const previous = favourites;
 
@@ -225,17 +251,37 @@ export default function ProfileScreen() {
     );
   }
 
+  const translatedConditions = (medicalId.conditions ?? [])
+    .map((item) => getConditionLabel(item, currentLangCode))
+    .join(", ");
+
+  const translatedAllergies = (medicalId.allergies ?? [])
+    .map((item) => getAllergyLabel(item, currentLangCode))
+    .join(", ");
+
+  const translatedGender = medicalId.gender
+    ? t(GENDER_TRANSLATION_KEYS[medicalId.gender] ?? medicalId.gender, {
+        defaultValue: medicalId.gender,
+      })
+    : "";
+
+  // Shows each spoken language's own native name (e.g. "Español") rather
+  // than the raw stored English name ("Spanish").
+  const nativeSpokenLanguages = (profile.spoken_languages ?? [])
+    .map(
+      (language) =>
+        allLanguages.find((item) => item.english === language)?.native ??
+        language,
+    )
+    .join(", ");
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Header */}
-
         <Text style={styles.title}>{t("profile.title")}</Text>
-
-        {/* Profile Summary */}
 
         <View style={styles.profileHeader}>
           <View style={styles.avatar}>
@@ -248,8 +294,6 @@ export default function ProfileScreen() {
 
           <Text style={styles.profileEmail}>{profile.email}</Text>
         </View>
-
-        {/* Sync Status */}
 
         <View style={styles.syncCard}>
           {syncStatus === "loading" ? (
@@ -275,20 +319,30 @@ export default function ProfileScreen() {
                   : t("profile.syncLoading", { defaultValue: "Syncing…" })}
             </Text>
 
-            <Text style={styles.syncText}>{t("profile.lastUpdated")}</Text>
+            <Text style={styles.syncText}>
+              {lastSyncedAt
+                ? t("profile.lastUpdatedAt", {
+                    defaultValue: "Updated {{time}}",
+                    time: formatReportedTime(lastSyncedAt.toISOString(), t),
+                  })
+                : t("profile.lastUpdated")}
+            </Text>
           </View>
         </View>
 
-        {/* Personal Information */}
-
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>
+            <Text
+              style={styles.sectionTitle}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
               {t("editProfile.personalInformation")}
             </Text>
 
             <TouchableOpacity
               testID="profile-edit-personal-info-button"
+              style={styles.editButton}
               onPress={() => router.push("/edit-profile")}
             >
               <Text style={styles.editText}>{t("common.edit")}</Text>
@@ -311,7 +365,7 @@ export default function ProfileScreen() {
             value={medicalId.date_of_birth ?? ""}
           />
 
-          <InfoRow label={t("profile.gender")} value={medicalId.gender ?? ""} />
+          <InfoRow label={t("profile.gender")} value={translatedGender} />
 
           <InfoRow
             label={t("profile.nationality")}
@@ -320,7 +374,7 @@ export default function ProfileScreen() {
 
           <InfoRow
             label={t("profile.languages")}
-            value={(profile.spoken_languages ?? []).join(", ")}
+            value={nativeSpokenLanguages}
           />
 
           <InfoRow
@@ -329,14 +383,19 @@ export default function ProfileScreen() {
           />
         </View>
 
-        {/* Medical ID */}
-
         <View style={styles.sectionCard}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>{t("profile.medicalId")}</Text>
+            <Text
+              style={styles.sectionTitle}
+              numberOfLines={1}
+              ellipsizeMode="tail"
+            >
+              {t("profile.medicalId")}
+            </Text>
 
             <TouchableOpacity
               testID="profile-edit-medical-id-button"
+              style={styles.editButton}
               onPress={() => router.push("/medical-id")}
             >
               <Text style={styles.editText}>{t("common.edit")}</Text>
@@ -350,17 +409,11 @@ export default function ProfileScreen() {
 
           <InfoRow
             label={t("profile.conditions")}
-            value={(medicalId.conditions ?? []).join(", ")}
+            value={translatedConditions}
           />
 
-          <InfoRow
-            label={t("profile.allergies")}
-            value={(medicalId.allergies ?? []).join(", ")}
-          />
+          <InfoRow label={t("profile.allergies")} value={translatedAllergies} />
         </View>
-
-        {/* Saved Clinics — sourced from GET /user/favourites, each
-            venue_id resolved to a real venue via getVenue(). */}
 
         <Text style={styles.savedTitle}>{t("profile.savedClinics")}</Text>
 
@@ -388,7 +441,6 @@ export default function ProfileScreen() {
               </View>
 
               <TouchableOpacity
-                accessibilityLabel="Remove from saved clinics"
                 onPress={() => handleRemoveFavourite(favourite.venue_id)}
                 hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
               >
@@ -407,9 +459,6 @@ type InfoRowProps = {
   value?: string | null;
 };
 
-// Missing/empty fields are omitted entirely rather than shown as a
-// label with nothing underneath — same rule used on sos.tsx and
-// show-staff.tsx.
 function InfoRow({ label, value }: InfoRowProps) {
   if (!value) return null;
 
@@ -521,6 +570,12 @@ const styles = StyleSheet.create({
   sectionTitle: {
     ...Typography.body,
     fontWeight: "700",
+    flex: 1,
+    marginRight: 12,
+  },
+
+  editButton: {
+    flexShrink: 0,
   },
 
   editText: {

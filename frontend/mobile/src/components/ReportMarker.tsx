@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { TFunction } from "i18next";
 import { StyleSheet } from "react-native";
 import { Marker } from "react-native-maps";
 
@@ -9,23 +10,27 @@ interface Props {
   onPress: (report: Report) => void;
 }
 
-// Formats a report's created_at timestamp as a relative "X min/hr ago"
-// string — shared by VerificationCard and ReportBottomSheet.
-export function formatReportedTime(createdAt: string) {
+export function formatReportedTime(createdAt: string, t: TFunction): string {
   const minutes = Math.floor(
     (Date.now() - new Date(createdAt).getTime()) / 60000,
   );
 
   if (minutes < 60) {
-    return `${minutes} min ago`;
+    return t("time.minutesAgo", {
+      defaultValue: "{{count}} min ago",
+      count: minutes,
+    });
   }
 
   const hours = Math.floor(minutes / 60);
-  return `${hours} hr${hours === 1 ? "" : "s"} ago`;
+
+  return t("time.hoursAgo", {
+    defaultValue: "{{count}} hr ago",
+    defaultValue_plural: "{{count}} hrs ago",
+    count: hours,
+  });
 }
 
-// Map marker for an active user report — only renders for reports whose
-// status is still "active" (resolved/expired reports don't show a pin).
 export default function ReportMarker({ report, onPress }: Props) {
   if (report.status !== "active") {
     return null;

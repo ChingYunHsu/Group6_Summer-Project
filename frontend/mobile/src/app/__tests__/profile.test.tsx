@@ -35,6 +35,13 @@ jest.mock("expo-router", () => ({
 }));
 
 jest.mock("react-i18next", () => ({
+  // profile.tsx imports i18n directly (for i18n.language, to resolve the
+  // current language code for condition/allergy labels) — not just the
+  // useTranslation hook below. That pulls in src/i18n.ts, which calls
+  // i18n.use(initReactI18next) at module load time. Without this entry,
+  // this mock's default export has no initReactI18next, i18next receives
+  // undefined, and i18n.use(undefined) throws before any test body runs.
+  initReactI18next: { type: "3rdParty", init: jest.fn() },
   useTranslation: () => ({
     t: (key: string, options?: any) => {
       const knownTranslations: Record<string, string> = {
@@ -68,6 +75,14 @@ jest.mock("react-i18next", () => ({
       return key;
     },
   }),
+}));
+
+// profile.tsx pulls in formatReportedTime from ReportMarker.tsx purely
+// for its "Updated {{time}}" sync-status text — but ReportMarker.tsx
+// also imports react-native-maps for its Marker component, which needs
+// a native module ('RNMapsAirModule') that doesn't exist under Jest.
+jest.mock("../../components/ReportMarker", () => ({
+  formatReportedTime: () => "Just now",
 }));
 
 jest.mock("../../services/authService", () => ({

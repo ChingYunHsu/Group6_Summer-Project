@@ -1,5 +1,4 @@
 import { Ionicons } from "@expo/vector-icons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router, useFocusEffect } from "expo-router";
 import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -109,8 +108,8 @@ export default function AssistantScreen() {
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
 
-  // The app's stored language preference (read from AsyncStorage below),
-  // defaulting to English until that read resolves.
+  // The app's current language preference, defaulting to English until
+  // the focus effect below resolves the real value.
   const [currentLanguage, setCurrentLanguage] = useState(
     featuredLanguages.find((l) => l.code === "en") ?? featuredLanguages[0],
   );
@@ -157,62 +156,66 @@ export default function AssistantScreen() {
     },
   ]);
 
-  // Runs every time this screen comes into focus. Reads the stored
-  // language preference and, if it changed since last time, resets the
-  // "responding in" label and re-translates the two greeting messages.
+  // Runs every time this screen comes into focus. Reads i18n.language
+  // directly (synchronous, in-memory) rather than AsyncStorage.getItem
+  // ("language") — reading from AsyncStorage was subject to a real race
+  // condition: language.tsx's Done button navigates back with a plain
+  // synchronous router.back() right after firing off an async
+  // AsyncStorage.setItem() write, with nothing guaranteeing that write
+  // has actually flushed to disk before this screen re-focuses and reads
+  // it back. That race was invisible on the Simulator (fast, predictable
+  // local disk) but real and reproducible on a physical device. i18n's
+  // own in-memory i18n.language is updated synchronously by
+  // i18n.changeLanguage() at selection time, with no disk round-trip, so
+  // reading it here has no such race.
   //
-  // Resets lastResponseLanguageCode whenever the resolved language
-  // genuinely differs from what was already active.
-  //
-  // Also refreshes the two greeting messages (id "1"/"2") here — they're
-  // baked into messages' useState initializer, computed once at first
-  // mount using whatever language was active then. Switching languages
-  // later doesn't remount this screen, so they never had a reason to
-  // retranslate on their own otherwise.
+  // If the resolved language changed since last time, resets the
+  // "responding in" label and re-translates the two greeting messages
+  // (id "1"/"2") — they're baked into messages' useState initializer,
+  // computed once at first mount using whatever language was active
+  // then, and switching languages later doesn't remount this screen.
   useFocusEffect(
     useCallback(() => {
-      (async () => {
-        const code = await AsyncStorage.getItem("language");
-        const match = featuredLanguages.find((l) => l.code === code);
+      const code = i18n.language;
+      const match = featuredLanguages.find((l) => l.code === code);
 
-        const resolved =
-          match ??
-          featuredLanguages.find((l) => l.code === "en") ??
-          featuredLanguages[0];
+      const resolved =
+        match ??
+        featuredLanguages.find((l) => l.code === "en") ??
+        featuredLanguages[0];
 
-        setCurrentLanguage((previous) => {
-          if (previous.code !== resolved.code) {
-            setLastResponseLanguageCode(null);
+      setCurrentLanguage((previous) => {
+        if (previous.code !== resolved.code) {
+          setLastResponseLanguageCode(null);
 
-            setMessages((currentMessages) =>
-              currentMessages.map((message) => {
-                if (message.id === "1") {
-                  return {
-                    ...message,
-                    text: i18n.t("assistant.greeting1", {
-                      defaultValue:
-                        "Hello! I'm your ClearPath Assistant. How can I help you today?",
-                    }),
-                  };
-                }
+          setMessages((currentMessages) =>
+            currentMessages.map((message) => {
+              if (message.id === "1") {
+                return {
+                  ...message,
+                  text: i18n.t("assistant.greeting1", {
+                    defaultValue:
+                      "Hello! I'm your ClearPath Assistant. How can I help you today?",
+                  }),
+                };
+              }
 
-                if (message.id === "2") {
-                  return {
-                    ...message,
-                    text: i18n.t("assistant.greeting2", {
-                      defaultValue:
-                        "I can help find clinics, explain services, and answer healthcare navigation questions.",
-                    }),
-                  };
-                }
+              if (message.id === "2") {
+                return {
+                  ...message,
+                  text: i18n.t("assistant.greeting2", {
+                    defaultValue:
+                      "I can help find clinics, explain services, and answer healthcare navigation questions.",
+                  }),
+                };
+              }
 
-                return message;
-              }),
-            );
-          }
-          return resolved;
-        });
-      })();
+              return message;
+            }),
+          );
+        }
+        return resolved;
+      });
     }, []),
   );
 
@@ -308,8 +311,8 @@ export default function AssistantScreen() {
     }
   };
 
-  // Voice input isn't implemented yet, future version, just tells the
-  // user to type instead.
+  // Voice input isn't implemented yet — just tells the user to type
+  // instead.
   const handleMicPress = () => {
     Alert.alert(
       t("assistant.voiceUnavailableTitle", {
@@ -390,12 +393,15 @@ export default function AssistantScreen() {
     </View>
   );
 
+  // KeyboardAvoidingView is the OUTERMOST wrapper here, with SafeAreaView
+  // nested inside it.
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-        style={styles.container}
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
-      >
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 75 : 0}
+    >
+      <SafeAreaView style={styles.container}>
         {/* Header */}
 
         <View style={styles.header}>
@@ -411,7 +417,6 @@ export default function AssistantScreen() {
           </View>
 
           <TouchableOpacity
-            accessibilityLabel="Change language"
             style={styles.languageButton}
             onPress={() =>
               router.push({ pathname: "/language", params: { origin: "app" } })
@@ -424,6 +429,7 @@ export default function AssistantScreen() {
         {/* Chat */}
 
         <FlatList
+          style={styles.messageList}
           data={messages}
           renderItem={renderMessage}
           keyExtractor={(item) => item.id}
@@ -434,11 +440,7 @@ export default function AssistantScreen() {
         {/* Input */}
 
         <View style={styles.inputContainer}>
-          <TouchableOpacity
-            accessibilityLabel="Voice input"
-            style={styles.micButton}
-            onPress={handleMicPress}
-          >
+          <TouchableOpacity style={styles.micButton} onPress={handleMicPress}>
             <Ionicons name="mic" size={22} color={Colours.primary} />
           </TouchableOpacity>
 
@@ -465,8 +467,8 @@ export default function AssistantScreen() {
             <Ionicons name="send" size={18} color="#FFFFFF" />
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -655,5 +657,9 @@ const styles = StyleSheet.create({
 
   sendButtonDisabled: {
     opacity: 0.5,
+  },
+
+  messageList: {
+    flex: 1,
   },
 });

@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { Colours } from "../constants/colours";
@@ -15,9 +16,15 @@ interface Props {
   onResolve: (reportId: string) => void;
 }
 
-// Shown when a report marker on the map is tapped — read-only detail
-// view of that report plus the shared VerificationCard
-// confirm/resolve controls.
+const ISSUE_TYPE_TRANSLATION_KEYS: Record<string, string> = {
+  large_crowd: "reportModal.issueTypes.largeCrowd",
+  entrance_closed: "reportModal.issueTypes.entranceClosed",
+  elevator_broken: "reportModal.issueTypes.elevatorBroken",
+  wheelchair_lift_broken: "reportModal.issueTypes.wheelchairLiftBroken",
+  toilet_out_of_order: "reportModal.issueTypes.toiletOutOfOrder",
+  protest_or_blockage: "reportModal.issueTypes.protestOrBlockage",
+};
+
 export default function ReportBottomSheet({
   visible,
   report,
@@ -25,7 +32,14 @@ export default function ReportBottomSheet({
   onConfirm,
   onResolve,
 }: Props) {
+  const { t } = useTranslation();
+
   if (!report) return null;
+
+  const title = t(
+    ISSUE_TYPE_TRANSLATION_KEYS[report.issue_type] ?? report.issue_type,
+    { defaultValue: report.issue_type_label ?? report.issue_type },
+  );
 
   return (
     <Modal visible={visible} transparent animationType="slide">
@@ -35,9 +49,7 @@ export default function ReportBottomSheet({
 
           <View style={styles.header}>
             <View style={{ flex: 1 }}>
-              <Text style={styles.title}>
-                {report.issue_type_label ?? report.issue_type}
-              </Text>
+              <Text style={styles.title}>{title}</Text>
             </View>
 
             <TouchableOpacity accessibilityLabel="Close" onPress={onClose}>
@@ -46,7 +58,7 @@ export default function ReportBottomSheet({
           </View>
 
           <VerificationCard
-            reportedAt={formatReportedTime(report.created_at)}
+            reportedAt={formatReportedTime(report.created_at, t)}
             confirmations={report.confirmations.count}
             onConfirm={() => onConfirm(report.report_id)}
             onResolve={() => onResolve(report.report_id)}

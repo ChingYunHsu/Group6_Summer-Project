@@ -20,7 +20,9 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colours } from "../../constants/colours";
 import { Typography } from "../../constants/typography";
+import { getAllergyLabel } from "../../data/allergies";
 import { featuredLanguages } from "../../data/languages";
+import { getConditionLabel } from "../../data/medicalConditions";
 
 import {
   phraseTemplates,
@@ -43,17 +45,11 @@ type StaffSummary = {
 export default function ShowStaffScreen() {
   const { t } = useTranslation();
 
-  // The visitor's own chosen app language — drives which native-language
-  // reference text is shown alongside the English phrases below.
   const [currentLanguage, setCurrentLanguage] = useState(featuredLanguages[0]);
 
   const [summaryLoading, setSummaryLoading] = useState(true);
   const [staffSummary, setStaffSummary] = useState<StaffSummary | null>(null);
 
-  // useFocusEffect, not plain useEffect — currentLanguage here represents
-  // the app user's own chosen language ("I am the visitor, and I speak
-  // whatever I've set my app to"), so it should track changes made
-  // anywhere else in the app.
   useFocusEffect(
     useCallback(() => {
       (async () => {
@@ -68,69 +64,65 @@ export default function ShowStaffScreen() {
     }, []),
   );
 
-  // Loads profile + medical data once on mount for the medical summary
-  // card at the bottom — logged-out users just see nothing there.
-  useEffect(() => {
-    (async () => {
-      try {
-        const token = await getAccessToken();
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        try {
+          const token = await getAccessToken();
 
-        if (!token) {
-          setStaffSummary(null);
-          return;
+          if (!token) {
+            setStaffSummary(null);
+            return;
+          }
+
+          const [profile, medical] = await Promise.all([
+            loadProfile().catch((error) => {
+              console.error("Failed to load profile for staff summary", error);
+              return null;
+            }),
+            loadMedicalId().catch((error) => {
+              console.error(
+                "Failed to load medical profile for staff summary",
+                error,
+              );
+              return null;
+            }),
+          ]);
+
+          if (!profile && !medical) {
+            setStaffSummary(null);
+            return;
+          }
+
+          // Always English here, regardless of the visitor's own app
+          // language — this is what staff read. Free-text entries not
+          // in the curated list pass through unchanged.
+          setStaffSummary({
+            fullName: profile?.full_name,
+            phone: profile?.phone,
+            bloodType: medical?.blood_type ?? undefined,
+            conditions: medical?.conditions?.length
+              ? medical.conditions
+                  .map((item) => getConditionLabel(item, "en"))
+                  .join(", ")
+              : undefined,
+            allergies: medical?.allergies?.length
+              ? medical.allergies
+                  .map((item) => getAllergyLabel(item, "en"))
+                  .join(", ")
+              : undefined,
+          });
+        } finally {
+          setSummaryLoading(false);
         }
+      })();
+    }, []),
+  );
 
-        const [profile, medical] = await Promise.all([
-          loadProfile().catch((error) => {
-            console.error("Failed to load profile for staff summary", error);
-            return null;
-          }),
-          loadMedicalId().catch((error) => {
-            console.error(
-              "Failed to load medical profile for staff summary",
-              error,
-            );
-            return null;
-          }),
-        ]);
-
-        if (!profile && !medical) {
-          setStaffSummary(null);
-          return;
-        }
-
-        setStaffSummary({
-          fullName: profile?.full_name,
-          phone: profile?.phone,
-          bloodType: medical?.blood_type ?? undefined,
-          conditions: medical?.conditions?.length
-            ? medical.conditions.join(", ")
-            : undefined,
-          allergies: medical?.allergies?.length
-            ? medical.allergies.join(", ")
-            : undefined,
-        });
-      } finally {
-        setSummaryLoading(false);
-      }
-    })();
-  }, []);
-
-  // This screen is read by Manhattan-based staff, who read English — so the
-  // *phrase content* shown large is always English, regardless of the
-  // visitor's language.
   const selectedLanguage = currentLanguage.english as SupportedLanguage;
   const isTranslated = selectedLanguage !== "English";
 
-  // Maxes out screen brightness while this screen is open (so staff can
-  // read it easily), and restores the original brightness on unmount or
-  // whenever the app backgrounds.
   useEffect(() => {
-    // On iOS, a brightness override set via setBrightnessAsync persists
-    // until the device is locked — it does NOT automatically revert just
-    // because the user backgrounds the app.
-    // Watch AppState and restore/re-max as the app backgrounds/foregrounds
-    // while this screen is still on top.
     let previousBrightness: number | null = null;
     let isMounted = true;
 
@@ -173,8 +165,6 @@ export default function ShowStaffScreen() {
 
   const [selectedScenario, setSelectedScenario] = useState<Scenario>("general");
 
-  // Live Translate input/output + the four distinct states a failed
-  // request can end up in (generic failure, not-logged-in, rate-limited).
   const [translationInput, setTranslationInput] = useState("");
   const [translatedText, setTranslatedText] = useState("");
   const [isTranslating, setIsTranslating] = useState(false);
@@ -182,19 +172,8 @@ export default function ShowStaffScreen() {
 
   const [translationNeedsLogin, setTranslationNeedsLogin] = useState(false);
 
-  // Rapid typing here can trip Gemini's requests-per-minute quota, since every
-  // debounced pause fires a real API call. "Please wait" is a much more
-  // actionable message than a generic failure for this specific case.
   const [translationRateLimited, setTranslationRateLimited] = useState(false);
 
-  // Translate free text server-side, not on-device — arbitrary visitor
-  // input isn't covered by the canned phraseTemplates, and running this
-  // through a third-party provider directly from the client would mean
-  // shipping an API key in the app bundle. Wired to POST /api/v1/translate
-  // (Gemini-backed, backend/src/api/translate.py) — on failure this
-  // throws rather than falling back to anything, since the callers below
-  // treat a thrown error as "show the failure state", and a fabricated
-  // medical translation would be worse than an obvious failure.
   const translateStaffText = async (
     text: string,
     sourceLanguage: string,
@@ -205,19 +184,15 @@ export default function ShowStaffScreen() {
 
   const trimmedInput = translationInput.trim();
 
-  // Debounced (1.2s) live-translate effect — fires a real API call after
-  // the user stops typing, and resets all the error/loading flags at the
-  // start of each new attempt.
   useEffect(() => {
     if (!trimmedInput) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: marks the debounced translation as starting
-    setIsTranslating(true);
-    setTranslationFailed(false);
-    setTranslationNeedsLogin(false);
-    setTranslationRateLimited(false);
-
     const handle = setTimeout(async () => {
+      setIsTranslating(true);
+      setTranslationFailed(false);
+      setTranslationNeedsLogin(false);
+      setTranslationRateLimited(false);
+
       try {
         const result = await translateStaffText(
           trimmedInput,
@@ -259,9 +234,6 @@ export default function ShowStaffScreen() {
       { key: "pharmacy", icon: "medkit-outline" },
     ];
 
-  // Speaks the given English phrase aloud using the target language's
-  // voice/accent, mapped from the app's language codes to expo-speech's
-  // BCP-47 locale tags.
   const speakPhrase = (text: string, language: SupportedLanguage) => {
     const languageMap: Record<SupportedLanguage, string> = {
       English: "en-US",
@@ -279,21 +251,16 @@ export default function ShowStaffScreen() {
     });
   };
 
-  // Copies a phrase to the clipboard.
   const copyPhrase = async (text: string) => {
     await Clipboard.setStringAsync(text);
   };
 
-  // Closes this screen and returns to wherever it was opened from.
   const handleCancel = () => {
     router.back();
   };
 
   const heroPhrase = phraseTemplates.general[0];
 
-  // The General category's first phrase is always the hero phrase above
-  // — showing it a second time in the card list right underneath looked
-  // redundant.
   const visiblePhrases =
     selectedScenario === "general"
       ? phraseTemplates.general.filter((phrase) => phrase !== heroPhrase)
@@ -305,19 +272,11 @@ export default function ShowStaffScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.content}
       >
-        {/* Header */}
-
-        <TouchableOpacity
-          accessibilityLabel="Close"
-          style={styles.closeButton}
-          onPress={handleCancel}
-        >
+        <TouchableOpacity style={styles.closeButton} onPress={handleCancel}>
           <Ionicons name="close" size={28} color={Colours.text} />
         </TouchableOpacity>
 
         <Text style={styles.title}>{t("showStaff.title")}</Text>
-
-        {/* Language Card */}
 
         <View style={styles.heroCard}>
           <View style={styles.languageBadge}>
@@ -333,24 +292,16 @@ export default function ShowStaffScreen() {
 
           <Text style={styles.languageText}>{currentLanguage.english}</Text>
 
-          {/* Primary content: always English, for staff to read. The
-              speaker icon lives right next to it, since this is the
-              text it actually plays. */}
           <View style={styles.staffPhraseRow}>
             <Text style={styles.staffPhraseText}>{heroPhrase.english}</Text>
 
             <TouchableOpacity
-              accessibilityLabel="Play phrase audio"
               onPress={() => speakPhrase(heroPhrase.english, "English")}
             >
               <Ionicons name="volume-high" size={26} color={Colours.primary} />
             </TouchableOpacity>
           </View>
 
-          {/* Secondary reference: visitor's own language, so they can
-              confirm the phrase means what they intend before showing it.
-              Plain text only — no speaker icon here, since audio always
-              plays the English version above, not this. */}
           {isTranslated && (
             <View style={styles.translationBox}>
               <Text style={styles.nativeReferenceText}>
@@ -359,8 +310,6 @@ export default function ShowStaffScreen() {
             </View>
           )}
         </View>
-
-        {/* Categories */}
 
         <Text style={styles.sectionTitle}>{t("showStaff.commonPhrases")}</Text>
 
@@ -400,14 +349,10 @@ export default function ShowStaffScreen() {
           })}
         </ScrollView>
 
-        {/* Phrase Cards */}
-
         {visiblePhrases.map((phrase) => (
           <View key={phrase.english} style={styles.phraseCard}>
-            {/* Primary content: always English, for staff to read */}
             <Text style={styles.staffPhraseText}>{phrase.english}</Text>
 
-            {/* Secondary reference: visitor's own language */}
             {isTranslated && (
               <Text style={styles.nativeReferenceCaption}>
                 {phrase.translations[selectedLanguage]}
@@ -415,10 +360,7 @@ export default function ShowStaffScreen() {
             )}
 
             <View style={styles.actions}>
-              <TouchableOpacity
-                accessibilityLabel="Copy phrase"
-                onPress={() => copyPhrase(phrase.english)}
-              >
+              <TouchableOpacity onPress={() => copyPhrase(phrase.english)}>
                 <Ionicons
                   name="copy-outline"
                   size={22}
@@ -427,7 +369,6 @@ export default function ShowStaffScreen() {
               </TouchableOpacity>
 
               <TouchableOpacity
-                accessibilityLabel="Play phrase audio"
                 onPress={() => speakPhrase(phrase.english, "English")}
               >
                 <Ionicons
@@ -439,8 +380,6 @@ export default function ShowStaffScreen() {
             </View>
           </View>
         ))}
-
-        {/* Live Translate */}
 
         <Text style={styles.sectionTitle}>{t("showStaff.liveTranslate")}</Text>
 
@@ -484,6 +423,10 @@ export default function ShowStaffScreen() {
           )}
         </View>
 
+        {/* Medical summary card — labels forced to English (lng: "en"),
+            matching the already-English condition/allergy values, since
+            this is the card most likely to be read directly by
+            English-speaking staff. */}
         {summaryLoading ? (
           <>
             <Text style={styles.sectionTitle}>
@@ -502,27 +445,27 @@ export default function ShowStaffScreen() {
 
               <View style={styles.summaryCard}>
                 <InfoRow
-                  label={t("profile.fullName")}
+                  label={t("profile.fullName", { lng: "en" })}
                   value={staffSummary.fullName}
                 />
 
                 <InfoRow
-                  label={t("profile.bloodType")}
+                  label={t("profile.bloodType", { lng: "en" })}
                   value={staffSummary.bloodType}
                 />
 
                 <InfoRow
-                  label={t("profile.conditions")}
+                  label={t("profile.conditions", { lng: "en" })}
                   value={staffSummary.conditions}
                 />
 
                 <InfoRow
-                  label={t("profile.allergies")}
+                  label={t("profile.allergies", { lng: "en" })}
                   value={staffSummary.allergies}
                 />
 
                 <InfoRow
-                  label={t("profile.phone")}
+                  label={t("profile.phone", { lng: "en" })}
                   value={staffSummary.phone}
                 />
               </View>
@@ -536,8 +479,6 @@ export default function ShowStaffScreen() {
 
 type InfoRowProps = { label: string; value?: string | null };
 
-// Per spec: missing or null fields are omitted entirely, never shown
-// with a placeholder like "Not provided".
 function InfoRow({ label, value }: InfoRowProps) {
   if (!value) return null;
 

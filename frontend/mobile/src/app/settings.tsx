@@ -187,19 +187,25 @@ export default function SettingsScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Header */}
+        {/* Header — same truncation/flex fix as medical-id.tsx and
+            edit-profile.tsx: headerLeft (back button + title) is capped
+            with flex: 1 and marginRight so it can never grow into and
+            push the avatar icon off the visible screen width when the
+            translated title ("Configuración") is longer than English.
+            The avatar itself gets flexShrink: 0 so it always stays put. */}
 
         <View style={styles.header}>
           <View style={styles.headerLeft}>
             <TouchableOpacity
-              accessibilityLabel="Go back"
               onPress={() => router.back()}
               style={styles.backButton}
             >
               <Ionicons name="chevron-back" size={24} color={Colours.text} />
             </TouchableOpacity>
 
-            <Text style={styles.title}>{t("settings.title")}</Text>
+            <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
+              {t("settings.title")}
+            </Text>
           </View>
 
           <View style={styles.avatar}>
@@ -213,6 +219,8 @@ export default function SettingsScreen() {
 
         <View style={styles.card}>
           <View style={styles.row}>
+            {/* rowLeft now has flex: 1 + marginRight, same reasoning as
+                the header above */}
             <View style={styles.rowLeft}>
               <Ionicons name="location" size={20} color={Colours.primary} />
 
@@ -337,15 +345,19 @@ const styles = StyleSheet.create({
   headerLeft: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
+    marginRight: 12,
   },
 
   backButton: {
     marginRight: 12,
+    flexShrink: 0,
   },
 
   title: {
     ...Typography.h1,
     color: Colours.primary,
+    flexShrink: 1,
   },
 
   avatar: {
@@ -357,6 +369,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: Colours.border,
+    flexShrink: 0,
   },
 
   sectionLabel: {
@@ -404,17 +417,21 @@ const styles = StyleSheet.create({
   rowLeft: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
+    marginRight: 12,
   },
 
   rowText: {
     ...Typography.body,
     color: Colours.text,
     marginLeft: 12,
+    flexShrink: 1,
   },
 
   trailing: {
     flexDirection: "row",
     alignItems: "center",
+    flexShrink: 0,
   },
 
   trailingText: {

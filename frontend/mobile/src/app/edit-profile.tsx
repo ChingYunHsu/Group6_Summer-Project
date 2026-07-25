@@ -189,20 +189,32 @@ export default function EditProfileScreen() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
+        {/* Header — same fix as medical-id.tsx: headerTitle takes the
+            flexible middle space (flex: 1) and truncates with an
+            ellipsis instead of sizing to its full translated text
+            content. Back and Save both get flexShrink: 0, so a longer
+            translated title (French/Spanish) can never push Save off
+            the visible screen width the way it previously could. */}
+
         <View style={styles.header}>
           <TouchableOpacity
-            accessibilityLabel="Go back"
+            style={styles.headerSideButton}
             onPress={() => router.back()}
           >
             <Ionicons name="chevron-back" size={24} color={Colours.text} />
           </TouchableOpacity>
 
-          <View style={{ flex: 1 }}>
-            <Text style={styles.headerTitle}>{t("editProfile.title")}</Text>
-          </View>
+          <Text
+            style={styles.headerTitle}
+            numberOfLines={1}
+            ellipsizeMode="tail"
+          >
+            {t("editProfile.title")}
+          </Text>
 
           <TouchableOpacity
             testID="edit-profile-save-button"
+            style={styles.headerSideButton}
             onPress={handleSave}
             disabled={loading || saving}
           >
@@ -211,6 +223,7 @@ export default function EditProfileScreen() {
                 styles.saveText,
                 (loading || saving) && styles.saveTextDisabled,
               ]}
+              numberOfLines={1}
             >
               {saving
                 ? t("common.saving", { defaultValue: "Saving…" })
@@ -245,10 +258,10 @@ export default function EditProfileScreen() {
 
           <InputField
             testID="edit-profile-dob-input"
-            label={t("editProfile.dateOfBirth")}
+            label={`${t("editProfile.dateOfBirth")} (${t("editProfile.dobFormatHint", { defaultValue: "YYYY-MM-DD" })})`}
             value={dob}
             onChangeText={setDob}
-            placeholder="YYYY-MM-DD"
+            placeholder="1990-01-15"
           />
 
           <View style={styles.field}>
@@ -306,7 +319,6 @@ export default function EditProfileScreen() {
             <Text style={styles.label}>{t("editProfile.spokenLanguages")}</Text>
 
             <TouchableOpacity
-              accessibilityLabel="Add language"
               testID="edit-profile-add-language-button"
               onPress={() => setLanguageModalVisible(true)}
             >
@@ -320,7 +332,6 @@ export default function EditProfileScreen() {
                 <Text style={styles.tagText}>{language}</Text>
 
                 <TouchableOpacity
-                  accessibilityLabel={`Remove ${language}`}
                   testID={`edit-profile-remove-language-${language}`}
                   onPress={() => removeLanguage(language)}
                 >
@@ -495,8 +506,14 @@ const styles = StyleSheet.create({
 
   headerTitle: {
     ...Typography.h3,
+    flex: 1,
     color: Colours.text,
     textAlign: "center",
+    marginHorizontal: 8,
+  },
+
+  headerSideButton: {
+    flexShrink: 0,
   },
 
   saveText: {
