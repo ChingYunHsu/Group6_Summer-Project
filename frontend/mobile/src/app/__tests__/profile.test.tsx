@@ -70,6 +70,14 @@ jest.mock("react-i18next", () => ({
   }),
 }));
 
+// profile.tsx pulls in formatReportedTime from ReportMarker.tsx purely
+// for its "Updated {{time}}" sync-status text — but ReportMarker.tsx
+// also imports react-native-maps for its Marker component, which needs
+// a native module ('RNMapsAirModule') that doesn't exist under Jest.
+jest.mock("../../components/ReportMarker", () => ({
+  formatReportedTime: () => "Just now",
+}));
+
 jest.mock("../../services/authService", () => ({
   getAccessToken: jest.fn(),
 }));

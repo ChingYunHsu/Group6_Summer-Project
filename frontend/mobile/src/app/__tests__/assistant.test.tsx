@@ -1,6 +1,5 @@
 import React from "react";
 import { act, fireEvent, render, waitFor } from "@testing-library/react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import AssistantScreen from "../(tabs)/assistant";
 
@@ -17,10 +16,6 @@ jest.mock("expo-router", () => ({
   // assistant.tsx reloads the stored language via useFocusEffect (fixed
   // from a mount-only useEffect — the original bug was that a language
   // change made elsewhere never got picked up on returning to this tab).
-  // Running the callback once on render is the closest honest
-  // approximation of "this screen just gained focus" available in a
-  // unit test without pulling in expo-router/testing-library's full
-  // renderRouter machinery.
   useFocusEffect: (callback: () => void | (() => void)) => {
     const { useEffect } = require("react");
     useEffect(() => {
@@ -60,9 +55,26 @@ jest.mock("react-i18next", () => ({
   }),
 }));
 
-jest.mock("@react-native-async-storage/async-storage", () =>
-  require("@react-native-async-storage/async-storage/jest/async-storage-mock"),
-);
+// assistant.tsx reads the current language directly off i18n.language
+// (synchronous, in-memory) rather than AsyncStorage. Mocking i18n itself, with a
+// plain mutable `language` property, lets tests drive that the same way
+// production code changes it (i18n.changeLanguage() updates this
+// synchronously with no disk round-trip). `t` here only needs to cover
+// the two greeting keys assistant.tsx re-translates on a language
+// change; it returns each call's defaultValue, same fallback behaviour
+// as the react-i18next mock above.
+jest.mock("../../i18n", () => ({
+  __esModule: true,
+  default: {
+    language: "en",
+    t: (key: string, options?: any) =>
+      options && typeof options === "object" && "defaultValue" in options
+        ? (options.defaultValue as string)
+        : key,
+  },
+}));
+
+const mockI18n = require("../../i18n").default;
 
 jest.mock("../../services/api", () => ({
   sendChatbotMessage: jest.fn(),
@@ -92,7 +104,7 @@ const REAL_VENUE = {
 
 beforeEach(() => {
   jest.clearAllMocks();
-  (AsyncStorage.getItem as jest.Mock).mockResolvedValue("en");
+  mockI18n.language = "en";
 });
 
 // fireEvent.changeText followed immediately by fireEvent.press, with
@@ -225,7 +237,7 @@ describe("AssistantScreen — graceful handling of network failures", () => {
 
 describe("AssistantScreen — language switching", () => {
   it("shows the stored language's native name in the header before any message is sent", async () => {
-    (AsyncStorage.getItem as jest.Mock).mockResolvedValue("es");
+    mockI18n.language = "es";
 
     const screen = await render(<AssistantScreen />);
 
@@ -235,11 +247,11 @@ describe("AssistantScreen — language switching", () => {
   });
 
   it("re-reads the stored language on focus, not just on first mount", async () => {
-    (AsyncStorage.getItem as jest.Mock).mockResolvedValueOnce("en");
+    mockI18n.language = "en";
     const screen = await render(<AssistantScreen />);
     await screen.findByText(/Responding in English/);
 
-    (AsyncStorage.getItem as jest.Mock).mockResolvedValue("fr");
+    mockI18n.language = "fr";
     await screen.rerender(<AssistantScreen />);
 
     expect(await screen.findByText(/Français/)).toBeTruthy();
@@ -248,7 +260,6 @@ describe("AssistantScreen — language switching", () => {
   });
 
   it("switches to the response's own detected_language once a real reply comes back, overriding the stored preference", async () => {
-    (AsyncStorage.getItem as jest.Mock).mockResolvedValue("en");
     sendChatbotMessage.mockResolvedValue({
       ...REAL_CHATBOT_RESPONSE,
       detected_language: "es",
