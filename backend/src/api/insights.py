@@ -13,6 +13,14 @@ bp = Blueprint("insights", __name__)
 FASTEST_HUBS_LIMIT = 10
 WALKING_SPEED_KM_PER_HOUR = 5.0
 
+# Sprint 5 SOP: only these venue types are V2-predictable. Kept in sync
+# with api/venues.py's V2_PREDICTABLE_VENUE_TYPES by hand rather than
+# imported — api/*.py blueprint modules don't currently import each other
+# (only shared non-blueprint modules like auth/db/mock_data), so duplicating
+# this 3-item allow-list matches the existing convention better than being
+# the first cross-blueprint import.
+V2_PREDICTABLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
+
 
 def _get_db_conn():
     """Create MySQL connection for area-aggregation queries (per-request)."""
@@ -52,23 +60,74 @@ def _get_default_district(cursor):
     return row[0] if row else None
 
 
-# ── D3.5: real-time density ──────────────────────────────────────────────
+# ── Sprint 5 SOP: shared V2 "current status per venue" resolution ───────
 
-def _real_time_density(cursor, district: str) -> dict:
-    """Average current busyness score across every venue in `district`."""
+def _eligible_venues_in_district(cursor, district: str) -> list:
+    """venue_id/name/language_tags/accessible_status for every V2-predictable
+    (clinic/hospital/pharmacy) venue in `district`. AED/restroom/etc. never
+    enter any of the aggregations below."""
+    placeholders = ", ".join(["%s"] * len(V2_PREDICTABLE_VENUE_TYPES))
     cursor.execute(
-        "SELECT bs.score, bs.estimated_wait_minutes "
-        "FROM busyness_scores bs "
-        "JOIN venues v ON v.venue_id = bs.venue_id "
-        "WHERE v.district = %s",
-        (district,),
+        "SELECT v.venue_id, v.name, v.language_tags, v.accessible_status "
+        "FROM venues v "
+        f"WHERE v.district = %s AND v.venue_type IN ({placeholders})",
+        (district, *V2_PREDICTABLE_VENUE_TYPES),
+    )
+    return cursor.fetchall()
+
+
+def _nearest_v2_forecast_by_venue(cursor, venue_ids: list) -> dict:
+    """For each venue_id, its nearest future forecast-v2 row from its latest
+    generation batch — the same "current status" resolution the single-venue
+    /busyness endpoint uses (api/venues.py), batched across many venues in
+    one query instead of one venue_id at a time. A venue absent from the
+    result has no current V2 data, exactly like an unavailable /busyness
+    response."""
+    if not venue_ids:
+        return {}
+
+    placeholders = ", ".join(["%s"] * len(venue_ids))
+    cursor.execute(
+        "SELECT bf.venue_id, bf.forecast_for, bf.predicted_score, "
+        "bf.predicted_level, bf.estimated_wait_minutes "
+        "FROM busyness_forecasts bf "
+        f"WHERE bf.venue_id IN ({placeholders}) "
+        "  AND bf.model_version = 'forecast-v2' "
+        "  AND bf.forecast_for >= UTC_TIMESTAMP() "
+        "  AND bf.generated_at = ( "
+        "    SELECT MAX(bf2.generated_at) FROM busyness_forecasts bf2 "
+        "    WHERE bf2.venue_id = bf.venue_id AND bf2.model_version = 'forecast-v2' "
+        "  ) "
+        "ORDER BY bf.venue_id, bf.forecast_for ASC",
+        tuple(venue_ids),
     )
     rows = cursor.fetchall()
 
-    if not rows:
+    nearest = {}
+    for venue_id, forecast_for, score, level, wait_minutes in rows:
+        if venue_id in nearest:
+            continue  # rows are ordered forecast_for ASC per venue — first wins
+        nearest[venue_id] = {
+            "forecast_for": forecast_for,
+            "predicted_score": score,
+            "predicted_level": level,
+            "estimated_wait_minutes": wait_minutes,
+        }
+    return nearest
+
+
+# ── D3.5: real-time density ──────────────────────────────────────────────
+
+def _real_time_density(cursor, district: str) -> dict:
+    """Average current forecast-v2 busyness across every V2-eligible venue
+    in `district` — resolved the same way as _fastest_hubs below."""
+    venue_rows = _eligible_venues_in_district(cursor, district)
+    current_by_venue = _nearest_v2_forecast_by_venue(cursor, [row[0] for row in venue_rows])
+    scores = [current["predicted_score"] for current in current_by_venue.values()]
+
+    if not scores:
         return {"percent": 0, "trend": "no data", "trend_label": "No data available"}
 
-    scores = [row[0] for row in rows]
     percent = round(sum(scores) / len(scores))
     return {"percent": percent, "trend": "stable", "trend_label": "Stable"}
 
@@ -118,35 +177,38 @@ def _best_travel_window(cursor, district: str) -> dict:
 # ── D3.5: fastest hubs ────────────────────────────────────────────────────
 
 def _fastest_hubs(cursor, district: str, limit: int = FASTEST_HUBS_LIMIT) -> list:
-    """Rank venues in `district` by current busyness (lowest first), then
-    by wait time; venues with no live score sort last."""
-    cursor.execute(
-        "SELECT v.venue_id, v.name, v.language_tags, v.accessible_status, "
-        "bs.score, bs.level, bs.estimated_wait_minutes "
-        "FROM venues v "
-        "LEFT JOIN busyness_scores bs ON bs.venue_id = v.venue_id "
-        "WHERE v.district = %s "
-        "ORDER BY (bs.score IS NULL), bs.score, bs.estimated_wait_minutes "
-        "LIMIT %s",
-        (district, limit),
-    )
-    rows = cursor.fetchall()
+    """Rank V2-eligible venues (clinic/hospital/pharmacy) in `district` by
+    current forecast-v2 busyness (lowest first), then by wait time; a venue
+    with no current V2 row sorts last with a NO DATA flow_status rather than
+    being dropped. AED/restroom/etc. never appear — they were leaking in
+    here via the legacy busyness_scores table with no venue_type filter,
+    surfacing stale scores as if they were live V2 predictions."""
+    venue_rows = _eligible_venues_in_district(cursor, district)
+    current_by_venue = _nearest_v2_forecast_by_venue(cursor, [row[0] for row in venue_rows])
 
     hubs = []
-    for venue_id, name, language_tags, accessible_status, score, level, wait_minutes in rows:
+    for venue_id, name, language_tags, accessible_status in venue_rows:
+        current = current_by_venue.get(venue_id)
+        score = current["predicted_score"] if current else None
         hubs.append(
             {
                 "venue_id": venue_id,
                 "venue_name": name,
                 "flow_status": _flow_status(score),
                 "busyness_score": score,
-                "busyness_level": level,
-                "wait_minutes": wait_minutes,
+                "busyness_level": current["predicted_level"] if current else None,
+                "wait_minutes": current["estimated_wait_minutes"] if current else None,
                 "language_tags": _parse_json_list(language_tags),
                 "accessible_status": accessible_status,
             }
         )
-    return hubs
+
+    hubs.sort(key=lambda hub: (
+        hub["busyness_score"] is None,
+        hub["busyness_score"] if hub["busyness_score"] is not None else 0,
+        hub["wait_minutes"] if hub["wait_minutes"] is not None else 0,
+    ))
+    return hubs[:limit]
 
 
 # ── D3.5/D3.7: prediction series ─────────────────────────────────────────
