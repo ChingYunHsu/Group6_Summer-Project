@@ -209,19 +209,14 @@
   },
   "welcome": {
     "slogan": "用您的语言提供无障碍智能服务",
-
     "healthcareNavigation": "医疗导航",
     "healthcareNavigationDescription": "轻松查找医院科室、诊所和医疗服务。",
-
     "medicalId": "医疗身份信息",
     "medicalIdDescription": "保存重要医疗信息，以备紧急情况使用。",
-
     "aiAssistant": "AI 助手",
     "aiAssistantDescription": "随时获得快速的医疗指导和支持。",
-
     "showStaff": "向工作人员出示",
     "showStaffDescription": "使用常用短语和实时翻译，与当地居民和医护人员顺畅沟通。",
-
     "emergencySos": "紧急求助",
     "emergencySosDescription": "在分秒必争的紧急情况下，快速获取救援支持。"
   },
@@ -268,28 +263,19 @@
   "reportModal": {
     "title": "报告问题",
     "subtitle": "通过报告临时无障碍问题，帮助保持 ClearPath 信息准确。",
-
     "whereIsIssue": "问题发生在哪里？",
     "selectVenue": "选择地点",
     "issueType": "问题类型",
-
     "nearbyVenue": "附近地标或地点",
     "currentLocation": "在当前位置放置图钉",
-
     "nearby": "附近",
-
     "additionalInformation": "补充信息（可选）",
-
     "timestampNotice": "（报告将始终使用当前时间提交。）",
-
     "submit": "提交报告",
-
     "loginRequired": "需要登录",
     "loginRequiredMessage": "为了确保 ClearPath 数据的准确性，提交报告前请先登录。",
-
     "locationRequired": "需要开启定位服务",
     "locationRequiredMessage": "提交报告前，请启用定位服务。",
-
     "issueTypes": {
       "largeCrowd": "人群拥挤",
       "entranceClosed": "入口受阻",
@@ -369,7 +355,8 @@
     "directions": "路线",
     "fullWheelchairAccess": "完全轮椅无障碍",
     "partialWheelchairAccess": "部分轮椅无障碍",
-    "accessibilityUnknown": "轮椅通道情况未知"
+    "accessibilityUnknown": "轮椅通道情况未知",
+    "languagesSpoken": "使用语言"
   },
   "time": {
     "minutesAgo": "{{count}} 分钟前",

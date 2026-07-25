@@ -40,15 +40,10 @@ interface Props {
 // the flag emoji, not just plain text.
 const LANGUAGE_OPTIONS = featuredLanguages
   .filter((l) => l.code !== "en")
-  .map((l) => ({ label: l.english, code: l.code, flag: l.flag }));
+  .map((l) => ({ label: l.native, code: l.code, flag: l.flag }));
 
 // Each selected language chip uses a colour pulled from that language's
-// own flag, rather than the generic Colours.primary blue every other
-// filter chip uses — a language filter reads more clearly when its own
-// selected state visually ties back to the flag shown right next to it.
-// Not derived programmatically (there's no reliable way to extract a
-// "flag colour" from an emoji) — hand-picked to match each flag's
-// dominant colour. Falls back to Colours.primary for any language added
+// own flag, falls back to Colours.primary for any language added
 // later that isn't in this map yet, so nothing breaks if the supported
 // set grows.
 const LANGUAGE_ACCENT_COLOURS: Record<string, string> = {
@@ -80,8 +75,8 @@ const LIVE_STATUS = [
 ] as const;
 
 const STATUS_COLOURS = {
-  quiet: "#006400",
-  moderate: "#F59E0B",
+  quiet: "#16A34A",
+  moderate: "#FACC15",
   busy: "#DC2626",
 };
 
@@ -319,15 +314,7 @@ export default function FilterModal({
             <Text style={styles.section}>
               {t("map.filters.language", { defaultValue: "Language" })}
             </Text>
-            {/* Re-activated — was previously a static, pointerEvents="none"
-                disabled row while language data on the backend wasn't
-                usable. Real, selectable single-choice chip row: tapping
-                the already-selected chip clears the filter back to ""
-                rather than requiring a separate clear control, same as
-                Wheelchair Access and Live Status above. Selected colour
-                is pulled from LANGUAGE_ACCENT_COLOURS (each language's
-                own flag colour) instead of the generic blue every other
-                chip row uses. */}
+
             <View testID="language-section" style={styles.chipRow}>
               {LANGUAGE_OPTIONS.map((item) => {
                 const selected = item.code === localLanguage;
@@ -447,10 +434,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 28,
     borderTopRightRadius: 28,
     padding: 24,
-    // Caps how tall the sheet can grow before its internal ScrollView
-    // takes over — without this, the ScrollView has no bounded height
-    // to actually scroll within, since its parent would just grow to
-    // fit all content instead.
     maxHeight: "88%",
   },
   scrollContent: {

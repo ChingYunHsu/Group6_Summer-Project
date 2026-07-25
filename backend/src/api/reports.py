@@ -255,6 +255,8 @@ def list_reports():
     db_module = _db()
     if db_module is not None:
         try:
+            cleanup_expired_reports()
+
             with db_module.db_cursor() as cursor:
                 cursor.execute(
                     "SELECT ur.report_id, ur.user_id, ur.venue_id, ur.issue_type, "
