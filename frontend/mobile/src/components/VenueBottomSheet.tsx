@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 
 import { Colours } from "../constants/colours";
 import { Typography } from "../constants/typography";
+import { featuredLanguages } from "../data/languages";
 import { getVenueBusyness, getVenueForecast } from "../services/api";
 import {
   BusynessResponse,
@@ -70,11 +71,12 @@ export default function VenueBottomSheet({
 
   useEffect(() => {
     if (!visible || !venue) {
+      setBusynessStatus(null);
+      setForecast(null);
       return;
     }
 
     let isActive = true;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- loading flag must be set synchronously when the fetch starts, before the async result arrives
     setBusynessLoading(true);
 
     Promise.all([
@@ -95,8 +97,6 @@ export default function VenueBottomSheet({
 
     return () => {
       isActive = false;
-      setBusynessStatus(null);
-      setForecast(null);
     };
   }, [visible, venue]);
 
@@ -106,10 +106,16 @@ export default function VenueBottomSheet({
   const hasForecast =
     forecast?.data_mode === "forecast" && forecast.forecast.length > 0;
 
-  const FORECAST_LEVEL_COLOURS: Record<string, string> = {
-    quiet: "green",
-    moderate: "yellow",
-    busy: "red",
+  // Single source of truth for status colours, matching VenueMarker.tsx's
+  // COLOURS exactly and the map's own legend — used for both the live
+  // "Now" badge and any selected forecast hour, always derived from
+  // displayLevel below rather than trusting a raw colour string sent
+  // directly by the backend (busynessStatus.busyness.busyness_color),
+  // which previously bypassed this map entirely for the live badge.
+  const STATUS_LEVEL_COLOURS: Record<string, string> = {
+    quiet: "#16A34A",
+    moderate: "#FACC15",
+    busy: "#DC2626",
   };
 
   const selectedForecastEntry =
@@ -123,11 +129,9 @@ export default function VenueBottomSheet({
       ? busynessStatus?.busyness?.busyness_status
       : undefined;
 
-  const displayColour = selectedForecastEntry
-    ? FORECAST_LEVEL_COLOURS[selectedForecastEntry.level]
-    : hasLiveStatus
-      ? busynessStatus?.busyness?.busyness_color
-      : undefined;
+  const displayColour = displayLevel
+    ? STATUS_LEVEL_COLOURS[displayLevel]
+    : undefined;
 
   const STATUS_LABEL_KEYS: Record<string, { key: string; label: string }> = {
     quiet: { key: "map.filters.quiet", label: "Quiet" },
@@ -164,6 +168,9 @@ export default function VenueBottomSheet({
 
             {onToggleFavourite && (
               <TouchableOpacity
+                accessibilityLabel={
+                  isFavourite ? "Remove from favourites" : "Add to favourites"
+                }
                 onPress={onToggleFavourite}
                 style={styles.favouriteButton}
               >
@@ -175,7 +182,7 @@ export default function VenueBottomSheet({
               </TouchableOpacity>
             )}
 
-            <TouchableOpacity onPress={onClose}>
+            <TouchableOpacity accessibilityLabel="Close" onPress={onClose}>
               <Ionicons name="close" size={26} color={Colours.text} />
             </TouchableOpacity>
           </View>
@@ -285,6 +292,34 @@ export default function VenueBottomSheet({
                     </View>
                   </View>
                 ))}
+              </View>
+            </>
+          )}
+
+          {(venue.language_tags ?? []).length > 0 && (
+            <>
+              <Text style={styles.sectionTitle}>
+                {t("venueSheet.languagesSpoken", {
+                  defaultValue: "Languages Spoken",
+                })}
+              </Text>
+
+              <View style={styles.languageRow}>
+                {venue.language_tags!.map((code) => {
+                  const language = featuredLanguages.find(
+                    (l) => l.code === code,
+                  );
+
+                  return (
+                    <View key={code} style={styles.languageChip}>
+                      <Text style={styles.languageChipText}>
+                        {language
+                          ? `${language.flag} ${language.native}`
+                          : code}
+                      </Text>
+                    </View>
+                  );
+                })}
               </View>
             </>
           )}
@@ -584,5 +619,26 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginTop: 8,
     marginBottom: 8,
+  },
+
+  languageRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    marginBottom: 12,
+  },
+
+  languageChip: {
+    backgroundColor: Colours.surfaceLight,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+
+  languageChipText: {
+    fontSize: 13,
+    fontWeight: "600",
+    color: Colours.text,
   },
 });
