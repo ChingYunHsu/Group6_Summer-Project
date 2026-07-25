@@ -32,7 +32,10 @@ function Settings({
     return localStorage.getItem(LOCATION_SHARING_KEY) !== "false";
   });
 
-  const [isLoading, setIsLoading] = useState(isAuthenticatedUser);
+  const isLoading =
+  isAuthenticatedUser &&
+  profile === null &&
+  error === "";
   const [isSavingLanguage, setIsSavingLanguage] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -51,69 +54,58 @@ function Settings({
    * and read all privacy, security, and legal information.
    */
   useEffect(() => {
-    if (!isAuthenticatedUser) {
-      setProfile(null);
-      setLanguagePreference("");
-      setIsLoading(false);
-      setError("");
-      return;
-    }
+  if (!isAuthenticatedUser) {
+    return;
+  }
 
-    let isCancelled = false;
+  let isCancelled = false;
 
-    async function loadSettings() {
-      try {
-        setIsLoading(true);
-        setError("");
+  async function loadSettings() {
+    try {
+      const [userProfile, medicalProfile] = await Promise.all([
+        getUserProfile(),
+        getMedicalProfile(),
+      ]);
 
-        const [userProfile, medicalProfile] = await Promise.all([
-          getUserProfile(),
-          getMedicalProfile(),
-        ]);
-
-        if (isCancelled) {
-          return;
-        }
-
-        const combinedProfile = {
-          ...medicalProfile,
-          ...userProfile,
-          spoken_languages:
-            userProfile?.spoken_languages ??
-            medicalProfile?.spoken_languages ??
-            [],
-        };
-
-        setProfile(combinedProfile);
-
-        setLanguagePreference(
-          combinedProfile.spoken_languages?.[0] ?? ""
-        );
-      } catch (loadError) {
-        if (isCancelled) {
-          return;
-        }
-
-        console.error("Failed to load settings:", loadError);
-
-        setProfile(null);
-        setError(
-          loadError.message ||
-            t("settings.couldNotLoadSettings")
-        );
-      } finally {
-        if (!isCancelled) {
-          setIsLoading(false);
-        }
+      if (isCancelled) {
+        return;
       }
+
+      const combinedProfile = {
+        ...medicalProfile,
+        ...userProfile,
+        spoken_languages:
+          userProfile?.spoken_languages ??
+          medicalProfile?.spoken_languages ??
+          [],
+      };
+
+      setProfile(combinedProfile);
+      setLanguagePreference(
+        combinedProfile.spoken_languages?.[0] ?? ""
+      );
+      setError("");
+    } catch (loadError) {
+      if (isCancelled) {
+        return;
+      }
+
+      console.error("Failed to load settings:", loadError);
+
+      setProfile(null);
+      setError(
+        loadError.message ||
+          t("settings.couldNotLoadSettings")
+      );
     }
+  }
 
-    loadSettings();
+  loadSettings();
 
-    return () => {
-      isCancelled = true;
-    };
-  }, [isAuthenticatedUser, t]);
+  return () => {
+    isCancelled = true;
+  };
+}, [isAuthenticatedUser, t]);
 
   async function handleLanguageChange(event) {
     if (!isAuthenticatedUser || !profile) {
