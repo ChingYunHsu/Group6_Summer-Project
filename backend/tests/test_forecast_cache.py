@@ -73,7 +73,7 @@ def test_forecast_endpoint_serves_second_request_from_cache(client, monkeypatch)
     assert _CountingCursor.calls == calls_after_first
 
 
-def test_forecast_cache_uses_5_minute_ttl(monkeypatch):
+def test_forecast_cache_uses_5_minute_ttl(client, monkeypatch):
     captured = {}
 
     def fake_set(key, value, ttl_seconds):
@@ -87,12 +87,7 @@ def test_forecast_cache_uses_5_minute_ttl(monkeypatch):
         lambda venue_id: {"venue_id": venue_id, "forecast": []},
     )
 
-    from app import create_app
-
-    app = create_app()
-    app.config["TESTING"] = True
-    with app.test_client() as client:
-        client.get("/api/v1/venues/v_ttl_test/busyness/forecast", headers={"X-API-Key": "test"})
+    client.get("/api/v1/venues/v_ttl_test/busyness/forecast", headers={"X-API-Key": "test"})
 
     assert captured["ttl"] == 300
 
