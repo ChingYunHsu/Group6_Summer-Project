@@ -10,6 +10,15 @@ afterEach(() => {
   localStorage.clear();
 });
 
+beforeEach(() => {
+  localStorage.setItem("access_token", "test-token");
+  localStorage.setItem("auth_mode", "authenticated");
+});
+
+afterEach(() => {
+  localStorage.clear();
+});
+
 describe("Navigation bar routing", () => {
   test("renders navigation links without crashing", () => {
     render(<App />);

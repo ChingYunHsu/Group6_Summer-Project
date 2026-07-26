@@ -32,15 +32,16 @@ function Settings({
     return localStorage.getItem(LOCATION_SHARING_KEY) !== "false";
   });
 
-  const isLoading =
+ const [error, setError] = useState("");
+const [successMessage, setSuccessMessage] = useState("");
+
+const isLoading =
   isAuthenticatedUser &&
   profile === null &&
   error === "";
-  const [isSavingLanguage, setIsSavingLanguage] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
 
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+const [isSavingLanguage, setIsSavingLanguage] = useState(false);
+const [isDeleting, setIsDeleting] = useState(false);
 
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [isSendingResetEmail, setIsSendingResetEmail] = useState(false);

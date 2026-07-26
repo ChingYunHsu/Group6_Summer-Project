@@ -64,7 +64,23 @@ describe("Medical Card empty profile rendering", () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText(/^ALERTA MÉDICA$/i)
+      screen.getByRole("heading", { name: /^MEDICAL ALERT$/i })
+    ).toBeInTheDocument();
+
+    expect(
+      screen.queryByText(/^ALERTA MÉDICA$/i)
+    ).not.toBeInTheDocument();
+
+    expect(
+      screen.getByText(
+        /the medical passport will be displayed in english only/i
+      )
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText(
+        /english emergency information is shown/i
+      )
     ).toBeInTheDocument();
 
     expect(
