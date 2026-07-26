@@ -60,12 +60,20 @@ const DEFAULT_LOCATION = {
   longitude: INITIAL_REGION.longitude,
 };
 
-// Shared by filteredVenues and the busyness-fetching effect below — both
-// need the same "which venues match the selected category" logic.
+// Clinic groups four raw venue_type values together per the medical
+// venue coverage SOP — healthcare/dentist/laboratory venues have no
+// filter chip of their own, so they'd otherwise be unreachable through
+// the category filter UI at all. Hospital and Pharmacy stay separate,
+// unaffected by this grouping.
 function matchesCategory(venue: Venue, category: Category): boolean {
   switch (category) {
     case "Clinic":
-      return venue.venue_type === "clinic";
+      return (
+        venue.venue_type === "clinic" ||
+        venue.venue_type === "healthcare" ||
+        venue.venue_type === "dentist" ||
+        venue.venue_type === "laboratory"
+      );
     case "Pharmacy":
       return venue.venue_type === "pharmacy";
     case "AED":
@@ -79,8 +87,6 @@ function matchesCategory(venue: Venue, category: Category): boolean {
   }
 }
 
-// Mirrors the exact colours VenueMarker paints markers with (the
-// COLOURS map in VenueMarker.tsx)
 const LEGEND_ITEMS = [
   {
     translationKey: "map.filters.quiet",
@@ -97,9 +103,6 @@ const LEGEND_ITEMS = [
     defaultValue: "Busy",
     colour: "#DC2626",
   },
-  // Matches VenueMarker's getMarkerColour() fallback (COLOURS.blue) — hit
-  // whenever busyness_color isn't green/yellow/red, i.e. no busyness data
-  // fetched yet for that venue.
   {
     translationKey: "map.filters.unknown",
     defaultValue: "Unknown",
@@ -110,22 +113,16 @@ const LEGEND_ITEMS = [
 export default function MapScreen() {
   const { t } = useTranslation();
 
-  // Full venue + report lists as loaded from the API, before any local
-  // search/category/filter narrowing is applied.
   const [venues, setVenues] = useState<Venue[]>([]);
 
   const [reports, setReports] = useState<Report[]>([]);
 
   const [loading, setLoading] = useState(true);
 
-  // Search text and selected category chip — both drive filteredVenues
-  // below.
   const [search, setSearch] = useState("");
 
   const [category, setCategory] = useState<Category>("Clinic");
 
-  // Which venue's marker was tapped (or picked from search), and the
-  // bottom sheet visibility that goes with it.
   const [selectedVenueId, setSelectedVenueId] = useState<string | null>(null);
 
   const selectedVenue = useMemo(
@@ -133,8 +130,6 @@ export default function MapScreen() {
     [venues, selectedVenueId],
   );
 
-  // The single active (unresolved) report tied to the selected venue, if
-  // any, used to populate VerificationCard in the venue sheet.
   const activeReportForSelectedVenue = useMemo(() => {
     if (!selectedVenueId) return null;
 
@@ -147,8 +142,6 @@ export default function MapScreen() {
 
   const [venueVisible, setVenueVisible] = useState(false);
 
-  // Same pattern as the venue sheet above, but for a tapped report
-  // marker.
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
 
   const selectedReport = useMemo(
@@ -158,14 +151,12 @@ export default function MapScreen() {
 
   const [reportSheetVisible, setReportSheetVisible] = useState(false);
 
-  // Visibility flags for the various modals/sheets this screen owns.
   const [filterVisible, setFilterVisible] = useState(false);
 
   const [reportVisible, setReportVisible] = useState(false);
 
   const [loginModalVisible, setLoginModalVisible] = useState(false);
 
-  // Active filter values, all set via FilterModal's onApply.
   const [openNow, setOpenNow] = useState<boolean | undefined>(undefined);
 
   const [wheelchairAccess, setWheelchairAccess] = useState<
@@ -182,8 +173,6 @@ export default function MapScreen() {
 
   const [timeOffset, setTimeOffset] = useState(0);
 
-  // Directions/route flow state — options list, the chosen route's
-  // detail, and the two modals that display them in sequence.
   const [routeOptionsVisible, setRouteOptionsVisible] = useState(false);
 
   const [routeDetailVisible, setRouteDetailVisible] = useState(false);
@@ -200,19 +189,10 @@ export default function MapScreen() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Set of venue_id, not full Favourite objects — all this screen needs
-  // is fast "is this venue favourited" lookups for the heart icon in
-  // VenueBottomSheet; the richer fields (favourite_id, saved_at,
-  // display_status) only matter where favourites are actually listed
-  // (profile.tsx), not here.
   const [favouriteVenueIds, setFavouriteVenueIds] = useState<Set<string>>(
     new Set(),
   );
 
-  // Tracks which venue_ids busyness has already been fetched FOR,
-  // regardless of whether that fetch actually succeeded — deliberately
-  // separate from checking venue.busyness itself, since a failed fetch
-  // also leaves that undefined.
   const [busynessFetchedIds, setBusynessFetchedIds] = useState<Set<string>>(
     new Set(),
   );
@@ -221,20 +201,10 @@ export default function MapScreen() {
 
   const [currentLocation, setCurrentLocation] = useState(DEFAULT_LOCATION);
 
-  // Region tracking + a ref to the MapView itself — both needed for the
-  // zoom in/out buttons below, which work by nudging the current
-  // region's lat/lng "delta" (how much area is visible) and animating
-  // to it, rather than using any platform-specific zoom API directly.
   const mapRef = useRef<MapView>(null);
 
   const [region, setRegion] = useState(INITIAL_REGION);
 
-  // ---------------------------------------------------------------------
-  // Auth + device location
-  // ---------------------------------------------------------------------
-
-  // Checks once on mount whether a token exists, to know whether to
-  // treat the user as logged in or a guest.
   useEffect(() => {
     (async () => {
       const token = await getAccessToken();
@@ -242,7 +212,6 @@ export default function MapScreen() {
     })();
   }, []);
 
-  // Favourites require a real login.
   useEffect(() => {
     if (!isAuthenticated) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: clears stale favourites immediately when auth is lost, same justified pattern as loadData's effect below
@@ -260,9 +229,6 @@ export default function MapScreen() {
     })();
   }, [isAuthenticated]);
 
-  // Requests location permission and grabs an initial fix on mount, so
-  // the map/report flows have a real starting position rather than the
-  // hardcoded DEFAULT_LOCATION.
   useEffect(() => {
     (async () => {
       const servicesEnabled = await Location.hasServicesEnabledAsync();
@@ -291,10 +257,6 @@ export default function MapScreen() {
     })();
   }, []);
 
-  // Fetches venues + reports whenever the active filters change. Wrapped
-  // in useCallback so it can safely be listed as an effect dependency
-  // below (resolves the exhaustive-deps warning) without recreating a new
-  // function identity on every render.
   const loadData = useCallback(async () => {
     setLoading(true);
 
@@ -309,9 +271,6 @@ export default function MapScreen() {
 
       setVenues(venueData);
       setReports(reportData);
-      // A fresh venue list means fresh objects with no busyness attached
-      // yet, even for venue_ids seen before — reset the guard so the
-      // effect below knows to fetch for all of them again.
       setBusynessFetchedIds(new Set());
     } catch (error) {
       console.error(error);
@@ -320,9 +279,6 @@ export default function MapScreen() {
     }
   }, [openNow, language]);
 
-  // Re-fetches just the reports list, used after any action that changes
-  // report state (submitting, confirming, resolving) without needing a
-  // full venues reload too.
   async function refreshReports() {
     try {
       const reportData = await getReports();
@@ -332,9 +288,6 @@ export default function MapScreen() {
     }
   }
 
-  // Kicks off the directions flow for the selected venue: confirms
-  // location is available, fetches route options for walk/transit/drive,
-  // and opens RouteOptionsModal.
   async function handleDirections() {
     const enabled = await Location.hasServicesEnabledAsync();
 
@@ -373,9 +326,6 @@ export default function MapScreen() {
     setRouteOptionsVisible(true);
   }
 
-  // Called when the user picks a mode/route from RouteOptionsModal —
-  // fetches the turn-by-turn detail for that mode and opens
-  // RouteDetailModal.
   async function handleRouteSelected(route: RouteOption) {
     setRouteOptionsVisible(false);
 
@@ -397,12 +347,6 @@ export default function MapScreen() {
     setRouteDetailVisible(true);
   }
 
-  // "Start Navigation" hands off to the device's own maps app rather than
-  // building in-app turn-by-turn (live GPS tracking, rerouting, voice
-  // guidance) — more realistic for language as it will be native. Apple
-  // Maps on iOS since it's always installed with no extra dependency;
-  // Google's cross-platform web URL as a universal fallback (opens the
-  // Google Maps app if installed, otherwise a browser).
   async function handleStartNavigation() {
     if (!selectedVenue) {
       setRouteDetailVisible(false);
@@ -414,11 +358,9 @@ export default function MapScreen() {
     const originLat = currentLocation.latitude;
     const originLng = currentLocation.longitude;
 
-    // Apple Maps dirflg: d=driving, w=walking, r=transit.
     const appleDirflg =
       selectedMode === "walk" ? "w" : selectedMode === "drive" ? "d" : "r";
 
-    // Google's universal web URL travelmode param.
     const googleTravelMode =
       selectedMode === "walk"
         ? "walking"
@@ -446,12 +388,6 @@ export default function MapScreen() {
     setRouteDetailVisible(false);
   }
 
-  // Shared by the map marker callout and the venue bottom sheet's
-  // VerificationCard — both confirm/resolve against the same report.
-  // Like report submission, confirm/resolve requires a real login
-  // server-side (require_bearer_auth on POST /reports/{id}/confirmations).
-  // A guest browsing the map can view reports but not act on them, same
-  // as they can't submit one.
   const handleReportConfirmation = useCallback(
     async (reportId: string, action: "still_here" | "resolved") => {
       if (!isAuthenticated) {
@@ -465,17 +401,11 @@ export default function MapScreen() {
         console.error(error);
       }
 
-      // Re-fetch rather than patch local state — confirmation counts,
-      // status, and expiry are all server-derived.
       await refreshReports();
     },
     [isAuthenticated],
   );
 
-  // Flips the heart immediately rather than waiting on the
-  // network, then rolls back only if the request actually fails. Same
-  // login-gate pattern as report confirmation, since both require
-  // require_bearer_auth server-side.
   const handleToggleFavourite = useCallback(async () => {
     if (!isAuthenticated) {
       setLoginModalVisible(true);
@@ -518,10 +448,6 @@ export default function MapScreen() {
     }
   }, [isAuthenticated, selectedVenue, favouriteVenueIds]);
 
-  // Selecting a search suggestion: clears the search text (so the
-  // dropdown closes), opens that venue's own detail sheet — same as
-  // tapping its marker directly would — and recenters/zooms the map on
-  // it via the same mapRef used by the zoom controls.
   const handleSelectSearchSuggestion = useCallback((venue: Venue) => {
     setSearch("");
     setSelectedVenueId(venue.venue_id);
@@ -538,34 +464,20 @@ export default function MapScreen() {
     );
   }, []);
 
-  // Fetch-on-filter-change. This is the standard "synchronize with an
-  // external system" effect use case (re-fetch venues/reports whenever the
-  // active filters change).
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional fetch-on-dependency-change
+    // eslint-disable-next-line react-hooks/set-state-in-effect, intentional fetch-on-dependency-change
     loadData();
   }, [loadData]);
 
-  // Applies the search text, category chip, live-status, and wheelchair
-  // filters together — this is what actually drives which markers render
-  // on the map.
   const filteredVenues = useMemo(() => {
     return venues.filter((venue) => {
       const matchesSearch = venue.name
         .toLowerCase()
         .includes(search.toLowerCase());
 
-      // undefined liveStatus (no chip selected) means "don't filter by
-      // this at all" — matches everything. Once a chip IS selected,
-      // venues whose busyness hasn't been fetched yet are deliberately
-      // excluded rather than shown anyway.
-      // permanently incomplete.
       const matchesLiveStatus =
         !liveStatus || venue.busyness?.busyness_status === liveStatus;
 
-      // "full_access" only matches venues confirmed fully accessible.
-      // "partial_or_full" is the broader option, matching either real
-      // positive status.
       const matchesWheelchairAccess =
         !wheelchairAccess ||
         (wheelchairAccess === "full_access"
@@ -582,8 +494,6 @@ export default function MapScreen() {
     });
   }, [venues, search, category, liveStatus, wheelchairAccess]);
 
-  // Dropdown suggestions shown under the search bar, distinct from
-  // filteredVenues (which drives the actual map markers).
   const searchSuggestions = useMemo(() => {
     if (!search.trim()) return [];
 
@@ -596,9 +506,6 @@ export default function MapScreen() {
       .slice(0, 6);
   }, [venues, search, category]);
 
-  // Report venue picker should show nearby options, not every venue in
-  // the dataset. Sorted by actual distance from the user's location via the
-  // calculateDistance() Haversine helper, capped at 5.
   const nearestVenuesForReport = useMemo(() => {
     const withDistance = venues.map((venue) => ({
       venue,
@@ -615,11 +522,6 @@ export default function MapScreen() {
     return withDistance.slice(0, 5).map((item) => item.venue);
   }, [venues, currentLocation]);
 
-  // Fetches busyness for whichever venues currently match the selected
-  // category (i.e. whatever's actually rendered as markers), merging the
-  // result into venues state so VenueMarker's existing colour-mapping
-  // logic — which already correctly reads venue.busyness?.busyness_color
-  // — actually has real data to read.
   useEffect(() => {
     const venuesNeedingBusyness = venues.filter(
       (v) =>
@@ -661,7 +563,6 @@ export default function MapScreen() {
     };
   }, [venues, category, busynessFetchedIds]);
 
-  // Halves the visible region delta (zooms in) and animates to it.
   const handleZoomIn = () => {
     const nextRegion = {
       ...region,
@@ -672,7 +573,6 @@ export default function MapScreen() {
     mapRef.current?.animateToRegion(nextRegion, 300);
   };
 
-  // Doubles the visible region delta (zooms out) and animates to it.
   const handleZoomOut = () => {
     const nextRegion = {
       ...region,
@@ -724,11 +624,6 @@ export default function MapScreen() {
           />
         ))}
 
-        {/* Route line — draws once a route has been selected via
-            RouteOptionsModal/RouteDetailModal, and stays visible even
-            after RouteDetailModal is closed (so the route stays on the
-            map while navigating), until a different route is selected. */}
-
         {routeDetail?.polyline_preview &&
           routeDetail.polyline_preview.length > 0 && (
             <Polyline
@@ -738,8 +633,6 @@ export default function MapScreen() {
             />
           )}
       </MapView>
-
-      {/* ---------------------- Top Overlay ---------------------- */}
 
       <View style={styles.topOverlay}>
         <MapSearchBar
@@ -753,29 +646,17 @@ export default function MapScreen() {
         <CategoryChips selected={category} onSelect={setCategory} />
       </View>
 
-      {/* ---------------------- Zoom Controls ---------------------- */}
-
       <View style={styles.zoomControls}>
-        <TouchableOpacity
-          accessibilityLabel="Zoom in"
-          style={styles.zoomButton}
-          onPress={handleZoomIn}
-        >
+        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomIn}>
           <Ionicons name="add" size={24} color={Colours.text} />
         </TouchableOpacity>
 
         <View style={styles.zoomDivider} />
 
-        <TouchableOpacity
-          accessibilityLabel="Zoom out"
-          style={styles.zoomButton}
-          onPress={handleZoomOut}
-        >
+        <TouchableOpacity style={styles.zoomButton} onPress={handleZoomOut}>
           <Ionicons name="remove" size={24} color={Colours.text} />
         </TouchableOpacity>
       </View>
-
-      {/* ---------------------- Busyness Legend ---------------------- */}
 
       {autoCurrentTime && (
         <View style={styles.legendContainer}>
@@ -798,8 +679,6 @@ export default function MapScreen() {
         </View>
       )}
 
-      {/* ---------------------- Floating Buttons ---------------------- */}
-
       <FloatingActionButtons
         onSOSPress={() => router.push("/sos")}
         onReportPress={() => setReportVisible(true)}
@@ -816,8 +695,6 @@ export default function MapScreen() {
             <Text style={styles.clearRouteText}>Clear Route</Text>
           </TouchableOpacity>
         )}
-
-      {/* ---------------------- Filters ---------------------- */}
 
       <FilterModal
         visible={filterVisible}
@@ -840,8 +717,6 @@ export default function MapScreen() {
           setTimeOffset(filters.timeOffset);
         }}
       />
-
-      {/* ---------------------- Report Modal ---------------------- */}
 
       <ReportModal
         visible={reportVisible}
@@ -903,8 +778,6 @@ export default function MapScreen() {
         }}
       />
 
-      {/* ---------------------- Venue Sheet ---------------------- */}
-
       <VenueBottomSheet
         visible={venueVisible}
         venue={selectedVenue}
@@ -925,8 +798,6 @@ export default function MapScreen() {
         }
       />
 
-      {/* ---------------------- Report Sheet ---------------------- */}
-
       <ReportBottomSheet
         visible={reportSheetVisible}
         report={selectedReport}
@@ -936,8 +807,6 @@ export default function MapScreen() {
         }
         onResolve={(reportId) => handleReportConfirmation(reportId, "resolved")}
       />
-
-      {/* ---------------------- Route Options Modal ---------------------- */}
 
       <RouteOptionsModal
         visible={routeOptionsVisible}
@@ -949,8 +818,6 @@ export default function MapScreen() {
         onSelectRoute={handleRouteSelected}
         onClose={() => setRouteOptionsVisible(false)}
       />
-
-      {/* ---------------------- Route Details Modal ---------------------- */}
 
       <RouteDetailModal
         visible={routeDetailVisible}
