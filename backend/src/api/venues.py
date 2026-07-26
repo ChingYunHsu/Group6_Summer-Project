@@ -149,10 +149,12 @@ VALID_VENUE_TYPES = {
     "laboratory",
 }
 
-# Sprint 5 SOP §1/§4: only these types may show V2 busyness predictions.
+# Only medical venue types may show V2 busyness predictions.
 # AEDs (emergencyasset) and restrooms always render the unavailable state,
 # even though historical V2 rows exist for them from before this rule.
-V2_PREDICTABLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
+V2_PREDICTABLE_VENUE_TYPES = {
+    "healthcare", "clinic", "hospital", "pharmacy", "dentist", "laboratory",
+}
 
 
 def _get_venue_type(cursor, venue_id: str):
@@ -312,8 +314,8 @@ def get_venue(venue_id: str):
 @require_api_key
 def get_venue_busyness(venue_id: str):
     """Return current busyness for a venue, resolved from the nearest future
-    V2 forecast point (Sprint 5 SOP §4/§C.5). Only clinic/hospital/pharmacy
-    are V2-predictable; live-telemetry and legacy traffic-baseline data are
+    V2 forecast point. Only medical venue types are V2-predictable;
+    live-telemetry and legacy traffic-baseline data are
     no longer part of this public contract, so an ineligible venue type, or
     an eligible venue with no current V2 rows, returns the unavailable
     payload rather than falling back to those older sources."""
@@ -387,8 +389,8 @@ def _compute_venue_busyness_forecast(venue_id: str):
     """Return the 12-hour V2 busyness forecast for a venue.
 
     Returns None only when the venue itself doesn't exist (→ 404). Per
-    Sprint 5 SOP §4/§C: only clinic/hospital/pharmacy are V2-predictable,
-    and only forecast-v2 rows for future timestamps from each venue's latest
+    Only medical venue types are V2-predictable, and only forecast-v2 rows
+    for future timestamps from each venue's latest
     generation batch are ever surfaced — no traffic-baseline, legacy
     forecast_1h, or mock fallback. Every other outcome (ineligible type, no
     current V2 rows, DB unreachable) returns the unavailable payload."""

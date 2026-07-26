@@ -13,13 +13,15 @@ bp = Blueprint("insights", __name__)
 FASTEST_HUBS_LIMIT = 10
 WALKING_SPEED_KM_PER_HOUR = 5.0
 
-# Sprint 5 SOP: only these venue types are V2-predictable. Kept in sync
+# Only these medical venue types are V2-predictable. Kept in sync
 # with api/venues.py's V2_PREDICTABLE_VENUE_TYPES by hand rather than
 # imported — api/*.py blueprint modules don't currently import each other
 # (only shared non-blueprint modules like auth/db/mock_data), so duplicating
-# this 3-item allow-list matches the existing convention better than being
+# this allow-list matches the existing convention better than being
 # the first cross-blueprint import.
-V2_PREDICTABLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
+V2_PREDICTABLE_VENUE_TYPES = {
+    "healthcare", "clinic", "hospital", "pharmacy", "dentist", "laboratory",
+}
 
 
 def _get_db_conn():
@@ -64,7 +66,7 @@ def _get_default_district(cursor):
 
 def _eligible_venues_in_district(cursor, district: str) -> list:
     """venue_id/name/language_tags/accessible_status for every V2-predictable
-    (clinic/hospital/pharmacy) venue in `district`. AED/restroom/etc. never
+    medical venue in `district`. AED/restroom/etc. never
     enter any of the aggregations below."""
     placeholders = ", ".join(["%s"] * len(V2_PREDICTABLE_VENUE_TYPES))
     cursor.execute(
@@ -177,7 +179,7 @@ def _best_travel_window(cursor, district: str) -> dict:
 # ── D3.5: fastest hubs ────────────────────────────────────────────────────
 
 def _fastest_hubs(cursor, district: str, limit: int = FASTEST_HUBS_LIMIT) -> list:
-    """Rank V2-eligible venues (clinic/hospital/pharmacy) in `district` by
+    """Rank V2-eligible medical venues in `district` by
     current forecast-v2 busyness (lowest first), then by wait time; a venue
     with no current V2 row sorts last with a NO DATA flow_status rather than
     being dropped. AED/restroom/etc. never appear — they were leaking in

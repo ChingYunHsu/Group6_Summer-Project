@@ -91,6 +91,22 @@ def test_serving_curve_includes_unlabelled_eligible_venues_and_excludes_ineligib
     assert curve.loc[curve.venue_id == "cold_start", "rating_missing"].eq(1).all()
 
 
+def test_all_medical_venue_types_are_eligible_for_cold_start_serving():
+    assert ELIGIBLE_VENUE_TYPES == {
+        "healthcare", "clinic", "hospital", "pharmacy", "dentist", "laboratory",
+    }
+
+    eligible = pd.DataFrame([
+        {"venue_id": f"v_{venue_type}", "venue_type": venue_type, "district": "d", "rating": None,
+         "latitude": 40.7, "longitude": -74.0, "weather_risk": None, "source_confidence": 1.0,
+         "accessible_status": None, "active_warning": 0, "open_now": 1}
+        for venue_type in ELIGIBLE_VENUE_TYPES
+    ])
+    curve = future_curve(serving_base(eligible), NOW)
+    assert set(curve.venue_type) == ELIGIBLE_VENUE_TYPES
+    assert len(curve) == len(ELIGIBLE_VENUE_TYPES) * (FORECAST_HORIZON_HOURS + 1)
+
+
 def test_eligible_venues_query_is_limited_to_v2_approved_types(monkeypatch):
     captured = {}
 
