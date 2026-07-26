@@ -237,6 +237,41 @@ def _prediction_series(cursor, district: str) -> list:
     return [round(avg_score) for _hour, avg_score in rows]
 
 
+# ── D3.5/D3.7: 7-day history ─────────────────────────────────────────────
+
+def _history_series_7d(cursor, district: str) -> list:
+    """Daily-average predicted busyness for each of the last 7 days, across
+    every V2-eligible venue in `district`.
+
+    Sourced from busyness_forecasts' already-elapsed rows. The V2 writer
+    upserts on (venue_id, forecast_for, model_version) — ON DUPLICATE KEY
+    UPDATE — while an hour is still in a run's future window, so once that
+    hour passes there is exactly one frozen row left for it: the last
+    prediction made before it happened. No _best_travel_window-style "latest
+    generated_at" disambiguation is needed here, because the unique key
+    already guarantees at most one row per (venue, hour) ever existed.
+    Days with no rows are omitted, never fabricated as 0%."""
+    venue_rows = _eligible_venues_in_district(cursor, district)
+    venue_ids = [row[0] for row in venue_rows]
+    if not venue_ids:
+        return []
+
+    placeholders = ", ".join(["%s"] * len(venue_ids))
+    cursor.execute(
+        "SELECT DATE(bf.forecast_for), AVG(bf.predicted_score) "
+        "FROM busyness_forecasts bf "
+        f"WHERE bf.venue_id IN ({placeholders}) "
+        "  AND bf.model_version = 'forecast-v2' "
+        "  AND bf.forecast_for < UTC_TIMESTAMP() "
+        "  AND bf.forecast_for >= UTC_TIMESTAMP() - INTERVAL 7 DAY "
+        "GROUP BY DATE(bf.forecast_for) "
+        "ORDER BY DATE(bf.forecast_for)",
+        tuple(venue_ids),
+    )
+    rows = cursor.fetchall()
+    return [round(avg_score) for _day, avg_score in rows]
+
+
 def _quick_triage(hubs: list) -> dict:
     """Surface the single fastest (lowest-wait) hub as the "go here now"
     triage suggestion. Venues with no live wait data are never picked over
@@ -300,6 +335,7 @@ def _get_insights_from_db(district_param, origin_lat=None, origin_lon=None):
             travel_window = _best_travel_window(cursor, district)
             hubs = _fastest_hubs(cursor, district)
             prediction_series = _prediction_series(cursor, district)
+            history_series_7d = _history_series_7d(cursor, district)
             travel_minutes_by_venue = _travel_minutes_by_venue(
                 cursor, [hub["venue_id"] for hub in hubs], origin_lat, origin_lon
             )
@@ -309,6 +345,7 @@ def _get_insights_from_db(district_param, origin_lat=None, origin_lon=None):
     has_data = (
         density["trend"] != "no data"
         or bool(prediction_series)
+        or bool(history_series_7d)
         or any(hub["busyness_score"] is not None for hub in hubs)
     )
 
@@ -320,7 +357,7 @@ def _get_insights_from_db(district_param, origin_lat=None, origin_lon=None):
         "best_travel_window": travel_window,
         "chart_mode": "live",
         "prediction_series": prediction_series,
-        "history_series_7d": [],
+        "history_series_7d": history_series_7d,
         "fastest_hubs": [
             {
                 "rank": index + 1,

@@ -73,6 +73,8 @@ def test_get_insights_db_path_includes_quick_triage_and_travel_minutes(client, m
         def fetchall(self):
             if "v.venue_type IN" in self.last_query:
                 return [("v1", "Test Venue", "[]", "full_access")]
+            if "GROUP BY DATE" in self.last_query:
+                return []
             if "bf.venue_id IN" in self.last_query:
                 return [("v1", datetime.now(timezone.utc), 40, "moderate", 10)]
             if "FROM busyness_forecasts bf" in self.last_query and "JOIN venues v" in self.last_query:
