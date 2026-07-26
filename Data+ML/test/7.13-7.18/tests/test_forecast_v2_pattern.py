@@ -9,8 +9,11 @@ from forecast_v2_pattern import (
     ELIGIBLE_VENUE_TYPES,
     ENRICHED_FEATURES,
     FORECAST_HORIZON_HOURS,
+    eligible_venues,
     feature_matrix,
+    future_curve,
     group_split,
+    serving_base,
     temporal_snapshot_split,
 )
 
@@ -71,6 +74,34 @@ def test_traffic_feature_missingness_is_explicit_and_matrix_is_stable():
     test = pd.DataFrame({"nyc_traffic_baseline_score": [0], "nyc_traffic_baseline_missing": [1]})
     columns = feature_matrix(train, features).columns.tolist()
     assert feature_matrix(test, features, columns).columns.tolist() == columns
+
+
+def test_serving_curve_includes_unlabelled_eligible_venues_and_excludes_ineligible():
+    eligible = pd.DataFrame([
+        {"venue_id": "labelled", "venue_type": "clinic", "district": "d", "rating": 4.0,
+         "latitude": 40.7, "longitude": -74.0, "weather_risk": None, "source_confidence": 1.0,
+         "accessible_status": None, "active_warning": 0, "open_now": 1},
+        {"venue_id": "cold_start", "venue_type": "pharmacy", "district": "d", "rating": None,
+         "latitude": 40.8, "longitude": -73.9, "weather_risk": None, "source_confidence": 1.0,
+         "accessible_status": None, "active_warning": 0, "open_now": 1},
+    ])
+    curve = future_curve(serving_base(eligible), NOW)
+    assert set(curve.venue_id) == {"labelled", "cold_start"}
+    assert len(curve) == 2 * (FORECAST_HORIZON_HOURS + 1)
+    assert curve.loc[curve.venue_id == "cold_start", "rating_missing"].eq(1).all()
+
+
+def test_eligible_venues_query_is_limited_to_v2_approved_types(monkeypatch):
+    captured = {}
+
+    def read_sql(query, params=()):
+        captured["query"], captured["params"] = query, params
+        return pd.DataFrame()
+
+    monkeypatch.setattr(pattern.db_utils, "read_sql", read_sql)
+    eligible_venues()
+    assert "venue_type IN" in captured["query"]
+    assert set(captured["params"]) == ELIGIBLE_VENUE_TYPES
 
 
 def test_publish_upserts_backend_forecast_contract(monkeypatch):
@@ -157,5 +188,17 @@ def test_audit_curve_fails_when_one_venue_is_fully_stale():
         for i in range(FORECAST_HORIZON_HOURS + 1)
     ]
     curve = pd.DataFrame(fresh_rows + stale_rows)
+    with pytest.raises(ValueError, match="missing forecast slots"):
+        pattern.audit_curve(curve, NOW)
+
+
+def test_audit_curve_fails_when_an_eligible_serving_venue_is_missing():
+    curve = _valid_curve()
+    with pytest.raises(ValueError, match="Serving venue coverage mismatch.*missing.*v2"):
+        pattern.audit_curve(curve, NOW, {"v1", "v2"})
+
+
+def test_audit_curve_fails_on_duplicate_future_slot():
+    curve = pd.concat([_valid_curve(), _valid_curve().iloc[[0]]], ignore_index=True)
     with pytest.raises(ValueError, match="missing forecast slots"):
         pattern.audit_curve(curve, NOW)
