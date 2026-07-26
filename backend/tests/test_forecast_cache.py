@@ -91,6 +91,7 @@ def test_forecast_cache_uses_5_minute_ttl(monkeypatch):
 
     app = create_app()
     app.config["TESTING"] = True
+    app.config["API_KEY"] = ""
     with app.test_client() as client:
         client.get("/api/v1/venues/v_ttl_test/busyness/forecast", headers={"X-API-Key": "test"})
 
