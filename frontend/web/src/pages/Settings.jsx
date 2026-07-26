@@ -1,74 +1,118 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import {
+  deleteAccount,
   getUserProfile,
   updateUserProfile,
-  deleteAccount,
 } from "../services/UserProfileApi";
 import { getMedicalProfile } from "../services/MedicalProfileApi";
 import { resetPassword } from "../services/AuthApi";
+
 import "./Settings.css";
 
-function Settings() {
+const AUTH_MODE_KEY = "auth_mode";
+const LOGGED_OUT_MODE = "logged_out";
+const LOCATION_SHARING_KEY = "clearPathLocationSharing";
+
+function Settings({
+  isAuthenticatedUser = false,
+  isGuestUser = false,
+  setAuthMode,
+  setUser,
+}) {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   const [profile, setProfile] = useState(null);
   const [languagePreference, setLanguagePreference] = useState("");
 
-  const [locationSharing, setLocationSharing] = useState(true);
+  const [locationSharing, setLocationSharing] = useState(() => {
+    return localStorage.getItem(LOCATION_SHARING_KEY) !== "false";
+  });
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [isSavingLanguage, setIsSavingLanguage] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+ const [error, setError] = useState("");
+const [successMessage, setSuccessMessage] = useState("");
+
+const isLoading =
+  isAuthenticatedUser &&
+  profile === null &&
+  error === "";
+
+const [isSavingLanguage, setIsSavingLanguage] = useState(false);
+const [isDeleting, setIsDeleting] = useState(false);
 
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [isSendingResetEmail, setIsSendingResetEmail] = useState(false);
   const [passwordModalError, setPasswordModalError] = useState("");
   const [resetEmailSent, setResetEmailSent] = useState(false);
 
+  /*
+   * Only authenticated account holders need profile data.
+   *
+   * Guests and logged-out users must still be able to open the Settings page
+   * and read all privacy, security, and legal information.
+   */
   useEffect(() => {
-    async function loadSettings() {
-      try {
-        setIsLoading(true);
-        setError("");
+  if (!isAuthenticatedUser) {
+    return;
+  }
 
-        const [userProfile, medicalProfile] = await Promise.all([
-          getUserProfile(),
-          getMedicalProfile(),
-        ]);
+  let isCancelled = false;
 
-        const combinedProfile = {
-          ...medicalProfile,
-          ...userProfile,
-          spoken_languages:
-            userProfile?.spoken_languages ??
-            medicalProfile?.spoken_languages ??
-            [],
-        };
+  async function loadSettings() {
+    try {
+      const [userProfile, medicalProfile] = await Promise.all([
+        getUserProfile(),
+        getMedicalProfile(),
+      ]);
 
-        setProfile(combinedProfile);
-
-        setLanguagePreference(
-          combinedProfile.spoken_languages?.[0] ?? ""
-        );
-      } catch (loadError) {
-        console.error("Failed to load settings:", loadError);
-
-        setError(
-          loadError.message ||
-            "Could not load your account settings."
-        );
-      } finally {
-        setIsLoading(false);
+      if (isCancelled) {
+        return;
       }
-    }
 
-    loadSettings();
-  }, []);
+      const combinedProfile = {
+        ...medicalProfile,
+        ...userProfile,
+        spoken_languages:
+          userProfile?.spoken_languages ??
+          medicalProfile?.spoken_languages ??
+          [],
+      };
+
+      setProfile(combinedProfile);
+      setLanguagePreference(
+        combinedProfile.spoken_languages?.[0] ?? ""
+      );
+      setError("");
+    } catch (loadError) {
+      if (isCancelled) {
+        return;
+      }
+
+      console.error("Failed to load settings:", loadError);
+
+      setProfile(null);
+      setError(
+        loadError.message ||
+          t("settings.couldNotLoadSettings")
+      );
+    }
+  }
+
+  loadSettings();
+
+  return () => {
+    isCancelled = true;
+  };
+}, [isAuthenticatedUser, t]);
 
   async function handleLanguageChange(event) {
+    if (!isAuthenticatedUser || !profile) {
+      return;
+    }
+
     const selectedLanguage = event.target.value;
     const previousLanguage = languagePreference;
 
@@ -78,12 +122,7 @@ function Settings() {
     setIsSavingLanguage(true);
 
     try {
-      /*
-       * Your profile endpoint currently accepts spoken_languages.
-       * Preserve all existing languages but move the selected preference
-       * to the beginning of the array.
-       */
-      const existingLanguages = profile?.spoken_languages ?? [];
+      const existingLanguages = profile.spoken_languages ?? [];
 
       const updatedLanguages = [
         selectedLanguage,
@@ -103,21 +142,43 @@ function Settings() {
           updatedProfile?.spoken_languages ?? updatedLanguages,
       }));
 
-      setSuccessMessage("Language preference saved.");
+      setSuccessMessage(t("settings.languageSaved"));
     } catch (saveError) {
       console.error("Failed to save language preference:", saveError);
 
       setLanguagePreference(previousLanguage);
+
       setError(
         saveError.message ||
-          "Could not save your language preference."
+          t("settings.couldNotSaveLanguage")
       );
     } finally {
       setIsSavingLanguage(false);
     }
   }
 
+  function handleLocationSharingToggle() {
+    setLocationSharing((currentValue) => {
+      const nextValue = !currentValue;
+
+      localStorage.setItem(
+        LOCATION_SHARING_KEY,
+        String(nextValue)
+      );
+
+      if (!nextValue) {
+        localStorage.removeItem("clearPathUserLocation");
+      }
+
+      return nextValue;
+    });
+  }
+
   function handleChangePassword() {
+    if (!isAuthenticatedUser || !profile?.email) {
+      return;
+    }
+
     setPasswordModalError("");
     setResetEmailSent(false);
     setIsPasswordModalOpen(true);
@@ -134,13 +195,19 @@ function Settings() {
   }
 
   async function handleSendResetEmail() {
+    if (!profile?.email) {
+      setPasswordModalError(t("settings.noRegisteredEmail"));
+      return;
+    }
+
     try {
       setIsSendingResetEmail(true);
       setPasswordModalError("");
 
-      // Per the API contract, this endpoint always responds success
-      // whether or not the address is registered (anti-enumeration),
-      // so we show the same confirmation regardless of the response body.
+      /*
+       * The endpoint deliberately returns the same success response whether
+       * the email exists or not, preventing account enumeration.
+       */
       await resetPassword(profile.email);
 
       setResetEmailSent(true);
@@ -148,25 +215,38 @@ function Settings() {
       console.error("Failed to request password reset:", resetError);
 
       setPasswordModalError(
-        resetError.message || "Could not send the reset email."
+        resetError.message || t("settings.couldNotSendResetEmail")
       );
     } finally {
       setIsSendingResetEmail(false);
     }
   }
 
-  function handleLogout() {
+  function clearLocalSession() {
     localStorage.removeItem("clearPathUserLocation");
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
+    localStorage.removeItem(AUTH_MODE_KEY);
 
-    navigate("/");
+    setUser?.(null);
+    setAuthMode?.(LOGGED_OUT_MODE);
+  }
+
+  function handleLogout() {
+    clearLocalSession();
+    navigate("/", { replace: true });
+  }
+
+  function handleOpenGuideSection(sectionId) {
+    navigate(`/guide?section=${sectionId}`);
   }
 
   async function handleDeleteAccount() {
-    const confirmed = window.confirm(
-      "Delete your ClearPath account permanently? This cannot be undone."
-    );
+    if (!isAuthenticatedUser) {
+      return;
+    }
+
+    const confirmed = window.confirm(t("settings.confirmDeleteAccount"));
 
     if (!confirmed) {
       return;
@@ -179,53 +259,32 @@ function Settings() {
 
       await deleteAccount();
 
-      localStorage.removeItem("clearPathUserLocation");
-      localStorage.removeItem("access_token");
-      localStorage.removeItem("refresh_token");
-
-      navigate("/");
+      clearLocalSession();
+      navigate("/", { replace: true });
     } catch (deleteError) {
       console.error("Failed to delete account:", deleteError);
 
       setError(
         deleteError.message ||
-          "Could not delete your account."
+          t("settings.couldNotDeleteAccount")
       );
     } finally {
       setIsDeleting(false);
     }
   }
 
-  if (isLoading) {
-    return (
-      <main className="settings-page">
-        <section className="settings-container">
-          <p>Loading settings...</p>
-        </section>
-      </main>
-    );
-  }
-
-  if (!profile) {
-    return (
-      <main className="settings-page">
-        <section className="settings-container">
-          <h1>Settings</h1>
-          <p role="alert">{error || "Profile unavailable."}</p>
-        </section>
-      </main>
-    );
-  }
-
-  const languages = profile.spoken_languages ?? [];
+  const languages = profile?.spoken_languages ?? [];
 
   return (
     <main className="settings-page">
       <section className="settings-container">
-        <h1>Settings</h1>
+        <h1>{t("settings.title")}</h1>
 
         {error && (
-          <p className="settings-message settings-error" role="alert">
+          <p
+            className="settings-message settings-error"
+            role="alert"
+          >
             {error}
           </p>
         )}
@@ -239,78 +298,132 @@ function Settings() {
           </p>
         )}
 
-        <section className="settings-card">
-          <h2>⚙ Account Settings</h2>
+        {isAuthenticatedUser ? (
+          <section className="settings-card">
+            <h2>⚙ {t("settings.accountSettings")}</h2>
 
-          <div className="settings-two-column">
-            <label>
-              Email Address
-              <input
-                type="email"
-                value={profile.email ?? ""}
-                readOnly
-              />
-              <small>Verified account email</small>
-            </label>
+            {isLoading ? (
+              <p>{t("settings.loadingAccountSettings")}</p>
+            ) : profile ? (
+              <>
+                <div className="settings-two-column">
+                  <label>
+                    {t("login.emailAddress")}
 
-            <label>
-              Language Preference
-              <select
-                value={languagePreference}
-                onChange={handleLanguageChange}
-                disabled={
-                  isSavingLanguage || languages.length === 0
-                }
-              >
-                {languages.length > 0 ? (
-                  languages.map((language) => (
-                    <option key={language} value={language}>
-                      {language}
-                    </option>
-                  ))
-                ) : (
-                  <option value="">
-                    No languages added
-                  </option>
-                )}
-              </select>
+                    <input
+                      type="email"
+                      value={profile.email ?? ""}
+                      readOnly
+                    />
 
-              {isSavingLanguage && <small>Saving...</small>}
-            </label>
-          </div>
+                    <small>{t("settings.verifiedAccountEmail")}</small>
+                  </label>
 
-          <div className="password-box">
-            <div className="password-icon">🔒</div>
+                  <label>
+                    {t("settings.languagePreference")}
 
-            <div>
-              <strong>Security Password</strong>
-              <p>Manage the password for your account.</p>
-            </div>
+                    <select
+                      value={languagePreference}
+                      onChange={handleLanguageChange}
+                      disabled={
+                        isSavingLanguage || languages.length === 0
+                      }
+                    >
+                      {languages.length > 0 ? (
+                        languages.map((language) => (
+                          <option
+                            key={language}
+                            value={language}
+                          >
+                            {language}
+                          </option>
+                        ))
+                      ) : (
+                        <option value="">
+                          {t("settings.noLanguagesAdded")}
+                        </option>
+                      )}
+                    </select>
 
-            <button type="button" onClick={handleChangePassword}>
-              Change Password
+                    {isSavingLanguage && <small>{t("common.saving")}</small>}
+                  </label>
+                </div>
+
+                <div className="password-box">
+                  <div
+                    className="password-icon"
+                    aria-hidden="true"
+                  >
+                    🔒
+                  </div>
+
+                  <div>
+                    <strong>{t("settings.securityPassword")}</strong>
+                    <p>{t("settings.managePasswordDescription")}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handleChangePassword}
+                  >
+                    {t("settings.changePassword")}
+                  </button>
+                </div>
+
+                <div className="logout-box">
+                  <div>
+                    <strong>{t("settings.session")}</strong>
+                    <p>{t("settings.logoutDescription")}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handleLogout}
+                  >
+                    {t("settings.logout")}
+                  </button>
+                </div>
+              </>
+            ) : (
+              <p>
+                {t("settings.settingsUnavailable")}
+              </p>
+            )}
+          </section>
+        ) : (
+          <section className="settings-card">
+            <h2>{t("settings.guestAccess")}</h2>
+
+            <p>
+              {isGuestUser
+                ? t("settings.guestAccessDescriptionGuest")
+                : t("settings.guestAccessDescriptionLoggedOut")}
+            </p>
+
+            <p>
+              {t("settings.guestAccessBody")}
+            </p>
+
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+            >
+              {t("settings.loginRegisterCta")}
             </button>
-          </div>
+          </section>
+        )}
 
-          <div className="logout-box">
-            <div>
-              <strong>Session</strong>
-              <p>Log out of your current ClearPath session.</p>
-            </div>
-
-            <button type="button" onClick={handleLogout}>
-              Log Out
-            </button>
-          </div>
-        </section>
-
+        {/*
+         * This entire section is intentionally public.
+         * Do not place it inside an authenticated-user condition.
+         */}
         <section className="settings-card">
-          <h2>▣ Privacy & Security</h2>
+          <h2>▣ {t("settings.privacySecurity")}</h2>
 
           <div className="privacy-grid">
             <div className="location-box">
               <div className="privacy-top-row">
-                <strong>Location Sharing</strong>
+                <strong>{t("settings.locationSharing")}</strong>
 
                 <button
                   className={
@@ -319,165 +432,207 @@ function Settings() {
                       : "toggle"
                   }
                   type="button"
-                  onClick={() =>
-                    setLocationSharing((current) => !current)
+                  onClick={handleLocationSharingToggle}
+                  aria-label={
+                    locationSharing
+                      ? t("settings.disableLocationSharing")
+                      : t("settings.enableLocationSharing")
                   }
-                  aria-label="Toggle location sharing"
                   aria-pressed={locationSharing}
                 />
               </div>
 
               <p>
-                Allow ClearPath to use your GPS to provide
-                local facility routing.
+                {t("settings.locationSharingDescription")}
               </p>
 
-              <a href="#privacy-information">
-                Data is anonymized before transmission.
-              </a>
+              <p>
+                {t("settings.locationSharingHelper")}
+              </p>
+
+              <button
+                type="button"
+                className="settings-link-button"
+                onClick={() =>
+                  handleOpenGuideSection("privacy-policy")
+                }
+              >
+                {t("settings.readLocationHandling")}
+              </button>
             </div>
 
             <div className="legal-box">
-              <strong>Legal Documents</strong>
+              <strong>{t("settings.legalDocuments")}</strong>
 
               <button
                 type="button"
-                onClick={() => navigate("/privacy-policy")}
+                className="settings-link-button legal-document-button"
+                onClick={() =>
+                  handleOpenGuideSection("privacy-policy")
+                }
               >
-                Privacy Policy <span>↗</span>
+                <span>{t("settings.privacyPolicy")}</span>
+                <span aria-hidden="true">→</span>
               </button>
 
               <button
                 type="button"
-                onClick={() => navigate("/terms")}
+                className="settings-link-button legal-document-button"
+                onClick={() =>
+                  handleOpenGuideSection("terms")
+                }
               >
-                Terms of Service <span>↗</span>
+                <span>{t("settings.termsOfService")}</span>
+                <span aria-hidden="true">→</span>
               </button>
             </div>
           </div>
         </section>
 
-        <section className="settings-card danger-card">
-          <div className="danger-label">⚠ DANGER ZONE</div>
 
-          <div className="danger-panel">
-            <h3>Delete Account</h3>
+        {isAuthenticatedUser && profile && (
+          <section className="settings-card danger-card">
+            <div className="danger-label">
+              ⚠ {t("settings.dangerZone")}
+            </div>
 
-            <p>
-              Once deleted, your profile, saved locations, and
-              medical information cannot be recovered.
-            </p>
+            <div className="danger-panel">
+              <h3>{t("settings.deleteAccountTitle")}</h3>
 
-            <button
-              type="button"
-              onClick={handleDeleteAccount}
-              disabled={isDeleting}
-            >
-              {isDeleting
-                ? "Deleting Account..."
-                : "🗑 Delete Account & Erase All Data"}
-            </button>
-          </div>
-        </section>
+              <p>
+                {t("settings.deleteAccountBody")}
+              </p>
+
+              <button
+                type="button"
+                onClick={handleDeleteAccount}
+                disabled={isDeleting}
+              >
+                {isDeleting
+                  ? t("settings.deletingAccount")
+                  : t("settings.deleteAccountCta")}
+              </button>
+            </div>
+          </section>
+        )}
 
         <footer className="settings-footer">
-          <p>ClearPath Preview App v0.1.0-alpha</p>
-          <p>© 2026 DataHealth Intelligence. All Rights Reserved.</p>
+          <p>{t("settings.footerAppVersion")}</p>
+          <p>
+            {t("settings.footerCopyright")}
+          </p>
         </footer>
       </section>
 
-      {isPasswordModalOpen && (
-        <div
-          role="presentation"
-          onClick={handleClosePasswordModal}
-          style={{
-            position: "fixed",
-            inset: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 1000,
-          }}
-        >
+      {isAuthenticatedUser &&
+        profile?.email &&
+        isPasswordModalOpen && (
           <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="change-password-title"
-            onClick={(event) => event.stopPropagation()}
+            role="presentation"
+            onClick={handleClosePasswordModal}
             style={{
-              backgroundColor: "#fff",
-              borderRadius: "8px",
-              padding: "24px",
-              width: "100%",
-              maxWidth: "400px",
-              boxShadow: "0 8px 24px rgba(0, 0, 0, 0.2)",
+              position: "fixed",
+              inset: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 1000,
             }}
           >
-            <h2 id="change-password-title" style={{ marginTop: 0 }}>
-              Change Password
-            </h2>
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="change-password-title"
+              onClick={(event) => event.stopPropagation()}
+              style={{
+                backgroundColor: "#fff",
+                borderRadius: "8px",
+                padding: "24px",
+                width: "100%",
+                maxWidth: "400px",
+                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.2)",
+              }}
+            >
+              <h2
+                id="change-password-title"
+                style={{ marginTop: 0 }}
+              >
+                {t("settings.changePasswordTitle")}
+              </h2>
 
-            {resetEmailSent ? (
-              <>
-                <p>
-                  If an account exists for <strong>{profile.email}</strong>,
-                  we've sent a link to reset your password. Check your
-                  inbox to continue.
-                </p>
-
-                <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                  <button type="button" onClick={handleClosePasswordModal}>
-                    Done
-                  </button>
-                </div>
-              </>
-            ) : (
-              <>
-                <p>
-                  We'll send a password reset link to your registered
-                  email address, <strong>{profile.email}</strong>.
-                </p>
-
-                {passwordModalError && (
-                  <p
-                    role="alert"
-                    style={{ color: "#b00020", marginBottom: "12px" }}
-                  >
-                    {passwordModalError}
+              {resetEmailSent ? (
+                <>
+                  <p>
+                    {t("settings.resetEmailSentMessage", {
+                      email: profile.email,
+                    })}
                   </p>
-                )}
 
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "flex-end",
-                    gap: "8px",
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={handleClosePasswordModal}
-                    disabled={isSendingResetEmail}
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                    }}
                   >
-                    Cancel
-                  </button>
+                    <button
+                      type="button"
+                      onClick={handleClosePasswordModal}
+                    >
+                      {t("common.done")}
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p>
+                    {t("settings.resetEmailIntro", {
+                      email: profile.email,
+                    })}
+                  </p>
 
-                  <button
-                    type="button"
-                    onClick={handleSendResetEmail}
-                    disabled={isSendingResetEmail}
+                  {passwordModalError && (
+                    <p
+                      role="alert"
+                      style={{
+                        color: "#b00020",
+                        marginBottom: "12px",
+                      }}
+                    >
+                      {passwordModalError}
+                    </p>
+                  )}
+
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      gap: "8px",
+                    }}
                   >
-                    {isSendingResetEmail
-                      ? "Sending..."
-                      : "Send Reset Email"}
-                  </button>
-                </div>
-              </>
-            )}
+                    <button
+                      type="button"
+                      onClick={handleClosePasswordModal}
+                      disabled={isSendingResetEmail}
+                    >
+                      {t("common.cancel")}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={handleSendResetEmail}
+                      disabled={isSendingResetEmail}
+                    >
+                      {isSendingResetEmail
+                        ? t("settings.sendingResetEmail")
+                        : t("settings.sendResetEmail")}
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
-        </div>
-      )}
+        )}
     </main>
   );
 }

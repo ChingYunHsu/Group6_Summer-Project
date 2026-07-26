@@ -1,154 +1,118 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./UserGuide.css";
 
+/*
+ * Numbers and icons are language-agnostic, so they live here as static
+ * config. Every piece of displayed text is pulled from the translation
+ * file at render time via the labelKey/eyebrowKey/etc. fields below.
+ */
 const DOCUMENTATION_BLOCKS = [
   {
     id: "product-guide",
-    label: "Product Guide",
-    eyebrow: "DOCUMENTATION",
-    title: "How To Use ClearPath",
-    intro:
-      "Master the core steps for using your healthcare intelligence dashboard. Follow these guidance blocks to configure preferences, monitor facility conditions, and access route support.",
+    i18nKey: "productGuide",
     cards: [
-      {
-        number: "01",
-        icon: "☷",
-        title: "Set Preferences",
-        text:
-          "Configure notification thresholds, language needs, and accessibility priorities so ClearPath can surface the most relevant healthcare options.",
-      },
-      {
-        number: "02",
-        icon: "♟",
-        title: "Check Crowds",
-        text:
-          "Use the live map and insights dashboard to monitor facility busyness, expected wait times, and operational flow across priority locations.",
-      },
-      {
-        number: "03",
-        icon: "⚑",
-        title: "Route & Save",
-        text:
-          "Open a facility card, review its current status, save important locations, and launch directions when route support is needed.",
-      },
+      { number: "01", icon: "☷", cardKey: "setPreferences" },
+      { number: "02", icon: "♟", cardKey: "checkCrowds" },
+      { number: "03", icon: "⚑", cardKey: "routeAndSave" },
     ],
-    complianceTitle: "Data Integrity & Compliance",
-    complianceText:
-      "ClearPath operates with strict data minimization principles. Local storage is used for non-identifiable UI preferences, while sensitive clinical information should remain local to the traveller’s device unless an approved handoff flow is explicitly introduced.",
   },
   {
     id: "privacy-policy",
-    label: "Privacy Policy",
-    eyebrow: "PRIVACY",
-    title: "Privacy Policy",
-    intro:
-      "ClearPath is designed around local-first handling of sensitive medical information and minimal exposure of personal data.",
+    i18nKey: "privacyPolicy",
     cards: [
-      {
-        number: "01",
-        icon: "▣",
-        title: "Local Medical Data",
-        text:
-          "Sensitive medical details should remain on the user’s device and should not be synced to the cloud database.",
-      },
-      {
-        number: "02",
-        icon: "◌",
-        title: "Limited Profile Sync",
-        text:
-          "Non-clinical account fields may be used for interface personalization and standard account management.",
-      },
-      {
-        number: "03",
-        icon: "⊙",
-        title: "Transparent Usage",
-        text:
-          "ClearPath should clearly communicate when location, saved facility, or preference data is being used by the interface.",
-      },
+      { number: "01", icon: "▣", cardKey: "localMedicalData" },
+      { number: "02", icon: "◌", cardKey: "limitedProfileSync" },
+      { number: "03", icon: "⊙", cardKey: "transparentUsage" },
     ],
-    complianceTitle: "Privacy-First Handling",
-    complianceText:
-      "The system avoids unnecessary collection of sensitive healthcare data. Any future backend integration should preserve the separation between general account information and clinical profile information.",
   },
   {
     id: "terms",
-    label: "Terms of Service",
-    eyebrow: "TERMS",
-    title: "Terms of Service",
-    intro:
-      "ClearPath provides healthcare navigation support and decision assistance, but it does not replace emergency services or professional medical advice.",
+    i18nKey: "terms",
     cards: [
-      {
-        number: "01",
-        icon: "!",
-        title: "Emergency Use",
-        text:
-          "In an emergency, users should contact local emergency services immediately rather than relying only on app guidance.",
-      },
-      {
-        number: "02",
-        icon: "⌖",
-        title: "Routing Accuracy",
-        text:
-          "Directions, wait times, and facility status information are guidance signals and may change in real time.",
-      },
-      {
-        number: "03",
-        icon: "✓",
-        title: "Responsible Use",
-        text:
-          "Users should verify critical healthcare information directly with providers where possible.",
-      },
+      { number: "01", icon: "!", cardKey: "emergencyUse" },
+      { number: "02", icon: "⌖", cardKey: "routingAccuracy" },
+      { number: "03", icon: "✓", cardKey: "responsibleUse" },
     ],
-    complianceTitle: "Service Boundaries",
-    complianceText:
-      "ClearPath is a support tool for accessibility-aware healthcare navigation. It should be presented as informational guidance, not as a clinical diagnosis, medical instruction system, or emergency dispatch service.",
   },
 ];
 
 function UserGuide() {
-  const [activeBlockId, setActiveBlockId] = useState("product-guide");
+  const { t } = useTranslation("common");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedBlockId = searchParams.get("section");
+
+  const activeBlockId = useMemo(() => {
+    const requestedBlockExists = DOCUMENTATION_BLOCKS.some(
+      (block) => block.id === requestedBlockId
+    );
+
+    return requestedBlockExists ? requestedBlockId : "product-guide";
+  }, [requestedBlockId]);
 
   const activeBlock = useMemo(() => {
     return (
-      DOCUMENTATION_BLOCKS.find((block) => block.id === activeBlockId) ||
-      DOCUMENTATION_BLOCKS[0]
+      DOCUMENTATION_BLOCKS.find(
+        (block) => block.id === activeBlockId
+      ) || DOCUMENTATION_BLOCKS[0]
     );
   }, [activeBlockId]);
+
+  function changeDocumentationBlock(blockId) {
+    if (blockId === "product-guide") {
+      setSearchParams({});
+      return;
+    }
+
+    setSearchParams({ section: blockId });
+  }
 
   return (
     <main className="guide-console-page">
       <aside className="guide-sidebar">
-        <p>DOCUMENTATION</p>
+        <p>{t("userGuide.sidebarHeading")}</p>
 
         {DOCUMENTATION_BLOCKS.map((block) => (
           <button
             key={block.id}
             type="button"
             className={activeBlockId === block.id ? "active" : ""}
-            onClick={() => setActiveBlockId(block.id)}
+            onClick={() => changeDocumentationBlock(block.id)}
           >
-            {block.label}
+            {t(`userGuide.blocks.${block.i18nKey}.label`)}
           </button>
         ))}
       </aside>
 
       <section className="guide-content">
-        <p className="eyebrow-label">{activeBlock.eyebrow}</p>
+        <p className="eyebrow-label">
+          {t(`userGuide.blocks.${activeBlock.i18nKey}.eyebrow`)}
+        </p>
 
-        <h1>{activeBlock.title}</h1>
+        <h1>{t(`userGuide.blocks.${activeBlock.i18nKey}.title`)}</h1>
 
-        <p className="guide-intro">{activeBlock.intro}</p>
+        <p className="guide-intro">
+          {t(`userGuide.blocks.${activeBlock.i18nKey}.intro`)}
+        </p>
 
         <section className="guide-step-grid">
           {activeBlock.cards.map((card) => (
-            <article className="guide-step-card" key={card.title}>
+            <article className="guide-step-card" key={card.cardKey}>
               <span className="guide-step-number">{card.number}</span>
 
               <div className="guide-step-icon">{card.icon}</div>
 
-              <h2>{card.title}</h2>
-              <p>{card.text}</p>
+              <h2>
+                {t(
+                  `userGuide.blocks.${activeBlock.i18nKey}.cards.${card.cardKey}.title`
+                )}
+              </h2>
+              <p>
+                {t(
+                  `userGuide.blocks.${activeBlock.i18nKey}.cards.${card.cardKey}.text`
+                )}
+              </p>
             </article>
           ))}
         </section>
@@ -157,19 +121,28 @@ function UserGuide() {
           <div className="guide-compliance-icon">▣</div>
 
           <div>
-            <h2>{activeBlock.complianceTitle}</h2>
-            <p>{activeBlock.complianceText}</p>
+            <h2>
+              {t(`userGuide.blocks.${activeBlock.i18nKey}.complianceTitle`)}
+            </h2>
+            <p>
+              {t(`userGuide.blocks.${activeBlock.i18nKey}.complianceText`)}
+            </p>
 
             <div className="guide-compliance-actions">
               <button
                 type="button"
-                onClick={() => setActiveBlockId("privacy-policy")}
+                onClick={() =>
+                  changeDocumentationBlock("privacy-policy")
+                }
               >
-                Review Privacy Policy
+                {t("userGuide.reviewPrivacyPolicyCta")}
               </button>
 
-              <button type="button" onClick={() => setActiveBlockId("terms")}>
-                Terms of Service
+              <button
+                type="button"
+                onClick={() => changeDocumentationBlock("terms")}
+              >
+                {t("userGuide.termsOfServiceCta")}
               </button>
             </div>
           </div>

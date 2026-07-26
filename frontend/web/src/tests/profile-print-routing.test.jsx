@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import "../i18n";
 import {
   MemoryRouter,
   Route,
@@ -50,8 +51,14 @@ describe("Web Page 6-1 print medical card flow", () => {
       ).toBeInTheDocument();
 
       expect(
-        screen.getByText(/^alerta médica$/i)
+        screen.getByRole("heading", {
+          name: /^medical alert$/i,
+        })
       ).toBeInTheDocument();
+
+      expect(
+        screen.queryByText(/^alerta médica$/i)
+      ).not.toBeInTheDocument();
     }
   );
 });

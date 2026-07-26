@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getMedicalProfile } from "../services/MedicalProfileApi";
 import { getUserProfile } from "../services/UserProfileApi";
 import "./Profile.css";
 
 function Profile() {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   const [profile, setProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +63,7 @@ function Profile() {
         console.error("Failed to load profile:", error);
         setError(
           error.message ||
-            "Could not load profile. Backend may not be ready yet."
+            t("profile.couldNotLoadProfile")
         );
       } finally {
         setIsLoading(false);
@@ -69,12 +71,12 @@ function Profile() {
     }
 
     loadProfile();
-  }, []);
+  }, [t]);
 
   if (isLoading) {
     return (
       <main className="profile-page">
-        <p>Loading profile...</p>
+        <p>{t("profile.loadingProfile")}</p>
       </main>
     );
   }
@@ -82,7 +84,7 @@ function Profile() {
   if (!profile) {
     return (
       <main className="profile-page">
-        <p className="profile-error">{error || "No profile available."}</p>
+        <p className="profile-error">{error || t("profile.noProfileAvailable")}</p>
       </main>
     );
   }
@@ -107,22 +109,20 @@ function Profile() {
     <main className="profile-page">
       <div className="profile-title-row">
         <div>
-          <h1>Personal & Medical Profile</h1>
+          <h1>{t("profile.pageTitle")}</h1>
           <p>
-            Securely manage your personal identification and critical medical
-            information. This data is used for emergency wayfinding and clinical
-            insights.
+            {t("profile.pageDescription")}
           </p>
         </div>
 
         <div className="profile-actions">
           <button type="button" onClick={() => navigate("/profile/edit")}>
-            ✎ Edit
+            ✎ {t("profile.editCta")}
           </button>
 
-          <button type="button" onClick={() => navigate("/medical-card", { 
+          <button type="button" onClick={() => navigate("/medical-card", {
             state: { medicalCardPayload: profile,}})}>
-            ⎙ Print Medical Card
+            ⎙ {t("profile.printMedicalCard")}
           </button>
         </div>
       </div>
@@ -136,46 +136,46 @@ function Profile() {
               {profile.full_name ||
                 profile.display_name ||
                 profile.email ||
-                "Not provided"}
+                t("profile.notProvided")}
             </h2>
 
-            <span className="verified-badge">⊙ Verified Patient</span>
+            <span className="verified-badge">⊙ {t("profile.verifiedPatient")}</span>
 
             <div className="info-line">
-              <span>DOB</span>
-              <strong>{profile.date_of_birth || "Not provided"}</strong>
+              <span>{t("profile.dobLabel")}</span>
+              <strong>{profile.date_of_birth || t("profile.notProvided")}</strong>
             </div>
 
             <div className="info-line">
-              <span>Gender</span>
-              <strong>{profile.gender || "Not provided"}</strong>
+              <span>{t("profile.gender")}</span>
+              <strong>{profile.gender || t("profile.notProvided")}</strong>
             </div>
 
             <div className="info-line">
-              <span>Nationality</span>
-              <strong>{profile.nationality || "Not provided"}</strong>
+              <span>{t("profile.nationality")}</span>
+              <strong>{profile.nationality || t("profile.notProvided")}</strong>
             </div>
           </div>
 
           <div className="profile-card">
-            <h3>▧ Contact Information</h3>
+            <h3>▧ {t("profile.contactInformationHeading")}</h3>
 
             <p>
-              <strong>Phone Number</strong>
+              <strong>{t("profile.phoneNumberLabel")}</strong>
               <br />
-              {profile.phone || "Not provided"}
+              {profile.phone || t("profile.notProvided")}
             </p>
 
             <p>
-              <strong>Email Address</strong>
+              <strong>{t("profile.emailAddressLabel")}</strong>
               <br />
-              {profile.email || "Not provided"}
+              {profile.email || t("profile.notProvided")}
             </p>
 
             <p>
-              <strong>Primary Address</strong>
+              <strong>{t("profile.primaryAddressLabel")}</strong>
               <br />
-              {profile.address || "Not provided"}
+              {profile.address || t("profile.notProvided")}
             </p>
           </div>
         </aside>
@@ -183,21 +183,21 @@ function Profile() {
         <section className="profile-right">
           <div className="top-cards">
             <div className="profile-card vital-card">
-              <h3>Vital Signs</h3>
+              <h3>{t("profile.vitalSignsHeading")}</h3>
 
               <div className="blood-row">
                 <span className="blood-type">
-                  {profile.blood_type || "N/A"}
+                  {profile.blood_type || t("profile.notAvailableShort")}
                 </span>
 
                 <p>
-                  <strong>Blood Type</strong>
+                  <strong>{t("profile.bloodTypeLabel")}</strong>
                 </p>
               </div>
             </div>
 
             <div className="profile-card language-card">
-              <h3>Spoken Languages</h3>
+              <h3>{t("profile.spokenLanguagesHeading")}</h3>
 
               <div className="tag-list">
                 {spokenLanguages.length > 0 ? (
@@ -205,18 +205,18 @@ function Profile() {
                     <span key={language}>{language}</span>
                   ))
                 ) : (
-                  <p>Not provided</p>
+                  <p>{t("profile.notProvided")}</p>
                 )}
               </div>
             </div>
           </div>
 
           <div className="profile-card clinical-card">
-            <h2>▣ Clinical Profile</h2>
+            <h2>▣ {t("profile.clinicalProfileHeading")}</h2>
 
             <div className="clinical-columns">
               <div>
-                <h3 className="warning-heading">△ Allergies</h3>
+                <h3 className="warning-heading">△ {t("profile.allergiesHeading")}</h3>
 
                 {allergies.length > 0 ? (
                   allergies.map((allergy, index) => (
@@ -229,12 +229,12 @@ function Profile() {
                     </div>
                   ))
                 ) : (
-                  <p>No known allergies listed.</p>
+                  <p>{t("profile.noAllergiesListed")}</p>
                 )}
               </div>
 
               <div>
-                <h3 className="condition-heading">⌘ Medical Conditions</h3>
+                <h3 className="condition-heading">⌘ {t("profile.medicalConditionsHeading")}</h3>
 
                 {medicalConditions.length > 0 ? (
                   medicalConditions.map((condition, index) => (
@@ -247,14 +247,14 @@ function Profile() {
                     </div>
                   ))
                 ) : (
-                  <p>No medical conditions listed.</p>
+                  <p>{t("profile.noConditionsListed")}</p>
                 )}
               </div>
             </div>
           </div>
 
           <div className="profile-card">
-            <h2>✱ Emergency Contacts</h2>
+            <h2>✱ {t("profile.emergencyContactsHeading")}</h2>
 
             <div className="contacts-grid">
               {emergencyContacts.length > 0 ? (
@@ -264,16 +264,16 @@ function Profile() {
                     key={contact.name || contact.phone || index}
                   >
                     <div className="contact-top">
-                      <strong>{contact.name || "Not provided"}</strong>
-                      {contact.primary && <span>Primary</span>}
+                      <strong>{contact.name || t("profile.notProvided")}</strong>
+                      {contact.primary && <span>{t("profile.primaryTag")}</span>}
                     </div>
 
-                    <p>{contact.relationship || "Not provided"}</p>
-                    <p>{contact.phone || "Not provided"}</p>
+                    <p>{contact.relationship || t("profile.notProvided")}</p>
+                    <p>{contact.phone || t("profile.notProvided")}</p>
                   </div>
                 ))
               ) : (
-                <p>No emergency contacts listed.</p>
+                <p>{t("profile.noContactsListed")}</p>
               )}
             </div>
           </div>

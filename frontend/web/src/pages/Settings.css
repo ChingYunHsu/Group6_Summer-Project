@@ -382,5 +382,32 @@ select {
   white-space: nowrap;
 }
 
-/* Route Planning Dashboard — replaces the search header when
-   "Open Live Directions" is clicked */
+.settings-link-button {
+  border: 0;
+  background: transparent;
+  color: #0057e7;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.settings-link-button:hover {
+  color: #003da5;
+}
+
+.settings-link-button:focus-visible {
+  outline: 3px solid rgba(0, 87, 231, 0.3);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.legal-document-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  text-decoration: none;
+}

@@ -5,6 +5,7 @@ import {
   useState,
 } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   deleteFavourite,
   listFavourites,
@@ -87,8 +88,21 @@ function getStatusClass(status) {
   return status.toLowerCase().replaceAll(" ", "-");
 }
 
+function getStatusLabel(status, t) {
+  const map = {
+    DIVERTING: t("favourites.status.diverting"),
+    "HIGH CAPACITY": t("favourites.status.highCapacity"),
+    MODERATE: t("favourites.status.moderate"),
+    "NO LIVE INFO": t("favourites.status.noLiveInfo"),
+    "OPTIMAL FLOW": t("favourites.status.optimalFlow"),
+  };
+
+  return map[status] ?? status;
+}
+
 function Favourites() {
   const navigate = useNavigate();
+  const { t } = useTranslation("common");
 
   const [savedVenues, setSavedVenues] = useState([]);
   const [activeFilter, setActiveFilter] =
@@ -115,7 +129,7 @@ function Favourites() {
 
             if (!venueId) {
               throw new Error(
-                "A favourite record did not include venue_id."
+                t("favourites.notProvidedVenueId")
               );
             }
 
@@ -183,9 +197,12 @@ function Favourites() {
 
         if (failedCount > 0) {
           setError(
-            `${failedCount} saved location${
-              failedCount === 1 ? "" : "s"
-            } could not be loaded.`
+            t(
+              failedCount === 1
+                ? "favourites.failedToLoadSingular"
+                : "favourites.failedToLoadPlural",
+              { count: failedCount }
+            )
           );
         } else {
           setError("");
@@ -200,7 +217,7 @@ function Favourites() {
 
         setError(
           loadError.message ||
-            "Could not load saved locations."
+            t("favourites.couldNotLoad")
         );
 
         setSavedVenues([]);
@@ -210,7 +227,7 @@ function Favourites() {
         }
       }
     },
-    []
+    [t]
   );
 
   useEffect(() => {
@@ -227,7 +244,7 @@ function Favourites() {
       window.clearInterval(telemetryRefresh);
     };
   }, [loadFavourites]);
-  
+
   const filteredVenues = useMemo(() => {
     if (activeFilter === "ALL") {
       return savedVenues;
@@ -265,7 +282,7 @@ function Favourites() {
 
       setError(
         removeError.message ||
-          "Could not remove the saved location."
+          t("favourites.couldNotRemove")
       );
     } finally {
       setRemovingVenueId(null);
@@ -285,13 +302,10 @@ function Favourites() {
     <main className="saved-locations-page">
       <section className="saved-locations-header">
         <div>
-          <h1>Saved Locations</h1>
+          <h1>{t("favourites.title")}</h1>
 
           <p>
-            Manage and monitor your primary healthcare
-            response sites. View real-time capacity and
-            routing information for your prioritized
-            facilities.
+            {t("favourites.description")}
           </p>
         </div>
 
@@ -307,7 +321,7 @@ function Favourites() {
               )
             }
           >
-            ⌕ Filter
+            ⌕ {t("favourites.filter")}
           </button>
         </div>
       </section>
@@ -323,7 +337,7 @@ function Favourites() {
             type="button"
             onClick={handleRetry}
           >
-            Try Again
+            {t("favourites.tryAgain")}
           </button>
         </section>
       )}
@@ -337,7 +351,7 @@ function Favourites() {
             }
             onClick={() => setActiveFilter("ALL")}
           >
-            All
+            {t("favourites.filters.all")}
           </button>
 
           <button
@@ -351,7 +365,7 @@ function Favourites() {
               setActiveFilter("HIGH CAPACITY")
             }
           >
-            High Capacity
+            {t("favourites.filters.highCapacity")}
           </button>
 
           <button
@@ -365,7 +379,7 @@ function Favourites() {
               setActiveFilter("MODERATE")
             }
           >
-            Moderate
+            {t("favourites.filters.moderate")}
           </button>
 
           <button
@@ -379,7 +393,7 @@ function Favourites() {
               setActiveFilter("OPTIMAL FLOW")
             }
           >
-            Optimal Flow
+            {t("favourites.filters.optimalFlow")}
           </button>
 
           <button
@@ -393,7 +407,7 @@ function Favourites() {
               setActiveFilter("DIVERTING")
             }
           >
-            Diverting
+            {t("favourites.filters.diverting")}
           </button>
 
           <button
@@ -407,36 +421,33 @@ function Favourites() {
               setActiveFilter("NO LIVE INFO")
             }
           >
-            No Live Info
+            {t("favourites.filters.noLiveInfo")}
           </button>
         </section>
       )}
 
       {isLoading ? (
         <section className="saved-empty-state">
-          <h2>Loading saved locations...</h2>
+          <h2>{t("favourites.loadingTitle")}</h2>
 
           <p>
-            Retrieving your favourites and current venue
-            information.
+            {t("favourites.loadingBody")}
           </p>
         </section>
       ) : savedVenues.length === 0 ? (
         <section className="saved-empty-state">
-          <h2>No saved locations yet</h2>
+          <h2>{t("favourites.emptyTitle")}</h2>
 
           <p>
-            Saved healthcare facilities will appear here
-            when they have been added to your account.
+            {t("favourites.emptyBody")}
           </p>
         </section>
       ) : filteredVenues.length === 0 ? (
         <section className="saved-empty-state">
-          <h2>No locations match this filter</h2>
+          <h2>{t("favourites.noMatchTitle")}</h2>
 
           <p>
-            Try changing the filter to view your saved
-            facilities.
+            {t("favourites.noMatchBody")}
           </p>
         </section>
       ) : (
@@ -460,7 +471,7 @@ function Favourites() {
                   <span
                     className={`status-tag ${statusClass}`}
                   >
-                    ● {status}
+                    ● {getStatusLabel(status, t)}
                   </span>
 
                   <button
@@ -472,44 +483,48 @@ function Favourites() {
                       )
                     }
                     disabled={isRemoving}
-                    aria-label={`Remove ${
-                      venue.name || "venue"
-                    }`}
+                    aria-label={t("favourites.removeVenue", {
+                      name: venue.name || t("favourites.unnamedVenue"),
+                    })}
                   >
-                    {isRemoving ? "…" : "♥"}
+                    {isRemoving ? t("favourites.removingEllipsis") : "♥"}
                   </button>
                 </div>
 
                 <h2>
-                  {venue.name || "Unnamed venue"}
+                  {venue.name || t("favourites.unnamedVenue")}
                 </h2>
 
                 <p className="saved-distance-line">
                   ⊙{" "}
                   {venue.distance_km != null
-                    ? `${venue.distance_km} km away`
-                    : "Distance unavailable"}{" "}
-                  • {venue.borough || "Area unknown"}
+                    ? t("favourites.distanceAway", {
+                        distance: venue.distance_km,
+                      })
+                    : t("favourites.distanceUnavailable")}{" "}
+                  • {venue.borough || t("favourites.areaUnknown")}
                 </p>
 
                 <p className="saved-service-line">
                   ✚{" "}
                   {venue.supported_services?.[0] ||
                     venue.venue_type ||
-                    "Healthcare service"}
+                    t("favourites.healthcareService")}
                 </p>
 
                 <p className="saved-meta-line">
-                  Wait time:{" "}
+                  {t("favourites.waitTime")}:{" "}
                   {venue.avg_wait_minutes != null
-                    ? `${venue.avg_wait_minutes} mins`
-                    : "Unavailable"}
+                    ? t("favourites.waitMinutes", {
+                        minutes: venue.avg_wait_minutes,
+                      })
+                    : t("favourites.waitUnavailable")}
                 </p>
 
                 <p className="saved-meta-line">
-                  Access:{" "}
+                  {t("favourites.access")}:{" "}
                   {venue.accessible_status ||
-                    "Not specified"}
+                    t("favourites.accessNotSpecified")}
                 </p>
 
                 <button
@@ -519,7 +534,7 @@ function Favourites() {
                     handleGetDirections(venue)
                   }
                 >
-                  ◈ Get Directions
+                  ◈ {t("favourites.getDirections")}
                 </button>
               </article>
             );

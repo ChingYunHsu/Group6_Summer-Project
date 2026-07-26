@@ -8,7 +8,9 @@ import {
 import "./LiveHelpMap.css";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { useTranslation } from "react-i18next";
 import ChatbotWidget from "../components/ChatbotWidget";
+import i18n from "../i18n";
 
 
 import {
@@ -162,20 +164,26 @@ const MOCK_USER_LOCATION = {
   lng: -73.9855,
 };
 
+/*
+ * getIssueMessage is called from plain (non-component) normalisation
+ * helpers, so it uses the shared i18next instance directly via i18n.t(...)
+ * rather than the useTranslation hook, which is only available inside
+ * React components.
+ */
 function getIssueMessage(issueType) {
   const messages = {
-    elevator_broken: "Elevator reported broken",
-    wheelchair_lift_broken: "Wheelchair lift reported broken",
-    toilet_out_of_order: "Toilet reported out of order",
-    large_crowd: "Large crowd reported",
-    long_waiting_time: "Long waiting time reported",
-    protest_or_blockage: "Protest or blockage reported",
-    entrance_closed: "Entrance reported closed",
-    ramp_blocked: "Accessibility ramp reported blocked",
-    closed_early: "Venue reported closed early",
+    elevator_broken: i18n.t("liveHelpMap.issueMessages.elevatorBroken"),
+    wheelchair_lift_broken: i18n.t("liveHelpMap.issueMessages.wheelchairLiftBroken"),
+    toilet_out_of_order: i18n.t("liveHelpMap.issueMessages.toiletOutOfOrder"),
+    large_crowd: i18n.t("liveHelpMap.issueMessages.largeCrowd"),
+    long_waiting_time: i18n.t("liveHelpMap.issueMessages.longWaitingTime"),
+    protest_or_blockage: i18n.t("liveHelpMap.issueMessages.protestOrBlockage"),
+    entrance_closed: i18n.t("liveHelpMap.issueMessages.entranceClosed"),
+    ramp_blocked: i18n.t("liveHelpMap.issueMessages.rampBlocked"),
+    closed_early: i18n.t("liveHelpMap.issueMessages.closedEarly"),
   };
 
-  return messages[issueType] || "Active community report";
+  return messages[issueType] || i18n.t("liveHelpMap.activeCommunityReport");
 }
 
 function normaliseVenue(rawVenue) {
@@ -340,18 +348,18 @@ function normaliseReport(rawReport) {
 
 const TRAVEL_MODE_UI = {
   walk: {
-    label: "Walking",
-    routeLabel: "Walking Route",
+    labelKey: "liveHelpMap.routePlanner.walking",
+    routeLabelKey: "liveHelpMap.routePlanner.walkingRoute",
     icon: "🚶",
   },
   transit: {
-    label: "Transit",
-    routeLabel: "Transit Route",
+    labelKey: "liveHelpMap.routePlanner.transit",
+    routeLabelKey: "liveHelpMap.routePlanner.transitRoute",
     icon: "🚇",
   },
   drive: {
-    label: "Driving",
-    routeLabel: "Driving Route",
+    labelKey: "liveHelpMap.routePlanner.driving",
+    routeLabelKey: "liveHelpMap.routePlanner.drivingRoute",
     icon: "🚗",
   },
 };
@@ -382,7 +390,7 @@ function normaliseRouteOptions(payload) {
       ...(summary ?? {}),
       mode: String(mode).toLowerCase(),
       duration_minutes: Number(summary?.duration_minutes),
-      summary: `${TRAVEL_MODE_UI[mode]?.label ?? mode} route`,
+      summary: `${i18n.t(TRAVEL_MODE_UI[mode]?.labelKey) ?? mode} route`,
     }))
     .filter((option) => option.mode in TRAVEL_MODE_UI);
 }
@@ -403,7 +411,7 @@ function normaliseRouteCoordinate(point) {
 }
 
 function formatRouteStatus(value) {
-  if (!value) return "Status unavailable";
+  if (!value) return i18n.t("venueSheet.unknown", { defaultValue: "Status unavailable" });
 
   return String(value)
     .replaceAll("_", " ")
@@ -590,6 +598,7 @@ function venueIsHospital(venue) {
 }
 
 function LiveHelpMap() {
+  const { t } = useTranslation("common");
   const BUSYNESS_BATCH_SIZE = 100;
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
@@ -683,13 +692,13 @@ function LiveHelpMap() {
       setShowLeftDrawer(normalisedVenues.length > 0);
     } catch (error) {
       console.error("Failed to load venues:", error);
-      setMapError(error.message || "Could not load venues.");
+      setMapError(error.message || t("liveHelpMap.couldNotLoadVenues"));
       setVenues([]);
       setSelectedVenueId(null);
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [t]);
 
   const refreshReports = useCallback(async () => {
     try {
@@ -700,64 +709,6 @@ function LiveHelpMap() {
       setMapError((current) => current || error.message);
     }
   }, []);
-
-  /*const refreshBusyness = useCallback(async () => {
-    if (venues.length === 0) {
-      setBusynessByVenueId({});
-      return;
-    }
-
-    const results = await Promise.allSettled(
-      venues.map(async (venue) => {
-        try {
-          const snapshot = await getVenueBusyness(
-            venue.venue_id,
-            queryTime
-          );
-
-          return [
-            venue.venue_id,
-            normaliseBusyness(snapshot),
-          ];
-        } catch (error) {
-          if (error.status === 404) {
-            // The current backend lists these venues successfully but its
-            // dedicated busyness lookup cannot find the seed IDs. In live
-            // mode, keep busyness values already returned by /venues.
-            // In future mode, do not pretend current data is predicted data.
-            const fallbackSnapshot = futureMode
-              ? {
-                  busyness_percent: null,
-                  busyness_level: "No Predicted Info",
-                  busyness_color: "#0057e7",
-                  avg_wait_minutes: null,
-                }
-              : normaliseBusyness(venue);
-
-            return [venue.venue_id, fallbackSnapshot];
-          }
-
-          throw error;
-        }
-      })
-    ); 
-
-    const nextBusyness = {};
-
-    for (const result of results) {
-      if (result.status === "fulfilled") {
-        const [venueId, snapshot] = result.value;
-        nextBusyness[venueId] = snapshot;
-      } else {
-        console.error(
-          "A busyness request failed:",
-          result.reason
-        );
-      }
-    }
-
-    setBusynessByVenueId(nextBusyness);
-  }, [futureMode, queryTime, venues]);*/
 
   useEffect(() => {
     loadVenues();
@@ -785,7 +736,7 @@ function LiveHelpMap() {
 
         setFavouriteError(
           error.message ||
-            "Could not load your saved locations."
+            t("liveHelpMap.couldNotLoadFavourites")
         );
       }
     }
@@ -795,7 +746,7 @@ function LiveHelpMap() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [t]);
 
   useEffect(() => {
     refreshReports();
@@ -803,13 +754,6 @@ function LiveHelpMap() {
     const interval = window.setInterval(refreshReports, 30000);
     return () => window.clearInterval(interval);
   }, [refreshReports]);
-
- /// useEffect(() => {
-  ///  refreshBusyness();
-
-  ///  const interval = window.setInterval(refreshBusyness, 30000);
-  ///  return () => window.clearInterval(interval);
-  ///}, [refreshBusyness]);
 
 useEffect(() => {
   const selectedType = appliedFilters.venueType;
@@ -1021,8 +965,8 @@ useEffect(() => {
   markerElement.className = "user-location-marker";
 
   markerElement.title = userLocation.isMock
-    ? "Mock Current Location"
-    : "Current Location";
+    ? t("liveHelpMap.userLocationMock")
+    : t("liveHelpMap.userLocationCurrent");
 
   userMarkerRef.current = new maplibregl.Marker({
     element: markerElement,
@@ -1038,7 +982,7 @@ useEffect(() => {
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
   };
-}, [userLocation]);
+}, [userLocation, t]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1266,7 +1210,9 @@ useEffect(() => {
       markerEl.style.zIndex = "10";
       markerEl.setAttribute(
         "aria-label",
-        `Open ${venue.name || "venue"}`
+        t("liveHelpMap.openVenue", {
+          name: venue.name || t("liveHelpMap.venue"),
+        })
       );
 
       markerEl.addEventListener("mousedown", (event) => {
@@ -1283,7 +1229,7 @@ useEffect(() => {
 
       markersRef.current.push(marker);
     });
-  }, [futureMode, openVenueDrawer, visibleVenues]);
+  }, [futureMode, openVenueDrawer, visibleVenues, t]);
 
   const selectedVenue = useMemo(() => {
     if (!selectedVenueId) return null;
@@ -1369,7 +1315,7 @@ useEffect(() => {
       console.error(`Failed to load ${mode} route:`, error);
 
       setRouteError(
-        error.message || "Could not calculate this route."
+        error.message || t("liveHelpMap.couldNotCalculateThisRoute")
       );
     } finally {
       setRouteLoading(false);
@@ -1428,9 +1374,7 @@ useEffect(() => {
       selectedVenue.venue_id ?? selectedVenue.id;
 
     if (!venueId) {
-      setFavouriteError(
-        "This venue does not have a valid venue ID."
-      );
+      setFavouriteError(t("liveHelpMap.invalidVenueId"));
       return;
     }
 
@@ -1466,7 +1410,7 @@ useEffect(() => {
 
       setFavouriteError(
         error.message ||
-          "Could not update this saved location."
+          t("liveHelpMap.couldNotUpdateFavourite")
       );
     } finally {
       setUpdatingFavouriteId(null);
@@ -1479,9 +1423,9 @@ useEffect(() => {
     setSelectedTravelMode("walk");
     setShowRoutePlanner(true);
     setShowLeftDrawer(false);
-    setRouteStart("Mock Manhattan Location");
-    setRouteDestination(selectedVenue.name ?? "Selected Venue");
-    setRouteDepartureTime("Leave Now");
+    setRouteStart(t("liveHelpMap.userLocationMock"));
+    setRouteDestination(selectedVenue.name ?? t("liveHelpMap.venue"));
+    setRouteDepartureTime(t("liveHelpMap.routePlanner.leaveNow"));
 
     await loadRoute(selectedVenue, "walk", true);
   }
@@ -1556,7 +1500,7 @@ useEffect(() => {
 
       {isLoading && (
         <div className="map-api-message">
-          Loading live venue data...
+          {t("liveHelpMap.loadingVenues")}
         </div>
       )}
 
@@ -1569,13 +1513,13 @@ useEffect(() => {
               onChange={(event) =>
                 setSearchText(event.target.value)
               }
-              placeholder="Search clinics or pharmacies..."
+              placeholder={t("liveHelpMap.searchPlaceholder")}
             />
             <button
               type="button"
               onClick={handleAdvancedFiltersClick}
             >
-              ⚙ Advanced Filters
+              ⚙ {t("liveHelpMap.advancedFilters")}
             </button>
           </section>
 
@@ -1589,7 +1533,7 @@ useEffect(() => {
               }
               onClick={() => selectCategory("clinic")}
             >
-              ✚ Clinics
+              ✚ {t("liveHelpMap.categories.clinics")}
             </button>
             <button
               type="button"
@@ -1603,7 +1547,7 @@ useEffect(() => {
               }
               onClick={() => selectCategory("hospital")}
             >
-              🏥 Hospitals
+              🏥 {t("liveHelpMap.categories.hospitals")}
             </button>
             <button
               type="button"
@@ -1614,7 +1558,7 @@ useEffect(() => {
               }
               onClick={() => selectCategory("pharmacy")}
             >
-              ⚕ Pharmacy
+              ⚕ {t("liveHelpMap.categories.pharmacy")}
             </button>
             <button
               type="button"
@@ -1627,7 +1571,7 @@ useEffect(() => {
                 selectCategory("emergencyasset")
               }
             >
-              ❤️ AED
+              ❤️ {t("liveHelpMap.categories.aed")}
             </button>
             <button
               type="button"
@@ -1638,7 +1582,7 @@ useEffect(() => {
               }
               onClick={() => selectCategory("restroom")}
             >
-              🚽 Toilets
+              🚽 {t("liveHelpMap.categories.toilets")}
             </button>
           </section>
         </>
@@ -1652,7 +1596,7 @@ useEffect(() => {
                   type="text"
                   value={routeStart}
                   readOnly
-                  placeholder="Mock Manhattan Location"
+                  placeholder={t("liveHelpMap.userLocationMock")}
                 />
               </label>
 
@@ -1672,7 +1616,7 @@ useEffect(() => {
                   type="text"
                   value={routeDepartureTime}
                   readOnly
-                  placeholder="Leave Now"
+                  placeholder={t("liveHelpMap.routePlanner.leaveNow")}
                 />
               </label>
 
@@ -1683,14 +1627,14 @@ useEffect(() => {
                 disabled={routeLoading}
               >
                 {routeLoading
-                  ? "Searching..."
-                  : "⇅ Search Route"}
+                  ? t("liveHelpMap.routePlanner.searching")
+                  : `⇅ ${t("liveHelpMap.routePlanner.searchRoute")}`}
               </button>
             </div>
 
             <aside className="direction-options-card">
               <div className="direction-options-header">
-                <h3>Direction Options</h3>
+                <h3>{t("liveHelpMap.routePlanner.directionOptions")}</h3>
                 <button
                   type="button"
                   onClick={closeRoutePlanner}
@@ -1718,7 +1662,7 @@ useEffect(() => {
                         handleTravelModeChange(mode)
                       }
                     >
-                      {modeUi.label}
+                      {t(modeUi.labelKey)}
                     </button>
                   )
                 )}
@@ -1729,14 +1673,11 @@ useEffect(() => {
                   <div>
                     <strong>
                       {TRAVEL_MODE_UI[selectedTravelMode].icon}{" "}
-                      {
-                        TRAVEL_MODE_UI[selectedTravelMode]
-                          .routeLabel
-                      }
+                      {t(TRAVEL_MODE_UI[selectedTravelMode].routeLabelKey)}
                     </strong>
                     <p>
                       {selectedRouteOption?.summary ??
-                        `${TRAVEL_MODE_UI[selectedTravelMode].label} route`}
+                        `${t(TRAVEL_MODE_UI[selectedTravelMode].labelKey)} route`}
                       {" • "}
                       {formatRouteStatus(
                         selectedRouteOption?.status
@@ -1746,7 +1687,7 @@ useEffect(() => {
 
                   <strong>
                     {routeLoading
-                      ? "Loading..."
+                      ? `${t("common.loading")}`
                       : Number.isFinite(
                             selectedRouteOption
                               ?.duration_minutes
@@ -1767,7 +1708,9 @@ useEffect(() => {
                   routeDetail?.steps?.length > 0 && (
                     <div className="route-steps">
                       <p>
-                        ↑ Start from {routeStart}
+                        ↑ {t("liveHelpMap.routePlanner.startFrom", {
+                          location: routeStart,
+                        })}
                       </p>
 
                       {routeDetail.steps.map(
@@ -1779,7 +1722,9 @@ useEffect(() => {
                       )}
 
                       <p>
-                        ↑ Arrive at {selectedVenue.name}
+                        ↑ {t("liveHelpMap.routePlanner.arriveAt", {
+                          location: selectedVenue.name,
+                        })}
                       </p>
                     </div>
                   )}
@@ -1788,7 +1733,7 @@ useEffect(() => {
                   !routeError &&
                   !routeDetail?.steps?.length && (
                     <p className="route-error">
-                      Route instructions are unavailable.
+                      {t("liveHelpMap.routePlanner.routeInstructionsUnavailable")}
                     </p>
                   )}
               </div>
@@ -1806,8 +1751,9 @@ useEffect(() => {
             {alert.icon}
           </span>
           <span className="standalone-alert-text">
-            {alert.message} | {alert.confirmations} users
-            confirmed
+            {alert.message} | {t("liveHelpMap.usersConfirmed", {
+              count: alert.confirmations,
+            })}
           </span>
         </div>
       ))}
@@ -1827,11 +1773,11 @@ useEffect(() => {
           <p className="open-status">
             ●{" "}
             {selectedVenue.open_now === true
-              ? "Open Now"
+              ? t("liveHelpMap.openNow")
               : selectedVenue.open_now === false
-                ? "Closed"
-                : "Hours Unknown"}{" "}
-            • {selectedVenue.busyness_level || "No Live Info"}
+                ? t("liveHelpMap.closed")
+                : t("liveHelpMap.hoursUnknown")}{" "}
+            • {selectedVenue.busyness_level || t("liveHelpMap.legend.noLiveInfo")}
           </p>
 
           {landmarkAlert && (
@@ -1841,7 +1787,9 @@ useEffect(() => {
               </span>
               <span className="landmark-alert-text">
                 {landmarkAlert.message} |{" "}
-                {landmarkAlert.confirmations} users confirmed
+                {t("liveHelpMap.usersConfirmed", {
+                  count: landmarkAlert.confirmations,
+                })}
               </span>
             </div>
           )}
@@ -1849,45 +1797,48 @@ useEffect(() => {
           {selectedAccessibilityReports.length > 0 && (
             <div className="alert-box">
               <strong>
-                ⓘ Active Accessibility Warning
+                ⓘ {t("liveHelpMap.accessibilityWarning")}
               </strong>
               <p>
-                {selectedAccessibilityReports.length} accessibility reports
-                confirmed
+                {t("liveHelpMap.accessibilityReportsConfirmed", {
+                  count: selectedAccessibilityReports.length,
+                })}
               </p>
             </div>
           )}
 
-          <h4>LOCATION INFO</h4>
+          <h4>{t("liveHelpMap.locationInfoHeading")}</h4>
           <p>
-            📍 {selectedVenue.borough || "Borough unknown"}
+            📍 {selectedVenue.borough || t("liveHelpMap.borough")}
             <br />
-            {selectedVenue.address || "Address unavailable"}
+            {selectedVenue.address || t("liveHelpMap.addressUnavailable")}
             <br />
             {selectedVenue.avg_wait_minutes != null
-              ? `${selectedVenue.avg_wait_minutes} min estimated wait`
-              : "Estimated wait unavailable"}
+              ? t("liveHelpMap.estimatedWaitMinutes", {
+                  minutes: selectedVenue.avg_wait_minutes,
+                })
+              : t("liveHelpMap.estimatedWaitUnavailable")}
           </p>
 
           <p className="venue-meta-line">
-            📞 {selectedVenue.phone || "Not available"}
+            📞 {selectedVenue.phone || t("liveHelpMap.phoneUnavailable")}
           </p>
           <p className="venue-meta-line">
             🕐{" "}
             {selectedVenue.opening_hours ||
-              "Opening hours unavailable"}
+              t("liveHelpMap.openingHoursUnavailable")}
           </p>
 
           <p>
-            Languages:{" "}
+            {t("map.filters.language")}:{" "}
             {(selectedVenue.language_tags ?? []).length
               ? selectedVenue.language_tags.join(", ")
-              : "Not listed"}
+              : t("liveHelpMap.languagesNotListed")}
           </p>
           <p>
-            Access:{" "}
+            {t("favourites.access")}:{" "}
             {selectedVenue.accessible_status ||
-              "Not specified"}
+              t("liveHelpMap.accessNotSpecified")}
           </p>
 
           {(selectedVenue.supported_services ?? []).length >
@@ -1909,7 +1860,7 @@ useEffect(() => {
           {autoCurrentTime ? (
             <>
               <h4 className="busyness-heading">
-                12-HOUR BUSYNESS PREDICTION
+                {t("liveHelpMap.busynessPredictionHeading")}
               </h4>
 
               {(selectedVenue.busyness_forecast_12h ?? [])
@@ -1922,8 +1873,8 @@ useEffect(() => {
                         style={{
                           height: `${Math.max(
                             Number(point.percent) || 0,
-                            8
-                          )}px`,
+                            6
+                          )}%`,
                         }}
                         title={`${point.percent}% ${point.level}`}
                       />
@@ -1932,16 +1883,17 @@ useEffect(() => {
                 </div>
               ) : (
                 <p className="forecast-unavailable">
-                  Forecast data is not currently available.
+                  {t("liveHelpMap.forecastUnavailable")}
                 </p>
               )}
             </>
           ) : (
             <div className="prediction-tag">
-              Predicted Status at{" "}
-              {selectedTime || "Selected Time"}:{" "}
+              {t("liveHelpMap.predictedStatusAt", {
+                time: selectedTime || t("liveHelpMap.predictedStatusFallback"),
+              })}{" "}
               {selectedVenue.busyness_level ||
-                "Unavailable"}
+                t("liveHelpMap.statusUnavailable")}
             </div>
           )}
 
@@ -1950,7 +1902,7 @@ useEffect(() => {
             type="button"
             onClick={handleOpenLiveDirections}
           >
-            ◈ Open Live Directions
+            ◈ {t("liveHelpMap.openLiveDirections")}
           </button>
 
           {favouriteError && (
@@ -1971,28 +1923,28 @@ useEffect(() => {
             )}
           >
             {updatingFavouriteId === selectedVenue.venue_id
-              ? "Saving..."
+              ? t("liveHelpMap.savingLocation")
               : favouriteVenueIds.includes(
                     selectedVenue.venue_id
                   )
-                ? "♥ Saved Location"
-                : "♡ Save Location"}
+                ? `♥ ${t("liveHelpMap.savedLocation")}`
+                : `♡ ${t("liveHelpMap.saveLocation")}`}
           </button>
         </aside>
       )}
 
       <div className="map-legend">
         <span>
-          <b className="quiet-dot" /> Quiet
+          <b className="quiet-dot" /> {t("liveHelpMap.legend.quiet")}
         </span>
         <span>
-          <b className="moderate-dot" /> Moderate
+          <b className="moderate-dot" /> {t("liveHelpMap.legend.moderate")}
         </span>
         <span>
-          <b className="busy-dot" /> Busy
+          <b className="busy-dot" /> {t("liveHelpMap.legend.busy")}
         </span>
         <span>
-          <b className="info-dot" /> No Live Info
+          <b className="info-dot" /> {t("liveHelpMap.legend.noLiveInfo")}
         </span>
       </div>
 
@@ -2000,7 +1952,7 @@ useEffect(() => {
         <div className="filter-overlay">
           <section className="filter-modal">
             <div className="filter-header">
-              <h2>Advanced Filters</h2>
+              <h2>{t("liveHelpMap.filterModal.title")}</h2>
               <button
                 type="button"
                 onClick={() => setShowFilters(false)}
@@ -2011,10 +1963,10 @@ useEffect(() => {
 
             <div className="filter-body">
               <div className="filter-title-row">
-                <h3>AVAILABILITY DATE & TIME</h3>
+                <h3>{t("liveHelpMap.filterModal.availabilityDateTime")}</h3>
 
                 <label className="auto-toggle">
-                  Auto Current Time
+                  {t("liveHelpMap.filterModal.autoCurrentTime")}
                   <button
                     type="button"
                     className={
@@ -2034,7 +1986,7 @@ useEffect(() => {
               {!autoCurrentTime && (
                 <div className="date-time-grid">
                   <label>
-                    Date
+                    {t("liveHelpMap.filterModal.date")}
                     <input
                       type="date"
                       value={selectedDate}
@@ -2047,7 +1999,7 @@ useEffect(() => {
                   </label>
 
                   <label>
-                    Time
+                    {t("liveHelpMap.filterModal.time")}
                     <input
                       type="time"
                       value={selectedTime}
@@ -2061,10 +2013,10 @@ useEffect(() => {
                 </div>
               )}
 
-              <h3>LANGUAGE</h3>
+              <h3>{t("liveHelpMap.filterModal.language")}</h3>
 
               <label>
-                Primary Language
+                {t("liveHelpMap.filterModal.primaryLanguage")}
                 <select
                   value={primaryLanguage}
                   onChange={(event) =>
@@ -2073,7 +2025,7 @@ useEffect(() => {
                     )
                   }
                 >
-                  <option value=""> Any language</option>
+                  <option value=""> {t("liveHelpMap.filterModal.anyLanguage")}</option>
                   {Object.keys(LANGUAGE_CODES).map(
                     (language) => (
                       <option key={language} value={language}>
@@ -2085,7 +2037,7 @@ useEffect(() => {
               </label>
 
               <label>
-                Secondary Language (Optional)
+                {t("liveHelpMap.filterModal.secondaryLanguage")}
                 <select
                   value={secondaryLanguage}
                   onChange={(event) =>
@@ -2094,7 +2046,7 @@ useEffect(() => {
                     )
                   }
                 >
-                  <option>None</option>
+                  <option>{t("liveHelpMap.filterModal.none")}</option>
                   {Object.keys(LANGUAGE_CODES).map(
                     (language) => (
                       <option key={language}>
@@ -2107,7 +2059,7 @@ useEffect(() => {
 
               {autoCurrentTime && (
                 <>
-                  <h3>BUSYNESS LEVEL</h3>
+                  <h3>{t("liveHelpMap.filterModal.busynessLevel")}</h3>
                   <label className="check-row">
                     <input
                       type="checkbox"
@@ -2119,7 +2071,7 @@ useEffect(() => {
                       }
                     />
                     <span className="quiet-dot" />
-                    Quiet (Under 30% load)
+                    {t("liveHelpMap.filterModal.quietOption")}
                   </label>
                   <label className="check-row">
                     <input
@@ -2132,7 +2084,7 @@ useEffect(() => {
                       }
                     />
                     <span className="moderate-dot" />
-                    Moderate (30% - 70% load)
+                    {t("liveHelpMap.filterModal.moderateOption")}
                   </label>
                   <label className="check-row">
                     <input
@@ -2145,12 +2097,12 @@ useEffect(() => {
                       }
                     />
                     <span className="busy-dot" />
-                    Busy (Over 70% load)
+                    {t("liveHelpMap.filterModal.busyOption")}
                   </label>
                 </>
               )}
 
-              <h3>ACCESSIBILITY FEATURES</h3>
+              <h3>{t("liveHelpMap.filterModal.accessibilityFeatures")}</h3>
               <label className="check-row">
                 <input
                   type="checkbox"
@@ -2161,7 +2113,7 @@ useEffect(() => {
                     )
                   }
                 />
-                Full Wheelchair Access
+                {t("liveHelpMap.filterModal.fullWheelchairAccess")}
               </label>
             </div>
 
@@ -2171,14 +2123,14 @@ useEffect(() => {
                 className="clear-btn"
                 onClick={clearFilters}
               >
-                Clear All
+                {t("liveHelpMap.filterModal.clearAll")}
               </button>
               <button
                 type="button"
                 className="apply-btn"
                 onClick={applyFilters}
               >
-                Apply Filters
+                {t("liveHelpMap.filterModal.applyFilters")}
               </button>
             </div>
           </section>

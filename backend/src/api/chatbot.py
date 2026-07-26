@@ -3,7 +3,7 @@ import math
 import time
 from copy import deepcopy
 
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, current_app, jsonify, request
 
 import gemini_client
 from auth import require_api_key
@@ -142,8 +142,11 @@ def ask_chatbot():
 
     try:
         return jsonify(_ask_gemini_rag(payload["message"], payload.get("language")))
-    except Exception:
-        pass  # Fallback to mock data below.
+    except Exception as error:
+        current_app.logger.exception(
+        "Chatbot RAG pipeline failed: %s",
+        error,
+    )
 
     response = deepcopy(CHATBOT_RESPONSE)
     response.setdefault("detected_language", response.get("language", "en"))

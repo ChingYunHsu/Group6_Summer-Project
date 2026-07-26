@@ -9,13 +9,16 @@ api/venues.py's DB-then-mock fallback).
 """
 
 import json
-
+import os
 import requests
 from flask import current_app
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
 EMBEDDING_MODEL = "models/gemini-embedding-001"
-GENERATION_MODEL = "models/gemini-2.5-flash"
+GENERATION_MODEL = os.getenv(
+    "GEMINI_GENERATION_MODEL",
+    "models/gemini-2.5-flash",
+)
 REQUEST_TIMEOUT_SECONDS = 8
 
 
