@@ -14,6 +14,14 @@ from mock_data import AUTH_USERS
 def app():
     app = create_app()
     app.config["TESTING"] = True
+    # create_app() reads API_KEY from the developer's local .env via
+    # settings.get_settings(). If that machine has a real key set (for
+    # running the app locally), every test's hardcoded X-API-Key header
+    # ("dev-api-key", "test", etc.) stops matching and require_api_key
+    # starts 401ing requests — tests must never depend on local machine
+    # config. Empty API_KEY makes require_api_key a no-op (see auth.py),
+    # matching the CI/fresh-checkout environment every test is written for.
+    app.config["API_KEY"] = ""
     yield app
 
 
