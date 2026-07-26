@@ -5,7 +5,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import clearPathLogo from "../assets/clearpath-logo.png";
 import loginPeopleImage from "../assets/login-people.jpg";
 
 import "./Login.css";
@@ -328,12 +327,6 @@ function Login({
       >
         <div className="brand-content">
           <div>
-            <img
-              src={clearPathLogo}
-              alt=""
-              aria-hidden="true"
-              className="login-brand-logo"
-            />
 
             <h1>{t("login.brandName")}</h1>
           </div>

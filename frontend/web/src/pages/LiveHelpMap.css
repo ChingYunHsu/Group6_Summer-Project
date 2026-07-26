@@ -1081,3 +1081,31 @@ select {
     width: min(360px, calc(100vw - 32px));
   }
 }
+
+/* Route-state refinements */
+.venue-pin--selected {
+  z-index: 100;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.venue-pin--deemphasised {
+  z-index: 5;
+}
+
+.user-location-marker--route-background {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+  opacity: 0.3;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+}
+
+.route-autocomplete-menu {
+  scrollbar-gutter: stable;
+}
+
+.direction-options-scroll > .route-option:last-child {
+  margin-bottom: 0;
+}
