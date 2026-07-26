@@ -217,8 +217,12 @@
 }
 
 .guide-content {
-  max-width: 960px;
-  padding: 54px 64px 70px;
+  width: min(100%, 1100px);
+  justify-self: center;
+  padding:
+    clamp(42px, 4vw, 64px)
+    clamp(28px, 5vw, 72px)
+    70px;
 }
 
 .guide-content h1 {
@@ -344,6 +348,23 @@
 .guide-compliance-actions button:hover {
   border-color: #0057e7;
   color: #0057e7;
+}
+
+@media (min-width: 1200px) {
+  .guide-console-page {
+    grid-template-columns:
+      230px
+      minmax(0, 1fr)
+      230px;
+  }
+
+  .guide-sidebar {
+    grid-column: 1;
+  }
+
+  .guide-content {
+    grid-column: 2;
+  }
 }
 
 @media (max-width: 950px) {
