@@ -8,6 +8,7 @@ SEED_SQL = REPO_ROOT / "docker/mysql/init/005_seed_venues.sql"
 GROUPS_SQL = REPO_ROOT / "docker/mysql/init/008_healthcare_prediction_groups.sql"
 ACCOUNT_DELETION_SQL = REPO_ROOT / "docker/mysql/init/009_account_deletion_report_cascades.sql"
 VENUE_LABEL_COLUMNS_SQL = REPO_ROOT / "docker/mysql/init/012_add_venues_prediction_label_columns.sql"
+MOCK_WHEELCHAIR_SQL = REPO_ROOT / "docker/mysql/init/013_seed_mock_wheelchair_support.sql"
 SCHEMA_SQL = REPO_ROOT / "docker/mysql/init/001_clearpath_schema.sql"
 MIGRATIONS = REPO_ROOT / "docker/mysql/apply_migrations.sh"
 TELEMETRY_CONTRACT = REPO_ROOT / "docs/telemetry-feed-contract.md"
@@ -68,6 +69,15 @@ def test_venue_prediction_label_migration_is_mysql_compatible_and_idempotent():
     assert [source.index(column) for column in expected_columns] == sorted(
         source.index(column) for column in expected_columns
     )
+
+
+def test_mock_wheelchair_seed_is_scoped_and_traceable():
+    source = MOCK_WHEELCHAIR_SQL.read_text()
+    assert "accessible_status = 'full_access'" in source
+    assert "venue_type IN ('healthcare', 'hospital', 'clinic', 'pharmacy', 'dentist', 'laboratory')" in source
+    assert "accessible_status = 'unknown'" in source
+    assert "'mock_wheelchair_support'" in source
+    assert "'source', 'mock'" in source
 
 
 def test_provider_mapping_contract_covers_runner_required_fields():

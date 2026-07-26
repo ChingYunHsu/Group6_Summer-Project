@@ -3,6 +3,8 @@ path: quick_triage and fastest_hubs[].travel_minutes must always be present
 (openapi.yaml requires both), matching what the mock fallback already
 returns."""
 
+from datetime import datetime, timezone
+
 import api.insights as insights_module
 from api.insights import _quick_triage, _travel_minutes_by_venue
 
@@ -69,12 +71,12 @@ def test_get_insights_db_path_includes_quick_triage_and_travel_minutes(client, m
             return ("MN05",)
 
         def fetchall(self):
-            if "FROM busyness_scores bs" in self.last_query:
-                return [(40, 10)]
-            if "FROM busyness_forecasts bf" in self.last_query:
+            if "v.venue_type IN" in self.last_query:
+                return [("v1", "Test Venue", "[]", "full_access")]
+            if "bf.venue_id IN" in self.last_query:
+                return [("v1", datetime.now(timezone.utc), 40, "moderate", 10)]
+            if "FROM busyness_forecasts bf" in self.last_query and "JOIN venues v" in self.last_query:
                 return []
-            if "LEFT JOIN busyness_scores bs ON bs.venue_id = v.venue_id" in self.last_query:
-                return [("v1", "Test Venue", "[]", "full_access", 40, "moderate", 10)]
             if "FROM venues WHERE venue_id IN" in self.last_query:
                 return [("v1", 40.71, -73.99)]
             return []
