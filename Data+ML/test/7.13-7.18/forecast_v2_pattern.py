@@ -36,7 +36,10 @@ CROWD_REPORT_DELTA_CAP = 15.0
 MODEL_VERSION = "forecast-v2-known-venue-serpapi-context"
 PUBLISHED_MODEL_VERSION = "forecast-v2"
 SPLIT_TYPE = "known_venue_temporal_snapshot"
-ELIGIBLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
+# Serving covers the complete medical POI taxonomy.  The SerpAPI-labelled
+# cohort remains the only source of supervised metrics; venue types absent
+# from that cohort are deliberately served through the cold-start path.
+ELIGIBLE_VENUE_TYPES = {"healthcare", "clinic", "hospital", "pharmacy", "dentist", "laboratory"}
 FORECAST_HORIZON_HOURS = 12  # approved contract — do not override via CLI
 
 
