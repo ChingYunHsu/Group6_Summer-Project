@@ -37,7 +37,7 @@ class _FakeCursor:
 
         if "v.venue_type IN" in q:
             # _eligible_venues_in_district: venue_id/name/language_tags/
-            # accessible_status for clinic/hospital/pharmacy in district.
+            # accessible_status for V2-eligible medical venues in district.
             district = params[0]
             eligible_types = set(params[1:])
             rows = [

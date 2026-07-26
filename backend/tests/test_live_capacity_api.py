@@ -1,7 +1,7 @@
 """Tests for DB-backed live capacity map/detail APIs.
 
 Sprint 5 SOP: both /venues/{id}/busyness and /venues/{id}/busyness/forecast
-are V2-only now — clinic/hospital/pharmacy with a current forecast-v2 row,
+are V2-only now — medical venues with a current forecast-v2 row,
 or the unavailable payload. No live-telemetry, traffic-baseline, legacy
 forecast_1h, or mock fallback is client-visible from either endpoint.
 """
@@ -219,6 +219,25 @@ def test_busyness_eligible_venue_with_v2_data_returns_forecast(client, monkeypat
     assert data["forecast_source"] == "busyness_forecasts"
     assert data["busyness_score"] == 42
     assert "unavailable_reason" not in data
+
+
+def test_busyness_all_medical_types_accept_v2_forecasts(client, monkeypatch):
+    for venue_type in ("healthcare", "clinic", "hospital", "pharmacy", "dentist", "laboratory"):
+        monkeypatch.setattr(
+            venues_module, "_get_db_conn",
+            lambda vt=venue_type: _V2Connection({"v_medical": vt}, {"v_medical": _forecast_rows([42])}),
+        )
+        response = client.get(
+            "/api/v1/venues/v_medical/busyness", headers={"X-API-Key": "dev-api-key"}
+        )
+        assert response.status_code == 200
+        assert response.get_json()["busyness"]["data_mode"] == "forecast"
+
+        forecast_response = client.get(
+            "/api/v1/venues/v_medical/busyness/forecast", headers={"X-API-Key": "dev-api-key"}
+        )
+        assert forecast_response.status_code == 200
+        assert forecast_response.get_json()["data_mode"] == "forecast"
 
 
 def test_busyness_aed_always_unavailable(client, monkeypatch):

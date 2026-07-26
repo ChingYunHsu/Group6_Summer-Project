@@ -525,7 +525,7 @@ function venueMatchesCategory(venue, selectedType) {
 
   if (selectedType === "clinic") {
     return (
-      ["clinic", "healthcare"].includes(venueType) &&
+      ["clinic", "healthcare", "dentist", "laboratory"].includes(venueType) &&
       !venueIsPharmacy(venue)
     );
   }
@@ -765,7 +765,7 @@ useEffect(() => {
   if (!selectedType) return;
 
   const typeAliases = {
-    clinic: ["clinic", "healthcare"],
+    clinic: ["clinic", "healthcare", "dentist", "laboratory"],
     pharmacy: ["pharmacy"],
     emergencyasset: ["emergencyasset", "aed"],
     restroom: ["restroom", "toilet"],
