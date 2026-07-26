@@ -40,8 +40,10 @@ ELIGIBLE_VENUE_TYPES = {"clinic", "hospital", "pharmacy"}
 FORECAST_HORIZON_HOURS = 12  # approved contract — do not override via CLI
 
 
-def venues(ids: list[str]) -> pd.DataFrame:
-    """Return only eligible venue types — clinic, hospital, pharmacy."""
+def labelled_venues(ids: list[str]) -> pd.DataFrame:
+    """Return eligible venues represented by the label cohort, for training only."""
+    if not ids:
+        return pd.DataFrame()
     marks = ",".join(["%s"] * len(ids))
     type_marks = ",".join(["%s"] * len(ELIGIBLE_VENUE_TYPES))
     return db_utils.read_sql(
@@ -53,6 +55,17 @@ def venues(ids: list[str]) -> pd.DataFrame:
     )
 
 
+def eligible_venues() -> pd.DataFrame:
+    """Return every venue eligible for V2 serving, independent of label coverage."""
+    type_marks = ",".join(["%s"] * len(ELIGIBLE_VENUE_TYPES))
+    return db_utils.read_sql(
+        "SELECT venue_id, venue_type, district, rating, latitude, longitude, weather_risk, "
+        "source_confidence, accessible_status, active_warning, open_now "
+        "FROM venues WHERE venue_type IN (" + type_marks + ") ORDER BY venue_id",
+        tuple(sorted(ELIGIBLE_VENUE_TYPES)),
+    )
+
+
 def traffic_baseline(ids: list[str]) -> pd.DataFrame:
     """Return the 2025 SODA venue-hour traffic profile used by V2.
 
@@ -60,6 +73,8 @@ def traffic_baseline(ids: list[str]) -> pd.DataFrame:
     not the short-lived current-context model.  The baseline date is irrelevant:
     only the source-derived hour-of-day traffic profile is joined to each label.
     """
+    if not ids:
+        return pd.DataFrame(columns=["venue_id", "hour_of_day", "nyc_traffic_baseline_score"])
     marks = ",".join(["%s"] * len(ids))
     return db_utils.read_sql(
         "SELECT venue_id, HOUR(forecast_start_time) AS hour_of_day, "
@@ -77,6 +92,34 @@ def add_traffic_baseline(frame: pd.DataFrame, traffic: pd.DataFrame) -> pd.DataF
     frame["nyc_traffic_baseline_missing"] = frame.nyc_traffic_baseline_score.isna().astype(int)
     frame["nyc_traffic_baseline_score"] = frame.nyc_traffic_baseline_score.fillna(0)
     return frame
+
+
+def serving_base(eligible: pd.DataFrame) -> pd.DataFrame:
+    """Prepare all eligible venues for cold-start-safe V2 inference.
+
+    The supervised model is trained only from the label cohort, but serving is
+    deliberately independent of that cohort.  Unseen venue IDs and missing
+    static fields are handled by ``feature_matrix``'s existing zero-fill path.
+    """
+    base = eligible.copy()
+    base["rating_missing"] = base.rating.isna().astype(int)
+    return base[["venue_id", "venue_type", "district", "rating", "latitude", "longitude",
+                 "weather_risk", "source_confidence", "accessible_status", "active_warning",
+                 "open_now", "rating_missing"]]
+
+
+def future_curve(base: pd.DataFrame, now: pd.Timestamp) -> pd.DataFrame:
+    """Create the fixed current-hour through +12h scoring grid for every venue."""
+    future = []
+    for offset in range(FORECAST_HORIZON_HOURS + 1):
+        target = now + timedelta(hours=offset)
+        item = base.copy()
+        item["forecast_for"], item["offset_hours"] = target, offset
+        item["day_of_week"], item["hour_of_day"], item["is_weekend"] = (
+            target.weekday(), target.hour, int(target.weekday() >= 5)
+        )
+        future.append(item)
+    return pd.concat(future, ignore_index=True)
 
 
 def group_split(df: pd.DataFrame):
@@ -243,7 +286,11 @@ def add_dynamic_context(curve: pd.DataFrame, now: pd.Timestamp) -> pd.DataFrame:
     return curve
 
 
-def audit_curve(curve: pd.DataFrame, now: pd.Timestamp) -> dict:
+def audit_curve(
+    curve: pd.DataFrame,
+    now: pd.Timestamp,
+    expected_venue_ids: set[str] | None = None,
+) -> dict:
     """Group predicted venues by type and check 12-hour window coverage.
 
     Raises ValueError if:
@@ -252,6 +299,7 @@ def audit_curve(curve: pd.DataFrame, now: pd.Timestamp) -> dict:
     - Max forecast_for does not reach now + 12 hours (anchored freshness)
     - Any eligible venue has fewer than 13 hourly forecast points (now through now+12)
     - Any hour bucket is missing for an eligible venue
+    - The curve omits or adds a venue relative to the full serving cohort
     """
     if curve.empty:
         raise ValueError("Curve is empty — cannot publish zero forecasts")
@@ -260,6 +308,16 @@ def audit_curve(curve: pd.DataFrame, now: pd.Timestamp) -> dict:
     ineligible = set(type_counts) - ELIGIBLE_VENUE_TYPES
     if ineligible:
         raise ValueError(f"Ineligible venue types in curve: {ineligible}")
+
+    actual_venue_ids = set(curve["venue_id"].unique())
+    if expected_venue_ids is not None:
+        missing_venues = expected_venue_ids - actual_venue_ids
+        unexpected_venues = actual_venue_ids - expected_venue_ids
+        if missing_venues or unexpected_venues:
+            raise ValueError(
+                "Serving venue coverage mismatch — "
+                f"missing: {sorted(missing_venues)}, unexpected: {sorted(unexpected_venues)}"
+            )
 
     future_mask = curve.forecast_for >= now
     future_rows = int(future_mask.sum())
@@ -284,10 +342,11 @@ def audit_curve(curve: pd.DataFrame, now: pd.Timestamp) -> dict:
     future_by_venue = future_curve.groupby("venue_id")["forecast_for"].apply(set).to_dict()
     expected_slots = {now + pd.Timedelta(hours=i) for i in range(FORECAST_HORIZON_HOURS + 1)}
     for venue_id in curve["venue_id"].unique():
+        venue_future = future_curve[future_curve.venue_id == venue_id]
         actual_slots = future_by_venue.get(venue_id, set())
         missing = expected_slots - actual_slots
         extra = actual_slots - expected_slots
-        if missing or extra:
+        if missing or extra or len(venue_future) != FORECAST_HORIZON_HOURS + 1:
             raise ValueError(
                 f"Venue {venue_id} missing forecast slots — "
                 f"missing: {sorted(missing)}, unexpected: {sorted(extra)}"
@@ -298,6 +357,8 @@ def audit_curve(curve: pd.DataFrame, now: pd.Timestamp) -> dict:
         "min_forecast_for": str(min_ts),
         "max_forecast_for": str(max_ts),
         "future_rows": future_rows,
+        "eligible_venue_count": len(expected_venue_ids) if expected_venue_ids is not None else len(actual_venue_ids),
+        "expected_future_rows": (len(expected_venue_ids) if expected_venue_ids is not None else len(actual_venue_ids)) * (FORECAST_HORIZON_HOURS + 1),
     }
 
 
@@ -348,14 +409,14 @@ def main() -> None:
     args = parser.parse_args()
     current_labels = pd.read_csv(args.labels, dtype={"venue_id": str, "place_id": str})
     legacy_labels = load_legacy_labels(args.legacy_labels)
-    ids = sorted(set(current_labels.venue_id) | set(legacy_labels.venue_id))
-    static = venues(ids)
-    traffic = traffic_baseline(ids)
+    label_ids = sorted(set(current_labels.venue_id) | set(legacy_labels.venue_id))
+    labelled_static = labelled_venues(label_ids)
+    training_traffic = traffic_baseline(labelled_static.venue_id.tolist())
     def enrich(labels: pd.DataFrame) -> pd.DataFrame:
-        frame = labels.merge(static, on="venue_id", how="inner", validate="many_to_one")
+        frame = labels.merge(labelled_static, on="venue_id", how="inner", validate="many_to_one")
         frame["is_weekend"] = (frame.day_of_week >= 5).astype(int)
         frame["rating_missing"] = frame.rating.isna().astype(int)
-        return add_traffic_baseline(frame, traffic)
+        return add_traffic_baseline(frame, training_traffic)
     train, test = temporal_snapshot_split(enrich(legacy_labels), enrich(current_labels))
     baseline_model, baseline_columns, baseline_rows = train_variant("baseline_time", BASELINE_FEATURES, train, test)
     static_model, static_columns, static_rows = train_variant(
@@ -371,17 +432,12 @@ def main() -> None:
         )
     results = pd.DataFrame(baseline_rows + static_rows + enriched_rows)
     now = pd.Timestamp(datetime.now(timezone.utc)).floor("h")
-    base = enrich(current_labels).drop_duplicates("venue_id")[[
-        "venue_id", "place_id", *[field for field in VENUE_SPECIFIC_FEATURES if field != "venue_id"]
-    ]]
-    future = []
-    for offset in range(FORECAST_HORIZON_HOURS + 1):
-        target = now + timedelta(hours=offset)
-        item = base.copy()
-        item["forecast_for"], item["offset_hours"] = target, offset
-        item["day_of_week"], item["hour_of_day"], item["is_weekend"] = target.weekday(), target.hour, int(target.weekday() >= 5)
-        future.append(item)
-    curve = add_traffic_baseline(pd.concat(future, ignore_index=True), traffic)
+    serving_static = eligible_venues()
+    serving_ids = set(serving_static.venue_id)
+    labelled_serving_ids = serving_ids & set(labelled_static.venue_id)
+    cold_start_ids = serving_ids - labelled_serving_ids
+    curve = future_curve(serving_base(serving_static), now)
+    curve = add_traffic_baseline(curve, traffic_baseline(sorted(serving_ids)))
     curve = add_dynamic_context(curve, now)
     curve["baseline_score"] = np.clip(enriched_model.predict(feature_matrix(curve, ENRICHED_FEATURES, enriched_columns)), 0, 100).round(2)
     curve["predicted_score"] = np.clip(curve.baseline_score + curve.dynamic_delta, 0, 100).round(2)
@@ -391,7 +447,7 @@ def main() -> None:
     curve.to_csv(args.output_dir / "prediction_curve_v2_pattern.csv", index=False)
 
     try:
-        audit = audit_curve(curve, now)
+        audit = audit_curve(curve, now, serving_ids)
     except ValueError as e:
         print(f"\n=== Audit FAILED ===", file=sys.stderr)
         print(f"  {e}", file=sys.stderr)
@@ -402,6 +458,9 @@ def main() -> None:
         print(f"  {vtype}: {count} venues")
     print(f"  forecast_for range: {audit['min_forecast_for']} → {audit['max_forecast_for']}")
     print(f"  future rows: {audit['future_rows']}")
+    print(f"  eligible venues: {audit['eligible_venue_count']}")
+    print(f"  labelled venues: {len(labelled_serving_ids)}")
+    print(f"  cold-start venues: {len(cold_start_ids)}")
 
     published_rows = publish_forecasts(curve) if args.publish else 0
 
@@ -409,6 +468,9 @@ def main() -> None:
     print(f"  model_version    : {PUBLISHED_MODEL_VERSION}")
     print(f"  generated_at     : {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print(f"  total_rows       : {len(curve)}")
+    print(f"  eligible_venues  : {audit['eligible_venue_count']}")
+    print(f"  labelled_venues  : {len(labelled_serving_ids)}")
+    print(f"  cold_start_venues: {len(cold_start_ids)}")
     for vtype, count in sorted(audit["type_counts"].items()):
         print(f"  {vtype}_venues   : {count}")
     print(f"  min_forecast_for : {audit['min_forecast_for']}")
@@ -425,6 +487,11 @@ def main() -> None:
                             "coverage_pct": round(100 * (1 - train.nyc_traffic_baseline_missing.mean()), 2)},
         "published_model_version": PUBLISHED_MODEL_VERSION if args.publish else None,
         "published_rows": published_rows,
+        "serving_venue_count": audit["eligible_venue_count"],
+        "serving_type_counts": audit["type_counts"],
+        "labelled_eligible_venue_count": len(labelled_serving_ids),
+        "cold_start_venue_count": len(cold_start_ids),
+        "expected_forecast_rows": audit["expected_future_rows"],
         "excluded_low_coverage_features": ["borough", "opening_hours", "primary_language", "venue_accessibility", "venue_language"],
         "dynamic_context_columns": DYNAMIC_COLUMNS, "dynamic_delta": "auditable serving rule; not supervised until real telemetry is sufficient",
         "cold_start_reference": "../v2_pattern_serpapi_20260716/forecast_v2_pattern_model_metrics.csv",
