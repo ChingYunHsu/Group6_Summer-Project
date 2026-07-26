@@ -318,37 +318,17 @@
   line-height: 1.5;
 }
 
-.leaderboard-table-head {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr auto;
-  gap: 12px;
-  margin-bottom: 12px;
-  color: #475569;
-  font-size: 11px;
-  font-weight: 900;
-}
-.leaderboard-table-head,
-.hub-route-button {
-  display: grid;
-  grid-template-columns: 1.4fr 0.8fr auto;
-  gap: 12px;
-  align-items: center;
-}
-
-
 .fastest-hubs-list {
   display: grid;
-  gap: 20px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+
 .fastest-hubs-list li {
   display: block;
-  grid-template-columns: 1.4fr 0.8fr auto;
-  gap: 12px;
-  align-items: center;
 }
 
 .hub-name-block strong {
@@ -372,45 +352,6 @@
   font-weight: 900;
 }
 
-.hub-name-block small {
-  display: block;
-  color: #10b981;
-  font-size: 10px;
-  font-weight: 900;
-}
-
-.capacity-bar {
-  height: 7px;
-  border-radius: 999px;
-  background: #e2e8f0;
-  overflow: hidden;
-}
-
-.capacity-bar span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-}
-
-.capacity-bar span.optimal {
-  width: 34%;
-  background: #10b981;
-}
-
-.capacity-bar span.moderate {
-  width: 62%;
-  background: #f59e0b;
-}
-
-.capacity-bar span.busy {
-  width: 82%;
-  background: #ef4444;
-}
-
-.hub-time {
-  color: #10b981;
-  font-size: 15px;
-}
 
 @media (max-width: 980px) {
   .insights-metric-grid,
@@ -507,19 +448,54 @@
   color: var(--text, #6b6375);
 }
 
+.hub-route-arrow {
+  color: #0052e0;
+  font-size: 20px;
+  font-weight: 900;
+}
+
 .hub-route-button {
   width: 100%;
-  padding: 8px 4px;
-  border: none;
-  background: transparent;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #06152b;
   cursor: pointer;
   text-align: left;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.hub-route-button:hover {
+  border-color: #0052e0;
+  background: #f5f8ff;
+  transform: translateY(-1px);
 }
 
 .hub-route-button:focus-visible {
   outline: 2px solid #0052e0;
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
+
+.hub-rank {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #0052e0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+}
+
 
 .chart-toggle button:disabled {
   cursor: not-allowed;

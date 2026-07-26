@@ -1015,11 +1015,6 @@ function InsightsDashboard() {
                   </p>
                 )}
 
-                <div className="leaderboard-table-head">
-                  <span>{t("insights.clinicHub")}</span>
-                  <span>{t("insights.capacity")}</span>
-                  <span>{t("insights.time")}</span>
-                </div>
 
                 {sortedHubs.length === 0 ? (
                   <div className="fastest-hubs-empty">
@@ -1035,7 +1030,7 @@ function InsightsDashboard() {
                   <ol className="fastest-hubs-list">
                     {sortedHubs
                       .slice(0, 3)
-                      .map((hub) => (
+                      .map((hub, index) => (
                         <li key={hub.venueId}>
                           <button
                             type="button"
@@ -1043,49 +1038,51 @@ function InsightsDashboard() {
                             onClick={() =>
                               handleHubDirections(hub)
                             }
-                            aria-label={t("insights.getDirectionsAria", {
-                              name:
-                                hub.clinicName ||
-                                t("insights.unnamedFacility"),
-                            })}
+                            aria-label={t(
+                              "insights.getDirectionsAria",
+                              {
+                                name:
+                                  hub.clinicName ||
+                                  t(
+                                    "insights.unnamedFacility"
+                                  ),
+                              }
+                            )}
                           >
+                            <span
+                              className="hub-rank"
+                              aria-hidden="true"
+                            >
+                              {index + 1}
+                            </span>
+
                             <div className="hub-name-block">
                               <strong>
                                 {hub.clinicName ||
-                                  t("insights.unnamedFacility")}
+                                  t(
+                                    "insights.unnamedFacility"
+                                  )}
                               </strong>
 
-                              <div className="language-flags">
-                                {hub.languageFlags.map(
-                                  (flag) => (
-                                    <span key={flag}>
-                                      {flag}
-                                    </span>
-                                  )
-                                )}
-                              </div>
-
-                              <small>
-                                {hub.capacityLabel}
-                              </small>
+                              {hub.languageFlags.length > 0 && (
+                                <div className="language-flags">
+                                  {hub.languageFlags.map(
+                                    (flag) => (
+                                      <span key={flag}>
+                                        {flag}
+                                      </span>
+                                    )
+                                  )}
+                                </div>
+                              )}
                             </div>
 
-                            <div
-                              className="capacity-bar"
+                            <span
+                              className="hub-route-arrow"
                               aria-hidden="true"
                             >
-                              <span
-                                className={
-                                  hub.flowStatus
-                                }
-                              />
-                            </div>
-
-                            <strong className="hub-time">
-                              {hub.travelMinutes === null
-                                ? "—"
-                                : `${hub.travelMinutes}m`}
-                            </strong>
+                              →
+                            </span>
                           </button>
                         </li>
                       ))}

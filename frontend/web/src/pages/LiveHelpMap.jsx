@@ -30,11 +30,11 @@ import {
 } from "../services/FavouritesApi";
 
 const LANGUAGE_CODES = {
-  "English (English)": "en",
   "Français (French)": "fr",
   "Español (Spanish)": "es",
   "中文 (Chinese)": "zh",
-  "العربية (Arabic)": "ar",
+  "Italiano (Italian)": "it",
+  "Deutsch (German)": "de",
 };
 
 
@@ -46,6 +46,24 @@ function getFavouriteVenueId(favourite) {
     favourite?.venue?.id ??
     null
   );
+}
+
+function getBusynessColor(value) {
+  const percent = Number(value);
+
+  if (!Number.isFinite(percent)) {
+    return "#0057e7";
+  }
+
+  if (percent < 30) {
+    return "#22c55e";
+  }
+
+  if (percent <= 70) {
+    return "#eab308";
+  }
+
+  return "#ef4444";
 }
 
 function getMarkerColor(venue, futureMode) {
@@ -440,9 +458,6 @@ function buildQueryTime(selectedDate, selectedTime) {
 }
 
 const LANGUAGE_ALIASES = {
-  en: "en",
-  english: "en",
-
   fr: "fr",
   french: "fr",
   français: "fr",
@@ -455,9 +470,13 @@ const LANGUAGE_ALIASES = {
   chinese: "zh",
   中文: "zh",
 
-  ar: "ar",
-  arabic: "ar",
-  العربية: "ar",
+  it: "it",
+  italian: "it",
+  italiano: "it",
+
+  de: "de",
+  german: "de",
+  deutsch: "de",
 };
 
 function normaliseList(value) {
@@ -627,7 +646,8 @@ function LiveHelpMap() {
   const [searchText, setSearchText] = useState("");
   const [primaryLanguage, setPrimaryLanguage] =
     useState("");
-  const [secondaryLanguage, setSecondaryLanguage] = useState("None");
+  const [secondaryLanguage, setSecondaryLanguage] =
+    useState("");
   const [accessibleOnly, setAccessibleOnly] = useState(false);
   const [selectedBusynessLevels, setSelectedBusynessLevels] = useState([]);
   const [appliedFilters, setAppliedFilters] = useState({
@@ -1246,12 +1266,31 @@ useEffect(() => {
 
     markerVenues.forEach((venue) => {
       const markerEl = document.createElement("button");
-      const isRouteEndpoint = routeEndpointVenueIds.has(venue.venue_id);
-      const isRouteBackground = showRoutePlanner && !isRouteEndpoint;
+      const isRouteEndpoint =
+        routeEndpointVenueIds.has(venue.venue_id);
+
+      const isClickedVenue =
+        !showRoutePlanner &&
+        selectedVenueId === venue.venue_id;
+
+      const isEmphasised =
+        isRouteEndpoint || isClickedVenue;
+
+      const isRouteBackground =
+        showRoutePlanner && !isRouteEndpoint;
 
       markerEl.type = "button";
       markerEl.className = "venue-pin";
-      markerEl.classList.toggle("venue-pin--selected", isRouteEndpoint);
+
+      markerEl.classList.toggle(
+        "venue-pin--selected",
+        isEmphasised
+      );
+
+      markerEl.classList.toggle(
+        "venue-pin--deemphasised",
+        isRouteBackground
+      );
       markerEl.classList.toggle(
         "venue-pin--deemphasised",
         isRouteBackground
@@ -1264,7 +1303,7 @@ useEffect(() => {
         venue
       )}</span>`;
       markerEl.style.pointerEvents = "auto";
-      markerEl.style.zIndex = isRouteEndpoint
+      markerEl.style.zIndex = isEmphasised
         ? "100"
         : isRouteBackground
           ? "5"
@@ -1295,6 +1334,7 @@ useEffect(() => {
     markerVenues,
     openVenueDrawer,
     routeEndpointVenueIds,
+    selectedVenueId,
     showRoutePlanner,
     t,
   ]);
@@ -1683,27 +1723,26 @@ useEffect(() => {
   }
 
   function applyFilters() {
-  const languages = [
-    LANGUAGE_CODES[primaryLanguage],
-    secondaryLanguage === "None"
-      ? null
-      : LANGUAGE_CODES[secondaryLanguage],
-  ].filter(Boolean);
+    const languages = [
+      LANGUAGE_CODES[primaryLanguage],
+      LANGUAGE_CODES[secondaryLanguage],
+    ].filter(Boolean);
 
-  setAppliedFilters((current) => ({
-    ...current,
-    languages,
-    accessible: accessibleOnly,
-  }));
+    setAppliedFilters((current) => ({
+      ...current,
+      languages,
+      accessible: accessibleOnly,
+    }));
 
-  setShowFilters(false);
-}
+    setShowFilters(false);
+  }
 
   function clearFilters() {
     setPrimaryLanguage("");
-    setSecondaryLanguage("None");
+    setSecondaryLanguage("");
     setAccessibleOnly(false);
     setSelectedBusynessLevels([]);
+
     setAppliedFilters({
       languages: [],
       accessible: false,
@@ -2258,6 +2297,9 @@ useEffect(() => {
                             Number(point.percent) || 0,
                             6
                           )}%`,
+                          backgroundColor: getBusynessColor(
+                            point.percent
+                          ),
                         }}
                         title={`${point.percent}% ${point.level}`}
                       />
@@ -2409,13 +2451,14 @@ useEffect(() => {
                   }
                 >
                   <option value=""> {t("liveHelpMap.filterModal.anyLanguage")}</option>
-                  {Object.keys(LANGUAGE_CODES).map(
-                    (language) => (
-                      <option key={language} value={language}>
-                        {language}
-                      </option>
-                    )
-                  )}
+                  {Object.keys(LANGUAGE_CODES).map((language) => (
+                    <option
+                      key={language}
+                      value={language}
+                    >
+                      {language}
+                    </option>
+                  ))}
                 </select>
               </label>
 

@@ -200,18 +200,11 @@ select {
 
 .mini-bars span {
   width: 16px;
-  background: #22c55e;
+  background: #0057e7;
   border-radius: 2px 2px 0 0;
-}
-
-.mini-bars span:nth-child(-n+3),
-.mini-bars span:nth-last-child(-n+3) {
-  background: #ef4444;
-}
-
-.mini-bars span:nth-child(4),
-.mini-bars span:nth-child(10) {
-  background: #eab308;
+  transition:
+    height 160ms ease,
+    background-color 160ms ease;
 }
 
 .map-info-card .mini-bars {
