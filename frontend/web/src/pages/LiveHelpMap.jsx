@@ -616,6 +616,15 @@ function venueIsHospital(venue) {
   );
 }
 
+function getCurrentTimeValue() {
+  const now = new Date();
+
+  return [
+    String(now.getHours()).padStart(2, "0"),
+    String(now.getMinutes()).padStart(2, "0"),
+  ].join(":");
+}
+
 function LiveHelpMap() {
   const { t } = useTranslation("common");
   const BUSYNESS_BATCH_SIZE = 100;
@@ -624,6 +633,7 @@ function LiveHelpMap() {
   const markersRef = useRef([]);
   const userMarkerRef = useRef(null);
   const routeRequestIdRef = useRef(0);
+  
 
   const [venues, setVenues] = useState([]);
   const [venueDetailsById, setVenueDetailsById] = useState({});
@@ -659,7 +669,8 @@ function LiveHelpMap() {
   const [showRoutePlanner, setShowRoutePlanner] = useState(false);
   const [routeStart, setRouteStart] = useState("");
   const [routeDestination, setRouteDestination] = useState("");
-  const [routeDepartureTime, setRouteDepartureTime] = useState("");
+  const [routeDepartureTime, setRouteDepartureTime] =
+    useState("");
   const [routeOriginSelection, setRouteOriginSelection] = useState(null);
   const [routeDestinationVenueId, setRouteDestinationVenueId] = useState(null);
   const [activeRouteField, setActiveRouteField] = useState(null);
@@ -1699,7 +1710,7 @@ useEffect(() => {
     setActiveRouteField(null);
     setRouteStart(t("liveHelpMap.userLocationMock"));
     setRouteDestination(selectedVenue.name ?? t("liveHelpMap.venue"));
-    setRouteDepartureTime(t("liveHelpMap.routePlanner.leaveNow"));
+    setRouteDepartureTime(getCurrentTimeValue());
 
     await loadRoute(selectedVenue, "walk", true, userLocation);
   }
@@ -1714,7 +1725,7 @@ useEffect(() => {
     setSelectedTravelMode("walk");
     setRouteStart("");
     setRouteDestination("");
-    setRouteDepartureTime("");
+    setRouteDepartureTime(getCurrentTimeValue());
     setRouteOriginSelection(null);
     setRouteDestinationVenueId(null);
     setActiveRouteField(null);
@@ -2025,13 +2036,22 @@ useEffect(() => {
                 </div>
               </div>
 
-              <div className="route-field">
-                <span>◷</span>
+              <div className="route-field route-time-field">
+                <span aria-hidden="true">◷</span>
+
                 <input
-                  type="text"
+                  type="time"
                   value={routeDepartureTime}
-                  readOnly
-                  placeholder={t("liveHelpMap.routePlanner.leaveNow")}
+                  onChange={(event) =>
+                    setRouteDepartureTime(event.target.value)
+                  }
+                  step="300"
+                  aria-label={t(
+                    "liveHelpMap.routePlanner.departureTime",
+                    {
+                      defaultValue: "Departure time",
+                    }
+                  )}
                 />
               </div>
 
