@@ -9,6 +9,7 @@ GROUPS_SQL = REPO_ROOT / "docker/mysql/init/008_healthcare_prediction_groups.sql
 ACCOUNT_DELETION_SQL = REPO_ROOT / "docker/mysql/init/009_account_deletion_report_cascades.sql"
 VENUE_LABEL_COLUMNS_SQL = REPO_ROOT / "docker/mysql/init/012_add_venues_prediction_label_columns.sql"
 MOCK_WHEELCHAIR_SQL = REPO_ROOT / "docker/mysql/init/013_seed_mock_wheelchair_support.sql"
+REMOVE_MOCK_WHEELCHAIR_SQL = REPO_ROOT / "docker/mysql/init/014_remove_mock_wheelchair_support.sql"
 SCHEMA_SQL = REPO_ROOT / "docker/mysql/init/001_clearpath_schema.sql"
 MIGRATIONS = REPO_ROOT / "docker/mysql/apply_migrations.sh"
 TELEMETRY_CONTRACT = REPO_ROOT / "docs/telemetry-feed-contract.md"
@@ -71,13 +72,16 @@ def test_venue_prediction_label_migration_is_mysql_compatible_and_idempotent():
     )
 
 
-def test_mock_wheelchair_seed_is_scoped_and_traceable():
+def test_mock_wheelchair_seed_is_retired_and_cleanup_is_provenance_scoped():
     source = MOCK_WHEELCHAIR_SQL.read_text()
-    assert "accessible_status = 'full_access'" in source
-    assert "venue_type IN ('healthcare', 'hospital', 'clinic', 'pharmacy', 'dentist', 'laboratory')" in source
-    assert "accessible_status = 'unknown'" in source
-    assert "'mock_wheelchair_support'" in source
-    assert "'source', 'mock'" in source
+    assert "no-op" in source
+    assert "SET accessible_status = 'full_access'" not in source
+    assert "INSERT INTO venue_accessibility" not in source
+
+    cleanup = REMOVE_MOCK_WHEELCHAIR_SQL.read_text()
+    assert "JSON_EXTRACT(venue.accessibility_features, '$.mock_wheelchair_support')" in cleanup
+    assert "accessible_status = 'unknown'" in cleanup
+    assert "DELETE accessibility" in cleanup
 
 
 def test_provider_mapping_contract_covers_runner_required_fields():
