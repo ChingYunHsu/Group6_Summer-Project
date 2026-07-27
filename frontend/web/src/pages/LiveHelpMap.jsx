@@ -9,9 +9,9 @@ import "./LiveHelpMap.css";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import ChatbotWidget from "../components/ChatbotWidget";
 import i18n from "../i18n";
-import manhattanBoundary from "../data/boundaries/manhattan-nyc-dcp-26b.json";
 
 
 import {
@@ -31,52 +31,12 @@ import {
 } from "../services/FavouritesApi";
 
 const LANGUAGE_CODES = {
+  "English (English)": "en",
   "Français (French)": "fr",
   "Español (Spanish)": "es",
   "中文 (Chinese)": "zh",
-  "Italiano (Italian)": "it",
-  "Deutsch (German)": "de",
+  "العربية (Arabic)": "ar",
 };
-
-function isPointInRing([longitude, latitude], ring) {
-  let inside = false;
-
-  for (let index = 0, previous = ring.length - 1; index < ring.length; previous = index++) {
-    const [currentLongitude, currentLatitude] = ring[index];
-    const [previousLongitude, previousLatitude] = ring[previous];
-    const intersects =
-      currentLatitude > latitude !== previousLatitude > latitude &&
-      longitude <
-        ((previousLongitude - currentLongitude) * (latitude - currentLatitude)) /
-          (previousLatitude - currentLatitude) +
-          currentLongitude;
-
-    if (intersects) inside = !inside;
-  }
-
-  return inside;
-}
-
-function isWithinManhattanBoundary({ latitude, longitude }) {
-  const point = [longitude, latitude];
-
-  return manhattanBoundary.geometry.coordinates.some((polygon) => {
-    const [outerRing, ...holes] = polygon;
-    return (
-      isPointInRing(point, outerRing) &&
-      !holes.some((hole) => isPointInRing(point, hole))
-    );
-  });
-}
-
-// Only these categories have V2 busyness predictions. AEDs and restrooms
-// never did, so they must not trigger prefetch batches — that was the source
-// of ~33 pointless request batches (and 33 full marker rebuilds) per AED load.
-const BUSYNESS_CATEGORIES = new Set([
-  "clinic",
-  "hospital",
-  "pharmacy",
-]);
 
 
 function getFavouriteVenueId(favourite) {
@@ -87,24 +47,6 @@ function getFavouriteVenueId(favourite) {
     favourite?.venue?.id ??
     null
   );
-}
-
-function getBusynessColor(value) {
-  const percent = Number(value);
-
-  if (!Number.isFinite(percent)) {
-    return "#0057e7";
-  }
-
-  if (percent < 30) {
-    return "#22c55e";
-  }
-
-  if (percent <= 70) {
-    return "#eab308";
-  }
-
-  return "#ef4444";
 }
 
 function getMarkerColor(venue, futureMode) {
@@ -150,7 +92,7 @@ function getMarkerColor(venue, futureMode) {
     rawPercent === ""
       ? Number.NaN
       : Number(rawPercent);
-
+    
   if (Number.isFinite(percent)) {
     if (percent < 30) return "#22c55e";
     if (percent <= 70) return "#eab308";
@@ -273,10 +215,6 @@ function normaliseVenue(rawVenue) {
         rawVenue.type ??
         ""
     ).toLowerCase(),
-
-    // Computed once here so getIcon / venueMatchesCategory never have to
-    // JSON.stringify the whole venue object per marker, per render pass.
-    is_pharmacy: scanForPharmacyTerms(rawVenue),
 
     language_tags: languages,
 
@@ -503,6 +441,9 @@ function buildQueryTime(selectedDate, selectedTime) {
 }
 
 const LANGUAGE_ALIASES = {
+  en: "en",
+  english: "en",
+
   fr: "fr",
   french: "fr",
   français: "fr",
@@ -515,13 +456,9 @@ const LANGUAGE_ALIASES = {
   chinese: "zh",
   中文: "zh",
 
-  it: "it",
-  italian: "it",
-  italiano: "it",
-
-  de: "de",
-  german: "de",
-  deutsch: "de",
+  ar: "ar",
+  arabic: "ar",
+  العربية: "ar",
 };
 
 function normaliseList(value) {
@@ -562,12 +499,7 @@ const PHARMACY_TERMS = [
   "drug store",
 ];
 
-/*
- * The expensive full-object scan. Only normaliseVenue should call this
- * directly — everywhere else goes through venueIsPharmacy, which reads the
- * cached is_pharmacy flag.
- */
-function scanForPharmacyTerms(venue) {
+function venueIsPharmacy(venue) {
   // This checks all available venue fields, including subtype,
   // category and amenity fields that may not be displayed.
   const searchableVenue = JSON.stringify(venue ?? {}).toLowerCase();
@@ -575,12 +507,6 @@ function scanForPharmacyTerms(venue) {
   return PHARMACY_TERMS.some((term) =>
     searchableVenue.includes(term)
   );
-}
-
-function venueIsPharmacy(venue) {
-  // Normalised venues carry the precomputed flag; fall back to the scan for
-  // raw payloads that never went through normaliseVenue.
-  return venue?.is_pharmacy ?? scanForPharmacyTerms(venue);
 }
 
 function venueMatchesCategory(venue, selectedType) {
@@ -600,7 +526,7 @@ function venueMatchesCategory(venue, selectedType) {
 
   if (selectedType === "clinic") {
     return (
-      ["clinic", "healthcare", "dentist", "laboratory"].includes(venueType) &&
+      ["clinic", "healthcare"].includes(venueType) &&
       !venueIsPharmacy(venue)
     );
   }
@@ -672,26 +598,16 @@ function venueIsHospital(venue) {
   );
 }
 
-function getCurrentTimeValue() {
-  const now = new Date();
-
-  return [
-    String(now.getHours()).padStart(2, "0"),
-    String(now.getMinutes()).padStart(2, "0"),
-  ].join(":");
-}
-
 function LiveHelpMap() {
   const { t } = useTranslation("common");
+  const location = useLocation();
   const BUSYNESS_BATCH_SIZE = 100;
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
-  // venue_id -> { element, marker, venue }
-  const markersByIdRef = useRef(new Map());
+  const markersRef = useRef([]);
   const userMarkerRef = useRef(null);
   const routeRequestIdRef = useRef(0);
-  const openVenueDrawerRef = useRef(null);
-
+  const handledNavigationKeyRef = useRef(null);
 
   const [venues, setVenues] = useState([]);
   const [venueDetailsById, setVenueDetailsById] = useState({});
@@ -714,8 +630,7 @@ function LiveHelpMap() {
   const [searchText, setSearchText] = useState("");
   const [primaryLanguage, setPrimaryLanguage] =
     useState("");
-  const [secondaryLanguage, setSecondaryLanguage] =
-    useState("");
+  const [secondaryLanguage, setSecondaryLanguage] = useState("None");
   const [accessibleOnly, setAccessibleOnly] = useState(false);
   const [selectedBusynessLevels, setSelectedBusynessLevels] = useState([]);
   const [appliedFilters, setAppliedFilters] = useState({
@@ -727,8 +642,7 @@ function LiveHelpMap() {
   const [showRoutePlanner, setShowRoutePlanner] = useState(false);
   const [routeStart, setRouteStart] = useState("");
   const [routeDestination, setRouteDestination] = useState("");
-  const [routeDepartureTime, setRouteDepartureTime] =
-    useState("");
+  const [routeDepartureTime, setRouteDepartureTime] = useState("");
   const [routeOriginSelection, setRouteOriginSelection] = useState(null);
   const [routeDestinationVenueId, setRouteDestinationVenueId] = useState(null);
   const [activeRouteField, setActiveRouteField] = useState(null);
@@ -766,8 +680,7 @@ function LiveHelpMap() {
           (venue) =>
             venue.venue_id &&
             Number.isFinite(venue.latitude) &&
-            Number.isFinite(venue.longitude) &&
-            isWithinManhattanBoundary(venue)
+            Number.isFinite(venue.longitude)
         );
 
       setVenues(normalisedVenues);
@@ -854,15 +767,11 @@ useEffect(() => {
 
   if (!selectedType) return;
 
-  // AEDs and restrooms have no V2 predictions — bail before any request.
-  if (!BUSYNESS_CATEGORIES.has(selectedType)) return;
-
   const typeAliases = {
-    clinic: ["clinic", "healthcare", "dentist", "laboratory"],
-    // venueIsHospital() accepts healthcare-typed records, so the prefetch
-    // has to accept them too or those hospitals never get busyness.
-    hospital: ["hospital", "healthcare"],
+    clinic: ["clinic", "healthcare"],
     pharmacy: ["pharmacy"],
+    emergencyasset: ["emergencyasset", "aed"],
+    restroom: ["restroom", "toilet"],
   };
 
   const acceptedTypes =
@@ -1038,8 +947,8 @@ useEffect(() => {
   );
 
   return () => {
-    markersByIdRef.current.forEach((entry) => entry.marker?.remove());
-    markersByIdRef.current.clear();
+    markersRef.current.forEach((marker) => marker.remove());
+    markersRef.current = [];
 
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
@@ -1048,6 +957,117 @@ useEffect(() => {
     mapRef.current = null;
   };
 }, []);
+
+  useEffect(() => {
+    const navigationState = location.state;
+    const requestedVenueId =
+      navigationState?.selectedVenueId ??
+      navigationState?.venueId;
+
+    if (
+      !requestedVenueId ||
+      venues.length === 0 ||
+      !mapRef.current
+    ) {
+      return;
+    }
+
+    const navigationKey =
+      location.key ||
+      String(requestedVenueId);
+
+    if (
+      handledNavigationKeyRef.current === navigationKey
+    ) {
+      return;
+    }
+
+    const requestedVenue = venues.find(
+      (venue) =>
+        String(venue.venue_id) ===
+        String(requestedVenueId)
+    );
+
+    if (!requestedVenue) {
+      const latitude = Number(
+        navigationState?.destinationCoordinates
+          ?.latitude
+      );
+      const longitude = Number(
+        navigationState?.destinationCoordinates
+          ?.longitude
+      );
+
+      if (
+        Number.isFinite(latitude) &&
+        Number.isFinite(longitude)
+      ) {
+        mapRef.current.flyTo({
+          center: [longitude, latitude],
+          zoom: 15,
+          essential: true,
+        });
+      }
+
+      handledNavigationKeyRef.current =
+        navigationKey;
+      return;
+    }
+
+    handledNavigationKeyRef.current =
+      navigationKey;
+
+    const shouldOpenRoutePlanner =
+      navigationState?.openRoutePlanner === true;
+
+    routeRequestIdRef.current += 1;
+    removeRouteLayer(mapRef.current);
+
+    setSelectedVenueId(requestedVenue.venue_id);
+    setRouteDestinationVenueId(
+      requestedVenue.venue_id
+    );
+    setRouteDestination(
+      requestedVenue.name ??
+        navigationState?.destination ??
+        t("liveHelpMap.venue")
+    );
+    setSelectedTravelMode("walk");
+    setRouteOptions([]);
+    setRouteDetail(null);
+    setRouteError("");
+    setRouteLoading(false);
+    setActiveRouteField(null);
+
+    if (shouldOpenRoutePlanner) {
+      setRouteOriginSelection("user");
+      setRouteStart(
+        t("liveHelpMap.userLocationMock")
+      );
+      setRouteDepartureTime(
+        t("liveHelpMap.routePlanner.leaveNow")
+      );
+      setShowRoutePlanner(true);
+      setShowLeftDrawer(false);
+    } else {
+      setShowRoutePlanner(false);
+      setShowLeftDrawer(true);
+    }
+
+    mapRef.current.flyTo({
+      center: [
+        requestedVenue.longitude,
+        requestedVenue.latitude,
+      ],
+      zoom: 15,
+      essential: true,
+    });
+  }, [
+    location.key,
+    location.state,
+    t,
+    venues,
+  ]);
 
 
 useEffect(() => {
@@ -1268,6 +1288,26 @@ useEffect(() => {
   venuesWithBusyness,
 ]);
 
+useEffect(() => {
+  console.log("MAP VENUE DEBUG", {
+    totalVenuesFromApi: venues.length,
+    venuesWithBusyness: Object.keys(busynessByVenueId).length,
+    visibleVenues: visibleVenues.length,
+    searchText,
+    appliedFilters,
+    selectedBusynessLevels,
+    futureMode,
+  });
+}, [
+  venues,
+  busynessByVenueId,
+  visibleVenues,
+  searchText,
+  appliedFilters,
+  selectedBusynessLevels,
+  futureMode,
+]);
+
   const routeEndpointVenueIds = useMemo(() => {
     if (!showRoutePlanner) return new Set();
 
@@ -1312,115 +1352,63 @@ useEffect(() => {
     setShowLeftDrawer(true);
   }, []);
 
-  // Marker click handlers read this ref, so a changing openVenueDrawer
-  // identity never forces listeners (or markers) to be rebuilt.
   useEffect(() => {
-    openVenueDrawerRef.current = openVenueDrawer;
-  }, [openVenueDrawer]);
+    if (!mapRef.current) return;
 
-  /*
-   * Diff the marker set instead of tearing it down. Previously every
-   * busyness batch recreated all markers, which on the AED layer meant
-   * ~100k remove/create lifecycle events.
-   */
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-
-    const markersById = markersByIdRef.current;
-    const nextIds = new Set(
-      markerVenues.map((venue) => venue.venue_id)
-    );
-
-    markersById.forEach((entry, venueId) => {
-      if (!nextIds.has(venueId)) {
-        entry.marker.remove();
-        markersById.delete(venueId);
-      }
-    });
+    markersRef.current.forEach((marker) => marker.remove());
+    markersRef.current = [];
 
     markerVenues.forEach((venue) => {
-      const isRouteEndpoint = routeEndpointVenueIds.has(
-        venue.venue_id
-      );
+      const markerEl = document.createElement("button");
+      const isRouteEndpoint = routeEndpointVenueIds.has(venue.venue_id);
+      const isRouteBackground = showRoutePlanner && !isRouteEndpoint;
 
-      const isClickedVenue =
-        !showRoutePlanner &&
-        selectedVenueId === venue.venue_id;
-
-      const isEmphasised = isRouteEndpoint || isClickedVenue;
-      const isRouteBackground =
-        showRoutePlanner && !isRouteEndpoint;
-
-      let entry = markersById.get(venue.venue_id);
-
-      if (!entry) {
-        const element = document.createElement("button");
-        element.type = "button";
-        element.className = "venue-pin";
-        element.style.pointerEvents = "auto";
-
-        entry = { element, marker: null, venue };
-
-        // Reads entry.venue at click time, so the listener is bound once.
-        element.addEventListener("mousedown", (event) => {
-          event.stopPropagation();
-          openVenueDrawerRef.current?.(entry.venue);
-        });
-
-        entry.marker = new maplibregl.Marker({
-          element,
-          anchor: "center",
-        })
-          .setLngLat([venue.longitude, venue.latitude])
-          .addTo(map);
-
-        markersById.set(venue.venue_id, entry);
-      } else {
-        entry.venue = venue;
-      }
-
-      const { element } = entry;
-
-      element.classList.toggle(
-        "venue-pin--selected",
-        isEmphasised
-      );
-
-      element.classList.toggle(
+      markerEl.type = "button";
+      markerEl.className = "venue-pin";
+      markerEl.classList.toggle("venue-pin--selected", isRouteEndpoint);
+      markerEl.classList.toggle(
         "venue-pin--deemphasised",
         isRouteBackground
       );
-
-      element.style.backgroundColor = getMarkerColor(
+      markerEl.style.backgroundColor = getMarkerColor(
         venue,
         futureMode
       );
-
-      element.style.zIndex = isEmphasised
+      markerEl.innerHTML = `<span>${getIcon(
+        venue
+      )}</span>`;
+      markerEl.style.pointerEvents = "auto";
+      markerEl.style.zIndex = isRouteEndpoint
         ? "100"
         : isRouteBackground
           ? "5"
           : "10";
-
-      const icon = getIcon(venue);
-
-      if (element.textContent !== icon) {
-        element.innerHTML = `<span>${icon}</span>`;
-      }
-
-      element.setAttribute(
+      markerEl.setAttribute(
         "aria-label",
         t("liveHelpMap.openVenue", {
           name: venue.name || t("liveHelpMap.venue"),
         })
       );
+
+      markerEl.addEventListener("mousedown", (event) => {
+        event.stopPropagation();
+        openVenueDrawer(venue);
+      });
+
+      const marker = new maplibregl.Marker({
+        element: markerEl,
+        anchor: "center",
+      })
+        .setLngLat([venue.longitude, venue.latitude])
+        .addTo(mapRef.current);
+
+      markersRef.current.push(marker);
     });
   }, [
     futureMode,
     markerVenues,
+    openVenueDrawer,
     routeEndpointVenueIds,
-    selectedVenueId,
     showRoutePlanner,
     t,
   ]);
@@ -1785,7 +1773,7 @@ useEffect(() => {
     setActiveRouteField(null);
     setRouteStart(t("liveHelpMap.userLocationMock"));
     setRouteDestination(selectedVenue.name ?? t("liveHelpMap.venue"));
-    setRouteDepartureTime(getCurrentTimeValue());
+    setRouteDepartureTime(t("liveHelpMap.routePlanner.leaveNow"));
 
     await loadRoute(selectedVenue, "walk", true, userLocation);
   }
@@ -1800,7 +1788,7 @@ useEffect(() => {
     setSelectedTravelMode("walk");
     setRouteStart("");
     setRouteDestination("");
-    setRouteDepartureTime(getCurrentTimeValue());
+    setRouteDepartureTime("");
     setRouteOriginSelection(null);
     setRouteDestinationVenueId(null);
     setActiveRouteField(null);
@@ -1809,26 +1797,27 @@ useEffect(() => {
   }
 
   function applyFilters() {
-    const languages = [
-      LANGUAGE_CODES[primaryLanguage],
-      LANGUAGE_CODES[secondaryLanguage],
-    ].filter(Boolean);
+  const languages = [
+    LANGUAGE_CODES[primaryLanguage],
+    secondaryLanguage === "None"
+      ? null
+      : LANGUAGE_CODES[secondaryLanguage],
+  ].filter(Boolean);
 
-    setAppliedFilters((current) => ({
-      ...current,
-      languages,
-      accessible: accessibleOnly,
-    }));
+  setAppliedFilters((current) => ({
+    ...current,
+    languages,
+    accessible: accessibleOnly,
+  }));
 
-    setShowFilters(false);
-  }
+  setShowFilters(false);
+}
 
   function clearFilters() {
     setPrimaryLanguage("");
-    setSecondaryLanguage("");
+    setSecondaryLanguage("None");
     setAccessibleOnly(false);
     setSelectedBusynessLevels([]);
-
     setAppliedFilters({
       languages: [],
       accessible: false,
@@ -2111,22 +2100,13 @@ useEffect(() => {
                 </div>
               </div>
 
-              <div className="route-field route-time-field">
-                <span aria-hidden="true">◷</span>
-
+              <div className="route-field">
+                <span>◷</span>
                 <input
-                  type="time"
+                  type="text"
                   value={routeDepartureTime}
-                  onChange={(event) =>
-                    setRouteDepartureTime(event.target.value)
-                  }
-                  step="300"
-                  aria-label={t(
-                    "liveHelpMap.routePlanner.departureTime",
-                    {
-                      defaultValue: "Departure time",
-                    }
-                  )}
+                  readOnly
+                  placeholder={t("liveHelpMap.routePlanner.leaveNow")}
                 />
               </div>
 
@@ -2392,9 +2372,6 @@ useEffect(() => {
                             Number(point.percent) || 0,
                             6
                           )}%`,
-                          backgroundColor: getBusynessColor(
-                            point.percent
-                          ),
                         }}
                         title={`${point.percent}% ${point.level}`}
                       />
@@ -2546,14 +2523,13 @@ useEffect(() => {
                   }
                 >
                   <option value=""> {t("liveHelpMap.filterModal.anyLanguage")}</option>
-                  {Object.keys(LANGUAGE_CODES).map((language) => (
-                    <option
-                      key={language}
-                      value={language}
-                    >
-                      {language}
-                    </option>
-                  ))}
+                  {Object.keys(LANGUAGE_CODES).map(
+                    (language) => (
+                      <option key={language} value={language}>
+                        {language}
+                      </option>
+                    )
+                  )}
                 </select>
               </label>
 

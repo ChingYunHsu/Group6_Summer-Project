@@ -153,6 +153,7 @@
 }
 
 .route-link-button {
+  display: block;
   margin-top: 14px;
   padding: 0;
   border: 0;
@@ -161,6 +162,22 @@
   font-size: 12px;
   font-weight: 900;
   cursor: pointer;
+}
+
+.route-link-button:hover {
+  text-decoration: underline;
+}
+
+.route-link-button:focus-visible {
+  outline: 2px solid #0052e0;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.route-link-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+  text-decoration: none;
 }
 
 .insights-main-grid {
@@ -326,7 +343,6 @@
   list-style: none;
 }
 
-
 .fastest-hubs-list li {
   display: block;
 }
@@ -351,7 +367,6 @@
   font-size: 10px;
   font-weight: 900;
 }
-
 
 @media (max-width: 980px) {
   .insights-metric-grid,
@@ -395,7 +410,6 @@
     max-width: none;
   }
 }
-
 
 .insights-data-status {
   display: flex;
@@ -484,6 +498,17 @@
   outline-offset: 3px;
 }
 
+.hub-route-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.hub-route-button:disabled:hover {
+  border-color: #e2e8f0;
+  background: #ffffff;
+}
+
 .hub-rank {
   width: 36px;
   height: 36px;
@@ -495,7 +520,6 @@
   font-size: 15px;
   font-weight: 900;
 }
-
 
 .chart-toggle button:disabled {
   cursor: not-allowed;

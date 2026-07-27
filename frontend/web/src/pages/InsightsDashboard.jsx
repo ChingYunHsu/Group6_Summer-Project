@@ -45,15 +45,19 @@ const EMPTY_DASHBOARD = {
     summary: "No data available",
   },
   quickTriage: {
+    waitMinutes: null,
     busynessPercent: null,
+    venueId: null,
+    clinicName: "",
+    latitude: null,
+    longitude: null,
     label: "No data available",
-    note: "No current triage recommendation",
+    note: "Clinic that should see you fastest.",
   },
   bestTravelWindow: {
     startTime: "",
     endTime: "",
     reason: "No recommended travel window is available",
-    ctaLabel: "Check back soon",
   },
   predictionSeries: [],
   historySeries7d: [],
@@ -115,36 +119,49 @@ function normaliseOptionalNumber(value, { allowZero = true } = {}) {
 }
 
 function normaliseHub(rawHub, index) {
+  const hub = rawHub ?? {};
+
   const travelMinutes = normaliseOptionalNumber(
-    rawHub.travel_minutes ?? rawHub.travelMinutes,
+    hub.travel_minutes ?? hub.travelMinutes,
     { allowZero: false }
   );
 
   const waitMinutes = normaliseOptionalNumber(
-    rawHub.wait_minutes ?? rawHub.waitMinutes,
+    hub.wait_minutes ?? hub.waitMinutes,
     { allowZero: false }
   );
 
   const capacityLabel =
-    rawHub.capacity_label ??
-    rawHub.capacityLabel ??
-    rawHub.flow_status ??
-    rawHub.flowStatus ??
+    hub.capacity_label ??
+    hub.capacityLabel ??
+    hub.flow_status ??
+    hub.flowStatus ??
     "NO LIVE INFO";
 
   return {
     venueId:
-      rawHub.venue_id ??
-      rawHub.venueId ??
-      `hub-${index}`,
+      hub.venue_id ??
+      hub.venueId ??
+      hub.id ??
+      null,
 
-    rank: Number(rawHub.rank) || index + 1,
+    rank: Number(hub.rank) || index + 1,
 
     clinicName:
-      rawHub.clinic_name ??
-      rawHub.venue_name ??
-      rawHub.name ??
+      hub.clinic_name ??
+      hub.venue_name ??
+      hub.name ??
       null,
+
+    latitude: normaliseOptionalNumber(
+      hub.latitude ?? hub.lat
+    ),
+
+    longitude: normaliseOptionalNumber(
+      hub.longitude ??
+        hub.lng ??
+        hub.lon
+    ),
 
     capacityLabel,
 
@@ -162,9 +179,9 @@ function normaliseHub(rawHub, index) {
         : (travelMinutes ?? 0) + (waitMinutes ?? 0),
 
     languageFlags:
-      rawHub.language_flags ??
-      rawHub.languageFlags ??
-      rawHub.languages ??
+      hub.language_flags ??
+      hub.languageFlags ??
+      hub.languages ??
       [],
   };
 }
@@ -241,14 +258,27 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     ? null
     : clampPercent(density.percent);
 
-  const busynessPercent = triageSaysNoData
-    ? null
-    : clampPercent(
-        triage.busyness_percent ?? triage.busynessPercent
-      );
+  const waitMinutes = triageSaysNoData
+  ? null
+  : normaliseOptionalNumber(
+      triage.wait_minutes ?? triage.waitMinutes,
+      { allowZero: false }
+    );
+
+const busynessPercent = triageSaysNoData
+  ? null
+  : clampPercent(
+      triage.busyness_percent ??
+        triage.busynessPercent ??
+        triage.percent ??
+        triage.demand_percent ??
+        triage.demandPercent
+    );
 
   const hasDensityData = densityPercent !== null;
-  const hasTriageData = busynessPercent !== null;
+  const hasTriageData =
+    waitMinutes !== null ||
+    busynessPercent !== null;
   const hasTravelWindow = Boolean(
     travelWindow.start_time ??
       travelWindow.startTime ??
@@ -304,18 +334,45 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     },
 
     quickTriage: {
+      waitMinutes,
       busynessPercent,
+
+      venueId:
+        triage.venue_id ??
+        triage.venueId ??
+        triage.clinic_id ??
+        triage.clinicId ??
+        null,
+
+      clinicName:
+        triage.venue_name ??
+        triage.venueName ??
+        triage.clinic_name ??
+        triage.clinicName ??
+        triage.label ??
+        "",
+
+      latitude: normaliseOptionalNumber(
+        triage.latitude ?? triage.lat
+      ),
+
+      longitude: normaliseOptionalNumber(
+        triage.longitude ??
+          triage.lng ??
+          triage.lon
+      ),
 
       label:
         triage.label ??
         triage.venue_name ??
-        t("insights.noDataAvailable", { defaultValue: "No data available" }),
+        triage.venueName ??
+        triage.clinic_name ??
+        triage.clinicName ??
+        t("insights.noDataAvailable", {
+          defaultValue: "No data available",
+        }),
 
-      note:
-        triage.note ??
-        triage.summary ??
-        triage.venue_name ??
-        "No current triage recommendation",
+      note: "Clinic that should see you fastest.",
     },
 
     bestTravelWindow: {
@@ -335,11 +392,6 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
         travelWindow.reason ??
         travelWindow.summary ??
         "No recommended travel window is available",
-
-      ctaLabel:
-        travelWindow.cta_label ??
-        travelWindow.ctaLabel ??
-        "Plan Route",
     },
 
     predictionSeries,
@@ -738,11 +790,13 @@ function InsightsDashboard() {
       : `${dashboardData.realTimeDensity.percent}%`;
 
   const triageValue =
-    dashboardData.quickTriage.busynessPercent === null
-      ? t("insights.busynessUnavailable")
-      : t("insights.busynessPercentSuffix", {
-          percent: dashboardData.quickTriage.busynessPercent,
-        });
+    dashboardData.quickTriage.busynessPercent !== null
+      ? `${dashboardData.quickTriage.busynessPercent}% busy`
+      : dashboardData.quickTriage.waitMinutes !== null
+        ? t("insights.waitMinutesSuffix", {
+            minutes: dashboardData.quickTriage.waitMinutes,
+          })
+        : t("insights.waitUnavailable");
 
   const travelWindowValue =
     dashboardData.bestTravelWindow.startTime &&
@@ -766,26 +820,56 @@ function InsightsDashboard() {
     void loadDashboard();
   }
 
-  function handlePlanRoute() {
+  function openVenueOnMap({
+    venueId,
+    clinicName,
+    latitude,
+    longitude,
+  }) {
+    if (!venueId) {
+      return;
+    }
+
+    localStorage.setItem(
+      "clearPathDirectionsDestination",
+      String(venueId)
+    );
+
+    const hasCoordinates =
+      Number.isFinite(latitude) &&
+      Number.isFinite(longitude);
+
     navigate("/map", {
       state: {
-        district: dashboardData.district,
-        query: selectedDistrict.query,
+        venueId,
+        selectedVenueId: venueId,
+        destination: clinicName,
+        destinationCoordinates: hasCoordinates
+          ? {
+              latitude,
+              longitude,
+            }
+          : null,
+        openRoutePlanner: true,
       },
     });
   }
 
-  function handleHubDirections(hub) {
-    localStorage.setItem(
-      "clearPathDirectionsDestination",
-      hub.venueId
-    );
+  function handleQuickTriageRoute() {
+    openVenueOnMap({
+      venueId: dashboardData.quickTriage.venueId,
+      clinicName: dashboardData.quickTriage.clinicName,
+      latitude: dashboardData.quickTriage.latitude,
+      longitude: dashboardData.quickTriage.longitude,
+    });
+  }
 
-    navigate("/map", {
-      state: {
-        venueId: hub.venueId,
-        destination: hub.clinicName,
-      },
+  function handleHubDirections(hub) {
+    openVenueOnMap({
+      venueId: hub.venueId,
+      clinicName: hub.clinicName,
+      latitude: hub.latitude,
+      longitude: hub.longitude,
     });
   }
 
@@ -891,11 +975,20 @@ function InsightsDashboard() {
                 eyebrow={t("insights.quickTriageDemand")}
                 icon="✱"
                 value={triageValue}
-                title={dashboardData.quickTriage.note}
+                title="Clinic that should see you fastest."
               >
                 <span className="clinic-chip">
                   {dashboardData.quickTriage.label}
                 </span>
+
+                <button
+                  type="button"
+                  className="route-link-button"
+                  onClick={handleQuickTriageRoute}
+                  disabled={!dashboardData.quickTriage.venueId}
+                >
+                  Plan Route →
+                </button>
               </MetricCard>
 
               <MetricCard
@@ -906,19 +999,7 @@ function InsightsDashboard() {
                 title={
                   dashboardData.bestTravelWindow.reason
                 }
-              >
-                <button
-                  type="button"
-                  className="route-link-button"
-                  onClick={handlePlanRoute}
-                >
-                  {
-                    dashboardData.bestTravelWindow
-                      .ctaLabel
-                  }{" "}
-                  →
-                </button>
-              </MetricCard>
+              />
             </section>
 
             <section className="insights-main-grid">
@@ -1030,13 +1111,19 @@ function InsightsDashboard() {
                     {sortedHubs
                       .slice(0, 3)
                       .map((hub, index) => (
-                        <li key={hub.venueId}>
+                        <li
+                          key={
+                            hub.venueId ??
+                            `${hub.clinicName}-${index}`
+                          }
+                        >
                           <button
                             type="button"
                             className="hub-route-button"
                             onClick={() =>
                               handleHubDirections(hub)
                             }
+                            disabled={!hub.venueId}
                             aria-label={t(
                               "insights.getDirectionsAria",
                               {
