@@ -258,11 +258,10 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     ? null
     : clampPercent(density.percent);
 
-  const waitMinutes = triageSaysNoData
+  const busynessPercent = triageSaysNoData
     ? null
-    : normaliseOptionalNumber(
-        triage.wait_minutes ?? triage.waitMinutes,
-        { allowZero: false }
+    : clampPercent(
+        triage.busyness_percent ?? triage.busynessPercent
       );
 
   const busynessPercent = triageSaysNoData

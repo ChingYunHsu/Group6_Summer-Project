@@ -190,17 +190,21 @@ env/
 # Data files that should not be tracked
 *.csv
 *.json
+# Versioned display-boundary asset; deliberately retained for reproducible
+# Manhattan point-in-polygon filtering in the web client.
+!frontend/web/src/data/boundaries/manhattan-nyc-dcp-26b.json
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.svg
-Data+ML/data_source/
-
 # Versioned source snapshots for reproducible data pipelines.
 !Data+ML/raw_data_source/
 !Data+ML/raw_data_source/**
 Data+ML/raw_data_source/.DS_Store
+!Data+ML/data_source/
+!Data+ML/data_source/**
+Data+ML/data_source/.DS_Store
 
 # Reproducible V2 training artifacts. These are intentionally versioned even
 # though other CSV source/output files remain ignored.

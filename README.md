@@ -1,9 +1,21 @@
 # Group6_Summer-Project
-UCD COMP47360 Team 6 - Accessibility Intelligence App for Manhattan
+UCD COMP47360 Team 6 — **ClearPath**, an accessibility intelligence application for Manhattan. It combines a React web dashboard, an Expo mobile client, a Flask API, MySQL/Redis services, and an offline Data/ML pipeline.
 
-## Development Guidelines & Workflow
+## For assessors: what is in this repository
 
-Welcome to the official repository for **ClearPath**. To ensure high code quality, robust architecture, and smooth sprint integrations, all team members are required to strictly adhere to the following development workflows.
+| Area | Location | Purpose |
+| --- | --- | --- |
+| Web application | [`frontend/web`](frontend/web) | React + Vite dashboard, including the live map and insights views. |
+| Mobile application | [`frontend/mobile`](frontend/mobile) | Expo / React Native mobile client. |
+| API | [`backend`](backend) | Flask blueprints, authentication, reporting, routes, venue and insights APIs. |
+| Database and infrastructure | [`docker`](docker), [`docker-compose.yml`](docker-compose.yml) | MySQL schema/seed scripts; local MySQL, Redis and phpMyAdmin services. |
+| Data and ML | [`Data+ML`](Data+ML) | ETL, telemetry, forecasting experiments and data documentation. |
+| API contract | [`openapi.yaml`](openapi.yaml) | Shared REST API specification. |
+| Technical documentation | [`docs`](docs) | ERD, telemetry contract and exported-venue schema. |
+
+## Architecture
+
+The browser and mobile applications communicate with the Flask API over HTTP/JSON. The API reads from MySQL and uses Redis for short-lived caching and token revocation. Data/ML processes prepare the source data and forecast outputs consumed by the application.
 
 ### System Architecture Diagram
 
@@ -20,19 +32,17 @@ graph LR
         B[Web Dashboard <br> React/HTML/CSS]:::client
     end
 
-    %% 2. Application Tier (Server Side - Docker Compose Network Boundary)
-    subgraph Docker_Environment [Docker Compose Network]
-        
-        subgraph Flask_Container [Container: API Application Server]
-            C[Poetry Environment] --> D[Flask Core Engine]
-            D --> E[Flask Blueprints <br> API Routing]
-        end
+    %% 2. Application and data services
+    subgraph Application_Tier [Local Application Processes]
+        C[Poetry Environment] --> D[Flask Core Engine]
+        D --> E[Flask Blueprints <br> API Routing]
+    end
 
+    subgraph Docker_Environment [Docker Compose Services]
         subgraph MySQL_Container [Container: Database Server]
-            F[(MySQL DB <br> Relational Schemas)]:::database
+        F[(MySQL DB <br> Relational Schemas)]:::database
         end
-        
-        E <-->|SQL via TCP/IP| F
+        R[(Redis Cache / Token Blacklist)]:::database
     end
 
     %% 3. Data & Analytics Pipeline (Offline / Background Process)
@@ -44,11 +54,87 @@ graph LR
     %% Network Protocols (Communication Layer)
     A <-->|HTTP Requests / JSON Payloads| E
     B <-->|HTTP Requests / JSON Payloads| E
+    E <-->|SQL via TCP/IP| F
+    E <-->|Cache / revocation| R
 
     %% Apply Styles
-    class Docker_Environment,Flask_Container,MySQL_Container docker;
+    class Docker_Environment,MySQL_Container docker;
 ```
----
+
+## Quick start: reproduce the local system
+
+### Prerequisites
+
+- Docker Desktop with Docker Compose
+- Node.js 20+ and npm
+- Python 3.11+ and Poetry
+
+### 1. Start the database services
+
+From the repository root:
+
+```bash
+docker compose up -d mysql redis phpmyadmin
+```
+
+MySQL is exposed on `localhost:3306`, Redis on `localhost:6379`, and phpMyAdmin at [http://localhost:8080](http://localhost:8080). The MySQL schema and seed scripts run from [`docker/mysql/init`](docker/mysql/init) on first startup.
+
+### 2. Configure and start the API
+
+```bash
+cp backend/.env.example backend/.env
+cd backend
+poetry install --no-interaction --no-root --sync
+poetry run python src/main.py
+```
+
+The Flask API listens on [http://localhost:5000](http://localhost:5000) by default. Replace placeholder values in `backend/.env` before using external services such as Google Maps or Gemini.
+
+### 3. Start the web application
+
+In a second terminal:
+
+```bash
+cd frontend/web
+npm ci
+npm run dev
+```
+
+Vite proxies `/api` calls to `http://127.0.0.1:5000` during local development.
+
+### 4. Start the mobile application (optional)
+
+```bash
+cd frontend/mobile
+npm ci
+npm start
+```
+
+Use Expo Go, an emulator, or the platform-specific `npm run ios` / `npm run android` commands.
+
+## Testing and build checks
+
+```bash
+# Backend
+cd backend && poetry run pytest tests/ -m "not integration"
+
+# Web
+cd frontend/web && npm run lint && npm test && npm run build
+
+# Mobile
+cd frontend/mobile && npm run lint && npm test
+```
+
+The data/ML module has its own [README](Data+ML/README.md), including ETL and database setup information.
+
+## Data and deployment notes
+
+- Versioned input snapshots are stored in [`Data+ML/raw_data_source`](Data+ML/raw_data_source). Their processing and Manhattan record counts are documented in [Data+ML/README.md](Data+ML/README.md).
+- The included Compose configuration is the reproducible local infrastructure deployment: MySQL, Redis and phpMyAdmin. The Flask API and Web client are started separately using the commands above.
+- Live telemetry is deliberately opt-in. It requires approved provider credentials and configuration, then can be enabled with `docker compose --profile telemetry up -d`. See the [telemetry feed contract](docs/telemetry-feed-contract.md).
+- This repository does not publish a public production URL or production secrets. Deployment evidence should use the local reproduction steps above and the API contract in [openapi.yaml](openapi.yaml).
+
+## Contributor workflow
 
 ## 1. Git Branching & Pull Request (PR) Policy
 
