@@ -735,11 +735,15 @@ function LiveHelpMap() {
     }
   }, [t]);
 
-  const refreshReports = useCallback(async () => {
+  const refreshReports = useCallback(async (isCancelled = () => false) => {
     try {
       const reports = await listReports({ status: "active" });
+      if (isCancelled()) return;
+
       setLiveReports(reports.map(normaliseReport));
     } catch (error) {
+      if (isCancelled()) return;
+
       console.error("Failed to load live reports:", error);
       setMapError((current) => current || error.message);
     }
@@ -784,10 +788,19 @@ function LiveHelpMap() {
   }, [t]);
 
   useEffect(() => {
-    refreshReports();
+    let cancelled = false;
+    const isCancelled = () => cancelled;
 
-    const interval = window.setInterval(refreshReports, 30000);
-    return () => window.clearInterval(interval);
+    void refreshReports(isCancelled);
+
+    const interval = window.setInterval(() => {
+      void refreshReports(isCancelled);
+    }, 30000);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(interval);
+    };
   }, [refreshReports]);
 
 useEffect(() => {
@@ -1205,25 +1218,6 @@ useEffect(() => {
   venuesWithBusyness,
 ]);
 
-useEffect(() => {
-  console.log("MAP VENUE DEBUG", {
-    totalVenuesFromApi: venues.length,
-    venuesWithBusyness: Object.keys(busynessByVenueId).length,
-    visibleVenues: visibleVenues.length,
-    searchText,
-    appliedFilters,
-    selectedBusynessLevels,
-    futureMode,
-  });
-}, [
-  venues,
-  busynessByVenueId,
-  visibleVenues,
-  searchText,
-  appliedFilters,
-  selectedBusynessLevels,
-  futureMode,
-]);
 
   const routeEndpointVenueIds = useMemo(() => {
     if (!showRoutePlanner) return new Set();
