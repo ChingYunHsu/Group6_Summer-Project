@@ -26,38 +26,328 @@ function getFavouriteVenueId(favourite) {
   );
 }
 
-function normaliseVenue(rawVenue) {
+function unwrapVenuePayload(payload) {
+  if (!payload || typeof payload !== "object") {
+    return {};
+  }
+
+  const unwrapped =
+    payload.venue ??
+    payload.item ??
+    payload.result ??
+    payload.data?.venue ??
+    payload.data?.item ??
+    payload.data ??
+    payload;
+
+  return unwrapped &&
+    typeof unwrapped === "object" &&
+    !Array.isArray(unwrapped)
+    ? unwrapped
+    : {};
+}
+
+function normaliseList(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (typeof value === "string") {
+    try {
+      const parsed = JSON.parse(value);
+
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+    } catch {
+      return value
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
+    }
+  }
+
+  return [];
+}
+
+function normaliseAccessStatus(value) {
+  if (typeof value === "boolean") {
+    return value ? "accessible" : "not accessible";
+  }
+
+  const cleanedValue = String(value ?? "").trim();
+
+  return cleanedValue || "";
+}
+
+function normaliseBusyness(payload) {
+  const rawBusyness =
+    payload?.busyness ??
+    payload?.data?.busyness ??
+    payload?.data ??
+    payload ??
+    {};
+
+  if (
+    !rawBusyness ||
+    typeof rawBusyness !== "object" ||
+    Array.isArray(rawBusyness)
+  ) {
+    return {};
+  }
+
+  const busynessPercent =
+    rawBusyness.busyness_percent ??
+    rawBusyness.busyness_score ??
+    rawBusyness.percent ??
+    rawBusyness.load_percent;
+
+  const busynessLevel =
+    rawBusyness.busyness_level ??
+    rawBusyness.busyness_status ??
+    rawBusyness.level ??
+    rawBusyness.status;
+
+  const numericBusynessPercent =
+    busynessPercent !== null &&
+    busynessPercent !== undefined &&
+    busynessPercent !== ""
+      ? Number(busynessPercent)
+      : Number.NaN;
+
   return {
-    ...rawVenue,
-    venue_id: rawVenue?.venue_id ?? rawVenue?.id,
-    supported_services:
-      rawVenue?.supported_services ??
-      rawVenue?.services ??
-      [],
-    language_tags:
-      rawVenue?.language_tags ??
-      rawVenue?.languages ??
-      [],
+    ...(Number.isFinite(numericBusynessPercent)
+      ? {
+          busyness_percent: Math.min(
+            100,
+            Math.max(0, numericBusynessPercent)
+          ),
+        }
+      : {}),
+
+    ...(busynessLevel
+      ? {
+          busyness_level: busynessLevel,
+          busyness_status:
+            rawBusyness.busyness_status ??
+            rawBusyness.status ??
+            busynessLevel,
+        }
+      : {}),
+
+    ...(rawBusyness.busyness_color ??
+    rawBusyness.color
+      ? {
+          busyness_color:
+            rawBusyness.busyness_color ??
+            rawBusyness.color,
+        }
+      : {}),
   };
 }
 
-function normaliseBusyness(rawBusyness) {
+function normaliseVenue(payload) {
+  const rawVenue = unwrapVenuePayload(payload);
+  const location = rawVenue.location ?? {};
+
+  const latitude = Number(
+    rawVenue.latitude ??
+      rawVenue.lat ??
+      location.latitude ??
+      location.lat
+  );
+
+  const longitude = Number(
+    rawVenue.longitude ??
+      rawVenue.lng ??
+      rawVenue.lon ??
+      location.longitude ??
+      location.lng ??
+      location.lon
+  );
+
   return {
-    ...rawBusyness,
+    ...rawVenue,
+
+    venue_id:
+      rawVenue.venue_id ??
+      rawVenue.venueId ??
+      rawVenue.id ??
+      null,
+
+    name:
+      rawVenue.name ??
+      rawVenue.venue_name ??
+      rawVenue.title ??
+      "",
+
+    venue_type:
+      rawVenue.venue_type ??
+      rawVenue.type ??
+      rawVenue.category ??
+      "",
+
+    borough:
+      rawVenue.borough ??
+      rawVenue.district ??
+      rawVenue.area ??
+      rawVenue.city ??
+      "",
+
+    address:
+      rawVenue.address ??
+      rawVenue.formatted_address ??
+      rawVenue.street_address ??
+      "",
+
+    latitude: Number.isFinite(latitude) ? latitude : null,
+    longitude: Number.isFinite(longitude) ? longitude : null,
+
+    supported_services: normaliseList(
+      rawVenue.supported_services ??
+        rawVenue.services
+    ),
+
+    language_tags: normaliseList(
+      rawVenue.language_tags ??
+        rawVenue.languages
+    ),
+
+    accessible_status: normaliseAccessStatus(
+      rawVenue.accessible_status ??
+        rawVenue.access_status ??
+        rawVenue.wheelchair_accessible ??
+        rawVenue.accessible ??
+        rawVenue.accessibility
+    ),
+
     busyness_percent:
-      rawBusyness?.busyness_percent ??
-      rawBusyness?.percent ??
-      rawBusyness?.load_percent ??
+      rawVenue.busyness_percent ??
+      rawVenue.busyness?.busyness_percent ??
+      rawVenue.busyness?.percent ??
       null,
+
     busyness_level:
-      rawBusyness?.busyness_level ??
-      rawBusyness?.level ??
-      rawBusyness?.status ??
+      rawVenue.busyness_level ??
+      rawVenue.busyness?.busyness_level ??
+      rawVenue.busyness?.level ??
+      rawVenue.busyness?.status ??
       "No Live Info",
-    avg_wait_minutes:
-      rawBusyness?.avg_wait_minutes ??
-      rawBusyness?.estimated_wait_minutes ??
-      null,
+  };
+}
+
+function getSavedUserLocation() {
+  try {
+    const storedLocation = JSON.parse(
+      localStorage.getItem("clearPathUserLocation") ||
+        "null"
+    );
+
+    const latitude = Number(
+      storedLocation?.latitude ??
+        storedLocation?.lat
+    );
+
+    const longitude = Number(
+      storedLocation?.longitude ??
+        storedLocation?.lng ??
+        storedLocation?.lon
+    );
+
+    if (
+      Number.isFinite(latitude) &&
+      Number.isFinite(longitude)
+    ) {
+      return { latitude, longitude };
+    }
+  } catch (error) {
+    console.error(
+      "Could not read the saved user location:",
+      error
+    );
+  }
+
+  return null;
+}
+
+function calculateDistanceKm(
+  originLatitude,
+  originLongitude,
+  destinationLatitude,
+  destinationLongitude
+) {
+  const earthRadiusKm = 6371;
+  const toRadians = (degrees) =>
+    (degrees * Math.PI) / 180;
+
+  const latitudeDifference = toRadians(
+    destinationLatitude - originLatitude
+  );
+
+  const longitudeDifference = toRadians(
+    destinationLongitude - originLongitude
+  );
+
+  const firstLatitude = toRadians(originLatitude);
+  const secondLatitude = toRadians(destinationLatitude);
+
+  const haversineValue =
+    Math.sin(latitudeDifference / 2) ** 2 +
+    Math.cos(firstLatitude) *
+      Math.cos(secondLatitude) *
+      Math.sin(longitudeDifference / 2) ** 2;
+
+  const angularDistance =
+    2 *
+    Math.atan2(
+      Math.sqrt(haversineValue),
+      Math.sqrt(1 - haversineValue)
+    );
+
+  return Number(
+    (earthRadiusKm * angularDistance).toFixed(1)
+  );
+}
+
+function addDistanceFromSavedLocation(
+  venue,
+  savedUserLocation
+) {
+  const hasApiDistance =
+    venue.distance_km !== null &&
+    venue.distance_km !== undefined &&
+    venue.distance_km !== "";
+
+  const apiDistance = hasApiDistance
+    ? Number(venue.distance_km)
+    : Number.NaN;
+
+  if (Number.isFinite(apiDistance)) {
+    return {
+      ...venue,
+      distance_km: apiDistance,
+    };
+  }
+
+  if (
+    !savedUserLocation ||
+    !Number.isFinite(venue.latitude) ||
+    !Number.isFinite(venue.longitude)
+  ) {
+    return {
+      ...venue,
+      distance_km: null,
+    };
+  }
+
+  return {
+    ...venue,
+    distance_km: calculateDistanceKm(
+      savedUserLocation.latitude,
+      savedUserLocation.longitude,
+      venue.latitude,
+      venue.longitude
+    ),
   };
 }
 
@@ -122,6 +412,9 @@ function Favourites() {
         const favouriteRecords =
           await listFavourites();
 
+        const savedUserLocation =
+          getSavedUserLocation();
+
         const venueResults = await Promise.allSettled(
           favouriteRecords.map(async (favourite) => {
             const venueId =
@@ -136,8 +429,8 @@ function Favourites() {
             const embeddedVenue =
               favourite.venue &&
               typeof favourite.venue === "object"
-                ? favourite.venue
-                : favourite;
+                ? unwrapVenuePayload(favourite.venue)
+                : unwrapVenuePayload(favourite);
 
             const [
               detailsResult,
@@ -147,14 +440,18 @@ function Favourites() {
               getVenueBusyness(venueId),
             ]);
 
-            const details =
+            const apiVenue =
               detailsResult.status === "fulfilled"
-                ? detailsResult.value
+                ? unwrapVenuePayload(
+                    detailsResult.value
+                  )
                 : {};
 
-            const busyness =
+            const apiBusyness =
               busynessResult.status === "fulfilled"
-                ? busynessResult.value
+                ? normaliseBusyness(
+                    busynessResult.value
+                  )
                 : {};
 
             if (
@@ -175,12 +472,17 @@ function Favourites() {
               );
             }
 
-            return {
-              ...normaliseVenue(embeddedVenue),
-              ...normaliseVenue(details),
-              ...normaliseBusyness(busyness),
+            const hydratedVenue = normaliseVenue({
+              ...embeddedVenue,
+              ...apiVenue,
+              ...apiBusyness,
               venue_id: venueId,
-            };
+            });
+
+            return addDistanceFromSavedLocation(
+              hydratedVenue,
+              savedUserLocation
+            );
           })
         );
 
@@ -292,10 +594,27 @@ function Favourites() {
   function handleGetDirections(venue) {
     localStorage.setItem(
       "clearPathDirectionsDestination",
-      venue.venue_id
+      String(venue.venue_id)
     );
 
-    navigate("/map");
+    const hasCoordinates =
+      Number.isFinite(venue.latitude) &&
+      Number.isFinite(venue.longitude);
+
+    navigate("/map", {
+      state: {
+        venueId: venue.venue_id,
+        selectedVenueId: venue.venue_id,
+        destination: venue.name,
+        destinationCoordinates: hasCoordinates
+          ? {
+              latitude: venue.latitude,
+              longitude: venue.longitude,
+            }
+          : null,
+        openRoutePlanner: true,
+      },
+    });
   }
 
   return (
@@ -502,7 +821,10 @@ function Favourites() {
                         distance: venue.distance_km,
                       })
                     : t("favourites.distanceUnavailable")}{" "}
-                  • {venue.borough || t("favourites.areaUnknown")}
+                  •{" "}
+                  {venue.borough ||
+                    venue.address ||
+                    t("favourites.areaUnknown")}
                 </p>
 
                 <p className="saved-service-line">
@@ -510,15 +832,6 @@ function Favourites() {
                   {venue.supported_services?.[0] ||
                     venue.venue_type ||
                     t("favourites.healthcareService")}
-                </p>
-
-                <p className="saved-meta-line">
-                  {t("favourites.waitTime")}:{" "}
-                  {venue.avg_wait_minutes != null
-                    ? t("favourites.waitMinutes", {
-                        minutes: venue.avg_wait_minutes,
-                      })
-                    : t("favourites.waitUnavailable")}
                 </p>
 
                 <p className="saved-meta-line">
