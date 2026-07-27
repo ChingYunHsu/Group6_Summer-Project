@@ -268,7 +268,6 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     ? null
     : clampPercent(
         triage.busyness_percent ??
-          triage.busynessPercent ??
           triage.percent ??
           triage.demand_percent ??
           triage.demandPercent
