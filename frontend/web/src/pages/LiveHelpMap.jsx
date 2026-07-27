@@ -37,6 +37,15 @@ const LANGUAGE_CODES = {
   "Deutsch (German)": "de",
 };
 
+// Only these categories have V2 busyness predictions. AEDs and restrooms
+// never did, so they must not trigger prefetch batches — that was the source
+// of ~33 pointless request batches (and 33 full marker rebuilds) per AED load.
+const BUSYNESS_CATEGORIES = new Set([
+  "clinic",
+  "hospital",
+  "pharmacy",
+]);
+
 
 function getFavouriteVenueId(favourite) {
   return (
@@ -109,7 +118,7 @@ function getMarkerColor(venue, futureMode) {
     rawPercent === ""
       ? Number.NaN
       : Number(rawPercent);
-    
+
   if (Number.isFinite(percent)) {
     if (percent < 30) return "#22c55e";
     if (percent <= 70) return "#eab308";
@@ -232,6 +241,10 @@ function normaliseVenue(rawVenue) {
         rawVenue.type ??
         ""
     ).toLowerCase(),
+
+    // Computed once here so getIcon / venueMatchesCategory never have to
+    // JSON.stringify the whole venue object per marker, per render pass.
+    is_pharmacy: scanForPharmacyTerms(rawVenue),
 
     language_tags: languages,
 
@@ -517,7 +530,12 @@ const PHARMACY_TERMS = [
   "drug store",
 ];
 
-function venueIsPharmacy(venue) {
+/*
+ * The expensive full-object scan. Only normaliseVenue should call this
+ * directly — everywhere else goes through venueIsPharmacy, which reads the
+ * cached is_pharmacy flag.
+ */
+function scanForPharmacyTerms(venue) {
   // This checks all available venue fields, including subtype,
   // category and amenity fields that may not be displayed.
   const searchableVenue = JSON.stringify(venue ?? {}).toLowerCase();
@@ -525,6 +543,12 @@ function venueIsPharmacy(venue) {
   return PHARMACY_TERMS.some((term) =>
     searchableVenue.includes(term)
   );
+}
+
+function venueIsPharmacy(venue) {
+  // Normalised venues carry the precomputed flag; fall back to the scan for
+  // raw payloads that never went through normaliseVenue.
+  return venue?.is_pharmacy ?? scanForPharmacyTerms(venue);
 }
 
 function venueMatchesCategory(venue, selectedType) {
@@ -630,10 +654,12 @@ function LiveHelpMap() {
   const BUSYNESS_BATCH_SIZE = 100;
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
-  const markersRef = useRef([]);
+  // venue_id -> { element, marker, venue }
+  const markersByIdRef = useRef(new Map());
   const userMarkerRef = useRef(null);
   const routeRequestIdRef = useRef(0);
-  
+  const openVenueDrawerRef = useRef(null);
+
 
   const [venues, setVenues] = useState([]);
   const [venueDetailsById, setVenueDetailsById] = useState({});
@@ -795,11 +821,15 @@ useEffect(() => {
 
   if (!selectedType) return;
 
+  // AEDs and restrooms have no V2 predictions — bail before any request.
+  if (!BUSYNESS_CATEGORIES.has(selectedType)) return;
+
   const typeAliases = {
     clinic: ["clinic", "healthcare", "dentist", "laboratory"],
+    // venueIsHospital() accepts healthcare-typed records, so the prefetch
+    // has to accept them too or those hospitals never get busyness.
+    hospital: ["hospital", "healthcare"],
     pharmacy: ["pharmacy"],
-    emergencyasset: ["emergencyasset", "aed"],
-    restroom: ["restroom", "toilet"],
   };
 
   const acceptedTypes =
@@ -975,8 +1005,8 @@ useEffect(() => {
   );
 
   return () => {
-    markersRef.current.forEach((marker) => marker.remove());
-    markersRef.current = [];
+    markersByIdRef.current.forEach((entry) => entry.marker?.remove());
+    markersByIdRef.current.clear();
 
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
@@ -1205,26 +1235,6 @@ useEffect(() => {
   venuesWithBusyness,
 ]);
 
-useEffect(() => {
-  console.log("MAP VENUE DEBUG", {
-    totalVenuesFromApi: venues.length,
-    venuesWithBusyness: Object.keys(busynessByVenueId).length,
-    visibleVenues: visibleVenues.length,
-    searchText,
-    appliedFilters,
-    selectedBusynessLevels,
-    futureMode,
-  });
-}, [
-  venues,
-  busynessByVenueId,
-  visibleVenues,
-  searchText,
-  appliedFilters,
-  selectedBusynessLevels,
-  futureMode,
-]);
-
   const routeEndpointVenueIds = useMemo(() => {
     if (!showRoutePlanner) return new Set();
 
@@ -1269,81 +1279,113 @@ useEffect(() => {
     setShowLeftDrawer(true);
   }, []);
 
+  // Marker click handlers read this ref, so a changing openVenueDrawer
+  // identity never forces listeners (or markers) to be rebuilt.
   useEffect(() => {
-    if (!mapRef.current) return;
+    openVenueDrawerRef.current = openVenueDrawer;
+  }, [openVenueDrawer]);
 
-    markersRef.current.forEach((marker) => marker.remove());
-    markersRef.current = [];
+  /*
+   * Diff the marker set instead of tearing it down. Previously every
+   * busyness batch recreated all markers, which on the AED layer meant
+   * ~100k remove/create lifecycle events.
+   */
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const markersById = markersByIdRef.current;
+    const nextIds = new Set(
+      markerVenues.map((venue) => venue.venue_id)
+    );
+
+    markersById.forEach((entry, venueId) => {
+      if (!nextIds.has(venueId)) {
+        entry.marker.remove();
+        markersById.delete(venueId);
+      }
+    });
 
     markerVenues.forEach((venue) => {
-      const markerEl = document.createElement("button");
-      const isRouteEndpoint =
-        routeEndpointVenueIds.has(venue.venue_id);
+      const isRouteEndpoint = routeEndpointVenueIds.has(
+        venue.venue_id
+      );
 
       const isClickedVenue =
         !showRoutePlanner &&
         selectedVenueId === venue.venue_id;
 
-      const isEmphasised =
-        isRouteEndpoint || isClickedVenue;
-
+      const isEmphasised = isRouteEndpoint || isClickedVenue;
       const isRouteBackground =
         showRoutePlanner && !isRouteEndpoint;
 
-      markerEl.type = "button";
-      markerEl.className = "venue-pin";
+      let entry = markersById.get(venue.venue_id);
 
-      markerEl.classList.toggle(
+      if (!entry) {
+        const element = document.createElement("button");
+        element.type = "button";
+        element.className = "venue-pin";
+        element.style.pointerEvents = "auto";
+
+        entry = { element, marker: null, venue };
+
+        // Reads entry.venue at click time, so the listener is bound once.
+        element.addEventListener("mousedown", (event) => {
+          event.stopPropagation();
+          openVenueDrawerRef.current?.(entry.venue);
+        });
+
+        entry.marker = new maplibregl.Marker({
+          element,
+          anchor: "center",
+        })
+          .setLngLat([venue.longitude, venue.latitude])
+          .addTo(map);
+
+        markersById.set(venue.venue_id, entry);
+      } else {
+        entry.venue = venue;
+      }
+
+      const { element } = entry;
+
+      element.classList.toggle(
         "venue-pin--selected",
         isEmphasised
       );
 
-      markerEl.classList.toggle(
+      element.classList.toggle(
         "venue-pin--deemphasised",
         isRouteBackground
       );
-      markerEl.classList.toggle(
-        "venue-pin--deemphasised",
-        isRouteBackground
-      );
-      markerEl.style.backgroundColor = getMarkerColor(
+
+      element.style.backgroundColor = getMarkerColor(
         venue,
         futureMode
       );
-      markerEl.innerHTML = `<span>${getIcon(
-        venue
-      )}</span>`;
-      markerEl.style.pointerEvents = "auto";
-      markerEl.style.zIndex = isEmphasised
+
+      element.style.zIndex = isEmphasised
         ? "100"
         : isRouteBackground
           ? "5"
           : "10";
-      markerEl.setAttribute(
+
+      const icon = getIcon(venue);
+
+      if (element.textContent !== icon) {
+        element.innerHTML = `<span>${icon}</span>`;
+      }
+
+      element.setAttribute(
         "aria-label",
         t("liveHelpMap.openVenue", {
           name: venue.name || t("liveHelpMap.venue"),
         })
       );
-
-      markerEl.addEventListener("mousedown", (event) => {
-        event.stopPropagation();
-        openVenueDrawer(venue);
-      });
-
-      const marker = new maplibregl.Marker({
-        element: markerEl,
-        anchor: "center",
-      })
-        .setLngLat([venue.longitude, venue.latitude])
-        .addTo(mapRef.current);
-
-      markersRef.current.push(marker);
     });
   }, [
     futureMode,
     markerVenues,
-    openVenueDrawer,
     routeEndpointVenueIds,
     selectedVenueId,
     showRoutePlanner,

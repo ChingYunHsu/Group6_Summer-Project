@@ -739,10 +739,10 @@ function InsightsDashboard() {
       : `${dashboardData.realTimeDensity.percent}%`;
 
   const triageValue =
-    dashboardData.quickTriage.waitMinutes === null
+    dashboardData.quickTriage.busynessPercent === null
       ? t("insights.waitUnavailable")
       : t("insights.waitMinutesSuffix", {
-          minutes: dashboardData.quickTriage.waitMinutes,
+          minutes: dashboardData.quickTriage.busynessPercent,
         });
 
   const travelWindowValue =
@@ -1076,7 +1076,6 @@ function InsightsDashboard() {
                                 </div>
                               )}
                             </div>
-
                             <span
                               className="hub-route-arrow"
                               aria-hidden="true"
