@@ -637,7 +637,7 @@ function venueMatchesCategory(
   ).toLowerCase();
 
   if (selectedType === "pharmacy") {
-    return venueIsPharmacy(venue);
+    return venueType === "pharmacy";
   }
 
   if (selectedType === "hospital") {
