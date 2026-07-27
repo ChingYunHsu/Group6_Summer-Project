@@ -258,20 +258,22 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     ? null
     : clampPercent(density.percent);
 
-  const busynessPercent = triageSaysNoData
-    ? null
-    : clampPercent(
-        triage.busyness_percent ?? triage.busynessPercent
-      );
+  const waitMinutes = triageSaysNoData
+  ? null
+  : normaliseOptionalNumber(
+      triage.wait_minutes ?? triage.waitMinutes,
+      { allowZero: false }
+    );
 
-  const busynessPercent = triageSaysNoData
-    ? null
-    : clampPercent(
-        triage.busyness_percent ??
-          triage.percent ??
-          triage.demand_percent ??
-          triage.demandPercent
-      );
+const busynessPercent = triageSaysNoData
+  ? null
+  : clampPercent(
+      triage.busyness_percent ??
+        triage.busynessPercent ??
+        triage.percent ??
+        triage.demand_percent ??
+        triage.demandPercent
+    );
 
   const hasDensityData = densityPercent !== null;
   const hasTriageData =

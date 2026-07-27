@@ -12,7 +12,6 @@ import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import ChatbotWidget from "../components/ChatbotWidget";
 import i18n from "../i18n";
-import manhattanBoundary from "../data/boundaries/manhattan-nyc-dcp-26b.json";
 
 
 import {
@@ -681,8 +680,7 @@ function LiveHelpMap() {
           (venue) =>
             venue.venue_id &&
             Number.isFinite(venue.latitude) &&
-            Number.isFinite(venue.longitude) &&
-            isWithinManhattanBoundary(venue)
+            Number.isFinite(venue.longitude)
         );
 
       setVenues(normalisedVenues);
