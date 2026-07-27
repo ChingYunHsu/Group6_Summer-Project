@@ -225,29 +225,63 @@ def _ask_gemini_rag(
 def ask_chatbot():
     payload = request.get_json(silent=True) or {}
 
-    if "message" not in payload:
-        return jsonify({"error": "Validation failed.", "missing_fields": ["message"]}), 400
+    message = payload.get("message")
+
+    if not isinstance(message, str) or not message.strip():
+        return (
+            jsonify(
+                {
+                    "error": "Validation failed.",
+                    "missing_fields": ["message"],
+                }
+            ),
+            400,
+        )
+
+    fallback_reason = None
 
     try:
         return jsonify(
             _ask_gemini_rag(
-                payload["message"],
+                message.strip(),
                 payload.get("language"),
                 payload.get("latitude"),
                 payload.get("longitude"),
             )
         )
+
     except Exception as error:
+        fallback_reason = (
+            f"{type(error).__name__}: {error}"
+        )
+
         current_app.logger.exception(
             "Chatbot RAG pipeline failed: %s",
-            error,
+            fallback_reason,
         )
 
     response = deepcopy(CHATBOT_RESPONSE)
-    response.setdefault("detected_language", response.get("language", "en"))
-    if "language" in payload:
-        response["language"] = payload["language"]
-    response["suggested_prompts"] = _suggested_prompts(response["language"])
+
+    fallback_language = payload.get(
+        "language",
+        "en",
+    )
+
+    if (
+        fallback_language
+        not in SUGGESTED_PROMPTS_BY_LANGUAGE
+    ):
+        fallback_language = "en"
+
+    response["language"] = fallback_language
+    response["detected_language"] = fallback_language
+    response["suggested_prompts"] = _suggested_prompts(
+        fallback_language
+    )
     response["fallback_used"] = True
+
+    # Only expose this during local development.
+    if current_app.debug and fallback_reason:
+        response["fallback_reason"] = fallback_reason
 
     return jsonify(response)
