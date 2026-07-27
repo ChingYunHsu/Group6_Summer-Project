@@ -502,6 +502,18 @@ function buildQueryTime(
   return `${selectedDate}T${selectedTime}:00`;
 }
 
+function getCurrentTimeInputValue() {
+  const now = new Date();
+  const hours = String(
+    now.getHours()
+  ).padStart(2, "0");
+  const minutes = String(
+    now.getMinutes()
+  ).padStart(2, "0");
+
+  return `${hours}:${minutes}`;
+}
+
 const LANGUAGE_ALIASES = {
 
   fr: "fr",
@@ -1338,9 +1350,7 @@ function LiveHelpMap() {
         )
       );
       setRouteDepartureTime(
-        t(
-          "liveHelpMap.routePlanner.leaveNow"
-        )
+        getCurrentTimeInputValue()
       );
       setShowRoutePlanner(true);
       setShowLeftDrawer(false);
@@ -2233,6 +2243,15 @@ function LiveHelpMap() {
     );
   }
 
+  function handleRouteDepartureTimeChange(
+    event
+  ) {
+    setRouteDepartureTime(
+      event.target.value
+    );
+    clearCurrentRouteResult();
+  }
+
   function chooseUserLocationAsRouteStart() {
     setRouteOriginSelection("user");
     setRouteStart(
@@ -2488,9 +2507,7 @@ function LiveHelpMap() {
         t("liveHelpMap.venue")
     );
     setRouteDepartureTime(
-      t(
-        "liveHelpMap.routePlanner.leaveNow"
-      )
+      getCurrentTimeInputValue()
     );
 
     await loadRoute(
@@ -3038,13 +3055,26 @@ function LiveHelpMap() {
               <div className="route-field">
                 <span>◷</span>
                 <input
-                  type="text"
+                  type="time"
                   value={
                     routeDepartureTime
                   }
-                  readOnly
-                  placeholder={t(
-                    "liveHelpMap.routePlanner.leaveNow"
+                  onChange={
+                    handleRouteDepartureTimeChange
+                  }
+                  aria-label={t(
+                    "liveHelpMap.routePlanner.departureTime",
+                    {
+                      defaultValue:
+                        "Departure time",
+                    }
+                  )}
+                  title={t(
+                    "liveHelpMap.routePlanner.departureTime",
+                    {
+                      defaultValue:
+                        "Departure time",
+                    }
                   )}
                 />
               </div>
