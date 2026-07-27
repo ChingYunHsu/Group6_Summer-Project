@@ -275,16 +275,20 @@ def _history_series_7d(cursor, district: str) -> list:
 
 
 def _quick_triage(hubs: list) -> dict:
-    """Surface the single fastest (lowest-wait) hub as the "go here now"
-    triage suggestion. Venues with no live wait data are never picked over
-    one that has data."""
-    scored = [hub for hub in hubs if hub.get("wait_minutes") is not None]
-    if not scored:
-        return {"wait_minutes": 0, "label": "No data available", "venue_name": None}
+    """Surface the least-busy hub as the "go here now" triage suggestion.
 
-    best = min(scored, key=lambda hub: hub["wait_minutes"])
+    Ranked by predicted busyness score, not wait time — Product decided
+    Quick Triage means minimum busyness, not wait time (the V2 model has no
+    wait-time estimate to rank by anyway; estimated_wait_minutes is always
+    null). Venues with no current V2 data are never picked over one that
+    has data."""
+    scored = [hub for hub in hubs if hub.get("busyness_score") is not None]
+    if not scored:
+        return {"busyness_percent": None, "label": "No data available", "venue_name": None}
+
+    best = min(scored, key=lambda hub: hub["busyness_score"])
     return {
-        "wait_minutes": best["wait_minutes"],
+        "busyness_percent": best["busyness_score"],
         "label": best["venue_name"],
         "venue_name": best["venue_name"],
     }
@@ -410,7 +414,7 @@ def get_insights():
             "trend_label": dashboard["real_time_density"].get("trend_label"),
         },
         "quick_triage": {
-            "wait_minutes": dashboard["quick_triage"]["wait_minutes"],
+            "busyness_percent": dashboard["quick_triage"].get("busyness_percent"),
             "label": dashboard["quick_triage"].get("venue_name", dashboard["quick_triage"].get("label", "")),
             "venue_name": dashboard["quick_triage"].get("venue_name"),
         },
