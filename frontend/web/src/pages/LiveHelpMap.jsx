@@ -11,6 +11,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { useTranslation } from "react-i18next";
 import ChatbotWidget from "../components/ChatbotWidget";
 import i18n from "../i18n";
+import manhattanBoundary from "../data/boundaries/manhattan-nyc-dcp-26b.json";
 
 
 import {
@@ -36,6 +37,37 @@ const LANGUAGE_CODES = {
   "Italiano (Italian)": "it",
   "Deutsch (German)": "de",
 };
+
+function isPointInRing([longitude, latitude], ring) {
+  let inside = false;
+
+  for (let index = 0, previous = ring.length - 1; index < ring.length; previous = index++) {
+    const [currentLongitude, currentLatitude] = ring[index];
+    const [previousLongitude, previousLatitude] = ring[previous];
+    const intersects =
+      currentLatitude > latitude !== previousLatitude > latitude &&
+      longitude <
+        ((previousLongitude - currentLongitude) * (latitude - currentLatitude)) /
+          (previousLatitude - currentLatitude) +
+          currentLongitude;
+
+    if (intersects) inside = !inside;
+  }
+
+  return inside;
+}
+
+function isWithinManhattanBoundary({ latitude, longitude }) {
+  const point = [longitude, latitude];
+
+  return manhattanBoundary.geometry.coordinates.some((polygon) => {
+    const [outerRing, ...holes] = polygon;
+    return (
+      isPointInRing(point, outerRing) &&
+      !holes.some((hole) => isPointInRing(point, hole))
+    );
+  });
+}
 
 
 function getFavouriteVenueId(favourite) {
@@ -708,7 +740,8 @@ function LiveHelpMap() {
           (venue) =>
             venue.venue_id &&
             Number.isFinite(venue.latitude) &&
-            Number.isFinite(venue.longitude)
+            Number.isFinite(venue.longitude) &&
+            isWithinManhattanBoundary(venue)
         );
 
       setVenues(normalisedVenues);
