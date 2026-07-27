@@ -9,20 +9,20 @@ import api.insights as insights_module
 from api.insights import _quick_triage, _travel_minutes_by_venue
 
 
-def test_quick_triage_picks_lowest_wait_hub():
+def test_quick_triage_picks_least_busy_hub():
     hubs = [
-        {"venue_id": "v_slow", "venue_name": "Slow Clinic", "wait_minutes": 20},
-        {"venue_id": "v_fast", "venue_name": "Fast Clinic", "wait_minutes": 5},
+        {"venue_id": "v_busy", "venue_name": "Busy Clinic", "busyness_score": 70},
+        {"venue_id": "v_quiet", "venue_name": "Quiet Clinic", "busyness_score": 15},
     ]
     result = _quick_triage(hubs)
-    assert result == {"wait_minutes": 5, "label": "Fast Clinic", "venue_name": "Fast Clinic"}
+    assert result == {"busyness_percent": 15, "label": "Quiet Clinic", "venue_name": "Quiet Clinic"}
 
 
 def test_quick_triage_ignores_hubs_with_no_data():
-    hubs = [{"venue_id": "v_nodata", "venue_name": "No Data", "wait_minutes": None}]
+    hubs = [{"venue_id": "v_nodata", "venue_name": "No Data", "busyness_score": None}]
     result = _quick_triage(hubs)
     assert result["venue_name"] is None
-    assert result["wait_minutes"] == 0
+    assert result["busyness_percent"] is None
 
 
 def test_quick_triage_empty_hubs_returns_placeholder():

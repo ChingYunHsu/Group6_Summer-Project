@@ -688,7 +688,7 @@ INSIGHTS_DASHBOARD = {
         "trend_label": "+4% vs last hour",
     },
     "quick_triage": {
-        "wait_minutes": 12,
+        "busyness_percent": 24,
         "label": "Lower Manhattan",
         "venue_name": "Central Park Urgent Care",
     },
