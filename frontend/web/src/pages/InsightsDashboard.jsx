@@ -118,6 +118,14 @@ function normaliseOptionalNumber(value, { allowZero = true } = {}) {
   return number;
 }
 
+function normaliseVenueName(value) {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .trim()
+    .toLocaleLowerCase()
+    .replace(/\s+/g, " ");
+}
+
 function normaliseHub(rawHub, index) {
   const hub = rawHub ?? {};
 
@@ -232,6 +240,72 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     ? rawHubs.map(normaliseHub)
     : [];
 
+  const triageClinicName =
+    triage.venue_name ??
+    triage.venueName ??
+    triage.clinic_name ??
+    triage.clinicName ??
+    triage.label ??
+    "";
+
+  const directTriageVenueId =
+    triage.venue_id ??
+    triage.venueId ??
+    triage.clinic_id ??
+    triage.clinicId ??
+    triage.recommended_venue_id ??
+    triage.recommendedVenueId ??
+    null;
+
+  const normalisedTriageClinicName =
+    normaliseVenueName(triageClinicName);
+
+  const matchingTriageHub = directTriageVenueId
+    ? null
+    : fastestHubs.find((hub) => {
+        const normalisedHubName =
+          normaliseVenueName(hub.clinicName);
+
+        if (
+          !normalisedTriageClinicName ||
+          !normalisedHubName
+        ) {
+          return false;
+        }
+
+        return (
+          normalisedHubName ===
+            normalisedTriageClinicName ||
+          normalisedHubName.includes(
+            normalisedTriageClinicName
+          ) ||
+          normalisedTriageClinicName.includes(
+            normalisedHubName
+          )
+        );
+      });
+
+  const triageVenueId =
+    directTriageVenueId ??
+    matchingTriageHub?.venueId ??
+    null;
+
+  const triageLatitude =
+    normaliseOptionalNumber(
+      triage.latitude ?? triage.lat
+    ) ??
+    matchingTriageHub?.latitude ??
+    null;
+
+  const triageLongitude =
+    normaliseOptionalNumber(
+      triage.longitude ??
+        triage.lng ??
+        triage.lon
+    ) ??
+    matchingTriageHub?.longitude ??
+    null;
+
   const densityTrendText = String(
     density.trend ?? ""
   ).toLowerCase();
@@ -337,30 +411,13 @@ const busynessPercent = triageSaysNoData
       waitMinutes,
       busynessPercent,
 
-      venueId:
-        triage.venue_id ??
-        triage.venueId ??
-        triage.clinic_id ??
-        triage.clinicId ??
-        null,
+      venueId: triageVenueId,
 
-      clinicName:
-        triage.venue_name ??
-        triage.venueName ??
-        triage.clinic_name ??
-        triage.clinicName ??
-        triage.label ??
-        "",
+      clinicName: triageClinicName,
 
-      latitude: normaliseOptionalNumber(
-        triage.latitude ?? triage.lat
-      ),
+      latitude: triageLatitude,
 
-      longitude: normaliseOptionalNumber(
-        triage.longitude ??
-          triage.lng ??
-          triage.lon
-      ),
+      longitude: triageLongitude,
 
       label:
         triage.label ??

@@ -30,7 +30,6 @@ import {
 } from "../services/FavouritesApi";
 
 const LANGUAGE_CODES = {
-  "English (English)": "en",
   "Français (French)": "fr",
   "Español (Spanish)": "es",
   "中文 (Chinese)": "zh",
@@ -504,8 +503,6 @@ function buildQueryTime(
 }
 
 const LANGUAGE_ALIASES = {
-  en: "en",
-  english: "en",
 
   fr: "fr",
   french: "fr",
