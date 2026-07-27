@@ -13,7 +13,6 @@ import { useLocation } from "react-router-dom";
 import ChatbotWidget from "../components/ChatbotWidget";
 import i18n from "../i18n";
 
-
 import {
   getRouteDetail,
   getRouteOptions,
@@ -35,9 +34,9 @@ const LANGUAGE_CODES = {
   "Français (French)": "fr",
   "Español (Spanish)": "es",
   "中文 (Chinese)": "zh",
-  "العربية (Arabic)": "ar",
+  "Italiano (Italian)": "it",
+  "Deutsch (German)": "de",
 };
-
 
 function getFavouriteVenueId(favourite) {
   return (
@@ -92,7 +91,7 @@ function getMarkerColor(venue, futureMode) {
     rawPercent === ""
       ? Number.NaN
       : Number(rawPercent);
-    
+
   if (Number.isFinite(percent)) {
     if (percent < 30) return "#22c55e";
     if (percent <= 70) return "#eab308";
@@ -141,7 +140,10 @@ function getIcon(venue) {
 }
 
 function getReportIcon(issueType) {
-  if (issueType === "large_crowd" || issueType === "long_waiting_time") {
+  if (
+    issueType === "large_crowd" ||
+    issueType === "long_waiting_time"
+  ) {
     return "⚠";
   }
 
@@ -157,7 +159,11 @@ function getReportIcon(issueType) {
 }
 
 function isAccessibilityReport(issueType) {
-  return ["elevator_broken", "wheelchair_lift_broken", "ramp_blocked"].includes(issueType);
+  return [
+    "elevator_broken",
+    "wheelchair_lift_broken",
+    "ramp_blocked",
+  ].includes(issueType);
 }
 
 const MOCK_USER_LOCATION = {
@@ -173,54 +179,67 @@ const MOCK_USER_LOCATION = {
  */
 function getIssueMessage(issueType) {
   const messages = {
-    elevator_broken: i18n.t("liveHelpMap.issueMessages.elevatorBroken"),
-    wheelchair_lift_broken: i18n.t("liveHelpMap.issueMessages.wheelchairLiftBroken"),
-    toilet_out_of_order: i18n.t("liveHelpMap.issueMessages.toiletOutOfOrder"),
-    large_crowd: i18n.t("liveHelpMap.issueMessages.largeCrowd"),
-    long_waiting_time: i18n.t("liveHelpMap.issueMessages.longWaitingTime"),
-    protest_or_blockage: i18n.t("liveHelpMap.issueMessages.protestOrBlockage"),
-    entrance_closed: i18n.t("liveHelpMap.issueMessages.entranceClosed"),
-    ramp_blocked: i18n.t("liveHelpMap.issueMessages.rampBlocked"),
-    closed_early: i18n.t("liveHelpMap.issueMessages.closedEarly"),
+    elevator_broken: i18n.t(
+      "liveHelpMap.issueMessages.elevatorBroken"
+    ),
+    wheelchair_lift_broken: i18n.t(
+      "liveHelpMap.issueMessages.wheelchairLiftBroken"
+    ),
+    toilet_out_of_order: i18n.t(
+      "liveHelpMap.issueMessages.toiletOutOfOrder"
+    ),
+    large_crowd: i18n.t(
+      "liveHelpMap.issueMessages.largeCrowd"
+    ),
+    long_waiting_time: i18n.t(
+      "liveHelpMap.issueMessages.longWaitingTime"
+    ),
+    protest_or_blockage: i18n.t(
+      "liveHelpMap.issueMessages.protestOrBlockage"
+    ),
+    entrance_closed: i18n.t(
+      "liveHelpMap.issueMessages.entranceClosed"
+    ),
+    ramp_blocked: i18n.t(
+      "liveHelpMap.issueMessages.rampBlocked"
+    ),
+    closed_early: i18n.t(
+      "liveHelpMap.issueMessages.closedEarly"
+    ),
   };
 
-  return messages[issueType] || i18n.t("liveHelpMap.activeCommunityReport");
+  return (
+    messages[issueType] ||
+    i18n.t("liveHelpMap.activeCommunityReport")
+  );
 }
 
 function normaliseVenue(rawVenue) {
   const languages = normaliseList(
-    rawVenue.language_tags ??
-      rawVenue.languages
+    rawVenue.language_tags ?? rawVenue.languages
   ).map(normaliseLanguage);
 
   return {
     ...rawVenue,
 
-    venue_id:
-      rawVenue.venue_id ??
-      rawVenue.id,
+    venue_id: rawVenue.venue_id ?? rawVenue.id,
 
     latitude: Number(
-      rawVenue.latitude ??
-        rawVenue.lat
+      rawVenue.latitude ?? rawVenue.lat
     ),
 
     longitude: Number(
-      rawVenue.longitude ??
-        rawVenue.lng
+      rawVenue.longitude ?? rawVenue.lng
     ),
 
     venue_type: String(
-      rawVenue.venue_type ??
-        rawVenue.type ??
-        ""
+      rawVenue.venue_type ?? rawVenue.type ?? ""
     ).toLowerCase(),
 
     language_tags: languages,
 
     supported_services: normaliseList(
-      rawVenue.supported_services ??
-        rawVenue.services
+      rawVenue.supported_services ?? rawVenue.services
     ),
   };
 }
@@ -265,21 +284,27 @@ function normaliseBusyness(payload) {
 
 function normaliseForecast(rawForecast) {
   const points =
-    rawForecast.busyness_forecast_12h ??
-    rawForecast.forecast ??
-    rawForecast.points ??
-    rawForecast.items ??
+    rawForecast?.busyness_forecast_12h ??
+    rawForecast?.forecast ??
+    rawForecast?.points ??
+    rawForecast?.items ??
     [];
 
   return Array.isArray(points)
     ? points.map((point, index) => ({
         ...point,
-        offset_hours: point.offset_hours ?? point.hour_offset ?? index,
+
+        offset_hours:
+          point.offset_hours ??
+          point.hour_offset ??
+          index,
+
         percent:
           point.percent ??
           point.busyness_percent ??
           point.load_percent ??
-          0,
+          null,
+
         level:
           point.level ??
           point.busyness_level ??
@@ -350,23 +375,28 @@ function normaliseReport(rawReport) {
 const TRAVEL_MODE_UI = {
   walk: {
     labelKey: "liveHelpMap.routePlanner.walking",
-    routeLabelKey: "liveHelpMap.routePlanner.walkingRoute",
+    routeLabelKey:
+      "liveHelpMap.routePlanner.walkingRoute",
     icon: "🚶",
   },
   transit: {
     labelKey: "liveHelpMap.routePlanner.transit",
-    routeLabelKey: "liveHelpMap.routePlanner.transitRoute",
+    routeLabelKey:
+      "liveHelpMap.routePlanner.transitRoute",
     icon: "🚇",
   },
   drive: {
     labelKey: "liveHelpMap.routePlanner.driving",
-    routeLabelKey: "liveHelpMap.routePlanner.drivingRoute",
+    routeLabelKey:
+      "liveHelpMap.routePlanner.drivingRoute",
     icon: "🚗",
   },
 };
 
 function normaliseRouteOptions(payload) {
-  const providedOptions = Array.isArray(payload?.options)
+  const providedOptions = Array.isArray(
+    payload?.options
+  )
     ? payload.options
     : [];
 
@@ -374,15 +404,25 @@ function normaliseRouteOptions(payload) {
     return providedOptions
       .map((option) => ({
         ...option,
-        mode: String(option?.mode ?? "").toLowerCase(),
-        duration_minutes: Number(option?.duration_minutes),
+        mode: String(
+          option?.mode ?? ""
+        ).toLowerCase(),
+        duration_minutes: Number(
+          option?.duration_minutes
+        ),
       }))
-      .filter((option) => option.mode in TRAVEL_MODE_UI);
+      .filter(
+        (option) =>
+          option.mode in TRAVEL_MODE_UI
+      );
   }
 
   const summaryByMode = payload?.summary_by_mode;
 
-  if (!summaryByMode || typeof summaryByMode !== "object") {
+  if (
+    !summaryByMode ||
+    typeof summaryByMode !== "object"
+  ) {
     return [];
   }
 
@@ -390,10 +430,19 @@ function normaliseRouteOptions(payload) {
     .map(([mode, summary]) => ({
       ...(summary ?? {}),
       mode: String(mode).toLowerCase(),
-      duration_minutes: Number(summary?.duration_minutes),
-      summary: `${i18n.t(TRAVEL_MODE_UI[mode]?.labelKey) ?? mode} route`,
+      duration_minutes: Number(
+        summary?.duration_minutes
+      ),
+      summary: `${
+        i18n.t(
+          TRAVEL_MODE_UI[mode]?.labelKey
+        ) ?? mode
+      } route`,
     }))
-    .filter((option) => option.mode in TRAVEL_MODE_UI);
+    .filter(
+      (option) =>
+        option.mode in TRAVEL_MODE_UI
+    );
 }
 
 function normaliseRouteCoordinate(point) {
@@ -403,20 +452,31 @@ function normaliseRouteCoordinate(point) {
     return [longitude, latitude];
   }
 
-  const latitude = Number(point?.lat ?? point?.latitude);
+  const latitude = Number(
+    point?.lat ?? point?.latitude
+  );
   const longitude = Number(
-    point?.lng ?? point?.lon ?? point?.longitude
+    point?.lng ??
+      point?.lon ??
+      point?.longitude
   );
 
   return [longitude, latitude];
 }
 
 function formatRouteStatus(value) {
-  if (!value) return i18n.t("venueSheet.unknown", { defaultValue: "Status unavailable" });
+  if (!value) {
+    return i18n.t("venueSheet.unknown", {
+      defaultValue: "Status unavailable",
+    });
+  }
 
   return String(value)
     .replaceAll("_", " ")
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+    .replace(
+      /\b\w/g,
+      (letter) => letter.toUpperCase()
+    );
 }
 
 function removeRouteLayer(map) {
@@ -431,7 +491,10 @@ function removeRouteLayer(map) {
   }
 }
 
-function buildQueryTime(selectedDate, selectedTime) {
+function buildQueryTime(
+  selectedDate,
+  selectedTime
+) {
   if (!selectedDate || !selectedTime) return "";
 
   // The API requires an ISO-8601 date-time. This preserves the selected
@@ -456,9 +519,13 @@ const LANGUAGE_ALIASES = {
   chinese: "zh",
   中文: "zh",
 
-  ar: "ar",
-  arabic: "ar",
-  العربية: "ar",
+  it: "it",
+  italian: "it",
+  italiano: "it",
+
+  de: "de",
+  german: "de",
+  deutsch: "de",
 };
 
 function normaliseList(value) {
@@ -489,7 +556,10 @@ function normaliseLanguage(value) {
     .trim()
     .toLowerCase();
 
-  return LANGUAGE_ALIASES[cleanedValue] ?? cleanedValue;
+  return (
+    LANGUAGE_ALIASES[cleanedValue] ??
+    cleanedValue
+  );
 }
 
 const PHARMACY_TERMS = [
@@ -502,14 +572,19 @@ const PHARMACY_TERMS = [
 function venueIsPharmacy(venue) {
   // This checks all available venue fields, including subtype,
   // category and amenity fields that may not be displayed.
-  const searchableVenue = JSON.stringify(venue ?? {}).toLowerCase();
+  const searchableVenue = JSON.stringify(
+    venue ?? {}
+  ).toLowerCase();
 
   return PHARMACY_TERMS.some((term) =>
     searchableVenue.includes(term)
   );
 }
 
-function venueMatchesCategory(venue, selectedType) {
+function venueMatchesCategory(
+  venue,
+  selectedType
+) {
   if (!selectedType) return true;
 
   const venueType = String(
@@ -526,17 +601,24 @@ function venueMatchesCategory(venue, selectedType) {
 
   if (selectedType === "clinic") {
     return (
-      ["clinic", "healthcare"].includes(venueType) &&
-      !venueIsPharmacy(venue)
+      ["clinic", "healthcare"].includes(
+        venueType
+      ) && !venueIsPharmacy(venue)
     );
   }
 
   if (selectedType === "emergencyasset") {
-    return ["emergencyasset", "aed"].includes(venueType);
+    return [
+      "emergencyasset",
+      "aed",
+    ].includes(venueType);
   }
 
   if (selectedType === "restroom") {
-    return ["restroom", "toilet"].includes(venueType);
+    return [
+      "restroom",
+      "toilet",
+    ].includes(venueType);
   }
 
   return venueType === selectedType;
@@ -553,7 +635,9 @@ function venueIsAccessible(venue) {
     return value;
   }
 
-  const cleanedValue = String(value).toLowerCase();
+  const cleanedValue = String(
+    value
+  ).toLowerCase();
 
   return (
     cleanedValue === "true" ||
@@ -577,7 +661,11 @@ function venueIsHospital(venue) {
   ).toLowerCase();
 
   // Prevent hospital-named AED records from appearing as hospitals.
-  if (!["healthcare", "hospital"].includes(venueType)) {
+  if (
+    !["healthcare", "hospital"].includes(
+      venueType
+    )
+  ) {
     return false;
   }
 
@@ -602,6 +690,7 @@ function LiveHelpMap() {
   const { t } = useTranslation("common");
   const location = useLocation();
   const BUSYNESS_BATCH_SIZE = 100;
+
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -610,57 +699,136 @@ function LiveHelpMap() {
   const handledNavigationKeyRef = useRef(null);
 
   const [venues, setVenues] = useState([]);
-  const [venueDetailsById, setVenueDetailsById] = useState({});
-  const [busynessByVenueId, setBusynessByVenueId] = useState({});
-  const [forecastByVenueId, setForecastByVenueId] = useState({});
-  const [liveReports, setLiveReports] = useState([]);
-  const [busynessFetchedIds, setBusynessFetchedIds] = useState(
-    () => new Set()
-  );
+  const [
+    venueDetailsById,
+    setVenueDetailsById,
+  ] = useState({});
+  const [
+    busynessByVenueId,
+    setBusynessByVenueId,
+  ] = useState({});
+  const [
+    forecastByVenueId,
+    setForecastByVenueId,
+  ] = useState({});
+  const [
+    liveReports,
+    setLiveReports,
+  ] = useState([]);
+  const [
+    busynessFetchedIds,
+    setBusynessFetchedIds,
+  ] = useState(() => new Set());
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [mapError, setMapError] = useState("");
-
-  const [showFilters, setShowFilters] = useState(false);
-  const [showLeftDrawer, setShowLeftDrawer] = useState(false);
-  const [autoCurrentTime, setAutoCurrentTime] = useState(true);
-  const [selectedTime, setSelectedTime] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
-
-  const [searchText, setSearchText] = useState("");
-  const [primaryLanguage, setPrimaryLanguage] =
+  const [isLoading, setIsLoading] =
+    useState(true);
+  const [mapError, setMapError] =
     useState("");
-  const [secondaryLanguage, setSecondaryLanguage] = useState("None");
-  const [accessibleOnly, setAccessibleOnly] = useState(false);
-  const [selectedBusynessLevels, setSelectedBusynessLevels] = useState([]);
-  const [appliedFilters, setAppliedFilters] = useState({
+
+  const [showFilters, setShowFilters] =
+    useState(false);
+  const [
+    showLeftDrawer,
+    setShowLeftDrawer,
+  ] = useState(false);
+  const [
+    autoCurrentTime,
+    setAutoCurrentTime,
+  ] = useState(true);
+  const [selectedTime, setSelectedTime] =
+    useState("");
+  const [selectedDate, setSelectedDate] =
+    useState("");
+
+  const [searchText, setSearchText] =
+    useState("");
+  const [
+    primaryLanguage,
+    setPrimaryLanguage,
+  ] = useState("");
+  const [
+    secondaryLanguage,
+    setSecondaryLanguage,
+  ] = useState("None");
+  const [
+    accessibleOnly,
+    setAccessibleOnly,
+  ] = useState(false);
+  const [
+    selectedBusynessLevels,
+    setSelectedBusynessLevels,
+  ] = useState([]);
+  const [
+    appliedFilters,
+    setAppliedFilters,
+  ] = useState({
     languages: [],
     accessible: false,
     venueType: "clinic",
   });
 
-  const [showRoutePlanner, setShowRoutePlanner] = useState(false);
-  const [routeStart, setRouteStart] = useState("");
-  const [routeDestination, setRouteDestination] = useState("");
-  const [routeDepartureTime, setRouteDepartureTime] = useState("");
-  const [routeOriginSelection, setRouteOriginSelection] = useState(null);
-  const [routeDestinationVenueId, setRouteDestinationVenueId] = useState(null);
-  const [activeRouteField, setActiveRouteField] = useState(null);
-  const [selectedTravelMode, setSelectedTravelMode] = useState("walk");
-  const [routeOptions, setRouteOptions] = useState([]);
-  const [routeDetail, setRouteDetail] = useState(null);
-  const [routeLoading, setRouteLoading] = useState(false);
-  const [routeError, setRouteError] = useState("");
-  const [selectedVenueId, setSelectedVenueId] = useState(null);
-
-  const [favouriteVenueIds, setFavouriteVenueIds] = useState([]);
-  const [favouriteError, setFavouriteError] = useState("");
-  const [updatingFavouriteId, setUpdatingFavouriteId] =
+  const [
+    showRoutePlanner,
+    setShowRoutePlanner,
+  ] = useState(false);
+  const [routeStart, setRouteStart] =
+    useState("");
+  const [
+    routeDestination,
+    setRouteDestination,
+  ] = useState("");
+  const [
+    routeDepartureTime,
+    setRouteDepartureTime,
+  ] = useState("");
+  const [
+    routeOriginSelection,
+    setRouteOriginSelection,
+  ] = useState(null);
+  const [
+    routeDestinationVenueId,
+    setRouteDestinationVenueId,
+  ] = useState(null);
+  const [
+    activeRouteField,
+    setActiveRouteField,
+  ] = useState(null);
+  const [
+    selectedTravelMode,
+    setSelectedTravelMode,
+  ] = useState("walk");
+  const [routeOptions, setRouteOptions] =
+    useState([]);
+  const [routeDetail, setRouteDetail] =
     useState(null);
+  const [routeLoading, setRouteLoading] =
+    useState(false);
+  const [routeError, setRouteError] =
+    useState("");
+  const [
+    selectedVenueId,
+    setSelectedVenueId,
+  ] = useState(null);
+
+  const [
+    favouriteVenueIds,
+    setFavouriteVenueIds,
+  ] = useState([]);
+  const [
+    favouriteError,
+    setFavouriteError,
+  ] = useState("");
+  const [
+    updatingFavouriteId,
+    setUpdatingFavouriteId,
+  ] = useState(null);
 
   const futureMode = !autoCurrentTime;
   const queryTime = futureMode
-    ? buildQueryTime(selectedDate, selectedTime)
+    ? buildQueryTime(
+        selectedDate,
+        selectedTime
+      )
     : "";
 
   const [userLocation] = useState({
@@ -673,33 +841,55 @@ function LiveHelpMap() {
       setIsLoading(true);
       setMapError("");
 
-      const backendVenues = await listVenues();
-      const normalisedVenues = backendVenues
-        .map(normaliseVenue)
-        .filter(
-          (venue) =>
-            venue.venue_id &&
-            Number.isFinite(venue.latitude) &&
-            Number.isFinite(venue.longitude)
-        );
+      const backendVenues =
+        await listVenues();
+      const normalisedVenues =
+        backendVenues
+          .map(normaliseVenue)
+          .filter(
+            (venue) =>
+              venue.venue_id &&
+              Number.isFinite(
+                venue.latitude
+              ) &&
+              Number.isFinite(
+                venue.longitude
+              )
+          );
 
       setVenues(normalisedVenues);
 
       setSelectedVenueId((currentId) => {
         if (
           currentId &&
-          normalisedVenues.some((venue) => venue.venue_id === currentId)
+          normalisedVenues.some(
+            (venue) =>
+              venue.venue_id === currentId
+          )
         ) {
           return currentId;
         }
 
-        return normalisedVenues[0]?.venue_id ?? null;
+        return (
+          normalisedVenues[0]?.venue_id ??
+          null
+        );
       });
 
-      setShowLeftDrawer(normalisedVenues.length > 0);
+      setShowLeftDrawer(
+        normalisedVenues.length > 0
+      );
     } catch (error) {
-      console.error("Failed to load venues:", error);
-      setMapError(error.message || t("liveHelpMap.couldNotLoadVenues"));
+      console.error(
+        "Failed to load venues:",
+        error
+      );
+      setMapError(
+        error.message ||
+          t(
+            "liveHelpMap.couldNotLoadVenues"
+          )
+      );
       setVenues([]);
       setSelectedVenueId(null);
     } finally {
@@ -707,15 +897,26 @@ function LiveHelpMap() {
     }
   }, [t]);
 
-  const refreshReports = useCallback(async () => {
-    try {
-      const reports = await listReports({ status: "active" });
-      setLiveReports(reports.map(normaliseReport));
-    } catch (error) {
-      console.error("Failed to load live reports:", error);
-      setMapError((current) => current || error.message);
-    }
-  }, []);
+  const refreshReports =
+    useCallback(async () => {
+      try {
+        const reports = await listReports({
+          status: "active",
+        });
+        setLiveReports(
+          reports.map(normaliseReport)
+        );
+      } catch (error) {
+        console.error(
+          "Failed to load live reports:",
+          error
+        );
+        setMapError(
+          (current) =>
+            current || error.message
+        );
+      }
+    }, []);
 
   useEffect(() => {
     loadVenues();
@@ -726,7 +927,8 @@ function LiveHelpMap() {
 
     async function loadSavedFavourites() {
       try {
-        const favourites = await listFavourites();
+        const favourites =
+          await listFavourites();
 
         if (cancelled) return;
 
@@ -734,16 +936,23 @@ function LiveHelpMap() {
           .map(getFavouriteVenueId)
           .filter(Boolean);
 
-        setFavouriteVenueIds([...new Set(venueIds)]);
+        setFavouriteVenueIds([
+          ...new Set(venueIds),
+        ]);
         setFavouriteError("");
       } catch (error) {
         if (cancelled) return;
 
-        console.error("Failed to load favourites:", error);
+        console.error(
+          "Failed to load favourites:",
+          error
+        );
 
         setFavouriteError(
           error.message ||
-            t("liveHelpMap.couldNotLoadFavourites")
+            t(
+              "liveHelpMap.couldNotLoadFavourites"
+            )
         );
       }
     }
@@ -758,105 +967,147 @@ function LiveHelpMap() {
   useEffect(() => {
     refreshReports();
 
-    const interval = window.setInterval(refreshReports, 30000);
-    return () => window.clearInterval(interval);
-  }, [refreshReports]);
-
-useEffect(() => {
-  const selectedType = appliedFilters.venueType;
-
-  if (!selectedType) return;
-
-  const typeAliases = {
-    clinic: ["clinic", "healthcare"],
-    pharmacy: ["pharmacy"],
-    emergencyasset: ["emergencyasset", "aed"],
-    restroom: ["restroom", "toilet"],
-  };
-
-  const acceptedTypes =
-    typeAliases[selectedType] ?? [selectedType];
-
-  const venuesNeedingBusyness = venues
-    .filter((venue) => {
-      const venueType = String(
-        venue.venue_type ?? ""
-      ).toLowerCase();
-
-      return (
-        acceptedTypes.includes(venueType) &&
-        !busynessFetchedIds.has(venue.venue_id)
-      );
-    })
-    .slice(0, BUSYNESS_BATCH_SIZE);
-
-  if (venuesNeedingBusyness.length === 0) {
-    return;
-  }
-
-  let cancelled = false;
-
-  async function loadBusynessBatch() {
-    const results = await Promise.allSettled(
-      venuesNeedingBusyness.map(async (venue) => {
-        const payload = await getVenueBusyness(
-          venue.venue_id,
-          queryTime
-        );
-
-        return {
-          venueId: venue.venue_id,
-          busyness: normaliseBusyness(
-            payload?.busyness ?? payload
-          ),
-        };
-      })
+    const interval = window.setInterval(
+      refreshReports,
+      30000
     );
 
-    if (cancelled) return;
+    return () =>
+      window.clearInterval(interval);
+  }, [refreshReports]);
 
-    setBusynessByVenueId((current) => {
-      const next = { ...current };
+  useEffect(() => {
+    const selectedType =
+      appliedFilters.venueType;
 
-      results.forEach((result) => {
-        if (result.status !== "fulfilled") {
-          return;
+    if (!selectedType) return;
+
+    const typeAliases = {
+      clinic: ["clinic", "healthcare"],
+      pharmacy: ["pharmacy"],
+      hospital: ["hospital", "healthcare"],
+      emergencyasset: [
+        "emergencyasset",
+        "aed",
+      ],
+      restroom: ["restroom", "toilet"],
+    };
+
+    const acceptedTypes =
+      typeAliases[selectedType] ?? [
+        selectedType,
+      ];
+
+    const venuesNeedingBusyness =
+      venues
+        .filter((venue) => {
+          const venueType = String(
+            venue.venue_type ?? ""
+          ).toLowerCase();
+
+          return (
+            acceptedTypes.includes(
+              venueType
+            ) &&
+            !busynessFetchedIds.has(
+              venue.venue_id
+            )
+          );
+        })
+        .slice(0, BUSYNESS_BATCH_SIZE);
+
+    if (
+      venuesNeedingBusyness.length === 0
+    ) {
+      return;
+    }
+
+    let cancelled = false;
+
+    async function loadBusynessBatch() {
+      const results =
+        await Promise.allSettled(
+          venuesNeedingBusyness.map(
+            async (venue) => {
+              const payload =
+                await getVenueBusyness(
+                  venue.venue_id,
+                  queryTime
+                );
+
+              return {
+                venueId: venue.venue_id,
+                busyness:
+                  normaliseBusyness(
+                    payload?.busyness ??
+                      payload
+                  ),
+              };
+            }
+          )
+        );
+
+      if (cancelled) return;
+
+      setBusynessByVenueId(
+        (current) => {
+          const next = {
+            ...current,
+          };
+
+          results.forEach((result) => {
+            if (
+              result.status !==
+              "fulfilled"
+            ) {
+              return;
+            }
+
+            const {
+              venueId,
+              busyness,
+            } = result.value;
+
+            next[venueId] = busyness;
+          });
+
+          return next;
         }
+      );
 
-        const { venueId, busyness } = result.value;
-        next[venueId] = busyness;
-      });
+      setBusynessFetchedIds(
+        (current) => {
+          const next = new Set(current);
 
-      return next;
-    });
+          venuesNeedingBusyness.forEach(
+            (venue) => {
+              next.add(
+                venue.venue_id
+              );
+            }
+          );
 
-    setBusynessFetchedIds((current) => {
-      const next = new Set(current);
+          return next;
+        }
+      );
+    }
 
-      venuesNeedingBusyness.forEach((venue) => {
-        next.add(venue.venue_id);
-      });
+    void loadBusynessBatch();
 
-      return next;
-    });
-  }
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    appliedFilters.venueType,
+    busynessFetchedIds,
+    queryTime,
+    venues,
+  ]);
 
-  void loadBusynessBatch();
-
-  return () => {
-    cancelled = true;
-  };
-}, [
-  appliedFilters.venueType,
-  busynessFetchedIds,
-  queryTime,
-  venues,
-]);
-
-useEffect(() => {
-  setBusynessFetchedIds(new Set());
-  setBusynessByVenueId({});
-}, [queryTime]);
+  useEffect(() => {
+    setBusynessFetchedIds(new Set());
+    setBusynessByVenueId({});
+  }, [queryTime]);
 
   useEffect(() => {
     if (!selectedVenueId) return;
@@ -865,28 +1116,41 @@ useEffect(() => {
 
     async function loadSelectedVenueData() {
       const listVenue = venues.find(
-        (venue) => venue.venue_id === selectedVenueId
+        (venue) =>
+          venue.venue_id ===
+          selectedVenueId
       );
 
-      const [venueResult, forecastResult] =
-        await Promise.allSettled([
-          getVenueById(selectedVenueId),
-          getVenueBusynessForecast(selectedVenueId),
-        ]);
+      const [
+        venueResult,
+        forecastResult,
+      ] = await Promise.allSettled([
+        getVenueById(
+          selectedVenueId
+        ),
+        getVenueBusynessForecast(
+          selectedVenueId
+        ),
+      ]);
 
       if (cancelled) return;
 
       const detailedPayload =
-        venueResult.status === "fulfilled"
+        venueResult.status ===
+        "fulfilled"
           ? venueResult.value
           : null;
 
       if (detailedPayload) {
-        setVenueDetailsById((current) => ({
-          ...current,
-          [selectedVenueId]:
-            normaliseVenue(detailedPayload),
-        }));
+        setVenueDetailsById(
+          (current) => ({
+            ...current,
+            [selectedVenueId]:
+              normaliseVenue(
+                detailedPayload
+              ),
+          })
+        );
       } else {
         console.error(
           "Failed to load selected venue details:",
@@ -894,28 +1158,43 @@ useEffect(() => {
         );
       }
 
-      if (forecastResult.status === "fulfilled") {
-        setForecastByVenueId((current) => ({
-          ...current,
-          [selectedVenueId]: normaliseForecast(
-            forecastResult.value
-          ),
-        }));
+      if (
+        forecastResult.status ===
+        "fulfilled"
+      ) {
+        setForecastByVenueId(
+          (current) => ({
+            ...current,
+            [selectedVenueId]:
+              normaliseForecast(
+                forecastResult.value
+              ),
+          })
+        );
         return;
       }
 
       // Some venue responses already include busyness_forecast_12h.
       // Preserve that data when the dedicated forecast route returns 404.
-      const embeddedForecast = normaliseForecast(
-        detailedPayload ?? listVenue ?? {}
+      const embeddedForecast =
+        normaliseForecast(
+          detailedPayload ??
+            listVenue ??
+            {}
+        );
+
+      setForecastByVenueId(
+        (current) => ({
+          ...current,
+          [selectedVenueId]:
+            embeddedForecast,
+        })
       );
 
-      setForecastByVenueId((current) => ({
-        ...current,
-        [selectedVenueId]: embeddedForecast,
-      }));
-
-      if (forecastResult.reason?.status !== 404) {
+      if (
+        forecastResult.reason?.status !==
+        404
+      ) {
         console.error(
           "Failed to load selected venue forecast:",
           forecastResult.reason
@@ -923,7 +1202,7 @@ useEffect(() => {
       }
     }
 
-    loadSelectedVenueData();
+    void loadSelectedVenueData();
 
     return () => {
       cancelled = true;
@@ -931,35 +1210,40 @@ useEffect(() => {
   }, [selectedVenueId, venues]);
 
   useEffect(() => {
-  if (mapRef.current) return;
+    if (mapRef.current) return;
 
-  mapRef.current = new maplibregl.Map({
-    container: mapContainerRef.current,
-    style:
-      "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-    center: [-73.9857, 40.758],
-    zoom: 12,
-  });
+    mapRef.current =
+      new maplibregl.Map({
+        container:
+          mapContainerRef.current,
+        style:
+          "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+        center: [-73.9857, 40.758],
+        zoom: 12,
+      });
 
-  mapRef.current.addControl(
-    new maplibregl.NavigationControl(),
-    "bottom-right"
-  );
+    mapRef.current.addControl(
+      new maplibregl.NavigationControl(),
+      "bottom-right"
+    );
 
-  return () => {
-    markersRef.current.forEach((marker) => marker.remove());
-    markersRef.current = [];
+    return () => {
+      markersRef.current.forEach(
+        (marker) => marker.remove()
+      );
+      markersRef.current = [];
 
-    userMarkerRef.current?.remove();
-    userMarkerRef.current = null;
+      userMarkerRef.current?.remove();
+      userMarkerRef.current = null;
 
-    mapRef.current?.remove();
-    mapRef.current = null;
-  };
-}, []);
+      mapRef.current?.remove();
+      mapRef.current = null;
+    };
+  }, []);
 
   useEffect(() => {
-    const navigationState = location.state;
+    const navigationState =
+      location.state;
     const requestedVenueId =
       navigationState?.selectedVenueId ??
       navigationState?.venueId;
@@ -977,24 +1261,28 @@ useEffect(() => {
       String(requestedVenueId);
 
     if (
-      handledNavigationKeyRef.current === navigationKey
+      handledNavigationKeyRef.current ===
+      navigationKey
     ) {
       return;
     }
 
-    const requestedVenue = venues.find(
-      (venue) =>
-        String(venue.venue_id) ===
-        String(requestedVenueId)
-    );
+    const requestedVenue =
+      venues.find(
+        (venue) =>
+          String(venue.venue_id) ===
+          String(requestedVenueId)
+      );
 
     if (!requestedVenue) {
       const latitude = Number(
-        navigationState?.destinationCoordinates
+        navigationState
+          ?.destinationCoordinates
           ?.latitude
       );
       const longitude = Number(
-        navigationState?.destinationCoordinates
+        navigationState
+          ?.destinationCoordinates
           ?.longitude
       );
 
@@ -1003,7 +1291,10 @@ useEffect(() => {
         Number.isFinite(longitude)
       ) {
         mapRef.current.flyTo({
-          center: [longitude, latitude],
+          center: [
+            longitude,
+            latitude,
+          ],
           zoom: 15,
           essential: true,
         });
@@ -1018,12 +1309,15 @@ useEffect(() => {
       navigationKey;
 
     const shouldOpenRoutePlanner =
-      navigationState?.openRoutePlanner === true;
+      navigationState
+        ?.openRoutePlanner === true;
 
     routeRequestIdRef.current += 1;
     removeRouteLayer(mapRef.current);
 
-    setSelectedVenueId(requestedVenue.venue_id);
+    setSelectedVenueId(
+      requestedVenue.venue_id
+    );
     setRouteDestinationVenueId(
       requestedVenue.venue_id
     );
@@ -1042,10 +1336,14 @@ useEffect(() => {
     if (shouldOpenRoutePlanner) {
       setRouteOriginSelection("user");
       setRouteStart(
-        t("liveHelpMap.userLocationMock")
+        t(
+          "liveHelpMap.userLocationMock"
+        )
       );
       setRouteDepartureTime(
-        t("liveHelpMap.routePlanner.leaveNow")
+        t(
+          "liveHelpMap.routePlanner.leaveNow"
+        )
       );
       setShowRoutePlanner(true);
       setShowLeftDrawer(false);
@@ -1069,54 +1367,75 @@ useEffect(() => {
     venues,
   ]);
 
+  useEffect(() => {
+    if (
+      !mapRef.current ||
+      !userLocation
+    ) {
+      return;
+    }
 
-useEffect(() => {
-  if (!mapRef.current || !userLocation) {
-    return;
-  }
+    if (userMarkerRef.current) {
+      userMarkerRef.current.remove();
+    }
 
-  if (userMarkerRef.current) {
-    userMarkerRef.current.remove();
-  }
+    const markerElement =
+      document.createElement("div");
+    markerElement.className =
+      "user-location-marker";
+    markerElement.classList.toggle(
+      "user-location-marker--route-active",
+      showRoutePlanner &&
+        routeOriginSelection === "user"
+    );
+    markerElement.classList.toggle(
+      "user-location-marker--route-background",
+      showRoutePlanner &&
+        routeOriginSelection !== "user"
+    );
 
-  const markerElement = document.createElement("div");
-  markerElement.className = "user-location-marker";
-  markerElement.classList.toggle(
-    "user-location-marker--route-active",
-    showRoutePlanner && routeOriginSelection === "user"
-  );
-  markerElement.classList.toggle(
-    "user-location-marker--route-background",
-    showRoutePlanner && routeOriginSelection !== "user"
-  );
+    markerElement.title =
+      userLocation.isMock
+        ? t(
+            "liveHelpMap.userLocationMock"
+          )
+        : t(
+            "liveHelpMap.userLocationCurrent"
+          );
 
-  markerElement.title = userLocation.isMock
-    ? t("liveHelpMap.userLocationMock")
-    : t("liveHelpMap.userLocationCurrent");
+    userMarkerRef.current =
+      new maplibregl.Marker({
+        element: markerElement,
+        anchor: "center",
+      })
+        .setLngLat([
+          userLocation.lng,
+          userLocation.lat,
+        ])
+        .addTo(mapRef.current);
 
-  userMarkerRef.current = new maplibregl.Marker({
-    element: markerElement,
-    anchor: "center",
-  })
-    .setLngLat([
-      userLocation.lng,
-      userLocation.lat,
-    ])
-    .addTo(mapRef.current);
-
-  return () => {
-    userMarkerRef.current?.remove();
-    userMarkerRef.current = null;
-  };
-}, [routeOriginSelection, showRoutePlanner, userLocation, t]);
+    return () => {
+      userMarkerRef.current?.remove();
+      userMarkerRef.current = null;
+    };
+  }, [
+    routeOriginSelection,
+    showRoutePlanner,
+    userLocation,
+    t,
+  ]);
 
   useEffect(() => {
     const map = mapRef.current;
-    const polyline = routeDetail?.polyline_preview;
+    const polyline =
+      routeDetail?.polyline_preview;
 
     if (!map) return;
 
-    if (!showRoutePlanner || !Array.isArray(polyline)) {
+    if (
+      !showRoutePlanner ||
+      !Array.isArray(polyline)
+    ) {
       removeRouteLayer(map);
       return;
     }
@@ -1125,7 +1444,9 @@ useEffect(() => {
       .map(normaliseRouteCoordinate)
       .filter(
         ([longitude, latitude]) =>
-          Number.isFinite(longitude) &&
+          Number.isFinite(
+            longitude
+          ) &&
           Number.isFinite(latitude)
       );
 
@@ -1146,18 +1467,28 @@ useEffect(() => {
     };
 
     function drawRoute() {
-      const existingSource = map.getSource("active-route");
+      const existingSource =
+        map.getSource("active-route");
 
       if (existingSource) {
-        existingSource.setData(routeGeoJson);
+        existingSource.setData(
+          routeGeoJson
+        );
       } else {
-        map.addSource("active-route", {
-          type: "geojson",
-          data: routeGeoJson,
-        });
+        map.addSource(
+          "active-route",
+          {
+            type: "geojson",
+            data: routeGeoJson,
+          }
+        );
       }
 
-      if (!map.getLayer("active-route-line")) {
+      if (
+        !map.getLayer(
+          "active-route-line"
+        )
+      ) {
         map.addLayer({
           id: "active-route-line",
           type: "line",
@@ -1174,14 +1505,20 @@ useEffect(() => {
         });
       }
 
-      const bounds = coordinates.reduce(
-        (currentBounds, coordinate) =>
-          currentBounds.extend(coordinate),
-        new maplibregl.LngLatBounds(
-          coordinates[0],
-          coordinates[0]
-        )
-      );
+      const bounds =
+        coordinates.reduce(
+          (
+            currentBounds,
+            coordinate
+          ) =>
+            currentBounds.extend(
+              coordinate
+            ),
+          new maplibregl.LngLatBounds(
+            coordinates[0],
+            coordinates[0]
+          )
+        );
 
       map.fitBounds(bounds, {
         padding: 100,
@@ -1199,144 +1536,195 @@ useEffect(() => {
     return () => {
       map.off("load", drawRoute);
     };
-  }, [routeDetail, selectedTravelMode, showRoutePlanner]);
+  }, [
+    routeDetail,
+    selectedTravelMode,
+    showRoutePlanner,
+  ]);
 
-  const venuesWithBusyness = useMemo(
-    () =>
-      venues.map((venue) => ({
-        ...venue,
-        ...(busynessByVenueId[venue.venue_id] ?? {}),
-      })),
-    [busynessByVenueId, venues]
-  );
+  const venuesWithBusyness =
+    useMemo(
+      () =>
+        venues.map((venue) => ({
+          ...venue,
+          ...(busynessByVenueId[
+            venue.venue_id
+          ] ?? {}),
+        })),
+      [busynessByVenueId, venues]
+    );
 
   const visibleVenues = useMemo(() => {
-    const cleanedSearch = searchText
-      .trim()
-      .toLowerCase();
+    const cleanedSearch =
+      searchText
+        .trim()
+        .toLowerCase();
 
     const requestedLanguages =
       appliedFilters.languages.map(
         normaliseLanguage
       );
 
-    return venuesWithBusyness.filter((venue) => {
-      const matchesSearch =
-        !cleanedSearch ||
-        [
-          venue.name,
-          venue.address,
-          venue.borough,
-        ]
-          .filter(Boolean)
-          .some((value) =>
-            String(value)
-              .toLowerCase()
-              .includes(cleanedSearch)
+    return venuesWithBusyness.filter(
+      (venue) => {
+        const matchesSearch =
+          !cleanedSearch ||
+          [
+            venue.name,
+            venue.address,
+            venue.borough,
+          ]
+            .filter(Boolean)
+            .some((value) =>
+              String(value)
+                .toLowerCase()
+                .includes(
+                  cleanedSearch
+                )
+            );
+
+        const venueLanguages =
+          normaliseList(
+            venue.language_tags
+          ).map(normaliseLanguage);
+
+        const matchesLanguages =
+          requestedLanguages.length ===
+            0 ||
+          requestedLanguages.every(
+            (language) =>
+              venueLanguages.includes(
+                language
+              )
           );
 
-      const venueLanguages =
-        normaliseList(
-          venue.language_tags
-        ).map(normaliseLanguage);
+        const matchesAccessibility =
+          !appliedFilters.accessible ||
+          venueIsAccessible(venue);
 
-      const matchesLanguages =
-        requestedLanguages.length === 0 ||
-        requestedLanguages.every(
-          (language) =>
-            venueLanguages.includes(language)
+        const selectedType =
+          appliedFilters.venueType;
+
+        const matchesVenueType =
+          venueMatchesCategory(
+            venue,
+            selectedType
+          );
+
+        const busynessLevel =
+          String(
+            venue.busyness_level ??
+              ""
+          ).toLowerCase();
+
+        const matchesBusyness =
+          futureMode ||
+          selectedBusynessLevels.length ===
+            0 ||
+          selectedBusynessLevels.some(
+            (selectedLevel) =>
+              busynessLevel.includes(
+                selectedLevel
+              )
+          );
+
+        return (
+          matchesSearch &&
+          matchesLanguages &&
+          matchesAccessibility &&
+          matchesVenueType &&
+          matchesBusyness
         );
-
-      const matchesAccessibility =
-        !appliedFilters.accessible ||
-        venueIsAccessible(venue);
-
-      const selectedType = appliedFilters.venueType;
-
-      const matchesVenueType = venueMatchesCategory(
-        venue,
-        selectedType
-      );
-
-    const busynessLevel = String(
-      venue.busyness_level ?? ""
-    ).toLowerCase();
-
-    const matchesBusyness =
-      futureMode ||
-      selectedBusynessLevels.length === 0 ||
-      selectedBusynessLevels.some(
-        (selectedLevel) =>
-          busynessLevel.includes(
-            selectedLevel
-          )
-      );
-
-    return (
-      matchesSearch &&
-      matchesLanguages &&
-      matchesAccessibility &&
-      matchesVenueType &&
-      matchesBusyness
+      }
     );
-  });
-}, [
-  appliedFilters,
-  futureMode,
-  searchText,
-  selectedBusynessLevels,
-  venuesWithBusyness,
-]);
+  }, [
+    appliedFilters,
+    futureMode,
+    searchText,
+    selectedBusynessLevels,
+    venuesWithBusyness,
+  ]);
 
-useEffect(() => {
-  console.log("MAP VENUE DEBUG", {
-    totalVenuesFromApi: venues.length,
-    venuesWithBusyness: Object.keys(busynessByVenueId).length,
-    visibleVenues: visibleVenues.length,
+  useEffect(() => {
+    console.log(
+      "MAP VENUE DEBUG",
+      {
+        totalVenuesFromApi:
+          venues.length,
+        venuesWithBusyness:
+          Object.keys(
+            busynessByVenueId
+          ).length,
+        visibleVenues:
+          visibleVenues.length,
+        searchText,
+        appliedFilters,
+        selectedBusynessLevels,
+        futureMode,
+      }
+    );
+  }, [
+    venues,
+    busynessByVenueId,
+    visibleVenues,
     searchText,
     appliedFilters,
     selectedBusynessLevels,
     futureMode,
-  });
-}, [
-  venues,
-  busynessByVenueId,
-  visibleVenues,
-  searchText,
-  appliedFilters,
-  selectedBusynessLevels,
-  futureMode,
-]);
+  ]);
 
-  const routeEndpointVenueIds = useMemo(() => {
-    if (!showRoutePlanner) return new Set();
+  const routeEndpointVenueIds =
+    useMemo(() => {
+      if (!showRoutePlanner) {
+        return new Set();
+      }
 
-    return new Set(
-      [
-        routeOriginSelection === "user" ? null : routeOriginSelection,
-        routeDestinationVenueId,
-      ].filter(Boolean)
-    );
-  }, [routeDestinationVenueId, routeOriginSelection, showRoutePlanner]);
+      return new Set(
+        [
+          routeOriginSelection ===
+          "user"
+            ? null
+            : routeOriginSelection,
+          routeDestinationVenueId,
+        ].filter(Boolean)
+      );
+    }, [
+      routeDestinationVenueId,
+      routeOriginSelection,
+      showRoutePlanner,
+    ]);
 
   const markerVenues = useMemo(() => {
     const venuesById = new Map(
-      visibleVenues.map((venue) => [venue.venue_id, venue])
+      visibleVenues.map((venue) => [
+        venue.venue_id,
+        venue,
+      ])
     );
 
     if (showRoutePlanner) {
-      routeEndpointVenueIds.forEach((venueId) => {
-        const forcedVenue = venuesWithBusyness.find(
-          (venue) => venue.venue_id === venueId
-        );
+      routeEndpointVenueIds.forEach(
+        (venueId) => {
+          const forcedVenue =
+            venuesWithBusyness.find(
+              (venue) =>
+                venue.venue_id ===
+                venueId
+            );
 
-        if (forcedVenue) {
-          venuesById.set(venueId, forcedVenue);
+          if (forcedVenue) {
+            venuesById.set(
+              venueId,
+              forcedVenue
+            );
+          }
         }
-      });
+      );
     }
 
-    return [...venuesById.values()];
+    return [
+      ...venuesById.values(),
+    ];
   }, [
     routeEndpointVenueIds,
     showRoutePlanner,
@@ -1344,98 +1732,181 @@ useEffect(() => {
     visibleVenues,
   ]);
 
-  const openVenueDrawer = useCallback((venue) => {
-    setSelectedVenueId(venue.venue_id);
-    setRouteDestination(venue.name ?? "");
-    setRouteDestinationVenueId(venue.venue_id);
-    setShowRoutePlanner(false);
-    setShowLeftDrawer(true);
-  }, []);
+  const openVenueDrawer =
+    useCallback((venue) => {
+      setSelectedVenueId(
+        venue.venue_id
+      );
+      setRouteDestination(
+        venue.name ?? ""
+      );
+      setRouteDestinationVenueId(
+        venue.venue_id
+      );
+      setShowRoutePlanner(false);
+      setShowLeftDrawer(true);
+    }, []);
 
   useEffect(() => {
     if (!mapRef.current) return;
 
-    markersRef.current.forEach((marker) => marker.remove());
+    markersRef.current.forEach(
+      (marker) => marker.remove()
+    );
     markersRef.current = [];
 
     markerVenues.forEach((venue) => {
-      const markerEl = document.createElement("button");
-      const isRouteEndpoint = routeEndpointVenueIds.has(venue.venue_id);
-      const isRouteBackground = showRoutePlanner && !isRouteEndpoint;
+      const markerEl =
+        document.createElement(
+          "button"
+        );
+
+      const isRouteEndpoint =
+        routeEndpointVenueIds.has(
+          venue.venue_id
+        );
+
+      const isSelectedVenue =
+        String(selectedVenueId) ===
+        String(venue.venue_id);
+
+      /*
+       * Outside route mode, the venue currently open in the
+       * information drawer is enlarged.
+       *
+       * During route mode, only the selected origin and destination
+       * are enlarged. This prevents a marker from receiving both the
+       * selected and deemphasised classes.
+       */
+      const shouldEnlargeMarker =
+        isRouteEndpoint ||
+        (!showRoutePlanner &&
+          isSelectedVenue);
+
+      const isRouteBackground =
+        showRoutePlanner &&
+        !isRouteEndpoint;
 
       markerEl.type = "button";
       markerEl.className = "venue-pin";
-      markerEl.classList.toggle("venue-pin--selected", isRouteEndpoint);
+
+      markerEl.classList.toggle(
+        "venue-pin--selected",
+        shouldEnlargeMarker
+      );
+
       markerEl.classList.toggle(
         "venue-pin--deemphasised",
         isRouteBackground
       );
-      markerEl.style.backgroundColor = getMarkerColor(
-        venue,
-        futureMode
-      );
+
+      markerEl.style.backgroundColor =
+        getMarkerColor(
+          venue,
+          futureMode
+        );
+
       markerEl.innerHTML = `<span>${getIcon(
         venue
       )}</span>`;
-      markerEl.style.pointerEvents = "auto";
-      markerEl.style.zIndex = isRouteEndpoint
-        ? "100"
-        : isRouteBackground
-          ? "5"
-          : "10";
+
+      markerEl.style.pointerEvents =
+        "auto";
+
+      markerEl.style.zIndex =
+        shouldEnlargeMarker
+          ? "100"
+          : isRouteBackground
+            ? "5"
+            : "10";
+
       markerEl.setAttribute(
         "aria-label",
-        t("liveHelpMap.openVenue", {
-          name: venue.name || t("liveHelpMap.venue"),
-        })
+        t(
+          "liveHelpMap.openVenue",
+          {
+            name:
+              venue.name ||
+              t(
+                "liveHelpMap.venue"
+              ),
+          }
+        )
       );
 
-      markerEl.addEventListener("mousedown", (event) => {
-        event.stopPropagation();
-        openVenueDrawer(venue);
-      });
+      markerEl.addEventListener(
+        "mousedown",
+        (event) => {
+          event.stopPropagation();
+          openVenueDrawer(venue);
+        }
+      );
 
-      const marker = new maplibregl.Marker({
-        element: markerEl,
-        anchor: "center",
-      })
-        .setLngLat([venue.longitude, venue.latitude])
-        .addTo(mapRef.current);
+      const marker =
+        new maplibregl.Marker({
+          element: markerEl,
+          anchor: "center",
+        })
+          .setLngLat([
+            venue.longitude,
+            venue.latitude,
+          ])
+          .addTo(mapRef.current);
 
-      markersRef.current.push(marker);
+      markersRef.current.push(
+        marker
+      );
     });
   }, [
     futureMode,
     markerVenues,
     openVenueDrawer,
     routeEndpointVenueIds,
+    selectedVenueId,
     showRoutePlanner,
     t,
   ]);
 
   const selectedVenue = useMemo(() => {
-    if (!selectedVenueId) return null;
+    if (!selectedVenueId) {
+      return null;
+    }
 
     const listVenue = venues.find(
-      (venue) => venue.venue_id === selectedVenueId
+      (venue) =>
+        venue.venue_id ===
+        selectedVenueId
     );
-    const detailedVenue =
-      venueDetailsById[selectedVenueId];
 
-    if (!listVenue && !detailedVenue) return null;
+    const detailedVenue =
+      venueDetailsById[
+        selectedVenueId
+      ];
+
+    if (
+      !listVenue &&
+      !detailedVenue
+    ) {
+      return null;
+    }
 
     const endpointForecast =
-      forecastByVenueId[selectedVenueId] ?? [];
+      forecastByVenueId[
+        selectedVenueId
+      ] ?? [];
 
-    const embeddedForecast = normaliseForecast({
-      ...listVenue,
-      ...detailedVenue,
-    });
+    const embeddedForecast =
+      normaliseForecast({
+        ...listVenue,
+        ...detailedVenue,
+      });
 
     return {
       ...listVenue,
       ...detailedVenue,
-      ...(busynessByVenueId[selectedVenueId] ?? {}),
+      ...(busynessByVenueId[
+        selectedVenueId
+      ] ?? {}),
       busyness_forecast_12h:
         endpointForecast.length > 0
           ? endpointForecast
@@ -1449,99 +1920,196 @@ useEffect(() => {
     venues,
   ]);
 
-  const routeOriginVenue = useMemo(() => {
-    if (!routeOriginSelection || routeOriginSelection === "user") {
-      return null;
-    }
+  const routeOriginVenue =
+    useMemo(() => {
+      if (
+        !routeOriginSelection ||
+        routeOriginSelection ===
+          "user"
+      ) {
+        return null;
+      }
 
-    return venuesWithBusyness.find(
-      (venue) => venue.venue_id === routeOriginSelection
-    ) ?? null;
-  }, [routeOriginSelection, venuesWithBusyness]);
+      return (
+        venuesWithBusyness.find(
+          (venue) =>
+            venue.venue_id ===
+            routeOriginSelection
+        ) ?? null
+      );
+    }, [
+      routeOriginSelection,
+      venuesWithBusyness,
+    ]);
 
-  const routeDestinationVenue = useMemo(() => {
-    if (!routeDestinationVenueId) return null;
+  const routeDestinationVenue =
+    useMemo(() => {
+      if (
+        !routeDestinationVenueId
+      ) {
+        return null;
+      }
 
-    return venuesWithBusyness.find(
-      (venue) => venue.venue_id === routeDestinationVenueId
-    ) ?? selectedVenue;
-  }, [routeDestinationVenueId, selectedVenue, venuesWithBusyness]);
+      return (
+        venuesWithBusyness.find(
+          (venue) =>
+            venue.venue_id ===
+            routeDestinationVenueId
+        ) ?? selectedVenue
+      );
+    }, [
+      routeDestinationVenueId,
+      selectedVenue,
+      venuesWithBusyness,
+    ]);
 
-  const routeOriginLocation = useMemo(() => {
-    if (routeOriginSelection === "user") {
-      return userLocation;
-    }
+  const routeOriginLocation =
+    useMemo(() => {
+      if (
+        routeOriginSelection ===
+        "user"
+      ) {
+        return userLocation;
+      }
 
-    if (!routeOriginVenue) return null;
+      if (!routeOriginVenue) {
+        return null;
+      }
 
-    return {
-      lat: routeOriginVenue.latitude,
-      lng: routeOriginVenue.longitude,
-      isMock: false,
-    };
-  }, [routeOriginSelection, routeOriginVenue, userLocation]);
+      return {
+        lat:
+          routeOriginVenue.latitude,
+        lng:
+          routeOriginVenue.longitude,
+        isMock: false,
+      };
+    }, [
+      routeOriginSelection,
+      routeOriginVenue,
+      userLocation,
+    ]);
 
-  const routeStartSuggestions = useMemo(() => {
-    const selectedName = routeOriginVenue?.name?.trim().toLowerCase();
-    const typedValue = routeStart.trim().toLowerCase();
-    const cleanedSearch =
-      routeOriginSelection === "user" || typedValue === selectedName
-        ? ""
-        : typedValue;
+  const routeStartSuggestions =
+    useMemo(() => {
+      const selectedName =
+        routeOriginVenue?.name
+          ?.trim()
+          .toLowerCase();
 
-    return venuesWithBusyness
-      .filter((venue) => {
-        if (!cleanedSearch) return true;
+      const typedValue =
+        routeStart
+          .trim()
+          .toLowerCase();
 
-        return [venue.name, venue.address, venue.borough]
-          .filter(Boolean)
-          .some((value) =>
-            String(value).toLowerCase().includes(cleanedSearch)
-          );
-      })
-      .slice(0, 50);
-  }, [
-    routeOriginSelection,
-    routeOriginVenue,
-    routeStart,
-    venuesWithBusyness,
-  ]);
+      const cleanedSearch =
+        routeOriginSelection ===
+          "user" ||
+        typedValue === selectedName
+          ? ""
+          : typedValue;
 
-  const routeDestinationSuggestions = useMemo(() => {
-    const selectedName = routeDestinationVenue?.name?.trim().toLowerCase();
-    const typedValue = routeDestination.trim().toLowerCase();
-    const cleanedSearch = typedValue === selectedName ? "" : typedValue;
+      return venuesWithBusyness
+        .filter((venue) => {
+          if (!cleanedSearch) {
+            return true;
+          }
 
-    return venuesWithBusyness
-      .filter((venue) => {
-        if (!cleanedSearch) return true;
+          return [
+            venue.name,
+            venue.address,
+            venue.borough,
+          ]
+            .filter(Boolean)
+            .some((value) =>
+              String(value)
+                .toLowerCase()
+                .includes(
+                  cleanedSearch
+                )
+            );
+        })
+        .slice(0, 50);
+    }, [
+      routeOriginSelection,
+      routeOriginVenue,
+      routeStart,
+      venuesWithBusyness,
+    ]);
 
-        return [venue.name, venue.address, venue.borough]
-          .filter(Boolean)
-          .some((value) =>
-            String(value).toLowerCase().includes(cleanedSearch)
-          );
-      })
-      .slice(0, 50);
-  }, [routeDestination, routeDestinationVenue, venuesWithBusyness]);
+  const routeDestinationSuggestions =
+    useMemo(() => {
+      const selectedName =
+        routeDestinationVenue?.name
+          ?.trim()
+          .toLowerCase();
 
-  const selectedRouteOption = useMemo(
-    () =>
-      routeOptions.find(
-        (option) => option.mode === selectedTravelMode
-      ) ?? null,
-    [routeOptions, selectedTravelMode]
-  );
+      const typedValue =
+        routeDestination
+          .trim()
+          .toLowerCase();
+
+      const cleanedSearch =
+        typedValue === selectedName
+          ? ""
+          : typedValue;
+
+      return venuesWithBusyness
+        .filter((venue) => {
+          if (!cleanedSearch) {
+            return true;
+          }
+
+          return [
+            venue.name,
+            venue.address,
+            venue.borough,
+          ]
+            .filter(Boolean)
+            .some((value) =>
+              String(value)
+                .toLowerCase()
+                .includes(
+                  cleanedSearch
+                )
+            );
+        })
+        .slice(0, 50);
+    }, [
+      routeDestination,
+      routeDestinationVenue,
+      venuesWithBusyness,
+    ]);
+
+  const selectedRouteOption =
+    useMemo(
+      () =>
+        routeOptions.find(
+          (option) =>
+            option.mode ===
+            selectedTravelMode
+        ) ?? null,
+      [
+        routeOptions,
+        selectedTravelMode,
+      ]
+    );
 
   async function loadRoute(
     venue,
     mode,
     refreshOptions = false,
-    originLocation = routeOriginLocation
+    originLocation =
+      routeOriginLocation
   ) {
-    if (!venue?.venue_id || !originLocation) return;
+    if (
+      !venue?.venue_id ||
+      !originLocation
+    ) {
+      return;
+    }
 
-    const requestId = ++routeRequestIdRef.current;
+    const requestId =
+      ++routeRequestIdRef.current;
 
     try {
       setRouteLoading(true);
@@ -1554,41 +2122,80 @@ useEffect(() => {
       setRouteDetail(null);
 
       if (refreshOptions) {
-        const [optionsPayload, detailPayload] =
-          await Promise.all([
-            getRouteOptions(venue.venue_id, originLocation),
-            getRouteDetail(
-              venue.venue_id,
-              originLocation,
-              mode
-            ),
-          ]);
+        const [
+          optionsPayload,
+          detailPayload,
+        ] = await Promise.all([
+          getRouteOptions(
+            venue.venue_id,
+            originLocation
+          ),
+          getRouteDetail(
+            venue.venue_id,
+            originLocation,
+            mode
+          ),
+        ]);
 
-        if (requestId !== routeRequestIdRef.current) return;
+        if (
+          requestId !==
+          routeRequestIdRef.current
+        ) {
+          return;
+        }
 
-        setRouteOptions(normaliseRouteOptions(optionsPayload));
-        setRouteDetail(detailPayload);
+        setRouteOptions(
+          normaliseRouteOptions(
+            optionsPayload
+          )
+        );
+        setRouteDetail(
+          detailPayload
+        );
         return;
       }
 
-      const detailPayload = await getRouteDetail(
-        venue.venue_id,
-        originLocation,
-        mode
+      const detailPayload =
+        await getRouteDetail(
+          venue.venue_id,
+          originLocation,
+          mode
+        );
+
+      if (
+        requestId !==
+        routeRequestIdRef.current
+      ) {
+        return;
+      }
+
+      setRouteDetail(
+        detailPayload
       );
-
-      if (requestId !== routeRequestIdRef.current) return;
-      setRouteDetail(detailPayload);
     } catch (error) {
-      if (requestId !== routeRequestIdRef.current) return;
+      if (
+        requestId !==
+        routeRequestIdRef.current
+      ) {
+        return;
+      }
 
-      console.error(`Failed to load ${mode} route:`, error);
+      console.error(
+        `Failed to load ${mode} route:`,
+        error
+      );
 
       setRouteError(
-        error.message || t("liveHelpMap.couldNotCalculateThisRoute")
+        error.message ||
+          t(
+            "liveHelpMap.couldNotCalculateThisRoute"
+          )
       );
     } finally {
-      if (requestId === routeRequestIdRef.current) {
+      if (
+        requestId ===
+        routeRequestIdRef.current
+      ) {
         setRouteLoading(false);
       }
     }
@@ -1603,53 +2210,99 @@ useEffect(() => {
     setRouteLoading(false);
   }
 
-  function handleRouteStartChange(event) {
-    setRouteStart(event.target.value);
+  function handleRouteStartChange(
+    event
+  ) {
+    setRouteStart(
+      event.target.value
+    );
     setRouteOriginSelection(null);
     clearCurrentRouteResult();
     setActiveRouteField("start");
   }
 
-  function handleRouteDestinationChange(event) {
-    setRouteDestination(event.target.value);
-    setRouteDestinationVenueId(null);
+  function handleRouteDestinationChange(
+    event
+  ) {
+    setRouteDestination(
+      event.target.value
+    );
+    setRouteDestinationVenueId(
+      null
+    );
     clearCurrentRouteResult();
-    setActiveRouteField("destination");
+    setActiveRouteField(
+      "destination"
+    );
   }
 
   function chooseUserLocationAsRouteStart() {
     setRouteOriginSelection("user");
-    setRouteStart(t("liveHelpMap.userLocationMock"));
+    setRouteStart(
+      t(
+        "liveHelpMap.userLocationMock"
+      )
+    );
     clearCurrentRouteResult();
     setActiveRouteField(null);
   }
 
-  function chooseRouteStartVenue(venue) {
-    setRouteOriginSelection(venue.venue_id);
-    setRouteStart(venue.name ?? t("liveHelpMap.venue"));
+  function chooseRouteStartVenue(
+    venue
+  ) {
+    setRouteOriginSelection(
+      venue.venue_id
+    );
+    setRouteStart(
+      venue.name ??
+        t("liveHelpMap.venue")
+    );
     clearCurrentRouteResult();
     setActiveRouteField(null);
 
     mapRef.current?.flyTo({
-      center: [venue.longitude, venue.latitude],
-      zoom: Math.max(mapRef.current.getZoom(), 14),
+      center: [
+        venue.longitude,
+        venue.latitude,
+      ],
+      zoom: Math.max(
+        mapRef.current.getZoom(),
+        14
+      ),
     });
   }
 
-  function chooseRouteDestinationVenue(venue) {
-    setRouteDestinationVenueId(venue.venue_id);
-    setSelectedVenueId(venue.venue_id);
-    setRouteDestination(venue.name ?? t("liveHelpMap.venue"));
+  function chooseRouteDestinationVenue(
+    venue
+  ) {
+    setRouteDestinationVenueId(
+      venue.venue_id
+    );
+    setSelectedVenueId(
+      venue.venue_id
+    );
+    setRouteDestination(
+      venue.name ??
+        t("liveHelpMap.venue")
+    );
     clearCurrentRouteResult();
     setActiveRouteField(null);
 
     mapRef.current?.flyTo({
-      center: [venue.longitude, venue.latitude],
-      zoom: Math.max(mapRef.current.getZoom(), 14),
+      center: [
+        venue.longitude,
+        venue.latitude,
+      ],
+      zoom: Math.max(
+        mapRef.current.getZoom(),
+        14
+      ),
     });
   }
 
-  async function handleTravelModeChange(mode) {
+  async function handleTravelModeChange(
+    mode
+  ) {
     if (
       !routeDestinationVenue ||
       !routeOriginLocation ||
@@ -1660,6 +2313,7 @@ useEffect(() => {
     }
 
     setSelectedTravelMode(mode);
+
     await loadRoute(
       routeDestinationVenue,
       mode,
@@ -1671,11 +2325,18 @@ useEffect(() => {
   async function handleRouteSearch() {
     if (routeLoading) return;
 
-    if (!routeOriginLocation || !routeDestinationVenue) {
+    if (
+      !routeOriginLocation ||
+      !routeDestinationVenue
+    ) {
       setRouteError(
-        t("liveHelpMap.routePlanner.selectValidEndpoints", {
-          defaultValue: "Select a valid start and destination venue.",
-        })
+        t(
+          "liveHelpMap.routePlanner.selectValidEndpoints",
+          {
+            defaultValue:
+              "Select a valid start and destination venue.",
+          }
+        )
       );
       return;
     }
@@ -1688,23 +2349,40 @@ useEffect(() => {
     );
   }
 
-  const selectedVenueReports = useMemo(
-    () =>
-      liveReports.filter(
-        (report) =>
-          String(report.venue_id ?? "") ===
-          String(selectedVenueId ?? "")
-      ),
-    [liveReports, selectedVenueId]
-  );
+  const selectedVenueReports =
+    useMemo(
+      () =>
+        liveReports.filter(
+          (report) =>
+            String(
+              report.venue_id ?? ""
+            ) ===
+            String(
+              selectedVenueId ?? ""
+            )
+        ),
+      [
+        liveReports,
+        selectedVenueId,
+      ]
+    );
 
-  const landmarkAlert = selectedVenueReports[0] ?? null;
-  const selectedAccessibilityReports = selectedVenueReports.filter((report) =>
-    isAccessibilityReport(report.issue_type)
-  );
-  const standaloneAlerts = liveReports.filter(
-    (report) => !report.venue_id
-  );
+  const landmarkAlert =
+    selectedVenueReports[0] ??
+    null;
+
+  const selectedAccessibilityReports =
+    selectedVenueReports.filter(
+      (report) =>
+        isAccessibilityReport(
+          report.issue_type
+        )
+    );
+
+  const standaloneAlerts =
+    liveReports.filter(
+      (report) => !report.venue_id
+    );
 
   function handleAdvancedFiltersClick() {
     setShowFilters(true);
@@ -1714,36 +2392,60 @@ useEffect(() => {
     if (!selectedVenue) return;
 
     const venueId =
-      selectedVenue.venue_id ?? selectedVenue.id;
+      selectedVenue.venue_id ??
+      selectedVenue.id;
 
     if (!venueId) {
-      setFavouriteError(t("liveHelpMap.invalidVenueId"));
+      setFavouriteError(
+        t(
+          "liveHelpMap.invalidVenueId"
+        )
+      );
       return;
     }
 
     const isAlreadyFavourite =
-      favouriteVenueIds.includes(venueId);
+      favouriteVenueIds.includes(
+        venueId
+      );
 
     try {
-      setUpdatingFavouriteId(venueId);
+      setUpdatingFavouriteId(
+        venueId
+      );
       setFavouriteError("");
 
       if (isAlreadyFavourite) {
-        await deleteFavourite(venueId);
+        await deleteFavourite(
+          venueId
+        );
 
-        setFavouriteVenueIds((currentIds) =>
-          currentIds.filter((id) => id !== venueId)
+        setFavouriteVenueIds(
+          (currentIds) =>
+            currentIds.filter(
+              (id) =>
+                id !== venueId
+            )
         );
       } else {
-        await addFavourite(venueId);
+        await addFavourite(
+          venueId
+        );
 
-        setFavouriteVenueIds((currentIds) => [
-          ...new Set([...currentIds, venueId]),
-        ]);
+        setFavouriteVenueIds(
+          (currentIds) => [
+            ...new Set([
+              ...currentIds,
+              venueId,
+            ]),
+          ]
+        );
       }
 
       window.dispatchEvent(
-        new Event("clearpath:saved-locations-updated")
+        new Event(
+          "clearpath:saved-locations-updated"
+        )
       );
     } catch (error) {
       console.error(
@@ -1753,29 +2455,53 @@ useEffect(() => {
 
       setFavouriteError(
         error.message ||
-          t("liveHelpMap.couldNotUpdateFavourite")
+          t(
+            "liveHelpMap.couldNotUpdateFavourite"
+          )
       );
     } finally {
-      setUpdatingFavouriteId(null);
+      setUpdatingFavouriteId(
+        null
+      );
     }
   }
 
   async function handleOpenLiveDirections() {
     if (!selectedVenue) return;
 
-    const destinationId = selectedVenue.venue_id ?? selectedVenue.id;
+    const destinationId =
+      selectedVenue.venue_id ??
+      selectedVenue.id;
 
     setSelectedTravelMode("walk");
     setShowRoutePlanner(true);
     setShowLeftDrawer(false);
     setRouteOriginSelection("user");
-    setRouteDestinationVenueId(destinationId);
+    setRouteDestinationVenueId(
+      destinationId
+    );
     setActiveRouteField(null);
-    setRouteStart(t("liveHelpMap.userLocationMock"));
-    setRouteDestination(selectedVenue.name ?? t("liveHelpMap.venue"));
-    setRouteDepartureTime(t("liveHelpMap.routePlanner.leaveNow"));
+    setRouteStart(
+      t(
+        "liveHelpMap.userLocationMock"
+      )
+    );
+    setRouteDestination(
+      selectedVenue.name ??
+        t("liveHelpMap.venue")
+    );
+    setRouteDepartureTime(
+      t(
+        "liveHelpMap.routePlanner.leaveNow"
+      )
+    );
 
-    await loadRoute(selectedVenue, "walk", true, userLocation);
+    await loadRoute(
+      selectedVenue,
+      "walk",
+      true,
+      userLocation
+    );
   }
 
   function closeRoutePlanner() {
@@ -1790,34 +2516,46 @@ useEffect(() => {
     setRouteDestination("");
     setRouteDepartureTime("");
     setRouteOriginSelection(null);
-    setRouteDestinationVenueId(null);
+    setRouteDestinationVenueId(
+      null
+    );
     setActiveRouteField(null);
     setShowRoutePlanner(false);
     setShowLeftDrawer(true);
   }
 
   function applyFilters() {
-  const languages = [
-    LANGUAGE_CODES[primaryLanguage],
-    secondaryLanguage === "None"
-      ? null
-      : LANGUAGE_CODES[secondaryLanguage],
-  ].filter(Boolean);
+    const languages = [
+      LANGUAGE_CODES[
+        primaryLanguage
+      ],
+      secondaryLanguage ===
+      "None"
+        ? null
+        : LANGUAGE_CODES[
+            secondaryLanguage
+          ],
+    ].filter(Boolean);
 
-  setAppliedFilters((current) => ({
-    ...current,
-    languages,
-    accessible: accessibleOnly,
-  }));
+    setAppliedFilters(
+      (current) => ({
+        ...current,
+        languages,
+        accessible:
+          accessibleOnly,
+      })
+    );
 
-  setShowFilters(false);
-}
+    setShowFilters(false);
+  }
 
   function clearFilters() {
     setPrimaryLanguage("");
     setSecondaryLanguage("None");
     setAccessibleOnly(false);
-    setSelectedBusynessLevels([]);
+    setSelectedBusynessLevels(
+      []
+    );
     setAppliedFilters({
       languages: [],
       accessible: false,
@@ -1825,19 +2563,32 @@ useEffect(() => {
     });
   }
 
-  function selectCategory(venueType) {
-    setAppliedFilters((current) => ({
-      ...current,
-      venueType:
-        current.venueType === venueType ? "" : venueType,
-    }));
+  function selectCategory(
+    venueType
+  ) {
+    setAppliedFilters(
+      (current) => ({
+        ...current,
+        venueType:
+          current.venueType ===
+          venueType
+            ? ""
+            : venueType,
+      })
+    );
   }
 
-  function toggleBusynessLevel(level) {
-    setSelectedBusynessLevels((current) =>
-      current.includes(level)
-        ? current.filter((item) => item !== level)
-        : [...current, level]
+  function toggleBusynessLevel(
+    level
+  ) {
+    setSelectedBusynessLevels(
+      (current) =>
+        current.includes(level)
+          ? current.filter(
+              (item) =>
+                item !== level
+            )
+          : [...current, level]
     );
   }
 
@@ -1849,14 +2600,19 @@ useEffect(() => {
       />
 
       {mapError && (
-        <div className="map-api-message" role="alert">
+        <div
+          className="map-api-message"
+          role="alert"
+        >
           {mapError}
         </div>
       )}
 
       {isLoading && (
         <div className="map-api-message">
-          {t("liveHelpMap.loadingVenues")}
+          {t(
+            "liveHelpMap.loadingVenues"
+          )}
         </div>
       )}
 
@@ -1867,15 +2623,24 @@ useEffect(() => {
             <input
               value={searchText}
               onChange={(event) =>
-                setSearchText(event.target.value)
+                setSearchText(
+                  event.target.value
+                )
               }
-              placeholder={t("liveHelpMap.searchPlaceholder")}
+              placeholder={t(
+                "liveHelpMap.searchPlaceholder"
+              )}
             />
             <button
               type="button"
-              onClick={handleAdvancedFiltersClick}
+              onClick={
+                handleAdvancedFiltersClick
+              }
             >
-              ⚙ {t("liveHelpMap.advancedFilters")}
+              ⚙{" "}
+              {t(
+                "liveHelpMap.advancedFilters"
+              )}
             </button>
           </section>
 
@@ -1883,62 +2648,105 @@ useEffect(() => {
             <button
               type="button"
               className={
-                appliedFilters.venueType === "clinic"
-                  ? "active"
-                  : ""
-              }
-              onClick={() => selectCategory("clinic")}
-            >
-              ✚ {t("liveHelpMap.categories.clinics")}
-            </button>
-            <button
-              type="button"
-              className={
-                appliedFilters.venueType === "hospital"
-                  ? "active"
-                  : ""
-              }
-              aria-pressed={
-                appliedFilters.venueType === "hospital"
-              }
-              onClick={() => selectCategory("hospital")}
-            >
-              🏥 {t("liveHelpMap.categories.hospitals")}
-            </button>
-            <button
-              type="button"
-              className={
-                appliedFilters.venueType === "pharmacy"
-                  ? "active"
-                  : ""
-              }
-              onClick={() => selectCategory("pharmacy")}
-            >
-              ⚕ {t("liveHelpMap.categories.pharmacy")}
-            </button>
-            <button
-              type="button"
-              className={
-                appliedFilters.venueType === "emergencyasset"
+                appliedFilters.venueType ===
+                "clinic"
                   ? "active"
                   : ""
               }
               onClick={() =>
-                selectCategory("emergencyasset")
+                selectCategory(
+                  "clinic"
+                )
               }
             >
-              ❤️ {t("liveHelpMap.categories.aed")}
+              ✚{" "}
+              {t(
+                "liveHelpMap.categories.clinics"
+              )}
             </button>
+
             <button
               type="button"
               className={
-                appliedFilters.venueType === "restroom"
+                appliedFilters.venueType ===
+                "hospital"
                   ? "active"
                   : ""
               }
-              onClick={() => selectCategory("restroom")}
+              aria-pressed={
+                appliedFilters.venueType ===
+                "hospital"
+              }
+              onClick={() =>
+                selectCategory(
+                  "hospital"
+                )
+              }
             >
-              🚽 {t("liveHelpMap.categories.toilets")}
+              🏥{" "}
+              {t(
+                "liveHelpMap.categories.hospitals"
+              )}
+            </button>
+
+            <button
+              type="button"
+              className={
+                appliedFilters.venueType ===
+                "pharmacy"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                selectCategory(
+                  "pharmacy"
+                )
+              }
+            >
+              ⚕{" "}
+              {t(
+                "liveHelpMap.categories.pharmacy"
+              )}
+            </button>
+
+            <button
+              type="button"
+              className={
+                appliedFilters.venueType ===
+                "emergencyasset"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                selectCategory(
+                  "emergencyasset"
+                )
+              }
+            >
+              ❤️{" "}
+              {t(
+                "liveHelpMap.categories.aed"
+              )}
+            </button>
+
+            <button
+              type="button"
+              className={
+                appliedFilters.venueType ===
+                "restroom"
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                selectCategory(
+                  "restroom"
+                )
+              }
+            >
+              🚽{" "}
+              {t(
+                "liveHelpMap.categories.toilets"
+              )}
             </button>
           </section>
         </>
@@ -1948,83 +2756,156 @@ useEffect(() => {
             <div className="route-planner-bar">
               <div className="route-field">
                 <span>⌾</span>
+
                 <div className="route-autocomplete-input-wrap">
                   <input
                     type="text"
                     value={routeStart}
-                    placeholder={t("liveHelpMap.userLocationMock")}
+                    placeholder={t(
+                      "liveHelpMap.userLocationMock"
+                    )}
                     autoComplete="off"
-                    aria-expanded={activeRouteField === "start"}
-                    onChange={handleRouteStartChange}
+                    aria-expanded={
+                      activeRouteField ===
+                      "start"
+                    }
+                    onChange={
+                      handleRouteStartChange
+                    }
                     onFocus={(event) => {
                       event.target.select();
-                      setActiveRouteField("start");
+                      setActiveRouteField(
+                        "start"
+                      );
                     }}
                     onBlur={() => {
-                      window.setTimeout(() => {
-                        setActiveRouteField((current) =>
-                          current === "start" ? null : current
-                        );
-                      }, 120);
+                      window.setTimeout(
+                        () => {
+                          setActiveRouteField(
+                            (current) =>
+                              current ===
+                              "start"
+                                ? null
+                                : current
+                          );
+                        },
+                        120
+                      );
                     }}
                   />
 
-                  {activeRouteField === "start" && (
-                    <div className="route-autocomplete-menu" role="listbox">
+                  {activeRouteField ===
+                    "start" && (
+                    <div
+                      className="route-autocomplete-menu"
+                      role="listbox"
+                    >
                       <div className="route-autocomplete-caption">
-                        {t("liveHelpMap.routePlanner.allVenues", {
-                          defaultValue: "All venues — filters do not apply",
-                        })}
+                        {t(
+                          "liveHelpMap.routePlanner.allVenues",
+                          {
+                            defaultValue:
+                              "All venues — filters do not apply",
+                          }
+                        )}
                       </div>
 
                       <button
                         type="button"
                         className="route-autocomplete-option"
-                        aria-selected={routeOriginSelection === "user"}
-                        onMouseDown={(event) => event.preventDefault()}
-                        onClick={chooseUserLocationAsRouteStart}
+                        aria-selected={
+                          routeOriginSelection ===
+                          "user"
+                        }
+                        onMouseDown={(
+                          event
+                        ) =>
+                          event.preventDefault()
+                        }
+                        onClick={
+                          chooseUserLocationAsRouteStart
+                        }
                       >
-                        <span className="route-autocomplete-icon">⌾</span>
+                        <span className="route-autocomplete-icon">
+                          ⌾
+                        </span>
                         <span>
-                          <strong>{t("liveHelpMap.userLocationMock")}</strong>
+                          <strong>
+                            {t(
+                              "liveHelpMap.userLocationMock"
+                            )}
+                          </strong>
                           <small>
-                            {t("liveHelpMap.routePlanner.currentStart", {
-                              defaultValue: "Use the current map location",
-                            })}
+                            {t(
+                              "liveHelpMap.routePlanner.currentStart",
+                              {
+                                defaultValue:
+                                  "Use the current map location",
+                              }
+                            )}
                           </small>
                         </span>
                       </button>
 
-                      {routeStartSuggestions.map((venue) => (
-                        <button
-                          key={`route-start-${venue.venue_id}`}
-                          type="button"
-                          className="route-autocomplete-option"
-                          aria-selected={
-                            routeOriginSelection === venue.venue_id
-                          }
-                          onMouseDown={(event) => event.preventDefault()}
-                          onClick={() => chooseRouteStartVenue(venue)}
-                        >
-                          <span className="route-autocomplete-icon">
-                            {getIcon(venue)}
-                          </span>
-                          <span>
-                            <strong>{venue.name}</strong>
-                            <small>
-                              {[venue.address, venue.borough]
-                                .filter(Boolean)
-                                .join(" • ")}
-                            </small>
-                          </span>
-                        </button>
-                      ))}
+                      {routeStartSuggestions.map(
+                        (venue) => (
+                          <button
+                            key={`route-start-${venue.venue_id}`}
+                            type="button"
+                            className="route-autocomplete-option"
+                            aria-selected={
+                              routeOriginSelection ===
+                              venue.venue_id
+                            }
+                            onMouseDown={(
+                              event
+                            ) =>
+                              event.preventDefault()
+                            }
+                            onClick={() =>
+                              chooseRouteStartVenue(
+                                venue
+                              )
+                            }
+                          >
+                            <span className="route-autocomplete-icon">
+                              {getIcon(
+                                venue
+                              )}
+                            </span>
+                            <span>
+                              <strong>
+                                {
+                                  venue.name
+                                }
+                              </strong>
+                              <small>
+                                {[
+                                  venue.address,
+                                  venue.borough,
+                                ]
+                                  .filter(
+                                    Boolean
+                                  )
+                                  .join(
+                                    " • "
+                                  )}
+                              </small>
+                            </span>
+                          </button>
+                        )
+                      )}
 
-                      {routeStartSuggestions.length === 0 && (
+                      {routeStartSuggestions.length ===
+                        0 && (
                         <p className="route-autocomplete-empty">
-                          {t("liveHelpMap.routePlanner.noVenuesFound", {
-                            defaultValue: "No venues found.",
-                          })}
+                          {t(
+                            "liveHelpMap.routePlanner.noVenuesFound",
+                            {
+                              defaultValue:
+                                "No venues found.",
+                            }
+                          )}
                         </p>
                       )}
                     </div>
@@ -2034,65 +2915,122 @@ useEffect(() => {
 
               <div className="route-field">
                 <span>⌖</span>
+
                 <div className="route-autocomplete-input-wrap">
                   <input
                     type="text"
-                    value={routeDestination}
-                    placeholder={routeDestinationVenue?.name ?? selectedVenue.name}
+                    value={
+                      routeDestination
+                    }
+                    placeholder={
+                      routeDestinationVenue?.name ??
+                      selectedVenue.name
+                    }
                     autoComplete="off"
-                    aria-expanded={activeRouteField === "destination"}
-                    onChange={handleRouteDestinationChange}
+                    aria-expanded={
+                      activeRouteField ===
+                      "destination"
+                    }
+                    onChange={
+                      handleRouteDestinationChange
+                    }
                     onFocus={(event) => {
                       event.target.select();
-                      setActiveRouteField("destination");
+                      setActiveRouteField(
+                        "destination"
+                      );
                     }}
                     onBlur={() => {
-                      window.setTimeout(() => {
-                        setActiveRouteField((current) =>
-                          current === "destination" ? null : current
-                        );
-                      }, 120);
+                      window.setTimeout(
+                        () => {
+                          setActiveRouteField(
+                            (current) =>
+                              current ===
+                              "destination"
+                                ? null
+                                : current
+                          );
+                        },
+                        120
+                      );
                     }}
                   />
 
-                  {activeRouteField === "destination" && (
-                    <div className="route-autocomplete-menu" role="listbox">
+                  {activeRouteField ===
+                    "destination" && (
+                    <div
+                      className="route-autocomplete-menu"
+                      role="listbox"
+                    >
                       <div className="route-autocomplete-caption">
-                        {t("liveHelpMap.routePlanner.allVenues", {
-                          defaultValue: "All venues — filters do not apply",
-                        })}
+                        {t(
+                          "liveHelpMap.routePlanner.allVenues",
+                          {
+                            defaultValue:
+                              "All venues — filters do not apply",
+                          }
+                        )}
                       </div>
 
-                      {routeDestinationSuggestions.map((venue) => (
-                        <button
-                          key={`route-destination-${venue.venue_id}`}
-                          type="button"
-                          className="route-autocomplete-option"
-                          aria-selected={
-                            routeDestinationVenueId === venue.venue_id
-                          }
-                          onMouseDown={(event) => event.preventDefault()}
-                          onClick={() => chooseRouteDestinationVenue(venue)}
-                        >
-                          <span className="route-autocomplete-icon">
-                            {getIcon(venue)}
-                          </span>
-                          <span>
-                            <strong>{venue.name}</strong>
-                            <small>
-                              {[venue.address, venue.borough]
-                                .filter(Boolean)
-                                .join(" • ")}
-                            </small>
-                          </span>
-                        </button>
-                      ))}
+                      {routeDestinationSuggestions.map(
+                        (venue) => (
+                          <button
+                            key={`route-destination-${venue.venue_id}`}
+                            type="button"
+                            className="route-autocomplete-option"
+                            aria-selected={
+                              routeDestinationVenueId ===
+                              venue.venue_id
+                            }
+                            onMouseDown={(
+                              event
+                            ) =>
+                              event.preventDefault()
+                            }
+                            onClick={() =>
+                              chooseRouteDestinationVenue(
+                                venue
+                              )
+                            }
+                          >
+                            <span className="route-autocomplete-icon">
+                              {getIcon(
+                                venue
+                              )}
+                            </span>
+                            <span>
+                              <strong>
+                                {
+                                  venue.name
+                                }
+                              </strong>
+                              <small>
+                                {[
+                                  venue.address,
+                                  venue.borough,
+                                ]
+                                  .filter(
+                                    Boolean
+                                  )
+                                  .join(
+                                    " • "
+                                  )}
+                              </small>
+                            </span>
+                          </button>
+                        )
+                      )}
 
-                      {routeDestinationSuggestions.length === 0 && (
+                      {routeDestinationSuggestions.length ===
+                        0 && (
                         <p className="route-autocomplete-empty">
-                          {t("liveHelpMap.routePlanner.noVenuesFound", {
-                            defaultValue: "No venues found.",
-                          })}
+                          {t(
+                            "liveHelpMap.routePlanner.noVenuesFound",
+                            {
+                              defaultValue:
+                                "No venues found.",
+                            }
+                          )}
                         </p>
                       )}
                     </div>
@@ -2104,16 +3042,22 @@ useEffect(() => {
                 <span>◷</span>
                 <input
                   type="text"
-                  value={routeDepartureTime}
+                  value={
+                    routeDepartureTime
+                  }
                   readOnly
-                  placeholder={t("liveHelpMap.routePlanner.leaveNow")}
+                  placeholder={t(
+                    "liveHelpMap.routePlanner.leaveNow"
+                  )}
                 />
               </div>
 
               <button
                 type="button"
                 className="route-search-btn"
-                onClick={handleRouteSearch}
+                onClick={
+                  handleRouteSearch
+                }
                 disabled={
                   routeLoading ||
                   !routeOriginLocation ||
@@ -2121,42 +3065,66 @@ useEffect(() => {
                 }
               >
                 {routeLoading
-                  ? t("liveHelpMap.routePlanner.searching")
-                  : `⇅ ${t("liveHelpMap.routePlanner.searchRoute")}`}
+                  ? t(
+                      "liveHelpMap.routePlanner.searching"
+                    )
+                  : `⇅ ${t(
+                      "liveHelpMap.routePlanner.searchRoute"
+                    )}`}
               </button>
             </div>
 
             <aside className="direction-options-card">
               <div className="direction-options-header">
-                <h3>{t("liveHelpMap.routePlanner.directionOptions")}</h3>
+                <h3>
+                  {t(
+                    "liveHelpMap.routePlanner.directionOptions"
+                  )}
+                </h3>
+
                 <button
                   type="button"
-                  onClick={closeRoutePlanner}
+                  onClick={
+                    closeRoutePlanner
+                  }
                 >
                   ×
                 </button>
               </div>
 
               <div className="transport-tabs">
-                {Object.entries(TRAVEL_MODE_UI).map(
-                  ([mode, modeUi]) => (
+                {Object.entries(
+                  TRAVEL_MODE_UI
+                ).map(
+                  ([
+                    mode,
+                    modeUi,
+                  ]) => (
                     <button
                       key={mode}
                       type="button"
                       className={
-                        selectedTravelMode === mode
+                        selectedTravelMode ===
+                        mode
                           ? "active"
                           : ""
                       }
                       aria-pressed={
-                        selectedTravelMode === mode
+                        selectedTravelMode ===
+                        mode
                       }
-                      disabled={routeLoading}
+                      disabled={
+                        routeLoading
+                      }
                       onClick={() =>
-                        handleTravelModeChange(mode)
+                        handleTravelModeChange(
+                          mode
+                        )
                       }
                     >
-                      {t(modeUi.labelKey)}
+                      {t(
+                        modeUi.labelKey
+                      )}
                     </button>
                   )
                 )}
@@ -2164,74 +3132,112 @@ useEffect(() => {
 
               <div className="direction-options-scroll">
                 <div className="route-option active">
-                <div className="route-option-top">
-                  <div>
-                    <strong>
-                      {TRAVEL_MODE_UI[selectedTravelMode].icon}{" "}
-                      {t(TRAVEL_MODE_UI[selectedTravelMode].routeLabelKey)}
-                    </strong>
-                    <p>
-                      {selectedRouteOption?.summary ??
-                        `${t(TRAVEL_MODE_UI[selectedTravelMode].labelKey)} route`}
-                      {" • "}
-                      {formatRouteStatus(
-                        selectedRouteOption?.status
-                      )}
-                    </p>
-                  </div>
-
-                  <strong>
-                    {routeLoading
-                      ? `${t("common.loading")}`
-                      : Number.isFinite(
-                            selectedRouteOption
-                              ?.duration_minutes
-                          )
-                        ? `${selectedRouteOption.duration_minutes} mins`
-                        : "— mins"}
-                  </strong>
-                </div>
-
-                {routeError && (
-                  <p className="route-error" role="alert">
-                    {routeError}
-                  </p>
-                )}
-
-                {!routeLoading &&
-                  !routeError &&
-                  routeDetail?.steps?.length > 0 && (
-                    <div className="route-steps">
-                      <p>
-                        ↑ {t("liveHelpMap.routePlanner.startFrom", {
-                          location: routeStart,
-                        })}
-                      </p>
-
-                      {routeDetail.steps.map(
-                        (step, index) => (
-                          <p key={`${index}-${step}`}>
-                            {index + 1}. {step}
-                          </p>
-                        )
-                      )}
+                  <div className="route-option-top">
+                    <div>
+                      <strong>
+                        {
+                          TRAVEL_MODE_UI[
+                            selectedTravelMode
+                          ].icon
+                        }{" "}
+                        {t(
+                          TRAVEL_MODE_UI[
+                            selectedTravelMode
+                          ].routeLabelKey
+                        )}
+                      </strong>
 
                       <p>
-                        ↑ {t("liveHelpMap.routePlanner.arriveAt", {
-                          location:
-                            routeDestinationVenue?.name ?? selectedVenue.name,
-                        })}
+                        {selectedRouteOption?.summary ??
+                          `${t(
+                            TRAVEL_MODE_UI[
+                              selectedTravelMode
+                            ].labelKey
+                          )} route`}
+                        {" • "}
+                        {formatRouteStatus(
+                          selectedRouteOption?.status
+                        )}
                       </p>
                     </div>
-                  )}
 
-                {!routeLoading &&
-                  !routeError &&
-                  !routeDetail?.steps?.length && (
-                    <p className="route-error">
-                      {t("liveHelpMap.routePlanner.routeInstructionsUnavailable")}
+                    <strong>
+                      {routeLoading
+                        ? t(
+                            "common.loading"
+                          )
+                        : Number.isFinite(
+                              selectedRouteOption?.duration_minutes
+                            )
+                          ? `${selectedRouteOption.duration_minutes} mins`
+                          : "— mins"}
+                    </strong>
+                  </div>
+
+                  {routeError && (
+                    <p
+                      className="route-error"
+                      role="alert"
+                    >
+                      {routeError}
                     </p>
                   )}
+
+                  {!routeLoading &&
+                    !routeError &&
+                    routeDetail?.steps
+                      ?.length > 0 && (
+                      <div className="route-steps">
+                        <p>
+                          ↑{" "}
+                          {t(
+                            "liveHelpMap.routePlanner.startFrom",
+                            {
+                              location:
+                                routeStart,
+                            }
+                          )}
+                        </p>
+
+                        {routeDetail.steps.map(
+                          (
+                            step,
+                            index
+                          ) => (
+                            <p
+                              key={`${index}-${step}`}
+                            >
+                              {index +
+                                1}
+                              . {step}
+                            </p>
+                          )
+                        )}
+
+                        <p>
+                          ↑{" "}
+                          {t(
+                            "liveHelpMap.routePlanner.arriveAt",
+                            {
+                              location:
+                                routeDestinationVenue?.name ??
+                                selectedVenue.name,
+                            }
+                          )}
+                        </p>
+                      </div>
+                    )}
+
+                  {!routeLoading &&
+                    !routeError &&
+                    !routeDetail?.steps
+                      ?.length && (
+                      <p className="route-error">
+                        {t(
+                          "liveHelpMap.routePlanner.routeInstructionsUnavailable"
+                        )}
+                      </p>
+                    )}
                 </div>
               </div>
             </aside>
@@ -2239,209 +3245,398 @@ useEffect(() => {
         )
       )}
 
-      {standaloneAlerts.map((alert) => (
-        <div
-          className="standalone-alert-pill"
-          key={alert.report_id}
-        >
-          <span className="standalone-alert-icon">
-            {alert.icon}
-          </span>
-          <span className="standalone-alert-text">
-            {alert.message} | {t("liveHelpMap.usersConfirmed", {
-              count: alert.confirmations,
-            })}
-          </span>
-        </div>
-      ))}
-
-      {showLeftDrawer && selectedVenue && (
-        <aside className="map-info-card">
-          <button
-            className="close-card"
-            type="button"
-            onClick={() => setShowLeftDrawer(false)}
+      {standaloneAlerts.map(
+        (alert) => (
+          <div
+            className="standalone-alert-pill"
+            key={alert.report_id}
           >
-            ×
-          </button>
-
-          <h3>{selectedVenue.name}</h3>
-
-          <p className="open-status">
-            ●{" "}
-            {selectedVenue.open_now === true
-              ? t("liveHelpMap.openNow")
-              : selectedVenue.open_now === false
-                ? t("liveHelpMap.closed")
-                : t("liveHelpMap.hoursUnknown")}{" "}
-            • {selectedVenue.busyness_level || t("liveHelpMap.legend.noLiveInfo")}
-          </p>
-
-          {landmarkAlert && (
-            <div className="landmark-alert-banner">
-              <span className="landmark-alert-icon">
-                {landmarkAlert.icon}
-              </span>
-              <span className="landmark-alert-text">
-                {landmarkAlert.message} |{" "}
-                {t("liveHelpMap.usersConfirmed", {
-                  count: landmarkAlert.confirmations,
-                })}
-              </span>
-            </div>
-          )}
-
-          {selectedAccessibilityReports.length > 0 && (
-            <div className="alert-box">
-              <strong>
-                ⓘ {t("liveHelpMap.accessibilityWarning")}
-              </strong>
-              <p>
-                {t("liveHelpMap.accessibilityReportsConfirmed", {
-                  count: selectedAccessibilityReports.length,
-                })}
-              </p>
-            </div>
-          )}
-
-          <h4>{t("liveHelpMap.locationInfoHeading")}</h4>
-          <p>
-            📍 {selectedVenue.borough || t("liveHelpMap.borough")}
-            <br />
-            {selectedVenue.address || t("liveHelpMap.addressUnavailable")}
-            <br />
-            {selectedVenue.avg_wait_minutes != null
-              ? t("liveHelpMap.estimatedWaitMinutes", {
-                  minutes: selectedVenue.avg_wait_minutes,
-                })
-              : t("liveHelpMap.estimatedWaitUnavailable")}
-          </p>
-
-          <p className="venue-meta-line">
-            📞 {selectedVenue.phone || t("liveHelpMap.phoneUnavailable")}
-          </p>
-          <p className="venue-meta-line">
-            🕐{" "}
-            {selectedVenue.opening_hours ||
-              t("liveHelpMap.openingHoursUnavailable")}
-          </p>
-
-          <p>
-            {t("map.filters.language")}:{" "}
-            {(selectedVenue.language_tags ?? []).length
-              ? selectedVenue.language_tags.join(", ")
-              : t("liveHelpMap.languagesNotListed")}
-          </p>
-          <p>
-            {t("favourites.access")}:{" "}
-            {selectedVenue.accessible_status ||
-              t("liveHelpMap.accessNotSpecified")}
-          </p>
-
-          {(selectedVenue.supported_services ?? []).length >
-            0 && (
-            <div className="service-tags">
-              {selectedVenue.supported_services.map(
-                (service) => (
-                  <span
-                    className="service-tag"
-                    key={service}
-                  >
-                    {service}
-                  </span>
-                )
+            <span className="standalone-alert-icon">
+              {alert.icon}
+            </span>
+            <span className="standalone-alert-text">
+              {alert.message} |{" "}
+              {t(
+                "liveHelpMap.usersConfirmed",
+                {
+                  count:
+                    alert.confirmations,
+                }
               )}
-            </div>
-          )}
-
-          {autoCurrentTime ? (
-            <>
-              <h4 className="busyness-heading">
-                {t("liveHelpMap.busynessPredictionHeading")}
-              </h4>
-
-              {(selectedVenue.busyness_forecast_12h ?? [])
-                .length > 0 ? (
-                <div className="mini-bars">
-                  {selectedVenue.busyness_forecast_12h.map(
-                    (point) => (
-                      <span
-                        key={point.offset_hours}
-                        style={{
-                          height: `${Math.max(
-                            Number(point.percent) || 0,
-                            6
-                          )}%`,
-                        }}
-                        title={`${point.percent}% ${point.level}`}
-                      />
-                    )
-                  )}
-                </div>
-              ) : (
-                <p className="forecast-unavailable">
-                  {t("liveHelpMap.forecastUnavailable")}
-                </p>
-              )}
-            </>
-          ) : (
-            <div className="prediction-tag">
-              {t("liveHelpMap.predictedStatusAt", {
-                time: selectedTime || t("liveHelpMap.predictedStatusFallback"),
-              })}{" "}
-              {selectedVenue.busyness_level ||
-                t("liveHelpMap.statusUnavailable")}
-            </div>
-          )}
-
-          <button
-            className="primary-map-btn"
-            type="button"
-            onClick={handleOpenLiveDirections}
-          >
-            ◈ {t("liveHelpMap.openLiveDirections")}
-          </button>
-
-          {favouriteError && (
-            <p className="favourite-error" role="alert">
-              {favouriteError}
-            </p>
-          )}
-
-          <button
-            className="secondary-map-btn"
-            type="button"
-            onClick={handleSaveLocation}
-            disabled={
-              updatingFavouriteId === selectedVenue.venue_id
-            }
-            aria-pressed={favouriteVenueIds.includes(
-              selectedVenue.venue_id
-            )}
-          >
-            {updatingFavouriteId === selectedVenue.venue_id
-              ? t("liveHelpMap.savingLocation")
-              : favouriteVenueIds.includes(
-                    selectedVenue.venue_id
-                  )
-                ? `♥ ${t("liveHelpMap.savedLocation")}`
-                : `♡ ${t("liveHelpMap.saveLocation")}`}
-          </button>
-        </aside>
+            </span>
+          </div>
+        )
       )}
+
+      {showLeftDrawer &&
+        selectedVenue && (
+          <aside className="map-info-card">
+            <button
+              className="close-card"
+              type="button"
+              onClick={() =>
+                setShowLeftDrawer(
+                  false
+                )
+              }
+            >
+              ×
+            </button>
+
+            <h3>
+              {selectedVenue.name}
+            </h3>
+
+            <p className="open-status">
+              ●{" "}
+              {selectedVenue.open_now ===
+              true
+                ? t(
+                    "liveHelpMap.openNow"
+                  )
+                : selectedVenue.open_now ===
+                    false
+                  ? t(
+                      "liveHelpMap.closed"
+                    )
+                  : t(
+                      "liveHelpMap.hoursUnknown"
+                    )}{" "}
+              •{" "}
+              {selectedVenue.busyness_level ||
+                t(
+                  "liveHelpMap.legend.noLiveInfo"
+                )}
+            </p>
+
+            {landmarkAlert && (
+              <div className="landmark-alert-banner">
+                <span className="landmark-alert-icon">
+                  {
+                    landmarkAlert.icon
+                  }
+                </span>
+                <span className="landmark-alert-text">
+                  {
+                    landmarkAlert.message
+                  }{" "}
+                  |{" "}
+                  {t(
+                    "liveHelpMap.usersConfirmed",
+                    {
+                      count:
+                        landmarkAlert.confirmations,
+                    }
+                  )}
+                </span>
+              </div>
+            )}
+
+            {selectedAccessibilityReports.length >
+              0 && (
+              <div className="alert-box">
+                <strong>
+                  ⓘ{" "}
+                  {t(
+                    "liveHelpMap.accessibilityWarning"
+                  )}
+                </strong>
+                <p>
+                  {t(
+                    "liveHelpMap.accessibilityReportsConfirmed",
+                    {
+                      count:
+                        selectedAccessibilityReports.length,
+                    }
+                  )}
+                </p>
+              </div>
+            )}
+
+            <h4>
+              {t(
+                "liveHelpMap.locationInfoHeading"
+              )}
+            </h4>
+
+            <p>
+              📍{" "}
+              {selectedVenue.borough ||
+                t(
+                  "liveHelpMap.borough"
+                )}
+              <br />
+              {selectedVenue.address ||
+                t(
+                  "liveHelpMap.addressUnavailable"
+                )}
+              <br />
+              {selectedVenue.avg_wait_minutes !=
+              null
+                ? t(
+                    "liveHelpMap.estimatedWaitMinutes",
+                    {
+                      minutes:
+                        selectedVenue.avg_wait_minutes,
+                    }
+                  )
+                : t(
+                    "liveHelpMap.estimatedWaitUnavailable"
+                  )}
+            </p>
+
+            <p className="venue-meta-line">
+              📞{" "}
+              {selectedVenue.phone ||
+                t(
+                  "liveHelpMap.phoneUnavailable"
+                )}
+            </p>
+
+            <p className="venue-meta-line">
+              🕐{" "}
+              {selectedVenue.opening_hours ||
+                t(
+                  "liveHelpMap.openingHoursUnavailable"
+                )}
+            </p>
+
+            <p>
+              {t(
+                "map.filters.language"
+              )}
+              :{" "}
+              {(selectedVenue.language_tags ??
+                []).length
+                ? selectedVenue.language_tags.join(
+                    ", "
+                  )
+                : t(
+                    "liveHelpMap.languagesNotListed"
+                  )}
+            </p>
+
+            <p>
+              {t(
+                "favourites.access"
+              )}
+              :{" "}
+              {selectedVenue.accessible_status ||
+                t(
+                  "liveHelpMap.accessNotSpecified"
+                )}
+            </p>
+
+            {(selectedVenue.supported_services ??
+              []).length > 0 && (
+              <div className="service-tags">
+                {selectedVenue.supported_services.map(
+                  (service) => (
+                    <span
+                      className="service-tag"
+                      key={
+                        service
+                      }
+                    >
+                      {service}
+                    </span>
+                  )
+                )}
+              </div>
+            )}
+
+            {autoCurrentTime ? (
+              <>
+                <h4 className="busyness-heading">
+                  {t(
+                    "liveHelpMap.busynessPredictionHeading"
+                  )}
+                </h4>
+
+                {(selectedVenue.busyness_forecast_12h ??
+                  []).length > 0 ? (
+                  <div className="mini-bars">
+                    {selectedVenue.busyness_forecast_12h.map(
+                      (
+                        point,
+                        index
+                      ) => {
+                        const rawPercent =
+                          point.percent;
+
+                        const percent =
+                          rawPercent ===
+                            null ||
+                          rawPercent ===
+                            undefined ||
+                          rawPercent ===
+                            ""
+                            ? Number.NaN
+                            : Number(
+                                rawPercent
+                              );
+
+                        const barColor =
+                          getMarkerColor(
+                            {
+                              busyness_percent:
+                                Number.isFinite(
+                                  percent
+                                )
+                                  ? percent
+                                  : null,
+                              busyness_level:
+                                point.level,
+                              busyness_status:
+                                point.status,
+                            },
+                            false
+                          );
+
+                        const barHeight =
+                          Number.isFinite(
+                            percent
+                          )
+                            ? Math.max(
+                                6,
+                                Math.min(
+                                  percent,
+                                  100
+                                )
+                              )
+                            : 6;
+
+                        const title =
+                          Number.isFinite(
+                            percent
+                          )
+                            ? `${percent}% ${point.level}`
+                            : point.level ||
+                              t(
+                                "liveHelpMap.legend.noLiveInfo"
+                              );
+
+                        return (
+                          <span
+                            key={`${point.offset_hours}-${index}`}
+                            style={{
+                              height: `${barHeight}%`,
+                              backgroundColor:
+                                barColor,
+                            }}
+                            title={
+                              title
+                            }
+                          />
+                        );
+                      }
+                    )}
+                  </div>
+                ) : (
+                  <p className="forecast-unavailable">
+                    {t(
+                      "liveHelpMap.forecastUnavailable"
+                    )}
+                  </p>
+                )}
+              </>
+            ) : (
+              <div className="prediction-tag">
+                {t(
+                  "liveHelpMap.predictedStatusAt",
+                  {
+                    time:
+                      selectedTime ||
+                      t(
+                        "liveHelpMap.predictedStatusFallback"
+                      ),
+                  }
+                )}{" "}
+                {selectedVenue.busyness_level ||
+                  t(
+                    "liveHelpMap.statusUnavailable"
+                  )}
+              </div>
+            )}
+
+            <button
+              className="primary-map-btn"
+              type="button"
+              onClick={
+                handleOpenLiveDirections
+              }
+            >
+              ◈{" "}
+              {t(
+                "liveHelpMap.openLiveDirections"
+              )}
+            </button>
+
+            {favouriteError && (
+              <p
+                className="favourite-error"
+                role="alert"
+              >
+                {favouriteError}
+              </p>
+            )}
+
+            <button
+              className="secondary-map-btn"
+              type="button"
+              onClick={
+                handleSaveLocation
+              }
+              disabled={
+                updatingFavouriteId ===
+                selectedVenue.venue_id
+              }
+              aria-pressed={favouriteVenueIds.includes(
+                selectedVenue.venue_id
+              )}
+            >
+              {updatingFavouriteId ===
+              selectedVenue.venue_id
+                ? t(
+                    "liveHelpMap.savingLocation"
+                  )
+                : favouriteVenueIds.includes(
+                      selectedVenue.venue_id
+                    )
+                  ? `♥ ${t(
+                      "liveHelpMap.savedLocation"
+                    )}`
+                  : `♡ ${t(
+                      "liveHelpMap.saveLocation"
+                    )}`}
+            </button>
+          </aside>
+        )}
 
       <div className="map-legend">
         <span>
-          <b className="quiet-dot" /> {t("liveHelpMap.legend.quiet")}
+          <b className="quiet-dot" />{" "}
+          {t(
+            "liveHelpMap.legend.quiet"
+          )}
         </span>
         <span>
-          <b className="moderate-dot" /> {t("liveHelpMap.legend.moderate")}
+          <b className="moderate-dot" />{" "}
+          {t(
+            "liveHelpMap.legend.moderate"
+          )}
         </span>
         <span>
-          <b className="busy-dot" /> {t("liveHelpMap.legend.busy")}
+          <b className="busy-dot" />{" "}
+          {t(
+            "liveHelpMap.legend.busy"
+          )}
         </span>
         <span>
-          <b className="info-dot" /> {t("liveHelpMap.legend.noLiveInfo")}
+          <b className="info-dot" />{" "}
+          {t(
+            "liveHelpMap.legend.noLiveInfo"
+          )}
         </span>
       </div>
 
@@ -2449,10 +3644,18 @@ useEffect(() => {
         <div className="filter-overlay">
           <section className="filter-modal">
             <div className="filter-header">
-              <h2>{t("liveHelpMap.filterModal.title")}</h2>
+              <h2>
+                {t(
+                  "liveHelpMap.filterModal.title"
+                )}
+              </h2>
               <button
                 type="button"
-                onClick={() => setShowFilters(false)}
+                onClick={() =>
+                  setShowFilters(
+                    false
+                  )
+                }
               >
                 ×
               </button>
@@ -2460,10 +3663,16 @@ useEffect(() => {
 
             <div className="filter-body">
               <div className="filter-title-row">
-                <h3>{t("liveHelpMap.filterModal.availabilityDateTime")}</h3>
+                <h3>
+                  {t(
+                    "liveHelpMap.filterModal.availabilityDateTime"
+                  )}
+                </h3>
 
                 <label className="auto-toggle">
-                  {t("liveHelpMap.filterModal.autoCurrentTime")}
+                  {t(
+                    "liveHelpMap.filterModal.autoCurrentTime"
+                  )}
                   <button
                     type="button"
                     className={
@@ -2473,7 +3682,8 @@ useEffect(() => {
                     }
                     onClick={() =>
                       setAutoCurrentTime(
-                        (current) => !current
+                        (current) =>
+                          !current
                       )
                     }
                   />
@@ -2483,26 +3693,40 @@ useEffect(() => {
               {!autoCurrentTime && (
                 <div className="date-time-grid">
                   <label>
-                    {t("liveHelpMap.filterModal.date")}
+                    {t(
+                      "liveHelpMap.filterModal.date"
+                    )}
                     <input
                       type="date"
-                      value={selectedDate}
-                      onChange={(event) =>
+                      value={
+                        selectedDate
+                      }
+                      onChange={(
+                        event
+                      ) =>
                         setSelectedDate(
-                          event.target.value
+                          event.target
+                            .value
                         )
                       }
                     />
                   </label>
 
                   <label>
-                    {t("liveHelpMap.filterModal.time")}
+                    {t(
+                      "liveHelpMap.filterModal.time"
+                    )}
                     <input
                       type="time"
-                      value={selectedTime}
-                      onChange={(event) =>
+                      value={
+                        selectedTime
+                      }
+                      onChange={(
+                        event
+                      ) =>
                         setSelectedTime(
-                          event.target.value
+                          event.target
+                            .value
                         )
                       }
                     />
@@ -2510,22 +3734,45 @@ useEffect(() => {
                 </div>
               )}
 
-              <h3>{t("liveHelpMap.filterModal.language")}</h3>
+              <h3>
+                {t(
+                  "liveHelpMap.filterModal.language"
+                )}
+              </h3>
 
               <label>
-                {t("liveHelpMap.filterModal.primaryLanguage")}
+                {t(
+                  "liveHelpMap.filterModal.primaryLanguage"
+                )}
                 <select
-                  value={primaryLanguage}
+                  value={
+                    primaryLanguage
+                  }
                   onChange={(event) =>
                     setPrimaryLanguage(
-                      event.target.value
+                      event.target
+                        .value
                     )
                   }
                 >
-                  <option value=""> {t("liveHelpMap.filterModal.anyLanguage")}</option>
-                  {Object.keys(LANGUAGE_CODES).map(
+                  <option value="">
+                    {t(
+                      "liveHelpMap.filterModal.anyLanguage"
+                    )}
+                  </option>
+
+                  {Object.keys(
+                    LANGUAGE_CODES
+                  ).map(
                     (language) => (
-                      <option key={language} value={language}>
+                      <option
+                        key={
+                          language
+                        }
+                        value={
+                          language
+                        }
+                      >
                         {language}
                       </option>
                     )
@@ -2534,19 +3781,38 @@ useEffect(() => {
               </label>
 
               <label>
-                {t("liveHelpMap.filterModal.secondaryLanguage")}
+                {t(
+                  "liveHelpMap.filterModal.secondaryLanguage"
+                )}
                 <select
-                  value={secondaryLanguage}
+                  value={
+                    secondaryLanguage
+                  }
                   onChange={(event) =>
                     setSecondaryLanguage(
-                      event.target.value
+                      event.target
+                        .value
                     )
                   }
                 >
-                  <option>{t("liveHelpMap.filterModal.none")}</option>
-                  {Object.keys(LANGUAGE_CODES).map(
+                  <option value="None">
+                    {t(
+                      "liveHelpMap.filterModal.none"
+                    )}
+                  </option>
+
+                  {Object.keys(
+                    LANGUAGE_CODES
+                  ).map(
                     (language) => (
-                      <option key={language}>
+                      <option
+                        key={
+                          language
+                        }
+                        value={
+                          language
+                        }
+                      >
                         {language}
                       </option>
                     )
@@ -2556,7 +3822,12 @@ useEffect(() => {
 
               {autoCurrentTime && (
                 <>
-                  <h3>{t("liveHelpMap.filterModal.busynessLevel")}</h3>
+                  <h3>
+                    {t(
+                      "liveHelpMap.filterModal.busynessLevel"
+                    )}
+                  </h3>
+
                   <label className="check-row">
                     <input
                       type="checkbox"
@@ -2564,12 +3835,17 @@ useEffect(() => {
                         "quiet"
                       )}
                       onChange={() =>
-                        toggleBusynessLevel("quiet")
+                        toggleBusynessLevel(
+                          "quiet"
+                        )
                       }
                     />
                     <span className="quiet-dot" />
-                    {t("liveHelpMap.filterModal.quietOption")}
+                    {t(
+                      "liveHelpMap.filterModal.quietOption"
+                    )}
                   </label>
+
                   <label className="check-row">
                     <input
                       type="checkbox"
@@ -2577,12 +3853,17 @@ useEffect(() => {
                         "moderate"
                       )}
                       onChange={() =>
-                        toggleBusynessLevel("moderate")
+                        toggleBusynessLevel(
+                          "moderate"
+                        )
                       }
                     />
                     <span className="moderate-dot" />
-                    {t("liveHelpMap.filterModal.moderateOption")}
+                    {t(
+                      "liveHelpMap.filterModal.moderateOption"
+                    )}
                   </label>
+
                   <label className="check-row">
                     <input
                       type="checkbox"
@@ -2590,27 +3871,41 @@ useEffect(() => {
                         "busy"
                       )}
                       onChange={() =>
-                        toggleBusynessLevel("busy")
+                        toggleBusynessLevel(
+                          "busy"
+                        )
                       }
                     />
                     <span className="busy-dot" />
-                    {t("liveHelpMap.filterModal.busyOption")}
+                    {t(
+                      "liveHelpMap.filterModal.busyOption"
+                    )}
                   </label>
                 </>
               )}
 
-              <h3>{t("liveHelpMap.filterModal.accessibilityFeatures")}</h3>
+              <h3>
+                {t(
+                  "liveHelpMap.filterModal.accessibilityFeatures"
+                )}
+              </h3>
+
               <label className="check-row">
                 <input
                   type="checkbox"
-                  checked={accessibleOnly}
+                  checked={
+                    accessibleOnly
+                  }
                   onChange={(event) =>
                     setAccessibleOnly(
-                      event.target.checked
+                      event.target
+                        .checked
                     )
                   }
                 />
-                {t("liveHelpMap.filterModal.fullWheelchairAccess")}
+                {t(
+                  "liveHelpMap.filterModal.fullWheelchairAccess"
+                )}
               </label>
             </div>
 
@@ -2618,16 +3913,25 @@ useEffect(() => {
               <button
                 type="button"
                 className="clear-btn"
-                onClick={clearFilters}
+                onClick={
+                  clearFilters
+                }
               >
-                {t("liveHelpMap.filterModal.clearAll")}
+                {t(
+                  "liveHelpMap.filterModal.clearAll"
+                )}
               </button>
+
               <button
                 type="button"
                 className="apply-btn"
-                onClick={applyFilters}
+                onClick={
+                  applyFilters
+                }
               >
-                {t("liveHelpMap.filterModal.applyFilters")}
+                {t(
+                  "liveHelpMap.filterModal.applyFilters"
+                )}
               </button>
             </div>
           </section>
