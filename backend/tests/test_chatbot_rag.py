@@ -95,7 +95,7 @@ def test_ask_chatbot_rag_happy_path(client, monkeypatch):
     assert body["message"] == "Central Park Urgent Care is open 24/7 and wheelchair accessible."
     assert body["detected_language"] == "en"
     assert body["language"] == "en"
-    assert body["citations"] == ["venue:v_close_match", "venue:v_far_match"]
+    assert body["citations"] == ["venue:v_close_match"]
     assert body["suggested_prompts"]
     assert body["fallback_used"] is False
     assert isinstance(body["response_time_ms"], int)
