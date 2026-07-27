@@ -190,6 +190,9 @@ env/
 # Data files that should not be tracked
 *.csv
 *.json
+# Versioned display-boundary asset; deliberately retained for reproducible
+# Manhattan point-in-polygon filtering in the web client.
+!frontend/web/src/data/boundaries/manhattan-nyc-dcp-26b.json
 *.png
 *.jpg
 *.jpeg
