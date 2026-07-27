@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "../App";
 
@@ -20,10 +20,8 @@ afterEach(() => {
 });
 
 describe("Navigation bar routing", () => {
-  test("renders navigation links without crashing", async () => {
-    await act(async () => {
-      render(<App />);
-    });
+  test("renders navigation links without crashing", () => {
+    render(<App />);
 
     expect(
       screen.getByRole("link", { name: /ClearPath/i })
@@ -40,9 +38,7 @@ describe("Navigation bar routing", () => {
 
     localStorage.setItem("access_token", "test-access-token");
 
-    await act(async () => {
-      render(<App />);
-    });
+    render(<App />);
 
     await user.click(
       screen.getByRole("button", { name: /open profile menu/i })

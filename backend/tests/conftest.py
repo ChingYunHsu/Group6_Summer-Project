@@ -14,10 +14,6 @@ from mock_data import AUTH_USERS
 def app():
     app = create_app()
     app.config["TESTING"] = True
-    # Tests exercise route behaviour directly; they must not inherit a local
-    # developer API key from backend/.env and unexpectedly fail at the auth
-    # gate before reaching the route under test.
-    app.config["API_KEY"] = ""
     yield app
 
 
