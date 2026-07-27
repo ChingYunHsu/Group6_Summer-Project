@@ -47,6 +47,25 @@ class _FakeCursor:
             ]
             self._result = rows
 
+        elif "GROUP BY DATE" in q:
+            # _history_series_7d: daily average of already-elapsed
+            # forecast-v2 rows over the last 7 days. No latest-batch
+            # disambiguation needed — the real unique key guarantees at
+            # most one row per (venue, hour) ever existed.
+            venue_ids = params
+            now = datetime.now(timezone.utc)
+            seven_days_ago = now - timedelta(days=7)
+            by_day = {}
+            for vid in venue_ids:
+                entries = self._store.get("busyness_forecasts", {}).get(vid, [])
+                entries = [f for f in entries if f.get("model_version", "forecast-v2") == "forecast-v2"]
+                for f in entries:
+                    ff = f["forecast_for"]
+                    if seven_days_ago <= ff < now:
+                        by_day.setdefault(ff.date(), []).append(f["predicted_score"])
+            rows = [(day, sum(scores) / len(scores)) for day, scores in sorted(by_day.items())]
+            self._result = rows
+
         elif "bf.venue_id IN" in q:
             # _nearest_v2_forecast_by_venue: nearest future forecast-v2 row
             # per venue_id, from each venue's latest generation batch.
@@ -475,6 +494,78 @@ def test_prediction_series_averages_cross_venue():
     result = insights_module._prediction_series(cur, "MN05")
     assert len(result) == 3
     assert result == [28, 38, 48]
+
+
+# ---------------------------------------------------------------------------
+# D3.5/D3.7: _history_series_7d
+# ---------------------------------------------------------------------------
+
+def test_history_series_7d_empty_district():
+    store = {"venues": [], "busyness_forecasts": {}}
+    cur = _FakeCursor(store)
+    result = insights_module._history_series_7d(cur, "NONEXISTENT")
+    assert result == []
+
+
+def test_history_series_7d_averages_past_rows_by_day():
+    now = datetime.now(timezone.utc)
+    store = {
+        "venues": [
+            {"venue_id": "v1", "name": "V1", "district": "MN05", "venue_type": "clinic"},
+            {"venue_id": "v2", "name": "V2", "district": "MN05", "venue_type": "clinic"},
+        ],
+        "busyness_forecasts": {
+            "v1": [
+                {"forecast_for": now - timedelta(days=1, hours=1), "predicted_score": 20},
+                {"forecast_for": now - timedelta(days=2, hours=1), "predicted_score": 40},
+            ],
+            "v2": [
+                {"forecast_for": now - timedelta(days=1, hours=2), "predicted_score": 30},
+            ],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._history_series_7d(cur, "MN05")
+    # 2 days of data: yesterday averages v1(20) and v2(30) = 25; the day
+    # before only has v1's 40. Ordered oldest first.
+    assert result == [40, 25]
+
+
+def test_history_series_7d_excludes_future_and_older_than_7_days():
+    now = datetime.now(timezone.utc)
+    store = {
+        "venues": [{"venue_id": "v1", "name": "V1", "district": "MN05", "venue_type": "clinic"}],
+        "busyness_forecasts": {
+            "v1": [
+                # Still in the future — not history yet.
+                {"forecast_for": now + timedelta(hours=1), "predicted_score": 99},
+                # Older than the 7-day window.
+                {"forecast_for": now - timedelta(days=8), "predicted_score": 99},
+                # The only row that should survive.
+                {"forecast_for": now - timedelta(days=3), "predicted_score": 45},
+            ],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._history_series_7d(cur, "MN05")
+    assert result == [45]
+
+
+def test_history_series_7d_excludes_ineligible_venue_types():
+    now = datetime.now(timezone.utc)
+    store = {
+        "venues": [
+            {"venue_id": "v_clinic", "name": "Clinic", "district": "MN05", "venue_type": "clinic"},
+            {"venue_id": "v_aed", "name": "AED", "district": "MN05", "venue_type": "emergencyasset"},
+        ],
+        "busyness_forecasts": {
+            "v_clinic": [{"forecast_for": now - timedelta(days=1), "predicted_score": 40}],
+            "v_aed": [{"forecast_for": now - timedelta(days=1), "predicted_score": 1}],
+        },
+    }
+    cur = _FakeCursor(store)
+    result = insights_module._history_series_7d(cur, "MN05")
+    assert result == [40]  # the AED's score never enters the average
 
 
 # ---------------------------------------------------------------------------

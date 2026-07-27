@@ -310,10 +310,13 @@ export async function getRouteDetail(
 /* -------------------------------------------------------------------------- */
 
 // Sends a message to the AI assistant and gets back a reply + citations
-// + suggested follow-up prompts.
+// + suggested follow-up prompts. latitude/longitude are optional — sent
+// fresh on every call so the backend can ground "near me" style answers.
 export async function sendChatbotMessage(payload: {
   message: string;
   language?: string;
+  latitude?: number;
+  longitude?: number;
 }): Promise<ChatbotResponse> {
   return request<ChatbotResponse>("/chatbot", {
     method: "POST",

@@ -21,6 +21,7 @@ import { Typography } from "../../constants/typography";
 import { featuredLanguages } from "../../data/languages";
 import i18n from "../../i18n";
 import { getVenue, sendChatbotMessage } from "../../services/api";
+import { getCurrentLocation } from "../../services/location";
 import { Venue } from "../../types/venue";
 
 type Citation = { type: string; id: string };
@@ -166,8 +167,7 @@ export default function AssistantScreen() {
   // it back. That race was invisible on the Simulator (fast, predictable
   // local disk) but real and reproducible on a physical device. i18n's
   // own in-memory i18n.language is updated synchronously by
-  // i18n.changeLanguage() at selection time, with no disk round-trip, so
-  // reading it here has no such race.
+  // i18n.changeLanguage() at selection time
   //
   // If the resolved language changed since last time, resets the
   // "responding in" label and re-translates the two greeting messages
@@ -265,10 +265,17 @@ export default function AssistantScreen() {
     setMessage("");
     setSending(true);
 
+    // Best-effort — same getCurrentLocation() helper map.tsx uses. A
+    // failed/denied lookup just means the assistant answers without
+    // proximity info, not a blocked send.
+    const position = await getCurrentLocation().catch(() => null);
+
     try {
       const response = await sendChatbotMessage({
         message: text,
         language: currentLanguage.code,
+        latitude: position?.latitude,
+        longitude: position?.longitude,
       });
 
       setLastResponseLanguageCode(

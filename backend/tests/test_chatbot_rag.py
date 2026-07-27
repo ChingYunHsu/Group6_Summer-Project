@@ -177,7 +177,7 @@ def test_ask_chatbot_suggested_prompts_fall_back_to_english_for_unknown_language
 
 
 def test_ask_chatbot_grounded_prompt_only_uses_retrieved_context(monkeypatch):
-    retrieved = [(0.9, "v_1", "Venue One is open 9-5."), (0.5, "v_2", "Venue Two has a wheelchair ramp.")]
+    retrieved = [(0.9, "v_1", "Venue One is open 9-5.", None), (0.5, "v_2", "Venue Two has a wheelchair ramp.", None)]
     prompt = chatbot_module._build_grounded_prompt("When is Venue One open?", retrieved)
 
     assert "Venue One is open 9-5." in prompt

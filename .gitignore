@@ -197,6 +197,11 @@ env/
 *.svg
 Data+ML/data_source/
 
+# Versioned source snapshots for reproducible data pipelines.
+!Data+ML/raw_data_source/
+!Data+ML/raw_data_source/**
+Data+ML/raw_data_source/.DS_Store
+
 # Reproducible V2 training artifacts. These are intentionally versioned even
 # though other CSV source/output files remain ignored.
 !Data+ML/test/7.13-7.18/output/serpapi_v2_labels_20260716/serpapi_popular_times_weak_labels.csv

@@ -1,9 +1,18 @@
 openapi: 3.0.3
 info:
   title: ClearPath API
-  version: 1.6.2
+  version: 1.6.3
   description: |
     Shared REST API contract for ClearPath frontend and backend teams.
+
+    ## Product decision — v1.6.3 (Quick Triage semantics)
+    `InsightsDashboard.quick_triage` is ranked by predicted busyness
+    (lowest wins), not wait time — Product resolved the open "wait time vs.
+    minimum busyness" question in favor of busyness, since the V2 model has
+    no wait-time estimate to rank by anyway (`estimated_wait_minutes` is
+    always null — see the Sprint 5 SOP note below). `wait_minutes` is
+    replaced by `busyness_percent` in the response. Frontend must switch
+    its binding and copy accordingly (was rendered as "X min wait").
 
     ## Sprint 5 SOP — v1.6.2 (Backend Engineer role, V2-only busyness API)
     Per the Sprint 5 Execution SOP (V2 Prediction Scope and Manhattan
@@ -2863,11 +2872,18 @@ components:
               type: string
         quick_triage:
           type: object
-          required: [wait_minutes, label]
+          required: [busyness_percent, label]
+          description: >
+            Ranked by predicted busyness (lowest wins), not wait time —
+            Product decision. The V2 model has no wait-time estimate to
+            rank by.
           properties:
-            wait_minutes:
+            busyness_percent:
               type: integer
               minimum: 0
+              maximum: 100
+              nullable: true
+              description: Null when no eligible venue has current V2 data.
             label:
               type: string
             venue_name:
