@@ -45,7 +45,7 @@ const EMPTY_DASHBOARD = {
     summary: "No data available",
   },
   quickTriage: {
-    waitMinutes: null,
+    busynessPercent: null,
     label: "No data available",
     note: "No current triage recommendation",
   },
@@ -241,15 +241,14 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     ? null
     : clampPercent(density.percent);
 
-  const waitMinutes = triageSaysNoData
+  const busynessPercent = triageSaysNoData
     ? null
-    : normaliseOptionalNumber(
-        triage.wait_minutes ?? triage.waitMinutes,
-        { allowZero: false }
+    : clampPercent(
+        triage.busyness_percent ?? triage.busynessPercent
       );
 
   const hasDensityData = densityPercent !== null;
-  const hasTriageData = waitMinutes !== null;
+  const hasTriageData = busynessPercent !== null;
   const hasTravelWindow = Boolean(
     travelWindow.start_time ??
       travelWindow.startTime ??
@@ -305,7 +304,7 @@ function normaliseDashboard(rawDashboard, selectedDistrict, t) {
     },
 
     quickTriage: {
-      waitMinutes,
+      busynessPercent,
 
       label:
         triage.label ??
@@ -740,9 +739,9 @@ function InsightsDashboard() {
 
   const triageValue =
     dashboardData.quickTriage.busynessPercent === null
-      ? t("insights.waitUnavailable")
-      : t("insights.waitMinutesSuffix", {
-          minutes: dashboardData.quickTriage.busynessPercent,
+      ? t("insights.busynessUnavailable")
+      : t("insights.busynessPercentSuffix", {
+          percent: dashboardData.quickTriage.busynessPercent,
         });
 
   const travelWindowValue =
