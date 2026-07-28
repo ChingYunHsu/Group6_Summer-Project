@@ -538,16 +538,23 @@ function buildQueryTime(
   return `${selectedDate}T${selectedTime}:00`;
 }
 
-function getCurrentTimeInputValue() {
-  const now = new Date();
-  const hours = String(
-    now.getHours()
-  ).padStart(2, "0");
-  const minutes = String(
-    now.getMinutes()
-  ).padStart(2, "0");
+const MANHATTAN_TIME_ZONE = "America/New_York";
 
-  return `${hours}:${minutes}`;
+function formatManhattanTime(value) {
+  const timestamp = new Date(value);
+
+  if (Number.isNaN(timestamp.getTime())) return "";
+
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: MANHATTAN_TIME_ZONE,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(timestamp);
+}
+
+function getCurrentTimeInputValue() {
+  return formatManhattanTime(new Date());
 }
 
 const LANGUAGE_ALIASES = {
@@ -3570,11 +3577,14 @@ function LiveHelpMap() {
                               )
                             : 6;
 
+                        const forecastTime = formatManhattanTime(
+                          point.forecast_for
+                        );
                         const title =
                           Number.isFinite(
                             percent
                           )
-                            ? `${percent}% ${point.level}`
+                            ? `${forecastTime ? `${forecastTime} ET — ` : ""}${percent}% ${point.level}`
                             : point.level ||
                               t(
                                 "liveHelpMap.legend.noLiveInfo"

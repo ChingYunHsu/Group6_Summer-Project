@@ -1,11 +1,11 @@
-"""busyness_ingestion.py — busyness_scores 数据导入管线 (venue 级别)。
+"""busyness_ingestion.py — busyness_scores data ingestion pipeline (venue level).
 
-数据流:
-  NYC SODA Traffic API (含 wktgeom) → EPSG:2263→WGS84 转换
-  → 按 segment+hour 聚合 → haversine 匹配最近 venue (50m)
+Data flow:
+  NYC SODA Traffic API (with wktgeom) → EPSG:2263→WGS84 conversion
+  → aggregate by segment+hour → haversine nearest-venue match (50m)
   → INSERT busyness_scores
 
-用法:
+Usage:
   cd Data+ML/test/6.8-6.12_DB
   python -m dqr.busyness_ingestion --year 2025 --dry-run
   python -m dqr.busyness_ingestion --year 2025
@@ -33,29 +33,29 @@ except ImportError:
 
 import requests
 
-# ── 常量 ──────────────────────────────────────────────────────
+# ── Constants ──────────────────────────────────────────────────────
 
 SODA_BASE = 'https://data.cityofnewyork.us/resource/7ym2-wayt.json'
-VENUE_MATCH_RADIUS_M = 100  # venue 匹配半径 (米) — 100m 覆盖 68% segments
+VENUE_MATCH_RADIUS_M = 100  # venue match radius (meters) — 100m covers 68% of segments
 
-# 曼哈顿边界
+# Manhattan bounds
 MANHATTAN_BOUNDS = {
     'lat_min': 40.700, 'lat_max': 40.882,
     'lng_min': -74.020, 'lng_max': -73.907,
 }
 
 
-# ── 工具函数 ──────────────────────────────────────────────────
+# ── Utility functions ──────────────────────────────────────────
 
 def classify_score(score):
-    """0-100 分数 → 四档等级。
+    """Map 0-100 score → four-level category.
 
-    阈值基于 Manhattan 交通数据实际分布 (score = avg_vol/peak_vol*100):
-    - Manhattan baseline 流量高，score 集中在 55-80 区间
-    - quiet (<55): 低谷时段 (凌晨/深夜)
-    - moderate (55-70): 平峰时段
-    - busy (70-85): 高峰时段
-    - no_data: score=0 或无数据
+    Thresholds based on actual Manhattan traffic distribution (score = avg_vol/peak_vol*100):
+    - Manhattan baseline flow is high; scores concentrate in the 55-80 range
+    - quiet (<55): off-hours (late night / early morning)
+    - moderate (55-70): off-peak hours
+    - busy (70-85): peak hours
+    - no_data: score=0 or no data
     """
     if score >= 70:
         return 'busy'
@@ -67,8 +67,8 @@ def classify_score(score):
 
 
 def haversine_m(lat1, lng1, lat2, lng2):
-    """计算两点间的 haversine 距离 (米)。"""
-    R = 6371000  # 地球半径 (米)
+    """Compute haversine distance between two points (meters)."""
+    R = 6371000  # Earth radius (meters)
     phi1, phi2 = np.radians(lat1), np.radians(lat2)
     dphi = np.radians(lat2 - lat1)
     dlam = np.radians(lng2 - lng1)
@@ -77,7 +77,7 @@ def haversine_m(lat1, lng1, lat2, lng2):
 
 
 def parse_wkt_point(wkt):
-    """解析 WKT POINT 字符串 → (x, y) 坐标。"""
+    """Parse a WKT POINT string → (x, y) coordinates."""
     match = re.match(r'POINT\s*\(([\d.]+)\s+([\d.]+)\)', wkt)
     if match:
         return float(match.group(1)), float(match.group(2))
@@ -89,7 +89,7 @@ _transformer = None
 
 
 def epsg2263_to_wgs84(x, y):
-    """NYC State Plane (EPSG:2263) → WGS84 (lat/lng)。使用缓存的 Transformer。"""
+    """NYC State Plane (EPSG:2263) → WGS84 (lat/lng). Uses a cached Transformer."""
     global _transformer
     if _transformer is None:
         from pyproj import Transformer
@@ -98,14 +98,14 @@ def epsg2263_to_wgs84(x, y):
     return lat, lng
 
 
-# ── Step 1: 数据采集 (含 GPS) ────────────────────────────────
+# ── Step 1: Data collection (with GPS) ────────────────────────────────
 
 def fetch_busyness_data(year=2025, boro='Manhattan'):
-    """从 NYC SODA API 拉取交通数据 (含 wktgeom)，转换为 WGS84。
+    """Fetch traffic data (with wktgeom) from NYC SODA API and convert to WGS84.
 
     Returns:
-        pd.DataFrame: 含 segmentid, street, hour, avg_vol, peak_vol,
-                      busyness_level, lat, lng 列
+        pd.DataFrame: columns segmentid, street, hour, avg_vol, peak_vol,
+                      busyness_level, lat, lng
     """
     params = {
         '$select': 'segmentid,street,fromst,tost,direction,hh,'
@@ -126,12 +126,12 @@ def fetch_busyness_data(year=2025, boro='Manhattan'):
 
     df = pd.DataFrame(raw)
 
-    # 类型转换
+    # Type conversion
     df['avg_vol'] = pd.to_numeric(df['avg_vol'], errors='coerce')
     df['hh'] = pd.to_numeric(df['hh'], errors='coerce')
     df.dropna(subset=['avg_vol', 'hh'], inplace=True)
 
-    # 解析 WKT → WGS84
+    # Parse WKT → WGS84
     coords = df['wktgeom'].apply(parse_wkt_point)
     df['x'] = coords.apply(lambda c: c[0])
     df['y'] = coords.apply(lambda c: c[1])
@@ -144,7 +144,7 @@ def fetch_busyness_data(year=2025, boro='Manhattan'):
     df['lat'] = lats
     df['lng'] = lngs
 
-    # 过滤曼哈顿范围
+    # Filter to Manhattan bounds
     df = df[
         (df['lat'] >= MANHATTAN_BOUNDS['lat_min']) &
         (df['lat'] <= MANHATTAN_BOUNDS['lat_max']) &
@@ -152,7 +152,7 @@ def fetch_busyness_data(year=2025, boro='Manhattan'):
         (df['lng'] <= MANHATTAN_BOUNDS['lng_max'])
     ].copy()
 
-    # 计算峰值和 busyness level
+    # Compute peak volume and busyness level
     peak = df.groupby('segmentid')['avg_vol'].max()
     df['peak_vol'] = df['segmentid'].map(peak)
     df['busyness_level'] = df.apply(
@@ -162,7 +162,7 @@ def fetch_busyness_data(year=2025, boro='Manhattan'):
     )
     df['hour'] = df['hh'].astype(int)
 
-    # 计算 score
+    # Compute score
     df['score'] = df.apply(
         lambda r: int(r['avg_vol'] / r['peak_vol'] * 100) if r['peak_vol'] > 0 else 0,
         axis=1
@@ -173,10 +173,10 @@ def fetch_busyness_data(year=2025, boro='Manhattan'):
     return df
 
 
-# ── Step 2: Segment-level 聚合 ───────────────────────────────
+# ── Step 2: Segment-level aggregation ───────────────────────────────
 
 def aggregate_by_segment(traffic_df):
-    """按 (segmentid, hour) 聚合，保留 GPS 坐标。
+    """Aggregate by (segmentid, hour), retaining GPS coordinates.
 
     Returns:
         pd.DataFrame: columns = [segmentid, street, hour, score, busyness_level, lat, lng]
@@ -186,7 +186,7 @@ def aggregate_by_segment(traffic_df):
 
     df = traffic_df.copy()
 
-    # 按 (segmentid, hour) 聚合，取平均 score
+    # Aggregate by (segmentid, hour), taking average score
     segment_hourly = df.groupby(['segmentid', 'street', 'hour', 'lat', 'lng']).agg(
         avg_vol=('avg_vol', 'mean'),
         peak_vol=('peak_vol', 'max'),
@@ -203,14 +203,14 @@ def aggregate_by_segment(traffic_df):
     return segment_hourly
 
 
-# ── Step 3: Venue 匹配 (haversine 50m) ──────────────────────
+# ── Step 3: Venue matching (haversine 50m) ───────────────────
 
 def map_segments_to_venues(conn, segment_hourly_df, hours=None):
-    """将 traffic segment 按 district 聚合，分配给同 district 所有 venue。
+    """Aggregate traffic segments by district and assign to all venues in the same district.
 
-    NYC Traffic API 只有 28 个 segment，无法覆盖 4,714 venues 的 1%。
-    改为 district 级别：每个 segment → gps_to_district() → 按 (district, hour) 聚合
-    → 同 district 所有 venue 共享该分数。
+    The NYC Traffic API only has 28 segments — not enough to cover 1% of the 4,714 venues.
+    Instead use district-level aggregation: each segment → gps_to_district() → aggregate by
+    (district, hour) → all venues in the same district share that score.
 
     Returns:
         pd.DataFrame: columns = [venue_id, district, hour, score, busyness_level]
@@ -218,7 +218,7 @@ def map_segments_to_venues(conn, segment_hourly_df, hours=None):
     if segment_hourly_df.empty:
         return pd.DataFrame()
 
-    # 1. 为每个 segment 分配 district
+    # 1. Assign a district to each segment
     df = segment_hourly_df.copy()
     df['district'] = df.apply(
         lambda r: gps_to_district(r['lat'], r['lng']), axis=1
@@ -229,7 +229,7 @@ def map_segments_to_venues(conn, segment_hourly_df, hours=None):
     print(f'District assignment: {n_assigned}/{n_total} segments mapped '
           f'({n_assigned/n_total*100:.0f}%)')
 
-    # 2. 按 (district, hour) 聚合，计算加权平均 score
+    # 2. Aggregate by (district, hour), compute weighted-average score
     district_hourly = df.groupby(['district', 'hour']).agg(
         avg_score=('score', 'mean'),
         n_segments=('segmentid', 'nunique'),
@@ -243,7 +243,7 @@ def map_segments_to_venues(conn, segment_hourly_df, hours=None):
     if hours is not None:
         district_hourly = district_hourly[district_hourly['hour'].isin(hours)].copy()
 
-    # 3. 读取所有 venues，为每个 venue × hour 生成一行
+    # 3. Load all venues and generate one row per venue × hour
     venues_df = pd.read_sql(
         'SELECT venue_id, district FROM venues WHERE district IS NOT NULL',
         conn
@@ -267,10 +267,10 @@ def map_segments_to_venues(conn, segment_hourly_df, hours=None):
     return result
 
 
-# ── Step 4: Forecast 生成 ────────────────────────────────────
+# ── Step 4: Forecast generation ──────────────────────────────
 
 def build_forecast_1h(scores_df, target_hour):
-    """为单个 venue 生成 forecast_1h JSON (12 小时滚动窗口)。
+    """Generate forecast_1h JSON for a single venue (12-hour rolling window).
 
     Returns:
         list[dict]: [{"offset_hours": 0, "percent": 20, "level": "quiet"}, ...]
@@ -293,23 +293,23 @@ def build_forecast_1h(scores_df, target_hour):
     return forecast
 
 
-# ── Step 5: DB 写入 ─────────────────────────────────────────
+# ── Step 5: DB write ─────────────────────────────────────────
 
 def insert_busyness_scores(conn, venue_scores_df,
                            model_version='nyc_traffic_baseline_v1',
                            features_snapshot=None,
                            data_year=2025):
-    """批量写入 busyness_scores 表，每个 venue 写 24 行 (每小时一行)。
+    """Bulk-write busyness_scores table: 24 rows per venue (one per hour).
 
-    使用 executemany 批量插入，显著提升性能。
-    唯一约束上的 upsert 让同一来源年份的重跑安全刷新小时模式。
+    Uses executemany for batch insert, significantly improving performance.
+    Upsert on unique constraint allows safe refresh of hour patterns for same source year.
 
     Args:
-        data_year: 源数据年份，也是静态小时模式的索引日期。调用方只能按
-            ``HOUR(forecast_start_time)`` 使用它，不能将其当作实时窗口。
+        data_year: source data year, also the index date for the static hour pattern.
+            Callers may only use it as ``HOUR(forecast_start_time)``, not as a live window.
 
     Returns:
-        int: 插入行数
+        int: number of rows inserted
     """
     if venue_scores_df.empty:
         print('No data to insert')
@@ -392,29 +392,29 @@ def retire_legacy_context_scores(conn):
         cursor.close()
 
 
-# ── 主入口 ───────────────────────────────────────────────────
+# ── Main entry point ─────────────────────────────────────────
 
 def run_pipeline(year=2025, dry_run=False):
-    """完整管线: 采集 → 聚合 → venue 匹配 → 写入。"""
+    """Full pipeline: collect → aggregate → venue matching → write."""
     model_version = 'nyc_traffic_baseline_v1'
     print('=== Busyness Ingestion Pipeline (venue-level) ===')
     print(f'Year: {year}, Model: {model_version}, Dry-run: {dry_run}')
 
-    # Step 1: 采集 (含 GPS)
+    # Step 1: Collect (with GPS)
     print('\n[1/4] Fetching traffic data with GPS...')
     traffic = fetch_busyness_data(year=year)
     if traffic.empty:
         print('ERROR: No traffic data. Aborting.')
         return
 
-    # Step 2: Segment 聚合
+    # Step 2: Segment aggregation
     print('\n[2/4] Aggregating by segment...')
     segment_hourly = aggregate_by_segment(traffic)
     if segment_hourly.empty:
         print('ERROR: Aggregation produced no data. Aborting.')
         return
 
-    # Step 3: Venue 匹配 (district 级别)
+    # Step 3: Venue matching (district level)
     print('\n[3/4] Matching segments to venues (district aggregation)...')
     conn = get_conn()
     try:
@@ -428,11 +428,11 @@ def run_pipeline(year=2025, dry_run=False):
             print('ERROR: No venue mapping. Aborting.')
             return
 
-        # Step 4: DB 写入
+        # Step 4: DB write
         if dry_run:
             print('\n[4/4] DRY RUN — skipping DB insert')
             print(f'Would insert {len(venue_scores)} venue-hour rows')
-            # 展示每个 district 的数据分布
+            # Show data distribution per district
             dist_stats = venue_scores.groupby('district')['venue_id'].nunique()
             print(f'\nVenues per district:')
             for d, c in dist_stats.items():

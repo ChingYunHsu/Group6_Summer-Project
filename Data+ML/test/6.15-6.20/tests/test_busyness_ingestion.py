@@ -2,15 +2,15 @@
 Tests for busyness_ingestion module.
 
 Two test layers:
-  - Unit tests (default):  mock 外部依赖, 无网络/DB, 秒级完成
-  - Integration tests:    调用真实 SODA API + MySQL, 需要网络和 Docker
-    运行: pytest -m integration
+  - Unit tests (default):  mock external dependencies, no network/DB, completes in seconds
+  - Integration tests:    calls real SODA API + MySQL, requires network and Docker
+    run: pytest -m integration
 
-运行:
+Run:
   cd Data+ML/test/6.8-6.12_DB
-  pytest tests/test_busyness_ingestion.py -v                  # 仅 mock 测试
-  pytest tests/test_busyness_ingestion.py -m integration -v   # 真实 API + DB
-  pytest tests/test_busyness_ingestion.py -v -m "not integration"  # 显式排除集成
+  pytest tests/test_busyness_ingestion.py -v                  # mock tests only
+  pytest tests/test_busyness_ingestion.py -m integration -v   # real API + DB
+  pytest tests/test_busyness_ingestion.py -v -m "not integration"  # explicitly exclude integration
 """
 
 import sys

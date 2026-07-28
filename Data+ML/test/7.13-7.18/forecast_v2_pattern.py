@@ -6,6 +6,7 @@ import json
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
@@ -41,6 +42,25 @@ SPLIT_TYPE = "known_venue_temporal_snapshot"
 # from that cohort are deliberately served through the cold-start path.
 ELIGIBLE_VENUE_TYPES = {"healthcare", "clinic", "hospital", "pharmacy", "dentist", "laboratory"}
 FORECAST_HORIZON_HOURS = 12  # approved contract — do not override via CLI
+MANHATTAN_TIMEZONE = ZoneInfo("America/New_York")
+
+
+def manhattan_forecast_hour(now: datetime | None = None) -> pd.Timestamp:
+    """Return the current Manhattan hour for temporal model features.
+
+    Forecast timestamps are persisted in UTC, but ``day_of_week`` and
+    ``hour_of_day`` must describe the venue's local (Manhattan) time.
+    """
+    reference = now or datetime.now(timezone.utc)
+    return pd.Timestamp(reference).tz_convert(MANHATTAN_TIMEZONE).floor("h")
+
+
+def forecast_timestamp_for_storage(value: object) -> datetime:
+    """Convert an aware forecast timestamp to naive UTC for MySQL DATETIME."""
+    timestamp = pd.Timestamp(value)
+    if timestamp.tzinfo is None:
+        raise ValueError("forecast timestamp must include a timezone")
+    return timestamp.tz_convert("UTC").tz_localize(None).to_pydatetime()
 
 
 def labelled_venues(ids: list[str]) -> pd.DataFrame:
@@ -371,9 +391,7 @@ def publish_forecasts(curve: pd.DataFrame) -> int:
     batch_generated_at = datetime.now(timezone.utc).replace(tzinfo=None, microsecond=0)
     rows = []
     for row in curve.itertuples(index=False):
-        forecast_for = pd.Timestamp(row.forecast_for).to_pydatetime()
-        if forecast_for.tzinfo is not None:
-            forecast_for = forecast_for.replace(tzinfo=None)
+        forecast_for = forecast_timestamp_for_storage(row.forecast_for)
         rows.append((
             row.venue_id, forecast_for, int(round(row.predicted_score)), row.predicted_level,
             None, PUBLISHED_MODEL_VERSION, batch_generated_at,
@@ -434,7 +452,7 @@ def main() -> None:
             round(static_test_mae - row["mae"], 3) if row["split"] == "test" else None
         )
     results = pd.DataFrame(baseline_rows + static_rows + enriched_rows)
-    now = pd.Timestamp(datetime.now(timezone.utc)).floor("h")
+    now = manhattan_forecast_hour()
     serving_static = eligible_venues()
     serving_ids = set(serving_static.venue_id)
     labelled_serving_ids = serving_ids & set(labelled_static.venue_id)

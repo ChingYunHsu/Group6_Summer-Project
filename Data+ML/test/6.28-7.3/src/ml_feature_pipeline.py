@@ -3,19 +3,19 @@
 The notebook should stay presentation-focused. This module owns reusable data
 loading, feature construction, audit output, and small summary tables.
 
-管线流程:
-  1. read_labels()          — 读取 venue_label_status_coverage_view.csv
-  2. build_coverage_summary() — 标签状态分布 + healthcare 覆盖率摘要
-  3. build_feature_registry() — 特征元数据注册表
-  4. build_popular_times()  — 从缓存 JSON 提取逐小时 busyness_score 标签
-  5. build_place_features() — 按 serpapi_place_id 分组的 Place 级特征
-  6. build_spatial_features() — 地铁/Citi Bike 最近距离 + DB ramp POI 密度
-  7. build_capacity_features() — NYS 床位容量 + CMS 医院评级匹配
-  8. build_training_frame() — 合并所有特征为最终训练表
-  9. build_seasonal_baseline() — 按 (district, day, hour) 的季节性基线
-  10. 输出 CSV + manifest
+Pipeline flow:
+  1. read_labels()          — read venue_label_status_coverage_view.csv
+  2. build_coverage_summary() — label status distribution + healthcare coverage summary
+  3. build_feature_registry() — feature metadata registry
+  4. build_popular_times()  — extract hourly busyness_score labels from cached JSON
+  5. build_place_features() — Place-level features grouped by serpapi_place_id
+  6. build_spatial_features() — subway/Citi Bike nearest distance + DB ramp POI density
+  7. build_capacity_features() — NYS bed capacity + CMS hospital rating matching
+  8. build_training_frame() — merge all features into final training table
+  9. build_seasonal_baseline() — seasonal baseline by (district, day, hour)
+  10. output CSV + manifest
 
-输出目录: Data+ML/test/6.28-7.3/output/
+Output directory: Data+ML/test/6.28-7.3/output/
 """
 
 from __future__ import annotations
@@ -42,9 +42,9 @@ from ml_modeling import (
 )
 
 
-# ── 常量 ─────────────────────────────────────────────────────────────────────
+# ── Constants ─────────────────────────────────────────────────────────────────────
 
-# NYC 经纬度边界框，用于过滤非 NYC 数据点
+# NYC lat/lon bounding box for filtering non-NYC data points
 NYC_BBOX = {
     "min_lon": -74.35,
     "max_lon": -73.55,
@@ -52,7 +52,7 @@ NYC_BBOX = {
     "max_lat": 41.05,
 }
 
-# 星期名 → 数字索引映射
+# Day name → numeric index mapping
 DAY_INDEX = {
     "monday": 0,
     "tuesday": 1,
@@ -66,21 +66,21 @@ DAY_INDEX = {
 BUSY_LEVEL_LABELS = ("quiet", "moderate", "busy")
 
 
-# ── 路径配置 ─────────────────────────────────────────────────────────────────
+# ── Path Configuration ─────────────────────────────────────────────────────────────────
 
 @dataclass(frozen=True)
 class PipelinePaths:
-    """管线所有输入/输出路径的不可变容器。"""
-    project_root: Path          # 项目根目录 (Group6_Summer-Project)
-    output_622: Path            # 6.22-6.27 阶段输出目录
-    raw_json_dir: Path          # SerpAPI 缓存 JSON 目录
+    """Immutable container for all pipeline input/output paths."""
+    project_root: Path          # Project root (Group6_Summer-Project)
+    output_622: Path            # 6.22-6.27 phase output directory
+    raw_json_dir: Path          # SerpAPI cached JSON directory
     label_view: Path            # venue_label_status_coverage_view.csv
-    data_source_dir: Path       # 外部数据源目录 (MTA/Citi Bike/NYS/CMS)
-    notebook_output_dir: Path   # 本管线输出目录 (6.28-7.3/output)
+    data_source_dir: Path       # External data source directory (MTA/Citi Bike/NYS/CMS)
+    notebook_output_dir: Path   # Pipeline output directory (6.28-7.3/output)
 
 
 def find_project_root(start: Path | None = None) -> Path:
-    """从当前目录向上查找项目根目录（包含 Data+ML 和 docs 的目录）。"""
+    """Find project root by walking up from current directory (directory containing Data+ML and docs)."""
     current = (start or Path.cwd()).resolve()
     for candidate in [current, *current.parents]:
         if (candidate / "Data+ML").exists() and (candidate / "docs").exists():
@@ -89,7 +89,7 @@ def find_project_root(start: Path | None = None) -> Path:
 
 
 def default_paths(project_root: Path | None = None) -> PipelinePaths:
-    """返回默认的 PipelinePaths 实例，包含所有输入/输出路径。"""
+    """Return default PipelinePaths instance with all input/output paths."""
     root = find_project_root(project_root)
     data_source_dir = root / "data_source"
     if not data_source_dir.exists():
@@ -117,7 +117,7 @@ def haversine_distance_m(lat1: Any, lon1: Any, lat2: Any, lon2: Any) -> np.ndarr
 
 
 def filter_nyc_points(frame: pd.DataFrame, lat_col: str = "latitude", lon_col: str = "longitude") -> pd.DataFrame:
-    """过滤 DataFrame，只保留 NYC 边界框内的点。用于 loader 函数清洗数据。"""
+    """Filter DataFrame to only keep points within NYC bounding box. Used by loader functions to clean data."""
     if frame.empty:
         return frame.copy()
     return frame[
@@ -127,7 +127,7 @@ def filter_nyc_points(frame: pd.DataFrame, lat_col: str = "latitude", lon_col: s
 
 
 def nearest_distance_to_points(venues: pd.DataFrame, points: pd.DataFrame) -> pd.Series:
-    """计算每个 venue 到 points 中最近点的距离（米）。用于 nearest_subway/citibike_distance_m 特征。"""
+    """Compute distance from each venue to the nearest point (meters). Used for nearest_subway/citibike_distance_m features."""
     valid_points = points[["latitude", "longitude"]].dropna().to_numpy(dtype=float)
     if len(valid_points) == 0:
         return pd.Series(np.nan, index=venues.index)
@@ -148,7 +148,7 @@ def nearest_distance_to_points(venues: pd.DataFrame, points: pd.DataFrame) -> pd
 
 
 def count_points_within_radius(venues: pd.DataFrame, points: pd.DataFrame, radius_m: float = 300) -> pd.Series:
-    """统计每个 venue 半径 radius_m 内的 points 数量。用于 poi_density_300m 特征。"""
+    """Count points within radius_m of each venue. Used for poi_density_300m feature."""
     valid_points = points[["latitude", "longitude"]].dropna().to_numpy(dtype=float)
     if len(valid_points) == 0:
         return pd.Series(0, index=venues.index, dtype="int64")
@@ -169,7 +169,7 @@ def count_points_within_radius(venues: pd.DataFrame, points: pd.DataFrame, radiu
 
 
 def parse_hour_label(value: object) -> int | None:
-    """将 Google Popular Times 时间标签（如 '8 AM'）转为 24 小时制整数。解析失败返回 None。"""
+    """Convert Google Popular Times time label (e.g. '8 AM') to 24-hour integer. Returns None on parse failure."""
     if not isinstance(value, str):
         return None
     match = re.fullmatch(r"\s*(\d{1,2})\s*([AP]M)\s*", value.upper())
@@ -184,7 +184,7 @@ def parse_hour_label(value: object) -> int | None:
 
 
 def parse_clock_time(value: object, fallback_period: str | None = None) -> float | None:
-    """将时钟时间字符串（如 '8:30 AM'）转为浮点小时数（如 8.5）。支持 fallback AM/PM 推断。"""
+    """Convert clock time string (e.g. '8:30 AM') to float hours (e.g. 8.5). Supports fallback AM/PM inference."""
     if not isinstance(value, str):
         return None
     text = value.strip().upper().replace(".", "")
@@ -204,7 +204,7 @@ def parse_clock_time(value: object, fallback_period: str | None = None) -> float
 
 
 def parse_hours_interval(interval_text: str) -> tuple[float, float] | None:
-    """解析营业时间区间（如 '8:30 AM–6:30 PM'）为 (start, end) 浮点小时元组。"""
+    """Parse business hours interval (e.g. '8:30 AM–6:30 PM') into (start, end) float-hour tuple."""
     normalized = (
         interval_text.replace("\u2013", "-")
         .replace("\u2014", "-")
@@ -224,7 +224,7 @@ def parse_hours_interval(interval_text: str) -> tuple[float, float] | None:
 
 
 def parse_daily_hours(hours_text: object) -> dict[str, Any]:
-    """解析 SerpAPI 的单日营业时间字符串，返回 {status, intervals}。支持 24h/closed/区间。"""
+    """Parse a SerpAPI day-hours string, returns {status, intervals}. Supports 24h/closed/intervals."""
     """Parse a SerpAPI day-hours string such as '8:30 AM–6:30 PM'."""
     if not isinstance(hours_text, str) or not hours_text.strip():
         return {"status": "unknown", "intervals": []}
@@ -247,7 +247,7 @@ def parse_daily_hours(hours_text: object) -> dict[str, Any]:
 
 
 def is_hour_in_intervals(hour: int | float | None, intervals: list[tuple[float, float]]) -> bool | Any:
-    """判断给定小时是否在营业时间区间内。用于 is_business_hours 特征。"""
+    """Check if a given hour falls within business hours intervals. Used for is_business_hours feature."""
     if hour is None or pd.isna(hour):
         return pd.NA
     hour_value = float(hour)
@@ -261,7 +261,7 @@ def is_hour_in_intervals(hour: int | float | None, intervals: list[tuple[float, 
 
 
 def build_hours_lookup(place: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    """从 SerpAPI place_results 构建每天的营业时间查找表。"""
+    """Build daily business hours lookup table from SerpAPI place_results."""
     raw_hours = place.get("hours")
     if not isinstance(raw_hours, list):
         return {}
@@ -276,7 +276,7 @@ def build_hours_lookup(place: dict[str, Any]) -> dict[str, dict[str, Any]]:
 
 
 def normalize_name(value: object) -> str:
-    """标准化名称：小写、去标点、去公司后缀（inc/llc/corp 等）。用于名称匹配。"""
+    """Normalize name: lowercase, remove punctuation, strip company suffixes (inc/llc/corp etc.). Used for name matching."""
     if pd.isna(value):
         return ""
     text = str(value).lower()
@@ -286,7 +286,7 @@ def normalize_name(value: object) -> str:
 
 
 def name_similarity(left: object, right: object) -> float:
-    """计算两个名称的 SequenceMatcher 相似度（0–1）。用于 NYS/CMS 设施匹配。"""
+    """Compute SequenceMatcher similarity (0-1) between two names. Used for NYS/CMS facility matching."""
     left_norm = normalize_name(left)
     right_norm = normalize_name(right)
     if not left_norm or not right_norm:
@@ -299,7 +299,7 @@ def read_labels(paths: PipelinePaths) -> pd.DataFrame:
 
 
 def build_coverage_summary(labels: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """返回两个表：(1) 按 venue_type×label_status 的交叉统计；(2) healthcare 覆盖率摘要（trainable_pct 等）。"""
+    """Return two tables: (1) cross-tab by venue_type×label_status; (2) healthcare coverage summary (trainable_pct etc.)."""
     status = (
         labels.groupby(["venue_type", "label_status"])
         .size()
@@ -321,7 +321,7 @@ def build_coverage_summary(labels: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataF
     )
     return status, summary
 
-# 新增特征
+# New features (V2 candidates)
 def build_feature_registry() -> pd.DataFrame:
     return pd.DataFrame(
         [
@@ -411,7 +411,7 @@ def iter_popular_times_rows(raw_json_dir: Path) -> list[dict[str, Any]]:
 
 
 def build_popular_times(paths: PipelinePaths) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """调用 iter_popular_times_rows()，返回 (hourly_df, summary_df)。"""
+    """Call iter_popular_times_rows(), returns (hourly_df, summary_df)."""
     rows = pd.DataFrame(iter_popular_times_rows(paths.raw_json_dir))
     summary = pd.DataFrame(
         [
@@ -463,7 +463,7 @@ def load_mta_subway_stations(paths: PipelinePaths) -> tuple[pd.DataFrame, pd.Dat
 
 
 def load_citibike_stations(paths: PipelinePaths) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """加载 Citi Bike GBFS JSON → station_id, station_name, latitude, longitude。"""
+    """Load Citi Bike GBFS JSON → station_id, station_name, latitude, longitude."""
     path = paths.data_source_dir / "citibike_station_information.json"
     if not path.exists():
         return pd.DataFrame(columns=["station_id", "station_name", "latitude", "longitude"]), pd.DataFrame(
@@ -685,7 +685,7 @@ def build_spatial_features(paths: PipelinePaths, healthcare: pd.DataFrame) -> tu
 
 
 def load_venue_coverage_features(paths: PipelinePaths) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """从 6.15-6.20 venue_coverage_detail.csv 读取 Citi Bike / MTA / Traffic 空间覆盖特征。"""
+    """Read Citi Bike / MTA / Traffic spatial coverage features from 6.15-6.20 venue_coverage_detail.csv."""
     coverage_path = paths.project_root / "Data+ML/test/6.15-6.20/output/venue_coverage_detail.csv"
     if not coverage_path.exists():
         return pd.DataFrame(), pd.DataFrame(
@@ -709,10 +709,10 @@ def load_venue_coverage_features(paths: PipelinePaths) -> tuple[pd.DataFrame, pd
 
 
 def build_urban_activity_spatial_features(paths: PipelinePaths, healthcare: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """构建 v1 城市活动空间代理特征，输出 urban_activity_spatial_features_v1.csv。
+    """Build v1 urban activity spatial proxy features, output urban_activity_spatial_features_v1.csv.
 
-    公式: urban_activity_spatial_score = 0.4*citibike_score + 0.4*mta_score + 0.2*traffic_score
-    其中 score = max(0, 100*(1 - distance_m/500))，缺失距离记为 0 分。
+    Formula: urban_activity_spatial_score = 0.4*citibike_score + 0.4*mta_score + 0.2*traffic_score
+    where score = max(0, 100*(1 - distance_m/500)), missing distance is scored as 0.
     """
     coverage, coverage_audit = load_venue_coverage_features(paths)
     if coverage.empty:
@@ -731,26 +731,26 @@ def build_urban_activity_spatial_features(paths: PipelinePaths, healthcare: pd.D
             merged[col] = merged[col].astype(float)
 
     def _distance_score(series: pd.Series) -> pd.Series:
-        """距离转 score：0-200m=100分，200-500m=40-100分，>500m=0分，缺失=0分"""
+        """Distance to score: 0-200m=100pts, 200-500m=40-100pts, >500m=0pts, missing=0pts"""
         score = (1 - series.fillna(500) / 500).clip(lower=0) * 100
         return score
 
     def _distance_bin(series: pd.Series) -> pd.Series:
-        """距离分箱：<200m=3, 200-500m=2, 500-1000m=1, >1000m/缺失=0"""
+        """Distance binning: <200m=3, 200-500m=2, 500-1000m=1, >1000m/missing=0"""
         bins = pd.cut(
-            series.fillna(1500),  # 缺失值视为超远距离
+            series.fillna(1500),  # Treat missing as very far distance
             bins=[0, 200, 500, 1000, float('inf')],
             labels=[3, 2, 1, 0],
             right=True
         )
         return bins.astype(float)
 
-    # 原始距离特征
+    # Raw distance features
     merged["citibike_nearest_distance_m"] = merged["citibike_nearest_distance_m"]
     merged["mta_nearest_distance_m"] = merged["mta_nearest_distance_m"]
     merged["traffic_nearest_distance_m"] = merged["traffic_nearest_distance_m"]
 
-    # 分箱特征（用于模型）
+    # Binned features (for model)
     merged["citibike_distance_bin"] = _distance_bin(merged["citibike_nearest_distance_m"])
     merged["mta_distance_bin"] = _distance_bin(merged["mta_nearest_distance_m"])
     merged["traffic_distance_bin"] = _distance_bin(merged["traffic_nearest_distance_m"])

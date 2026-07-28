@@ -11,13 +11,27 @@ from forecast_v2_pattern import (
     FORECAST_HORIZON_HOURS,
     eligible_venues,
     feature_matrix,
+    forecast_timestamp_for_storage,
     future_curve,
     group_split,
+    manhattan_forecast_hour,
     serving_base,
     temporal_snapshot_split,
 )
 
 NOW = pd.Timestamp("2026-07-24 12:00:00", tz="UTC")
+
+
+def test_manhattan_forecast_hour_uses_local_business_time():
+    now = manhattan_forecast_hour(datetime(2026, 7, 24, 12, 34, tzinfo=timezone.utc))
+
+    assert str(now) == "2026-07-24 08:00:00-04:00"
+
+
+def test_forecast_timestamp_for_storage_converts_manhattan_time_to_utc():
+    stored = forecast_timestamp_for_storage(pd.Timestamp("2026-07-24 08:00:00", tz="America/New_York"))
+
+    assert stored == datetime(2026, 7, 24, 12, 0)
 
 
 def _valid_curve(now: pd.Timestamp = NOW, venue_type: str = "clinic") -> pd.DataFrame:
