@@ -1,9 +1,9 @@
-"""fix_restroom_gps.py — 修复 124 个 (0,0) 坐标 restroom 的 GPS。
+"""fix_restroom_gps.py — Fix GPS coordinates for 124 restrooms with (0,0) coordinates.
 
-从 NYC Open Data Parks Toilets API 按名称匹配，更新 DB 中的 latitude/longitude。
-然后重新分配 district。
+Matches by name from the NYC Open Data Parks Toilets API and updates latitude/longitude in the DB.
+Then re-assigns district.
 
-用法:
+Usage:
     cd Data+ML/test/6.8-6.12_DB
     python dqr/fix_restroom_gps.py
 """

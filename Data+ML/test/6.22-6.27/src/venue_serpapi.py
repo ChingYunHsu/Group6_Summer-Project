@@ -10,8 +10,8 @@ Implements the Venue ML Coverage SOP (2026-06-23):
   - ML candidate list generationv   
 
 Key constraint (SOP):
-  Search query 用于批量发现 candidates；Place query 只用于最终 label 验证。
-  不要对每个本地 venue 直接消耗一次 SerpApi 调用。
+  Search queries are used for batch candidate discovery; Place queries are only for final label validation.
+  Do not consume one SerpApi call per local venue directly.
 
 Usage:
   import venue_serpapi as vs

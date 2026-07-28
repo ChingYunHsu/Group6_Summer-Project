@@ -56,7 +56,7 @@ DQ_WEIGHTS = {
 
 
 def check_completeness(data):
-    """计算各表核心字段的填充率，返回 {'passed', 'score', '_dataframe'}"""
+    """Compute fill rate of core fields per table, returns {'passed', 'score', '_dataframe'}"""
     results = []
     for table, fields in KEY_FIELDS.items():
         df = data.get(table, pd.DataFrame())
@@ -84,7 +84,7 @@ def check_completeness(data):
 
 
 def check_accuracy(venues_df):
-    """校验坐标范围、venue_id 格式、district 枚举，返回 _coord_valid_mask"""
+    """Validate coordinate range, venue_id format, district enum, returns _coord_valid_mask"""
     issues = []
     coord_valid_mask = None
 
@@ -125,7 +125,7 @@ def check_accuracy(venues_df):
 
 
 def check_database_integrity(venues_df):
-    """所有场馆必须有 district，诊断 GPS(0,0) 导致的空 district"""
+    """All venues must have a district; diagnose null districts caused by GPS(0,0)"""
     issues = []
     if venues_df.empty or 'district' not in venues_df.columns:
         return {'passed': False, 'score': 0, 'metrics': {}, 'issues': ['District column missing']}
@@ -148,7 +148,7 @@ def check_database_integrity(venues_df):
 
 
 def check_fk_orphans(venues_df, data):
-    """子表 venue_id 必须在 venues 中存在（外键引用完整性）"""
+    """Child table venue_id must exist in venues (foreign key referential integrity)"""
     issues = []
     venue_ids = set(venues_df['venue_id'].values) if not venues_df.empty and 'venue_id' in venues_df.columns else set()
 
@@ -171,7 +171,7 @@ def check_fk_orphans(venues_df, data):
 
 
 def compute_dq_scores(venues_df, data, anomaly_df, gps_duplicates_df, coord_valid_mask=None):
-    """计算六维度加权评分，返回 dict[str, float]"""
+    """Compute six-dimension weighted scores, returns dict[str, float]"""
     scores = {}
     n = len(venues_df) if not venues_df.empty else 1
 
@@ -224,7 +224,7 @@ def compute_dq_scores(venues_df, data, anomaly_df, gps_duplicates_df, coord_vali
 
 
 def compute_total_score(scores, weights=None):
-    """加权总分 + 等级判定 (Excellent/Good/Fair/Poor)"""
+    """Weighted total score + grade determination (Excellent/Good/Fair/Poor)"""
     weights = weights or DQ_WEIGHTS
     total = sum(scores[k] * weights[k] for k in weights)
     if total >= 90:
@@ -244,7 +244,7 @@ def compute_total_score(scores, weights=None):
 
 
 def column_profile(df, table_name):
-    """单表列级画像：dtype, non_null, unique, min/max/mean/mode"""
+    """Single-table column-level profile: dtype, non_null, unique, min/max/mean/mode"""
     results = []
     for col in df.columns:
         s = df[col]
@@ -270,14 +270,14 @@ def column_profile(df, table_name):
 
 
 def build_all_profiles(data):
-    """全表列级画像"""
+    """All-table column-level profiles"""
     frames = [column_profile(df, name) for name, df in data.items()
               if not df.empty and len(df) > 0]
     return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
 
 def build_record_analysis(venues_df):
-    """行级质量评分：每条记录的 0-1 分数"""
+    """Row-level quality score: 0-1 score per record"""
     if venues_df.empty:
         return pd.DataFrame()
     record_fields = ['venue_id', 'venue_type', 'name', 'latitude', 'longitude', 'district']
@@ -288,7 +288,7 @@ def build_record_analysis(venues_df):
 
 
 def detect_coordinate_anomalies(data):
-    """检测 venues 和 pedestrian_ramps 中超出曼哈顿范围或 GPS(0,0) 的记录"""
+    """Detect records in venues and pedestrian_ramps outside Manhattan bounds or with GPS(0,0)"""
     anomalies = []
     venues_df = data.get('venues', pd.DataFrame())
     if not venues_df.empty and 'latitude' in venues_df.columns:

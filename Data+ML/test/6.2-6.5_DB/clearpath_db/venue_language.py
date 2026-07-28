@@ -5,14 +5,14 @@ import pymysql
 from .db import etl_execute, log_etl_error
 
 
-# parse_lass_languages: 解析 LASS 语言文本
-# 功能：将逗号分隔的语言名称转换为 ISO 语言代码列表
-# 输入：language_text（如 "Spanish, Chinese, Russian"）
-# 输出：["es", "zh", "ru"]（ISO 代码列表，已排序去重）
-# 特殊处理：
-#   - "designated citywide" / "at least" → 返回 6 种主要语言
-#   - "lang:xxx" 格式 → 直接提取代码
-#   - 空值/无效值 → 返回空列表
+# parse_lass_languages: Parse LASS language text
+# Converts comma-separated language names into ISO language code list
+# Input: language_text (e.g. "Spanish, Chinese, Russian")
+# Output: ["es", "zh", "ru"] (ISO code list, sorted and deduplicated)
+# Special handling:
+#   - "designated citywide" / "at least" → returns 6 major languages
+#   - "lang:xxx" format → directly extract code
+#   - Empty/invalid values → returns empty list
 def parse_lass_languages(language_text):
     if not language_text or language_text.strip() in {
         "None",
@@ -22,7 +22,7 @@ def parse_lass_languages(language_text):
     }:
         return []
 
-    # 语言名称 → ISO 代码映射表
+    # Language name → ISO code mapping table
     language_map = {
         "spanish": "es",
         "chinese": "zh",
@@ -47,28 +47,28 @@ def parse_lass_languages(language_text):
 
     lower_text = language_text.lower()
 
-    # 特殊情况：全市指定语言服务点 → 返回 6 种主要语言
+    # Special case: citywide designated language services → return 6 major languages
     if "designated citywide" in lower_text or "at least" in lower_text:
         return ["es", "zh", "ru", "ko", "fr", "ht"]
 
-    # 逐个解析逗号分隔的语言名称
+    # Parse comma-separated language names one by one
     languages = []
     for part in language_text.split(","):
         normalized = part.strip().rstrip(".").lower()
         if normalized in language_map:
             languages.append(language_map[normalized])
         elif normalized.startswith("lang:"):
-            # 支持 "lang:en" 格式
+            # Support "lang:en" format
             languages.append(normalized.replace("lang:", ""))
 
-    return sorted(set(languages))  # 排序 + 去重
+    return sorted(set(languages))  # Sort + deduplicate
 
 
-# find_nearest_venue: 查找最近的场所
-# 功能：根据 GPS 坐标查找最近的 venues 记录
-# 输入：cursor（数据库游标）, lat（纬度）, lng（经度）, threshold（距离阈值，默认100米）
-# 输出：venue_id（最近场所ID）或 None（无匹配）
-# 算法：Haversine 公式计算球面距离
+# find_nearest_venue: Find nearest venue
+# Finds the nearest venue record by GPS coordinates
+# Input: cursor (DB cursor), lat (latitude), lng (longitude), threshold (distance threshold, default 100m)
+# Output: venue_id (nearest venue ID) or None (no match)
+# Algorithm: Haversine formula for great-circle distance
 def find_nearest_venue(cursor, lat, lng, threshold=100):
     cursor.execute(
         "SELECT venue_id, (6371000 * ACOS("
@@ -83,37 +83,37 @@ def find_nearest_venue(cursor, lat, lng, threshold=100):
     return row[0] if row else None
 
 
-# etl_venue_language: 语言支持 ETL 导入函数
-# 功能：将 LASS 语言访问数据导入 venue_language 表
-# 输入：conn（数据库连接）, lass_data（LASS CSV 数据列表）
-# 流程：
-#   1. 筛选曼哈顿记录
-#   2. 解析 GPS 坐标
-#   3. 提取语言标签（signs + documents）
-#   4. 匹配最近场所（GPS < 100m）
-#   5. 插入 venue_language 表
-# 返回：{"imported": 成功数, "skipped": 跳过数, "errors": 错误数}
+# etl_venue_language: Language support ETL import function
+# Imports LASS language access data into venue_language table
+# Input: conn (DB connection), lass_data (LASS CSV data list)
+# Flow:
+#   1. Filter Manhattan records
+#   2. Parse GPS coordinates
+#   3. Extract language tags (signs + documents)
+#   4. Match nearest venue (GPS < 100m)
+#   5. Insert into venue_language table
+# Returns: {"imported": success count, "skipped": skip count, "errors": error count}
 def etl_venue_language(conn, lass_data):
-    imported = skipped = errors = 0   # 统计计数器
+    imported = skipped = errors = 0   # Statistics counters
 
-    # 步骤 1：筛选曼哈顿记录
+    # Step 1: Filter Manhattan records
     manhattan_rows = [ row for row in lass_data if row.get("Borough", "").strip().lower() == "manhattan"]
 
-    # LASS CSV 中的列名（用于提取翻译语言）
+    # LASS CSV column names (for extracting translated languages)
     signs_column = (
         "Languages in which the facility has translated signs "
         "relating to service being provided"
     )
     documents_column = "Languages in which the facility has translated documents"
 
-    # 步骤 2-5：逐条处理
+    # Step 2-5: Process row by row
     for row in manhattan_rows:
-        # 步骤 2：解析 GPS 坐标
+        # Step 2: Parse GPS coordinates
         try:
             lat = float(row.get("Latitude", "").strip())
             lng = float(row.get("Longitude", "").strip())
         except (ValueError, TypeError) as error:
-            # 记录错误日志并统计
+            # Log error and count
             log_etl_error(
                 "venue_language", row.get("Facility Name", "<unknown>"), error
             )
@@ -121,19 +121,19 @@ def etl_venue_language(conn, lass_data):
             errors += 1
             continue
 
-        # 验证曼哈顿 GPS 边界框
+        # Validate Manhattan GPS bounding box
         if not (40.700 <= lat <= 40.880 and -74.020 <= lng <= -73.900):
             skipped += 1
             continue
 
-        # 步骤 3：提取语言标签（合并 signs + documents）
+        # Step 3: Extract language tags (merge signs + documents)
         languages = sorted(set(parse_lass_languages(row.get(signs_column, ""))+ parse_lass_languages(row.get(documents_column, "")) ))
 
-        # 步骤 4：确定语言支持等级
-        # full: ≥3 种语言 | partial: 有语言但 <3 种 | none: 无语言
+        # Step 4: Determine language support level
+        # full: ≥3 languages | partial: has languages but <3 | none: no languages
         level = "full" if len(languages) >= 3 else ("partial" if languages else "none")
 
-        # 步骤 5：匹配最近场所（GPS < 100m）
+        # Step 5: Match nearest venue (GPS < 100m)
         try:
             with conn.cursor() as cursor:
                 venue_id = find_nearest_venue(cursor, lat, lng)
@@ -147,7 +147,7 @@ def etl_venue_language(conn, lass_data):
             skipped += 1
             continue
 
-        # 步骤 6：插入 venue_language 表
+        # Step 6: Insert into venue_language table
         language_json = json.dumps(languages) if languages else None
         statement = [
             (
