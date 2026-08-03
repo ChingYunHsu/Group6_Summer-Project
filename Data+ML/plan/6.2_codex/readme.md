@@ -1,44 +1,44 @@
-# ClearPath 6.2 Codex 工作记录
+# ClearPath 6.2 Codex Work Log
 
-## 1. 目录边界
+## 1. Directory Boundaries
 
-`ml_training/plan/6.2_codex` 是 Codex 专属工作区，用于保存 Codex 对数据库架构、数据源范围、过程记录和后续任务的整理。
+`ml_training/plan/6.2_codex` is a Codex-specific workspace, used to store Codex's organization of the database schema, data source scope, process records, and follow-up tasks.
 
-边界约定：
+Boundary conventions:
 
-- `ml_training/plan/6.2_codex`：Codex 工作记录与 Codex schema 副本。
-- `ml_training/plan/6.2_CC`：CC / Claude 风格参考文档，不由 Codex 修改。
-- `ml_training/plan/6.2`：如存在，应视为其他 agent / Claude 任务区，不由 Codex 修改。
-- Docker 初始化主 schema 当前使用 Codex 方案：`docker/mysql/init/001_clearpath_schema.sql`。
+- `ml_training/plan/6.2_codex`: Codex work records and Codex schema copy.
+- `ml_training/plan/6.2_CC`: CC / Claude-style reference documents, not to be modified by Codex.
+- `ml_training/plan/6.2`: if it exists, it should be treated as another agent / Claude task area, not to be modified by Codex.
+- The Docker initialization main schema currently uses the Codex scheme: `docker/mysql/init/001_clearpath_schema.sql`.
 
-## 2. 本轮目标
+## 2. Objectives for This Round
 
-本轮目标是为 ClearPath Sprint 1 的 Data Analysis & ML Lead 工作建立数据库和数据底座：
+The goal of this round is to establish the database and data foundation for the ClearPath Sprint 1 Data Analysis & ML Lead work:
 
-- 明确保留数据源范围。
-- 设计合理数量的 MySQL 8.4 表。
-- 合并同类型数据源，避免 one-table-per-source。
-- 保留数据来源追踪。
-- 为后续 ETL、API、ML busyness prediction 提供结构基础。
-- 生成过程文档和后续任务清单。
+- Clearly retain the data source scope.
+- Design a reasonable number of MySQL 8.4 tables.
+- Merge similar data sources to avoid one-table-per-source.
+- Retain data lineage tracking.
+- Provide a structural foundation for subsequent ETL, API, and ML busyness prediction.
+- Generate process documentation and a follow-up task list.
 
-## 3. 已确认的数据源范围
+## 3. Confirmed Data Source Scope
 
-只使用 9 个来源：
+Use only 9 sources:
 
 | Type | Source | Role |
 | --- | --- | --- |
-| Internal | User Reports Database | 实时报告与确认 |
-| Toilet | NYC Public Restrooms `i7jb-7jku` | 主要厕所数据 |
-| Toilet | Directory of Toilets in Public Parks `hjae-yuav` | 公园厕所补充 |
-| Healthcare | OpenStreetMap / Overpass POI | 广覆盖医疗 POI |
-| Healthcare | NYS Health Facility General Information `vn5v-hh5r` | 官方医疗设施验证 |
+| Internal | User Reports Database | Real-time reports and confirmations |
+| Toilet | NYC Public Restrooms `i7jb-7jku` | Primary restroom data |
+| Toilet | Directory of Toilets in Public Parks `hjae-yuav` | Park restroom supplement |
+| Healthcare | OpenStreetMap / Overpass POI | Broad-coverage medical POI |
+| Healthcare | NYS Health Facility General Information `vn5v-hh5r` | Official healthcare facility verification |
 | Healthcare | AED Inventory `2er2-jqsx` | AED / emergency asset |
-| Accessibility | Pedestrian Ramp Locations `ufzp-rrqu` | 轮椅路线基础设施 |
-| Traffic | Google Map API | 路线 / 交通上下文缓存 |
-| Weather | Weather / NYC Urban Heat Portal | 天气 / 热风险上下文缓存 |
+| Accessibility | Pedestrian Ramp Locations `ufzp-rrqu` | Wheelchair routing infrastructure |
+| Traffic | Google Map API | Routing / traffic context cache |
+| Weather | Weather / NYC Urban Heat Portal | Weather / heat risk context cache |
 
-明确排除：
+Explicitly excluded:
 
 - `POI_accessibility.geojson`
 - HRSA
@@ -48,13 +48,13 @@
 - Taxi data
 - Traffic volume counts
 - Language datasets
-- 任何未在 9 个来源中列出的数据源
+- Any data source not listed among the 9 sources
 
-## 4. 已完成任务
+## 4. Completed Tasks
 
-### 4.1 数据库 schema
+### 4.1 Database schema
 
-已设计并落地 MySQL 8.4 / 10 表 Codex schema：
+Designed and landed a MySQL 8.4 / 10-table Codex schema:
 
 1. `venues`
 2. `venue_source_links`
@@ -67,72 +67,72 @@
 9. `busyness_scores`
 10. `external_context_cache`
 
-对应文件：
+Corresponding files:
 
 - `docker/mysql/init/001_clearpath_schema.sql`
 - `ml_training/plan/6.2_codex/001_clearpath_schema.sql`
 
-两份 schema 应保持完全一致。
+The two schema copies should remain completely identical.
 
-### 4.2 数据源 manifest 与验证
+### 4.2 Data source manifest and validation
 
-已新增：
+Added:
 
 - `backend/database/clearpath_sources.json`
 - `backend/database/validate_sources.py`
 - `backend/database/README.md`
 
-作用：
+Purpose:
 
-- 记录 9 个保留来源。
-- 记录废弃本地文件。
-- 校验 6 个本地数据文件存在。
-- 防止废弃来源被误加入 MVP 数据库路径。
+- Record the 9 retained sources.
+- Record deprecated local files.
+- Verify that 6 local data files exist.
+- Prevent deprecated sources from being mistakenly added to the MVP database path.
 
-### 4.3 数据库架构文档
+### 4.3 Database architecture documentation
 
-已扩展：
+Extended:
 
 - `ml_training/plan/database.md`
 - `ml_training/plan/6.2_codex/database.md`
 
-内容吸收了 CC 文档结构，但保持 Codex 的 9 来源 + 10 表方案。新增重点：
+The content absorbs the CC document structure but keeps the Codex 9-source + 10-table scheme. New highlights:
 
-- 需求来源与当前约束
-- 整体架构
-- 云端 MySQL 表分层
-- ER 关系图
-- 数据合并规则
-- 字段映射摘要
-- 数据质量问题
-- 索引策略
-- API 与数据库映射
+- Requirements origin and current constraints
+- Overall architecture
+- Cloud MySQL table layering
+- ER diagram
+- Data merge rules
+- Field mapping summary
+- Data quality issues
+- Index strategy
+- API and database mapping
 - ETL Flow
-- 非功能需求
-- 验收标准
+- Non-functional requirements
+- Acceptance criteria
 
-### 4.4 过程文档
+### 4.4 Process documentation
 
-已写入：
+Written:
 
 - `ml_training/plan/6.2_codex/database_implementation_process.md`
 
-记录内容：
+Recorded content:
 
-- 输入范围
-- 设计决策
-- 已实现文件
-- 10 张表
-- 验证命令和结果
-- 下一步 ETL / API 接入方向
+- Input scope
+- Design decisions
+- Implemented files
+- 10 tables
+- Validation commands and results
+- Next steps for ETL / API integration
 
-### 4.5 测试与验证
+### 4.5 Testing and validation
 
-已新增：
+Added:
 
 - `test/6.2_DB/test_database_plan.py`
 
-已通过验证：
+Passed validation:
 
 ```bash
 python3 -m unittest test/6.2_DB/test_database_plan.py
@@ -141,78 +141,78 @@ docker compose config
 cmp docker/mysql/init/001_clearpath_schema.sql ml_training/plan/6.2_codex/001_clearpath_schema.sql
 ```
 
-验证结果：
+Validation results:
 
-- schema 只包含 Codex 10 表。
-- manifest 只包含 9 个来源。
-- 6 个本地数据文件存在。
-- Docker Compose config 有效。
-- Docker initializer 与 Codex schema 副本一致。
+- The schema contains only the Codex 10 tables.
+- The manifest contains only the 9 sources.
+- The 6 local data files exist.
+- The Docker Compose config is valid.
+- The Docker initializer is identical to the Codex schema copy.
 
-## 5. 本轮关键判断
+## 5. Key Judgments for This Round
 
-### 5.1 Data Lead 与 Backend Lead 的责任拆分
+### 5.1 Responsibility split between Data Lead and Backend Lead
 
-Data & ML Lead 负责：
+Data & ML Lead is responsible for:
 
-- 数据源选择
-- 数据采集
-- 数据清洗
-- 字段映射
-- 数据质量问题
-- 去重规则
-- ETL 逻辑
-- ML 特征与 `busyness_scores` 输出
+- Data source selection
+- Data collection
+- Data cleaning
+- Field mapping
+- Data quality issues
+- Deduplication rules
+- ETL logic
+- ML features and `busyness_scores` output
 
-Backend Lead 负责：
+Backend Lead is responsible for:
 
-- Flask API 与数据库连接
-- endpoint 实现
-- Docker / MySQL 运行环境
-- 数据库连接池、事务、部署
-- 非功能需求在后端架构中的实现
+- Flask API and database connection
+- endpoint implementation
+- Docker / MySQL runtime environment
+- Database connection pool, transactions, deployment
+- Implementation of non-functional requirements in the backend architecture
 
-共同边界：
+Shared boundaries:
 
-- schema 概念设计
-- API contract 与数据库字段对齐
-- 查询路径和索引策略
+- Schema conceptual design
+- API contract and database field alignment
+- Query paths and index strategy
 
-### 5.2 当前完成度
+### 5.2 Current completion status
 
-如果目标是“数据库搭建架构分析 + schema 落地设计”，当前完成度约 **80%**。
+If the goal is "database setup architecture analysis + schema landing design," the current completion is about **80%**.
 
-如果目标是“完整数据库系统可运行并有真实数据”，当前完成度约 **45%-50%**。
+If the goal is "a complete database system that is runnable with real data," the current completion is about **45%-50%**.
 
-尚未完成：
+Not yet completed:
 
-- 实际启动 MySQL 并执行建表检查。
-- ETL 脚本导入 CSV / GeoJSON。
-- 厕所、医疗、AED 去重合并逻辑。
-- Flask API 查询数据库。
-- ML baseline / dummy score 写入 `busyness_scores`。
-- Google Maps / Weather cache 真实接入。
+- Actually starting MySQL and performing table creation checks.
+- ETL scripts to import CSV / GeoJSON.
+- Restroom, healthcare, and AED deduplication and merge logic.
+- Flask API querying the database.
+- ML baseline / dummy score written to `busyness_scores`.
+- Real integration of Google Maps / Weather cache.
 
-## 6. 文件索引
+## 6. File Index
 
 | File | Purpose |
 | --- | --- |
-| `ml_training/plan/6.2_codex/readme.md` | Codex 工作记录总览 |
-| `ml_training/plan/6.2_codex/todolist.md` | Sprint 1 后续任务清单 |
-| `ml_training/plan/6.2_codex/001_clearpath_schema.sql` | Codex schema 副本 |
-| `ml_training/plan/6.2_codex/database.md` | Codex 架构文档副本 |
-| `ml_training/plan/6.2_codex/database_implementation_process.md` | 过程记录 |
-| `ml_training/plan/database.md` | 当前主数据库架构文档 |
+| `ml_training/plan/6.2_codex/readme.md` | Codex work record overview |
+| `ml_training/plan/6.2_codex/todolist.md` | Sprint 1 follow-up task list |
+| `ml_training/plan/6.2_codex/001_clearpath_schema.sql` | Codex schema copy |
+| `ml_training/plan/6.2_codex/database.md` | Codex architecture document copy |
+| `ml_training/plan/6.2_codex/database_implementation_process.md` | Process record |
+| `ml_training/plan/database.md` | Current main database architecture document |
 | `docker/mysql/init/001_clearpath_schema.sql` | Docker MySQL initializer |
-| `backend/database/clearpath_sources.json` | 数据源 manifest |
-| `backend/database/validate_sources.py` | 数据源校验脚本 |
-| `tests/test_database_plan.py` | schema / manifest 测试 |
+| `backend/database/clearpath_sources.json` | Data source manifest |
+| `backend/database/validate_sources.py` | Data source validation script |
+| `tests/test_database_plan.py` | schema / manifest test |
 
-## 7. 注意事项
+## 7. Notes
 
-- 不要把 CC schema 中的 `toilets`、`reports`、`busyness_predictions`、`traffic_cache`、`weather_cache` 直接合并到 Codex schema。
-- CC 文档可作为 presentation / task breakdown / field mapping 参考，但 Docker initializer 的 source of truth 是 Codex 10 表 schema。
-- 后续如果需要修改 schema，应同时更新：
+- Do not directly merge `toilets`, `reports`, `busyness_predictions`, `traffic_cache`, and `weather_cache` from the CC schema into the Codex schema.
+- CC documents can be used as a reference for presentation / task breakdown / field mapping, but the source of truth for the Docker initializer is the Codex 10-table schema.
+- If the schema needs to be modified later, update all of the following at the same time:
   - `docker/mysql/init/001_clearpath_schema.sql`
   - `ml_training/plan/6.2_codex/001_clearpath_schema.sql`
   - `ml_training/plan/database.md`

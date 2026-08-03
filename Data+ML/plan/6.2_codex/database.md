@@ -1,35 +1,35 @@
-# ClearPath 数据库架构文档（Codex 方案）— 2026.6.2
+# ClearPath Database Schema Document (Codex Plan) - 2026.6.2
 
-## 1. Scope / 范围
+## 1. Scope
 
-ClearPath 使用一个 **MySQL 8.4 application schema**，schema 名为 `clearpath`。当前已验证目标是 MySQL 8.4；MariaDB compatibility 不是本阶段验证目标，因为本地 Docker service 和 initializer SQL 都基于 `mysql:8.4`。
+ClearPath uses a single **MySQL 8.4 application schema** named `clearpath`. The currently verified target is MySQL 8.4; MariaDB compatibility is not a verification goal for this phase, because the local Docker service and initializer SQL are both based on `mysql:8.4`.
 
-本方案按 **业务对象 / product objects** 建模，而不是 one-table-per-source：
+This schema is modeled by **business objects / product objects**, rather than one-table-per-source:
 
-- `venues` and source provenance / 场所与来源追踪
-- restroom, healthcare, emergency-service profiles / 厕所、医疗、AED 扩展信息
-- pedestrian ramps for wheelchair routing / 轮椅路线基础设施
-- live user reports and confirmations / 实时用户报告与确认
-- ML busyness outputs / 机器学习拥挤度输出
-- Google Maps and Weather context cache / 外部 API 上下文缓存
+- `venues` and source provenance
+- restroom, healthcare, emergency-service profiles
+- pedestrian ramps for wheelchair routing
+- live user reports and confirmations
+- ML busyness outputs
+- Google Maps and Weather context cache
 
 The MVP keeps sensitive medical profile data on-device via AsyncStorage or SQLite. It is not part of the backend schema.
 
 ---
 
-## 2. 需求来源与当前约束
+## 2. Requirement Sources and Current Constraints
 
-| Source document | 对数据库的约束 |
+| Source document | Constraint on the database |
 | --- | --- |
-| User Stories / Acceptance Criteria | 支持 Find、Report、Predict、Assist；报告需要确认、过期、用于 ML training signal。 |
-| Business Plan | 技术栈为 Flask + MySQL + Google Maps + Gemini/RAG；数据库服务 venues、reports、busyness history。 |
-| COMP47360 Project Specification | 至少两个 Manhattan-related datasets；需要 data analytics、ML prediction、Generative AI、EDI features。 |
-| Endpoint Shared Contract | 当前共享 API 包含 `/api/v1/venues`、`/api/v1/reports`、`/api/v1/integrations/status` 等核心路径。 |
-| Data Source Review | 只使用用户确认的 9 个来源，废弃来源不进入 MVP database path。 |
+| User Stories / Acceptance Criteria | Support Find, Report, Predict, Assist; reports require confirmation, expiry, and use as ML training signal. |
+| Business Plan | Tech stack is Flask + MySQL + Google Maps + Gemini/RAG; the database serves venues, reports, and busyness history. |
+| COMP47360 Project Specification | At least two Manhattan-related datasets; requires data analytics, ML prediction, Generative AI, and EDI features. |
+| Endpoint Shared Contract | The current shared API includes core paths such as `/api/v1/venues`, `/api/v1/reports`, and `/api/v1/integrations/status`. |
+| Data Source Review | Only the nine user-approved sources are used; deprecated sources do not enter the MVP database path. |
 
 ---
 
-## 3. Retained Data Sources / 保留数据源
+## 3. Retained Data Sources
 
 Only these nine sources are in scope. Local source files live outside the repository at `/Users/alex/Documents/COMP47360-Research_Practicum/data_source`; `backend/database/clearpath_sources.json` resolves this from the project root.
 
@@ -49,7 +49,7 @@ Excluded for this version: `POI_accessibility.geojson`, HRSA, CityMD, Google Pla
 
 ---
 
-## 4. Overall Architecture / 整体架构
+## 4. Overall Architecture
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
@@ -80,78 +80,78 @@ AsyncStorage / SQLite for medical_profile, SOS data, show-staff cards.
 
 ---
 
-## 5. Cloud MySQL Table Layers / 云端 MySQL 表分层
+## 5. Cloud MySQL Table Layers
 
-### Layer 1: POI 数据层（静态 / 低频更新）
-
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                     POI 数据层                               │
-│                                                             │
-│  venues                                                     │
-│  ├─ venue_source_links       来源追踪 / 去重证据              │
-│  ├─ restroom_profiles        厕所扩展字段                    │
-│  ├─ healthcare_profiles      医疗扩展字段                    │
-│  └─ emergency_assets         AED / emergency asset details   │
-│                                                             │
-│  pedestrian_ramps            轮椅路线基础设施，不作为 venue   │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Layer 2: 实时交互层（高频读写）
+### Layer 1: POI Data Layer (Static / Low-frequency updates)
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                    实时交互层                                │
-│                                                             │
-│  user_reports             active / resolved / expired        │
-│  report_confirmations     still_here / resolved / not_sure   │
-│                                                             │
-│  Purpose: live warnings, confidence update, ML training log  │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────┐
+│                           POI Data Layer                           │
+│                                                                    │
+│  venues                                                            │
+│  ├─ venue_source_links       Source tracking / dedup evidence      │
+│  ├─ restroom_profiles        Restroom extension fields             │
+│  ├─ healthcare_profiles      Healthcare extension fields           │
+│  └─ emergency_assets         AED / emergency asset details         │
+│                                                                    │
+│  pedestrian_ramps            Wheelchair routing infra, not a venue │
+└────────────────────────────────────────────────────────────────────┘
 ```
 
-### Layer 3: ML 输出层（Predict）
+### Layer 2: Real-time Interaction Layer (High-frequency read/write)
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                    ML 输出层                                 │
-│                                                             │
-│  busyness_scores                                             │
-│  ├─ venue_id                                                 │
-│  ├─ score / level                                            │
-│  ├─ estimated_wait_minutes                                   │
-│  ├─ forecast_start_time / forecast_end_time                  │
-│  └─ model_version / features_snapshot_id                     │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────┐
+│                    Real-time Interaction Layer                     │
+│                                                                    │
+│  user_reports                active / resolved / expired           │
+│  report_confirmations        still_here / resolved / not_sure      │
+│                                                                    │
+│  Purpose: live warnings, confidence update, ML training log        │
+└────────────────────────────────────────────────────────────────────┘
 ```
 
-### Layer 4: 缓存层（External APIs）
+### Layer 3: ML Output Layer (Predict)
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                    外部 API 缓存层                           │
-│                                                             │
-│  external_context_cache                                      │
-│  ├─ google_route                                             │
-│  ├─ distance_matrix                                          │
-│  ├─ weather_current                                          │
-│  ├─ weather_forecast                                         │
-│  └─ urban_heat_static                                        │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────┐
+│                          ML Output Layer                           │
+│                                                                    │
+│  busyness_scores                                                   │
+│  ├─ venue_id                                                       │
+│  ├─ score / level                                                  │
+│  ├─ estimated_wait_minutes                                         │
+│  ├─ forecast_start_time / forecast_end_time                        │
+│  └─ model_version / features_snapshot_id                           │
+└────────────────────────────────────────────────────────────────────┘
 ```
 
-### Layer 5: 本地设备层（不进入 backend schema）
+### Layer 4: Cache Layer (External APIs)
+
+```text
+┌────────────────────────────────────────────────────────────────────┐
+│                      External API Cache Layer                      │
+│                                                                    │
+│  external_context_cache                                            │
+│  ├─ google_route                                                   │
+│  ├─ distance_matrix                                                │
+│  ├─ weather_current                                                │
+│  ├─ weather_forecast                                               │
+│  └─ urban_heat_static                                              │
+└────────────────────────────────────────────────────────────────────┘
+```
+
+### Layer 5: Local Device Layer (Not part of the backend schema)
 
 ```text
 medical_profile | sos_data | show_staff_cards | chat_drafts | consent_flags
 ```
 
-这些数据属于 privacy-sensitive local data，默认保存在客户端 AsyncStorage / SQLite。
+These are privacy-sensitive local data, stored on the client AsyncStorage / SQLite by default.
 
 ---
 
-## 6. Logical Schema / 逻辑表设计
+## 6. Logical Schema
 
 | Table | Purpose | Main source / owner |
 | --- | --- | --- |
@@ -168,7 +168,7 @@ medical_profile | sos_data | show_staff_cards | chat_drafts | consent_flags
 
 ---
 
-## 7. ER Relationship / ER 关系图
+## 7. ER Relationship
 
 ```text
 ┌──────────────────┐
@@ -220,7 +220,7 @@ venues 1:N external_context_cache
 
 ---
 
-## 8. Merge Rules / 数据合并规则
+## 8. Merge Rules
 
 | Source group | Merge target | Rule |
 | --- | --- | --- |
@@ -233,9 +233,9 @@ venues 1:N external_context_cache
 
 ---
 
-## 9. Field Mapping / 字段映射摘要
+## 9. Field Mapping
 
-### 9.1 OSM Healthcare POI → `venues` + `healthcare_profiles`
+### 9.1 OSM Healthcare POI -> `venues` + `healthcare_profiles`
 
 | Source field | Target | Transformation |
 | --- | --- | --- |
@@ -247,7 +247,7 @@ venues 1:N external_context_cache
 | `phone`, `website`, `opening_hours` | `venues.phone`, `venues.website`, `venues.opening_hours` | Direct where available. |
 | `healthcare:speciality` | `healthcare_profiles.healthcare_speciality` | Direct. |
 
-### 9.2 NYS Health Facility → `venues` + `healthcare_profiles`
+### 9.2 NYS Health Facility -> `venues` + `healthcare_profiles`
 
 | Source field | Target | Transformation |
 | --- | --- | --- |
@@ -260,7 +260,7 @@ venues 1:N external_context_cache
 | `Short Description`, `Description` | `healthcare_profiles.facility_type` | Direct / normalized. |
 | `Operator Name`, `Ownership Type` | `healthcare_profiles.operator_name`, `ownership_type` | Direct. |
 
-### 9.3 AED Inventory → `venues` + `emergency_assets`
+### 9.3 AED Inventory -> `venues` + `emergency_assets`
 
 | Source field | Target | Transformation |
 | --- | --- | --- |
@@ -271,7 +271,7 @@ venues 1:N external_context_cache
 | `AED_NumAeds`, `AED_NumPersonTrained` | `emergency_assets.aed_count`, `trained_people_count` | Parse integer. |
 | `Last Updated` | `emergency_assets.last_updated` | Parse date. |
 
-### 9.4 Public Restrooms + Parks Toilets → `venues` + `restroom_profiles`
+### 9.4 Public Restrooms + Parks Toilets -> `venues` + `restroom_profiles`
 
 | Source field | Target | Transformation |
 | --- | --- | --- |
@@ -286,7 +286,7 @@ venues 1:N external_context_cache
 
 Parks Toilets has no reliable coordinates in the local file. MVP ETL should either geocode later or import only records that can be matched to an existing restroom venue by name/location.
 
-### 9.5 Pedestrian Ramps → `pedestrian_ramps`
+### 9.5 Pedestrian Ramps -> `pedestrian_ramps`
 
 | Source field | Target | Transformation |
 | --- | --- | --- |
@@ -300,7 +300,7 @@ Parks Toilets has no reliable coordinates in the local file. MVP ETL should eith
 
 ---
 
-## 10. Data Quality Problems / 数据质量问题
+## 10. Data Quality Problems
 
 | Problem | Source | Planned solution |
 | --- | --- | --- |
@@ -314,7 +314,7 @@ Parks Toilets has no reliable coordinates in the local file. MVP ETL should eith
 
 ---
 
-## 11. Index Strategy / 索引策略
+## 11. Index Strategy
 
 | Table | Index | Purpose |
 | --- | --- | --- |
@@ -332,7 +332,7 @@ Parks Toilets has no reliable coordinates in the local file. MVP ETL should eith
 
 ---
 
-## 12. API Mapping / API 与数据库映射
+## 12. API Mapping
 
 | API | Database behavior |
 | --- | --- |
@@ -351,7 +351,7 @@ Parks Toilets has no reliable coordinates in the local file. MVP ETL should eith
 
 ---
 
-## 13. ETL Flow / 数据导入流程
+## 13. ETL Flow
 
 ```text
 CSV / GeoJSON source files
@@ -388,29 +388,29 @@ backend/database/
 
 Sprint 1 can start with a minimal import order:
 
-1. Public Restrooms → `venues` + `restroom_profiles`
-2. OSM Healthcare → `venues` + `healthcare_profiles`
-3. AED Inventory → `venues` + `emergency_assets`
-4. Pedestrian Ramps Manhattan subset → `pedestrian_ramps`
+1. Public Restrooms -> `venues` + `restroom_profiles`
+2. OSM Healthcare -> `venues` + `healthcare_profiles`
+3. AED Inventory -> `venues` + `emergency_assets`
+4. Pedestrian Ramps Manhattan subset -> `pedestrian_ramps`
 
 ---
 
-## 14. Nonfunctional Requirements / 非功能需求
+## 14. Nonfunctional Requirements
 
 | Requirement | Target / rationale |
 | --- | --- |
-| 查询延迟 | Map POI queries should stay under 200ms for demo-sized Manhattan subsets. |
-| 空间查询 | Support latitude/longitude bounding-box query for Manhattan map viewport. |
-| 并发 | Demo target: 50+ concurrent users; MySQL indexes avoid full scans on core map/report paths. |
-| 数据一致性 | `venue_source_links` unique source record keys support idempotent re-import. |
-| 字符集 | `utf8mb4` for multilingual names and notes. |
-| 过期清理 | `user_reports.expires_at` and `external_context_cache.expires_at` support cleanup. |
-| 可维护性 | Source manifest records included/excluded datasets so scope changes are explicit. |
-| 隐私 | Medical profile and SOS data stay local by default. |
+| Query latency | Map POI queries should stay under 200ms for demo-sized Manhattan subsets. |
+| Spatial queries | Support latitude/longitude bounding-box query for Manhattan map viewport. |
+| Concurrency | Demo target: 50+ concurrent users; MySQL indexes avoid full scans on core map/report paths. |
+| Data consistency | `venue_source_links` unique source record keys support idempotent re-import. |
+| Character set | `utf8mb4` for multilingual names and notes. |
+| Expiry cleanup | `user_reports.expires_at` and `external_context_cache.expires_at` support cleanup. |
+| Maintainability | Source manifest records included/excluded datasets so scope changes are explicit. |
+| Privacy | Medical profile and SOS data stay local by default. |
 
 ---
 
-## 15. Acceptance Criteria / 验收标准
+## 15. Acceptance Criteria
 
 | # | Standard | Verification |
 | --- | --- | --- |
@@ -424,7 +424,7 @@ Sprint 1 can start with a minimal import order:
 
 ---
 
-## 16. Implementation Files / 实现文件
+## 16. Implementation Files
 
 - Schema initializer: `docker/mysql/init/001_clearpath_schema.sql`
 - Codex schema copy: `ml_training/plan/6.2_codex/001_clearpath_schema.sql`

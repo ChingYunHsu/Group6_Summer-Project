@@ -32,9 +32,18 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 
+# Annotate every run with a UTC timestamp, the published model version, and the
+# git short sha so each output directory is self-describing and never
+# overwrites a prior run.  A relative `latest` symlink always points to the
+# most recent run.
+RUN_TS="$(date -u '+%Y%m%dT%H%M%SZ')"
+GIT_SHA="$(git -C "$PROJECT_ROOT" rev-parse --short HEAD 2>/dev/null || echo nogit)"
+VERSION="forecast-v2"
+
 LABELS="$SCRIPT_DIR/output/serpapi_v2_labels_20260716/serpapi_popular_times_weak_labels.csv"
 LEGACY_LABELS="$SCRIPT_DIR/output/serpapi_repeat_audit/legacy_cached_baseline.csv"
-OUTPUT_DIR="$SCRIPT_DIR/output/v2_pattern_traffic_latest"
+OUTPUT_DIR="$SCRIPT_DIR/output/v2_pattern_traffic_${RUN_TS}_${VERSION}_g${GIT_SHA}"
+LATEST_LINK="$SCRIPT_DIR/output/v2_pattern_traffic_latest"
 PYTHON="$PROJECT_ROOT/.venv-1/bin/python"
 LOG_FILE="${LOG_FILE:-$HOME/logs/clearpath_v2_forecast.log}"
 
@@ -63,7 +72,12 @@ fi
     --labels "$LABELS" \
     --legacy-labels "$LEGACY_LABELS" \
     --output-dir "$OUTPUT_DIR" \
+    --git-commit "$GIT_SHA" \
     --publish
 
-  echo "[$(date -u '+%Y-%m-%d %H:%M:%S UTC')] V2 forecast pipeline complete"
+  # Maintain a relative `latest` symlink so downstream tools always find the
+  # most recent run regardless of where the repo is mounted.
+  ln -sfn "$(basename "$OUTPUT_DIR")" "$LATEST_LINK"
+
+  echo "[$(date -u '+%Y-%m-%d %H:%M:%S UTC')] V2 forecast pipeline complete (output: $(basename "$OUTPUT_DIR"))"
 } 2>&1 | tee -a "$LOG_FILE"

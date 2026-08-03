@@ -1,272 +1,272 @@
-# venue_coverage 功能介绍与执行缺口分析
+# venue_coverage Feature Introduction and Execution Gap Analysis
 
-> 审查日期：2026-06-15（初版） → 2026-06-15（更新）  
-> SOP 文件：`Data+ML/plan/venue_coverage_sop_zh.md`  
-> 最近运行：`20260615T193635Z`（MTA 修复后，三源全部成功）  
-> 当前状态：106 tests passed（44 busyness + 62 venue coverage）
+> Review date: 2026-06-15 (initial) -> 2026-06-15 (updated)  
+> SOP file: `Data+ML/plan/venue_coverage_sop_zh.md`  
+> Latest run: `20260615T193635Z` (after MTA fix, all three sources succeeded)  
+> Current status: 106 tests passed (44 busyness + 62 venue coverage)
 
-## 功能概述
+## Feature Overview
 
-venue_coverage 是 ClearPath 项目的**空间覆盖测试系统**，衡量在不同 GPS 半径内，项目场馆（venue）是否能被至少一个外部数据源覆盖。
+venue_coverage is ClearPath's **spatial coverage testing system**, measuring whether project venues can be covered by at least one external data source within different GPS radii.
 
-### 核心目标
+### Core Objective
 
-回答一个问题：**在 100m-500m 范围内，有多少场馆附近有可用的数据采集点？**
+It answers one question: **Within the 100m-500m range, how many venues have an available data collection point nearby?**
 
-本系统仅衡量空间特征可用性，不评估预测质量、时间相关性或生产模型权重。
+This system only measures spatial feature availability; it does not evaluate prediction quality, temporal correlation, or production model weights.
 
-### 数据流
+### Data Flow
 
 ```
-场馆清单 (venues_clean.csv, 4,838 venues)
+Venue list (venues_clean.csv, 4,838 venues)
   │
-  ▼  BallTree (Haversine) 最近距离查询
+  ▼  BallTree (Haversine) nearest distance query
   │
-  ├── Citi Bike GBFS ─── 2,326 站点 (纽约共享单车)
-  ├── MTA Station Complexes ─── 5f5g-n3cz (地铁站综合体)
-  └── NYC Traffic ─── 7ym2-wayt (交通传感器路段)
+  ├── Citi Bike GBFS ─── 2,326 stations (NYC bike share)
+  ├── MTA Station Complexes ─── 5f5g-n3cz (subway station complexes)
+  └── NYC Traffic ─── 7ym2-wayt (traffic sensor segments)
   │
-  ▼  按 100m/200m/300m/400m/500m 半径计算覆盖
+  ▼  Compute coverage at 100m/200m/300m/400m/500m radii
   │
-  ├── 单数据源覆盖 (standalone)
-  ├── 累计组合覆盖 (cumulative: CB → CB+MTA → CB+MTA+Traffic)
-  ├── 按 venue_type 聚合 (emergencyasset/healthcare/restroom)
-  └── 按 district 聚合 (downtown/midtown_east/midtown_west/uptown)
+  ├── Single-source coverage (standalone)
+  ├── Cumulative combination coverage (cumulative: CB -> CB+MTA -> CB+MTA+Traffic)
+  ├── Aggregate by venue_type (emergencyasset/healthcare/restroom)
+  └── Aggregate by district (downtown/midtown_east/midtown_west/uptown)
   │
-  ▼  制品生成
+  ▼  Artifact generation
   │
-  ├── venue_coverage_detail.csv (每场馆一行)
-  ├── coverage_summary.csv (聚合指标)
-  ├── coverage_report.md (可读报告)
-  ├── run_metadata.json (运行元数据)
-  ├── traffic_year_profile.csv (Traffic 年度分布诊断)
-  └── 4 张 PNG 图表
+  ├── venue_coverage_detail.csv (one row per venue)
+  ├── coverage_summary.csv (aggregate metrics)
+  ├── coverage_report.md (readable report)
+  ├── run_metadata.json (run metadata)
+  ├── traffic_year_profile.csv (Traffic yearly distribution diagnostics)
+  └── 4 PNG charts
 ```
 
-### 关键架构
+### Key Architecture
 
-| 组件 | 文件 | 功能 |
+| Component | File | Function |
 |------|------|------|
-| 核心库 | `src/venue_coverage.py` | 数据源获取、BallTree 距离计算、覆盖聚合、报告/图表生成 |
-| CLI 入口 | `src/run_venue_coverage.py` | 参数解析、流程编排、制品写入 |
-| 测试 | `tests/test_venue_coverage.py` | 65 个测试（62 离线 + 3 集成） |
+| Core library | `src/venue_coverage.py` | Data source fetching, BallTree distance computation, coverage aggregation, report/chart generation |
+| CLI entry | `src/run_venue_coverage.py` | Argument parsing, pipeline orchestration, artifact writing |
+| Tests | `tests/test_venue_coverage.py` | 65 tests (62 offline + 3 integration) |
 
-### 数据源说明
+### Data Source Details
 
-| 数据源 | 数据集 ID | 类型 | 特点 |
+| Data source | Dataset ID | Type | Characteristics |
 |--------|----------|------|------|
-| Citi Bike | GBFS | 共享单车站点 | 覆盖最广，100m 即达 45% |
-| MTA | `5f5g-n3cz` | 地铁站综合体 | 直接含坐标，无需 OD 聚合 |
-| Traffic | `7ym2-wayt` | 交通传感器路段 | 需 EPSG:2263→WGS84 坐标转换 |
+| Citi Bike | GBFS | Bike share stations | Widest coverage, reaches 45% at 100m |
+| MTA | `5f5g-n3cz` | Subway station complexes | Includes coordinates directly, no OD aggregation needed |
+| Traffic | `7ym2-wayt` | Traffic sensor segments | Requires EPSG:2263->WGS84 coordinate conversion |
 
-### 测试半径
-
-```text
-100m → 200m → 300m → 400m → 500m
-```
-
-每个半径增量的边际收益用于评估"覆盖"与"局部性"的权衡。
-
-### 数据源归因顺序
+### Test Radii
 
 ```text
-Citi Bike → Citi Bike + MTA → Citi Bike + MTA + Traffic
+100m -> 200m -> 300m -> 400m -> 500m
 ```
 
-失败数据源中断后续组合（不跳过），确保组合结果的完整性。
+The marginal benefit of each radius increment is used to evaluate the tradeoff between "coverage" and "locality".
 
-### 与 busyness_ingestion 的关系
+### Data Source Attribution Order
 
-- **venue_coverage**：衡量数据源的**空间可用性**（有没有数据点在附近）
-- **busyness_ingestion**：利用交通数据计算场馆的**繁忙度分数**并写入数据库
+```text
+Citi Bike -> Citi Bike + MTA -> Citi Bike + MTA + Traffic
+```
 
-两者共享 `dqr/` 模块（坐标转换、GPS 工具），但目标不同。venue_coverage 不写入数据库，busyness_ingestion 会写入 `busyness_scores` 表。
+A failed data source interrupts subsequent combinations (not skipped), ensuring the integrity of combination results.
+
+### Relationship with busyness_ingestion
+
+- **venue_coverage**: measures the **spatial availability** of data sources (whether there are data points nearby)
+- **busyness_ingestion**: uses traffic data to compute the **busyness score** for venues and writes it to the database
+
+Both share the `dqr/` module (coordinate conversion, GPS utilities), but have different goals. venue_coverage does not write to the database; busyness_ingestion writes to the `busyness_scores` table.
 
 ---
 
-## 执行缺口分析
+## Execution Gap Analysis
 
-## 文件存在性 (SOP §4)
+## File Existence (SOP §4)
 
-| 文件 | 状态 |
+| File | Status |
 |------|------|
-| `dqr/venue_coverage.py` (1,171行) | ✅ 已创建 |
-| `run_venue_coverage.py` (347行) | ✅ 已创建 |
-| `tests/test_venue_coverage.py` (1,071行) | ✅ 已创建 |
-| `tests/output/venues_clean.csv` (4,838行) | ✅ 已存在 |
-| `output/` 目录 | ✅ 已存在 |
+| `dqr/venue_coverage.py` (1,171 lines) | ✅ Created |
+| `run_venue_coverage.py` (347 lines) | ✅ Created |
+| `tests/test_venue_coverage.py` (1,071 lines) | ✅ Created |
+| `tests/output/venues_clean.csv` (4,838 lines) | ✅ Exists |
+| `output/` directory | ✅ Exists |
 
 
-## 单元测试 (SOP §13 任务 1-7)
+## Unit Tests (SOP §13 Tasks 1-7)
 
 ```text
 60 passed, 3 skipped, 3 warnings
 ```
 
-| 任务 | 测试类 | 状态 |
+| Task | Test class | Status |
 |------|--------|------|
-| 任务1: CLI 解析 | TestCLIParsing (12) | ✅ 全部通过 |
-| 任务2: HTTP/重试/隔离 | TestHTTPClient + TestPagination + TestSourceIsolation (10) | =✅ 全部通过 |
-| 任务3: 数据源适配器 | TestCitiBikeAdapter + TestMTAAdapter + TestTrafficAdapter (9) | ✅ 全部通过 |
-| 任务4: BallTree 距离 | TestBallTreeDistance + TestVenueDeduplication (8) | ✅ 全部通过 |
-| 任务5: 覆盖聚合 | TestStandaloneCoverage + TestCumulativeCoverage (9) | ✅ 全部通过 |
-| 任务6: 制品与可视化 | TestArtifacts + TestCharts (9) | ✅ 全部通过 |
-| 任务7: 冒烟测试 | TestLiveSmoke (3) | ⏭️ 全部跳过 (需 `@pytest.mark.integration`) |
+| Task 1: CLI parsing | TestCLIParsing (12) | ✅ All passed |
+| Task 2: HTTP/retry/isolation | TestHTTPClient + TestPagination + TestSourceIsolation (10) | =✅ All passed |
+| Task 3: Data source adapters | TestCitiBikeAdapter + TestMTAAdapter + TestTrafficAdapter (9) | ✅ All passed |
+| Task 4: BallTree distance | TestBallTreeDistance + TestVenueDeduplication (8) | ✅ All passed |
+| Task 5: Coverage aggregation | TestStandaloneCoverage + TestCumulativeCoverage (9) | ✅ All passed |
+| Task 6: Artifacts and visualization | TestArtifacts + TestCharts (9) | ✅ All passed |
+| Task 7: Smoke tests | TestLiveSmoke (3) | ⏭️ All skipped (requires `@pytest.mark.integration`) |
 
-## 实际运行结果 (latest run: 20260615T193635Z)
+## Actual Run Results (latest run: 20260615T193635Z)
 
-| 数据源 | 状态 | 获取耗时 | 原始点数 | 有效点数 | 问题 |
+| Data source | Status | Fetch time | Raw points | Valid points | Issue |
 |--------|------|---------|---------|---------|------|
-| Citi Bike | ✅ ok | 1.5s | 2,411 | 2,328 | — |
-| MTA | ✅ ok | 0.6s | 445 | 445 | —（修复：`complex_name` → `display_name`） |
-| Traffic | ✅ ok | 7.1s | 28 | 28 | 仅 28 个路段（Manhattan 2025） |
+| Citi Bike | ✅ ok | 1.5s | 2,411 | 2,328 | - |
+| MTA | ✅ ok | 0.6s | 445 | 445 | -(fix: `complex_name` -> `display_name`) |
+| Traffic | ✅ ok | 7.1s | 28 | 28 | Only 28 segments (Manhattan 2025) |
 
-## 覆盖率摘要
+## Coverage Summary
 
-### 单数据源
+### Single Source
 
-| 数据源 | 100m | 200m | 300m | 400m | 500m |
+| Data source | 100m | 200m | 300m | 400m | 500m |
 |--------|------|------|------|------|------|
 | Citi Bike | 45.5% | 91.8% | 98.0% | 98.3% | 98.5% |
 | MTA | 11.9% | 39.6% | 64.8% | 80.4% | 88.2% |
 | Traffic | 1.2% | 3.3% | 6.7% | 10.9% | 14.7% |
 
-### 累计组合
+### Cumulative Combinations
 
-| 组合 | 100m | 200m | 300m | 400m | 500m |
+| Combination | 100m | 200m | 300m | 400m | 500m |
 |------|------|------|------|------|------|
 | Citi Bike | 45.5% | 91.8% | 98.0% | 98.3% | 98.5% |
 | Citi Bike + MTA | 51.1% | 93.9% | 98.2% | 98.4% | 98.6% |
 | Citi Bike + MTA + Traffic | 51.5% | 94.0% | 98.2% | 98.4% | 98.6% |
 
-完整累计链 `Citi Bike → CB+MTA → CB+MTA+Traffic` 恢复。MTA 在 100m 处贡献最大增量 +5.6pp。
+The full cumulative chain `Citi Bike -> CB+MTA -> CB+MTA+Traffic` is restored. MTA contributes the largest increment at 100m, +5.6pp.
 
 
 
-### 最近距离分布
+### Nearest Distance Distribution
 
-| 数据源 | 中位数 (m) | P90 (m) |
+| Data source | Median (m) | P90 (m) |
 |--------|-----------|---------|
 | Citi Bike | 107m | 192m |
 | MTA | 241m | 524m |
 | Traffic | 1,110m | 2,231m |
 
-## 代码量评估
+## Code Volume Assessment
 
-| 文件 | 行数 | 职责 |
+| File | Lines | Responsibility |
 |------|------|------|
-| `src/venue_coverage.py` | 1,190 | 核心库：API 获取、BallTree 距离、覆盖聚合、报告/图表生成 |
-| `src/run_venue_coverage.py` | 350 | CLI 入口：参数解析、流程编排、制品写入 |
-| `tests/test_venue_coverage.py` | 1,117 | 测试：62 离线 + 3 集成 |
-| **合计** | **2,657** | |
+| `src/venue_coverage.py` | 1,190 | Core library: API fetching, BallTree distance, coverage aggregation, report/chart generation |
+| `src/run_venue_coverage.py` | 350 | CLI entry: argument parsing, pipeline orchestration, artifact writing |
+| `tests/test_venue_coverage.py` | 1,117 | Tests: 62 offline + 3 integration |
+| **Total** | **2,657** | |
 
-代码量分布合理：核心逻辑 ~1,200 行，测试 ~1,100 行（测试/实现比 ≈ 0.93），CLI 胶水 ~350 行。
+Code volume distribution is reasonable: core logic ~1,200 lines, tests ~1,100 lines (test/implementation ratio ≈ 0.93), CLI glue ~350 lines.
 
-## 已确认的缺口
+## Confirmed Gaps
 
-### ~~P0：MTA 数据源失败 — 组合覆盖链断裂~~ ✅ 已修复
+### ~~P0: MTA data source failure - cumulative coverage chain broken~~ ✅ Fixed
 
-MTA 已从 OD 客流表 `y2qv-fytt`（需要 GROUP BY 聚合）改为官方站点综合体数据集 `5f5g-n3cz`（直接包含坐标）。修复内容：
+MTA has been changed from the OD ridership table `y2qv-fytt` (requires GROUP BY aggregation) to the official station complex dataset `5f5g-n3cz` (includes coordinates directly). Fixes:
 
-- `fetch_mta()` 移除 `year` 参数，直接查询 `5f5g-n3cz`
-- `fetch_mta()` 字段名修复：`complex_name` → `display_name`（SODA API 实际字段名）
-- CLI 移除 `--mta-year` 参数
-- 完整覆盖链 `Citi Bike → Citi Bike + MTA → Citi Bike + MTA + Traffic` 恢复
-- 离线测试 62 个全部通过（含 4 个新 MTA 测试）
+- `fetch_mta()` removed the `year` parameter, queries `5f5g-n3cz` directly
+- `fetch_mta()` field name fix: `complex_name` -> `display_name` (actual SODA API field name)
+- CLI removed the `--mta-year` parameter
+- Full coverage chain `Citi Bike -> Citi Bike + MTA -> Citi Bike + MTA + Traffic` restored
+- All 62 offline tests passed (including 4 new MTA tests)
 
-### ~~P1：read_timeout 配置不一致~~ ✅ 已对齐
+### ~~P1: read_timeout configuration inconsistency~~ ✅ Aligned
 
-代码默认超时 `(2, 5)` 与 SOP §7.2 一致。之前运行时使用 30s 是手动配置偏差。
+The code default timeout `(2, 5)` is consistent with SOP §7.2. The previous run using 30s was a manual configuration deviation.
 
-### P1：Traffic 数据量极少
+### P1: Traffic data volume is very small
 
-仅 28 个路段通过 Manhattan 过滤，覆盖率极低（100m 仅 1.2%）。已新增 `traffic_year_profile.csv` 诊断文件，明确各年份的记录数和路段数，确认是官方数据稀疏性而非解析错误。
+Only 28 segments passed the Manhattan filter, with very low coverage (only 1.2% at 100m). A `traffic_year_profile.csv` diagnostic file has been added, clarifying the record count and segment count per year, confirming this is official data sparsity rather than a parsing error.
 
-### ~~P2：3 个冒烟测试被跳过~~ ✅ 已修复
+### ~~P2: 3 smoke tests skipped~~ ✅ Fixed
 
-`@pytest.mark.integration` marker 已存在，CI 已扩展支持运行集成测试。
+The `@pytest.mark.integration` marker already exists, and CI has been extended to support running integration tests.
 
-### ~~P2：图表 legend 警告~~ ✅ 已修复
+### ~~P2: Chart legend warning~~ ✅ Fixed
 
-所有三处 `ax.legend()` 调用前已添加 handles 检查守卫。空数据显示 "No data available" 文本。
+Handle-check guards have been added before all three `ax.legend()` calls. Empty data shows the "No data available" text.
 
-**建议**：检查 `venue_coverage.py` L1000/L1079 的 legend 逻辑。
+**Recommendation**: check the legend logic in `venue_coverage.py` L1000/L1079.
 
 
-## SOP §14 审查清单状态
+## SOP §14 Review Checklist Status
 
-| 检查项 | 状态 |
+| Check item | Status |
 |--------|------|
-| 场地分母和重复计数已记录 | ✅ (0 duplicates) |
-| 所有数据源状态明确 | ✅ (all ok) |
-| API 查询年份和数据集 ID 已记录 | ✅ |
-| 没有数据源在 5,000 行处静默停止 | ✅ |
-| 失败数据源已从受影响的组合中排除 | ✅ |
-| 单数据源和累计覆盖均已呈现 | ✅ |
-| 结果包含总体、场地类型和区域视图 | ✅ |
-| 每个 100m 增量的边际变化均已显示 | ✅ |
-| Traffic 未被描述为观测到的行人繁忙度 | ✅ |
-| 未从空间覆盖推断预测权重 | ✅ |
-| 未持久化原始 API 响应 | ✅ |
-| 未发生数据库写入 | ✅ |
+| Venue denominator and duplicate count documented | ✅ (0 duplicates) |
+| All data source statuses explicit | ✅ (all ok) |
+| API query year and dataset ID documented | ✅ |
+| No data source silently stops at 5,000 rows | ✅ |
+| Failed data sources excluded from affected combinations | ✅ |
+| Both single-source and cumulative coverage presented | ✅ |
+| Results include overall, venue type, and district views | ✅ |
+| Marginal change for each 100m increment shown | ✅ |
+| Traffic not described as observed pedestrian busyness | ✅ |
+| No prediction weights inferred from spatial coverage | ✅ |
+| Raw API responses not persisted | ✅ |
+| No database writes occurred | ✅ |
 
-## 优先级汇总
+## Priority Summary
 
-| 优先级 | 缺口 | 状态 |
+| Priority | Gap | Status |
 |--------|------|------|
-| **P0** | MTA 超时失败 → 改用 `5f5g-n3cz` + 字段名修复 (`complex_name` → `display_name`) | ✅ 已修复 |
-| **P1** | read_timeout 30s vs SOP 5s | ✅ 已对齐 |
-| **P1** | Traffic 仅 28 段 | ⚠️ 已添加年度诊断 (`traffic_year_profile.csv`) |
-| **P2** | 3 个冒烟测试未运行 | ✅ CI 已扩展支持 `workflow_dispatch` 运行集成测试 |
-| **P2** | 图表 legend 警告 | ✅ 已修复 (handles 检查守卫) |
+| **P0** | MTA timeout failure -> switched to `5f5g-n3cz` + field name fix (`complex_name` -> `display_name`) | ✅ Fixed |
+| **P1** | read_timeout 30s vs SOP 5s | ✅ Aligned |
+| **P1** | Traffic only 28 segments | ⚠️ Yearly diagnostics added (`traffic_year_profile.csv`) |
+| **P2** | 3 smoke tests not run | ✅ CI extended to support `workflow_dispatch` running integration tests |
+| **P2** | Chart legend warning | ✅ Fixed (handle-check guards) |
 
-## 结论与推荐
+## Conclusions and Recommendations
 
-### 数据源评估
+### Data Source Assessment
 
-| 数据源 | 空间价值 | 独特贡献 | 建议 |
+| Data source | Spatial value | Unique contribution | Recommendation |
 |--------|---------|---------|------|
-| Citi Bike | ★★★★★ 100m 即达 45%，200m 达 92% | 主力数据源，覆盖绝大多数 venue | **必须保留** |
-| MTA | ★★★☆☆ 200m 达 40%，500m 达 88% | 在 100m 半径贡献 +5.6pp 增量 | **保留**，尤其对 downtown 区域有价值 |
-| Traffic | ★☆☆☆☆ 100m 仅 1.2%，中位距离 1.1km | 几乎无空间增量，与 Citi Bike 高度重叠 | **移除**空间覆盖，仅保留 busyness 时间维度 |
+| Citi Bike | ★★★★★ reaches 45% at 100m, 92% at 200m | Primary data source, covers the vast majority of venues | **Must keep** |
+| MTA | ★★★☆☆ reaches 40% at 200m, 88% at 500m | Contributes a +5.6pp increment at the 100m radius | **Keep**, especially valuable for the downtown area |
+| Traffic | ★☆☆☆☆ only 1.2% at 100m, median distance 1.1km | Almost no spatial increment, highly overlaps with Citi Bike | **Remove** from spatial coverage, keep only the busyness temporal dimension |
 
-### 推荐数据集组合
+### Recommended Dataset Combination
 
-**生产环境推荐：Citi Bike + MTA**
+**Production recommendation: Citi Bike + MTA**
 
 ```
-Citi Bike + MTA @ 200m → 93.9% 覆盖率
-Citi Bike + MTA @ 300m → 98.2% 覆盖率
+Citi Bike + MTA @ 200m -> 93.9% coverage
+Citi Bike + MTA @ 300m -> 98.2% coverage
 ```
 
-理由：
-- Citi Bike 单独已在 200m 达 91.8%，MTA 额外贡献 +2.1pp
-- Traffic 在任何半径下都不提供有意义的空间增量（与 Citi Bike 重叠率 >95%）
-- MTA 在 100m 半径增量最大（+5.6pp），适合需要高精度定位的场景
+Rationale:
+- Citi Bike alone reaches 91.8% at 200m; MTA contributes an additional +2.1pp
+- Traffic provides no meaningful spatial increment at any radius (overlap with Citi Bike >95%)
+- MTA has the largest increment at the 100m radius (+5.6pp), suitable for scenarios requiring high-precision positioning
 
-### 推荐距离参数
+### Recommended Distance Parameters
 
-| 场景 | 推荐半径 | 覆盖率 | 理由 |
+| Scenario | Recommended radius | Coverage | Rationale |
 |------|---------|--------|------|
-| **通用默认** | **200m** | 93.9% | 性价比最高，200m 后边际收益急剧递减 |
-| 高精度定位 | 100m | 51.1% | 适合需要精确到建筑物入口的场景 |
-| 最大覆盖 | 300m | 98.2% | 适合"附近有什么"的宽泛查询 |
+| **General default** | **200m** | 93.9% | Best cost-effectiveness; marginal benefit drops sharply after 200m |
+| High-precision positioning | 100m | 51.1% | Suitable for scenarios requiring accuracy down to a building entrance |
+| Maximum coverage | 300m | 98.2% | Suitable for broad "what's nearby" queries |
 
-**200m 是推荐的默认半径**，原因：
-- 从 100m 到 200m：覆盖率从 51.1% 跳到 93.9%（+42.8pp）
-- 从 200m 到 300m：仅从 93.9% 到 98.2%（+4.3pp）
-- 从 300m 到 500m：仅从 98.2% 到 98.6%（+0.4pp）
-- 200m 步行约 2-3 分钟，用户体验可接受
+**200m is the recommended default radius**, because:
+- From 100m to 200m: coverage jumps from 51.1% to 93.9% (+42.8pp)
+- From 200m to 300m: only from 93.9% to 98.2% (+4.3pp)
+- From 300m to 500m: only from 98.2% to 98.6% (+0.4pp)
+- 200m is about a 2-3 minute walk, acceptable for user experience
 
-### 按区域差异
+### Differences by District
 
-| 区域 | Citi Bike 200m | MTA 200m | CB+MTA 200m |
+| District | Citi Bike 200m | MTA 200m | CB+MTA 200m |
 |------|---------------|---------|------------|
 | downtown | 95.4% | 43.8% | 97.1% |
 | midtown_west | 94.4% | 51.1% | 97.8% |
 | midtown_east | 88.6% | 29.1% | 89.9% |
 | uptown | 92.2% | 28.2% | 93.7% |
 
-- **midtown_east 覆盖率最低**（89.9%），可考虑扩大到 300m
-- **downtown 和 midtown_west** Citi Bike 密度最高，200m 即可
+- **midtown_east has the lowest coverage** (89.9%); consider expanding to 300m
+- **downtown and midtown_west** have the highest Citi Bike density; 200m is sufficient
 
