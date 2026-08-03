@@ -1,22 +1,22 @@
-# Busyness & Venue Coverage — 文件索引
+# Busyness & Venue Coverage - File Index
 
-> 整理日期：2026-06-15  
-> 来源目录：`Data+ML/test/6.8-6.12_DB/`
+> Organized date: 2026-06-15  
+> Source directory: `Data+ML/test/6.8-6.12_DB/`
 
-## 目录结构
+## Directory Structure
 
 ```text
 6.15-5.20/
-├── src/                          # 源代码
-│   ├── busyness_ingestion.py     # Busyness ETL 管道 (440行)
-│   ├── venue_coverage.py         # 空间覆盖测试核心 (1,190行)
-│   └── run_venue_coverage.py     # CLI 入口 (350行)
-├── tests/                        # 测试文件
-│   ├── conftest.py               # Pytest 共享 fixtures
-│   ├── test_busyness_ingestion.py  # Busyness 测试 (44 tests)
-│   └── test_venue_coverage.py      # 覆盖测试 (65 tests)
-├── output/                       # 运行输出
-│   └── venue_coverage/           # 最近一次覆盖运行结果
+├── src/                          # Source code
+│   ├── busyness_ingestion.py     # Busyness ETL pipeline (440 lines)
+│   ├── venue_coverage.py         # Spatial coverage testing core (1,190 lines)
+│   └── run_venue_coverage.py     # CLI entry point (350 lines)
+├── tests/                        # Test files
+│   ├── conftest.py               # Pytest shared fixtures
+│   ├── test_busyness_ingestion.py  # Busyness tests (44 tests)
+│   └── test_venue_coverage.py      # Coverage tests (65 tests)
+├── output/                       # Run output
+│   └── venue_coverage/           # Latest coverage run results
 │       ├── venue_coverage_detail.csv
 │       ├── coverage_summary.csv
 │       ├── coverage_report.md
@@ -25,57 +25,57 @@
 │       ├── incremental_coverage.png
 │       ├── venue_type_coverage_heatmap.png
 │       └── uncovered_venue_distribution.png
-└── docs/                         # 文档与审查
-    ├── venue_coverage_sop_zh.md  # 空间覆盖 SOP (中文)
-    ├── busynessreview.md         # Busyness 代码审查笔记
-    └── venue-coverage-review.md  # 覆盖测试执行缺口分析
+└── docs/                         # Documentation and review
+    ├── venue_coverage_sop_zh.md  # Spatial coverage SOP (Chinese)
+    ├── busynessreview.md         # Busyness code review notes
+    └── venue-coverage-review.md  # Coverage testing execution gap analysis
 ```
 
-> **依赖**：`src/` 下的源文件通过 `sys.path` 引用 `Data+ML/test/6.8-6.12_DB/dqr/` 共享模块，不重复存放。
+> **Dependencies**: Source files under `src/` reference shared modules in `Data+ML/test/6.8-6.12_DB/dqr/` via `sys.path`, and are not duplicated.
 
-## 文件说明
+## File Descriptions
 
-### 源代码
+### Source Code
 
-| 文件 | 行数 | 功能 |
+| File | Lines | Function |
 |------|------|------|
-| `busyness_ingestion.py` | 440 | NYC 交通数据 → venue busyness 分数的 ETL 管道 |
-| `venue_coverage.py` | 1,190 | Citi Bike / MTA / Traffic 空间覆盖测试核心 |
-| `run_venue_coverage.py` | 350 | 覆盖测试 CLI 入口，支持 `--radii`, `--sources` 等参数 |
+| `busyness_ingestion.py` | 440 | ETL pipeline: NYC transit data -> venue busyness score |
+| `venue_coverage.py` | 1,190 | Core of Citi Bike / MTA / Traffic spatial coverage testing |
+| `run_venue_coverage.py` | 350 | Coverage testing CLI entry point, supports `--radii`, `--sources` and other parameters |
 
-### 测试
+### Tests
 
-| 文件 | 测试数 | 覆盖范围 |
+| File | Test Count | Coverage Scope |
 |------|--------|---------|
-| `test_busyness_ingestion.py` | 44 (44 pass) | 分类、GPS转换、距离、聚合、venue匹配、预测、DB写入、API获取、pipeline |
-| `test_venue_coverage.py` | 65 (62 pass, 3 skip) | CLI、HTTP重试、数据源适配器、BallTree、覆盖聚合、制品契约、图表、MTA站点综合体、Traffic年度诊断 |
+| `test_busyness_ingestion.py` | 44 (44 pass) | Classification, GPS conversion, distance, aggregation, venue matching, forecasting, DB writes, API fetching, pipeline |
+| `test_venue_coverage.py` | 65 (62 pass, 3 skip) | CLI, HTTP retry, data source adapters, BallTree, coverage aggregation, artifact contracts, charts, MTA station complexes, Traffic annual diagnostics |
 
-### 输出 (latest run: 20260615T150606Z)
+### Output (latest run: 20260615T150606Z)
 
-| 数据源 | 状态 | 数据集 | 100m 覆盖率 | 500m 覆盖率 |
+| Data Source | Status | Dataset | 100m Coverage | 500m Coverage |
 |--------|------|--------|------------|------------|
 | Citi Bike | ✅ ok | GBFS | 45.3% | 98.5% |
-| MTA | ✅ 已修复 | `5f5g-n3cz` (站点综合体) | 待运行 | 待运行 |
+| MTA | ✅ Fixed | `5f5g-n3cz` (station complexes) | Pending run | Pending run |
 | Traffic | ✅ ok | `7ym2-wayt` | 1.2% | 14.7% |
 
-### 文档
+### Documentation
 
-| 文件 | 内容 |
+| File | Content |
 |------|------|
-| `venue_coverage_sop_zh.md` | 空间覆盖测试标准操作规程 |
-| `busynessreview.md` | busyness_ingestion.py 代码审查与测试解释 |
-| `venue-coverage-review.md` | 功能介绍与执行缺口分析 (P0-P3) |
+| `venue_coverage_sop_zh.md` | Standard operating procedure for spatial coverage testing |
+| `busynessreview.md` | Code review and test explanation for busyness_ingestion.py |
+| `venue-coverage-review.md` | Feature overview and execution gap analysis (P0-P3) |
 
-## 运行命令
+## Run Commands
 
 ```bash
-# Busyness 测试
+# Busyness tests
 .venv-1/bin/python -m pytest -q Data+ML/test/6.15-5.20/tests/test_busyness_ingestion.py
 
-# 覆盖测试
+# Coverage tests
 .venv-1/bin/python -m pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 
-# 覆盖测试 (线上冒烟)
+# Coverage tests (live smoke)
 python Data+ML/test/6.15-5.20/src/run_venue_coverage.py \
   --venue-file Data+ML/test/6.8-6.12_DB/tests/output/venues_clean.csv \
   --radii 100,200,300,400,500 \

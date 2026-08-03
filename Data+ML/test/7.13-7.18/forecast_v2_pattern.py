@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -420,6 +421,18 @@ def publish_forecasts(curve: pd.DataFrame) -> int:
         conn.close()
 
 
+def _detect_git_commit() -> str:
+    """Return the short git sha of the working repo, or 'unavailable'."""
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            capture_output=True, text=True, check=True,
+        )
+        return result.stdout.strip() or "unavailable"
+    except Exception:
+        return "unavailable"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--labels", type=Path, required=True)
@@ -427,7 +440,10 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--publish", action="store_true",
                         help="Upsert the generated 12-hour curve to busyness_forecasts as forecast-v2")
+    parser.add_argument("--git-commit", default=None,
+                        help="Git short sha to record in the manifest; auto-detected if omitted")
     args = parser.parse_args()
+    git_commit = args.git_commit or _detect_git_commit()
     current_labels = pd.read_csv(args.labels, dtype={"venue_id": str, "place_id": str})
     legacy_labels = load_legacy_labels(args.legacy_labels)
     label_ids = sorted(set(current_labels.venue_id) | set(legacy_labels.venue_id))
@@ -499,6 +515,8 @@ def main() -> None:
     print(f"  published        : {published_rows if args.publish else 'dry-run'}")
 
     (args.output_dir / "forecast_v2_pattern_manifest.json").write_text(json.dumps({
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "git_commit": git_commit,
         "model_version": MODEL_VERSION, "target_type": "google_popular_times_proxy", "training_rows": len(train),
         "test_rows": len(test), "venues": test.venue_id.nunique(), "places": test.place_id.nunique(), "split": SPLIT_TYPE,
         "validation_status": "not available: no third temporally complete SerpAPI cohort",

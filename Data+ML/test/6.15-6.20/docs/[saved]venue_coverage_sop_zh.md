@@ -1,97 +1,97 @@
-# 场地空间覆盖测试标准操作规程（SOP）
+# Venue Spatial Coverage Testing Standard Operating Procedure (SOP)
 
-> 日期：2026-06-15  
-> 范围：Citi Bike、MTA 地铁、NYC 交通数据的空间覆盖测试  
-> 输入：`Data+ML/test/6.8-6.12_DB/tests/output/venues_clean.csv`  
-> 状态：已批准的实施计划
+> Date: 2026-06-15  
+> Scope: Spatial coverage testing of Citi Bike, MTA subway, and NYC traffic data  
+> Input: `Data+ML/test/6.8-6.12_DB/tests/output/venues_clean.csv`  
+> Status: Approved implementation plan
 
-## 1. 目标
+## 1. Objective
 
-衡量在合理 GPS 半径范围内，有多少项目场地至少拥有一个可用的数据源点。
-本阶段仅衡量空间特征可用性，不评估预测质量、相关性或生产模型权重。
+Measure how many project venues have at least one usable data source point within a reasonable GPS radius.
+This phase only measures spatial feature availability; it does not evaluate prediction quality, correlation, or production model weight.
 
-测试半径：
-
-```text
-100m、200m、300m、400m、500m
-```
-
-数据源归因顺序：
+Test radii:
 
 ```text
-Citi Bike → Citi Bike + MTA → Citi Bike + MTA + Traffic
+100m, 200m, 300m, 400m, 500m
 ```
 
-在审查结果之前，不定义通过/失败的覆盖阈值。
-
-## 2. 固定决策
-
-### 2.1 场地数据集
-
-- 使用当前提供的 `venues_clean.csv`。
-- 预期输入规模：`venue_id` 去重前 4,838 行。
-- 不重复 ETL 已完成的坐标验证。
-- 按 `venue_id` 对场地行去重，保留第一行。
-- 相同坐标但不同 `venue_id` 的记录保留为单独的分母记录。
-- 在运行元数据中记录重复 `venue_id` 计数。
-- 在本 SOP 期间不根据 `borough` 清洗或排除记录。
-
-### 2.2 必需的分组维度
-
-生成以下维度的结果：
-
-- 总体（Overall）
-- `venue_type`（场地类型）
-- `district`（区域）
-
-初始版本不生成 `venue_type × district` 交叉表。
-
-当前预期的场地类型包括：
+Data source attribution order:
 
 ```text
-emergencyasset（AED）
-healthcare（医疗保健）
-restroom（卫生间）
+Citi Bike -> Citi Bike + MTA -> Citi Bike + MTA + Traffic
 ```
 
-### 2.3 数据源优先级
+No pass/fail coverage threshold is defined before reviewing the results.
+
+## 2. Fixed Decisions
+
+### 2.1 Venue Dataset
+
+- Use the currently provided `venues_clean.csv`.
+- Expected input scale: 4,838 rows before `venue_id` deduplication.
+- Do not repeat the coordinate validation already completed in ETL.
+- Deduplicate venue rows by `venue_id`, keeping the first row.
+- Records with the same coordinates but different `venue_id` are retained as separate denominator records.
+- Record the duplicate `venue_id` count in the run metadata.
+- Do not clean or exclude records based on `borough` during this SOP.
+
+### 2.2 Required Grouping Dimensions
+
+Generate results for the following dimensions:
+
+- Overall
+- `venue_type` (venue type)
+- `district` (district)
+
+The initial version does not generate a `venue_type × district` crosstab.
+
+Currently expected venue types include:
+
+```text
+emergencyasset (AED)
+healthcare (healthcare)
+restroom (restroom)
+```
+
+### 2.3 Data Source Priority
 
 1. Citi Bike GBFS
-2. MTA 地铁
-3. NYC 交通
+2. MTA subway
+3. NYC traffic
 
-NYC 行人传感器从主要覆盖序列中排除，因为其有效空间覆盖过于稀疏。
-它们仍适合在后续模型校准中使用。
+NYC pedestrian sensors are excluded from the main coverage sequence because their effective spatial coverage is too sparse.
+They remain suitable for use in later model calibration.
 
-BestTime 从本覆盖测试中排除，因为它是付费的场地级数据源，且不太可能与大多数应急资产和卫生间匹配。
+BestTime is excluded from this coverage test because it is a paid venue-level data source and is unlikely to match most emergency assets and restrooms.
 
-## 3. 交通数据接入决策
+## 3. Traffic Data Ingestion Decision
 
-保留 NYC 交通作为候选空间数据源，但不将
-`Data+ML/test/6.15-5.20/src/busyness_ingestion.py` 重复用作生产接入管道。
+Retain NYC traffic as a candidate spatial data source, but do not reuse
+`Data+ML/test/6.15-5.20/src/busyness_ingestion.py` as the production ingestion pipeline.
 
-当前处置方案：
+Current disposition:
 
 ```text
-数据源：保留用于覆盖测试
-现有接入实现：仅为原型
-当前预测权重：0
-覆盖测试期间的数据库写入：禁止
+Data source: retained for coverage testing
+Existing ingestion implementation: prototype only
+Current prediction weight: 0
+Database writes during coverage testing: prohibited
 ```
 
-交通数据仅在以下条件满足后才可能获得未来模型权重：
+Traffic data may only receive future model weight after the following conditions are met:
 
-- 场地-时段重复聚合已修正；
-- 数据库写入真正满足幂等性；
-- 历史数据源年份和预测时间戳语义已修正；
-- 与行人或交通衍生的活动指标的相关性已测量；
-- 消融测试表明可测量的预测改进。
+- venue-time repeated aggregation is fixed;
+- database writes are truly idempotent;
+- historical data source year and prediction timestamp semantics are fixed;
+- correlation with pedestrian or traffic-derived activity metrics is measured;
+- ablation testing shows measurable prediction improvement.
 
-仅凭空间覆盖不能作为交通数据预测行人或场地繁忙程度的证据。
+Spatial coverage alone is not evidence that traffic data predicts pedestrian or venue busyness.
 
-## 4. 文件清单
+## 4. File Inventory
 
-创建：
+Create:
 
 ```text
 Data+ML/test/6.15-5.20/src/venue_coverage.py
@@ -99,17 +99,17 @@ Data+ML/test/6.15-5.20/src/run_venue_coverage.py
 Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-计划文档：
+Planning document:
 
 ```text
 Data+ML/test/6.15-5.20/docs/venue_coverage_sop_zh.md
 ```
 
-本工作不修改 `busyness_scores` 或 `busyness_forecasts` 表。
+This work does not modify the `busyness_scores` or `busyness_forecasts` tables.
 
-## 5. CLI 接口契约
+## 5. CLI Interface Contract
 
-从项目根目录运行：
+Run from the project root:
 
 ```bash
 python Data+ML/test/6.15-5.20/src/run_venue_coverage.py \
@@ -120,7 +120,7 @@ python Data+ML/test/6.15-5.20/src/run_venue_coverage.py \
   --output-dir Data+ML/test/6.15-5.20/output/venue_coverage
 ```
 
-默认值：
+Defaults:
 
 ```text
 --radii          100,200,300,400,500
@@ -132,257 +132,257 @@ python Data+ML/test/6.15-5.20/src/run_venue_coverage.py \
 --max-retries    3
 ```
 
-`--sources` 的顺序定义了增量组合归因。
+The order of `--sources` defines the incremental combination attribution.
 
-CLI 必须拒绝以下情况：
+The CLI must reject the following cases:
 
-- 空半径列表；
-- 非正数半径；
-- 递减或重复的半径；
-- 不支持的数据源名称；
-- 页面大小大于 5,000；
-- 缺少场地输入文件。
+- empty radius list;
+- non-positive radius;
+- decreasing or duplicate radii;
+- unsupported data source name;
+- page size greater than 5,000;
+- missing venue input file.
 
-## 6. API 数据源契约
+## 6. API Data Source Contracts
 
 ### 6.1 Citi Bike
 
-端点：
+Endpoints:
 
 ```text
 https://gbfs.lyft.com/gbfs/1.1/bkn/en/station_information.json
 https://gbfs.lyft.com/gbfs/1.1/bkn/en/station_status.json
 ```
 
-规则：
+Rules:
 
-- 使用 `station_information` 获取 `station_id`、名称、纬度和经度。
-- 使用 `station_status` 识别当前已安装且运行中的站点（如可用）。
-- 通过 `station_id` 进行关联。
-- 在本阶段不将自行车或停车桩视为场地客流量。
-- 记录 feed `last_updated`、TTL、获取时间、原始站点数和保留点数。
+- Use `station_information` to obtain `station_id`, name, latitude, and longitude.
+- Use `station_status` to identify stations currently installed and operating (if available).
+- Associate via `station_id`.
+- Do not treat bikes or docking points as venue foot traffic at this phase.
+- Record the feed `last_updated`, TTL, fetch time, raw station count, and retained point count.
 
-标准化点格式：
+Normalized point format:
 
 ```text
 source = citibike
 source_id = station_id
-name = 站点名称
-latitude（纬度）
-longitude（经度）
-source_timestamp（数据源时间戳）
+name = station name
+latitude (latitude)
+longitude (longitude)
+source_timestamp (source timestamp)
 ```
 
-### 6.2 MTA 地铁
+### 6.2 MTA Subway
 
-默认数据集：
+Default dataset:
 
 ```text
 MTA Station Complexes
-数据集 ID：5f5g-n3cz
-API：https://data.ny.gov/resource/5f5g-n3cz.json
+Dataset ID: 5f5g-n3cz
+API: https://data.ny.gov/resource/5f5g-n3cz.json
 ```
 
-规则：
+Rules:
 
-- 直接读取站点综合体 ID、名称和坐标。
-- 不需要 OD 聚合查询。
-- 不需要 `--mta-year` 参数。
-- 记录数据集 ID、查询语句、获取时间、原始 API 行数和保留点数。
+- Read station complex ID, name, and coordinates directly.
+- No OD aggregation query required.
+- No `--mta-year` parameter required.
+- Record the dataset ID, query statement, fetch time, raw API row count, and retained point count.
 
-标准化点格式：
+Normalized point format:
 
 ```text
 source = mta
 source_id = complex_id
-name = complex_name（站点综合体名称）
-latitude（纬度）
-longitude（经度）
-source_timestamp（数据源时间戳）
+name = complex_name (station complex name)
+latitude (latitude)
+longitude (longitude)
+source_timestamp (source timestamp)
 ```
 
-### 6.3 NYC 交通
+### 6.3 NYC Traffic
 
-使用项目已引用的官方 NYC SODA 交通数据集：
+Use the official NYC SODA traffic dataset already referenced by the project:
 
 ```text
-数据集 ID：7ym2-wayt
-API：https://data.cityofnewyork.us/resource/7ym2-wayt.json
+Dataset ID: 7ym2-wayt
+API: https://data.cityofnewyork.us/resource/7ym2-wayt.json
 ```
 
-规则：
+Rules:
 
-- 按请求的 `--traffic-year` 过滤。
-- 使用服务端按 `segmentid` 分组。
-- 每个路段请求一个代表性几何体。
-- 将 EPSG:2263 路段几何体转换为 WGS84 坐标系。
-- 每个路段使用一个代表性点进行覆盖测试。
-- 不计算繁忙度分数。
-- 不调用数据库插入代码。
-- 记录年份、数据集 ID、查询语句、坐标转换失败数和保留点数。
+- Filter by the requested `--traffic-year`.
+- Use server-side grouping by `segmentid`.
+- Request one representative geometry per segment.
+- Convert EPSG:2263 segment geometry to the WGS84 coordinate system.
+- Use one representative point per segment for coverage testing.
+- Do not compute busyness scores.
+- Do not invoke database insert code.
+- Record the year, dataset ID, query statement, coordinate conversion failure count, and retained point count.
 
-标准化点格式：
+Normalized point format:
 
 ```text
 source = traffic
 source_id = segmentid
-name = 街道或路段标签
-latitude（纬度）
-longitude（经度）
-source_timestamp（数据源时间戳）
+name = street or segment label
+latitude (latitude)
+longitude (longitude)
+source_timestamp (source timestamp)
 ```
 
-## 7. API 执行策略
+## 7. API Execution Strategy
 
-### 7.1 分页
+### 7.1 Pagination
 
-- 最大页面大小：5,000。
-- 当服务端分组结果仍超过一页时，使用 `$limit` 和 `$offset` 进行 SODA 分页。
-- 仅当页面包含的记录数少于请求的页面大小时才停止。
-- 每个数据源添加 20,000 个唯一点的安全上限。
-- 如果超过安全上限，则使该数据源失败，而非静默截断。
+- Maximum page size: 5,000.
+- Use `$limit` and `$offset` SODA pagination when server-side grouped results still exceed one page.
+- Stop only when a page contains fewer records than the requested page size.
+- Add a safety cap of 20,000 unique points per data source.
+- If the safety cap is exceeded, fail that data source rather than silently truncating.
 
-### 7.2 超时与重试
+### 7.2 Timeout and Retry
 
-使用：
+Use:
 
 ```python
 timeout = (2, 5)
 ```
 
-含义：
+Meaning:
 
-- 连接超时：2 秒；
-- 响应读取超时：5 秒。
+- connection timeout: 2 seconds;
+- response read timeout: 5 seconds.
 
-每次失败请求最多重试三次，延迟如下：
-
-```text
-1 秒、2 秒、4 秒
-```
-
-重试连接错误、读取超时、HTTP 429 和 HTTP 5xx 响应。不重试其他 HTTP 4xx 响应。
-
-### 7.3 故障隔离
-
-每个数据源独立运行。
-
-如果某个数据源在重试后仍然失败：
-
-- 将其元数据状态设为 `failed`；
-- 记录异常类型和简明错误信息；
-- 继续处理成功获取的数据源；
-- 不将失败数据源表示为零覆盖；
-- 不生成任何包含失败数据源的组合结果。
-
-示例：
+Retry each failed request up to three times with the following delays:
 
 ```text
-Citi Bike 成功，MTA 失败，Traffic 成功：
-- 生成 Citi Bike 单独覆盖结果；
-- 生成 Traffic 单独覆盖结果；
-- 不生成 Citi Bike + MTA 组合；
-- 不生成 Citi Bike + MTA + Traffic 组合。
+1 second, 2 seconds, 4 seconds
 ```
 
-## 8. 点位标准化与去重
+Retry connection errors, read timeouts, HTTP 429, and HTTP 5xx responses. Do not retry other HTTP 4xx responses.
 
-对于每个数据源：
+### 7.3 Failure Isolation
 
-1. 将 API 响应解析为标准化点模式。
-2. 删除 API 坐标缺失、非数值或无法转换的记录。
-3. 按 `source_id` 去重，保留第一条有效记录。
-4. 如果多个剩余 ID 具有完全相同的纬度和经度，则保留一个坐标用于空间计算。
-5. 保留以下计数：
-   - 原始记录数；
-   - 有效记录数；
-   - 唯一 source ID 数；
-   - 唯一坐标数；
-   - 被拒绝的记录数。
+Each data source runs independently.
 
-不将原始 API 响应或标准化点快照持久化到磁盘。数据源点仅在运行期间存在于内存中。
+If a data source still fails after retrying:
 
-## 9. 空间算法
+- set its metadata status to `failed`;
+- record the exception type and a concise error message;
+- continue processing successfully fetched data sources;
+- do not represent the failed data source as zero coverage;
+- do not generate any combined results that include the failed data source.
 
-使用 `sklearn.neighbors.BallTree`，度量方式为 Haversine。
+Example:
 
-每个成功数据源的处理流程：
+```text
+Citi Bike succeeds, MTA fails, Traffic succeeds:
+- generate Citi Bike standalone coverage result;
+- generate Traffic standalone coverage result;
+- do not generate Citi Bike + MTA combination;
+- do not generate Citi Bike + MTA + Traffic combination.
+```
 
-1. 将数据源和场地坐标从度数转换为弧度。
-2. 从唯一数据源坐标构建一个 BallTree。
-3. 为每个去重后的场地查询最近的数据源点。
-4. 使用以下公式将角度距离转换为米：
+## 8. Point Normalization and Deduplication
+
+For each data source:
+
+1. Parse the API response into the normalized point schema.
+2. Drop records with missing, non-numeric, or unconvertible API coordinates.
+3. Deduplicate by `source_id`, keeping the first valid record.
+4. If multiple remaining IDs have the exact same latitude and longitude, keep one coordinate for spatial computation.
+5. Retain the following counts:
+   - raw record count;
+   - valid record count;
+   - unique source ID count;
+   - unique coordinate count;
+   - rejected record count.
+
+Do not persist raw API responses or normalized point snapshots to disk. Data source points exist in memory only during the run.
+
+## 9. Spatial Algorithm
+
+Use `sklearn.neighbors.BallTree` with the Haversine metric.
+
+Processing flow for each successful data source:
+
+1. Convert data source and venue coordinates from degrees to radians.
+2. Build a BallTree from the unique data source coordinates.
+3. Query the nearest data source point for each deduplicated venue.
+4. Convert the angular distance to meters using the following formula:
 
 ```text
 distance_m = angular_distance × 6,371,008.8
 ```
 
-5. 存储每个场地最近的 `source_id` 和最近距离。
-6. 根据该单一最近距离结果计算所有半径标志。
+5. Store the nearest `source_id` and nearest distance for each venue.
+6. Compute all radius flags from this single nearest distance result.
 
-不为每个半径单独重建或查询树。
+Do not rebuild or query the tree separately for each radius.
 
-覆盖规则：
+Coverage rule:
 
 ```text
 covered(source, radius) = nearest_distance_m <= radius
 ```
 
-## 10. 覆盖指标
+## 10. Coverage Metrics
 
-### 10.1 单数据源覆盖
+### 10.1 Single-Source Coverage
 
-对于每个数据源、半径和分组维度：
+For each data source, radius, and grouping dimension:
 
 ```text
-venue_count（场地数）
-covered_count（覆盖数）
-coverage_rate（覆盖率）
-newly_covered_count_vs_previous_radius（相对于前一半径的新增覆盖数）
-marginal_gain_percentage_points（边际增益百分点）
+venue_count (venue count)
+covered_count (covered count)
+coverage_rate (coverage rate)
+newly_covered_count_vs_previous_radius (newly covered count vs previous radius)
+marginal_gain_percentage_points (marginal gain percentage points)
 ```
 
-在 100m 处，前一半径的覆盖数为零。
+At 100m, the coverage of the previous radius is zero.
 
 ```text
 coverage_rate = covered_count / venue_count
 marginal_gain_pp = current_coverage_rate - previous_coverage_rate
 ```
 
-### 10.2 组合覆盖
+### 10.2 Combined Coverage
 
-对于每个半径，按固定 CLI 顺序应用数据源：
+For each radius, apply data sources in the fixed CLI order:
 
 ```text
 C1 = Citi Bike
-C2 = Citi Bike 或 MTA
-C3 = Citi Bike 或 MTA 或 Traffic
+C2 = Citi Bike or MTA
+C3 = Citi Bike or MTA or Traffic
 ```
 
-每个阶段报告：
+Report at each stage:
 
 ```text
-cumulative_covered_count（累计覆盖数）
-cumulative_coverage_rate（累计覆盖率）
-incremental_unique_covered_count（增量唯一覆盖数）
-incremental_gain_percentage_points（增量增益百分点）
+cumulative_covered_count (cumulative covered count)
+cumulative_coverage_rate (cumulative coverage rate)
+incremental_unique_covered_count (incremental unique covered count)
+incremental_gain_percentage_points (incremental gain percentage points)
 ```
 
-新添加数据源的增量计数仅包含在同一半径下尚未被先前数据源覆盖的场地。
+The incremental count of a newly added data source includes only venues not already covered by a previous data source at the same radius.
 
-### 10.3 距离分布
+### 10.3 Distance Distribution
 
-对于每个单数据源和分组维度报告：
+For each single source and grouping dimension, report:
 
 ```text
-nearest_distance_median（最近距离中位数）
-nearest_distance_p90（最近距离第 90 百分位）
-nearest_distance_max（最近距离最大值）
+nearest_distance_median (nearest distance median)
+nearest_distance_p90 (nearest distance 90th percentile)
+nearest_distance_max (nearest distance maximum)
 ```
 
-## 11. 输出结构
+## 11. Output Structure
 
-每次运行使用 UTC 时间：
+Each run uses UTC time:
 
 ```text
 Data+ML/test/6.15-5.20/output/venue_coverage/
@@ -407,68 +407,68 @@ Data+ML/test/6.15-5.20/output/venue_coverage/
     uncovered_venue_distribution.png
 ```
 
-首先写入带时间戳的运行目录。仅在该运行的所有必需制品成功生成后，才更新 `latest/` 目录。
+The timestamped run directory is written first. The `latest/` directory is updated only after all required artifacts for that run are successfully generated.
 
 ### 11.1 `venue_coverage_detail.csv`
 
-每个去重后场地一行。
+One row per deduplicated venue.
 
-必需基础列：
-
-```text
-venue_id（场地ID）
-venue_type（场地类型）
-district（区域）
-latitude（纬度）
-longitude（经度）
-```
-
-每个成功数据源的列：
+Required base columns:
 
 ```text
-{source}_nearest_source_id（最近数据源ID）
-{source}_nearest_distance_m（最近距离_米）
-{source}_covered_100m（100m覆盖）
-{source}_covered_200m（200m覆盖）
-{source}_covered_300m（300m覆盖）
-{source}_covered_400m（400m覆盖）
-{source}_covered_500m（500m覆盖）
+venue_id (venue ID)
+venue_type (venue type)
+district (district)
+latitude (latitude)
+longitude (longitude)
 ```
 
-失败数据源的列可以不存在，但失败必须在 `run_metadata.json` 和 `coverage_report.md` 中明确记录。
+Columns for each successful data source:
+
+```text
+{source}_nearest_source_id (nearest data source ID)
+{source}_nearest_distance_m (nearest distance meters)
+{source}_covered_100m (100m covered)
+{source}_covered_200m (200m covered)
+{source}_covered_300m (300m covered)
+{source}_covered_400m (400m covered)
+{source}_covered_500m (500m covered)
+```
+
+Columns for failed data sources may be absent, but the failure must be explicitly recorded in `run_metadata.json` and `coverage_report.md`.
 
 ### 11.2 `coverage_summary.csv`
 
-必需列：
+Required columns:
 
 ```text
-scope（范围）
-group_name（分组名称）
-group_value（分组值）
-coverage_kind（覆盖类型）
-source_or_combination（数据源或组合）
-radius_m（半径_米）
-venue_count（场地数）
-covered_count（覆盖数）
-coverage_rate（覆盖率）
-incremental_covered_count（增量覆盖数）
-marginal_gain_pp（边际增益百分点）
-nearest_distance_median（最近距离中位数）
-nearest_distance_p90（最近距离第90百分位）
+scope (scope)
+group_name (group name)
+group_value (group value)
+coverage_kind (coverage kind)
+source_or_combination (data source or combination)
+radius_m (radius meters)
+venue_count (venue count)
+covered_count (covered count)
+coverage_rate (coverage rate)
+incremental_covered_count (incremental covered count)
+marginal_gain_pp (marginal gain percentage points)
+nearest_distance_median (nearest distance median)
+nearest_distance_p90 (nearest distance 90th percentile)
 ```
 
-取值：
+Values:
 
 ```text
 scope: overall | venue_type | district
 coverage_kind: standalone | cumulative
 ```
 
-距离分布字段在单数据源行中填充，累计组合行留空。
+Distance distribution fields are populated on single-source rows and left empty on cumulative combination rows.
 
 ### 11.3 `run_metadata.json`
 
-必需部分：
+Required sections:
 
 ```json
 {
@@ -484,248 +484,248 @@ coverage_kind: standalone | cumulative
 }
 ```
 
-记录内容：
+Recorded content:
 
-- 场地文件路径和行数；
-- 唯一场地数和重复 `venue_id` 数；
-- 半径和数据源顺序；
-- MTA 和 Traffic 年份；
-- API URL、数据集 ID、请求参数和查询语句；
-- API 获取时间和最大数据源时间戳；
-- 数据源数据年龄或 `timestamp_unavailable`；
-- 原始、有效、唯一 ID、唯一坐标和被拒绝的计数；
-- 数据源状态、重试次数和失败消息；
-- Python 和包版本；
-- 制品文件名。
+- venue file path and row count;
+- unique venue count and duplicate `venue_id` count;
+- radii and data source order;
+- MTA and Traffic years;
+- API URL, dataset ID, request parameters, and query statement;
+- API fetch time and maximum data source timestamp;
+- data source data age or `timestamp_unavailable`;
+- raw, valid, unique ID, unique coordinate, and rejected counts;
+- data source status, retry count, and failure message;
+- Python and package versions;
+- artifact file names.
 
 ### 11.4 `coverage_report.md`
 
-必需章节：
+Required sections:
 
-1. 运行摘要
-2. 数据源状态和时效性
-3. 总体单数据源覆盖
-4. 累计覆盖和数据源边际贡献
-5. 按 `venue_type` 的覆盖
-6. 按区域的覆盖
-7. 最近距离分布
-8. 未覆盖场地计数
-9. 数据质量警告
-10. 解读约束
+1. Run summary
+2. Data source status and timeliness
+3. Overall single-source coverage
+4. Cumulative coverage and data source marginal contribution
+5. Coverage by `venue_type`
+6. Coverage by district
+7. Nearest distance distribution
+8. Uncovered venue count
+9. Data quality warnings
+10. Interpretation constraints
 
-不自动推荐生产半径。呈现 100m 到 500m 的边际结果供审查。
+Do not automatically recommend a production radius. Present the marginal results from 100m to 500m for review.
 
-## 12. 静态可视化
+## 12. Static Visualizations
 
-使用 PNG 格式，1,600 × 900 像素，150 DPI。不生成交互式地图。
+Use PNG format, 1,600 × 900 pixels, 150 DPI. Do not generate interactive maps.
 
-必需图表：
+Required charts:
 
-### `coverage_by_radius.png`（按半径覆盖）
+### `coverage_by_radius.png` (coverage by radius)
 
-- X 轴：半径
-- Y 轴：覆盖率
-- 每个单数据源一条线
-- 有效累计组合的附加线
+- X axis: radius
+- Y axis: coverage rate
+- One line per single data source
+- Additional line for valid cumulative combinations
 
-### `incremental_coverage.png`（增量覆盖）
+### `incremental_coverage.png` (incremental coverage)
 
-- 按半径分组的条形图
-- 显示每个数据源在组合顺序中的贡献百分点
+- Bar chart grouped by radius
+- Show the contribution percentage points of each data source in the combination order
 
-### `venue_type_coverage_heatmap.png`（场地类型覆盖热力图）
+### `venue_type_coverage_heatmap.png` (venue type coverage heatmap)
 
-- 行：场地类型
-- 列：数据源/组合和半径
-- 单元格：覆盖率
+- Rows: venue types
+- Columns: data sources/combinations and radii
+- Cells: coverage rate
 
-### `uncovered_venue_distribution.png`（未覆盖场地分布）
+### `uncovered_venue_distribution.png` (uncovered venue distribution)
 
-使用静态分组条形图，而非地图：
+Use a static grouped bar chart rather than a map:
 
-- X 轴：区域或场地类型
-- Y 轴：仍未覆盖的计数
-- 系列：半径或最终组合
+- X axis: district or venue type
+- Y axis: count still uncovered
+- Series: radius or final combination
 
-每个图表必须包含标题、轴标签、适用的图例以及数据源/运行时间戳。
+Each chart must include a title, axis labels, a legend where applicable, and the data source/run timestamp.
 
-## 13. 测试驱动的实施任务
+## 13. Test-Driven Implementation Tasks
 
-### 任务 1：CLI 解析与验证
+### Task 1: CLI Parsing and Validation
 
-文件：
+Files:
 
 ```text
-创建：Data+ML/test/6.15-5.20/src/run_venue_coverage.py
-创建：Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
+Create: Data+ML/test/6.15-5.20/src/run_venue_coverage.py
+Create: Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-测试：
+Tests:
 
-- 默认值正确解析；
-- 可配置的 MTA 和 Traffic 年份被保留；
-- 数据源顺序被保持；
-- 无效半径和页面大小报错失败；
-- 缺少场地文件时在 API 调用前失败。
+- defaults parse correctly;
+- configurable MTA and Traffic years are preserved;
+- data source order is maintained;
+- invalid radii and page sizes raise errors;
+- missing venue file fails before API calls.
 
-运行：
+Run:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py -k cli
 ```
 
-预期：CLI 测试通过。
+Expected: CLI tests pass.
 
-### 任务 2：HTTP 客户端、重试与数据源隔离
+### Task 2: HTTP Client, Retry, and Data Source Isolation
 
-文件：
+Files:
 
 ```text
-创建：Data+ML/test/6.15-5.20/src/venue_coverage.py
-修改：Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
+Create: Data+ML/test/6.15-5.20/src/venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-测试：
+Tests:
 
-- 每个请求使用 `timeout=(2, 5)`；
-- 瞬态失败使用 `1/2/4` 延迟重试三次；
-- 不可重试的 4xx 立即失败；
-- 分页在短页面时停止；
-- 超过 20,000 个唯一点时数据源失败；
-- 一个数据源失败不会停止其他数据源；
-- 包含失败数据源的组合被省略。
+- each request uses `timeout=(2, 5)`;
+- transient failures retry three times with `1/2/4` delays;
+- non-retryable 4xx fails immediately;
+- pagination stops on a short page;
+- data source fails when exceeding 20,000 unique points;
+- one data source failing does not stop other data sources;
+- combinations including a failed data source are omitted.
 
-运行：
+Run:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py -k 'http or retry or pagination or isolation'
 ```
 
-预期：HTTP 行为测试在无实时网络访问的情况下通过。
+Expected: HTTP behavior tests pass without live network access.
 
-### 任务 3：数据源适配器
+### Task 3: Data Source Adapters
 
-文件：
+Files:
 
 ```text
-修改：Data+ML/test/6.15-5.20/src/venue_coverage.py
-修改：Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/src/venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-测试：
+Tests:
 
-- Citi Bike 信息/状态关联；
-- MTA 服务端唯一站点解析；
-- Traffic 唯一路段解析和坐标转换；
-- 请求年份出现在数据源查询中；
-- 数据源 ID 去重；
-- 重复坐标移除；
-- 无效 API 坐标被拒绝并计数；
-- 数据源时效性元数据被填充。
+- Citi Bike information/status association;
+- MTA server-side unique station resolution;
+- Traffic unique segment resolution and coordinate conversion;
+- requested year appears in the data source query;
+- data source ID deduplication;
+- duplicate coordinate removal;
+- invalid API coordinates are rejected and counted;
+- data source timeliness metadata is populated.
 
-运行：
+Run:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py -k source
 ```
 
-预期：使用 fixture 或模拟响应的数据源适配器测试通过。
+Expected: data source adapter tests pass using fixtures or mocked responses.
 
-### 任务 4：BallTree 距离计算
+### Task 4: BallTree Distance Computation
 
-文件：
+Files:
 
 ```text
-修改：Data+ML/test/6.15-5.20/src/venue_coverage.py
-修改：Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/src/venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-测试：
+Tests:
 
-- 已知坐标对产生容差范围内的预期 Haversine 距离；
-- 最近数据源 ID 正确；
-- 精确 100m 边界被覆盖；
-- 单次树查询支持全部五个半径标志；
-- 场地去重仅通过 `venue_id` 进行；
-- 相同坐标但不同场地 ID 保持独立。
+- known coordinate pairs produce the expected Haversine distance within tolerance;
+- nearest data source ID is correct;
+- the exact 100m boundary is covered;
+- a single tree query supports all five radius flags;
+- venue deduplication is performed only via `venue_id`;
+- identical coordinates but different venue IDs remain separate.
 
-运行：
+Run:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py -k 'distance or balltree or dedup'
 ```
 
-预期：空间测试通过。
+Expected: spatial tests pass.
 
-### 任务 5：覆盖聚合
+### Task 5: Coverage Aggregation
 
-文件：
+Files:
 
 ```text
-修改：Data+ML/test/6.15-5.20/src/venue_coverage.py
-修改：Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/src/venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-测试：
+Tests:
 
-- 每个半径的单数据源覆盖；
-- 半径边际计数和百分点计算；
-- 累计数据源顺序；
-- 增量唯一归因；
-- 总体聚合；
-- `venue_type` 聚合；
-- 区域聚合；
-- 无 `venue_type × district` 交叉表；
-- 中位数和 P90 距离。
+- single-source coverage per radius;
+- radius marginal count and percentage point computation;
+- cumulative data source order;
+- incremental unique attribution;
+- overall aggregation;
+- `venue_type` aggregation;
+- district aggregation;
+- no `venue_type × district` crosstab;
+- median and P90 distance.
 
-运行：
+Run:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py -k coverage
 ```
 
-预期：聚合测试通过。
+Expected: aggregation tests pass.
 
-### 任务 6：制品与可视化
+### Task 6: Artifacts and Visualizations
 
-文件：
+Files:
 
 ```text
-修改：Data+ML/test/6.15-5.20/src/venue_coverage.py
-修改：Data+ML/test/6.15-5.20/src/run_venue_coverage.py
-修改：Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/src/venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/src/run_venue_coverage.py
+Modify: Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-测试：
+Tests:
 
-- 明细 CSV 契约；
-- 汇总 CSV 契约；
-- 元数据 JSON 契约；
-- Markdown 必需章节；
-- 全部四个 PNG 文件存在且非空；
-- 创建带时间戳的运行目录；
-- 仅在完全成功后更新 `latest/`；
-- 不写入原始 API 响应或数据源点快照。
+- detail CSV contract;
+- summary CSV contract;
+- metadata JSON contract;
+- Markdown required sections;
+- all four PNG files exist and are non-empty;
+- timestamped run directory is created;
+- `latest/` is updated only after full success;
+- no raw API responses or data source point snapshots are written.
 
-运行：
+Run:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py -k 'artifact or report or chart or metadata'
 ```
 
-预期：输出契约测试通过。
+Expected: output contract tests pass.
 
-### 任务 7：完整验证与线上冒烟测试
+### Task 7: Full Validation and Live Smoke Test
 
-运行单元测试：
+Run unit tests:
 
 ```bash
 pytest -q Data+ML/test/6.15-5.20/tests/test_venue_coverage.py
 ```
 
-预期：所有覆盖测试通过。
+Expected: all coverage tests pass.
 
-运行线上 API 冒烟测试：
+Run the live API smoke test:
 
 ```bash
 python Data+ML/test/6.15-5.20/src/run_venue_coverage.py \
@@ -737,39 +737,39 @@ python Data+ML/test/6.15-5.20/src/run_venue_coverage.py \
   --output-dir Data+ML/test/6.15-5.20/output/venue_coverage
 ```
 
-预期：
+Expected:
 
-- 至少一个数据源成功时进程退出码为 0；
-- 数据源失败可见且不被表示为零覆盖；
-- 存在完整的带时间戳运行目录；
-- `latest/` 指向新完成的结果；
-- 未修改任何 MySQL 表。
+- process exit code 0 when at least one data source succeeds;
+- data source failures are visible and not represented as zero coverage;
+- a complete timestamped run directory exists;
+- `latest/` points to the newly completed result;
+- no MySQL tables are modified.
 
-## 14. 审查清单
+## 14. Review Checklist
 
-在解读结果之前，确认：
+Before interpreting the results, confirm:
 
-- [ ] 场地分母和重复计数已记录。
-- [ ] 所有数据源状态明确。
-- [ ] API 查询年份和数据集 ID 已记录。
-- [ ] 没有数据源在 5,000 行处静默停止。
-- [ ] 失败数据源已从受影响的组合中排除。
-- [ ] 单数据源和累计覆盖均已呈现。
-- [ ] 结果包含总体、场地类型和区域视图。
-- [ ] 每个 100m 增量的边际变化均已显示。
-- [ ] Traffic 未被描述为观测到的行人繁忙度。
-- [ ] 未从空间覆盖推断预测权重。
-- [ ] 未持久化原始 API 响应。
-- [ ] 未发生数据库写入。
+- [ ] Venue denominator and duplicate counts are recorded.
+- [ ] All data source statuses are explicit.
+- [ ] API query years and dataset IDs are recorded.
+- [ ] No data source silently stops at 5,000 rows.
+- [ ] Failed data sources are excluded from affected combinations.
+- [ ] Both single-source and cumulative coverage are presented.
+- [ ] Results include overall, venue type, and district views.
+- [ ] Marginal change at each 100m increment is shown.
+- [ ] Traffic is not described as observed pedestrian busyness.
+- [ ] No prediction weight is inferred from spatial coverage.
+- [ ] No raw API responses are persisted.
+- [ ] No database writes occurred.
 
-## 15. 测试后决策
+## 15. Post-Test Decisions
 
-审查生成的覆盖报告后，决定：
+After reviewing the generated coverage report, decide:
 
-1. 哪个半径提供了可接受的覆盖与局部性权衡。
-2. Traffic 是否增加了足够的唯一空间覆盖以证明进一步验证工作的合理性。
-3. 哪些场地类型或区域需要回退特征。
-4. 是否添加行人传感器作为校准标签。
-5. 是否从空间覆盖测试推进到时间相关性和模型消融分析。
+1. Which radius provides an acceptable coverage-versus-locality tradeoff.
+2. Whether Traffic adds enough unique spatial coverage to justify further validation work.
+3. Which venue types or districts need fallback features.
+4. Whether to add pedestrian sensors as a calibration label.
+5. Whether to advance from spatial coverage testing to temporal correlation and model ablation analysis.
 
-在时间验证阶段完成之前，不分配生产权重。
+Do not assign production weights until the temporal validation phase is complete.

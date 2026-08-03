@@ -1,137 +1,137 @@
-# Todolist — Venue Busyness 预测优化
+# Todolist - Venue Busyness Prediction Optimization
 
-## 核心问题
+## Core Problem
 
-venue 自身的热力/拥挤度数据无法直接获取：
+The heat/crowdedness data of venues themselves cannot be obtained directly:
 
-- Google Popular Times：无公开 API
-- BestTime：单次查询，付费，无法批量训练
-- Yelp/Google Places：无实时人流接口
+- Google Popular Times: no public API
+- BestTime: single query, paid, no batch training
+- Yelp/Google Places: no real-time footfall interface
 
-**需要通过公开代理信号构建训练标签。**
+**Training labels need to be built from public proxy signals.**
 
 ---
 
-## 已确认可用的代理数据源
+## Confirmed Available Proxy Data Sources
 
-### 1. MTA Subway Hourly Ridership ⭐ 最有价值
+### 1. MTA Subway Hourly Ridership ⭐ Most Valuable
 
-| 项 | 值 |
+| Item | Value |
 |---|---|
-| 数据集 ID | `wujg-7c2s` |
+| Dataset ID | `wujg-7c2s` |
 | API | `https://data.ny.gov/resource/wujg-7c2s.json` |
-| 粒度 | station_complex + hour |
-| Manhattan 行数 | 36,828,057 |
-| 时间范围 | 2020–2024（最新 2024-12-31） |
-| 关键字段 | `station_complex_id`, `station_complex`, `ridership`, `transfers`, `latitude`, `longitude`, `borough`, `transit_timestamp` |
-| 费用 | 免费 |
+| Granularity | station_complex + hour |
+| Manhattan Row Count | 36,828,057 |
+| Time Range | 2020–2024 (latest 2024-12-31) |
+| Key Fields | `station_complex_id`, `station_complex`, `ridership`, `transfers`, `latitude`, `longitude`, `borough`, `transit_timestamp` |
+| Cost | Free |
 
-**价值**：每个站点每小时的进出站人数，直接反映附近区域的活动强度。
+**Value**: The number of entries and exits per station per hour directly reflects the activity intensity of the surrounding area.
 
-### 2. Citi Bike GBFS（已有）
+### 2. Citi Bike GBFS (existing)
 
-| 项 | 值 |
+| Item | Value |
 |---|---|
-| 端点 | station_information + station_status |
-| 粒度 | 站点级实时 |
-| Manhattan 站点 | ~2,328 |
-| 费用 | 免费 |
+| Endpoint | station_information + station_status |
+| Granularity | station-level real-time |
+| Manhattan Stations | ~2,328 |
+| Cost | Free |
 
-**价值**：站点被借空/还满的频率反映周边活动。
+**Value**: The frequency of stations being borrowed empty/returned full reflects surrounding activity.
 
-### 3. NYC Traffic（已有）
+### 3. NYC Traffic (existing)
 
-| 项 | 值 |
+| Item | Value |
 |---|---|
-| 数据集 ID | `7ym2-wayt` |
-| 粒度 | 路段级/小时 |
-| Manhattan 路段 | 28（稀疏） |
-| 费用 | 免费 |
+| Dataset ID | `7ym2-wayt` |
+| Granularity | segment-level/hourly |
+| Manhattan Segments | 28 (sparse) |
+| Cost | Free |
 
-**价值**：district 级别聚合后可作为辅助特征。
+**Value**: After aggregating at the district level, it can serve as an auxiliary feature.
 
 ---
 
-## 待办事项
+## Todo Items
 
-### Phase 1：MTA 数据接入（优先级 P0）
+### Phase 1: MTA Data Integration (Priority P0)
 
-- [ ] **接入 MTA Hourly Ridership API**
-  - 数据集 `wujg-7c2s`，Manhattan 筛选 `borough='Manhattan'`
-  - 按 `station_complex_id` + `transit_timestamp` 聚合 ridership
-  - 输出：每个 station_complex 每小时的总 ridership
+- [ ] **Integrate MTA Hourly Ridership API**
+  - Dataset `wujg-7c2s`, filter Manhattan with `borough='Manhattan'`
+  - Aggregate ridership by `station_complex_id` + `transit_timestamp`
+  - Output: total hourly ridership per station_complex
 
-- [ ] **MTA 站点 → venue 映射**
-  - 用 haversine 距离把 venue 匹配到最近的 MTA 站点
-  - 复用 venue_coverage 的 BallTree 逻辑
-  - 关联表：`venue_id → nearest_station_complex_id → distance_m`
+- [ ] **MTA Station -> Venue Mapping**
+  - Use haversine distance to match venues to the nearest MTA station
+  - Reuse the BallTree logic from venue_coverage
+  - Mapping table: `venue_id -> nearest_station_complex_id -> distance_m`
 
-- [ ] **存储设计**
-  - 新表 `mta_hourly_ridership`：`station_complex_id, hour, ridership, transfers`
-  - 或直接在 ETL 中按需查询，不持久化（数据量大：36M+ 行）
+- [ ] **Storage Design**
+  - New table `mta_hourly_ridership`: `station_complex_id, hour, ridership, transfers`
+  - Or query on-demand directly in the ETL without persisting (large data volume: 36M+ rows)
 
-### Phase 2：多源活动指数（优先级 P0）
+### Phase 2: Multi-source Activity Index (Priority P0)
 
-- [ ] **构建 district + hour 级活动指数**
+- [ ] **Build district + hour level activity index**
   ```python
   activity_index = w1 * citibike_norm + w2 * mta_norm + w3 * traffic_norm
   ```
-  - 每个数据源按 district + hour 归一化到 0-100
-  - 权重 w1/w2/w3 初始设为 1/1/1，后续根据相关性调整
+  - Normalize each data source to 0-100 by district + hour
+  - Set weights w1/w2/w3 to 1/1/1 initially, adjust later based on correlation
 
-- [ ] **验证时间相关性**
-  - 按 district 分组计算 Pearson/Spearman 相关系数
-  - 对齐 24h 曲线，检查高峰时段一致性
-  - 预期：MTA ridership 与 venue busyness r > 0.7
+- [ ] **Validate Time Correlation**
+  - Compute Pearson/Spearman correlation coefficients grouped by district
+  - Align 24h curves, check consistency of peak hours
+  - Expected: MTA ridership vs venue busyness r > 0.7
 
-### Phase 3：模型训练（优先级 P1）
+### Phase 3: Model Training (Priority P1)
 
-- [ ] **训练数据构建**
-  - 输入特征：MTA ridership (hour, district) + Citi Bike activity + Traffic volume + 时间特征 (hour, day_of_week, is_holiday)
-  - 标签：多源活动指数（activity_index）
-  - 训练集：2020-2023，验证集：2024
+- [ ] **Training Data Construction**
+  - Input features: MTA ridership (hour, district) + Citi Bike activity + Traffic volume + time features (hour, day_of_week, is_holiday)
+  - Label: multi-source activity index (activity_index)
+  - Training set: 2020-2023, validation set: 2024
 
-- [ ] **模型选型**
-  - 基线：LightGBM / XGBoost（tabular data）
-  - 进阶：LSTM / Prophet（时序预测）
-  - 输出：未来 12h 的 activity_index 预测
+- [ ] **Model Selection**
+  - Baseline: LightGBM / XGBoost (tabular data)
+  - Advanced: LSTM / Prophet (time series forecasting)
+  - Output: activity_index forecast for the next 12h
 
-- [ ] **评估指标**
-  - MAE / RMSE：预测值与实际活动指数的偏差
-  - 排序精度：预测的高峰/低谷时段是否准确
-  - 消融实验：有/无 Traffic 对预测精度的影响
+- [ ] **Evaluation Metrics**
+  - MAE / RMSE: deviation between predicted and actual activity index
+  - Ranking accuracy: whether predicted peak/trough hours are accurate
+  - Ablation study: impact of Traffic presence/absence on prediction accuracy
 
-### Phase 4：生产集成（优先级 P2）
+### Phase 4: Production Integration (Priority P2)
 
-- [ ] **替换现有 busyness_scores 表**
-  - 用 MTA + Citi Bike 活动指数替代纯 Traffic 分数
-  - 保持 district 级别粒度
+- [ ] **Replace existing busyness_scores table**
+  - Replace pure Traffic scores with MTA + Citi Bike activity index
+  - Maintain district-level granularity
 
-- [ ] **定时更新管道**
-  - 每小时拉取 MTA ridership（增量查询 `transit_timestamp > last_update`）
-  - 重新计算活动指数并更新 busyness_scores
+- [ ] **Scheduled Update Pipeline**
+  - Pull MTA ridership hourly (incremental query `transit_timestamp > last_update`)
+  - Recompute activity index and update busyness_scores
 
-- [ ] **前端 API 适配**
-  - `get_venue_busyness` 返回新的活动指数
-  - `get_venue_busyness_forecast` 返回 12h 预测
+- [ ] **Frontend API Adaptation**
+  - `get_venue_busyness` returns the new activity index
+  - `get_venue_busyness_forecast` returns the 12h forecast
 
 ---
 
-## 数据量估算
+## Data Volume Estimation
 
-| 数据源 | 每天行数 | 每月行数 | 存储需求 |
+| Data Source | Rows per Day | Rows per Month | Storage Requirement |
 |--------|---------|---------|---------|
-| MTA hourly (Manhattan) | ~250K | ~7.5M | ~1.5GB/月 |
-| Citi Bike | ~55K | ~1.6M | ~300MB/月 |
-| Traffic | ~672 | ~20K | ~5MB/月 |
+| MTA hourly (Manhattan) | ~250K | ~7.5M | ~1.5GB/month |
+| Citi Bike | ~55K | ~1.6M | ~300MB/month |
+| Traffic | ~672 | ~20K | ~5MB/month |
 
-MTA 数据量最大，建议按需查询而非全量存储。
+MTA has the largest data volume; on-demand querying is recommended instead of full storage.
 
 ---
 
-## 风险与注意事项
+## Risks and Considerations
 
-1. **MTA 数据截止 2024-12-31**：需要确认 2025 数据是否已发布
-2. **payment_method 维度**：metrocard vs omny 可能有统计口径差异，聚合时需注意
-3. **station_complex 重复坐标**：同一 complex_id 可能有多行（不同 payment_method），聚合时按 complex_id + hour 去重
-4. **Citi Bike 实时 vs 历史**：GBFS 只提供实时状态，历史数据需另行获取
+1. **MTA data ends 2024-12-31**: need to confirm whether 2025 data has been released
+2. **payment_method dimension**: metrocard vs omny may have statistical caliber differences, pay attention during aggregation
+3. **station_complex duplicate coordinates**: the same complex_id may have multiple rows (different payment_method), deduplicate by complex_id + hour during aggregation
+4. **Citi Bike real-time vs historical**: GBFS only provides real-time status, historical data must be obtained separately
