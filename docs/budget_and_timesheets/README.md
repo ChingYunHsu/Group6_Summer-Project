@@ -1,6 +1,6 @@
 # ClearPath Budget and Timesheets
 
-This folder provides access to the combined budget and timesheet records for each ClearPath sprint.
+This folder provides access to the combined budget and timesheet records for all ClearPath sprint.
 
 [Open Budget and Timesheet](https://drive.google.com/drive/folders/1Uj89BuAKIdoFqbvOYMNDFBB4KIMugOti?usp=sharing)
 
